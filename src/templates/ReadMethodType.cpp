@@ -21344,3 +21344,28 @@ L_skip:
         call ext_006A6DD2
     }
 }
+
+// [0x004716D0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_5 (58 bytes)
+extern "C" void ext_0046C110();
+extern "C" __declspec(naked) void __fastcall fn_004716D0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip
+        call ext_0046C110
+        fstp dword ptr [esp + 44]
+        fld dword ptr [esp + 44]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
