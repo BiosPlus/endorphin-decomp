@@ -3835,3 +3835,34 @@ extern "C" void* __fastcall fn_007873F0(void* self, int edx_unused, const int* s
     dst[7] = src[7];
     return self;
 }
+
+// [0x00789940] sub_00789940 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00789940(void* self) {
+    __asm {
+        xor edx, edx
+        push esi
+        add ecx, 0x18
+    fn_00789940_outer:
+        mov eax, edx
+        mov esi, 0x8
+        shl eax, 0x18
+    fn_00789940_inner:
+        test eax, 0x80000000
+        je fn_00789940_shl
+        add eax, eax
+        xor eax, 0x04C11DB7
+        jmp fn_00789940_next
+    fn_00789940_shl:
+        shl eax, 1
+    fn_00789940_next:
+        dec esi
+        jne fn_00789940_inner
+        mov dword ptr [ecx], eax
+        inc edx
+        add ecx, 0x4
+        cmp edx, 0x100
+        jl fn_00789940_outer
+        pop esi
+        ret
+    }
+}
