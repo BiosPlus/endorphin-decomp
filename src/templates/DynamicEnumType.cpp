@@ -2101,3 +2101,38 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00494D00] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_0 (71 bytes)
+extern "C" void ext_006AD970();
+extern "C" void ext_006720C0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) void __fastcall fn_00494D00(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      short L_null
+        push    esi
+        call    ext_006AD970
+        mov     esi, dword ptr [esp + 0x34]
+        push    eax
+        mov     ecx, esi
+        call    ext_006720C0
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     0x8
+    L_null:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
