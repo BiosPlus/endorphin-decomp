@@ -4505,3 +4505,47 @@ extern "C" void __fastcall fn_007800D0(void* self, int edx_unused, int a1, int a
     *(unsigned char*)(p + 0x120) = a9;
     *(unsigned char*)(p + 0x121) = a8;
 }
+
+// [0x00782D30] sub_00782D30 (96 bytes)
+extern "C" int mem_009251D8;
+extern "C" __declspec(naked) void __fastcall fn_00782D30(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0x0
+        je short L_clear
+        mov eax, dword ptr [esi + 0x4]
+        push ebp
+        mov ebp, dword ptr [mem_009251D8]
+        push edi
+        xor edi, edi
+        test eax, eax
+        jle short L_freeArr
+L_loop:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 8*edi]
+        push ecx
+        call ebp
+        mov edx, dword ptr [esi]
+        add esp, 0x4
+        mov dword ptr [edx + 8*edi], 0x0
+        mov eax, dword ptr [esi + 0x4]
+        inc edi
+        cmp edi, eax
+        jl short L_loop
+L_freeArr:
+        mov eax, dword ptr [esi]
+        push eax
+        call ebp
+        add esp, 0x4
+        mov dword ptr [esi], 0x0
+        pop edi
+        pop ebp
+L_clear:
+        mov dword ptr [esi + 0x4], 0x0
+        mov dword ptr [esi + 0x8], 0x0
+        mov byte ptr [esi + 0x10], 0x0
+        pop esi
+        ret
+    }
+}
