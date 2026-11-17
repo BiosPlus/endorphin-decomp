@@ -7975,3 +7975,40 @@ extern "C" __declspec(naked) int __fastcall fn_007B7830(void* self) {
         ret
     }
 }
+
+// [0x007B0FC0] sub_007B0FC0 (112 bytes)
+extern "C" __declspec(naked) float __cdecl fn_007B0FC0(void* self, void* p) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        cmp word ptr [edx + 0x150], 0x4d4d
+        jne L_7B1000
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        push esi
+        mov esi, dword ptr [edx + 0x15c]
+        mov ax, word ptr [ecx + 0x2]
+        push edi
+        mov edi, dword ptr [ecx + 0x8]
+        shl eax, 0x2
+        mov ecx, dword ptr [esi + eax]
+        shr edi, cl
+        mov ecx, dword ptr [edx + 0x160]
+        and edi, dword ptr [ecx + eax]
+        mov dword ptr [esp + 0x10], edi
+        pop edi
+        fld dword ptr [esp + 0xc]
+        pop esi
+        ret
+    L_7B1000:
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [edx + 0x160]
+        xor ecx, ecx
+        mov cx, word ptr [eax + 0x2]
+        mov ecx, dword ptr [edx + 4*ecx]
+        mov edx, dword ptr [eax + 0x8]
+        and ecx, edx
+        mov dword ptr [esp + 0x8], ecx
+        fld dword ptr [esp + 0x8]
+        ret
+    }
+}
