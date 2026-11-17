@@ -21577,3 +21577,28 @@ extern "C" __declspec(naked) void __fastcall fn_004E2170(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004F8300] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_5 (58 bytes)
+extern "C" void ext_004F4EA0();
+extern "C" __declspec(naked) void __fastcall fn_004F8300(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip
+        call ext_004F4EA0
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
