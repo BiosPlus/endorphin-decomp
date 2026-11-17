@@ -39,8 +39,10 @@ extern "C" __declspec(naked) void __fastcall fn_007AA880(void* self) {
         ret
     }
 }
+extern "C" void ext_007AF800();
+extern "C" void ext_007AF8F0();
 
-// [0x007A0C40] sub_007A0C40 (223 bytes)
+extern "C" void ext_007AF8F0();
 extern "C" int mem_009251D8;
 
 extern "C" __declspec(naked) void __cdecl fn_007A0C40(void** pp) {
@@ -4217,5 +4219,38 @@ done:
         __asm _emit 0x90
         __asm _emit 0x90
         __asm _emit 0x90
+    }
+}
+
+// [0x007AF8B0] sub_007AF8B0 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007AF8B0(void* a, void* b) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        call ext_007AF8F0
+        mov ebx, dword ptr [esp + 0x14]
+        mov esi, eax
+        push ebx
+        call ext_007AF800
+        add esp, 8
+        test esi, esi
+        je not_found
+        push edi
+        push ebx
+        call dword ptr [esi + 8]
+        add esp, 8
+        pop edi
+        pop esi
+        pop ebx
+        ret
+not_found:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
     }
 }
