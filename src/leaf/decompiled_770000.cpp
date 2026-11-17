@@ -2403,3 +2403,35 @@ extern "C" __declspec(naked) int __fastcall fn_0077F4E0(void* self) {
         ret
     }
 }
+
+// [0x0077FD70] sub_0077FD70 (64 bytes)
+extern "C" void ext_0077FC70();
+
+extern "C" __declspec(naked) void __fastcall fn_0077FD70(void* self, int edx_unused, void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [eax + 0x1c]
+        mov edx, dword ptr [eax + 0x18]
+        push ecx
+        mov ecx, dword ptr [eax + 0x14]
+        push edx
+        mov edx, dword ptr [eax + 0x10]
+        push ecx
+        mov ecx, dword ptr [eax + 0xc]
+        push edx
+        mov edx, dword ptr [eax + 0x8]
+        push ecx
+        mov ecx, dword ptr [eax + 0x4]
+        push edx
+        mov edx, dword ptr [eax]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_0077FC70
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
