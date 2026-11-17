@@ -134,6 +134,7 @@ extern "C" void* __stdcall fn_004C0FC0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA2E914, 0);
 }
+extern "C" void ext_005D07E0();
 
 // [0x004C5890] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004C5890(void* a1) {
@@ -38132,6 +38133,36 @@ extern "C" __declspec(naked) void __fastcall fn_005C7E50(void* self, int edx_unu
         je null_path
         push esi
         call ext_005C2F40
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        push esi
+        call ext_004276B0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    null_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005DAE20] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005DAE20(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je null_path
+        push esi
+        call ext_005D07E0
         mov esi, dword ptr [esp + 0x34]
         push eax
         push esi
