@@ -27,6 +27,7 @@ extern "C" void ext_005F5860();
 extern "C" void ext_00627680();
 extern "C" void ext_004F4DE0();
 extern "C" void ext_004F4DD0();
+extern "C" void ext_0046C070();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -17965,6 +17966,30 @@ null_path:
         call ext_0046C3C0
         push 0x9dec1c
         lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0046E210] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0046E210(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_null
+        call ext_0046C070
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+4]
         push ecx
         call ext_006A6DD2
     }
