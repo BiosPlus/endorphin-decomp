@@ -17,5 +17,7 @@
     "0x0051DEF3",
     "0x0051DEF8"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T15:03:24Z"
 }
