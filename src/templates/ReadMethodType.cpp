@@ -61349,3 +61349,52 @@ extern "C" __declspec(naked) int __fastcall fn_005E3050(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x00609B90] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_3 (104 bytes)
+extern "C" void ext_00609730();
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) int __fastcall fn_00609B90(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_null_00609B90
+        push esi
+        push edi
+        call ext_00609730
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne L_true_00609B90
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne L_true_00609B90
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+    L_true_00609B90:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+    L_null_00609B90:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
