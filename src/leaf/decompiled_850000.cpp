@@ -3711,3 +3711,60 @@ L_done:
         ret
     }
 }
+
+// [0x0085A650] sub_0085A650 (96 bytes)
+extern "C" void __cdecl ext_00859730(void* p);
+extern "C" void ext_00859FC0();
+extern "C" void ext_0085A130();
+extern "C" void ext_0085A430();
+
+extern "C" __declspec(naked) void __cdecl fn_0085A650(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        jbe L_skip1
+    L_loop1:
+        dec eax
+        push eax
+        push esi
+        call ext_0085A430
+        mov eax, dword ptr [esi + 0x4]
+        add esp, 0x8
+        test eax, eax
+        ja L_loop1
+    L_skip1:
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        jbe L_skip2
+    L_loop2:
+        dec eax
+        push eax
+        push esi
+        call ext_0085A130
+        mov eax, dword ptr [esi + 0x8]
+        add esp, 0x8
+        test eax, eax
+        ja L_loop2
+    L_skip2:
+        mov eax, dword ptr [esi + 0xc]
+        test eax, eax
+        jbe L_skip3
+    L_loop3:
+        dec eax
+        push eax
+        push esi
+        call ext_00859FC0
+        mov eax, dword ptr [esi + 0xc]
+        add esp, 0x8
+        test eax, eax
+        ja L_loop3
+    L_skip3:
+        push esi
+        call ext_00859730
+        add esp, 0x4
+        pop esi
+        ret
+    }
+}
