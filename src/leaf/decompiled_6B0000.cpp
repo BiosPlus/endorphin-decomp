@@ -34,6 +34,7 @@ extern "C" __declspec(naked) void __fastcall fn_006BB730(void* self) {
 
 extern "C" void ext_006B7DE0();
 extern "C" void ext_006B9C10();
+extern "C" void ext_006E6E40();
 
 // [0x006B6030] sub_006B6030 (32 bytes)
 // Stores arg0 into this+0xD8; if this+0xD4 is non-null, replace arg0 with the value
@@ -9787,6 +9788,49 @@ L_nonnull:
         mov eax, esi
         pop edi
         pop esi
+        ret 4
+    }
+}
+
+// [0x006BB150] sub_006BB150 (80 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006BB150(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, ecx
+        test ebp, ebp
+        je fail
+        mov ebx, dword ptr [edi + 0x9c]
+        xor esi, esi
+        test ebx, ebx
+        jle fail
+loop_top:
+        mov eax, dword ptr [edi + 0xac]
+        push ebp
+        mov ecx, dword ptr [eax + 4*esi]
+        call ext_006E6E40
+        test al, al
+        jne found
+        inc esi
+        cmp esi, ebx
+        jl loop_top
+fail:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 4
+found:
+        mov ecx, dword ptr [edi + 0xac]
+        pop edi
+        mov eax, dword ptr [ecx + 4*esi]
+        pop esi
+        pop ebp
+        pop ebx
         ret 4
     }
 }
