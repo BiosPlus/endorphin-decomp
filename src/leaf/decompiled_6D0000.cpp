@@ -84,6 +84,7 @@ extern "C" __declspec(naked) void __fastcall fn_006DAE00(void* self, int edx_unu
         ret 0x8
     }
 }
+extern "C" void ext_006D80A0();
 
 // [0x006D9790] sub_006D9790 (48 bytes)
 // Linear search over 12 x 32-byte records starting at 0x00B5D910 (key at +0xC).
@@ -5352,5 +5353,34 @@ extern "C" __declspec(naked) void __fastcall fn_006DEED0(void* self, int edx_unu
         xor eax, eax
         pop ebx
         ret 0x8
+    }
+}
+
+// [0x006D2A40] sub_006D2A40 (80 bytes)
+// SEH-guarded thunk: installs an exception frame, calls 0x6D2170(a1, &a2),
+// then 0x6D80A0(&a2) with ecx = &a2, restores the previous frame and returns esi.
+extern "C" __declspec(naked) void __fastcall fn_006D2A40(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c08e8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov edx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x18]
+        push eax
+        push edx
+        mov dword ptr [esp + 0x14], 0
+        call ext_006D2170
+        lea ecx, [esp + 0x18]
+        mov esi, eax
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x24
     }
 }
