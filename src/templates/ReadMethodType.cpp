@@ -19908,3 +19908,28 @@ L_004C5950:
         call ext_006A6DD2
     }
 }
+
+// [0x004D5CB0] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_1 (55 bytes)
+extern "C" void ext_004D39D0();
+
+extern "C" __declspec(naked) void __stdcall fn_004D5CB0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_004D5CD0
+        call ext_004D39D0
+        mov dword ptr [esp + 0x2c], eax
+        fild dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0x4
+    L_004D5CD0:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
