@@ -19524,3 +19524,40 @@ extern "C" __declspec(naked) void __cdecl fn_007C16F0(int* state, const unsigned
         ret
     }
 }
+
+// [0x007C3C40] sub_007C3C40 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C3C40(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov ecx, 0x11e
+        xor esi, esi
+        lea eax, [edx + 0x8c]
+    loop1:
+        mov word ptr [eax], si
+        add eax, 0x4
+        dec ecx
+        jne loop1
+        lea eax, [edx + 0x980]
+        mov ecx, 0x1e
+    loop2:
+        mov word ptr [eax], si
+        add eax, 0x4
+        dec ecx
+        jne loop2
+        lea eax, [edx + 0xa74]
+        mov ecx, 0x13
+    loop3:
+        mov word ptr [eax], si
+        add eax, 0x4
+        dec ecx
+        jne loop3
+        mov dword ptr [edx + 0x16a4], esi
+        mov dword ptr [edx + 0x16a0], esi
+        mov dword ptr [edx + 0x16a8], esi
+        mov dword ptr [edx + 0x1698], esi
+        mov word ptr [edx + 0x48c], 0x1
+        pop esi
+        ret
+    }
+}
