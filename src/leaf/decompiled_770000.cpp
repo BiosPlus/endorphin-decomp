@@ -2906,3 +2906,26 @@ extern "C" __declspec(naked) void __fastcall fn_0077E5D0(void* self) {
         ret 4
     }
 }
+
+// [0x0077FFD0] sub_0077FFD0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0077FFD0(void* self) {
+    __asm {
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x110], ecx
+        mov dword ptr [eax + 0x118], ecx
+        mov dword ptr [eax + 0x128], ecx
+        mov dword ptr [eax], 0xffffffff
+        mov byte ptr [eax + 0x4], cl
+        mov dword ptr [eax + 0x104], ecx
+        mov dword ptr [eax + 0x108], ecx
+        mov dword ptr [eax + 0x10c], ecx
+        mov dword ptr [eax + 0x114], ecx
+        mov dword ptr [eax + 0x11c], ecx
+        mov dword ptr [eax + 0x124], ecx
+        mov dword ptr [eax + 0x12c], ecx
+        mov byte ptr [eax + 0x120], cl
+        mov byte ptr [eax + 0x121], cl
+        ret
+    }
+}
