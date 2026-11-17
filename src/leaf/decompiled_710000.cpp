@@ -4615,3 +4615,59 @@ L_done:
         ret
     }
 }
+
+// [0x00712FC0] sub_00712FC0 (96 bytes)
+extern "C" int mem_00AAC13C;
+extern "C" int mem_00AAC0A0;
+extern "C" int mem_00B5FA68;
+extern "C" void ext_00782E70();
+extern "C" __declspec(naked) void __cdecl fn_00712FC0(const char* s) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, offset mem_00AAC13C
+        mov eax, edi
+L_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne L_ne
+        test cl, cl
+        je L_eq
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne L_ne
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L_loop
+L_eq:
+        xor eax, eax
+        jmp L_done
+L_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_done:
+        test eax, eax
+        jne L_call
+        mov eax, dword ptr [mem_00AAC0A0]
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_call:
+        mov ecx, dword ptr [mem_00B5FA68]
+        push 0
+        push edi
+        call ext_00782E70
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
