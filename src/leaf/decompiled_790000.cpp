@@ -5381,3 +5381,63 @@ L_done:
         _emit 0x90
     }
 }
+
+// [0x0079E0B0] sub_0079E0B0 (128 bytes)
+extern "C" void ext_006D80A0();
+extern "C" void ext_00714910();
+extern "C" __declspec(naked) void __fastcall fn_0079E0B0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c08e8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0x8], 0x0
+        sub eax, 0x0
+        je short L_case0
+        dec eax
+        je short L_case1
+        dec eax
+        jne short L_default
+        mov ecx, dword ptr [ecx]
+        lea eax, [esp + 0x14]
+        push eax
+        add ecx, 0x90
+        jmp short L_call
+L_case1:
+        mov ecx, dword ptr [ecx]
+        lea edx, [esp + 0x14]
+        push edx
+        add ecx, 0x48
+        jmp short L_call
+L_case0:
+        mov ecx, dword ptr [ecx]
+        lea eax, [esp + 0x14]
+        push eax
+L_call:
+        call ext_00714910
+L_default:
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x8], 0xffffffff
+        call ext_006D80A0
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0x24
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
