@@ -15260,3 +15260,25 @@ extern "C" __declspec(naked) void __fastcall fn_004B8AA0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004B94A0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_5 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004B94A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_skip
+        fld dword ptr [eax + 0x44]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
