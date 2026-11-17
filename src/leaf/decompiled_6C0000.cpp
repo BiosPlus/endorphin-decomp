@@ -4315,3 +4315,71 @@ extern "C" __declspec(naked) void __cdecl fn_006C81A0() {
         ret
     }
 }
+
+// [0x006CA0E0] sub_006CA0E0 (96 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006CA140();
+
+// SEH-guarded allocation: push -1 / handler / prev-frame, alloc 0x98 bytes,
+// if non-null construct via sub_006CA140, then unlink the SEH frame.
+extern "C" __declspec(naked) void __fastcall fn_006CA0E0(void* self) {
+    __asm {
+        push    -1
+        push    0x8b8fdb
+        __asm _emit 0x64
+        __asm _emit 0xa1
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        push    eax
+        __asm _emit 0x64
+        __asm _emit 0x89
+        __asm _emit 0x25
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        push    ecx
+        push    0x98
+        call    ext_006A5C62
+        add     esp, 4
+        __asm _emit 0x89
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        test    eax, eax
+        mov     dword ptr [esp + 0xc], 0
+        je      null_path
+        mov     ecx, eax
+        call    ext_006CA140
+        mov     ecx, dword ptr [esp + 4]
+        __asm _emit 0x64
+        __asm _emit 0x89
+        __asm _emit 0x0d
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        add     esp, 0x10
+        ret
+null_path:
+        mov     ecx, dword ptr [esp + 4]
+        xor     eax, eax
+        __asm _emit 0x64
+        __asm _emit 0x89
+        __asm _emit 0x0d
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        add     esp, 0x10
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
