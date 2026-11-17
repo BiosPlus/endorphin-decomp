@@ -22,5 +22,7 @@
     "0x00590BA2",
     "0x00590BAC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T16:15:33Z"
 }
