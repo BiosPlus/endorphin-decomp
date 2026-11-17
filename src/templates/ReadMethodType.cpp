@@ -31155,3 +31155,39 @@ null_path:
         call    ext_006A6DD2
     }
 }
+
+// [0x004B1E00] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_4 (72 bytes)
+extern "C" void ext_0046C460();
+
+extern "C" __declspec(naked) void* __fastcall fn_004B1E00(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub     esp, 2Ch
+        mov     eax, dword ptr [esp + 34h]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        mov     dword ptr [esp], 0
+        je      null_path
+        movzx   ecx, byte ptr [eax + 1]
+        push    esi
+        mov     esi, dword ptr [esp + 34h]
+        push    ecx
+        push    esi
+        call    ext_0046C460
+        add     esp, 8
+        mov     eax, esi
+        pop     esi
+        add     esp, 2Ch
+        ret     8
+null_path:
+        lea     ecx, [esp + 4]
+        call    ext_0046C3C0
+        __asm _emit 0x68
+        __asm _emit 0x1C
+        __asm _emit 0xEC
+        __asm _emit 0x9D
+        __asm _emit 0x00
+        lea     edx, [esp + 8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
