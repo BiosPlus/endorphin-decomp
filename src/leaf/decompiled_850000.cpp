@@ -3812,3 +3812,56 @@ fail_path:
         ret
     }
 }
+
+// [0x00859D40] sub_00859D40 (96 bytes)
+extern "C" void ext_00859E50();
+extern "C" void ext_0085B330();
+extern "C" void ext_0086CE10();
+extern "C" void ext_0086CEE0();
+
+extern "C" __declspec(naked) int __cdecl fn_00859D40(void) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov eax, dword ptr [esi]
+        mov ebx, eax
+        push eax
+        shr ebx, 0x18
+        push ebp
+        and bl, 0xe0
+        call ext_0086CEE0
+        mov edi, eax
+        mov eax, dword ptr [esi + 0xc]
+        push eax
+        push ebp
+        call ext_0086CE10
+        add esp, 0x10
+        add edi, eax
+        test bl, 0x20
+        jne L_done_859D40
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        call ext_00859E50
+        mov edx, dword ptr [esi + 0x8]
+        push ebp
+        add eax, edx
+        mov edx, dword ptr [esi + 0xc]
+        push edx
+        push 0x1
+        push eax
+        call ext_0085B330
+        add esp, 0x14
+        add edi, eax
+    L_done_859D40:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
