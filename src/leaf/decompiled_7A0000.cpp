@@ -190,6 +190,7 @@ extern "C" __declspec(naked) void __fastcall fn_007AC2B0(void* self) {
         ret
     }
 }
+extern "C" void ext_006DEEC0();
 
 // [0x007AE7D0] sub_007AE7D0 (95 bytes)
 extern "C" void ext_006A6C87();
@@ -4614,5 +4615,53 @@ extern "C" __declspec(naked) void __cdecl fn_007AF580(void* self, void* a2, void
         mov dword ptr [mem_00B61C14], eax
         pop ebx
         ret
+    }
+}
+
+// [0x007AE3C0] sub_007AE3C0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AE3C0(void* self, int edx_unused, void* a1, int unused) {
+    __asm {
+        sub esp, 0x54
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x68]
+        mov ebp, ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x10], ebp
+        mov eax, dword ptr [edi]
+        call dword ptr [eax + 0x14]
+        mov ebx, eax
+        xor esi, esi
+        test ebx, ebx
+        jle AFTER_LOOP
+        lea ebp, [esp + 0x14]
+    LOOP_TOP:
+        mov edx, dword ptr [edi]
+        push esi
+        mov ecx, edi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006DEEC0
+        mov dword ptr [ebp], eax
+        inc esi
+        add ebp, 0x4
+        cmp esi, ebx
+        jl LOOP_TOP
+        mov ebp, dword ptr [esp + 0x10]
+    AFTER_LOOP:
+        mov eax, dword ptr [ebp]
+        lea ecx, [esp + 0x14]
+        push ebx
+        push ecx
+        mov ecx, ebp
+        call dword ptr [eax + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x54
+        ret 0x8
     }
 }
