@@ -6808,3 +6808,42 @@ L_7B9646:
         ret
     }
 }
+
+// [0x007B2530] sub_007B2530 (64 bytes)
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2E50();
+extern "C" void ext_007B3380();
+
+extern "C" __declspec(naked) void __cdecl fn_007B2530(void) {
+    __asm {
+        push ecx
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push eax
+        call ext_007B2C20
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [ecx], 0xb030
+        mov edx, dword ptr [esp + 0x4]
+        push edx
+        call ext_007B3380
+        mov ecx, dword ptr [esp + 0x10]
+        mov word ptr [eax], 0xffff
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        call ext_007B2E50
+        add esp, 0x14
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
