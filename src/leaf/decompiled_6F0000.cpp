@@ -7789,3 +7789,46 @@ extern "C" __declspec(naked) void __fastcall fn_006FA530(void* self) {
         ret
     }
 }
+
+// [0x006F7470] sub_006F7470 (112 bytes)
+extern "C" void __stdcall ext_006BAF60(int a1);
+extern "C" void __stdcall ext_006C4DB0(int, int, int, int);
+extern "C" void ext_006EA740();
+extern "C" void ext_006F8CF0();
+
+extern "C" __declspec(naked) void __fastcall fn_006F7470(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov ebx, ecx
+        push 0xb5d2c0
+        call ext_006BAF60
+        mov dword ptr [ebx + 0x198], 0x4
+        mov dword ptr [ebx + 0x19c], 0x0
+        xor esi, esi
+        lea edi, [ebx + 0x1a0]
+    loop_top_6F7470:
+        mov ecx, dword ptr [edi]
+        test ecx, ecx
+        je skip_6F7470
+        push 0x0
+        push esi
+        push 0x0
+        push ebx
+        call ext_006C4DB0
+    skip_6F7470:
+        mov ecx, edi
+        call ext_006EA740
+        inc esi
+        add edi, 0xb8
+        cmp esi, 0xbf
+        jl loop_top_6F7470
+        mov ecx, dword ptr [ebx + 0x8ae8]
+        call ext_006F8CF0
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
