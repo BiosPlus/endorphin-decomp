@@ -44700,3 +44700,37 @@ extern "C" __declspec(naked) bool __fastcall fn_004AA3C0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0049CB10] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_4 (81 bytes)
+extern "C" void ext_0049AA20();
+extern "C" void ext_0046C460();
+extern "C" __declspec(naked) void* __fastcall fn_0049CB10(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 2Ch
+        mov eax, dword ptr [esp + 34h]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je L_throw
+        push esi
+        call ext_0049AA20
+        mov esi, dword ptr [esp + 34h]
+        mov byte ptr [esp + 38h], al
+        mov ecx, dword ptr [esp + 38h]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 8
+        mov eax, esi
+        pop esi
+        add esp, 2Ch
+        ret 8
+    L_throw:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
