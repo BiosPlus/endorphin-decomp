@@ -3521,3 +3521,30 @@ extern "C" __declspec(naked) void __fastcall fn_006C9930(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006CA020] sub_006CA020 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006CA020(void* self, int edx_unused, int v) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, 0x51eb851f
+        imul edi
+        mov esi, edx
+        mov ecx, dword ptr [ecx + 0x20]
+        sar esi, 3
+        mov eax, esi
+        shr eax, 31
+        add esi, eax
+        mov eax, edi
+        cdq
+        mov edi, 25
+        idiv edi
+        mov eax, dword ptr [ecx + 4*esi]
+        pop edi
+        pop esi
+        lea edx, [edx + 4*edx]
+        lea eax, [eax + 8*edx]
+        ret 0x4
+    }
+}
