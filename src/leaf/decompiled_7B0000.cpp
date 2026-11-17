@@ -7319,3 +7319,44 @@ L_7B2594:
         ret
     }
 }
+
+// [0x007B29C0] sub_007B29C0 (80 bytes)
+extern "C" void ext_007A9BE0();
+extern "C" void ext_007B2D20();
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B2F70();
+
+extern "C" __declspec(naked) void __cdecl fn_007B29C0(int a, int b, int c) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        push edx
+        call ext_007A9BE0
+        add esp, 0xc
+        test eax, eax
+        jne L_7B2A0D
+        lea eax, [esp + 0xc]
+        push eax
+        push 0x8000
+        push 0x0
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0xc
+        test eax, eax
+        je L_7B2A05
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push eax
+        call ext_007B2F70
+        add esp, 0x8
+    L_7B2A05:
+        push 0x0
+        call ext_007B2D20
+        pop ecx
+    L_7B2A0D:
+        ret
+    }
+}
