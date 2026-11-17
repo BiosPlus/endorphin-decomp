@@ -23,6 +23,7 @@ extern "C" void ext_005B69A0();
 extern "C" void ext_005C38F0();
 extern "C" void ext_005C3A30();
 extern "C" void ext_005F5160();
+extern "C" void ext_005F5860();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -16443,6 +16444,28 @@ extern "C" __declspec(naked) void __fastcall fn_005F9470(void* self) {
         call ext_0046C4E0
         fstp st(0)
     L_null_005F9470:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005FA7F0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_1 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005FA7F0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_null_005FA7F0
+        call ext_005F5860
+        push eax
+        call ext_0046C4E0
+        fstp st(0)
+    L_null_005FA7F0:
         lea ecx, [esp]
         call ext_0046C3C0
         push 0x9dec1c
