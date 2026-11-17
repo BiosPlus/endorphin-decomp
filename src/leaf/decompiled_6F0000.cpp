@@ -6912,3 +6912,49 @@ found:
         ret 0x4
     }
 }
+
+// [0x006FBC90] sub_006FBC90 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FBC90(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x14]
+        dec esi
+        js done
+        push ebx
+    loop_top:
+        mov ecx, dword ptr [edi + 0x10]
+        lea eax, [esi + 2*esi]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je skip
+        mov edx, dword ptr [eax]
+        mov ebx, dword ptr [ecx]
+        cmp edx, ebx
+        jne skip
+        mov eax, dword ptr [eax + 0x4]
+        test eax, eax
+        je skip
+        push eax
+        mov ecx, edi
+        call ext_006FBC70
+    skip:
+        mov eax, dword ptr [edi + 0x14]
+        cmp esi, eax
+        jg clamp
+        dec esi
+        jmp next
+    clamp:
+        lea esi, [eax - 0x1]
+    next:
+        test esi, esi
+        jge loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
