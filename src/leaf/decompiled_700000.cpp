@@ -3964,3 +3964,52 @@ extern "C" __declspec(naked) void __fastcall fn_0070EB40(void* self) {
         ret 0x98
     }
 }
+
+// [0x0070BF50] sub_0070BF50 (128 bytes)
+extern "C" void ext_006C98E0();
+extern "C" void ext_006CD330();
+extern "C" void ext_006DC460();
+extern "C" int mem_0092A278;
+extern "C" int mem_0092A270;
+
+// Clamp of the double argument between mem_0092A278 (lower) and mem_0092A270 (upper),
+// then passed as a float to sub_006C98E0; its result is the self for sub_006CD330.
+extern "C" __declspec(naked) void __fastcall fn_0070BF50(void* self) {
+    __asm {
+        call ext_006DC460
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_0092A278]
+        mov ecx, eax
+        fnstsw ax
+        test ah, 0x1
+        je L_hi
+        fld qword ptr [mem_0092A278]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_006C98E0
+        mov ecx, eax
+        call ext_006CD330
+        ret 0x8
+    L_hi:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L_mid
+        fld qword ptr [mem_0092A270]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_006C98E0
+        mov ecx, eax
+        call ext_006CD330
+        ret 0x8
+    L_mid:
+        fld qword ptr [esp + 0x4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_006C98E0
+        mov ecx, eax
+        call ext_006CD330
+        ret 0x8
+    }
+}
