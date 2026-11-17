@@ -73,8 +73,10 @@ extern "C" void ext_006720A0();
 extern "C" int mem_009433D8; /* double 1e-06 */
 extern "C" int mem_0095F7E0; /* double 1e-06 */
 extern "C" void ext_00672110();
+extern "C" void ext_0051AEF0();
+extern "C" void ext_00672150();
 
-// [0x00497CA0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void ext_00672150();
 extern "C" void* __fastcall fn_00497CA0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA2F13C, 0);
@@ -28710,6 +28712,35 @@ extern "C" __declspec(naked) void __fastcall fn_0059F010(void* self) {
         push eax
         mov ecx, esi
         call ext_006720E0
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    THROW_PATH:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0051B1B0] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_0 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051B1B0(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je THROW_PATH
+        push esi
+        call ext_0051AEF0
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        call ext_00672150
         mov eax, esi
         pop esi
         add esp, 0x2c
