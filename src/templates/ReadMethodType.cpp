@@ -60295,3 +60295,50 @@ extern "C" __declspec(naked) void __stdcall fn_0046D2B0(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x00674CE0] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_3 (100 bytes)
+extern "C" int mem_00924FC0; /* u32 0x006294AC */
+
+extern "C" __declspec(naked) void __fastcall fn_00674CE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je throw_path
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        lea esi, [eax + 1Ch]
+        push 92F10Ch
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne ret_true
+        push 93A810h
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne ret_true
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 28h
+        ret 4
+ret_true:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 28h
+        ret 4
+throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
