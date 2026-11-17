@@ -16,8 +16,10 @@ extern "C" void ext_00859BB0();
 extern "C" void ext_00859CF0();
 extern "C" void ext_00859DD0();
 extern "C" void ext_00859E00();
+extern "C" int mem_00B73C90;
+extern "C" int mem_00B73C94;
 
-// [0x0080FAE0] sub_0080FAE0 (16 bytes)
+extern "C" int mem_00B73C94;
 extern "C" __declspec(naked) void __cdecl fn_0080FAE0(void* p) {
     __asm {
         mov eax, dword ptr [esp + 4]
@@ -7805,6 +7807,48 @@ extern "C" __declspec(naked) int __cdecl fn_0080FB60() {
     L_fail:
         pop edi
         mov eax, ebx
+        pop esi
+        pop ebx
+        ret
+    }
+}
+
+// [0x0080C790] sub_0080C790 (80 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0080C790(int arg) {
+    __asm {
+        mov eax, dword ptr [mem_00B73C90]
+        push ebx
+        push esi
+        xor ebx, ebx
+        xor esi, esi
+        push edi
+        test eax, eax
+        jbe L_epilogue
+        mov edi, dword ptr [esp + 0x10]
+    L_loop:
+        mov eax, dword ptr [mem_00B73C94]
+        mov ecx, dword ptr [eax + 4*esi]
+        mov edx, dword ptr [ecx]
+        push edx
+        push edi
+        call ext_00859830
+        add esp, 8
+        test eax, eax
+        je L_match
+        mov eax, dword ptr [mem_00B73C90]
+        inc esi
+        cmp esi, eax
+        jb L_loop
+    L_epilogue:
+        pop edi
+        mov eax, ebx
+        pop esi
+        pop ebx
+        ret
+    L_match:
+        mov eax, dword ptr [mem_00B73C94]
+        pop edi
+        mov eax, dword ptr [eax + 4*esi]
         pop esi
         pop ebx
         ret
