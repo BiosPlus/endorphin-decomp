@@ -4040,3 +4040,47 @@ done_label:
         ret 4
     }
 }
+
+// [0x006C27E0] sub_006C27E0 (80 bytes)
+extern "C" void ext_006C2720();
+extern "C" void ext_006C2830();
+extern "C" void ext_006FB650();
+
+extern "C" __declspec(naked) void __fastcall fn_006C27E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        test esi, esi
+        jne short L_006C27F3
+        pop edi
+        xor al, al
+        pop esi
+        ret 4
+L_006C27F3:
+        mov ecx, esi
+        call ext_006C2720
+        test eax, eax
+        je short L_006C280D
+        push esi
+        mov ecx, esi
+        call ext_006C2720
+        mov ecx, eax
+        call ext_006C2830
+L_006C280D:
+        mov eax, dword ptr [esi]
+        push 0
+        mov ecx, esi
+        call dword ptr [eax + 0Ch]
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx + 0Ch]
+        mov ecx, eax
+        call ext_006FB650
+        pop edi
+        pop esi
+        ret 4
+    }
+}
