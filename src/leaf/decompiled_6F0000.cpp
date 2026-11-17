@@ -6418,3 +6418,31 @@ extern "C" __declspec(naked) void __cdecl fn_006FEFB0(void) {
         ret
     }
 }
+
+// [0x006F8FB0] sub_006F8FB0 (64 bytes)
+extern "C" void ext_006F8B30();
+
+extern "C" __declspec(naked) void __fastcall fn_006F8FB0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jl   L_false
+        cmp eax, 0x2c
+        jge  L_false
+        lea eax, [eax + 2*eax]
+        lea eax, [ecx + 4*eax + 0x3bbc]
+        cmp dword ptr [eax], 0x0
+        je   L_false
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        je   L_true
+        push eax
+        call ext_006F8B30
+L_true:
+        mov al, 0x1
+        ret 0x8
+L_false:
+        xor al, al
+        ret 0x8
+    }
+}
