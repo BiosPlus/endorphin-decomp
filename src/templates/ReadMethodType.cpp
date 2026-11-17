@@ -15006,3 +15006,24 @@ extern "C" __declspec(naked) void __fastcall fn_00637B10(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00636E80] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_1 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00636E80(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je fail
+        fld dword ptr [eax + 0xcc]
+        add esp, 0x28
+        ret 4
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
