@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_860000.cpp
+extern "C" void ext_0085C130();
+extern "C" void ext_0085C170();
 
-// [0x00864F30] sub_00864F30 (32 bytes)
+extern "C" void ext_0085C170();
 extern "C" int mem_00AB98EC;
 
 extern "C" __declspec(naked) int __cdecl fn_00864F30(void) {
@@ -5541,6 +5543,40 @@ extern "C" __declspec(naked) void __cdecl fn_0086CFB0(int flag) {
     set_one_0086CFB0:
         mov dword ptr [eax + 0xc], edx
     done_0086CFB0:
+        ret
+    }
+}
+
+// [0x0086D210] sub_0086D210 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0086D210(int* p) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [edi]
+        and eax, 0xfffffff
+        push eax
+        call ext_0085C170
+        mov esi, eax
+        mov eax, dword ptr [edi + 0xc]
+        add esp, 4
+        cmp eax, -1
+        jne short L_has_off
+        add esi, 3
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+L_has_off:
+        push eax
+        call ext_0085C130
+        add esi, eax
+        mov eax, dword ptr [edi + 0xc]
+        add esp, 4
+        add esi, eax
+        mov eax, esi
+        pop edi
+        pop esi
         ret
     }
 }
