@@ -4291,3 +4291,42 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_007A34F0(void* a1) {
         ret
     }
 }
+
+// [0x007AF8F0] sub_007AF8F0 (80 bytes)
+extern "C" int mem_00B61C18;
+extern "C" int mem_00AB1870;
+
+extern "C" __declspec(naked) void* __cdecl fn_007AF8F0(unsigned short key) {
+    __asm {
+        mov eax, dword ptr [mem_00B61C18]
+        mov cx, word ptr [esp + 0x4]
+        test eax, eax
+        je L_tail
+    L_loop1:
+        mov edx, dword ptr [eax + 0x4]
+        cmp word ptr [edx + 0x4], cx
+        je L_found
+        mov eax, dword ptr [eax]
+        test eax, eax
+        jne L_loop1
+    L_tail:
+        mov edx, dword ptr [mem_00AB1870]
+        mov eax, offset mem_00AB1870
+        test edx, edx
+        je L_zero
+    L_loop2:
+        cmp word ptr [eax + 0x4], cx
+        je L_ret
+        mov edx, dword ptr [eax + 0xc]
+        add eax, 0xc
+        test edx, edx
+        jne L_loop2
+    L_zero:
+        xor eax, eax
+    L_ret:
+        ret
+    L_found:
+        mov eax, dword ptr [eax + 0x4]
+        ret
+    }
+}
