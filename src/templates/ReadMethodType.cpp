@@ -137,6 +137,7 @@ extern "C" void* __stdcall fn_004C0FC0(void* a1) {
 extern "C" void ext_005D07E0();
 extern "C" int mem_00979AF0; /* double 1e-06 */
 extern "C" void ext_0046C390();
+extern "C" void ext_0046C460();
 
 // [0x004C5890] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004C5890(void* a1) {
@@ -44726,6 +44727,38 @@ extern "C" __declspec(naked) void* __fastcall fn_0049CB10(void* self, int edx_un
         add esp, 2Ch
         ret 8
     L_throw:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00471E20] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00471E20(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 2Ch
+        mov eax, dword ptr [esp + 34h]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je not_set
+        push esi
+        call ext_0046F910
+        mov esi, dword ptr [esp + 34h]
+        mov byte ptr [esp + 38h], al
+        mov ecx, dword ptr [esp + 38h]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 8
+        mov eax, esi
+        pop esi
+        add esp, 2Ch
+        ret 8
+not_set:
         lea ecx, [esp + 4]
         call ext_0046C3C0
         push 9DEC1Ch
