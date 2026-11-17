@@ -62046,3 +62046,55 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005B37A0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_3 (109 bytes)
+extern "C" int mem_0092F10C;
+extern "C" int mem_0093A810;
+
+extern "C" __declspec(naked) void __stdcall fn_005B37A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_throw
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x20]
+        push esi
+        push edi
+        call eax
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push offset mem_0092F10C
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne short L_true
+        push offset mem_0093A810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne short L_true
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+L_true:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
