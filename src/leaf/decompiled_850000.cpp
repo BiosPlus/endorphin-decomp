@@ -3620,3 +3620,48 @@ L_ret_esi:
         ret
     }
 }
+
+// [0x00859F60] sub_00859F60 (96 bytes)
+extern "C" void __cdecl ext_00859730(void* p);
+extern "C" void ext_0086CF90();
+extern "C" void ext_0086CFB0();
+extern "C" __declspec(naked) void* __cdecl fn_00859F60(void) {
+    __asm {
+        push esi
+        push edi
+        push 0
+        call ext_0086CFB0
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        je done
+        mov eax, dword ptr [esp + 0xc]
+        mov edi, dword ptr [esp + 0x10]
+        test eax, eax
+        jne store
+        test edi, edi
+        mov dword ptr [esi + 0xc], 0
+        je store
+        push 1
+        push edi
+        call ext_0086CF90
+        add esp, 8
+        test eax, eax
+        jne store
+        push esi
+        call ext_00859730
+        add esp, 4
+        xor eax, eax
+        pop edi
+        pop esi
+        ret
+store:
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], edi
+done:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+    }
+}
