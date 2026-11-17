@@ -4796,3 +4796,38 @@ extern "C" __declspec(naked) void __fastcall fn_007ABCA0(void* self) {
         ret
     }
 }
+
+// [0x007AA990] sub_007AA990 (112 bytes)
+extern "C" void ext_006B9E60();
+extern "C" __declspec(naked) void __fastcall fn_007AA990(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8c1b08
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0x8], 0x0
+        test eax, eax
+        jle L_skip
+        cmp eax, 0x12
+        jge L_skip
+        lea edx, [esp + 0x14]
+        push edx
+        lea edx, [eax + 8*eax]
+        lea eax, [eax + 2*edx]
+        lea ecx, [ecx + 4*eax + 0x1dc]
+        call ext_006B9E60
+    L_skip:
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x8], 0xffffffff
+        call ext_006B9D70
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x50
+    }
+}
