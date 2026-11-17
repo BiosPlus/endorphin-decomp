@@ -3727,3 +3727,26 @@ extern "C" __declspec(naked) void __fastcall fn_0072DA80(void* self) {
         ret
     }
 }
+
+// [0x0072B130] sub_0072B130 (80 bytes)
+extern "C" void ext_006B9960();
+extern "C" __declspec(naked) void __fastcall fn_0072B130(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006B9960
+        lea ecx, [esi + 0x4c]
+        call ext_006B9960
+        lea ecx, [esi + 0x98]
+        call ext_006B9960
+        lea ecx, [esi + 0xe4]
+        call ext_006B9960
+        lea ecx, [esi + 0x130]
+        call ext_006B9960
+        lea ecx, [esi + 0x17c]
+        call ext_006B9960
+        mov dword ptr [esi + 0x1c8], 0
+        pop esi
+        ret
+    }
+}
