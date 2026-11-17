@@ -2238,3 +2238,37 @@ extern "C" __declspec(naked) void __fastcall fn_004D5060(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004D4820] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_0 (71 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_004D3CE0();
+extern "C" void ext_006720C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_004D4820(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je THROW_PATH
+        push esi
+        call ext_004D3CE0
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    THROW_PATH:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
