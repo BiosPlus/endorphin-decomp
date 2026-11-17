@@ -18458,3 +18458,29 @@ extern "C" __declspec(naked) int __fastcall fn_004D7550(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x004CAF60] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" void ext_004CA2F0();
+
+extern "C" __declspec(naked) bool __stdcall fn_004CAF60(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_004CA2F0
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
