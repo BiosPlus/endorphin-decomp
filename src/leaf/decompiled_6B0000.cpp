@@ -9919,3 +9919,45 @@ fail:
         ret 8
     }
 }
+
+// [0x006BCEE0] sub_006BCEE0 (80 bytes)
+extern "C" bool __fastcall ext_006BA780(void*, void*, void*);
+
+extern "C" __declspec(naked) int __fastcall fn_006BCEE0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        xor esi, esi
+        mov eax, dword ptr [edi + 0xc4]
+        test eax, eax
+        jle not_found_006BCEE0
+        mov ebx, dword ptr [esp + 0x10]
+    loop_006BCEE0:
+        mov eax, dword ptr [edi + 0xd4]
+        mov ecx, dword ptr [eax + 4*esi]
+        push ecx
+        mov ecx, ebx
+        call ext_006BA780
+        test al, al
+        jne found_006BCEE0
+        mov eax, dword ptr [edi + 0xc4]
+        inc esi
+        cmp esi, eax
+        jl loop_006BCEE0
+    not_found_006BCEE0:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 4
+    found_006BCEE0:
+        mov edx, dword ptr [edi + 0xd4]
+        pop edi
+        mov eax, dword ptr [edx + 4*esi]
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
