@@ -1023,3 +1023,39 @@ loop_top:
         ret     8
     }
 }
+
+// [0x007648B0] sub_007648B0 (64 bytes)
+extern "C" void ext_006C3030();
+extern "C" void ext_006FD480();
+extern "C" void ext_006FD980();
+extern "C" __declspec(naked) char __fastcall fn_007648B0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        call ext_006C3030
+        mov esi, eax
+        push 0x0
+        mov ecx, esi
+        call ext_006FD980
+        test eax, eax
+        jg set_flag
+        push 0x0
+        mov ecx, esi
+        call ext_006FD480
+        test eax, eax
+        jle done_noset
+set_flag:
+        mov al, 0x1
+        mov byte ptr [edi + 0x14f], al
+        pop edi
+        pop esi
+        ret 0x4
+done_noset:
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
