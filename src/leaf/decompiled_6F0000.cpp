@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_6F0000.cpp
 // Isolated WIP translation unit for fn_006FA950
+extern "C" void ext_006FBC70();
 
 // [0x006F9DC0] sub_006F9DC0 (32 bytes)
 // Store four stack args into the object: dwords at +0, +4, +8 and a byte at +0xC (ret 0x10).
@@ -6513,5 +6514,35 @@ fail:
 done:
         pop edi
         ret
+    }
+}
+
+// [0x006FBD70] sub_006FBD70 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FBD70(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [ecx + 0x10]
+        lea eax, [eax + 2*eax]
+        lea edx, [edx + 4*eax]
+        mov eax, dword ptr [edx + 4]
+        test eax, eax
+        je null_path
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [edx]
+        cmp esi, edi
+        pop edi
+        pop esi
+        jne null_path
+        mov eax, dword ptr [eax + 4]
+        push eax
+        call ext_006FBC70
+        ret 4
+    null_path:
+        xor eax, eax
+        push eax
+        call ext_006FBC70
+        ret 4
     }
 }
