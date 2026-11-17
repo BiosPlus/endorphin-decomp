@@ -25513,3 +25513,28 @@ extern "C" __declspec(naked) void __fastcall fn_00631BA0(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x00639D90] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_4 (60 bytes)
+extern "C" void ext_00630420();
+extern "C" __declspec(naked) void __fastcall fn_00639D90(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      L_00639DB4
+        call    ext_00630420
+        mov     ecx, dword ptr [esp + 0x30]
+        push    eax
+        push    ecx
+        call    ext_0046C4E0
+    L_00639DB4:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     edx, [esp + 0x8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
