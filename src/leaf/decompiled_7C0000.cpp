@@ -29,6 +29,7 @@ extern "C" void ext_007D8EB0();
 extern "C" void ext_007D8F60();
 extern "C" void ext_007DA220();
 extern "C" void ext_007DA2D0();
+extern "C" void ext_007C5440();
 
 // [0x007CC3D0] sub_007CC3D0 (32 bytes)
 // Zeroes the float triple at arg2[0..2] (stores 0.0 to [+8], [+4], [0]), then stores
@@ -19689,6 +19690,61 @@ L3:     shr edi, 2
         mov byte ptr [ebx+1Ch], al
         pop esi
         pop ebx
+        ret
+    }
+}
+
+// [0x007C4660] sub_007C4660 (128 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C4660(void* self, int n, short* in) {
+    __asm {
+        mov edx, dword ptr [esp+0ch]
+        sub esp, 20h
+        xor ecx, ecx
+        mov eax, 1
+        push ebx
+        push esi
+        lea esi, [esp+0ah]
+        sub edx, esi
+    L1:
+        lea esi, [edx+eax*2]
+        mov si, word ptr [esp+esi+8]
+        add si, cx
+        add esi, esi
+        inc eax
+        mov ecx, esi
+        cmp eax, 0fh
+        mov word ptr [esp+eax*2+6], cx
+        jle L1
+        mov ebx, dword ptr [esp+30h]
+        xor esi, esi
+        test ebx, ebx
+        jl L3
+        push edi
+        mov edi, dword ptr [esp+30h]
+    L2:
+        xor eax, eax
+        mov ax, word ptr [edi+esi*4+2]
+        test eax, eax
+        je L4
+        mov dx, word ptr [esp+eax*2+0ch]
+        push eax
+        mov ecx, edx
+        and ecx, 0ffffh
+        inc edx
+        push ecx
+        mov word ptr [esp+eax*2+14h], dx
+        call ext_007C5440
+        add esp, 8
+        mov word ptr [edi+esi*4], ax
+    L4:
+        inc esi
+        cmp esi, ebx
+        jle L2
+        pop edi
+    L3:
+        pop esi
+        pop ebx
+        add esp, 20h
         ret
     }
 }
