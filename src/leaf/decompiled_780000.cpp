@@ -4698,3 +4698,55 @@ L_fail:
         ret 0xc
     }
 }
+
+// [0x00780030] sub_00780030 (96 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_0077FFD0();
+
+extern "C" __declspec(naked) void __fastcall fn_00780030(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ebx, ecx
+        lea eax, [esi + 8*esi]
+        mov dword ptr [ebx], esi
+        lea ecx, [esi + 2*eax]
+        shl ecx, 0x4
+        push ecx
+        call ext_006A5C62
+        mov ebp, eax
+        add esp, 0x4
+        test ebp, ebp
+        je short L_null
+        lea eax, [esi - 0x1]
+        push edi
+        test eax, eax
+        mov edi, ebp
+        jl short L_done
+        lea esi, [eax + 0x1]
+L_loop:
+        mov ecx, edi
+        call ext_0077FFD0
+        add edi, 0x130
+        dec esi
+        jne short L_loop
+L_done:
+        pop edi
+        mov dword ptr [ebx + 0x4], ebp
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret 0x4
+L_null:
+        xor eax, eax
+        pop esi
+        mov dword ptr [ebx + 0x4], eax
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
