@@ -2341,3 +2341,44 @@ found_00743440:
         ret
     }
 }
+
+// [0x0074D800] sub_0074D800 (80 bytes)
+extern "C" void ext_006D2250();
+extern "C" int mem_00925264;
+
+extern "C" __declspec(naked) bool __fastcall fn_0074D800(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        xor esi, esi
+        mov ebx, dword ptr [edi + 15Ch]
+        lea ecx, [edi + 15Ch]
+        test ebx, ebx
+        mov dword ptr [esp + 0Ch], ecx
+        jle SKIP_LOOP
+        push ebp
+        mov ebp, dword ptr [mem_00925264]
+LOOP_TOP:
+        mov eax, dword ptr [edi + 16Ch]
+        mov ecx, dword ptr [eax + 4*esi]
+        push ecx
+        call ebp
+        add esp, 4
+        inc esi
+        cmp esi, ebx
+        jl LOOP_TOP
+        mov ecx, dword ptr [esp + 10h]
+        pop ebp
+SKIP_LOOP:
+        call ext_006D2250
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        pop ecx
+        ret
+    }
+}
