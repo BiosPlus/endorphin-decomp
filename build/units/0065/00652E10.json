@@ -19,5 +19,7 @@
     "0x00652E56",
     "0x00652E60"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T15:45:05Z"
 }
