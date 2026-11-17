@@ -4426,3 +4426,56 @@ L_done:
         ret 4
     }
 }
+
+// [0x006C59F0] sub_006C59F0 (96 bytes)
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_006C59F0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C59F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        test al, al
+        mov al, byte ptr [edi + 0x4cc]
+        je L_ret_flag
+        test al, al
+        je L_scan
+L_true:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+L_scan:
+        push 0
+        mov ecx, edi
+        call ext_006C2860
+        mov ebx, eax
+        xor esi, esi
+        test ebx, ebx
+        jle L_none
+L_loop:
+        push 1
+        push esi
+        mov ecx, edi
+        call ext_006C28D0
+        mov ecx, eax
+        call ext_006C59F0
+        test al, al
+        jne L_true
+        inc esi
+        cmp esi, ebx
+        jl L_loop
+L_none:
+        xor al, al
+L_ret_flag:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
