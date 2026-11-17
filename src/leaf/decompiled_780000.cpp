@@ -4138,3 +4138,42 @@ L_exit:
         ret 0x8
     }
 }
+
+// [0x00782F20] sub_00782F20 (80 bytes)
+extern "C" void ext_00782F70();
+extern "C" int mem_009251D8; /* "&|b" */
+extern "C" int mem_0092528C; /* u32 0x0062D370 */
+extern "C" __declspec(naked) void __fastcall fn_00782F20(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00782F70
+        mov edi, dword ptr [esi + 0xc]
+        mov ebx, dword ptr [esp + 0x10]
+        imul edi, dword ptr [esi + 0x8]
+        mov eax, dword ptr [esi]
+        sub edi, ebx
+        dec edi
+        mov ecx, dword ptr [eax + ebx*8]
+        push ecx
+        call dword ptr [mem_009251D8]
+        mov eax, dword ptr [esi]
+        lea edx, [edi*8]
+        push edx
+        lea ecx, [eax + ebx*8 + 0x8]
+        lea edx, [eax + ebx*8]
+        push ecx
+        push edx
+        call dword ptr [mem_0092528C]
+        mov eax, dword ptr [esi + 0x4]
+        add esp, 0x10
+        dec eax
+        mov dword ptr [esi + 0x4], eax
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
