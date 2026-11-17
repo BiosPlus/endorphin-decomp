@@ -3892,3 +3892,38 @@ L_else:
         ret 4
     }
 }
+
+// [0x006CCAF0] sub_006CCAF0 (64 bytes)
+extern "C" void ext_006C9DC0();
+extern "C" void ext_006CC990();
+
+extern "C" __declspec(naked) void __fastcall fn_006CCAF0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], 0
+        call ext_006CC990
+        test al, al
+        je fail_path
+        push edi
+        mov ecx, esi
+        call ext_006CA060
+        push 4
+        mov ecx, eax
+        call ext_006C9DC0
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+fail_path:
+        fld dword ptr [esp + 8]
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
