@@ -4808,3 +4808,41 @@ L_loop:
         ret
     }
 }
+
+// [0x007986B0] sub_007986B0 (96 bytes)
+extern "C" void ext_0079B140();
+extern "C" __declspec(naked) int __cdecl fn_007986B0(void* self, unsigned a2, unsigned a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        xor edx, edx
+        div dword ptr [esi + 0x50]
+        cmp word ptr [esi + 0x72], 0x2
+        jne short L_ret
+        mov dx, word ptr [esi + 0x4e]
+        mov ecx, dword ptr [esp + 0x10]
+        cmp cx, dx
+        jb short L_mul
+        mov eax, dword ptr [esi]
+        and edx, 0xffff
+        and ecx, 0xffff
+        push edx
+        push ecx
+        push 0xaafa2c
+        push eax
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop esi
+        ret
+L_mul:
+        mov edx, dword ptr [esi + 0xc8]
+        and ecx, 0xffff
+        imul edx, ecx
+        add eax, edx
+L_ret:
+        pop esi
+        ret
+    }
+}
