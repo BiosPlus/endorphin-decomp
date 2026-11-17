@@ -5054,3 +5054,68 @@ extern "C" __declspec(naked) void __fastcall fn_007A4B70(void* self) {
         ret
     }
 }
+
+// [0x007AF180] sub_007AF180 (128 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007AF180(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [ecx + 0x30]
+        mov ebx, dword ptr [ecx + 0x34]
+        mov esi, dword ptr [ecx + 0x38]
+        cmp edi, -1
+        jne L_7AF180_a
+        mov edi, dword ptr [ecx + 0x24]
+    L_7AF180_a:
+        cmp ebx, -1
+        jne L_7AF180_b
+        mov ebx, dword ptr [ecx + 0x28]
+    L_7AF180_b:
+        cmp esi, -1
+        jne L_7AF180_c
+        mov esi, dword ptr [ecx + 0x2c]
+    L_7AF180_c:
+        test edi, edi
+        je L_7AF180_zero
+        test ebx, ebx
+        je L_7AF180_zero
+        test esi, esi
+        je L_7AF180_zero
+        mov eax, dword ptr [ecx + 0x2c]
+        xor edx, edx
+        lea eax, [eax + esi - 0x1]
+        div esi
+        mov edx, dword ptr [ecx + 0x28]
+        mov esi, eax
+        lea eax, [edx + ebx - 0x1]
+        xor edx, edx
+        div ebx
+        xor edx, edx
+        imul esi, eax
+        mov eax, dword ptr [ecx + 0x24]
+        lea eax, [eax + edi - 0x1]
+        div edi
+        imul esi, eax
+        jmp L_7AF180_cont
+    L_7AF180_zero:
+        xor esi, esi
+    L_7AF180_cont:
+        cmp word ptr [ecx + 0x72], 0x2
+        jne L_7AF180_ret
+        xor eax, eax
+        pop edi
+        mov ax, word ptr [ecx + 0x4e]
+        imul eax, esi
+        pop esi
+        pop ebx
+        ret
+    L_7AF180_ret:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
