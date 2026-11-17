@@ -7688,3 +7688,63 @@ extern "C" __declspec(naked) void __fastcall fn_006FCD50(void* self) {
         ret
     }
 }
+
+// [0x006FECE0] sub_006FECE0 (112 bytes)
+extern "C" int __fastcall ext_006B99C0(void* self);
+extern "C" char* __fastcall ext_006E7460(void* self);
+
+// Splits the string in a1 in place at '\\' or '/' separators, storing each piece start in a2.
+// Returns (number of separators) - 1, or -1 if the length query fails.
+extern "C" __declspec(naked) int __cdecl fn_006FECE0(void* a1, char** a2) {
+    __asm {
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ecx, edi
+        xor esi, esi
+        xor ebp, ebp
+        call ext_006B99C0
+        test eax, eax
+        mov dword ptr [esp + 0x10], eax
+        jl fail_6FECE0
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_6FECE0:
+        mov ecx, edi
+        call ext_006E7460
+        cmp byte ptr [eax + esi], 0x5c
+        je sep_6FECE0
+        mov ecx, edi
+        call ext_006E7460
+        cmp byte ptr [eax + esi], 0x2f
+        jne next_6FECE0
+    sep_6FECE0:
+        mov ecx, edi
+        call ext_006E7460
+        mov ecx, edi
+        mov byte ptr [eax + esi], 0
+        call ext_006E7460
+        lea eax, [eax + esi + 1]
+        inc ebp
+        mov dword ptr [ebx], eax
+        add ebx, 4
+    next_6FECE0:
+        mov eax, dword ptr [esp + 0x14]
+        inc esi
+        cmp esi, eax
+        jle loop_6FECE0
+        pop ebx
+        pop edi
+        lea eax, [ebp - 1]
+        pop esi
+        pop ebp
+        ret
+    fail_6FECE0:
+        pop edi
+        lea eax, [ebp - 1]
+        pop esi
+        pop ebp
+        ret
+    }
+}
