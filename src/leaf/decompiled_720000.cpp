@@ -4802,3 +4802,48 @@ extern "C" __declspec(naked) void __fastcall fn_00724E80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00725D60] sub_00725D60 (128 bytes)
+extern "C" void ext_006B9D80();
+extern "C" int mem_00925218;
+extern "C" __declspec(naked) void __fastcall fn_00725D60(void* self) {
+    __asm {
+        sub esp, 0x18
+        mov eax, dword ptr [ecx + 0x1dc]
+        mov edx, dword ptr [ecx + 0x1cc]
+        push esi
+        push eax
+        push edx
+        mov edx, dword ptr [ecx + 0x1e4]
+        mov eax, 0x66666667
+        mov dword ptr [esp + 0xc], 0x0
+        imul edx
+        sar edx, 0x2
+        mov eax, edx
+        shr eax, 0x1f
+        add edx, eax
+        mov eax, dword ptr [ecx + 0x1d8]
+        push edx
+        mov edx, dword ptr [ecx + 0x1d4]
+        push edx
+        mov edx, dword ptr [ecx + 0x1d0]
+        push eax
+        mov eax, dword ptr [ecx + 0x1e0]
+        push edx
+        push eax
+        lea ecx, [esp + 0x24]
+        push 0xaacfb4
+        push ecx
+        call dword ptr [mem_00925218]
+        mov esi, dword ptr [esp + 0x44]
+        add esp, 0x24
+        lea edx, [esp + 0x8]
+        mov ecx, esi
+        push edx
+        call ext_006B9D80
+        mov eax, esi
+        pop esi
+        add esp, 0x18
+        ret 0x4
+    }
+}
