@@ -4176,3 +4176,46 @@ L_ret_one:
         ret
     }
 }
+
+// [0x007AF5E0] sub_007AF5E0 (64 bytes)
+extern "C" void ext_007AF580();
+extern "C" void ext_0079B140();
+
+extern "C" __declspec(naked) void __cdecl fn_007AF5E0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push 0
+        push edi
+        push eax
+        call ext_007AF580
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        jne short done
+        push edi
+        push 0xab10a0
+        push 0xab108c
+        call ext_0079B140
+        add esp, 0xc
+done:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
