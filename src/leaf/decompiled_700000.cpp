@@ -3115,3 +3115,37 @@ extern "C" __declspec(naked) void __fastcall fn_0070C1B0(void* self) {
         _emit 0x90
     }
 }
+
+// [0x0070BF00] sub_0070BF00 (80 bytes)
+extern "C" void ext_006C98F0();
+extern "C" void ext_006C9F70();
+extern "C" void ext_006DC460();
+extern "C" int mem_00995B48;
+extern "C" int mem_0092A278;
+extern "C" int mem_0092A270;
+extern "C" __declspec(naked) void __fastcall fn_0070BF00(void* self) {
+    __asm {
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C98F0
+        mov ecx, eax
+        call ext_006C9F70
+        fmul qword ptr [mem_00995B48]
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x01
+        je check_upper
+        fstp st(0)
+        fld qword ptr [mem_0092A278]
+        ret
+    check_upper:
+        fcom qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne keep
+        fstp st(0)
+        fld qword ptr [mem_0092A270]
+    keep:
+        ret
+    }
+}
