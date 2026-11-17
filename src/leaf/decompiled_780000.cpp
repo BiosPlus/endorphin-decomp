@@ -5715,3 +5715,66 @@ extern "C" __declspec(naked) void __fastcall fn_00783160(void* self) {
         ret
     }
 }
+
+// [0x0078CEF0] sub_0078CEF0 (128 bytes)
+extern "C" int mem_009242E0;
+extern "C" int mem_009251D8;
+extern "C" int mem_009241BC;
+
+// Locks self->lock (EnterCriticalSection), frees every node in each bucket of
+// self->buckets[0..self->count) (free() via IAT), zeroes the bucket heads,
+// zeroes self->[0x20]/[0x24], then unlocks (LeaveCriticalSection).
+extern "C" __declspec(naked) void __fastcall fn_0078CEF0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi]
+        push esi
+        mov dword ptr [esp + 0x10], esi
+        call dword ptr [mem_009242E0]
+        mov eax, dword ptr [edi + 0x4]
+        test eax, eax
+        je short L_0078CEF0_unlock
+        mov eax, dword ptr [edi + 0xc]
+        xor ebx, ebx
+        test eax, eax
+        jbe short L_0078CEF0_unlock
+        push ebp
+        mov ebp, dword ptr [mem_009251D8]
+L_0078CEF0_bucket:
+        mov eax, dword ptr [edi + 0x4]
+        mov eax, dword ptr [eax + ebx*4]
+        test eax, eax
+        je short L_0078CEF0_clear
+L_0078CEF0_node:
+        mov esi, dword ptr [eax]
+        push eax
+        call ebp
+        add esp, 0x4
+        mov eax, esi
+        test esi, esi
+        jne short L_0078CEF0_node
+L_0078CEF0_clear:
+        mov ecx, dword ptr [edi + 0x4]
+        inc ebx
+        mov dword ptr [ecx + ebx*4 - 0x4], 0
+        mov eax, dword ptr [edi + 0xc]
+        cmp ebx, eax
+        jb short L_0078CEF0_bucket
+        mov esi, dword ptr [esp + 0x10]
+        pop ebp
+L_0078CEF0_unlock:
+        push esi
+        mov dword ptr [edi + 0x20], 0
+        mov dword ptr [edi + 0x24], 0
+        call dword ptr [mem_009241BC]
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
