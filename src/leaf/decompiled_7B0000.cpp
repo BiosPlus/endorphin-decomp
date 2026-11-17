@@ -6988,3 +6988,40 @@ L_7B8DB7:
         ret
     }
 }
+
+// [0x007BAE40] sub_007BAE40 (80 bytes)
+extern "C" int mem_0092A278;
+extern "C" int mem_00999A50;
+extern "C" int mem_00999A48;
+extern "C" __declspec(naked) void __fastcall fn_007BAE40(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, eax
+        and ecx, 0x7fff
+        mov dword ptr [esp + 0x4], ecx
+        jne L_7BAE59
+        fld qword ptr [mem_0092A278]
+        ret
+L_7BAE59:
+        fild dword ptr [esp + 0x4]
+        test ah, 0x80
+        fadd qword ptr [mem_00993828]
+        fmul qword ptr [mem_00999A50]
+        fsub qword ptr [mem_00999A48]
+        fldl2e
+        fmulp st(1), st
+        fld st(0)
+        frndint
+        fxch st(1)
+        fsub st, st(1)
+        f2xm1
+        fld1
+        faddp st(1), st
+        fscale
+        fstp st(1)
+        je L_7BAE8C
+        fchs
+L_7BAE8C:
+        ret
+    }
+}
