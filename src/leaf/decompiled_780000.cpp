@@ -5614,3 +5614,58 @@ L_ret_early:
         ret 0xc
     }
 }
+
+// [0x00784650] sub_00784650 (128 bytes)
+extern "C" int mem_00925208;
+extern "C" int mem_00925290;
+extern "C" __declspec(naked) void __fastcall fn_00784650(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 8]
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, eax
+        mov edi, dword ptr [esi + 4]
+        imul edx, ecx
+        cmp edi, edx
+        jne short L_store
+        test eax, eax
+        jne short L_realloc
+        lea eax, [ecx*8]
+        mov dword ptr [esi + 8], 1
+        push eax
+        call dword ptr [mem_00925208]
+        add esp, 4
+        jmp short L_setbase
+L_realloc:
+        inc eax
+        mov dword ptr [esi + 8], eax
+        imul eax, ecx
+        mov ecx, dword ptr [esi]
+        shl eax, 3
+        push eax
+        push ecx
+        call dword ptr [mem_00925290]
+        add esp, 8
+L_setbase:
+        mov dword ptr [esi], eax
+L_store:
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov dword ptr [eax + edx*8], ecx
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + edx*8 + 4], ecx
+        mov eax, dword ptr [esi + 4]
+        inc eax
+        mov byte ptr [esi + 0x10], 1
+        mov dword ptr [esi + 4], eax
+        xor eax, eax
+        pop esi
+        ret 8
+    }
+}
