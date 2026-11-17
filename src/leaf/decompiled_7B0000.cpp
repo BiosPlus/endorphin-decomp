@@ -7160,3 +7160,39 @@ L_ret:
         ret
     }
 }
+
+// [0x007B06A0] sub_007B06A0 (80 bytes)
+extern "C" void ext_007AF5E0();
+extern "C" void ext_007AF620();
+extern "C" __declspec(naked) void __fastcall fn_007B06A0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [ecx + 0x4]
+        cmp edx, eax
+        je L_7b06dd
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edx
+        push eax
+        xor eax, eax
+        mov ax, word ptr [ecx]
+        push eax
+        push esi
+        call ext_007AF5E0
+        mov ecx, dword ptr [eax + 0x10]
+        mov edx, dword ptr [esi]
+        add esp, 0x8
+        push ecx
+        push 0xab1430
+        push edx
+        call ext_007AF620
+        add esp, 0x14
+        xor eax, eax
+        pop esi
+        ret
+    L_7b06dd:
+        mov eax, 0x1
+        ret
+    }
+}
