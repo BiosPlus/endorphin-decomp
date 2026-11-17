@@ -38668,3 +38668,36 @@ extern "C" __declspec(naked) void __fastcall fn_00615210(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004EA080] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_1 (74 bytes)
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) float __stdcall fn_004EA080(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_throw
+        cmp byte ptr [eax + 5], 0
+        je L_zero
+        fld1
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 4
+L_zero:
+        fldz
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 4
+L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
