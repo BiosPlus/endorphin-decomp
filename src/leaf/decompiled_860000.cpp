@@ -5951,3 +5951,70 @@ extern "C" __declspec(naked) void __cdecl fn_00869E50(void) {
         ret
     }
 }
+
+// [0x00869EC0] sub_00869EC0 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00869EC0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x10]
+        push ebx
+        xor edx, edx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        dec eax
+        push esi
+        test ecx, ecx
+        push edi
+        jbe zero_fill
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x18], ecx
+    outer_loop:
+        test eax, eax
+        jl finish
+        mov ecx, dword ptr [esp + 0x18]
+        xor esi, esi
+        mov edi, dword ptr [ecx]
+    inner_cond:
+        cmp esi, 0x20
+        jae inner_end
+        mov ebx, edi
+        mov ecx, esi
+        shr ebx, cl
+        dec eax
+        add esi, 0x8
+        test eax, eax
+        mov byte ptr [eax + ebp + 0x1], bl
+        jge inner_cond
+    inner_end:
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x20]
+        inc edx
+        add esi, 0x4
+        cmp edx, ecx
+        mov dword ptr [esp + 0x18], esi
+        jb outer_loop
+    zero_fill:
+        test eax, eax
+        jl finish
+    zero_loop:
+        mov byte ptr [eax + ebp], 0x0
+        dec eax
+        jns zero_loop
+    finish:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
