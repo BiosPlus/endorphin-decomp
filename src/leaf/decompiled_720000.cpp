@@ -5005,3 +5005,65 @@ extern "C" __declspec(naked) void __fastcall fn_00722730(void* self) {
         ret
     }
 }
+
+// [0x00722BA0] sub_00722BA0 (128 bytes)
+extern "C" void ext_00722660();
+extern "C" void ext_00722720();
+extern "C" int mem_009967F0; /* double 500 */
+extern "C" int mem_009967F8; /* double 0.002 */
+extern "C" __declspec(naked) void __fastcall fn_00722BA0(void* self) {
+    __asm {
+        sub esp, 0x8
+        fld qword ptr [esp + 0x14]
+        fcomp qword ptr [esp + 0x1c]
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0xe8
+        _emit 0x03
+        _emit 0x00
+        _emit 0x00
+        fnstsw ax
+        test ah, 0x1
+        _emit 0x74
+        _emit 0x08
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0x18
+        _emit 0xfc
+        _emit 0xff
+        _emit 0xff
+        _emit 0xdb
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        fld qword ptr [esp + 0x14]
+        fsub qword ptr [mem_009967F0]
+        sub esp, 0x8
+        fmul qword ptr [mem_009967F8]
+        fstp qword ptr [esp]
+        call ext_00722720
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push edx
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        fstp qword ptr [esp + 0x20]
+        push ecx
+        push edx
+        call ext_00722660
+        fadd qword ptr [esp + 0x28]
+        add esp, 0x30
+        ret
+    }
+}
