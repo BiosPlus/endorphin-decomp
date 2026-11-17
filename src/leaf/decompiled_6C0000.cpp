@@ -3712,3 +3712,40 @@ done:
         ret 0x4
     }
 }
+
+// [0x006CC6B0] sub_006CC6B0 (64 bytes)
+extern "C" void ext_006C9D20();
+extern "C" void ext_006CA060();
+
+extern "C" __declspec(naked) bool __fastcall fn_006CC6B0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jle L_zero
+        lea eax, [edi - 0x1]
+        push ebx
+        push eax
+        call ext_006CA060
+        push edi
+        mov ecx, esi
+        mov ebx, eax
+        call ext_006CA060
+        mov ecx, ebx
+        call ext_006C9D20
+        test eax, 0x2000000
+        pop ebx
+        je L_zero
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    L_zero:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
