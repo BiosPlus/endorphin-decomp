@@ -2435,3 +2435,43 @@ extern "C" __declspec(naked) void __fastcall fn_0077FD70(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0077FA30] sub_0077FA30 (64 bytes)
+extern "C" void ext_006DC510();
+extern "C" void ext_006DC550();
+
+extern "C" __declspec(naked) void __fastcall fn_0077FA30(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, ecx
+        xor esi, esi
+        mov ecx, ebx
+        mov dword ptr [edi + 0x4], ebx
+        call ext_006DC550
+        test eax, eax
+        jle fn77_done
+        push ebp
+fn77_loop:
+        mov ebp, dword ptr [edi]
+        push esi
+        mov ecx, ebx
+        call ext_006DC510
+        push eax
+        mov ecx, edi
+        call dword ptr [ebp + 0x10]
+        mov ecx, ebx
+        inc esi
+        call ext_006DC550
+        cmp esi, eax
+        jl fn77_loop
+        pop ebp
+fn77_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
