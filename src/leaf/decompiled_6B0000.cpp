@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_6B0000.cpp
+extern "C" void ext_006BB7D0();
+extern "C" void ext_006E7440();
 
-// [0x006B6270] sub_006B6270 (25 bytes)
+extern "C" void ext_006E7440();
 extern "C" void ext_006B0DE0();
 
 extern "C" __declspec(naked) void __fastcall fn_006B6270(void* self) {
@@ -9570,5 +9572,35 @@ done_006BB6B0:
         pop edi
         pop esi
         ret
+    }
+}
+
+// [0x006BB7E0] sub_006BB7E0 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006BB7E0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl skip_fn_006BB7E0
+        call ext_006BB7D0
+        cmp edi, eax
+        jge skip_fn_006BB7E0
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 0x24], edi
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+skip_fn_006BB7E0:
+        mov ecx, dword ptr [esi]
+        push 0x0
+        add ecx, 0x28
+        call ext_006E7440
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
     }
 }
