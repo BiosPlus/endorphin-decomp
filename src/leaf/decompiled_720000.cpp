@@ -3776,3 +3776,45 @@ extern "C" __declspec(naked) void __fastcall fn_0072C060(void* self, int edx_unu
         ret 4ch
     }
 }
+
+// [0x007257F0] sub_007257F0 (80 bytes)
+extern "C" void ext_00725840();
+extern "C" void ext_00725BE0();
+
+extern "C" __declspec(naked) void __fastcall fn_007257F0(void* self) {
+    __asm {
+        sub esp, 0x10
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        __asm _emit 0x8b
+        __asm _emit 0xf1
+        push eax
+        call ext_00725BE0
+        mov ecx, dword ptr [esi + 0x10]
+        lea eax, [esp + 0x4]
+        push 0x10
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x1c]
+        mov eax, dword ptr [esi + 0x1c4]
+        xor ecx, ecx
+        test eax, eax
+        jle short L_skip
+        mov ecx, dword ptr [esi + 0x1a4]
+        mov ecx, dword ptr [ecx + 4*eax]
+L_skip:
+        mov edx, dword ptr [esi + 0x1bc]
+        mov eax, dword ptr [edx + 4*eax]
+        push eax
+        push ecx
+        __asm _emit 0x8b
+        __asm _emit 0xce
+        call ext_00725840
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
