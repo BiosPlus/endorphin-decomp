@@ -31503,3 +31503,34 @@ extern "C" __declspec(naked) void __fastcall fn_005D3000(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005D2C00] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_0 (72 bytes)
+extern "C" void ext_00672080();
+extern "C" __declspec(naked) void* __fastcall fn_005D2C00(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je null_path
+        fld dword ptr [eax + 0x38]
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    null_path:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
