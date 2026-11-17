@@ -14096,3 +14096,35 @@ no_target:
         call ext_006A6DD2
     }
 }
+
+// [0x004EA260] ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)>::vfunc_41 (70 bytes)
+extern "C" void ext_004E9D70();
+extern "C" __declspec(naked) void __fastcall fn_004EA260(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je throw_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+0xc]
+        call eax
+        mov ecx, esi
+        mov byte ptr [esi+6], al
+        call ext_004E9D70
+        pop esi
+        add esp, 0x28
+        ret 8
+throw_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
