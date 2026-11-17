@@ -4905,3 +4905,48 @@ L_store_old:
         ret 0x8
     }
 }
+
+// [0x0071B870] sub_0071B870 (128 bytes)
+extern "C" int mem_00993868; /* double 0.001 */
+extern "C" int mem_00996630; /* double 600000 */
+extern "C" __declspec(naked) void __fastcall fn_0071B870(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00993868]
+        fnstsw ax
+        test ah, 0x1
+        je L_hi
+        fld qword ptr [mem_00993868]
+        jmp L_store
+L_hi:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00996630]
+        fnstsw ax
+        test ah, 0x41
+        jne L_keep
+        fld qword ptr [mem_00996630]
+        jmp L_store
+L_keep:
+        fld qword ptr [esp + 0x4]
+L_store:
+        mov eax, dword ptr [ecx + 0xc]
+        fstp qword ptr [eax + 0xb08]
+        mov ecx, dword ptr [ecx + 0xc]
+        fld qword ptr [ecx + 0xb08]
+        fld qword ptr [ecx + 0xa80]
+        fst qword ptr [esp + 0x4]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x1
+        je L_else
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0xa80], edx
+        mov dword ptr [ecx + 0xa84], eax
+        fstp st(0)
+        ret 0x8
+L_else:
+        fstp qword ptr [ecx + 0xa80]
+        ret 0x8
+    }
+}
