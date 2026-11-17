@@ -5514,3 +5514,33 @@ extern "C" __declspec(naked) void __cdecl fn_0086A800(int a, int b, int c, int d
         ret
     }
 }
+
+// [0x0086CFB0] sub_0086CFB0 (64 bytes)
+extern "C" void ext_008596E0();
+
+extern "C" __declspec(naked) void __cdecl fn_0086CFB0(int flag) {
+    __asm {
+        push 0x10
+        call ext_008596E0
+        xor ecx, ecx
+        add esp, 0x4
+        cmp eax, ecx
+        je done_0086CFB0
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov edx, 0x1
+        cmp esi, ecx
+        mov byte ptr [eax], -0x2
+        mov byte ptr [eax + 0x1], dl
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        pop esi
+        je set_one_0086CFB0
+        mov dword ptr [eax + 0xc], ecx
+        ret
+    set_one_0086CFB0:
+        mov dword ptr [eax + 0xc], edx
+    done_0086CFB0:
+        ret
+    }
+}
