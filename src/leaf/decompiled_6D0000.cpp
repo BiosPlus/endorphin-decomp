@@ -5511,3 +5511,25 @@ extern "C" __declspec(naked) void __fastcall fn_006D6B10(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006D7BE0] sub_006D7BE0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D7BE0(void* self) {
+    __asm {
+        mov edx, 0x4
+        xor eax, eax
+        mov dword ptr [ecx + 0x1a8], edx
+        mov dword ptr [ecx + 0x1ac], edx
+        mov dword ptr [ecx + 0x1b0], eax
+        mov dword ptr [ecx + 0x1b4], eax
+        mov dword ptr [ecx + 0x1b8], eax
+        mov dword ptr [ecx + 0x1bc], eax
+        mov byte ptr [ecx + 0x1c0], al
+        mov byte ptr [ecx + 0x1c1], al
+        mov dword ptr [ecx + 0x1c8], edx
+        mov byte ptr [ecx + 0x1c2], al
+        mov byte ptr [ecx + 0x1c3], al
+        mov byte ptr [ecx + 0x1c4], al
+        mov byte ptr [ecx + 0x1c5], al
+        ret
+    }
+}
