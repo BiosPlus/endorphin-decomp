@@ -2574,3 +2574,32 @@ L_fail:
         ret 4
     }
 }
+
+// [0x0070CF10] sub_0070CF10 (64 bytes)
+extern "C" void ext_0070CF00();
+extern "C" __declspec(naked) void __fastcall fn_0070CF10(void* self, int idx) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl short L_fail
+        call ext_0070CF00
+        cmp edi, eax
+        jge short L_fail
+        mov eax, dword ptr [esi + 0x68]
+        mov eax, dword ptr [eax + 4*edi]
+        pop edi
+        pop esi
+        ret 4
+L_fail:
+        push 0
+        lea ecx, [esi + 0x150]
+        call ext_006E7440
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 4
+    }
+}
