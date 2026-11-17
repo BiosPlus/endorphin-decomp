@@ -63616,3 +63616,45 @@ extern "C" __declspec(naked) void __fastcall fn_00685360(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0049D4B0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_2 (117 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0049D4B0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je L_null_0049D4B0
+        lea ecx, [eax + 8]
+        call ext_0046A470
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 30h]
+        fldz
+        add esp, 4
+        fld dword ptr [esp + 2Ch]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne L_neg_0049D4B0
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 28h
+        ret 4
+L_neg_0049D4B0:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 28h
+        ret 4
+L_null_0049D4B0:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
