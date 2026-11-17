@@ -43,6 +43,7 @@ extern "C" void ext_0068EE60();
 extern "C" void ext_0046C2E0();
 extern "C" void ext_004A9A60();
 extern "C" void ext_00407700();
+extern "C" void ext_0046F860();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -21314,6 +21315,30 @@ L_skip:
         lea ecx, [esp]
         call ext_0046C3C0
         push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00470C20] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_5 (58 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00470C20(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_skip
+        call ext_0046F860
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
         lea ecx, [esp + 4]
         push ecx
         call ext_006A6DD2
