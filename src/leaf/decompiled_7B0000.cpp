@@ -8259,3 +8259,56 @@ extern "C" __declspec(naked) void __cdecl fn_007B2D80(void* a1, int a2, void* a3
         ret
     }
 }
+
+// [0x007B2760] sub_007B2760 (112 bytes)
+extern "C" void ext_007B24C0();
+extern "C" void ext_007B2530();
+extern "C" void ext_007B2570();
+extern "C" void ext_007B25C0();
+
+extern "C" __declspec(naked) int __cdecl fn_007B2760() {
+    __asm {
+        mov eax, dword ptr [esp + 0x24]
+        push esi
+        test eax, eax
+        jne L_7B2775
+        mov eax, dword ptr [esp + 0x2c]
+        push eax
+        push 0xb006
+        jmp L_7B277F
+    L_7B2775:
+        mov ecx, dword ptr [esp + 0x2c]
+        push ecx
+        push 0xb004
+    L_7B277F:
+        call ext_007B2570
+        add esp, 0x8
+        mov esi, eax
+        push esi
+        call ext_007B2530
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [esp + 0x24]
+        push esi
+        push edx
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        push ecx
+        push edx
+        call ext_007B24C0
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x28]
+        push esi
+        push eax
+        mov eax, dword ptr [esp + 0x2c]
+        push ecx
+        push edx
+        push eax
+        call ext_007B25C0
+        add esp, 0x2c
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
