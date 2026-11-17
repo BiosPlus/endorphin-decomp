@@ -4036,3 +4036,64 @@ extern "C" __declspec(naked) int __cdecl fn_0085C270(void) {
         ret
     }
 }
+
+// [0x0085BEC0] sub_0085BEC0 (128 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085BEC0(void* t, int key) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0ch]
+        push esi
+        mov esi, dword ptr [esp + 0ch]
+        xor eax, eax
+        push edi
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        jbe NOTFOUND
+        mov edi, dword ptr [esi + 4]
+        mov edx, edi
+    SCAN:
+        cmp ebx, dword ptr [edx]
+        je FOUND
+        inc eax
+        add edx, 8
+        cmp eax, ecx
+        jb SCAN
+    NOTFOUND:
+        lea eax, [8*ecx + 8]
+        mov ecx, dword ptr [esi + 4]
+        push eax
+        push ecx
+        call ext_008596F0
+        add esp, 8
+        test eax, eax
+        jne GROW
+        pop edi
+        pop esi
+        mov eax, 0ch
+        pop ebx
+        ret
+    FOUND:
+        mov ecx, dword ptr [edi + 8*eax + 4]
+        inc ecx
+        mov dword ptr [edi + 8*eax + 4], ecx
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    GROW:
+        mov edx, dword ptr [esi]
+        pop edi
+        mov dword ptr [eax + 8*edx + 4], 1
+        mov ecx, dword ptr [esi]
+        mov dword ptr [eax + 8*ecx], ebx
+        mov dword ptr [esi + 4], eax
+        mov eax, dword ptr [esi]
+        inc eax
+        mov dword ptr [esi], eax
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
