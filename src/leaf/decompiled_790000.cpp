@@ -5074,3 +5074,42 @@ L_store:
         ret
     }
 }
+
+// [0x0079E4B0] sub_0079E4B0 (112 bytes)
+extern "C" void ext_006C3520();
+extern "C" void ext_006D2390();
+extern "C" void ext_006D80A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0079E4B0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    __asm {
+        push -1
+        push 0x008b9300
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        sub esp, 0x20
+        lea eax, [esp + 0x38]
+        mov ecx, esp
+        mov dword ptr [esp + 0x24], esp
+        push eax
+        mov dword ptr [esp + 0x34], 0
+        call ext_006D2390
+        mov ecx, dword ptr [esi]
+        push 0
+        mov byte ptr [esp + 0x34], 0
+        call ext_00714AE0
+        mov ecx, eax
+        call ext_006C3520
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x10], -1
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x20
+    }
+}
