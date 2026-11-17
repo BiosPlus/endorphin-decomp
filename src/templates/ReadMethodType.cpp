@@ -47119,3 +47119,37 @@ extern "C" __declspec(naked) void __fastcall fn_0058B980(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0058DF10] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_0 (82 bytes)
+extern "C" void ext_0058CFD0();
+
+extern "C" __declspec(naked) void __fastcall fn_0058DF10(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je null_path_0058DF10
+        push esi
+        call ext_0058CFD0
+        fstp dword ptr [esp + 0x38]
+        mov esi, dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x38]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    null_path_0058DF10:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
