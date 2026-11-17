@@ -40324,3 +40324,33 @@ extern "C" __declspec(naked) void __fastcall fn_0061AF20(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x0061B3C0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_0 (75 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0061B3C0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        mov     dword ptr [esp], 0
+        je      null_path
+        fld     dword ptr [eax + 0xb4]
+        push    esi
+        mov     esi, dword ptr [esp + 0x34]
+        push    ecx
+        mov     ecx, esi
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     8
+    null_path:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
