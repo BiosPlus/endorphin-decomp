@@ -2957,3 +2957,12 @@ extern "C" void* __fastcall fn_0085BFB0(void* self) {
     }
     return p;
 }
+
+// [0x0085C130] sub_0085C130 (64 bytes)
+extern "C" int __cdecl fn_0085C130(unsigned int v) {
+    if (v < 0x80) return 1;
+    if (v < 0x100) return 2;
+    if (v < 0x10000) return 3;
+    if (v < 0x1000000) return 4;
+    return 5;
+}
