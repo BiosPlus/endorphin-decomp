@@ -5274,3 +5274,43 @@ done:
         ret 0x4
     }
 }
+
+// [0x006D2320] sub_006D2320 (80 bytes)
+extern "C" void ext_006D2250();
+extern "C" __declspec(naked) void* __fastcall fn_006D2320(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006D2250
+        mov ebx, dword ptr [esp + 0x14]
+        xor edi, edi
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [esi + 0x8], eax
+        mov ebp, dword ptr [ebx]
+        test ebp, ebp
+        jle done
+    loop_top:
+        mov ecx, dword ptr [ebx + 0x10]
+        lea eax, dword ptr [esp + 0x14]
+        push eax
+        mov edx, dword ptr [ecx + 4*edi]
+        mov ecx, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], edx
+        call ext_006D2170
+        inc edi
+        cmp edi, ebp
+        jl loop_top
+    done:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
