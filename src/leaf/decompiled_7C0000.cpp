@@ -19433,3 +19433,42 @@ extern "C" __declspec(naked) void __cdecl fn_007C1750() {
         ret
     }
 }
+
+// [0x007C15A0] sub_007C15A0 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C15A0(void* p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        je L_fail
+        mov eax, dword ptr [esi + 0x1c]
+        test eax, eax
+        je L_fail
+        mov ecx, dword ptr [esi + 0x24]
+        test ecx, ecx
+        je L_fail
+        mov eax, dword ptr [eax + 0x2c]
+        test eax, eax
+        je L_skip
+        push eax
+        mov eax, dword ptr [esi + 0x28]
+        push eax
+        call ecx
+        add esp, 8
+    L_skip:
+        mov ecx, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [esi + 0x28]
+        push ecx
+        push edx
+        call dword ptr [esi + 0x24]
+        add esp, 8
+        mov dword ptr [esi + 0x1c], 0
+        xor eax, eax
+        pop esi
+        ret
+    L_fail:
+        mov eax, 0xfffffffe
+        pop esi
+        ret
+    }
+}
