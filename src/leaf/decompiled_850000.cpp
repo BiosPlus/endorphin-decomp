@@ -3468,3 +3468,54 @@ done:
         ret
     }
 }
+
+// [0x0085BBC0] sub_0085BBC0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0085BBC0(void* self) {
+    __asm {
+        sub     esp, 8
+        mov     eax, dword ptr [esp+0Ch]
+        mov     edx, dword ptr [esp+10h]
+        push    esi
+        mov     esi, dword ptr [esp+18h]
+        test    esi, esi
+        mov     dword ptr [esp+4], eax
+        je      L_done
+        cmp     esi, 40h
+        jb      L_small
+        xor     eax, eax
+        xor     edx, edx
+        pop     esi
+        add     esp, 8
+        ret
+L_small:
+        cmp     esi, 1Fh
+        push    edi
+        jbe     L_lt32
+        lea     ecx, [esi-20h]
+        xor     edi, edi
+        shl     eax, cl
+        mov     edx, eax
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        add     esp, 8
+        ret
+L_lt32:
+        mov     edi, eax
+        mov     ecx, esi
+        shl     edi, cl
+        mov     ecx, 20h
+        sub     ecx, esi
+        shr     eax, cl
+        mov     ecx, esi
+        shl     edx, cl
+        or      eax, edx
+        mov     edx, eax
+        mov     eax, edi
+        pop     edi
+L_done:
+        pop     esi
+        add     esp, 8
+        ret
+    }
+}
