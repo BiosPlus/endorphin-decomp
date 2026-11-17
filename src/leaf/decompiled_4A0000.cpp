@@ -13189,3 +13189,58 @@ extern "C" __declspec(naked) void __cdecl fn_004A59A0(unsigned int n) {
         call ext_006A6DD2
     }
 }
+
+// [0x004A13D0] sub_004A13D0 (125 bytes)
+extern "C" void ext_0049CF20();
+extern "C" void ext_0049E910();
+extern "C" void ext_004A0660();
+extern "C" __declspec(naked) void* __fastcall fn_004A13D0(void* self, int edx_unused, void* a) {
+    __asm {
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x8B __asm _emit 0xEC // mov ebp, esp
+        __asm _emit 0x6A __asm _emit 0xFF // push -0x1
+        __asm _emit 0x68 __asm _emit 0x20 __asm _emit 0x74 __asm _emit 0x88 __asm _emit 0x00 // push 0x887420
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, fs:[0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], esp
+        __asm _emit 0x83 __asm _emit 0xEC __asm _emit 0x08 // sub esp, 0x8
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x56 // push esi
+        __asm _emit 0x57 // push edi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        __asm _emit 0x89 __asm _emit 0x65 __asm _emit 0xF0 // mov [ebp-0x10], esp
+        __asm _emit 0x89 __asm _emit 0x75 __asm _emit 0xEC // mov [ebp-0x14], esi
+        __asm call ext_0049CF20 // call sub_0049CF20
+        __asm _emit 0x8B __asm _emit 0x4D __asm _emit 0x08 // mov ecx, [ebp+0x8]
+        __asm _emit 0x8B __asm _emit 0x5D __asm _emit 0x08 // mov ebx, [ebp+0x8]
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x89 __asm _emit 0x46 __asm _emit 0x04 // mov [esi+0x4], eax
+        __asm _emit 0xC7 __asm _emit 0x46 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esi+0x8], 0
+        __asm _emit 0x8B __asm _emit 0x51 __asm _emit 0x04 // mov edx, [ecx+0x4]
+        __asm _emit 0x8B __asm _emit 0x3A // mov edi, [edx]
+        __asm _emit 0x8B __asm _emit 0x00 // mov eax, [eax]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x57 // push edi
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x56 // push esi
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        __asm _emit 0xC7 __asm _emit 0x45 __asm _emit 0xFC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ebp-0x4], 0
+        __asm call ext_004A0660 // call sub_004A0660
+        __asm _emit 0x8B __asm _emit 0x4D __asm _emit 0xF4 // mov ecx, [ebp-0xc]
+        __asm _emit 0x5F // pop edi
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        __asm _emit 0x5E // pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], ecx
+        __asm _emit 0x5B // pop ebx
+        __asm _emit 0x8B __asm _emit 0xE5 // mov esp, ebp
+        __asm _emit 0x5D // pop ebp
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+        __asm _emit 0x8B __asm _emit 0x4D __asm _emit 0xEC // mov ecx, [ebp-0x14]
+        __asm call ext_0049E910 // call sub_0049E910
+        __asm _emit 0x6A __asm _emit 0x00 // push 0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0
+        __asm call ext_006A6DD2 // call thunk_MSVCR80__CxxThrowException
+    }
+}
