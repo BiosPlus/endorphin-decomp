@@ -3079,3 +3079,39 @@ extern "C" __declspec(naked) void __fastcall fn_0070C280(void* self) {
         _emit 0x90
     }
 }
+
+// [0x0070C1B0] sub_0070C1B0 (80 bytes)
+extern "C" void ext_006D80A0();
+extern "C" void ext_0070BCC0();
+extern "C" int mem_008B9338;
+
+extern "C" __declspec(naked) void __fastcall fn_0070C1B0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b9338
+        push eax
+        mov dword ptr fs:[0], esp
+        lea eax, [esp + 0x10]
+        mov dword ptr [esp + 0x8], 0
+        push eax
+        call ext_0070BCC0
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], -1
+        call ext_006D80A0
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x20
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+    }
+}
