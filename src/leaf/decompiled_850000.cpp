@@ -3978,3 +3978,61 @@ extern "C" __declspec(naked) void __fastcall fn_0085C2E0(void* self) {
         ret
     }
 }
+
+// [0x0085C270] sub_0085C270 (112 bytes)
+extern "C" void ext_00859D40();
+extern "C" void ext_0085B330();
+extern "C" void ext_0085C270();
+
+extern "C" __declspec(naked) int __cdecl fn_0085C270(void) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        push ebp
+        mov ebx, dword ptr [edi]
+        shr ebx, 0x18
+        and bl, -0x20
+        call ext_00859D40
+        add esp, 0x8
+        mov esi, eax
+        test bl, 0x20
+        je skip_child
+        mov eax, dword ptr [edi + 0x20]
+        push eax
+        push ebp
+        call ext_0085C270
+        add esi, eax
+        mov eax, dword ptr [edi + 0xc]
+        add esp, 0x8
+        cmp eax, -1
+        jne skip_child
+        push ebp
+        push 0x2
+        push 0x1
+        push 0xbc5c10
+        call ext_0085B330
+        add esp, 0x10
+        add esi, eax
+    skip_child:
+        mov edi, dword ptr [edi + 0x1c]
+        test edi, edi
+        je done
+        push edi
+        push ebp
+        call ext_0085C270
+        add esp, 0x8
+        add esi, eax
+    done:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
