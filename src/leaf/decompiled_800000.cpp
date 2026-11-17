@@ -8079,3 +8079,56 @@ extern "C" __declspec(naked) short __cdecl fn_008070E0(short a1, void* self, sho
         ret
     }
 }
+
+// [0x0080ADB0] sub_0080ADB0 (112 bytes)
+extern "C" void ext_00852700();
+extern "C" int mem_009242C4;
+extern "C" int mem_009242C0;
+
+extern "C" __declspec(naked) int __cdecl fn_0080ADB0(void* out) {
+    __asm {
+        sub esp, 0x18
+        lea eax, [esp + 0x8]
+        push eax
+        call dword ptr [mem_009242C4]
+        __asm _emit 0x8d
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        lea edx, [esp + 0x8]
+        push ecx
+        push edx
+        call dword ptr [mem_009242C0]
+        test eax, eax
+        jne ok_path
+        mov eax, 0x18
+        add esp, 0x18
+        ret
+    ok_path:
+        __asm _emit 0x8b
+        __asm _emit 0x54
+        __asm _emit 0x24
+        __asm _emit 0x00
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        xor eax, eax
+        xor esi, esi
+        or eax, edx
+        or ecx, esi
+        sub eax, 0xd53e8000
+        push 0
+        push 0x989680
+        sbb ecx, 0x19db1de
+        push ecx
+        push eax
+        call ext_00852700
+        mov ecx, dword ptr [esp + 0x30]
+        add esp, 0x10
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx + 0x4], edx
+        xor eax, eax
+        pop esi
+        add esp, 0x18
+        ret
+    }
+}
