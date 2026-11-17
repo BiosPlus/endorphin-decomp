@@ -5712,3 +5712,49 @@ extern "C" __declspec(naked) int __cdecl fn_0086AF80(unsigned int* dst, const un
         ret
     }
 }
+
+// [0x0086D110] sub_0086D110 (80 bytes)
+extern "C" void ext_008596E0();
+extern "C" void ext_00859780();
+
+extern "C" __declspec(naked) int __cdecl fn_0086D110(int* self) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov ebp, 0xfffffffe
+        test byte ptr [esi + 0xc], 0x1
+        je done
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        call ext_008596E0
+        mov edi, eax
+        add esp, 0x4
+        test edi, edi
+        je fail
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [esi + 0x4]
+        push ecx
+        push edx
+        push edi
+        call ext_00859780
+        mov eax, dword ptr [esi + 0xc]
+        add esp, 0xc
+        xor eax, 0x1
+        mov dword ptr [esi + 0x4], edi
+        mov dword ptr [esi + 0xc], eax
+    done:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebp
+        ret
+    fail:
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        ret
+    }
+}
