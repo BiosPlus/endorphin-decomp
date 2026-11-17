@@ -3668,3 +3668,42 @@ extern "C" __declspec(naked) void __fastcall fn_00708D10(void* self) {
         ret 4
     }
 }
+
+// [0x0070BEA0] sub_0070BEA0 (96 bytes)
+extern "C" void ext_006C98F0();
+extern "C" void ext_006CD330();
+extern "C" void ext_006DC460();
+extern "C" int mem_0092A278;
+extern "C" int mem_0092A270;
+extern "C" int mem_00995B40;
+extern "C" __declspec(naked) void __fastcall fn_0070BEA0(void* self, int edx_unused, double a1) {
+    __asm {
+        call ext_006DC460
+        fld qword ptr [esp + 4]
+        fcomp qword ptr [mem_0092A278]
+        mov ecx, eax
+        fnstsw ax
+        test ah, 0x1
+        je L_small
+        fld qword ptr [mem_0092A278]
+        jmp L_scale
+    L_small:
+        fld qword ptr [esp + 4]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L_arg
+        fld qword ptr [mem_0092A270]
+        jmp L_scale
+    L_arg:
+        fld qword ptr [esp + 4]
+    L_scale:
+        fmul qword ptr [mem_00995B40]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_006C98F0
+        mov ecx, eax
+        call ext_006CD330
+        ret 8
+    }
+}
