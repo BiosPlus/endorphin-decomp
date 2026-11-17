@@ -7511,3 +7511,53 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_006FACA0(void* a0, int a
         ret 0x1c
     }
 }
+
+// [0x006FAD90] sub_006FAD90 (96 bytes)
+extern "C" void ext_006FAD90();
+extern "C" __declspec(naked) void __stdcall fn_006FAD90(void* a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push ebx
+        mov ebx, dword ptr [esp + 0x20]
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+        push edi
+        mov edi, dword ptr [esp + 0x2c]
+        push edi
+        push ebx
+        push ebp
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push edx
+        mov edx, dword ptr [esi + 0x4]
+        push eax
+        push edx
+        call ext_006FAD90
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi]
+        push edi
+        push ebx
+        mov eax, dword ptr [ecx]
+        push ebp
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push edx
+        call dword ptr [eax + 0x38]
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        ret 0x1c
+    null_path:
+        xor al, al
+        pop esi
+        ret 0x1c
+    }
+}
