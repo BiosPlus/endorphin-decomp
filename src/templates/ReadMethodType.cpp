@@ -33305,3 +33305,32 @@ extern "C" __declspec(naked) void __stdcall fn_005250B0(void* arg) {
         call ext_006A6DD2
     }
 }
+
+// [0x00521880] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_1 (73 bytes)
+extern "C" void ext_00687090();
+extern "C" __declspec(naked) float __fastcall fn_00521880(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        mov     ecx, dword ptr [eax]
+        sub     esp, 0x28
+        test    ecx, ecx
+        je      short L_throw
+        call    ext_00687090
+        mov     ecx, eax
+        call    dword ptr [mem_00924FF0]
+        push    eax
+        call    dword ptr [mem_009251F0]
+        fstp    dword ptr [esp + 0x30]
+        fld     dword ptr [esp + 0x30]
+        add     esp, 0x4
+        add     esp, 0x28
+        ret     0x4
+    L_throw:
+        lea     ecx, [esp]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x4]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
