@@ -4777,3 +4777,34 @@ L_ret:
         ret 4
     }
 }
+
+// [0x00798EA0] sub_00798EA0 (80 bytes)
+extern "C" void ext_0079AF40();
+
+extern "C" __declspec(naked) void __cdecl fn_00798EA0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0x18
+        call ext_0079AF40
+        add esp, 0x4
+        mov dword ptr [esi + 0xdc], eax
+        xor eax, eax
+L_loop:
+        mov ecx, dword ptr [esi + 0xdc]
+        mov edx, 0x1
+        mov dword ptr [eax + ecx], 0x0
+        mov cl, byte ptr [esi + 0x28]
+        shl edx, cl
+        mov ecx, dword ptr [esi + 0xdc]
+        add eax, 0x8
+        dec edx
+        cmp eax, 0x18
+        mov dword ptr [esp + 0x8], edx
+        fild dword ptr [esp + 0x8]
+        fstp dword ptr [eax + ecx - 0x4]
+        jl short L_loop
+        pop esi
+        ret
+    }
+}
