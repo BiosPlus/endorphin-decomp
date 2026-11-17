@@ -13964,3 +13964,38 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005853E0] ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}>::vfunc_41 (69 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_004AA580();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __stdcall fn_005853E0(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        lea ecx, [esi + 0xc]
+        push eax
+        call ext_004AA580
+        pop esi
+        add esp, 0x28
+        ret 0x8
+null_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
