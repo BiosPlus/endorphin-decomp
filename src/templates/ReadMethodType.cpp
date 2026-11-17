@@ -18919,3 +18919,29 @@ extern "C" __declspec(naked) int __fastcall fn_004FF460(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x005C7A20] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" void ext_005B6480();
+
+extern "C" __declspec(naked) bool __stdcall fn_005C7A20(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_005B6480
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
