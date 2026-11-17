@@ -15326,3 +15326,25 @@ extern "C" __declspec(naked) void __fastcall fn_005D2C80(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004B8010] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_5 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B8010(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je fail
+        fld dword ptr [eax + 0x24]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
