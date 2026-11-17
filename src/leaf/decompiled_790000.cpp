@@ -4846,3 +4846,47 @@ L_ret:
         ret
     }
 }
+
+// [0x007990F0] sub_007990F0 (96 bytes)
+extern "C" void ext_007AF580();
+extern "C" __declspec(naked) int __cdecl fn_007990F0(int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push 0x0
+        push edi
+        push esi
+        call ext_007AF580
+        add esp, 0xc
+        test eax, eax
+        je L_zero
+        cmp edi, 0xffff
+        ja L_call
+        xor edx, edx
+        mov dx, word ptr [eax + 0xc]
+        mov eax, 0x1
+        mov ecx, edx
+        and ecx, 0x1f
+        shl eax, cl
+        shr edx, 0x5
+        test dword ptr [esi + 4*edx + 0x18], eax
+        je L_zero
+L_call:
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push edi
+        push esi
+        call dword ptr [esi + 0x220]
+        add esp, 0xc
+        pop edi
+        pop esi
+        ret
+L_zero:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
