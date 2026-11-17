@@ -6925,3 +6925,28 @@ L_7B78CC:
         nop
     }
 }
+
+// [0x007BFDF0] sub_007BFDF0 (80 bytes)
+extern "C" int __cdecl fn_007BFDF0(char* self) {
+    if (self != 0) {
+    char* p = *(char**)(self + 0x1c);
+    if (p != 0) {
+    *(int*)(p + 0x18) = 0;
+    *(int*)(self + 0x14) = 0;
+    *(int*)(self + 0x08) = 0;
+    *(int*)(self + 0x18) = 0;
+    *(int*)(p + 0x00) = 0;
+    *(int*)(p + 0x04) = 0;
+    *(int*)(p + 0x0c) = 0;
+    *(int*)(p + 0x20) = 0;
+    *(int*)(p + 0x24) = 0;
+    *(int*)(p + 0x30) = 0;
+    *(int*)(p + 0x34) = 0;
+    *(int*)(p + 0x64) = (int)(p + 0x528);
+    *(int*)(p + 0x48) = (int)(p + 0x528);
+    *(int*)(p + 0x44) = (int)(p + 0x528);
+    return 0;
+    }
+    }
+    return -2;
+}
