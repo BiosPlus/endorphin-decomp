@@ -4,8 +4,10 @@ extern "C" void ext_006B9E60();
 extern "C" void ext_006A73CC();
 extern "C" int mem_00993CC0;
 extern "C" int mem_00993C78;
+extern "C" void ext_006B9D20();
+extern "C" void ext_006B9D70();
 
-// [0x00755020] sub_00755020 (16 bytes)
+extern "C" void ext_006B9D70();
 extern "C" void __fastcall fn_00755020(void* self, int edx_unused, void* a1) {
     typedef void (__thiscall *Callee)(void* self, void* a1);
     Callee callee = (Callee)ext_006B9E60;
@@ -3333,5 +3335,34 @@ extern "C" __declspec(naked) void __fastcall fn_00754FA0(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x00757D60] sub_00757D60 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00757D60(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c1b08
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esp + 0x14]
+        lea ecx, [esp + 0x18]
+        push ecx
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [esi], eax
+        call ext_006B9D20
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0xc], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x50
     }
 }
