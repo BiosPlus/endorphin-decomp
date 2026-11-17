@@ -5160,3 +5160,52 @@ extern "C" __declspec(naked) void __fastcall fn_006C9170(void* self) {
         ret 4
     }
 }
+
+// [0x006CAE80] sub_006CAE80 (112 bytes)
+extern "C" void ext_006C9AB0();
+extern "C" void ext_006CA020();
+extern "C" void ext_006CA570();
+
+extern "C" __declspec(naked) void __fastcall fn_006CAE80(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x24]
+        lea eax, [edi + 0x1]
+        push eax
+        call ext_006CA570
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esp + 0x14]
+        push 0x0
+        mov edx, dword ptr [esp + 0x14]
+        push 0x0
+        push 0x3eaaaaab
+        push 0x3eaaaaab
+        push 0x0
+        push 0x0
+        inc eax
+        push 0x0
+        push 0x100
+        mov dword ptr [esi + 0x24], eax
+        mov eax, dword ptr [esp + 0x2c]
+        push 0x8
+        push ecx
+        push edx
+        push eax
+        push edi
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9AB0
+        mov dword ptr [esi + 0x48], 0xffffffff
+        mov dword ptr [esi + 0x4c], 0x7fffffff
+        mov eax, dword ptr [esi + 0x18]
+        inc eax
+        mov dword ptr [esi + 0x18], eax
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
