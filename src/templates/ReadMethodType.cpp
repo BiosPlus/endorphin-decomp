@@ -56302,3 +56302,41 @@ extern "C" __declspec(naked) float __fastcall fn_0058B9E0(void* self, int edx_un
         call    ext_006A6DD2
     }
 }
+
+// [0x005263E0] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_2 (96 bytes)
+extern "C" void ext_00525E70();
+
+extern "C" __declspec(naked) float __fastcall fn_005263E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        mov     ecx, dword ptr [eax]
+        sub     esp, 0x28
+        test    ecx, ecx
+        je      throw_path
+        call    ext_00525E70
+        fstp    dword ptr [esp + 0x2c]
+        fldz
+        fld     dword ptr [esp + 0x2c]
+        fcom    st(1)
+        fnstsw  ax
+        fstp    st(1)
+        test    ah, 0x1
+        jne     neg_path
+        fadd    qword ptr [mem_00993828]
+        call    ext_006A6DE0
+        add     esp, 0x28
+        ret     4
+    neg_path:
+        fsub    qword ptr [mem_00993828]
+        call    ext_006A6DE0
+        add     esp, 0x28
+        ret     4
+    throw_path:
+        lea     ecx, dword ptr [esp]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, dword ptr [esp + 4]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
