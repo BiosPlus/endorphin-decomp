@@ -4508,3 +4508,56 @@ extern "C" __declspec(naked) void __fastcall fn_007A74E0(void* self) {
         ret
     }
 }
+
+// [0x007A1940] sub_007A1940 (96 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007A1940(void** pp) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je done
+        mov eax, dword ptr [eax + 0x30]
+        push edi
+        mov edi, dword ptr [mem_009251D8]
+        test eax, eax
+        je L34
+        push eax
+        call edi
+        add esp, 0x4
+    L34:
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 0x34]
+        test eax, eax
+        je L40
+        push eax
+        call edi
+        add esp, 0x4
+    L40:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx + 0x40]
+        test eax, eax
+        je L44
+        push eax
+        call edi
+        add esp, 0x4
+    L44:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x44]
+        test eax, eax
+        je LFREE
+        push eax
+        call edi
+        add esp, 0x4
+    LFREE:
+        mov eax, dword ptr [esi]
+        push eax
+        call edi
+        add esp, 0x4
+        mov dword ptr [esi], 0x0
+        pop edi
+    done:
+        pop esi
+        ret
+    }
+}
