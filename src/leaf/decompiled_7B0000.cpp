@@ -6500,3 +6500,32 @@ extern "C" __declspec(naked) void __cdecl fn_007B7970(unsigned int count, const 
         ret
     }
 }
+
+// [0x007B04C0] sub_007B04C0 (64 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079B140();
+
+extern "C" __declspec(naked) int __cdecl fn_007B04C0(int* a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push esi
+        push eax
+        call ext_0079AF40
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        jne done
+        mov edx, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push 0xab13d8
+        mov eax, dword ptr [edx]
+        push eax
+        call ext_0079B140
+        add esp, 0xc
+    done:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
