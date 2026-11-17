@@ -2058,3 +2058,37 @@ done:
         ret 4
     }
 }
+
+// [0x006E6260] sub_006E6260 (64 bytes)
+extern "C" void ext_006DECD0();
+extern "C" void __fastcall ext_006E3990(void* self, int edx_unused, int a1, int a2);
+extern "C" void ext_006E5750();
+extern "C" void ext_006E6260();
+
+extern "C" __declspec(naked) void __fastcall fn_006E6260(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x40]
+        mov byte ptr [esi + 0x10], al
+        test ecx, ecx
+        je skip_child
+        push eax
+        call ext_006E6260
+skip_child:
+        push 1
+        push 0
+        mov ecx, esi
+        call ext_006DECD0
+        mov ecx, eax
+        call ext_006E3990
+        push 0x10
+        mov ecx, esi
+        call ext_006DECD0
+        mov ecx, eax
+        call ext_006E5750
+        pop esi
+        ret 4
+    }
+}
