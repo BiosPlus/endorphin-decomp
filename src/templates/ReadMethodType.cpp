@@ -19835,3 +19835,27 @@ extern "C" __declspec(naked) void __stdcall fn_004C0400(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x0046D8E0] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_1 (55 bytes)
+extern "C" void ext_006AD1C0();
+extern "C" __declspec(naked) void __stdcall fn_0046D8E0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_0046D900
+        call ext_006AD1C0
+        mov dword ptr [esp + 0x2c], eax
+        fild dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0x4
+    L_0046D900:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
