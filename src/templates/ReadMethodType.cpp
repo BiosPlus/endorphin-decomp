@@ -54068,3 +54068,38 @@ extern "C" __declspec(naked) void* __fastcall fn_00604E50(void* self, int edx_un
         call ext_006A6DD2
     }
 }
+
+// [0x0059F7C0] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_0 (85 bytes)
+extern "C" void ext_0059DEB0();
+
+extern "C" __declspec(naked) void* __fastcall fn_0059F7C0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 2Ch
+        mov eax, dword ptr [esp+34h]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je L_else
+        push esi
+        lea ecx, [eax+4]
+        call ext_0059DEB0
+        fstp dword ptr [esp+38h]
+        mov esi, dword ptr [esp+34h]
+        fld dword ptr [esp+38h]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 2Ch
+        ret 8
+L_else:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
