@@ -259,3 +259,60 @@ extern "C" __declspec(naked) void __cdecl fn_00810C30(void* self) {
         ret
     }
 }
+
+// [0x008115A0] sub_008115A0 (112 bytes)
+extern "C" __declspec(naked) int __cdecl fn_008115A0(void* a1, void* a2, void* a3, unsigned a4, int a5) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        mov eax, dword ptr [ebx + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x14], eax
+        xor esi, esi
+    loop_top:
+        mov ecx, dword ptr [esp + 0x24]
+        test ecx, ecx
+        je skip_max
+        cmp esi, ecx
+        jge loop_done
+    skip_max:
+        cmp eax, -1
+        je loop_done
+        mov edx, dword ptr [esp + 0x1c]
+        xor ecx, ecx
+        cmp dword ptr [edx + 4*eax], ecx
+        mov edx, ebp
+        sete cl
+        shr edx, 5
+        and edx, 1
+        xor ecx, edx
+        jne loop_done
+        test edi, edi
+        je skip_store
+        mov byte ptr [esi + edi], al
+    skip_store:
+        lea eax, [esp + 0x14]
+        push eax
+        push ebx
+        call dword ptr [ebx + 4]
+        mov eax, dword ptr [esp + 0x1c]
+        add esp, 8
+        inc esi
+        jmp loop_top
+    loop_done:
+        test edi, edi
+        je epilogue
+        mov byte ptr [esi + edi], 0
+    epilogue:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        ret
+    }
+}
