@@ -7274,3 +7274,48 @@ extern "C" __declspec(naked) void __cdecl fn_007B2B10(void* self, int* out) {
         ret
     }
 }
+
+// [0x007B2570] sub_007B2570 (80 bytes)
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2E50();
+extern "C" bool mem_00B61218;
+extern "C" __declspec(naked) void __fastcall fn_007B2570(void* self) {
+    __asm {
+        push ecx
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push eax
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B2594
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne L_7B2594
+        xor eax, eax
+        pop ecx
+        ret
+L_7B2594:
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx], edx
+        __asm _emit 0x8b
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        call ext_007B2E50
+        mov eax, dword ptr [esp + 0x8]
+        add esp, 0x8
+        pop ecx
+        ret
+    }
+}
