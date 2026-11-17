@@ -1997,3 +1997,31 @@ extern "C" __declspec(naked) void* __fastcall fn_006E8820(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006E7150] sub_006E7150 (64 bytes)
+extern "C" void ext_00711B50();
+
+extern "C" __declspec(naked) void __fastcall fn_006E7150(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        test eax, eax
+        je skip1
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0xa8], edx
+        mov dword ptr [eax + 0xac], esi
+        pop esi
+    skip1:
+        mov ecx, dword ptr [ecx]
+        test ecx, ecx
+        je skip2
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_00711B50
+    skip2:
+        ret 8
+    }
+}
