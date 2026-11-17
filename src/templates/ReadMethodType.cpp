@@ -38541,3 +38541,38 @@ extern "C" __declspec(naked) void __fastcall fn_005F85D0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00692850] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+extern "C" void ext_00692210();
+extern "C" void ext_0046C500();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00692850(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je null_path
+        push esi
+        call ext_00692210
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        push esi
+        call ext_0046C500
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    null_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
