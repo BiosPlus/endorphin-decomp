@@ -4604,3 +4604,49 @@ L_found:
         ret 0x4
     }
 }
+
+// [0x0078C690] sub_0078C690 (96 bytes)
+extern "C" int mem_009251E4;
+extern "C" __declspec(naked) int __fastcall fn_0078C690(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        mov eax, dword ptr [ecx + 0x20]
+        test eax, eax
+        je short L_alt
+        mov edx, dword ptr [ebp + 0x8]
+        push esi
+        mov esi, dword ptr [ecx + 0x28]
+        cmp edx, esi
+        pop esi
+        jge short L_zero
+        mov ecx, dword ptr [ecx + 0x2c]
+        mov edx, dword ptr [ecx + 4*edx]
+        mov cl, byte ptr [ebp + 0xc]
+        test cl, cl
+        mov eax, dword ptr [edx + eax]
+        mov dword ptr [ebp + 0x8], eax
+        je short L_ret
+        mov eax, dword ptr [ebp + 0x8]
+        bswap eax
+        pop ebp
+        ret 0x8
+L_alt:
+        mov eax, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ecx + 0x4]
+        cmp eax, edx
+        jge short L_zero
+        mov ecx, dword ptr [ecx + 0x14]
+        mov edx, dword ptr [ecx + 4*eax]
+        push edx
+        call dword ptr [mem_009251E4]
+        add esp, 0x4
+        pop ebp
+        ret 0x8
+L_zero:
+        xor eax, eax
+L_ret:
+        pop ebp
+        ret 0x8
+    }
+}
