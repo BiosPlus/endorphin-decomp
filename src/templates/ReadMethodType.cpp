@@ -38576,3 +38576,34 @@ extern "C" __declspec(naked) void __fastcall fn_00692850(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005D2810] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_1 (74 bytes)
+extern "C" __declspec(naked) void __stdcall fn_005D2810(void* self) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        mov     eax, dword ptr [eax]
+        sub     esp, 28h
+        test    eax, eax
+        je      L_null
+        cmp     byte ptr [eax + 30h], 0
+        je      L_false
+        fld1
+        fstp    dword ptr [esp + 2ch]
+        fld     dword ptr [esp + 2ch]
+        add     esp, 28h
+        ret     4
+L_false:
+        fldz
+        fstp    dword ptr [esp + 2ch]
+        fld     dword ptr [esp + 2ch]
+        add     esp, 28h
+        ret     4
+L_null:
+        lea     ecx, [esp]
+        call    ext_0046C3C0
+        push    9dec1ch
+        lea     ecx, [esp + 4]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
