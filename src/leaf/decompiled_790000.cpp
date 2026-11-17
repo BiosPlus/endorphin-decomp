@@ -4939,3 +4939,39 @@ L_done:
         ret
     }
 }
+
+// [0x0079BE90] sub_0079BE90 (96 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_0079BEF0();
+
+extern "C" __declspec(naked) void __fastcall fn_0079BE90(void* self) {
+    __asm {
+        push -1
+        push 0x008b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 0xf8c
+        call ext_006A5C62
+        add esp, 4
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0
+        je short L_null
+        mov ecx, eax
+        call ext_0079BEF0
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    L_null:
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+    }
+}
