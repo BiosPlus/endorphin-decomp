@@ -16690,3 +16690,27 @@ extern "C" __declspec(naked) void __fastcall fn_006289C0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00627FE0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_1 (49 bytes)
+extern "C" void ext_006275A0();
+extern "C" void ext_0046C4E0();
+extern "C" __declspec(naked) void __fastcall fn_00627FE0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_null_00627FE0
+        call ext_006275A0
+        push eax
+        call ext_0046C4E0
+        fstp st(0)
+    L_null_00627FE0:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
