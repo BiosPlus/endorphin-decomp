@@ -3632,3 +3632,46 @@ L_00726AC9:
         ret 0x8
     }
 }
+
+// [0x0072C820] sub_0072C820 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0072C820(unsigned char* src, unsigned char* dst, int len, int count) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        xor edx, edx
+        test eax, eax
+        jbe L_ret
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        and edi, 0xffff
+        mov dword ptr [esp + 0x20], eax
+L_outer:
+        test edi, edi
+        jbe L_skip
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [edx + ebp]
+        sub ecx, ebp
+        mov esi, edi
+L_inner:
+        mov bl, byte ptr [ecx + eax]
+        mov byte ptr [eax], bl
+        inc eax
+        dec esi
+        jne L_inner
+L_skip:
+        mov eax, dword ptr [esp + 0x20]
+        add edx, edi
+        dec eax
+        mov dword ptr [esp + 0x20], eax
+        jne L_outer
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+L_ret:
+        ret
+    }
+}
