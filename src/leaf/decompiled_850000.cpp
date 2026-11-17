@@ -3519,3 +3519,51 @@ L_done:
         ret
     }
 }
+
+// [0x0085BE20] sub_0085BE20 (96 bytes)
+extern "C" unsigned int ext_0085BC20(void*);
+extern "C" void ext_00859DD0();
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_0085BE20(void* a1, unsigned int count, unsigned int* out) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push ebp
+        call ext_0085BC20
+        mov edi, dword ptr [esp + 0x20]
+        mov ebx, dword ptr [esp + 0x1c]
+        add esp, 4
+        xor esi, esi
+        test ebx, ebx
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [edi], 0
+        jbe fn0085BE20_end
+fn0085BE20_loop:
+        push ebp
+        call ext_00859DD0
+        add esp, 4
+        cmp eax, 0xff00
+        je fn0085BE20_end
+        mov ecx, dword ptr [edi]
+        shl ecx, 8
+        or ecx, eax
+        inc esi
+        cmp esi, ebx
+        mov dword ptr [edi], ecx
+        jb fn0085BE20_loop
+fn0085BE20_end:
+        push ebp
+        call ext_0085BC20
+        mov ecx, dword ptr [esp + 0x18]
+        add esp, 4
+        sub eax, ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
