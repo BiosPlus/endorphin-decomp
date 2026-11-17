@@ -14832,3 +14832,27 @@ extern "C" __declspec(naked) void __fastcall fn_006155D0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00522380] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_1 (48 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00522380(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je throw_path
+        fild dword ptr [eax + 0C4h]
+        add esp, 28h
+        ret 4
+    throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
