@@ -42102,3 +42102,35 @@ extern "C" __declspec(naked) void* __fastcall fn_00615680(void* self, int edx_un
         call ext_006A6DD2
     }
 }
+
+// [0x005D9C60] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_1 (77 bytes)
+extern "C" __declspec(naked) float __stdcall fn_005D9C60(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_null
+        call ext_005CF950
+        test al, al
+        je L_zero
+        fld1
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 4
+    L_zero:
+        fldz
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
