@@ -38840,3 +38840,34 @@ extern "C" __declspec(naked) void __fastcall fn_00614ED0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004EAD50] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_1 (74 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004EAD50(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je null_path
+        cmp byte ptr [eax + 6], 0
+        je zero_path
+        fld1
+        fstp dword ptr [esp + 2ch]
+        fld dword ptr [esp + 2ch]
+        add esp, 28h
+        ret 4
+zero_path:
+        fldz
+        fstp dword ptr [esp + 2ch]
+        fld dword ptr [esp + 2ch]
+        add esp, 28h
+        ret 4
+null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
