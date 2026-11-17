@@ -3011,3 +3011,36 @@ done:
         ret
     }
 }
+
+// [0x008596F0] sub_008596F0 (64 bytes)
+extern "C" int mem_009242CC; /* u32 0x0062D742 */
+extern "C" int mem_00924210; /* u32 0x006282F4 */
+extern "C" int mem_00924214; /* u32 0x00628300 */
+extern "C" __declspec(naked) void __cdecl fn_008596F0(void* mem, unsigned int size) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [esp + 8]
+        test ecx, ecx
+        je null_path
+        test eax, eax
+        je free_path
+        push 2
+        push eax
+        push ecx
+        call dword ptr [mem_009242CC]
+        ret
+free_path:
+        push ecx
+        call dword ptr [mem_00924210]
+zero_ret:
+        xor eax, eax
+        ret
+null_path:
+        test eax, eax
+        je zero_ret
+        push eax
+        push 0
+        call dword ptr [mem_00924214]
+        ret
+    }
+}
