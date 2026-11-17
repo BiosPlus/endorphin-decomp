@@ -6371,3 +6371,21 @@ extern "C" __declspec(naked) void* __cdecl fn_007B2480(const char* s) {
         ret
     }
 }
+
+// [0x007B8B60] sub_007B8B60 (64 bytes)
+extern "C" int mem_00AB16BC; /* u32 0x0000B004 */
+extern "C" int mem_00999859; /* u32 0x02000000 */
+extern "C" int mem_00999858; /* u32 0x00000001 */
+extern "C" short __cdecl fn_007B8B60(int x) {
+    if (mem_00AB16BC == 0) {
+        return (signed char)mem_00999859;
+    }
+    int* p = &mem_00AB16BC;
+    do {
+        if (x == *p) {
+            return (signed char)mem_00999858;
+        }
+        ++p;
+    } while (*p != 0);
+    return (signed char)mem_00999859;
+}
