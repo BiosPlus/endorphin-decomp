@@ -6426,3 +6426,39 @@ extern "C" __declspec(naked) void __cdecl fn_007B79F0(const char* s) {
         ret
     }
 }
+
+// [0x007B79B0] sub_007B79B0 (64 bytes)
+extern "C" void ext_007B7750();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007B79B0(unsigned int count, char* out) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        xor esi, esi
+        test ebx, ebx
+        push edi
+        jbe done
+        mov edi, dword ptr [esp + 0x14]
+    loop_top:
+        call ext_007B7750
+        mov byte ptr [esi + edi], al
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je inc_i
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je done
+    inc_i:
+        inc esi
+        cmp esi, ebx
+        jb loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
