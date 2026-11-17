@@ -6046,3 +6046,47 @@ extern "C" __declspec(naked) void __fastcall fn_006DCFD0(void* self) {
         ret
     }
 }
+
+// [0x006D5940] sub_006D5940 (112 bytes)
+// SEH-guarded (fs:[0] frame, handler 0x008BCB18). Calls ext_006B9D80 and ext_006BA6C0,
+// selects one of two globals as the return value, then calls ext_006B9D70 for cleanup.
+extern "C" int mem_008BCB18;
+extern "C" int mem_00AA8788;
+extern "C" int mem_00AA8E7C;
+extern "C" int mem_00AA8794;
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA6C0();
+extern "C" __declspec(naked) void __fastcall fn_006D5940(void* self) {
+    __asm {
+        push -1
+        push offset mem_008BCB18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        mov eax, dword ptr [esp + 0x5c]
+        push esi
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006B9D80
+        push offset mem_00AA8788
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x5c], 0
+        mov esi, offset mem_00AA8E7C
+        call ext_006BA6C0
+        test eax, eax
+        jne skip_alt
+        mov esi, offset mem_00AA8794
+    skip_alt:
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x58], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x50]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret
+    }
+}
