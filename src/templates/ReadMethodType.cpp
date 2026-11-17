@@ -85,6 +85,7 @@ extern "C" void ext_0058B2A0();
 extern "C" void ext_005B6BF0();
 extern "C" void ext_005C3970();
 extern "C" void ext_00630420();
+extern "C" void ext_00672080();
 
 // [0x0049AF40] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0049AF40(void* self, int edx_unused, void* a1) {
@@ -31532,5 +31533,35 @@ extern "C" __declspec(naked) void* __fastcall fn_005D2C00(void* self) {
         lea ecx, [esp + 8]
         push ecx
         call ext_006A6DD2
+    }
+}
+
+// [0x006175E0] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_0 (72 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006175E0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        mov     dword ptr [esp], 0
+        je      null_path
+        fld     dword ptr [eax + 0x10]
+        push    esi
+        mov     esi, dword ptr [esp + 0x34]
+        push    ecx
+        mov     ecx, esi
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     8
+    null_path:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
     }
 }
