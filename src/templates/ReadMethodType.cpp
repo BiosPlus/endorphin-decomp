@@ -25876,3 +25876,32 @@ L_null:
         call ext_006A6DD2
     }
 }
+
+// [0x005FCC10] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_4 (62 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_005FCC10(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je skip
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x38]
+        call eax
+        mov ecx, dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        call ext_0046C4E0
+    skip:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
