@@ -7600,3 +7600,50 @@ extern "C" __declspec(naked) bool __fastcall fn_006F7680(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006F74E0] sub_006F74E0 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F74E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push edi
+        test eax, eax
+        mov dword ptr [esi + 0x198], eax
+        jne not_zero
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        je clear_ptr
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0x8]
+        cmp eax, 0x6
+        jne clear_ptr
+        mov dword ptr [esi + 0x19c], edi
+        pop edi
+        pop esi
+        ret 0x8
+    not_zero:
+        cmp eax, 0x1
+        jne clear_ptr
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        je clear_ptr
+        mov edx, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [edx + 0x8]
+        cmp eax, 0x8
+        jne clear_ptr
+        cmp edi, esi
+        je clear_ptr
+        mov dword ptr [esi + 0x19c], edi
+        pop edi
+        pop esi
+        ret 0x8
+    clear_ptr:
+        mov dword ptr [esi + 0x19c], 0x0
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
