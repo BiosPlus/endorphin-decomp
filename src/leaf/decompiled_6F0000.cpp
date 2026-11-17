@@ -23,8 +23,10 @@ extern "C" __declspec(naked) void __fastcall fn_006F9DC0(void* self, int edx_unu
 }
 extern "C" void ext_006FBC50();
 // Isolated WIP translation unit for fn_006F7850
+extern "C" void ext_006B9D10();
+extern "C" void __fastcall ext_006F8AC0(void* self);
 
-// [0x006FA350] sub_006FA350 (32 bytes)
+extern "C" void __fastcall ext_006F8AC0(void* self);
 // Returns self if arg0 is 0, 2 or 0xDE1947F3; otherwise returns NULL (ret 8).
 extern "C" __declspec(naked) void* __fastcall fn_006FA350(void* self, int edx_unused, int a1, int a2) {
     __asm {
@@ -7088,6 +7090,32 @@ found:
         pop ebp
         mov al, 0x1
         pop ebx
+        ret
+    }
+}
+
+// [0x006F8A70] sub_006F8A70 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F8A70(void* self) {
+    __asm {
+        push -1
+        push 008BDF0Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        lea ecx, [esi + 4]
+        call ext_006B9D10
+        mov ecx, esi
+        mov dword ptr [esp + 10h], 0
+        call ext_006F8AC0
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
         ret
     }
 }
