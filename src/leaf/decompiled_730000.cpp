@@ -2350,3 +2350,37 @@ extern "C" __declspec(naked) void __stdcall fn_00738C30(void* a1, void* a2) {
         ret 8
     }
 }
+
+// [0x00738C70] sub_00738C70 (64 bytes)
+extern "C" void ext_0073A080();
+extern "C" void ext_0073A120();
+extern "C" void ext_0073A1D0();
+extern "C" void ext_0073A260();
+extern "C" void ext_0073A380();
+
+extern "C" __declspec(naked) bool __fastcall fn_00738C70(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push edi
+        call ext_0073A080
+        push edi
+        mov ecx, esi
+        call ext_0073A120
+        push edi
+        mov ecx, esi
+        call ext_0073A1D0
+        push edi
+        mov ecx, esi
+        call ext_0073A260
+        push edi
+        mov ecx, esi
+        call ext_0073A380
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
