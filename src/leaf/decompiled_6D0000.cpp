@@ -5235,3 +5235,42 @@ extern "C" __declspec(naked) void __fastcall fn_006DC370(void* self) {
         ret 0x4
     }
 }
+
+// [0x006DEB50] sub_006DEB50 (80 bytes)
+extern "C" void ext_006DE130();
+extern "C" void ext_006E5750();
+extern "C" __declspec(naked) void __fastcall fn_006DEB50(void* self, int edx_unused, void* arg) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi + 0x3c]
+        cmp eax, edi
+        je done
+        test eax, eax
+        je skip1
+        mov edx, dword ptr [eax + 0x1c]
+        dec edx
+        mov ecx, edx
+        mov dword ptr [eax + 0x1c], edx
+        test ecx, ecx
+        jg skip1
+        mov ecx, dword ptr [esi + 0x3c]
+        push 0x0
+        call ext_006DE130
+skip1:
+        test edi, edi
+        mov dword ptr [esi + 0x3c], edi
+        je skip2
+        inc dword ptr [edi + 0x1c]
+skip2:
+        push 0x8
+        mov ecx, esi
+        call ext_006E5750
+done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
