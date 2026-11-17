@@ -7310,3 +7310,57 @@ extern "C" __declspec(naked) int __cdecl fn_006F90F0(const char* s) {
         ret
     }
 }
+
+// [0x006FC250] sub_006FC250 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FC250(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x18]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [ecx + 0x14]
+        lea eax, [eax + edi - 0x1]
+        cmp eax, edi
+        jl notfound
+        mov ecx, dword ptr [ecx + 0x10]
+        mov ebx, dword ptr [esp + 0x10]
+        lea edx, [eax + 2*eax]
+        lea esi, [ecx + 4*edx]
+    top:
+        test ebx, ebx
+        je zero
+        mov ecx, dword ptr [ebx + 0x4]
+        mov edx, dword ptr [ecx]
+        jmp cmpkey
+    zero:
+        xor edx, edx
+        xor ecx, ecx
+    cmpkey:
+        cmp edx, dword ptr [esi]
+        jne next
+        cmp ecx, dword ptr [esi + 0x4]
+        je found
+    next:
+        dec eax
+        sub esi, 0xc
+        cmp eax, edi
+        jl notfound
+        jmp top
+    found:
+        sub eax, edi
+        pop edi
+        cmp eax, -1
+        pop esi
+        pop ebx
+        setne al
+        ret 0x4
+    notfound:
+        or eax, -1
+        pop edi
+        cmp eax, -1
+        pop esi
+        pop ebx
+        setne al
+        ret 0x4
+    }
+}
