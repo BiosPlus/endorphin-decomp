@@ -7844,3 +7844,47 @@ L_7B7ADD:
         ret
     }
 }
+
+// [0x007B77D0] sub_007B77D0 (96 bytes)
+extern "C" void ext_0079EBE0();
+extern "C" void ext_007BAE30();
+extern "C" int mem_00999788;
+extern "C" int mem_009252AC;
+extern "C" __declspec(naked) int __fastcall fn_007B77D0(void* self) {
+    __asm {
+        push ecx
+        call ext_0079EBE0
+        push eax
+        mov eax, dword ptr [mem_00999788]
+        push 0x1
+        lea ecx, [esp + 0x8]
+        push eax
+        push ecx
+        call dword ptr [mem_009252AC]
+        add esp, 0x10
+        cmp eax, 0x1
+        je L_7B780A
+        push 0xd
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        jne L_7B780A
+        xor ax, ax
+        pop ecx
+        ret
+    L_7B780A:
+        lea edx, [esp + 0x2]
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push edx
+        push eax
+        call ext_007BAE30
+        mov ax, word ptr [esp + 0xa]
+        add esp, 0x8
+        pop ecx
+        ret
+    }
+}
