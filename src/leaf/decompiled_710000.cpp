@@ -5009,3 +5009,46 @@ null_src:
         ret 0x4
     }
 }
+
+// [0x0071B6F0] sub_0071B6F0 (128 bytes)
+extern "C" void ext_0071B110();
+extern "C" int mem_009520D8; /* double 0.05 */
+extern "C" int mem_00996628; /* double 20 */
+extern "C" __declspec(naked) void __fastcall fn_0071B6F0(void* self, int edx_unused, double a1) {
+    __asm {
+        mov edx, dword ptr [ecx + 0xc]
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [edx + 0x628]
+        fnstsw ax
+        test ah, 0x40
+        jne done
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_009520D8]
+        fnstsw ax
+        test ah, 0x1
+        je notless
+        fld qword ptr [mem_009520D8]
+        push 0x0
+        fstp qword ptr [edx + 0x628]
+        call ext_0071B110
+        ret 0x8
+    notless:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00996628]
+        fnstsw ax
+        test ah, 0x41
+        jne inrange
+        fld qword ptr [mem_00996628]
+        push 0x0
+        fstp qword ptr [edx + 0x628]
+        call ext_0071B110
+        ret 0x8
+    inrange:
+        fld qword ptr [esp + 0x4]
+        push 0x0
+        fstp qword ptr [edx + 0x628]
+        call ext_0071B110
+    done:
+        ret 0x8
+    }
+}
