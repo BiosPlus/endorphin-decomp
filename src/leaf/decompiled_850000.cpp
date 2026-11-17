@@ -3243,3 +3243,38 @@ extern "C" __declspec(naked) int __cdecl fn_0085A3E0(void* self) {
         ret
     }
 }
+
+// [0x0085A5D0] sub_0085A5D0 (80 bytes)
+extern "C" void __cdecl ext_00859740(void* a, int b, int c);
+
+extern "C" __declspec(naked) void __cdecl fn_0085A5D0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0x64
+        push 0x0
+        push esi
+        call ext_00859740
+        add esp, 0xc
+        or eax, -1
+        mov byte ptr [esi], 0x0
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x1c], eax
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x2c], 0x1
+        mov dword ptr [esi + 0x3c], eax
+        mov dword ptr [esi + 0x40], eax
+        mov dword ptr [esi + 0x44], eax
+        mov dword ptr [esi + 0x48], eax
+        mov dword ptr [esi + 0x4c], eax
+        mov dword ptr [esi + 0x54], eax
+        mov dword ptr [esi + 0x50], eax
+        mov dword ptr [esi + 0x58], eax
+        pop esi
+        ret
+    }
+}
