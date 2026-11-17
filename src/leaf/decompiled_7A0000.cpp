@@ -4017,3 +4017,37 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_007AF200(void* self) {
         ret
     }
 }
+
+// [0x007AF080] sub_007AF080 (64 bytes)
+extern "C" void ext_007AF040();
+
+extern "C" __declspec(naked) void __cdecl fn_007AF080(void* dst, unsigned int count) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        lea eax, [edi + edi]
+        push eax
+        push esi
+        call ext_007AF040
+        add esp, 0x8
+        mov ecx, edi
+        dec edi
+        test ecx, ecx
+        jbe done_007AF080
+        lea ecx, [edi + 0x1]
+    swap_007AF080:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esi], edx
+        mov dword ptr [esi + 0x4], eax
+        add esi, 0x8
+        dec ecx
+        jne swap_007AF080
+    done_007AF080:
+        pop edi
+        pop esi
+        ret
+    }
+}
