@@ -6885,3 +6885,43 @@ extern "C" __declspec(naked) void __fastcall fn_007B78D0(void* self) {
         ret
     }
 }
+
+// [0x007B7890] sub_007B7890 (64 bytes)
+extern "C" void ext_0079EBE0();
+extern "C" void ext_007AA510();
+extern "C" void ext_007BAE20();
+extern "C" int mem_0099978C;
+extern "C" int mem_00925268;
+
+extern "C" __declspec(naked) void __fastcall fn_007B7890(void* self) {
+    __asm {
+        push ecx
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        lea ecx, [esp + 0x8]
+        push eax
+        push ecx
+        call ext_007BAE20
+        call ext_0079EBE0
+        mov edx, dword ptr [mem_0099978C]
+        push eax
+        push 0x1
+        lea eax, [esp + 0x10]
+        push edx
+        push eax
+        call dword ptr [mem_00925268]
+        add esp, 0x18
+        cmp eax, 0x1
+        je L_7B78CC
+        push 0x11
+        call ext_007AA510
+        add esp, 0x4
+L_7B78CC:
+        pop ecx
+        ret
+        nop
+        nop
+    }
+}
