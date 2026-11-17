@@ -5758,3 +5758,36 @@ extern "C" __declspec(naked) int __cdecl fn_0086D110(int* self) {
         ret
     }
 }
+
+// [0x0086D480] sub_0086D480 (80 bytes)
+extern "C" void ext_0086D620();
+extern "C" void ext_0086FF80();
+
+extern "C" __declspec(naked) void __fastcall fn_0086D480(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea ecx, [esi + 0x1048]
+        push edi
+        push ecx
+        mov dword ptr [esi + 0x1058], eax
+        call ext_0086FF80
+        lea edx, [esi + 0x1050]
+        push edi
+        push edx
+        call ext_0086FF80
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x20]
+        push eax
+        push ecx
+        push esi
+        call ext_0086D620
+        add esp, 0x1c
+        pop edi
+        pop esi
+        ret
+    }
+}
