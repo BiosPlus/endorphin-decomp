@@ -32278,3 +32278,33 @@ extern "C" __declspec(naked) float __fastcall fn_004C1C20(void* self, int edx_un
         call    ext_006A6DD2
     }
 }
+
+// [0x004CB630] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_1 (73 bytes)
+extern "C" void ext_004CA5E0();
+
+extern "C" __declspec(naked) float __fastcall fn_004CB630(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        mov     ecx, dword ptr [eax]
+        sub     esp, 0x28
+        test    ecx, ecx
+        je      short L_throw
+        call    ext_004CA5E0
+        mov     ecx, eax
+        call    dword ptr [mem_00924FF0]
+        push    eax
+        call    dword ptr [mem_009251F0]
+        fstp    dword ptr [esp + 0x30]
+        fld     dword ptr [esp + 0x30]
+        add     esp, 0x4
+        add     esp, 0x28
+        ret     0x4
+    L_throw:
+        lea     ecx, [esp]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x4]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
