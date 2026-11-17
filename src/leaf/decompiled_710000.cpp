@@ -3677,3 +3677,25 @@ extern "C" __declspec(naked) void __fastcall fn_00713020(void* self) {
         ret
     }
 }
+
+// [0x00710F10] sub_00710F10 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00710F10(void* self) {
+    __asm {
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x20], ecx
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x2c], ecx
+        mov dword ptr [eax + 0x4], 0xb5d2c0
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x28], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov word ptr [eax + 0x30], 0xffff
+        mov dword ptr [eax + 0x1c], ecx
+        mov dword ptr [eax + 0x24], 0x40590000
+        ret
+    }
+}
