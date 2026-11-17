@@ -19,5 +19,7 @@
     "0x0066FB3E",
     "0x0066FB48"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T16:33:54Z"
 }
