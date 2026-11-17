@@ -37,6 +37,7 @@ extern "C" void ext_004D39C0();
 extern "C" void ext_004EDE20();
 extern "C" void ext_006A7C10();
 extern "C" void ext_005B64D0();
+extern "C" void ext_005CF950();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -19189,6 +19190,30 @@ extern "C" __declspec(naked) bool __stdcall fn_00643960(void* self) {
         test ecx, ecx
         je null_path
         call ext_0048FAF0
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005D9CB0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" __declspec(naked) bool __stdcall fn_005D9CB0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_005CF950
         neg al
         sbb eax, eax
         neg eax
