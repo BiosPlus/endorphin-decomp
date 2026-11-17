@@ -45081,3 +45081,38 @@ extern "C" __declspec(naked) void* __stdcall fn_004D8070(void* a1, void* a2) {
         call ext_006A6DD2
     }
 }
+
+// [0x004D7D30] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_4 (81 bytes)
+extern "C" void ext_004D3C10();
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) bool __fastcall fn_004D7D30(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je throw_null
+        push esi
+        call ext_004D3C10
+        mov esi, dword ptr [esp + 0x34]
+        mov byte ptr [esp + 0x38], al
+        mov ecx, dword ptr [esp + 0x38]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    throw_null:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
