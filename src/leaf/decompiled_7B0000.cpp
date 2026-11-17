@@ -7612,3 +7612,41 @@ extern "C" __declspec(naked) void __fastcall fn_007B2090(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007B2D20] sub_007B2D20 (96 bytes)
+extern "C" void ext_007B2CD0();
+extern "C" void ext_007B7130();
+extern "C" unsigned char mem_009996FC;
+extern "C" __declspec(naked) void __cdecl fn_007B2D20(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je L_7B2D71
+        mov ecx, dword ptr [esi + 0x14]
+        lea eax, [esi + 0x14]
+        test ecx, ecx
+        je L_7B2D3C
+        push eax
+        call ext_007B2CD0
+        add esp, 0x4
+L_7B2D3C:
+        mov eax, dword ptr [esi + 0xc]
+        test eax, eax
+        je L_7B2D4C
+        push esi
+        call ext_007B7130
+        add esp, 0x4
+L_7B2D4C:
+        mov dword ptr [esi], 0x0
+        mov dword ptr [esi + 0x4], 0x0
+        mov dword ptr [esi + 0x8], 0x0
+        mov al, byte ptr [mem_009996FC]
+        mov byte ptr [esi + 0x18], al
+        mov cl, byte ptr [mem_009996FC]
+        mov byte ptr [esi + 0x19], cl
+L_7B2D71:
+        pop esi
+        ret
+    }
+}
