@@ -6652,3 +6652,18 @@ extern "C" __declspec(naked) int __cdecl fn_007BA470(int a1, unsigned char* obj,
         ret
     }
 }
+
+// [0x007B92D0] sub_007B92D0 (64 bytes)
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B3CF0();
+
+extern "C" void __cdecl fn_007B92D0(void* a1, unsigned short a2) {
+    ((void (__cdecl*)(void*, int, void**))ext_007B2D80)(a1, 0xb030, &a1);
+    void* r = a1;
+    if (r != 0) {
+        void* q = ((void* (__cdecl*)(void*))ext_007B3CF0)(r);
+        if (q != 0) {
+            *(unsigned short*)q = a2;
+        }
+    }
+}
