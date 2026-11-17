@@ -9,8 +9,10 @@ extern "C" void* __fastcall fn_0046C530(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA31098, (void*)0xA2E2F8, 0);
 }
+extern "C" void ext_005C3150();
+extern "C" void ext_0046C4E0();
 
-// [0x0046FBC0] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void ext_0046C4E0();
 extern "C" void* __fastcall fn_0046FBC0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA31D58, 0);
@@ -14774,6 +14776,27 @@ extern "C" __declspec(naked) void __fastcall fn_0063A620(void* self) {
         test ecx, ecx
         je short L_empty
         call ext_00630E60
+        push eax
+        call ext_0046C4E0
+    L_empty:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005C53A0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_2 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005C53A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_empty
+        call ext_005C3150
         push eax
         call ext_0046C4E0
     L_empty:
