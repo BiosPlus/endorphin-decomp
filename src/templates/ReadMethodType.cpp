@@ -12868,3 +12868,29 @@ extern "C" __declspec(naked) void __fastcall fn_004ED120(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0051B240] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_2 (47 bytes)
+extern "C" void ext_0051AEF0();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_0051B240(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_empty
+        call ext_0051AEF0
+        push eax
+        call ext_0046C4E0
+    L_empty:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
