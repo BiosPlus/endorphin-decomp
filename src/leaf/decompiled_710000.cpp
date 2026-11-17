@@ -4472,3 +4472,47 @@ extern "C" __declspec(naked) int __cdecl fn_00712250(const char* s) {
         ret
     }
 }
+
+// [0x0071B780] sub_0071B780 (96 bytes)
+// Maps zero args to 1 (u = a1 ? a1 : 1, v = a2 ? a2 : 1), then returns a3 / (u / v). Stdcall, ret 0x10.
+extern "C" __declspec(naked) double __stdcall fn_0071B780(int a1, int a2, double a3) {
+    __asm {
+        sub esp, 0x8
+        mov edx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp edx, 0x1
+        sbb eax, eax
+        push edi
+        neg eax
+        dec eax
+        cmp esi, 0x1
+        sbb ecx, ecx
+        mov edi, eax
+        neg ecx
+        not eax
+        dec ecx
+        and edi, edx
+        and eax, 0x1
+        mov edx, ecx
+        or edi, eax
+        xor eax, eax
+        not ecx
+        and edx, esi
+        and ecx, 0x1
+        mov dword ptr [esp + 0x8], edi
+        mov dword ptr [esp + 0xc], eax
+        fild qword ptr [esp + 0x8]
+        or edx, ecx
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esp + 0x8], edx
+        pop edi
+        fild qword ptr [esp + 0x4]
+        pop esi
+        _emit 0xde
+        _emit 0xf9
+        fdivr qword ptr [esp + 0x14]
+        add esp, 0x8
+        ret 0x10
+    }
+}
