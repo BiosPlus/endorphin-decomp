@@ -12393,3 +12393,35 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0058C010] ExprParser::ReadWriteMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, NM::Vector4 const &, {protected: void __thiscall AnimatableTransform::setQuat(class NM::Vector4 const &), 0}>::vfunc_41 (68 bytes)
+extern "C" void ext_0058B350();
+extern "C" __declspec(naked) void __fastcall fn_0058C010(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+0x18]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0058B350
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
