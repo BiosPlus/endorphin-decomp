@@ -2,8 +2,10 @@
 // Isolated WIP translation unit for fn_006FA950
 extern "C" void ext_006FBC70();
 extern "C" void ext_006FC950();
+extern "C" void ext_006D2200();
+extern "C" void ext_006FC830();
 
-// [0x006F9DC0] sub_006F9DC0 (32 bytes)
+extern "C" void ext_006FC830();
 // Store four stack args into the object: dwords at +0, +4, +8 and a byte at +0xC (ret 0x10).
 extern "C" __declspec(naked) void __fastcall fn_006F9DC0(void* self, int edx_unused, int a1, int a2, int a3, unsigned char a4) {
     __asm {
@@ -6685,5 +6687,44 @@ extern "C" __declspec(naked) void __fastcall fn_006FA460(void* self, int edx_unu
         pop edi
         pop esi
         ret 4
+    }
+}
+
+// [0x006FDEF0] sub_006FDEF0 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FDEF0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push edi
+        mov eax, dword ptr [ebx + 0x10]
+        lea edi, [ebx + 0x10]
+        test eax, eax
+        je done
+        push esi
+    loop_top:
+        mov ecx, dword ptr [ebx + 0x20]
+        mov esi, dword ptr [ecx + eax*4 - 4]
+        mov ecx, esi
+        call ext_006FC830
+        mov edx, dword ptr [edi]
+        mov ecx, edi
+        dec edx
+        push edx
+        call ext_006D2200
+        test esi, esi
+        je skip_release
+        mov eax, dword ptr [esi]
+        push 1
+        mov ecx, esi
+        call dword ptr [eax]
+    skip_release:
+        mov eax, dword ptr [edi]
+        test eax, eax
+        jne loop_top
+        pop esi
+    done:
+        pop edi
+        pop ebx
+        ret
     }
 }
