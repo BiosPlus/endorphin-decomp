@@ -32308,3 +32308,35 @@ extern "C" __declspec(naked) float __fastcall fn_004CB630(void* self, int edx_un
         call    ext_006A6DD2
     }
 }
+
+// [0x004CEBF0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_3 (73 bytes)
+extern "C" void ext_004CE580();
+extern "C" int mem_009473B8; /* double 1e-06 */
+extern "C" __declspec(naked) void __stdcall fn_004CEBF0(void* arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_throw
+        call ext_004CE580
+        fcomp qword ptr [mem_009473B8]
+        fnstsw ax
+        test ah, 1
+        jne L_false
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+    L_false:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
