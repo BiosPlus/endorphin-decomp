@@ -3065,3 +3065,37 @@ extern "C" void __fastcall fn_0085C220(void* self) {
     p[9] = 0;
     p[10] = 0;
 }
+
+// [0x00859AF0] sub_00859AF0 (64 bytes)
+extern "C" void __cdecl ext_00859AF0();
+extern "C" void __cdecl ext_0086CD00();
+
+extern "C" __declspec(naked) void __cdecl fn_00859AF0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi]
+        shr eax, 18h
+        test al, 20h
+        je L_skip_child
+        mov eax, dword ptr [esi + 20h]
+        test eax, eax
+        je L_skip_child
+        push eax
+        call ext_00859AF0
+        add esp, 4
+L_skip_child:
+        mov eax, dword ptr [esi + 1Ch]
+        test eax, eax
+        je L_skip_next
+        push eax
+        call ext_00859AF0
+        add esp, 4
+L_skip_next:
+        push esi
+        call ext_0086CD00
+        add esp, 4
+        pop esi
+        ret
+    }
+}
