@@ -2025,3 +2025,36 @@ extern "C" __declspec(naked) void __fastcall fn_006E7150(void* self) {
         ret 8
     }
 }
+
+// [0x006EA300] sub_006EA300 (64 bytes)
+extern "C" void ext_006E9500();
+extern "C" void ext_006E9580();
+extern "C" void ext_006EA340();
+extern "C" __declspec(naked) void __fastcall fn_006EA300(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006EA340
+        mov edi, dword ptr [esp + 0xc]
+        cmp eax, edi
+        je done
+        mov ecx, dword ptr [esi + 0xf0]
+        test ecx, ecx
+        je skip1
+        push esi
+        call ext_006E9580
+skip1:
+        test edi, edi
+        mov dword ptr [esi + 0xf0], edi
+        je done
+        push esi
+        mov ecx, edi
+        call ext_006E9500
+done:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
