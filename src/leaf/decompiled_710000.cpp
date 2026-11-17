@@ -3953,3 +3953,36 @@ L_done_00711B50:
         ret 8
     }
 }
+
+// [0x00711B00] sub_00711B00 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00711B00(void* self, int edx_unused, double a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0071E680
+        fld qword ptr [eax + 0x18]
+        fcomp qword ptr [esp + 0x8]
+        fnstsw ax
+        test ah, 0x40
+        jne done
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x18], ecx
+        push 0
+        push 0
+        push 0
+        mov dword ptr [eax + 0x1c], edx
+        mov eax, dword ptr [esi]
+        push esi
+        push 0x1f
+        push 0
+        mov ecx, esi
+        call dword ptr [eax + 0x3c]
+    done:
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    }
+}
