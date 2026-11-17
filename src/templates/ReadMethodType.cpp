@@ -21525,3 +21525,29 @@ extern "C" __declspec(naked) void __stdcall fn_0062E4B0(void* a1, void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004C5CB0] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_5 (58 bytes)
+extern "C" void ext_004C4DB0();
+
+extern "C" __declspec(naked) void __fastcall fn_004C5CB0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip
+        call ext_004C4DB0
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
