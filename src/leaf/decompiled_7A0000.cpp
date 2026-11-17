@@ -4408,3 +4408,37 @@ extern "C" __declspec(naked) void __fastcall fn_007AD660(void* self) {
         ret
     }
 }
+
+// [0x007ADD00] sub_007ADD00 (80 bytes)
+extern "C" void ext_0078D0C0();
+
+extern "C" __declspec(naked) void __fastcall fn_007ADD00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8c1c08
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        __asm _emit 0xc7
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0xe0
+        __asm _emit 0x89
+        __asm _emit 0x99
+        __asm _emit 0x00
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        lea eax, [esp + 0x4]
+        push edx
+        push eax
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_0078D0C0
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
