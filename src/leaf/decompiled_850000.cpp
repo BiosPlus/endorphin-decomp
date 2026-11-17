@@ -3205,3 +3205,41 @@ early:
         ret
     }
 }
+
+// [0x0085A3E0] sub_0085A3E0 (80 bytes)
+extern "C" void ext_008596F0();
+
+extern "C" __declspec(naked) int __cdecl fn_0085A3E0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        or edi, -0x1
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi + 0x8]
+        lea ecx, [8*eax + 0x8]
+        push ecx
+        push edx
+        call ext_008596F0
+        mov ecx, eax
+        add esp, 0x8
+        test ecx, ecx
+        je fail
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], ecx
+        mov dword ptr [ecx + 8*eax], 0x0
+        mov ecx, dword ptr [esi + 0x8]
+        mov dword ptr [ecx + 8*eax + 0x4], edi
+        mov ecx, dword ptr [esi + 0x4]
+        inc ecx
+        pop edi
+        mov dword ptr [esi + 0x4], ecx
+        pop esi
+        ret
+    fail:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
