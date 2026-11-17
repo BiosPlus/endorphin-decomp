@@ -4569,3 +4569,29 @@ done_006D3B50:
         ret 0x4
     }
 }
+
+// [0x006D0450] sub_006D0450 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D0450(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], eax
+        lea edx, [esp + 0x8]
+        mov eax, dword ptr [esi + 0x68]
+        lea ecx, [esi + 0x68]
+        push edx
+        push eax
+        call ext_006D2170
+        mov edx, dword ptr [esp + 0xc]
+        lea ecx, [esi + 0x80]
+        mov dword ptr [esp + 0x8], edx
+        lea eax, [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        push eax
+        push edx
+        call ext_006D2170
+        pop esi
+        ret 0x8
+    }
+}
