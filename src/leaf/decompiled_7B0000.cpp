@@ -6529,3 +6529,29 @@ extern "C" __declspec(naked) int __cdecl fn_007B04C0(int* a1, int a2, int a3) {
         ret
     }
 }
+
+// [0x007B10D0] sub_007B10D0 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007B10D0(void* a1, int* a2, int* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        cmp dword ptr [eax + 4], 1
+        jne short L_slow
+        mov ecx, dword ptr [esp + 0ch]
+        mov eax, dword ptr [eax + 8]
+        mov dword ptr [ecx], eax
+        mov eax, 1
+        ret
+L_slow:
+        mov edx, dword ptr [esp + 0ch]
+        push edx
+        push eax
+        mov eax, dword ptr [esp + 0ch]
+        push eax
+        call ext_007B06F0
+        add esp, 0ch
+        neg eax
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
