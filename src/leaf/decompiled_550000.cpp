@@ -20176,3 +20176,45 @@ extern "C" __declspec(naked) void __cdecl fn_00553F90(int n) {
         call ext_006A6DD2
     }
 }
+
+// [0x00554140] sub_00554140 (95 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925130; /* "l{b" */
+
+extern "C" __declspec(naked) void __cdecl fn_00554140() {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        sub esp, 0xc
+        test ecx, ecx
+        ja check_overflow
+        xor ecx, ecx
+alloc_path:
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        add edx, edx
+        add edx, edx
+        push edx
+        call ext_006A5C62
+        add esp, 0x4
+        add esp, 0xc
+        ret
+check_overflow:
+        or eax, -1
+        xor edx, edx
+        div ecx
+        cmp eax, 0x3c
+        jae alloc_path
+        lea eax, [esp + 0x10]
+        push eax
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00925130]
+        push 0x9cdf94
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov dword ptr [esp + 0x8], 0x928ec0
+        call ext_006A6DD2
+    }
+}
