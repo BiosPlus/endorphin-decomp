@@ -6385,3 +6385,36 @@ extern "C" __declspec(naked) void __fastcall fn_006FA320(void* self) {
         ret
     }
 }
+
+// [0x006FEFB0] sub_006FEFB0 (64 bytes)
+extern "C" int mem_00925278;
+extern "C" int mem_009252A0;
+
+extern "C" __declspec(naked) void __cdecl fn_006FEFB0(void) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je fn_006FEFB0_ret_false
+        push 0x3a
+        push esi
+        call dword ptr [mem_00925278]
+        add esp, 0x8
+        test eax, eax
+        jne fn_006FEFB0_ret_false
+        push 0x2
+        push 0xaab928
+        push esi
+        call dword ptr [mem_009252A0]
+        add esp, 0xc
+        test eax, eax
+        je fn_006FEFB0_ret_false
+        mov al, 0x1
+        pop esi
+        ret
+    fn_006FEFB0_ret_false:
+        xor al, al
+        pop esi
+        ret
+    }
+}
