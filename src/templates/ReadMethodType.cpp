@@ -20447,3 +20447,26 @@ extern "C" __declspec(naked) void __fastcall fn_004AAAF0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004A35D0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_5 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004A35D0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_skip
+        call ext_00496F40
+        mov byte ptr [esp + 0x2c], al
+        mov ecx, dword ptr [esp + 0x2c]
+        push ecx
+        call ext_0046C4E0
+    L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 0x4]
+        push edx
+        call ext_006A6DD2
+    }
+}
