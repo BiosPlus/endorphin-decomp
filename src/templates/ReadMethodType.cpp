@@ -12817,3 +12817,28 @@ extern "C" __declspec(naked) void __fastcall fn_0050A2F0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x006364F0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_2 (47 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_006364F0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_skip
+        add eax, 0x90
+        push eax
+        call ext_0046C4E0
+    L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
