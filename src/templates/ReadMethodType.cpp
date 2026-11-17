@@ -68,6 +68,7 @@ extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA34520, 0);
 }
 extern "C" void ext_006720C0();
+extern "C" int mem_00987B78; /* double 1e-06 */
 
 // [0x00497CA0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_00497CA0(void* self, int edx_unused, void* a1) {
@@ -26234,6 +26235,36 @@ extern "C" __declspec(naked) void __fastcall fn_00674900(void* self, int edx_unu
         call ext_0046C3C0
         push 0x9dec1c
         lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00670700] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_3 (70 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00670700(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je null_path
+        fld dword ptr [eax]
+        fcomp qword ptr [mem_00987B78]
+        fnstsw ax
+        test ah, 1
+        jne ret_zero
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+ret_zero:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
         push ecx
         call ext_006A6DD2
     }
