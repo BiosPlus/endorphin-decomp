@@ -22,5 +22,7 @@
     "0x005FDA32",
     "0x005FDA3C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T16:22:52Z"
 }
