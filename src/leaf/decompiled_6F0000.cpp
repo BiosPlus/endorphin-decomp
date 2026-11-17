@@ -6870,3 +6870,45 @@ extern "C" __declspec(naked) void __fastcall fn_006FAA40(void* self) {
         ret 0x8
     }
 }
+
+// [0x006FC200] sub_006FC200 (80 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_006FC200(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x14]
+        push esi
+        dec edx
+        push edi
+        js neg_index
+        mov ecx, dword ptr [ecx + 0x10]
+        mov edi, dword ptr [esp + 0xc]
+        lea eax, [edx + 2*edx]
+        lea esi, [ecx + 4*eax]
+loop_top:
+        test edi, edi
+        je null_arg
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, dword ptr [eax]
+        jmp have_key
+null_arg:
+        xor ecx, ecx
+        xor eax, eax
+have_key:
+        cmp ecx, dword ptr [esi]
+        jne next_entry
+        cmp eax, dword ptr [esi + 0x4]
+        je found
+next_entry:
+        dec edx
+        sub esi, 0xc
+        test edx, edx
+        jge loop_top
+neg_index:
+        or edx, -1
+found:
+        cmp edx, -1
+        pop edi
+        pop esi
+        setne al
+        ret 0x4
+    }
+}
