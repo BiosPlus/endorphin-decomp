@@ -22,6 +22,7 @@ extern "C" void ext_0077FB40();
 extern "C" void ext_007A64E0();
 extern "C" int mem_009252D0;
 extern "C" int mem_009939D8;
+extern "C" void ext_006D2A30();
 
 // [0x007646E0] sub_007646E0 (96 bytes)
 extern "C" __declspec(naked) char __fastcall fn_007646E0(void* self, int edx_unused, void* arg) {
@@ -990,5 +991,35 @@ extern "C" __declspec(naked) int __fastcall fn_007648F0(void* self, int edx_unus
         pop esi
         pop ebx
         ret 0x8
+    }
+}
+
+// [0x00766240] sub_00766240 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00766240(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push    ebx
+        mov     ebx, dword ptr [esp + 0xc]
+        push    ebp
+        mov     ebp, dword ptr [esp + 0xc]
+        push    esi
+        push    edi
+        xor     esi, esi
+loop_top:
+        mov     ecx, ebp
+        call    ext_006D2A30
+        mov     ecx, ebx
+        lea     edi, [eax + esi]
+        call    ext_006D2A30
+        fld     qword ptr [eax + esi]
+        fadd    qword ptr [edi]
+        add     esi, 8
+        cmp     esi, 0x80
+        fstp    qword ptr [edi]
+        jl      loop_top
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     8
     }
 }
