@@ -3453,3 +3453,55 @@ extern "C" __declspec(naked) void __fastcall fn_0075B3A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00757EC0] sub_00757EC0 (112 bytes)
+extern "C" void ext_00715550();
+extern "C" void ext_007275F0();
+extern "C" void ext_007283B0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+extern "C" void ext_00757F30();
+
+extern "C" __declspec(naked) void __fastcall fn_00757EC0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, ebp
+        call ext_00715550
+        mov ebx, eax
+        xor edi, edi
+        test ebx, ebx
+        jle done
+    loop_top:
+        mov ecx, dword ptr [esi + 0ACh]
+        push 0AAD244h
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_00728410
+        push edi
+        push ebp
+        mov ecx, esi
+        call ext_00757F30
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_007283B0
+        inc edi
+        cmp edi, ebx
+        jl loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
