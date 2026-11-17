@@ -6667,3 +6667,38 @@ extern "C" void __cdecl fn_007B92D0(void* a1, unsigned short a2) {
         }
     }
 }
+
+// [0x007B3CB0] sub_007B3CB0 (64 bytes)
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B3380();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007B3CB0(void) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B3CD4
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne L_7B3CD4
+        xor eax, eax
+        pop esi
+        ret
+L_7B3CD4:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax], ecx
+        mov edx, dword ptr [esi]
+        push edx
+        call ext_007B3380
+        add esp, 0x4
+        pop esi
+        ret
+    }
+}
