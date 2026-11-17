@@ -10456,3 +10456,34 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00618460] ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, float, &public: void __thiscall NMData::HingeLimit::setLowerDamping(float)>::vfunc_41 (63 bytes)
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) void __fastcall fn_00618460(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        fstp dword ptr [esi + 0x18]
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
