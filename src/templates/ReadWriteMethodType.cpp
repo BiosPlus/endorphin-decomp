@@ -75,6 +75,7 @@ extern "C" void ext_004B0EB0();
 extern "C" void ext_004D3B50();
 extern "C" void ext_00402040();
 extern "C" void ext_00522190();
+extern "C" void ext_00610A60();
 
 // [0x0046E190] ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}>::vfunc_40 (122 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0046E190(void* self, int edx_unused, void* a1) {
@@ -13087,6 +13088,37 @@ extern "C" __declspec(naked) void __fastcall fn_0061C8C0(void* self, int edx_unu
         mov ecx, esi
         push eax
         call ext_00610AB0
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0061B910] ExprParser::ReadWriteMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, bool, {private: void __thiscall NMData::HingeConstraint::setIsEnabled(bool), 0}>::vfunc_41 (68 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0061B910(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+0xc]
+        call eax
+        mov ecx, esi
+        push eax
+        call ext_00610A60
         pop esi
         add esp, 0x28
         ret 8
