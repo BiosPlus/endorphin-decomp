@@ -44,8 +44,10 @@ extern "C" void __stdcall ext_00711CF0(int a1, int a2);
 extern "C" void __stdcall fn_00711A70(int a1) {
     ext_00711CF0(0x20, a1);
 }
+extern "C" void ext_006E7460();
+extern "C" void ext_00711A80();
 
-// [0x00712150] sub_00712150 (16 bytes)
+extern "C" void ext_00711A80();
 extern "C" int ext_00711DB0();
 extern "C" bool __fastcall fn_00712150(void* self) {
     return ext_00711DB0() == 0x11;
@@ -5050,5 +5052,61 @@ extern "C" __declspec(naked) void __fastcall fn_0071B6F0(void* self, int edx_unu
         call ext_0071B110
     done:
         ret 0x8
+    }
+}
+
+// [0x00711BE0] sub_00711BE0 (128 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00711BE0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00711A80
+        test al, al
+        mov ecx, esi
+        je L_00711C2D
+    L_00711BEF:
+        call ext_0071E680
+        mov ecx, dword ptr [eax + 0x2c]
+        test ecx, ecx
+        je L_00711C55
+        mov ecx, esi
+        call ext_0071E680
+        mov eax, dword ptr [eax + 0x2c]
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, dword ptr [eax + 0x4]
+        jge L_00711C55
+        mov ecx, esi
+        call ext_0071E680
+        mov eax, dword ptr [eax + 0x2c]
+        cmp edi, dword ptr [eax + 0x4]
+        jge L_00711C55
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 4*edi]
+        call ext_006E7460
+        pop edi
+        pop esi
+        ret 0x4
+    L_00711C2D:
+        call ext_0071E680
+        mov ecx, dword ptr [eax]
+        shr ecx, 0x9
+        test cl, 0x1
+        mov ecx, esi
+        je L_00711BEF
+        call ext_0071E680
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [eax + 0x2c]
+        mov ecx, dword ptr [esi + 0x8]
+        push edx
+        call eax
+        pop edi
+        pop esi
+        ret 0x4
+    L_00711C55:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
     }
 }
