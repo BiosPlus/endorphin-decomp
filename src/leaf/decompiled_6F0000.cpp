@@ -60,6 +60,7 @@ extern "C" __declspec(naked) void __stdcall fn_006F69B0(int a1) {
         ret 0x4
     }
 }
+extern "C" void ext_006EA7C0();
 
 // [0x006F6900] sub_006F6900 (16 bytes)
 extern "C" void ext_00782C00();
@@ -7559,5 +7560,43 @@ extern "C" __declspec(naked) void __stdcall fn_006FAD90(void* a1, int a2, int a3
         xor al, al
         pop esi
         ret 0x1c
+    }
+}
+
+// [0x006F7680] sub_006F7680 (96 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_006F7680(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        jl fail
+        cmp eax, 0xbf
+        jge fail
+        lea edx, [eax + 2*eax]
+        shl edx, 0x3
+        sub edx, eax
+        lea eax, [ecx + 8*edx]
+        mov ecx, dword ptr [eax + 0x1a0]
+        test ecx, ecx
+        lea esi, [eax + 0x1a0]
+        jne have_slot
+        lea ecx, [eax + 0x1a4]
+        call ext_006B9950
+        test al, al
+        jne fail
+    have_slot:
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        je skip_call
+        push esi
+        call ext_006EA7C0
+    skip_call:
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    fail:
+        xor al, al
+        pop esi
+        ret 0x8
     }
 }
