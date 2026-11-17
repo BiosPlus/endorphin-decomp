@@ -44365,3 +44365,34 @@ extern "C" __declspec(naked) bool __fastcall fn_006169D0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0068EFF0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_1 (80 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0068EFF0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je empty_path
+        mov edx, dword ptr [ecx + 4]
+        mov eax, dword ptr [edx + 0xc]
+        push eax
+        call ext_0068EE60
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x30]
+        add esp, 4
+        add esp, 0x28
+        ret 4
+empty_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 4]
+        push eax
+        call ext_006A6DD2
+    }
+}
