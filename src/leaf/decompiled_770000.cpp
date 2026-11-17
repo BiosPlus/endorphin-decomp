@@ -2475,3 +2475,41 @@ fn77_done:
         ret 0x4
     }
 }
+
+// [0x0077EA70] sub_0077EA70 (64 bytes)
+extern "C" void ext_00715550();
+extern "C" void ext_006BC440();
+extern "C" void ext_0077EAB0();
+
+extern "C" __declspec(naked) void __fastcall fn_0077EA70(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        mov ebx, ecx
+        push esi
+        push edi
+        mov ecx, ebp
+        call ext_00715550
+        mov edi, eax
+        xor esi, esi
+        test edi, edi
+        jle done
+    loop_top:
+        push esi
+        mov ecx, ebp
+        call ext_006BC440
+        push eax
+        mov ecx, ebx
+        call ext_0077EAB0
+        inc esi
+        cmp esi, edi
+        jl loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
