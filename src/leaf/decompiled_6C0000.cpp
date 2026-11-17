@@ -4278,3 +4278,40 @@ extern "C" __declspec(naked) void __cdecl fn_006C4A30(void* out, void* mat, void
         ret
     }
 }
+
+// [0x006C81A0] sub_006C81A0 (96 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006C81A0() {
+    __asm {
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        fld qword ptr [edx]
+        fld st(0)
+        fmul qword ptr [ecx]
+        fstp qword ptr [eax]
+        fld st(0)
+        fmul qword ptr [ecx + 0x8]
+        fstp qword ptr [eax + 0x8]
+        fmul qword ptr [ecx + 0x10]
+        fstp qword ptr [eax + 0x10]
+        fld qword ptr [edx + 0x8]
+        fld st(0)
+        fmul qword ptr [ecx + 0x20]
+        fstp qword ptr [eax + 0x20]
+        fld st(0)
+        fmul qword ptr [ecx + 0x28]
+        fstp qword ptr [eax + 0x28]
+        fmul qword ptr [ecx + 0x30]
+        fstp qword ptr [eax + 0x30]
+        fld qword ptr [edx + 0x10]
+        fld st(0)
+        fmul qword ptr [ecx + 0x40]
+        fstp qword ptr [eax + 0x40]
+        fld st(0)
+        fmul qword ptr [ecx + 0x48]
+        fstp qword ptr [eax + 0x48]
+        fmul qword ptr [ecx + 0x50]
+        fstp qword ptr [eax + 0x50]
+        ret
+    }
+}
