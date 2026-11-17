@@ -28,6 +28,7 @@ extern "C" void ext_00627680();
 extern "C" void ext_004F4DE0();
 extern "C" void ext_004F4DD0();
 extern "C" void ext_0046C070();
+extern "C" void ext_0046F910();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -18038,6 +18039,30 @@ extern "C" __declspec(naked) void __stdcall fn_0046CE20(void* self) {
         add esp, 0x28
         ret 0x4
     L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00471DB0] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" __declspec(naked) bool __stdcall fn_00471DB0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_0046F910
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+null_path:
         lea ecx, [esp]
         call ext_0046C3C0
         push 0x9dec1c
