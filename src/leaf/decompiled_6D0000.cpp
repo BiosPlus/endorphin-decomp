@@ -152,8 +152,10 @@ extern "C" __declspec(naked) int __cdecl fn_006D98A0(int key) {
         ret
     }
 }
+extern "C" void ext_006D8A40();
+extern "C" void ext_0077FAC0();
 
-// [0x006D2940] sub_006D2940 (96 bytes)
+extern "C" void ext_0077FAC0();
 extern "C" int mem_00993810;
 
 extern "C" __declspec(naked) bool __fastcall fn_006D2940(void* self, int edx_unused, void* a1) {
@@ -6197,5 +6199,42 @@ extern "C" __declspec(naked) void __fastcall fn_006DD1D0(void* self, int edx_unu
         pop esi
         pop ebx
         ret 0xc
+    }
+}
+
+// [0x006D89D0] sub_006D89D0 (112 bytes)
+// SEH-protected wrapper (ret 0x10): builds a local temp from arg1, calls the
+// member accessor on *self, then destroys the temp and returns the accessor result.
+extern "C" __declspec(naked) void* __fastcall fn_006D89D0(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push -0x1
+        push 0x008b9338
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        sub esp, 0x10
+        lea eax, [esp + 0x28]
+        mov ecx, esp
+        mov dword ptr [esp + 0x14], esp
+        push eax
+        mov dword ptr [esp + 0x24], 0x0
+        call ext_0077FAC0
+        mov ecx, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call ext_006D8A40
+        lea ecx, [esp + 0x18]
+        mov esi, eax
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x10
     }
 }
