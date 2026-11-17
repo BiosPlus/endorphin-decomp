@@ -20,5 +20,7 @@
     "0x00614310",
     "0x0061431A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T15:51:22Z"
 }
