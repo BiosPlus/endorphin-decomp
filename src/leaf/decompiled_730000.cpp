@@ -2460,3 +2460,48 @@ L_end:
         ret 4
     }
 }
+
+// [0x00731EA0] sub_00731EA0 (112 bytes)
+extern "C" void ext_006BC380();
+extern "C" void ext_006C3030();
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726860();
+extern "C" void ext_007268D0();
+extern "C" void ext_00731DE0();
+extern "C" int mem_00AAD45C;
+
+extern "C" __declspec(naked) void __fastcall fn_00731EA0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push offset mem_00AAD45C
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je L_end
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00726860
+        test al, al
+        je L_skip
+        mov ecx, dword ptr [esp + 8]
+        call ext_006BC380
+        mov ecx, eax
+        call ext_006C3030
+        push eax
+        mov ecx, esi
+        call ext_00731DE0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007268D0
+    L_skip:
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00726840
+    L_end:
+        pop esi
+        ret 4
+    }
+}
