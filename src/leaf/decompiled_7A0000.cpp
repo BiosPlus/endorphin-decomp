@@ -4561,3 +4561,58 @@ extern "C" __declspec(naked) void __cdecl fn_007A1940(void** pp) {
         ret
     }
 }
+
+// [0x007AF580] sub_007AF580 (96 bytes)
+extern "C" int mem_00B61C14;
+
+extern "C" __declspec(naked) void __cdecl fn_007AF580(void* self, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [mem_00B61C14]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        test eax, eax
+        je L_scan
+        cmp dword ptr [eax], ebx
+        jne L_scan
+        test edi, edi
+        je L_ret
+        cmp edi, dword ptr [eax + 0x8]
+        je L_ret
+    L_scan:
+        mov eax, dword ptr [esp + 0x10]
+        xor ecx, ecx
+        mov esi, dword ptr [eax + 0x218]
+        test esi, esi
+        jle L_zero
+        mov edx, dword ptr [eax + 0x214]
+    L_loop:
+        mov eax, dword ptr [edx]
+        cmp dword ptr [eax], ebx
+        jne L_next
+        test edi, edi
+        je L_store
+        cmp dword ptr [eax + 0x8], edi
+        je L_store
+    L_next:
+        inc ecx
+        add edx, 0x4
+        cmp ecx, esi
+        jl L_loop
+    L_zero:
+        xor eax, eax
+    L_ret:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_store:
+        pop edi
+        pop esi
+        mov dword ptr [mem_00B61C14], eax
+        pop ebx
+        ret
+    }
+}
