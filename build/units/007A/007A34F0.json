@@ -15,5 +15,7 @@
     "0x007A3501",
     "0x007A3512"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T10:25:10Z"
 }

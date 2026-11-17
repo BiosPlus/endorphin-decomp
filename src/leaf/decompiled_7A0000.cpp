@@ -4254,3 +4254,40 @@ not_found:
         ret
     }
 }
+
+// [0x007A34F0] sub_007A34F0 (64 bytes)
+extern "C" void ext_007A95F0();
+extern "C" void ext_007AA510();
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_007A34F0(void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_7a3510
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        jne L_7a3510
+        xor eax, eax
+        pop esi
+        ret
+    L_7a3510:
+        push esi
+        call ext_007A95F0
+        mov esi, dword ptr [esi + 0xc]
+        add esp, 0x4
+        test esi, esi
+        jne L_7a3524
+        xor eax, eax
+        pop esi
+        ret
+    L_7a3524:
+        mov eax, dword ptr [esi]
+        pop esi
+        ret
+    }
+}
