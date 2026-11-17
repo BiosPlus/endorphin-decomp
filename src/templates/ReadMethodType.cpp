@@ -13206,3 +13206,29 @@ extern "C" __declspec(naked) void __fastcall fn_005BBBE0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005BAE70] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_2 (47 bytes)
+extern "C" void ext_005B6C50();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_005BAE70(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_empty
+        call ext_005B6C50
+        push eax
+        call ext_0046C4E0
+    L_empty:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
