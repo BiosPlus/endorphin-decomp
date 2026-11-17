@@ -12165,3 +12165,36 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0051D310] ExprParser::ReadWriteMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const &, &public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const &)>::vfunc_41 (68 bytes)
+extern "C" void ext_0051D2D0();
+
+extern "C" __declspec(naked) void __stdcall fn_0051D310(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+0x18]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0051D2D0
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
