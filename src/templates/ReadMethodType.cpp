@@ -155,8 +155,10 @@ extern "C" void ext_005E28B0();
 extern "C" void ext_00611170();
 extern "C" void ext_006118E0();
 extern "C" void ext_0068BC30();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828; /* double 0.5 */
 
-// [0x004C72B0] ExprParser::ReadMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" int mem_00993828; /* double 0.5 */
 extern "C" void* __stdcall fn_004C72B0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329A4, 0);
@@ -54467,6 +54469,42 @@ extern "C" __declspec(naked) void __stdcall fn_005B2F00(void* a1) {
         test eax, eax
         je L_null
         fld dword ptr [eax + 0x18]
+        fstp dword ptr [esp + 0x2c]
+        fldz
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne L_neg
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_neg:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005D25E0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_2 (94 bytes)
+extern "C" __declspec(naked) void __stdcall fn_005D25E0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_null
+        fld dword ptr [eax + 0x2c]
         fstp dword ptr [esp + 0x2c]
         fldz
         fld dword ptr [esp + 0x2c]
