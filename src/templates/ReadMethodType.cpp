@@ -54454,3 +54454,42 @@ extern "C" __declspec(naked) void __stdcall fn_005B2180(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x005B2F00] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_2 (94 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828; /* double 0.5 */
+
+extern "C" __declspec(naked) void __stdcall fn_005B2F00(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_null
+        fld dword ptr [eax + 0x18]
+        fstp dword ptr [esp + 0x2c]
+        fldz
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne L_neg
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_neg:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
