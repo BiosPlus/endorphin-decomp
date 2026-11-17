@@ -3099,3 +3099,37 @@ L_skip_next:
         ret
     }
 }
+
+// [0x0085C350] sub_0085C350 (64 bytes)
+extern "C" void ext_00852700();
+extern "C" void ext_00859360();
+
+extern "C" __declspec(naked) void __fastcall fn_0085C350(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 10h]
+        mov ecx, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        push eax
+        push ecx
+        push eax
+        push ecx
+        push esi
+        push edi
+        call ext_00852700
+        add esp, 10h
+        push edx
+        push eax
+        call ext_00859360
+        add esp, 10h
+        sub edi, eax
+        sbb esi, edx
+        mov eax, edi
+        mov edx, esi
+        pop edi
+        pop esi
+        ret
+    }
+}
