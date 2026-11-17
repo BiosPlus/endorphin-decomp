@@ -24463,3 +24463,28 @@ extern "C" __declspec(naked) void __stdcall fn_006364B0(void* a1, void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0058D1D0] ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_4 (60 bytes)
+extern "C" void ext_0058B2A0();
+extern "C" __declspec(naked) void __fastcall fn_0058D1D0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      L_skip
+        call    ext_0058B2A0
+        mov     ecx, dword ptr [esp + 0x30]
+        push    eax
+        push    ecx
+        call    ext_0046C4E0
+L_skip:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     edx, [esp + 0x8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
