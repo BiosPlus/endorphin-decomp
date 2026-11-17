@@ -18585,3 +18585,29 @@ extern "C" __declspec(naked) int __fastcall fn_004C1400(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x004D6650] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" void ext_004D3A00();
+
+extern "C" __declspec(naked) bool __stdcall fn_004D6650(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_004D3A00
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
