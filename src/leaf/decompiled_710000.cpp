@@ -4743,3 +4743,40 @@ extern "C" __declspec(naked) void __fastcall fn_00715450(void* self) {
         ret
     }
 }
+
+// [0x00714580] sub_00714580 (112 bytes)
+extern "C" void __fastcall fn_00714580(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(unsigned int*)(p + 0x78) = 0;
+    *(unsigned int*)(p + 0x50) = 0;
+    *(unsigned int*)(p + 0x28) = 0;
+    *(unsigned int*)(p + 0x00) = 0;
+    *(unsigned int*)(p + 0x70) = 0;
+    *(unsigned int*)(p + 0x68) = 0;
+    *(unsigned int*)(p + 0x60) = 0;
+    *(unsigned int*)(p + 0x58) = 0;
+    *(unsigned int*)(p + 0x48) = 0;
+    *(unsigned int*)(p + 0x40) = 0;
+    *(unsigned int*)(p + 0x38) = 0;
+    *(unsigned int*)(p + 0x30) = 0;
+    *(unsigned int*)(p + 0x20) = 0;
+    *(unsigned int*)(p + 0x18) = 0;
+    *(unsigned int*)(p + 0x10) = 0;
+    *(unsigned int*)(p + 0x08) = 0;
+    *(unsigned int*)(p + 0x7c) = 0x3ff00000u;
+    *(unsigned int*)(p + 0x54) = 0x3ff00000u;
+    *(unsigned int*)(p + 0x2c) = 0x3ff00000u;
+    *(unsigned int*)(p + 0x04) = 0x3ff00000u;
+    *(unsigned int*)(p + 0x74) = 0;
+    *(unsigned int*)(p + 0x6c) = 0;
+    *(unsigned int*)(p + 0x64) = 0;
+    *(unsigned int*)(p + 0x5c) = 0;
+    *(unsigned int*)(p + 0x4c) = 0;
+    *(unsigned int*)(p + 0x44) = 0;
+    *(unsigned int*)(p + 0x3c) = 0;
+    *(unsigned int*)(p + 0x34) = 0;
+    *(unsigned int*)(p + 0x24) = 0;
+    *(unsigned int*)(p + 0x1c) = 0;
+    *(unsigned int*)(p + 0x14) = 0;
+    *(unsigned int*)(p + 0x0c) = 0;
+}
