@@ -19,5 +19,7 @@
     "0x0077E5FD",
     "0x0077E605"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T14:56:27Z"
 }
