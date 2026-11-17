@@ -43048,3 +43048,36 @@ extern "C" __declspec(naked) float __stdcall fn_0066F9A0(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x005B3B70] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_4 (78 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B3B70(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0x0
+        je L_null
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x20]
+        push esi
+        call eax
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        push esi
+        call ext_004276B0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    L_null:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
