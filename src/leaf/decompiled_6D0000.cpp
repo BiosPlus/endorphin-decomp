@@ -5533,3 +5533,47 @@ extern "C" __declspec(naked) void __fastcall fn_006D7BE0(void* self) {
         ret
     }
 }
+
+// [0x006DFFF0] sub_006DFFF0 (96 bytes)
+// Euclidean norm of the four doubles at +0, +8, +0x10, +0x18 (returned in st0).
+extern "C" __declspec(naked) double __cdecl fn_006DFFF0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x28
+        mov eax, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [eax + 0x18]
+        mov edx, dword ptr [eax + 0x1c]
+        mov dword ptr [ebp - 0x8], ecx
+        mov ecx, dword ptr [eax + 0x10]
+        mov dword ptr [ebp - 0x4], edx
+        mov edx, dword ptr [eax + 0x14]
+        mov dword ptr [ebp - 0x10], ecx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [ebp - 0xc], edx
+        mov edx, dword ptr [eax + 0xc]
+        mov dword ptr [ebp - 0x18], ecx
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ebp - 0x14], edx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ebp - 0x20], ecx
+        mov dword ptr [ebp - 0x1c], edx
+        fld qword ptr [ebp - 0x20]
+        fmul st(0), st
+        fld qword ptr [ebp - 0x18]
+        fmul st(0), st
+        faddp st(1), st
+        fld qword ptr [ebp - 0x10]
+        fmul st(0), st
+        faddp st(1), st
+        fld qword ptr [ebp - 0x8]
+        fmul st(0), st
+        faddp st(1), st
+        fsqrt
+        fstp qword ptr [ebp - 0x28]
+        fld qword ptr [ebp - 0x28]
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
