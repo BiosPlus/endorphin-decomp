@@ -3927,3 +3927,33 @@ extern "C" __declspec(naked) void __fastcall fn_00780090(void* self) {
         ret 0x8
     }
 }
+
+// [0x0078D510] sub_0078D510 (64 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0078D510(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        push esi
+        lea eax, [eax + 2*eax]
+        mov ecx, dword ptr [ecx + 8*eax + 10h]
+        xor eax, eax
+        mov edx, dword ptr [ecx + 4*edx]
+        mov ecx, dword ptr [edx]
+        test ecx, ecx
+        jle short L_end
+        mov edx, dword ptr [edx + 10h]
+        mov esi, dword ptr [esp + 10h]
+    L_loop:
+        cmp dword ptr [edx], esi
+        je short L_done
+        inc eax
+        add edx, 10h
+        cmp eax, ecx
+        jl short L_loop
+    L_end:
+        or eax, -1
+    L_done:
+        pop esi
+        ret 0Ch
+    }
+}
