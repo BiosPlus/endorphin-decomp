@@ -15282,3 +15282,25 @@ L_skip:
         call ext_006A6DD2
     }
 }
+
+// [0x005B2230] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_5 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B2230(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je short L_null
+        fld dword ptr [eax + 10h]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
