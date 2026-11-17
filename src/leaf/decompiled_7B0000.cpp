@@ -8066,3 +8066,49 @@ extern "C" __declspec(naked) void __cdecl fn_007B3120(void* pp) {
         ret
     }
 }
+
+// [0x007B8C10] sub_007B8C10 (96 bytes)
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B8B60();
+extern "C" void ext_007B8C70();
+extern "C" void ext_007B8E30();
+extern "C" int mem_00999858;
+extern "C" __declspec(naked) void __cdecl fn_007B8C10(void* a1) {
+    __asm {
+        mov     ecx, dword ptr [esp + 0x4]
+        lea     eax, [esp + 0x4]
+        push    eax
+        push    0xb000
+        mov     edx, dword ptr [ecx]
+        push    edx
+        call    ext_007B2D80
+        mov     eax, dword ptr [esp + 0x10]
+        add     esp, 0xc
+        test    eax, eax
+        je      L_7b8c67
+        push    esi
+        mov     esi, dword ptr [eax + 0x14]
+        test    esi, esi
+        je      L_7b8c61
+    L_7b8c39:
+        mov     eax, dword ptr [esi]
+        push    eax
+        call    ext_007B8B60
+        movsx   cx, byte ptr [mem_00999858]
+        add     esp, 0x4
+        cmp     ax, cx
+        jne     L_7b8c5a
+        push    esi
+        call    ext_007B8C70
+        add     esp, 0x4
+    L_7b8c5a:
+        mov     esi, dword ptr [esi + 0x10]
+        test    esi, esi
+        jne     L_7b8c39
+    L_7b8c61:
+        call    ext_007B8E30
+        pop     esi
+    L_7b8c67:
+        ret
+    }
+}
