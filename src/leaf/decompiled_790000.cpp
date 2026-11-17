@@ -4739,3 +4739,41 @@ L_end:
         ret
     }
 }
+
+// [0x0079DDC0] sub_0079DDC0 (64 bytes)
+extern "C" void ext_00714980();
+extern "C" void ext_007149B0();
+extern "C" void ext_007149D0();
+
+extern "C" __declspec(naked) bool __fastcall fn_0079DDC0(void* self, int edx_unused, int mode) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov al, 1
+        _emit 0x83
+        _emit 0xEA
+        _emit 0x00
+        je short L_case0
+        dec edx
+        je short L_case1
+        dec edx
+        jne short L_ret
+        mov ecx, dword ptr [ecx]
+        call ext_007149D0
+        test al, al
+        sete al
+        ret 4
+L_case1:
+        mov ecx, dword ptr [ecx]
+        call ext_007149B0
+        test al, al
+        sete al
+        ret 4
+L_case0:
+        mov ecx, dword ptr [ecx]
+        call ext_00714980
+        test al, al
+        sete al
+L_ret:
+        ret 4
+    }
+}
