@@ -62149,3 +62149,45 @@ extern "C" __declspec(naked) bool __stdcall fn_0068F0D0(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x004B1990] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_2 (110 bytes)
+// Body reads its pointer from the first stack slot (no ecx use), so it is __stdcall with ret 4.
+// Naked: the null-pointer path throws, and the float rounding uses x87 ops in a fixed order.
+extern "C" __declspec(naked) __int64 __stdcall fn_004B1990(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_throw
+        lea ecx, [eax + 0x4]
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fldz
+        add esp, 0x4
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne L_neg
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 0x4
+L_neg:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 0x4
+L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
