@@ -3548,3 +3548,17 @@ extern "C" __declspec(naked) void __fastcall fn_006CA020(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006C9BF0] sub_006C9BF0 (64 bytes)
+extern "C" void __fastcall fn_006C9BF0(void* self, int edx_unused, void* src) {
+    int* d = (int*)self;
+    int* s = (int*)src;
+    d[0] = s[0];
+    d[2] = s[2];
+    d[3] = s[3];
+    d[4] = s[4];
+    d[5] = s[5];
+    d[6] = s[6];
+    d[7] = s[7];
+    d[8] = s[8];
+}
