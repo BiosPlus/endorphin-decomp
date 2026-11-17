@@ -27776,3 +27776,35 @@ extern "C" __declspec(naked) void __fastcall fn_00471380(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x0046F150] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_0 (71 bytes)
+extern "C" void ext_0046C090();
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) void __fastcall fn_0046F150(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      THROW_PATH
+        push    esi
+        call    ext_0046C090
+        mov     esi, dword ptr [esp + 0x34]
+        push    eax
+        mov     ecx, esi
+        call    ext_006720C0
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     0x8
+    THROW_PATH:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
