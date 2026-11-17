@@ -4460,3 +4460,31 @@ extern "C" __declspec(naked) void __fastcall fn_006D23B0(void* self, int edx_unu
         ret 0x20
     }
 }
+
+// [0x006D97C0] sub_006D97C0 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_006D97C0(int key) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, 0x6
+        xor ecx, ecx
+        mov edx, 0xb5d92d
+    loop_top:
+        cmp dword ptr [edx - 0xd], esi
+        jne short skip_entry
+        cmp byte ptr [edx], 0x0
+        jne short found
+    skip_entry:
+        inc ecx
+        add edx, 0x20
+        cmp ecx, 0xc
+        jl short loop_top
+        pop esi
+        ret
+    found:
+        shl ecx, 0x5
+        pop esi
+        mov eax, dword ptr [ecx + 0xb5d91c]
+        ret
+    }
+}
