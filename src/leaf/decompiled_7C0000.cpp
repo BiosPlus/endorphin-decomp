@@ -19561,3 +19561,28 @@ extern "C" __declspec(naked) void __cdecl fn_007C3C40(void* self) {
         ret
     }
 }
+
+// [0x007C3BD0] sub_007C3BD0 (112 bytes)
+extern "C" void ext_006D80A0();
+extern "C" void ext_007C3C40();
+extern "C" __declspec(naked) void __cdecl fn_007C3BD0(void* self) {
+    __asm {
+        call ext_006D80A0
+        mov eax, dword ptr [esp + 4]
+        mov dword ptr [esp + 4], eax
+        lea ecx, [eax + 0x8c]
+        lea edx, [eax + 0x980]
+        mov dword ptr [eax + 0xb10], ecx
+        lea ecx, [eax + 0xa74]
+        mov dword ptr [eax + 0xb28], ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0xb18], 0xab286c
+        mov dword ptr [eax + 0xb1c], edx
+        mov dword ptr [eax + 0xb24], 0xab2880
+        mov dword ptr [eax + 0xb30], 0xab2894
+        mov word ptr [eax + 0x16b0], cx
+        mov dword ptr [eax + 0x16b4], ecx
+        mov dword ptr [eax + 0x16ac], 8
+        jmp ext_007C3C40
+    }
+}
