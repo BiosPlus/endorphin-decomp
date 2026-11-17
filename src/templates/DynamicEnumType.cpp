@@ -1696,3 +1696,35 @@ extern "C" __declspec(naked) void __stdcall fn_005C89D0(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x00515C50] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_41 (63 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00515C50(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        call eax
+        mov dword ptr [esi + 0x8], eax
+        pop esi
+        add esp, 0x28
+        ret 0x8
+null_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
