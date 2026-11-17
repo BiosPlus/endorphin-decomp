@@ -24488,3 +24488,32 @@ L_skip:
         call    ext_006A6DD2
     }
 }
+
+// [0x0051B270] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_4 (60 bytes)
+extern "C" void ext_0051AEF0();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __cdecl fn_0051B270(void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je skip_call
+        call ext_0051AEF0
+        mov ecx, dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        call ext_0046C4E0
+skip_call:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
