@@ -3802,3 +3802,32 @@ extern "C" __declspec(naked) int __cdecl fn_0071FC30(int orig) {
         ret
     }
 }
+
+// [0x0071C3E0] sub_0071C3E0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071C3E0(void* self, int edx_unused, unsigned int flags) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [ecx + 0ch]
+        mov dl, al
+        and dl, 1
+        mov byte ptr [esi + 1278h], dl
+        mov esi, dword ptr [ecx + 0ch]
+        mov edx, eax
+        _emit 0xd1
+        _emit 0xea
+        and dl, 1
+        mov byte ptr [esi + 1388h], dl
+        mov esi, dword ptr [ecx + 0ch]
+        mov edx, eax
+        shr edx, 2
+        and dl, 1
+        mov byte ptr [esi + 1410h], dl
+        mov ecx, dword ptr [ecx + 0ch]
+        shr eax, 3
+        and al, 1
+        pop esi
+        mov byte ptr [ecx + 1300h], al
+        ret 4
+    }
+}
