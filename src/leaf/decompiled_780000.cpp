@@ -5049,3 +5049,27 @@ L_end:
         ret 0xc
     }
 }
+
+// [0x00785E00] sub_00785E00 (112 bytes)
+extern "C" void ext_007857F0();
+extern "C" __declspec(naked) void __fastcall fn_00785E00(void* self) {
+    __asm {
+        mov edx, 0x8d4fdf3b
+        mov eax, 0x3f826e97
+        mov dword ptr [ecx + 0x78], edx
+        mov dword ptr [ecx + 0x80], edx
+        mov dword ptr [ecx + 0xa0], edx
+        mov dword ptr [ecx + 0x88], edx
+        mov dword ptr [ecx + 0x90], edx
+        mov dword ptr [ecx + 0x98], 0xd2f1a9fc
+        mov dword ptr [ecx + 0x7c], eax
+        mov dword ptr [ecx + 0x84], eax
+        mov byte ptr [ecx + 0xa8], 0
+        mov byte ptr [ecx + 0xa9], 0
+        mov dword ptr [ecx + 0xa4], eax
+        mov dword ptr [ecx + 0x8c], eax
+        mov dword ptr [ecx + 0x94], eax
+        mov dword ptr [ecx + 0x9c], 0x3f70624d
+        jmp ext_007857F0
+    }
+}
