@@ -3957,3 +3957,37 @@ extern "C" __declspec(naked) int __fastcall fn_0078D510(void* self, int edx_unus
         ret 0Ch
     }
 }
+
+// [0x00782EC0] sub_00782EC0 (64 bytes)
+extern "C" void ext_00782F70();
+
+extern "C" __declspec(naked) unsigned int __fastcall fn_00782EC0(void* self, int edx_unused, int idx, unsigned int* out) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl fail
+        cmp edi, dword ptr [esi + 0x4]
+        jge fail
+        call ext_00782F70
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je skip
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx + 8*edi]
+        mov dword ptr [eax], edx
+    skip:
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 8*edi + 0x4]
+        pop edi
+        pop esi
+        ret 8
+    fail:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 8
+    }
+}
