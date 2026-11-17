@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_850000.cpp
+extern "C" { void* __cdecl ext_0085B2C0(void* a, void* b); int __cdecl ext_0086CDB0(void* p); void __cdecl ext_00859A90(void* p); }
 
 // [0x008598C0] sub_008598C0 (32 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
@@ -3132,4 +3133,16 @@ extern "C" __declspec(naked) void __fastcall fn_0085C350(void* self) {
         pop esi
         ret
     }
+}
+
+// [0x00859CF0] sub_00859CF0 (64 bytes)
+extern "C" void* __cdecl fn_00859CF0(void* a1, void* a2) {
+    void* r = ext_0085B2C0(a1, a2);
+    if (r != 0) {
+        if (ext_0086CDB0(r) != 0) {
+            ext_00859A90(r);
+            return 0;
+        }
+    }
+    return r;
 }
