@@ -7204,3 +7204,52 @@ extern "C" __declspec(naked) void __fastcall fn_006FDFC0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006FCF30] sub_006FCF30 (80 bytes)
+extern "C" void ext_006D2250();
+extern "C" void ext_006D89D0();
+extern "C" void ext_006FCFA0();
+extern "C" void ext_0077FAC0();
+
+// __thiscall with one stack arg (ret 0x4); returns self in eax.
+// Naked: the body writes a pointer to its own stack temporary into the
+// caller's argument slot ([esp+0x24] after the 0x10 temp reservation), which
+// C++ cannot express.
+extern "C" __declspec(naked) void* __fastcall fn_006FCF30(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_006D2250
+        mov ebx, dword ptr [esp + 0x14]
+        xor esi, esi
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [edi + 0x8], eax
+        mov ebp, dword ptr [ebx]
+        test ebp, ebp
+        jle done
+    loop_top:
+        push esi
+        mov ecx, ebx
+        call ext_006FCFA0
+        sub esp, 0x10
+        mov ecx, esp
+        mov dword ptr [esp + 0x24], esp
+        push eax
+        call ext_0077FAC0
+        mov ecx, edi
+        call ext_006D89D0
+        inc esi
+        cmp esi, ebp
+        jl loop_top
+    done:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
