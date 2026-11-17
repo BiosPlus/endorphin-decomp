@@ -31191,3 +31191,34 @@ null_path:
         call    ext_006A6DD2
     }
 }
+
+// [0x004EAA40] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_4 (72 bytes)
+extern "C" void ext_0046C460();
+extern "C" __declspec(naked) void* __fastcall fn_004EAA40(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0x0
+        je L_null_004EAA40
+        movzx ecx, byte ptr [eax + 0x5]
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+L_null_004EAA40:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
