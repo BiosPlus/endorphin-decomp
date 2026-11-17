@@ -84,8 +84,10 @@ extern "C" __declspec(naked) int __fastcall fn_007266F0(void* self, int edx_unus
 }
 
 extern "C" void ext_006B9D20();
+extern "C" void ext_006A5C62();
+extern "C" void ext_00782D00();
 
-// [0x0072CB00] sub_0072CB00 (32 bytes)
+extern "C" void ext_00782D00();
 extern "C" __declspec(naked) void* __fastcall fn_0072CB00(void* self, int edx_unused, void* arg) {
     __asm {
         push ecx
@@ -3966,5 +3968,41 @@ L_skip:
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x0072C0B0] sub_0072C0B0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0072C0B0(void* self, int edx_unused, int arg) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b8fbb
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        push 0x14
+        mov dword ptr [esi + 0x4], eax
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x14], eax
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0x0
+        je short L_null
+        push 0x14
+        mov ecx, eax
+        call ext_00782D00
+        jmp short L_store
+L_null:
+        xor eax, eax
+L_store:
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [esi], eax
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
     }
 }
