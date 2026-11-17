@@ -17301,3 +17301,26 @@ skip_call:
         call ext_006A6DD2
     }
 }
+
+// [0x004F6190] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_5 (50 bytes)
+extern "C" void ext_004F4DB0();
+extern "C" __declspec(naked) void __cdecl fn_004F6190() {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip_call
+        call ext_004F4DB0
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    skip_call:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
