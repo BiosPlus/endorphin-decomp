@@ -5209,3 +5209,29 @@ extern "C" __declspec(naked) void __fastcall fn_006DE460(void* self) {
         ret
     }
 }
+
+// [0x006DC370] sub_006DC370 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006DC370(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        mov esi, ecx
+        jl short L_fail
+        cmp eax, dword ptr [esi + 0xb8]
+        jge short L_fail
+        mov dword ptr [esi + 0xe8], eax
+        mov al, 1
+        pop esi
+        ret 0x4
+    L_fail:
+        mov ecx, dword ptr [esi + 0xec]
+        push 0xaa87e4
+        push 0
+        call ext_006E7410
+        mov dword ptr [esi + 0xe8], 0
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
