@@ -4985,3 +4985,56 @@ extern "C" __declspec(naked) void __fastcall fn_006C3490(void* self) {
         __asm _emit 0x90
     }
 }
+
+// [0x006C9DF0] sub_006C9DF0 (112 bytes)
+extern "C" void ext_00872828();
+extern "C" float mem_00957758;
+extern "C" float mem_0099381C;
+extern "C" float mem_00993818;
+
+extern "C" __declspec(naked) void __fastcall fn_006C9DF0(void* self) {
+    __asm {
+        fld     dword ptr [esp + 0x8]
+        push    esi
+        mov     esi, dword ptr [esp + 0x8]
+        push    edi
+        cmp     esi, 0x2
+        mov     edi, ecx
+        jge     L_hi
+        fstp    dword ptr [edi + 4*esi + 0x14]
+        pop     edi
+        pop     esi
+        ret     0x8
+    L_hi:
+        je      L_23
+        cmp     esi, 0x3
+        jne     L_28
+    L_23:
+        fcom    dword ptr [mem_00957758]
+        fnstsw  ax
+        test    ah, 0x41
+        jne     L_28
+        fstp    st(0)
+        fld     dword ptr [mem_00957758]
+        jmp     L_mul
+    L_28:
+        cmp     esi, 0x2
+        je      L_32
+        cmp     esi, 0x3
+        jne     L_mul
+    L_32:
+        fcom    dword ptr [mem_0099381C]
+        fnstsw  ax
+        test    ah, 0x1
+        je      L_mul
+        fstp    st(0)
+        fld     dword ptr [mem_0099381C]
+    L_mul:
+        fmul    dword ptr [mem_00993818]
+        call    ext_00872828
+        mov     word ptr [edi + 2*esi + 0x18], ax
+        pop     edi
+        pop     esi
+        ret     0x8
+    }
+}
