@@ -7762,3 +7762,51 @@ extern "C" __declspec(naked) void __cdecl fn_00809540(void* p) {
         ret
     }
 }
+
+// [0x0080FB60] sub_0080FB60 (80 bytes)
+extern "C" void ext_008596F0();
+
+extern "C" __declspec(naked) int __cdecl fn_0080FB60() {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        xor ebx, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test eax, eax
+        jne L_nonzero
+        mov eax, dword ptr [edi + 0x8]
+        test eax, eax
+        jne L_double
+        mov esi, 0x1
+        jmp L_call
+    L_double:
+        lea esi, [eax + eax]
+        jmp L_call
+    L_nonzero:
+        mov esi, dword ptr [edi + 0x8]
+        add esi, eax
+    L_call:
+        mov eax, dword ptr [edi]
+        push esi
+        push eax
+        call ext_008596F0
+        add esp, 0x8
+        test eax, eax
+        je L_fail
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 0x8], esi
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    L_fail:
+        pop edi
+        mov eax, ebx
+        pop esi
+        pop ebx
+        ret
+    }
+}
