@@ -6756,3 +6756,43 @@ extern "C" __declspec(naked) void __fastcall fn_006F9ED0(void* self) {
         ret
     }
 }
+
+// [0x006FA9F0] sub_006FA9F0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FA9F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        test byte ptr [esi + 0x34], 0x1
+        je short L_fail
+        mov ecx, dword ptr [esi + 0x38]
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x74]
+        test al, al
+        je short L_fail
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi]
+        push 0
+        push eax
+        push edi
+        push -1
+        push esi
+        push 0
+        push 0
+        mov ecx, esi
+        call dword ptr [edx + 0x40]
+        test al, al
+        je short L_fail
+        pop edi
+        mov al, 1
+        pop esi
+        ret 0x8
+    L_fail:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x8
+    }
+}
