@@ -29,6 +29,7 @@ extern "C" void ext_004F4DE0();
 extern "C" void ext_004F4DD0();
 extern "C" void ext_0046C070();
 extern "C" void ext_0046F910();
+extern "C" void ext_0049AA50();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -18138,6 +18139,30 @@ extern "C" __declspec(naked) bool __stdcall fn_0049CAD0(void* self) {
         test ecx, ecx
         je null_path
         call ext_0049AA20
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004A2B50] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" __declspec(naked) bool __stdcall fn_004A2B50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_0049AA50
         neg al
         sbb eax, eax
         neg eax
