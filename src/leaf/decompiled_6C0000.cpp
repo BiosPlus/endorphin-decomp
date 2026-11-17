@@ -3562,3 +3562,37 @@ extern "C" void __fastcall fn_006C9BF0(void* self, int edx_unused, void* src) {
     d[7] = s[7];
     d[8] = s[8];
 }
+
+// [0x006CE020] sub_006CE020 (64 bytes)
+extern "C" void ext_006CD350();
+
+extern "C" __declspec(naked) float __fastcall fn_006CE020(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, dword ptr [esi + 0x48]
+        jne L_call
+        cmp ebx, dword ptr [esi + 0x4c]
+        je L_ret
+L_call:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, esi
+        push eax
+        push ebx
+        push edi
+        call ext_006CD350
+        fstp dword ptr [esi + 0x50]
+        mov dword ptr [esi + 0x48], edi
+        mov dword ptr [esi + 0x4c], ebx
+L_ret:
+        fld dword ptr [esi + 0x50]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
