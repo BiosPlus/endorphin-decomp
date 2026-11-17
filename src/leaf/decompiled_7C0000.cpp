@@ -19642,3 +19642,53 @@ extern "C" __declspec(naked) void __fastcall fn_007C1F90(void* self) {
         ret
     }
 }
+
+// [0x007C53C0] sub_007C53C0 (128 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C53C0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp+8]
+        push esi
+        push edi
+        xor edi, edi
+        xor edx, edx
+        lea eax, [ebx+8Ch]
+        mov ecx, 7
+L1:     xor esi, esi
+        mov si, word ptr [eax]
+        add eax, 4
+        add edx, esi
+        dec ecx
+        jne L1
+        lea eax, [ebx+0A8h]
+        mov ecx, 79h
+        mov esi, 80h
+        push ebp
+L2:     xor ebp, ebp
+        mov bp, word ptr [eax]
+        add eax, 4
+        add edi, ebp
+        dec ecx
+        jne L2
+        cmp esi, 100h
+        pop ebp
+        jge L3
+        mov eax, 100h
+        lea ecx, [ebx+esi*4+8Ch]
+        sub eax, esi
+L4:     xor esi, esi
+        mov si, word ptr [ecx]
+        add ecx, 4
+        add edx, esi
+        dec eax
+        jne L4
+L3:     shr edi, 2
+        cmp edx, edi
+        pop edi
+        setbe al
+        mov byte ptr [ebx+1Ch], al
+        pop esi
+        pop ebx
+        ret
+    }
+}
