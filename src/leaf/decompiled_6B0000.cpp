@@ -9634,3 +9634,29 @@ L_006BB852:
         ret 4
     }
 }
+
+// [0x006B9F00] sub_006B9F00 (64 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" int mem_00925218;
+
+extern "C" __declspec(naked) void __fastcall fn_006B9F00(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 8]
+        push 0xaa86a4
+        push ecx
+        call dword ptr [mem_00925218]
+        add esp, 0xc
+        lea edx, [esp + 4]
+        mov ecx, esi
+        push edx
+        call ext_006B9EC0
+        pop esi
+        add esp, 0x14
+        ret 4
+    }
+}
