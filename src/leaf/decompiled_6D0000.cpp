@@ -4895,3 +4895,35 @@ extern "C" __declspec(naked) void __fastcall fn_006D8940(void* self) {
         ret
     }
 }
+
+// [0x006DC480] sub_006DC480 (64 bytes)
+extern "C" void ext_006DC550();
+extern "C" void __fastcall ext_006E7410(void* self, int edx, int a, const char* b);
+extern "C" __declspec(naked) void __fastcall fn_006DC480(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0xe8]
+        test eax, eax
+        jl short L_fail
+        mov edi, eax
+        call ext_006DC550
+        cmp edi, eax
+        jge short L_fail
+        mov eax, dword ptr [esi + 0xc8]
+        mov eax, dword ptr [eax + 4*edi]
+        pop edi
+        pop esi
+        ret
+L_fail:
+        mov ecx, dword ptr [esi + 0xec]
+        push 0xaa93ec
+        push 0
+        call ext_006E7410
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
