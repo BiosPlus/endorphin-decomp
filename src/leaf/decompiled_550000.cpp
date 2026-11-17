@@ -20218,3 +20218,54 @@ check_overflow:
         call ext_006A6DD2
     }
 }
+
+// [0x0055F2C0] sub_0055F2C0 (122 bytes)
+extern "C" void ext_0055E290();
+extern "C" void ext_0055E560();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FF0;
+// Naked: the EH frame (fs:[0] registration) and the dead throw block after `ret 4` are written out directly.
+extern "C" __declspec(naked) void __fastcall fn_0055F2C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x89b1e8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x54
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [ebp + 0x8]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x4], 0x0
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea eax, [esi + 0x470]
+        push eax
+        lea ecx, [esi + 0x46c]
+        push ecx
+        mov ecx, esi
+        call ext_0055E560
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+        lea edx, [ebp - 0x60]
+        push edx
+        lea ecx, [ebp - 0x38]
+        mov byte ptr [ebp - 0x4], 0x2
+        call ext_0055E290
+        push 0x9fa84c
+        lea eax, [ebp - 0x38]
+        push eax
+        call ext_006A6DD2
+    }
+}

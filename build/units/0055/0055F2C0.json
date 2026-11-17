@@ -19,5 +19,7 @@
     "0x0055F32D",
     "0x0055F336"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T16:41:30Z"
 }
