@@ -8730,3 +8730,78 @@ extern "C" __declspec(naked) void __cdecl fn_0080ACF0(void* a1, void* a2, void* 
         ret
     }
 }
+
+// [0x008071E0] sub_008071E0 (160 bytes)
+extern "C" void ext_00806E30();
+extern "C" void ext_00809A50();
+extern "C" void ext_0080A800();
+extern "C" __declspec(naked) void __cdecl fn_008071E0(int a0, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        cmp eax, 0FFF2h
+        push edi
+        je short L_1
+        pop edi
+        mov eax, 0Ah
+        pop esi
+        ret
+    L_1:
+        mov eax, dword ptr [esp + 24h]
+        test eax, eax
+        jne short L_2
+        pop edi
+        mov eax, 5
+        pop esi
+        ret
+    L_2:
+        mov ecx, dword ptr [esp + 10h]
+        mov edi, dword ptr [esp + 0Ch]
+        lea eax, [esp + 14h]
+        push 0
+        push eax
+        push 0
+        push 0
+        push ecx
+        push edi
+        call ext_00809A50
+        mov esi, eax
+        add esp, 18h
+        test esi, esi
+        je short L_3
+        cmp esi, 258h
+        je short L_3
+        push esi
+        push 0AB43D4h
+        call ext_0080A800
+        add esp, 8
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+    L_3:
+        mov eax, dword ptr [esp + 18h]
+        mov ecx, dword ptr [esp + 1Ch]
+        mov esi, dword ptr [esp + 14h]
+        lea edx, [eax + ecx]
+        shl esi, 2
+        cmp edx, esi
+        jbe short L_4
+        pop edi
+        mov eax, 1
+        pop esi
+        ret
+    L_4:
+        mov edx, dword ptr [esp + 20h]
+        add eax, 30h
+        push edx
+        push ecx
+        push eax
+        push edi
+        call ext_00806E30
+        add esp, 10h
+        pop edi
+        pop esi
+        ret
+    }
+}
