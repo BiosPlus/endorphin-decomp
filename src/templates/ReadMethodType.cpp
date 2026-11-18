@@ -114297,3 +114297,60 @@ extern "C" __declspec(naked) void __fastcall fn_0066F440(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004EA920] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_46 (165 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004EA920(void* a1, void* a2) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov fs:[0], esp
+        sub esp, 48
+        push esi
+        mov esi, [esp+68]
+        mov eax, [esi]
+        test eax, eax
+        je throw_path
+        mov al, byte ptr [eax+4]
+        mov byte ptr [esp+68], al
+        mov ecx, [esp+68]
+        push ecx
+        lea ecx, [esp+8]
+        call ext_006720A0
+        lea edx, [esp+4]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp+64], 0
+        call ext_0041CF50
+        mov ecx, [esp+8]
+        test ecx, ecx
+        mov dword ptr [esp+60], -1
+        je skip_dtor
+        mov eax, [ecx]
+        mov eax, [eax+120]
+        lea edx, [esp+4]
+        push edx
+        call eax
+skip_dtor:
+        mov ecx, [esi+4]
+        mov eax, [esp+72]
+        mov edx, [ecx]
+        mov edx, [edx+184]
+        push eax
+        push esi
+        call edx
+        mov ecx, [esp+52]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 60
+        ret 8
+throw_path:
+        lea ecx, [esp+12]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp+16]
+        push eax
+        call ext_006A6DD2
+    }
+}
