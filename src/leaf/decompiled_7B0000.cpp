@@ -530,8 +530,10 @@ extern "C" __declspec(naked) void* __cdecl fn_007B3380(int* s) {
         ret
     }
 }
+extern "C" void ext_0079B030();
+extern "C" void ext_007BA3E0();
 
-// [0x007B7E40] sub_007B7E40 (48 bytes)
+extern "C" void ext_007BA3E0();
 extern "C" void ext_007B78D0();
 extern "C" bool mem_00B61218;
 extern "C" bool mem_00B61219;
@@ -8799,6 +8801,69 @@ L_7BA460:
         pop esi
         pop ebp
         xor eax, eax
+        pop ebx
+        ret
+    }
+}
+
+// [0x007BA980] sub_007BA980 (144 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BA980(void* self, int arg2) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, 0x1
+        xor eax, eax
+        mov cl, byte ptr [edi + 0x40]
+        mov ax, word ptr [edi + 0x4e]
+        shl esi, cl
+        xor ecx, ecx
+        lea ebx, [edi + 0xf8]
+        mov cx, word ptr [edi + 0x90]
+        shl esi, 1
+        sub eax, ecx
+        js L_7ba9b6
+        cmp eax, 0x1
+        jle L_7ba9ea
+        cmp eax, 0x2
+        je L_7ba9d1
+    L_7ba9b6:
+        mov edx, dword ptr [ebx + 0x8]
+        mov eax, dword ptr [ebx]
+        push esi
+        push edx
+        push eax
+        call ext_0079B030
+        add esp, 0xc
+        test eax, eax
+        je L_7ba9d1
+        mov eax, 0x3
+        jmp L_7ba9ef
+    L_7ba9d1:
+        mov ecx, dword ptr [ebx + 0x4]
+        mov edx, dword ptr [ebx]
+        push esi
+        push ecx
+        push edx
+        call ext_0079B030
+        add esp, 0xc
+        test eax, eax
+        mov eax, 0x3
+        jne L_7ba9ef
+    L_7ba9ea:
+        mov eax, 0x1
+    L_7ba9ef:
+        push ebx
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        push 0x12d
+        push edi
+        call ext_007BA3E0
+        add esp, 0x14
+        pop edi
+        pop esi
         pop ebx
         ret
     }
