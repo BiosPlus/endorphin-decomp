@@ -1487,3 +1487,83 @@ extern "C" __declspec(naked) void __fastcall fn_0076B150(void* self) {
         ret 24h
     }
 }
+
+// [0x00760140] sub_00760140 (160 bytes)
+extern "C" __declspec(naked) char __fastcall fn_00760140(void* self, int edx_unused, void* arg) {
+    __asm {
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x8]
+        push    ebp
+        push    edi
+        mov     edi, dword ptr [ebx + 0x1c4]
+        mov     ebp, ecx
+        test    edi, edi
+        jg      L_nonzero
+        pop     edi
+        pop     ebp
+        mov     al, 1
+        pop     ebx
+        ret     4
+L_nonzero:
+        mov     ecx, dword ptr [ebx + 0x1d4]
+        mov     eax, 1
+        cmp     edi, eax
+        push    esi
+        mov     edx, dword ptr [ecx + 0x8]
+        jle     L_done
+        add     ecx, 0x14
+L_scan:
+        cmp     dword ptr [ecx], edx
+        jne     L_mismatch
+        inc     eax
+        add     ecx, 0xc
+        cmp     eax, edi
+        jl      L_scan
+        pop     esi
+        pop     edi
+        pop     ebp
+        mov     al, 1
+        pop     ebx
+        ret     4
+L_mismatch:
+        mov     ecx, dword ptr [ebp + 0xac]
+        push    0xaadc90
+        add     ecx, 0x4
+        call    ext_007275F0
+        test    edi, edi
+        jle     L_after_loop
+        xor     esi, esi
+L_call_loop:
+        mov     eax, dword ptr [ebx + 0x1d4]
+        mov     ecx, dword ptr [esi + eax + 0x8]
+        push    ecx
+        mov     ecx, dword ptr [ebp + 0xac]
+        add     ecx, 0x4
+        call    ext_00727C80
+        add     esi, 0xc
+        dec     edi
+        jne     L_call_loop
+L_after_loop:
+        mov     ecx, dword ptr [ebp + 0xac]
+        add     ecx, 0x4
+        call    ext_007283B0
+L_done:
+        pop     esi
+        pop     edi
+        pop     ebp
+        mov     al, 1
+        pop     ebx
+        ret     4
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
