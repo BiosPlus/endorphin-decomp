@@ -5631,3 +5631,57 @@ L_skip2:
         ret
     }
 }
+
+// [0x006C9B70] sub_006C9B70 (128 bytes)
+extern "C" void ext_006C9C40();
+extern "C" void ext_006C9D00();
+extern "C" void ext_006C9DA0();
+extern "C" void ext_006C9E70();
+extern "C" void ext_006C9F20();
+extern "C" void ext_00789BA0();
+extern "C" void ext_0079E5B0();
+extern "C" __declspec(naked) void __fastcall fn_006C9B70(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        push eax
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_0079E5B0
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, esi
+        push edx
+        call ext_00789BA0
+        push 0x8
+        mov ecx, esi
+        call ext_006C9C40
+        push 0x200
+        mov ecx, esi
+        call ext_006C9D00
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, esi
+        push eax
+        push 0x0
+        call ext_006C9E70
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push 0x1
+        mov ecx, esi
+        call ext_006C9E70
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, esi
+        push edx
+        push 0x2
+        call ext_006C9E70
+        push 0x0
+        mov ecx, esi
+        call ext_006C9F20
+        push 0x0
+        mov ecx, esi
+        call ext_006C9DA0
+        pop esi
+        ret 0x18
+    }
+}
