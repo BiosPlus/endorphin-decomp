@@ -22,5 +22,7 @@
     "0x00471F59",
     "0x00471F63"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-18T15:11:36Z"
 }
