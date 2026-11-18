@@ -8455,3 +8455,75 @@ extern "C" __declspec(naked) bool __fastcall fn_006F8E50(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006FB5C0] sub_006FB5C0 (144 bytes)
+// Stack args: a1 (table A), a2 (index into A), a3 (table B), a4 (index into B), a5 (forwarded).
+// Each table: +0x10 = base of 12-byte entries, +0x14 = offset/count, +0x18 = count (A only).
+extern "C" void ext_006FAF30();
+extern "C" __declspec(naked) int __cdecl fn_006FB5C0(void* a1, int a2, void* a3, int a4, int a5) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        xor eax, eax
+        xor edx, edx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test ecx, ecx
+        jl L_first_done
+        cmp ecx, dword ptr [edi + 0x18]
+        jge L_first_done
+        mov eax, dword ptr [edi + 0x14]
+        add eax, ecx
+        mov ecx, dword ptr [edi + 0x10]
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je L_first_zero
+        mov esi, dword ptr [eax]
+        mov ebx, dword ptr [ecx]
+        cmp esi, ebx
+        jne L_first_zero
+        mov eax, dword ptr [eax + 0x4]
+        jmp L_first_done
+    L_first_zero:
+        xor eax, eax
+    L_first_done:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        test ecx, ecx
+        jl L_second_done
+        cmp ecx, dword ptr [esi + 0x14]
+        jge L_second_done
+        lea edx, [ecx + 2*ecx]
+        mov ecx, dword ptr [esi + 0x10]
+        lea edx, [ecx + 4*edx]
+        mov ecx, dword ptr [edx + 0x4]
+        test ecx, ecx
+        je L_second_zero
+        mov ebx, dword ptr [ecx]
+        push ebp
+        mov ebp, dword ptr [edx]
+        cmp ebx, ebp
+        pop ebp
+        jne L_second_zero
+        mov edx, dword ptr [ecx + 0x4]
+        jmp L_second_done
+    L_second_zero:
+        xor edx, edx
+    L_second_done:
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        push edx
+        push esi
+        push eax
+        push edi
+        call ext_006FAF30
+        add esp, 0x14
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
