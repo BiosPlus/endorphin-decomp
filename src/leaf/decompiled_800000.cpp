@@ -8595,3 +8595,73 @@ extern "C" __declspec(naked) void __cdecl fn_00809DF0(void* p) {
         ret
     }
 }
+
+// [0x0080AC50] sub_0080AC50 (160 bytes)
+extern "C" void ext_0080B530();
+extern "C" void ext_0080B560();
+extern "C" int mem_00AB5C70;
+extern "C" int mem_009242BC;
+extern "C" int mem_00B73C70;
+extern "C" int mem_009242B8;
+extern "C" int mem_009242B4;
+
+extern "C" __declspec(naked) void __fastcall fn_0080AC50(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00AB5C70]
+        test eax, eax
+        je get_value
+        call dword ptr [mem_009242BC]
+        mov dword ptr [mem_00B73C70], eax
+        mov dword ptr [mem_00AB5C70], 0
+    get_value:
+        mov eax, dword ptr [mem_00B73C70]
+        push esi
+        push eax
+        call dword ptr [mem_009242B8]
+        mov esi, eax
+        test esi, esi
+        jne have_value
+        push 8
+        call ext_0080B530
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        jne alloc_block
+        pop esi
+        ret
+    alloc_block:
+        push 0x5000
+        call ext_0080B530
+        add esp, 4
+        mov dword ptr [esi + 4], eax
+        test eax, eax
+        jne set_block
+        push esi
+        call ext_0080B560
+        add esp, 4
+        xor eax, eax
+        pop esi
+        ret
+    set_block:
+        mov dword ptr [esi], 0x5000
+        mov ecx, dword ptr [mem_00B73C70]
+        push esi
+        push ecx
+        call dword ptr [mem_009242B4]
+        test eax, eax
+        jne have_value
+        mov edx, dword ptr [esi + 4]
+        push edx
+        call ext_0080B560
+        push esi
+        call ext_0080B560
+        add esp, 8
+        xor eax, eax
+        pop esi
+        ret
+    have_value:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
