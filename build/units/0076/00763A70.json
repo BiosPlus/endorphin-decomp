@@ -28,5 +28,7 @@
     "0x00763AD5",
     "0x00763AE1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-18T03:12:20Z"
 }
