@@ -6063,3 +6063,67 @@ L_fail:
         ret
     }
 }
+
+// [0x0078B3D0] sub_0078B3D0 (128 bytes)
+extern "C" void ext_0078ABD0();
+
+extern "C" __declspec(naked) void __cdecl fn_0078B3D0(void* p, int mode, void* a3) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        jne L_nonnull
+        pop esi
+        mov eax, 0xfffffff9
+        pop ebx
+        ret
+L_nonnull:
+        mov bl, byte ptr [esp + 0x10]
+        cmp bl, 0x1
+        je L_ok
+        cmp bl, 0x2
+        je L_ok
+        cmp bl, 0x3
+        je L_ok
+        pop esi
+        mov eax, 0xfffffffc
+        pop ebx
+        ret
+L_ok:
+        cmp bl, 0x1
+        mov dword ptr [esi + 0x14], 0x48534946
+        je L_store
+        mov eax, dword ptr [esp + 0x14]
+        test eax, eax
+        je L_store
+        lea ecx, [esi + 0x18]
+        push 0x0
+        push ecx
+        push eax
+        push 0x80
+        call ext_0078ABD0
+        add esp, 0x10
+        test eax, eax
+        je L_copy
+        pop esi
+        mov eax, 0xfffffff8
+        pop ebx
+        ret
+L_copy:
+        lea eax, [esi + 0x1]
+        mov ecx, 0x4
+L_loop:
+        mov edx, dword ptr [eax + 0x17]
+        mov dword ptr [eax], edx
+        add eax, 0x4
+        dec ecx
+        jne L_loop
+L_store:
+        mov byte ptr [esi], bl
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    }
+}
