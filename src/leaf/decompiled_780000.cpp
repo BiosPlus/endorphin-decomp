@@ -6375,3 +6375,76 @@ extern "C" __declspec(naked) void __fastcall fn_0078D420(void* self, int edx_unu
         ret 10h
     }
 }
+
+// [0x007839F0] sub_007839F0 (144 bytes)
+extern "C" void ext_00783790();
+extern "C" __declspec(naked) void __fastcall fn_007839F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0xc]
+        call ext_00783790
+        mov eax, dword ptr [esi + 0x18]
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0xc], eax
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi + 0x18], ecx
+        mov ecx, dword ptr [esp + 0x18]
+        dec eax
+        mov dword ptr [esp + 0x10], esi
+        cmp eax, ecx
+        mov dword ptr [esp + 0x14], eax
+        jl short L_end
+        mov edi, dword ptr [esp + 0x24]
+        mov ebx, dword ptr [esp + 0x20]
+    L_loop:
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        je short L_skip
+        mov edx, dword ptr [esi + 0x10]
+        push edi
+        push ebx
+        mov eax, dword ptr [edx + 4*eax]
+        mov ecx, dword ptr [eax]
+        call dword ptr [eax + 0x4]
+        test edi, edi
+        je short L_cont
+        mov al, byte ptr [edi + 0x4]
+        test al, al
+        jne short L_end
+    L_cont:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x18]
+        dec eax
+        cmp eax, ecx
+        mov dword ptr [esp + 0x14], eax
+        jge short L_loop
+    L_end:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je short L_skip
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x18], eax
+    L_skip:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x10
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
