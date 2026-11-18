@@ -105498,3 +105498,84 @@ extern "C" __declspec(naked) void __fastcall fn_00635280(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00635330] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_46 (160 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00635330(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        _emit 0x64
+        _emit 0xA1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x6A
+        _emit 0xFF
+        _emit 0x68
+        _emit 0x28
+        _emit 0x54
+        _emit 0x8A
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je null_path_00635330
+        mov eax, dword ptr [eax + 0xc0]
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720C0
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je skip_dtor_00635330
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+skip_dtor_00635330:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xb8]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0D
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x3c
+        ret 0x8
+null_path_00635330:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        _emit 0x68
+        _emit 0x1C
+        _emit 0xEC
+        _emit 0x9D
+        _emit 0x00
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
