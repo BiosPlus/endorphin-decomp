@@ -6463,3 +6463,54 @@ extern "C" __declspec(naked) int __fastcall fn_006D3C30(void* self) {
         ret
     }
 }
+
+// [0x006D3880] sub_006D3880 (128 bytes)
+// SEH-framed: installs an fs:[0] exception record (scope table 0x008B8FDB),
+// calls ext_006A5C62(0x40), then conditionally ext_0072B280(eax) and ext_006D2170.
+extern "C" void ext_0072B280();
+extern "C" __declspec(naked) void __fastcall fn_006D3880(void* self) {
+    __asm {
+        push -0x1
+        push 0x8b8fdb
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        push 0x40
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x8], eax
+        test eax, eax
+        mov dword ptr [esp + 0x14], 0x0
+        je L_null_006D3880
+        push edi
+        mov ecx, eax
+        call ext_0072B280
+        mov esi, eax
+        jmp L_join_006D3880
+    L_null_006D3880:
+        xor esi, esi
+    L_join_006D3880:
+        test esi, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        je L_skip_006D3880
+        mov edx, dword ptr [edi + 0x7c]
+        lea ecx, [edi + 0x7c]
+        lea eax, [esp + 0x8]
+        mov dword ptr [esp + 0x8], esi
+        push eax
+        push edx
+        call ext_006D2170
+    L_skip_006D3880:
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, esi
+        pop edi
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
