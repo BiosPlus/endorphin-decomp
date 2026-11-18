@@ -114699,3 +114699,60 @@ L_throw_004EA7C0:
         call ext_006A6DD2
     }
 }
+
+// [0x004B1510] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_43 (165 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_004B1510(void* self) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0008a5428h
+        push eax
+        mov fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, [esp+44h]
+        mov eax, [esi]
+        test eax, eax
+        je L_throw_1510
+        mov al, [eax+1]
+        mov [esp+44h], al
+        mov ecx, [esp+44h]
+        push ecx
+        lea ecx, [esp+8]
+        call ext_006720A0
+        lea edx, [esp+4]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp+40h], 0
+        call ext_0041CF50
+        mov ecx, [esp+8]
+        test ecx, ecx
+        mov dword ptr [esp+3ch], -1
+        je L_skip_1510
+        mov eax, [ecx]
+        mov eax, [eax+78h]
+        lea edx, [esp+4]
+        push edx
+        call eax
+    L_skip_1510:
+        mov ecx, [esi+4]
+        mov eax, [esp+48h]
+        mov edx, [ecx]
+        mov edx, [edx+0ach]
+        push eax
+        push esi
+        call edx
+        mov ecx, [esp+34h]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 3ch
+        ret 8
+    L_throw_1510:
+        lea ecx, [esp+0ch]
+        call ext_0046C3C0
+        push 009dec1ch
+        lea eax, [esp+10h]
+        push eax
+        call ext_006A6DD2
+    }
+}
