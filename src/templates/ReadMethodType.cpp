@@ -104856,3 +104856,64 @@ extern "C" __declspec(naked) void __stdcall fn_00692680(void* self, int a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x004E9EB0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_47 (160 bytes)
+extern "C" int mem_008A5428;
+extern "C" void ext_0041CF50();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006720A0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_004E9EB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, [esp+0x44]
+        mov eax, [esi]
+        test eax, eax
+        je L_throw
+        mov al, [eax+4]
+        mov [esp+0x44], al
+        mov ecx, [esp+0x44]
+        push ecx
+        lea ecx, [esp+8]
+        call ext_006720A0
+        lea edx, [esp+4]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp+0x40], 0
+        call ext_0041CF50
+        mov ecx, [esp+8]
+        test ecx, ecx
+        mov dword ptr [esp+0x3c], -1
+        je L_skip
+        mov eax, [ecx]
+        mov eax, [eax+0x78]
+        lea edx, [esp+4]
+        push edx
+        call eax
+    L_skip:
+        mov ecx, [esi+4]
+        mov edx, [ecx]
+        mov eax, [edx+0xbc]
+        push esi
+        call eax
+        mov ecx, [esp+0x34]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x3c
+        ret 4
+    L_throw:
+        lea ecx, [esp+0xc]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp+0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
