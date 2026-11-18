@@ -3502,3 +3502,82 @@ extern "C" __declspec(naked) void __fastcall fn_007714C0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00771AF0] sub_00771AF0 (160 bytes)
+extern "C" void ext_0079EEF0();
+extern "C" void ext_007A8BC0();
+extern "C" void ext_007A92B0();
+extern "C" void ext_007AA410();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __fastcall fn_00771AF0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0xbc]
+        mov ecx, dword ptr [esi + 0xb8]
+        lea edi, [esi + 0xbc]
+        push eax
+        push ecx
+        call ext_007AA410
+        mov al, byte ptr [mem_00B61218]
+        add esp, 8
+        test al, al
+        je step2
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne step2
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    step2:
+        add esi, 0xc0
+        push esi
+        call ext_007A8BC0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je step3
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne step3
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    step3:
+        push edi
+        call ext_007A92B0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je step4
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne step4
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    step4:
+        call ext_0079EEF0
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je step5
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne step5
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    step5:
+        pop edi
+        mov al, 1
+        pop esi
+        ret
+    }
+}
