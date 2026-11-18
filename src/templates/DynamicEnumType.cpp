@@ -2691,3 +2691,61 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00516610] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_42 (154 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006720C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00516610(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [eax]
+        sub esp, 0x30
+        test eax, eax
+        je L_null_0516610
+        mov eax, dword ptr [eax + 0x8]
+        push ebx
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720C0
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0x0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je L_skip_0516610
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    L_skip_0516610:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_null_0516610:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
