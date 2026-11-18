@@ -7072,3 +7072,73 @@ extern "C" __declspec(naked) int __cdecl fn_006D9800(const char* key) {
         ret
     }
 }
+
+// [0x006DC3C0] sub_006DC3C0 (160 bytes)
+extern "C" const char* __fastcall ext_006C9330(void* self);
+extern "C" __declspec(naked) bool __fastcall fn_006DC3C0(void* self, int edx_unused, const char* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        xor ebp, ebp
+        mov eax, dword ptr [edi + 0xb8]
+        test eax, eax
+        jle not_found_006DC3C0
+        mov ebx, dword ptr [esp + 0x14]
+    outer_006DC3C0:
+        mov eax, dword ptr [edi + 0xc8]
+        mov esi, ebx
+        mov ecx, dword ptr [eax + ebp*4]
+        call ext_006C9330
+    cmp_top_006DC3C0:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne diff_006DC3C0
+        test cl, cl
+        je equal_006DC3C0
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne diff_006DC3C0
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne cmp_top_006DC3C0
+    equal_006DC3C0:
+        xor eax, eax
+        jmp cmp_done_006DC3C0
+    diff_006DC3C0:
+        sbb eax, eax
+        sbb eax, -1
+    cmp_done_006DC3C0:
+        test eax, eax
+        je found_006DC3C0
+        mov eax, dword ptr [edi + 0xb8]
+        inc ebp
+        cmp ebp, eax
+        jl outer_006DC3C0
+    not_found_006DC3C0:
+        mov ecx, dword ptr [edi + 0xec]
+        push 0xaa93d4
+        push 0
+        call ext_006E7410
+        mov dword ptr [edi + 0xe8], 0
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0x4
+    found_006DC3C0:
+        mov dword ptr [edi + 0xe8], ebp
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
