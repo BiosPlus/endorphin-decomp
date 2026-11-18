@@ -110379,3 +110379,60 @@ null_path_670a30:
         call ext_006A6DD2
     }
 }
+
+// [0x0068F2E0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_42 (163 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0068F2E0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], esp
+        mov ecx, dword ptr [eax]
+        sub esp, 0x30
+        test ecx, ecx
+        je L_null_0068F2E0
+        mov edx, dword ptr [ecx + 4]
+        mov eax, dword ptr [edx + 0xc]
+        push ebx
+        push eax
+        call ext_0068EE60
+        push eax
+        lea ecx, [esp + 8]
+        call ext_006720E0
+        mov edx, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xa8]
+        push edx
+        lea edx, [esp + 8]
+        push edx
+        mov dword ptr [esp + 0x44], 0
+        call eax
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], -1
+        je L_done_0068F2E0
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+    L_done_0068F2E0:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 8
+    L_null_0068F2E0:
+        lea ecx, [esp + 8]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_006A6DD2
+    }
+}
