@@ -8186,3 +8186,64 @@ extern "C" __declspec(naked) void __fastcall fn_006FAC10(void* self, int edx_unu
         ret 0x18
     }
 }
+
+// [0x006FE610] sub_006FE610 (144 bytes)
+extern "C" void ext_006B9D80();
+extern "C" int mem_00925278;
+
+// Copies a2 into a 1 KB stack buffer, truncates at the last '/' (else last '\\', else empties it),
+// calls sub_006B9D80(a1, buf) with a1 in ecx and returns a1 (cdecl, ret 0).
+extern "C" __declspec(naked) void* __cdecl fn_006FE610(void* a1, const char* a2) {
+    __asm {
+        sub esp, 0x404
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x414]
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0xc]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        push 0x2f
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        mov dword ptr [esp + 0xc], 0x0
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        mov esi, dword ptr [mem_00925278]
+        lea ecx, [esp + 0x10]
+        push ecx
+        call esi
+        add esp, 0x8
+        test eax, eax
+        jne found
+        lea edx, [esp + 0xc]
+        push 0x5c
+        push edx
+        call esi
+        add esp, 0x8
+        test eax, eax
+        je notfound
+    found:
+        mov byte ptr [eax], 0x0
+        jmp docall
+    notfound:
+        mov byte ptr [esp + 0xc], 0x0
+    docall:
+        mov esi, dword ptr [esp + 0x410]
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_006B9D80
+        mov eax, esi
+        pop edi
+        pop esi
+        add esp, 0x404
+        ret
+    }
+}
