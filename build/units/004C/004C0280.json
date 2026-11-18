@@ -21,5 +21,7 @@
     "0x004C02FC",
     "0x004C0306"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-18T03:16:27Z"
 }
