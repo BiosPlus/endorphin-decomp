@@ -19,5 +19,7 @@
     "0x007783DC",
     "0x007783ED"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-18T03:21:12Z"
 }
