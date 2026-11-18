@@ -6127,3 +6127,65 @@ L_store:
         ret
     }
 }
+
+// [0x0078C830] sub_0078C830 (144 bytes)
+extern "C" int mem_0092521C;
+extern "C" __declspec(naked) void __fastcall fn_0078C830(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 8
+        mov edx, dword ptr [ecx + 0x20]
+        test edx, edx
+        je L_873
+        mov eax, dword ptr [ebp + 0x8]
+        push esi
+        mov esi, dword ptr [ecx + 0x28]
+        cmp eax, esi
+        pop esi
+        jge L_8B0
+        mov ecx, dword ptr [ecx + 0x2c]
+        mov ecx, dword ptr [ecx + 4*eax]
+        mov eax, dword ptr [ecx + edx]
+        mov dword ptr [ebp - 0x8], eax
+        mov edx, dword ptr [ecx + edx + 0x4]
+        mov cl, byte ptr [ebp + 0xc]
+        test cl, cl
+        mov dword ptr [ebp - 0x4], edx
+        je L_8B4
+        mov edx, dword ptr [ebp - 0x8]
+        mov eax, dword ptr [ebp - 0x4]
+        bswap edx
+        bswap eax
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+L_873:
+        mov eax, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ecx + 0x4]
+        cmp eax, edx
+        jge L_8B0
+        mov ecx, dword ptr [ecx + 0x14]
+        lea edx, [ebp - 0x8]
+        mov dword ptr [ebp - 0x8], 0
+        mov dword ptr [ebp - 0x4], 0
+        push edx
+        mov edx, dword ptr [ecx + 4*eax]
+        push 0xaa92d4
+        push edx
+        call dword ptr [mem_0092521C]
+        mov eax, dword ptr [ebp - 0x8]
+        mov edx, dword ptr [ebp - 0x4]
+        add esp, 0xc
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+L_8B0:
+        xor eax, eax
+        xor edx, edx
+L_8B4:
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
