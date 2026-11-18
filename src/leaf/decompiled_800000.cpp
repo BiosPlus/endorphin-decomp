@@ -8805,3 +8805,70 @@ extern "C" __declspec(naked) void __cdecl fn_008071E0(int a0, int a1, int a2, in
         ret
     }
 }
+
+// [0x008078D0] sub_008078D0 (160 bytes)
+extern "C" void ext_0080A800();
+extern "C" void ext_0080ACF0();
+extern "C" void ext_0080B060();
+
+// Disassembly shows plain cdecl: five stack args, no ecx this, caller cleans (add esp, 0x14).
+extern "C" __declspec(naked) int __cdecl fn_008078D0(void* p, int a2, int a3, int a4, unsigned int a5) {
+    __asm {
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, edx
+        sub ecx, 0
+        je proceed
+        dec ecx
+        je case1
+        dec ecx
+        je case2
+        mov eax, 0x2bb
+        ret
+    case2:
+        cmp eax, 0x30
+        je proceed
+        mov eax, 0x2bb
+        ret
+    case1:
+        cmp eax, 0x20
+        je proceed
+        mov eax, 0x2bb
+        ret
+    proceed:
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        test ecx, ecx
+        jne set_140
+        mov word ptr [esi + 0x18], 0x13f
+        jmp after_set
+    set_140:
+        mov word ptr [esi + 0x18], 0x140
+    after_set:
+        mov ecx, dword ptr [esp + 0x18]
+        push esi
+        shr eax, 0x3
+        push 0x1
+        mov dword ptr [esi + 0x12], ecx
+        mov word ptr [esi + 0x16], ax
+        mov byte ptr [esi + 0x55], dl
+        mov word ptr [esi + 0x3e], 0x0
+        call ext_0080ACF0
+        mov edi, eax
+        mov byte ptr [esi + 0x55], 0x0
+        mov edx, edi
+        mov word ptr [esi + 0x16], 0x0
+        and edx, 0xffff
+        push edx
+        push 0xab4724
+        call ext_0080A800
+        push edi
+        call ext_0080B060
+        add esp, 0x14
+        pop edi
+        pop esi
+        ret
+    }
+}
