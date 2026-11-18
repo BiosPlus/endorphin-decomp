@@ -194,6 +194,7 @@ extern "C" bool __stdcall fn_004DE820(void* a1) {
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA397B0, 0);
 }
 extern "C" void ext_00528530();
+extern "C" void ext_005B6930();
 
 // [0x004E9D90] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004E9D90(void* a1) {
@@ -67648,6 +67649,59 @@ extern "C" __declspec(naked) void __stdcall fn_005BC160(void* self) {
         test ecx, ecx
         je throw_path
         call ext_005B6AF0
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_00672110
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    skip_release:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    throw_path:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
+
+// [0x005BBB00] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_47 (154 bytes)
+extern "C" __declspec(naked) void __stdcall fn_005BBB00(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je throw_path
+        call ext_005B6930
         push eax
         lea ecx, [esp + 0x8]
         call ext_00672110
