@@ -6189,3 +6189,70 @@ L_8B4:
         ret 0x8
     }
 }
+
+// [0x0078B180] sub_0078B180 (144 bytes)
+// Reads two stack args (at esp+0x18 / esp+0x1c after pushes); ecx is preserved.
+extern "C" __declspec(naked) void __fastcall fn_0078B180(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor edi, edi
+        xor ebx, ebx
+L_outer:
+        mov eax, dword ptr [esp + 0x18]
+        test ebx, ebx
+        jne short L_skip
+        mov eax, dword ptr [esp + 0x1c]
+L_skip:
+        xor edi, eax
+        mov ebp, 4
+L_loop:
+        mov ecx, edi
+        shr ecx, 0x18
+        mov byte ptr [esp + 0x10], cl
+        mov al, cl
+        mov edx, dword ptr [esp + 0x10]
+        and al, 0x80
+        and edx, 0xff
+        neg al
+        sbb eax, eax
+        mov esi, edx
+        and eax, 0x14d
+        and esi, 0x7f
+        and eax, 0xff
+        and cl, 0x1
+        shl esi, 1
+        xor esi, eax
+        mov eax, edx
+        neg cl
+        sbb ecx, ecx
+        and ecx, 0xa6
+        shr eax, 1
+        xor ecx, eax
+        xor ecx, esi
+        mov eax, ecx
+        shl eax, 8
+        xor eax, esi
+        shl eax, 8
+        xor eax, ecx
+        xor eax, edi
+        shl eax, 8
+        xor eax, edx
+        dec ebp
+        mov edi, eax
+        jne short L_loop
+        inc ebx
+        cmp ebx, 2
+        jl short L_outer
+
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
