@@ -109248,3 +109248,58 @@ extern "C" __declspec(naked) void __stdcall fn_006445D0(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x004B9270] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_47 (163 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B9270(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x008a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_throw_004B9270
+        mov al, byte ptr [eax + 0x83]
+        mov byte ptr [esp + 0x44], al
+        mov ecx, dword ptr [esp + 0x44]
+        push ecx
+        lea ecx, [esp + 0x8]
+        call ext_006720A0
+        lea edx, [esp + 0x4]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je L_skip_004B9270
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    L_skip_004B9270:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xbc]
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    L_throw_004B9270:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x009dec1c
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
