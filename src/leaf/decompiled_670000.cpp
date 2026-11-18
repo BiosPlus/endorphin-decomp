@@ -18276,3 +18276,69 @@ extern "C" __declspec(naked) void __fastcall fn_0067F5B0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00673EA0] sub_00673EA0 (144 bytes)
+extern "C" void ext_00673C90();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __fastcall fn_00673EA0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8b4141
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov [ebp-16], esp
+        push 76
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        mov [ebp-20], esi
+        mov dword ptr [ebp-4], 0
+        je L_skip1_00673EA0
+        mov eax, [ebp+8]
+        mov [esi], eax
+    L_skip1_00673EA0:
+        lea eax, [esi+4]
+        test eax, eax
+        je L_skip2_00673EA0
+        mov ecx, [ebp+12]
+        mov [eax], ecx
+    L_skip2_00673EA0:
+        lea ecx, [esi+8]
+        mov [ebp+8], ecx
+        mov [ebp+12], ecx
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L_skip3_00673EA0
+        mov edx, [ebp+16]
+        push edx
+        call ext_00673C90
+    L_skip3_00673EA0:
+        mov ecx, [ebp-12]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 12
+    L_cleanup_00673EA0:
+        mov eax, [ebp-20]
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
