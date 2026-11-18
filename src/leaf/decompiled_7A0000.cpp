@@ -5448,3 +5448,65 @@ extern "C" __declspec(naked) void __fastcall fn_007A5F80(void* self) {
         ret
     }
 }
+
+// [0x007A3170] sub_007A3170 (160 bytes)
+extern "C" void ext_007AA510();
+extern "C" int mem_00B61219;
+extern "C" int mem_00997C31;
+
+extern "C" __declspec(naked) void __cdecl fn_007A3170(void* dst, ...) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        cmp esi, ebx
+        jne L_store
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        cmp al, bl
+        je L_done
+    L_store:
+        mov byte ptr [esi], bl
+        mov dword ptr [esi + 0x10], ebx
+        mov dword ptr [esi + 0x14], 0x1
+        mov al, byte ptr [mem_00997C31]
+        mov byte ptr [esi + 0x18], al
+        mov dword ptr [esi + 0x1c], ebx
+        mov dword ptr [esi + 0x20], ebx
+        mov cl, byte ptr [mem_00997C31]
+        mov byte ptr [esi + 0x24], cl
+        mov dl, byte ptr [mem_00997C31]
+        mov eax, 0x3f800000
+        mov byte ptr [esi + 0x25], dl
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esi + 0x2c], eax
+        mov dword ptr [esi + 0x30], ebx
+        mov dword ptr [esi + 0x34], ebx
+        mov dword ptr [esi + 0x38], ebx
+        mov dword ptr [esi + 0x3c], ebx
+        mov dword ptr [esi + 0x48], ebx
+        mov dword ptr [esi + 0x44], ebx
+        mov dword ptr [esi + 0x40], ebx
+        mov dword ptr [esi + 0x54], eax
+        mov dword ptr [esi + 0x50], eax
+        mov dword ptr [esi + 0x4c], eax
+        mov dword ptr [esi + 0x58], eax
+        mov dword ptr [esi + 0x60], ebx
+        mov dword ptr [esi + 0x5c], ebx
+        mov dword ptr [esi + 0x68], eax
+        mov dword ptr [esi + 0x6c], ebx
+        mov dword ptr [esi + 0x64], ebx
+        mov dword ptr [esi + 0x78], eax
+        mov dword ptr [esi + 0x70], ebx
+        mov dword ptr [esi + 0x74], ebx
+        mov dword ptr [esi + 0x80], ebx
+        mov dword ptr [esi + 0x7c], ebx
+    L_done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
