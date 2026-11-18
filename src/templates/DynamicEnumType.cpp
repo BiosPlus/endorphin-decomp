@@ -2985,3 +2985,62 @@ extern "C" __declspec(naked) void __stdcall fn_004D5280(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004D4FC0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_47 (154 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_004D3CE0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006720C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __stdcall fn_004D4FC0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 08A5428h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, dword ptr [esp + 44h]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je throw_path
+        call ext_004D3CE0
+        push eax
+        lea ecx, [esp + 8]
+        call ext_006720C0
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 40h], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+    skip_release:
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0BCh]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 34h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 3Ch
+        ret 4
+    throw_path:
+        lea ecx, [esp + 0Ch]
+        call ext_0046C3C0
+        push 009DEC1Ch
+        lea eax, [esp + 10h]
+        push eax
+        call ext_006A6DD2
+    }
+}
