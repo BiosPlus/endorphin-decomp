@@ -8936,3 +8936,73 @@ extern "C" __declspec(naked) void __fastcall fn_00805980(void* self) {
         ret 1ch
     }
 }
+
+// [0x0080DC60] sub_0080DC60 (160 bytes)
+extern "C" void __cdecl ext_008596E0(void* a1);
+extern "C" void ext_0080DD00();
+extern "C" void ext_0080ECA0();
+extern "C" __declspec(naked) void __fastcall fn_0080DC60(void* self) {
+    __asm {
+        sub esp, 0x20
+        push edi
+        push 0x5a00
+        call ext_008596E0
+        mov edi, eax
+        add esp, 4
+        test edi, edi
+        jne have_buf
+        or eax, -1
+        pop edi
+        add esp, 0x20
+        ret
+    have_buf:
+        push ebx
+        push esi
+        push 0x20
+        lea eax, [esp + 0x10]
+        push 0
+        push eax
+        call ext_00859740
+        mov ecx, dword ptr [esp + 0x44]
+        mov edx, dword ptr [esp + 0x3c]
+        mov ebx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [esp + 0x40]
+        mov dword ptr [esp + 0x18], ecx
+        mov ecx, dword ptr [esp + 0x50]
+        mov dword ptr [esp + 0x20], edx
+        mov edx, dword ptr [esp + 0x4c]
+        push ecx
+        push edx
+        push edi
+        push ebx
+        push 1
+        mov dword ptr [esp + 0x44], eax
+        mov dword ptr [esp + 0x48], 0
+        call ext_0080DD00
+        mov esi, eax
+        add esp, 0x20
+        test esi, esi
+        jl fail_path
+        push edi
+        lea eax, [esp + 0x10]
+        push ebx
+        push eax
+        call ext_0080ECA0
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x34]
+        add esp, 0xc
+        test eax, eax
+        je fail_path
+        mov esi, eax
+    fail_path:
+        push edi
+        call ext_00859730
+        add esp, 4
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop edi
+        add esp, 0x20
+        ret
+    }
+}
