@@ -107330,3 +107330,58 @@ L_0049D95A:
         call ext_006A6DD2
     }
 }
+
+// [0x004A2DC0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_47 (162 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004A2DC0(void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je THROW_PATH
+        call ext_0049AA50
+        mov byte ptr [esp + 0x44], al
+        mov eax, dword ptr [esp + 0x44]
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720A0
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je SKIP_VCALL
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    SKIP_VCALL:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    THROW_PATH:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
