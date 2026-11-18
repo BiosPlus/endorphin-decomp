@@ -6323,3 +6323,55 @@ L_fail:
         ret 0x8
     }
 }
+
+// [0x0078D420] sub_0078D420 (144 bytes)
+extern "C" void ext_006D2170();
+
+extern "C" __declspec(naked) void __fastcall fn_0078D420(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        sub esp, 20h
+        push ebx
+        mov ebx, dword ptr [esp + 28h]
+        push ebp
+        mov eax, dword ptr [esp + 34h]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 3Ch]
+        mov ebp, dword ptr [esp + 10h]
+        mov edx, dword ptr [esi + 10h]
+        mov dword ptr [esp + 18h], ecx
+        mov dword ptr [esp + 14h], eax
+        mov dword ptr [esp + 24h], eax
+        mov ecx, dword ptr [edx + ebx*4]
+        mov edx, dword ptr [esp + 18h]
+        mov dword ptr [esp + 28h], edx
+        lea eax, [esp + 1Ch]
+        mov edx, dword ptr [ecx]
+        push edi
+        mov edi, dword ptr [esp + 38h]
+        push eax
+        push edx
+        mov dword ptr [esp + 28h], edi
+        mov dword ptr [esp + 2Ch], ebp
+        call ext_006D2170
+        mov eax, dword ptr [esi + 28h]
+        mov edx, dword ptr [esp + 18h]
+        mov dword ptr [esp + 28h], edx
+        lea edx, [esp + 20h]
+        mov ecx, dword ptr [eax + edi*4]
+        mov eax, dword ptr [esp + 1Ch]
+        mov dword ptr [esp + 2Ch], eax
+        push edx
+        mov eax, dword ptr [ecx]
+        mov dword ptr [esp + 24h], ebx
+        push eax
+        mov dword ptr [esp + 2Ch], ebp
+        call ext_006D2170
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 20h
+        ret 10h
+    }
+}
