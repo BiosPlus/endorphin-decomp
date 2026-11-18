@@ -6027,3 +6027,78 @@ L_end:
         ret
     }
 }
+
+// [0x0079E800] sub_0079E800 (160 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_0079E620();
+extern "C" int mem_00B61144;
+extern "C" int mem_00AAFF74;
+
+extern "C" __declspec(naked) void __fastcall fn_0079E800(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov ecx, dword ptr [mem_00B61144]
+        test ecx, ecx
+        jne short L_869
+        mov al, byte ptr [mem_00AAFF74]
+        test al, al
+        je short L_880
+        push 0x24
+        call ext_006A5C62
+        add esp, 4
+        __asm _emit 0x89
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0
+        je short L_84C
+        mov ecx, eax
+        call ext_0079E620
+        jmp short L_84E
+L_84C:
+        xor eax, eax
+L_84E:
+        mov ecx, eax
+        mov dword ptr [esp + 0xc], -1
+        test eax, eax
+        mov dword ptr [mem_00B61144], ecx
+        mov byte ptr [mem_00AAFF74], 0
+        je short L_880
+L_869:
+        mov eax, dword ptr [ecx]
+        push 0
+        push 0
+        call dword ptr [eax]
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+L_880:
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
