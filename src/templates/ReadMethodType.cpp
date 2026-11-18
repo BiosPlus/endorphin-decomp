@@ -78503,3 +78503,58 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0062E5F0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_43 (157 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062E5F0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_throw_0062E5F0
+        add eax, 0x78
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_00672110
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je L_skip_0062E5F0
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_skip_0062E5F0:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xac]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_throw_0062E5F0:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
