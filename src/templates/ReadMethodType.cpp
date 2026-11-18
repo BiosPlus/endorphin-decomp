@@ -138513,3 +138513,24 @@ extern "C" __declspec(naked) void __fastcall fn_004E14B0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005C5860] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_1 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005C5860(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_null
+        call ext_005C2FF0
+        add esp, 0x28
+        ret 0x4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
