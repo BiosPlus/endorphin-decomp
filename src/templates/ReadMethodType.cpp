@@ -66541,3 +66541,56 @@ extern "C" __declspec(naked) void __stdcall fn_004E18E0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0051B9D0] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_47 (154 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0051B9D0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 08A5428h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, dword ptr [esp + 44h]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je throw_path
+        call ext_0051AEF0
+        push eax
+        lea ecx, [esp + 8]
+        call ext_00672150
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 40h], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+    skip_release:
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0BCh]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 34h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 3Ch
+        ret 4
+    throw_path:
+        lea ecx, [esp + 0Ch]
+        call ext_0046C3C0
+        push 09DEC1Ch
+        lea eax, [esp + 10h]
+        push eax
+        call ext_006A6DD2
+    }
+}
