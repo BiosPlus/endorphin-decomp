@@ -207,6 +207,7 @@ extern "C" void ext_00627530();
 extern "C" void ext_00630740();
 extern "C" void ext_0064E220();
 extern "C" void ext_00650800();
+extern "C" void ext_006658C0();
 
 // [0x004E9D90] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004E9D90(void* a1) {
@@ -71967,6 +71968,60 @@ L_cleanup_00497FE0:
         add esp, 0x3c
         ret 0x8
 L_throw_00497FE0:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004A39C0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_42 (156 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_004A39C0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        mov ecx, dword ptr [eax]
+        sub esp, 0x30
+        test ecx, ecx
+        je L_throw_004A39C0
+        push ebx
+        call ext_006658C0
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720C0
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0x0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], -0x1
+        je L_cleanup_004A39C0
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    L_cleanup_004A39C0:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_throw_004A39C0:
         lea ecx, [esp + 0x8]
         call ext_0046C3C0
         push 0x9dec1c
