@@ -19,6 +19,7 @@
     "0x004FF511",
     "0x004FF51B"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-18T15:33:09Z"
 }
