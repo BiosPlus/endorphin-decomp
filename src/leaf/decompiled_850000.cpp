@@ -3,6 +3,7 @@ extern "C" { void* __cdecl ext_0085B2C0(void* a, void* b); int __cdecl ext_0086C
 extern "C" void ext_008692F0();
 extern "C" void ext_008596F0();
 extern "C" void ext_0086D250();
+extern "C" void ext_00859B30();
 
 // [0x008598C0] sub_008598C0 (32 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
@@ -4156,6 +4157,82 @@ L_FAIL:
 L_DONE:
         pop edi
         pop esi
+        ret
+    }
+}
+
+// [0x00859B30] sub_00859B30 (128 bytes)
+// cdecl: int fn(int* node_list, int* pat, int flag, int (*cb)(int*, void*), void* ctx)
+// Recursive pattern walk over a sibling/child node list terminated by -1.
+extern "C" __declspec(naked) void __cdecl fn_00859B30() {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        xor ebx, ebx
+        mov eax, dword ptr [ecx]
+        push esi
+        cmp eax, -0x1
+        push edi
+        jne L_48
+L_early:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+L_48:
+        mov ebp, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x20]
+        mov esi, dword ptr [esp + 0x14]
+L_54:
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi]
+        cmp eax, edx
+        jne L_9f
+        mov eax, dword ptr [ecx + 0x4]
+        add ecx, 0x4
+        cmp eax, -0x1
+        je L_83
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        je L_early
+        mov edx, dword ptr [esp + 0x1c]
+        push ebp
+        push edi
+        push edx
+        push ecx
+        push eax
+        call ext_00859B30
+        add esp, 0x14
+        add ebx, eax
+        jmp L_93
+L_83:
+        inc ebx
+        test edi, edi
+        je L_93
+        push ebp
+        push esi
+        call edi
+        add esp, 0x8
+        test eax, eax
+        jne L_a6
+L_93:
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je L_a6
+        mov ecx, dword ptr [esp + 0x18]
+L_9f:
+        mov esi, dword ptr [esi + 0x1c]
+        test esi, esi
+        jne L_54
+L_a6:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
         ret
     }
 }
