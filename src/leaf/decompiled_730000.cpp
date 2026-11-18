@@ -3054,3 +3054,18 @@ fn0073A080_ret1:
         ret 4
     }
 }
+
+// [0x00732160] sub_00732160 (64 bytes)
+extern "C" void ext_006BC7D0();
+extern "C" void ext_006E84E0();
+extern "C" void ext_007321A0();
+extern "C" void ext_00732460();
+extern "C" void ext_007325C0();
+
+extern "C" void __fastcall fn_00732160(void* self, int edx_unused, void* a1) {
+    void* tmp = ((void* (__thiscall*)(void*))ext_006BC7D0)(a1);
+    ((void (__thiscall*)(void*))ext_006E84E0)(tmp);
+    ((void (__thiscall*)(void*, void*))ext_00732460)(self, a1);
+    ((void (__thiscall*)(void*, void*))ext_007325C0)(self, a1);
+    ((void (__thiscall*)(void*, void*))ext_007321A0)(self, a1);
+}
