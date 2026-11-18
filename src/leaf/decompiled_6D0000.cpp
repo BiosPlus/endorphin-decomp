@@ -6645,3 +6645,60 @@ extern "C" __declspec(naked) void __fastcall fn_006D29A0(void* self) {
         ret
     }
 }
+
+// [0x006D2500] sub_006D2500 (144 bytes)
+extern "C" void ext_006D2390();
+extern "C" void ext_006D23B0();
+extern "C" void ext_006D80A0();
+
+// Builds a 4-double negated vector on the stack from *self (ecx) and calls sub_006D23B0,
+// then sub_006D2390(self_arg, &tmp) and sub_006D80A0(&tmp). Returns the stack arg in eax.
+extern "C" __declspec(naked) void* __fastcall fn_006D2500(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x8bfd88
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        fld qword ptr [ecx + 0x18]
+        push esi
+        xor esi, esi
+        sub esp, 0x8
+        mov dword ptr [esp + 0xc], esi
+        fchs
+        fstp qword ptr [esp]
+        fld qword ptr [ecx + 0x10]
+        sub esp, 0x8
+        fchs
+        fstp qword ptr [esp]
+        fld qword ptr [ecx + 0x8]
+        sub esp, 0x8
+        fchs
+        fstp qword ptr [esp]
+        fld qword ptr [ecx]
+        sub esp, 0x8
+        lea ecx, [esp + 0x28]
+        fchs
+        fstp qword ptr [esp]
+        call ext_006D23B0
+        mov dword ptr [esp + 0x30], esi
+        mov esi, dword ptr [ebp + 0x8]
+        lea eax, [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D2390
+        lea ecx, [esp + 0x8]
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
