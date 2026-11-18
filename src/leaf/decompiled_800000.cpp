@@ -8132,3 +8132,56 @@ extern "C" __declspec(naked) int __cdecl fn_0080ADB0(void* out) {
         ret
     }
 }
+
+// [0x0080B6C0] sub_0080B6C0 (128 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080B6C0(void) {
+    __asm {
+        sub esp, 8
+        push esi
+        lea eax, [esp + 0x14]
+        push edi
+        lea ecx, [esp + 8]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        lea edx, [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x20], 0
+        mov dword ptr [esp + 0x1c], 0
+        call ext_0080C090
+        mov edi, dword ptr [esp + 0x30]
+        mov esi, eax
+        add esp, 0x14
+        test esi, esi
+        jne L_store
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 8]
+        push edi
+        push 0
+        push edx
+        push eax
+        call ext_0080B740
+        mov esi, eax
+        add esp, 0x10
+        test esi, esi
+        je L_after
+    L_store:
+        mov dword ptr [edi], 0
+    L_after:
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        je L_ret
+        push eax
+        call ext_00859730
+        add esp, 4
+    L_ret:
+        mov eax, esi
+        pop edi
+        pop esi
+        add esp, 8
+        ret
+    }
+}
