@@ -131,8 +131,10 @@ extern "C" __declspec(naked) void* __fastcall fn_0070EA90(void* self, int edx_un
     }
 }
 extern "C" void ext_00712000();
+extern "C" void ext_00704EC0();
+extern "C" void ext_00704FD0();
 
-// [0x0070EA70] sub_0070EA70 (32 bytes)
+extern "C" void ext_00704FD0();
 extern "C" int __fastcall ext_006BADB0(void* obj);
 extern "C" void ext_006B9EC0();
 extern "C" void __fastcall fn_0070EA70(void* self, int edx_unused, void* a1) {
@@ -4627,6 +4629,84 @@ extern "C" __declspec(naked) void __fastcall fn_00702220(void* self, int edx_unu
         mov ecx, edi
         call ext_00704DB0
     L_end:
+        pop edi
+        pop esi
+        pop ebp
+        ret 0x4
+    }
+}
+
+// [0x007022C0] sub_007022C0 (160 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007022C0(void* self, int edx_unused, const char* arg) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0xc]
+        mov ecx, dword ptr [eax + 0x14]
+        test ecx, ecx
+        jle short f7022C0_end
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax + 0x10]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je short f7022C0_zero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne short f7022C0_zero
+        mov eax, dword ptr [eax + 0x4]
+        jmp short f7022C0_have
+f7022C0_zero:
+        xor eax, eax
+f7022C0_have:
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx + 0x12c]
+        mov edi, eax
+        test edi, edi
+        je short f7022C0_end
+        push ebx
+        mov ecx, edi
+        call ext_00704FD0
+        mov ebp, dword ptr [esp + 0x14]
+        mov esi, eax
+        mov ecx, ebp
+f7022C0_loop:
+        mov dl, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov al, dl
+        cmp dl, bl
+        jne short f7022C0_ne
+        test al, al
+        je short f7022C0_eq
+        mov dl, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov al, dl
+        cmp dl, bl
+        jne short f7022C0_ne
+        add ecx, 0x2
+        add esi, 0x2
+        test al, al
+        jne short f7022C0_loop
+f7022C0_eq:
+        xor eax, eax
+        jmp short f7022C0_done
+f7022C0_ne:
+        sbb eax, eax
+        sbb eax, -1
+f7022C0_done:
+        test eax, eax
+        pop ebx
+        je short f7022C0_end
+        push ebp
+        mov ecx, edi
+        call ext_00704EC0
+f7022C0_end:
         pop edi
         pop esi
         pop ebp
