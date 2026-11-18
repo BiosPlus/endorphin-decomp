@@ -4,8 +4,10 @@ extern "C" void ext_008692F0();
 extern "C" void ext_008596F0();
 extern "C" void ext_0086D250();
 extern "C" void ext_00859B30();
+extern "C" void ext_008599F0();
+extern "C" void ext_0086CCC0();
 
-// [0x008598C0] sub_008598C0 (32 bytes)
+extern "C" void ext_0086CCC0();
 extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
     __asm {
         mov ecx, dword ptr [esp + 4]
@@ -4442,6 +4444,81 @@ L_end:
         pop esi
         pop ebp
         pop ecx
+        ret
+    }
+}
+
+// [0x0085C390] sub_0085C390 (160 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085C390(unsigned int a, unsigned int b) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        mov ebp, dword ptr [esp + 16]
+        push esi
+        push edi
+        xor esi, esi
+        xor edi, edi
+        cmp ebx, ebp
+        jne L_NE
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L_NE:
+        push ebx
+        call ext_0086CCC0
+        push ebp
+        mov dword ptr [esp + 32], eax
+        call ext_0086CCC0
+        push ebx
+        mov dword ptr [esp + 32], eax
+        call ext_008599F0
+        push ebp
+        mov ebx, eax
+        call ext_008599F0
+        add esp, 16
+        test ebx, ebx
+        jbe L_END
+        mov edx, dword ptr [esp + 20]
+        mov ebp, dword ptr [esp + 24]
+        sub edx, ebp
+    L_LOOP:
+        cmp edi, eax
+        jae L_END
+        lea ecx, [edi + ebp]
+        movsx esi, byte ptr [edx + ecx]
+        movsx ecx, byte ptr [ecx]
+        movsx esi, byte ptr [esi + 0xac3940]
+        mov dword ptr [esp + 20], esi
+        movsx esi, byte ptr [ecx + 0xac3940]
+        mov ecx, dword ptr [esp + 20]
+        sub esi, ecx
+        jne L_DIFF
+        inc edi
+        cmp edi, ebx
+        jb L_LOOP
+    L_END:
+        cmp ebx, eax
+        jae L_TAIL
+        or esi, -1
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_TAIL:
+        jbe L_DIFF
+        mov esi, 1
+    L_DIFF:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
         ret
     }
 }
