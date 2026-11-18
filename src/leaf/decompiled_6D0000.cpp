@@ -6582,3 +6582,66 @@ extern "C" __declspec(naked) void* __fastcall fn_006D5F50(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006D29A0] sub_006D29A0 (144 bytes)
+// Normalizes the 3-double vector at self (x@0, y@8, z@0x10) in place; zeroes it when len == mem_0092A278.
+extern "C" int mem_0092A278;
+extern "C" int mem_0092A270;
+extern "C" __declspec(naked) void __fastcall fn_006D29A0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x20
+        mov eax, dword ptr [ecx + 0x10]
+        mov edx, dword ptr [ecx + 0x14]
+        mov dword ptr [ebp - 0x8], eax
+        mov eax, dword ptr [ecx + 0x8]
+        mov dword ptr [ebp - 0x4], edx
+        mov edx, dword ptr [ecx + 0xc]
+        mov dword ptr [ebp - 0x10], eax
+        mov eax, dword ptr [ecx]
+        mov dword ptr [ebp - 0xc], edx
+        mov edx, dword ptr [ecx + 0x4]
+        mov dword ptr [ebp - 0x18], eax
+        mov dword ptr [ebp - 0x14], edx
+        fld qword ptr [ebp - 0x18]
+        fmul st(0), st
+        fld qword ptr [ebp - 0x10]
+        fmul st(0), st
+        faddp st(1), st
+        fld qword ptr [ebp - 0x8]
+        fmul st(0), st
+        faddp st(1), st
+        fsqrt
+        fstp qword ptr [ebp - 0x20]
+        fld qword ptr [ebp - 0x20]
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je short L_scale_006D29A0
+        xor eax, eax
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx + 0x8], eax
+        mov dword ptr [ecx + 0x10], eax
+        mov dword ptr [ecx + 0x4], eax
+        fstp st(0)
+        mov dword ptr [ecx + 0xc], eax
+        mov dword ptr [ecx + 0x14], eax
+        mov esp, ebp
+        pop ebp
+        ret
+    L_scale_006D29A0:
+        fdivr qword ptr [mem_0092A270]
+        fld st(0)
+        fmul qword ptr [ecx]
+        fstp qword ptr [ecx]
+        fld st(0)
+        fmul qword ptr [ecx + 0x8]
+        fstp qword ptr [ecx + 0x8]
+        fmul qword ptr [ecx + 0x10]
+        fstp qword ptr [ecx + 0x10]
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
