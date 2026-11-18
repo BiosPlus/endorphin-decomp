@@ -9144,3 +9144,80 @@ extern "C" __declspec(naked) int __cdecl fn_007BA4B0(void* self, unsigned short 
         ret
     }
 }
+
+// [0x007BA300] sub_007BA300 (160 bytes)
+extern "C" void ext_007990D0();
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50();
+extern "C" void ext_007BA700();
+
+extern "C" __declspec(naked) void* __cdecl fn_007BA300(void* a1, int a2, int a3, int a4) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x5c
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        push esi
+        xor esi, esi
+        mov si, word ptr [ebx + 0x4e]
+        push edi
+        cmp esi, 0xa
+        lea edi, [esp + 0x18]
+        jbe L_7BA330
+        lea eax, [8*esi]
+        push eax
+        call ext_0079AF40
+        add esp, 0x4
+        mov edi, eax
+    L_7BA330:
+        mov edx, dword ptr [ebp + 0x10]
+        lea ecx, [esp + 0x10]
+        push ecx
+        push edx
+        push ebx
+        call ext_007990D0
+        add esp, 0xc
+        test esi, esi
+        jle L_7BA360
+        mov eax, edi
+        mov ecx, esi
+    L_7BA34A:
+        mov edx, dword ptr [esp + 0x10]
+        mov ebx, dword ptr [esp + 0x14]
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ebx
+        add eax, 0x8
+        dec ecx
+        jne L_7BA34A
+        mov ebx, dword ptr [ebp + 0x8]
+    L_7BA360:
+        mov eax, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [ebp + 0xc]
+        push edi
+        push esi
+        push eax
+        push ecx
+        push edx
+        push ebx
+        call ext_007BA700
+        mov esi, eax
+        lea eax, [esp + 0x30]
+        add esp, 0x18
+        cmp edi, eax
+        je L_7BA38A
+        push edi
+        call ext_0079AF50
+        add esp, 0x4
+    L_7BA38A:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
