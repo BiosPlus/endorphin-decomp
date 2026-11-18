@@ -110989,3 +110989,59 @@ extern "C" __declspec(naked) bool __fastcall fn_004A32A0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0049C710] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_42 (164 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0049C710(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        mov ecx, dword ptr [eax]
+        sub esp, 0x30
+        test ecx, ecx
+        je throw_null
+        push ebx
+        call ext_0049AA20
+        mov byte ptr [esp + 0x44], al
+        mov ecx, dword ptr [esp + 0x44]
+        push ecx
+        lea ecx, [esp + 0x8]
+        call ext_006720A0
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0x0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], -1
+        je done
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+done:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+throw_null:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
