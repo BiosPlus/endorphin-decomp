@@ -6985,3 +6985,90 @@ extern "C" __declspec(naked) void __fastcall fn_006D6C20(void* self) {
         ret
     }
 }
+
+// [0x006D9800] sub_006D9800 (160 bytes)
+// Scans 12 records (stride 0x20, base 0xB5D924): compares arg string against the
+// string pointers at rec-0xC (0xB5D918+i*0x20) and rec+0 (0xB5D924+i*0x20).
+// On match returns dword at 0xB5D91C+i*0x20; otherwise returns 6.
+extern "C" __declspec(naked) int __cdecl fn_006D9800(const char* key) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        xor ebp, ebp
+        mov edi, 0xb5d924
+    loop_top:
+        mov ecx, dword ptr [edi - 0xc]
+        mov esi, ebx
+    a_loop:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne a_neq
+        test dl, dl
+        je a_eq
+        mov al, byte ptr [ecx + 0x1]
+        mov dl, al
+        cmp al, byte ptr [esi + 0x1]
+        jne a_neq
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne a_loop
+    a_eq:
+        xor ecx, ecx
+        jmp a_done
+    a_neq:
+        sbb ecx, ecx
+        sbb ecx, -1
+    a_done:
+        test ecx, ecx
+        je found
+        mov ecx, dword ptr [edi]
+        mov esi, ebx
+    b_loop:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne b_neq
+        test dl, dl
+        je b_eq
+        mov al, byte ptr [ecx + 0x1]
+        mov dl, al
+        cmp al, byte ptr [esi + 0x1]
+        jne b_neq
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne b_loop
+    b_eq:
+        xor ecx, ecx
+        jmp b_done
+    b_neq:
+        sbb ecx, ecx
+        sbb ecx, -1
+    b_done:
+        test ecx, ecx
+        je found
+        inc ebp
+        add edi, 0x20
+        cmp ebp, 0xc
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x6
+        pop ebx
+        ret
+    found:
+        shl ebp, 0x5
+        pop edi
+        pop esi
+        mov eax, dword ptr [ebp + 0xb5d91c]
+        pop ebp
+        pop ebx
+        ret
+    }
+}
