@@ -10285,3 +10285,45 @@ extern "C" __declspec(naked) void __fastcall fn_006BA0C0(void* self) {
         ret
     }
 }
+
+// [0x006BA040] sub_006BA040 (128 bytes)
+// SEH-framed function (fs:[0] chain, local object at esp+0x10); returns arg2 in eax.
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9DE0();
+extern "C" void ext_006B9F80();
+
+extern "C" __declspec(naked) int __cdecl fn_006BA040() {
+    __asm {
+        push -1
+        push 0x8b93df
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x50
+        mov eax, dword ptr [esp + 0x68]
+        push esi
+        push 1
+        push eax
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0xc], 0
+        call ext_006B9DE0
+        mov ecx, dword ptr [esp + 0x68]
+        mov esi, dword ptr [esp + 0x64]
+        push eax
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x68], 1
+        call ext_006B9F80
+        add esp, 0xc
+        mov dword ptr [esp + 0x4], 1
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x5c], 0
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x54]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x5c
+        ret
+    }
+}
