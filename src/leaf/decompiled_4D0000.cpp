@@ -8819,3 +8819,51 @@ extern "C" __declspec(naked) void __fastcall fn_004DCE50(void* self, int edx_unu
         ret 0x18
     }
 }
+
+// [0x004D5560] sub_004D5560 (138 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_004D3A10();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004D5560(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 08924e3h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 48h
+        mov ecx, dword ptr [esp + 5ch]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je throw_path
+        push esi
+        lea eax, [esp + 8]
+        push eax
+        call ext_004D3A10
+        mov esi, dword ptr [esp + 5ch]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 58h], 1
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 4], 1
+        mov byte ptr [esp + 54h], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 4ch]
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 54h
+        ret 8
+throw_path:
+        lea ecx, [esp + 20h]
+        call ext_0046C3C0
+        push 09dec1ch
+        lea ecx, [esp + 24h]
+        push ecx
+        call ext_006A6DD2
+    }
+}
