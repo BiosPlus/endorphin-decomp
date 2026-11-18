@@ -7142,3 +7142,59 @@ extern "C" __declspec(naked) bool __fastcall fn_006DC3C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D2590] sub_006D2590 (160 bytes)
+extern "C" void ext_006D2390();
+extern "C" void ext_006D23B0();
+extern "C" void ext_006D80A0();
+// Vector add of two 4 x double records (self + a2 -> temp), SEH-framed; result a1 returned in eax.
+extern "C" __declspec(naked) void* __fastcall fn_006D2590(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x8bfd88
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        mov eax, dword ptr [ebp + 0xc]
+        push esi
+        sub esp, 0x8
+        xor esi, esi
+        fld qword ptr [eax + 0x18]
+        fadd qword ptr [ecx + 0x18]
+        sub esp, 0x8
+        mov dword ptr [esp + 0x14], esi
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [eax + 0x10]
+        fadd qword ptr [ecx + 0x10]
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [eax + 0x8]
+        fadd qword ptr [ecx + 0x8]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [eax]
+        fadd qword ptr [ecx]
+        lea ecx, [esp + 0x28]
+        fstp qword ptr [esp]
+        call ext_006D23B0
+        mov dword ptr [esp + 0x30], esi
+        mov esi, dword ptr [ebp + 0x8]
+        lea eax, [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D2390
+        lea ecx, [esp + 0x8]
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
