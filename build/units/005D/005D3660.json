@@ -20,5 +20,7 @@
     "0x005D36FA",
     "0x005D3704"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-18T15:50:48Z"
 }
