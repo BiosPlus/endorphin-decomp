@@ -185,8 +185,10 @@ extern "C" void* __stdcall fn_004D1820(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA32AA8, 0);
 }
+extern "C" void ext_004A9A40();
+extern "C" void ext_006720E0();
 
-// [0x004DE820] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void ext_006720E0();
 extern "C" bool __stdcall fn_004DE820(void* a1) {
     typedef bool (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA397B0, 0);
@@ -65778,6 +65780,59 @@ extern "C" __declspec(naked) void __stdcall fn_004B4460(void* self) {
         test ecx, ecx
         mov dword ptr [esp + 3Ch], 0FFFFFFFFh
         je L_skip
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+    L_skip:
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0BCh]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 34h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 3Ch
+        ret 4
+    L_throw:
+        lea ecx, [esp + 0Ch]
+        call ext_0046C3C0
+        push 09DEC1Ch
+        lea eax, [esp + 10h]
+        push eax
+        call ext_006A6DD2
+    }
+}
+
+// [0x004AA910] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_47 (154 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004AA910(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 08A5428h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, dword ptr [esp + 44h]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_throw
+        call ext_004A9A40
+        push eax
+        lea ecx, [esp + 8]
+        call ext_006720E0
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 40h], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je short L_skip
         mov edx, dword ptr [ecx]
         mov edx, dword ptr [edx + 78h]
         lea eax, [esp + 4]
