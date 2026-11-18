@@ -212,6 +212,7 @@ extern "C" void ext_005C84B0();
 extern "C" void ext_004D0AF0();
 extern "C" void ext_00594060();
 extern "C" void ext_00630580();
+extern "C" void ext_00682ED0();
 
 // [0x004E9D90] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004E9D90(void* a1) {
@@ -80297,6 +80298,60 @@ extern "C" __declspec(naked) void __fastcall fn_00639AD0(void* self, int edx_unu
         push 0x9dec1c
         lea ecx, [esp + 0x10]
         push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00514130] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_47 (157 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00514130(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_00514185
+        lea ecx, [eax + 0x4]
+        call ext_00682ED0
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720E0
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je L_00514165
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_00514165:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    L_00514185:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0x10]
+        push eax
         call ext_006A6DD2
     }
 }
