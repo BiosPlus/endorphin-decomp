@@ -5935,3 +5935,62 @@ extern "C" __declspec(naked) void __cdecl fn_007A2580(void* a1, int a2, unsigned
         ret
     }
 }
+
+// [0x007A4BE0] sub_007A4BE0 (96 bytes)
+extern "C" void ext_007A3E40();
+extern "C" void ext_007A9880();
+extern "C" void ext_007AA510();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007A4BE0(void* a1, void* a2, void* a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        jne L_007A4BFC
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_007A4C30
+    L_007A4BFC:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        call ext_007A9880
+        mov cl, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test cl, cl
+        je L_007A4C22
+        mov cl, byte ptr [mem_00B61219]
+        test cl, cl
+        je L_007A4C30
+    L_007A4C22:
+        test eax, eax
+        je L_007A4C30
+        push esi
+        push eax
+        call ext_007A3E40
+        add esp, 0x8
+    L_007A4C30:
+        pop esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
