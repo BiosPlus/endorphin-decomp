@@ -150,8 +150,10 @@ extern "C" __declspec(naked) void __fastcall fn_00783570(void* self, int edx_unu
 
 extern "C" int mem_00925184;
 extern "C" int mem_009252C4;
+extern "C" void ext_00782D00();
+extern "C" int mem_00925208;
 
-// [0x007835B0] sub_007835B0 (64 bytes)
+extern "C" int mem_00925208;
 // Two-part unit: ftell wrapper on self->[4]->[4] (ret), then fseek(file, arg, 0) wrapper (ret 0x4).
 extern "C" __declspec(naked) void __fastcall fn_007835B0(void* self, int edx_unused, int a1) {
     __asm {
@@ -6683,5 +6685,68 @@ L_nogrow:
         pop ebp
         pop ebx
         ret 0x8
+    }
+}
+
+// [0x00789A30] sub_00789A30 (160 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00789A30(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push 0x14
+        lea ecx, [esi + 0x4]
+        call ext_00782D00
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dl, byte ptr [esp + 0x18]
+        mov dword ptr [esi + 0x18], eax
+        mov al, byte ptr [esp + 0x14]
+        xor ebx, ebx
+        cmp al, bl
+        mov dword ptr [esi + 0x1c], ecx
+        mov byte ptr [esi + 0x20], al
+        mov byte ptr [esi + 0x21], dl
+        jne short L_else
+        push 0x1000
+        mov dword ptr [esi + 0x2c], 0x1000
+        mov dword ptr [esi + 0x30], ebx
+        mov dword ptr [esi + 0x34], ebx
+        call dword ptr [mem_00925208]
+        mov dword ptr [esi + 0x24], eax
+        add esp, 0x4
+        mov byte ptr [eax], bl
+        jmp short L_join
+L_else:
+        mov dword ptr [esi + 0x2c], ebx
+        mov dword ptr [esi + 0x30], ebx
+        mov dword ptr [esi + 0x34], ebx
+        mov dword ptr [esi + 0x24], ebx
+L_join:
+        cmp byte ptr [esi + 0x20], bl
+        je short L_alt
+        mov eax, dword ptr [esp + 0x1c]
+        cmp eax, ebx
+        je short L_alt
+        mov dword ptr [esi + 0x24], eax
+        mov byte ptr [esi + 0x28], bl
+        mov byte ptr [esi + 0x38], bl
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x3c], ebx
+        mov dword ptr [esi + 0x40], ebx
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret 0x14
+L_alt:
+        mov byte ptr [esi + 0x28], 0x1
+        mov byte ptr [esi + 0x38], bl
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x3c], ebx
+        mov dword ptr [esi + 0x40], ebx
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret 0x14
     }
 }
