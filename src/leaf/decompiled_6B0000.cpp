@@ -10891,3 +10891,94 @@ extern "C" __declspec(naked) void __fastcall fn_006BA920(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006BA4D0] sub_006BA4D0 (160 bytes)
+extern "C" void ext_006B9940();
+extern "C" void ext_006B9CE0();
+
+extern "C" __declspec(naked) void __fastcall fn_006BA4D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        xor ebp, ebp
+        mov edi, dword ptr [esi]
+        call ext_006B9940
+        test al, al
+        je L_fail_006BA4D0
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi]
+        add eax, edx
+        cmp edi, eax
+        jae L_fail_006BA4D0
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+    L_loop_006BA4D0:
+        mov cl, byte ptr [edi]
+        push ebx
+        push ecx
+        mov ecx, esi
+        call ext_006B9CE0
+        test al, al
+        jne L_done_006BA4D0
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        add edx, ecx
+        inc ebp
+        cmp edi, edx
+        jae L_done_006BA4D0
+    L_inner1_006BA4D0:
+        mov al, byte ptr [edi]
+        push ebx
+        push eax
+        mov ecx, esi
+        call ext_006B9CE0
+        test al, al
+        jne L_done_006BA4D0
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi]
+        inc edi
+        add ecx, edx
+        cmp edi, ecx
+        jb L_inner1_006BA4D0
+    L_done_006BA4D0:
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        add edx, ecx
+        cmp edi, edx
+        jae L_after2_006BA4D0
+    L_inner2_006BA4D0:
+        mov al, byte ptr [edi]
+        push ebx
+        push eax
+        mov ecx, esi
+        call ext_006B9CE0
+        test al, al
+        je L_after2_006BA4D0
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi]
+        inc edi
+        add ecx, edx
+        cmp edi, ecx
+        jb L_inner2_006BA4D0
+    L_after2_006BA4D0:
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        add edx, ecx
+        cmp edi, edx
+        jb L_loop_006BA4D0
+        pop ebx
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        ret 4
+    L_fail_006BA4D0:
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        ret 4
+    }
+}
