@@ -8469,3 +8469,53 @@ extern "C" __declspec(naked) void __cdecl fn_00807150(int a0, int a1, int a2, in
         ret
     }
 }
+
+// [0x008058F0] sub_008058F0 (144 bytes)
+extern "C" void ext_0080A6A0();
+extern "C" void ext_0080A800();
+extern "C" void ext_0080AF20();
+extern "C" void ext_0080F7F0();
+
+extern "C" __declspec(naked) int __fastcall fn_008058F0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    __asm {
+        sub esp, 200h
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 208h]
+        push esi
+        push 0ab378ch
+        push eax
+        call ext_0080F7F0
+        lea ecx, [esp + 10h]
+        push ecx
+        call ext_0080A6A0
+        mov edx, dword ptr [esp + 234h]
+        mov eax, dword ptr [esp + 230h]
+        mov ecx, dword ptr [esp + 22ch]
+        push edx
+        mov edx, dword ptr [esp + 22ch]
+        push eax
+        mov eax, dword ptr [esp + 22ch]
+        push ecx
+        mov ecx, dword ptr [esp + 22ch]
+        push edx
+        mov edx, dword ptr [esp + 22ch]
+        push eax
+        push ecx
+        push edx
+        push esi
+        call ext_0080AF20
+        mov esi, eax
+        push esi
+        push 0ab37b8h
+        call ext_0080A800
+        add esp, 38h
+        mov eax, esi
+        pop esi
+        add esp, 200h
+        ret 20h
+    }
+}
