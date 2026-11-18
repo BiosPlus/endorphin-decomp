@@ -65123,3 +65123,62 @@ extern "C" __declspec(naked) void* __stdcall fn_00639950(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x0046DE70] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_47 (154 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_0046C090();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006720C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __stdcall fn_0046DE70(void* a1) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 08a5428h
+        push eax
+        mov fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, dword ptr [esp + 44h]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je null_path
+        call ext_0046C090
+        push eax
+        lea ecx, [esp + 8]
+        call ext_006720C0
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 40h], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov dword ptr [esp + 3ch], -1
+        je skip_dtor
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+skip_dtor:
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0bch]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 34h]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 3ch
+        ret 4
+null_path:
+        lea ecx, [esp + 0ch]
+        call ext_0046C3C0
+        push 09dec1ch
+        lea eax, [esp + 10h]
+        push eax
+        call ext_006A6DD2
+    }
+}
