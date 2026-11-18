@@ -19748,3 +19748,51 @@ extern "C" __declspec(naked) void __cdecl fn_007C4660(void* self, int n, short* 
         ret
     }
 }
+
+// [0x007C5460] sub_007C5460 (144 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C5460(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ecx, dword ptr [eax + 0x16b4]
+        cmp ecx, 0x10
+        jne short L_notEq10
+        mov ecx, dword ptr [eax + 0x8]
+        mov edx, dword ptr [eax + 0x14]
+        mov bl, byte ptr [eax + 0x16b0]
+        mov byte ptr [ecx + edx], bl
+        mov edx, dword ptr [eax + 0x14]
+        mov bl, byte ptr [eax + 0x16b1]
+        inc edx
+        mov dword ptr [eax + 0x14], edx
+        mov ecx, edx
+        mov edx, dword ptr [eax + 0x8]
+        mov byte ptr [ecx + edx], bl
+        mov ecx, dword ptr [eax + 0x14]
+        inc ecx
+        pop ebx
+        mov dword ptr [eax + 0x14], ecx
+        xor ecx, ecx
+        mov word ptr [eax + 0x16b0], cx
+        mov dword ptr [eax + 0x16b4], ecx
+        ret
+L_notEq10:
+        cmp ecx, 0x8
+        jl short L_exit
+        mov ecx, dword ptr [eax + 0x8]
+        mov edx, dword ptr [eax + 0x14]
+        mov bl, byte ptr [eax + 0x16b0]
+        mov byte ptr [ecx + edx], bl
+        mov edx, dword ptr [eax + 0x14]
+        movzx cx, byte ptr [eax + 0x16b1]
+        mov word ptr [eax + 0x16b0], cx
+        mov ecx, dword ptr [eax + 0x16b4]
+        inc edx
+        add ecx, -8
+        mov dword ptr [eax + 0x14], edx
+        mov dword ptr [eax + 0x16b4], ecx
+L_exit:
+        pop ebx
+        ret
+    }
+}
