@@ -8616,3 +8616,71 @@ extern "C" __declspec(naked) void __cdecl fn_007B2EF0() {
         ret
     }
 }
+
+// [0x007B1660] sub_007B1660 (128 bytes)
+extern "C" void ext_00798FF0();
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50();
+extern "C" void ext_007B08E0();
+extern "C" void ext_007B09C0();
+
+extern "C" __declspec(naked) void* __cdecl fn_007B1660(int a1, void* obj) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x2c]
+        lea esi, [esp + 0x10]
+        mov eax, dword ptr [edi + 0x4]
+        cmp eax, 0xa
+        jbe L_7B1684
+        add eax, eax
+        push eax
+        call ext_0079AF40
+        add esp, 0x4
+        mov esi, eax
+    L_7B1684:
+        mov ebp, dword ptr [esp + 0x28]
+        cmp word ptr [edi + 0x2], 0x1
+        push esi
+        push edi
+        push ebp
+        jne L_7B1699
+        call ext_007B08E0
+        jmp L_7B169E
+    L_7B1699:
+        call ext_007B09C0
+    L_7B169E:
+        mov ebx, eax
+        add esp, 0xc
+        test ebx, ebx
+        je L_7B16BD
+        mov ecx, dword ptr [edi + 0x4]
+        xor edx, edx
+        mov dx, word ptr [edi]
+        push esi
+        push ecx
+        push edx
+        push ebp
+        call ext_00798FF0
+        add esp, 0x10
+        mov ebx, eax
+    L_7B16BD:
+        lea eax, [esp + 0x10]
+        cmp esi, eax
+        je L_7B16CE
+        push esi
+        call ext_0079AF50
+        add esp, 0x4
+    L_7B16CE:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
