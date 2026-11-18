@@ -2563,3 +2563,67 @@ L_next3:
         ret 0x4
     }
 }
+
+// [0x00738B10] sub_00738B10 (128 bytes)
+extern "C" void ext_006C9360();
+extern "C" void ext_006DC460();
+extern "C" void ext_006E5EE0();
+
+extern "C" __declspec(naked) void __fastcall fn_00738B10(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        push edi
+        mov eax, dword ptr [ebx + 0ach]
+        test eax, eax
+        je fn00738B10_null1
+        lea esi, [eax + 4]
+        jmp fn00738B10_s1
+fn00738B10_null1:
+        xor esi, esi
+fn00738B10_s1:
+        mov edi, dword ptr [esp + 10h]
+        push 0
+        push 1
+        push 1
+        mov ecx, edi
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C9360
+        push eax
+        push esi
+        call ext_006E5EE0
+        add esp, 14h
+        test eax, eax
+        je fn00738B10_fail
+fn00738B10_loop:
+        mov eax, dword ptr [ebx + 0ach]
+        test eax, eax
+        je fn00738B10_null2
+        lea esi, [eax + 4]
+        jmp fn00738B10_s2
+fn00738B10_null2:
+        xor esi, esi
+fn00738B10_s2:
+        push 0
+        push 1
+        push 1
+        mov ecx, edi
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C9360
+        push eax
+        push esi
+        call ext_006E5EE0
+        add esp, 14h
+        test eax, eax
+        jne fn00738B10_loop
+fn00738B10_fail:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
