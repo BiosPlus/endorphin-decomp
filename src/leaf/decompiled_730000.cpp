@@ -2988,3 +2988,69 @@ extern "C" __declspec(naked) void __fastcall fn_00738B90(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0073A080] sub_0073A080 (160 bytes)
+extern "C" void ext_0072CF10();
+extern "C" void ext_006D37E0();
+extern "C" void ext_0073EF50();
+extern "C" void ext_006FDB00();
+
+extern "C" __declspec(naked) void __fastcall fn_0073A080(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 1
+        mov ecx, dword ptr [esi + 0b4h]
+        call ext_0072CF10
+        test al, al
+        je fn0073A080_ret1
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad40ch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073A080_ret1
+        push ebx
+        mov ebx, dword ptr [esp + 0ch]
+        push edi
+fn0073A080_loop:
+        mov ecx, dword ptr [esi + 4]
+        push 0b5d2c0h
+        call ext_006D37E0
+        mov edi, eax
+        mov ecx, esi
+        push edi
+        call ext_0073EF50
+        test al, al
+        je fn0073A080_else
+        push 0
+        push edi
+        mov ecx, ebx
+        call ext_006FDB00
+        jmp fn0073A080_after
+fn0073A080_else:
+        mov ecx, dword ptr [esi + 4]
+        push edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 80h]
+fn0073A080_after:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad40ch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        jne fn0073A080_loop
+        pop edi
+        pop ebx
+        mov al, 1
+        pop esi
+        ret 4
+fn0073A080_ret1:
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
