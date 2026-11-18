@@ -5705,3 +5705,67 @@ L_append:
         ret
     }
 }
+
+// [0x00798750] sub_00798750 (144 bytes)
+// Plain cdecl (ret, no N): arg1 = struct ptr (ebx), arg2 = multiplier (ebp; -1 means use self+0x28).
+extern "C" void ext_00798840();
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_00798750(void* self, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        cmp ebp, -1
+        jne short L_have_mul
+        mov ebp, dword ptr [ebx + 0x28]
+L_have_mul:
+        cmp word ptr [ebx + 0x72], 0x1
+        jne short L_slow
+        cmp word ptr [ebx + 0x46], 0x6
+        jne short L_slow
+        mov eax, dword ptr [ebx + 0xc]
+        test ah, 0x40
+        jne short L_slow
+        mov eax, dword ptr [ebx + 0x24]
+        push esi
+        push edi
+        xor edi, edi
+        mov di, word ptr [ebx + 0xe4]
+        xor edx, edx
+        xor esi, esi
+        lea eax, [eax + edi - 0x1]
+        mov si, word ptr [ebx + 0xe6]
+        div edi
+        xor edx, edx
+        mov dx, word ptr [ebx + 0x40]
+        mov ecx, eax
+        lea eax, [esi + ebp - 0x1]
+        imul ecx, edx
+        xor edx, edx
+        imul ecx, edi
+        div esi
+        add ecx, 0x7
+        xor edx, edx
+        shr ecx, 0x3
+        imul eax, esi
+        imul esi, edi
+        imul ecx, eax
+        mov eax, ecx
+        pop edi
+        div esi
+        pop esi
+        pop ebp
+        pop ebx
+        lea eax, [ecx + 2*eax]
+        ret
+L_slow:
+        push ebx
+        call ext_00798840
+        imul eax, ebp
+        add esp, 0x4
+        pop ebp
+        pop ebx
+        ret
+    }
+}
