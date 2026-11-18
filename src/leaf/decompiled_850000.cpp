@@ -4376,3 +4376,72 @@ L_RET:
         ret
     }
 }
+
+// [0x0085BD10] sub_0085BD10 (144 bytes)
+extern "C" void ext_00859DD0();
+extern "C" void ext_0085BBC0();
+extern "C" unsigned int ext_0085BC20(void*);
+
+extern "C" __declspec(naked) void __cdecl fn_0085BD10(unsigned int a1, unsigned int a2, unsigned __int64* out) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        push eax
+        call ext_0085BC20
+        mov esi, dword ptr [esp + 0x20]
+        mov ebp, dword ptr [esp + 0x1c]
+        xor edi, edi
+        add esp, 0x4
+        mov dword ptr [esi], edi
+        cmp ebp, edi
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esi + 0x4], edi
+        jbe L_end
+        push ebx
+L_loop:
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        call ext_00859DD0
+        mov ebx, eax
+        add esp, 0x4
+        cmp ebx, 0xff00
+        je L_break
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esi]
+        push 0x8
+        push edx
+        push eax
+        call ext_0085BBC0
+        mov dword ptr [esi], eax
+        mov eax, ebx
+        mov dword ptr [esi + 0x4], edx
+        mov ecx, dword ptr [esi]
+        cdq
+        or ecx, eax
+        add esp, 0xc
+        mov dword ptr [esi], ecx
+        mov ebx, dword ptr [esi + 0x4]
+        or ebx, edx
+        inc edi
+        cmp edi, ebp
+        mov dword ptr [esi + 0x4], ebx
+        jb L_loop
+L_break:
+        pop ebx
+L_end:
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        call ext_0085BC20
+        mov ecx, dword ptr [esp + 0x10]
+        add esp, 0x4
+        sub eax, ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+    }
+}
