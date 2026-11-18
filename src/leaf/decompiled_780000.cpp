@@ -6807,3 +6807,80 @@ L_skip:
         ret
     }
 }
+
+// [0x00786300] sub_00786300 (160 bytes)
+extern "C" void ext_006DE7C0();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_006E7410();
+extern "C" void ext_007865F0();
+
+extern "C" __declspec(naked) void __fastcall fn_00786300(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, ecx
+        cmp dword ptr [esi + 0x54], 0x2
+        jne short L_fail
+        push 0xaa8ca8
+        mov ecx, esi
+        mov bl, 0x1
+        call ext_006DE7C0
+        test eax, eax
+        je short L_a
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        setne bl
+    L_a:
+        push 0xaa8ca4
+        mov ecx, esi
+        call ext_006DE7C0
+        test eax, eax
+        je short L_b
+        test bl, bl
+        je short L_c
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        je short L_c
+        mov bl, 0x1
+        jmp short L_b
+    L_c:
+        xor bl, bl
+    L_b:
+        push 0xaa8ca0
+        mov ecx, esi
+        call ext_006DE7C0
+        test eax, eax
+        je short L_d
+        test bl, bl
+        je short L_fail
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        jne short L_call
+    L_fail:
+        push 0xaaf4a0
+        push 0x2
+        lea ecx, [edi + 0x20]
+        call ext_006E7410
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x8
+    L_d:
+        test bl, bl
+        je short L_fail
+    L_call:
+        push esi
+        mov ecx, edi
+        call ext_007865F0
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
