@@ -19,5 +19,7 @@
     "0x004EFA30",
     "0x004EFA3C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-18T03:19:37Z"
 }
