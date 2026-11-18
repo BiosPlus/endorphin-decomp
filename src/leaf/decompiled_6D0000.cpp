@@ -7574,3 +7574,74 @@ extern "C" __declspec(naked) void __fastcall fn_006D3B90(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006D02D0] sub_006D02D0 (160 bytes)
+extern "C" void ext_006CA6B0();
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_006CBDB0();
+extern "C" void ext_006CC600();
+extern "C" void ext_006CC6B0();
+extern "C" void ext_006CC6F0();
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) int __fastcall fn_006D02D0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x50
+        __asm _emit 0x8d __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x5c]
+        mov esi, ecx
+        push edi
+        push eax
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9C30
+        test al, 0x8
+        je fail
+        lea ecx, [esp + 0x30]
+        push edi
+        push ecx
+        mov ecx, esi
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 0x1
+        je fail
+        push edi
+        mov ecx, esi
+        call ext_006CBDB0
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je fail
+        push edi
+        mov ecx, esi
+        call ext_006CC600
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je fail
+        push edi
+        mov ecx, esi
+        call ext_006CC6B0
+        test al, al
+        jne fail
+        push edi
+        mov ecx, esi
+        call ext_006CC6F0
+        test al, al
+        jne fail
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x50
+        ret 0x4
+    fail:
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x50
+        ret 0x4
+    }
+}
