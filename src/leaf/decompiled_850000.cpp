@@ -4300,3 +4300,79 @@ extern "C" __declspec(naked) void __cdecl fn_008587C0(void) {
         ret
     }
 }
+
+// [0x00859830] sub_00859830 (144 bytes)
+extern "C" void ext_008599F0();
+extern "C" void ext_0086CCC0();
+
+extern "C" __declspec(naked) int __cdecl fn_00859830(unsigned int a, unsigned int b) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        mov ebp, dword ptr [esp + 16]
+        push esi
+        push edi
+        xor esi, esi
+        xor edi, edi
+        cmp ebx, ebp
+        jne L_NE
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+L_NE:
+        push ebx
+        call ext_0086CCC0
+        push ebp
+        mov dword ptr [esp + 32], eax
+        call ext_0086CCC0
+        push ebx
+        mov dword ptr [esp + 32], eax
+        call ext_008599F0
+        push ebp
+        mov ebx, eax
+        call ext_008599F0
+        add esp, 16
+        test ebx, ebx
+        jbe L_END
+        mov edx, dword ptr [esp + 20]
+        mov ebp, dword ptr [esp + 24]
+        sub edx, ebp
+L_LOOP:
+        cmp edi, eax
+        jae L_END
+        lea ecx, [edi + ebp]
+        movsx esi, byte ptr [edx + ecx]
+        mov dword ptr [esp + 20], esi
+        movsx esi, byte ptr [ecx]
+        mov ecx, dword ptr [esp + 20]
+        sub esi, ecx
+        jne L_RET
+        inc edi
+        cmp edi, ebx
+        jb L_LOOP
+L_END:
+        cmp ebx, eax
+        jae L_GE
+        or esi, -1
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_GE:
+        jbe L_RET
+        mov esi, 1
+L_RET:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
