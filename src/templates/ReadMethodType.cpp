@@ -118843,3 +118843,67 @@ extern "C" __declspec(naked) float __fastcall fn_005BCD90(void* self, int edx_un
         call ext_006A6DD2
     }
 }
+
+// [0x005BE140] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_47 (165 bytes)
+extern "C" void ext_005B6FE0();
+extern "C" void ext_00672080();
+extern "C" void ext_0041CF50();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_008A5428;
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) float __fastcall fn_005BE140(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_null_005BE140
+        call ext_005B6FE0
+        fstp dword ptr [esp + 0x44]
+        fld dword ptr [esp + 0x44]
+        push ecx
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je L_skip_005BE140
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_skip_005BE140:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    L_null_005BE140:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
