@@ -113329,3 +113329,60 @@ L_null_005D7080:
         call ext_006A6DD2
     }
 }
+
+// [0x004B8F20] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_42 (165 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_004B8F20(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push offset mem_008A5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [eax]
+        sub esp, 0x30
+        test eax, eax
+        je L_null_4B8F20
+        fld dword ptr [eax + 0x24]
+        push ebx
+        fstp dword ptr [esp + 0x44]
+        push ecx
+        fld dword ptr [esp + 0x48]
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0x0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], -0x1
+        je L_skip_4B8F20
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    L_skip_4B8F20:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_null_4B8F20:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
