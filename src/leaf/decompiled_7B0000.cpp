@@ -8684,3 +8684,61 @@ extern "C" __declspec(naked) void* __cdecl fn_007B1660(int a1, void* obj) {
         ret
     }
 }
+
+// [0x007B8000] sub_007B8000 (144 bytes)
+extern "C" unsigned short ext_007B77D0();
+extern "C" unsigned short ext_007B7830();
+extern "C" int mem_00999758;
+extern "C" int mem_0099975C;
+extern "C" int mem_00999760;
+extern "C" int mem_00999764;
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007B8000(int* out) {
+    __asm {
+        mov ecx, dword ptr [mem_00999758]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, esi
+        mov dword ptr [eax], ecx
+        mov edx, dword ptr [mem_0099975C]
+        mov dword ptr [eax + 0x4], edx
+        mov ecx, dword ptr [mem_00999760]
+        mov dword ptr [eax + 0x8], ecx
+        mov edx, dword ptr [mem_00999764]
+        mov dword ptr [eax + 0xc], edx
+        call ext_007B77D0
+        mov word ptr [esi], ax
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_call1
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end
+    L_call1:
+        call ext_007B7830
+        mov dword ptr [esi + 0x4], eax
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_call2
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end
+    L_call2:
+        call ext_007B7830
+        mov dword ptr [esi + 0x8], eax
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_call3
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end
+    L_call3:
+        call ext_007B7830
+        mov dword ptr [esi + 0xc], eax
+    L_end:
+        pop esi
+        ret
+    }
+}
