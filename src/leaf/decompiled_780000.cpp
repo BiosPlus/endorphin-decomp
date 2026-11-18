@@ -6256,3 +6256,70 @@ L_loop:
         ret
     }
 }
+
+// [0x0078D130] sub_0078D130 (144 bytes)
+extern "C" int mem_009242E0;
+extern "C" int mem_009241BC;
+extern "C" __declspec(naked) void __fastcall fn_0078D130(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        push esi
+        mov ebx, dword ptr [eax - 0x8]
+        mov esi, ecx
+        add eax, -0x8
+        xor ecx, ecx
+        mov ebp, dword ptr [esi]
+        push edi
+        mov cl, byte ptr [eax + 0x4]
+        mov edi, eax
+        push ebp
+        sub edi, ecx
+        call dword ptr [mem_009242E0]
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_fail
+        cmp ebx, 0x8
+        jb L_fail
+        cmp ebx, dword ptr [esi + 0x8]
+        jae L_fail
+        mov ecx, dword ptr [esi + 0x1c]
+        test ecx, ecx
+        je L_skip
+        cmp dword ptr [esi + 0x20], ecx
+        ja L_fail
+L_skip:
+        mov ecx, dword ptr [esi + 0x10]
+        push ebp
+        shr ebx, cl
+        mov edx, dword ptr [eax + ebx*4]
+        mov dword ptr [edi], edx
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + ebx*4], edi
+        call dword ptr [mem_009241BC]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+L_fail:
+        push ebp
+        call dword ptr [mem_009241BC]
+        mov ecx, dword ptr [esp + 0x14]
+        push edi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [esi + 0x20]
+        mov eax, dword ptr [esi + 0x24]
+        sub ecx, ebx
+        dec eax
+        mov dword ptr [esi + 0x20], ecx
+        mov dword ptr [esi + 0x24], eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
