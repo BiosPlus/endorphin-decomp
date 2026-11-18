@@ -114411,3 +114411,60 @@ L_throw_004EA600:
         call ext_006A6DD2
     }
 }
+
+// [0x004EA100] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_46 (165 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004EA100(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je SHORT L_throw_004EA100
+        mov al, byte ptr [eax + 0x5]
+        mov byte ptr [esp + 0x44], al
+        mov ecx, dword ptr [esp + 0x44]
+        push ecx
+        lea ecx, [esp + 0x8]
+        call ext_006720A0
+        lea edx, [esp + 0x4]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je SHORT L_skip_004EA100
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    L_skip_004EA100:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esp + 0x48]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xb8]
+        push eax
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_throw_004EA100:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
