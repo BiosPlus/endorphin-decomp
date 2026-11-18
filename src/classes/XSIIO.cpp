@@ -129,3 +129,56 @@ L_end_00566D80:
         call ext_006A6DD2
     }
 }
+
+// [0x00565D90] XSIIO::vfunc_11 (129 bytes)
+extern "C" void ext_005649D0();
+extern "C" void ext_00565350();
+extern "C" void ext_007C56DC();
+extern "C" void ext_007C570C();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00565D90(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89b8a0
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov esi, ecx
+        push eax
+        mov dword ptr [ebp - 0x14], esi
+        call ext_005649D0
+        test al, al
+        je short fn565de7_end
+        mov ecx, dword ptr [esi + 0x494]
+        mov dword ptr [ebp - 0x4], 0x0
+        call ext_007C56DC
+        mov ecx, esi
+        call ext_00565350
+        mov ecx, dword ptr [esi + 0x494]
+        call ext_007C570C
+fn565de7_end:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+        mov ecx, dword ptr [ebp - 0x14]
+        mov ecx, dword ptr [ecx + 0x494]
+        call ext_007C570C
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    }
+}
