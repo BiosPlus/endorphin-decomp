@@ -10502,3 +10502,81 @@ extern "C" __declspec(naked) void __fastcall fn_006B9A00(void* self) {
         ret 8
     }
 }
+
+// [0x006BAAF0] sub_006BAAF0 (144 bytes)
+extern "C" void ext_006B9940();
+extern "C" void ext_006B9D20();
+extern "C" void ext_006B9E30();
+extern "C" int mem_0092531C; /* u32 0x00627F02 */
+
+extern "C" __declspec(naked) void __fastcall fn_006BAAF0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], 0
+        call ext_006B9940
+        test al, al
+        jne branch2_006BAAF0
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        call ext_006B9D20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    branch2_006BAAF0:
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+        mov ebp, dword ptr [mem_0092531C]
+        push edi
+        mov edi, dword ptr [esi]
+        mov esi, dword ptr [esi + 0x4]
+        add esi, edi
+        cmp ebx, 0x1
+        je mid_006BAAF0
+        cmp esi, edi
+        je mid_006BAAF0
+    loop1_006BAAF0:
+        movsx eax, byte ptr [esi - 0x1]
+        push eax
+        call ebp
+        add esp, 0x4
+        test eax, eax
+        je mid_006BAAF0
+        dec esi
+        cmp esi, edi
+        jne loop1_006BAAF0
+    mid_006BAAF0:
+        test ebx, ebx
+        je after_006BAAF0
+        cmp esi, edi
+        je after_006BAAF0
+    loop2_006BAAF0:
+        movsx ecx, byte ptr [edi]
+        push ecx
+        call ebp
+        add esp, 0x4
+        test eax, eax
+        je after_006BAAF0
+        inc edi
+        cmp esi, edi
+        jne loop2_006BAAF0
+    after_006BAAF0:
+        sub esi, edi
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push edi
+        mov ecx, esi
+        call ext_006B9E30
+        pop edi
+        pop ebp
+        mov eax, esi
+        pop ebx
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
