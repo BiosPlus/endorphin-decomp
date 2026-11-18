@@ -2867,3 +2867,80 @@ L_ret_early:
         nop
     }
 }
+
+// [0x00747FD0] sub_00747FD0 (160 bytes)
+extern "C" void ext_006BC370();
+extern "C" void ext_006C27E0();
+extern "C" void ext_00747FA0();
+
+extern "C" __declspec(naked) void __fastcall fn_00747FD0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0xb5]
+        test al, al
+        je L_nobase
+        mov ebp, dword ptr [esi + 0x148]
+        jmp L_top
+    L_nobase:
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_006BC370
+        mov ebp, eax
+    L_top:
+        mov eax, dword ptr [esi + 0x1b8]
+        xor ebx, ebx
+        test eax, eax
+        jbe L_ret_early
+        push edi
+    L_loop:
+        mov eax, dword ptr [esi + 0x1cc]
+        or ecx, -1
+        mov edi, dword ptr [eax + 4*ebx]
+        xor eax, eax
+        add edi, 0xb
+        mov dword ptr [esp + 0x14], edi
+        repne scasb
+        not ecx
+        dec ecx
+        jne L_nonempty
+        mov ecx, dword ptr [esi + 0x1b0]
+        mov edx, dword ptr [ecx + 4*ebx]
+        push edx
+        jmp L_callsite
+    L_nonempty:
+        mov eax, dword ptr [esi + 0x1b0]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov eax, dword ptr [eax + 4*ebx]
+        push eax
+        call ext_00747FA0
+        cmp al, 1
+        je L_after
+        mov edx, dword ptr [esi + 0x1b0]
+        mov eax, dword ptr [edx + 4*ebx]
+        push eax
+    L_callsite:
+        mov ecx, ebp
+        call ext_006C27E0
+    L_after:
+        mov eax, dword ptr [esi + 0x1b8]
+        inc ebx
+        cmp ebx, eax
+        jb L_loop
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    L_ret_early:
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
