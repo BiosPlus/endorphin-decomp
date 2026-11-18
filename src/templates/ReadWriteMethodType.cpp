@@ -17620,3 +17620,51 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00497C10] ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setCondition(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+extern "C" void ext_0046E780();
+extern "C" void ext_00496F00();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00497C10(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x892ed9
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, dword ptr [esp+0x10]
+        sub esp, 0x44
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je short fn497C10_null
+        mov edx, dword ptr [esp+0x58]
+        mov eax, dword ptr [esp+0x5c]
+        mov ecx, dword ptr [eax+4]
+        push edx
+        push eax
+        lea eax, [esp+0xc]
+        push eax
+        call ext_0046E780
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp+0x54], 0
+        call ext_00496F00
+        lea ecx, [esp+4]
+        mov dword ptr [esp+0x50], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp+0x48]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x50
+        ret 8
+fn497C10_null:
+        lea ecx, [esp+0x20]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+0x24]
+        push ecx
+        call ext_006A6DD2
+    }
+}
