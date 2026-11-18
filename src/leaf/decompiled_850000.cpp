@@ -30,8 +30,10 @@ extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
         ret
     }
 }
+extern "C" { void ext_0085A310(); void ext_00859780(); }
+extern "C" void* __cdecl ext_008596E0(unsigned int size);
 
-// [0x0085A110] sub_0085A110 (32 bytes)
+extern "C" void* __cdecl ext_008596E0(unsigned int size);
 extern "C" __declspec(naked) void __cdecl fn_0085A110(void) {
     __asm {
         mov ecx, dword ptr [esp + 8]
@@ -4515,6 +4517,84 @@ extern "C" __declspec(naked) int __cdecl fn_0085C390(unsigned int a, unsigned in
         mov esi, 1
     L_DIFF:
         mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
+
+// [0x0085A270] sub_0085A270 (160 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085A270(void* self, void* a2, void* a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test eax, eax
+        push edi
+        je lblzero
+        mov eax, dword ptr [esp + 0x18]
+        push ebx
+        push eax
+        push esi
+        call ext_0085A310
+        mov edi, eax
+        add esp, 0xc
+        cmp edi, -1
+        mov dword ptr [esp + 0x20], edi
+        jne lblretedi
+        jmp lblafter
+    lblzero:
+        mov edi, dword ptr [esp + 0x20]
+    lblafter:
+        push ebx
+        call ext_008596E0
+        mov ebp, eax
+        add esp, 0x4
+        test ebp, ebp
+        je lblretedi
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [esi + 0x18]
+        lea edx, [8 * ecx + 0x8]
+        push edx
+        push eax
+        call ext_008596F0
+        mov edi, eax
+        add esp, 0x8
+        test edi, edi
+        je lblstored
+        mov ecx, dword ptr [esp + 0x18]
+        push ebx
+        push ecx
+        push ebp
+        call ext_00859780
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [esi + 0x18], edi
+        add esp, 0xc
+        mov dword ptr [edi + 8 * eax + 0x4], ebp
+        mov edx, dword ptr [esi + 0x18]
+        pop edi
+        mov dword ptr [edx + 8 * eax], ebx
+        mov ecx, dword ptr [esi + 0xc]
+        inc ecx
+        mov dword ptr [esi + 0xc], ecx
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    lblstored:
+        mov eax, dword ptr [esp + 0x20]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    lblretedi:
+        mov eax, edi
         pop edi
         pop esi
         pop ebp
