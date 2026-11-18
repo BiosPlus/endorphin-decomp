@@ -6611,3 +6611,77 @@ extern "C" __declspec(naked) void __fastcall fn_0078CA60(void* self) {
         ret
     }
 }
+
+// [0x00782D90] sub_00782D90 (160 bytes)
+// Appends an 8-byte {char* copy-of-string, int value} entry to a growable array
+// at self->[0] (cap at [8], count at [4], stride multiplier at [0xc]); sets dirty flag [0x10].
+extern "C" int mem_00925290;
+extern "C" int mem_00925208;
+extern "C" __declspec(naked) void __fastcall fn_00782D90(void* self, int edx_unused, const char* name, int value) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push ebp
+        push esi
+        mov eax, dword ptr [ebx + 0x8]
+        mov ecx, dword ptr [ebx + 0xc]
+        mov edx, eax
+        mov esi, dword ptr [ebx + 0x4]
+        imul edx, ecx
+        cmp esi, edx
+        push edi
+        jne short L_nogrow
+        inc eax
+        mov dword ptr [ebx + 0x8], eax
+        imul eax, ecx
+        shl eax, 3
+        push eax
+        mov eax, dword ptr [ebx]
+        push eax
+        call dword ptr [mem_00925290]
+        add esp, 0x8
+        mov dword ptr [ebx], eax
+L_nogrow:
+        mov esi, dword ptr [esp + 0x14]
+        or ecx, -1
+        mov edi, esi
+        xor eax, eax
+        repne scasb
+        not ecx
+        push ecx
+        call dword ptr [mem_00925208]
+        mov ecx, dword ptr [ebx + 0x4]
+        mov edx, dword ptr [ebx]
+        mov edi, esi
+        add esp, 0x4
+        mov dword ptr [edx + ecx*8], eax
+        or ecx, -1
+        xor eax, eax
+        mov edx, dword ptr [ebx + 0x4]
+        repne scasb
+        mov ebp, dword ptr [ebx]
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, dword ptr [ebp + edx*8]
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x18]
+        and ecx, 0x3
+        rep movsb
+        mov ecx, dword ptr [ebx + 0x4]
+        mov edx, dword ptr [ebx]
+        pop edi
+        pop esi
+        mov dword ptr [edx + ecx*8 + 0x4], eax
+        mov eax, dword ptr [ebx + 0x4]
+        inc eax
+        mov byte ptr [ebx + 0x10], 0x1
+        mov dword ptr [ebx + 0x4], eax
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
