@@ -8527,3 +8527,69 @@ extern "C" __declspec(naked) int __cdecl fn_006FB5C0(void* a1, int a2, void* a3,
         ret
     }
 }
+
+// [0x006FA790] sub_006FA790 (160 bytes)
+extern "C" int mem_00925290; /* u32 0x0062D37A */
+extern "C" int mem_0092528C; /* u32 0x0062D370 */
+extern "C" __declspec(naked) void __fastcall fn_006FA790(void* self, int edx_unused, int a1, void* a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        lea eax, [eax + ecx + 0x1]
+        lea edx, [eax + 2*eax]
+        mov eax, dword ptr [esi]
+        shl edx, 0x2
+        push edx
+        push eax
+        call dword ptr [mem_00925290]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edi, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esi + 0x8]
+        sub ecx, edi
+        add esp, 0x8
+        add ecx, edx
+        mov dword ptr [esi], eax
+        js skip_move
+        lea ecx, [ecx + 2*ecx]
+        lea edx, [edi + 2*edi]
+        shl ecx, 0x2
+        push ecx
+        lea ecx, [eax + 4*edx]
+        lea edx, [edi + 2*edi + 0x3]
+        push ecx
+        lea eax, [eax + 4*edx]
+        push eax
+        call dword ptr [mem_0092528C]
+        add esp, 0xc
+    skip_move:
+        mov edx, dword ptr [esi]
+        lea ecx, [edi + 2*edi]
+        shl ecx, 0x2
+        mov eax, ecx
+        add eax, edx
+        mov edx, dword ptr [esp + 0x10]
+        test edx, edx
+        je null_src
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [edx]
+        mov dword ptr [eax], edx
+        jmp store_val
+    null_src:
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], 0x0
+    store_val:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [esp + 0x14]
+        pop edi
+        mov dword ptr [ecx + eax + 0x8], edx
+        mov eax, dword ptr [esi + 0x4]
+        inc eax
+        mov dword ptr [esi + 0x4], eax
+        pop esi
+        ret 0xc
+    }
+}
