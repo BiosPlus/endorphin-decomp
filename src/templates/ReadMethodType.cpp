@@ -239,6 +239,7 @@ extern "C" void ext_004DDE60();
 extern "C" void ext_00641FE0();
 extern "C" void ext_00622310();
 extern "C" void ext_0058F5F0();
+extern "C" void ext_0058CFD0();
 
 // [0x004E9D90] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004E9D90(void* a1) {
@@ -118088,6 +118089,62 @@ extern "C" __declspec(naked) float __fastcall fn_005906C0(void* self, int edx_un
         add esp, 0x3c
         ret 0x4
     L_null_005906C0:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
+
+// [0x0058EAB0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_47 (165 bytes)
+extern "C" __declspec(naked) float __fastcall fn_0058EAB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_null_0058EAB0
+        call ext_0058CFD0
+        fstp dword ptr [esp + 0x44]
+        fld dword ptr [esp + 0x44]
+        push ecx
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je L_skip_0058EAB0
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_skip_0058EAB0:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    L_null_0058EAB0:
         lea ecx, [esp + 0xc]
         call ext_0046C3C0
         push offset mem_009DEC1C
