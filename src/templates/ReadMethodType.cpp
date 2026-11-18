@@ -132485,3 +132485,60 @@ extern "C" __declspec(naked) void __fastcall fn_004A40A0(void* self, int edx_unu
         call    ext_006A6DD2
     }
 }
+
+// [0x004A49D0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_44 (167 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004A49D0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0]
+        push    -1
+        push    offset mem_008A5428
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 30h
+        push    esi
+        mov     esi, dword ptr [esp + 44h]
+        mov     ecx, dword ptr [esi]
+        test    ecx, ecx
+        je      no_obj
+        call    ext_00496F30
+        mov     byte ptr [esp + 44h], al
+        mov     eax, dword ptr [esp + 44h]
+        push    eax
+        lea     ecx, [esp + 8]
+        call    ext_006720A0
+        lea     ecx, [esp + 4]
+        push    ecx
+        mov     ecx, esi
+        mov     dword ptr [esp + 40h], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je      skip_release
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 78h]
+        lea     eax, [esp + 4]
+        push    eax
+        call    edx
+skip_release:
+        mov     ecx, dword ptr [esi + 4]
+        mov     edx, dword ptr [esp + 48h]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0B0h]
+        push    edx
+        push    esi
+        call    eax
+        mov     ecx, dword ptr [esp + 34h]
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 3Ch
+        ret     8
+no_obj:
+        lea     ecx, [esp + 0Ch]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, [esp + 10h]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
