@@ -5230,3 +5230,80 @@ extern "C" __declspec(naked) void __cdecl fn_007A9230(void** pp) {
         ret
     }
 }
+
+// [0x007AA510] sub_007AA510 (144 bytes)
+extern "C" void ext_007AA5A0();
+extern "C" int mem_00998118;
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61210;
+extern "C" int mem_00B61214;
+
+extern "C" __declspec(naked) void __cdecl fn_007AA510(void* arg) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        test ecx, ecx
+        je done
+        mov al, byte ptr [mem_00998118]
+        xor esi, esi
+        mov byte ptr [mem_00B61218], al
+        mov eax, 0xb61170
+    scan:
+        cmp dword ptr [eax], 0x0
+        je slot_free
+        add eax, 0x8
+        inc esi
+        cmp eax, 0xb61208
+        jl scan
+        mov eax, dword ptr [mem_00B61210]
+        test eax, eax
+        jne fail
+        push ecx
+        mov dword ptr [mem_00B61210], ecx
+        call ext_007AA5A0
+        add esp, 0x4
+        mov dword ptr [mem_00B61214], eax
+        pop esi
+        ret
+    slot_free:
+        push ecx
+        _emit 0x89
+        _emit 0x0c
+        _emit 0xf5
+        _emit 0x70
+        _emit 0x11
+        _emit 0xb6
+        _emit 0x00
+        call ext_007AA5A0
+        add esp, 0x4
+        _emit 0x89
+        _emit 0x04
+        _emit 0xf5
+        _emit 0x74
+        _emit 0x11
+        _emit 0xb6
+        _emit 0x00
+        _emit 0xc7
+        _emit 0x04
+        _emit 0xf5
+        _emit 0x78
+        _emit 0x11
+        _emit 0xb6
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        pop esi
+        ret
+    fail:
+        push 0x16
+        mov dword ptr [mem_00B61210], 0x16
+        call ext_007AA5A0
+        add esp, 0x4
+        mov dword ptr [mem_00B61214], eax
+    done:
+        pop esi
+        ret
+    }
+}
