@@ -265,6 +265,7 @@ extern "C" void* __stdcall fn_004E9D90(void* a1) {
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA3E89C, 0);
 }
 extern "C" void ext_005CFE50();
+extern "C" void ext_005F51B0();
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -138715,6 +138716,63 @@ extern "C" __declspec(naked) void __fastcall fn_0061C810(void* self, int edx_unu
         lea     ecx, [esp + 0Ch]
         call    ext_0046C3C0
         push    offset mem_009DEC1C
+        lea     ecx, [esp + 10h]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
+
+// [0x005F9110] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_44 (167 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005F9110(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0]
+        push    -1
+        push    offset mem_008A5428
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 30h
+        push    esi
+        mov     esi, dword ptr [esp + 44h]
+        mov     ecx, dword ptr [esi]
+        test    ecx, ecx
+        je      no_obj_9110
+        call    ext_005F51B0
+        mov     byte ptr [esp + 44h], al
+        mov     eax, dword ptr [esp + 44h]
+        push    eax
+        lea     ecx, [esp + 8]
+        call    ext_006720A0
+        lea     ecx, [esp + 4]
+        push    ecx
+        mov     ecx, esi
+        mov     dword ptr [esp + 40h], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je      skip_release_9110
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 78h]
+        lea     eax, [esp + 4]
+        push    eax
+        call    edx
+    skip_release_9110:
+        mov     ecx, dword ptr [esi + 4]
+        mov     edx, dword ptr [esp + 48h]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0B0h]
+        push    edx
+        push    esi
+        call    eax
+        mov     ecx, dword ptr [esp + 34h]
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 3Ch
+        ret     8
+    no_obj_9110:
+        lea     ecx, [esp + 0Ch]
+        call    ext_0046C3C0
+        push    9DEC1Ch
         lea     ecx, [esp + 10h]
         push    ecx
         call    ext_006A6DD2
