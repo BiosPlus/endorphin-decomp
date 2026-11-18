@@ -5441,3 +5441,73 @@ L_default:
         __asm _emit 0x90
     }
 }
+
+// [0x0079AF60] sub_0079AF60 (128 bytes)
+extern "C" int mem_00924194;
+extern "C" int mem_009241F0;
+extern "C" int mem_009241E8;
+
+// GlobalReAlloc-like helper: src = arg1 (stack), newSize = arg2 (stack).
+// Allocates newSize bytes, copies min(oldSize, newSize) bytes (copies newSize when
+// oldSize >= newSize, oldSize otherwise), frees src, returns the new handle (0 on failure).
+extern "C" __declspec(naked) void* __cdecl fn_0079AF60(void* src, unsigned int newSize) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push ebp
+        call dword ptr [mem_00924194]
+        mov esi, dword ptr [esp + 0x18]
+        mov edi, eax
+        cmp edi, esi
+        push esi
+        push 0
+        jl short L_grow
+        call dword ptr [mem_009241F0]
+        mov ebx, eax
+        test ebx, ebx
+        je short L_done
+        mov ecx, esi
+        mov esi, ebp
+        mov eax, ecx
+        mov edi, ebx
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        push ebp
+        and ecx, 3
+        rep movsb
+        call dword ptr [mem_009241E8]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret
+L_grow:
+        call dword ptr [mem_009241F0]
+        mov ebx, eax
+        test ebx, ebx
+        je short L_done
+        mov ecx, edi
+        mov esi, ebp
+        mov edx, ecx
+        mov edi, ebx
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        push ebp
+        and ecx, 3
+        rep movsb
+        call dword ptr [mem_009241E8]
+L_done:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret
+    }
+}
