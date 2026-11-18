@@ -63908,3 +63908,56 @@ extern "C" __declspec(naked) void __fastcall fn_005051F0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00504DD0] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_42 (152 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00504DD0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], esp
+        mov eax, dword ptr [eax]
+        sub esp, 0x30
+        test eax, eax
+        je fn_00504DD0_throw
+        push ebx
+        push 0
+        lea ecx, [esp + 0x8]
+        call ext_006720C0
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], -1
+        je fn_00504DD0_skip
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+fn_00504DD0_skip:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 8
+fn_00504DD0_throw:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
