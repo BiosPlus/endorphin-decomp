@@ -3549,3 +3549,53 @@ L_fn_00757520_end:
         ret 4
     }
 }
+
+// [0x0075B430] sub_0075B430 (128 bytes)
+extern "C" void ext_006EF8D0();
+extern "C" void ext_007275F0();
+extern "C" void ext_00727C80();
+extern "C" void ext_007283B0();
+extern "C" void ext_006C2F40();
+
+extern "C" __declspec(naked) unsigned char __fastcall fn_0075B430(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, ebx
+        call ext_006EF8D0
+        mov esi, dword ptr [edi + 0xac]
+        push 0xaad91c
+        add esi, 0x4
+        mov byte ptr [esp + 0x14], al
+        mov ecx, esi
+        call ext_007275F0
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, esi
+        and eax, 0xff
+        push eax
+        call ext_00727C80
+        mov ecx, esi
+        call ext_007283B0
+        mov ecx, ebx
+        call ext_006C2F40
+        mov esi, dword ptr [edi + 0xac]
+        push 0xaad910
+        add esi, 0x4
+        mov ebx, eax
+        mov ecx, esi
+        call ext_007275F0
+        push ebx
+        mov ecx, esi
+        call ext_00727C80
+        mov ecx, esi
+        call ext_007283B0
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
