@@ -5465,3 +5465,74 @@ extern "C" __declspec(naked) void __fastcall fn_00726CB0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0072ADA0] sub_0072ADA0 (144 bytes)
+extern "C" void ext_0070F2D0();
+extern "C" void ext_0070F330();
+extern "C" void ext_0070F340();
+extern "C" void ext_0078D420();
+
+extern "C" __declspec(naked) void __fastcall fn_0072ADA0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0xc
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        xor ebx, ebx
+        push esi
+        mov eax, dword ptr [eax]
+        push edi
+        test eax, eax
+        mov dword ptr [esp + 0x14], eax
+        jle short L_0072ADA0_end
+    L_0072ADA0_outer:
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ecx + 0x10]
+        mov esi, dword ptr [edx + ebx*4]
+        mov ecx, esi
+        call ext_0070F2D0
+        mov edi, eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], edi
+        call ext_0070F330
+        mov ecx, esi
+        mov dword ptr [esp + 0xc], eax
+        call ext_0070F340
+        test edi, edi
+        jle short L_0072ADA0_next
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0xc], eax
+    L_0072ADA0_inner:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edi]
+        push ecx
+        mov ecx, dword ptr [ebp + 0xc]
+        push edx
+        push eax
+        push ebx
+        call ext_0078D420
+        mov eax, dword ptr [esp + 0xc]
+        add esi, 0x8
+        add edi, 0x4
+        dec eax
+        mov dword ptr [esp + 0xc], eax
+        jne short L_0072ADA0_inner
+    L_0072ADA0_next:
+        mov eax, dword ptr [esp + 0x14]
+        inc ebx
+        cmp ebx, eax
+        jl short L_0072ADA0_outer
+    L_0072ADA0_end:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
