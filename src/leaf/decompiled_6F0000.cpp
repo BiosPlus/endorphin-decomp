@@ -8048,3 +8048,67 @@ extern "C" __declspec(naked) void __fastcall fn_006F9DE0(void* self) {
         ret
     }
 }
+
+// [0x006F8F30] sub_006F8F30 (128 bytes)
+extern "C" void ext_006C4D70();
+extern "C" void __stdcall ext_006C4DB0(int, int, int, int);
+extern "C" void __fastcall ext_006F8B10(void* self);
+extern "C" void ext_006F8B30();
+
+extern "C" __declspec(naked) void __fastcall fn_006F8F30(void* self, int edx_unused, int a0, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        test esi, esi
+        jl f8f30_fail
+        cmp esi, 0x2c
+        jge f8f30_fail
+        lea eax, [esi + 2*esi]
+        push ebx
+        mov ecx, dword ptr [edi + 4*eax + 0x3bbc]
+        lea ebx, [edi + 4*eax + 0x3bbc]
+        test ecx, ecx
+        je f8f30_skip1
+        mov edx, dword ptr [edi]
+        push 0
+        push esi
+        push 2
+        push edx
+        call ext_006C4DB0
+    f8f30_skip1:
+        mov eax, dword ptr [esp + 0x14]
+        test eax, eax
+        je f8f30_else
+        lea eax, [esp + 0x14]
+        mov ecx, ebx
+        push eax
+        call ext_006F8B30
+        mov ecx, dword ptr [edi]
+        push 0
+        push esi
+        push 2
+        push ecx
+        mov ecx, dword ptr [esp + 0x24]
+        call ext_006C4D70
+        pop ebx
+        pop edi
+        mov al, 1
+        pop esi
+        ret 0x10
+    f8f30_else:
+        mov ecx, ebx
+        call ext_006F8B10
+        pop ebx
+        pop edi
+        mov al, 1
+        pop esi
+        ret 0x10
+    f8f30_fail:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x10
+    }
+}
