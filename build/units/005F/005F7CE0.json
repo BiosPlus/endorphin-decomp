@@ -17,6 +17,7 @@
     "0x005F7D01",
     "0x005F7D0B"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-18T15:34:25Z"
 }
