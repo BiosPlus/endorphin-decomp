@@ -7426,3 +7426,90 @@ extern "C" __declspec(naked) void __fastcall fn_006D37E0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006DEAB0] sub_006DEAB0 (160 bytes)
+extern "C" void ext_006DEEA0();
+extern "C" void ext_006D2250();
+extern "C" void ext_006DE130();
+extern "C" void ext_006DECE0();
+extern "C" __declspec(naked) void __fastcall fn_006DEAB0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006DEEA0
+        test eax, eax
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        jne L_alt
+        call dword ptr [eax + 0x14]
+        mov edi, eax
+        dec edi
+        js L_after1
+    L_loop1:
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x10]
+        dec edi
+        jns L_loop1
+        jmp L_after1
+    L_alt:
+        call dword ptr [eax + 0x14]
+        mov edi, eax
+        dec edi
+        js L_after1
+    L_loop2:
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0xc]
+        dec edi
+        jns L_loop2
+    L_after1:
+        lea ecx, [esi + 0x20]
+        call ext_006D2250
+        mov ecx, dword ptr [esi + 0x38]
+        xor edi, edi
+        cmp ecx, edi
+        je L_a
+        push edi
+        call ext_006DE130
+    L_a:
+        mov eax, dword ptr [esi + 0x40]
+        mov dword ptr [esi + 0x38], edi
+        cmp eax, edi
+        je L_b
+        mov edx, dword ptr [eax + 0x1c]
+        dec edx
+        mov ecx, edx
+        mov dword ptr [eax + 0x1c], edx
+        cmp ecx, edi
+        jg L_b
+        mov ecx, dword ptr [esi + 0x40]
+        push edi
+        call ext_006DE130
+    L_b:
+        push esi
+        mov ecx, esi
+        mov dword ptr [esi + 0x40], edi
+        call ext_006DECE0
+        mov eax, dword ptr [esi + 0x3c]
+        cmp eax, edi
+        je L_c
+        mov edx, dword ptr [eax + 0x1c]
+        dec edx
+        mov ecx, edx
+        mov dword ptr [eax + 0x1c], edx
+        cmp ecx, edi
+        jg L_c
+        mov ecx, dword ptr [esi + 0x3c]
+        push edi
+        call ext_006DE130
+    L_c:
+        mov dword ptr [esi + 0x3c], edi
+        pop edi
+        pop esi
+        ret
+    }
+}
