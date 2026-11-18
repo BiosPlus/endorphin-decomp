@@ -105031,3 +105031,58 @@ extern "C" __declspec(naked) void __stdcall fn_006928A0(void* self, int a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x004EB550] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_47 (160 bytes)
+extern "C" __declspec(naked) bool __stdcall fn_004EB550(void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp+0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je throw_path
+        mov al, byte ptr [eax+0x9]
+        mov byte ptr [esp+0x44], al
+        mov ecx, dword ptr [esp+0x44]
+        push ecx
+        lea ecx, [esp+0x8]
+        call ext_006720A0
+        lea edx, [esp+0x4]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp+0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp+0x8]
+        test ecx, ecx
+        mov dword ptr [esp+0x3c], -1
+        je skip_dtor
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax+0x78]
+        lea edx, [esp+0x4]
+        push edx
+        call eax
+    skip_dtor:
+        mov ecx, dword ptr [esi+0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0xbc]
+        push esi
+        call eax
+        mov ecx, dword ptr [esp+0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    throw_path:
+        lea ecx, [esp+0xc]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp+0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
