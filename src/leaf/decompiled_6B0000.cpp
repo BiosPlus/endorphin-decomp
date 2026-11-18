@@ -54,9 +54,12 @@ extern "C" __declspec(naked) void __fastcall fn_006B6030(void* self, int edx_unu
         ret 8
     }
 }
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006B9F80();
 
-// [0x006B8B10] sub_006B8B10 (8 bytes)
-// Calls thunk_MFC80_ord_1903 (ext_006A5EA8) and returns, popping three stack arguments.
+extern "C" void ext_006B9D80();
+extern "C" void ext_006B9F80();
 extern "C" void ext_006A5EA8();
 
 extern "C" __declspec(naked) void __fastcall fn_006B8B10(void* self) {
@@ -10242,6 +10245,43 @@ extern "C" __declspec(naked) void __fastcall fn_006BAC20(void* self) {
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 0x10
+        ret
+    }
+}
+
+// [0x006BA0C0] sub_006BA0C0 (128 bytes)
+// SEH-framed wrapper: builds a local object at esp+0x0c, calls 0x6B9D80, 0x6B9F80, 0x6B9D70.
+extern "C" __declspec(naked) void __fastcall fn_006BA0C0(void* self) {
+    __asm {
+        push -1
+        push 0x8b93df
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x50
+        mov eax, dword ptr [esp + 0x68]
+        push esi
+        push eax
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D80
+        mov ecx, dword ptr [esp + 0x68]
+        mov esi, dword ptr [esp + 0x64]
+        push eax
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x68], 0x1
+        call ext_006B9F80
+        add esp, 0xc
+        mov dword ptr [esp + 0x4], 0x1
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x5c], 0x0
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x54]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x5c
         ret
     }
 }
