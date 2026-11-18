@@ -115844,3 +115844,59 @@ L_throw_0046C9E0:
         call ext_006A6DD2
     }
 }
+
+// [0x00470F20] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_47 (165 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00470F20(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, [esp+0x44]
+        mov ecx, [esi]
+        test ecx, ecx
+        je L_else_00470F20
+        call ext_0046F860
+        fstp dword ptr [esp+0x44]
+        fld dword ptr [esp+0x44]
+        push ecx
+        lea ecx, [esp+8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea eax, [esp+4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp+0x40], 0
+        call ext_0041CF50
+        mov ecx, [esp+8]
+        test ecx, ecx
+        mov dword ptr [esp+0x3c], -1
+        je L_skip_00470F20
+        mov edx, [ecx]
+        mov edx, [edx+0x78]
+        lea eax, [esp+4]
+        push eax
+        call edx
+L_skip_00470F20:
+        mov ecx, [esi+4]
+        mov eax, [ecx]
+        mov edx, [eax+0xbc]
+        push esi
+        call edx
+        mov ecx, [esp+0x34]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x3c
+        ret 4
+L_else_00470F20:
+        lea ecx, [esp+0xc]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp+0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
