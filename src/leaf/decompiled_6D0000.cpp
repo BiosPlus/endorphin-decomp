@@ -6756,3 +6756,59 @@ extern "C" __declspec(naked) void* __fastcall fn_006D2410(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x006DC560] sub_006DC560 (144 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void __fastcall ext_006C9250(void* self);
+extern "C" void ext_006D2200();
+extern "C" __declspec(naked) void __fastcall fn_006DC560(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        jne L_nonzero_006DC560
+        mov ecx, dword ptr [ecx + 0xec]
+        push 0xaa9408
+        push eax
+        call ext_006E7410
+        xor al, al
+        pop esi
+        ret 0x4
+    L_nonzero_006DC560:
+        jl L_fail_006DC560
+        mov esi, dword ptr [ecx + 0xb8]
+        lea edx, [ecx + 0xb8]
+        cmp eax, esi
+        jge L_fail_006DC560
+        mov esi, dword ptr [ecx + 0xe8]
+        cmp esi, eax
+        jne L_skip_006DC560
+        dec esi
+        mov dword ptr [ecx + 0xe8], esi
+    L_skip_006DC560:
+        mov ecx, dword ptr [edx + 0x10]
+        push eax
+        mov esi, dword ptr [ecx + 4*eax]
+        mov ecx, edx
+        call ext_006D2200
+        test esi, esi
+        je L_done_006DC560
+        mov ecx, esi
+        call ext_006C9250
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_done_006DC560:
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    L_fail_006DC560:
+        mov ecx, dword ptr [ecx + 0xec]
+        push 0xaa87e4
+        push 0x0
+        call ext_006E7410
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
