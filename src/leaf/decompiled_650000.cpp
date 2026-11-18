@@ -12724,3 +12724,69 @@ extern "C" __declspec(naked) void __fastcall fn_0065D790(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0065EBD0] sub_0065EBD0 (144 bytes)
+extern "C" void ext_0065DC10();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __fastcall fn_0065EBD0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8b2531
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov [ebp-16], esp
+        push 108
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        mov [ebp-20], esi
+        mov dword ptr [ebp-4], 0
+        je L_skip1
+        mov eax, [ebp+8]
+        mov [esi], eax
+    L_skip1:
+        lea eax, [esi+4]
+        test eax, eax
+        je L_skip2
+        mov ecx, [ebp+12]
+        mov [eax], ecx
+    L_skip2:
+        lea ecx, [esi+8]
+        mov [ebp+8], ecx
+        mov [ebp+12], ecx
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L_skip3
+        mov edx, [ebp+16]
+        push edx
+        call ext_0065DC10
+    L_skip3:
+        mov ecx, [ebp-12]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 12
+        mov eax, [ebp-20]
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
