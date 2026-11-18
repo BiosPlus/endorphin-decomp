@@ -2689,3 +2689,70 @@ fn00731BE0_skip:
         ret 4
     }
 }
+
+// [0x00731870] sub_00731870 (128 bytes)
+extern "C" void ext_0072CF10();
+extern "C" void ext_007318F0();
+extern "C" void ext_00731A10();
+extern "C" void ext_00731BE0();
+extern "C" void ext_00731C60();
+extern "C" void ext_0079D6D0();
+
+extern "C" __declspec(naked) void __fastcall fn_00731870(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, dword ptr [esi + 0ach]
+        call ext_0079D6D0
+        test al, al
+        je fn00731870_ret1
+        mov edi, dword ptr [esp + 0ch]
+        mov ecx, esi
+        push edi
+        call ext_007318F0
+        test al, al
+        jne fn00731870_s1
+        pop edi
+        pop esi
+        ret 4
+fn00731870_s1:
+        mov ecx, dword ptr [esi + 0b4h]
+        push 4
+        call ext_0072CF10
+        test al, al
+        je fn00731870_s2
+        push edi
+        push edi
+        mov ecx, esi
+        call ext_00731A10
+        test al, al
+        jne fn00731870_s2
+        pop edi
+        pop esi
+        ret 4
+fn00731870_s2:
+        push edi
+        mov ecx, esi
+        call ext_00731BE0
+        test al, al
+        jne fn00731870_s3
+        pop edi
+        pop esi
+        ret 4
+fn00731870_s3:
+        push edi
+        mov ecx, esi
+        call ext_00731C60
+        test al, al
+        jne fn00731870_ret1
+        pop edi
+        pop esi
+        ret 4
+fn00731870_ret1:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
