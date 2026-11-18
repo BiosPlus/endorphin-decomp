@@ -79749,3 +79749,59 @@ extern "C" __declspec(naked) void __fastcall fn_0062ECC0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005FCC90] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_42 (158 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_005FCC90(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x008a5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        mov ecx, dword ptr [eax]
+        sub esp, 0x30
+        test ecx, ecx
+        je throw_path
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x38]
+        push ebx
+        call eax
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_00672110
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0x0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je skip_release
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    skip_release:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    throw_path:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push 0x009dec1c
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
