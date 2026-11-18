@@ -4552,3 +4552,84 @@ extern "C" __declspec(naked) void __fastcall fn_0070E2F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00702220] sub_00702220 (160 bytes)
+extern "C" void ext_00704DB0();
+extern "C" void ext_00704EB0();
+
+extern "C" __declspec(naked) void __fastcall fn_00702220(void* self, int edx_unused, const char* arg) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0xc]
+        mov ecx, dword ptr [eax + 0x14]
+        test ecx, ecx
+        jle L_end
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax + 0x10]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je L_zero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_zero
+        mov eax, dword ptr [eax + 0x4]
+        jmp L_have
+    L_zero:
+        xor eax, eax
+    L_have:
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx + 0x12c]
+        mov edi, eax
+        test edi, edi
+        je L_end
+        push ebx
+        mov ecx, edi
+        call ext_00704EB0
+        mov ebp, dword ptr [esp + 0x14]
+        mov esi, eax
+        mov ecx, ebp
+    L_loop:
+        mov dl, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov al, dl
+        cmp dl, bl
+        jne L_diff
+        test al, al
+        je L_eq
+        mov dl, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov al, dl
+        cmp dl, bl
+        jne L_diff
+        add ecx, 0x2
+        add esi, 0x2
+        test al, al
+        jne L_loop
+    L_eq:
+        xor eax, eax
+        jmp L_fin
+    L_diff:
+        sbb eax, eax
+        sbb eax, -1
+    L_fin:
+        test eax, eax
+        pop ebx
+        je L_end
+        push ebp
+        mov ecx, edi
+        call ext_00704DB0
+    L_end:
+        pop edi
+        pop esi
+        pop ebp
+        ret 0x4
+    }
+}
