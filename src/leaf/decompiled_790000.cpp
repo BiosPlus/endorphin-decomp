@@ -5511,3 +5511,62 @@ L_done:
         ret
     }
 }
+
+// [0x0079E950] sub_0079E950 (128 bytes)
+extern "C" void ext_007AA510();
+extern "C" int mem_009977ED;
+extern "C" int mem_0092522C;
+extern "C" int mem_00B61219;
+extern "C" unsigned char mem_00B61151;
+
+extern "C" __declspec(naked) void __fastcall fn_0079E950(void* self) {
+    __asm {
+        push ecx
+        xor eax, eax
+        push 4
+        mov al, byte ptr [mem_009977ED]
+        push eax
+        call dword ptr [mem_0092522C]
+        add esp, 8
+        mov dword ptr [mem_00B6114C], eax
+        test eax, eax
+        jne short L_init
+        push 1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je short L_done
+L_init:
+        mov cl, byte ptr [mem_009977ED]
+        xor al, al
+        test cl, cl
+        _emit 0x88
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        jbe short L_clear
+L_loop:
+        _emit 0x8B
+        _emit 0x4C
+        _emit 0x24
+        _emit 0x00
+        mov edx, dword ptr [mem_00B6114C]
+        and ecx, 0xff
+        inc al
+        _emit 0x88
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov dword ptr [edx + 4*ecx], 0
+        mov cl, byte ptr [mem_009977ED]
+        cmp al, cl
+        jb short L_loop
+L_clear:
+        mov byte ptr [mem_00B61150], 0
+        mov byte ptr [mem_00B61151], 0
+L_done:
+        pop ecx
+        ret
+    }
+}
