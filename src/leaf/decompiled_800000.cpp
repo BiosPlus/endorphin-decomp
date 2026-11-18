@@ -8253,3 +8253,96 @@ extern "C" __declspec(naked) void __fastcall fn_0080A6A0(void* self) {
         ret
     }
 }
+
+// [0x0080C2C0] sub_0080C2C0 (144 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080C2C0(char* dst, const char* src, int n, unsigned int maxWs) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        xor ebp, ebp
+        xor eax, eax
+        xor edx, edx
+        push edi
+        test esi, esi
+        jle pop_only
+        mov edi, dword ptr [esp + 0x18]
+        mov ebx, dword ptr [esp + 0x14]
+    top:
+        mov cl, byte ptr [edx + edi]
+        cmp cl, 0x41
+        jb l1
+        cmp cl, 0x5a
+        jbe copy
+    l1:
+        cmp cl, 0x61
+        jb l2
+        cmp cl, 0x7a
+        jbe copy
+    l2:
+        cmp cl, 0x30
+        jb l3
+        cmp cl, 0x39
+        jbe copy
+    l3:
+        cmp cl, 0x2b
+        jb l4
+        cmp cl, 0x3d
+        jbe copy
+    l4:
+        cmp edx, esi
+        jge next
+        cmp cl, 0x20
+        je ws
+        cmp cl, 0x09
+        je ws
+        cmp cl, 0x0d
+        je ws
+        cmp cl, 0x0a
+        jne zero
+    ws:
+        mov ecx, dword ptr [esp + 0x20]
+        inc ebp
+        cmp ebp, ecx
+        ja zero
+        inc edx
+        jmp top
+    copy:
+        cmp edx, esi
+        jge next
+        mov byte ptr [eax + ebx], cl
+        inc eax
+    next:
+        inc edx
+        cmp edx, esi
+        jl top
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    zero:
+        xor eax, eax
+    pop_only:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
