@@ -287,9 +287,12 @@ extern "C" __declspec(naked) void __fastcall fn_007AE7D0(void* self) {
         _emit 0xc3
     }
 }
+extern "C" void ext_007A9950();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
 
-// [0x007A9C80] sub_007A9C80 (96 bytes)
-extern "C" void ext_007A9950(void* a1);
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
 extern "C" int mem_00B61218;
 extern "C" int mem_00B61219;
 
@@ -5710,6 +5713,87 @@ extern "C" __declspec(naked) void __cdecl fn_007A8B20(void** pp) {
         mov dword ptr [ecx + 0x24], 0x0
     LDONE:
         pop esi
+        ret
+    }
+}
+
+// [0x007A9BE0] sub_007A9BE0 (160 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007A9BE0(void* self, const char* name, int len) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push esi
+        call ext_007A9950
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L03
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L5F
+    L03:
+        mov eax, dword ptr [esi + 0x10]
+        xor ebp, ebp
+        mov edx, dword ptr [eax]
+        test edx, edx
+        jbe L5F
+        mov eax, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x14], eax
+        mov edi, eax
+    L17:
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        cmp ecx, eax
+        jne L57
+        mov esi, dword ptr [edi]
+        mov eax, dword ptr [esp + 0x18]
+    L2A:
+        mov bl, byte ptr [eax]
+        mov cl, bl
+        cmp bl, byte ptr [esi]
+        jne L4E
+        test cl, cl
+        je L4A
+        mov bl, byte ptr [eax + 0x1]
+        mov cl, bl
+        cmp bl, byte ptr [esi + 0x1]
+        jne L4E
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L2A
+    L4A:
+        xor eax, eax
+        jmp L53
+    L4E:
+        sbb eax, eax
+        sbb eax, -1
+    L53:
+        test eax, eax
+        je LFOUND
+    L57:
+        inc ebp
+        add edi, 0x8
+        cmp ebp, edx
+        jb L17
+    L5F:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    LFOUND:
+        mov edx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        mov eax, dword ptr [edx + ebp*8 + 0x4]
+        pop ebp
+        pop ebx
         ret
     }
 }
