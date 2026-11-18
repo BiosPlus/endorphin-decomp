@@ -8185,3 +8185,71 @@ extern "C" __declspec(naked) void __cdecl fn_0080B6C0(void) {
         ret
     }
 }
+
+// [0x0080A6A0] sub_0080A6A0 (128 bytes)
+extern "C" void ext_0080A720();
+extern "C" void ext_0080AC50();
+extern "C" void ext_0080B610();
+extern "C" void ext_0080B630();
+extern "C" void ext_0080B670();
+extern "C" int mem_00B62020;
+
+extern "C" __declspec(naked) void __fastcall fn_0080A6A0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00B62020]
+        push ebx
+        push esi
+        push edi
+        test eax, eax
+        mov edi, 1
+        je L_end
+        call ext_0080AC50
+        mov ebx, dword ptr [esp + 0x10]
+        mov esi, eax
+        push ebx
+        call ext_0080B670
+        mov ecx, dword ptr [esi]
+        add esp, 4
+        cmp eax, ecx
+        jb L_store
+    L_test:
+        test edi, edi
+        je L_zero
+        push esi
+        xor edi, edi
+        call ext_0080A720
+        push ebx
+        call ext_0080B670
+        mov ecx, dword ptr [esi]
+        add esp, 8
+        cmp eax, ecx
+        jae L_test
+    L_store:
+        mov eax, dword ptr [esi + 4]
+        push ebx
+        push eax
+        call ext_0080B610
+        add esp, 8
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_zero:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [esi + 4]
+        dec ecx
+        push ecx
+        push ebx
+        push edx
+        call ext_0080B630
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [esi]
+        add esp, 0Ch
+        mov byte ptr [eax + ecx - 1], 0
+    L_end:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
