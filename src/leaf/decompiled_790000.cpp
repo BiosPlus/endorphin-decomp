@@ -5830,3 +5830,65 @@ L_one:
         ret
     }
 }
+
+// [0x0079E9D0] sub_0079E9D0 (144 bytes)
+extern "C" void ext_0079E950();
+extern "C" int mem_009977ED;
+extern "C" void ext_007AA510();
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_0079E9D0(void* a1) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [mem_00B6114C]
+        test ecx, ecx
+        jne short L_have
+        call ext_0079E950
+        mov ecx, dword ptr [mem_00B6114C]
+L_have:
+        mov al, byte ptr [mem_00B61150]
+        push ebx
+        xor bl, bl
+        push esi
+        test al, al
+        mov byte ptr [esp + 0x8], bl
+        jbe short L_fall
+L_loop:
+        mov esi, dword ptr [esp + 0x8]
+        mov edx, esi
+        and edx, 0xff
+        cmp dword ptr [ecx + 4*edx], 0x0
+        je short L_chk
+        inc bl
+        cmp bl, al
+        mov byte ptr [esp + 0x8], bl
+        jb short L_loop
+L_fall:
+        mov esi, dword ptr [esp + 0x8]
+L_chk:
+        cmp bl, byte ptr [mem_009977ED]
+        jb short L_store
+        push 0x13
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je short L_ret
+        mov ecx, dword ptr [mem_00B6114C]
+L_store:
+        mov eax, dword ptr [esp + 0x10]
+        and esi, 0xff
+        mov dword ptr [ecx + 4*esi], eax
+        mov byte ptr [eax + 0xc], bl
+        mov al, byte ptr [mem_00B61150]
+        cmp bl, al
+        jne short L_ret
+        inc al
+        mov byte ptr [mem_00B61150], al
+L_ret:
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
