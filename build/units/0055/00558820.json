@@ -19,5 +19,7 @@
     "0x005588A3",
     "0x005588AF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-18T03:25:11Z"
 }
