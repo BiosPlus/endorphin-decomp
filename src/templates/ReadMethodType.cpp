@@ -177,8 +177,10 @@ extern "C" void ext_005E02A0();
 extern "C" void ext_005E0E40();
 extern "C" void ext_0046A470();
 extern "C" void ext_004CEA30();
+extern "C" void ext_0049AA40();
+extern "C" void ext_0041CF50();
 
-// [0x004D1820] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void ext_0041CF50();
 extern "C" void* __stdcall fn_004D1820(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA32AA8, 0);
@@ -65520,6 +65522,59 @@ extern "C" __declspec(naked) void __stdcall fn_004C12E0(void* self) {
         call ext_0046C3C0
         push 0x9dec1c
         lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
+
+// [0x004A47B0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_47 (154 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004A47B0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 08A5428h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, dword ptr [esp + 44h]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_throw
+        call ext_0049AA40
+        push eax
+        lea ecx, [esp + 8]
+        call ext_006720C0
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 40h], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je short L_skip
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+    L_skip:
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0BCh]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 34h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 3Ch
+        ret 4
+    L_throw:
+        lea ecx, [esp + 0Ch]
+        call ext_0046C3C0
+        push 009DEC1Ch
+        lea eax, [esp + 10h]
         push eax
         call ext_006A6DD2
     }
