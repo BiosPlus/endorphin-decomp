@@ -113270,3 +113270,62 @@ extern "C" __declspec(naked) bool __fastcall fn_005B22B0(void* self, int edx_unu
         call    ext_006A6DD2
     }
 }
+
+// [0x005D7080] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_42 (165 bytes)
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) void __fastcall fn_005D7080(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], esp
+        mov eax, dword ptr [eax]
+        sub esp, 0x30
+        test eax, eax
+        je L_null_005D7080
+        fld dword ptr [eax + 0x34]
+        push ebx
+        fstp dword ptr [esp + 0x44]
+        push ecx
+        fld dword ptr [esp + 0x48]
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], -1
+        je L_done_005D7080
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+L_done_005D7080:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 8
+L_null_005D7080:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}

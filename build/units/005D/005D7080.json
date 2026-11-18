@@ -18,5 +18,7 @@
     "0x005D7117",
     "0x005D7121"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-18T11:58:46Z"
 }
