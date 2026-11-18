@@ -8346,3 +8346,59 @@ extern "C" __declspec(naked) void __cdecl fn_0080C2C0(char* dst, const char* src
         nop
     }
 }
+
+// [0x0080AAF0] sub_0080AAF0 (144 bytes)
+extern "C" void ext_0080AB80();
+extern "C" void ext_0080B560();
+extern "C" __declspec(naked) void __cdecl fn_0080AAF0(void) {
+    __asm {
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebp, edi
+        shr edi, 0x10
+        and ebp, 0xffff
+        cmp edi, 0x80
+        jb L_aaf0_body
+        pop edi
+        pop esi
+        mov eax, 9
+        pop ebp
+        ret
+    L_aaf0_body:
+        call ext_0080AB80
+        lea esi, [edi + 8*edi]
+        shl esi, 3
+        sub esi, edi
+        shl esi, 3
+        mov al, byte ptr [esi + 0B62260h]
+        test al, al
+        je L_aaf0_clear
+        cmp dword ptr [esi + 0B6204Ch], ebp
+        je L_aaf0_match
+    L_aaf0_clear:
+        call ext_0080ABC0
+        pop edi
+        pop esi
+        mov eax, 9
+        pop ebp
+        ret
+    L_aaf0_match:
+        mov eax, dword ptr [esi + 0B62034h]
+        test eax, eax
+        je L_aaf0_zero
+        push eax
+        call ext_0080B560
+        add esp, 4
+        mov dword ptr [esi + 0B62034h], 0
+    L_aaf0_zero:
+        mov byte ptr [esi + 0B62260h], 0
+        call ext_0080ABC0
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebp
+        ret
+    }
+}
