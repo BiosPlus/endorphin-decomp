@@ -5570,3 +5570,77 @@ L_done:
         ret
     }
 }
+
+// [0x0079EAE0] sub_0079EAE0 (144 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0079EAE0(int a1) {
+    __asm {
+        push ecx
+        mov al, byte ptr [mem_00B61150]
+        push ebx
+        push ebp
+        push esi
+        test al, al
+        push edi
+        mov byte ptr [esp + 0x10], 0x0
+        jbe L_end
+        mov edx, dword ptr [esp + 0x18]
+        mov ebp, dword ptr [mem_00B6114C]
+L_loop:
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, edi
+        and eax, 0xff
+        mov eax, dword ptr [ebp + 4*eax]
+        test eax, eax
+        je L_next
+        mov eax, dword ptr [eax + 0x4]
+        mov esi, edx
+L_cmp:
+        mov bl, byte ptr [eax]
+        mov cl, bl
+        cmp bl, byte ptr [esi]
+        jne L_ne
+        test cl, cl
+        je L_eq
+        mov bl, byte ptr [eax + 0x1]
+        mov cl, bl
+        cmp bl, byte ptr [esi + 0x1]
+        jne L_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_cmp
+L_eq:
+        xor eax, eax
+        jmp L_done
+L_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_done:
+        test eax, eax
+        je L_found
+L_next:
+        mov al, byte ptr [esp + 0x10]
+        mov cl, byte ptr [mem_00B61150]
+        inc al
+        cmp al, cl
+        mov byte ptr [esp + 0x10], al
+        jb L_loop
+L_end:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+L_found:
+        and edi, 0xff
+        mov eax, dword ptr [ebp + 4*edi]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
