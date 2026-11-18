@@ -112130,3 +112130,61 @@ extern "C" __declspec(naked) bool __fastcall fn_004E0CF0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005B3810] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_43 (164 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B3810(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je throw_path
+        mov ecx, dword ptr [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        call edx
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720E0
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    skip_release:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xac]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 8
+    throw_path:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
