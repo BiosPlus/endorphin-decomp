@@ -8943,3 +8943,73 @@ extern "C" __declspec(naked) void __cdecl fn_007B7C50(char* buf, unsigned int co
         ret
     }
 }
+
+// [0x007BA270] sub_007BA270 (144 bytes)
+extern "C" void ext_007990D0();
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50();
+extern "C" void ext_007BA4B0();
+
+extern "C" __declspec(naked) void* __fastcall fn_007BA270(void* self) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        push ebp
+        push esi
+        xor esi, esi
+        push edi
+        mov si, word ptr [ebx + 0x4e]
+        lea edi, [esp + 0x10]
+        cmp esi, 0xa
+        jbe L_7BA298
+        lea eax, [esi + esi]
+        push eax
+        call ext_0079AF40
+        add esp, 0x4
+        mov edi, eax
+    L_7BA298:
+        mov ebp, dword ptr [esp + 0x2c]
+        lea ecx, [esp + 0x28]
+        push ecx
+        push ebp
+        push ebx
+        call ext_007990D0
+        add esp, 0xc
+        test esi, esi
+        jle L_7BA2C1
+        mov eax, edi
+        mov ecx, esi
+    L_7BA2B3:
+        mov dx, word ptr [esp + 0x28]
+        mov word ptr [eax], dx
+        add eax, 0x2
+        dec ecx
+        jne L_7BA2B3
+    L_7BA2C1:
+        mov eax, dword ptr [esp + 0x30]
+        push edi
+        push esi
+        push eax
+        push ebp
+        push 0x3
+        push ebx
+        call ext_007BA4B0
+        lea ecx, [esp + 0x28]
+        add esp, 0x18
+        cmp edi, ecx
+        mov esi, eax
+        je L_7BA2E7
+        push edi
+        call ext_0079AF50
+        add esp, 0x4
+    L_7BA2E7:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
