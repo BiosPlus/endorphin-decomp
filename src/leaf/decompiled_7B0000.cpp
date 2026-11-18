@@ -9013,3 +9013,75 @@ extern "C" __declspec(naked) void* __fastcall fn_007BA270(void* self) {
         ret
     }
 }
+
+// [0x007B2340] sub_007B2340 (160 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2170();
+extern "C" void ext_007B2090();
+extern "C" void ext_007B2210();
+
+extern "C" __declspec(naked) void __fastcall fn_007B2340(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b8fbb
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        push ebp
+        mov ebx, ecx
+        push esi
+        mov ebp, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [ebx + 0x8]
+        push edi
+        lea edi, [ebx + 0x8]
+        xor esi, esi
+        test eax, eax
+        jle L_ALLOC
+    L_LOOP:
+        mov eax, dword ptr [ebx + 0x18]
+        push ebp
+        mov ecx, dword ptr [eax + 4*esi]
+        call ext_007B2210
+        test al, al
+        jne L_EXIT
+        mov eax, dword ptr [edi]
+        inc esi
+        cmp esi, eax
+        jl L_LOOP
+    L_ALLOC:
+        push 0x50
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x20], eax
+        test eax, eax
+        mov dword ptr [esp + 0x18], 0x0
+        je L_NULL
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        push ebp
+        mov ecx, eax
+        call ext_007B2090
+        jmp L_STORE
+    L_NULL:
+        xor eax, eax
+    L_STORE:
+        mov dword ptr [esp + 0x20], eax
+        mov eax, dword ptr [edi]
+        lea edx, [esp + 0x20]
+        mov ecx, edi
+        push edx
+        push eax
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call ext_006D2170
+    L_EXIT:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    }
+}
