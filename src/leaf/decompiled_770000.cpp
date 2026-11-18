@@ -3430,3 +3430,75 @@ extern "C" __declspec(naked) void __fastcall fn_0077EC90(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x007714C0] sub_007714C0 (160 bytes)
+extern "C" void ext_006C9F60();
+extern "C" void ext_006CD350();
+extern "C" void ext_006DAB00();
+extern "C" __declspec(naked) void __fastcall fn_007714C0(void* self, int edx_unused, void* a1, void* a2, void* a3, int a4) {
+    __asm {
+        sub esp, 0x30
+        push ebx
+        xor ebx, ebx
+        push edi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], ebx
+        mov dword ptr [esp + 0xc], ebx
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x1c], ebx
+        call ext_006C9F60
+        mov eax, dword ptr [esp + 0x48]
+        xor edi, edi
+        cmp eax, ebx
+        jbe early_out
+        mov eax, dword ptr [esp + 0x3c]
+        push ebp
+        mov ebp, dword ptr [esp + 0x44]
+        push esi
+        lea esi, [eax + 0x8]
+    loop_top:
+        push 0x6
+        push ebx
+        push ebx
+        push edi
+        push ebx
+        push ebx
+        push ebx
+        lea ecx, [esp + 0x2c]
+        call ext_006DAB00
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push ebx
+        push ecx
+        mov ecx, dword ptr [esp + 0x54]
+        push edx
+        call ext_006CD350
+        mov eax, dword ptr [esp + 0x50]
+        mov dword ptr [esi - 0x8], edi
+        mov word ptr [esi - 0x4], 0x7
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        fstp dword ptr [ebp]
+        inc edi
+        add esi, 0x1c
+        add ebp, 0x4
+        cmp edi, eax
+        jb loop_top
+        pop esi
+        pop ebp
+        pop edi
+        mov al, 0x1
+        pop ebx
+        add esp, 0x30
+        ret 0x10
+    early_out:
+        pop edi
+        mov al, 0x1
+        pop ebx
+        add esp, 0x30
+        ret 0x10
+    }
+}
