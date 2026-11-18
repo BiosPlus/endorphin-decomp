@@ -8519,3 +8519,79 @@ extern "C" __declspec(naked) int __fastcall fn_008058F0(void* self, int edx_unus
         ret 20h
     }
 }
+
+// [0x00809DF0] sub_00809DF0 (160 bytes)
+extern "C" void ext_0080CA10();
+extern "C" __declspec(naked) void __cdecl fn_00809DF0(void* p) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 8]
+        push esi
+        mov eax, dword ptr [ebp + 8]
+        mov esi, dword ptr [ebp + 0x10]
+        test eax, eax
+        je L_a8
+        push eax
+        call ext_0080CA10
+        add esp, 4
+    L_a8:
+        test esi, esi
+        je L_s
+        mov eax, dword ptr [esi + 0x18]
+        test eax, eax
+        je L_free_s
+        mov eax, dword ptr [esi + 0x14]
+        push ebx
+        xor ebx, ebx
+        test eax, eax
+        jbe L_after_loop
+        push edi
+        xor edi, edi
+    L_loop:
+        mov eax, dword ptr [esi + 0x18]
+        mov eax, dword ptr [edi + eax + 0xc]
+        test eax, eax
+        je L_loop_skip
+        push eax
+        call ext_0080CA10
+        add esp, 4
+    L_loop_skip:
+        mov eax, dword ptr [esi + 0x14]
+        inc ebx
+        add edi, 0x10
+        cmp ebx, eax
+        jb L_loop
+        pop edi
+    L_after_loop:
+        mov ecx, dword ptr [esi + 0x18]
+        push ecx
+        call ext_0080CA10
+        add esp, 4
+        pop ebx
+    L_free_s:
+        push esi
+        call ext_0080CA10
+        add esp, 4
+    L_s:
+        mov eax, dword ptr [ebp + 0x14]
+        test eax, eax
+        je L_a14
+        push eax
+        call ext_0080CA10
+        add esp, 4
+    L_a14:
+        mov eax, dword ptr [ebp + 0x20]
+        test eax, eax
+        je L_a20
+        push eax
+        call ext_0080CA10
+        add esp, 4
+    L_a20:
+        push ebp
+        call ext_0080CA10
+        add esp, 4
+        pop esi
+        pop ebp
+        ret
+    }
+}
