@@ -22,5 +22,6 @@
     "0x005A202A",
     "0x005A2034"
   ],
-  "status": "todo"
+  "status": "deferred",
+  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
 }
