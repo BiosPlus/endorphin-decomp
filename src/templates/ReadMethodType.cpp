@@ -109303,3 +109303,59 @@ extern "C" __declspec(naked) void __fastcall fn_004B9270(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x004B8260] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_47 (163 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B8260(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -1
+        push    offset mem_008A5428
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x30
+        push    esi
+        mov     esi, dword ptr [esp + 0x44]
+        mov     eax, dword ptr [esi]
+        test    eax, eax
+        je      no_obj
+        fld     dword ptr [eax + 0x24]
+        push    ecx
+        fstp    dword ptr [esp + 0x48]
+        lea     ecx, [esp + 0x8]
+        fld     dword ptr [esp + 0x48]
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        lea     eax, [esp + 0x4]
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x40], 0x0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 0x8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x3c], 0xffffffff
+        je      skip_dtor
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    edx
+skip_dtor:
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 0xbc]
+        push    esi
+        call    edx
+        mov     ecx, dword ptr [esp + 0x34]
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x3c
+        ret     0x4
+no_obj:
+        lea     ecx, [esp + 0xc]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     eax, [esp + 0x10]
+        push    eax
+        call    ext_006A6DD2
+    }
+}
