@@ -18012,3 +18012,78 @@ extern "C" __declspec(naked) void __fastcall fn_004028E0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00402500] sub_00402500 (167 bytes)
+extern "C" void ext_00402500();
+extern "C" void ext_004EF970();
+extern "C" void ext_005DF270();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_00402500(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x872d80
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        cmp byte ptr [ebx + 0x15], 0
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x18], esi
+        mov dword ptr [ebp - 0x14], eax
+        jne done_path
+        movzx ecx, byte ptr [ebx + 0x14]
+        push ecx
+        mov ecx, dword ptr [ebp + 0xc]
+        lea edx, [ebx + 0xc]
+        push edx
+        push eax
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_004EF970
+        mov edx, dword ptr [ebp - 0x14]
+        cmp byte ptr [edx + 0x15], 0
+        mov edi, eax
+        je skip_store
+        mov dword ptr [ebp - 0x14], edi
+skip_store:
+        mov eax, dword ptr [ebx]
+        push edi
+        push eax
+        mov ecx, esi
+        mov dword ptr [ebp - 0x4], 0
+        call ext_00402500
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [ebx + 0x8]
+        push edi
+        push ecx
+        mov ecx, esi
+        call ext_00402500
+        mov dword ptr [edi + 0x8], eax
+done_path:
+        mov ecx, dword ptr [ebp - 0xc]
+        mov eax, dword ptr [ebp - 0x14]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+        mov edx, dword ptr [ebp - 0x14]
+        mov ecx, dword ptr [ebp - 0x18]
+        push edx
+        call ext_005DF270
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
