@@ -9085,3 +9085,62 @@ extern "C" __declspec(naked) void __fastcall fn_007B2340(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007BA4B0] sub_007BA4B0 (160 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BA4B0(void* self, unsigned short w2, unsigned short w3,
+                                                     void* out, unsigned int count, const void* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x10]
+        mov dx, word ptr [esp + 0x8]
+        mov ax, word ptr [esp + 0xc]
+        mov word ptr [ecx + 0x2], dx
+        mov edx, dword ptr [esp + 0x14]
+        cmp edx, 0x2
+        mov word ptr [ecx], ax
+        mov dword ptr [ecx + 0x4], edx
+        ja L_7BA4B0_ja
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        cmp word ptr [eax + 0x150], 0x4d4d
+        jne L_7BA4B0_b
+        mov esi, dword ptr [esp + 0x1c]
+        xor eax, eax
+        mov ax, word ptr [esi]
+        shl eax, 0x10
+        cmp edx, 0x2
+        mov dword ptr [ecx + 0x8], eax
+        jne L_7BA4B0_done
+        xor edx, edx
+        mov dx, word ptr [esi + 0x2]
+        pop esi
+        or edx, eax
+        mov eax, 0x1
+        mov dword ptr [ecx + 0x8], edx
+        ret
+    L_7BA4B0_b:
+        mov esi, dword ptr [esp + 0x1c]
+        xor eax, eax
+        cmp edx, 0x2
+        mov ax, word ptr [esi]
+        mov dword ptr [ecx + 0x8], eax
+        jne L_7BA4B0_done
+        xor edx, edx
+        mov dx, word ptr [esi + 0x2]
+        shl edx, 0x10
+        or edx, eax
+        mov dword ptr [ecx + 0x8], edx
+    L_7BA4B0_done:
+        mov eax, 0x1
+        pop esi
+        ret
+    L_7BA4B0_ja:
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        call ext_007BAA40
+        add esp, 0xc
+        ret
+    }
+}
