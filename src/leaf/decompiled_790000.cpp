@@ -5644,3 +5644,64 @@ L_found:
         ret
     }
 }
+
+// [0x0079ABF0] sub_0079ABF0 (144 bytes)
+extern "C" int mem_00B60F40;
+extern "C" __declspec(naked) int __cdecl fn_0079ABF0(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        sub eax, 0
+        je short L_case0
+        dec eax
+        je short L_case1
+        dec eax
+        jne short L_default
+        mov dword ptr [mem_00B60F40], 0
+L_true:
+        mov eax, 1
+        pop esi
+        ret
+L_case1:
+        mov edx, dword ptr [mem_00B60F40]
+        xor eax, eax
+        test edx, edx
+        jle short L_default
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, 0xb60dc0
+L_scan1:
+        cmp dword ptr [ecx], esi
+        je short L_true
+        inc eax
+        add ecx, 4
+        cmp eax, edx
+        jl short L_scan1
+L_default:
+        xor eax, eax
+        pop esi
+        ret
+L_case0:
+        mov ecx, dword ptr [mem_00B60F40]
+        cmp ecx, 0x5e
+        jge short L_default
+        mov esi, dword ptr [esp + 0xc]
+        xor eax, eax
+        test ecx, ecx
+        jle short L_append
+        mov edx, 0xb60dc0
+L_scan0:
+        cmp dword ptr [edx], esi
+        je short L_true
+        inc eax
+        add edx, 4
+        cmp eax, ecx
+        jl short L_scan0
+L_append:
+        mov dword ptr [4*ecx + 0xb60dc0], esi
+        inc ecx
+        mov dword ptr [mem_00B60F40], ecx
+        mov eax, 1
+        pop esi
+        ret
+    }
+}
