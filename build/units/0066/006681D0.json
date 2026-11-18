@@ -19,5 +19,7 @@
     "0x00668253",
     "0x0066825F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-18T03:23:59Z"
 }
