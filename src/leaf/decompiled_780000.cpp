@@ -6000,3 +6000,66 @@ L_tail:
         ret 0x4
     }
 }
+
+// [0x00783B40] sub_00783B40 (128 bytes)
+extern "C" void ext_00783A80();
+extern "C" void ext_006E7460();
+extern "C" void ext_00782E70();
+extern "C" void ext_00783940();
+extern "C" void ext_00783880();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00782E30();
+extern "C" __declspec(naked) void __fastcall fn_00783B40(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_00783A80
+        test eax, eax
+        je L_fail
+        push 0
+        mov ecx, edi
+        call ext_006E7460
+        push eax
+        call ext_00783A80
+        mov ecx, eax
+        call ext_00782E70
+        mov esi, eax
+        mov eax, dword ptr [edi + 0x50]
+        test eax, eax
+        je L_fail
+        test esi, esi
+        je L_fail
+        push eax
+        mov eax, dword ptr [edi + 0x4c]
+        push eax
+        mov ecx, esi
+        call ext_00783940
+        mov ecx, esi
+        call ext_006E7460
+        test eax, eax
+        jne L_clear
+        mov ecx, esi
+        call ext_00783880
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+        mov ecx, edi
+        call ext_006E7460
+        push eax
+        call ext_00783A80
+        mov ecx, eax
+        call ext_00782E30
+L_clear:
+        mov dword ptr [edi + 0x50], 0
+        pop edi
+        mov al, 1
+        pop esi
+        ret
+L_fail:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    }
+}
