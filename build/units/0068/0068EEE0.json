@@ -21,5 +21,7 @@
     "0x0068EF5E",
     "0x0068EF68"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-18T03:18:27Z"
 }
