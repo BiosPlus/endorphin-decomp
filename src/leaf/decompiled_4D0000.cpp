@@ -8867,3 +8867,75 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x004D02B0] sub_004D02B0 (164 bytes)
+extern "C" void ext_004CFFE0();
+extern "C" void ext_00694720();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FD8;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_004D02B0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x88ca29
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x28
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [ebp + 0xc]
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], ecx
+        mov ecx, dword ptr [ecx]
+        push eax
+        push ecx
+        mov ecx, dword ptr [ebp + 0x8]
+        push edx
+        mov dword ptr [ebp - 0x4], 0
+        call ext_00694720
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+        // catch(...) funclet region (follows the main body in the original binary)
+        mov eax, dword ptr [ebp - 0x14]
+        push eax
+        lea ecx, [ebp - 0x34]
+        push ecx
+        mov ecx, dword ptr [ebp + 0x8]
+        call ext_004CFFE0
+        mov esi, dword ptr [ebp - 0x18]
+        add esi, 0x1c
+        mov ecx, esi
+        mov byte ptr [ebp - 0x4], 0x2
+        call dword ptr [mem_00924FEC]
+        test al, al
+        jne catch_done_4D02B0
+        push 0x92ab70
+        lea ecx, [ebp - 0x34]
+        call dword ptr [mem_00924ED0]
+        push esi
+        lea ecx, [ebp - 0x34]
+        call dword ptr [mem_00924FD8]
+    catch_done_4D02B0:
+        lea edx, [ebp - 0x34]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
