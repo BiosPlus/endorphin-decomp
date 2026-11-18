@@ -10367,3 +10367,67 @@ extern "C" __declspec(naked) void __fastcall fn_006BA140(void* self) {
         ret
     }
 }
+
+// [0x006B9B90] sub_006B9B90 (128 bytes)
+// __thiscall with ret 0x10: this in ecx, 4 stack args. Calls sub_006B9A00(sum, &slot) and,
+// when it returns 0 and sum != 0, copies a1 bytes from a2 and a3 bytes from a4 into *(this)
+// and *(this)+a1. Then calls thunk_MFC80_ord_764(slot) (cdecl).
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006B9A00();
+
+extern "C" __declspec(naked) void __fastcall fn_006B9B90(void* self, int edx_unused, int a1, const void* a2, int a3, const void* a4) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        mov ebx, ecx
+        push esi
+        lea ecx, [esp + 0xc]
+        push edi
+        lea esi, [eax + ebp]
+        push ecx
+        push esi
+        mov ecx, ebx
+        call ext_006B9A00
+        mov edi, eax
+        test esi, esi
+        mov dword ptr [esp + 0x18], edi
+        je done_006B9B90
+        test edi, edi
+        jne done_006B9B90
+        mov esi, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [ebx]
+        mov ecx, ebp
+        mov edx, ecx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov ecx, dword ptr [esp + 0x20]
+        mov edi, dword ptr [ebx]
+        mov esi, dword ptr [esp + 0x24]
+        mov eax, ecx
+        add edi, ebp
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        mov edi, dword ptr [esp + 0x18]
+    done_006B9B90:
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        call ext_006A5C5C
+        add esp, 0x4
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
+    }
+}
