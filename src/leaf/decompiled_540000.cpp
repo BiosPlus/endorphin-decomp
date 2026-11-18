@@ -12112,3 +12112,62 @@ L_0542FC0:
         ret
     }
 }
+
+// [0x00541580] sub_00541580 (168 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_005DF5C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00AF166C;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00541580(void* self) {
+    __asm {
+        push    -1
+        push    8A3E82h
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 64h
+        push    esi
+        mov     esi, ecx
+        sub     esp, 1Ch
+        lea     eax, [esp + 94h]
+        mov     ecx, esp
+        mov     dword ptr [esp + 20h], esp
+        push    eax
+        mov     dword ptr [esp + 90h], 0
+        call    dword ptr [mem_00924FE0]
+        mov     ecx, esi
+        call    ext_005DF5C0
+        mov     esi, eax
+        test    esi, esi
+        je      L_throw
+        lea     ecx, [esp + 78h]
+        mov     dword ptr [esp + 70h], 0FFFFFFFFh
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, dword ptr [esp + 68h]
+        mov     eax, esi
+        mov     fs:[0], ecx
+        pop     esi
+        add     esp, 70h
+        ret     1Ch
+    L_throw:
+        mov     ecx, dword ptr [mem_00AF166C]
+        push    ecx
+        lea     ecx, [esp + 0Ch]
+        call    dword ptr [mem_00924FE4]
+        lea     edx, [esp + 78h]
+        push    edx
+        lea     eax, [esp + 0Ch]
+        push    eax
+        lea     ecx, [esp + 2Ch]
+        mov     byte ptr [esp + 78h], 1
+        call    ext_0041FF30
+        push    9D3748h
+        lea     ecx, [esp + 28h]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
