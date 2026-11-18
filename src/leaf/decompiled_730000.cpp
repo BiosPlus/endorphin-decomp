@@ -2627,3 +2627,65 @@ fn00738B10_fail:
         ret 4
     }
 }
+
+// [0x00731BE0] sub_00731BE0 (128 bytes)
+extern "C" void ext_006C2990();
+extern "C" void ext_006C2B60();
+extern "C" void ext_00782EC0();
+extern "C" void ext_00782F00();
+extern "C" void ext_00782F70();
+
+extern "C" __declspec(naked) void __fastcall fn_00731BE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0cch]
+        mov ecx, edi
+        call ext_00782F70
+        mov ebp, dword ptr [esi + 0d0h]
+        xor esi, esi
+        test ebp, ebp
+        jle fn00731BE0_skip
+        push ebx
+fn00731BE0_loop:
+        push esi
+        mov ecx, edi
+        call ext_00782F00
+        mov ebx, dword ptr [eax]
+        lea eax, [esp + 10h]
+        push eax
+        push esi
+        mov ecx, edi
+        mov dword ptr [esp + 18h], 0
+        call ext_00782EC0
+        mov ecx, dword ptr [esp + 10h]
+        push 0
+        push 1
+        push ecx
+        mov ecx, dword ptr [esp + 24h]
+        call ext_006C2990
+        push eax
+        mov ecx, ebx
+        call ext_006C2B60
+        inc esi
+        cmp esi, ebp
+        jl fn00731BE0_loop
+        pop ebx
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebp
+        pop ecx
+        ret 4
+fn00731BE0_skip:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebp
+        pop ecx
+        ret 4
+    }
+}
