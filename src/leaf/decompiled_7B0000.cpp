@@ -8742,3 +8742,64 @@ extern "C" __declspec(naked) void __cdecl fn_007B8000(int* out) {
         ret
     }
 }
+
+// [0x007BA3E0] sub_007BA3E0 (144 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BA3E0(void* self, unsigned int a2, void* out, unsigned int count, const unsigned int* arr) {
+    __asm {
+        mov ax, word ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov edx, 0x1
+        push edi
+        mov word ptr [esi], ax
+        mov word ptr [esi + 0x2], 0x3
+        mov cl, byte ptr [ebp + 0x40]
+        mov edi, dword ptr [esp + 0x20]
+        shl edx, cl
+        xor ebx, ebx
+        test edi, edi
+        mov dword ptr [esi + 0x4], edx
+        mov eax, dword ptr [ebp + 0x174]
+        mov dword ptr [esp + 0x18], eax
+        jbe L_7BA448
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x1c], ecx
+L_7BA423:
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [edx]
+        push eax
+        push esi
+        push ebp
+        call ext_007BAA40
+        add esp, 0xc
+        test eax, eax
+        je L_7BA460
+        mov ecx, dword ptr [esp + 0x1c]
+        inc ebx
+        add ecx, 0x4
+        cmp ebx, edi
+        mov dword ptr [esp + 0x1c], ecx
+        jb L_7BA423
+L_7BA448:
+        imul edi, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0x4], edi
+        mov dword ptr [esi + 0x8], ecx
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+L_7BA460:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
