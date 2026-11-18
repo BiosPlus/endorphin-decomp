@@ -5408,3 +5408,60 @@ extern "C" __declspec(naked) void __fastcall fn_00725B50(void* self, int edx_unu
         __asm _emit 0x90
     }
 }
+
+// [0x00726CB0] sub_00726CB0 (144 bytes)
+extern "C" void ext_006DAE00();
+extern "C" void ext_00725A60();
+extern "C" void ext_00726980();
+extern "C" void ext_00726B80();
+extern "C" void ext_00726BE0();
+extern "C" __declspec(naked) void __fastcall fn_00726CB0(void* self, int edx_unused, void* out) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], 0x0
+        mov dword ptr [esp + 0x8], 0x0
+        mov al, byte ptr [esi + 0x15]
+        test al, al
+        je short L_path_b
+        call ext_00726980
+        cmp al, 0x4c
+        je short L_path_a
+        mov al, byte ptr [esi + 0x15]
+        test al, al
+        jne short L_path_c
+    L_path_b:
+        mov eax, dword ptr [esi + 0x1c4]
+        mov ecx, esi
+        push eax
+        call ext_00725A60
+        cmp eax, 0x7d1
+        jl short L_path_c
+    L_path_a:
+        mov ecx, esi
+        call ext_00726B80
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x10]
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        add esp, 0x8
+        ret 0x4
+    L_path_c:
+        mov ecx, esi
+        call ext_00726BE0
+        sub esp, 0x8
+        lea ecx, [esp + 0xc]
+        fstp qword ptr [esp]
+        call ext_006DAE00
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        add esp, 0x8
+        ret 0x4
+    }
+}
