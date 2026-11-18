@@ -7198,3 +7198,55 @@ extern "C" __declspec(naked) void* __fastcall fn_006D2590(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x006D2630] sub_006D2630 (160 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006D2630(void* self, int edx_unused, void* out, void* other) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x8bfd88
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        mov eax, dword ptr [ebp + 0xc]
+        push esi
+        fld qword ptr [ecx + 0x18]
+        fsub qword ptr [eax + 0x18]
+        sub esp, 0x8
+        xor esi, esi
+        sub esp, 0x8
+        mov dword ptr [esp + 0x14], esi
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [ecx + 0x10]
+        fsub qword ptr [eax + 0x10]
+        sub esp, 0x8
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [ecx + 0x8]
+        fsub qword ptr [eax + 0x8]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [ecx]
+        fsub qword ptr [eax]
+        lea ecx, [esp + 0x28]
+        fstp qword ptr [esp]
+        call ext_006D23B0
+        mov dword ptr [esp + 0x30], esi
+        mov esi, dword ptr [ebp + 0x8]
+        lea eax, [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D2390
+        lea ecx, [esp + 0x8]
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
