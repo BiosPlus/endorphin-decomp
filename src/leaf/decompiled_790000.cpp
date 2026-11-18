@@ -40,6 +40,7 @@ extern "C" __declspec(naked) int __cdecl fn_0079EEC0() {
         ret
     }
 }
+extern "C" int mem_009251D8; /* "&|b" */
 
 // [0x0079AFE0] sub_0079AFE0 (48 bytes)
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
@@ -5939,5 +5940,90 @@ extern "C" __declspec(naked) void __fastcall fn_0079E520(void* self, int edx_unu
         mov dword ptr fs:[0], ecx
         add esp, 0x30
         ret 0x4
+    }
+}
+
+// [0x0079FCC0] sub_0079FCC0 (160 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0079FCC0(void* p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_end
+        mov eax, dword ptr [eax + 0x30]
+        push edi
+        mov edi, dword ptr [mem_009251D8]
+        test eax, eax
+        je short L1
+        push eax
+        call edi
+        add esp, 0x4
+L1:
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 0x34]
+        test eax, eax
+        je short L2
+        push eax
+        call edi
+        add esp, 0x4
+L2:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx + 0x40]
+        test eax, eax
+        je short L3
+        push eax
+        call edi
+        add esp, 0x4
+L3:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x44]
+        test eax, eax
+        je short L4
+        push eax
+        call edi
+        add esp, 0x4
+L4:
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 0x50]
+        test eax, eax
+        je short L5
+        push eax
+        call edi
+        add esp, 0x4
+L5:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx + 0x54]
+        test eax, eax
+        je short L6
+        push eax
+        call edi
+        add esp, 0x4
+L6:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x78]
+        test eax, eax
+        je short L7
+        push eax
+        call edi
+        add esp, 0x4
+L7:
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 0x7c]
+        test eax, eax
+        je short L8
+        push eax
+        call edi
+        add esp, 0x4
+L8:
+        mov ecx, dword ptr [esi]
+        push ecx
+        call edi
+        add esp, 0x4
+        mov dword ptr [esi], 0x0
+        pop edi
+L_end:
+        pop esi
+        ret
     }
 }
