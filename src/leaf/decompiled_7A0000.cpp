@@ -5307,3 +5307,73 @@ extern "C" __declspec(naked) void __cdecl fn_007AA510(void* arg) {
         ret
     }
 }
+
+// [0x007AC8D0] sub_007AC8D0 (144 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007AC690();
+extern "C" void ext_007AC840();
+extern "C" int mem_00B61219;
+extern "C" int mem_00B61218;
+
+extern "C" __declspec(naked) void __cdecl fn_007AC8D0(void* a, void* b) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test esi, esi
+        je L_E2
+        test edi, edi
+        jne L_F5
+    L_E2:
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_END
+    L_F5:
+        cmp dword ptr [esi], 0x0
+        jne L_90D
+        push 0x5
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_END
+    L_90D:
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax]
+        cmp eax, 0x4d4d
+        je L_932
+        cmp eax, 0xc23d
+        je L_932
+        push 0x6
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_END
+    L_932:
+        push edi
+        push esi
+        call ext_007AC690
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test al, al
+        je L_94E
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_END
+    L_94E:
+        add edi, 0x8
+        push edi
+        push esi
+        call ext_007AC840
+        add esp, 0x8
+    L_END:
+        pop edi
+        pop esi
+        ret
+    }
+}
