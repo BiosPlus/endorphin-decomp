@@ -71094,3 +71094,57 @@ L_throw_005050B0:
         call ext_006A6DD2
     }
 }
+
+// [0x00505150] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_46 (155 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00505150(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 08A5428h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 30h
+        push esi
+        mov esi, dword ptr [esp + 44h]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_throw_00505150
+        push 0
+        lea ecx, [esp + 8]
+        call ext_006720C0
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 40h], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        mov dword ptr [esp + 3Ch], 0FFFFFFFFh
+        je L_skip_00505150
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 4]
+        push eax
+        call edx
+L_skip_00505150:
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [esp + 48h]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0B8h]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 34h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 3Ch
+        ret 8
+L_throw_00505150:
+        lea ecx, [esp + 0Ch]
+        call ext_0046C3C0
+        push 09DEC1Ch
+        lea ecx, [esp + 10h]
+        push ecx
+        call ext_006A6DD2
+    }
+}
