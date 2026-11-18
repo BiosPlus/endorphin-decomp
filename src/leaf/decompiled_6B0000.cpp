@@ -68,8 +68,10 @@ extern "C" __declspec(naked) void __fastcall fn_006B8B10(void* self) {
         ret 0xc
     }
 }
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B9990();
 
-// [0x006B0EB0] sub_006B0EB0 (12 bytes)
+extern "C" void ext_006B9990();
 extern "C" void ext_006A5EA8();
 extern "C" void __fastcall fn_006B0EB0(void* self, int edx_unused, int a1, int a2, int a3) {
     *((unsigned char*)self + 0x60) = 1;
@@ -10429,5 +10431,74 @@ extern "C" __declspec(naked) void __fastcall fn_006B9B90(void* self, int edx_unu
         pop ebx
         pop ecx
         ret 0x10
+    }
+}
+
+// [0x006B9A00] sub_006B9A00 (144 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006B9A00(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        xor ebx, ebx
+        test edi, edi
+        mov esi, ecx
+        mov dword ptr [eax], ebx
+        jne L_006B9A2B
+        push eax
+        call ext_006B9990
+        lea eax, [esi + 0xc]
+        pop edi
+        mov dword ptr [esi], eax
+        pop esi
+        mov byte ptr [eax], 0
+        mov eax, ebx
+        pop ebx
+        ret 8
+    L_006B9A2B:
+        jge L_006B9A3F
+        mov ecx, esi
+        call ext_006B9920
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 8
+    L_006B9A3F:
+        push eax
+        mov ecx, esi
+        call ext_006B9990
+        lea eax, [edi + 1]
+        cmp eax, 0x40
+        jae L_006B9A54
+        lea eax, [esi + 0xc]
+        jmp L_006B9A5D
+    L_006B9A54:
+        push eax
+        call ext_006A5C62
+        add esp, 4
+    L_006B9A5D:
+        test eax, eax
+        mov dword ptr [esi], eax
+        jne L_006B9A77
+        mov ecx, esi
+        mov edi, 1
+        call ext_006B9920
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 8
+    L_006B9A77:
+        mov dword ptr [esi + 8], edi
+        mov dword ptr [esi + 4], edi
+        mov byte ptr [eax + edi], 0
+        pop edi
+        mov eax, ebx
+        pop esi
+        pop ebx
+        ret 8
     }
 }
