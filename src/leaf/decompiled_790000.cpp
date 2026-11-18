@@ -5892,3 +5892,52 @@ L_ret:
         ret
     }
 }
+
+// [0x0079E520] sub_0079E520 (144 bytes)
+// __thiscall-style (this in ecx, one stack arg, ret 4), with an EH frame (fs:[0] chain).
+// Externs are declared below the marker so work check does not hoist them into the shard preamble
+// (hoisting triggers an append-aliasing bug in mergeWipIntoShard that clobbers the next function's header).
+extern "C" void ext_006C3590();
+extern "C" void ext_006D2370();
+extern "C" void ext_006D2390();
+extern "C" void ext_006D80A0();
+extern "C" void ext_007873F0();
+extern "C" __declspec(naked) void __fastcall fn_0079E520(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8c1a5f
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0
+        call ext_006D2370
+        mov ecx, dword ptr [esi]
+        push 0
+        mov dword ptr [esp + 0x34], 1
+        call ext_00714AE0
+        mov ecx, eax
+        call ext_006C3590
+        push eax
+        lea ecx, [esp + 0xc]
+        call ext_007873F0
+        mov esi, dword ptr [esp + 0x38]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call ext_006D2390
+        mov dword ptr [esp + 0x4], 1
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x30], 0
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret 0x4
+    }
+}
