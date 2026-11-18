@@ -4236,3 +4236,67 @@ L_a6:
         ret
     }
 }
+
+// [0x008587C0] sub_008587C0 (144 bytes)
+// RC4-style KSA: S = identity; key-mixed swap loop over 256 entries.
+// Args (cdecl, stack): [esp+4]=key, [esp+8]=keylen, [esp+0xC]=S (256-byte state).
+extern "C" __declspec(naked) void __cdecl fn_008587C0(void) {
+    __asm {
+        sub esp, 8
+        xor eax, eax
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp+24h]
+        mov ecx, edi
+    init_loop:
+        mov byte ptr [ecx], al
+        inc eax
+        inc ecx
+        cmp ax, 100h
+        jl init_loop
+        mov byte ptr [esp+24h], 0
+        xor ecx, ecx
+        mov esi, edi
+        mov dword ptr [esp+10h], 100h
+    ksa_loop:
+        mov eax, dword ptr [esp+24h]
+        mov ebp, dword ptr [esp+1ch]
+        mov dl, byte ptr [esi]
+        and eax, 0ffh
+        xor ebx, ebx
+        mov bl, byte ptr [eax+ebp]
+        mov ebp, edx
+        and ebp, 0ffh
+        sub ebx, ebp
+        add ebx, ecx
+        and ebx, 800000ffh
+        jns skip_fix
+        dec ebx
+        or ebx, 0ffffff00h
+        inc ebx
+    skip_fix:
+        mov byte ptr [esp+14h], bl
+        mov ecx, dword ptr [esp+14h]
+        and ecx, 0ffh
+        inc eax
+        mov bl, byte ptr [ecx+edi]
+        mov byte ptr [esi], bl
+        mov byte ptr [ecx+edi], dl
+        cdq
+        idiv dword ptr [esp+20h]
+        mov eax, dword ptr [esp+10h]
+        inc esi
+        dec eax
+        mov dword ptr [esp+10h], eax
+        mov byte ptr [esp+24h], dl
+        jne ksa_loop
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
