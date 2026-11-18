@@ -17887,3 +17887,66 @@ extern "C" __declspec(naked) void __fastcall fn_005A6220(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005AD0E0] sub_005AD0E0 (148 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A5C5C();
+
+// [0x005AD0E0] sub_005AD0E0 (148 bytes)
+// Naked: hand-written frame + SEH-style unwind (new / string copy / delete+rethrow).
+extern "C" __declspec(naked) void __fastcall fn_005AD0E0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 008a2961h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        push esi
+        push edi
+        mov [ebp-10h], esp
+        push 2Ch
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov [ebp-14h], esi
+        mov dword ptr [ebp-4], 0
+        mov [ebp-18h], esi
+        test esi, esi
+        mov byte ptr [ebp-4], 1
+        je skip_lbl
+        mov eax, [ebp+8]
+        mov ecx, [ebp+0Ch]
+        mov edx, [ebp+10h]
+        mov [esi], eax
+        mov eax, [ebp+14h]
+        mov [esi+4], ecx
+        push eax
+        lea ecx, [esi+0Ch]
+        mov [esi+8], edx
+        call dword ptr [mem_00924FE0]
+        mov cl, byte ptr [ebp+18h]
+        mov byte ptr [esi+28h], cl
+        mov byte ptr [esi+29h], 0
+skip_lbl:
+        mov ecx, [ebp-0Ch]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 14h
+        mov edx, [ebp-14h]
+        push edx
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
