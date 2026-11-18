@@ -5191,3 +5191,50 @@ L_sign_pos:
         ret
     }
 }
+
+// [0x0072EF40] sub_0072EF40 (128 bytes)
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726860();
+extern "C" void ext_007268D0();
+extern "C" void ext_0072FA60();
+extern "C" __declspec(naked) void __fastcall fn_0072EF40(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0x00aad2d8
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00726770
+        test al, al
+        je L_end
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00726860
+        test al, al
+        je L_skip
+        mov eax, dword ptr [esi + 0xb4]
+        mov eax, dword ptr [eax + 0x154]
+        test eax, eax
+        je L_noflush
+        mov ecx, dword ptr [esi + 0x4]
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0xa4]
+    L_noflush:
+        mov ecx, esi
+        call ext_0072FA60
+        mov ecx, dword ptr [esi + 0xb4]
+        mov dword ptr [ecx + 0x154], eax
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_007268D0
+    L_skip:
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00726840
+    L_end:
+        pop esi
+        ret
+    }
+}
