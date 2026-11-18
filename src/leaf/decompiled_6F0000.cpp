@@ -8593,3 +8593,72 @@ extern "C" __declspec(naked) void __fastcall fn_006FA790(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006FE570] sub_006FE570 (160 bytes)
+extern "C" void ext_006B9D80();
+extern "C" int mem_00925278;
+
+// Copies the path into a 1 KB stack buffer, finds the extension after the last '.' (must follow the last '/' and '\\'),
+// and passes it (or a default literal) to sub_006B9D80 with the path as `this`; returns the path.
+extern "C" __declspec(naked) void* __cdecl fn_006FE570(void* a1) {
+    __asm {
+        sub esp, 0x404
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x414]
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0xc]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        push 0x2e
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        mov dword ptr [esp + 0xc], 0
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+        mov edi, dword ptr [mem_00925278]
+        lea ecx, [esp + 0x10]
+        push ecx
+        call edi
+        mov esi, eax
+        add esp, 0x8
+        test esi, esi
+        je use_default
+        push ebx
+        lea edx, [esp + 0x10]
+        push 0x2f
+        push edx
+        call edi
+        mov ebx, eax
+        lea eax, [esp + 0x18]
+        push 0x5c
+        push eax
+        call edi
+        add esp, 0x10
+        cmp ebx, esi
+        pop ebx
+        jae use_default
+        cmp eax, esi
+        jae use_default
+        inc esi
+        push esi
+        jmp do_call
+    use_default:
+        push 0xb5d2c0
+    do_call:
+        mov esi, dword ptr [esp + 0x414]
+        mov ecx, esi
+        call ext_006B9D80
+        mov eax, esi
+        pop edi
+        pop esi
+        add esp, 0x404
+        ret
+    }
+}
