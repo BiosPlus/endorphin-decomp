@@ -217,6 +217,7 @@ extern "C" void ext_00486C90();
 extern "C" void ext_004C0310();
 extern "C" void ext_006AD190();
 // Isolated WIP translation unit for fn_004DE5E0
+// Isolated WIP translation unit for fn_004DFB20
 
 // [0x004E9D90] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004E9D90(void* a1) {
@@ -87255,6 +87256,67 @@ extern "C" __declspec(naked) void __stdcall fn_004E1700(void* self, int a1) {
         add esp, 0x3c
         ret 0x8
     L_else_004E1700:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x009dec1c
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004DFB20] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_46 (159 bytes)
+extern "C" void ext_004DE160();
+extern "C" void ext_006720C0();
+extern "C" void ext_0041CF50();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __stdcall fn_004DFB20(void* self, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x008a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_else_004DFB20
+        call ext_004DE160
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720C0
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je L_skip_004DFB20
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_skip_004DFB20:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xb8]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_else_004DFB20:
         lea ecx, [esp + 0xc]
         call ext_0046C3C0
         push 0x009dec1c
