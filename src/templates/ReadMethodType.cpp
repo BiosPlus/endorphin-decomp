@@ -82729,3 +82729,59 @@ extern "C" __declspec(naked) void __stdcall fn_0049BB70(void* a1, void* a2) {
         call ext_006A6DD2
     }
 }
+
+// [0x0049BA30] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_43 (159 bytes)
+extern "C" void ext_004C0310();
+extern "C" __declspec(naked) void __stdcall fn_0049BA30(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x008a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_throw_0049BA30
+        call ext_004C0310
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720E0
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je L_skip_0049BA30
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_skip_0049BA30:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xac]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    L_throw_0049BA30:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x009dec1c
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
