@@ -197,8 +197,10 @@ extern "C" __declspec(naked) bool __fastcall fn_006D2940(void* self, int edx_unu
         ret 0x4
     }
 }
+extern "C" void ext_006D2390();
+extern "C" void ext_006D23B0();
 
-// [0x006D7500] sub_006D7500 (96 bytes)
+extern "C" void ext_006D23B0();
 extern "C" int mem_00925284;
 extern "C" int mem_00B5D780;
 extern "C" int mem_00B5D784;
@@ -6700,5 +6702,57 @@ extern "C" __declspec(naked) void* __fastcall fn_006D2500(void* self, int edx_un
         mov esp, ebp
         pop ebp
         ret 0x4
+    }
+}
+
+// [0x006D2410] sub_006D2410 (144 bytes)
+// Builds a 0x28-byte temp from self (4 doubles) scaled by s, then out->op(temp); returns out.
+extern "C" __declspec(naked) void* __fastcall fn_006D2410(void* self, int edx_unused, void* out, double s) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push 0x8bfd88
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        fld qword ptr [ebp + 0xc]
+        fld st(0)
+        fmul qword ptr [ecx + 0x18]
+        push esi
+        xor esi, esi
+        sub esp, 0x8
+        mov dword ptr [esp + 0xc], esi
+        fstp qword ptr [esp]
+        sub esp, 0x8
+        fld st(0)
+        fmul qword ptr [ecx + 0x10]
+        sub esp, 0x8
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x10]
+        fld st(0)
+        fmul qword ptr [ecx + 0x8]
+        fstp qword ptr [esp + 0x8]
+        fmul qword ptr [ecx]
+        lea ecx, [esp + 0x28]
+        fstp qword ptr [esp]
+        call ext_006D23B0
+        mov dword ptr [esp + 0x30], esi
+        mov esi, dword ptr [ebp + 0x8]
+        lea eax, [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D2390
+        lea ecx, [esp + 0x8]
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        mov dword ptr fs:[0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0xc
     }
 }
