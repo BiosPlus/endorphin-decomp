@@ -18,5 +18,7 @@
     "0x0063EBFC",
     "0x0063EC08"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-18T03:35:16Z"
 }

@@ -6763,3 +6763,74 @@ extern "C" __declspec(naked) void* __fastcall fn_0063FAB0(void* self, int edx_un
         ret 10h
     }
 }
+
+// [0x0063EB70] sub_0063EB70 (156 bytes)
+// Stdcall (ret 0x14, five stack args; ecx is not read). SEH-framed (state -1, handler 0x8AED41).
+// Allocates 0x30 bytes via ext_006A5C62 (operator new); if non-NULL, fills the object:
+// [0]=a1, [4]=a2, [8]=a3, [0xC]=std::string copy of *a4, [0x28]=byte at a4+0x1C, [0x2C]=a5, [0x2D]=0.
+// Returns the object pointer (NULL on allocation failure). Unwind funclet deletes the object and rethrows.
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __stdcall fn_0063EB70(int a1, int a2, int a3, const void* a4, int a5) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 8aed41h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        push 30h
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 4], 0
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        mov byte ptr [ebp - 4], 1
+        je done_63EB70
+        mov ecx, dword ptr [ebp + 0ch]
+        mov eax, dword ptr [ebp + 8]
+        mov edx, dword ptr [ebp + 10h]
+        mov ebx, dword ptr [ebp + 14h]
+        mov dword ptr [esi + 4], ecx
+        lea edi, [esi + 0ch]
+        push ebx
+        mov ecx, edi
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 8], edx
+        call dword ptr [mem_00924FE0]
+        mov al, byte ptr [ebx + 1ch]
+        mov cl, byte ptr [ebp + 18h]
+        mov byte ptr [edi + 1ch], al
+        mov byte ptr [esi + 2ch], cl
+        mov byte ptr [esi + 2dh], 0
+    done_63EB70:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 14h
+    unwind_63EB70:
+        mov edx, dword ptr [ebp - 0x14]
+        push edx
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
