@@ -9006,3 +9006,67 @@ extern "C" __declspec(naked) void __fastcall fn_0080DC60(void* self) {
         ret
     }
 }
+
+// [0x008074E0] sub_008074E0 (160 bytes)
+extern "C" void ext_0080A750();
+extern "C" void ext_0080A800();
+extern "C" void ext_0080AE20();
+extern "C" void ext_0080F7F0();
+extern "C" int mem_00AB45A8;
+extern "C" int mem_00AB45F4;
+
+extern "C" __declspec(naked) void __cdecl fn_008074E0(void) {
+    __asm {
+        sub esp, 200h
+        mov eax, dword ptr [esp + 208h]
+        mov ecx, dword ptr [esp + 204h]
+        _emit 0x8D
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        push ebx
+        mov ebx, dword ptr [esp + 214h]
+        push ebp
+        mov ebp, dword ptr [esp + 214h]
+        push esi
+        mov esi, dword ptr [esp + 224h]
+        push edi
+        mov edi, dword ptr [esp + 224h]
+        push esi
+        push edi
+        push ebx
+        push ebp
+        push eax
+        push ecx
+        push offset mem_00AB45A8
+        push edx
+        call ext_0080F7F0
+        lea eax, dword ptr [esp + 30h]
+        push eax
+        call ext_0080A750
+        mov ecx, dword ptr [esp + 250h]
+        mov edx, dword ptr [esp + 23Ch]
+        mov eax, dword ptr [esp + 238h]
+        push ecx
+        push esi
+        push edi
+        push ebx
+        push ebp
+        push edx
+        push eax
+        call ext_0080AE20
+        add esp, 40h
+        mov esi, eax
+        push esi
+        push offset mem_00AB45F4
+        call ext_0080A800
+        add esp, 8
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 200h
+        ret
+    }
+}
