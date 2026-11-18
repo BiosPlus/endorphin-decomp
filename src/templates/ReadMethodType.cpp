@@ -129131,3 +129131,61 @@ L_null_006165C0:
         call ext_006A6DD2
     }
 }
+
+// [0x00619780] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_42 (167 bytes)
+extern "C" void ext_006111D0();
+extern "C" __declspec(naked) bool __fastcall fn_00619780(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov eax, dword ptr [esp + 10h]
+        mov dword ptr fs:[0], esp
+        mov ecx, dword ptr [eax]
+        sub esp, 30h
+        test ecx, ecx
+        je L_null_00619780
+        push ebx
+        call ext_006111D0
+        fstp dword ptr [esp + 44h]
+        fld dword ptr [esp + 44h]
+        push ecx
+        lea ecx, [esp + 8h]
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, dword ptr [esp + 48h]
+        mov ecx, dword ptr [esp + 8h]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0a8h]
+        push eax
+        lea eax, [esp + 8h]
+        push eax
+        mov dword ptr [esp + 44h], 0
+        call edx
+        mov ecx, dword ptr [esp + 8h]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 3ch], 0ffffffffh
+        je L_done_00619780
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 78h]
+        lea edx, [esp + 4h]
+        push edx
+        call eax
+    L_done_00619780:
+        mov ecx, dword ptr [esp + 34h]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 3ch
+        ret 8
+    L_null_00619780:
+        lea ecx, [esp + 8h]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea ecx, [esp + 0ch]
+        push ecx
+        call ext_006A6DD2
+    }
+}
