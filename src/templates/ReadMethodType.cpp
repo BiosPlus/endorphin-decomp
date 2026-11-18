@@ -79413,3 +79413,64 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00513740] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_42 (159 bytes)
+extern "C" void ext_00682ED0();
+extern "C" void ext_006720E0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) bool __fastcall fn_00513740(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [eax]
+        sub esp, 0x30
+        test eax, eax
+        je null_path
+        push ebx
+        lea ecx, [eax + 0x4]
+        call ext_00682ED0
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720E0
+        mov eax, dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa8]
+        push eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov dword ptr [esp + 0x44], 0x0
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je skip_dtor
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+    skip_dtor:
+        mov ecx, dword ptr [esp + 0x34]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    null_path:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    }
+}
