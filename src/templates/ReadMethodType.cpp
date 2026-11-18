@@ -64015,3 +64015,56 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005092C0] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_47 (152 bytes)
+extern "C" void ext_0041CF50();
+
+extern "C" __declspec(naked) void __stdcall fn_005092C0(void* a1) {
+    __asm {
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x6A __asm _emit 0xFF
+        __asm _emit 0x68 __asm _emit 0x28 __asm _emit 0x54 __asm _emit 0x8A __asm _emit 0x00
+        __asm _emit 0x50
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x83 __asm _emit 0xEC __asm _emit 0x30
+        __asm _emit 0x56
+        __asm _emit 0x8B __asm _emit 0x74 __asm _emit 0x24 __asm _emit 0x44
+        __asm _emit 0x8B __asm _emit 0x06
+        __asm _emit 0x85 __asm _emit 0xC0
+        __asm _emit 0x74 __asm _emit 0x5D
+        __asm _emit 0x8B __asm _emit 0x40 __asm _emit 0x14
+        __asm _emit 0x50
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x08
+        __asm call ext_006720C0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04
+        __asm _emit 0x50
+        __asm _emit 0x8B __asm _emit 0xCE
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x40 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm call ext_0041CF50
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x08
+        __asm _emit 0x85 __asm _emit 0xC9
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x3C __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF
+        __asm _emit 0x74 __asm _emit 0x0C
+        __asm _emit 0x8B __asm _emit 0x11
+        __asm _emit 0x8B __asm _emit 0x52 __asm _emit 0x78
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04
+        __asm _emit 0x50
+        __asm _emit 0xFF __asm _emit 0xD2
+        __asm _emit 0x8B __asm _emit 0x4E __asm _emit 0x04
+        __asm _emit 0x8B __asm _emit 0x01
+        __asm _emit 0x8B __asm _emit 0x90 __asm _emit 0xBC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x56
+        __asm _emit 0xFF __asm _emit 0xD2
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x34
+        __asm _emit 0x5E
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x3C
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x0C
+        __asm call ext_0046C3C0
+        __asm _emit 0x68 __asm _emit 0x1C __asm _emit 0xEC __asm _emit 0x9D __asm _emit 0x00
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x10
+        __asm _emit 0x50
+        __asm call ext_006A6DD2
+    }
+}
