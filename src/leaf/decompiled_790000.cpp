@@ -6164,3 +6164,44 @@ L_skip4:
         ret
     }
 }
+
+// [0x00798F10] sub_00798F10 (80 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50(void*);
+extern "C" void ext_0079B010();
+extern "C" __declspec(naked) void __cdecl fn_00798F10(void** p, void* src, int n) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je short L1
+        push eax
+        call ext_0079AF50
+        add esp, 4
+        mov dword ptr [esi], 0
+L1:
+        mov ebx, dword ptr [esp + 0x14]
+        test ebx, ebx
+        je short L3
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        call ext_0079AF40
+        add esp, 4
+        mov dword ptr [esi], eax
+        test eax, eax
+        je short L3
+        push edi
+        push ebx
+        push eax
+        call ext_0079B010
+        add esp, 0xc
+L3:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
