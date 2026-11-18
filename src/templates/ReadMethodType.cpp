@@ -122234,3 +122234,60 @@ extern "C" __declspec(naked) void __fastcall fn_00653220(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x006705F0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_47 (165 bytes)
+extern "C" void ext_0067C550();
+extern "C" __declspec(naked) void __fastcall fn_006705F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_throw_006705F0
+        call ext_0067C550
+        fstp dword ptr [esp + 0x44]
+        fld dword ptr [esp + 0x44]
+        push ecx
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], -1
+        je L_skip_006705F0
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_skip_006705F0:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x4
+    L_throw_006705F0:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
