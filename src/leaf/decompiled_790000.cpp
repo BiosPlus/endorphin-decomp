@@ -6102,3 +6102,65 @@ L_880:
         __asm _emit 0x90
     }
 }
+
+// [0x00798870] sub_00798870 (160 bytes)
+extern "C" void ext_007AF360();
+extern "C" void ext_00799150();
+extern "C" void ext_0079AF50(void*);
+
+extern "C" __declspec(naked) void __cdecl fn_00798870(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je short L_skip1
+        push esi
+        call ext_007AF360
+        add esp, 0x4
+L_skip1:
+        push esi
+        call dword ptr [esi + 0x1c0]
+        push esi
+        call ext_00799150
+        mov eax, dword ptr [esi + 0x1d8]
+        add esp, 0x8
+        test eax, eax
+        je short L_skip2
+        mov ecx, dword ptr [esi + 0xc]
+        test ch, 0x2
+        je short L_skip2
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+L_skip2:
+        mov eax, dword ptr [esi + 0xc]
+        test ah, 0x8
+        je short L_skip3
+        mov eax, dword ptr [esi + 0x1ec]
+        mov ecx, dword ptr [esi + 0x1e8]
+        mov edx, dword ptr [esi + 0x1f8]
+        push eax
+        push ecx
+        push edx
+        call dword ptr [esi + 0x1f4]
+        add esp, 0xc
+L_skip3:
+        mov eax, dword ptr [esi + 0x1f8]
+        push eax
+        call dword ptr [esi + 0x208]
+        mov eax, dword ptr [esi + 0x214]
+        add esp, 0x4
+        test eax, eax
+        je short L_skip4
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+L_skip4:
+        push esi
+        call ext_0079AF50
+        add esp, 0x4
+        pop esi
+        ret
+    }
+}
