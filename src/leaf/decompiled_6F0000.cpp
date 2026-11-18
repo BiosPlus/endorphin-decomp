@@ -8112,3 +8112,77 @@ extern "C" __declspec(naked) void __fastcall fn_006F8F30(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x006FAC10] sub_006FAC10 (144 bytes)
+extern "C" void ext_006FACA0();
+
+// __thiscall-style body (ret 0x18): forwards six stack args to a->vfunc[15] when a is set and
+// (self->flags & 0x10) is clear; otherwise calls sub_006FACA0 with self->m3C->m4 and the args,
+// then forwards them to self->m3C->vfunc[15] and returns 1.
+extern "C" __declspec(naked) void __fastcall fn_006FAC10(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        test eax, eax
+        je fac10_else
+        test byte ptr [ecx + 0x34], 0x10
+        jne fac10_else
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [eax]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, eax
+        call dword ptr [edx + 0x3c]
+        ret 0x18
+    fac10_else:
+        push esi
+        mov esi, dword ptr [ecx + 0x3c]
+        test esi, esi
+        je fac10_ret1
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        push ebp
+        mov ebp, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        push edi
+        push ebx
+        push ebp
+        push edx
+        mov edx, dword ptr [esp + 0x24]
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        push edx
+        push eax
+        call ext_006FACA0
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esi]
+        push edi
+        push ebx
+        mov edx, dword ptr [ecx]
+        push ebp
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        call dword ptr [edx + 0x3c]
+        pop edi
+        pop ebp
+        pop ebx
+    fac10_ret1:
+        mov al, 0x1
+        pop esi
+        ret 0x18
+    }
+}
