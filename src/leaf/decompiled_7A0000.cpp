@@ -5182,3 +5182,51 @@ extern "C" __declspec(naked) void __fastcall fn_007AD5E0(void* self) {
         ret
     }
 }
+
+// [0x007A9230] sub_007A9230 (128 bytes)
+extern "C" void ext_007AA510();
+extern "C" int mem_00925208;
+extern "C" int mem_00B61219;
+extern "C" int mem_00998070;
+
+extern "C" __declspec(naked) void __cdecl fn_007A9230(void** pp) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp dword ptr [esi], 0x0
+        jne LINIT
+        push 0x14
+        call dword ptr [mem_00925208]
+        add esp, 0x4
+        mov dword ptr [esi], eax
+        test eax, eax
+        jne LINIT
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je LDONE
+    LINIT:
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax], 0x0
+        mov ecx, dword ptr [esi]
+        mov dl, byte ptr [mem_00998070]
+        mov byte ptr [ecx + 0x4], dl
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_00998070]
+        mov byte ptr [eax + 0x5], cl
+        mov edx, dword ptr [esi]
+        mov al, byte ptr [mem_00998070]
+        mov byte ptr [edx + 0x6], al
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 0x8], 0x0
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 0xc], 0x0
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 0x10], 0x0
+    LDONE:
+        pop esi
+        ret
+    }
+}
