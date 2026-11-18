@@ -16234,3 +16234,79 @@ extern "C" __declspec(naked) void* __stdcall fn_00489390(int a1, int a2, int a3,
         call ext_006A6DD2
     }
 }
+
+// [0x0048A8F0] sub_0048A8F0 (167 bytes)
+extern "C" void ext_00489390();
+extern "C" void ext_0048A0E0();
+extern "C" void ext_0048A8F0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_0048A8F0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0884d20h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        mov ebx, dword ptr [ebp+8]
+        cmp byte ptr [ebx+69h], 0
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi+4]
+        push edi
+        mov dword ptr [ebp-10h], esp
+        mov dword ptr [ebp-18h], esi
+        mov dword ptr [ebp-14h], eax
+        jne short L_exit
+        movzx ecx, byte ptr [ebx+68h]
+        push ecx
+        mov ecx, dword ptr [ebp+0ch]
+        lea edx, [ebx+0ch]
+        push edx
+        push eax
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_00489390
+        mov edx, dword ptr [ebp-14h]
+        cmp byte ptr [edx+69h], 0
+        mov edi, eax
+        je short L_skip
+        mov dword ptr [ebp-14h], edi
+L_skip:
+        mov eax, dword ptr [ebx]
+        push edi
+        push eax
+        mov ecx, esi
+        mov dword ptr [ebp-4], 0
+        call ext_0048A8F0
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [ebx+8]
+        push edi
+        push ecx
+        mov ecx, esi
+        call ext_0048A8F0
+        mov dword ptr [edi+8], eax
+L_exit:
+        mov ecx, dword ptr [ebp-0ch]
+        mov eax, dword ptr [ebp-14h]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+        mov edx, dword ptr [ebp-14h]
+        mov ecx, dword ptr [ebp-18h]
+        push edx
+        call ext_0048A0E0
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
