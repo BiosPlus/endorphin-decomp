@@ -8386,3 +8386,72 @@ extern "C" __declspec(naked) void __fastcall fn_006F8FF0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006F8E50] sub_006F8E50 (144 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_006F8E50(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        test esi, esi
+        jl failed
+        cmp esi, 0xbf
+        jge failed
+        lea eax, [esi + 4*esi]
+        push ebx
+        shl eax, 0x4
+        push ebp
+        mov ecx, dword ptr [eax + edi + 0xc]
+        lea ebx, [eax + edi + 0xc]
+        test ecx, ecx
+        je after_first
+        mov edx, dword ptr [edi]
+        push 0
+        push esi
+        push 1
+        push edx
+        call ext_006C4DB0
+    after_first:
+        mov ebp, dword ptr [esp + 0x18]
+        cmp dword ptr [ebp], 0
+        jne slow_path
+        lea ecx, [ebp + 0x4]
+        call ext_006B9950
+        test al, al
+        je slow_path
+        mov ecx, ebx
+        call ext_006F8AC0
+        pop ebp
+        pop ebx
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    slow_path:
+        push ebp
+        mov ecx, ebx
+        call ext_006F8AD0
+        mov ecx, dword ptr [ebp]
+        test ecx, ecx
+        je after_second
+        mov eax, dword ptr [edi]
+        push 0
+        push esi
+        push 1
+        push eax
+        call ext_006C4D70
+    after_second:
+        pop ebp
+        pop ebx
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    failed:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x8
+    }
+}
