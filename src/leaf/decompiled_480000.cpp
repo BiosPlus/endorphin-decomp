@@ -16163,3 +16163,74 @@ extern "C" __declspec(naked) void __fastcall fn_0048B6A0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00489390] sub_00489390 (163 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __stdcall fn_00489390(int a1, int a2, int a3, const void* src, unsigned char flag) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        _emit 0x68
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        push 0x6c
+        call ext_006A5C62
+        mov ebx, eax
+        add esp, 0x4
+        mov dword ptr [ebp - 0x14], ebx
+        mov dword ptr [ebp - 0x4], 0x0
+        mov dword ptr [ebp - 0x18], ebx
+        test ebx, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je done
+        mov ecx, dword ptr [ebp + 0xc]
+        mov eax, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp + 0x10]
+        mov esi, dword ptr [ebp + 0x14]
+        mov dword ptr [ebx + 0x4], ecx
+        lea edi, [ebx + 0xc]
+        push esi
+        mov ecx, edi
+        mov dword ptr [ebx], eax
+        mov dword ptr [ebx + 0x8], edx
+        call dword ptr [mem_00924FE0]
+        mov al, byte ptr [ebp + 0x18]
+        add esi, 0x1c
+        add edi, 0x1c
+        mov ecx, 0x10
+        rep movsd
+        mov byte ptr [ebx + 0x68], al
+        mov byte ptr [ebx + 0x69], 0x0
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov eax, ebx
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x14
+        mov ecx, dword ptr [ebp - 0x14]
+        push ecx
+        call ext_006A5C5C
+        add esp, 0x4
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    }
+}
