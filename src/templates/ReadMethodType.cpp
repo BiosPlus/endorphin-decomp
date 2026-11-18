@@ -109471,3 +109471,67 @@ L_null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005D7340] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_47 (163 bytes)
+extern "C" __declspec(naked) void __stdcall fn_005D7340(void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        _emit 0x68
+        _emit 0x28
+        _emit 0x54
+        _emit 0x8a
+        _emit 0x00
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp+0x44]
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je null_path_5d7340
+        fld dword ptr [eax+0x34]
+        push ecx
+        fstp dword ptr [esp+0x48]
+        lea ecx, [esp+0x8]
+        fld dword ptr [esp+0x48]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea eax, [esp+0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp+0x40], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp+0x8]
+        test ecx, ecx
+        mov dword ptr [esp+0x3c], -1
+        je skip_5d7340
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx+0x78]
+        lea eax, [esp+0x4]
+        push eax
+        call edx
+skip_5d7340:
+        mov ecx, dword ptr [esi+0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+0xbc]
+        push esi
+        call edx
+        mov ecx, dword ptr [esp+0x34]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 0x4
+null_path_5d7340:
+        lea ecx, [esp+0xc]
+        call ext_0046C3C0
+        _emit 0x68
+        _emit 0x1c
+        _emit 0xec
+        _emit 0x9d
+        _emit 0x00
+        lea eax, [esp+0x10]
+        push eax
+        call ext_006A6DD2
+    }
+}
