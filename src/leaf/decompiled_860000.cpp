@@ -6142,3 +6142,80 @@ extern "C" __declspec(naked) void __cdecl fn_0086CD20(void) {
         ret
     }
 }
+
+// [0x0086FE40] sub_0086FE40 (160 bytes)
+extern "C" void ext_0085BC20();
+extern "C" void ext_00859DD0();
+
+extern "C" __declspec(naked) int __cdecl fn_0086FE40(int a1, int* out) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        push ebx
+        call ext_0085BC20
+        push ebx
+        mov ebp, eax
+        call ext_00859DD0
+        mov esi, eax
+        add esp, 0x8
+        cmp esi, 0xff00
+        je L_ret
+        cmp esi, 0x80
+        jge L_ge80
+        mov eax, dword ptr [esp + 0x18]
+        push ebx
+        mov dword ptr [eax], esi
+        call ext_0085BC20
+        add esp, 0x4
+        sub eax, ebp
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_ge80:
+        jne L_gt80
+        mov ecx, dword ptr [esp + 0x18]
+        push ebx
+        mov dword ptr [ecx], 0xffffffff
+        call ext_0085BC20
+        add esp, 0x4
+        sub eax, ebp
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_gt80:
+        mov edi, dword ptr [esp + 0x18]
+        and esi, 0x7f
+        mov dword ptr [edi], 0x0
+        jle L_ret
+    L_loop:
+        push ebx
+        call ext_00859DD0
+        add esp, 0x4
+        cmp eax, 0xff00
+        je L_ret
+        mov edx, dword ptr [edi]
+        shl edx, 0x8
+        or edx, eax
+        dec esi
+        test esi, esi
+        mov dword ptr [edi], edx
+        jg L_loop
+    L_ret:
+        push ebx
+        call ext_0085BC20
+        add esp, 0x4
+        sub eax, ebp
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
