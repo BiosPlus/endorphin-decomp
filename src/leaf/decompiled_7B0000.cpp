@@ -8436,3 +8436,56 @@ extern "C" __declspec(naked) int __cdecl fn_007B0E55(int a1, int a2, int a3) {
         _emit 0x90
     }
 }
+
+// [0x007B09C0] sub_007B09C0 (128 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007B09C0(void* a, void* b, void* c) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx + 0x4]
+        cmp eax, 0x2
+        ja L_slow
+        mov edx, dword ptr [esp + 0x4]
+        cmp word ptr [edx + 0x150], 0x4d4d
+        jne L_be
+        mov edx, dword ptr [esp + 0xc]
+        dec eax
+        je L_le1
+        dec eax
+        jne L_ret1
+        mov ax, word ptr [ecx + 0x8]
+        mov word ptr [edx + 0x2], ax
+    L_le1:
+        mov ecx, dword ptr [ecx + 0x8]
+        mov eax, 0x1
+        shr ecx, 0x10
+        mov word ptr [edx], cx
+        ret
+    L_be:
+        mov edx, dword ptr [esp + 0xc]
+        dec eax
+        je L_be1
+        dec eax
+        jne L_ret1
+        mov eax, dword ptr [ecx + 0x8]
+        shr eax, 0x10
+        mov word ptr [edx + 0x2], ax
+    L_be1:
+        mov cx, word ptr [ecx + 0x8]
+        mov word ptr [edx], cx
+    L_ret1:
+        mov eax, 0x1
+        ret
+    L_slow:
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x4]
+        push edx
+        push ecx
+        push eax
+        call ext_007B06F0
+        add esp, 0xc
+        neg eax
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
