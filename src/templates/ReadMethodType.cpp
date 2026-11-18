@@ -114468,3 +114468,60 @@ extern "C" __declspec(naked) void __fastcall fn_004EA100(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x004B15C0] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_44 (165 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_004B15C0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0]
+        push    -1
+        push    8a5428h
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 30h
+        push    esi
+        mov     esi, dword ptr [esp + 44h]
+        mov     eax, dword ptr [esi]
+        test    eax, eax
+        je      nullpath
+        mov     al, byte ptr [eax + 1]
+        mov     byte ptr [esp + 44h], al
+        mov     ecx, dword ptr [esp + 44h]
+        push    ecx
+        lea     ecx, [esp + 8]
+        call    ext_006720A0
+        lea     edx, [esp + 4]
+        push    edx
+        mov     ecx, esi
+        mov     dword ptr [esp + 40h], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 3Ch], -1
+        je      skipdtor
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 78h]
+        lea     edx, [esp + 4]
+        push    edx
+        call    eax
+skipdtor:
+        mov     ecx, dword ptr [esi + 4]
+        mov     eax, dword ptr [esp + 48h]
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0b0h]
+        push    eax
+        push    esi
+        call    edx
+        mov     ecx, dword ptr [esp + 34h]
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 3Ch
+        ret     8
+nullpath:
+        lea     ecx, [esp + 0ch]
+        call    ext_0046C3C0
+        push    9dec1ch
+        lea     eax, [esp + 10h]
+        push    eax
+        call    ext_006A6DD2
+    }
+}
