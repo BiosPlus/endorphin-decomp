@@ -76,8 +76,10 @@ extern "C" __declspec(naked) void __stdcall fn_006F6900(void* a) {
         ret 0x4
     }
 }
+extern "C" void ext_006C4D70();
+extern "C" void __stdcall ext_006C4DB0(int, int, int, int);
 
-// [0x006F6940] sub_006F6940 (16 bytes)
+extern "C" void __stdcall ext_006C4DB0(int, int, int, int);
 extern "C" void ext_00782C80(int value);
 
 extern "C" __declspec(naked) void __stdcall fn_006F6940(int a1) {
@@ -8315,5 +8317,72 @@ extern "C" __declspec(naked) void __fastcall fn_006FAD00(void* self, int edx_unu
         mov al, 0x1
         pop esi
         ret 0x18
+    }
+}
+
+// [0x006F8FF0] sub_006F8FF0 (144 bytes)
+// Stores a2 into self->slots[(a3-1) + 14*a1] (slots at +0x3dcc) and calls the two helpers; ret 0xc.
+extern "C" __declspec(naked) void __fastcall fn_006F8FF0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        test esi, esi
+        mov ebp, ecx
+        jl fail
+        cmp esi, 0x2c
+        jge fail
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, 0x1
+        jl fail
+        cmp edi, 0xf
+        jge fail
+        lea eax, [8*esi]
+        dec edi
+        sub eax, esi
+        push ebx
+        lea ecx, [edi + 2*eax]
+        lea ebx, [ebp + 4*ecx + 0x3dcc]
+        mov ecx, dword ptr [ebp + 4*ecx + 0x3dcc]
+        test ecx, ecx
+        je skip1
+        mov edx, dword ptr [ebp]
+        push edi
+        push esi
+        push 0x3
+        push edx
+        call ext_006C4DB0
+    skip1:
+        mov ecx, dword ptr [esp + 0x18]
+        test ecx, ecx
+        je zero
+        mov dword ptr [ebx], ecx
+        mov eax, dword ptr [ebp]
+        push edi
+        push esi
+        push 0x3
+        push eax
+        call ext_006C4D70
+        pop ebx
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebp
+        ret 0xc
+    zero:
+        mov dword ptr [ebx], 0x0
+        pop ebx
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebp
+        ret 0xc
+    fail:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebp
+        ret 0xc
     }
 }
