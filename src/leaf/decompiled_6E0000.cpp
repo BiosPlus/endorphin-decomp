@@ -3990,3 +3990,66 @@ no_match:
         jmp epilogue
     }
 }
+
+// [0x006E9210] sub_006E9210 (160 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006BA660();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006E7440();
+
+extern "C" __declspec(naked) void __fastcall fn_006E9210(void* self, int edx_unused) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x8bdc58
+        push eax
+        mov fs:[0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebx, ecx
+        mov ebp, dword ptr [ebx + 0x4c]
+        xor esi, esi
+        cmp ebp, esi
+        mov dword ptr [esp + 0x18], esi
+        jle after_loop
+    loop_top:
+        mov eax, dword ptr [ebx + 0x5c]
+        mov ecx, dword ptr [eax + esi*4]
+        mov edi, dword ptr [ecx]
+        mov ecx, edi
+        call ext_006BADB0
+        push eax
+        lea ecx, [esp + 0x24]
+        call ext_006BA660
+        test eax, eax
+        je no_match
+        inc esi
+        cmp esi, ebp
+        jl loop_top
+    after_loop:
+        push 9
+        lea ecx, [ebx + 0x94]
+        call ext_006E7440
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x18], -1
+        call ext_006B9D70
+        xor eax, eax
+    epilogue:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x4c
+    no_match:
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x18], -1
+        call ext_006B9D70
+        mov eax, edi
+        jmp epilogue
+    }
+}
