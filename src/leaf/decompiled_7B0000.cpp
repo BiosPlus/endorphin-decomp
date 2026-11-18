@@ -8489,3 +8489,59 @@ extern "C" __declspec(naked) int __cdecl fn_007B09C0(void* a, void* b, void* c) 
         ret
     }
 }
+
+// [0x007B2C20] sub_007B2C20 (128 bytes)
+extern "C" unsigned char mem_009996FC;
+
+extern "C" __declspec(naked) void __cdecl fn_007B2C20(void** p) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        cmp esi, ebx
+        jne L_7b2c3f
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        cmp al, bl
+        je L_7b2c95
+    L_7b2c3f:
+        push 0x1c
+        call dword ptr [mem_00925208]
+        add esp, 0x4
+        cmp esi, ebx
+        mov dword ptr [esi], eax
+        jne L_7b2c63
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        cmp al, bl
+        je L_7b2c95
+    L_7b2c63:
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 0x4], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 0x8], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 0xc], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 0x10], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 0x14], ebx
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_009996FC]
+        mov byte ptr [eax + 0x18], cl
+        mov edx, dword ptr [esi]
+        mov al, byte ptr [mem_009996FC]
+        mov byte ptr [edx + 0x19], al
+    L_7b2c95:
+        pop esi
+        pop ebx
+        ret
+    }
+}
