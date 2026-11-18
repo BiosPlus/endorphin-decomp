@@ -123609,3 +123609,61 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0068F4F0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_46 (166 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0068F4F0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x30
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_throw_0068F4F0
+        mov eax, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        push eax
+        call ext_0068EE60
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006720E0
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x40], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je L_skip_0068F4F0
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+L_skip_0068F4F0:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xb8]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x34]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 0x8
+L_throw_0068F4F0:
+        lea ecx, [esp + 0xc]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_006A6DD2
+    }
+}
