@@ -486,3 +486,75 @@ extern "C" __declspec(naked) void __fastcall fn_00811110(void* self) {
         ret
     }
 }
+
+// [0x00810730] sub_00810730 (160 bytes)
+extern "C" void ext_0080DD00();
+extern "C" void ext_008107D0();
+extern "C" void ext_008596E0();
+extern "C" void ext_00859730();
+extern "C" void ext_00859740();
+extern "C" __declspec(naked) void __cdecl fn_00810730(void) {
+    __asm {
+        sub esp, 20h
+        push edi
+        push 5a00h
+        call ext_008596E0
+        mov edi, eax
+        add esp, 4
+        test edi, edi
+        jne have_buf
+        or eax, -1
+        pop edi
+        add esp, 20h
+        ret
+    have_buf:
+        push ebx
+        push esi
+        push 20h
+        lea eax, [esp + 10h]
+        push 0
+        push eax
+        call ext_00859740
+        mov ecx, dword ptr [esp + 44h]
+        mov edx, dword ptr [esp + 3ch]
+        mov ebx, dword ptr [esp + 48h]
+        mov eax, dword ptr [esp + 40h]
+        mov dword ptr [esp + 1ch], ecx
+        mov ecx, dword ptr [esp + 50h]
+        mov dword ptr [esp + 20h], edx
+        mov edx, dword ptr [esp + 4ch]
+        push ecx
+        push edx
+        push edi
+        push ebx
+        push 2
+        mov dword ptr [esp + 44h], eax
+        mov dword ptr [esp + 48h], 0
+        call ext_0080DD00
+        mov esi, eax
+        add esp, 20h
+        test esi, esi
+        jl skip_a
+        push edi
+        lea eax, [esp + 10h]
+        push ebx
+        push eax
+        call ext_008107D0
+        mov esi, eax
+        mov eax, dword ptr [esp + 34h]
+        add esp, 0ch
+        test eax, eax
+        je skip_a
+        mov esi, eax
+    skip_a:
+        push edi
+        call ext_00859730
+        add esp, 4
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop edi
+        add esp, 20h
+        ret
+    }
+}
