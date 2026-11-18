@@ -8872,3 +8872,67 @@ extern "C" __declspec(naked) int __cdecl fn_008078D0(void* p, int a2, int a3, in
         ret
     }
 }
+
+// [0x00805980] sub_00805980 (160 bytes)
+extern "C" void ext_0080A6A0();
+extern "C" void ext_0080A800();
+extern "C" void ext_0080AE20();
+extern "C" void ext_0080F7F0();
+extern "C" int mem_00AB37E8;
+extern "C" int mem_00AB3834;
+
+extern "C" __declspec(naked) void __fastcall fn_00805980(void* self) {
+    __asm {
+        sub esp, 200h
+        mov eax, dword ptr [esp + 208h]
+        mov ecx, dword ptr [esp + 204h]
+        __asm _emit 0x8d
+        __asm _emit 0x54
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push ebx
+        mov ebx, dword ptr [esp + 214h]
+        push ebp
+        mov ebp, dword ptr [esp + 214h]
+        push esi
+        mov esi, dword ptr [esp + 224h]
+        push edi
+        mov edi, dword ptr [esp + 224h]
+        push esi
+        push edi
+        push ebx
+        push ebp
+        push eax
+        push ecx
+        push offset mem_00AB37E8
+        push edx
+        call ext_0080F7F0
+        lea eax, [esp + 30h]
+        push eax
+        call ext_0080A6A0
+        mov ecx, dword ptr [esp + 250h]
+        mov edx, dword ptr [esp + 23ch]
+        mov eax, dword ptr [esp + 238h]
+        push ecx
+        push esi
+        push edi
+        push ebx
+        push ebp
+        push edx
+        push eax
+        call ext_0080AE20
+        add esp, 40h
+        mov esi, eax
+        push esi
+        push offset mem_00AB3834
+        call ext_0080A800
+        add esp, 8
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 200h
+        ret 1ch
+    }
+}
