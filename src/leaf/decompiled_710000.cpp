@@ -7094,3 +7094,72 @@ extern "C" __declspec(naked) void* __stdcall fn_0071A6B0(unsigned int a1) {
         ret 0x4
     }
 }
+
+// [0x0071E750] sub_0071E750 (121 bytes)
+extern "C" void ext_006C3030();
+extern "C" void ext_006C30A0();
+extern "C" void ext_0071E7D0();
+extern "C" void ext_0071E920();
+extern "C" void ext_0071EB40();
+extern "C" void ext_0071ED70();
+
+extern "C" __declspec(naked) void __fastcall fn_0071E750(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        xor bl, bl
+        mov esi, ecx
+        push ebp
+        mov byte ptr [esp + 0x17], bl
+        call ext_0071E7D0
+        mov ecx, ebp
+        mov byte ptr [esp + 0x18], al
+        call ext_006C3030
+        mov edi, eax
+        test edi, edi
+        je L_end
+        mov ecx, ebp
+        call ext_006C30A0
+        test eax, eax
+        je L_end
+        push edi
+        mov ecx, esi
+        call ext_0071E920
+        push edi
+        mov ecx, esi
+        mov bl, al
+        call ext_0071EB40
+        push edi
+        mov ecx, esi
+        mov byte ptr [esp + 0x17], al
+        call ext_0071ED70
+L_end:
+        mov al, byte ptr [esp + 0x18]
+        test al, al
+        jne L_true
+        test bl, bl
+        jne L_true
+        mov al, byte ptr [esp + 0x13]
+        test al, al
+        jne L_true
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        pop ecx
+        ret 0x4
+L_true:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
