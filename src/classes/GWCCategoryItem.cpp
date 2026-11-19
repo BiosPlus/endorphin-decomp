@@ -14,6 +14,7 @@ extern "C" int mem_009256BC;
 extern "C" int mem_0092431C;
 extern "C" int mem_00924300;
 extern "C" int mem_009242F4;
+extern "C" void ext_006A60EE();
 
 // [0x006AECA0] GWCCategoryItem::vfunc_5 (32 bytes)
 extern "C" __declspec(naked) void __fastcall fn_006AECA0(void* self, int edx_unused, int a1, int a2) {
@@ -785,5 +786,42 @@ extern "C" __declspec(naked) void __fastcall fn_006AF910(void* self, int edx_unu
     done:
         pop     esi
         ret     4
+    }
+}
+
+// [0x006AF890] GWCCategoryItem::vfunc_6 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006AF890(void* self, int edx_unused, unsigned int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x4]
+        xor esi, esi
+        mov byte ptr [eax + 0x4], bl
+        cmp dword ptr [edi + 0x58], esi
+        jle done
+    loop_top:
+        test esi, esi
+        jl bad
+        cmp esi, dword ptr [edi + 0x58]
+        jge bad
+        mov ecx, dword ptr [edi + 0x54]
+        mov ecx, dword ptr [ecx + 4*esi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x20]
+        push ebx
+        call eax
+        add esi, 0x1
+        cmp esi, dword ptr [edi + 0x58]
+        jl loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    bad:
+        call ext_006A60EE
     }
 }
