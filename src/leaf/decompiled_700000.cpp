@@ -7499,3 +7499,69 @@ fn70_copy:
         ret 4
     }
 }
+
+// [0x00709F90] sub_00709F90 (148 bytes)
+extern "C" void ext_006B9E60();
+extern "C" void ext_006BC380();
+extern "C" void ext_0071E680();
+extern "C" __declspec(naked) void __fastcall fn_00709F90(void* self, int edx_unused, void* a1, void* a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8bfd28
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esi]
+        lea ebx, [esi + 0x80]
+        push 0x0
+        push ebx
+        push edi
+        push esi
+        push 0x14
+        push 0x0
+        call dword ptr [eax + 0x38]
+        mov eax, dword ptr [esi + 0x54]
+        test eax, eax
+        je no_branch
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x68], esp
+        push edi
+        call ext_006B9D20
+        mov ecx, esi
+        mov dword ptr [esp + 0x60], 0xffffffff
+        call ext_0071E680
+        mov ecx, esi
+        mov ebx, eax
+        call ext_006BC380
+        mov ecx, eax
+        call dword ptr [ebx + 0x14]
+        jmp after_branch
+no_branch:
+        push edi
+        mov ecx, ebx
+        call ext_006B9E60
+after_branch:
+        mov edx, dword ptr [esi]
+        push 0x0
+        push 0x0
+        push edi
+        push esi
+        push 0x15
+        push 0x0
+        mov ecx, esi
+        call dword ptr [edx + 0x38]
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x10
+    }
+}
