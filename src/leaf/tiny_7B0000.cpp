@@ -116,3 +116,11 @@ extern "C" __declspec(naked) void fn_007B1F90() {
         jmp ext_007B1FC0
     }
 }
+
+// [0x007B2080] Member forwarding thunk (10 bytes) - sub_007B2080
+extern "C" __declspec(naked) void fn_007B2080() {
+    __asm {
+        mov ecx, offset mem_00B61D98
+        jmp ext_007B22B0
+    }
+}
