@@ -106,8 +106,10 @@ extern "C" __declspec(naked) void __stdcall fn_006F6B40(int a1) {
         ret 0x4
     }
 }
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void __fastcall fn_006FC8E0(void* self);
 
-// [0x006F6E40] sub_006F6E40 (16 bytes)
+extern "C" void __fastcall fn_006FC8E0(void* self);
 extern "C" void ext_00782CD0();
 
 extern "C" __declspec(naked) void __stdcall fn_006F6E40(int a1) {
@@ -8869,5 +8871,87 @@ fail_ret:
         pop ebx
         pop ecx
         ret 0x8
+    }
+}
+
+// [0x006FC830] sub_006FC830 (176 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FC830(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        xor ebx, ebx
+
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, ebx
+        je loc_6FC84E
+        mov ecx, edi
+        call fn_006FC8E0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+
+    loc_6FC84E:
+        mov edi, dword ptr [esi + 0x8]
+        cmp edi, ebx
+        je loc_6FC865
+        mov ecx, edi
+        call fn_006FC8E0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+
+    loc_6FC865:
+        mov edi, dword ptr [esi + 0xc]
+        cmp edi, ebx
+        je loc_6FC87C
+        mov ecx, edi
+        call fn_006FC8E0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+
+    loc_6FC87C:
+        mov edi, dword ptr [esi + 0x10]
+        cmp edi, ebx
+        je loc_6FC893
+        mov ecx, edi
+        call fn_006FC8E0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+
+    loc_6FC893:
+        mov edi, dword ptr [esi + 0x14]
+        cmp edi, ebx
+        je loc_6FC8AA
+        mov ecx, edi
+        call fn_006FC8E0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+
+    loc_6FC8AA:
+        mov edi, dword ptr [esi + 0x18]
+        cmp edi, ebx
+        je loc_6FC8C1
+        mov ecx, edi
+        call fn_006FC8E0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+
+    loc_6FC8C1:
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        mov dword ptr [esi + 0x14], ebx
+        mov dword ptr [esi + 0x18], ebx
+        pop edi
+        pop esi
+        pop ebx
+        ret
     }
 }
