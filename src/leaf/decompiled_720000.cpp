@@ -5809,3 +5809,18 @@ extern "C" void __cdecl fn_0072CB30() {
     mem_00B60294 = 0xb60fb0;
     mem_00B6029C = 0;
 }
+
+// [0x0072B4C0] sub_0072B4C0 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B60168;
+extern "C" int mem_00B60170;
+extern "C" int mem_00B60178;
+extern "C" int mem_00B60180;
+
+extern "C" void __cdecl fn_0072B4C0() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B60168 = -*p;
+    *(double*)&mem_00B60170 = -*p;
+    *(double*)&mem_00B60178 = -*p;
+    *(double*)&mem_00B60180 = -*p;
+}
