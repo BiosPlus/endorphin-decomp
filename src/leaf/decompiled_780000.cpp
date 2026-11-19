@@ -8699,3 +8699,82 @@ L_end:
         ret 0x4
     }
 }
+
+// [0x00789980] sub_00789980 (176 bytes)
+extern "C" void ext_007895C0();
+extern "C" void ext_00789620();
+extern "C" void ext_00789650();
+extern "C" void ext_00789670();
+
+extern "C" __declspec(naked) void __fastcall fn_00789980(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00789650
+        push 0x0
+        push 0x2
+        mov ecx, esi
+        mov ebp, eax
+        call ext_00789620
+        mov ecx, esi
+        call ext_00789650
+        push 0x0
+        push 0x0
+        mov ecx, esi
+        mov ebx, eax
+        call ext_00789620
+        lea eax, [ebx - 0x4]
+        or edi, -0x1
+        test eax, eax
+        jle L_skip1
+        mov ebx, eax
+    L_loop1:
+        lea eax, [esp + 0x10]
+        push 0x1
+        push eax
+        mov ecx, esi
+        call ext_007895C0
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, edi
+        shr ecx, 0x18
+        and edx, 0xff
+        xor ecx, edx
+        shl edi, 0x8
+        mov eax, dword ptr [esi + 4*ecx + 0x18]
+        xor edi, eax
+        dec ebx
+        jne L_loop1
+    L_skip1:
+        mov ebx, 0x4
+    L_loop2:
+        lea ecx, [esp + 0x10]
+        push 0x1
+        push ecx
+        mov ecx, esi
+        call ext_007895C0
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, edi
+        shr edx, 0x18
+        and eax, 0xff
+        xor edx, eax
+        shl edi, 0x8
+        mov ecx, dword ptr [esi + 4*edx + 0x18]
+        xor edi, ecx
+        dec ebx
+        jne L_loop2
+        push ebp
+        mov ecx, esi
+        call ext_00789670
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
