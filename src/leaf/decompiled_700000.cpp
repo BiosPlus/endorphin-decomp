@@ -5229,3 +5229,28 @@ extern "C" __declspec(naked) void __stdcall fn_0070FBA0() {
         ret 0x1c
     }
 }
+
+// [0x007055F0] sub_007055F0 (43 bytes)
+extern "C" int __stdcall ext_006FBC70(int a1);
+extern "C" __declspec(naked) int __stdcall fn_007055F0(int a1, int* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        test eax, eax
+        je fallback
+        mov edx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp edx, esi
+        pop esi
+        jne fallback
+        mov eax, dword ptr [eax + 0x4]
+        push eax
+        call ext_006FBC70
+        ret 0x8
+    fallback:
+        xor eax, eax
+        push eax
+        call ext_006FBC70
+        ret 0x8
+    }
+}
