@@ -9084,3 +9084,94 @@ extern "C" __declspec(naked) void __fastcall fn_007894D0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007832E0] sub_007832E0 (182 bytes)
+// Switch on a2 (0..3 select a string literal copied into a local buffer), default path copies
+// a second string, then calls vtbl+4 on self->[0] with the buffer and a3. ret 0xc.
+extern "C" __declspec(naked) void __fastcall fn_007832E0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x20
+        cmp eax, 0x3
+        mov edx, ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        ja short L7E_default
+        __asm _emit 0xff
+        __asm _emit 0x24
+        __asm _emit 0x85
+        __asm _emit 0x98
+        __asm _emit 0x33
+        __asm _emit 0x78
+        __asm _emit 0x00
+L7E_c0:
+        lea ebx, [esp + 0x10]
+        mov edi, 0xaac1f8
+        jmp short L7E_scan
+L7E_c1:
+        lea ebx, [esp + 0x10]
+        mov edi, 0xaac1c0
+        jmp short L7E_scan
+L7E_c2:
+        lea ebx, [esp + 0x10]
+        mov edi, 0xaaf3ac
+        jmp short L7E_scan
+L7E_c3:
+        lea ebx, [esp + 0x10]
+        mov edi, 0xaac20c
+L7E_scan:
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, ebx
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+L7E_default:
+        mov al, byte ptr [esp + 0x3c]
+        lea ebx, [esp + 0x10]
+        test al, al
+        mov edi, 0xaaf3a8
+        jne short L7E_go
+        mov edi, 0xaac1f0
+L7E_go:
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov esi, edi
+        mov ebp, ecx
+        mov edi, ebx
+        or ecx, -1
+        repne scasb
+        mov ecx, ebp
+        dec edi
+        shr ecx, 2
+        rep movsd
+        mov ecx, ebp
+        mov eax, dword ptr [edx]
+        and ecx, 3
+        rep movsb
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x38]
+        push ecx
+        mov ecx, edx
+        call dword ptr [eax + 0x4]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret 0xc
+    }
+}
