@@ -10568,3 +10568,84 @@ extern "C" __declspec(naked) void __fastcall fn_006DEBA0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006D82F0] sub_006D82F0 (208 bytes)
+extern "C" void ext_0070E3D0();
+// Calls this->0x0070E3D0(a1), then resets container at this+0x1c4 and fills it from a1's 12-byte
+// records (a1+0x1d4, count a1+0x1c4); then resets container at this+0x1dc and fills it from a1's
+// dwords (a1+0x1ec, count a1+0x1dc). Returns self. ret 4.
+extern "C" __declspec(naked) void* __fastcall fn_006D82F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        push edi
+        mov ebp, ecx
+        push esi
+        mov dword ptr [esp + 0x14], ebp
+        call ext_0070E3D0
+        lea edi, [ebp + 0x1c4]
+        mov ecx, edi
+        call ext_006D2250
+        mov eax, dword ptr [esi + 0x1cc]
+        mov dword ptr [edi + 0x8], eax
+        mov eax, dword ptr [esi + 0x1c4]
+        test eax, eax
+        jle short L_82F0_after1
+        xor ebx, ebx
+        mov dword ptr [esp + 0x24], eax
+    L_82F0_loop1:
+        mov ecx, dword ptr [esi + 0x1d4]
+        add ecx, ebx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp + 0x14], edx
+        lea edx, [esp + 0x14]
+        mov eax, dword ptr [ecx + 0x4]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [ecx + 0x8]
+        push eax
+        mov dword ptr [esp + 0x24], ecx
+        mov ecx, edi
+        call ext_006D2170
+        mov eax, dword ptr [esp + 0x24]
+        add ebx, 0xc
+        dec eax
+        mov dword ptr [esp + 0x24], eax
+        jne short L_82F0_loop1
+    L_82F0_after1:
+        lea edi, [ebp + 0x1dc]
+        mov ecx, edi
+        call ext_006D2250
+        mov ecx, dword ptr [esi + 0x1e4]
+        xor ebx, ebx
+        mov dword ptr [edi + 0x8], ecx
+        mov ebp, dword ptr [esi + 0x1dc]
+        test ebp, ebp
+        jle short L_82F0_done
+    L_82F0_loop2:
+        mov edx, dword ptr [esi + 0x1ec]
+        lea ecx, [esp + 0x24]
+        push ecx
+        mov ecx, edi
+        mov eax, dword ptr [edx + 4 * ebx]
+        mov edx, dword ptr [edi]
+        push edx
+        mov dword ptr [esp + 0x2c], eax
+        call ext_006D2170
+        inc ebx
+        cmp ebx, ebp
+        jl short L_82F0_loop2
+    L_82F0_done:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret 0x4
+    }
+}
