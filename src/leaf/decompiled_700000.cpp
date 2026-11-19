@@ -6044,3 +6044,14 @@ extern "C" void __fastcall fn_0070ABC0(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x210) = a5;
     *(int*)(p + 0x214) = a6;
 }
+
+// [0x0070AC40] sub_0070AC40 (63 bytes)
+extern "C" void __fastcall fn_0070AC40(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    char* p = (char*)self;
+    *(int*)(p + 0x2a0) = a1;
+    *(int*)(p + 0x2a4) = a2;
+    *(int*)(p + 0x2a8) = a3;
+    *(int*)(p + 0x2ac) = a4;
+    *(int*)(p + 0x2b0) = a5;
+    *(int*)(p + 0x2b4) = a6;
+}
