@@ -563,6 +563,7 @@ extern "C" __declspec(naked) void __cdecl fn_007B7E40(void* self) {
 }
 extern "C" void ext_006D2130();
 extern "C" int mem_007BDA50;
+extern "C" void ext_007BFDF0();
 
 // [0x007BA6D0] sub_007BA6D0 (48 bytes)
 extern "C" void ext_007BAA40();
@@ -9550,6 +9551,28 @@ extern "C" __declspec(naked) void __cdecl fn_007BD310(void* self) {
         and ecx, 0x2
         inc ecx
         mov word ptr [eax + 0x4e], cx
+        ret
+    }
+}
+
+// [0x007BD640] sub_007BD640 (48 bytes)
+extern "C" __declspec(naked) void fn_007BD640() {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov ecx, dword ptr [eax + 0x1cc]
+        mov esi, dword ptr [eax + 0x1d8]
+        mov dword ptr [ecx + 0x30], esi
+        mov eax, dword ptr [eax + 0x1e4]
+        lea edx, [ecx + 0x30]
+        mov dword ptr [ecx + 0x34], eax
+        push edx
+        call ext_007BFDF0
+        add esp, 0x4
+        neg eax
+        sbb eax, eax
+        pop esi
+        inc eax
         ret
     }
 }
