@@ -3470,3 +3470,84 @@ fn0073C5C0_ret1:
         ret 4
     }
 }
+
+// [0x0073C360] sub_0073C360 (192 bytes)
+extern "C" int mem_00AADC44;
+extern "C" void ext_006D7990();
+extern "C" void ext_006D7AA0();
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726900();
+extern "C" void ext_00726BE0();
+
+extern "C" __declspec(naked) void __fastcall fn_0073C360(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push edi
+        mov edi, ecx
+        push offset mem_00AADC44
+        mov dword ptr [esp + 8], edi
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073C360_ret1
+        mov ecx, dword ptr [edi + 0ach]
+        push ebx
+        push esi
+        add ecx, 4
+        call ext_00726900
+        mov ecx, eax
+        mov eax, 55555556h
+        imul ecx
+        mov ebx, dword ptr [esp + 14h]
+        mov eax, edx
+        shr eax, 1fh
+        add edx, eax
+        mov ecx, ebx
+        mov esi, edx
+        push esi
+        call ext_006D7990
+        mov ecx, ebx
+        call ext_006D7AA0
+        test esi, esi
+        jle fn0073C360_skip
+        push ebp
+        mov ebp, eax
+        mov dword ptr [esp + 18h], esi
+fn0073C360_outer:
+        mov esi, dword ptr [edi + 0ach]
+        mov edi, ebp
+        add esi, 4
+        mov ebx, 3
+fn0073C360_inner:
+        mov ecx, esi
+        call ext_00726BE0
+        fstp qword ptr [edi]
+        add edi, 8
+        dec ebx
+        jne fn0073C360_inner
+        mov eax, dword ptr [esp + 18h]
+        mov edi, dword ptr [esp + 10h]
+        add ebp, 20h
+        dec eax
+        mov dword ptr [esp + 18h], eax
+        jne fn0073C360_outer
+        pop ebp
+fn0073C360_skip:
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        pop esi
+        pop ebx
+        mov al, 1
+        pop edi
+        pop ecx
+        ret 4
+fn0073C360_ret1:
+        mov al, 1
+        pop edi
+        pop ecx
+        ret 4
+    }
+}
