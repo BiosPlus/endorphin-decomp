@@ -15,5 +15,7 @@
     "0x006F133B",
     "0x006F1344"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:08:31Z"
 }
