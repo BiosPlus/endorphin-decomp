@@ -11484,3 +11484,91 @@ extern "C" __declspec(naked) void* __fastcall fn_006FE3E0(void* self, int edx_un
         ret
     }
 }
+
+// [0x006F75B0] sub_006F75B0 (208 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_006F75B0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ebx, ecx
+        test esi, esi
+        jl fail
+        cmp esi, 0xbf
+        jge fail
+        lea eax, [esi + 2*esi]
+        push ebp
+        shl eax, 0x3
+        sub eax, esi
+        push edi
+        lea edi, [ebx + 8*eax]
+        mov ecx, dword ptr [edi + 0x1a0]
+        lea ebp, [edi + 0x1a0]
+        test ecx, ecx
+        je skip1
+        push 0x0
+        push esi
+        push 0x0
+        push ebx
+        call ext_006C4DB0
+    skip1:
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, ebp
+        call ext_006EA7C0
+        mov ebp, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [ebp]
+        test ecx, ecx
+        je skip2
+        push 0x0
+        push esi
+        push 0x0
+        push ebx
+        call ext_006C4D70
+    skip2:
+        mov al, byte ptr [esp + 0x1c]
+        test al, al
+        je ret_true
+        mov eax, dword ptr [edi + 0x250]
+        test eax, eax
+        je ret_true
+        mov ecx, dword ptr [ebp]
+        test ecx, ecx
+        je alt
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0xc]
+        test eax, eax
+        je alt
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [edi + 0x250]
+        mov edx, dword ptr [ecx]
+        mov esi, dword ptr [eax]
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [edi + 0x250]
+        push eax
+        push 0x0
+        call dword ptr [esi + 0xb8]
+        pop edi
+        pop ebp
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0xc
+    alt:
+        mov ecx, dword ptr [edi + 0x250]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0xc8]
+    ret_true:
+        pop edi
+        pop ebp
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0xc
+    fail:
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0xc
+    }
+}
