@@ -51,6 +51,7 @@ extern "C" __declspec(naked) int __cdecl fn_007CC3D0(int a0, float* a1, float* a
         ret
     }
 }
+extern "C" void ext_007C54F0(void* self);
 
 // [0x007C71C0] sub_007C71C0 (12 bytes)
 extern "C" void __cdecl ext_007C7150(int value);
@@ -20021,6 +20022,78 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_007C23C0(void* strm, void* 
         mov dword ptr [ebx], ecx
         pop ebp
         pop ebx
+        ret
+    }
+}
+
+// [0x007C5570] sub_007C5570 (145 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C5570(void* self, void* data, unsigned int len, int flag) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 8]
+        push    edi
+        push    esi
+        call    ext_007C54F0
+        mov     eax, dword ptr [esp + 0x1c]
+        add     esp, 4
+        test    eax, eax
+        mov     eax, dword ptr [esp + 0x14]
+        mov     dword ptr [esi + 0x16ac], 8
+        je      loc_7c55de
+
+        mov     ecx, dword ptr [esi + 0x14]
+        mov     edx, dword ptr [esi + 8]
+        mov     byte ptr [ecx + edx], al
+        mov     edx, dword ptr [esi + 0x14]
+        mov     edi, dword ptr [esi + 8]
+        inc     edx
+        mov     dword ptr [esi + 0x14], edx
+        mov     ecx, edx
+        xor     edx, edx
+        mov     dl, ah
+        mov     byte ptr [ecx + edi], dl
+        mov     ecx, dword ptr [esi + 0x14]
+        mov     edi, dword ptr [esi + 8]
+        mov     dl, al
+        inc     ecx
+        not     dl
+        mov     dword ptr [esi + 0x14], ecx
+        mov     byte ptr [ecx + edi], dl
+        mov     edi, dword ptr [esi + 0x14]
+        mov     ecx, eax
+        not     ecx
+        xor     edx, edx
+        inc     edi
+        mov     dl, ch
+        mov     ecx, dword ptr [esi + 8]
+        mov     dword ptr [esi + 0x14], edi
+        mov     byte ptr [edi + ecx], dl
+        mov     ecx, dword ptr [esi + 0x14]
+        inc     ecx
+        mov     dword ptr [esi + 0x14], ecx
+
+    loc_7c55de:
+        test    eax, eax
+        je      loc_7c55fe
+        mov     ecx, dword ptr [esp + 0x10]
+        push    ebx
+
+    loc_7c55e7:
+        mov     edx, dword ptr [esi + 0x14]
+        mov     edi, dword ptr [esi + 8]
+        mov     bl, byte ptr [ecx]
+        mov     byte ptr [edx + edi], bl
+        mov     ebx, dword ptr [esi + 0x14]
+        inc     ebx
+        inc     ecx
+        dec     eax
+        mov     dword ptr [esi + 0x14], ebx
+        jne     loc_7c55e7
+        pop     ebx
+
+    loc_7c55fe:
+        pop     edi
+        pop     esi
         ret
     }
 }
