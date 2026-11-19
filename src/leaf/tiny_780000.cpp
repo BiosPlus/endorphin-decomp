@@ -443,3 +443,21 @@ extern "C" __declspec(naked) void fn_00784550() {
         ret
     }
 }
+
+// [0x00784790] Guarded tiny leaf function (25 bytes) - sub_00784790
+extern "C" __declspec(naked) void fn_00784790() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x08 // mov ecx, dword ptr [esp + 0x8]
+        __asm _emit 0x8B __asm _emit 0x00 // mov eax, dword ptr [eax]
+        __asm _emit 0x8B __asm _emit 0x09 // mov ecx, dword ptr [ecx]
+        __asm _emit 0x3B __asm _emit 0xC8 // cmp ecx, eax
+        jbe L_007847A4
+        __asm _emit 0x83 __asm _emit 0xC8 __asm _emit 0xFF // or eax, -0x1
+        ret
+L_007847A4:
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
