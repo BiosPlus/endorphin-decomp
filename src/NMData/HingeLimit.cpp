@@ -36,3 +36,116 @@ extern "C" __declspec(naked) void __fastcall fn_006120D0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0061F130] NMData::HingeLimit::vfunc_15 (232 bytes)
+extern "C" void ext_0061ED50();
+extern "C" void ext_0061ED70();
+extern "C" void ext_0061ED90();
+extern "C" void ext_0061EDB0();
+extern "C" void ext_0061EDD0();
+extern "C" void ext_0061EDF0();
+extern "C" void ext_0061EE10();
+extern "C" void ext_0061EE30();
+extern "C" void ext_00671F30();
+extern "C" __declspec(naked) void __fastcall fn_0061F130(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp+0xc]
+        add eax, 0xfffffd55
+        cmp eax, 0xc4
+        push esi
+        mov dword ptr [esp+0x4], 0x0
+        ja L_0061F204
+        movzx eax, byte ptr [eax + 0x61f23c]
+        jmp dword ptr [4*eax + 0x61f218]
+    L_0061F15C:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061ED50
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F171:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061ED70
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F186:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061ED90
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F19B:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061EDB0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F1B0:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061EDD0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F1C5:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061EDF0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F1DA:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061EE10
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F1EF:
+        mov esi, dword ptr [esp+0xc]
+        push ecx
+        push esi
+        call ext_0061EE30
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_0061F204:
+        mov esi, dword ptr [esp+0xc]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
