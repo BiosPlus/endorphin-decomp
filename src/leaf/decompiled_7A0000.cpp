@@ -479,6 +479,7 @@ extern "C" __declspec(naked) void __cdecl fn_007ACAC0(void* p) {
         ret
     }
 }
+extern "C" void ext_007AEC70();
 
 // [0x007AD6B0] sub_007AD6B0 (143 bytes)
 extern "C" void ext_0078D130();
@@ -6312,5 +6313,38 @@ extern "C" __declspec(naked) int __cdecl fn_007AF4C0(void* a, void* b) {
         inc     ecx
         mov     eax, ecx
         ret
+    }
+}
+
+// [0x007AED60] sub_007AED60 (52 bytes)
+extern "C" __declspec(naked) unsigned int __stdcall fn_007AED60(unsigned int* p, unsigned char swap) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push 0x1
+        push 0x4
+        push esi
+        call ext_007AEC70
+        test eax, eax
+        je L_ret0
+        mov al, byte ptr [ebp + 0xc]
+        test al, al
+        je L_ret_val
+        mov eax, dword ptr [esi]
+        mov dword ptr [ebp + 0xc], eax
+        mov eax, dword ptr [ebp + 0xc]
+        bswap eax
+    L_ret_val:
+        mov eax, dword ptr [esi]
+        pop esi
+        pop ebp
+        ret 0x8
+    L_ret0:
+        xor eax, eax
+        pop esi
+        pop ebp
+        ret 0x8
     }
 }
