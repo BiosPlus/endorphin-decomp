@@ -3439,3 +3439,8 @@ extern "C" __declspec(naked) void fn_006FC6C0() {
         ret
     }
 }
+
+// [0x006FC6D0] Return false (5 bytes) - sub_006FC6D0
+extern "C" bool __stdcall fn_006FC6D0(int a1) {
+    return false;
+}
