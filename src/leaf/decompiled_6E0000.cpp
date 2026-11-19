@@ -6565,3 +6565,107 @@ loc_6E7281:
         nop
     }
 }
+
+// [0x006E0810] sub_006E0810 (240 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006E0810(void* out, void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        cmp eax, ecx
+        jne short L_alias_path
+        fld qword ptr [ecx]
+        fld qword ptr [ecx + 0x8]
+        fld qword ptr [ecx + 0x10]
+        fld qword ptr [ecx + 0x18]
+        mov ecx, dword ptr [esp + 0xc]
+        fld st(0)
+        fmul qword ptr [ecx]
+        fld st(3)
+        fmul qword ptr [ecx + 0x10]
+        faddp st(1), st
+        fld st(4)
+        fmul qword ptr [ecx + 0x18]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx + 0x8]
+        fsubp st(1), st
+        fstp qword ptr [eax]
+        fld st(0)
+        fmul qword ptr [ecx + 0x8]
+        fld st(4)
+        fmul qword ptr [ecx + 0x10]
+        fsubp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx + 0x18]
+        faddp st(1), st
+        fstp qword ptr [eax + 0x8]
+        fld st(3)
+        fmul qword ptr [ecx + 0x8]
+        fld st(1)
+        fmul qword ptr [ecx + 0x10]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx]
+        fsubp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx + 0x18]
+        jmp short L_join
+L_alias_path:
+        mov edx, dword ptr [esp + 0xc]
+        fld qword ptr [edx]
+        fld qword ptr [edx + 0x8]
+        fld qword ptr [edx + 0x10]
+        fld qword ptr [edx + 0x18]
+        fld st(1)
+        fmul qword ptr [ecx + 0x8]
+        fld st(1)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fld st(4)
+        fmul qword ptr [ecx + 0x18]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx + 0x10]
+        fsubp st(1), st
+        fstp qword ptr [eax]
+        fld st(2)
+        fmul qword ptr [ecx + 0x18]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fsubp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx + 0x8]
+        faddp st(1), st
+        fld st(4)
+        fmul qword ptr [ecx + 0x10]
+        faddp st(1), st
+        fstp qword ptr [eax + 0x8]
+        fld st(1)
+        fmul qword ptr [ecx + 0x18]
+        fld st(3)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fld st(4)
+        fmul qword ptr [ecx + 0x8]
+        fsubp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx + 0x10]
+L_join:
+        faddp st(1), st
+        fstp qword ptr [eax + 0x10]
+        fmul qword ptr [ecx + 0x18]
+        fxch st(3)
+        fmul qword ptr [ecx]
+        fsubp st(3), st
+        fxch st(1)
+        fmul qword ptr [ecx + 0x8]
+        fsubp st(2), st
+        fmul qword ptr [ecx + 0x10]
+        fsubp st(1), st
+        fstp qword ptr [eax + 0x18]
+        ret
+    }
+}
