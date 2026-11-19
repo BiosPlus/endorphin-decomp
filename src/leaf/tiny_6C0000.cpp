@@ -1335,3 +1335,8 @@ extern "C" __declspec(naked) void fn_006C0440() {
         ret
     }
 }
+
+// [0x006C0460] Constant byte/bool return (5 bytes) - sub_006C0460
+extern "C" unsigned char __stdcall fn_006C0460(int a1, int a2, int a3, int a4) {
+    return 0x1;
+}
