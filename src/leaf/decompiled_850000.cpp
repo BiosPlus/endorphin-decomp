@@ -4799,3 +4799,29 @@ extern "C" __declspec(naked) int __cdecl fn_008573F0(void) {
         ret
     }
 }
+
+// [0x0085D530] sub_0085D530 (36 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085D530(void) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 0x10]
+        mov     eax, esi
+        dec     esi
+        test    eax, eax
+        je      done
+        mov     eax, dword ptr [esp + 0x8]
+        mov     ecx, dword ptr [esp + 0xc]
+    loop_start:
+        mov     dl, byte ptr [ecx]
+        inc     eax
+        inc     ecx
+        mov     byte ptr [eax - 0x1], dl
+        mov     edx, esi
+        dec     esi
+        test    edx, edx
+        jne     loop_start
+    done:
+        pop     esi
+        ret
+    }
+}
