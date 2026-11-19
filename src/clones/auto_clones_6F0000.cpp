@@ -1847,3 +1847,23 @@ extern "C" __declspec(naked) void __fastcall fn_006F8760(void* self) {
         ret
     }
 }
+
+// [0x006FD090] Identical-shape clone of 0x006BB9B0 (57 bytes) - sub_006FD090
+extern "C" __declspec(naked) void __fastcall fn_006FD090(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E450], ecx
+        mov dword ptr [mem_00B5E454], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E458], ecx
+        mov dword ptr [mem_00B5E45C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E460], ecx
+        mov dword ptr [mem_00B5E464], edx
+        ret
+    }
+}

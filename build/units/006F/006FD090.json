@@ -16,5 +16,7 @@
     "0x006FD0BE",
     "0x006FD0C4"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:15:49Z"
 }
