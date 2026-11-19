@@ -7291,3 +7291,88 @@ extern "C" __declspec(naked) void __cdecl fn_006C4220(void* out, const void* in)
         ret
     }
 }
+
+// [0x006C28D0] sub_006C28D0 (192 bytes)
+extern "C" void ext_006C1B30();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" int mem_00B5D448;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_006C28D0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        push esi
+        push edi
+        call dword ptr [eax + 0ch]
+        mov edi, eax
+        test edi, edi
+        je L_fail
+        mov eax, dword ptr [mem_00B5D448]
+        cmp eax, -1
+        je L_nalt1
+        cmp eax, dword ptr [mem_00B5E400]
+        je L_nalt1
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, edi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 14h]
+        mov eax, dword ptr [mem_00B5D448]
+        jmp L_2911
+    L_nalt1:
+        mov ecx, dword ptr [edi + 14h]
+    L_2911:
+        mov esi, dword ptr [esp + 0ch]
+        cmp esi, ecx
+        jge L_fail
+        cmp eax, -1
+        je L_nalt2
+        cmp eax, dword ptr [mem_00B5E400]
+        je L_nalt2
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, edi
+        push eax
+        call ext_006FA5A0
+        mov edx, dword ptr [eax + 10h]
+        lea ecx, [esi + 2*esi]
+        mov eax, dword ptr [edx + 4*ecx + 4]
+        lea ecx, [edx + 4*ecx]
+        test eax, eax
+        je L_fail
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_fail
+        jmp L_296A
+    L_nalt2:
+        mov ecx, dword ptr [edi + 10h]
+        lea eax, [esi + 2*esi]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 4]
+        test eax, eax
+        je L_fail
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_fail
+    L_296A:
+        mov eax, dword ptr [eax + 4]
+        test eax, eax
+        je L_fail
+        mov ecx, eax
+        call ext_006C1B30
+        pop edi
+        pop esi
+        ret 4
+    L_fail:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 4
+    }
+}
