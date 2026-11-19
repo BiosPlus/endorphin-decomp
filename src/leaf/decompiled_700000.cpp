@@ -5254,3 +5254,27 @@ extern "C" __declspec(naked) int __stdcall fn_007055F0(int a1, int* a2) {
         ret 0x8
     }
 }
+
+// [0x007004C0] sub_007004C0 (44 bytes)
+extern "C" int mem_00B5E5C0;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+extern "C" __declspec(naked) void __fastcall fn_007004C0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5E5C0]
+        cmp eax, ecx
+        jne L_007004D3
+        mov al, 0x1
+        ret 0x4
+    L_007004D3:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne L_007004E0
+        mov al, 0x1
+        ret 0x4
+    L_007004E0:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
