@@ -6683,3 +6683,41 @@ extern "C" __declspec(naked) void __fastcall fn_0079F2E0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0079AD50] sub_0079AD50 (70 bytes)
+extern "C" int mem_00924184;
+
+extern "C" __declspec(naked) void fn_0079AD50() {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        cmp ecx, -0x1
+        jne loc_79ad5c
+        or eax, ecx
+        ret
+    loc_79ad5c:
+        mov eax, dword ptr [esp + 0xc]
+        sub eax, 0x0
+        je loc_79ad79
+        dec eax
+        je loc_79ad72
+        dec eax
+        jne loc_79ad79
+        mov eax, 0x2
+        jmp loc_79ad7b
+    loc_79ad72:
+        mov eax, 0x1
+        jmp loc_79ad7b
+    loc_79ad79:
+        xor eax, eax
+    loc_79ad7b:
+        push eax
+        lea eax, [esp + 0xc]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0x14], 0x0
+        push ecx
+        call dword ptr [mem_00924184]
+        ret
+    }
+}
