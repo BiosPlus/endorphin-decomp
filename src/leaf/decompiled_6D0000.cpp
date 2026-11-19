@@ -9361,3 +9361,73 @@ extern "C" __declspec(naked) bool __fastcall fn_006D4F90(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D5640] sub_006D5640 (125 bytes)
+// Scans self->array (count at +0xc4, Ptr array at +0xd4) for an entry whose name (ext_006BADB0)
+// strcmp-equals s; returns the matching entry, or calls ext_006E7440 on self+0x1c4 and returns 0.
+extern "C" void ext_006BADB0();
+extern "C" void ext_006E7440();
+extern "C" __declspec(naked) void* __fastcall fn_006D5640(void* self, int edx_unused, const char* s) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, ecx
+        xor ebx, ebx
+        push esi
+        push edi
+        mov eax, dword ptr [ebp + 0xc4]
+        test eax, eax
+        jle L_notfound
+    L_loop:
+        mov eax, dword ptr [ebp + 0xd4]
+        mov esi, dword ptr [esp + 0x14]
+        mov edi, dword ptr [eax + 4*ebx]
+        mov ecx, edi
+        call ext_006BADB0
+    L_cmp:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_diff
+        test cl, cl
+        je L_equal
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_diff
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_cmp
+    L_equal:
+        xor eax, eax
+        jmp L_cmpdone
+    L_diff:
+        sbb eax, eax
+        sbb eax, -1
+    L_cmpdone:
+        test eax, eax
+        je L_found
+        mov eax, dword ptr [ebp + 0xc4]
+        inc ebx
+        cmp ebx, eax
+        jl L_loop
+    L_notfound:
+        push 0x0
+        lea ecx, [ebp + 0x1c4]
+        call ext_006E7440
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    L_found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
