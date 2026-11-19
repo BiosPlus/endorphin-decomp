@@ -310,6 +310,7 @@ extern "C" void ext_00648ED0();
 extern "C" void ext_00648EE0();
 extern "C" void ext_0058F770();
 extern "C" void ext_00511960();
+extern "C" void ext_00683100();
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -172052,6 +172053,27 @@ extern "C" __declspec(naked) void __cdecl fn_00512C20(void** a1) {
         lea eax, [esp + 0x4]
         push eax
         call ext_00511960
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call ext_0046C4E0
+    }
+}
+
+// [0x006839B0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_5 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006839B0(void) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 0x4]
+        push eax
+        call ext_00683100
         push eax
         mov dword ptr [esp + 0x28], 0
         call ext_0046C4E0
