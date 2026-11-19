@@ -7104,3 +7104,27 @@ extern "C" int __cdecl fn_00782C40(unsigned int idx) {
     default: return 0;
     }
 }
+
+// [0x00783410] sub_00783410 (42 bytes)
+extern "C" int mem_009252AC;
+extern "C" __declspec(naked) int __fastcall fn_00783410(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_null
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        push 0x1
+        push edx
+        call dword ptr [mem_009252AC]
+        add esp, 0x10
+        ret 0x8
+L_null:
+        xor eax, eax
+        ret 0x8
+    }
+}
