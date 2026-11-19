@@ -9517,3 +9517,28 @@ extern "C" __declspec(naked) void __fastcall fn_006FC5E0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006FC570] sub_006FC570 (44 bytes)
+extern "C" int mem_00B608B0;
+extern "C" int mem_00B608B4;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __stdcall fn_006FC570(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B608B0]
+        cmp eax, ecx
+        jne L_006FC583
+        mov al, 0x1
+        ret 0x4
+    L_006FC583:
+        cmp eax, dword ptr [mem_00B608B4]
+        jne L_006FC590
+        mov al, 0x1
+        ret 0x4
+    L_006FC590:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
