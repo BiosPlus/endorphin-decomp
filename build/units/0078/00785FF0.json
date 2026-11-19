@@ -18,5 +18,7 @@
     "0x0078602F",
     "0x00786035"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:25:06Z"
 }
