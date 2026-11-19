@@ -472,3 +472,8 @@ L_0079DB18:
         ret 0x4
     }
 }
+
+// [0x0079DCD0] Subobject address getter (4 bytes) - sub_0079DCD0
+extern "C" void* __fastcall fn_0079DCD0(void* self) {
+    return reinterpret_cast<char*>(self) + 0x78;
+}
