@@ -5651,3 +5651,34 @@ loc_701eb0:
         ret 0x4
     }
 }
+
+// [0x00701990] sub_00701990 (57 bytes)
+extern "C" int mem_00B5E75C;
+extern "C" int mem_00B5F060;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_00701990(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5E75C]
+        cmp eax, ecx
+        jne L_007019A3
+        mov al, 0x1
+        ret 0x4
+    L_007019A3:
+        cmp eax, dword ptr [mem_00B5F060]
+        jne L_007019B0
+        mov al, 0x1
+        ret 0x4
+    L_007019B0:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne L_007019BD
+        mov al, 0x1
+        ret 0x4
+    L_007019BD:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
