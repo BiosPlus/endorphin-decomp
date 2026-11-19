@@ -5526,3 +5526,9 @@ extern "C" void __fastcall fn_00713A70(void* self) {
 extern "C" void __fastcall fn_00713AB0(void* self) {
     ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x00713AC0);
 }
+
+// [0x00712690] sub_00712690 (15 bytes)
+extern "C" void __fastcall fn_00712690(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *Callee)(void* self, int a, int b);
+    ((Callee)ext_00710F80)(static_cast<char*>(self) + 0x40, 0xc, 1);
+}
