@@ -19891,3 +19891,14 @@ extern "C" __declspec(naked) void __cdecl fn_007C38C0(void* a, void* b) {
         jmp ext_007C38E0
     }
 }
+
+// [0x007CCB00] sub_007CCB00 (71 bytes)
+extern "C" void __cdecl fn_007CCB00(int* p, unsigned int idx) {
+    switch (idx) {
+    case 0: *p = 0; return;
+    case 1: *p = 3; return;
+    case 2: *p = 1; return;
+    case 3: *p = 2; return;
+    default: *p = 0; return;
+    }
+}
