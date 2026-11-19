@@ -12016,3 +12016,74 @@ L_7BB603:
         ret
     }
 }
+
+// [0x007B2910] sub_007B2910 (176 bytes)
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2E50();
+extern "C" void ext_007B3380();
+extern "C" int mem_00925208;
+extern "C" __declspec(naked) void __cdecl fn_007B2910() {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_007B2C20
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [ecx], 0xb024
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        call ext_007B3380
+        mov ebp, dword ptr [esp + 0x20]
+        mov ebx, eax
+        mov ax, word ptr [esp + 0x24]
+        lea esi, [8*ebp]
+        mov word ptr [ebx], ax
+        sub esi, ebp
+        xor eax, eax
+        shl esi, 2
+        push esi
+        mov dword ptr [ebx + 0xc], ebp
+        mov dword ptr [ebx + 8], eax
+        mov dword ptr [ebx + 4], eax
+        call dword ptr [mem_00925208]
+        mov ecx, esi
+        mov esi, dword ptr [esp + 0x2c]
+        mov edx, ecx
+        mov edi, eax
+        shr ecx, 2
+        mov dword ptr [ebx + 0x10], eax
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        lea esi, [4*ebp]
+        push esi
+        call dword ptr [mem_00925208]
+        mov ecx, esi
+        mov esi, dword ptr [esp + 0x34]
+        mov dword ptr [ebx + 0x14], eax
+        mov edi, eax
+        mov eax, ecx
+        mov edx, dword ptr [esp + 0x38]
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        push edx
+        call ext_007B2E50
+        add esp, 0x18
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
