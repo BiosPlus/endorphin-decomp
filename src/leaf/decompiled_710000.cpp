@@ -5504,3 +5504,9 @@ extern "C" void __fastcall fn_00713850(void* self) {
 extern "C" void __fastcall fn_00713910(void* self) {
     ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x00713920);
 }
+
+// [0x007139F0] sub_007139F0 (12 bytes)
+extern "C" void ext_006A6C87();
+extern "C" void __fastcall fn_007139F0(void* self) {
+    ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x00713A00);
+}
