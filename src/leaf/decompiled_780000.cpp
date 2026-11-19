@@ -190,8 +190,10 @@ L_seek_null:
         ret 0x4
     }
 }
+extern "C" void ext_0078A660();
+extern "C" void ext_0078A8B0();
 
-// [0x00788C90] sub_00788C90 (112 bytes)
+extern "C" void ext_0078A8B0();
 // Calls GetLocalTime into a stack SYSTEMTIME, then copies year/month/day/hour/minute/second/ms
 // (each masked to 16 bits) into out[0..6] as dwords; ret 0.
 extern "C" int mem_00924164;
@@ -6992,5 +6994,17 @@ extern "C" __declspec(naked) void __fastcall fn_00780250(void* self) {
         call ext_006A5C5C
         pop ecx
         ret
+    }
+}
+
+// [0x0078A640] sub_0078A640 (17 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078A640(void* self) {
+    __asm {
+        mov al, byte ptr [ecx + 0x20]
+        test al, al
+        je short L_false
+        jmp ext_0078A660
+L_false:
+        jmp ext_0078A8B0
     }
 }
