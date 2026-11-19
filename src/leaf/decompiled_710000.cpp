@@ -5929,3 +5929,16 @@ L_00713F50:
         ret 0x4
     }
 }
+
+// [0x007108B0] sub_007108B0 (41 bytes)
+extern "C" int mem_00B5F050;
+extern "C" int mem_00B5F058;
+extern "C" int mem_00B5F054;
+extern "C" int mem_00B5F05C;
+
+extern "C" void __cdecl fn_007108B0() {
+    mem_00B5F050 = 0xb5f060;
+    mem_00B5F058 = 0xaabf08;
+    mem_00B5F054 = 0xb5eb50;
+    mem_00B5F05C = 0;
+}
