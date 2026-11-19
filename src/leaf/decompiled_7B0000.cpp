@@ -710,8 +710,10 @@ L_END_007B23E0:
 }
 extern "C" void ext_0079B850();
 extern "C" int mem_0092522C;
+extern "C" void ext_007BFF40();
+extern "C" void ext_007C15F0();
 
-// [0x007B22B0] sub_007B22B0 (96 bytes)
+extern "C" void ext_007C15F0();
 extern "C" void ext_006D2160();
 extern "C" void ext_0079E900();
 extern "C" void ext_007B23E0();
@@ -12858,6 +12860,98 @@ L_7BC600:
         xor eax, eax
         pop edi
         pop esi
+        pop ebx
+        ret
+    }
+}
+
+// [0x007BD670] sub_007BD670 (204 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BD670(void* p1, int p2, int p3) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x18]
+        mov esi, dword ptr [edi + 0x1cc]
+        push 0x1
+        lea ebx, [esi + 0x30]
+        mov dword ptr [esi + 0x3c], eax
+        push ebx
+        mov dword ptr [esi + 0x40], ecx
+        call ext_007BFF40
+        add esp, 0x8
+        cmp eax, 0x1
+        je L_7bd6ea
+    L_7bd69e:
+        cmp eax, -0x3
+        jne L_7bd6cf
+        mov edx, dword ptr [esi + 0x48]
+        mov eax, dword ptr [edi + 0x164]
+        mov ecx, dword ptr [edi]
+        push edx
+        push eax
+        push ecx
+        push 0xab229c
+        push 0x999b90
+        call ext_0079B140
+        push ebx
+        call ext_007C15F0
+        add esp, 0x18
+        test eax, eax
+        jne L_7bd70e
+        jmp L_7bd6d3
+    L_7bd6cf:
+        test eax, eax
+        jne L_7bd714
+    L_7bd6d3:
+        mov eax, dword ptr [esi + 0x40]
+        test eax, eax
+        jbe L_7bd6ea
+        push 0x1
+        push ebx
+        call ext_007BFF40
+        add esp, 0x8
+        cmp eax, 0x1
+        jne L_7bd69e
+    L_7bd6ea:
+        mov esi, dword ptr [esi + 0x40]
+        test esi, esi
+        je L_7bd733
+        mov ecx, dword ptr [edi + 0x164]
+        mov edx, dword ptr [edi]
+        push esi
+        push ecx
+        push edx
+        push 0xab2268
+        push 0x999b90
+        call ext_0079B140
+        add esp, 0x14
+    L_7bd70e:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    L_7bd714:
+        mov edx, dword ptr [esi + 0x48]
+        mov eax, dword ptr [edi]
+        push edx
+        push eax
+        push 0xab2254
+        push 0x999b90
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_7bd733:
+        pop edi
+        pop esi
+        mov eax, 0x1
         pop ebx
         ret
     }
