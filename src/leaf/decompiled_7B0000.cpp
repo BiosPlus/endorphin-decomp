@@ -11084,3 +11084,56 @@ extern "C" __declspec(naked) int __cdecl fn_007BF430(char* s, void* dst, int len
         ret
     }
 }
+
+// [0x007BF930] sub_007BF930 (115 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BF930(void* a, unsigned short* b, int c) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov ecx, dword ptr [eax + 0x1cc]
+        mov eax, dword ptr [esp + 0x10]
+        cdq
+        mov esi, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [esp + 0xc]
+        sub eax, edx
+        sar eax, 1
+        cmp eax, esi
+        jle L_7bf9a1
+        push edi
+        sub eax, esi
+    L_7bf952:
+        cmp esi, 0x4
+        ja L_7bf95e
+        jmp dword ptr [4*esi + 0x7bf9a4]
+    L_7bf95e:
+        lea edx, [esi - 0x4]
+        test edx, edx
+        jle L_7bf972
+    L_7bf965:
+        mov di, word ptr [ecx]
+        add word ptr [ecx + 2*esi], di
+        add ecx, 0x2
+        dec edx
+        jne L_7bf965
+    L_7bf972:
+        mov dx, word ptr [ecx]
+        add word ptr [ecx + 2*esi], dx
+        add ecx, 0x2
+        mov dx, word ptr [ecx]
+        add word ptr [ecx + 2*esi], dx
+        add ecx, 0x2
+        mov dx, word ptr [ecx]
+        add word ptr [ecx + 2*esi], dx
+        add ecx, 0x2
+        mov dx, word ptr [ecx]
+        add word ptr [ecx + 2*esi], dx
+        add ecx, 0x2
+        sub eax, esi
+        test eax, eax
+        jg L_7bf952
+        pop edi
+    L_7bf9a1:
+        pop esi
+        ret
+    }
+}
