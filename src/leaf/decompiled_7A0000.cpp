@@ -7251,3 +7251,68 @@ extern "C" __declspec(naked) void __cdecl jt_007AF56C() {
         _emit 0x00
     }
 }
+
+// [0x007ADEC0] sub_007ADEC0 (121 bytes)
+extern "C" void ext_0078CD30();
+extern "C" void ext_007AD660();
+extern "C" void ext_007AD6B0();
+extern "C" int mem_00B61680;
+
+extern "C" __declspec(naked) void __fastcall fn_007ADEC0(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je L_done
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        jne L_done
+        mov eax, dword ptr [eax + 0x4]
+        test eax, eax
+        jle L_global
+        push ebx
+        push esi
+        mov esi, 0xc
+        mov ebx, eax
+    L_loop:
+        mov eax, dword ptr [edi]
+        mov ecx, esi
+        add ecx, eax
+        mov eax, dword ptr [ecx]
+        test eax, eax
+        je L_next
+        mov edx, dword ptr [eax + 0x8]
+        dec edx
+        test edx, edx
+        mov dword ptr [eax + 0x8], edx
+        jne L_next
+        call ext_007AD660
+    L_next:
+        add esi, 0x4
+        dec ebx
+        jne L_loop
+        pop esi
+        pop ebx
+    L_global:
+        mov eax, dword ptr [mem_00B61680]
+        test eax, eax
+        jne L_have
+        push 0x200000
+        push eax
+        push 0x2
+        push 0x20000
+        call ext_0078CD30
+        add esp, 0x10
+        mov dword ptr [mem_00B61680], eax
+    L_have:
+        mov ecx, dword ptr [edi]
+        push ecx
+        mov ecx, eax
+        call ext_007AD6B0
+        mov dword ptr [edi], 0x0
+    L_done:
+        pop edi
+        ret
+    }
+}

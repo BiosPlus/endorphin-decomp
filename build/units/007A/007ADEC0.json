@@ -18,5 +18,7 @@
     "0x007ADF23",
     "0x007ADF2D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-19T15:37:01Z"
 }
