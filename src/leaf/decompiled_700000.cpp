@@ -237,8 +237,10 @@ extern "C" __declspec(naked) void __fastcall fn_0070BB80(void* self, int edx_unu
 }
 extern "C" void ext_006FAD00();
 extern "C" void ext_006FAC10();
+extern "C" void ext_007055F0();
+extern "C" int mem_00B5EB78;
 
-// [0x0070BC20] sub_0070BC20 (80 bytes)
+extern "C" int mem_00B5EB78;
 extern "C" void ext_006C9810();
 extern "C" void ext_006C9830();
 extern "C" void ext_006C9850();
@@ -7118,6 +7120,70 @@ extern "C" __declspec(naked) void __fastcall fn_00702EE0(void* self) {
         _emit 0x00
         mov dword ptr fs:[0], ecx
         add esp, 0x34
+        ret
+    }
+}
+
+// [0x007073D0] sub_007073D0 (126 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007073D0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, ecx
+        push esi
+        push edi
+        mov eax, dword ptr [ebp + 0x14]
+        dec eax
+        js done
+        lea ebx, [eax + 2*eax]
+        shl ebx, 0x2
+        inc eax
+        mov dword ptr [esp + 0x10], eax
+loop_top:
+        mov eax, dword ptr [ebp + 0x10]
+        sub esp, 0x8
+        add eax, ebx
+        mov esi, esp
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je clear
+        mov edx, dword ptr [ecx]
+        mov edi, dword ptr [eax]
+        cmp edx, edi
+        jne clear
+        mov edi, dword ptr [ecx + 0x4]
+        test edi, edi
+        je clear
+        mov ecx, dword ptr [mem_00B5EB78]
+        mov eax, dword ptr [edi]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je clear
+        mov edi, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], edi
+        mov edx, dword ptr [edi]
+        mov dword ptr [esi], edx
+        jmp after
+clear:
+        mov dword ptr [esi], 0x0
+        mov dword ptr [esi + 0x4], 0x0
+after:
+        mov ecx, ebp
+        call ext_007055F0
+        mov eax, dword ptr [esp + 0x10]
+        sub ebx, 0xc
+        dec eax
+        mov dword ptr [esp + 0x10], eax
+        jne loop_top
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
         ret
     }
 }
