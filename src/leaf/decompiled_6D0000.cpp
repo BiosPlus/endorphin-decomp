@@ -8511,3 +8511,32 @@ extern "C" __declspec(naked) void __fastcall fn_006D8E70(void* self) {
         ret
     }
 }
+
+// [0x006D8A40] sub_006D8A40 (84 bytes)
+extern "C" int mem_008C08E8;
+extern "C" __declspec(naked) int __fastcall fn_006D8A40(void* self, int edx_unused, int idx, int s0, int s1, int s2, int s3) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push offset mem_008C08E8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov edx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x18]
+        push eax
+        push edx
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_006D2170
+        lea ecx, [esp + 0x18]
+        mov esi, eax
+        mov dword ptr [esp + 0xc], 0xffffffff
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x14
+    }
+}
