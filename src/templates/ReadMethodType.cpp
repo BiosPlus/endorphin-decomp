@@ -172565,3 +172565,69 @@ extern "C" __declspec(naked) void __fastcall fn_00604EF0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x006253C0] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_45 (178 bytes)
+extern "C" void ext_006720A0();
+extern "C" void ext_0041CF50();
+extern "C" __declspec(naked) void __stdcall fn_006253C0(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a5428
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x48]
+        mov esi, dword ptr [edi]
+        test esi, esi
+        je throw_path_006253C0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x44]
+        mov ecx, esi
+        call edx
+        fstp st(0)
+        mov al, byte ptr [esi + 0x30]
+        mov byte ptr [esp + 0x48], al
+        mov ecx, dword ptr [esp + 0x48]
+        push ecx
+        lea ecx, [esp + 0xc]
+        call ext_006720A0
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, edi
+        mov dword ptr [esp + 0x44], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x40], -0x1
+        je skip_006253C0
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x8]
+        push edx
+        call eax
+    skip_006253C0:
+        mov ecx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [esp + 0x4c]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xb4]
+        push eax
+        push edi
+        call edx
+        mov ecx, dword ptr [esp + 0x38]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret 0x8
+    throw_path_006253C0:
+        lea ecx, [esp + 0x10]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_006A6DD2
+    }
+}
