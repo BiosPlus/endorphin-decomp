@@ -10887,3 +10887,54 @@ extern "C" __declspec(naked) void __cdecl fn_007BCF90(void* self, float* src, in
         ret
     }
 }
+
+// [0x007BC630] sub_007BC630 (106 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BC630(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        xor eax, eax
+        xor ecx, ecx
+        mov ax, word ptr [edx + 0x28]
+        mov cx, word ptr [edx + 0x2a]
+        shl eax, 0x3
+        or eax, ecx
+        add eax, -0x41
+        cmp eax, 0xc3
+        ja L_7BC677
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x7bc6b0]
+        jmp dword ptr [4*ecx + 0x7bc69c]
+L_7BC65E:
+        xor eax, eax
+        jmp L_7BC67A
+L_7BC662:
+        mov eax, 0x2
+        jmp L_7BC67A
+L_7BC669:
+        mov eax, 0x1
+        jmp L_7BC67A
+L_7BC670:
+        mov eax, 0x3
+        jmp L_7BC67A
+L_7BC677:
+        or eax, -0x1
+L_7BC67A:
+        xor ecx, ecx
+        mov cx, word ptr [edx + 0x36]
+        dec ecx
+        je L_7BC691
+        sub ecx, 0x2
+        jne L_7BC696
+        cmp eax, 0x2
+        jne L_7BC699
+        or eax, -0x1
+        ret
+L_7BC691:
+        cmp eax, 0x2
+        je L_7BC699
+L_7BC696:
+        or eax, -0x1
+L_7BC699:
+        ret
+    }
+}
