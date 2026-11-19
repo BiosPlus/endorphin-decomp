@@ -3551,3 +3551,64 @@ fn0073C360_ret1:
         ret 4
     }
 }
+
+// [0x00732BF0] sub_00732BF0 (192 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_00726AA0();
+extern "C" void ext_00726AE0();
+
+extern "C" __declspec(naked) void __fastcall fn_00732BF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        push 0b5d2c0h
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad558h
+        add ecx, 4
+        call ext_00726AA0
+        mov edi, dword ptr [esp + 0ch]
+        push eax
+        mov ecx, edi
+        call ext_006B9EC0
+        mov ecx, dword ptr [esi + 0ach]
+        push 0b5d2c0h
+        add ecx, 4
+        push 0aad54ch
+        call ext_00726AA0
+        push eax
+        lea ecx, [edi + 4ch]
+        call ext_006B9EC0
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad53ch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn00732BF0_done
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        test eax, eax
+        setne al
+        mov byte ptr [edi + 98h], al
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        test eax, eax
+        setne cl
+        mov byte ptr [edi + 99h], cl
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        test eax, eax
+        setne dl
+        mov byte ptr [edi + 9ah], dl
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+fn00732BF0_done:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
