@@ -4916,3 +4916,24 @@ L_skip:
         ret 4
     }
 }
+
+// [0x006E9B30] sub_006E9B30 (55 bytes)
+extern "C" void ext_006C9360();
+extern "C" void ext_006C95F0();
+extern "C" void ext_006CD330();
+extern "C" void ext_006DE9D0();
+extern "C" void ext_00732CB0();
+extern "C" int mem_00AA8D80;
+
+extern "C" void __fastcall fn_006E9B30(void* self, int edx_unused, void* a1) {
+    typedef void (__stdcall *t_00732CB0)(void*);
+    typedef void* (__thiscall *t_006C9360)(void*);
+    typedef void (__thiscall *t_006DE9D0)(void*, void*, int);
+    typedef void* (__thiscall *t_006C95F0)(void*, int);
+    typedef void (__thiscall *t_006CD330)(void*);
+    ((t_00732CB0)ext_00732CB0)(a1);
+    void* obj1 = ((t_006C9360)ext_006C9360)(a1);
+    ((t_006DE9D0)ext_006DE9D0)(obj1, &mem_00AA8D80, 1);
+    void* obj2 = ((t_006C95F0)ext_006C95F0)(a1, 0x3f800000);
+    ((t_006CD330)ext_006CD330)(obj2);
+}
