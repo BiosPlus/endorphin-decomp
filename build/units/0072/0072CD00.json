@@ -14,5 +14,6 @@
     "0x0072CD04",
     "0x0072CD11"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
