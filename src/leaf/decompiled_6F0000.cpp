@@ -8782,3 +8782,92 @@ extern "C" __declspec(naked) void __fastcall fn_006F9B30(void* self) {
         ret
     }
 }
+
+// [0x006FAA90] sub_006FAA90 (176 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006FAA90(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        or eax, -0x1
+        push edi
+        test esi, esi
+        jl fail_ret
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [edx + 0x14]
+        cmp esi, eax
+        mov eax, dword ptr [ecx + 0x14]
+        jge fail_ret
+        test eax, eax
+        mov dword ptr [esp + 0x10], eax
+        je fail_ret
+        mov edx, dword ptr [edx + 0x10]
+        mov edi, dword ptr [ecx + 0x10]
+        xor esi, esi
+        xor eax, eax
+        mov dword ptr [esp + 0x18], edx
+outer_loop:
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        je b_zero
+        mov edx, dword ptr [ecx]
+        mov ebx, dword ptr [edi]
+        cmp edx, ebx
+        jne b_zero
+        mov ebx, dword ptr [ecx + 0x4]
+        jmp b_done
+b_zero:
+        xor ebx, ebx
+b_done:
+        mov edx, dword ptr [esp + 0x18]
+        lea ecx, [esi + 2*esi]
+        lea edx, [edx + 4*ecx]
+inner_loop:
+        mov ecx, dword ptr [edx + 0x4]
+        test ecx, ecx
+        je a_zero
+        mov ebp, dword ptr [ecx]
+        cmp ebp, dword ptr [edx]
+        jne a_zero
+        mov ecx, dword ptr [ecx + 0x4]
+        jmp a_done
+a_zero:
+        xor ecx, ecx
+a_done:
+        cmp ebx, ecx
+        je matched
+        inc esi
+        add edx, 0xc
+        jmp inner_loop
+matched:
+        mov ecx, dword ptr [esp + 0x1c]
+        inc eax
+        add edi, 0xc
+        inc esi
+        cmp esi, ecx
+        jg dec_ret
+        mov edx, dword ptr [esp + 0x10]
+        cmp eax, edx
+        jl outer_loop
+        cmp esi, ecx
+        jg dec_ret
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, edx
+        pop ebx
+        pop ecx
+        ret 0x8
+dec_ret:
+        dec eax
+fail_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
