@@ -597,3 +597,8 @@ L_0078BB28:
         ret 0x4
     }
 }
+
+// [0x0078CBC0] Field setter (10 bytes) - sub_0078CBC0
+extern "C" void __fastcall fn_0078CBC0(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x1c) = a1;
+}
