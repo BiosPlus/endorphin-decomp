@@ -9733,3 +9733,30 @@ extern "C" __declspec(naked) void __fastcall fn_007B2040(void* self) {
         ret
     }
 }
+
+// [0x007BD4A0] sub_007BD4A0 (54 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BD4A0(void* self, int cmd, void*** out) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp edx, 0x10018
+        mov eax, dword ptr [ecx + 0x1cc]
+        je L_7BD4C6
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        push edx
+        push ecx
+        call dword ptr [eax + 0x18]
+        add esp, 0xc
+        pop esi
+        ret
+    L_7BD4C6:
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+    }
+}
