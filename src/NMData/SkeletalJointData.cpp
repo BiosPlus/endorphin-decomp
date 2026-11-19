@@ -1436,3 +1436,98 @@ extern "C" __declspec(naked) int __fastcall fn_005EE3F0(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x005E20F0] NMData::SkeletalJointData::vfunc_55 (235 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_005E20F0(void* self, void* /*edx*/, unsigned int arg) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        mov edx, dword ptr [eax + 0x1c]
+        lea ecx, [esi + 4]
+        call edx
+        test al, al
+        je L_switch
+        cmp byte ptr [esi + 0x17a], 0
+        je L_switch
+        mov al, 1
+        pop esi
+        ret 4
+    L_switch:
+        mov eax, dword ptr [esp + 8]
+        cmp eax, 6
+        ja L_default
+        jmp dword ptr [eax * 4 + 0x5e21dc]
+    L_case0:
+        mov eax, dword ptr [esi + 0x308]
+        and al, 1
+        sub al, 1
+        neg al
+        pop esi
+        sbb eax, eax
+        neg eax
+        ret 4
+    L_case1:
+        mov eax, dword ptr [esi + 0x308]
+        and al, 2
+        xor ecx, ecx
+        cmp al, 2
+        setne cl
+        mov al, cl
+        pop esi
+        ret 4
+    L_case2:
+        mov edx, dword ptr [esi + 0x308]
+        and dl, 4
+        xor eax, eax
+        cmp dl, 4
+        setne al
+        pop esi
+        ret 4
+    L_case3:
+        mov eax, dword ptr [esi + 0x308]
+        and eax, 0x100
+        xor ecx, ecx
+        cmp eax, 0x100
+        setne cl
+        mov al, cl
+        pop esi
+        ret 4
+    L_case4:
+        mov edx, dword ptr [esi + 0x308]
+        and edx, 0x200
+        xor eax, eax
+        cmp edx, 0x200
+        setne al
+        pop esi
+        ret 4
+    L_case5:
+        mov eax, dword ptr [esi + 0x308]
+        and eax, 0x400
+        xor ecx, ecx
+        cmp eax, 0x400
+        setne cl
+        mov al, cl
+        pop esi
+        ret 4
+    L_case6:
+        mov eax, dword ptr [esi + 0x308]
+        test al, 1
+        je L_ret1
+        test al, 2
+        je L_ret1
+        test al, 4
+        je L_ret1
+        xor eax, eax
+        pop esi
+        ret 4
+    L_ret1:
+        mov eax, 1
+        pop esi
+        ret 4
+    L_default:
+        xor al, al
+        pop esi
+        ret 4
+    }
+}
