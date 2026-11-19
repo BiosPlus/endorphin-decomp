@@ -9536,3 +9536,20 @@ extern "C" __declspec(naked) int __cdecl fn_007BADF0(void* self) {
         ret
     }
 }
+
+// [0x007BD310] sub_007BD310 (39 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BD310(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov cx, word ptr [eax + 0x46]
+        mov word ptr [eax + 0x40], 0x10
+        sub cx, 0x804c
+        mov word ptr [eax + 0x42], 0x2
+        neg cx
+        sbb ecx, ecx
+        and ecx, 0x2
+        inc ecx
+        mov word ptr [eax + 0x4e], cx
+        ret
+    }
+}
