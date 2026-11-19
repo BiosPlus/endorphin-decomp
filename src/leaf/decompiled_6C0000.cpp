@@ -6847,3 +6847,40 @@ extern "C" __declspec(naked) float __cdecl fn_006CD650(void) {
         ret
     }
 }
+
+// [0x006C90C0] sub_006C90C0 (166 bytes)
+extern "C" int mem_00B5D6E0;
+extern "C" int mem_00B5D6E8;
+extern "C" int mem_00B5D6F0;
+extern "C" int mem_00B5D6F8;
+extern "C" int mem_00B5D700;
+extern "C" int mem_00B5D708;
+extern "C" int mem_00B5D710;
+extern "C" int mem_00B5D718;
+extern "C" int mem_00B5D720;
+extern "C" int mem_00B5D728;
+extern "C" int mem_00B5D730;
+extern "C" int mem_00B5D738;
+extern "C" int mem_00B5D740;
+extern "C" int mem_00B5D748;
+extern "C" int mem_00B5D750;
+extern "C" int mem_00B5D758;
+
+extern "C" void __cdecl fn_006C90C0() {
+    *(double*)&mem_00B5D6E0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D6E8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D6F0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D6F8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D700 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D708 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D710 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D718 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D720 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D728 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D730 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D738 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D740 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D748 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D750 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5D758 = -*(double*)mem_00925284;
+}
