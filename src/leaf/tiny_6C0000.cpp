@@ -1322,3 +1322,16 @@ extern "C" __declspec(naked) void fn_006C0420() {
         ret
     }
 }
+
+// [0x006C0440] Tiny indirect/IAT call leaf (20 bytes) - sub_006C0440
+extern "C" __declspec(naked) void fn_006C0440() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push -0x1
+        push 0x0
+        push offset mem_00B5EB80
+        push 0x18
+        call dword ptr [eax + 0xa4]
+        ret
+    }
+}
