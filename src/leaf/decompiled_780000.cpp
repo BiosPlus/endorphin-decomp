@@ -736,8 +736,10 @@ extern "C" void ext_006A5C5C();
 extern "C" void ext_0078CEF0();
 extern "C" int mem_009251D8;
 extern "C" int mem_009242E4;
+extern "C" void ext_006CD310();
+extern "C" void ext_00789A30();
 
-// [0x0078CEB0] sub_0078CEB0 (64 bytes)
+extern "C" void ext_00789A30();
 extern "C" __declspec(naked) void __fastcall fn_0078CEB0(void* self) {
     __asm {
         push esi
@@ -8627,4 +8629,73 @@ extern "C" void __cdecl fn_00787730() {
     mem_00B60C98 = -*h;
     mem_00B60CA0 = -*h;
     mem_00B60CA8 = -*h;
+}
+
+// [0x0078AAF0] sub_0078AAF0 (176 bytes)
+// SEH-framed wrapper: allocates 0x44-byte object (ext_006A5C62), constructs via ext_00789A30,
+// stores result at this->[0x3c], calls ext_006CD310; ret 0x4.
+extern "C" __declspec(naked) int __fastcall fn_0078AAF0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8bf9f6
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0x20]
+        test al, al
+        je short L_else
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        je short L_else
+        push 0x44
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x0
+        je short L_null
+        mov ecx, dword ptr [esi + 0x30]
+        mov edx, dword ptr [esi + 0x24]
+        add ecx, edx
+        push ecx
+        jmp short L_common
+L_else:
+        push 0x44
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x1
+        je short L_null
+        push 0x0
+L_common:
+        mov dl, byte ptr [esi + 0x21]
+        mov cl, byte ptr [esi + 0x20]
+        push edx
+        mov edx, dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, dword ptr [esi + 0x18]
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_00789A30
+        jmp short L_end
+L_null:
+        xor eax, eax
+L_end:
+        push esi
+        mov ecx, eax
+        mov dword ptr [esp + 0x14], 0xffffffff
+        mov dword ptr [esi + 0x3c], eax
+        call ext_006CD310
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x3c]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
 }
