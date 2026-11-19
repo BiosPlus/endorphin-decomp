@@ -49,11 +49,16 @@ extern "C" int mem_00B5D604;
 extern "C" void __cdecl fn_006C9540() {
     ext_006C9960(0, 0, (int)0xaa8d2c);
 }
+extern "C" void ext_006C1B30();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" int mem_00B5D448;
+extern "C" int mem_00B5E400;
 
-// [0x006C9550] sub_006C9550 (15 bytes)
-extern "C" void __cdecl fn_006C9550() {
-    ext_006C9960(0, 0, (int)0xaa8d3c);
-}
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" int mem_00B5D448;
+extern "C" int mem_00B5E400;
 
 // [0x006C9560] sub_006C9560 (15 bytes)
 extern "C" void __cdecl fn_006C9560() {
@@ -7374,5 +7379,89 @@ extern "C" __declspec(naked) void __fastcall fn_006C28D0(void* self, int edx_unu
         xor eax, eax
         pop esi
         ret 4
+    }
+}
+
+// [0x006C2720] sub_006C2720 (192 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006C2720(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        push esi
+        call dword ptr [eax + 0Ch]
+        mov esi, eax
+        test esi, esi
+        je ret_zero
+
+        mov eax, mem_00B5D448
+        cmp eax, -1
+        je use_esi_18
+        cmp eax, mem_00B5E400
+        je use_esi_18
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 18h]
+        mov eax, mem_00B5D448
+        jmp check_ecx
+
+    use_esi_18:
+        mov ecx, dword ptr [esi + 18h]
+
+    check_ecx:
+        test ecx, ecx
+        jle ret_zero
+        cmp eax, -1
+        je use_esi_slot
+        cmp eax, mem_00B5E400
+        je use_esi_slot
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 14h]
+        mov edx, dword ptr [eax + 10h]
+        add eax, 10h
+        lea ecx, [ecx + 2*ecx]
+        mov eax, dword ptr [edx + 4*ecx + 4]
+        lea ecx, [edx + 4*ecx]
+        test eax, eax
+        je ret_zero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne ret_zero
+        jmp call_target
+
+    use_esi_slot:
+        mov eax, dword ptr [esi + 14h]
+        mov ecx, dword ptr [esi + 10h]
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 4]
+        test eax, eax
+        je ret_zero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne ret_zero
+
+    call_target:
+        mov eax, dword ptr [eax + 4]
+        test eax, eax
+        je ret_zero
+        mov ecx, eax
+        call ext_006C1B30
+        pop esi
+        ret
+
+    ret_zero:
+        xor eax, eax
+        pop esi
+        ret
     }
 }
