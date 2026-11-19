@@ -311,6 +311,7 @@ extern "C" void ext_00648EE0();
 extern "C" void ext_0058F770();
 extern "C" void ext_00511960();
 extern "C" void ext_00683100();
+#include <math.h>
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -173151,5 +173152,80 @@ null_path:
         lea ecx, [esp + 0x10]
         push ecx
         call ext_006A6DD2
+    }
+}
+
+// [0x0066FC80] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_43 (198 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_00672080();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_006A7250();
+
+extern "C" __declspec(naked) void __fastcall fn_0066FC80(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -1
+        push    0x8a5428
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x30
+        push    esi
+        mov     esi, dword ptr [esp + 0x44]
+        mov     eax, dword ptr [esi]
+        test    eax, eax
+        je      L_throw_0066FC80
+        fld     dword ptr [eax + 0x4]
+        fld     dword ptr [eax]
+        fld     dword ptr [eax + 0x8]
+        fld     st(1)
+        fmulp   st(2), st
+        fld     st(2)
+        fmulp   st(3), st
+        fxch    st(1)
+        faddp   st(2), st
+        fmul    st(0), st
+        faddp   st(1), st
+        call    ext_006A7250
+        fstp    dword ptr [esp + 0x44]
+        fld     dword ptr [esp + 0x44]
+        push    ecx
+        lea     ecx, [esp + 0x8]
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        lea     eax, [esp + 0x4]
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x40], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 0x8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x3c], 0xffffffff
+        je      L_skip_0066FC80
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    edx
+    L_skip_0066FC80:
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [esp + 0x48]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0xac]
+        push    edx
+        push    esi
+        call    eax
+        mov     ecx, dword ptr [esp + 0x34]
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x3c
+        ret     0x8
+    L_throw_0066FC80:
+        lea     ecx, [esp + 0xc]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        call    ext_006A6DD2
     }
 }
