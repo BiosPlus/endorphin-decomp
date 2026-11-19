@@ -22,6 +22,7 @@ import (
 
 	"endorphin_decomp/internal/decomp"
 	"endorphin_decomp/internal/unitstore"
+	"endorphin_decomp/internal/worklock"
 )
 
 type ObjFunc struct {
@@ -340,7 +341,7 @@ func main() {
 	totalChecked := 0
 	totalMatched := 0
 	var totalBytesMatched uint64
-	unitsUpdated := false
+	var newlyMatched []string // units this run verified that the ledger does not yet record as matched
 	var failures []string
 
 	type tuCompileResult struct {
@@ -441,18 +442,16 @@ func main() {
 			}
 
 			if !u.IsThunk && u.Status != "out_of_scope" && u.Status != "matched" {
-				u.Status = "matched"
-				unitsUpdated = true
+				newlyMatched = append(newlyMatched, u.VA)
 			}
 			totalMatched++
 			totalBytesMatched += uint64(u.Size)
 		}
 	}
 
-	if unitsUpdated {
-		outJSON, err := json.MarshalIndent(units, "", "  ")
-		if err == nil {
-			_ = unitstore.WriteAll(outJSON)
+	if len(newlyMatched) > 0 {
+		if err := markMatched(newlyMatched); err != nil {
+			fmt.Fprintf(os.Stderr, "Error recording matches in build/units: %v\n", err)
 		}
 	}
 
@@ -485,4 +484,36 @@ func main() {
 		}
 		os.Exit(1)
 	}
+}
+
+// markMatched records verified units as matched: per unit, read-modify-write of just the status field, under the
+// work lock. Never rewrite the whole ledger here: agents' `work check` and auto_solve write units concurrently,
+// and a full rewrite from this run's (minutes old) snapshot would silently revert their changes.
+func markMatched(vas []string) error {
+	return worklock.Do(func() error {
+		for _, va := range vas {
+			b, err := unitstore.ReadOne(va)
+			if err != nil {
+				continue
+			}
+			var obj map[string]json.RawMessage
+			if err := json.Unmarshal(b, &obj); err != nil {
+				continue
+			}
+			var st string
+			_ = json.Unmarshal(obj["status"], &st)
+			if st == "matched" || st == "out_of_scope" {
+				continue
+			}
+			obj["status"] = json.RawMessage(`"matched"`)
+			out, err := json.Marshal(obj)
+			if err != nil {
+				return err
+			}
+			if err := unitstore.WriteOne(va, out); err != nil {
+				return err
+			}
+		}
+		return nil
+	})
 }

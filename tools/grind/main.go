@@ -109,6 +109,7 @@ func main() {
 		c := exec.Command(g.bin("auto_solve"))
 		c.Stdout, c.Stderr = os.Stdout, os.Stderr
 		_ = c.Run()
+		g.verifyAutoSolved()
 		g.work("commit-pending")
 	}
 

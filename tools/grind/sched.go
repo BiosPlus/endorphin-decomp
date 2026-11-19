@@ -541,6 +541,9 @@ func (g *grind) maybeAutoSolve() {
 			}
 		}
 		_ = os.WriteFile(filepath.Join(g.root, ".local", "auto_solve.log"), out, 0o644)
+		if n > 0 {
+			g.verifyAutoSolved()
+		}
 		g.autoSolveDone <- n
 	}()
 }
@@ -735,4 +738,32 @@ func (g *grind) run() {
 			}
 		}
 	}
+}
+
+// verifyAutoSolved byte-verifies the source files auto_solve just wrote (its tiny-function solutions are
+// written as todo and only become matched once build_and_match verifies them; without this step the next
+// `work clean` strips them again). Agents only ever edit src/wip, so other dirty files in src/ are auto_solve's.
+func (g *grind) verifyAutoSolved() {
+	out, _ := exec.Command("git", "status", "--porcelain", "--", "src/").Output()
+	var files []string
+	for _, l := range strings.Split(string(out), "\n") {
+		if len(l) < 4 {
+			continue
+		}
+		p := strings.TrimSpace(l[3:])
+		if strings.HasSuffix(p, ".cpp") && !strings.HasPrefix(p, "src/wip/") {
+			files = append(files, p)
+		}
+	}
+	if len(files) == 0 {
+		return
+	}
+	logf, err := os.Create(filepath.Join(g.root, ".local", "auto_solve_verify.log"))
+	if err != nil {
+		return
+	}
+	defer logf.Close()
+	c := exec.Command(g.bin("build_and_match"), append([]string{"-require-compiler"}, files...)...)
+	c.Stdout, c.Stderr = logf, logf
+	_ = c.Run() // failures just stay todo; `work clean` strips them
 }
