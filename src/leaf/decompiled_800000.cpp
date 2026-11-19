@@ -9267,3 +9267,27 @@ extern "C" __declspec(naked) void __cdecl fn_0080F890(char* a1, int a2, int a3) 
         ret
     }
 }
+
+// [0x0080EB80] sub_0080EB80 (41 bytes)
+extern "C" void ext_008598E0();
+
+extern "C" __declspec(naked) int __cdecl fn_0080EB80(char* p1, int p2, int p3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        lea eax, [esi - 0x1]
+        push eax
+        push ecx
+        push edi
+        call ext_008598E0
+        add esp, 0xc
+        mov byte ptr [edi + esi - 0x1], 0x0
+        mov eax, 0x1
+        pop edi
+        pop esi
+        ret
+    }
+}
