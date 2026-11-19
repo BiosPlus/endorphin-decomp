@@ -266,8 +266,10 @@ extern "C" __declspec(naked) void __fastcall fn_006D7500(void* self) {
         ret
     }
 }
+extern "C" void ext_00728D90();
+extern "C" int mem_00B5D770;
 
-// [0x006D9070] sub_006D9070 (96 bytes)
+extern "C" int mem_00B5D770;
 // state = self->[0x10]; if state is 1 or 2, copy 3 doubles from arg into self->[0x0c]->[0x270],
 // set self->[0x16] = 1 and return true; otherwise return false (ret 4).
 extern "C" __declspec(naked) bool __fastcall fn_006D9070(void* self, int edx_unused, const double* src) {
@@ -7643,5 +7645,14 @@ extern "C" __declspec(naked) int __fastcall fn_006D02D0(void* self, int edx_unus
         pop esi
         add esp, 0x50
         ret 0x4
+    }
+}
+
+// [0x006D2C90] sub_006D2C90 (12 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006D2C90() {
+    __asm {
+        call ext_00728D90
+        inc dword ptr [mem_00B5D770]
+        ret
     }
 }
