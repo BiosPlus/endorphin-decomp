@@ -7853,3 +7853,41 @@ extern "C" void __cdecl fn_007000F0() {
     mem_00B5E748 = -*h;
     mem_00B5E750 = -*h;
 }
+
+// [0x00701360] sub_00701360 (166 bytes)
+// [VA] 0x00701360
+extern "C" double mem_00B5E8C8;
+extern "C" double mem_00B5E8D0;
+extern "C" double mem_00B5E8D8;
+extern "C" double mem_00B5E8E0;
+extern "C" double mem_00B5E8E8;
+extern "C" double mem_00B5E8F0;
+extern "C" double mem_00B5E8F8;
+extern "C" double mem_00B5E900;
+extern "C" double mem_00B5E908;
+extern "C" double mem_00B5E910;
+extern "C" double mem_00B5E918;
+extern "C" double mem_00B5E920;
+extern "C" double mem_00B5E928;
+extern "C" double mem_00B5E930;
+extern "C" double mem_00B5E938;
+extern "C" double mem_00B5E940;
+extern "C" void __cdecl fn_00701360() {
+    double* h = (double*)mem_00925284;
+    mem_00B5E8C8 = -*h;
+    mem_00B5E8D0 = -*h;
+    mem_00B5E8D8 = -*h;
+    mem_00B5E8E0 = -*h;
+    mem_00B5E8E8 = -*h;
+    mem_00B5E8F0 = -*h;
+    mem_00B5E8F8 = -*h;
+    mem_00B5E900 = -*h;
+    mem_00B5E908 = -*h;
+    mem_00B5E910 = -*h;
+    mem_00B5E918 = -*h;
+    mem_00B5E920 = -*h;
+    mem_00B5E928 = -*h;
+    mem_00B5E930 = -*h;
+    mem_00B5E938 = -*h;
+    mem_00B5E940 = -*h;
+}
