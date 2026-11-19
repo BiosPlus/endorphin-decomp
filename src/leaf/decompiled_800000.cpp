@@ -9487,3 +9487,37 @@ extern "C" __declspec(naked) void __cdecl fn_0080F940(void) {
         ret
     }
 }
+
+// [0x0080F980] sub_0080F980 (60 bytes)
+extern "C" void ext_0080DC60();
+extern "C" __declspec(naked) void __cdecl fn_0080F980(void* a1, int a2, void* a3, void* a4) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        jbe loc_zero
+        lea eax, [esi - 0x1]
+        jmp loc_cont
+    loc_zero:
+        xor eax, eax
+    loc_cont:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        push 0x0
+        push edx
+        push 0x80f910
+        push eax
+        lea eax, [esp + 0x1c]
+        push eax
+        call ext_0080DC60
+        add esp, 0x18
+        test esi, esi
+        pop esi
+        jbe loc_ret
+        mov ecx, dword ptr [esp + 0x4]
+        mov byte ptr [ecx], 0x0
+    loc_ret:
+        ret
+    }
+}
