@@ -7839,3 +7839,75 @@ extern "C" __declspec(naked) void __cdecl fn_0086BF80(void) {
         ret
     }
 }
+
+// [0x008635C0] sub_008635C0 (128 bytes)
+extern "C" int mem_00AB9F38;
+extern "C" void ext_0085F7B0();
+extern "C" void ext_0085D530();
+
+extern "C" __declspec(naked) int __cdecl fn_008635C0(const void* arg) {
+    __asm {
+        push ebx
+        mov eax, dword ptr [mem_00AB9F38]
+        push esi
+        test eax, eax
+        push edi
+        je loc_863601
+        mov ebx, 0
+        jle loc_863601
+        mov esi, 0xab9f40
+        mov edi, dword ptr [esp + 0x10]
+    loc_8635DC:
+        push 0xd
+        push esi
+        push edi
+        call ext_0085F7B0
+        add esp, 0xc
+        test eax, eax
+        mov eax, dword ptr [mem_00AB9F38]
+        je loc_8635FB
+        add esi, 0xd
+        inc ebx
+        cmp eax, ebx
+        jg loc_8635DC
+        jmp loc_863605
+    loc_8635FB:
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    loc_863601:
+        mov edi, dword ptr [esp + 0x10]
+    loc_863605:
+        push 0xd
+        lea ecx, [eax + 2*eax]
+        push edi
+        lea ecx, [eax + 4*ecx]
+        add ecx, 0xab9f40
+        push ecx
+        call ext_0085D530
+        add esp, 0xc
+        mov eax, dword ptr [mem_00AB9F38]
+        cmp eax, 0x63
+        jge loc_86362D
+        inc eax
+        mov dword ptr [mem_00AB9F38], eax
+    loc_86362D:
+        mov eax, 1
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
