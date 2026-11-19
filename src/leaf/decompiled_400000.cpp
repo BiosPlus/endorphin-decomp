@@ -18204,3 +18204,86 @@ L_00402CCC:
         call ext_006A6DD2
     }
 }
+
+// [0x0040F9F0] sub_0040F9F0 (234 bytes)
+extern "C" void ext_0040F2B0();
+extern "C" void ext_006A60EE();
+extern "C" int mem_00924494;
+extern "C" int mem_0092431C;
+extern "C" int mem_00924300;
+extern "C" int mem_009242F4;
+
+// Loop head is the function's first byte; the frame (locals, saved regs, SEH record)
+// is established by the caller-side init code, so the body is emitted verbatim.
+extern "C" __declspec(naked) void __fastcall fn_0040F9F0(void* self) {
+    __asm {
+loop_top:
+        mov ecx, dword ptr [esp + 0x60]
+        mov edx, dword ptr [esp + 0x5c]
+        mov eax, dword ptr [esp + 0x64]
+        mov dword ptr [esp + 0x24], edx
+        add edx, 0x3
+        sub eax, 0x3
+        test edi, edi
+        mov dword ptr [esp + 0x28], ecx
+        mov ecx, dword ptr [esp + 0x68]
+        mov dword ptr [esp + 0x24], edx
+        mov edx, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x2c], eax
+        lea eax, [edx + ebp]
+        mov dword ptr [esp + 0x30], ecx
+        mov dword ptr [esp + 0x28], ebp
+        mov dword ptr [esp + 0x30], eax
+        jl cold_path
+        cmp edi, dword ptr [esp + 0x3c]
+        jge cold_path
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        lea ecx, [esp + 0x74]
+        call dword ptr [mem_00924494]
+        mov edx, dword ptr [esp + 0x58]
+        mov esi, dword ptr [ebx]
+        push edx
+        lea eax, [esp + 0x28]
+        push eax
+        lea ecx, [esp + 0x78]
+        mov byte ptr [esp + 0x58], 0x5
+        add esi, 0x70
+        call dword ptr [mem_0092431C]
+        push eax
+        lea ecx, [esp + 0x7c]
+        call dword ptr [mem_00924300]
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, ebx
+        call edx
+        lea ecx, [esp + 0x70]
+        mov byte ptr [esp + 0x50], 0x1
+        call dword ptr [mem_009242F4]
+        add ebp, dword ptr [esp + 0x20]
+        add dword ptr [esp + 0x10], 0x4
+        add edi, 0x1
+        cmp edi, dword ptr [esp + 0x3c]
+        jl loop_top
+        mov ecx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x38]
+        push ecx
+        mov ecx, ebx
+        call edx
+        lea ecx, [esp + 0x34]
+        call ext_0040F2B0
+        lea ecx, [esp + 0x6c]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x48]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0x44
+        ret 0x1c
+cold_path:
+        call ext_006A60EE
+    }
+}
