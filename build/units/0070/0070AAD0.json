@@ -13,5 +13,7 @@
     "0x0070AAF2",
     "0x0070AAFF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-19T15:16:57Z"
 }
