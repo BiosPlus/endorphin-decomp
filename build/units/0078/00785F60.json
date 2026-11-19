@@ -16,5 +16,7 @@
     "0x00785F8E",
     "0x00785F94"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:15:49Z"
 }
