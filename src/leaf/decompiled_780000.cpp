@@ -7969,3 +7969,93 @@ extern "C" __declspec(naked) void* __fastcall fn_0078D260(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x0078A20C] sub_0078A20C (106 bytes)
+extern "C" void ext_0078A280();
+extern "C" void ext_0078A450();
+extern "C" __declspec(naked) void __fastcall fn_0078A20C(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x00
+        _emit 0x02
+        _emit 0x02
+        _emit 0x00
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x00
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x00
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x01
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov al, byte ptr [ecx + 0x20]
+        test al, al
+        je short L_fallback
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_0078A280
+        ret 0x8
+    L_fallback:
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_0078A450
+        ret 0x8
+    }
+}
