@@ -1312,3 +1312,8 @@ extern "C" __declspec(naked) void fn_007057E0() {
 extern "C" bool __stdcall fn_00707450(int a1, int a2, int a3, int a4) {
     return false;
 }
+
+// [0x00707950] Dword field getter (7 bytes) - sub_00707950
+extern "C" int __fastcall fn_00707950(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0xc0);
+}
