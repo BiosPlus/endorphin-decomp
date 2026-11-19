@@ -6652,3 +6652,85 @@ extern "C" __declspec(naked) void __cdecl fn_0085F130(void* self) {
         __asm _emit 0x00
     }
 }
+
+// [0x008578E0] sub_008578E0 (207 bytes)
+extern "C" void ext_00857BE0();
+extern "C" void ext_00869310();
+extern "C" __declspec(naked) int __cdecl fn_008578E0(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x14]
+        xor eax, eax
+        sub esp, 0x100
+        mov ax, word ptr [ecx]
+        add eax, 7
+        push esi
+        cdq
+        and edx, 7
+        add eax, edx
+        mov edx, dword ptr [esp + 0x114]
+        mov esi, eax
+        sar esi, 3
+        lea eax, [edx + 0xb]
+        cmp eax, esi
+        jbe ok
+        mov eax, 0x406
+        pop esi
+        add esp, 0x100
+        ret
+    ok:
+        mov ecx, esi
+        mov eax, 2
+        sub ecx, edx
+        mov byte ptr [esp + 4], 0
+        dec ecx
+        mov byte ptr [esp + 5], 1
+        cmp ecx, eax
+        jbe skip_fill
+        push ebx
+        push ebp
+        lea ebp, [ecx - 2]
+        push edi
+        mov ecx, ebp
+        or eax, -1
+        mov ebx, ecx
+        lea edi, [esp + 0x12]
+        shr ecx, 2
+        rep stosd
+        mov ecx, ebx
+        and ecx, 3
+        rep stosb
+        lea eax, [ebp + 2]
+        pop edi
+        pop ebp
+        pop ebx
+    skip_fill:
+        push edx
+        mov edx, dword ptr [esp + 0x114]
+        mov byte ptr [esp + eax + 8], 0
+        lea eax, [esp + eax + 9]
+        push edx
+        push eax
+        call ext_00869310
+        mov ecx, dword ptr [esp + 0x124]
+        mov eax, dword ptr [esp + 0x118]
+        push ecx
+        mov ecx, dword ptr [esp + 0x118]
+        lea edx, [esp + 0x14]
+        push esi
+        push edx
+        push eax
+        push ecx
+        call ext_00857BE0
+        push 0x100
+        lea edx, [esp + 0x28]
+        push 0
+        push edx
+        mov esi, eax
+        call ext_008692F0
+        add esp, 0x2c
+        mov eax, esi
+        pop esi
+        add esp, 0x100
+        ret
+    }
+}
