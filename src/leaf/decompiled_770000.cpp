@@ -4344,3 +4344,82 @@ extern "C" __declspec(naked) void __fastcall fn_0077E880(void* self) {
         ret 4
     }
 }
+
+// [0x0077E9A0] sub_0077E9A0 (208 bytes)
+extern "C" void ext_007275F0();
+extern "C" void ext_006BADB0();
+extern "C" void ext_007279A0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+extern "C" __declspec(naked) void __fastcall fn_0077E9A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x008BCB18
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x4c
+        push esi
+        mov esi, ecx
+        push edi
+        push 0x00AAD20C
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007275F0
+        mov edi, dword ptr [esp + 0x64]
+        mov ecx, edi
+        call ext_006BADB0
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        mov eax, dword ptr [edi]
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        mov dword ptr [esp + 0x5c], 0
+        call ext_006E7460
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 0x5c], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00728410
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        mov ecx, dword ptr [esp + 0x54]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x58
+        ret 4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
+extern "C" void ext_006B9D70();
+extern "C" void ext_006E7460();
+extern "C" void ext_007283B0();
