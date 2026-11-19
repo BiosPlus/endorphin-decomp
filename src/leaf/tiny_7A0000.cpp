@@ -189,3 +189,11 @@ L_007AB368:
         ret 0x4
     }
 }
+
+// [0x007AB370] Base destructor tail-call (11 bytes) - sub_007AB370
+extern "C" __declspec(naked) void fn_007AB370() {
+    __asm {
+        mov dword ptr [ecx], offset mem_00998398
+        jmp ext_00785430
+    }
+}
