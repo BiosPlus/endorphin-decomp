@@ -4913,3 +4913,10 @@ extern "C" int mem_00B5E9B8;
 extern "C" void __cdecl fn_00703FC0() {
     mem_00B5E9B8 = ext_006FC3A0((void*)0xb5e9a8, -1);
 }
+
+// [0x007001F0] sub_007001F0 (21 bytes)
+extern "C" int __cdecl ext_006FC3A0(void*, int);
+extern "C" int mem_00B5E5C0;
+extern "C" void __cdecl fn_007001F0() {
+    mem_00B5E5C0 = ext_006FC3A0((void*)0xb5e5c8, -1);
+}
