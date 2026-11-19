@@ -6115,3 +6115,18 @@ extern "C" __declspec(naked) void __fastcall fn_006C0470(void* self) {
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
     }
 }
+
+// [0x006C8F50] sub_006C8F50 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B5D640;
+extern "C" int mem_00B5D648;
+extern "C" int mem_00B5D650;
+extern "C" int mem_00B5D658;
+
+extern "C" void __cdecl fn_006C8F50() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B5D640 = -*p;
+    *(double*)&mem_00B5D648 = -*p;
+    *(double*)&mem_00B5D650 = -*p;
+    *(double*)&mem_00B5D658 = -*p;
+}
