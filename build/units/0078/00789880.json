@@ -14,5 +14,6 @@
     "0x00789884",
     "0x00789891"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
