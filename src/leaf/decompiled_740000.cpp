@@ -3079,3 +3079,45 @@ extern "C" __declspec(naked) int __cdecl fn_0074F7A0(const void* a, const void* 
         ret
     }
 }
+
+// [0x0074F990] sub_0074F990 (84 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006E7440();
+extern "C" int mem_009252A8;
+
+extern "C" __declspec(naked) void __fastcall fn_0074F990(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        je skip_close
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x8]
+skip_close:
+        mov edi, dword ptr [esp + 0xc]
+        push 0xaae64c
+        push edi
+        call dword ptr [mem_009252A8]
+        add esp, 0x8
+        mov dword ptr [esi + 0xac], eax
+        test eax, eax
+        jne opened
+        push 0x3
+        lea ecx, [esi + 0x8]
+        call ext_006E7440
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+opened:
+        push edi
+        lea ecx, [esi + 0xb0]
+        call ext_006B9EC0
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
