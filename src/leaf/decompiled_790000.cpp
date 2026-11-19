@@ -6305,3 +6305,10 @@ extern "C" void __cdecl ext_007AF010(int, int);
 extern "C" void __cdecl fn_00798650(int a1, int a2, int a3) {
     ext_007AF010(a2, a3 / 2);
 }
+
+// [0x00798670] sub_00798670 (28 bytes)
+extern "C" void ext_007AF040();
+
+extern "C" int __cdecl fn_00798670(int a1, int a2, int a3) {
+    return ((int (__cdecl *)(int, int))ext_007AF040)(a2, a3 / 4);
+}
