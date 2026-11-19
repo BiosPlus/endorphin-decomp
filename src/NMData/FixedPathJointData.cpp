@@ -1,7 +1,10 @@
 // Decompiled translation unit: src/NMData/FixedPathJointData.cpp
+extern "C" void ext_0058AF80();
+extern "C" void ext_005E1090();
+extern "C" void ext_0067E820();
 
-// [0x005E09B0] NMData::FixedPathJointData::vfunc_44 (20 bytes)
-// Tail-call thunk: ecx = this->+0x18c; forwards with ecx = &inner+4 to inner->vtbl[0xb0 / 4].
+extern "C" void ext_005E1090();
+extern "C" void ext_0067E820();
 extern "C" __declspec(naked) void __fastcall fn_005E09B0(void* self) {
     __asm {
         mov ecx, dword ptr [ecx + 0x18c]
@@ -1613,5 +1616,56 @@ extern "C" __declspec(naked) void __fastcall fn_005E1CD0(void* self) {
         pop esi
         add esp, 0xc
         ret
+    }
+}
+
+// [0x005E4900] NMData::FixedPathJointData::vfunc_0_off_150 (111 bytes)
+// Switch on self->[+0x44] (0..6 dispatch), with a tail-jump through a vtable
+// in the default branch, so this is written as naked asm.
+extern "C" __declspec(naked) void __fastcall fn_005E4900(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi+0x44]
+        cmp eax, 6
+        ja L_ret_esi
+        movzx eax, byte ptr [eax + 0x5e497c]
+        jmp dword ptr [4*eax + 0x5e4970]
+
+L_caseA:
+        push edi
+        mov edi, dword ptr [esp+0xc]
+        push edi
+        lea ecx, [esi-0x150]
+        call ext_0058AF80
+        mov esi, dword ptr [esi+0x148]
+        test esi, esi
+        je L_pop_edi
+        push esi
+        mov ecx, edi
+        call ext_0067E820
+L_pop_edi:
+        pop edi
+L_ret_esi:
+        pop esi
+        ret 4
+
+L_caseB:
+        cmp dword ptr [esi+0x144], 0
+        je L_caseC
+        mov ecx, dword ptr [esp+8]
+        push ecx
+        lea ecx, [esi-0x150]
+        call ext_005E1090
+        pop esi
+        ret 4
+
+L_caseC:
+        mov esi, dword ptr [esi+0xe4]
+        mov edx, dword ptr [esi+4]
+        mov edx, dword ptr [edx]
+        lea ecx, [esi+4]
+        pop esi
+        jmp edx
     }
 }
