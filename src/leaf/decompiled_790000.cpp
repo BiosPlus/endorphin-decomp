@@ -8286,3 +8286,96 @@ L_fail:
         ret 0x4
     }
 }
+
+// [0x0079B4C0] sub_0079B4C0 (240 bytes)
+extern "C" void ext_00798710();
+extern "C" void ext_007AF180();
+extern "C" void ext_0079AF40();
+extern "C" void __cdecl ext_0079AFE0(void*, int, unsigned int);
+
+extern "C" __declspec(naked) int __cdecl fn_0079B4C0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0xc]
+        test ah, 0x4
+        je L_flagclear
+        test byte ptr [esi + 0x18], 0x4
+        je L_call7af
+        mov eax, dword ptr [esi + 0x28]
+        test eax, eax
+        jne L_call7af
+        xor eax, eax
+        mov ax, word ptr [esi + 0x4e]
+        jmp L_store
+L_call7af:
+        push esi
+        call ext_007AF180
+        jmp L_after_call
+L_flagclear:
+        test dword ptr [esi + 0x18], 0x20000
+        je L_call798
+        mov eax, dword ptr [esi + 0x28]
+        test eax, eax
+        jne L_call798
+        xor eax, eax
+        mov ax, word ptr [esi + 0x4e]
+        jmp L_store
+L_call798:
+        push esi
+        call ext_00798710
+L_after_call:
+        add esp, 0x4
+L_store:
+        cmp word ptr [esi + 0x72], 0x2
+        mov dword ptr [esi + 0xc8], eax
+        mov dword ptr [esi + 0xcc], eax
+        jne L_nodiv
+        xor ecx, ecx
+        xor edx, edx
+        mov cx, word ptr [esi + 0x4e]
+        div ecx
+        mov dword ptr [esi + 0xc8], eax
+L_nodiv:
+        mov edx, dword ptr [esi + 0xcc]
+        shl edx, 0x2
+        push edx
+        call ext_0079AF40
+        mov dword ptr [esi + 0xd0], eax
+        mov eax, dword ptr [esi + 0xcc]
+        shl eax, 0x2
+        push eax
+        call ext_0079AF40
+        mov ecx, dword ptr [esi + 0xd0]
+        add esp, 0x8
+        test ecx, ecx
+        mov dword ptr [esi + 0xd4], eax
+        je L_fail
+        test eax, eax
+        je L_fail
+        mov edx, dword ptr [esi + 0xcc]
+        shl edx, 0x2
+        push edx
+        push 0x0
+        push ecx
+        call ext_0079AFE0
+        mov eax, dword ptr [esi + 0xcc]
+        mov ecx, dword ptr [esi + 0xd4]
+        shl eax, 0x2
+        push eax
+        push 0x0
+        push ecx
+        call ext_0079AFE0
+        mov eax, dword ptr [esi + 0x18]
+        add esp, 0x18
+        or eax, 0x3000000
+        mov dword ptr [esi + 0x18], eax
+        mov eax, 0x1
+        pop esi
+        ret
+L_fail:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
