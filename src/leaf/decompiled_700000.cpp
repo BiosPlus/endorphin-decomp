@@ -7254,3 +7254,38 @@ l_00700F36:
         ret 4
     }
 }
+
+// [0x00702660] sub_00702660 (131 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00702660(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        dec eax
+        cmp eax, 0x4
+        ja def_case
+        jmp dword ptr [eax*4 + 0x7026e4]
+    c_one:
+        mov ecx, dword ptr [ecx + 0x268]
+        mov dword ptr [ecx + 0x160], 0x3
+        ret 0x4
+    c_two:
+        mov edx, dword ptr [ecx + 0x268]
+        mov dword ptr [edx + 0x160], 0x4
+        ret 0x4
+    c_three:
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x160], 0x1
+        ret 0x4
+    c_four:
+        mov ecx, dword ptr [ecx + 0x268]
+        mov dword ptr [ecx + 0x160], 0x2
+        ret 0x4
+    c_five:
+        mov edx, dword ptr [ecx + 0x268]
+        mov dword ptr [edx + 0x160], 0x5
+        ret 0x4
+    def_case:
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x160], 0x0
+        ret 0x4
+    }
+}
