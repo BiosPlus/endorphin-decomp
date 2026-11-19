@@ -14,5 +14,6 @@
     "0x006DDEE4",
     "0x006DDEF1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
