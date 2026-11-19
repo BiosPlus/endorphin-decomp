@@ -5599,3 +5599,84 @@ L_end:
         ret
     }
 }
+
+// [0x006E3990] sub_006E3990 (176 bytes)
+extern "C" void ext_006CE060();
+extern "C" void ext_006E3970();
+extern "C" void __fastcall ext_006E3990(void* self, int edx_unused, int a1, int a2);
+extern "C" void ext_006E5710();
+
+extern "C" __declspec(naked) void __fastcall fn_006E3990(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebp
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_006E5710
+        mov ebp, eax
+        mov eax, dword ptr [esi + 0x58]
+        cmp ebp, eax
+        jne short L_mismatch
+        mov ecx, dword ptr [esi + 0x38]
+        test ecx, ecx
+        je short L_skip_cleanup
+        call ext_006CE060
+L_skip_cleanup:
+        mov dword ptr [esi + 0x90], 0xffffffff
+        mov dword ptr [esi + 0x94], 0x7fffffff
+        mov edx, dword ptr [esi]
+        push ebx
+        mov eax, 0x1
+        push edi
+        mov ecx, esi
+        mov dword ptr [esi + 0x64], eax
+        mov dword ptr [esi + 0x68], eax
+        xor edi, edi
+        call dword ptr [edx + 0x14]
+        mov ebx, dword ptr [esp + 0x18]
+        test eax, eax
+        jle short L_after_loop
+L_loop:
+        mov eax, dword ptr [esi]
+        push ebx
+        push ebp
+        push edi
+        mov ecx, esi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006E3990
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        inc edi
+        call dword ptr [edx + 0x14]
+        cmp edi, eax
+        jl short L_loop
+L_after_loop:
+        pop edi
+        test bl, bl
+        pop ebx
+        je short L_done
+        mov ecx, esi
+        call ext_006E3970
+        pop esi
+        xor eax, eax
+        pop ebp
+        ret 8
+L_mismatch:
+        mov ecx, dword ptr [esi + 0x40]
+        test ecx, ecx
+        je short L_done
+        cmp dword ptr [ecx + 0x58], ebp
+        jg short L_done
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        push ebp
+        call ext_006E3990
+L_done:
+        pop esi
+        xor eax, eax
+        pop ebp
+        ret 8
+    }
+}
