@@ -13,5 +13,7 @@
     "0x00864AF6",
     "0x00864B49"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T16:19:21Z"
 }
