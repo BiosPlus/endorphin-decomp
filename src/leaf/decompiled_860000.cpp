@@ -6621,3 +6621,37 @@ extern "C" __declspec(naked) short __cdecl fn_0086BF40(int* p) {
         ret
     }
 }
+
+// [0x0086C1D0] sub_0086C1D0 (56 bytes)
+extern "C" void ext_0086C020();
+extern "C" void ext_0086EE60();
+
+extern "C" __declspec(naked) void __cdecl fn_0086C1D0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        sub esp, 0x14
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        push esi
+        call ext_0086C020
+        mov ecx, dword ptr [esp + 0x30]
+        mov eax, dword ptr [esp + 0x2c]
+        lea edx, [esp + 0x10]
+        add esp, 0xc
+        push esi
+        push ecx
+        push eax
+        push edx
+        call ext_0086EE60
+        add esp, 0x10
+        pop esi
+        add esp, 0x14
+        ret
+    }
+}
