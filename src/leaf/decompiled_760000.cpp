@@ -1793,3 +1793,49 @@ extern "C" __declspec(naked) bool __fastcall fn_007611C0(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x00761120] sub_00761120 (136 bytes)
+extern "C" __declspec(naked) char __fastcall fn_00761120(void* self, int edx_unused, int a0, int sel) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x8]
+        cmp     eax, 0x4
+        ja      L_default
+        jmp     dword ptr [eax*4 + 0x7611a8]
+    L_c0:
+        mov     ecx, dword ptr [ecx + 0xac]
+        push    0xaae384
+        add     ecx, 0x4
+        call    ext_007279A0
+        mov     al, 0x1
+        ret     0x8
+    L_c1:
+        mov     ecx, dword ptr [ecx + 0xac]
+        push    0xaae374
+        add     ecx, 0x4
+        call    ext_007279A0
+        mov     al, 0x1
+        ret     0x8
+    L_c2:
+        mov     ecx, dword ptr [ecx + 0xac]
+        push    0xaae368
+        add     ecx, 0x4
+        call    ext_007279A0
+        mov     al, 0x1
+        ret     0x8
+    L_c3:
+        mov     ecx, dword ptr [ecx + 0xac]
+        push    0xaae360
+        add     ecx, 0x4
+        call    ext_007279A0
+        mov     al, 0x1
+        ret     0x8
+    L_c4:
+        mov     ecx, dword ptr [ecx + 0xac]
+        push    0xaaeb44
+        add     ecx, 0x4
+        call    ext_007279A0
+    L_default:
+        mov     al, 0x1
+        ret     0x8
+    }
+}
