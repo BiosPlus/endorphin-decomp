@@ -3275,3 +3275,13 @@ L_006FA935:
         ret 0x4
     }
 }
+
+// [0x006FA940] Boolean predicate (11 bytes) - sub_006FA940
+extern "C" __declspec(naked) void fn_006FA940() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x08 // mov eax, dword ptr [ecx + 0x8]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        setne al
+        ret 0x4
+    }
+}
