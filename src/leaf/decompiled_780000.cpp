@@ -8778,3 +8778,79 @@ extern "C" __declspec(naked) void __fastcall fn_00789980(void* self) {
         ret
     }
 }
+
+// [0x007854A0] sub_007854A0 (176 bytes)
+extern "C" void ext_006C9F00();
+extern "C" void ext_006CA060();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006CAEF0();
+extern "C" void ext_00872828();
+extern "C" int mem_0092A270;
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) int __fastcall fn_007854A0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        mov ecx, edi
+        call ext_006CA6A0
+        test eax, eax
+        jne L1
+        pop edi
+        or eax, -1
+        pop esi
+        add esp, 0x10
+        ret 4
+    L1:
+        lea eax, dword ptr [esp + 0x10]
+        mov ecx, edi
+        push eax
+        push 0
+        call ext_006CA060
+        mov ecx, eax
+        call ext_006C9F00
+        mov edx, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [eax + 4]
+        mov dword ptr [esp + 8], edx
+        mov edx, dword ptr [esi + 0x14]
+        mov dword ptr [esp + 0x10], ecx
+        cmp edx, eax
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0xc], edx
+        jl L2
+        jg L3
+        mov eax, dword ptr [esi + 0x10]
+        cmp eax, ecx
+        jbe L2
+    L3:
+        lea eax, dword ptr [esp + 8]
+        jmp L4
+    L2:
+        lea eax, dword ptr [esp + 0x10]
+    L4:
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [eax + 4]
+        push 0
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_006CAEF0
+        fsub qword ptr [mem_0092A270]
+        fld qword ptr [mem_0092A278]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L5
+        fstp st(0)
+        fld qword ptr [mem_0092A278]
+    L5:
+        call ext_00872828
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
