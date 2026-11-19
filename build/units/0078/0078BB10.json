@@ -14,5 +14,6 @@
     "0x0078BB14",
     "0x0078BB21"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
