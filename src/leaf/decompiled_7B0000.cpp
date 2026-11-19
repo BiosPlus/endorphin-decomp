@@ -12552,3 +12552,75 @@ L_7B3241:
         ret
     }
 }
+
+// [0x007B9310] sub_007B9310 (181 bytes)
+extern "C" void ext_007B2EF0();
+extern "C" void ext_007B3380();
+extern "C" __declspec(naked) void __cdecl fn_007B9310(void* a1, int code) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_7B9330
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B93C3
+L_7B9330:
+        cmp dword ptr [esi], 0x0
+        jne L_7B9348
+        push 0x3
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B93C3
+L_7B9348:
+        mov eax, dword ptr [esi]
+        cmp dword ptr [eax], 0x4d4d
+        jne L_7B93C3
+        lea ecx, [esp + 0x8]
+        push ecx
+        push 0x2
+        push eax
+        call ext_007B2EF0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0xc
+        test al, al
+        je L_7B9374
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B93C3
+L_7B9374:
+        mov edx, dword ptr [esp + 0x8]
+        push edx
+        call ext_007B3380
+        mov cl, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test cl, cl
+        je L_7B9395
+        mov cl, byte ptr [mem_00B61219]
+        test cl, cl
+        je L_7B93C3
+L_7B9395:
+        mov ecx, dword ptr [esp + 0xc]
+        cmp ecx, 0x3
+        ja L_7B93C3
+        jmp dword ptr [4*ecx + 0x7b93c8]
+        mov dword ptr [eax], 0x1
+        pop esi
+        ret
+        mov dword ptr [eax], 0x2
+        pop esi
+        ret
+        mov dword ptr [eax], 0x3
+        pop esi
+        ret
+        mov dword ptr [eax], 0x4
+L_7B93C3:
+        pop esi
+        ret
+    }
+}
