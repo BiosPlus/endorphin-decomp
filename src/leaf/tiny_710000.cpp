@@ -2875,3 +2875,21 @@ extern "C" void __fastcall fn_0071A1B0(void* self, int edx_unused, int a1) {
 extern "C" int __fastcall fn_0071A1C0(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x1d18);
 }
+
+// [0x0071A1D0] Scalar deleting destructor (30 bytes) - sub_0071A1D0
+extern "C" __declspec(naked) void fn_0071A1D0() {
+    __asm {
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        call ext_0071A1F0
+        __asm _emit 0xF6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 // test byte ptr [esp + 0x8], 0x1
+        je L_0071A1E8
+        push esi
+        call ext_006A5C5C
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 0x4
+L_0071A1E8:
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
