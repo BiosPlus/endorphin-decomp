@@ -9258,3 +9258,42 @@ extern "C" __declspec(naked) bool __fastcall fn_006D4C90(void* self, int edx_dum
         ret 0x4
     }
 }
+
+// [0x006D59C0] sub_006D59C0 (122 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006E73B0();
+// SEH-framed ctor-like body: sets up an EH frame (state -1 / handler 0x8b9056),
+// calls ext_006E73B0 with this+4, stores arg1 into [this+0xa8], then tears down.
+extern "C" __declspec(naked) void __fastcall fn_006D59C0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8b9056
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0xb
+        push 0xaa8e88
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0xc], esi
+        call ext_006E73B0
+        lea ecx, [esi + 0x5c]
+        mov dword ptr [esp + 0x10], 0
+        call ext_006B9D10
+        mov eax, dword ptr [esp + 0x18]
+        lea ecx, [esi + 0xb0]
+        mov byte ptr [esp + 0x10], 1
+        mov dword ptr [esi + 0xa8], eax
+        mov dword ptr [esi + 0xac], 0
+        call ext_006B9D10
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi], 0x99393c
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
