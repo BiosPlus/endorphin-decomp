@@ -3640,3 +3640,17 @@ extern "C" __declspec(naked) void __stdcall fn_00750940(void* a0, void* a1) {
         __asm _emit 0x90
     }
 }
+
+// [0x007552D0] sub_007552D0 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" double mem_00B60480;
+extern "C" double mem_00B60488;
+extern "C" double mem_00B60490;
+extern "C" double mem_00B60498;
+
+extern "C" void __cdecl fn_007552D0() {
+    mem_00B60480 = -*(double*)mem_00925284;
+    mem_00B60488 = -*(double*)mem_00925284;
+    mem_00B60490 = -*(double*)mem_00925284;
+    mem_00B60498 = -*(double*)mem_00925284;
+}
