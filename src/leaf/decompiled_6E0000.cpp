@@ -114,8 +114,10 @@ extern "C" int mem_00B5DD98;
 extern "C" int mem_00B5DD9C;
 extern "C" int mem_00B5DD90;
 extern "C" void ext_00711D40();
+extern "C" void ext_006C8B30();
+extern "C" void ext_006C8A70();
 
-// [0x006E6360] sub_006E6360 (80 bytes)
+extern "C" void ext_006C8A70();
 // Two incremental-link style thunks: each jumps over 11 nop padding to a body.
 // Body 1: copy the double at *_HUGE into mem_00B5DD98/9C.
 // Body 2: store -(*_HUGE) into mem_00B5DD90.
@@ -4530,4 +4532,10 @@ extern "C" __declspec(naked) void __fastcall fn_006EFFA0(void* self, int edx_unu
         call ext_00711D40
         ret 0x8
     }
+}
+
+// [0x006EFD60] sub_006EFD60 (34 bytes)
+extern "C" void __fastcall fn_006EFD60(void* self, int edx_unused, int a1, int a2) {
+    typedef void (__thiscall *Fn)(void*, int, int, void*, void*);
+    ((Fn)ext_00711D40)((char*)self + 0x1c28, a1, a2, (void*)ext_006C8B30, (void*)ext_006C8A70);
 }
