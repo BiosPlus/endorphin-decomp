@@ -146,6 +146,7 @@ extern "C" void __fastcall fn_0070EA70(void* self, int edx_unused, void* a1) {
 }
 extern "C" void ext_006FA8F0();
 extern "C" void __stdcall ext_006FA920(void* a1);
+extern "C" int mem_00B5D268;
 
 // [0x00708BD0] sub_00708BD0 (64 bytes)
 extern "C" void ext_00708C10();
@@ -4877,4 +4878,10 @@ extern "C" __declspec(naked) void __fastcall fn_00701DF0(void* self, int edx_unu
         call ext_006DC8E0
         ret 4
     }
+}
+
+// [0x00706230] sub_00706230 (19 bytes)
+extern "C" void __fastcall fn_00706230(void* self) {
+    void* p = *(void**)((char*)self + 0x50);
+    ((void (__thiscall *)(void*))ext_006E7460)(p ? p : &mem_00B5D268);
 }
