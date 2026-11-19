@@ -975,3 +975,11 @@ L_006BAC18:
         ret 0x4
     }
 }
+
+// [0x006BADB0] This-adjustor thunk (8 bytes) - sub_006BADB0
+extern "C" __declspec(naked) void fn_006BADB0() {
+    __asm {
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x04 // add ecx, 0x4
+        jmp ext_006E6340
+    }
+}
