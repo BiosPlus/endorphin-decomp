@@ -304,6 +304,7 @@ extern "C" void ext_0062A580();
 extern "C" void ext_00603680();
 extern "C" void ext_006036A0();
 extern "C" void ext_00610B20();
+extern "C" void ext_006111D0();
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -169297,6 +169298,64 @@ extern "C" __declspec(naked) void __fastcall fn_00616210(void* self, int edx_unu
         lea     ecx, [esp + 0xc]
         call    ext_0046C3C0
         push    0x9dec1c
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
+
+// [0x00614BF0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_46 (170 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00614BF0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -1
+        push    offset mem_008A5428
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x30
+        push    esi
+        mov     esi, dword ptr [esp + 0x44]
+        mov     ecx, dword ptr [esi]
+        test    ecx, ecx
+        je      L_throw_614BF0
+        call    ext_006111D0
+        fstp    dword ptr [esp + 0x44]
+        fld     dword ptr [esp + 0x44]
+        push    ecx
+        lea     ecx, [esp + 0x8]
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        lea     eax, [esp + 0x4]
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x40], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 0x8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x3c], 0xffffffff
+        je      L_skip_614BF0
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    edx
+    L_skip_614BF0:
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [esp + 0x48]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0xb8]
+        push    edx
+        push    esi
+        call    eax
+        mov     ecx, dword ptr [esp + 0x34]
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x3c
+        ret     8
+    L_throw_614BF0:
+        lea     ecx, [esp + 0xc]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
         lea     ecx, [esp + 0x10]
         push    ecx
         call    ext_006A6DD2
