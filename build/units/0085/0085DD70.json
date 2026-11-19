@@ -23,5 +23,7 @@
     "0x0085DDE8",
     "0x0085DDF0"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-19T16:23:08Z"
 }

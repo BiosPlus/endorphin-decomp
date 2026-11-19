@@ -5760,3 +5760,66 @@ extern "C" __declspec(naked) void __cdecl fn_00857350(void* self) {
         ret
     }
 }
+
+// [0x0085DD70] sub_0085DD70 (160 bytes)
+extern "C" void ext_0085D510(); extern "C" void ext_0085D530(); extern "C" void ext_0085DE10(); extern "C" void ext_0085DE20(); extern "C" void ext_0085DF30();
+extern "C" int mem_00AB98EC; extern "C" int mem_00AB9878; extern "C" int mem_00AB98AC;
+extern "C" char mem_00ABAA40[];
+extern "C" __declspec(naked) int __cdecl fn_0085DD70(void* buf, unsigned int size) {
+    __asm {
+        mov dword ptr [mem_00AB98EC], 0
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, 0x400
+        jbe ok
+        mov eax, 0xfffffff4
+        pop esi
+        mov dword ptr [mem_00AB98EC], 0x14
+        ret
+    ok:
+        push 0x40a
+        push 0
+        push offset mem_00ABAA40
+        call ext_0085D510
+        add esp, 0xc
+        test esi, esi
+        je skip
+        mov eax, dword ptr [esp + 8]
+        push esi
+        push eax
+        push offset mem_00ABAA40
+        call ext_0085D530
+        add esp, 0xc
+    skip:
+        call ext_0085DE10
+        cmp dword ptr [mem_00AB9878], 0
+        jne good
+        mov eax, 0xffffffff
+        pop esi
+        mov dword ptr [mem_00AB98EC], 1
+        ret
+    good:
+        push offset mem_00ABAA40
+        call ext_0085DF30
+        add esp, 4
+        call ext_0085DE20
+        xor eax, eax
+        pop esi
+        mov dword ptr [mem_00AB98AC], 1
+        ret
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0
+        _emit 0
+        _emit 0
+        _emit 0
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0
+        _emit 0
+        _emit 0
+        _emit 0
+    }
+}
