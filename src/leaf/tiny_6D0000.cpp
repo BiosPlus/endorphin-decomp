@@ -742,3 +742,8 @@ L_006D8E68:
         ret 0x4
     }
 }
+
+// [0x006D8ED0] Constant return (6 bytes) - sub_006D8ED0
+extern "C" int __cdecl fn_006D8ED0(void) {
+    return 0x3;
+}
