@@ -8390,3 +8390,59 @@ extern "C" __declspec(naked) int __fastcall fn_00785550(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x007898A0] sub_007898A0 (118 bytes)
+extern "C" void ext_00789590();
+extern "C" void ext_007895F0();
+extern "C" void ext_00789980();
+
+extern "C" __declspec(naked) void __fastcall fn_007898A0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0xc], 2
+        jne short L_done
+        push ebx
+        call ext_00789980
+        mov ebx, eax
+        lea ecx, [esp + 0xb]
+        not ebx
+        mov eax, ebx
+        push 1
+        shr eax, 0x18
+        push ecx
+        mov ecx, esi
+        mov byte ptr [esp + 0x13], al
+        call ext_007895F0
+        mov edx, ebx
+        lea eax, [esp + 0xb]
+        shr edx, 0x10
+        push 1
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x13], dl
+        call ext_007895F0
+        mov ecx, ebx
+        lea edx, [esp + 0xb]
+        shr ecx, 8
+        mov byte ptr [esp + 0xb], cl
+        push 1
+        push edx
+        mov ecx, esi
+        call ext_007895F0
+        lea eax, [esp + 0xb]
+        push 1
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x13], bl
+        call ext_007895F0
+        pop ebx
+    L_done:
+        mov ecx, esi
+        call ext_00789590
+        pop esi
+        pop ecx
+        ret
+    }
+}
