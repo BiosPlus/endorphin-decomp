@@ -191,13 +191,13 @@ extern "C" void ext_00714540();
 extern "C" void ext_00714550();
 extern "C" void ext_0071F060();
 
-// [0x00712460] Identical-shape clone of 0x006BEC70 (41 bytes) - sub_00712460
-extern "C" __declspec(naked) void __cdecl fn_00712460() {
+// [0x00714E70] Identical-shape clone of 0x006BEC70 (41 bytes) - sub_00714E70
+extern "C" __declspec(naked) void __cdecl fn_00714E70() {
     __asm {
-        mov dword ptr [mem_00B5F1E8], 0xB5F220
-        mov dword ptr [mem_00B5F1F0], 0xAABF74
-        mov dword ptr [mem_00B5F1EC], 0xB5F200
-        mov dword ptr [mem_00B5F1F4], 0
+        mov dword ptr [mem_00B5FA70], 0xB5FA80
+        mov dword ptr [mem_00B5FA78], 0xAAC2F8
+        mov dword ptr [mem_00B5FA74], 0xB5EB50
+        mov dword ptr [mem_00B5FA7C], 0
         ret
     }
 }
