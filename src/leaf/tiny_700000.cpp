@@ -1317,3 +1317,13 @@ extern "C" bool __stdcall fn_00707450(int a1, int a2, int a3, int a4) {
 extern "C" int __fastcall fn_00707950(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0xc0);
 }
+
+// [0x00707960] Branchless tiny leaf function (16 bytes) - sub_00707960
+extern "C" __declspec(naked) void fn_00707960() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x81 __asm _emit 0xD0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [ecx + 0xd0]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x04 // mov ecx, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x04 __asm _emit 0x88 // mov eax, dword ptr [eax + 4*ecx]
+        ret 0x4
+    }
+}
