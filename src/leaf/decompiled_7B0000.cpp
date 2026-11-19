@@ -10043,3 +10043,33 @@ extern "C" __declspec(naked) int __cdecl fn_007BEDA0(void* a1) {
         ret
     }
 }
+
+// [0x007BF2B0] sub_007BF2B0 (63 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BF2B0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, 0x465
+        mov eax, dword ptr [eax + 0x5c]
+        add eax, 0x11940
+        or ecx, -0x1
+L_7BF2C4:
+        mov dword ptr [eax - 0x38], ecx
+        mov dword ptr [eax - 0x30], ecx
+        mov dword ptr [eax - 0x28], ecx
+        mov dword ptr [eax - 0x20], ecx
+        mov dword ptr [eax - 0x18], ecx
+        mov dword ptr [eax - 0x10], ecx
+        mov dword ptr [eax - 0x8], ecx
+        mov dword ptr [eax], ecx
+        sub eax, 0x40
+        dec edx
+        jne L_7BF2C4
+        mov edx, 0x1
+L_7BF2E6:
+        mov dword ptr [eax], ecx
+        sub eax, 0x8
+        dec edx
+        jne L_7BF2E6
+        ret
+    }
+}
