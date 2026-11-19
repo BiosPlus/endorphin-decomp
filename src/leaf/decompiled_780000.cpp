@@ -8321,3 +8321,72 @@ extern "C" __declspec(naked) char* __fastcall fn_0078BD50(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00785550] sub_00785550 (141 bytes)
+extern "C" void ext_006C9F00();
+extern "C" void ext_006CA060();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006CAEF0();
+extern "C" void ext_00872828();
+extern "C" __declspec(naked) int __fastcall fn_00785550(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        mov ecx, edi
+        call ext_006CA6A0
+        test eax, eax
+        jne short L_nonzero
+        pop edi
+        or eax, -0x1
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    L_nonzero:
+        lea eax, [esp + 0x10]
+        mov ecx, edi
+        push eax
+        call ext_006CA6A0
+        dec eax
+        mov ecx, edi
+        push eax
+        call ext_006CA060
+        mov ecx, eax
+        call ext_006C9F00
+        mov edx, dword ptr [esi + 0x18]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x8], edx
+        mov edx, dword ptr [esi + 0x1c]
+        mov dword ptr [esp + 0x10], ecx
+        cmp edx, eax
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0xc], edx
+        jg short L_use_10
+        jl short L_use_08
+        mov eax, dword ptr [esi + 0x18]
+        cmp eax, ecx
+        jae short L_use_10
+    L_use_08:
+        lea eax, [esp + 0x8]
+        jmp short L_call_ef0
+    L_use_10:
+        lea eax, [esp + 0x10]
+    L_call_ef0:
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [eax + 0x4]
+        push 0x0
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_006CAEF0
+        call ext_00872828
+        pop edi
+        inc eax
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
