@@ -7776,3 +7776,66 @@ extern "C" __declspec(naked) void __cdecl fn_0086EA60(void* p, void* q, void* d)
         _emit 0x00
     }
 }
+
+// [0x0086BF80] sub_0086BF80 (148 bytes)
+extern "C" void ext_0086EE60();
+extern "C" void ext_0086F050();
+extern "C" void ext_0086F0A0();
+extern "C" void ext_0086F240();
+extern "C" void ext_0086F8A0();
+
+extern "C" __declspec(naked) void __cdecl fn_0086BF80(void) {
+    __asm {
+        sub esp, 0x154
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        push edi
+        push eax
+        call ext_0086F8A0
+        lea eax, [esp + 0x70]
+        lea ecx, [esp + 0xc]
+        add esp, 0x4
+        push eax
+        push ecx
+        call ext_0086F050
+        lea ecx, [esp + 0x24]
+        mov esi, dword ptr [esp + 0x168]
+        add esp, 0x8
+        lea eax, [esi + 0x52]
+        push ecx
+        push eax
+        call ext_0086F050
+        lea eax, [esp + 0xc4]
+        lea ecx, [esp + 0x114]
+        lea edx, [esp + 0x24]
+        add esp, 0x8
+        push eax
+        push ecx
+        lea eax, [esp + 0x74]
+        push edx
+        push eax
+        call ext_0086F240
+        mov edi, dword ptr [esp + 0x174]
+        lea ecx, [esp + 0xcc]
+        add esp, 0x10
+        push edi
+        push ecx
+        call ext_0086F0A0
+        add esp, 0x8
+        lea eax, [edi + 0x14]
+        push esi
+        push eax
+        add esi, 0x2a
+        push esi
+        push edi
+        call ext_0086EE60
+        add esp, 0x10
+        pop edi
+        pop esi
+        add esp, 0x154
+        ret
+    }
+}
