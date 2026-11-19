@@ -80,6 +80,7 @@ extern "C" __declspec(naked) void __cdecl fn_0085D510(void) {
     }
 }
 extern "C" int mem_00924214;
+extern "C" void __cdecl ext_008536D0(void* a, void* b, void* c);
 
 // [0x0085BEA0] sub_0085BEA0 (32 bytes)
 extern "C" void __cdecl ext_00859730(void* p);
@@ -4841,6 +4842,32 @@ extern "C" __declspec(naked) int __cdecl fn_00856F00(void* self) {
         mov dword ptr [esi], 0x100
         xor eax, eax
         pop esi
+        ret
+    }
+}
+
+// [0x00858A50] sub_00858A50 (46 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00858A50(void* a, void* b, void* c) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        jne arg1_ok
+        mov eax, 0xc9
+        ret
+    arg1_ok:
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        jne arg3_ok
+        mov eax, 0xc9
+        ret
+    arg3_ok:
+        mov edx, dword ptr [esp + 0x8]
+        push edx
+        push ecx
+        push eax
+        call ext_008536D0
+        add esp, 0xc
+        xor eax, eax
         ret
     }
 }
