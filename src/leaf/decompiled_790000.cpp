@@ -6646,3 +6646,40 @@ L_done:
         ret 0xc
     }
 }
+
+// [0x0079F2E0] sub_0079F2E0 (70 bytes)
+extern "C" int mem_00B61168;
+extern "C" int mem_00B61230;
+extern "C" int mem_00B60F58;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_0079F2E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B61168]
+        cmp eax, ecx
+        jne short L_next1
+        mov al, 0x1
+        ret 0x4
+    L_next1:
+        cmp eax, dword ptr [mem_00B61230]
+        jne short L_next2
+        mov al, 0x1
+        ret 0x4
+    L_next2:
+        cmp eax, dword ptr [mem_00B60F58]
+        jne short L_next3
+        mov al, 0x1
+        ret 0x4
+    L_next3:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne short L_next4
+        mov al, 0x1
+        ret 0x4
+    L_next4:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
