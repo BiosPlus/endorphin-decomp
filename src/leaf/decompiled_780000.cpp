@@ -241,10 +241,14 @@ extern "C" int mem_00B60B38;
 extern "C" int mem_00B60B3C;
 extern "C" int mem_00B60B30;
 extern "C" int mem_00925198;
+extern "C" int mem_00B608B8;
+extern "C" int mem_00B608C0;
+extern "C" int mem_00B608BC;
+extern "C" int mem_00B608C4;
 
-// [0x00787430] sub_00787430 (144 bytes)
-// Copies eight stack args into self->[0..0x1C]; ret 0x20. The block also holds two
-// linker-incremental thunks (jmp -> body at +0x50: copies _HUGE pair to globals;
+extern "C" int mem_00B608C0;
+extern "C" int mem_00B608BC;
+extern "C" int mem_00B608C4;
 // jmp -> body at +0x80: loads -_HUGE as double into a global), reproduced byte-for-byte.
 extern "C" __declspec(naked) void __fastcall fn_00787430(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
     __asm {
@@ -325,6 +329,7 @@ extern "C" __declspec(naked) void __fastcall fn_00787430(void* self, int edx_unu
         ret
     }
 }
+extern "C" int mem_009252AC;
 
 // [0x0078C3B0] sub_0078C3B0 (96 bytes)
 extern "C" void ext_006A5C62();
@@ -7126,5 +7131,38 @@ extern "C" __declspec(naked) int __fastcall fn_00783410(void* self, int edx_unus
 L_null:
         xor eax, eax
         ret 0x8
+    }
+}
+
+// [0x00783090] sub_00783090 (41 bytes)
+extern "C" void __cdecl fn_00783090() {
+    mem_00B608B8 = 0xb608b4;
+    mem_00B608C0 = 0xaaf39c;
+    mem_00B608BC = 0xb5e3f0;
+    mem_00B608C4 = 0;
+}
+
+// [0x00783510] sub_00783510 (43 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00783510(void* self, int edx_unused, void* dst) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_fail
+        mov eax, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push eax
+        push 1
+        push 1
+        push esi
+        call dword ptr [mem_009252AC]
+        mov al, byte ptr [esi]
+        add esp, 0x10
+        pop esi
+        ret 4
+    L_fail:
+        xor al, al
+        ret 4
     }
 }
