@@ -6466,3 +6466,40 @@ extern "C" __declspec(naked) void __cdecl fn_007AF310(void* dummy1, int* p1, int
         ret
     }
 }
+
+// [0x007AC210] sub_007AC210 (70 bytes)
+extern "C" int mem_00B61260;
+extern "C" int mem_00B61230;
+extern "C" int mem_00B60F58;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_007AC210(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B61260]
+        cmp eax, ecx
+        jne short L_next1
+        mov al, 0x1
+        ret 0x4
+    L_next1:
+        cmp eax, dword ptr [mem_00B61230]
+        jne short L_next2
+        mov al, 0x1
+        ret 0x4
+    L_next2:
+        cmp eax, dword ptr [mem_00B60F58]
+        jne short L_next3
+        mov al, 0x1
+        ret 0x4
+    L_next3:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne short L_next4
+        mov al, 0x1
+        ret 0x4
+    L_next4:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
