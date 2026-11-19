@@ -4288,3 +4288,71 @@ extern "C" __declspec(naked) void __fastcall fn_006E8B50(void* self) {
         ret
     }
 }
+
+// [0x006E37C0] sub_006E37C0 (176 bytes)
+extern "C" double mem_0092A270;
+extern "C" __declspec(naked) void __cdecl fn_006E37C0(double* dst, const double* a, const double* b, double t, unsigned int n) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x140
+        push esi
+        mov esi, dword ptr [ebp + 0x1c]
+        lea edx, [esp + 0xa4]
+        push edi
+        lea ecx, [esp + 8*esi + 0xa8]
+        lea eax, [esp + 0xa8]
+        cmp edx, ecx
+        jae L1
+        fld qword ptr [mem_0092A270]
+        mov edx, dword ptr [ebp + 0xc]
+        lea edi, [esp + 0xa8]
+        fsub qword ptr [ebp + 0x14]
+        sub edx, edi
+    L0:
+        fld st(0)
+        fmul qword ptr [edx + eax]
+        add eax, 0x8
+        cmp eax, ecx
+        fstp qword ptr [eax - 0x8]
+        jb L0
+        fstp st(0)
+    L1:
+        lea ecx, [esp + 8*esi + 0x8]
+        lea edx, [esp + 0x8]
+        cmp edx, ecx
+        lea eax, [esp + 0x8]
+        jae L3
+        mov edx, dword ptr [ebp + 0x10]
+        lea edi, [esp + 0x8]
+        sub edx, edi
+    L2:
+        fld qword ptr [ebp + 0x14]
+        fmul qword ptr [edx + eax]
+        add eax, 0x8
+        cmp eax, ecx
+        fstp qword ptr [eax - 0x8]
+        jb L2
+    L3:
+        mov ecx, dword ptr [ebp + 0x8]
+        lea edx, [ecx + 8*esi]
+        cmp ecx, edx
+        jae L5
+        xor eax, eax
+    L4:
+        fld qword ptr [esp + eax + 0x8]
+        fadd qword ptr [esp + eax + 0xa8]
+        add eax, 0x8
+        lea esi, [eax + ecx]
+        fstp qword ptr [eax + ecx - 0x8]
+        cmp esi, edx
+        jb L4
+    L5:
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
