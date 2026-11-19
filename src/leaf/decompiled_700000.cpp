@@ -236,6 +236,7 @@ extern "C" __declspec(naked) void __fastcall fn_0070BB80(void* self, int edx_unu
     }
 }
 extern "C" void ext_006FAD00();
+extern "C" void ext_006FAC10();
 
 // [0x0070BC20] sub_0070BC20 (80 bytes)
 extern "C" void ext_006C9810();
@@ -6974,5 +6975,66 @@ extern "C" __declspec(naked) void __fastcall fn_00709F10(void* self, int edx_unu
         mov dword ptr fs:[0x0], ecx
         add esp, 0x58
         ret 0x10
+    }
+}
+
+// [0x00707A10] sub_00707A10 (115 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00707A10(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebx, dword ptr [esp + 0x1c]
+        mov     ebp, dword ptr [esp + 0x18]
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     edi, dword ptr [esp + 0x28]
+        mov     eax, dword ptr [esi + 0x4c]
+        test    eax, eax
+        je      loc_707A63
+        mov     eax, dword ptr [eax]
+        mov     ecx, dword ptr [esi + 0x48]
+        cmp     eax, ecx
+        jne     loc_707A63
+        mov     eax, dword ptr [esi + 0x4c]
+        test    eax, eax
+        je      loc_707A47
+        mov     ecx, dword ptr [eax]
+        mov     edx, dword ptr [esi + 0x48]
+        cmp     ecx, edx
+        jne     loc_707A47
+        mov     ecx, dword ptr [eax + 0x4]
+        jmp     loc_707A49
+loc_707A47:
+        xor     ecx, ecx
+loc_707A49:
+        mov     eax, dword ptr [esp + 0x1c]
+        mov     edx, dword ptr [ecx]
+        push    edi
+        push    ebx
+        push    ebp
+        push    eax
+        mov     eax, dword ptr [esp + 0x28]
+        push    eax
+        mov     eax, dword ptr [esp + 0x28]
+        push    eax
+        call    dword ptr [edx + 0x128]
+loc_707A63:
+        mov     ecx, dword ptr [esp + 0x1c]
+        mov     edx, dword ptr [esp + 0x18]
+        mov     eax, dword ptr [esp + 0x14]
+        push    edi
+        push    ebx
+        push    ebp
+        push    ecx
+        push    edx
+        push    eax
+        mov     ecx, esi
+        call    ext_006FAC10
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x18
     }
 }
