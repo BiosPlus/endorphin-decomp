@@ -608,3 +608,31 @@ extern "C" __declspec(naked) void __cdecl fn_008106D0(void* arg0) {
         ret
     }
 }
+
+// [0x00810520] sub_00810520 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00810520() {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x0c]
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x10
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov eax, dword ptr [esp + 8]
+        push 0
+        push ecx
+        push edx
+        push eax
+        call ext_00810550
+        add esp, 0x14
+        ret
+    }
+}
