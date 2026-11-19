@@ -71,6 +71,7 @@ extern "C" __declspec(naked) int __cdecl fn_00867360(const char* s) {
     }
 }
 extern "C" int mem_00AC4A94;
+extern "C" void __cdecl fn_0086F000(int* ptr);
 
 // [0x0086B1C0] sub_0086B1C0 (58 bytes)
 extern "C" __declspec(naked) void __cdecl fn_0086B1C0(void* self) {
@@ -6980,5 +6981,43 @@ extern "C" __declspec(naked) void __cdecl fn_0086F8A0(void* p) {
         __asm _emit 0x00
         __asm _emit 0x00
         __asm _emit 0x00
+    }
+}
+
+// [0x0086F050] sub_0086F050 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F050(int* dst, const unsigned int* src) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov di, 0x4
+        push ebp
+        push esi
+        call fn_0086F000
+        mov edx, dword ptr [esp + 0x18]
+        add esp, 0x4
+    loop_start:
+        movsx eax, di
+        lea ebx, [2*edi]
+        lea eax, [edx + 4*eax]
+        add bx, 0xb
+        mov ecx, dword ptr [eax]
+        movsx ebp, bx
+        dec bx
+        and ecx, 0xffff
+        mov dword ptr [esi + 4*ebp], ecx
+        mov ecx, dword ptr [eax]
+        shr ecx, 0x10
+        movsx eax, bx
+        dec di
+        mov dword ptr [esi + 4*eax], ecx
+        jns loop_start
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        mov edi, edi
     }
 }
