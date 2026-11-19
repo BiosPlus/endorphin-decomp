@@ -6729,3 +6729,39 @@ extern "C" __declspec(naked) char* __cdecl fn_00868140(char* hay, char* needle) 
         mov edi, edi
     }
 }
+
+// [0x0086F0A0] sub_0086F0A0 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F0A0(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        xor si, si
+        push edi
+        mov edx, dword ptr [esp + 0x10]
+    loop_start:
+        lea eax, [2*esi + 0xa]
+        movsx edi, ax
+        lea eax, [ecx + 4*edi]
+        mov edi, dword ptr [ecx + 4*edi + 0x4]
+        mov eax, dword ptr [eax]
+        shl eax, 0x10
+        or edi, eax
+        movsx eax, si
+        inc si
+        mov dword ptr [edx + 4*eax], edi
+        movsx edi, si
+        cmp edi, 0x5
+        jb loop_start
+        pop edi
+        pop esi
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    }
+}
