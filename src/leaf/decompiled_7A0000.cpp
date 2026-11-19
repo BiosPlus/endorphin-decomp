@@ -357,8 +357,10 @@ extern "C" void ext_007AA510();
 extern "C" void ext_007B27D0();
 extern "C" void ext_007B3250();
 extern "C" int mem_00B61219;
+extern "C" void ext_007B2CD0();
+extern "C" void ext_007B3120();
 
-// [0x007A19E0] sub_007A19E0 (127 bytes)
+extern "C" void ext_007B3120();
 extern "C" __declspec(naked) void __fastcall fn_007A19E0(void* self) {
     __asm {
         push ecx
@@ -6022,5 +6024,82 @@ extern "C" __declspec(naked) void __cdecl fn_007AF800(void* self) {
         mov dword ptr [eax + 0x1c8], 0x7af310
         mov dword ptr [eax + 0xc], ecx
         ret
+    }
+}
+
+// [0x007A92B0] sub_007A92B0 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007A92B0(void** pp) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        je L_done
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_done
+        cmp dword ptr [eax], 0
+        je L_check8
+        push eax
+        call ext_007B2CD0
+        add esp, 4
+    L_check8:
+        mov eax, dword ptr [esi]
+        add eax, 8
+        cmp dword ptr [eax], 0
+        je L_checkC
+        push eax
+        call ext_007B3120
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L_checkC
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_done
+    L_checkC:
+        mov eax, dword ptr [esi]
+        add eax, 0xc
+        cmp dword ptr [eax], 0
+        je L_check10
+        push eax
+        call ext_007B3120
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L_check10
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_done
+    L_check10:
+        mov eax, dword ptr [esi]
+        add eax, 0x10
+        cmp dword ptr [eax], 0
+        je L_free
+        push eax
+        call ext_007B3120
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L_free
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_done
+    L_free:
+        mov eax, dword ptr [esi]
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 4
+        mov dword ptr [esi], 0
+    L_done:
+        pop esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
     }
 }
