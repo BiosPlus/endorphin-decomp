@@ -1273,3 +1273,26 @@ L_00705448:
         ret 0x4
     }
 }
+
+// [0x00705740] Tiny indirect/IAT call leaf (30 bytes) - sub_00705740
+extern "C" __declspec(naked) void fn_00705740() {
+    __asm {
+        push esi
+        push edi
+        __asm _emit 0x8B __asm _emit 0xF9 // mov edi, ecx
+        __asm _emit 0x8B __asm _emit 0xB7 __asm _emit 0xC0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov esi, dword ptr [edi + 0xc0]
+        dec esi
+        js L_0070575B
+L_0070574D:
+        __asm _emit 0x8B __asm _emit 0x07 // mov eax, dword ptr [edi]
+        push esi
+        __asm _emit 0x8B __asm _emit 0xCF // mov ecx, edi
+        call dword ptr [eax + 0xe8]
+        dec esi
+        jns L_0070574D
+L_0070575B:
+        pop edi
+        pop esi
+        ret
+    }
+}
