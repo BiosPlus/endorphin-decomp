@@ -1304,3 +1304,21 @@ extern "C" __declspec(naked) void __cdecl fn_007182F0(void) {
         ret
     }
 }
+
+// [0x0071E0C0] Identical-shape clone of 0x006BBA00 (36 bytes) - sub_0071E0C0
+extern "C" __declspec(naked) void __cdecl fn_0071E0C0(void) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5FE60]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5FE68]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5FE70]
+        ret
+    }
+}
+
