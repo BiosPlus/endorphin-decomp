@@ -752,3 +752,11 @@ extern "C" int __cdecl fn_006D8ED0(void) {
 extern "C" int __fastcall fn_006D91C0(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x10);
 }
+
+// [0x006D9450] Virtual dispatch / tail-call thunk (8 bytes) - sub_006D9450
+extern "C" __declspec(naked) void fn_006D9450() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x128]
+    }
+}
