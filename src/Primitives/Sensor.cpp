@@ -98,3 +98,96 @@ L_s25_bit0:
         ret 0xc
     }
 }
+
+// [0x0053D870] Primitives::Sensor::vfunc_28 (232 bytes)
+extern "C" void ext_0053D3C0();
+extern "C" int mem_00925414;
+extern "C" int mem_00925404;
+extern "C" int mem_009254CC;
+extern "C" int mem_00955A30;
+extern "C" int mem_00955D14;
+extern "C" int mem_00955D10;
+
+extern "C" __declspec(naked) void __fastcall fn_0053D870(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        test ecx, ecx
+        je L_s28_out
+        push edi
+        push 0x2
+        call ext_005B11D0
+        fld dword ptr [eax]
+        call ext_006A6DE0
+        mov ecx, esi
+        mov edi, eax
+        call ext_0053D3C0
+        call dword ptr [mem_00925414]
+        cmp edi, 0x5
+        ja L_s28_tail
+        jmp dword ptr [edi*4 + 0x0053d958]
+L_s28_c0:
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fld1
+        fstp dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955A30]
+        jmp short L_s28_rot
+L_s28_c1:
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld1
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955D14]
+        jmp short L_s28_rot
+L_s28_c3:
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fld1
+        fstp dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955D14]
+        jmp short L_s28_rot
+L_s28_c4:
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld1
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955A30]
+        jmp short L_s28_rot
+L_s28_c5:
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fld1
+        fstp dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955D10]
+L_s28_rot:
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254CC]
+L_s28_tail:
+        mov ecx, dword ptr [esi + 0x3c]
+        test ecx, ecx
+        pop edi
+        je short L_s28_pop
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [eax + 0x58]
+        push edx
+        call eax
+L_s28_pop:
+        call dword ptr [mem_00925404]
+L_s28_out:
+        pop esi
+        ret 0x4
+    }
+}
