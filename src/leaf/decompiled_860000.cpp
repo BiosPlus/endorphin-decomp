@@ -6892,3 +6892,48 @@ extern "C" __declspec(naked) int __cdecl fn_0086AE50(void) {
         ret
     }
 }
+
+// [0x00860330] sub_00860330 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00860330(int a1, int a2, int* a3, int* a4) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, 0x1
+        jge L_hi1
+        mov esi, 0x1
+    L_hi1:
+        cmp esi, 0x1e
+        jle L_a
+        mov esi, 0x1e
+    L_a:
+        mov eax, dword ptr [esp + 0x8]
+        cmp eax, 0x1
+        jge L_b
+        mov eax, 0x1
+    L_b:
+        cmp eax, 0x3c
+        jle L_c
+        mov eax, 0x3c
+    L_c:
+        cmp esi, eax
+        jle L_d
+        mov eax, esi
+    L_d:
+        cdq
+        idiv esi
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [ecx], esi
+        pop esi
+        mov dword ptr [edx], eax
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    }
+}
