@@ -9343,3 +9343,31 @@ extern "C" __declspec(naked) void __cdecl fn_0080BD90(void* p) {
         ret
     }
 }
+
+// [0x0080F910] sub_0080F910 (47 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080F910(void* s, char c) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        mov edx, dword ptr [eax + 0x10]
+        mov ebx, dword ptr [eax + 0x18]
+        mov ecx, dword ptr [eax + 0x8]
+        cmp edx, ebx
+        jge skip
+        mov edx, dword ptr [ecx]
+        mov bl, byte ptr [esp + 0xc]
+        mov byte ptr [edx], bl
+        mov ebx, dword ptr [ecx]
+        inc ebx
+        mov dword ptr [ecx], ebx
+        mov edx, dword ptr [eax + 0x14]
+        inc edx
+        mov dword ptr [eax + 0x14], edx
+    skip:
+        mov ecx, dword ptr [eax + 0x10]
+        pop ebx
+        inc ecx
+        mov dword ptr [eax + 0x10], ecx
+        ret
+    }
+}
