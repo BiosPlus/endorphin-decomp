@@ -4996,3 +4996,14 @@ extern "C" __declspec(naked) void* __stdcall fn_0085C430(unsigned int a1) {
         ret 0x4
     }
 }
+
+// [0x008539E0] sub_008539E0 (61 bytes)
+extern "C" void __cdecl fn_008539E0(unsigned int* ctx) {
+    ((void (__cdecl*)(void*, int, unsigned int))ext_008692F0)(ctx, 0, 0x58);
+    ctx[0] = 0x67452301;
+    ctx[1] = 0xefcdab89;
+    ctx[2] = 0x98badcfe;
+    ctx[3] = 0x10325476;
+    ctx[5] = 0;
+    ctx[4] = 0;
+}
