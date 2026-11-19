@@ -32,13 +32,20 @@ extern "C" void ext_007873F0();
 extern "C" void __cdecl fn_006C9520() {
     ext_006C9960(0, 0, (int)0xaa8d10);
 }
+extern "C" int mem_00925284;
+extern "C" int mem_00B5D5F0;
+extern "C" int mem_00B5D5F4;
+extern "C" int mem_00B5D5F8;
+extern "C" int mem_00B5D5FC;
+extern "C" int mem_00B5D600;
+extern "C" int mem_00B5D604;
 
-// [0x006C9530] sub_006C9530 (15 bytes)
-extern "C" void __cdecl fn_006C9530() {
-    ext_006C9960(0, 0, (int)0xaa8d1c);
-}
-
-// [0x006C9540] sub_006C9540 (15 bytes)
+extern "C" int mem_00B5D5F0;
+extern "C" int mem_00B5D5F4;
+extern "C" int mem_00B5D5F8;
+extern "C" int mem_00B5D5FC;
+extern "C" int mem_00B5D600;
+extern "C" int mem_00B5D604;
 extern "C" void __cdecl fn_006C9540() {
     ext_006C9960(0, 0, (int)0xaa8d2c);
 }
@@ -6129,4 +6136,24 @@ extern "C" void __cdecl fn_006C8F50() {
     *(double*)&mem_00B5D648 = -*p;
     *(double*)&mem_00B5D650 = -*p;
     *(double*)&mem_00B5D658 = -*p;
+}
+
+// [0x006C8E60] sub_006C8E60 (57 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006C8E60() {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [mem_00B5D5F0], ecx
+        mov dword ptr [mem_00B5D5F4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [mem_00B5D5F8], ecx
+        mov dword ptr [mem_00B5D5FC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [mem_00B5D600], ecx
+        mov dword ptr [mem_00B5D604], edx
+        ret
+    }
 }
