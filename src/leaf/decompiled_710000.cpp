@@ -95,8 +95,10 @@ extern "C" __declspec(naked) void __fastcall fn_0071B010(void* self, int edx_unu
         ret 0x4
     }
 }
+extern "C" void ext_006FB690();
+extern "C" void ext_006FB6B0();
 
-// [0x0071B040] sub_0071B040 (16 bytes)
+extern "C" void ext_006FB6B0();
 extern "C" __declspec(naked) void __fastcall fn_0071B040(void* self, int edx_unused, int a1) {
     __asm {
         mov eax, dword ptr [esp + 0x4]
@@ -6455,6 +6457,39 @@ loc_fallback:
         push ecx
         mov ecx, esi
         call ext_006FC100
+        and eax, 0xff
+        pop esi
+        ret 0x8
+    }
+}
+
+// [0x00712780] sub_00712780 (72 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00712780(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0xd0]
+        mov al, byte ptr [esi + 0x34]
+        push 0x0
+        test al, 0x1
+        je label_else
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006FB690
+        and eax, 0xff
+        pop esi
+        ret 0x8
+    label_else:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006FB6B0
         and eax, 0xff
         pop esi
         ret 0x8
