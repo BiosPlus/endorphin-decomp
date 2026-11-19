@@ -1531,3 +1531,8 @@ extern "C" __declspec(naked) void fn_006C0DA0() {
         ret 0x8
     }
 }
+
+// [0x006C0DC0] Double field getter (7 bytes) - sub_006C0DC0
+extern "C" double __fastcall fn_006C0DC0(void* self) {
+    return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0xfc8);
+}
