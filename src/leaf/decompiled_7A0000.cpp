@@ -6433,3 +6433,36 @@ extern "C" __declspec(naked) void __fastcall fn_007AA7F0(void* self) {
         ret 0x4
     }
 }
+
+// [0x007AF310] sub_007AF310 (65 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AF310(void* dummy1, int* p1, int* p2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        cmp dword ptr [ecx], 0x1
+        jge L1
+        mov dword ptr [ecx], 0x100
+    L1:
+        mov edx, dword ptr [esp + 0xc]
+        cmp dword ptr [edx], 0x1
+        jge L2
+        mov dword ptr [edx], 0x100
+    L2:
+        mov eax, dword ptr [ecx]
+        test al, 0xf
+        je L3
+        add eax, 0xf
+        shr eax, 0x4
+        shl eax, 0x4
+        mov dword ptr [ecx], eax
+    L3:
+        mov eax, dword ptr [edx]
+        test al, 0xf
+        je L4
+        add eax, 0xf
+        shr eax, 0x4
+        shl eax, 0x4
+        mov dword ptr [edx], eax
+    L4:
+        ret
+    }
+}
