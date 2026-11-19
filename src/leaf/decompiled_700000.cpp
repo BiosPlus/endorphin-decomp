@@ -7424,3 +7424,78 @@ loc_701dc3:
         ret 0x1c
     }
 }
+
+// [0x00704A70] sub_00704A70 (143 bytes)
+// Logic: buf = self->[0x81c]; if (!buf) buf = malloc(strlen(src)+1);
+//        else if (strlen(buf) < strlen(src)) buf = realloc(buf, strlen(src)+1);
+//        store buf (only on malloc/realloc paths); copy src incl. NUL into buf.
+extern "C" int mem_00925208;
+extern "C" int mem_00925290;
+extern "C" __declspec(naked) void __fastcall fn_00704A70(void* self, int edx_unused, const char* src) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        push edi
+        mov edx, dword ptr [ebx + 0x81c]
+        test edx, edx
+        jne fn70_nonnull
+        mov esi, dword ptr [esp + 0x10]
+        or ecx, -1
+        mov edi, esi
+        xor eax, eax
+        repne scasb
+        not ecx
+        push ecx
+        call dword ptr [mem_00925208]
+        add esp, 4
+        jmp fn70_store
+fn70_nonnull:
+        mov edi, edx
+        or ecx, -1
+        xor eax, eax
+        mov esi, dword ptr [esp + 0x10]
+        repne scasb
+        not ecx
+        dec ecx
+        push ebp
+        mov ebp, ecx
+        mov edi, esi
+        or ecx, -1
+        repne scasb
+        not ecx
+        dec ecx
+        cmp ebp, ecx
+        pop ebp
+        jae fn70_copy
+        mov edi, esi
+        or ecx, -1
+        repne scasb
+        not ecx
+        push ecx
+        push edx
+        call dword ptr [mem_00925290]
+        add esp, 8
+fn70_store:
+        mov dword ptr [ebx + 0x81c], eax
+fn70_copy:
+        mov edi, esi
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, dword ptr [ebx + 0x81c]
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
