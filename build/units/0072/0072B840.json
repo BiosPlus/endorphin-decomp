@@ -11,5 +11,6 @@
     "0x0072B841",
     "0x0072B846"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
