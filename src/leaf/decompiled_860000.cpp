@@ -7062,3 +7062,53 @@ extern "C" __declspec(naked) void __cdecl fn_0086C180(void) {
         ret
     }
 }
+
+// [0x0086A1E0] sub_0086A1E0 (93 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_0086A1E0(unsigned int* out, const unsigned int* in, unsigned int shift, unsigned int count) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        xor eax, eax
+        cmp esi, 0x20
+        jae done
+        mov ecx, dword ptr [esp + 0x14]
+        test ecx, ecx
+        je done
+        mov ecx, 0x20
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        sub ecx, esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x1c], ecx
+    loop_top:
+        mov edx, dword ptr [edi]
+        mov ecx, esi
+        mov ebp, edx
+        add edi, 0x4
+        shl ebp, cl
+        add ebx, 0x4
+        or ebp, eax
+        mov dword ptr [ebx - 0x4], ebp
+        test esi, esi
+        je zero_carry
+        mov ecx, dword ptr [esp + 0x1c]
+        shr edx, cl
+        mov eax, edx
+        jmp next
+    zero_carry:
+        xor eax, eax
+    next:
+        mov ecx, dword ptr [esp + 0x20]
+        dec ecx
+        mov dword ptr [esp + 0x20], ecx
+        jne loop_top
+        pop edi
+        pop ebp
+        pop ebx
+    done:
+        pop esi
+        ret
+    }
+}
