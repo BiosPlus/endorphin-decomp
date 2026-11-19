@@ -7090,3 +7090,56 @@ L_end:
         ret
     }
 }
+
+// [0x007966D0] sub_007966D0 (110 bytes)
+extern "C" void ext_00796740();
+extern "C" __declspec(naked) void __fastcall fn_007966D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x2c]
+        test eax, eax
+        jne L_end
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esi + 0x4c]
+        cmp eax, 1
+        mov eax, dword ptr [esi + 0x14]
+        push edi
+        mov edi, dword ptr [esi + 0x1c]
+        push eax
+        je L_one
+        mov edx, dword ptr [esi + 0x268]
+        add ecx, eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_00796740
+        mov ecx, eax
+        inc edi
+        dec ecx
+        mov dword ptr [esi + 0x270], eax
+        imul ecx, dword ptr [esi + 0x1c]
+        lea eax, [ecx + edi]
+        pop edi
+        mov dword ptr [esi + 0x2c], eax
+        pop esi
+        ret
+L_one:
+        lea edx, [ecx + 2*eax - 0x1]
+        mov eax, dword ptr [esi + 0x268]
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_00796740
+        mov ecx, eax
+        mov dword ptr [esi + 0x270], eax
+        dec ecx
+        imul ecx, dword ptr [esi + 0x1c]
+        lea eax, [ecx + edi]
+        pop edi
+        mov dword ptr [esi + 0x2c], eax
+L_end:
+        pop esi
+        ret
+    }
+}
