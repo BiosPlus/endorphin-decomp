@@ -171922,3 +171922,25 @@ extern "C" __declspec(naked) void __cdecl fn_004D8820(void) {
         call ext_0046C4E0
     }
 }
+
+// [0x005B2620] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_5 (55 bytes)
+extern "C" void ext_005B1220();
+extern "C" __declspec(naked) void __cdecl fn_005B2620(void) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 0x4]
+        push eax
+        call ext_005B1220
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call ext_0046C4E0
+    }
+}
