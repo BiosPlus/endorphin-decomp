@@ -8105,3 +8105,14 @@ extern "C" __declspec(naked) __int64 __stdcall fn_006DADA0(int a1) {
         ret 0x4
     }
 }
+
+// [0x006D8D00] sub_006D8D00 (63 bytes)
+extern "C" void __fastcall fn_006D8D00(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    char* p = (char*)self;
+    *(int*)(p + 0x270) = a1;
+    *(int*)(p + 0x274) = a2;
+    *(int*)(p + 0x278) = a3;
+    *(int*)(p + 0x27c) = a4;
+    *(int*)(p + 0x280) = a5;
+    *(int*)(p + 0x284) = a6;
+}
