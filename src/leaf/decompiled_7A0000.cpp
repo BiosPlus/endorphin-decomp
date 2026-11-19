@@ -809,6 +809,7 @@ extern "C" __declspec(naked) void __cdecl fn_007A65C0(void* self) {
         ret
     }
 }
+extern "C" unsigned char mem_00998A98[256];
 
 // [0x007ADD50] sub_007ADD50 (159 bytes)
 extern "C" void ext_007AD660();
@@ -7723,6 +7724,76 @@ extern "C" __declspec(naked) void __cdecl fn_007A24A0(void** pp) {
         pop edi
     done:
         pop esi
+        ret
+    }
+}
+
+// [0x007AF0C0] sub_007AF0C0 (192 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AF0C0(unsigned char* buf, unsigned int len) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        cmp ecx, 0x8
+        jbe L_tail_setup
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        lea esi, [ecx - 0x1]
+        shr esi, 0x3
+    L_unroll:
+        xor edx, edx
+        sub ecx, 0x8
+        mov dl, byte ptr [eax]
+        add eax, 0x8
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x8], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x7]
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x7], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x6]
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x6], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x5]
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x5], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x4]
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x4], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x3]
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x3], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x2]
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x2], dl
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x1]
+        dec esi
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x1], dl
+        jne L_unroll
+        pop esi
+        jmp L_tail
+    L_tail_setup:
+        mov eax, dword ptr [esp + 0x4]
+    L_tail:
+        mov edx, ecx
+        dec ecx
+        test edx, edx
+        jbe L_done
+        inc ecx
+    L_tail_loop:
+        xor edx, edx
+        mov dl, byte ptr [eax]
+        inc eax
+        dec ecx
+        mov dl, byte ptr [edx + mem_00998A98]
+        mov byte ptr [eax - 0x1], dl
+        jne L_tail_loop
+    L_done:
         ret
     }
 }
