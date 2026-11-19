@@ -13,5 +13,7 @@
     "0x0080F790",
     "0x0080F79C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-19T15:12:50Z"
 }
