@@ -8238,3 +8238,86 @@ extern "C" __declspec(naked) void __fastcall fn_0078D7A0(void* self) {
         ret
     }
 }
+
+// [0x0078BD50] sub_0078BD50 (135 bytes)
+extern "C" __declspec(naked) char* __fastcall fn_0078BD50(void* self, int edx_unused, char* buf, int maxLen) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor edi, edi
+        test eax, eax
+        mov dword ptr [esp + 0x10], ecx
+        jg short L_gt_zero
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_gt_zero:
+        cmp eax, 0x1
+        jne short L_gt_one
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        mov byte ptr [eax], 0x0
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_gt_one:
+        mov ebx, dword ptr [esp + 0x18]
+        lea ebp, [eax - 0x1]
+        test ebp, ebp
+        jle short L_done_loop
+        mov esi, ebx
+        jmp short L_loop_body
+    L_loop_top:
+        mov ecx, dword ptr [esp + 0x10]
+    L_loop_body:
+        mov eax, dword ptr [ecx]
+        push 0x1
+        push esi
+        call dword ptr [eax + 0x14]
+        cmp eax, 0x1
+        jne short L_read_fail
+        cmp byte ptr [esi], 0xa
+        je short L_newline
+        inc edi
+        inc esi
+        cmp edi, ebp
+        jl short L_loop_top
+    L_done_loop:
+        mov byte ptr [edi + ebx], 0x0
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_read_fail:
+        mov byte ptr [edi + ebx], 0x0
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_newline:
+        mov byte ptr [edi + ebx + 0x1], 0x0
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
