@@ -7565,3 +7565,85 @@ after_branch:
         ret 0x10
     }
 }
+
+// [0x00705640] sub_00705640 (146 bytes)
+extern "C" void ext_006FBC50();
+extern "C" void ext_006FBC90();
+extern "C" void ext_006FBCE0();
+extern "C" __declspec(naked) void __fastcall fn_00705640(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov ebx, dword ptr [esi + 0xc0]
+        dec ebx
+        js L_after_loop1
+L_loop1:
+        mov eax, dword ptr [esi + 0xd0]
+        mov edi, dword ptr [eax + 4*ebx]
+        mov ecx, edi
+        call ext_006FBC90
+        mov ecx, edi
+        call ext_006FBCE0
+        dec ebx
+        jns L_loop1
+L_after_loop1:
+        mov ecx, esi
+        call ext_006FBC90
+        mov edi, dword ptr [esi + 0x18]
+        dec edi
+        js L_done
+L_loop2:
+        mov ebx, dword ptr [esi + 0x14]
+        mov edx, dword ptr [esi + 0x10]
+        mov eax, edi
+        add eax, ebx
+        lea ecx, [eax + 2*eax]
+        mov eax, dword ptr [edx + 4*ecx + 0x4]
+        test eax, eax
+        lea ecx, [edx + 4*ecx]
+        je L_null1
+        mov edx, dword ptr [eax]
+        mov ebx, dword ptr [ecx]
+        cmp edx, ebx
+        jne L_null1
+        mov eax, dword ptr [eax + 0x4]
+        jmp L_have1
+L_null1:
+        xor eax, eax
+L_have1:
+        mov ecx, dword ptr [esi + 0x4c]
+        mov edx, dword ptr [esi + 0x48]
+        test ecx, ecx
+        je L_null2
+        cmp dword ptr [ecx], edx
+        jne L_null2
+        mov ecx, dword ptr [ecx + 0x4]
+        jmp L_have2
+L_null2:
+        xor ecx, ecx
+L_have2:
+        cmp eax, ecx
+        je L_skip
+        push eax
+        mov ecx, esi
+        call ext_006FBC50
+L_skip:
+        mov eax, dword ptr [esi + 0x18]
+        cmp edi, eax
+        jg L_gt
+        dec edi
+        jmp L_adj
+L_gt:
+        lea edi, [eax - 1]
+L_adj:
+        test edi, edi
+        jge L_loop2
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
