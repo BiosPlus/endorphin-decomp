@@ -11136,3 +11136,15 @@ extern "C" __declspec(naked) void __cdecl fn_006BBA00(void) {
         ret
     }
 }
+
+// [0x006BE9A0] sub_006BE9A0 (36 bytes)
+extern "C" int mem_00925284;
+extern "C" double mem_00B5D488;
+extern "C" double mem_00B5D490;
+extern "C" double mem_00B5D498;
+
+extern "C" void __cdecl fn_006BE9A0() {
+    mem_00B5D488 = -*(double*)mem_00925284;
+    mem_00B5D490 = -*(double*)mem_00925284;
+    mem_00B5D498 = -*(double*)mem_00925284;
+}
