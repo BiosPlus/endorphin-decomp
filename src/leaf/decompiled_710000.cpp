@@ -54,8 +54,10 @@ extern "C" bool __fastcall fn_00712150(void* self) {
 }
 extern "C" void ext_006A6C87();
 extern "C" void ext_006B9D80();
+extern "C" void ext_006FA030();
+extern "C" void ext_00710F10();
 
-// [0x00714910] sub_00714910 (16 bytes)
+extern "C" void ext_00710F10();
 extern "C" void ext_007873F0();
 
 extern "C" __declspec(naked) void __fastcall fn_00714910(void* self, int edx_unused, int a1) {
@@ -5686,4 +5688,20 @@ extern "C" bool __fastcall fn_00713490(void* self, void* dummy_edx, unsigned int
     arg[5] = 0;
     arg[7] = 0;
     return true;
+}
+
+// [0x007111D0] sub_007111D0 (33 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_007111D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006FA030
+        lea ecx, [esi + 0x40]
+        call ext_00710F10
+        mov dword ptr [esi], 0x995f50
+        mov dword ptr [esi + 0x78], 0
+        mov eax, esi
+        pop esi
+        ret
+    }
 }
