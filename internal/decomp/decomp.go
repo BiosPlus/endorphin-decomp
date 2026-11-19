@@ -42,6 +42,11 @@ type UnitEntry struct {
 	MatchedAt   string   `json:"matched_at,omitempty"`
 }
 
+// ImageSymClassLabel is the COFF storage class of a code label. MSVC emits one per switch case ($LN<n>);
+// they mark positions inside a function and must never be treated as function boundaries. (The jump
+// table itself gets a static $LN symbol, which correctly ends the function's code.)
+const ImageSymClassLabel = 6
+
 // BaseClassInfo describes a base class and its offset in a derived class.
 type BaseClassInfo struct {
 	DemangledName string `json:"demangled_name"`

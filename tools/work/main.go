@@ -791,7 +791,9 @@ func extractObjFunctions(objPath string) (map[string]ObjFunc, error) {
 		if sym.SectionNumber <= 0 || int(sym.SectionNumber) > len(coff.Sections) {
 			continue
 		}
-		if strings.HasPrefix(sym.Name, ".") {
+		// Section names are not functions, and neither are code labels (IMAGE_SYM_CLASS_LABEL): MSVC emits
+		// one per switch case ($LN6...), which would otherwise cut the function off at its first case.
+		if strings.HasPrefix(sym.Name, ".") || sym.StorageClass == decomp.ImageSymClassLabel {
 			continue
 		}
 		symsBySec[sym.SectionNumber] = append(symsBySec[sym.SectionNumber], secSym{

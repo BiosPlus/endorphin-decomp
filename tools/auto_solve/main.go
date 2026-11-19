@@ -1219,7 +1219,8 @@ func compileCppToObjFuncs(cppPath string) (map[string]objFunc, error) {
 		if sym.SectionNumber <= 0 || int(sym.SectionNumber) > len(coff.Sections) {
 			continue
 		}
-		if strings.HasPrefix(sym.Name, ".") {
+		// Section names and code labels ($LN switch-case labels, IMAGE_SYM_CLASS_LABEL) are not functions.
+		if strings.HasPrefix(sym.Name, ".") || sym.StorageClass == decomp.ImageSymClassLabel {
 			continue
 		}
 		symsBySec[sym.SectionNumber] = append(symsBySec[sym.SectionNumber], secSym{

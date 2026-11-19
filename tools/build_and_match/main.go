@@ -129,8 +129,10 @@ func compileAndExtractObjFunctions(cppPath string) (map[string]ObjFunc, error) {
 		if sym.SectionNumber <= 0 || int(sym.SectionNumber) > len(coff.Sections) {
 			continue
 		}
-		// Skip section-name symbols (StorageClass == 3 and Value == 0 and Name starts with .text)
-		if strings.HasPrefix(sym.Name, ".") {
+		// Skip section-name symbols (StorageClass == 3 and Value == 0 and Name starts with .text), and code
+		// labels (IMAGE_SYM_CLASS_LABEL): MSVC emits one per switch case ($LN6...), which would otherwise cut
+		// the function off at its first case.
+		if strings.HasPrefix(sym.Name, ".") || sym.StorageClass == decomp.ImageSymClassLabel {
 			continue
 		}
 		symsBySec[sym.SectionNumber] = append(symsBySec[sym.SectionNumber], secSym{
