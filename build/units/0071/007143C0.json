@@ -11,5 +11,6 @@
     "0x007143C1",
     "0x007143C6"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
