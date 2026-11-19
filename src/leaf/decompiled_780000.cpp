@@ -8485,3 +8485,70 @@ extern "C" __declspec(naked) void __fastcall fn_007831E0(void* self) {
         ret
     }
 }
+
+// [0x00784570] sub_00784570 (165 bytes)
+extern "C" int mem_00B60930;
+extern "C" int mem_00B60934;
+extern "C" int mem_00B60938;
+extern "C" int mem_00B6093C;
+extern "C" int mem_00B60940;
+extern "C" int mem_00B60944;
+extern "C" int mem_00B60948;
+extern "C" int mem_00B6094C;
+extern "C" int mem_00B60950;
+extern "C" int mem_00B60954;
+extern "C" int mem_00B60958;
+extern "C" int mem_00B6095C;
+extern "C" int mem_00B60960;
+extern "C" int mem_00B60964;
+extern "C" int mem_00B60968;
+extern "C" int mem_00B6096C;
+extern "C" int mem_00B60970;
+extern "C" int mem_00B60974;
+extern "C" int mem_00B60978;
+extern "C" int mem_00B6097C;
+extern "C" int mem_00B60980;
+extern "C" int mem_00B60984;
+extern "C" int mem_00B60988;
+extern "C" int mem_00B60990;
+extern "C" int mem_00B60994;
+extern "C" int mem_00B60998;
+extern "C" int mem_00B6099C;
+extern "C" int mem_00B609A0;
+extern "C" int mem_00B609A4;
+extern "C" __declspec(naked) void __fastcall fn_00784570(void* self) {
+    __asm {
+        xor eax, eax
+        mov ecx, 0x1
+        mov dword ptr [mem_00B60930], eax
+        mov dword ptr [mem_00B60934], eax
+        mov dword ptr [mem_00B60938], eax
+        mov dword ptr [mem_00B6093C], eax
+        mov dword ptr [mem_00B60940], eax
+        mov dword ptr [mem_00B60944], eax
+        mov dword ptr [mem_00B60948], eax
+        mov dword ptr [mem_00B6094C], eax
+        mov dword ptr [mem_00B60950], eax
+        mov dword ptr [mem_00B60954], eax
+        mov dword ptr [mem_00B60958], eax
+        mov dword ptr [mem_00B6095C], eax
+        mov dword ptr [mem_00B60960], eax
+        mov dword ptr [mem_00B60964], eax
+        mov dword ptr [mem_00B60968], eax
+        mov dword ptr [mem_00B6096C], eax
+        mov dword ptr [mem_00B60970], eax
+        mov dword ptr [mem_00B60974], 0xffffffff
+        mov dword ptr [mem_00B60978], eax
+        mov dword ptr [mem_00B6097C], ecx
+        mov dword ptr [mem_00B60980], ecx
+        mov dword ptr [mem_00B60984], eax
+        mov dword ptr [mem_00B60988], eax
+        mov dword ptr [mem_00B60990], eax
+        mov dword ptr [mem_00B60994], eax
+        mov byte ptr [mem_00B60998], al
+        mov dword ptr [mem_00B6099C], 0xff
+        mov dword ptr [mem_00B609A0], eax
+        mov byte ptr [mem_00B609A4], al
+        ret
+    }
+}
