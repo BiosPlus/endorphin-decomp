@@ -7833,3 +7833,88 @@ extern "C" __declspec(naked) void* __fastcall fn_006C3640(void* self, int edx_un
         ret 0ch
     }
 }
+
+// [0x006CA140] sub_006CA140 (239 bytes)
+extern "C" void ext_006C9A40();
+extern "C" void ext_006CE060();
+extern "C" void ext_006D03D0();
+extern "C" void ext_006D2130();
+extern "C" void ext_006DAE00();
+
+extern "C" __declspec(naked) void __fastcall fn_006CA140(void* self) {
+    __asm {
+        push -1
+        push 0x008b8e49
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        mov eax, 1
+        push edi
+        mov [esi + 0x14], ebx
+        mov [esi + 0x18], ebx
+        mov byte ptr [esi + 0x1c], 1
+        mov byte ptr [esi + 0x1d], 1
+        mov [esi + 0x20], ebx
+        mov [esi + 0x24], ebx
+        mov [esi + 0x28], ebx
+        mov dword ptr [esi + 0x2c], 0xffffffff
+        mov [esi + 0x30], eax
+        mov [esi + 0x34], ebx
+        mov [esi + 0x38], eax
+        mov [esi + 0x3c], ebx
+        mov [esi + 0x40], ebx
+        lea edi, [esi + 0x54]
+        lea ebp, [esi + 0x68]
+        mov [esi + 0x48], ebx
+        push 4
+        mov [esi + 0x4c], ebx
+        push 0x10
+        mov ecx, ebp
+        mov [esp + 0x18], esi
+        mov dword ptr [edi], 0x200
+        mov byte ptr [edi + 4], bl
+        call ext_006D2130
+        lea eax, [ebp + 0x10]
+        mov [ebp + 0x14], eax
+        lea ebp, [esi + 0x80]
+        push 4
+        push 0x10
+        mov ecx, ebp
+        mov [esp + 0x24], ebx
+        call ext_006D2130
+        lea ecx, [ebp + 0x10]
+        mov [ebp + 0x14], ecx
+        mov eax, 0x3f800000
+        mov ecx, esi
+        mov byte ptr [esp + 0x1c], 1
+        mov dword ptr [esi], 0x993820
+        mov [esi + 0x8], eax
+        mov [esi + 0xc], eax
+        mov [esi + 0x10], eax
+        mov [esi + 0x44], ebx
+        call ext_006D03D0
+        mov ecx, edi
+        call ext_006C9A40
+        mov ecx, esi
+        call ext_006CE060
+        push 0x3ee4f8b5
+        push 0x88e368f1
+        mov ecx, 0xb5d760
+        call ext_006DAE00
+        mov ecx, [esp + 0x14]
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
