@@ -11,5 +11,6 @@
     "0x007137A1",
     "0x007137A6"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
