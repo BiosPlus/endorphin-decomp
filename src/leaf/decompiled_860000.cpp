@@ -7283,3 +7283,67 @@ extern "C" __declspec(naked) int __cdecl fn_008685C0(void) {
         ret
     }
 }
+
+// [0x00865960] sub_00865960 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00865960(unsigned int* s, const unsigned int* p) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        push edi
+        mov eax, dword ptr [edx]
+        push ebp
+        mov esi, dword ptr [esp + 0x14]
+        add edx, 0x8
+        mov ebp, 0xc
+        add dword ptr [esi + 0x4], eax
+        mov ecx, dword ptr [edx - 0x4]
+        add dword ptr [esi], ecx
+    loop_top:
+        mov ebx, dword ptr [esi]
+        mov edi, dword ptr [esi + 0x4]
+        xor edi, ebx
+        mov cl, 0x20
+        shr ebx, 0x4
+        mov eax, edi
+        and bl, 0x1f
+        add edx, 0x8
+        sub cl, bl
+        shr eax, cl
+        mov cl, bl
+        shl edi, cl
+        or eax, edi
+        mov cl, 0x20
+        sub eax, dword ptr [edx - 0x8]
+        mov dword ptr [esi + 0x4], eax
+        mov edi, dword ptr [esi]
+        xor edi, eax
+        shr eax, 0x7
+        mov ebx, edi
+        and al, 0x1f
+        sub cl, al
+        shr ebx, cl
+        mov cl, al
+        shl edi, cl
+        or ebx, edi
+        add ebx, dword ptr [edx - 0x4]
+        dec ebp
+        mov dword ptr [esi], ebx
+        jne loop_top
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
