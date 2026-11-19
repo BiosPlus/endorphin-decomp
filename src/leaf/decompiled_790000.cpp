@@ -6928,3 +6928,47 @@ extern "C" __declspec(naked) int __cdecl fn_007985F0(void* self, int arg1) {
         ret
     }
 }
+
+// [0x0079AC80] sub_0079AC80 (99 bytes)
+extern "C" void ext_007B1980();
+extern "C" __declspec(naked) void __fastcall fn_0079AC80(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        mov al, byte ptr [ecx + 0x1]
+        cmp al, 0x75
+        je short L_case_u
+        test al, al
+        je short L_default
+        cmp byte ptr [ecx + 0x2], 0x75
+        jne short L_default
+L_case_u:
+        mov edx, 0x6d80a0
+        mov eax, 0x6fa8e0
+        jmp short L_common
+L_default:
+        mov edx, 0x79ae40
+        mov eax, 0x79add0
+L_common:
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edx
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push 0x79adc0
+        push 0x79ada0
+        push 0x79ad50
+        push 0x79ad20
+        push 0x79acf0
+        push esi
+        push ecx
+        push eax
+        call ext_007B1980
+        add esp, 0x28
+        test eax, eax
+        je short L_done
+        mov dword ptr [eax + 0x4], esi
+L_done:
+        pop esi
+        ret
+    }
+}
