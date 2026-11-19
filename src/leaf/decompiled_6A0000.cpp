@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_6A0000.cpp
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A7B00();
 
-// [0x006AD920] sub_006AD920 (18 bytes)
+extern "C" void ext_006A7B00();
 extern "C" void ext_0053A700();
 
 typedef void (__fastcall *SetterFn006AD920)(void* self, int edx_unused, void* a1);
@@ -12650,5 +12652,44 @@ loc_6abdc3:
         pop     ebx
         add     esp, 0xb0
         ret     0xc
+    }
+}
+
+// [0x006A89B0] sub_006A89B0 (65 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006A89B0(void* self, int edx, void* arg1) {
+    __asm {
+        push    ebx
+        push    esi
+        push    edi
+        mov     esi, ecx
+        xor     edi, edi
+        cmp     dword ptr [esi + 0x7c], edi
+        jle     L_ret_zero
+        mov     ebx, dword ptr [esp + 0x10]
+    L_loop:
+        test    edi, edi
+        jl      L_invalid_arg
+        cmp     edi, dword ptr [esi + 0x7c]
+        jge     L_invalid_arg
+        mov     eax, dword ptr [esi + 0x78]
+        mov     eax, dword ptr [eax + edi * 4]
+        push    eax
+        push    ebx
+        mov     ecx, esi
+        call    ext_006A7B00
+        test    eax, eax
+        jne     L_ret
+        add     edi, 1
+        cmp     edi, dword ptr [esi + 0x7c]
+        jl      L_loop
+    L_ret_zero:
+        xor     eax, eax
+    L_ret:
+        pop     edi
+        pop     esi
+        pop     ebx
+        ret     0x4
+    L_invalid_arg:
+        call    ext_006A60EE
     }
 }
