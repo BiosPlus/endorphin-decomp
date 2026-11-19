@@ -52,6 +52,7 @@ extern "C" int ext_00711DB0();
 extern "C" bool __fastcall fn_00712150(void* self) {
     return ext_00711DB0() == 0x11;
 }
+extern "C" void ext_006A6C87();
 
 // [0x00714910] sub_00714910 (16 bytes)
 extern "C" void ext_007873F0();
@@ -5497,4 +5498,9 @@ extern "C" void __fastcall fn_007138D0(void* self) {
 extern "C" void ext_006A6C87();
 extern "C" void __fastcall fn_00713850(void* self) {
     ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x00713860);
+}
+
+// [0x00713910] sub_00713910 (12 bytes)
+extern "C" void __fastcall fn_00713910(void* self) {
+    ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x00713920);
 }
