@@ -3300,3 +3300,53 @@ L_skip_grow:
         ret
     }
 }
+
+// [0x0074F850] sub_0074F850 (156 bytes)
+extern "C" void ext_0072CF30();
+extern "C" void ext_006B9D80();
+extern "C" void ext_007ABC20();
+extern "C" void ext_00782D00();
+extern "C" __declspec(naked) void __fastcall fn_0074F850(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x008BF7F4
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0xc], esi
+        call ext_0072CF30
+        xor edi, edi
+        push 0x00B5D2C0
+        lea ecx, [esi + 0xb0]
+        mov dword ptr [esp + 0x18], edi
+        mov dword ptr [esi + 0xac], edi
+        call ext_006B9D80
+        lea ecx, [esi + 0x104]
+        mov byte ptr [esp + 0x14], 0x1
+        mov dword ptr [esi + 0xfc], edi
+        mov dword ptr [esi + 0x100], edi
+        call ext_007ABC20
+        push 0x14
+        lea ecx, [esi + 0x128]
+        mov byte ptr [esp + 0x18], 0x2
+        call ext_00782D00
+        lea edi, [esi + 0x13c]
+        mov ecx, 0x100
+        xor eax, eax
+        mov dword ptr [esi], 0x00996BBC
+        rep stosd
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, esi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
