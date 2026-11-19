@@ -4871,3 +4871,32 @@ extern "C" __declspec(naked) int __cdecl fn_00858A50(void* a, void* b, void* c) 
         ret
     }
 }
+
+// [0x0085D860] sub_0085D860 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085D860(void) {
+    __asm {
+        mov dx, word ptr [esp + 0x8]
+        test dx, dx
+        je done
+        mov ecx, dword ptr [esp + 0x4]
+    loop_start:
+        mov eax, dword ptr [ecx]
+        test eax, 0x80000000
+        je branch_zero
+        add eax, eax
+        mov dword ptr [ecx], eax
+        or eax, 0x1
+        dec dx
+        mov dword ptr [ecx], eax
+        jne loop_start
+        ret
+    branch_zero:
+        add eax, eax
+        dec dx
+        mov dword ptr [ecx], eax
+        jne loop_start
+    done:
+        ret
+        mov edi, edi
+    }
+}
