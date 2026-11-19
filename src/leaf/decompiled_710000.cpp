@@ -5899,3 +5899,16 @@ extern "C" __declspec(naked) void* __fastcall fn_00713360(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00714E70] sub_00714E70 (41 bytes)
+extern "C" int mem_00B5FA70;
+extern "C" int mem_00B5FA78;
+extern "C" int mem_00B5FA74;
+extern "C" int mem_00B5FA7C;
+
+extern "C" void __cdecl fn_00714E70() {
+    mem_00B5FA70 = 0xb5fa80;
+    mem_00B5FA78 = 0xaac2f8;
+    mem_00B5FA74 = 0xb5eb50;
+    mem_00B5FA7C = 0;
+}
