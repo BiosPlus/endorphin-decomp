@@ -8163,3 +8163,40 @@ extern "C" __declspec(naked) void* __fastcall fn_006DE720(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006DCF80] sub_006DCF80 (68 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006DCF80(void* self, int edx_unused, void* arg0) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        push ebx
+        push esi
+        push edi
+        call dword ptr [eax + 0xc]
+        mov edi, eax
+        xor esi, esi
+        mov ebx, dword ptr [edi + 0xc0]
+        test ebx, ebx
+        jle done
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+    loop_top:
+        mov ecx, dword ptr [edi + 0xd0]
+        lea eax, [esp + 0x14]
+        push eax
+        mov edx, dword ptr [ecx + 4*esi]
+        mov ecx, dword ptr [ebp]
+        push ecx
+        mov ecx, ebp
+        mov dword ptr [esp + 0x1c], edx
+        call ext_006D2170
+        inc esi
+        cmp esi, ebx
+        jl loop_top
+        pop ebp
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
