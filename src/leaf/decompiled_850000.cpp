@@ -6525,3 +6525,51 @@ extern "C" __declspec(naked) void __cdecl fn_0085B330(void) {
         ret
     }
 }
+
+// [0x0085E050] sub_0085E050 (144 bytes)
+extern "C" int mem_00AB98F8;
+extern "C" int mem_00AB98FC;
+extern "C" int mem_00AB9910;
+extern "C" int mem_00AB9D28;
+extern "C" int mem_00AB9914;
+extern "C" int mem_00AB9920;
+extern "C" int mem_00AB9B24;
+extern "C" int mem_00AB9B28;
+extern "C" int mem_00AB990C;
+extern "C" int mem_00AB9B20;
+extern "C" int mem_00AB9F2C;
+extern "C" int mem_00AB9F34;
+extern "C" int mem_00AB9908;
+extern "C" int mem_00AB9F38;
+extern "C" int mem_00AB9F30;
+extern "C" int mem_00AB9918;
+extern "C" int mem_00AB9F28;
+extern "C" int mem_00ABA454;
+extern "C" __declspec(naked) void __fastcall fn_0085E050(void* self) {
+    __asm {
+        mov ecx, 1
+        xor edx, edx
+        mov dword ptr [mem_00AB98F8], ecx
+        mov dword ptr [mem_00AB98FC], ecx
+        mov dword ptr [mem_00AB9910], ecx
+        mov byte ptr [mem_00AB9D28], dl
+        mov dword ptr [mem_00AB9914], ecx
+        mov byte ptr [mem_00AB9920], dl
+        mov dword ptr [mem_00AB9B24], ecx
+        mov byte ptr [mem_00AB9B28], dl
+        mov dword ptr [mem_00AB990C], 3
+        mov dword ptr [mem_00AB9B20], 3
+        mov dword ptr [mem_00AB9F2C], ecx
+        mov dword ptr [mem_00AB9F34], ecx
+        mov dword ptr [mem_00AB9908], edx
+        mov dword ptr [mem_00AB9F38], edx
+        mov dword ptr [mem_00AB9F30], 3
+        mov word ptr [mem_00AB9918], 0x7483
+        mov word ptr [mem_00AB9F28], 0x1db
+        mov dword ptr [mem_00ABA454], edx
+        ret
+        __asm _emit 0x8d __asm _emit 0x49 __asm _emit 0x00
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24
+        __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    }
+}
