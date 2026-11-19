@@ -503,3 +503,18 @@ extern "C" __declspec(naked) void fn_0072DC50() {
         ret 0x4
     }
 }
+
+// [0x0072DC60] Tiny indirect/IAT call leaf (20 bytes) - sub_0072DC60
+extern "C" __declspec(naked) void fn_0072DC60() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push 0x0
+        push edx
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x0C // mov edx, dword ptr [esp + 0xc]
+        push edx
+        call dword ptr [eax + 0x20]
+        ret 0x8
+    }
+}
+
