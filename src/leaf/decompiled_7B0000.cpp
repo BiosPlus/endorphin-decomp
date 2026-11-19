@@ -562,6 +562,7 @@ extern "C" __declspec(naked) void __cdecl fn_007B7E40(void* self) {
     }
 }
 extern "C" void ext_006D2130();
+extern "C" int mem_007BDA50;
 
 // [0x007BA6D0] sub_007BA6D0 (48 bytes)
 extern "C" void ext_007BAA40();
@@ -9495,6 +9496,19 @@ extern "C" __declspec(naked) void __cdecl fn_007BEA10(void* self) {
         push edx
         call ext_0079B140
         add esp, 0xc
+        ret
+    }
+}
+
+// [0x007BDA20] sub_007BDA20 (33 bytes)
+extern "C" __declspec(naked) void fn_007BDA20() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        mov ecx, offset mem_007BDA50
+        __asm _emit 0x89 __asm _emit 0x88 __asm _emit 0xA0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x1a0], ecx
+        __asm _emit 0x89 __asm _emit 0x88 __asm _emit 0xA8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x1a8], ecx
+        __asm _emit 0x89 __asm _emit 0x88 __asm _emit 0xB0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x1b0], ecx
+        __asm _emit 0xB8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, 0x1
         ret
     }
 }
