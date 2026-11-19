@@ -6706,3 +6706,55 @@ L_comma:
         ret 0x8
     }
 }
+
+// [0x0071E6F0] sub_0071E6F0 (90 bytes)
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_006D2170();
+extern "C" __declspec(naked) void __fastcall fn_0071E6F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        mov ebx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ebx]
+        push edi
+        call dword ptr [eax + 0xc]
+        test al, al
+        je L_skip
+        mov eax, dword ptr [ebx + 0x8]
+        lea ecx, [ebx + 0x8]
+        lea edx, [esp + 0x10]
+        mov dword ptr [esp + 0x10], edi
+        push edx
+        push eax
+        call ext_006D2170
+L_skip:
+        xor esi, esi
+        mov ecx, edi
+        push esi
+        call ext_006C2860
+        test eax, eax
+        jle L_done
+L_loop:
+        push esi
+        mov ecx, edi
+        call ext_006C28D0
+        mov edx, dword ptr [ebx]
+        push eax
+        mov ecx, ebx
+        call dword ptr [edx + 0x8]
+        push 0
+        mov ecx, edi
+        inc esi
+        call ext_006C2860
+        cmp esi, eax
+        jl L_loop
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
