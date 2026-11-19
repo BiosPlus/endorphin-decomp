@@ -10597,3 +10597,47 @@ extern "C" __declspec(naked) int __cdecl fn_007BFCF0(char* a, int b, unsigned sh
         ret
     }
 }
+
+// [0x007BFC90] sub_007BFC90 (81 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BFC90(void* a, char* b, int c, int d) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [eax + 0x1cc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [ebp + 0x8]
+        test edi, edi
+        jle L_done
+    L_loop:
+        mov ecx, dword ptr [esp + 0x14]
+        push esi
+        push ebx
+        push ecx
+        call dword ptr [ebp + 0xc]
+        sub edi, esi
+        add esp, 0xc
+        add ebx, esi
+        test edi, edi
+        jg L_loop
+        mov edi, dword ptr [esp + 0x1c]
+    L_done:
+        mov edx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        push edi
+        push eax
+        push ecx
+        call dword ptr [ebp + 0x18]
+        add esp, 0x10
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
