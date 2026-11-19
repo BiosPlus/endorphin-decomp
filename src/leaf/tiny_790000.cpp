@@ -441,3 +441,11 @@ extern "C" __declspec(naked) void fn_0079D980() {
         jmp ext_006E7460
     }
 }
+
+// [0x0079D990] This-adjustor thunk (11 bytes) - sub_0079D990
+extern "C" __declspec(naked) void fn_0079D990() {
+    __asm {
+        __asm _emit 0x81 __asm _emit 0xC1 __asm _emit 0x9C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, 0x9c
+        jmp ext_006E7460
+    }
+}
