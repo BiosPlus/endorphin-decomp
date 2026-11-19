@@ -7217,3 +7217,77 @@ extern "C" __declspec(naked) void* __fastcall fn_006CE800(void* self, int dummy_
         ret     0x10
     }
 }
+
+// [0x006C4220] sub_006C4220 (192 bytes)
+extern "C" void ext_006A73BA();
+extern "C" int mem_00993800;
+extern "C" int mem_009937F8;
+extern "C" int mem_009937F0;
+extern "C" int mem_009937E8;
+
+extern "C" __declspec(naked) void __cdecl fn_006C4220(void* out, const void* in) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        fld qword ptr [esi + 0x10]
+        fcomp qword ptr [mem_00993800]
+        fnstsw ax
+        test ah, 0x1
+        jne L_6C4261
+        fld qword ptr [esi + 0x48]
+        fchs
+        fld qword ptr [esi + 0x40]
+        fchs
+        fpatan
+        mov eax, dword ptr [esp + 0x8]
+        xor ecx, ecx
+        pop esi
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0xc], 0xc0568000
+        mov dword ptr [eax + 0x14], ecx
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax]
+        ret
+    L_6C4261:
+        fld qword ptr [esi + 0x10]
+        fcomp qword ptr [mem_009937F0]
+        fnstsw ax
+        test ah, 0x41
+        je L_6C4299
+        fld qword ptr [esi + 0x20]
+        fld qword ptr [esi + 0x28]
+        fpatan
+        mov eax, dword ptr [esp + 0x8]
+        xor ecx, ecx
+        pop esi
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0xc], 0x40568000
+        mov dword ptr [eax + 0x14], ecx
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax]
+        ret
+    L_6C4299:
+        fld qword ptr [esi + 0x30]
+        fld qword ptr [esi + 0x50]
+        fpatan
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [edi]
+        fld qword ptr [esi + 0x10]
+        call ext_006A73BA
+        fmul qword ptr [mem_009937E8]
+        mov eax, edi
+        fstp qword ptr [edi + 0x8]
+        fld qword ptr [esi + 0x8]
+        fld qword ptr [esi]
+        fpatan
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [edi + 0x10]
+        pop edi
+        pop esi
+        ret
+    }
+}
