@@ -196,3 +196,28 @@ extern "C" __declspec(naked) void __fastcall fn_0072B460(void* self) {
         ret
     }
 }
+
+// [0x0072D2A0] Identical-shape clone of 0x006EA450 (74 bytes) - sub_0072D2A0
+extern "C" __declspec(naked) void __fastcall fn_0072D2A0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B602E0], ecx
+        mov dword ptr [mem_00B602E4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B602E8], ecx
+        mov dword ptr [mem_00B602EC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B602F0], ecx
+        mov dword ptr [mem_00B602F4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B602F8], ecx
+        mov dword ptr [mem_00B602FC], edx
+        ret
+    }
+}
+
