@@ -10153,3 +10153,102 @@ extern "C" __declspec(naked) void __fastcall fn_0078D850(void* self) {
         ret
     }
 }
+
+// [0x0078D330] sub_0078D330 (240 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2170();
+extern "C" void ext_0078D6B0();
+
+// SEH-framed __thiscall (ret 8): two loops, each allocating 0x18-byte objects
+// and calling a ctor/insert helper; loops over arg1 then arg2.
+extern "C" __declspec(naked) void __fastcall fn_0078D330(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8c17c6
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_0078D6B0
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        jle short L_second
+        mov ebx, eax
+    L_loop1:
+        push 0x18
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x1c], esi
+        test esi, esi
+        mov dword ptr [esp + 0x14], 0
+        je short L_null1
+        push 0x10
+        push 0x10
+        mov ecx, esi
+        call ext_006D2130
+        lea eax, [esi + 0x10]
+        mov dword ptr [esi + 0x14], eax
+        jmp short L_after1
+    L_null1:
+        xor esi, esi
+    L_after1:
+        mov eax, dword ptr [edi]
+        lea ecx, [esp + 0x1c]
+        push ecx
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x1c], -1
+        mov dword ptr [esp + 0x24], esi
+        call ext_006D2170
+        dec ebx
+        jne short L_loop1
+    L_second:
+        mov eax, dword ptr [esp + 0x20]
+        test eax, eax
+        jle short L_end
+        add edi, 0x18
+        mov ebx, eax
+    L_loop2:
+        push 0x18
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x1c], esi
+        test esi, esi
+        mov dword ptr [esp + 0x14], 1
+        je short L_null2
+        push 0x10
+        push 0x10
+        mov ecx, esi
+        call ext_006D2130
+        lea edx, [esi + 0x10]
+        mov dword ptr [esi + 0x14], edx
+        jmp short L_after2
+    L_null2:
+        xor esi, esi
+    L_after2:
+        mov ecx, dword ptr [edi]
+        lea eax, [esp + 0x20]
+        push eax
+        push ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x1c], -1
+        mov dword ptr [esp + 0x28], esi
+        call ext_006D2170
+        dec ebx
+        jne short L_loop2
+    L_end:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    }
+}
