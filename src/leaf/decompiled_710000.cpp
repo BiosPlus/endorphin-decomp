@@ -7220,3 +7220,51 @@ L_ret:
         ret
     }
 }
+
+// [0x0071DD50] sub_0071DD50 (125 bytes)
+extern "C" void ext_0077F9E0();
+extern "C" void ext_006A5C62();
+extern "C" void ext_0071DBD0();
+extern "C" void ext_0071DE60();
+
+extern "C" __declspec(naked) void __fastcall fn_0071DD50(void* self) {
+    __asm {
+        push -1
+        push 0x8bcca3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x8], esi
+        call ext_0077F9E0
+        push 0x168
+        mov dword ptr [esp + 0x14], 0
+        mov dword ptr [esi], 0x996778
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov byte ptr [esp + 0x10], 1
+        je no_alloc
+        mov ecx, eax
+        call ext_0071DBD0
+        jmp done_alloc
+no_alloc:
+        xor eax, eax
+done_alloc:
+        mov ecx, esi
+        mov byte ptr [esp + 0x10], 0
+        mov dword ptr [esi + 0x10], eax
+        call ext_0071DE60
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
