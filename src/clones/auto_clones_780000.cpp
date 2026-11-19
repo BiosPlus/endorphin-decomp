@@ -34,3 +34,13 @@ extern "C" __declspec(naked) void __cdecl fn_00784820() {
         jmp ext_00784840
     }
 }
+
+// [0x0078D2C0] Identical-shape clone of 0x00434E30 (8 bytes) - sub_0078D2C0
+extern "C" __declspec(naked) void __cdecl fn_0078D2C0() {
+    __asm {
+        push 0x10
+        call ext_0078D720
+        ret
+    }
+}
+
