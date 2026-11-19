@@ -6805,3 +6805,45 @@ extern "C" __declspec(naked) void __fastcall fn_006C78D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006CD650] sub_006CD650 (115 bytes)
+extern "C" int mem_0092A270;
+
+extern "C" __declspec(naked) float __cdecl fn_006CD650(void) {
+    __asm {
+        sub esp, 0Ch
+        fld dword ptr [esp+1Ch]
+        fsubr qword ptr [mem_0092A270]
+        fstp dword ptr [esp+1Ch]
+        fld dword ptr [esp+10h]
+        fsubr qword ptr [mem_0092A270]
+        fst qword ptr [esp+4]
+        fld dword ptr [esp+1Ch]
+        fmul st, st(1)
+        fld dword ptr [esp+10h]
+        fmul dword ptr [esp+18h]
+        faddp st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5c __asm _emit 0x24 __asm _emit 0x00
+        fld dword ptr [esp+1Ch]
+        fmul dword ptr [esp+10h]
+        fadd st, st(1)
+        fmul st, st(1)
+        __asm _emit 0xd9 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00
+        fmul dword ptr [esp+10h]
+        faddp st(1), st
+        fmul st, st(1)
+        fld dword ptr [esp+18h]
+        fmulp st(2), st
+        fxch st(1)
+        fmul dword ptr [esp+10h]
+        __asm _emit 0xd9 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00
+        fmul qword ptr [esp+4]
+        faddp st(1), st
+        fst dword ptr [esp+18h]
+        fmul dword ptr [esp+10h]
+        faddp st(1), st
+        fsub dword ptr [esp+14h]
+        add esp, 0Ch
+        ret
+    }
+}
