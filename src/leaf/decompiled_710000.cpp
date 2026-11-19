@@ -6602,3 +6602,57 @@ extern "C" __declspec(naked) void __fastcall fn_00717D60(void* self) {
         ret
     }
 }
+
+// [0x007135C0] sub_007135C0 (87 bytes)
+extern "C" int mem_00925224;
+
+extern "C" __declspec(naked) bool __stdcall fn_007135C0(const char* str, double* out) {
+    __asm {
+        push    ebx
+        push    esi
+        mov     esi, dword ptr [esp + 0xc]
+        push    edi
+        cmp     byte ptr [esi], 0x7b
+        je      loc_7135d4
+loc_7135cc:
+        pop     edi
+        pop     esi
+        xor     al, al
+        pop     ebx
+        ret     0x8
+
+loc_7135d4:
+        mov     ebx, dword ptr [esp + 0x14]
+        xor     edi, edi
+
+loc_7135da:
+        lea     eax, [esp + 0x10]
+        inc     esi
+        push    eax
+        push    esi
+        call    dword ptr [mem_00925224]
+        mov     eax, dword ptr [esp + 0x18]
+        add     esp, 0x8
+        fstp    qword ptr [ebx]
+        cmp     esi, eax
+        je      loc_7135cc
+        cmp     byte ptr [eax], 0x2c
+        je      loc_7135fe
+        cmp     edi, 0xf
+        jl      loc_7135cc
+
+loc_7135fe:
+        inc     edi
+        add     ebx, 0x8
+        cmp     edi, 0x10
+        mov     esi, eax
+        jl      loc_7135da
+        mov     cl, byte ptr [eax]
+        pop     edi
+        cmp     cl, 0x7d
+        pop     esi
+        sete    al
+        pop     ebx
+        ret     0x8
+    }
+}
