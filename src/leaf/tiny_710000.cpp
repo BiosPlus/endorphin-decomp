@@ -2716,3 +2716,8 @@ extern "C" unsigned char __fastcall fn_00719FC0(void* self) {
 extern "C" void __fastcall fn_00719FD0(void* self, int edx_unused, int a1) {
     *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + 0x1630) = static_cast<unsigned char>(a1);
 }
+
+// [0x00719FE0] Byte/bool field getter (7 bytes) - sub_00719FE0
+extern "C" unsigned char __fastcall fn_00719FE0(void* self) {
+    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x1630);
+}
