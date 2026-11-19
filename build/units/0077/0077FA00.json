@@ -14,5 +14,6 @@
     "0x0077FA04",
     "0x0077FA11"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
