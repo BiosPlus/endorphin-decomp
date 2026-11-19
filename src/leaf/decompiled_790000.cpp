@@ -6821,3 +6821,44 @@ L_ret:
         ret
     }
 }
+
+// [0x0079D680] sub_0079D680 (72 bytes)
+extern "C" void ext_00726E90();
+extern "C" void ext_007B2040();
+extern "C" void ext_007B2340();
+
+extern "C" __declspec(naked) int __cdecl fn_0079D680() {
+    __asm {
+        mov     edx, dword ptr [esp + 0xc]
+        push    ebx
+        lea     eax, [esp + 0x10]
+        push    esi
+        mov     esi, dword ptr [esp + 0xc]
+        push    eax
+        mov     eax, dword ptr [esp + 0x14]
+        push    edx
+        push    eax
+        push    esi
+        call    ext_00726E90
+        mov     bl, al
+        test    bl, bl
+        je      short L_79d6b3
+        mov     ecx, dword ptr [esp + 0x14]
+        push    ecx
+        push    esi
+        call    ext_007B2040
+        mov     ecx, eax
+        call    ext_007B2340
+    L_79d6b3:
+        mov     eax, dword ptr [esp + 0x18]
+        test    eax, eax
+        je      short L_79d6c1
+        mov     dl, byte ptr [esp + 0x14]
+        mov     byte ptr [eax], dl
+    L_79d6c1:
+        mov     al, bl
+        pop     esi
+        pop     ebx
+        ret     0x10
+    }
+}
