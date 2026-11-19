@@ -5038,3 +5038,50 @@ extern "C" __declspec(naked) void __cdecl fn_0085D820(unsigned char* buf, int le
         ret
     }
 }
+
+// [0x0085D890] sub_0085D890 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085D890(void) {
+    __asm {
+        mov cx, word ptr [esp + 8]
+        test cx, cx
+        je done
+        mov eax, dword ptr [esp + 4]
+    loop_start:
+        mov edx, dword ptr [eax]
+        test dl, 1
+        je shift_only
+        _emit 0xc1
+        _emit 0xea
+        _emit 0x01
+        mov dword ptr [eax], edx
+        or edx, 0x80000000
+        dec cx
+        mov dword ptr [eax], edx
+        jne loop_start
+        ret
+    shift_only:
+        _emit 0xc1
+        _emit 0xea
+        _emit 0x01
+        dec cx
+        mov dword ptr [eax], edx
+        jne loop_start
+    done:
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
