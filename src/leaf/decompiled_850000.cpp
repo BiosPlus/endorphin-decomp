@@ -7085,3 +7085,100 @@ extern "C" __declspec(naked) void __cdecl fn_0085FA70(void) {
         _emit 0x00
     }
 }
+
+// [0x0085D0C0] sub_0085D0C0 (202 bytes)
+extern "C" void ext_0081CEBA();
+extern "C" void ext_0084D8E8();
+extern "C" void ext_0085CF60();
+extern "C" __declspec(naked) void* __cdecl fn_0085D0C0(void) {
+    __asm {
+        sub     esp, 4
+        push    ebx
+        push    esi
+        push    edi
+        xor     ebx, ebx
+        mov     dword ptr [esp + 0xc], ebx
+        push    0x1c
+        call    ext_0081CEBA
+        add     esp, 4
+        mov     esi, eax
+        test    esi, esi
+        je      ret_null
+        xor     eax, eax
+        mov     edx, dword ptr [esp + 0x14]
+        mov     al, byte ptr [edx]
+        inc     edx
+        xor     edi, edi
+        mov     dword ptr [esi], eax
+        mov     dword ptr [esi + 4], edi
+        mov     dword ptr [esi + 8], edi
+        mov     dword ptr [esi + 0x14], edi
+        mov     dword ptr [esi + 0x18], edi
+        mov     dword ptr [esi + 0x10], edi
+        mov     dword ptr [esi + 0xc], 1
+        mov     al, byte ptr [edx]
+        test    al, 0x80
+        je      short_len
+        and     al, 0x7f
+        xor     ebx, ebx
+        mov     bl, al
+        test    ebx, ebx
+        jle     after_len
+    len_loop:
+        xor     eax, eax
+        mov     ecx, dword ptr [esi + 4]
+        shl     ecx, 8
+        mov     al, byte ptr [edi + edx + 1]
+        or      eax, ecx
+        inc     edi
+        mov     dword ptr [esi + 4], eax
+        cmp     edi, ebx
+        jl      len_loop
+        jmp     after_len
+    short_len:
+        xor     ecx, ecx
+        mov     cl, al
+        mov     dword ptr [esi + 4], ecx
+    after_len:
+        lea     edi, [ebx + 2]
+        lea     edx, [ebx + edx + 1]
+        test    byte ptr [esi], 0x20
+        je      not_constructed
+        lea     eax, [esp + 0xc]
+        mov     ecx, dword ptr [esi + 4]
+        push    eax
+        push    ecx
+        push    edx
+        call    ext_0085CF60
+        add     esp, 0xc
+        mov     dword ptr [esi + 0x14], eax
+        add     edi, dword ptr [esp + 0xc]
+        mov     eax, dword ptr [esp + 0x1c]
+        test    eax, eax
+        je      ret_node
+        mov     dword ptr [eax], edi
+    ret_node:
+        mov     eax, esi
+        pop     edi
+        pop     esi
+        pop     ebx
+        add     esp, 4
+        ret
+    not_constructed:
+        test    esi, esi
+        je      clear_out
+        push    esi
+        call    ext_0084D8E8
+        add     esp, 4
+    clear_out:
+        mov     eax, dword ptr [esp + 0x1c]
+        mov     dword ptr [eax], 0
+        xor     eax, eax
+    ret_null:
+        pop     edi
+        pop     esi
+        pop     ebx
+        add     esp, 4
+        ret
+    }
+}
