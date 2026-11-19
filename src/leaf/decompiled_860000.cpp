@@ -7424,3 +7424,73 @@ extern "C" __declspec(naked) void* __cdecl fn_008671C0(const char* name) {
         __asm _emit 0x00
     }
 }
+
+// [0x0086B220] sub_0086B220 (128 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086B220(void) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [edx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        mov dword ptr [edx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        mov dword ptr [edx + 0x10], eax
+        pop ebx
+        ret
+        mov edi, edi
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        xor dx, dx
+        mov ecx, dword ptr [esp + 0x4]
+    loop1:
+        movsx eax, dx
+        inc dx
+        mov dword ptr [ecx + 4*eax], 0x0
+        movsx eax, dx
+        cmp eax, 0x9
+        jbe loop1
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        xor di, di
+    loop2:
+        movsx eax, di
+        shl eax, 0x2
+        inc di
+        mov ecx, dword ptr [eax + edx]
+        mov dword ptr [eax + esi], ecx
+        movsx eax, di
+        cmp eax, 0x9
+        jbe loop2
+        pop edi
+        pop esi
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
