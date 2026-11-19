@@ -2336,3 +2336,14 @@ extern "C" __declspec(naked) void fn_00719AB0() {
         ret
     }
 }
+
+// [0x00719AC0] Branchless tiny leaf function (23 bytes) - sub_00719AC0
+extern "C" __declspec(naked) void fn_00719AC0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x89 __asm _emit 0x81 __asm _emit 0xF8 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0x2f8], eax
+        __asm _emit 0x89 __asm _emit 0x91 __asm _emit 0xFC __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0x2fc], edx
+        ret 0x8
+    }
+}
