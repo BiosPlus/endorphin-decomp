@@ -48,6 +48,7 @@ extern "C" void __cdecl ext_00798750(void*, unsigned int);
 extern "C" void ext_007AF080();
 extern "C" int mem_00924268;
 extern "C" void ext_00783940();
+extern "C" void ext_007838E0();
 
 // [0x0079AFE0] sub_0079AFE0 (48 bytes)
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
@@ -6487,4 +6488,13 @@ extern "C" void __cdecl fn_0079BC70() {
     *(double*)&mem_00B61028 = -*p;
     *(double*)&mem_00B61030 = -*p;
     *(double*)&mem_00B61038 = -*p;
+}
+
+// [0x0079E690] sub_0079E690 (46 bytes)
+extern "C" int __fastcall fn_0079E690(void* self, int /*edx*/, int a1, int a2, int a3, int a4) {
+    if (a1 != 0x34538402) {
+        return 1;
+    }
+    ((void (__thiscall*)(void*, int, int, int))ext_007838E0)((char*)self + 4, a2, a3, 0x7fffffff);
+    return 0;
 }
