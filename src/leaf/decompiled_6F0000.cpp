@@ -9928,3 +9928,28 @@ extern "C" __declspec(naked) void __fastcall fn_006FA830(void* self) {
         ret
     }
 }
+
+// [0x006FC950] sub_006FC950 (55 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006FC950(void* self, int edx_unused, int a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        xor eax, eax
+        dec edx
+        cmp edx, 0x5
+        ja done
+        jmp dword ptr [edx*4 + 0x6fc988]
+        mov eax, dword ptr [ecx + 0x4]
+        ret 0x4
+        mov eax, dword ptr [ecx + 0x8]
+        ret 0x4
+        mov eax, dword ptr [ecx + 0xc]
+        ret 0x4
+        mov eax, dword ptr [ecx + 0x10]
+        ret 0x4
+        mov eax, dword ptr [ecx + 0x14]
+        ret 0x4
+        mov eax, dword ptr [ecx + 0x18]
+    done:
+        ret 0x4
+    }
+}
