@@ -9740,3 +9740,46 @@ extern "C" __declspec(naked) void __fastcall fn_0080F9C0(void* self) {
         ret
     }
 }
+
+// [0x0080B060] sub_0080B060 (86 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0080B060(unsigned int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        and eax, 0xffff
+        cmp eax, 0x45
+        ja L_default
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x80b0e0]
+        jmp dword ptr [4*ecx + 0x80b0b8]
+    L_zero:
+        xor eax, eax
+        ret
+    L_07:
+        mov eax, 0x7
+        ret
+    L_0c:
+        mov eax, 0xc
+        ret
+    L_18:
+        mov eax, 0x18
+        ret
+    L_01:
+        mov eax, 0x1
+        ret
+    L_17:
+        mov eax, 0x17
+        ret
+    L_0e:
+        mov eax, 0xe
+        ret
+    L_0b:
+        mov eax, 0xb
+        ret
+    L_1b:
+        mov eax, 0x1b
+        ret
+    L_default:
+        mov eax, 0x1f
+        ret
+    }
+}
