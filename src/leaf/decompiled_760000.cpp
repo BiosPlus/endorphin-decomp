@@ -26,8 +26,10 @@ extern "C" void ext_006D2A30();
 extern "C" void ext_006C3030();
 extern "C" void ext_006B9D80();
 extern "C" int __cdecl ext_0079EC50(int, int);
+extern "C" void ext_006B9EC0();
+extern "C" int mem_00925264;
 
-// [0x007646E0] sub_007646E0 (96 bytes)
+extern "C" int mem_00925264;
 extern "C" __declspec(naked) char __fastcall fn_007646E0(void* self, int edx_unused, void* arg) {
     __asm {
         push    ebp
@@ -1623,5 +1625,32 @@ extern "C" __declspec(naked) bool __fastcall fn_007668D0(void* self, void* /*edx
         pop esi
         setne al
         ret 4
+    }
+}
+
+// [0x007643C0] sub_007643C0 (62 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_007643C0(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        push    edi
+        xor     edi, edi
+        mov     eax, dword ptr [esi + 0xac]
+        test    eax, eax
+        je      L_skip_fclose
+        push    eax
+        call    dword ptr [mem_00925264]
+        add     esp, 4
+        mov     edi, eax
+    L_skip_fclose:
+        push    0xb5d2c0
+        lea     ecx, [esi + 0xb4]
+        mov     dword ptr [esi + 0xac], 0
+        call    ext_006B9EC0
+        test    edi, edi
+        pop     edi
+        pop     esi
+        sete    al
+        ret
     }
 }
