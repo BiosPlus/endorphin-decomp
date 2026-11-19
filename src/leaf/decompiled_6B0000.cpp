@@ -11287,3 +11287,36 @@ extern "C" __declspec(naked) void __fastcall fn_006BB3F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006BBA40] sub_006BBA40 (74 bytes)
+extern "C" int mem_00B5D308;
+extern "C" int mem_00B5D30C;
+extern "C" int mem_00B5D310;
+extern "C" int mem_00B5D314;
+extern "C" int mem_00B5D318;
+extern "C" int mem_00B5D31C;
+extern "C" int mem_00B5D320;
+extern "C" int mem_00B5D324;
+
+extern "C" __declspec(naked) void __fastcall fn_006BBA40(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D308], ecx
+        mov dword ptr [mem_00B5D30C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D310], ecx
+        mov dword ptr [mem_00B5D314], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D318], ecx
+        mov dword ptr [mem_00B5D31C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D320], ecx
+        mov dword ptr [mem_00B5D324], edx
+        ret
+    }
+}
