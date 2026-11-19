@@ -7398,3 +7398,41 @@ L_null:
         ret 0x8
     }
 }
+
+// [0x007834C0] sub_007834C0 (71 bytes)
+extern "C" __declspec(naked) unsigned short __fastcall fn_007834C0(void* self, int edx_unused, unsigned short* out, unsigned char swap_bytes) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_zero
+        mov eax, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push eax
+        push 0x1
+        push 0x2
+        push esi
+        call dword ptr [mem_009252AC]
+        mov al, byte ptr [ebp + 0xc]
+        add esp, 0x10
+        test al, al
+        je short L_ret
+        mov cx, word ptr [esi]
+        mov dword ptr [ebp + 0xc], ecx
+        mov ax, word ptr [ebp + 0xc]
+        xchg al, ah
+        mov word ptr [esi], ax
+    L_ret:
+        mov ax, word ptr [esi]
+        pop esi
+        pop ebp
+        ret 0x8
+    L_zero:
+        xor ax, ax
+        pop ebp
+        ret 0x8
+    }
+}
