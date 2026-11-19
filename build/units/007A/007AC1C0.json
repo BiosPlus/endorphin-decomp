@@ -16,5 +16,7 @@
     "0x007AC1EE",
     "0x007AC1F3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
