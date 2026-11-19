@@ -7791,3 +7791,75 @@ L_store:
         ret
     }
 }
+
+// [0x0079B680] sub_0079B680 (208 bytes)
+extern "C" void* __cdecl ext_0079AF60(void*, unsigned int);
+extern "C" void __cdecl ext_0079AFE0(void*, int, unsigned int);
+
+extern "C" __declspec(naked) int __cdecl fn_0079B680(void* self, int n, int arg3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0xcc]
+        mov ecx, dword ptr [esi + 0xd0]
+        add eax, edi
+        shl eax, 0x2
+        push eax
+        push ecx
+        call ext_0079AF60
+        mov edx, dword ptr [esi + 0xcc]
+        mov dword ptr [esi + 0xd0], eax
+        mov eax, dword ptr [esi + 0xd4]
+        add edx, edi
+        shl edx, 0x2
+        push edx
+        push eax
+        call ext_0079AF60
+        mov ecx, dword ptr [esi + 0xd0]
+        add esp, 0x10
+        test ecx, ecx
+        mov dword ptr [esi + 0xd4], eax
+        je L_fail
+        test eax, eax
+        je L_fail
+        mov edx, dword ptr [esi + 0xcc]
+        push ebx
+        lea ebx, [edi*4]
+        push ebx
+        lea eax, [ecx + 4*edx]
+        push 0x0
+        push eax
+        call ext_0079AFE0
+        mov ecx, dword ptr [esi + 0xcc]
+        mov edx, dword ptr [esi + 0xd4]
+        push ebx
+        push 0x0
+        lea eax, [edx + 4*ecx]
+        push eax
+        call ext_0079AFE0
+        mov eax, dword ptr [esi + 0xcc]
+        add esp, 0x18
+        add eax, edi
+        pop ebx
+        mov dword ptr [esi + 0xcc], eax
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_fail:
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 0xcc], 0x0
+        mov ecx, dword ptr [esi]
+        push ecx
+        push 0xaafdd8
+        push edx
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        ret
+    }
+}
