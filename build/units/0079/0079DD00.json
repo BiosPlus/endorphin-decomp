@@ -8,5 +8,6 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
