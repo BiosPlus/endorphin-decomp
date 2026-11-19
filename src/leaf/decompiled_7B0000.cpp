@@ -13418,3 +13418,94 @@ L_BCBC0_FAIL:
         ret
     }
 }
+
+// [0x007BF1D0] sub_007BF1D0 (219 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BF1D0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push ebx
+        push ebp
+        push esi
+        mov ebx, dword ptr [ecx + 0x1cc]
+        mov eax, dword ptr [ecx + 0x1e0]
+        xor ebp, ebp
+        push edi
+        mov edx, dword ptr [ebx + 0x58]
+        mov edi, dword ptr [ebx + 0x3c]
+        mov esi, dword ptr [ebx + 0x38]
+        mov bp, word ptr [ebx + 0x30]
+        cmp eax, edx
+        jbe L_7BF218
+        mov edx, dword ptr [ecx + 0x1d8]
+        push ecx
+        sub eax, edx
+        mov dword ptr [ecx + 0x1e4], eax
+        call ext_0079B850
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0x4
+        mov eax, dword ptr [eax + 0x1d8]
+    L_7BF218:
+        mov edx, dword ptr [ebx + 0x44]
+        cmp edx, 0xffff
+        je L_7BF251
+        mov ecx, ebp
+        add edi, ebp
+        shl esi, cl
+        add edi, -0x8
+        mov ecx, edi
+        or esi, edx
+        mov edx, esi
+        sar edx, cl
+        inc eax
+        cmp edi, 0x8
+        mov byte ptr [eax - 0x1], dl
+        jl L_7BF24A
+        add edi, -0x8
+        mov edx, esi
+        mov ecx, edi
+        sar edx, cl
+        inc eax
+        mov byte ptr [eax - 0x1], dl
+    L_7BF24A:
+        mov dword ptr [ebx + 0x44], 0xffff
+    L_7BF251:
+        mov ecx, ebp
+        add edi, ebp
+        shl esi, cl
+        or esi, 0x101
+        mov edx, esi
+        lea esi, [edi - 0x8]
+        mov ebx, edx
+        mov ecx, esi
+        sar ebx, cl
+        inc eax
+        cmp esi, 0x8
+        mov byte ptr [eax - 0x1], bl
+        jl L_7BF27E
+        add esi, -0x8
+        mov ebx, edx
+        mov ecx, esi
+        sar ebx, cl
+        inc eax
+        mov byte ptr [eax - 0x1], bl
+    L_7BF27E:
+        test esi, esi
+        jle L_7BF28F
+        mov ecx, 0x8
+        sub ecx, esi
+        shl dl, cl
+        inc eax
+        mov byte ptr [eax - 0x1], dl
+    L_7BF28F:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        mov edx, dword ptr [ecx + 0x1d8]
+        pop ebx
+        sub eax, edx
+        mov dword ptr [ecx + 0x1e4], eax
+        mov eax, 0x1
+        ret
+    }
+}
