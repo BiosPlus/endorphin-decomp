@@ -588,10 +588,14 @@ extern "C" __declspec(naked) void __fastcall fn_007BA6D0(void* self) {
         ret
     }
 }
+extern "C" void ext_007B8BA0();
+extern "C" void ext_007B8BB0();
+extern "C" void ext_007B8C10();
+extern "C" void ext_007B8E60();
 
-// [0x007BA690] sub_007BA690 (64 bytes)
-extern "C" void ext_007BAA40();
-
+extern "C" void ext_007B8BB0();
+extern "C" void ext_007B8C10();
+extern "C" void ext_007B8E60();
 extern "C" int __cdecl fn_007BA690(void* a, unsigned short b, unsigned short c, unsigned char* d, int e, int* f) {
     *(unsigned short*)d = c;
     *(unsigned short*)(d + 2) = b;
@@ -9906,6 +9910,33 @@ extern "C" __declspec(naked) int __cdecl fn_007BE010(void* arg) {
         add esp, 0x4
         mov dword ptr [esi + 0x1cc], eax
         mov eax, 0x1
+        pop esi
+        ret
+    }
+}
+
+// [0x007B8AE0] sub_007B8AE0 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B8AE0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_7B8AFC
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B8B15
+    L_7B8AFC:
+        call ext_007B8BA0
+        push esi
+        call ext_007B8C10
+        push esi
+        call ext_007B8E60
+        add esp, 0x8
+        call ext_007B8BB0
+    L_7B8B15:
         pop esi
         ret
     }
