@@ -181,6 +181,7 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, in
         ret 0x4
     }
 }
+extern "C" void __stdcall ext_006FAEA0(int, int, int, int, int, int, int, int);
 
 // [0x006F7970] sub_006F7970 (79 bytes)
 // Unit holds two paths: a virtual call at [vtbl+0x8c] with 4 pushed args (ret 8), then
@@ -10803,4 +10804,85 @@ extern "C" void __cdecl fn_006F89C0() {
     mem_00B5E3C0 = -*h;
     mem_00B5E3C8 = -*h;
     mem_00B5E3D0 = -*h;
+}
+
+// [0x006FADF0] sub_006FADF0 (176 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_006FADF0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [ecx + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0x8], ecx
+        test eax, eax
+        mov dword ptr [esp + 0x4], edi
+        je L_else
+        test byte ptr [ecx + 0x34], 0x10
+        jne L_else
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [eax]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, eax
+        call dword ptr [edx + 0x40]
+        pop edi
+        add esp, 0x8
+        ret 0x1c
+    L_else:
+        push esi
+        mov esi, dword ptr [ecx + 0x3c]
+        test esi, esi
+        je L_ret_1
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x20]
+        push ebx
+        mov ebx, dword ptr [esp + 0x30]
+        push ebp
+        mov ebp, dword ptr [esp + 0x30]
+        push ebx
+        push ebp
+        push edx
+        mov edx, dword ptr [esp + 0x30]
+        push eax
+        mov eax, dword ptr [esp + 0x30]
+        push edx
+        mov edx, dword ptr [esi + 0x4]
+        push eax
+        push edi
+        push edx
+        call ext_006FAEA0
+        mov edx, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [esi]
+        push ebx
+        push ebp
+        push edx
+        mov edx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [esp + 0x34]
+        push edx
+        mov edx, dword ptr [esp + 0x34]
+        push edx
+        push edi
+        call dword ptr [eax + 0x40]
+        pop ebp
+        pop ebx
+    L_ret_1:
+        pop esi
+        mov al, 0x1
+        pop edi
+        add esp, 0x8
+        ret 0x1c
+    }
 }
