@@ -11,8 +11,10 @@ extern "C" void __fastcall fn_006AD920(char* self, int edx_unused, int a1) {
     *(int*)(self + 0x30) = a1;
     return ((SetterFn006AD920)ext_0053A700)((void*)a1, edx_unused, (void*)self);
 }
+extern "C" void ext_0049AA40();
+extern "C" void ext_006ADC80();
 
-// [0x006A7C20] sub_006A7C20 (12 bytes)
+extern "C" void ext_006ADC80();
 extern "C" void ext_006AD120();
 
 typedef void (__fastcall *CalleeFn006A7C20)(void* self, int edx_unused);
@@ -12691,5 +12693,37 @@ extern "C" __declspec(naked) int __fastcall fn_006A89B0(void* self, int edx, voi
         ret     0x4
     L_invalid_arg:
         call    ext_006A60EE
+    }
+}
+
+// [0x006ADE30] sub_006ADE30 (68 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006ADE30(void* self, int edx, int index) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0049AA40
+        test eax, eax
+        jne label_check
+        cmp dword ptr [esi + 4], 3
+        jne label_check
+        push eax
+        push 0x00B5D1FC
+        push 0x00B5D1F8
+        push 1
+        push esi
+        call ext_006ADC80
+        add esp, 0x14
+    label_check:
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        jl label_throw
+        cmp eax, dword ptr [esi + 0x20]
+        jge label_throw
+        mov ecx, dword ptr [esi + 0x1C]
+        mov eax, dword ptr [ecx + eax * 4]
+        pop esi
+        ret 4
+    label_throw:
+        call ext_006A60EE
     }
 }
