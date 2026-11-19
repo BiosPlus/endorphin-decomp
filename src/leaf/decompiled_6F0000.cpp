@@ -11395,3 +11395,92 @@ extern "C" __declspec(naked) void __fastcall fn_006F98D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006FE3E0] sub_006FE3E0 (208 bytes)
+extern "C" void ext_006B9D80();
+extern "C" int mem_00925278;
+
+extern "C" __declspec(naked) void* __fastcall fn_006FE3E0(void* self, int edx_unused, const char* path, const char* ext) {
+    __asm {
+        sub esp, 0x404
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x418]
+        or ecx, -0x1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        lea edx, [esp + 0x10]
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        push 0x2e
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        mov dword ptr [esp + 0x10], 0x0
+        and ecx, 0x3
+        rep movsb
+        mov edi, dword ptr [mem_00925278]
+        lea ecx, [esp + 0x14]
+        push ecx
+        call edi
+        mov esi, eax
+        add esp, 0x8
+        test esi, esi
+        je L_append
+        lea edx, [esp + 0x10]
+        push 0x2f
+        push edx
+        call edi
+        mov ebx, eax
+        lea eax, [esp + 0x18]
+        push 0x5c
+        push eax
+        call edi
+        add esp, 0x10
+        cmp ebx, esi
+        jae L_append
+        cmp eax, esi
+        jae L_append
+        mov byte ptr [esi], 0x0
+    L_append:
+        lea edi, [esp + 0x10]
+        or ecx, -0x1
+        xor eax, eax
+        repne scasb
+        mov edi, dword ptr [esp + 0x41c]
+        not ecx
+        dec ecx
+        lea edx, [esp + ecx + 0x10]
+        or ecx, -0x1
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov esi, edi
+        mov ebx, ecx
+        mov edi, edx
+        or ecx, -0x1
+        repne scasb
+        mov ecx, ebx
+        dec edi
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, ebx
+        lea eax, [esp + 0x10]
+        and ecx, 0x3
+        push eax
+        rep movsb
+        mov esi, dword ptr [esp + 0x418]
+        mov ecx, esi
+        call ext_006B9D80
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x404
+        ret
+    }
+}
