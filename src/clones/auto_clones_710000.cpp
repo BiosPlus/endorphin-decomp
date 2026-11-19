@@ -1093,3 +1093,8 @@ extern "C" void __fastcall fn_00714180(void* self) {
 extern "C" void __fastcall fn_007141C0(void* self) {
     ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x7141D0);
 }
+
+// [0x00714200] Identical-shape clone of 0x006B98F0 (12 bytes) - sub_00714200
+extern "C" void __fastcall fn_00714200(void* self) {
+    ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x714210);
+}
