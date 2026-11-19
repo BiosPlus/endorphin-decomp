@@ -11742,3 +11742,75 @@ extern "C" __declspec(naked) void __fastcall fn_006BC460(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006BAFB0] sub_006BAFB0 (193 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006B9D20();
+extern "C" void ext_006B9D70();
+
+extern "C" __declspec(naked) void* __cdecl fn_006BAFB0(void* a0, int a1) {
+    __asm {
+        push -1
+        push 0x8b93df
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x50
+        lea ecx, [esp + 4]
+        __asm _emit 0xc7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        call ext_006B9D10
+        mov eax, dword ptr [esp + 0x64]
+        mov dword ptr [esp + 0x58], 1
+        dec eax
+        cmp eax, 0xb
+        ja L_default
+        jmp dword ptr [4*eax + 0x6bb074]
+    L_case1:
+        push 0xaa8704
+        jmp L_call_ec0
+    L_case2:
+        push 0xaa86f8
+        jmp L_call_ec0
+    L_case3:
+        push 0xaa86ec
+        jmp L_call_ec0
+    L_case4:
+        push 0xaa86e4
+        jmp L_call_ec0
+    L_case7:
+        push 0xaa86d8
+        jmp L_call_ec0
+    L_case6:
+        push 0xaa86c8
+        jmp L_call_ec0
+    L_case10:
+        push 0xb5d2c0
+        jmp L_call_ec0
+    L_case9:
+        push 0xaa86c0
+        jmp L_call_ec0
+    L_case12:
+        push 0xaa86ac
+    L_call_ec0:
+        lea ecx, [esp + 8]
+        call ext_006B9EC0
+    L_default:
+        push esi
+        mov esi, dword ptr [esp + 0x64]
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, esi
+        call ext_006B9D20
+        mov dword ptr [esp + 4], 1
+        lea ecx, [esp + 8]
+        mov byte ptr [esp + 0x5c], 0
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x54]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x5c
+        ret
+    }
+}
