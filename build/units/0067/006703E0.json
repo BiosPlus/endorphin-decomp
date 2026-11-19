@@ -22,5 +22,7 @@
     "0x0067047C",
     "0x00670486"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
