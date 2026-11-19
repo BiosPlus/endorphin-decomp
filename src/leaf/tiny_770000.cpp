@@ -163,3 +163,15 @@ extern "C" __declspec(naked) void fn_00774EC0() {
         ret 0x8
     }
 }
+
+// [0x0077F9E0] Branchless tiny leaf function (25 bytes) - sub_0077F9E0
+extern "C" __declspec(naked) void fn_0077F9E0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0xC1 // mov eax, ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x04 // mov ecx, dword ptr [esp + 0x4]
+        __asm _emit 0xC7 __asm _emit 0x40 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x4], 0x0
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x08 // mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax], offset mem_00996D48
+        ret 0x4
+    }
+}
