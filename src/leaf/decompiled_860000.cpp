@@ -6687,3 +6687,45 @@ extern "C" __declspec(naked) void __cdecl fn_0086F120(void) {
         ret
     }
 }
+
+// [0x00868140] sub_00868140 (64 bytes)
+extern "C" __declspec(naked) char* __cdecl fn_00868140(char* hay, char* needle) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+        cmp byte ptr [ecx], 0x0
+        je epi_148
+        cmp byte ptr [eax], 0x0
+        je zero_148
+    outer_154:
+        mov edx, eax
+        mov esi, ecx
+        cmp byte ptr [eax], 0x0
+        je nomatch_16e
+    inner_15d:
+        mov bl, byte ptr [esi]
+        test bl, bl
+        je nomatch_16e
+        cmp byte ptr [edx], bl
+        jne nomatch_16e
+        inc edx
+        inc esi
+        cmp byte ptr [edx], 0x0
+        jne inner_15d
+    nomatch_16e:
+        cmp byte ptr [esi], 0x0
+        je epi_148
+        inc eax
+        cmp byte ptr [eax], 0x0
+        jne outer_154
+    zero_148:
+        xor eax, eax
+    epi_148:
+        pop esi
+        pop ebx
+        ret
+        mov edi, edi
+    }
+}
