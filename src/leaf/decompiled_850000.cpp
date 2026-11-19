@@ -7836,3 +7836,95 @@ extern "C" __declspec(naked) void __cdecl fn_0085AD60(void) {
         nop
     }
 }
+
+// [0x0085FDB0] sub_0085FDB0 (224 bytes)
+extern "C" int mem_00BC6670;
+extern "C" int mem_00AB9888;
+extern "C" int mem_00BC6400;
+extern "C" int mem_00AB9F28;
+extern "C" int mem_00BC70F8;
+extern "C" int mem_00BC6402;
+extern "C" int mem_00BC6404;
+extern "C" int mem_00BC5C20;
+extern "C" int mem_00BC70D8;
+extern "C" int mem_00924248;
+extern "C" void ext_0085D510();
+extern "C" void ext_0085D530();
+extern "C" void ext_0085F9D0();
+
+extern "C" __declspec(naked) void __cdecl fn_0085FDB0(void) {
+    __asm {
+        sub esp, 0x400
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push 0x400
+        push 0
+        push eax
+        call ext_0085D510
+        lea eax, [esp + 0xc]
+        add esp, 0xc
+        push 0xa5
+        push offset mem_00BC6670
+        push eax
+        call ext_0085D530
+        lea eax, [esp + 0xd]
+        add esp, 0xc
+        mov cl, byte ptr [mem_00BC6670]
+        push 0xa4
+        push eax
+        push ecx
+        call ext_0085F9D0
+        add esp, 0xc
+        inc dword ptr [mem_00AB9888]
+        push 0x10
+        push 0
+        push offset mem_00BC6400
+        call ext_0085D510
+        mov eax, dword ptr [esp + 0x410]
+        add esp, 0xc
+        mov word ptr [mem_00BC6400], 2
+        push 4
+        inc eax
+        push eax
+        push offset mem_00BC6404
+        call ext_0085D530
+        mov ax, word ptr [mem_00AB9F28]
+        add esp, 0xc
+        test ax, ax
+        jne skip
+        mov ax, 0x1db
+    skip:
+        mov word ptr [mem_00AB9F28], ax
+        push eax
+        call dword ptr [mem_00BC70F8]
+        mov word ptr [mem_00BC6402], ax
+        push 0x10
+        lea eax, [esp + 4]
+        push offset mem_00BC6400
+        push 0
+        mov ecx, dword ptr [mem_00BC5C20]
+        push 0xa5
+        push eax
+        push ecx
+        call dword ptr [mem_00BC70D8]
+        push 1
+        call dword ptr [mem_00924248]
+        add esp, 0x400
+        ret
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
