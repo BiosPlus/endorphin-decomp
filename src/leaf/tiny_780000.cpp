@@ -602,3 +602,11 @@ L_0078BB28:
 extern "C" void __fastcall fn_0078CBC0(void* self, int edx_unused, int a1) {
     *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x1c) = a1;
 }
+
+// [0x0078CBD0] Branchless tiny leaf function (4 bytes) - sub_0078CBD0
+extern "C" __declspec(naked) void fn_0078CBD0() {
+    __asm {
+        inc dword ptr [ecx + 0x1c]
+        ret
+    }
+}
