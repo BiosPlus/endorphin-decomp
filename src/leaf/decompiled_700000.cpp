@@ -8767,3 +8767,71 @@ extern "C" __declspec(naked) void __fastcall fn_00702130(void* self) {
         ret
     }
 }
+
+// [0x0070D7E0] sub_0070D7E0 (192 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006C9360();
+extern "C" void ext_0070CF50();
+extern "C" int mem_008BCB18;
+extern "C" __declspec(naked) void __fastcall fn_0070D7E0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push offset mem_008BCB18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push esi
+        push edi
+        mov edi, ecx
+        lea ecx, [esp + 0x8]
+        call ext_006B9D10
+        mov ecx, dword ptr [esp + 0x64]
+        mov dword ptr [esp + 0x5c], 0
+        call ext_006C9360
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x68]
+        push eax
+        mov ecx, edi
+        call ext_0070CF50
+        push eax
+        lea ecx, [esp + 0xc]
+        call ext_006B9EC0
+        mov edi, dword ptr [esi]
+        lea ecx, [esp + 0x8]
+        call ext_006E7460
+        push eax
+        mov ecx, esi
+        call dword ptr [edi + 0x28]
+        or edi, -1
+        cmp eax, edi
+        je slow_path
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x10]
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x5c], edi
+        call ext_006B9D70
+        pop edi
+        mov al, 1
+        pop esi
+        mov ecx, dword ptr [esp + 0x4c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 8
+    slow_path:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x5c], edi
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x54]
+        pop edi
+        xor al, al
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 8
+    }
+}
