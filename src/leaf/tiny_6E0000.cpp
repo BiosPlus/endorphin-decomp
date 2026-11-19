@@ -1001,3 +1001,8 @@ extern "C" __declspec(naked) void fn_006EFD20() {
 extern "C" double __fastcall fn_006EFD40(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x1c20);
 }
+
+// [0x006EFD50] Byte/bool field getter (7 bytes) - sub_006EFD50
+extern "C" unsigned char __fastcall fn_006EFD50(void* self) {
+    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x1ca8);
+}
