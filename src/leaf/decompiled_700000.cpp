@@ -5205,3 +5205,27 @@ extern "C" void __cdecl fn_00701420() {
     mem_00B5E764 = 0xb5f050;
     mem_00B5E76C = 0;
 }
+
+// [0x0070FBA0] sub_0070FBA0 (43 bytes)
+extern "C" void ext_00707A90();
+
+extern "C" __declspec(naked) void __stdcall fn_0070FBA0() {
+    __asm {
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push eax
+        call ext_00707A90
+        ret 0x1c
+    }
+}
