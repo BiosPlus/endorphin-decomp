@@ -284,3 +284,11 @@ L_007AC028:
         ret 0x4
     }
 }
+
+// [0x007AC260] Branchless tiny leaf function (6 bytes) - sub_007AC260
+extern "C" __declspec(naked) void fn_007AC260() {
+    __asm {
+        mov eax, dword ptr [mem_00B61260]
+        ret
+    }
+}
