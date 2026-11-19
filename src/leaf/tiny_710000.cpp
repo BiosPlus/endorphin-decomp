@@ -3012,3 +3012,12 @@ L_0071F058:
         ret 0x4
     }
 }
+
+// [0x0071F090] This-adjustor thunk (8 bytes) - sub_0071F090
+extern "C" __declspec(naked) void fn_0071F090() {
+    __asm {
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x08 // add ecx, 0x8
+        jmp ext_006D2250
+    }
+}
+
