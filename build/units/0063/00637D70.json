@@ -20,5 +20,7 @@
     "0x00637E0D",
     "0x00637E17"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
