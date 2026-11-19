@@ -6844,3 +6844,51 @@ extern "C" __declspec(naked) void __cdecl fn_0086FFF0(void) {
         ret
     }
 }
+
+// [0x0086AE50] sub_0086AE50 (81 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0086AE50(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        test eax, eax
+        je ae50_zero
+        mov esi, dword ptr [esp + 0x8]
+        dec eax
+        mov edx, dword ptr [esi + 4*eax]
+        lea ecx, [esi + 4*eax]
+        test edx, edx
+        jne ae50_a
+    ae50_scan:
+        mov edx, eax
+        dec eax
+        sub ecx, 0x4
+        test edx, edx
+        je ae50_a
+        cmp dword ptr [ecx], 0x0
+        je ae50_scan
+    ae50_a:
+        lea edx, [eax + 0x1]
+        test edx, edx
+        jne ae50_b
+    ae50_zero:
+        xor eax, eax
+        pop esi
+        ret
+    ae50_b:
+        mov eax, dword ptr [esi + 4*edx - 0x4]
+        xor ecx, ecx
+    ae50_bits:
+        test eax, eax
+        je ae50_c
+        inc ecx
+        shr eax, 1
+        cmp ecx, 0x20
+        jb ae50_bits
+    ae50_c:
+        lea eax, [edx + 0x7ffffff]
+        pop esi
+        shl eax, 5
+        add eax, ecx
+        ret
+    }
+}
