@@ -6290,3 +6290,24 @@ extern "C" void* __stdcall fn_00713E30(unsigned int a1) {
         default: return (void*)0x00AAC03C;
     }
 }
+
+// [0x007134C0] sub_007134C0 (56 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_007134C0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x3
+        ja L_007134f0
+        jmp dword ptr [4*eax + 0x7134f8]
+        mov eax, 0xaac194
+        ret 0x4
+        mov eax, 0xaac198
+        ret 0x4
+        mov eax, 0xaac19c
+        ret 0x4
+        mov eax, 0xaac1c0
+        ret 0x4
+L_007134f0:
+        mov eax, 0xaac03c
+        ret 0x4
+    }
+}
