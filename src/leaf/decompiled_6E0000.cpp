@@ -6387,3 +6387,88 @@ L_d:
         ret
     }
 }
+
+// [0x006E5150] sub_006E5150 (224 bytes)
+extern "C" void ext_006E5590();
+extern "C" __declspec(naked) void __fastcall fn_006E5150(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x18
+        lea eax, [esp + 0x8]
+        _emit 0x8d
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        push eax
+        push edx
+        mov dword ptr [esp + 0x8], 0xffffffff
+        mov dword ptr [esp + 0xc], 0x7fffffff
+        mov dword ptr [esp + 0x10], 0x1
+        mov dword ptr [esp + 0x14], 0x80000000
+        call ext_006E5590
+        test al, al
+        je L_epi
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x4]
+        push edi
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0x8], edi
+        mov edi, dword ptr [ecx + 0x4]
+        cmp edi, edx
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x1c], edx
+        mov dword ptr [esp + 0xc], edi
+        jg short L_a
+        jl short L_b
+        mov edx, dword ptr [ecx]
+        cmp edx, esi
+        jae short L_a
+L_b:
+        lea edx, [esp + 0x8]
+        jmp short L_c
+L_a:
+        lea edx, [esp + 0x18]
+L_c:
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0xc], edx
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esp + 0x18], edi
+        mov edi, dword ptr [ecx + 0x4]
+        cmp edi, edx
+        mov dword ptr [esp + 0x1c], edi
+        jl short L_d
+        jg short L_e
+        mov edx, dword ptr [ecx]
+        cmp edx, esi
+        jbe short L_d
+L_e:
+        lea edx, [esp + 0x18]
+        pop edi
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        pop esi
+        add esp, 0x18
+        ret 0x8
+L_d:
+        lea edx, [esp + 0x8]
+        pop edi
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        pop esi
+L_epi:
+        add esp, 0x18
+        ret 0x8
+    }
+}
