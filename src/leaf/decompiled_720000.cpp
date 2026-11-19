@@ -7613,3 +7613,117 @@ extern "C" __declspec(naked) void __fastcall fn_00720170(void* self) {
         __asm _emit 0x90
     }
 }
+
+// [0x00722570] sub_00722570 (240 bytes)
+extern "C" void ext_00722660();
+extern "C" void ext_007226A0();
+extern "C" void ext_00722730();
+extern "C" int mem_009967F0;
+extern "C" int mem_009967E8;
+
+extern "C" __declspec(naked) void __cdecl fn_00722570(double* out, double* a, double* b, double* c) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 8
+        mov ecx, dword ptr [ebp + 0xc]
+        cmp dword ptr [ecx], 0
+        jne L_general
+        cmp dword ptr [ecx + 4], 0x40590000
+        jne L_check_neg
+        mov eax, dword ptr [ebp + 0x10]
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov eax, dword ptr [eax + 4]
+        mov dword ptr [ecx + 4], eax
+        mov esp, ebp
+        pop ebp
+        ret
+L_check_neg:
+        cmp dword ptr [ecx], 0
+        jne L_general
+        cmp dword ptr [ecx + 4], 0xc0590000
+        jne L_general
+        mov eax, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov eax, dword ptr [eax + 4]
+        mov dword ptr [ecx + 4], eax
+        mov esp, ebp
+        pop ebp
+        ret
+L_general:
+        fld qword ptr [ecx]
+        _emit 0xdd
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        fcomp qword ptr [mem_009967F0]
+        fnstsw ax
+        test ah, 0x41
+        jne L_le500
+        mov eax, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebp + 0x10]
+        push ecx
+        push edx
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        push ecx
+        call ext_007226A0
+        mov edx, dword ptr [ebp + 0x8]
+        add esp, 0x18
+        fstp qword ptr [edx]
+        mov esp, ebp
+        pop ebp
+        ret
+L_le500:
+        fld qword ptr [ecx]
+        _emit 0xdd
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        fcomp qword ptr [mem_009967E8]
+        fnstsw ax
+        test ah, 0x1
+        mov eax, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebp + 0x10]
+        push ecx
+        push edx
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        push ecx
+        je L_call660
+        call ext_00722730
+        mov edx, dword ptr [ebp + 0x8]
+        add esp, 0x18
+        fstp qword ptr [edx]
+        mov esp, ebp
+        pop ebp
+        ret
+L_call660:
+        call ext_00722660
+        mov edx, dword ptr [ebp + 0x8]
+        add esp, 0x18
+        fstp qword ptr [edx]
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
