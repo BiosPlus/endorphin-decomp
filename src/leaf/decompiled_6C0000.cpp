@@ -6018,3 +6018,16 @@ extern "C" __declspec(naked) void __fastcall fn_006CA2F0(void* self) {
         ret
     }
 }
+
+// [0x006C1B10] sub_006C1B10 (19 bytes)
+extern "C" void ext_006DC8E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C1B10(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [ecx + 0x20f8]
+        push eax
+        call ext_006DC8E0
+        ret 4
+    }
+}
