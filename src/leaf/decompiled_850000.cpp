@@ -6430,3 +6430,98 @@ extern "C" __declspec(naked) int __cdecl fn_00852910(unsigned __int64 x) {
         ret
     }
 }
+
+// [0x0085B330] sub_0085B330 (192 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085B330(void) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov esi, edi
+        test byte ptr [edi + 0x14], 0x4
+        je L_b342
+        mov esi, dword ptr [edi]
+    L_b342:
+        mov eax, dword ptr [esi + 0x14]
+        test al, 0x1
+        je L_b350
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L_b350:
+        mov ebx, dword ptr [esp + 0x1c]
+        mov ebp, dword ptr [esp + 0x18]
+        test al, 0x2
+        je L_b377
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [edi + 0x8]
+        sub eax, ecx
+        mov ecx, ebp
+        imul ecx, ebx
+        cmp ecx, eax
+        jbe L_b377
+        xor edx, edx
+        div ebp
+        mov dword ptr [esp + 0x20], eax
+        jmp L_b3aa
+    L_b377:
+        mov eax, ebp
+        mov ecx, dword ptr [edi + 0x8]
+        mov edx, dword ptr [esi + 0xc]
+        imul eax, ebx
+        sub edx, ecx
+        cmp eax, edx
+        jbe L_b3a6
+        mov edx, dword ptr [esi + 0x10]
+        add edx, eax
+        mov eax, dword ptr [esi]
+        add edx, ecx
+        push edx
+        push eax
+        call ext_008596F0
+        add esp, 0x8
+        test eax, eax
+        jne L_b3a4
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_b3a4:
+        mov dword ptr [esi], eax
+    L_b3a6:
+        mov dword ptr [esp + 0x20], ebx
+    L_b3aa:
+        mov ebx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esi]
+        imul ebx, ebp
+        mov eax, dword ptr [edi + 0x8]
+        mov ecx, dword ptr [esp + 0x14]
+        push ebx
+        add edx, eax
+        push ecx
+        push edx
+        call ext_00859780
+        mov ecx, dword ptr [edi + 0x8]
+        add esp, 0xc
+        add ecx, ebx
+        mov dword ptr [edi + 0x8], ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov edi, ecx
+        cmp edi, eax
+        jbe L_b3db
+        mov dword ptr [esi + 0x4], edi
+    L_b3db:
+        mov eax, dword ptr [esp + 0x20]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
