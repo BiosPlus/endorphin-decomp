@@ -172953,3 +172953,71 @@ extern "C" __declspec(naked) void __fastcall fn_00605070(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00605130] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_45 (179 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_00672080();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00605130(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a7d48
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x40
+        push esi
+        mov esi, dword ptr [esp + 0x54]
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je null_path
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x38]
+        lea edx, [esp + 0xc]
+        push edx
+        call eax
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x54]
+        push ecx
+        fld dword ptr [esp + 0x58]
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x50], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x4c], -0x1
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+skip_release:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x58]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xb4]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x44]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x4c
+        ret 0x8
+null_path:
+        lea ecx, [esp + 0x1c]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x20]
+        push ecx
+        call ext_006A6DD2
+    }
+}
