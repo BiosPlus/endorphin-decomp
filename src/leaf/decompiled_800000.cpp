@@ -9148,3 +9148,22 @@ extern "C" __declspec(naked) void __cdecl fn_0080A9D0(unsigned int key, void* ou
         nop
     }
 }
+
+// [0x0080FC50] sub_0080FC50 (25 bytes)
+extern "C" void __cdecl ext_008596E0(void* a1);
+
+extern "C" __declspec(naked) void __fastcall fn_0080FC50(void* self) {
+    __asm {
+        push 0xc
+        call ext_008596E0
+        xor ecx, ecx
+        add esp, 4
+        cmp eax, ecx
+        je done
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 4], ecx
+        mov dword ptr [eax + 8], ecx
+    done:
+        ret
+    }
+}
