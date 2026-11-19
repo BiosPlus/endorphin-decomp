@@ -1883,3 +1883,80 @@ extern "C" __declspec(naked) void __fastcall fn_007642D0(void* self) {
         ret
     }
 }
+
+// [0x00760070] sub_00760070 (208 bytes)
+extern "C" __declspec(naked) char __fastcall fn_00760070(void* self, int edx_unused, void* arg) {
+    __asm {
+        push    ebx
+        push    ebp
+        push    edi
+        mov     edi, dword ptr [esp + 0x10]
+        mov     ebx, ecx
+        mov     ebp, 1
+        mov     eax, dword ptr [edi + 0x1c4]
+        test    eax, eax
+        je      L_early
+        mov     ecx, dword ptr [ebx + 0xac]
+        push    esi
+        push    0xaae000
+        add     ecx, 4
+        call    ext_007275F0
+        mov     ecx, dword ptr [edi + 0x1dc]
+        xor     esi, esi
+        test    ecx, ecx
+        jle     L_after_loop
+        mov     dword ptr [esp + 0x14], 0xc
+    L_loop:
+        mov     eax, dword ptr [edi + 0x1ec]
+        mov     edx, dword ptr [edi + 0x1c4]
+        cmp     ebp, edx
+        mov     eax, dword ptr [eax + 4*esi]
+        jge     L_else
+        mov     ecx, dword ptr [edi + 0x1d4]
+        mov     edx, dword ptr [esp + 0x14]
+        mov     ecx, dword ptr [ecx + edx]
+        dec     ecx
+        cmp     esi, ecx
+        jne     L_join
+        mov     ecx, dword ptr [esp + 0x14]
+        or      edx, -1
+        sub     edx, eax
+        inc     ebp
+        add     ecx, 0xc
+        mov     eax, edx
+        mov     dword ptr [esp + 0x14], ecx
+        jmp     L_join
+    L_else:
+        dec     ecx
+        cmp     esi, ecx
+        jne     L_join
+        or      ecx, -1
+        sub     ecx, eax
+        mov     eax, ecx
+    L_join:
+        mov     ecx, dword ptr [ebx + 0xac]
+        push    eax
+        add     ecx, 4
+        call    ext_00727C80
+        mov     ecx, dword ptr [edi + 0x1dc]
+        inc     esi
+        cmp     esi, ecx
+        jl      L_loop
+    L_after_loop:
+        mov     ecx, dword ptr [ebx + 0xac]
+        add     ecx, 4
+        call    ext_007283B0
+        pop     esi
+        pop     edi
+        pop     ebp
+        mov     al, 1
+        pop     ebx
+        ret     4
+    L_early:
+        pop     edi
+        pop     ebp
+        mov     al, 1
+        pop     ebx
+        ret     4
+    }
+}
