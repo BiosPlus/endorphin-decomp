@@ -6161,3 +6161,17 @@ extern "C" void __cdecl fn_007AF710(void* a1) {
     typedef void (__cdecl *Fn)(void*, int);
     ((Fn)ext_007AF660)(a1, 0xaafcd4);
 }
+
+// [0x007AF7A0] sub_007AF7A0 (19 bytes)
+extern "C" void ext_007AF750();
+
+extern "C" __declspec(naked) void __cdecl fn_007AF7A0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push 0xaafccc
+        push eax
+        call ext_007AF750
+        add esp, 0x8
+        ret
+    }
+}
