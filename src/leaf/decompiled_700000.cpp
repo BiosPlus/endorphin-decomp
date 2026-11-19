@@ -5470,3 +5470,34 @@ extern "C" void __cdecl fn_00703D50() {
     *(double*)&mem_00B5EA30 = -*p;
     *(double*)&mem_00B5EA38 = -*p;
 }
+
+// [0x0070D400] sub_0070D400 (46 bytes)
+extern "C" void ext_006FE1C0();
+extern "C" void ext_0077FA70();
+extern "C" __declspec(naked) void __fastcall fn_0070D400(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_006FE1C0
+        mov ebx, dword ptr [edi + 0x58]
+        xor esi, esi
+        test ebx, ebx
+        jle done
+    loop_top:
+        mov eax, dword ptr [edi + 0x68]
+        mov ecx, dword ptr [eax + esi*4]
+        call ext_006FE1C0
+        inc esi
+        cmp esi, ebx
+        jl loop_top
+    done:
+        mov ecx, edi
+        call ext_0077FA70
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
