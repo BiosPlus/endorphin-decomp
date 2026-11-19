@@ -9514,3 +9514,87 @@ extern "C" __declspec(naked) void __fastcall fn_00788E80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00788D20] sub_00788D20 (208 bytes)
+// Stack-probe 0x1000, SetErrorMode(1) around a UTF-8 -> wide conversion of an argument,
+// wcsrchr for '*', optional wcscat of a suffix, then FindFirstFileW into self->[0]; ret 0x4.
+extern "C" int mem_0092416C;
+extern "C" int mem_009241FC;
+extern "C" int mem_00925170;
+extern "C" int mem_00925164;
+extern "C" int mem_00924168;
+extern "C" void ext_006A7270();
+extern "C" void ext_006FF870();
+extern "C" __declspec(naked) void __fastcall fn_00788D20(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, 1000h
+        call ext_006A7270
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_0092416C]
+        push esi
+        push edi
+        mov esi, ecx
+        push 1
+        xor bl, bl
+        call ebp
+        mov ecx, dword ptr [esp + 1014h]
+        mov edi, dword ptr [mem_009241FC]
+        lea eax, [esp + 10h]
+        push 400h
+        push eax
+        push -1
+        push ecx
+        push 0
+        push 0FDE9h
+        call edi
+        lea edx, [esp + 10h]
+        push 2Ah
+        push edx
+        call dword ptr [mem_00925170]
+        add esp, 8
+        test eax, eax
+        jne L_skip_suffix
+        lea eax, [esp + 810h]
+        push 400h
+        push eax
+        push -1
+        push 0AAB938h
+        push 0
+        push 0FDE9h
+        call edi
+        lea ecx, [esp + 810h]
+        lea edx, [esp + 10h]
+        push ecx
+        push edx
+        call dword ptr [mem_00925164]
+        add esp, 8
+    L_skip_suffix:
+        lea eax, [esp + 10h]
+        lea ecx, [esp + 10h]
+        push eax
+        push ecx
+        call ext_006FF870
+        add esp, 8
+        lea edx, [esi + 4]
+        lea eax, [esp + 10h]
+        push edx
+        push eax
+        call dword ptr [mem_00924168]
+        cmp eax, -1
+        mov dword ptr [esi], eax
+        je L_nofile
+        mov bl, 1
+    L_nofile:
+        push 0
+        call ebp
+        mov byte ptr [esi + 654h], bl
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebp
+        pop ebx
+        add esp, 1000h
+        ret 4
+    }
+}
