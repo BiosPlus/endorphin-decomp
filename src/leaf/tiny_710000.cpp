@@ -1809,3 +1809,8 @@ extern "C" __declspec(naked) void fn_007129A0() {
         ret 0x8
     }
 }
+
+// [0x007129C0] Empty return (3 bytes) - sub_007129C0
+extern "C" void __stdcall fn_007129C0(int a1, int a2, int a3, int a4) {
+    return;
+}
