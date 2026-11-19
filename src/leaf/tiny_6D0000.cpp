@@ -747,3 +747,8 @@ L_006D8E68:
 extern "C" int __cdecl fn_006D8ED0(void) {
     return 0x3;
 }
+
+// [0x006D91C0] Dword field getter (4 bytes) - sub_006D91C0
+extern "C" int __fastcall fn_006D91C0(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x10);
+}
