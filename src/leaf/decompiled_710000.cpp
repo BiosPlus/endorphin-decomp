@@ -5610,3 +5610,24 @@ extern "C" __declspec(naked) void* __fastcall fn_00717DB0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0071A820] sub_0071A820 (33 bytes)
+extern "C" int mem_00AACA78;
+extern "C" int mem_00AACA84;
+extern "C" __declspec(naked) void* __stdcall fn_0071A820(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub eax, 0x0
+        je L_case0
+        dec eax
+        je L_case1
+        xor eax, eax
+        ret 0x4
+    L_case1:
+        mov eax, offset mem_00AACA84
+        ret 0x4
+    L_case0:
+        mov eax, offset mem_00AACA78
+        ret 0x4
+    }
+}
