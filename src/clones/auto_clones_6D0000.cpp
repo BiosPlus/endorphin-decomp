@@ -20,3 +20,33 @@ extern "C" __declspec(naked) void __cdecl fn_006D2C80() {
         jmp ext_006D2CA0
     }
 }
+
+// [0x006D7DB0] Identical-shape clone of 0x00462440 (101 bytes) - sub_006D7DB0
+extern "C" __declspec(naked) void __fastcall fn_006D7DB0(void* self) {
+    __asm {
+        push -1
+        push 0x8B92A6
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x9939B4
+        lea ecx, [esi + 0x1DC]
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_006D2160
+        lea ecx, [esi + 0x1C4]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006D2160
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0070CD30
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
