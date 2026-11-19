@@ -9167,3 +9167,19 @@ extern "C" __declspec(naked) void __fastcall fn_0080FC50(void* self) {
         ret
     }
 }
+
+// [0x0080BA40] sub_0080BA40 (26 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0080BA40(void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        add eax, 0x4
+        push 0
+        push eax
+        push ecx
+        call ext_0080BA60
+        add esp, 0xc
+        xor eax, eax
+        ret
+    }
+}
