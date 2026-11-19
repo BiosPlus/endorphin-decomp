@@ -142,3 +142,15 @@ L_007B22A8:
         ret 0x4
     }
 }
+
+// [0x007BADD0] Branchless tiny leaf function (27 bytes) - sub_007BADD0
+extern "C" __declspec(naked) void fn_007BADD0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        mov ecx, offset mem_007BADF0
+        __asm _emit 0x89 __asm _emit 0x88 __asm _emit 0x8C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x18c], ecx
+        __asm _emit 0x89 __asm _emit 0x88 __asm _emit 0x94 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x194], ecx
+        __asm _emit 0xB8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, 0x1
+        ret
+    }
+}
