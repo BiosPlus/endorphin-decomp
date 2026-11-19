@@ -14328,3 +14328,26 @@ extern "C" __declspec(naked) void __fastcall fn_00692230(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0069B180] sub_0069B180 (42 bytes)
+extern "C" __declspec(naked) char __cdecl fn_0069B180(char c) {
+    __asm {
+        movsx eax, byte ptr [esp + 4]
+        add eax, -0x28
+        cmp eax, 0x53
+        ja L_default
+        movzx eax, byte ptr [eax + 0x69b1c0]
+        jmp dword ptr [4*eax + 0x69b1ac]
+        mov al, 0x7d
+        ret
+        mov al, 0x29
+        ret
+        mov al, 0x5d
+        ret
+        mov al, 0x3e
+        ret
+    L_default:
+        xor al, al
+        ret
+    }
+}

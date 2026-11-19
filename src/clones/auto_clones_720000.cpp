@@ -80,37 +80,14 @@ extern "C" int mem_00B602C8;
 extern "C" int mem_00B602D0;
 extern "C" int mem_00B602D8;
 
-// [0x0072B420] Identical-shape clone of 0x006BBA00 (36 bytes) - sub_0072B420
-extern "C" __declspec(naked) void __cdecl fn_0072B420(void) {
-    __asm {
-        mov eax, dword ptr [mem_00925284]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B60130]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B60138]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B60140]
-        ret
-    }
+// [0x0072B420] sub_0072B420 (36 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B60130;
+extern "C" int mem_00B60138;
+extern "C" int mem_00B60140;
+extern "C" void __cdecl fn_0072B420(void) {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B60130 = -*p;
+    *(double*)&mem_00B60138 = -*p;
+    *(double*)&mem_00B60140 = -*p;
 }
-
-// [0x0072D260] Identical-shape clone of 0x006BBA00 (36 bytes) - sub_0072D260
-extern "C" __declspec(naked) void __cdecl fn_0072D260(void) {
-    __asm {
-        mov eax, dword ptr [mem_00925284]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B602C8]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B602D0]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B602D8]
-        ret
-    }
-}
-

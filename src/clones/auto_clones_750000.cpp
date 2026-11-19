@@ -19,21 +19,3 @@ extern "C" int mem_00925284;
 extern "C" int mem_00B60448;
 extern "C" int mem_00B60450;
 extern "C" int mem_00B60458;
-
-// [0x00755230] Identical-shape clone of 0x006BBA00 (36 bytes) - sub_00755230
-extern "C" __declspec(naked) void __cdecl fn_00755230(void) {
-    __asm {
-        mov eax, dword ptr [mem_00925284]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B60448]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B60450]
-        fld qword ptr [eax]
-        fchs
-        fstp qword ptr [mem_00B60458]
-        ret
-    }
-}
-
