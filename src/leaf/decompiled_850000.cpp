@@ -6008,3 +6008,74 @@ extern "C" __declspec(naked) int __cdecl fn_0085D190(void) {
         ret
     }
 }
+
+// [0x00856F30] sub_00856F30 (163 bytes)
+extern "C" void ext_00869380();
+extern "C" void ext_008693B0();
+extern "C" void ext_00869460();
+extern "C" __declspec(naked) void __fastcall fn_00856F30(void* self) {
+    __asm {
+        sub esp, 0x68
+        lea eax, [esp + 0x10]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push eax
+        call ext_00869380
+        mov ecx, dword ptr [esp + 0x88]
+        mov edx, dword ptr [esp + 0x84]
+        push ecx
+        lea eax, [esp + 0x28]
+        push edx
+        push eax
+        call ext_008693B0
+        lea ecx, [esp + 0x30]
+        lea edx, [esp + 0x20]
+        push ecx
+        push edx
+        call ext_00869460
+        mov ebp, dword ptr [esp + 0x94]
+        add esp, 0x18
+        xor ecx, ecx
+        lea esi, [esp + 0x1f]
+        lea eax, [ebp + 0x13]
+        mov edi, 0x10
+    carry_loop:
+        movzx dx, byte ptr [esi]
+        movzx bx, byte ptr [eax]
+        add edx, ecx
+        lea ecx, [edx + ebx]
+        xor edx, edx
+        mov byte ptr [eax], cl
+        dec esi
+        mov dl, ch
+        dec eax
+        dec edi
+        mov ecx, edx
+        jne carry_loop
+        mov eax, dword ptr [ebp]
+        mov ecx, dword ptr [esp + 0x84]
+        cmp eax, ecx
+        jae sub_path
+        mov dword ptr [ebp], 0
+        jmp after_store
+    sub_path:
+        sub eax, ecx
+        mov dword ptr [ebp], eax
+    after_store:
+        push 0x10
+        lea eax, [esp + 0x14]
+        push 0
+        push eax
+        call ext_008692F0
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x68
+        ret
+    }
+}
