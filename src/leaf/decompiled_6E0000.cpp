@@ -4766,3 +4766,30 @@ extern "C" __declspec(naked) void __fastcall fn_006E70E0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006E63C0] sub_006E63C0 (57 bytes)
+extern "C" int mem_00B5DDA0;
+extern "C" int mem_00B5DDA4;
+extern "C" int mem_00B5DDA8;
+extern "C" int mem_00B5DDAC;
+extern "C" int mem_00B5DDB0;
+extern "C" int mem_00B5DDB4;
+
+extern "C" __declspec(naked) void __fastcall fn_006E63C0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DDA0], ecx
+        mov dword ptr [mem_00B5DDA4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DDA8], ecx
+        mov dword ptr [mem_00B5DDAC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DDB0], ecx
+        mov dword ptr [mem_00B5DDB4], edx
+        ret
+    }
+}
