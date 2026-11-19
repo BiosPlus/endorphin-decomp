@@ -13328,3 +13328,93 @@ L_7B11F2:
         ret
     }
 }
+
+// [0x007BCBC0] sub_007BCBC0 (209 bytes)
+extern "C" void ext_0079B850();
+extern "C" __declspec(naked) int __cdecl fn_007BCBC0(void* self, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        cdq
+        mov ecx, dword ptr [esi + 0x1cc]
+        idiv dword ptr [ecx + 0x8]
+        mov ebx, eax
+        mov eax, dword ptr [ecx]
+        cmp eax, 0x2
+        jne L_BCBC0_A
+        mov edi, dword ptr [esp + 0x18]
+        jmp L_BCBC0_B
+L_BCBC0_A:
+        mov eax, dword ptr [esp + 0x18]
+        mov edi, dword ptr [ecx + 0xc]
+        push ebx
+        push eax
+        push ecx
+        call dword ptr [ecx + 0x14]
+        add esp, 0xc
+L_BCBC0_B:
+        mov ecx, dword ptr [esi + 0x1dc]
+        mov ebp, dword ptr [esi + 0x1e4]
+        mov eax, dword ptr [esi + 0x1e0]
+        sub ecx, ebp
+        test ebx, ebx
+        lea ebp, [ebx - 0x1]
+        je L_BCBC0_END
+L_BCBC0_LOOP:
+        cmp ecx, 0x3
+        jge L_BCBC0_WRITE
+        mov edx, dword ptr [esi + 0x1dc]
+        push esi
+        sub edx, ecx
+        mov dword ptr [esi + 0x1e0], eax
+        mov dword ptr [esi + 0x1e4], edx
+        call ext_0079B850
+        add esp, 0x4
+        test eax, eax
+        je L_BCBC0_FAIL
+        mov ecx, dword ptr [esi + 0x1dc]
+        mov edx, dword ptr [esi + 0x1e4]
+        mov eax, dword ptr [esi + 0x1e0]
+        sub ecx, edx
+L_BCBC0_WRITE:
+        mov edx, dword ptr [edi]
+        add edi, 0x4
+        shr edx, 0x10
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [edi - 0x4]
+        inc eax
+        sub ecx, 0x3
+        shr edx, 0x8
+        mov byte ptr [eax], dl
+        mov dl, byte ptr [edi - 0x4]
+        inc eax
+        mov byte ptr [eax], dl
+        inc eax
+        mov edx, ebp
+        dec ebp
+        test edx, edx
+        jne L_BCBC0_LOOP
+L_BCBC0_END:
+        mov dword ptr [esi + 0x1e0], eax
+        mov eax, dword ptr [esi + 0x1dc]
+        sub eax, ecx
+        pop edi
+        mov dword ptr [esi + 0x1e4], eax
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+L_BCBC0_FAIL:
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        ret
+    }
+}
