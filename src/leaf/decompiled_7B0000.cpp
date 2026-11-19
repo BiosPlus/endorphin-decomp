@@ -10938,3 +10938,63 @@ L_7BC699:
         ret
     }
 }
+
+// [0x007BFD80] sub_007BFD80 (110 bytes)
+extern "C" int mem_0092525C;
+
+extern "C" __declspec(naked) void __cdecl fn_007BFD80(void* self, void* a2, int a3) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ebp + 0x1c]
+        mov ebx, dword ptr [ebp + 0x1cc]
+        test eax, 0x80000000
+        je L_7BFDD7
+        push edi
+        mov edi, dword ptr [mem_0092525C]
+        push 0xab261c
+        push esi
+        call edi
+        mov eax, dword ptr [ebx]
+        add esp, 0x8
+        dec eax
+        je L_7BFDBC
+        dec eax
+        jne L_7BFDC7
+        push 0xab2600
+        jmp L_7BFDC1
+    L_7BFDBC:
+        push 0xab25f8
+    L_7BFDC1:
+        push esi
+        call edi
+        add esp, 0x8
+    L_7BFDC7:
+        mov eax, dword ptr [ebx]
+        push eax
+        push eax
+        push 0xab25ec
+        push esi
+        call edi
+        add esp, 0x10
+        pop edi
+    L_7BFDD7:
+        mov ebx, dword ptr [ebx + 0x24]
+        test ebx, ebx
+        je L_7BFDEA
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push esi
+        push ebp
+        call ebx
+        add esp, 0xc
+    L_7BFDEA:
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
