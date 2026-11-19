@@ -9553,3 +9553,32 @@ extern "C" __declspec(naked) void __cdecl fn_0080DC20() {
         ret
     }
 }
+
+// [0x0080FA10] sub_0080FA10 (66 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0080FA10(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_0080F700
+        mov edx, dword ptr [esp + 8]
+        lea ecx, [esp + 0x14]
+        push 0
+        add edx, eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [esp + 0x18]
+        sub ecx, eax
+        push edx
+        dec ecx
+        push offset ext_0080F910
+        lea edx, [esp + 0x18]
+        push ecx
+        push edx
+        call ext_0080DC60
+        mov ecx, dword ptr [esp + 0x20]
+        add esp, 0x1c
+        mov byte ptr [ecx], 0
+        ret
+    }
+}
