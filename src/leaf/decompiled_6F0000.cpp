@@ -182,9 +182,12 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, in
     }
 }
 extern "C" void __stdcall ext_006FAEA0(int, int, int, int, int, int, int, int);
+extern "C" void ext_006FAF30();
+extern "C" void ext_006FBD70();
+extern "C" void ext_006FBDB0();
 
-// [0x006F7970] sub_006F7970 (79 bytes)
-// Unit holds two paths: a virtual call at [vtbl+0x8c] with 4 pushed args (ret 8), then
+extern "C" void ext_006FBD70();
+extern "C" void ext_006FBDB0();
 // padding and a cached-value getter that stores into *arg (ret 0x10).
 extern "C" __declspec(naked) void __fastcall fn_006F7970(void* self) {
     __asm {
@@ -11897,5 +11900,133 @@ extern "C" __declspec(naked) void* __fastcall fn_006F9BE0(void* self, int edx_un
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret 0x4
+    }
+}
+
+// [0x006FC010] sub_006FC010 (240 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_006FC010(void* self, int edx_unused, void* a1, void* a2, int a3) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, ecx
+        push esi
+        push edi
+        mov esi, dword ptr [ebp + 0x14]
+        dec esi
+        js L_ret_false
+        mov ecx, dword ptr [ebp + 0x10]
+        lea eax, [esi + 2*esi]
+        lea edi, [ecx + 4*eax]
+    L_loop:
+        mov edx, dword ptr [esp + 0x14]
+        test edx, edx
+        je L_null_a1
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, dword ptr [eax]
+        jmp L_cmp
+    L_null_a1:
+        xor ecx, ecx
+        xor eax, eax
+    L_cmp:
+        cmp ecx, dword ptr [edi]
+        jne L_next
+        cmp eax, dword ptr [edi + 0x4]
+        je L_found
+    L_next:
+        dec esi
+        sub edi, 0xc
+        test esi, esi
+        jl L_ret_false
+        jmp L_loop
+    L_found:
+        cmp esi, -0x1
+        jne L_do_work
+    L_ret_false:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0xc
+    L_do_work:
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        push 0xa
+        push edx
+        push ebp
+        push edx
+        push ebp
+        call ext_006FBDB0
+        add esp, 0x18
+        mov ecx, ebp
+        xor bl, bl
+        push esi
+        call ext_006FBD70
+        test al, al
+        je L_after_call
+        cmp esi, dword ptr [ebp + 0x14]
+        jge L_zero_edx
+        mov eax, dword ptr [ebp + 0x10]
+        lea edx, [esi + 2*esi]
+        lea ecx, [eax + 4*edx]
+        mov eax, dword ptr [eax + 4*edx + 0x4]
+        test eax, eax
+        je L_zero_edx
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_zero_edx
+        mov edx, dword ptr [eax + 0x4]
+        jmp L_check_a3
+    L_zero_edx:
+        xor edx, edx
+    L_check_a3:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [edi + 0x18]
+        cmp ecx, eax
+        jge L_zero_eax
+        test ecx, ecx
+        jl L_zero_eax
+        mov eax, dword ptr [edi + 0x14]
+        add eax, ecx
+        mov ecx, dword ptr [edi + 0x10]
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je L_zero_eax
+        mov esi, dword ptr [eax]
+        mov ebx, dword ptr [ecx]
+        cmp esi, ebx
+        jne L_zero_eax
+        mov eax, dword ptr [eax + 0x4]
+        jmp L_call_6faf30
+    L_zero_eax:
+        xor eax, eax
+    L_call_6faf30:
+        push 0x0
+        push edx
+        push ebp
+        push eax
+        push edi
+        call ext_006FAF30
+        add esp, 0x14
+        mov bl, al
+    L_after_call:
+        mov eax, dword ptr [esp + 0x14]
+        push edi
+        push 0xb
+        push eax
+        push ebp
+        push eax
+        push ebp
+        call ext_006FBDB0
+        add esp, 0x18
+        mov al, bl
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
     }
 }
