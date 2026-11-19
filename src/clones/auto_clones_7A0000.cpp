@@ -70,3 +70,11 @@ extern "C" __declspec(naked) void __cdecl fn_007AE070() {
         jmp ext_007AE090
     }
 }
+
+// [0x007AE0B0] Identical-shape clone of 0x005220B0 (10 bytes) - sub_007AE0B0
+extern "C" __declspec(naked) void __cdecl fn_007AE0B0() {
+    __asm {
+        call ext_007AE0C0
+        jmp ext_007AE0D0
+    }
+}
