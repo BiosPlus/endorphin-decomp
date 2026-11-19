@@ -9317,3 +9317,29 @@ extern "C" __declspec(naked) void __cdecl fn_0080FC70(void* self, int a2) {
         ret
     }
 }
+
+// [0x0080BD90] sub_0080BD90 (47 bytes)
+extern "C" void ext_008536D0();
+extern "C" __declspec(naked) void __cdecl fn_0080BD90(void* p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esi + 4]
+        push eax
+        push ecx
+        call ext_00859E50
+        mov ecx, dword ptr [esi + 8]
+        mov edx, dword ptr [esp + 0x14]
+        add esp, 4
+        add eax, ecx
+        add edx, 4
+        push eax
+        push edx
+        call ext_008536D0
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
