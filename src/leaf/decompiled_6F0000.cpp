@@ -11046,3 +11046,107 @@ extern "C" __declspec(naked) void* __cdecl fn_006FE4B0(void* self, const char* s
         ret
     }
 }
+
+// [0x006FAF30] sub_006FAF30 (192 bytes)
+extern "C" void ext_006FA9F0();
+extern "C" void ext_006FAA40();
+extern "C" void ext_006FAFF0();
+
+extern "C" __declspec(naked) void __cdecl fn_006FAF30(void* a1, void* a2, void* a3, void* a4, int a5) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+    f30_loop:
+        test ebp, ebp
+        je f30_nob
+        mov eax, dword ptr [ebp + 0x34]
+        and eax, 0x8
+        cmp al, 0x8
+        jne f30_nob
+        mov ebx, dword ptr [ebp + 0x8]
+        jmp f30_bdone
+    f30_nob:
+        xor ebx, ebx
+    f30_bdone:
+        test esi, esi
+        je f30_nos
+        mov ecx, dword ptr [esi + 0x34]
+        and ecx, 0x8
+        cmp cl, 0x8
+        jne f30_nos
+        mov edi, dword ptr [esi + 0x8]
+        jmp f30_sdone
+    f30_nos:
+        xor edi, edi
+    f30_sdone:
+        test ebp, ebp
+        je f30_fail
+        test esi, esi
+        je f30_fail
+        cmp ebp, esi
+        je f30_fail
+        test byte ptr [esi + 0x34], 0x4
+        je f30_skipor
+        mov eax, dword ptr [esp + 0x24]
+        or al, 0x2
+        mov dword ptr [esp + 0x24], eax
+    f30_skipor:
+        push 0x0
+        push ebp
+        mov ecx, esi
+        call ext_006FA9F0
+        test al, al
+        je f30_fail
+        test byte ptr [esp + 0x24], 0x2
+        jne f30_after
+        push 0x0
+        push esi
+        mov ecx, ebp
+        call ext_006FAA40
+        test al, al
+        je f30_fail
+    f30_after:
+        test ebx, ebx
+        jne f30_bnz
+        test edi, edi
+        je f30_tail
+        jmp f30_setesi
+    f30_bnz:
+        test edi, edi
+        je f30_keep
+    f30_setesi:
+        mov esi, edi
+    f30_keep:
+        test ebx, ebx
+        je f30_loop
+        mov ebp, ebx
+        jmp f30_loop
+    f30_tail:
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x18]
+        push edx
+        push eax
+        push esi
+        push ecx
+        push ebp
+        call ext_006FAFF0
+        add esp, 0x14
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    f30_fail:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret
+    }
+}
