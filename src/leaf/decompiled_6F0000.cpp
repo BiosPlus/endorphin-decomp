@@ -10765,3 +10765,42 @@ extern "C" void __cdecl fn_006FD2F0() {
     mem_00B5E5B0 = -*h;
     mem_00B5E5B8 = -*h;
 }
+
+// [0x006F89C0] sub_006F89C0 (166 bytes)
+extern "C" int mem_00925284;
+extern "C" double mem_00B5E358;
+extern "C" double mem_00B5E360;
+extern "C" double mem_00B5E368;
+extern "C" double mem_00B5E370;
+extern "C" double mem_00B5E378;
+extern "C" double mem_00B5E380;
+extern "C" double mem_00B5E388;
+extern "C" double mem_00B5E390;
+extern "C" double mem_00B5E398;
+extern "C" double mem_00B5E3A0;
+extern "C" double mem_00B5E3A8;
+extern "C" double mem_00B5E3B0;
+extern "C" double mem_00B5E3B8;
+extern "C" double mem_00B5E3C0;
+extern "C" double mem_00B5E3C8;
+extern "C" double mem_00B5E3D0;
+
+extern "C" void __cdecl fn_006F89C0() {
+    double* h = (double*)mem_00925284;
+    mem_00B5E358 = -*h;
+    mem_00B5E360 = -*h;
+    mem_00B5E368 = -*h;
+    mem_00B5E370 = -*h;
+    mem_00B5E378 = -*h;
+    mem_00B5E380 = -*h;
+    mem_00B5E388 = -*h;
+    mem_00B5E390 = -*h;
+    mem_00B5E398 = -*h;
+    mem_00B5E3A0 = -*h;
+    mem_00B5E3A8 = -*h;
+    mem_00B5E3B0 = -*h;
+    mem_00B5E3B8 = -*h;
+    mem_00B5E3C0 = -*h;
+    mem_00B5E3C8 = -*h;
+    mem_00B5E3D0 = -*h;
+}
