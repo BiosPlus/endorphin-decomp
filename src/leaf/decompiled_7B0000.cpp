@@ -11811,3 +11811,64 @@ extern "C" __declspec(naked) void __cdecl fn_007BD870(void* a1) {
         ret
     }
 }
+
+// [0x007BC360] sub_007BC360 (159 bytes)
+extern "C" int mem_00999B50;
+extern "C" int mem_00999B60;
+extern "C" __declspec(naked) void __cdecl fn_007BC360(void* a, short* b, int n) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x10
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [eax + 0xc]
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jle L_end
+        push ebx
+        push ebp
+        lea ebx, [eax + 1]
+        xor ebp, ebp
+L_loop:
+        mov edx, dword ptr [edi]
+        mov dword ptr [esp + 0x14], ebp
+        shr edx, 0x10
+        mov word ptr [esi], dx
+        mov eax, dword ptr [edi]
+        mov ecx, eax
+        mov dword ptr [esp + 0x1c], ebp
+        and ecx, 0xff
+        add esi, 2
+        mov dword ptr [esp + 0x10], ecx
+        fild qword ptr [esp + 0x10]
+        shr eax, 8
+        and eax, 0xff
+        fadd qword ptr [mem_00993828]
+        mov dword ptr [esp + 0x18], eax
+        fmul qword ptr [mem_00999B50]
+        fild qword ptr [esp + 0x18]
+        fadd qword ptr [mem_00993828]
+        fmul qword ptr [mem_00999B50]
+        fmul qword ptr [mem_00999B60]
+        call ext_00872828
+        fmul qword ptr [mem_00999B60]
+        mov word ptr [esi], ax
+        add esi, 2
+        call ext_00872828
+        mov word ptr [esi], ax
+        add esi, 2
+        add edi, 4
+        dec ebx
+        jne L_loop
+        pop ebp
+        pop ebx
+L_end:
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
