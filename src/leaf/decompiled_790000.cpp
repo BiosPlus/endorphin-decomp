@@ -6611,3 +6611,38 @@ extern "C" __declspec(naked) void* __fastcall fn_0079DAC0(void* self) {
         ret
     }
 }
+
+// [0x00796740] sub_00796740 (62 bytes)
+extern "C" int mem_00997100; /* u32 0xE2308C3A */
+extern "C" __declspec(naked) int __fastcall fn_00796740(void* self, int edx_unused, int a0, int a1, int a2) {
+    __asm {
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        sub eax, edx
+        lea ecx, [edx - 0x1]
+        xor esi, esi
+        cmp ecx, eax
+        jae short L_done
+        mov edx, dword ptr [esp + 0x8]
+        sub eax, ecx
+        lea edx, [edx + 8*ecx]
+        mov ecx, eax
+L_loop:
+        fld qword ptr [edx + 0x8]
+        fsub qword ptr [edx]
+        fcomp qword ptr [mem_00997100]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_skip
+        inc esi
+L_skip:
+        add edx, 0x8
+        dec ecx
+        jne short L_loop
+L_done:
+        mov eax, esi
+        pop esi
+        ret 0xc
+    }
+}
