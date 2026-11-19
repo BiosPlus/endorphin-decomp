@@ -6373,3 +6373,14 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x0079D700] sub_0079D700 (35 bytes)
+extern "C" void* __fastcall fn_0079D700(void* self, void* dummy, int a1, int a2) {
+    if (a1 == 0 || a1 == 3) {
+        return self;
+    }
+    if (a1 == 12 && self) {
+        return (char*)self + 4;
+    }
+    return 0;
+}
