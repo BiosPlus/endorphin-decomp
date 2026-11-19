@@ -6140,3 +6140,17 @@ extern "C" __declspec(naked) void __cdecl fn_007AF640(void* a1) {
         ret
     }
 }
+
+// [0x007AF6F0] sub_007AF6F0 (19 bytes)
+extern "C" void ext_007AF660();
+
+extern "C" __declspec(naked) void __cdecl fn_007AF6F0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push 0xaafccc
+        push eax
+        call ext_007AF660
+        add esp, 0x8
+        ret
+    }
+}
