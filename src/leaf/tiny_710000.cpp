@@ -1819,3 +1819,14 @@ extern "C" void __stdcall fn_007129C0(int a1, int a2, int a3, int a4) {
 extern "C" bool __stdcall fn_00712FB0(int a1, int a2) {
     return false;
 }
+
+// [0x007131C0] Branchless tiny leaf function (22 bytes) - sub_007131C0
+extern "C" __declspec(naked) void fn_007131C0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0xC7 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax], 0x0
+        __asm _emit 0xC7 __asm _emit 0x40 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [eax + 0x4], 0x0
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        ret 0x4
+    }
+}
