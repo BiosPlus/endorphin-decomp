@@ -5184,3 +5184,65 @@ extern "C" __declspec(naked) void __fastcall fn_008522E0(void* self) {
         jmp ext_00852345
     }
 }
+
+// [0x0085F750] sub_0085F750 (96 bytes)
+extern "C" void ext_0085F7B0();
+extern "C" __declspec(naked) void __fastcall fn_0085F750(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        mov ecx, dword ptr [esp + 0xc]
+        mov bl, byte ptr [eax]
+        cmp byte ptr [ecx], bl
+        je same
+        xor eax, eax
+        pop ebx
+        ret
+    same:
+        xor edx, edx
+        mov dl, bl
+        cmp edx, 1
+        je case1
+        cmp edx, 4
+        je case4
+        cmp edx, 8
+        je case4
+        xor eax, eax
+        pop ebx
+        ret
+    case1:
+        push 0xa
+        inc ecx
+        push ecx
+        inc eax
+        push eax
+        call ext_0085F7B0
+        add esp, 0xc
+        cmp eax, 1
+        sbb eax, eax
+        pop ebx
+        neg eax
+        ret
+    case4:
+        push 4
+        inc ecx
+        push ecx
+        inc eax
+        push eax
+        call ext_0085F7B0
+        add esp, 0xc
+        cmp eax, 1
+        sbb eax, eax
+        pop ebx
+        neg eax
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    }
+}
