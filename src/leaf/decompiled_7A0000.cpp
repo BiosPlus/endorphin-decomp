@@ -6264,3 +6264,21 @@ extern "C" unsigned char __stdcall fn_007AEDE0(void* p) {
     }
     return 0;
 }
+
+// [0x007AEC30] sub_007AEC30 (35 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AEC30(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        je L_fail
+        mov dword ptr [ecx + 0x58], eax
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x5c], eax
+        mov dword ptr [ecx + 0x60], 0x0
+        mov al, 0x1
+        ret 0x8
+    L_fail:
+        xor al, al
+        ret 0x8
+    }
+}
