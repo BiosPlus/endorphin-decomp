@@ -31,8 +31,10 @@ extern "C" void ext_007DA220();
 extern "C" void ext_007DA2D0();
 extern "C" void ext_007C5440();
 extern "C" void ext_007C38E0(void* a, void* b);
+extern "C" void ext_007C3790();
+extern "C" void ext_007C38C0();
 
-// [0x007CC3D0] sub_007CC3D0 (32 bytes)
+extern "C" void ext_007C38C0();
 // Zeroes the float triple at arg2[0..2] (stores 0.0 to [+8], [+4], [0]), then stores
 // the global float mem_0099D148 to *arg3; returns 1. arg1 is unused.
 extern "C" __declspec(naked) int __cdecl fn_007CC3D0(int a0, float* a1, float* a2) {
@@ -19947,6 +19949,78 @@ extern "C" __declspec(naked) void __cdecl fn_007C54F0(void* self) {
         mov     word ptr [eax + 0x16b0], cx
         mov     dword ptr [eax + 0x16b4], ecx
         pop     ebx
+        ret
+    }
+}
+
+// [0x007C23C0] sub_007C23C0 (130 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_007C23C0(void* strm, void* buf, unsigned int size) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x0c]
+        push ebx
+        mov ebx, dword ptr [esp + 0x08]
+        push ebp
+        mov eax, dword ptr [ebx + 0x04]
+        mov ebp, eax
+        cmp ebp, ecx
+        jbe L_7c23d5
+        mov ebp, ecx
+    L_7c23d5:
+        test ebp, ebp
+        jne L_7c23de
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L_7c23de:
+        sub eax, ebp
+        mov dword ptr [ebx + 0x04], eax
+        mov eax, dword ptr [ebx + 0x1c]
+        mov eax, dword ptr [eax + 0x18]
+        cmp eax, 1
+        jne L_7c23fd
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [ebx + 0x30]
+        push ebp
+        push ecx
+        push edx
+        call ext_007C3790
+        jmp L_7c240f
+    L_7c23fd:
+        cmp eax, 2
+        jne L_7c2415
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [ebx + 0x30]
+        push ebp
+        push eax
+        push ecx
+        call ext_007C38C0
+    L_7c240f:
+        add esp, 0x0c
+        mov dword ptr [ebx + 0x30], eax
+    L_7c2415:
+        mov ecx, ebp
+        push esi
+        mov esi, dword ptr [ebx]
+        mov edx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        mov eax, dword ptr [ebx + 0x08]
+        mov ecx, dword ptr [ebx]
+        add eax, ebp
+        add ecx, ebp
+        mov dword ptr [ebx + 0x08], eax
+        pop edi
+        mov eax, ebp
+        pop esi
+        mov dword ptr [ebx], ecx
+        pop ebp
+        pop ebx
         ret
     }
 }
