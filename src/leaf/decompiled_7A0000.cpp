@@ -6282,3 +6282,35 @@ extern "C" __declspec(naked) void __fastcall fn_007AEC30(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007AF4C0] sub_007AF4C0 (50 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007AF4C0(void* a, void* b) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        mov     ecx, dword ptr [esp + 0x8]
+        push    esi
+        mov     eax, dword ptr [eax]
+        mov     ecx, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        mov     esi, dword ptr [ecx]
+        cmp     edx, esi
+        je      L_equal
+        sbb     eax, eax
+        pop     esi
+        and     al, 0xfe
+        inc     eax
+        ret
+    L_equal:
+        mov     edx, dword ptr [ecx + 0x8]
+        mov     esi, dword ptr [eax + 0x8]
+        xor     ecx, ecx
+        cmp     edx, esi
+        setge   cl
+        dec     ecx
+        pop     esi
+        and     ecx, -2
+        inc     ecx
+        mov     eax, ecx
+        ret
+    }
+}
