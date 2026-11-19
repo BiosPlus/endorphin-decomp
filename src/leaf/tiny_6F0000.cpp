@@ -2824,3 +2824,8 @@ extern "C" __declspec(naked) void fn_006F1F70() {
 extern "C" double __fastcall fn_006F1F90(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x61b8);
 }
+
+// [0x006F1FD0] Dword field getter (7 bytes) - sub_006F1FD0
+extern "C" int __fastcall fn_006F1FD0(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x6240);
+}
