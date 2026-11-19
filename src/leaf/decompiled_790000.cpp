@@ -6972,3 +6972,68 @@ L_done:
         ret
     }
 }
+
+// [0x0079ADD0] sub_0079ADD0 (107 bytes)
+extern "C" void ext_0079ADC0();
+extern "C" int mem_0092418C; /* u32 0x0062D5EE */
+extern "C" int mem_00924188; /* u32 0x0062D5DE */
+extern "C" int mem_009241E0; /* u32 0x0062822A */
+
+extern "C" __declspec(naked) int __cdecl fn_0079ADD0() {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        call ext_0079ADC0
+        mov edi, eax
+        add esp, 0x4
+        cmp edi, -1
+        jne short L_valid
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+L_valid:
+        push 0x0
+        push edi
+        push 0x0
+        push 0x2
+        push 0x0
+        push esi
+        call dword ptr [mem_0092418C]
+        mov esi, eax
+        test esi, esi
+        jne short L_mapped
+        pop edi
+        pop esi
+        ret
+L_mapped:
+        push ebx
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push esi
+        call dword ptr [mem_00924188]
+        mov ebx, dword ptr [esp + 0x14]
+        push esi
+        mov dword ptr [ebx], eax
+        call dword ptr [mem_009241E0]
+        mov eax, dword ptr [ebx]
+        pop ebx
+        test eax, eax
+        jne short L_ok
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+L_ok:
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [eax], edi
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
