@@ -47,6 +47,7 @@ extern "C" __declspec(naked) void __cdecl fn_0080FB10(void* p) {
     }
 }
 extern "C" void ext_0080DC60();
+extern "C" int mem_0080F910;
 
 // [0x00803990] sub_00803990 (44 bytes)
 extern "C" void fn_00803980();
@@ -9579,6 +9580,43 @@ extern "C" __declspec(naked) void __fastcall fn_0080FA10(void* self) {
         mov ecx, dword ptr [esp + 0x20]
         add esp, 0x1c
         mov byte ptr [ecx], 0
+        ret
+    }
+}
+
+// [0x0080F8C0] sub_0080F8C0 (70 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080F8C0(void* p) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x18]
+        test esi, esi
+        mov dword ptr [esp + 0x4], eax
+        jbe zero_count
+        lea eax, [esi - 0x1]
+        jmp have_count
+    zero_count:
+        xor eax, eax
+    have_count:
+        mov edx, dword ptr [esp + 0x14]
+        lea ecx, [esp + 0x4]
+        push 0x0
+        push ecx
+        push edx
+        push offset mem_0080F910
+        push eax
+        lea eax, [esp + 0x20]
+        push eax
+        call ext_0080DC60
+        add esp, 0x18
+        test esi, esi
+        pop esi
+        jbe skip_store
+        mov ecx, dword ptr [esp + 0x8]
+        mov byte ptr [ecx], 0x0
+    skip_store:
+        pop ecx
         ret
     }
 }
