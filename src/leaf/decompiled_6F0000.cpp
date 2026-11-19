@@ -9091,3 +9091,22 @@ extern "C" int mem_00B5E418;
 extern "C" void __cdecl fn_006FC380(void) {
     mem_00B5E418 = ext_006FC3A0(0x00B5E408, -1);
 }
+
+// [0x006F7370] sub_006F7370 (33 bytes)
+extern "C" void ext_006B9D80();
+
+extern "C" __declspec(naked) void* __fastcall fn_006F7370(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0xaaa374
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D80
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
