@@ -10400,3 +10400,74 @@ extern "C" __declspec(naked) int __cdecl fn_0080C6D0(void** out, int n) {
         ret
     }
 }
+
+// [0x00809480] sub_00809480 (192 bytes)
+extern "C" void ext_0080A800();
+extern "C" void ext_0080ACF0();
+extern "C" void ext_0080B060();
+
+extern "C" __declspec(naked) void __cdecl fn_00809480(void* self) {
+    __asm {
+        cmp dword ptr [esp + 8], 0xfff1
+        je L_ok
+        mov eax, 0xa
+        ret
+    L_ok:
+        mov ecx, dword ptr [esp + 0xc]
+        cmp ecx, 0x10
+        ja L_one
+        mov eax, dword ptr [esp + 0x10]
+        cmp eax, 0x10
+        ja L_one
+        mov edx, dword ptr [esp + 0x18]
+        test edx, edx
+        je L_one
+        test eax, eax
+        jne L_go
+        ret
+    L_go:
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test al, 7
+        mov word ptr [esi + 0x10], cx
+        mov ecx, dword ptr [esp + 0x18]
+        push edi
+        mov dword ptr [esi + 0x12], ecx
+        je L_aligned
+        mov edx, eax
+        and eax, 7
+        shr edx, 3
+        mov ecx, 8
+        inc edx
+        sub ecx, eax
+        mov word ptr [esi + 0x16], dx
+        mov word ptr [esi + 0x3e], cx
+        jmp L_cont
+    L_aligned:
+        shr eax, 3
+        mov word ptr [esi + 0x16], ax
+        mov word ptr [esi + 0x3e], 0
+    L_cont:
+        push esi
+        push 1
+        mov word ptr [esi + 0x18], 0x137
+        call ext_0080ACF0
+        mov edi, eax
+        mov word ptr [esi + 0x3e], 0
+        mov edx, edi
+        mov word ptr [esi + 0x16], 0
+        and edx, 0xffff
+        push edx
+        push 0xab55d8
+        call ext_0080A800
+        push edi
+        call ext_0080B060
+        add esp, 0x14
+        pop edi
+        pop esi
+        ret
+    L_one:
+        mov eax, 1
+        ret
+    }
+}
