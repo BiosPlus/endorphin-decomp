@@ -2451,3 +2451,8 @@ extern "C" double __fastcall fn_006F1010(void* self) {
 extern "C" double __fastcall fn_006F1050(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x4370);
 }
+
+// [0x006F1090] Double field getter (7 bytes) - sub_006F1090
+extern "C" double __fastcall fn_006F1090(void* self) {
+    return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x43f8);
+}
