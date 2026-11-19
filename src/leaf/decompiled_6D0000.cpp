@@ -11100,3 +11100,92 @@ L_5E99:
         ret
     }
 }
+
+// [0x006DE9D0] sub_006DE9D0 (224 bytes)
+// SEH-guarded thiscall (ret 0x8): frame push, virtual dispatch on arg, conditional allocation/cleanup.
+extern "C" void ext_006CA140();
+extern "C" void ext_006DDF00();
+extern "C" void ext_006DEEC0();
+extern "C" __declspec(naked) int __fastcall fn_006DE9D0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b95b6
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esi]
+        push edi
+        call dword ptr [eax + 0x28]
+        cmp eax, -1
+        jne short L_9D0_has
+        push 0xa0
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x0
+        je short L_9D0_c
+        push 0x0
+        push 0x0
+        push 0x0
+        push edi
+        push edi
+        mov ecx, eax
+        call ext_006DDF00
+        jmp short L_9D0_d
+    L_9D0_c:
+        xor eax, eax
+    L_9D0_d:
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        mov edi, eax
+        call dword ptr [edx + 0x8]
+        jmp short L_9D0_end
+    L_9D0_has:
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov edi, eax
+    L_9D0_end:
+        mov al, byte ptr [esp + 0x1c]
+        test al, al
+        je short L_9D0_fin
+        mov ecx, edi
+        call ext_006DEEC0
+        test eax, eax
+        jne short L_9D0_fin
+        push 0x98
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x1c], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x1
+        je short L_9D0_e
+        mov ecx, eax
+        call ext_006CA140
+        jmp short L_9D0_f
+    L_9D0_e:
+        xor eax, eax
+    L_9D0_f:
+        push 0x0
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_006DEED0
+    L_9D0_fin:
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, edi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    }
+}
