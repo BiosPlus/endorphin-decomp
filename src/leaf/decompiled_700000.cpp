@@ -6011,3 +6011,14 @@ extern "C" __declspec(naked) void __fastcall fn_0070ACC0(void* self) {
         ret 0x20
     }
 }
+
+// [0x0070AB40] sub_0070AB40 (63 bytes)
+extern "C" void __fastcall fn_0070AB40(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    char* p = (char*)self;
+    *(int*)(p + 0x160) = a1;
+    *(int*)(p + 0x164) = a2;
+    *(int*)(p + 0x168) = a3;
+    *(int*)(p + 0x16c) = a4;
+    *(int*)(p + 0x170) = a5;
+    *(int*)(p + 0x174) = a6;
+}
