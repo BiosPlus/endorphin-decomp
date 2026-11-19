@@ -3637,3 +3637,31 @@ extern "C" __declspec(naked) void* __cdecl fn_0077F5D0(unsigned int n) {
         ret
     }
 }
+
+// [0x0077F550] sub_0077F550 (51 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0077F550(unsigned int n) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, 0xAAEB2C
+        cmp ecx, 4
+        ja  dflt
+        _emit 0xFF
+        _emit 0x24
+        _emit 0x8D
+        _emit 0x84
+        _emit 0xF5
+        _emit 0x77
+        _emit 0x00
+        mov eax, 0xAAEB2C
+        ret
+        mov eax, 0xAADFE0
+        ret
+        mov eax, 0xAAE0D4
+        ret
+        mov eax, 0xAADFD4
+        ret
+        mov eax, 0xAADFCC
+    dflt:
+        ret
+    }
+}
