@@ -6188,3 +6188,14 @@ extern "C" __declspec(naked) bool __fastcall fn_006C04D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006C0950] sub_006C0950 (63 bytes)
+extern "C" void __fastcall fn_006C0950(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    char* p = (char*)self;
+    *(int*)(p + 0x6d0) = a1;
+    *(int*)(p + 0x6d4) = a2;
+    *(int*)(p + 0x6d8) = a3;
+    *(int*)(p + 0x6dc) = a4;
+    *(int*)(p + 0x6e0) = a5;
+    *(int*)(p + 0x6e4) = a6;
+}
