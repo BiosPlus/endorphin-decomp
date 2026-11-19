@@ -10261,3 +10261,56 @@ extern "C" __declspec(naked) void __fastcall fn_006FFF20(void* self) {
         ret
     }
 }
+
+// [0x006FA870] sub_006FA870 (99 bytes)
+extern "C" void ext_006FA430();
+extern "C" __declspec(naked) void __fastcall fn_006FA870(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi + 0x8]
+        cmp ecx, edi
+        je same
+        test edi, edi
+        je nullcase
+        mov eax, dword ptr [esi]
+        push 0x0
+        mov ecx, esi
+        call dword ptr [eax + 0x44]
+        mov ecx, dword ptr [esi + 0x34]
+        mov dword ptr [esi + 0x8], edi
+        and ecx, 0x8
+        cmp cl, 0x8
+        jne ret1
+        push esi
+        mov ecx, edi
+        call ext_006FA430
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    nullcase:
+        mov edx, dword ptr [esi + 0x34]
+        and edx, 0x8
+        cmp dl, 0x8
+        jne clear
+        test ecx, ecx
+        je clear
+        push esi
+        call ext_006FA460
+    clear:
+        mov dword ptr [esi + 0x8], 0x0
+    ret1:
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    same:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
