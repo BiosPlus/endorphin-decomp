@@ -8414,3 +8414,34 @@ extern "C" __declspec(naked) int __fastcall fn_006DE690(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x006D7B50] sub_006D7B50 (79 bytes)
+// SEH-protected constructor-like thunk: installs an EH frame, sets vtable at *self to mem_00993990,
+// calls ext_006D7BE0, then ext_0070CD30 with state -1, and unlinks the frame.
+extern "C" void ext_006D7BE0();
+extern "C" void ext_0070CD30();
+extern "C" int mem_00993990;
+extern "C" __declspec(naked) void __fastcall fn_006D7B50(void* self) {
+    __asm {
+        push -1
+        push 0x8b9248
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], offset mem_00993990
+        mov dword ptr [esp + 0x10], 0
+        call ext_006D7BE0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0070CD30
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
