@@ -6071,3 +6071,73 @@ extern "C" __declspec(naked) void __cdecl fn_00720260() {
         ret
     }
 }
+
+// [0x0072DAD0] sub_0072DAD0 (162 bytes)
+extern "C" void ext_006E7410();
+extern "C" void ext_006E7440();
+extern "C" void ext_00723920();
+extern "C" void ext_00728D40();
+extern "C" void ext_00728D50();
+extern "C" __declspec(naked) void __fastcall fn_0072DAD0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        jne L_nonnull
+        push 3
+        lea ecx, [esi + 0x8]
+        call ext_006E7440
+        xor al, al
+        pop esi
+        ret
+    L_nonnull:
+        lea ecx, [eax + 0x4]
+        call ext_00723920
+        test al, al
+        jne L_true
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00728D40
+        cmp eax, 0x3
+        je L_eq3
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00728D50
+        push eax
+        push 0x7
+        lea ecx, [esi + 0x8]
+        call ext_006E7410
+        jmp L_after
+    L_eq3:
+        push 0x3
+        lea ecx, [esi + 0x8]
+        call ext_006E7440
+    L_after:
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        je L_skip1
+        lea ecx, [eax + 0x4]
+        push 0x1
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax]
+    L_skip1:
+        mov dword ptr [esi + 0xac], 0x0
+        xor al, al
+        pop esi
+        ret
+    L_true:
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        je L_skip2
+        mov edx, dword ptr [eax + 0x4]
+        lea ecx, [eax + 0x4]
+        push 0x1
+        call dword ptr [edx]
+    L_skip2:
+        mov dword ptr [esi + 0xac], 0x0
+        mov al, 0x1
+        pop esi
+        ret
+    }
+}
