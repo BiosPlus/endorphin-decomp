@@ -6657,3 +6657,28 @@ extern "C" __declspec(naked) unsigned int __fastcall fn_007AEE00(void* self, int
         ret 8
     }
 }
+
+// [0x007AEF80] sub_007AEF80 (74 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AEF80(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8c1c68
+        push eax
+        mov dword ptr fs:[0], esp
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D70
+        lea ecx, [esp + 0x5c]
+        mov dword ptr [esp + 0x8], 0xffffffff
+        call ext_006B9D70
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        xor al, al
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x98
+    }
+}
