@@ -20975,3 +20975,54 @@ L_56FA94:
         jmp L_56FA4F
     }
 }
+
+// [0x005601D0] sub_005601D0 (139 bytes)
+extern "C" void ext_0055FAF0();
+extern "C" int mem_00925134; /* "P{b" */
+extern "C" int mem_00924FF4; /* u32 0x00628FF0 */
+
+extern "C" __declspec(naked) void __fastcall fn_005601D0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+loop_head_005601D0:
+        mov     eax, dword ptr [esi + 0x1d8]
+        cmp     dword ptr [esi + 0x1d4], eax
+        mov     dword ptr [esp + 0x10], eax
+        jbe     short skip_inv1_005601D0
+        call    dword ptr [mem_00925134]
+        mov     eax, dword ptr [esp + 0x10]
+skip_inv1_005601D0:
+        cmp     ebx, eax
+        je      short done_005601D0
+        cmp     ebx, dword ptr [esi + 0x1d8]
+        jb      short skip_inv2_005601D0
+        call    dword ptr [mem_00925134]
+skip_inv2_005601D0:
+        mov     edx, dword ptr [esp + 0x12c]
+        mov     eax, dword ptr [ebx]
+        push    edx
+        push    0
+        push    edi
+        push    eax
+        mov     ecx, ebp
+        call    ext_0055FAF0
+        cmp     ebx, dword ptr [esi + 0x1d8]
+        jb      short skip_inv3_005601D0
+        call    dword ptr [mem_00925134]
+skip_inv3_005601D0:
+        add     ebx, 4
+        jmp     short loop_head_005601D0
+done_005601D0:
+        lea     ecx, [esp + 0xb4]
+        mov     dword ptr [esp + 0x118], 0xffffffff
+        call    dword ptr [mem_00924FF4]
+        mov     al, 1
+        mov     ecx, dword ptr [esp + 0x110]
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     dword ptr fs:[0], ecx
+        pop     ebx
+        add     esp, 0x10c
+        ret     0x10
+    }
+}
