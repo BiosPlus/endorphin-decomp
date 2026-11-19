@@ -19305,3 +19305,208 @@ extern "C" __declspec(naked) void __fastcall fn_007F0EE0(void* self) {
         ret
     }
 }
+
+// [0x007F5950] sub_007F5950 (204 bytes)
+extern "C" void ext_007D5B30();
+extern "C" void ext_007F56E0();
+extern "C" void ext_007F5710();
+extern "C" void ext_007F5850();
+
+extern "C" __declspec(naked) void __cdecl fn_007F5950(void* a1, void* a2, float* a3) {
+    __asm {
+        __asm _emit 0x57                    // push edi
+        __asm _emit 0x8b
+        __asm _emit 0x7c
+        __asm _emit 0x24
+        __asm _emit 0x08                    // mov edi, [esp+8]
+        __asm _emit 0x8b
+        __asm _emit 0x07                    // mov eax, [edi]
+        __asm _emit 0x8b
+        __asm _emit 0x00                    // mov eax, [eax]
+        __asm _emit 0x25
+        __asm _emit 0xff
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00                    // and eax, 0xff
+        __asm _emit 0x83
+        __asm _emit 0xc0
+        __asm _emit 0xff                    // add eax, -1
+        __asm _emit 0x83
+        __asm _emit 0xf8
+        __asm _emit 0x06                    // cmp eax, 6
+        __asm _emit 0x0f
+        __asm _emit 0x87
+        __asm _emit 0x9d
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00                    // ja default
+        __asm _emit 0xff
+        __asm _emit 0x24
+        __asm _emit 0x85
+        __asm _emit 0x1c
+        __asm _emit 0x5a
+        __asm _emit 0x7f
+        __asm _emit 0x00                    // jmp [4*eax + 0x7f5a1c]
+
+        // case 1
+        __asm _emit 0x8b
+        __asm _emit 0x47
+        __asm _emit 0x04                    // mov eax, [edi+4]
+        __asm _emit 0xd9
+        __asm _emit 0x40
+        __asm _emit 0x30                    // fld [eax+0x30]
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x10                    // mov ecx, [esp+0x10]
+        __asm _emit 0x83
+        __asm _emit 0xc0
+        __asm _emit 0x30                    // add eax, 0x30
+        __asm _emit 0xd9
+        __asm _emit 0x19                    // fstp [ecx]
+        __asm _emit 0xd9
+        __asm _emit 0x40
+        __asm _emit 0x04                    // fld [eax+4]
+        __asm _emit 0x5f                    // pop edi
+        __asm _emit 0xd9
+        __asm _emit 0x59
+        __asm _emit 0x04                    // fstp [ecx+4]
+        __asm _emit 0xd9
+        __asm _emit 0x40
+        __asm _emit 0x08                    // fld [eax+8]
+        __asm _emit 0xd9
+        __asm _emit 0x59
+        __asm _emit 0x08                    // fstp [ecx+8]
+        __asm _emit 0xc3                    // ret
+
+        // case 5
+        __asm _emit 0x53                    // push ebx
+        __asm _emit 0x8b
+        __asm _emit 0x5c
+        __asm _emit 0x24
+        __asm _emit 0x10                    // mov ebx, [esp+0x10]
+        __asm _emit 0x56                    // push esi
+        __asm _emit 0x8b
+        __asm _emit 0x74
+        __asm _emit 0x24
+        __asm _emit 0x18                    // mov esi, [esp+0x18]
+        __asm _emit 0x56                    // push esi
+        __asm _emit 0x53                    // push ebx
+        __asm _emit 0x57                    // push edi
+        __asm call ext_007D5B30
+        __asm _emit 0x8b
+        __asm _emit 0x0f                    // mov ecx, [edi]
+        __asm _emit 0x51                    // push ecx
+        __asm call ext_007F56E0
+        __asm _emit 0xd9
+        __asm _emit 0xe0                    // fchs
+        __asm _emit 0xd9
+        __asm _emit 0x5c
+        __asm _emit 0x24
+        __asm _emit 0x20                    // fstp [esp+0x20]
+        __asm _emit 0x83
+        __asm _emit 0xc4
+        __asm _emit 0x10                    // add esp, 0x10
+        __asm _emit 0xd9
+        __asm _emit 0x03                    // fld [ebx]
+        __asm _emit 0xd9
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x10                    // fld [esp+0x10]
+        __asm _emit 0xd9
+        __asm _emit 0xc0                    // fld st(0)
+        __asm _emit 0xde
+        __asm _emit 0xca                    // fmulp st(2), st
+        __asm _emit 0xd9
+        __asm _emit 0x06                    // fld [esi]
+        __asm _emit 0xde
+        __asm _emit 0xc2                    // faddp st(2), st
+        __asm _emit 0xd9
+        __asm _emit 0xc9                    // fxch st(1)
+        __asm _emit 0xd9
+        __asm _emit 0x1e                    // fstp [esi]
+        __asm _emit 0xd9
+        __asm _emit 0x43
+        __asm _emit 0x04                    // fld [ebx+4]
+        __asm _emit 0xd8
+        __asm _emit 0xc9                    // fmul st, st(1)
+        __asm _emit 0xd8
+        __asm _emit 0x46
+        __asm _emit 0x04                    // fadd [esi+4]
+        __asm _emit 0xd9
+        __asm _emit 0x5e
+        __asm _emit 0x04                    // fstp [esi+4]
+        __asm _emit 0xd8
+        __asm _emit 0x4b
+        __asm _emit 0x08                    // fmul [ebx+8]
+        __asm _emit 0xd8
+        __asm _emit 0x46
+        __asm _emit 0x08                    // fadd [esi+8]
+        __asm _emit 0xd9
+        __asm _emit 0x5e
+        __asm _emit 0x08                    // fstp [esi+8]
+        __asm _emit 0x5e                    // pop esi
+        __asm _emit 0x5b                    // pop ebx
+        __asm _emit 0x5f                    // pop edi
+        __asm _emit 0xc3                    // ret
+
+        // case 2
+        __asm _emit 0x8b
+        __asm _emit 0x54
+        __asm _emit 0x24
+        __asm _emit 0x10                    // mov edx, [esp+0x10]
+        __asm _emit 0x8b
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x0c                    // mov eax, [esp+0xc]
+        __asm _emit 0x52                    // push edx
+        __asm _emit 0x50                    // push eax
+        __asm _emit 0x57                    // push edi
+        __asm call ext_007F5710
+        __asm _emit 0x83
+        __asm _emit 0xc4
+        __asm _emit 0x0c                    // add esp, 0xc
+        __asm _emit 0x5f                    // pop edi
+        __asm _emit 0xc3                    // ret
+
+        // case 7
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x10                    // mov ecx, [esp+0x10]
+        __asm _emit 0x8b
+        __asm _emit 0x54
+        __asm _emit 0x24
+        __asm _emit 0x0c                    // mov edx, [esp+0xc]
+        __asm _emit 0x51                    // push ecx
+        __asm _emit 0x52                    // push edx
+        __asm _emit 0x57                    // push edi
+        __asm call ext_007F5850
+        __asm _emit 0xdd
+        __asm _emit 0xd8                    // fstp st(0)
+        __asm _emit 0x83
+        __asm _emit 0xc4
+        __asm _emit 0x0c                    // add esp, 0xc
+        __asm _emit 0x5f                    // pop edi
+        __asm _emit 0xc3                    // ret
+
+        // default
+        __asm _emit 0x8b
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x10                    // mov eax, [esp+0x10]
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x0c                    // mov ecx, [esp+0xc]
+        __asm _emit 0x50                    // push eax
+        __asm _emit 0x51                    // push ecx
+        __asm _emit 0x57                    // push edi
+        __asm call ext_007D5B30
+        __asm _emit 0x83
+        __asm _emit 0xc4
+        __asm _emit 0x0c                    // add esp, 0xc
+        __asm _emit 0x5f                    // pop edi
+        __asm _emit 0xc3                    // ret
+    }
+}
