@@ -6477,3 +6477,76 @@ extern "C" __declspec(naked) void* __fastcall fn_0072CBF0(void* self) {
         ret
     }
 }
+
+// [0x00728410] sub_00728410 (192 bytes)
+extern "C" void ext_006E7410();
+extern "C" void ext_006E7440();
+extern "C" void ext_006E7460();
+extern "C" int mem_00AAD034;
+extern "C" int mem_00AAD040;
+extern "C" int mem_00AAD0B0;
+extern "C" __declspec(naked) void __fastcall fn_00728410(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0xef0]
+        mov ecx, edi
+        call ext_006E7460
+        cmp eax, -1
+        jg L_end
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x2c]
+        test al, al
+        je L_end
+        mov eax, dword ptr [esi + 0x25c]
+        test eax, eax
+        jne L_skip1
+        push offset mem_00AAD040
+        push 0xa
+        mov ecx, edi
+        call ext_006E7410
+    L_skip1:
+        mov al, byte ptr [esi + 0x15]
+        mov dword ptr [esi + 0x25c], 0
+        test al, al
+        jne L_else
+        mov eax, dword ptr [esi + 0x10]
+        push offset mem_00AAD0B0
+        push eax
+        mov ecx, dword ptr [eax]
+        call dword ptr [ecx + 0x3c]
+        mov eax, dword ptr [esi + 0x10]
+        add esp, 8
+        mov edx, dword ptr [eax]
+        push offset mem_00AAD034
+        push eax
+        call dword ptr [edx + 0x3c]
+        add esp, 8
+        jmp L_after
+    L_else:
+        mov edx, dword ptr [esi + 0x260]
+        inc edx
+        mov eax, edx
+        mov dword ptr [esi + 0x260], edx
+        shl eax, 4
+        mov dword ptr [eax + esi + 0x264], 0
+    L_after:
+        mov edx, dword ptr [esi + 0xee4]
+        mov ecx, dword ptr [esi + 0x10]
+        inc edx
+        mov dword ptr [esi + 0xee4], edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x30]
+        test eax, eax
+        je L_end
+        push 0xb
+        mov ecx, edi
+        call ext_006E7440
+    L_end:
+        pop edi
+        pop esi
+        ret
+    }
+}
