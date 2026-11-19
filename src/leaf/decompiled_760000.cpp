@@ -83,8 +83,10 @@ extern "C" __declspec(naked) char __fastcall fn_007646E0(void* self, int edx_unu
         ret     4
     }
 }
+extern "C" void ext_006D2170();
+extern "C" void ext_006D23F0();
 
-// [0x00761230] sub_00761230 (303 bytes)
+extern "C" void ext_006D23F0();
 extern "C" __declspec(naked) char __fastcall fn_00761230(void* self, int edx_unused, void* arg) {
     __asm {
         sub     esp, 8
@@ -2094,5 +2096,99 @@ extern "C" __declspec(naked) void __fastcall fn_00763EA0(void* self, int edx_unu
         nop
         nop
         nop
+    }
+}
+
+// [0x00763910] sub_00763910 (224 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00763910(void* self, int edx_unused, int* a1, int* a2, int* a3) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -8
+        sub     esp, 0x14
+        mov     eax, dword ptr [ebp + 8]
+        push    ebx
+        push    esi
+        push    edi
+        mov     eax, dword ptr [eax]
+        xor     edi, edi
+        cmp     eax, edi
+        mov     dword ptr [esp + 0x1c], eax
+        mov     dword ptr [esp + 0x10], edi
+        jle     L_done
+        mov     dword ptr [esp + 0x14], edi
+        jmp     L_body
+    L_loop:
+        mov     edi, dword ptr [esp + 0x14]
+    L_body:
+        mov     ecx, dword ptr [ebp + 8]
+        mov     edx, dword ptr [ebp + 0xc]
+        mov     esi, edi
+        push    0
+        mov     eax, dword ptr [ecx + 0x10]
+        mov     ebx, dword ptr [edx + 0x10]
+        add     esi, eax
+        add     edi, ebx
+        mov     ecx, esi
+        call    ext_006D23F0
+        push    0
+        mov     ecx, edi
+        mov     ebx, eax
+        call    ext_006D23F0
+        fld     qword ptr [ebx]
+        fcomp   qword ptr [eax]
+        fnstsw  ax
+        test    ah, 0x40
+        je      L_call
+        push    1
+        mov     ecx, esi
+        call    ext_006D23F0
+        push    1
+        mov     ecx, edi
+        mov     ebx, eax
+        call    ext_006D23F0
+        fld     qword ptr [ebx]
+        fcomp   qword ptr [eax]
+        fnstsw  ax
+        test    ah, 0x40
+        je      L_call
+        push    2
+        mov     ecx, esi
+        call    ext_006D23F0
+        push    2
+        mov     ecx, edi
+        mov     esi, eax
+        call    ext_006D23F0
+        fld     qword ptr [esi]
+        fcomp   qword ptr [eax]
+        fnstsw  ax
+        test    ah, 0x40
+        jne     L_next
+    L_call:
+        mov     eax, dword ptr [esp + 0x10]
+        lea     ecx, [esp + 0x18]
+        push    ecx
+        mov     ecx, dword ptr [ebp + 0x10]
+        mov     dword ptr [esp + 0x1c], eax
+        mov     edx, dword ptr [ecx]
+        push    edx
+        call    ext_006D2170
+    L_next:
+        mov     eax, dword ptr [esp + 0x10]
+        mov     edx, dword ptr [esp + 0x14]
+        mov     ecx, dword ptr [esp + 0x1c]
+        inc     eax
+        add     edx, 0x20
+        cmp     eax, ecx
+        mov     dword ptr [esp + 0x10], eax
+        mov     dword ptr [esp + 0x14], edx
+        jl      L_loop
+    L_done:
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     0xc
     }
 }
