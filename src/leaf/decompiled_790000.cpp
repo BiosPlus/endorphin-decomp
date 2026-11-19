@@ -6384,3 +6384,20 @@ extern "C" void* __fastcall fn_0079D700(void* self, void* dummy, int a1, int a2)
     }
     return 0;
 }
+
+// [0x007911E0] sub_007911E0 (39 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007911E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x50], eax
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x4c], eax
+        xor eax, eax
+        mov dword ptr [ecx + 0x48], edx
+        mov dword ptr [ecx + 0x60], 0x1
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0xc
+    }
+}
