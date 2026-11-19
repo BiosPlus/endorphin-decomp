@@ -7324,3 +7324,42 @@ L_skip:
         ret
     }
 }
+
+// [0x0079BDE0] sub_0079BDE0 (166 bytes)
+// [VA] 0x0079BDE0
+extern "C" int mem_00925284;
+extern "C" double mem_00B610C0;
+extern "C" double mem_00B610C8;
+extern "C" double mem_00B610D0;
+extern "C" double mem_00B610D8;
+extern "C" double mem_00B610E0;
+extern "C" double mem_00B610E8;
+extern "C" double mem_00B610F0;
+extern "C" double mem_00B610F8;
+extern "C" double mem_00B61100;
+extern "C" double mem_00B61108;
+extern "C" double mem_00B61110;
+extern "C" double mem_00B61118;
+extern "C" double mem_00B61120;
+extern "C" double mem_00B61128;
+extern "C" double mem_00B61130;
+extern "C" double mem_00B61138;
+extern "C" void __cdecl fn_0079BDE0() {
+    double* h = (double*)mem_00925284;
+    mem_00B610C0 = -*h;
+    mem_00B610C8 = -*h;
+    mem_00B610D0 = -*h;
+    mem_00B610D8 = -*h;
+    mem_00B610E0 = -*h;
+    mem_00B610E8 = -*h;
+    mem_00B610F0 = -*h;
+    mem_00B610F8 = -*h;
+    mem_00B61100 = -*h;
+    mem_00B61108 = -*h;
+    mem_00B61110 = -*h;
+    mem_00B61118 = -*h;
+    mem_00B61120 = -*h;
+    mem_00B61128 = -*h;
+    mem_00B61130 = -*h;
+    mem_00B61138 = -*h;
+}
