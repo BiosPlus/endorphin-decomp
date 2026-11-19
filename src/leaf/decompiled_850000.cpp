@@ -5484,3 +5484,77 @@ extern "C" __declspec(naked) int __cdecl fn_0085E6A0(const char* a, const char* 
         __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00 // lea esp, [esp]
     }
 }
+
+// [0x0085E3A0] sub_0085E3A0 (128 bytes)
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E420();
+extern "C" __declspec(naked) void __cdecl fn_0085E3A0(char* s) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push esi
+        call ext_0085E1F0
+        add esp, 4
+        test eax, eax
+        je semi
+    trim:
+        cmp byte ptr [esi], 0x20
+        jg semi
+        push esi
+        call ext_0085E1F0
+        add esp, 4
+        push eax
+        lea eax, [esi + 1]
+        push eax
+        push esi
+        call ext_0085E420
+        add esp, 0xc
+        push esi
+        call ext_0085E1F0
+        add esp, 4
+        test eax, eax
+        jne trim
+    semi:
+        push esi
+        call ext_0085E1F0
+        add esp, 4
+        xor ecx, ecx
+        test eax, eax
+        jle after
+    semi_loop:
+        lea edx, [esi + ecx]
+        cmp byte ptr [edx], 0x3b
+        jne skip
+        mov byte ptr [edx], 0
+    skip:
+        inc ecx
+        cmp ecx, eax
+        jl semi_loop
+    after:
+        push esi
+        call ext_0085E1F0
+        add esp, 4
+        dec eax
+        js done
+    rtrim:
+        lea ecx, [esi + eax]
+        cmp byte ptr [ecx], 0x20
+        jg done
+        dec eax
+        mov byte ptr [ecx], 0
+        jns rtrim
+    done:
+        pop esi
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
