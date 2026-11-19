@@ -7494,3 +7494,51 @@ extern "C" __declspec(naked) void __cdecl fn_0086B220(void) {
         _emit 0x00
     }
 }
+
+// [0x00860800] sub_00860800 (107 bytes)
+extern "C" int mem_00BC70C0;
+extern "C" int mem_00BC7100;
+extern "C" int mem_00BC672C;
+extern "C" int mem_00AB9608;
+extern "C" int mem_00AB960C;
+extern "C" __declspec(naked) int __cdecl fn_00860800(int s) {
+    __asm {
+        sub esp, 0x4
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x4
+        mov dword ptr [esp + 0x8], 0x1
+        push eax
+        push 0x20
+        push 0xffff
+        push esi
+        call dword ptr [mem_00BC70C0]
+        cmp eax, -0x1
+        jne nonblock
+        push esi
+        call dword ptr [mem_00BC7100]
+        mov eax, 0x1
+        pop esi
+        add esp, 0x4
+        ret
+    nonblock:
+        push offset mem_00AB9608
+        push 0x8004667e
+        push esi
+        call dword ptr [mem_00BC672C]
+        push 0x4
+        push offset mem_00AB960C
+        push 0x4000
+        push 0x3e8
+        push esi
+        call dword ptr [mem_00BC70C0]
+        xor eax, eax
+        pop esi
+        add esp, 0x4
+        ret
+    }
+}
