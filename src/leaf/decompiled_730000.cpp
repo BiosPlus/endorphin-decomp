@@ -3069,3 +3069,72 @@ extern "C" void __fastcall fn_00732160(void* self, int edx_unused, void* a1) {
     ((void (__thiscall*)(void*, void*))ext_007325C0)(self, a1);
     ((void (__thiscall*)(void*, void*))ext_007321A0)(self, a1);
 }
+
+// [0x0073A120] sub_0073A120 (176 bytes)
+extern "C" void ext_0072CF10();
+extern "C" void ext_006D3900();
+extern "C" void ext_0073E150();
+extern "C" void ext_006D2170();
+
+extern "C" __declspec(naked) void __fastcall fn_0073A120(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        push 2
+        mov ecx, dword ptr [esi + 0b4h]
+        call ext_0072CF10
+        test al, al
+        je fn0073A120_ret1
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad404h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073A120_ret1
+        push edi
+fn0073A120_loop:
+        mov ecx, dword ptr [esi + 4]
+        push 0b5d2c0h
+        call ext_006D3900
+        mov edi, eax
+        mov ecx, esi
+        push edi
+        call ext_0073E150
+        test al, al
+        je fn0073A120_else
+        mov edx, dword ptr [esi + 1b8h]
+        lea ecx, [esi + 1b8h]
+        lea eax, [esp + 8]
+        mov dword ptr [esp + 8], edi
+        push eax
+        push edx
+        call ext_006D2170
+        jmp fn0073A120_join
+fn0073A120_else:
+        mov ecx, dword ptr [esi + 4]
+        push edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 88h]
+fn0073A120_join:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad404h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        jne fn0073A120_loop
+        pop edi
+        mov al, 1
+        pop esi
+        pop ecx
+        ret 4
+fn0073A120_ret1:
+        mov al, 1
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
