@@ -71,8 +71,10 @@ extern "C" void ext_006C9DA0();
 extern "C" void ext_006C9F20();
 extern "C" void ext_00789BA0();
 extern "C" void ext_0079E5B0();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_00722DC0();
 
-// [0x006C9570] sub_006C9570 (15 bytes)
+extern "C" void ext_00722DC0();
 extern "C" void __cdecl fn_006C9570() {
     ext_006C9960(0, 0, (int)0xaa8d5c);
 }
@@ -7600,5 +7602,86 @@ L_join_6C7940:
         mov dword ptr fs:[0], ecx
         add esp, 0xa8
         ret 4
+    }
+}
+
+// [0x006CC310] sub_006CC310 (208 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006CC310(void* self, int edx_unused, int a1, float a2) {
+    __asm {
+        sub     esp, 0x10
+        push    ebx
+        push    esi
+        mov     esi, ecx
+        call    ext_006CA6A0
+        mov     ebx, dword ptr [esp + 0x1c]
+        dec     eax
+        cmp     ebx, eax
+        jge     L_early
+        push    edi
+        mov     dword ptr [esi + 0x48], 0xffffffff
+        push    ebx
+        mov     ecx, esi
+        mov     dword ptr [esi + 0x4c], 0x7fffffff
+        call    ext_006CA060
+        mov     edi, eax
+        mov     ecx, edi
+        call    ext_006C9C30
+        cmp     eax, 8
+        jne     L_tail
+        mov     ecx, edi
+        call    ext_006C9CD0
+        cmp     eax, 0x900
+        ja      L_gt900
+        je      L_float
+        cmp     eax, 0x100
+        je      L_float
+        cmp     eax, 0x400
+        je      L_dword
+        push    ebx
+        push    0x10
+        mov     ecx, esi
+        call    ext_006D03E0
+        pop     edi
+        pop     esi
+        pop     ebx
+        add     esp, 0x10
+        ret     8
+L_float:
+        fld     dword ptr [esp + 0x24]
+        push    ebx
+        lea     eax, [esp + 0x18]
+        fstp    qword ptr [esp + 0x18]
+        push    esi
+        lea     ecx, [esp + 0x14]
+        push    eax
+        push    ecx
+        mov     dword ptr [esp + 0x1c], 0
+        mov     dword ptr [esp + 0x20], 0
+        call    ext_00722DC0
+        fld     qword ptr [esp + 0x1c]
+        add     esp, 0xc
+        fstp    dword ptr [esp]
+        jmp     L_store
+L_gt900:
+        cmp     eax, 0xc00
+        jne     L_tail
+L_dword:
+        mov     edx, dword ptr [esp + 0x24]
+        push    edx
+L_store:
+        push    0
+        mov     ecx, edi
+        call    ext_006C9DF0
+L_tail:
+        push    ebx
+        push    0x10
+        mov     ecx, esi
+        call    ext_006D03E0
+        pop     edi
+L_early:
+        pop     esi
+        pop     ebx
+        add     esp, 0x10
+        ret     8
     }
 }
