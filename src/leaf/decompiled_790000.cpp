@@ -6473,3 +6473,18 @@ extern "C" int __fastcall fn_0079E6C0(void* self, int /*edx*/, int a1, int a2, i
     ((void (__thiscall*)(void*, int, int))ext_00783940)((char*)self + 4, a2, a3);
     return 0;
 }
+
+// [0x0079BC70] sub_0079BC70 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B61020;
+extern "C" int mem_00B61028;
+extern "C" int mem_00B61030;
+extern "C" int mem_00B61038;
+
+extern "C" void __cdecl fn_0079BC70() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B61020 = -*p;
+    *(double*)&mem_00B61028 = -*p;
+    *(double*)&mem_00B61030 = -*p;
+    *(double*)&mem_00B61038 = -*p;
+}
