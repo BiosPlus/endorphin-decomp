@@ -10951,3 +10951,97 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0058AFF0] sub_0058AFF0 (234 bytes)
+extern "C" void ext_00672380();
+extern "C" void ext_0058A170();
+extern "C" void ext_00476660();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FD8;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_0058AFF0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 89fa02h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 44h
+        mov eax, dword ptr [ecx + 4]
+        mov edx, dword ptr [ebp + 0ch]
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 10h], esp
+        mov dword ptr [ebp - 14h], ecx
+        mov ecx, dword ptr [ecx]
+        push eax
+        push ecx
+        mov ecx, dword ptr [ebp + 8]
+        push edx
+        mov dword ptr [ebp - 4], 0
+        call ext_00672380
+        mov ecx, dword ptr [ebp - 0ch]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+        mov eax, dword ptr [ebp - 14h]
+        push eax
+        lea ecx, [ebp - 34h]
+        push ecx
+        mov ecx, dword ptr [ebp + 8]
+        call ext_0058A170
+        mov bl, 2
+        push 92f144h
+        lea ecx, [ebp - 34h]
+        mov byte ptr [ebp - 4], bl
+        call dword ptr [mem_00924ED0]
+        mov edx, dword ptr [ebp + 14h]
+        push edx
+        lea eax, [ebp - 50h]
+        push eax
+        call ext_00476660
+        add esp, 8
+        push eax
+        lea ecx, [ebp - 34h]
+        mov byte ptr [ebp - 4], 3
+        call dword ptr [mem_00924FD8]
+        lea ecx, [ebp - 50h]
+        mov byte ptr [ebp - 4], bl
+        call dword ptr [mem_00924FF4]
+        mov esi, dword ptr [ebp - 18h]
+        add esi, 1ch
+        mov ecx, esi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        lea ecx, [ebp - 34h]
+        je short LB0B0
+        push 92f140h
+        call dword ptr [mem_00924ED0]
+        jmp short LB0C5
+LB0B0:
+        push 93bf54h
+        call dword ptr [mem_00924ED0]
+        push esi
+        lea ecx, [ebp - 34h]
+        call dword ptr [mem_00924FD8]
+LB0C5:
+        lea ecx, [ebp - 34h]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
