@@ -9593,3 +9593,33 @@ extern "C" __declspec(naked) int __cdecl fn_007BF4A0(char* self, int scale) {
         ret
     }
 }
+
+// [0x007BFC60] sub_007BFC60 (47 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BFC60(void* a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push ebx
+        mov edi, dword ptr [esi + 0x1cc]
+        push ebp
+        push esi
+        call dword ptr [edi + 0xc]
+        mov eax, dword ptr [esp + 0x2c]
+        push eax
+        push ebx
+        push ebp
+        push esi
+        call dword ptr [edi + 0x10]
+        add esp, 0x1c
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
