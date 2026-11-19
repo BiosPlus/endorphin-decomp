@@ -510,3 +510,16 @@ extern "C" __declspec(naked) void fn_0079DD10() {
 extern "C" double __fastcall fn_0079E5D0(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x8);
 }
+
+// [0x0079E610] Tiny indirect/IAT call leaf (14 bytes) - sub_0079E610
+extern "C" __declspec(naked) void fn_0079E610() {
+    __asm {
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        je L_0079E61B
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax + 0x8]
+L_0079E61B:
+        ret 0x4
+    }
+}
