@@ -12886,3 +12886,81 @@ extern "C" __declspec(naked) void __fastcall fn_006AF770(void* self, int edx_unu
         call ext_006A60EE
     }
 }
+
+// [0x006AF530] sub_006AF530 (152 bytes)
+extern "C" void ext_006A60EE();
+extern "C" void ext_004B0EB0();
+extern "C" void ext_006A6796();
+extern "C" void ext_006A8660();
+extern "C" void ext_006ACFE0();
+extern "C" void ext_006AD000();
+extern "C" void ext_006AD040();
+extern "C" void ext_006AD1B0();
+extern "C" __declspec(naked) void __fastcall fn_006AF530(void* self, int, void* a, void* b, void* c) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        push eax
+        mov ecx, esi
+        call ext_006AD000
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_006AD040
+        mov edx, dword ptr [edi + 0x14]
+        push edx
+        mov ecx, esi
+        call ext_006ACFE0
+        mov ecx, dword ptr [edi + 0x14]
+        push esi
+        push edi
+        call ext_006A8660
+        mov eax, dword ptr [edi + 0x58]
+        test eax, eax
+        je L1
+        add eax, -1
+        js L2
+        cmp eax, dword ptr [edi + 0x58]
+        jge L2
+        mov ecx, dword ptr [edi + 0x54]
+        push ebx
+        mov ebx, dword ptr [ecx + 4*eax]
+        push esi
+        mov ecx, ebx
+        call ext_004B0EB0
+        push ebx
+        mov ecx, esi
+        call ext_006AD1B0
+        pop ebx
+    L1:
+        mov edx, dword ptr [edi + 0x58]
+        lea ecx, [edi + 0x50]
+        push esi
+        push edx
+        call ext_006A6796
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x14]
+        push 0
+        push 1
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [edi + 4]
+        cmp byte ptr [eax + 4], 0
+        jne L3
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x18]
+        push 0
+        mov ecx, esi
+        call eax
+    L3:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 0xc
+    L2:
+        call ext_006A60EE
+    }
+}
