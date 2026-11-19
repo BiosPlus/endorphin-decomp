@@ -7363,3 +7363,69 @@ extern "C" void __cdecl fn_0079BDE0() {
     mem_00B61130 = -*h;
     mem_00B61138 = -*h;
 }
+
+// [0x007984B0] sub_007984B0 (192 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50(void*);
+extern "C" void ext_0079B140();
+
+extern "C" __declspec(naked) void __cdecl fn_007984B0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x1d8]
+        test eax, eax
+        je short L_alloc_check
+        mov ecx, dword ptr [esi + 0xc]
+        test ch, 0x2
+        je short L_clear_ptr
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+L_clear_ptr:
+        mov dword ptr [esi + 0x1d8], 0
+L_alloc_check:
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        je short L_round_alloc
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x1d8], eax
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [esi + 0x1dc], ecx
+        and ah, 0xfd
+        jmp short L_store_flags
+L_round_alloc:
+        mov edx, dword ptr [esp + 0x10]
+        lea eax, [edx + 0x3ff]
+        shr eax, 0xa
+        shl eax, 0xa
+        push eax
+        mov dword ptr [esi + 0x1dc], eax
+        call ext_0079AF40
+        mov dword ptr [esi + 0x1d8], eax
+        mov eax, dword ptr [esi + 0xc]
+        add esp, 0x4
+        or ah, 0x2
+L_store_flags:
+        mov dword ptr [esi + 0xc], eax
+        mov eax, dword ptr [esi + 0x1d8]
+        test eax, eax
+        jne short L_ret_one
+        mov eax, dword ptr [esi + 0x164]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        push 0xaaf988
+        push 0x99743c
+        call ext_0079B140
+        add esp, 0x10
+        mov dword ptr [esi + 0x1dc], 0
+        xor eax, eax
+        pop esi
+        ret
+L_ret_one:
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
