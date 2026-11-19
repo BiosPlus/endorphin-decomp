@@ -5800,3 +5800,21 @@ extern "C" __declspec(naked) void __fastcall fn_007045A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0070D310] sub_0070D310 (53 bytes)
+extern "C" void ext_006C9F70();
+extern "C" void ext_006DC460();
+extern "C" void ext_0070CF90();
+extern "C" int mem_0092A278;
+
+extern "C" double __fastcall fn_0070D310(void* self, int edx_unused, void* arg) {
+    void* obj = *(void**)((char*)self + 4);
+    if (obj) {
+        void* a = ((void* (__thiscall*)(void*))ext_006DC460)(obj);
+        void* res = ((void* (__thiscall*)(void*, void*, void*))ext_0070CF90)(self, a, arg);
+        if (res) {
+            return ((double (__thiscall*)(void*))ext_006C9F70)(res);
+        }
+    }
+    return *(double*)&mem_0092A278;
+}
