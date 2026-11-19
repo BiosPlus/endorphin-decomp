@@ -48,8 +48,10 @@ extern "C" __declspec(naked) void __cdecl fn_0080FB10(void* p) {
 }
 extern "C" void ext_0080DC60();
 extern "C" int mem_0080F910;
+extern "C" void ext_0080FC70();
+extern "C" int mem_00B83EB8;
 
-// [0x00803990] sub_00803990 (44 bytes)
+extern "C" int mem_00B83EB8;
 extern "C" void fn_00803980();
 
 extern "C" void __cdecl fn_00803990(void* self, int a2, int a3, int a4) {
@@ -9827,6 +9829,56 @@ extern "C" __declspec(naked) void __fastcall fn_0080FA60(void* self) {
         pop edi
         pop esi
         pop ecx
+        ret
+    }
+}
+
+// [0x0080FD70] sub_0080FD70 (106 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0080FD70(void) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        push offset mem_00B83EB8
+        mov dword ptr [ebx], 0
+        call ext_0080FBC0
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        jne have_esi
+        pop esi
+        mov eax, 0xfffffffa
+        pop ebx
+        ret
+    have_esi:
+        mov ecx, dword ptr [esp + 0x10]
+        push edi
+        lea eax, [esp + 0x18]
+        push 0
+        push eax
+        push ecx
+        push offset ext_0080FC70
+        push 0
+        push esi
+        call ext_0080DC60
+        mov edi, eax
+        add esp, 0x18
+        test edi, edi
+        jl skip_store
+        push esi
+        call ext_0080FB10
+        push esi
+        call ext_0080FAF0
+        add esp, 8
+        mov dword ptr [ebx], eax
+    skip_store:
+        push esi
+        call ext_0080FAC0
+        add esp, 4
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
         ret
     }
 }
