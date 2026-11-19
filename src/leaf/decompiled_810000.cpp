@@ -959,3 +959,62 @@ extern "C" __declspec(naked) void __cdecl fn_00810600(void* self, int flag) {
         ret
     }
 }
+
+// [0x00810550] sub_00810550 (104 bytes)
+extern "C" void ext_0080DD00();
+extern "C" void ext_0080ECA0();
+extern "C" void ext_008596E0();
+extern "C" void ext_00859730();
+
+extern "C" __declspec(naked) int __cdecl fn_00810550(void) {
+    __asm {
+        push edi
+        push 5a00h
+        call ext_008596E0
+        mov edi, eax
+        add esp, 4
+        test edi, edi
+        jne short L_body
+        or eax, -1
+        pop edi
+        ret
+    L_body:
+        mov eax, dword ptr [esp + 14h]
+        mov ecx, dword ptr [esp + 10h]
+        push ebx
+        mov ebx, dword ptr [esp + 10h]
+        push esi
+        push eax
+        push ecx
+        push edi
+        push ebx
+        push 1
+        call ext_0080DD00
+        mov esi, eax
+        add esp, 14h
+        test esi, esi
+        jl short L_free
+        push edi
+        push ebx
+        mov ebx, dword ptr [esp + 18h]
+        mov edx, dword ptr [ebx]
+        push edx
+        call ext_0080ECA0
+        mov esi, eax
+        mov eax, dword ptr [ebx]
+        add esp, 0ch
+        mov eax, dword ptr [eax + 1ch]
+        test eax, eax
+        je short L_free
+        mov esi, eax
+    L_free:
+        push edi
+        call ext_00859730
+        add esp, 4
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop edi
+        ret
+    }
+}
