@@ -45,6 +45,7 @@ extern "C" void __stdcall ext_007856F0(int a1, int a2);
 extern "C" void ext_007857A0();
 extern "C" void ext_00791FF0();
 extern "C" void __cdecl ext_00798750(void*, unsigned int);
+extern "C" void ext_007AF080();
 
 // [0x0079AFE0] sub_0079AFE0 (48 bytes)
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
@@ -6322,4 +6323,9 @@ extern "C" void __cdecl fn_007987E0(void* a1) {
         val50 = val28;
     }
     ext_00798750(a1, val50);
+}
+
+// [0x00798690] sub_00798690 (28 bytes)
+extern "C" int __cdecl fn_00798690(int a1, int a2, int a3) {
+    return ((int (__cdecl *)(int, int))ext_007AF080)(a2, a3 / 8);
 }
