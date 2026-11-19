@@ -16,5 +16,7 @@
     "0x007BEDC6",
     "0x007BEDCB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-19T15:19:23Z"
 }
