@@ -1388,3 +1388,8 @@ extern "C" __declspec(naked) void fn_006C0530() {
         ret
     }
 }
+
+// [0x006C08A0] Byte field setter (13 bytes) - sub_006C08A0
+extern "C" void __fastcall fn_006C08A0(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + 0x5a8) = static_cast<unsigned char>(a1);
+}
