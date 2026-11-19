@@ -127,6 +127,7 @@ extern "C" int ext_00789BB0();
 extern "C" int ext_0078C3A0();
 extern "C" int ext_0078CBE0();
 // Isolated WIP translation unit for fn_00724BF0
+extern "C" void ext_0077F9E0();
 
 // [0x00726940] sub_00726940 (63 bytes)
 extern "C" int __fastcall fn_00726940(void* self) {
@@ -5746,6 +5747,21 @@ extern "C" __declspec(naked) void* __fastcall fn_0072B280(void* self, int edx_un
         push eax
         call ext_006D7880
         mov dword ptr [esi], 0x996810
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
+
+// [0x0072B2F0] sub_0072B2F0 (25 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0072B2F0(void* self, int edx_unused, int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_0077F9E0
+        mov dword ptr [esi], 0x996834
         mov eax, esi
         pop esi
         ret 0x4
