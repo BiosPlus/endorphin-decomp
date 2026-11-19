@@ -12,5 +12,7 @@
     "0x007ABEF0",
     "0x007ABEFA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:05:19Z"
 }
