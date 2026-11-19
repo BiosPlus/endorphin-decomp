@@ -8198,3 +8198,79 @@ extern "C" __declspec(naked) void __fastcall fn_00867640(void* self) {
         mov edi, edi
     }
 }
+
+// [0x0086CEE0] sub_0086CEE0 (176 bytes)
+extern "C" void ext_0085B330();
+extern "C" __declspec(naked) void __cdecl fn_0086CEE0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x8
+        mov ecx, eax
+        shr eax, 0x18
+        and ecx, 0xfffffff
+        and al, 0xe0
+        push esi
+        cmp ecx, 0x1f
+        push edi
+        jae l1
+        or al, cl
+        mov edi, 1
+        mov byte ptr [esp + 8], al
+        jmp l9
+    l1:
+        or al, 0x1f
+        cmp ecx, 0xfffffff
+        mov byte ptr [esp + 8], al
+        jbe l2
+        mov edx, 5
+        jmp l8
+    l2:
+        cmp ecx, 0x1fffff
+        jbe l3
+        mov edx, 4
+        jmp l8
+    l3:
+        cmp ecx, 0x3fff
+        jbe l4
+        mov edx, 3
+        jmp l8
+    l4:
+        mov eax, 0x7f
+        cmp eax, ecx
+        sbb edx, edx
+        neg edx
+        inc edx
+    l8:
+        test edx, edx
+        lea edi, [edx + 1]
+        mov esi, edx
+        jbe l9
+    l5:
+        test ecx, ecx
+        je l9
+        mov al, cl
+        and al, 0x7f
+        cmp esi, edx
+        mov byte ptr [esp + esi + 8], al
+        jae l6
+        or al, 0x80
+        mov byte ptr [esp + esi + 8], al
+    l6:
+        shr ecx, 7
+        dec esi
+        jne l5
+    l9:
+        mov ecx, dword ptr [esp + 0x14]
+        lea edx, [esp + 8]
+        push ecx
+        push edi
+        push 1
+        push edx
+        call ext_0085B330
+        add esp, 0x10
+        pop edi
+        pop esi
+        add esp, 8
+        ret
+    }
+}
