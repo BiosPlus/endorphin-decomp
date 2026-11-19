@@ -7553,3 +7553,85 @@ extern "C" __declspec(naked) bool __fastcall fn_00713620(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00711398] sub_00711398 (147 bytes)
+extern "C" int ext_00711DB0();
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) double __fastcall fn_00711398(void* self) {
+    __asm {
+        _emit 0
+        _emit 1
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 0
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 2
+        _emit 1
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        call ext_00711DB0
+        dec eax
+        cmp eax, 0xf
+        ja Ldef
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x71143c]
+        jmp dword ptr [4*ecx + 0x71142c]
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x74]
+        mov dword ptr [esp + 4], eax
+        pop esi
+        _emit 0xdb
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        add esp, 8
+        ret
+        mov eax, dword ptr [esi]
+        push 0
+        push 0
+        lea ecx, [esp + 0xc]
+        push 0
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x88]
+        fld qword ptr [esp + 4]
+        pop esi
+        add esp, 8
+        ret
+        mov edx, dword ptr [esi]
+        push 0
+        push 0
+        lea eax, [esp + 0xc]
+        push 0
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x88]
+        fld qword ptr [esp + 4]
+        pop esi
+        add esp, 8
+        ret
+    Ldef:
+        fld qword ptr [mem_0092A278]
+        pop esi
+        add esp, 8
+        ret
+    }
+}
