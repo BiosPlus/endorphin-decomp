@@ -12,5 +12,7 @@
     "0x0070FAB0",
     "0x0070FABA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:05:19Z"
 }
