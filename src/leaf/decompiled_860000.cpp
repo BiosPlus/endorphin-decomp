@@ -7700,3 +7700,79 @@ extern "C" __declspec(naked) int __cdecl fn_008680B0(char* s) {
         _emit 0
     }
 }
+
+// [0x0086EA60] sub_0086EA60 (144 bytes)
+extern "C" void ext_0086B180();
+extern "C" void ext_0086B200();
+extern "C" void ext_0086B220();
+extern "C" void ext_0086B510();
+
+extern "C" __declspec(naked) void __cdecl fn_0086EA60(void* p, void* q, void* d) {
+    __asm {
+        sub esp, 0x28
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 0x30]
+        push edi
+        push eax
+        push esi
+        call ext_0086B220
+        lea ecx, [esp + 0x10]
+        add esp, 0x8
+        push ecx
+        call ext_0086B180
+        lea eax, [esp + 0x20]
+        lea ecx, [esp + 0xc]
+        add esp, 0x4
+        push eax
+        push ecx
+        push esi
+        call ext_0086B510
+        mov esi, dword ptr [esp + 0x44]
+        mov edi, dword ptr [esp + 0x48]
+        add esp, 0xc
+        cmp word ptr [esi], 0
+        push edi
+        je zero_path
+        lea eax, [esi + 2]
+        lea ecx, [esp + 0xc]
+        push eax
+        push ecx
+        call ext_0086B510
+        add esp, 0xc
+        jmp loop_setup
+    zero_path:
+        call ext_0086B200
+        add esp, 0x4
+    loop_setup:
+        xor dx, dx
+    loop_top:
+        movsx eax, dx
+        shl eax, 2
+        inc dx
+        mov ecx, dword ptr [esi + eax + 0x16]
+        xor ecx, dword ptr [esp + eax + 0x1c]
+        xor dword ptr [edi + eax], ecx
+        movsx eax, dx
+        cmp eax, 5
+        jb loop_top
+        pop edi
+        pop esi
+        add esp, 0x28
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
