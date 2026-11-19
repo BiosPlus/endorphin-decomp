@@ -3131,3 +3131,8 @@ extern "C" int __fastcall fn_006F9660(void* self) {
 extern "C" void __fastcall fn_006F9670(void* self, int edx_unused, int a1) {
     *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + 0x1f0) = static_cast<unsigned char>(a1);
 }
+
+// [0x006F9680] Byte/bool field getter (7 bytes) - sub_006F9680
+extern "C" unsigned char __fastcall fn_006F9680(void* self) {
+    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x1f0);
+}
