@@ -11330,3 +11330,87 @@ extern "C" __declspec(naked) void __fastcall fn_006D5D60(void* self) {
         nop
     }
 }
+
+// [0x006D2720] sub_006D2720 (240 bytes)
+// __thiscall-style: self in ecx (two doubles), two stack args (ret 0x8); returns a1 in eax.
+extern "C" __declspec(naked) void* __fastcall fn_006D2720(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x8bfd88
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x44
+        fld qword ptr [ecx]
+        fld qword ptr [ecx + 0x8]
+        mov eax, dword ptr [ebp + 0xc]
+        push esi
+        fld qword ptr [ecx + 0x10]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        fld qword ptr [eax + 0x10]
+        xor esi, esi
+        mov dword ptr [esp + 0xc], ecx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [eax + 0xc]
+        mov dword ptr [esp + 0x4], esi
+        fld st(0)
+        mov dword ptr [esp + 0x4], ecx
+        mov dword ptr [esp + 0x8], edx
+        fmul st, st(3)
+        fld qword ptr [esp + 0x4]
+        fmul st, st(3)
+        push 0x3ff00000
+        push esi
+        fsubp st(1), st
+        fstp qword ptr [esp + 0x24]
+        fld qword ptr [esp + 0x14]
+        fmul st, st(2)
+        fxch st(1)
+        fmul st, st(4)
+        fsubp st(1), st
+        fstp qword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x20]
+        fstp st(0)
+        fld qword ptr [esp + 0xc]
+        fmul st, st(2)
+        fld qword ptr [esp + 0x14]
+        fmul st, st(2)
+        fsubp st(1), st
+        fstp qword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        mov eax, dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, dword ptr [esp + 0x30]
+        push edx
+        mov edx, dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        fstp st(0)
+        push edx
+        lea ecx, [esp + 0x48]
+        fstp st(0)
+        call ext_006D23B0
+        mov dword ptr [esp + 0x50], esi
+        mov esi, dword ptr [ebp + 0x8]
+        lea eax, [esp + 0x28]
+        mov ecx, esi
+        push eax
+        call ext_006D2390
+        lea ecx, [esp + 0x28]
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x48]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
