@@ -6205,3 +6205,30 @@ extern "C" void __cdecl fn_00710CF0() {
     *(double*)&mem_00B5F288 = -*p;
     *(double*)&mem_00B5F290 = -*p;
 }
+
+// [0x00712860] sub_00712860 (49 bytes)
+extern "C" void ext_006FBC50();
+extern "C" void ext_006FBC70();
+extern "C" __declspec(naked) void __fastcall fn_00712860(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0xd0]
+        test byte ptr [esi + 0x34], 0x1
+        je short L_no_flag
+        mov ecx, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call ext_006FBC70
+        pop esi
+        ret 0x4
+L_no_flag:
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, esi
+        push edx
+        call ext_006FBC50
+        pop esi
+        ret 0x4
+    }
+}
