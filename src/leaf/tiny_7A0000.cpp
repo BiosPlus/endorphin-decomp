@@ -477,3 +477,23 @@ L_007AEF03:
         ret
     }
 }
+
+// [0x007AF620] Tiny indirect/IAT call leaf (30 bytes) - sub_007AF620
+extern "C" __declspec(naked) void fn_007AF620() {
+    __asm {
+        mov eax, dword ptr [mem_00AAFC28]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        je L_007AF63D
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x0C // lea ecx, [esp + 0xc]
+        push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x08 // mov ecx, dword ptr [esp + 0x8]
+        push edx
+        push ecx
+        call eax
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x0C // add esp, 0xc
+L_007AF63D:
+        ret
+    }
+}
+
