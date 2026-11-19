@@ -6771,3 +6771,53 @@ L_ret:
         ret
     }
 }
+
+// [0x00790F40] sub_00790F40 (85 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00790F40(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x2c]
+        test eax, eax
+        jne L_ret
+        mov eax, dword ptr [ecx + 0xc]
+        push ebx
+        mov ebx, dword ptr [ecx + 0x24]
+        push esi
+        mov esi, dword ptr [ecx + 0x1c]
+        push edi
+        imul esi, ebx
+        cmp eax, 0x1
+        jne L_not_one
+        mov edi, dword ptr [ecx + 0x14]
+        mov eax, dword ptr [ecx + 0x4c]
+        sub eax, edi
+        xor edx, edx
+        div ebx
+        mov edx, esi
+        add eax, edi
+        pop edi
+        dec eax
+        imul eax, esi
+        add eax, edx
+        pop esi
+        mov dword ptr [ecx + 0x2c], eax
+        pop ebx
+        ret
+L_not_one:
+        mov eax, dword ptr [ecx + 0x4c]
+        mov edi, dword ptr [ecx + 0x14]
+        sub eax, edi
+        xor edx, edx
+        div ebx
+        lea edx, [esi + 0x1]
+        pop edi
+        inc eax
+        dec eax
+        imul eax, esi
+        add eax, edx
+        pop esi
+        mov dword ptr [ecx + 0x2c], eax
+        pop ebx
+L_ret:
+        ret
+    }
+}
