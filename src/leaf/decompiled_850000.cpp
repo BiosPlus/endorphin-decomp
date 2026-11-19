@@ -5907,3 +5907,104 @@ extern "C" __declspec(naked) void __cdecl fn_0085E300(void* a1) {
         _emit 0x00
     }
 }
+
+// [0x0085D190] sub_0085D190 (171 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085D190(void) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        xor ebx, ebx
+        mov esi, dword ptr [esp + 0x14]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        cmp esi, ebx
+        je ret0
+        cmp dword ptr [esi], ebx
+        je ret0
+        mov edi, dword ptr [esp + 0x20]
+    top:
+        mov eax, dword ptr [esi]
+        cmp dword ptr [ebp], eax
+        jne next
+        lea ecx, [esi + 4]
+        cmp dword ptr [ecx], 0
+        je leaf
+        mov eax, dword ptr [ebp + 0x14]
+        test eax, eax
+        je ret0b
+        mov edx, dword ptr [esp + 0x24]
+        push edx
+        push edi
+        mov edx, dword ptr [esp + 0x24]
+        push edx
+        push ecx
+        push eax
+        call fn_0085D190
+        add esp, 0x14
+        add ebx, eax
+        cmp eax, -1
+        jne chk
+        mov eax, 0xffffffff
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    leaf:
+        inc ebx
+        test edi, edi
+        je chk
+        mov edx, dword ptr [esp + 0x24]
+        push edx
+        push ebp
+        call edi
+        add esp, 8
+        cmp eax, -1
+        je retm1
+        test eax, eax
+        je retb
+    chk:
+        cmp dword ptr [esp + 0x1c], 0
+        je retb2
+    next:
+        mov ebp, dword ptr [ebp + 0x18]
+        test ebp, ebp
+        jne top
+    retb2:
+        mov eax, ebx
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    ret0b:
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    retm1:
+        mov eax, 0xffffffff
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    retb:
+        mov eax, ebx
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    ret0:
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
