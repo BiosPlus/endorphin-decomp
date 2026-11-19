@@ -9044,3 +9044,11 @@ extern "C" __declspec(naked) void __fastcall fn_006F3160(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006FA010] sub_006FA010 (21 bytes)
+extern "C" int __cdecl ext_006FC3A0_2(int a, int b);
+extern "C" int mem_00B5E400;
+
+extern "C" void __cdecl fn_006FA010() {
+    mem_00B5E400 = ext_006FC3A0_2(0xb5e3f0, 2);
+}
