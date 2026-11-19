@@ -15,8 +15,10 @@ extern "C" __declspec(naked) void __fastcall fn_00454BE0(void* self) {
         jmp ext_00454BB0
     }
 }
+extern "C" void ext_006A60F4();
+extern "C" void ext_006A6304();
 
-// [0x00455CD0] sub_00455CD0 (26 bytes)
+extern "C" void ext_006A6304();
 extern "C" void ext_004090C0();
 extern "C" void ext_00455CB0();
 
@@ -15124,5 +15126,18 @@ L_45d1bf:
         pop ebx
         add esp, 8
         ret 0xc
+    }
+}
+
+// [0x00458C80] sub_00458C80 (22 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00458C80() {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 0x8007000e
+        jne skip_call
+        call ext_006A60F4
+    skip_call:
+        push eax
+        call ext_006A6304
     }
 }
