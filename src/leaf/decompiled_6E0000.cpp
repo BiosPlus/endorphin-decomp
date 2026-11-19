@@ -4738,3 +4738,31 @@ extern "C" void __cdecl fn_006EA4B0() {
     *(double*)&mem_00B5E130 = -*p;
     *(double*)&mem_00B5E138 = -*p;
 }
+
+// [0x006E70E0] sub_006E70E0 (53 bytes)
+extern "C" void ext_00711B00();
+
+extern "C" __declspec(naked) void __fastcall fn_006E70E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        test eax, eax
+        je skip1
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0xa0], edx
+        mov dword ptr [eax + 0xa4], esi
+        pop esi
+    skip1:
+        mov ecx, dword ptr [ecx]
+        test ecx, ecx
+        je skip2
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_00711B00
+    skip2:
+        ret 8
+    }
+}
