@@ -8599,3 +8599,93 @@ extern "C" __declspec(naked) void __cdecl fn_00869460(unsigned char* digest, voi
         ret
     }
 }
+
+// [0x00860870] sub_00860870 (224 bytes)
+extern "C" int mem_00AB987C;
+extern "C" int mem_00AB9880;
+extern "C" int mem_00BC70E4;
+extern "C" int mem_00BC5C20;
+extern "C" int mem_00BC63E2;
+extern "C" int mem_00BC63E0;
+extern "C" int mem_00BC63E4;
+extern "C" int mem_00BC6724;
+extern "C" int mem_00BC70EC;
+extern "C" int mem_00BC6728;
+extern "C" int mem_00AB9884;
+extern "C" int mem_00BC70C0;
+extern "C" __declspec(naked) void __cdecl fn_00860870(void) {
+    __asm {
+        sub esp, 0x18
+        cmp dword ptr [mem_00AB987C], 0
+        mov dword ptr [esp + 0x4], 1
+        je short init_path
+        mov eax, 1
+        add esp, 0x18
+        ret
+    init_path:
+        mov dword ptr [mem_00AB9880], 0
+        push 0
+        push 2
+        push 2
+        call dword ptr [mem_00BC70E4]
+        mov dword ptr [mem_00BC5C20], eax
+        cmp eax, -1
+        jne short sock_ok
+        xor eax, eax
+        add esp, 0x18
+        ret
+    sock_ok:
+        xor ecx, ecx
+        push 0x10
+        mov word ptr [mem_00BC63E2], cx
+        push offset mem_00BC63E0
+        push eax
+        mov dword ptr [mem_00BC5C20], eax
+        mov word ptr [mem_00BC63E0], 2
+        mov dword ptr [mem_00BC63E4], ecx
+        call dword ptr [mem_00BC6724]
+        cmp eax, -1
+        jne short bind_ok
+        xor eax, eax
+        add esp, 0x18
+        ret
+    bind_ok:
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        lea ecx, [esp + 0x8]
+        push eax
+        mov edx, dword ptr [mem_00BC5C20]
+        mov dword ptr [esp + 0x4], 0x10
+        push ecx
+        push edx
+        call dword ptr [mem_00BC70EC]
+        mov ecx, dword ptr [esp + 0xa]
+        push ecx
+        call dword ptr [mem_00BC6728]
+        mov word ptr [mem_00AB9884], ax
+        push 4
+        lea ecx, [esp + 0x8]
+        mov edx, dword ptr [mem_00BC5C20]
+        push ecx
+        push 0x20
+        push 0xffff
+        push edx
+        call dword ptr [mem_00BC70C0]
+        mov eax, 1
+        add esp, 0x18
+        mov dword ptr [mem_00AB9880], eax
+        mov dword ptr [mem_00AB987C], eax
+        ret
+        _emit 0x8b
+        _emit 0xff
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
