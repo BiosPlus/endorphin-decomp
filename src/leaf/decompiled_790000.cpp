@@ -6558,3 +6558,30 @@ loc_79b060:
         ret
     }
 }
+
+// [0x00798800] sub_00798800 (52 bytes)
+extern "C" void ext_00798840();
+extern "C" __declspec(naked) int __cdecl fn_00798800(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        cmp eax, 0x1
+        jge short L_ret
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_00798840
+        add esp, 0x4
+        mov ecx, 0x1
+        test eax, eax
+        je short L_skip
+        mov ecx, eax
+L_skip:
+        mov eax, 0x2000
+        xor edx, edx
+        div ecx
+        test eax, eax
+        jne short L_ret
+        mov eax, 0x1
+L_ret:
+        ret
+    }
+}
