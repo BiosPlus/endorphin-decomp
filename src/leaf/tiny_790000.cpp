@@ -388,3 +388,17 @@ L_0079BA88:
 extern "C" void* __fastcall fn_0079C040(void* self) {
     return reinterpret_cast<char*>(self) + 0x4;
 }
+
+// [0x0079C1F0] Tiny indirect/IAT call leaf (17 bytes) - sub_0079C1F0
+extern "C" __declspec(naked) void fn_0079C1F0() {
+    __asm {
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        je L_0079C1FE
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x04 // mov eax, dword ptr [ecx + 0x4]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x04 // add ecx, 0x4
+        push 0x1
+        call dword ptr [eax]
+L_0079C1FE:
+        ret 0x4
+    }
+}
