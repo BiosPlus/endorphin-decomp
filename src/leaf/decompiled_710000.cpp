@@ -5674,3 +5674,16 @@ extern "C" __declspec(naked) void* __stdcall fn_0071A790(int a1) {
         ret 0x4
     }
 }
+
+// [0x00713490] sub_00713490 (34 bytes)
+extern "C" bool __fastcall fn_00713490(void* self, void* dummy_edx, unsigned int* arg) {
+    arg[0] = 0;
+    arg[2] = 0;
+    arg[4] = 0;
+    arg[6] = 0;
+    arg[1] = 0;
+    arg[3] = 0;
+    arg[5] = 0;
+    arg[7] = 0;
+    return true;
+}
