@@ -34,8 +34,10 @@ extern "C" __declspec(naked) void __fastcall fn_00455CD0(void* self) {
         jmp ext_00455CB0
     }
 }
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A67B4();
 
-// [0x00455AD0] sub_00455AD0 (28 bytes)
+extern "C" void ext_006A67B4();
 extern "C" void ext_00455820();
 extern "C" int mem_00928B5D;
 extern "C" int mem_00924FD4;
@@ -15180,5 +15182,84 @@ extern "C" __declspec(naked) void __fastcall fn_0045D8D0(void* self, int edx_unu
     L_ret:
         ret 4
     L_tbl:
+    }
+}
+
+// [0x00456680] sub_00456680 (176 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00456680(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8c]
+        push -0x1
+        push esi
+        call ext_006A67B4
+        mov edx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x10]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [esi + 0x8c]
+        mov ebx, dword ptr [eax + 0xa0]
+        mov dword ptr [edi], 0xffffffff
+        mov eax, dword ptr [edx]
+        sub eax, 0x1
+        js loc_4566e3
+
+    loc_4566b6:
+        cmp dword ptr [edi], -0x1
+        jne loc_4566e3
+        mov ecx, dword ptr [esi + 0x8c]
+        add ecx, 0x98
+        test eax, eax
+        jl loc_45672b
+        cmp eax, dword ptr [ecx + 0x8]
+        jge loc_45672b
+        mov ecx, dword ptr [ecx + 0x4]
+        cmp dword ptr [ecx + 4*eax], 0x0
+        jne loc_4566de
+        lea ecx, [eax + 0x1]
+        mov dword ptr [edi], ecx
+
+    loc_4566de:
+        sub eax, 0x1
+        jns loc_4566b6
+
+    loc_4566e3:
+        mov edi, dword ptr [esp + 0x14]
+        mov dword ptr [edi], 0xffffffff
+        mov eax, dword ptr [edx]
+        add eax, 0x1
+        cmp eax, ebx
+        jge loc_456725
+
+    loc_4566f6:
+        cmp dword ptr [edi], -0x1
+        jne loc_456725
+        mov ecx, dword ptr [esi + 0x8c]
+        add ecx, 0x98
+        test eax, eax
+        jl loc_45672b
+        cmp eax, dword ptr [ecx + 0x8]
+        jge loc_45672b
+        mov edx, dword ptr [ecx + 0x4]
+        cmp dword ptr [edx + 4*eax], 0x0
+        jne loc_45671e
+        lea ecx, [eax - 0x1]
+        mov dword ptr [edi], ecx
+
+    loc_45671e:
+        add eax, 0x1
+        cmp eax, ebx
+        jl loc_4566f6
+
+    loc_456725:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+
+    loc_45672b:
+        call ext_006A60EE
     }
 }
