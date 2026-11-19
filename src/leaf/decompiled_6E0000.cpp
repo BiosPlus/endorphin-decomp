@@ -6171,3 +6171,120 @@ L_ret:
         ret 8
     }
 }
+
+// [0x006E92B0] sub_006E92B0 (224 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006D2170();
+extern "C" void ext_006E7440();
+extern "C" void ext_006E8A20();
+
+extern "C" __declspec(naked) void __fastcall fn_006E92B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, ecx
+        push ebp
+        push esi
+        mov eax, dword ptr [ebx + 0x4c]
+        lea esi, [ebx + 0x4c]
+        xor ebp, ebp
+        push edi
+        test eax, eax
+        mov dword ptr [esp + 0x10], esi
+        jle L_none
+L_loop:
+        mov eax, dword ptr [ebx + 0x5c]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [eax + 4*ebp]
+        lea edi, [eax + 4*ebp]
+        cmp dword ptr [edx], ecx
+        je L_match
+        call ext_006BADB0
+        mov esi, eax
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [eax]
+        call ext_006BADB0
+L_strloop:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_diff
+        test cl, cl
+        je L_eq
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L_diff
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L_strloop
+L_eq:
+        xor eax, eax
+        jmp L_cmpdone
+L_diff:
+        sbb eax, eax
+        sbb eax, -1
+L_cmpdone:
+        test eax, eax
+        je L_notfound
+        mov eax, dword ptr [esp + 0x10]
+        inc ebp
+        cmp ebp, dword ptr [eax]
+        jl L_loop
+        mov esi, eax
+L_none:
+        push 8
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je L_null
+        mov edx, dword ptr [esp + 0x18]
+        mov ecx, eax
+        push edx
+        call ext_006E8A20
+        jmp L_common
+L_match:
+        mov ecx, dword ptr [ebx + 0x5c]
+        pop edi
+        pop esi
+        mov eax, dword ptr [ecx + 4*ebp]
+        pop ebp
+        pop ebx
+        mov ecx, dword ptr [eax + 4]
+        inc ecx
+        mov dword ptr [eax + 4], ecx
+        mov al, 1
+        pop ecx
+        ret 4
+L_notfound:
+        push 0xa
+        lea ecx, [ebx + 0x94]
+        call ext_006E7440
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        pop ecx
+        ret 4
+L_null:
+        xor eax, eax
+L_common:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [esp + 0x18], eax
+        lea eax, [esp + 0x18]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006D2170
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
