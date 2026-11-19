@@ -8835,3 +8835,97 @@ extern "C" __declspec(naked) void __fastcall fn_0070D7E0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00709040] sub_00709040 (192 bytes)
+extern "C" void ext_00711A50();
+extern "C" void ext_00711A80();
+extern "C" void ext_00711AA0();
+extern "C" void ext_00711BA0();
+extern "C" void ext_00711BB0();
+extern "C" void ext_00711DB0();
+extern "C" void ext_00712000();
+extern "C" void ext_00712010();
+extern "C" void ext_007120B0();
+extern "C" void ext_00712A80();
+extern "C" __declspec(naked) void __fastcall fn_00709040(void* self, int edx_unused, void* arg) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        test esi, esi
+        je L_fail
+        push ebx
+        push ebp
+        mov ecx, esi
+        xor ebx, ebx
+        call ext_00711DB0
+        cmp eax, 0x11
+        jne L_mid
+        mov ecx, esi
+        call ext_007120B0
+        mov ebx, eax
+L_mid:
+        mov ecx, esi
+        call ext_00711A50
+        mov ebp, dword ptr [edi]
+        push ebx
+        test al, al
+        mov ecx, esi
+        je L_else
+        call ext_00711A80
+        push eax
+        mov ecx, esi
+        call ext_00711A50
+        push eax
+        mov ecx, esi
+        call ext_00712010
+        push eax
+        mov ecx, esi
+        call ext_00712010
+        push eax
+        call ext_00712A80
+        add esp, 0x4
+        jmp L_join
+L_else:
+        call ext_00711A80
+        push eax
+        mov ecx, esi
+        call ext_00711A50
+        push eax
+        push 0x0
+        mov ecx, esi
+        call ext_00711DB0
+L_join:
+        push eax
+        mov ecx, esi
+        call ext_00712000
+        push eax
+        mov ecx, edi
+        call dword ptr [ebp + 0xdc]
+        mov edi, eax
+        pop ebp
+        test edi, edi
+        pop ebx
+        je L_fail
+        mov ecx, esi
+        call ext_00711BB0
+        sub esp, 0x8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_00711BA0
+        sub esp, 0x8
+        mov ecx, edi
+        fstp qword ptr [esp]
+        call ext_00711AA0
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+L_fail:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    }
+}
