@@ -5549,3 +5549,9 @@ extern "C" bool __fastcall fn_00713560(void* self, int edx_unused, int a1, int a
     a3->method_006D9940(a1, 5, 0, 2);
     return true;
 }
+
+// [0x00711140] sub_00711140 (26 bytes)
+extern "C" void __fastcall fn_00711140(void* self, int edx_unused, int a1) {
+    *(int*)((char*)self + 0x2c) = a1;
+    ((void (__fastcall *)(void*, int, int, bool))ext_00710F80)(self, edx_unused, 0x200, a1 != 0);
+}
