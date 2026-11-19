@@ -3258,3 +3258,20 @@ L_006FA228:
         ret 0x4
     }
 }
+
+// [0x006FA920] Tiny indirect/IAT call leaf (26 bytes) - sub_006FA920
+extern "C" __declspec(naked) void fn_006FA920() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x04 // mov ecx, dword ptr [esp + 0x4]
+        __asm _emit 0x39 __asm _emit 0x49 __asm _emit 0x08 // cmp dword ptr [ecx + 0x8], ecx
+        jne L_006FA935
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push 0x0
+        call dword ptr [eax + 0x44]
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        ret 0x4
+L_006FA935:
+        __asm _emit 0x32 __asm _emit 0xC0 // xor al, al
+        ret 0x4
+    }
+}
