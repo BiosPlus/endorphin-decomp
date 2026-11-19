@@ -18087,3 +18087,21 @@ done_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0040EFF0] sub_0040EFF0 (34 bytes)
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A60F4();
+
+extern "C" __declspec(naked) void __fastcall fn_0040EFF0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x50
+        ja default_case
+        movzx ecx, byte ptr [eax + 0x40f024]
+        jmp dword ptr [4*ecx + 0x40f014]
+        jmp ext_006A60F4
+default_case:
+        jmp ext_006A60EE
+        ret
+    }
+}
