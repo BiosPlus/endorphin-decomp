@@ -11307,3 +11307,60 @@ extern "C" __declspec(naked) void __fastcall fn_007B1EC0(void* self) {
         ret
     }
 }
+
+// [0x007BC160] sub_007BC160 (107 bytes)
+extern "C" void ext_007BAE40();
+extern "C" int mem_0092A278;
+extern "C" int mem_0092A270;
+extern "C" int mem_00999A68;
+extern "C" __declspec(naked) void __cdecl fn_007BC160(void* a1, unsigned char* out, int count) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [eax + 0xc]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jle L_7BC1C8
+        push ebx
+        lea ebx, [eax + 0x1]
+L_7BC17C:
+        movsx eax, word ptr [edi]
+        push eax
+        add edi, 0x2
+        call ext_007BAE40
+        fcom qword ptr [mem_0092A278]
+        add esp, 0x4
+        fnstsw ax
+        test ah, 0x41
+        je L_7BC19E
+        fstp st(0)
+        xor eax, eax
+        jmp L_7BC1C1
+L_7BC19E:
+        fcom qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x1
+        jne L_7BC1B4
+        fstp st(0)
+        mov eax, 0xff
+        jmp L_7BC1C1
+L_7BC1B4:
+        fsqrt
+        fmul qword ptr [mem_00999A68]
+        call ext_00872828
+L_7BC1C1:
+        mov byte ptr [esi], al
+        inc esi
+        dec ebx
+        jne L_7BC17C
+        pop ebx
+L_7BC1C8:
+        pop edi
+        pop esi
+        ret
+    }
+}
