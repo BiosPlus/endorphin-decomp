@@ -330,8 +330,10 @@ extern "C" __declspec(naked) void __fastcall fn_00787430(void* self, int edx_unu
     }
 }
 extern "C" int mem_009252AC;
+extern "C" void ext_006E73B0();
+extern "C" int mem_00996EDC;
 
-// [0x0078C3B0] sub_0078C3B0 (96 bytes)
+extern "C" int mem_00996EDC;
 extern "C" void ext_006A5C62();
 extern "C" void ext_006D2170();
 extern "C" __declspec(naked) void __fastcall fn_0078C3B0(void* self, int edx_unused, const char* s) {
@@ -7235,5 +7237,30 @@ extern "C" __declspec(naked) void __cdecl fn_00786050() {
         fchs
         fstp qword ptr [mem_00B60A28]
         ret
+    }
+}
+
+// [0x007853D0] sub_007853D0 (54 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_007853D0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x8], eax
+        xor eax, eax
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        push ecx
+        mov dword ptr [esi + 0x18], eax
+        push edx
+        lea ecx, [esi + 0x20]
+        mov dword ptr [esi + 0x1c], eax
+        call ext_006E73B0
+        mov dword ptr [esi], offset mem_00996EDC
+        mov eax, esi
+        pop esi
+        ret 0xc
     }
 }
