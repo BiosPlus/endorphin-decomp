@@ -5888,3 +5888,67 @@ extern "C" __declspec(naked) void __fastcall fn_007057F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00702700] sub_00702700 (58 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00702700(void* self) {
+    __asm {
+        _emit 0x8b
+        _emit 0x81
+        _emit 0x68
+        _emit 0x02
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x80
+        _emit 0x60
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x48
+        _emit 0x83
+        _emit 0xf8
+        _emit 0x04
+        _emit 0x77
+        _emit 0x25
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xb8
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xc3
+        _emit 0xb8
+        _emit 0x02
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xc3
+        _emit 0xb8
+        _emit 0x03
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xc3
+        _emit 0xb8
+        _emit 0x04
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xc3
+        _emit 0xb8
+        _emit 0x05
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xc3
+        _emit 0x33
+        _emit 0xc0
+        _emit 0xc3
+    }
+}
