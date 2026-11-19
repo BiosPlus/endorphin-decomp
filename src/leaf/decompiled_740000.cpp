@@ -3036,3 +3036,46 @@ extern "C" __declspec(naked) bool __fastcall fn_00743C80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0074F7A0] sub_0074F7A0 (70 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0074F7A0(const void* a, const void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_diff_edx_esi
+        mov edx, dword ptr [eax + 0x8]
+        mov esi, dword ptr [ecx + 0x8]
+        cmp edx, esi
+        jne L_diff_edx_esi
+        mov eax, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [ecx + 0x4]
+        cmp eax, ecx
+        jne L_diff_eax_ecx
+        xor eax, eax
+        pop esi
+        ret
+    L_diff_eax_ecx:
+        xor edx, edx
+        cmp eax, ecx
+        setge dl
+        dec edx
+        pop esi
+        and edx, -0x2
+        inc edx
+        mov eax, edx
+        ret
+    L_diff_edx_esi:
+        xor eax, eax
+        cmp edx, esi
+        setge al
+        dec eax
+        pop esi
+        and al, -0x2
+        inc eax
+        ret
+    }
+}
