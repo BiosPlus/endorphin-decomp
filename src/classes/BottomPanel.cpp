@@ -12,8 +12,10 @@ extern "C" int mem_00924410;
 extern "C" int mem_00924300;
 extern "C" int mem_0092568C;
 extern "C" int mem_009242F4;
+extern "C" void ext_00407BB0();
+extern "C" void ext_006A5D94();
 
-// [0x00407750] BottomPanel::vfunc_81 (131 bytes)
+extern "C" void ext_006A5D94();
 extern "C" __declspec(naked) void __fastcall fn_00407750(void* self) {
     __asm {
         push ebx
@@ -422,5 +424,23 @@ extern "C" __declspec(naked) void __fastcall fn_004086A0(void* self) {
         mov dword ptr [esp + 8], edx
         mov eax, dword ptr [eax + 0x174]
         jmp eax
+    }
+}
+
+// [0x00407D60] BottomPanel::vfunc_61 (51 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00407D60(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        lea eax, [edx - 0x417]
+        cmp eax, 6
+        ja default_case
+        movzx eax, byte ptr [eax + 0x00407D9C]
+        jmp dword ptr [eax * 4 + 0x00407D94]
+        call ext_00407BB0
+        mov eax, 1
+        ret 0xC
+    default_case:
+        mov dword ptr [esp + 4], edx
+        jmp ext_006A5D94
     }
 }
