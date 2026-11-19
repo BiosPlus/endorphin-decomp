@@ -709,6 +709,7 @@ L8_child0:
         ret 0x8
     }
 }
+extern "C" int mem_009252C8;
 
 // [0x007865D0] sub_007865D0 (31 bytes)
 extern "C" void ext_00722170();
@@ -7659,5 +7660,37 @@ extern "C" __declspec(naked) void __stdcall fn_0078FF40(void* a0, const double* 
         mov esp, ebp
         pop ebp
         ret 0x10
+    }
+}
+
+// [0x00783670] sub_00783670 (83 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00783670(void* self, const char* fmt, ...) {
+    __asm {
+        mov eax, 0x4000
+        call ext_006A7270
+        push esi
+        mov esi, dword ptr [esp + 0x4008]
+        mov eax, dword ptr [esi + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short done
+        mov edx, dword ptr [esp + 0x400c]
+        lea ecx, [esp + 0x4010]
+        push ecx
+        lea eax, [esp + 0x8]
+        push edx
+        push eax
+        call dword ptr [mem_009252B8]
+        mov ecx, dword ptr [esi + 0x4]
+        lea eax, [esp + 0x10]
+        mov edx, dword ptr [ecx]
+        push edx
+        push eax
+        call dword ptr [mem_009252C8]
+        add esp, 0x14
+    done:
+        pop esi
+        add esp, 0x4000
+        ret
     }
 }
