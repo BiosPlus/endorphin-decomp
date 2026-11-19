@@ -6170,3 +6170,80 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_00856FF0(void) {
         ret
     }
 }
+
+// [0x00857FA0] sub_00857FA0 (192 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00857FA0(void) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push edi
+        xor edi, edi
+        cmp eax, edi
+        mov dword ptr [esp + 4], edi
+        jle fn00857FA0_exit
+        mov eax, dword ptr [esp + 0x14]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        xor ecx, ecx
+        xor esi, esi
+    fn00857FA0_loop:
+        inc ecx
+        and ecx, 0x800000ff
+        jns fn00857FA0_s1
+        dec ecx
+        or ecx, 0xffffff00
+        inc ecx
+    fn00857FA0_s1:
+        mov byte ptr [esp + 0x20], cl
+        xor edx, edx
+        mov ecx, dword ptr [esp + 0x20]
+        and ecx, 0xff
+        mov dl, byte ptr [ecx + eax]
+        add edx, esi
+        and edx, 0x800000ff
+        jns fn00857FA0_s2
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    fn00857FA0_s2:
+        mov byte ptr [esp + 0x18], dl
+        mov dl, byte ptr [ecx + eax]
+        mov esi, dword ptr [esp + 0x18]
+        and esi, 0xff
+        mov bl, byte ptr [esi + eax]
+        mov byte ptr [ecx + eax], bl
+        mov byte ptr [esi + eax], dl
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [ecx + eax]
+        mov bl, byte ptr [esi + eax]
+        add edx, ebx
+        and edx, 0x800000ff
+        jns fn00857FA0_s3
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    fn00857FA0_s3:
+        mov bl, byte ptr [edi + ebp]
+        and edx, 0xff
+        mov dl, byte ptr [edx + eax]
+        xor bl, dl
+        mov edx, dword ptr [esp + 0x10]
+        inc edx
+        mov byte ptr [edi + ebp], bl
+        movsx edi, dx
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [esp + 0x1c]
+        cmp edi, edx
+        jl fn00857FA0_loop
+        pop esi
+        pop ebp
+        pop ebx
+    fn00857FA0_exit:
+        pop edi
+        pop ecx
+        ret
+    }
+}
