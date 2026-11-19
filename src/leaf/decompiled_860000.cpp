@@ -7112,3 +7112,58 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_0086A1E0(unsigned int* out,
         ret
     }
 }
+
+// [0x0086FF80] sub_0086FF80 (102 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086FF80(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        push esi
+        mov al, byte ptr [ecx]
+        mov edx, eax
+        mov eax, dword ptr [esp + 0x8]
+        shl edx, 0x18
+        mov dword ptr [eax], edx
+        mov esi, dword ptr [eax]
+        inc ecx
+        xor edx, edx
+        add eax, 0x4
+        mov dl, byte ptr [ecx]
+        shl edx, 0x10
+        or esi, edx
+        inc ecx
+        xor edx, edx
+        mov dword ptr [eax - 0x4], esi
+        mov dh, byte ptr [ecx]
+        or esi, edx
+        inc ecx
+        xor edx, edx
+        mov dword ptr [eax - 0x4], esi
+        mov dl, byte ptr [ecx]
+        or esi, edx
+        inc ecx
+        xor edx, edx
+        mov dword ptr [eax - 0x4], esi
+        mov dl, byte ptr [ecx]
+        shl edx, 0x18
+        mov dword ptr [eax], edx
+        mov esi, dword ptr [eax]
+        inc ecx
+        xor edx, edx
+        mov dl, byte ptr [ecx]
+        shl edx, 0x10
+        or esi, edx
+        inc ecx
+        xor edx, edx
+        mov dword ptr [eax], esi
+        mov dh, byte ptr [ecx]
+        or esi, edx
+        xor edx, edx
+        mov dword ptr [eax], esi
+        mov dl, byte ptr [ecx + 0x1]
+        or edx, esi
+        pop esi
+        mov dword ptr [eax], edx
+        ret
+    }
+}
