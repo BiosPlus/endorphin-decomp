@@ -7143,3 +7143,48 @@ L_end:
         ret
     }
 }
+
+// [0x00792810] sub_00792810 (109 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_00790D80();
+extern "C" void ext_00790DA0();
+extern "C" void ext_00792880();
+
+extern "C" __declspec(naked) void* __cdecl fn_00792810(int a1, int a2) {
+    __asm {
+        push -0x1
+        push 0x008B8FDB
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push 0x280
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        xor esi, esi
+        cmp eax, esi
+        mov dword ptr [esp + 0x10], esi
+        je short L_after_ctor
+        mov ecx, eax
+        call ext_00792880
+        mov esi, eax
+L_after_ctor:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, esi
+        push eax
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_00790D80
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, esi
+        call ext_00790DA0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
