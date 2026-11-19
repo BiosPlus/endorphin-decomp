@@ -7008,3 +7008,16 @@ L_false:
         jmp ext_0078A8B0
     }
 }
+
+// [0x007865B0] sub_007865B0 (20 bytes)
+extern "C" void ext_006E7410();
+extern "C" __declspec(naked) void __fastcall fn_007865B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push 0xaaf4a0
+        push 0x2
+        add ecx, 0x20
+        call ext_006E7410
+        xor al, al
+        ret 0x4
+    }
+}
