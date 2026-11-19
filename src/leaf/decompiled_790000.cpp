@@ -7286,3 +7286,41 @@ L_skip:
         ret
     }
 }
+
+// [0x0079B0E0] sub_0079B0E0 (82 bytes)
+extern "C" int mem_0092525C; /* u32 0x00627D86 */
+extern "C" int mem_009251A8; /* u32 0x0062D4B2 */
+extern "C" int mem_009251A4; /* u32 0x0062D4A6 */
+extern "C" __declspec(naked) void __fastcall fn_0079B0E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [mem_0092525C]
+        test eax, eax
+        je short L_skip
+        push eax
+        mov eax, dword ptr [mem_009251A8]
+        add eax, 0x40
+        push 0xaafc50
+        push eax
+        call esi
+        add esp, 0xc
+L_skip:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [mem_009251A8]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        add eax, 0x40
+        push edx
+        push eax
+        call dword ptr [mem_009251A4]
+        mov ecx, dword ptr [mem_009251A8]
+        push 0xaafc40
+        add ecx, 0x40
+        push ecx
+        call esi
+        add esp, 0x14
+        pop esi
+        ret
+    }
+}
