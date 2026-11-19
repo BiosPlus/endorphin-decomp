@@ -25,5 +25,7 @@
     "0x0071E5C6",
     "0x0071E5D5"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }

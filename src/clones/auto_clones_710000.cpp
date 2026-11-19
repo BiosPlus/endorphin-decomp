@@ -938,3 +938,58 @@ extern "C" void __fastcall fn_00714540(void* self) {
         call ext_00714440
     }
 }
+
+// [0x0071E510] Identical-shape clone of 0x00447590 (217 bytes) - sub_0071E510
+extern "C" __declspec(naked) void __fastcall fn_0071E510(void* self) {
+    __asm {
+        push -1
+        push 0x8BD53A
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x99679C
+        lea ecx, [esi + 0x100]
+        mov dword ptr [esp + 0x10], 0x9
+        call ext_006D2160
+        lea ecx, [esi + 0xE8]
+        mov byte ptr [esp + 0x10], 0x8
+        call ext_006D2160
+        lea ecx, [esi + 0xD0]
+        mov byte ptr [esp + 0x10], 0x7
+        call ext_006D2160
+        lea ecx, [esi + 0xB8]
+        mov byte ptr [esp + 0x10], 0x6
+        call ext_006D2160
+        lea ecx, [esi + 0xA0]
+        mov byte ptr [esp + 0x10], 0x5
+        call ext_006D2160
+        lea ecx, [esi + 0x88]
+        mov byte ptr [esp + 0x10], 0x4
+        call ext_006D2160
+        lea ecx, [esi + 0x70]
+        mov byte ptr [esp + 0x10], 0x3
+        call ext_006D2160
+        lea ecx, [esi + 0x58]
+        mov byte ptr [esp + 0x10], 0x2
+        call ext_006D2160
+        lea ecx, [esi + 0x40]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_006D2160
+        lea ecx, [esi + 0x28]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006D2160
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0071F060
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
+
