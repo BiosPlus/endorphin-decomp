@@ -9201,3 +9201,26 @@ extern "C" __declspec(naked) void __fastcall fn_0080EBD0(void* self) {
         ret
     }
 }
+
+// [0x0080F830] sub_0080F830 (37 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080F830(void* self, unsigned char c) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        mov bl, byte ptr [esp + 0ch]
+        mov ecx, dword ptr [eax + 8]
+        mov edx, dword ptr [ecx]
+        mov byte ptr [edx], bl
+        mov ebx, dword ptr [ecx]
+        inc ebx
+        mov dword ptr [ecx], ebx
+        mov edx, dword ptr [eax + 10h]
+        mov ecx, dword ptr [eax + 14h]
+        inc edx
+        inc ecx
+        mov dword ptr [eax + 10h], edx
+        mov dword ptr [eax + 14h], ecx
+        pop ebx
+        ret
+    }
+}
