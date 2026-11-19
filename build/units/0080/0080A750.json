@@ -25,5 +25,7 @@
     "0x0080A7CC",
     "0x0080A7DB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@medium",
+  "matched_at": "2026-11-19T16:31:32Z"
 }
