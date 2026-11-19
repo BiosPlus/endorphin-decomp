@@ -726,9 +726,12 @@ extern "C" __declspec(naked) void __fastcall fn_007AC840(void* self) {
     }
 }
 extern "C" int mem_009252A0;
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF60();
+extern "C" int mem_00925298;
 
-// [0x007A65C0] sub_007A65C0 (159 bytes)
-extern "C" void ext_007AA510();
+extern "C" void ext_0079AF60();
+extern "C" int mem_00925298;
 extern "C" void ext_007B3250();
 extern "C" int mem_00B61219;
 extern "C" int mem_00B61218;
@@ -7492,6 +7495,68 @@ extern "C" __declspec(naked) int __cdecl fn_007AA5A0(int a1) {
         ret
     L_def:
         mov eax, 0xab0020
+        ret
+    }
+}
+
+// [0x007AF420] sub_007AF420 (151 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AF420(char* self, char* items, int count) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esi + 0x218]
+        test eax, eax
+        jle L_alloc
+        add eax, edi
+        shl eax, 0x2
+        push eax
+        mov eax, dword ptr [esi + 0x214]
+        push eax
+        call ext_0079AF60
+        add esp, 0x8
+        jmp L_after_alloc
+    L_alloc:
+        lea ecx, [4 * edi]
+        push ecx
+        call ext_0079AF40
+        add esp, 0x4
+    L_after_alloc:
+        mov edx, dword ptr [esi + 0x218]
+        mov dword ptr [esi + 0x214], eax
+        test edi, edi
+        lea ecx, [eax + 4 * edx]
+        jle L_after_loop
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, edi
+    L_loop:
+        mov dword ptr [ecx], eax
+        add eax, 0x14
+        add ecx, 0x4
+        dec edx
+        jne L_loop
+    L_after_loop:
+        mov eax, dword ptr [esi + 0x218]
+        test eax, eax
+        jle L_no_qsort
+        mov ecx, dword ptr [esi + 0x214]
+        add eax, edi
+        push 0x7af4c0
+        push 0x4
+        push eax
+        push ecx
+        mov dword ptr [esi + 0x218], eax
+        call dword ptr [mem_00925298]
+        add esp, 0x10
+        pop edi
+        pop esi
+        ret
+    L_no_qsort:
+        add eax, edi
+        pop edi
+        mov dword ptr [esi + 0x218], eax
+        pop esi
         ret
     }
 }
