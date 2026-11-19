@@ -7194,3 +7194,21 @@ extern "C" void __cdecl fn_007875C0() {
     mem_00B60BA0 = -*(double*)mem_00925284;
     mem_00B60BA8 = -*(double*)mem_00925284;
 }
+
+// [0x00789260] sub_00789260 (46 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00789260(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x8], edx
+        mov dl, byte ptr [esp + 0x10]
+        mov dword ptr [eax + 0xc], ecx
+        mov byte ptr [eax + 0x10], dl
+        mov dword ptr [eax + 0x14], 0x0
+        mov dword ptr [eax], 0x996fa0
+        ret 0x10
+    }
+}
