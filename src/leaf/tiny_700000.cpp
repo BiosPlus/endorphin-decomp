@@ -1352,3 +1352,23 @@ extern "C" bool __cdecl fn_007098B0(void) {
 extern "C" bool __stdcall fn_007098C0(int a1, int a2, int a3) {
     return false;
 }
+
+// [0x00709C90] Guarded tiny leaf function (24 bytes) - sub_00709C90
+extern "C" __declspec(naked) void fn_00709C90() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x04 // mov eax, dword ptr [ecx + 0x4]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        je L_00709CA5
+        __asm _emit 0x8B __asm _emit 0x10 // mov edx, dword ptr [eax]
+        push esi
+        __asm _emit 0x8B __asm _emit 0x31 // mov esi, dword ptr [ecx]
+        __asm _emit 0x3B __asm _emit 0xD6 // cmp edx, esi
+        pop esi
+        jne L_00709CA5
+        __asm _emit 0x8B __asm _emit 0x40 __asm _emit 0x04 // mov eax, dword ptr [eax + 0x4]
+        ret
+L_00709CA5:
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        ret
+    }
+}
