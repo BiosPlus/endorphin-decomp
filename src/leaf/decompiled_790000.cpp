@@ -6218,3 +6218,21 @@ extern "C" __declspec(naked) void __stdcall fn_0079DB30(int a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x00790EA0] sub_00790EA0 (20 bytes)
+extern "C" void ext_00791FF0();
+
+extern "C" __declspec(naked) void __fastcall fn_00790EA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x60]
+        test eax, eax
+        je short L_skip
+        call ext_00791FF0
+L_skip:
+        mov al, byte ptr [esi + 0x67]
+        pop esi
+        ret
+    }
+}
