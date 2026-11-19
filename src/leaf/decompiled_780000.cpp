@@ -7166,3 +7166,18 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_00783510(void* self, in
         ret 4
     }
 }
+
+// [0x00782C00] sub_00782C00 (43 bytes)
+extern "C" int mem_00AAF318;
+extern "C" int mem_00AAF2F4;
+extern "C" int mem_00AAF30C;
+extern "C" int mem_00AAF304;
+extern "C" void* __cdecl fn_00782C00(unsigned int a) {
+    switch (a) {
+        case 0: return &mem_00AAF318;
+        case 1: return &mem_00AAF2F4;
+        case 2: return &mem_00AAF30C;
+        case 3: return &mem_00AAF304;
+        default: return 0;
+    }
+}
