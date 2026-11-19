@@ -3654,3 +3654,37 @@ extern "C" void __cdecl fn_007552D0() {
     mem_00B60490 = -*(double*)mem_00925284;
     mem_00B60498 = -*(double*)mem_00925284;
 }
+
+// [0x00754F20] sub_00754F20 (93 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006E73B0();
+
+extern "C" __declspec(naked) void __fastcall fn_00754F20(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 008bdd3bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 14h]
+        push esi
+        mov esi, ecx
+        push 6
+        push 00aae878h
+        mov dword ptr [esp + 0ch], esi
+        lea ecx, [esi + 8]
+        mov dword ptr [esi + 4], eax
+        call ext_006E73B0
+        lea ecx, [esi + 60h]
+        mov dword ptr [esp + 10h], 0
+        call ext_006B9D10
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr [esi], 00996bf0h
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 4
+    }
+}
