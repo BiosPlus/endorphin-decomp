@@ -6093,3 +6093,25 @@ extern "C" __declspec(naked) void* __stdcall fn_006C1BB0(int a1) {
         ret 0x4
     }
 }
+
+// [0x006C0470] sub_006C0470 (44 bytes)
+extern "C" int mem_00B5F060;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+extern "C" __declspec(naked) void __fastcall fn_006C0470(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5F060]
+        __asm _emit 0x3B __asm _emit 0xC1 // cmp eax, ecx
+        __asm _emit 0x75 __asm _emit 0x05 // jne +5
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+        cmp eax, dword ptr [mem_00B5EB78]
+        __asm _emit 0x75 __asm _emit 0x05 // jne +5
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+        cmp eax, dword ptr [mem_00B5E400]
+        __asm _emit 0x0F __asm _emit 0x94 __asm _emit 0xC0 // sete al
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+    }
+}
