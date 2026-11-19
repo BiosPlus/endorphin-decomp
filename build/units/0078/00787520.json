@@ -13,5 +13,7 @@
     "0x00787535",
     "0x0078753F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:02:54Z"
 }
