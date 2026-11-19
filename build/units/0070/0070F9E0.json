@@ -26,5 +26,7 @@
     "0x0070FA77",
     "0x0070FA81"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-19T16:25:31Z"
 }
