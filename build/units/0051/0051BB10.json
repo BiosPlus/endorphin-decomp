@@ -23,5 +23,7 @@
     "0x0051BBF1",
     "0x0051BBFA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T17:03:31Z"
 }
