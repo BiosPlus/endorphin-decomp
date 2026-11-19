@@ -5981,3 +5981,36 @@ extern "C" void __cdecl fn_00711170() {
     mem_00B5F204 = 0xb5e3f0;
     mem_00B5F20C = 0;
 }
+
+// [0x00712460] sub_00712460 (41 bytes)
+extern "C" int mem_00B5F1E8;
+extern "C" int mem_00B5F1F0;
+extern "C" int mem_00B5F1EC;
+extern "C" int mem_00B5F1F4;
+
+extern "C" void __cdecl fn_00712460() {
+    mem_00B5F1E8 = 0xb5f220;
+    mem_00B5F1F0 = 0xaabf74;
+    mem_00B5F1EC = 0xb5f200;
+    mem_00B5F1F4 = 0;
+}
+
+// [0x007101F0] sub_007101F0 (43 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_007101F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [ecx + 0xf4]
+        push    esi
+        mov     dword ptr [esp + 0x4], 0x0
+        mov     eax, dword ptr [ecx]
+        call    dword ptr [eax + 0x130]
+        mov     esi, dword ptr [esp + 0xc]
+        push    eax
+        mov     ecx, esi
+        call    ext_006B9D80
+        mov     eax, esi
+        pop     esi
+        pop     ecx
+        ret     0x4
+    }
+}
