@@ -18,6 +18,7 @@ import (
 
 	"endorphin_decomp/internal/decomp"
 	"endorphin_decomp/internal/unitstore"
+	"endorphin_decomp/internal/worklock"
 )
 
 type DisasmLine struct {
@@ -801,6 +802,9 @@ type matchedSourceBlock struct {
 func loadMatchedSources() map[string]matchedSourceBlock {
 	result := make(map[string]matchedSourceBlock)
 	_ = filepath.Walk("src", func(path string, info os.FileInfo, err error) error {
+		if err == nil && info.IsDir() && filepath.ToSlash(path) == "src/wip" {
+			return filepath.SkipDir // in-flight agent attempts are never clone sources
+		}
 		if err != nil || info.IsDir() || !strings.HasSuffix(path, ".cpp") {
 			return nil
 		}
@@ -818,10 +822,9 @@ func loadMatchedSources() map[string]matchedSourceBlock {
 			if curVA == "" {
 				return
 			}
-			block := strings.Join(curLines, "\n")
-			if strings.Contains(block, "__asm") {
-				return
-			}
+			// Naked __asm blocks are valid clone sources too: they reference callees/globals as
+			// ext_/mem_ identifiers and 0x literals, which substituteCloneBody rewrites the same
+			// way as in C++ bodies, and every clone is byte-verified before it is accepted.
 			shortHex := strings.TrimPrefix(curVA, "0x")
 			fnTag := "fn_" + shortHex
 			fnIdx := -1
@@ -1572,6 +1575,11 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
+	// Remember what we read so the locked write phase only touches units this run changed.
+	readStatus := make(map[string]string, len(units))
+	for _, u := range units {
+		readStatus[u.VA] = u.Status
+	}
 
 	classesBytes, err := os.ReadFile("build/classes.json")
 	if err != nil {
@@ -1607,6 +1615,11 @@ func main() {
 		u := &units[i]
 		origStatus := u.Status
 		if decomp.IsCompleted(origStatus) {
+			alreadySolved[u.VA] = true
+			continue
+		}
+		if isClaimedByAgent(u.VA) {
+			// An agent is working on it right now (grind runs auto_solve mid-session): leave it alone.
 			alreadySolved[u.VA] = true
 			continue
 		}
@@ -1702,6 +1715,26 @@ func main() {
 		}
 		return
 	}
+
+	// Everything above ran unlocked (analysis + compile/verify can take minutes). From here on we write
+	// src/ and the ledger, which `work check` merges/commits also do, so hold the shared work lock and drop
+	// anything that another process matched or an agent claimed while we were verifying.
+	unlock := worklock.Acquire()
+	defer unlock()
+	stillOpen := func(sf *SolvedFunc) bool {
+		if isClaimedByAgent(sf.Unit.VA) {
+			return false
+		}
+		cur, ok := readUnitStatus(sf.Unit.VA)
+		return ok && cur == readStatus[sf.Unit.VA]
+	}
+	// Never emit a second definition for a VA that already has one in src/ (repeat runs, agent shards).
+	haveSource := existingSourceVAs()
+	notDefined := func(sf *SolvedFunc) bool { return !haveSource[decompNormVA(sf.Unit.VA)] }
+	solvedInScope = filterSolved(filterSolved(solvedInScope, stillOpen), notDefined)
+	solvedThunks = filterSolved(filterSolved(solvedThunks, stillOpen), notDefined)
+	verifiedClones = filterCandidates(filterCandidates(verifiedClones, stillOpen), notDefined)
+	verifiedNaked = filterCandidates(filterCandidates(verifiedNaked, stillOpen), notDefined)
 
 	if err := os.MkdirAll("src", 0755); err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating src/: %v\n", err)
@@ -1837,14 +1870,23 @@ func main() {
 		}
 	}
 
-	outJSON, err := json.MarshalIndent(units, "", "  ")
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error marshaling unit ledger (build/units/): %v\n", err)
-		os.Exit(1)
-	}
-	if err := unitstore.WriteAll(outJSON); err != nil {
-		fmt.Fprintf(os.Stderr, "Error writing unit ledger (build/units/): %v\n", err)
-		os.Exit(1)
+	// Write back only units this run changed, and only if nobody else changed them since we read them.
+	written := 0
+	for i := range units {
+		u := &units[i]
+		before := readStatus[u.VA]
+		if u.Status == before {
+			continue
+		}
+		cur, ok := readUnitStatus(u.VA)
+		if !ok || cur != before {
+			continue
+		}
+		if err := updateUnitFields(u); err != nil {
+			fmt.Fprintf(os.Stderr, "Error writing unit %s: %v\n", u.VA, err)
+			os.Exit(1)
+		}
+		written++
 	}
 
 	fmt.Println("=== Endorphin Auto-Solver Summary ===")
@@ -1856,4 +1898,5 @@ func main() {
 		fmt.Printf("Solved naked disasm fallback    : %d functions (from %d candidates)\n", len(verifiedNaked), nakedCandidates)
 	}
 	fmt.Printf("Generated C++ translation units : %d files in src/\n", len(tuPaths))
+	fmt.Printf("Ledger units updated            : %d\n", written)
 }
