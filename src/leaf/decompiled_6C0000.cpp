@@ -6042,3 +6042,17 @@ extern "C" __declspec(naked) void __stdcall fn_006CA060(int a) {
         ret 4
     }
 }
+
+// [0x006C1AF0] sub_006C1AF0 (18 bytes)
+extern "C" void __stdcall ext_00705790(int a, int b);
+
+extern "C" __declspec(naked) void __stdcall fn_006C1AF0(int a, int b) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_00705790
+        ret 0x8
+    }
+}
