@@ -7815,3 +7815,18 @@ extern "C" __declspec(naked) void __fastcall fn_006D66A0(void* self) {
         ret
     }
 }
+
+// [0x006D8AB0] sub_006D8AB0 (41 bytes)
+extern "C" int mem_00B5D900;
+extern "C" int mem_00B5D908;
+extern "C" int mem_00B5D904;
+extern "C" int mem_00B5D90C;
+extern "C" __declspec(naked) void __cdecl fn_006D8AB0(void) {
+    __asm {
+        mov dword ptr [mem_00B5D900], 0xb5d8f8
+        mov dword ptr [mem_00B5D908], 0xaa916c
+        mov dword ptr [mem_00B5D904], 0xb5eb50
+        mov dword ptr [mem_00B5D90C], 0x0
+        ret
+    }
+}
