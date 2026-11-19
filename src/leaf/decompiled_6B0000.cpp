@@ -11106,3 +11106,11 @@ extern "C" void ext_006A6C87();
 extern "C" void __fastcall fn_006B98F0(void* self) {
     ((void (__cdecl *)(void*))ext_006A6C87)((void*)0x006B9900);
 }
+
+// [0x006BECB0] sub_006BECB0 (21 bytes)
+extern "C" void ext_006FC3A0();
+extern "C" int mem_00B5D448;
+
+extern "C" void __cdecl fn_006BECB0(void) {
+    mem_00B5D448 = ((int (__cdecl*)(int, int))ext_006FC3A0)(0x00B5D450, -1);
+}
