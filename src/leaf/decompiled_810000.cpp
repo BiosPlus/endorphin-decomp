@@ -657,3 +657,11 @@ extern "C" __declspec(naked) void __cdecl fn_008106A0(void) {
         ret
     }
 }
+
+// [0x008104F0] sub_008104F0 (36 bytes)
+extern "C" void ext_0080F600();
+extern "C" void __cdecl fn_008104F0(int* a1, int a2) {
+    int* e = *(int**)((char*)a1 + 4);
+    typedef void (__cdecl *F5)(int, int, int, int, int);
+    ((F5)ext_0080F600)(a1[0], a2, e[1], e[2], e[3]);
+}
