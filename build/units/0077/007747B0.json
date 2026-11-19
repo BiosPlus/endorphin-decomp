@@ -13,5 +13,7 @@
     "0x007747C5",
     "0x007747CF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:02:54Z"
 }
