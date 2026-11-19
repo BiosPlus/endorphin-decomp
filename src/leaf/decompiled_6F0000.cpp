@@ -229,6 +229,7 @@ extern "C" __declspec(naked) void __fastcall fn_006F7970(void* self) {
         ret 0x10
     }
 }
+// Isolated WIP translation unit for fn_006FE0D0
 
 // [0x006F7560] sub_006F7560 (80 bytes)
 extern "C" __declspec(naked) void* __fastcall fn_006F7560(void* self) {
@@ -12028,5 +12029,119 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_006FC010(void* self, in
         pop ebp
         pop ebx
         ret 0xc
+    }
+}
+
+// [0x006FE0D0] sub_006FE0D0 (240 bytes)
+extern "C" void ext_006FE1C0();
+extern "C" void ext_006D91C0();
+extern "C" void ext_006FDF70();
+extern "C" void ext_006BC380();
+extern "C" void ext_00715550();
+extern "C" void ext_006E8EF0();
+extern "C" void ext_006E90D0();
+
+extern "C" __declspec(naked) void __fastcall fn_006FE0D0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, ecx
+        cmp esi, dword ptr [edi + 0xc]
+        je fe0_exit
+        call ext_006FE1C0
+        test esi, esi
+        je fe0_exit
+        mov ecx, edi
+        mov dword ptr [edi + 0xc], esi
+        call ext_006D91C0
+        xor esi, esi
+        mov dword ptr [esp + 0xc], eax
+        test eax, eax
+        mov dword ptr [esp + 0x8], esi
+        jle fe0_exit
+        push ebx
+        push ebp
+    fe0_loop:
+        push esi
+        mov ecx, edi
+        call ext_006FDF70
+        mov ecx, eax
+        call ext_006BC380
+        push esi
+        mov ecx, edi
+        mov ebx, eax
+        call ext_006FDF70
+        mov ecx, eax
+        call ext_00715550
+        test ebx, ebx
+        mov dword ptr [esp + 0x1c], eax
+        je fe0_b168
+        mov ecx, dword ptr [ebx + 0x4]
+        test ecx, ecx
+        je fe0_b147
+        cmp ecx, 0x2
+        je fe0_b147
+        xor ebp, ebp
+        jmp fe0_b14a
+    fe0_b147:
+        mov ebp, dword ptr [ebx + 0x8]
+    fe0_b14a:
+        xor esi, esi
+        test ebp, ebp
+        jle fe0_b168
+    fe0_b150:
+        mov eax, dword ptr [ebx + 0x18]
+        mov ecx, dword ptr [eax + 4*esi]
+        push ecx
+        mov ecx, dword ptr [edi + 0xc]
+        call ext_006E8EF0
+        inc esi
+        cmp esi, ebp
+        jl fe0_b150
+        mov eax, dword ptr [esp + 0x1c]
+    fe0_b168:
+        test eax, eax
+        je fe0_b19f
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je fe0_b17c
+        cmp ecx, 0x2
+        je fe0_b17c
+        xor ebx, ebx
+        jmp fe0_b17f
+    fe0_b17c:
+        mov ebx, dword ptr [eax + 0x8]
+    fe0_b17f:
+        xor esi, esi
+        test ebx, ebx
+        jle fe0_b19f
+        jmp fe0_b18b
+    fe0_b187:
+        mov eax, dword ptr [esp + 0x1c]
+    fe0_b18b:
+        mov edx, dword ptr [eax + 0x18]
+        mov ecx, dword ptr [edi + 0xc]
+        mov eax, dword ptr [edx + 4*esi]
+        push eax
+        call ext_006E90D0
+        inc esi
+        cmp esi, ebx
+        jl fe0_b187
+    fe0_b19f:
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+        inc esi
+        cmp esi, eax
+        mov dword ptr [esp + 0x10], esi
+        jl fe0_loop
+        pop ebp
+        pop ebx
+    fe0_exit:
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret 0x4
     }
 }
