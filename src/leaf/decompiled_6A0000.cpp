@@ -12777,3 +12777,53 @@ bad_index:
         call ext_006A60EE
     }
 }
+
+// [0x006AF7E0] sub_006AF7E0 (83 bytes)
+extern "C" void ext_006AEC60();
+extern "C" void ext_006AEC70();
+extern "C" void ext_006A63BE();
+extern "C" void ext_006AF7E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006AF7E0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 8]
+        push esi
+        push edi
+        push ebp
+        mov edi, ecx
+        call ext_006AEC70
+        xor esi, esi
+        cmp dword ptr [edi + 0x58], esi
+        jle done
+        push ebx
+    loop_top:
+        test esi, esi
+        jl fail
+        cmp esi, dword ptr [edi + 0x58]
+        jge fail
+        mov eax, dword ptr [edi + 0x54]
+        mov ebx, dword ptr [eax + 4*esi]
+        call ext_006AEC60
+        push eax
+        mov ecx, ebx
+        call ext_006A63BE
+        test eax, eax
+        je next
+        push ebp
+        mov ecx, ebx
+        call ext_006AF7E0
+    next:
+        add esi, 1
+        cmp esi, dword ptr [edi + 0x58]
+        jl loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        ret 4
+    fail:
+        call ext_006A60EE
+    }
+}
