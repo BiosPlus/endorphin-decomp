@@ -3444,3 +3444,19 @@ extern "C" __declspec(naked) void fn_006FC6C0() {
 extern "C" bool __stdcall fn_006FC6D0(int a1) {
     return false;
 }
+
+// [0x006FC7E0] Branchless tiny leaf function (29 bytes) - sub_006FC7E0
+extern "C" __declspec(naked) void fn_006FC7E0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0xC1 // mov eax, ecx
+        __asm _emit 0x33 __asm _emit 0xC9 // xor ecx, ecx
+        mov dword ptr [eax], offset mem_00995180
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x04 // mov dword ptr [eax + 0x4], ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x08 // mov dword ptr [eax + 0x8], ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x0C // mov dword ptr [eax + 0xc], ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x10 // mov dword ptr [eax + 0x10], ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x14 // mov dword ptr [eax + 0x14], ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x18 // mov dword ptr [eax + 0x18], ecx
+        ret
+    }
+}
