@@ -5838,3 +5838,33 @@ extern "C" void __cdecl fn_0072D300() {
     mem_00B60310 = -*(double*)mem_00925284;
     mem_00B60318 = -*(double*)mem_00925284;
 }
+
+// [0x0072CC90] sub_0072CC90 (57 bytes)
+extern "C" int mem_00B60288;
+extern "C" int mem_00B60F58;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+extern "C" __declspec(naked) void __fastcall fn_0072CC90(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B60288]
+        cmp eax, ecx
+        jne short L_next1
+        mov al, 0x1
+        ret 0x4
+    L_next1:
+        cmp eax, dword ptr [mem_00B60F58]
+        jne short L_next2
+        mov al, 0x1
+        ret 0x4
+    L_next2:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne short L_next3
+        mov al, 0x1
+        ret 0x4
+    L_next3:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
