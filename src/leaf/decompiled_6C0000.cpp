@@ -6375,3 +6375,25 @@ extern "C" void __fastcall fn_006C1170(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x1a38) = a5;
     *(int*)(p + 0x1a3c) = a6;
 }
+
+// [0x006C0730] sub_006C0730 (74 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C0730(void* self, int edx_unused, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x3c8]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x3cc]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x3d0]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0x3d4]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x3d8]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x3dc]
+        mov dword ptr [eax + 0x18], 0x0
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x1c], 0x3ff00000
+        ret 0x4
+    }
+}
