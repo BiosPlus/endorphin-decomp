@@ -9872,3 +9872,96 @@ extern "C" __declspec(naked) void __fastcall fn_0078BA20(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x007893E0] sub_007893E0 (232 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_007831E0();
+extern "C" int mem_009252DC;
+extern "C" __declspec(naked) void __fastcall fn_007893E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je short L_no_inner
+        mov edi, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [ecx]
+        push edi
+        push edx
+        call dword ptr [eax + 0x8]
+        jmp short L_after
+L_no_inner:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je short L_skip_free
+        mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax]
+L_skip_free:
+        push 0x58
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x8], eax
+        test eax, eax
+        mov dword ptr [esp + 0x14], 0x0
+        je short L_null_obj
+        mov ecx, eax
+        call ext_007831E0
+        jmp short L_store
+L_null_obj:
+        xor eax, eax
+L_store:
+        mov edi, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [esi + 0x14], eax
+        mov edx, dword ptr [eax]
+        push edi
+        push ecx
+        mov ecx, eax
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        call dword ptr [edx + 0x4]
+L_after:
+        test al, al
+        je short L_fail
+        push 0x72
+        push edi
+        call dword ptr [mem_009252DC]
+        add esp, 0x8
+        test eax, eax
+        je short L_mode2
+        mov dword ptr [esi + 0xc], 0x1
+        pop edi
+        mov al, 0x1
+        pop esi
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+L_mode2:
+        mov dword ptr [esi + 0xc], 0x2
+        pop edi
+        mov al, 0x1
+        pop esi
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+L_fail:
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0xc], 0x0
+        pop edi
+        xor al, al
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
