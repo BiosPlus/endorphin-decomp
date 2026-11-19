@@ -6194,3 +6194,38 @@ extern "C" __declspec(naked) void* __stdcall fn_00701E20(unsigned int a1) {
         ret 0x4
     }
 }
+
+// [0x00708C10] sub_00708C10 (65 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00708C10(void* self, int edx_unused, int arg) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0xc0]
+        xor eax, eax
+        test esi, esi
+        push edi
+        jle not_found
+        mov edx, dword ptr [ecx + 0xd0]
+        mov edi, dword ptr [esp + 0xc]
+    loop_start:
+        cmp dword ptr [edx], edi
+        je found
+        inc eax
+        add edx, 4
+        cmp eax, esi
+        jl loop_start
+    not_found:
+        pop edi
+        pop esi
+        mov eax, 1
+        ret 4
+    found:
+        cmp eax, -1
+        je not_found
+        mov edx, dword ptr [ecx]
+        push eax
+        call dword ptr [edx + 0xe8]
+        pop edi
+        pop esi
+        ret 4
+    }
+}
