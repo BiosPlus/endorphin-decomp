@@ -3220,3 +3220,85 @@ fn0073C2A0_ret1:
         __asm _emit 0x90
     }
 }
+
+// [0x00731DE0] sub_00731DE0 (192 bytes)
+extern "C" void ext_00726B40();
+extern "C" void ext_006E9B00();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006D2250();
+extern "C" void ext_006E9BB0();
+extern "C" void ext_00726900();
+
+extern "C" __declspec(naked) void __fastcall fn_00731DE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        push 0
+        push 0aad450h
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726B40
+        mov ebx, dword ptr [esp + 14h]
+        push eax
+        mov ecx, ebx
+        call ext_006E9B00
+        mov esi, dword ptr [ebx + 0ch]
+        lea ebp, [ebx + 0ch]
+        test esi, esi
+        je fn00731DE0_after_loop
+fn00731DE0_loop:
+        mov eax, dword ptr [ebp + 10h]
+        dec esi
+        mov ebx, dword ptr [eax + 4*esi]
+        test ebx, ebx
+        je fn00731DE0_skip
+        mov ecx, ebx
+        call ext_006B9D70
+        push ebx
+        call ext_006A5C5C
+        add esp, 4
+fn00731DE0_skip:
+        test esi, esi
+        jne fn00731DE0_loop
+        mov ebx, dword ptr [esp + 14h]
+fn00731DE0_after_loop:
+        mov ecx, ebp
+        call ext_006D2250
+        mov ecx, dword ptr [edi + 0ach]
+        push 0aad440h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn00731DE0_ret
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726900
+        test eax, eax
+        je fn00731DE0_tail
+        mov esi, eax
+fn00731DE0_loop2:
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726A40
+        push eax
+        mov ecx, ebx
+        call ext_006E9BB0
+        dec esi
+        jne fn00731DE0_loop2
+fn00731DE0_tail:
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726840
+fn00731DE0_ret:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
