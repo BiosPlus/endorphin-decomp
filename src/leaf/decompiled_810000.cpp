@@ -592,3 +592,19 @@ extern "C" __declspec(naked) void __cdecl fn_008105C0(void) {
         ret
     }
 }
+
+// [0x008106D0] sub_008106D0 (21 bytes)
+extern "C" void ext_0080EB80();
+extern "C" char mem_00AB6AC4;
+
+extern "C" __declspec(naked) void __cdecl fn_008106D0(void* arg0) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        push 0x40
+        push offset mem_00AB6AC4
+        call ext_0080EB80
+        add esp, 0xc
+        ret
+    }
+}
