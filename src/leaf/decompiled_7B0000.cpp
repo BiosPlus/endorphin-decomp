@@ -13713,3 +13713,95 @@ extern "C" __declspec(naked) int __cdecl fn_007B1200(void* obj, unsigned short* 
         ret
     }
 }
+
+// [0x007B93E0] sub_007B93E0 (228 bytes)
+extern "C" void ext_007B2CA0();
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B2EF0();
+extern "C" __declspec(naked) void __cdecl fn_007B93E0(void** out) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        jne L_7B9401_A
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B94C1_A
+L_7B9401_A:
+        cmp dword ptr [esi], 0x0
+        jne L_7B941D_A
+        push 0x3
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B94C1_A
+L_7B941D_A:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax]
+        cmp ecx, 0x4d4d
+        je L_7B9435_A
+        cmp ecx, 0xc23d
+        jne L_7B94C1_A
+L_7B9435_A:
+        lea ecx, [esp + 0xc]
+        push ecx
+        push 0x3d3d
+        push eax
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0xc
+        test eax, eax
+        jne L_7B946F_A
+        lea edx, [esp + 0xc]
+        push 0x3d3d
+        push edx
+        call ext_007B2CA0
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        call ext_007B2E50
+        add esp, 0x10
+L_7B946F_A:
+        mov eax, dword ptr [esp + 0xc]
+        lea edx, [esp + 0x4]
+        push edx
+        push 0x3d3e
+        push eax
+        call ext_007B2EF0
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        call ext_007B3380
+        mov ecx, dword ptr [esp + 0x20]
+        add esp, 0x10
+        cmp ecx, 0x3
+        ja L_7B94C1_A
+        jmp dword ptr [4*ecx + 0x7b94c4]
+L_7B94A0_A:
+        mov dword ptr [eax], 0x1
+        pop esi
+        pop ecx
+        ret
+L_7B94A9_A:
+        mov dword ptr [eax], 0x2
+        pop esi
+        pop ecx
+        ret
+L_7B94B2_A:
+        mov dword ptr [eax], 0x3
+        pop esi
+        pop ecx
+        ret
+L_7B94BB_A:
+        mov dword ptr [eax], 0x4
+L_7B94C1_A:
+        pop esi
+        pop ecx
+        ret
+    }
+}
