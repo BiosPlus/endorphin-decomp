@@ -14,5 +14,6 @@
     "0x0070B024",
     "0x0070B031"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
