@@ -81,8 +81,10 @@ extern "C" __declspec(naked) void __cdecl fn_0085D510(void) {
 }
 extern "C" int mem_00924214;
 extern "C" void __cdecl ext_008536D0(void* a, void* b, void* c);
+extern "C" void ext_00857BE0();
+extern "C" void ext_00869310();
 
-// [0x0085BEA0] sub_0085BEA0 (32 bytes)
+extern "C" void ext_00869310();
 extern "C" void __cdecl ext_00859730(void* p);
 
 extern "C" void __cdecl fn_0085BEA0(void* self) {
@@ -7626,5 +7628,99 @@ extern "C" __declspec(naked) int __cdecl fn_0085E220(void* s) {
         __asm _emit 0x00
         __asm _emit 0x00
         __asm _emit 0x00
+    }
+}
+
+// [0x008579B0] sub_008579B0 (237 bytes)
+extern "C" __declspec(naked) void __cdecl fn_008579B0(void) {
+    __asm {
+        mov     ecx, dword ptr [esp + 0x14]
+        xor     eax, eax
+        sub     esp, 0x104
+        mov     ax, word ptr [ecx]
+        add     eax, 0x7
+        push    esi
+        cdq
+        and     edx, 0x7
+        add     eax, edx
+        mov     esi, eax
+        mov     eax, dword ptr [esp + 0x118]
+        sar     esi, 0x3
+        cmp     eax, esi
+        jbe     L_8579e6
+        mov     eax, 0x406
+        pop     esi
+        add     esp, 0x104
+        ret
+    L_8579e6:
+        push    ecx
+        push    eax
+        mov     eax, dword ptr [esp + 0x11c]
+        lea     ecx, [esp + 0xc]
+        push    eax
+        lea     edx, [esp + 0x14]
+        push    ecx
+        push    edx
+        call    ext_00857BE0
+        add     esp, 0x14
+        test    eax, eax
+        jne     L_857a95
+        cmp     dword ptr [esp + 0x4], esi
+        je      L_857a1d
+        mov     eax, 0x406
+        pop     esi
+        add     esp, 0x104
+        ret
+    L_857a1d:
+        mov     al, byte ptr [esp + 0x8]
+        test    al, al
+        jne     L_857a90
+        mov     cl, byte ptr [esp + 0x9]
+        mov     eax, 0x2
+        cmp     cl, al
+        jne     L_857a90
+        lea     ecx, [esi - 0x1]
+        cmp     ecx, eax
+        jbe     L_857a46
+    L_857a39:
+        mov     dl, byte ptr [esp + eax + 0x8]
+        test    dl, dl
+        je      L_857a46
+        inc     eax
+        cmp     eax, ecx
+        jb      L_857a39
+    L_857a46:
+        inc     eax
+        cmp     eax, esi
+        jae     L_857a90
+        mov     edx, dword ptr [esp + 0x110]
+        mov     ecx, esi
+        sub     ecx, eax
+        mov     dword ptr [edx], ecx
+        lea     edx, [ecx + 0xb]
+        cmp     edx, esi
+        ja      L_857a90
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x110]
+        lea     eax, [esp + eax + 0xc]
+        push    eax
+        push    ecx
+        call    ext_00869310
+        push    0x100
+        lea     edx, [esp + 0x18]
+        push    0x0
+        push    edx
+        call    ext_008692F0
+        add     esp, 0x18
+        xor     eax, eax
+        pop     esi
+        add     esp, 0x104
+        ret
+    L_857a90:
+        mov     eax, 0x401
+    L_857a95:
+        pop     esi
+        add     esp, 0x104
+        ret
     }
 }
