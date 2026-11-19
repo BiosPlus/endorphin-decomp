@@ -362,3 +362,20 @@ extern "C" __declspec(naked) void fn_007835F0() {
 extern "C" void* __fastcall fn_00783600(void* self) {
     return reinterpret_cast<char*>(self) + 0xc;
 }
+
+// [0x00783610] Guarded tiny leaf function (22 bytes) - sub_00783610
+extern "C" __declspec(naked) void fn_00783610() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x04 // mov eax, dword ptr [ecx + 0x4]
+        __asm _emit 0x8A __asm _emit 0x48 __asm _emit 0x04 // mov cl, byte ptr [eax + 0x4]
+        __asm _emit 0x84 __asm _emit 0xC9 // test cl, cl
+        je L_00783623
+        __asm _emit 0x8B __asm _emit 0x00 // mov eax, dword ptr [eax]
+        __asm _emit 0x8B __asm _emit 0x40 __asm _emit 0x0C // mov eax, dword ptr [eax + 0xc]
+        __asm _emit 0x83 __asm _emit 0xE0 __asm _emit 0x20 // and eax, 0x20
+        ret
+L_00783623:
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        ret
+    }
+}
