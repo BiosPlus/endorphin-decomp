@@ -6988,3 +6988,77 @@ L_ret_bl:
         ret
     }
 }
+
+// [0x00725C90] sub_00725C90 (208 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006E7460();
+extern "C" void ext_00725D60();
+extern "C" void ext_00725E10();
+
+extern "C" __declspec(naked) void __fastcall fn_00725C90(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8bcb18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push ebx
+        push esi
+        lea eax, [esp + 0x8]
+        push edi
+        mov ebx, ecx
+        push eax
+        call ext_00725D60
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x60], 0
+        call ext_006E7460
+        mov esi, dword ptr [esp + 0x68]
+        push eax
+        push esi
+        mov ecx, ebx
+        call ext_00725E10
+        push 0xaacb2c
+        push esi
+        mov ecx, ebx
+        call ext_00725E10
+        lea ecx, [esp + 0xc]
+        call ext_006E7460
+        push eax
+        push esi
+        mov ecx, ebx
+        call ext_00725E10
+        lea ecx, [esp + 0xc]
+        call ext_006E7460
+        mov edi, dword ptr [esp + 0x6c]
+        push eax
+        push edi
+        mov ecx, ebx
+        call ext_00725E10
+        mov ecx, 0x4
+        xor edx, edx
+        repe cmpsd
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr [esp + 0x54], -1
+        __asm _emit 0x8d
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        je short L_equal
+        call ext_006B9D70
+        xor al, al
+        mov ecx, dword ptr [esp + 0x4c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 0x8
+    L_equal:
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x4c]
+        mov al, 0x1
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 0x8
+    }
+}
