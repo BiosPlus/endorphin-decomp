@@ -1692,3 +1692,17 @@ extern "C" void __fastcall fn_006C10C0(void* self, int edx_unused, int a1) {
 extern "C" unsigned char __fastcall fn_006C10D0(void* self) {
     return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x1900);
 }
+
+// [0x006C1290] Tiny indirect/IAT call leaf (31 bytes) - sub_006C1290
+extern "C" __declspec(naked) void fn_006C1290() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x8B __asm _emit 0x81 __asm _emit 0xE8 __asm _emit 0x1A __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [ecx + 0x1ae8]
+        __asm _emit 0x81 __asm _emit 0xC1 __asm _emit 0xE8 __asm _emit 0x1A __asm _emit 0x00 __asm _emit 0x00 // add ecx, 0x1ae8
+        push edx
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        push edx
+        call dword ptr [eax + 0xb8]
+        ret 0x8
+    }
+}
