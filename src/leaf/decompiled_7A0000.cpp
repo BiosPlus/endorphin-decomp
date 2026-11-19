@@ -7933,3 +7933,99 @@ extern "C" __declspec(naked) void __fastcall fn_007AB380(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x007ADDF0] sub_007ADDF0 (208 bytes)
+extern "C" void ext_0078CD30();
+extern "C" void ext_007AD540();
+extern "C" void ext_007ADEC0();
+extern "C" int mem_00B61680;
+
+extern "C" __declspec(naked) void __fastcall fn_007ADDF0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        mov eax, dword ptr [ebx]
+        test eax, eax
+        je A_ret
+        cmp dword ptr [eax + 0x8], 0x1
+        jle A_ret
+        mov eax, dword ptr [eax + 0x4]
+        push ebp
+        push esi
+        push edi
+        lea esi, [4*eax + 0xc]
+        mov eax, dword ptr [mem_00B61680]
+        test eax, eax
+        jne A_have
+        push 0x200000
+        push eax
+        push 0x2
+        push 0x20000
+        call ext_0078CD30
+        add esp, 0x10
+        mov dword ptr [mem_00B61680], eax
+    A_have:
+        push esi
+        mov ecx, eax
+        call ext_007AD540
+        mov ecx, esi
+        mov esi, dword ptr [ebx]
+        mov ebp, eax
+        mov edx, ecx
+        mov edi, ebp
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov eax, dword ptr [ebx]
+        test eax, eax
+        je A_zero
+        mov esi, dword ptr [eax + 0x4]
+        jmp A_cnt
+    A_zero:
+        xor esi, esi
+    A_cnt:
+        test esi, esi
+        jle A_after
+        mov ecx, 0xc
+        mov edx, esi
+    A_inc:
+        mov edi, dword ptr [ebx]
+        mov eax, ecx
+        add eax, edi
+        mov eax, dword ptr [eax]
+        test eax, eax
+        je A_skip
+        inc dword ptr [eax + 0x8]
+    A_skip:
+        add ecx, 0x4
+        dec edx
+        jne A_inc
+    A_after:
+        mov eax, dword ptr [ebx]
+        test eax, eax
+        je A_store
+        mov edx, dword ptr [eax + 0x8]
+        dec edx
+        mov ecx, edx
+        mov dword ptr [eax + 0x8], edx
+        test ecx, ecx
+        jne A_store
+        mov ecx, ebx
+        call ext_007ADEC0
+    A_store:
+        mov dword ptr [ebx], ebp
+        mov dword ptr [ebp + 0x8], 0x1
+        mov eax, dword ptr [ebx]
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        mov ecx, dword ptr [ebx]
+        pop esi
+        pop ebp
+        mov dword ptr [ecx], 0x0
+    A_ret:
+        pop ebx
+        ret
+    }
+}
