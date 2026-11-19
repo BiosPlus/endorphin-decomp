@@ -9452,3 +9452,38 @@ extern "C" __declspec(naked) void __fastcall fn_0080F7B0(void* self) {
         ret
     }
 }
+
+// [0x0080F940] sub_0080F940 (60 bytes)
+extern "C" void ext_0080DC60();
+extern "C" void ext_0080F910();
+extern "C" __declspec(naked) void __cdecl fn_0080F940(void) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 12]
+        test esi, esi
+        jbe f940_zero
+        lea eax, [esi - 1]
+        jmp f940_call
+    f940_zero:
+        xor eax, eax
+    f940_call:
+        mov edx, dword ptr [esp + 16]
+        lea ecx, [esp + 20]
+        push 0
+        push ecx
+        push edx
+        push offset ext_0080F910
+        push eax
+        lea eax, [esp + 28]
+        push eax
+        call ext_0080DC60
+        add esp, 24
+        test esi, esi
+        pop esi
+        jbe f940_done
+        mov ecx, dword ptr [esp + 4]
+        mov byte ptr [ecx], 0
+    f940_done:
+        ret
+    }
+}
