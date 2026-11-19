@@ -5115,3 +5115,52 @@ extern "C" __declspec(naked) void __fastcall fn_006E9D40(void* self) {
         ret
     }
 }
+
+// [0x006E7078] sub_006E7078 (79 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E7078(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x01
+        _emit 0x02
+        _emit 0x02
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x03
+        _emit 0x04
+        _emit 0x04
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x5
+        ja loc_6e70c4
+        jmp dword ptr [4*eax + 0x6e70c8]
+        mov eax, 0xaa94b4
+        ret
+        mov eax, 0xaa94ac
+        ret
+        mov eax, 0xaa94a4
+        ret
+        mov eax, 0xaa8cec
+        ret
+        mov eax, 0xaa949c
+        ret
+        mov eax, 0xaa9494
+        ret
+    loc_6e70c4:
+        xor eax, eax
+        ret
+    }
+}
