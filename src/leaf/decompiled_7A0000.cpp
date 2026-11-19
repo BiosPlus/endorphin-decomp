@@ -7031,3 +7031,87 @@ extern "C" __declspec(naked) void __cdecl fn_007AEF10(void* self) {
         ret
     }
 }
+
+// [0x007A6E8C] sub_007A6E8C (102 bytes)
+extern "C" void ext_007A6F00();
+extern "C" __declspec(naked) void __fastcall fn_007A6E8C(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x01
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x02
+        _emit 0x03
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x04
+        _emit 0x05
+        _emit 0x06
+        _emit 0x07
+        _emit 0x0b
+        _emit 0x0b
+        _emit 0x08
+        _emit 0x09
+        _emit 0x0a
+        nop
+        nop
+
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test esi, esi
+        je short L_err
+        test edi, edi
+        jne short L_call
+    L_err:
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je short L_done
+    L_call:
+        push edi
+        push esi
+        call ext_007A6F00
+        add esp, 0x8
+    L_done:
+        pop edi
+        pop esi
+        ret
+    }
+}
