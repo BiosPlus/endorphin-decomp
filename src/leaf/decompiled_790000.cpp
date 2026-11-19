@@ -6585,3 +6585,29 @@ L_ret:
         ret
     }
 }
+
+// [0x0079DAC0] sub_0079DAC0 (54 bytes)
+extern "C" void ext_007853D0();
+extern "C" int mem_00AAFEEC;
+extern "C" int mem_00AAFEF4;
+extern "C" int mem_009976F8;
+
+extern "C" __declspec(naked) void* __fastcall fn_0079DAC0(void* self) {
+    __asm {
+        push esi
+        push 0x2
+        push offset mem_00AAFEEC
+        mov esi, ecx
+        push offset mem_00AAFEF4
+        call ext_007853D0
+        xor eax, eax
+        mov dword ptr [esi], offset mem_009976F8
+        mov dword ptr [esi + 0x78], eax
+        mov dword ptr [esi + 0x7c], eax
+        mov dword ptr [esi + 0x80], eax
+        mov dword ptr [esi + 0x84], 0x3ff00000
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
