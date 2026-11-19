@@ -7221,3 +7221,65 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_0086A240(unsigned int* dst,
         ret
     }
 }
+
+// [0x008685C0] sub_008685C0 (106 bytes)
+extern "C" __declspec(naked) int __cdecl fn_008685C0(void) {
+    __asm {
+        pushfd
+        pushfd
+        pop     eax
+        and     eax, 0xffdfffff
+        push    eax
+        popfd
+        pushfd
+        pop     eax
+        test    eax, 0x200000
+        jne     loc_868626
+        pushfd
+        pop     eax
+        or      eax, 0x200000
+        push    eax
+        popfd
+        pushfd
+        pop     eax
+        test    eax, 0x200000
+        je      loc_868626
+        mov     eax, 0
+        push    ebx
+        push    ecx
+        push    edx
+        cpuid
+        sub     ebx, 0x756e6547
+        sub     edx, 0x49656e69
+        sub     ecx, 0x6c65746e
+        // 09 cb = or ebx, ecx (r/m32, r32 opcode 09 instead of 0B)
+        // 09 d3 = or ebx, edx
+        _emit 0x09
+        _emit 0xcb
+        _emit 0x09
+        _emit 0xd3
+        pop     edx
+        pop     ecx
+        pop     ebx
+        jne     loc_868626
+        mov     eax, 1
+        push    edx
+        push    ebx
+        push    ecx
+        cpuid
+        pop     ecx
+        pop     ebx
+        and     edx, 0x40000000
+        pop     edx
+        je      loc_868626
+        popfd
+        mov     eax, 1
+        ret
+    loc_868626:
+        popfd
+        // 29 c0 = sub eax, eax (r/m32, r32 opcode 29 instead of 2B)
+        _emit 0x29
+        _emit 0xc0
+        ret
+    }
+}
