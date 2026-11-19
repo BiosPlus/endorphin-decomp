@@ -6588,3 +6588,36 @@ extern "C" __declspec(naked) void __cdecl fn_0086EFD0(void* p) {
         _emit 0x00
     }
 }
+
+// [0x0086BF40] sub_0086BF40 (53 bytes)
+extern "C" __declspec(naked) short __cdecl fn_0086BF40(int* p) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [ecx + 0x4c]
+        cmp esi, 0x1
+        jbe loop_init
+        xor ax, ax
+        pop esi
+        ret
+    loop_init:
+        xor dx, dx
+    loop_top:
+        movsx eax, dx
+        cmp dword ptr [ecx + 4*eax], 0x0
+        jne fail_ret
+        inc dx
+        movsx eax, dx
+        cmp eax, 0x13
+        jb loop_top
+        cmp esi, 0x1
+        pop esi
+        sbb eax, eax
+        inc eax
+        ret
+    fail_ret:
+        xor ax, ax
+        pop esi
+        ret
+    }
+}
