@@ -448,3 +448,14 @@ L_007AEED5:
         ret 0x4
     }
 }
+
+// [0x007AEEE0] Boolean predicate (11 bytes) - sub_007AEEE0
+extern "C" __declspec(naked) void fn_007AEEE0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x51 __asm _emit 0x58 // mov edx, dword ptr [ecx + 0x58]
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        __asm _emit 0x85 __asm _emit 0xD2 // test edx, edx
+        setne al
+        ret
+    }
+}
