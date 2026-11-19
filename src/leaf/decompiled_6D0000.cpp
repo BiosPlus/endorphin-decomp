@@ -11258,3 +11258,75 @@ extern "C" __declspec(naked) void __fastcall fn_006D5C50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D5D60] sub_006D5D60 (208 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void ext_006D2160();
+extern "C" void ext_006D5A60();
+extern "C" int mem_008B90CE;
+extern "C" int mem_0099394C;
+
+extern "C" __declspec(naked) void __fastcall fn_006D5D60(void* self) {
+    __asm {
+        push -0x1
+        push offset mem_008B90CE
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], offset mem_0099394C
+        mov dword ptr [esp + 0x14], 0x5
+        call ext_006D5E30
+        mov edi, dword ptr [esi + 0xfc]
+        test edi, edi
+        je short L_no_edi
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        je short L_no_vfunc
+        mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax]
+    L_no_vfunc:
+        push edi
+        mov dword ptr [edi + 0x4], 0x0
+        call ext_006A5C5C
+        add esp, 0x4
+    L_no_edi:
+        lea ecx, [esi + 0x220]
+        mov byte ptr [esp + 0x14], 0x4
+        call ext_006B9D70
+        lea ecx, [esi + 0x1d4]
+        mov byte ptr [esp + 0x14], 0x3
+        call ext_006B9D70
+        lea ecx, [esi + 0x16c]
+        mov byte ptr [esp + 0x14], 0x2
+        call ext_006B9D70
+        lea ecx, [esi + 0x150]
+        mov byte ptr [esp + 0x14], 0x1
+        call ext_006D2160
+        lea ecx, [esi + 0x104]
+        mov byte ptr [esp + 0x14], 0x0
+        call ext_006B9D70
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_006D5A60
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
