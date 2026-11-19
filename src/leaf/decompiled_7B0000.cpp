@@ -12956,3 +12956,80 @@ extern "C" __declspec(naked) int __cdecl fn_007BD670(void* p1, int p2, int p3) {
         ret
     }
 }
+
+// [0x007B25C0] sub_007B25C0 (208 bytes)
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2E50();
+extern "C" void ext_007B3380();
+extern "C" __declspec(naked) void __cdecl fn_007B25C0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        cmp ebp, 0x1
+        push edi
+        jb L_7B267E
+        mov edi, dword ptr [esp + 0x18]
+        xor esi, esi
+        cmp edi, esi
+        je L_7B267E
+        cmp dword ptr [esp + 0x1c], esi
+        je L_7B267E
+        lea eax, [esp + 0x10]
+        push ebx
+        push eax
+        call ext_007B2C20
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [ecx], 0xb020
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        call ext_007B3380
+        mov ebx, eax
+        mov ax, word ptr [esp + 0x20]
+        mov dword ptr [ebx + 0x8], esi
+        mov dword ptr [ebx + 0x4], esi
+        lea esi, [8*ebp]
+        mov word ptr [ebx], ax
+        sub esi, ebp
+        mov dword ptr [ebx + 0xc], ebp
+        shl esi, 0x2
+        push esi
+        call dword ptr [mem_00925208]
+        mov ecx, esi
+        mov esi, edi
+        mov edx, ecx
+        mov edi, eax
+        shr ecx, 0x2
+        mov dword ptr [ebx + 0x10], eax
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        lea esi, [ebp + 2*ebp]
+        shl esi, 0x2
+        push esi
+        call dword ptr [mem_00925208]
+        mov ecx, esi
+        mov esi, dword ptr [esp + 0x30]
+        mov dword ptr [ebx + 0x14], eax
+        mov edi, eax
+        mov eax, ecx
+        mov edx, dword ptr [esp + 0x34]
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        push edx
+        call ext_007B2E50
+        add esp, 0x18
+        pop ebx
+    L_7B267E:
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    }
+}
