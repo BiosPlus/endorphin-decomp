@@ -3665,3 +3665,33 @@ extern "C" __declspec(naked) void* __cdecl fn_0077F550(unsigned int n) {
         ret
     }
 }
+
+// [0x007721B0] sub_007721B0 (62 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" int mem_00925264;
+
+extern "C" __declspec(naked) void __fastcall fn_007721B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        je skip_close
+        push eax
+        call dword ptr [mem_00925264]
+        add esp, 4
+        mov edi, eax
+    skip_close:
+        push 0xb5d2c0
+        lea ecx, [esi + 0xb0]
+        mov dword ptr [esi + 0xac], 0
+        call ext_006B9EC0
+        test edi, edi
+        pop edi
+        pop esi
+        sete al
+        ret
+    }
+}
