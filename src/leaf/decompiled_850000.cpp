@@ -5355,3 +5355,63 @@ extern "C" __declspec(naked) void __cdecl fn_00858AF0(void) {
         ret
     }
 }
+
+// [0x0085D570] sub_0085D570 (128 bytes)
+extern "C" void ext_0082132A();
+extern "C" void ext_0085D5F0();
+extern "C" void ext_00862010();
+extern "C" void ext_00865C80();
+extern "C" int mem_00AB9644;
+extern "C" int mem_00AB9648;
+extern "C" __declspec(naked) void __cdecl fn_0085D570(void) {
+    __asm {
+        cmp dword ptr [mem_00AB9644], 0
+        jne L_59d
+        call ext_0082132A
+        mov ecx, 1
+        test eax, 0x80000000
+        mov dword ptr [mem_00AB9644], ecx
+        je L_5ba
+        test eax, 0x40000000
+        jne L_59d
+        mov dword ptr [mem_00AB9648], ecx
+    L_59d:
+        xor eax, eax
+        mov ecx, dword ptr [esp + 4]
+        mov ax, word ptr [ecx + 6]
+        test eax, eax
+        je L_5d3
+        cmp eax, 4
+        je L_5dd
+        mov eax, 3
+        mov word ptr [ecx + 0x1a], ax
+        ret
+    L_5ba:
+        call ext_0085D5F0
+        test eax, eax
+        je L_59d
+        mov ecx, dword ptr [esp + 4]
+        mov eax, 8
+        mov word ptr [ecx + 0x1a], 8
+        ret
+    L_5d3:
+        push ecx
+        call ext_00865C80
+        add esp, 4
+        ret
+    L_5dd:
+        push ecx
+        call ext_00862010
+        add esp, 4
+        ret
+        __asm _emit 0x8b
+        __asm _emit 0xff
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
