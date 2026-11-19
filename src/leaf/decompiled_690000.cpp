@@ -13,8 +13,10 @@ extern "C" void ext_0069B100();
 extern "C" void ext_00693D40();
 extern "C" int __cdecl ext_007BFDF0(void*);
 extern "C" int __cdecl ext_007BFF40(void*, int);
+extern "C" void ext_00435D00();
+extern "C" int mem_00924FA0;
 
-// [0x00698EC0] sub_00698EC0 (13 bytes)
+extern "C" int mem_00924FA0;
 extern "C" __declspec(naked) void __stdcall fn_00698EC0(void* a1) {
     __asm {
         lea eax, [esp + 4]
@@ -14348,6 +14350,106 @@ extern "C" __declspec(naked) char __cdecl fn_0069B180(char c) {
         ret
     L_default:
         xor al, al
+        ret
+    }
+}
+
+// [0x00696700] sub_00696700 (212 bytes)
+// Switch dispatch: idx in [0,0x14] -> byte table @0x696804 -> jump table @0x6967D4.
+// idx > 0x14 prints a message via cout and returns 0.
+extern "C" __declspec(naked) int __cdecl fn_00696700(int idx, int flag) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 14h
+        ja L_default
+        movzx eax, byte ptr [eax + 0696804h]
+        jmp dword ptr [eax * 4 + 06967D4h]
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        and eax, -15h
+        add eax, 15h
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        add eax, 3
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        and eax, -5
+        add eax, 9
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        add eax, 7
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        and eax, 3
+        add eax, 5
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        add eax, 0Bh
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        and eax, -5
+        add eax, 11h
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        add eax, 0Fh
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        and eax, 3
+        add eax, 0Dh
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        add eax, 13h
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        and eax, 13h
+        add eax, 1
+        ret
+
+        mov al, byte ptr [esp + 8]
+        neg al
+        sbb eax, eax
+        add eax, 17h
+        ret
+
+L_default:
+        mov ecx, dword ptr [mem_00924FA0]
+        push 098F650h
+        push ecx
+        call ext_00435D00
+        add esp, 8
+        xor eax, eax
         ret
     }
 }
