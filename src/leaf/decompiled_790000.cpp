@@ -6351,3 +6351,25 @@ L_ret0:
         ret 0x8
     }
 }
+
+// [0x0079C050] sub_0079C050 (34 bytes)
+extern "C" void ext_0079C080();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_0079C050(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0079C080
+        test byte ptr [esp + 0x8], 0x1
+        lea eax, [esi - 0x4]
+        je short L_done
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        lea eax, [esi - 0x4]
+L_done:
+        pop esi
+        ret 0x4
+    }
+}
