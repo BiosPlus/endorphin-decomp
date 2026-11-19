@@ -5783,3 +5783,16 @@ extern "C" __declspec(naked) void* __fastcall fn_0072B750(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0072B6F0] sub_0072B6F0 (41 bytes)
+extern "C" int mem_00B600A8;
+extern "C" int mem_00B600B0;
+extern "C" int mem_00B600AC;
+extern "C" int mem_00B600B4;
+
+extern "C" void __cdecl fn_0072B6F0() {
+    mem_00B600A8 = 0xb600a0;
+    mem_00B600B0 = 0xaad0e0;
+    mem_00B600AC = 0xb5f050;
+    mem_00B600B4 = 0;
+}
