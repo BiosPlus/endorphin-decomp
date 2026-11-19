@@ -9783,3 +9783,50 @@ extern "C" __declspec(naked) int __cdecl fn_0080B060(unsigned int arg) {
         ret
     }
 }
+
+// [0x0080FA60] sub_0080FA60 (88 bytes)
+extern "C" void ext_0080DC60();
+extern "C" void ext_0080FAC0();
+extern "C" void ext_0080FAF0();
+extern "C" void ext_0080FB10();
+extern "C" void ext_0080FBC0();
+extern "C" __declspec(naked) void __fastcall fn_0080FA60(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        push 0xb83eac
+        xor edi, edi
+        call ext_0080FBC0
+        mov esi, eax
+        add esp, 4
+        cmp esi, edi
+        je done
+        mov edx, dword ptr [esp + 0x10]
+        lea ecx, [esp + 0x8]
+        push edi
+        push ecx
+        push edx
+        push 0x80fc70
+        lea eax, [esp + 0x24]
+        push edi
+        push esi
+        mov dword ptr [esp + 0x20], eax
+        call ext_0080DC60
+        push esi
+        mov dword ptr [esp + 0x24], edi
+        call ext_0080FB10
+        push esi
+        call ext_0080FAF0
+        push esi
+        mov edi, eax
+        call ext_0080FAC0
+        add esp, 0x24
+    done:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret
+    }
+}
