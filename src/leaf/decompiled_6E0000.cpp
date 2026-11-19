@@ -208,6 +208,7 @@ extern "C" __declspec(naked) void __fastcall fn_006E7730(void* self) {
         ret
     }
 }
+extern "C" void ext_00711DB0();
 
 // [0x006E4CD0] sub_006E4CD0 (95 bytes)
 extern "C" double mem_00993CC8;
@@ -5678,5 +5679,76 @@ L_done:
         xor eax, eax
         pop ebp
         ret 8
+    }
+}
+
+// [0x006E68B0] sub_006E68B0 (192 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E68B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_epilogue
+        call ext_00711DB0
+        cmp eax, 0xe
+        jne L_check_f
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [esi]
+        push 0x0
+        push 0x0
+        fld qword ptr [eax]
+        fstp qword ptr [esp + 0xc]
+        fld qword ptr [eax + 0x8]
+        fstp qword ptr [esp + 0x14]
+        fld qword ptr [eax + 0x10]
+        fstp qword ptr [esp + 0x1c]
+        mov eax, dword ptr [ecx]
+        lea edx, [esp + 0xc]
+        push 0x0
+        push edx
+        call dword ptr [eax + 0x8c]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_epilogue
+        mov eax, dword ptr [ecx]
+        push esi
+        call dword ptr [eax + 0x128]
+        pop esi
+        add esp, 0x20
+        ret 0x4
+L_check_f:
+        mov ecx, dword ptr [esi]
+        call ext_00711DB0
+        cmp eax, 0xf
+        jne L_epilogue
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [esi]
+        push 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        fld qword ptr [eax]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [eax + 0x8]
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [eax + 0x10]
+        fstp qword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x24], 0x3ff00000
+        mov edx, dword ptr [ecx]
+        push 0x0
+        lea eax, [esp + 0xc]
+        push 0x0
+        push eax
+        call dword ptr [edx + 0x8c]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_epilogue
+        mov edx, dword ptr [ecx]
+        push esi
+        call dword ptr [edx + 0x128]
+L_epilogue:
+        pop esi
+        add esp, 0x20
+        ret 0x4
     }
 }
