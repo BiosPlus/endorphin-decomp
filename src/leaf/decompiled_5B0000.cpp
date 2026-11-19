@@ -6726,3 +6726,34 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005B3630] sub_005B3630 (51 bytes)
+extern "C" void ext_005B1E20();
+extern "C" void ext_005B1EE0();
+extern "C" void ext_005B1FA0();
+extern "C" void ext_005B2010();
+
+extern "C" __declspec(naked) void __stdcall fn_005B3630(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        add eax, -1
+        cmp eax, 4
+        ja  L_default
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0x64
+        _emit 0x36
+        _emit 0x5b
+        _emit 0x00
+        call ext_005B1FA0
+        ret 4
+        call ext_005B1E20
+        ret 4
+        call ext_005B1EE0
+        ret 4
+        call ext_005B2010
+    L_default:
+        ret 4
+    }
+}
