@@ -8016,3 +8016,85 @@ L_skip:
         ret
     }
 }
+
+// [0x0079DF00] sub_0079DF00 (192 bytes)
+extern "C" void ext_006C3490();
+extern "C" void ext_006D2390();
+extern "C" void ext_006D80A0();
+extern "C" void ext_00714910();
+extern "C" void ext_00714940();
+extern "C" void ext_00714AE0();
+
+extern "C" __declspec(naked) void __fastcall fn_0079DF00(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c19a0
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0xc], 0
+        sub eax, 0
+        je short L_case0
+        dec eax
+        je short L_case1
+        dec eax
+        jne short L_default
+        mov ecx, dword ptr [esi]
+        lea eax, [esp + 0x18]
+        push eax
+        add ecx, 0x90
+        call ext_00714910
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esi]
+        add ecx, 0x90
+        jmp short L_join
+    L_case1:
+        sub esp, 0x20
+        lea edx, [esp + 0x38]
+        mov ecx, esp
+        mov dword ptr [esp + 0x34], esp
+        push edx
+        call ext_006D2390
+        mov ecx, dword ptr [esi]
+        push 0
+        mov byte ptr [esp + 0x30], 0
+        call ext_00714AE0
+        mov ecx, eax
+        call ext_006C3490
+        jmp short L_default
+    L_case0:
+        mov ecx, dword ptr [esi]
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_00714910
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esi]
+    L_join:
+        call ext_00714940
+    L_default:
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0xc], 0xffffffff
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x4]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0x24
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
