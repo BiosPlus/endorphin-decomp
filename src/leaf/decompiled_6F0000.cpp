@@ -144,6 +144,7 @@ extern "C" __declspec(naked) void __fastcall fn_006F79C0(void* self, int edx_unu
 extern "C" void ext_00711D40();
 extern "C" void ext_00711A70();
 extern "C" void ext_006F8320();
+extern "C" void __fastcall ext_006FA460(void* self, int edx_unused, void* item);
 
 // [0x006FA8F0] sub_006FA8F0 (47 bytes)
 extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, int edx_unused, void* a1) {
@@ -9891,4 +9892,39 @@ extern "C" void __cdecl fn_006FFF80() {
     *(double*)&mem_00B5E640 = -*p;
     *(double*)&mem_00B5E648 = -*p;
     *(double*)&mem_00B5E650 = -*p;
+}
+
+// [0x006FA830] sub_006FA830 (52 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FA830(void* self) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, ecx
+        mov ebx, dword ptr [edi + 0x1c]
+        dec ebx
+        js done
+        push esi
+    loop_start:
+        mov eax, dword ptr [edi + 0x2c]
+        mov ecx, edi
+        mov esi, dword ptr [eax + 4*ebx]
+        push esi
+        call ext_006FA460
+        mov ecx, dword ptr [esi + 0x34]
+        and ecx, 0x10
+        cmp cl, 0x10
+        jne next_iter
+        mov edx, dword ptr [esi]
+        push 0x0
+        mov ecx, esi
+        call dword ptr [edx + 0x4]
+    next_iter:
+        dec ebx
+        jns loop_start
+        pop esi
+    done:
+        pop edi
+        pop ebx
+        ret
+    }
 }
