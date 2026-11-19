@@ -6806,3 +6806,41 @@ extern "C" __declspec(naked) void __cdecl fn_0086F8F0(unsigned int* p) {
         _emit 0x00
     }
 }
+
+// [0x0086FFF0] sub_0086FFF0 (72 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086FFF0(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        add ecx, 0x4
+        shr edx, 0x18
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [ecx - 0x4]
+        inc eax
+        shr edx, 0x10
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [ecx - 0x4]
+        inc eax
+        shr edx, 0x8
+        mov byte ptr [eax], dl
+        mov dl, byte ptr [ecx - 0x4]
+        inc eax
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [ecx]
+        inc eax
+        shr edx, 0x18
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [ecx]
+        inc eax
+        shr edx, 0x10
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [ecx]
+        inc eax
+        shr edx, 0x8
+        mov byte ptr [eax], dl
+        mov cl, byte ptr [ecx]
+        mov byte ptr [eax + 0x1], cl
+        ret
+    }
+}
