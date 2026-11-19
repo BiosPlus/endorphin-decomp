@@ -6236,3 +6236,19 @@ L_skip:
         ret
     }
 }
+
+// [0x00790E40] sub_00790E40 (20 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00790E40(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x60]
+        test eax, eax
+        je short L_skip
+        call ext_00791FF0
+L_skip:
+        mov al, byte ptr [esi + 0x64]
+        pop esi
+        ret
+    }
+}
