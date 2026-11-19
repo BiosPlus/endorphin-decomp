@@ -1516,3 +1516,15 @@ L_0070E708:
         ret 0x4
     }
 }
+
+// [0x0070F730] Branchless tiny leaf function (23 bytes) - sub_0070F730
+extern "C" __declspec(naked) void fn_0070F730() {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        __asm _emit 0x8B __asm _emit 0x08 // mov ecx, dword ptr [eax]
+        __asm _emit 0x8B __asm _emit 0x50 __asm _emit 0x04 // mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EED8], ecx
+        mov dword ptr [mem_00B5EEDC], edx
+        ret
+    }
+}

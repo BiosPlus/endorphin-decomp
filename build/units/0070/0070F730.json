@@ -12,5 +12,6 @@
     "0x0070F73C",
     "0x0070F742"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
