@@ -17,5 +17,7 @@
     "0x0080A51E",
     "0x0080A524"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@medium",
+  "matched_at": "2026-11-19T16:47:27Z"
 }
