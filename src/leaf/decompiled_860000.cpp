@@ -6290,3 +6290,93 @@ extern "C" __declspec(naked) int __cdecl fn_0086FEE0(void) {
         ret
     }
 }
+
+// [0x0086D160] sub_0086D160 (176 bytes)
+extern "C" __declspec(naked) __int64 __cdecl fn_0086D160(__int64 val, unsigned int shift) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        push edi
+        mov dword ptr [esp + 0x10], edx
+        je done
+        test edx, 0x80000000
+        je non_negative
+        cmp esi, 0x40
+        jb neg_lt_64
+        or eax, -1
+        pop edi
+        or edx, -1
+        pop esi
+        ret
+    neg_lt_64:
+        cmp esi, 0x1f
+        jbe neg_le_31
+        lea ecx, [esi - 0x20]
+        or edi, -1
+        shr edx, cl
+        cmp esi, 0x20
+        mov eax, edx
+        je set_edx_edi
+        mov ecx, 0x40
+        or edx, -1
+        sub ecx, esi
+        shl edx, cl
+        or eax, edx
+        mov edx, edi
+        pop edi
+        pop esi
+        ret
+    neg_le_31:
+        mov edi, edx
+        mov ecx, esi
+        sar edi, cl
+        mov ecx, 0x20
+        sub ecx, esi
+        shl edx, cl
+        mov ecx, esi
+        shr eax, cl
+        or edx, eax
+        mov eax, edx
+        mov edx, edi
+        pop edi
+        pop esi
+        ret
+    non_negative:
+        cmp esi, 0x40
+        jb pos_lt_64
+        xor eax, eax
+        pop edi
+        xor edx, edx
+        pop esi
+        ret
+    pos_lt_64:
+        cmp esi, 0x1f
+        jbe pos_le_31
+        lea ecx, [esi - 0x20]
+        xor edi, edi
+        shr edx, cl
+        mov eax, edx
+        mov edx, edi
+        pop edi
+        pop esi
+        ret
+    pos_le_31:
+        mov edi, edx
+        mov ecx, esi
+        sar edi, cl
+        shr eax, cl
+        mov ecx, 0x20
+        sub ecx, esi
+        shl edx, cl
+        or eax, edx
+    set_edx_edi:
+        mov edx, edi
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
