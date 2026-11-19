@@ -1412,3 +1412,14 @@ extern "C" __declspec(naked) void fn_0070AD40() {
 extern "C" double __fastcall fn_0070AD60(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x3e0);
 }
+
+// [0x0070AD70] Branchless tiny leaf function (23 bytes) - sub_0070AD70
+extern "C" __declspec(naked) void fn_0070AD70() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x89 __asm _emit 0x81 __asm _emit 0x68 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0x468], eax
+        __asm _emit 0x89 __asm _emit 0x91 __asm _emit 0x6C __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0x46c], edx
+        ret 0x8
+    }
+}
