@@ -14069,3 +14069,99 @@ L_7BB68C:
         ret
     }
 }
+
+// [0x007BB7F0] sub_007BB7F0 (240 bytes)
+extern "C" void ext_007BAE40();
+extern "C" int mem_0092A278;
+extern "C" int mem_00993828;
+extern "C" int mem_00999B50;
+extern "C" int mem_00999B40;
+extern "C" int mem_00999B38;
+extern "C" int mem_009548E0;
+extern "C" int mem_0092A270;
+extern "C" int mem_00999B30;
+extern "C" int mem_0093F7B0;
+
+extern "C" __declspec(naked) void __cdecl fn_007BB7F0(int packed, void* out) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov eax, esi
+        sar eax, 0x10
+        push eax
+        call ext_007BAE40
+        fcom qword ptr [mem_0092A278]
+        add esp, 0x4
+        fnstsw ax
+        test ah, 0x41
+        je L_7BB828
+        mov eax, dword ptr [esp + 0x1c]
+        xor ecx, ecx
+        fstp st(0)
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax], ecx
+        pop esi
+        add esp, 0x10
+        ret
+L_7BB828:
+        mov ecx, esi
+        mov eax, dword ptr [esp + 0x1c]
+        shr ecx, 0x8
+        and ecx, 0xff
+        mov dword ptr [esp + 0x4], ecx
+        xor ecx, ecx
+        mov dword ptr [esp + 0x8], ecx
+        and esi, 0xff
+        fild qword ptr [esp + 0x4]
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esp + 0x8], ecx
+        pop esi
+        fadd qword ptr [mem_00993828]
+        fmul qword ptr [mem_00999B50]
+        __asm _emit 0xdf
+        __asm _emit 0x6c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fadd qword ptr [mem_00993828]
+        fmul qword ptr [mem_00999B50]
+        fstp qword ptr [esp + 0x8]
+        fld st(0)
+        fmul qword ptr [mem_00999B40]
+        fld qword ptr [esp + 0x8]
+        fmul qword ptr [mem_00999B38]
+        fsubp st(1), st
+        fadd qword ptr [mem_009548E0]
+        fdivr qword ptr [mem_0092A270]
+        __asm _emit 0xdd
+        __asm _emit 0x54
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fmulp st(1), st
+        fmul qword ptr [mem_00999B30]
+        __asm _emit 0xdd
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fmul qword ptr [esp + 0x8]
+        fmul qword ptr [mem_0093F7B0]
+        fld st(1)
+        fdiv st, st(1)
+        fmul st, st(3)
+        fstp dword ptr [eax]
+        fld st(2)
+        fstp dword ptr [eax + 0x4]
+        fld qword ptr [mem_0092A270]
+        fsub st, st(2)
+        fsub st, st(1)
+        fdiv st, st(1)
+        fmul st, st(3)
+        fstp dword ptr [eax + 0x8]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        add esp, 0x10
+        ret
+    }
+}
