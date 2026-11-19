@@ -10189,3 +10189,97 @@ extern "C" __declspec(naked) void __fastcall fn_006DC2C0(void* self) {
         ret
     }
 }
+
+// [0x006D4930] sub_006D4930 (170 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void ext_006BBE90();
+extern "C" void ext_006BC370();
+extern "C" void ext_006E7440();
+
+extern "C" __declspec(naked) bool __fastcall fn_006D4930(void* self, int edx_unused, void* item, bool flag) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, ecx
+        mov ecx, dword ptr [ebx + 0x4]
+        push ebp
+        lea ebp, [ebx + 0x4]
+        xor eax, eax
+        push esi
+        push edi
+        test ecx, ecx
+        jle L_not_found
+        mov edx, dword ptr [ebp + 0x10]
+    L_loop:
+        mov esi, dword ptr [esp + 0x18]
+        mov edi, dword ptr [edx]
+        cmp edi, esi
+        je L_found
+        inc eax
+        add edx, 0x4
+        cmp eax, ecx
+        jl L_loop
+    L_not_found:
+        or esi, -0x1
+    L_check:
+        xor edi, edi
+        cmp esi, -0x1
+        mov byte ptr [esp + 0x13], 0x1
+        jne L_remove
+        push edi
+        lea ecx, [ebx + 0x1c4]
+        call ext_006E7440
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_found:
+        mov esi, eax
+        jmp L_check
+    L_remove:
+        mov al, byte ptr [esp + 0x1c]
+        test al, al
+        je L_skip_get
+        mov ecx, dword ptr [esp + 0x18]
+        call ext_006BC370
+        mov edi, eax
+    L_skip_get:
+        push esi
+        mov ecx, ebp
+        call ext_006D2200
+        mov esi, dword ptr [esp + 0x18]
+        test esi, esi
+        je L_after_delete
+        mov ecx, esi
+        call ext_006BBE90
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_after_delete:
+        mov al, byte ptr [esp + 0x1c]
+        test al, al
+        je L_ret_ok
+        mov eax, dword ptr [ebx]
+        push 0x1
+        push edi
+        mov ecx, ebx
+        call dword ptr [eax + 0x74]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_ret_ok:
+        mov al, byte ptr [esp + 0x13]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
