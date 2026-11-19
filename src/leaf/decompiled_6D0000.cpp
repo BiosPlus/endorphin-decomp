@@ -372,9 +372,12 @@ done:
         ret 0x8
     }
 }
+extern "C" void ext_006D5E30();
+extern "C" void ext_006D5AD0();
+extern "C" void ext_006D6350();
 
-// [0x006D2280] sub_006D2280 (127 bytes)
-// Grow-by-n with zero fill: used += n; reallocs data to ceil((used+n)/blk) blocks when capacity is exceeded.
+extern "C" void ext_006D5AD0();
+extern "C" void ext_006D6350();
 extern "C" int mem_00925290;
 extern "C" __declspec(naked) void __fastcall fn_006D2280(void* self, int edx_unused, int n) {
     __asm {
@@ -7722,4 +7725,25 @@ extern "C" void* __fastcall fn_006D7BA0(void* self, int edx_unused, void* a1) {
     volatile int local = 0;
     ((void (__thiscall*)(void*, void*))ext_006B9D80)(a1, &mem_00AA9158);
     return a1;
+}
+
+// [0x006D5F20] sub_006D5F20 (35 bytes)
+// thiscall(self) with one stack arg (ret 0x4): calls E30, then D5AD0(arg) and, if it returns true, D6350.
+extern "C" __declspec(naked) void __fastcall fn_006D5F20(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006D5E30
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D5AD0
+        test al, al
+        je done
+        mov ecx, esi
+        call ext_006D6350
+    done:
+        pop esi
+        ret 0x4
+    }
 }
