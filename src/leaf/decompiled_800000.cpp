@@ -9371,3 +9371,30 @@ extern "C" __declspec(naked) void __cdecl fn_0080F910(void* s, char c) {
         ret
     }
 }
+
+// [0x0080F7F0] sub_0080F7F0 (49 bytes)
+extern "C" void ext_0080DC60();
+extern "C" __declspec(naked) void __cdecl fn_0080F7F0(void* p, void* q) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0xc]
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        lea eax, [esp + 0x10]
+        push 0
+        push ecx
+        mov dword ptr [esp + 0x8], eax
+        push edx
+        push 0x80f830
+        lea eax, [esp + 0x18]
+        push 0
+        push eax
+        call ext_0080DC60
+        mov ecx, dword ptr [esp + 0x20]
+        mov byte ptr [ecx], 0
+        add esp, 0x1c
+        ret
+    }
+}
