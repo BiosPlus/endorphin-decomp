@@ -7743,3 +7743,75 @@ extern "C" __declspec(naked) void __fastcall fn_007056E0(void* self) {
         ret
     }
 }
+
+// [0x00707460] sub_00707460 (159 bytes)
+extern "C" void ext_007839F0();
+extern "C" __declspec(naked) void __fastcall fn_00707460(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        sub esp, 0x20
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x2c]
+        xor ebx, ebx
+        cmp esi, ecx
+        mov byte ptr [esp + 0xc], bl
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esp + 0x8], 0x52362
+        mov dword ptr [esp + 0x24], ebx
+        jne done
+        mov eax, dword ptr [esp + 0x30]
+        cmp ecx, ebx
+        mov dword ptr [esp + 0x24], eax
+        je l1
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [eax]
+        jmp l2
+    l1:
+        xor edx, edx
+        xor eax, eax
+    l2:
+        mov dword ptr [esp + 0x14], edx
+        mov edx, dword ptr [esp + 0x34]
+        mov dword ptr [esp + 0x18], eax
+        mov eax, dword ptr [edx + 0x4]
+        cmp eax, ebx
+        je l3
+        push ebp
+        mov ebp, dword ptr [edx]
+        push edi
+        mov edi, dword ptr [eax]
+        cmp edi, ebp
+        pop edi
+        pop ebp
+        jne l3
+        mov eax, dword ptr [eax + 0x4]
+        cmp eax, ebx
+        je l3
+        mov eax, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        jmp l4
+    l3:
+        xor edx, edx
+        xor eax, eax
+    l4:
+        mov ecx, dword ptr [ecx + 0x68]
+        mov dword ptr [esp + 0x1c], edx
+        cmp ecx, ebx
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x10], esi
+        je done
+        lea edx, [esp + 0x8]
+        push edx
+        push ebx
+        call ext_007839F0
+    done:
+        pop esi
+        mov al, 1
+        pop ebx
+        add esp, 0x20
+        ret 0x10
+    }
+}
