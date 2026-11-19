@@ -1152,3 +1152,19 @@ extern "C" int __fastcall fn_00704A60(void* self) {
 extern "C" int __fastcall fn_00704B20(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x7c8);
 }
+
+// [0x00704C20] Guarded tiny leaf function (31 bytes) - sub_00704C20
+extern "C" __declspec(naked) void fn_00704C20() {
+    __asm {
+        mov cl, byte ptr [mem_00B5E9A0]
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        __asm _emit 0x84 __asm _emit 0xC8 // test al, cl
+        jne L_00704C3E
+        __asm _emit 0x0A __asm _emit 0xC8 // or cl, al
+        mov byte ptr [mem_00B5E9A0], cl
+        mov ecx, offset mem_00B5E948
+        jmp ext_007641C0
+L_00704C3E:
+        ret
+    }
+}
