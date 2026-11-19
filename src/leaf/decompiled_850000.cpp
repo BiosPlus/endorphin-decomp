@@ -7277,3 +7277,88 @@ extern "C" __declspec(naked) void __cdecl fn_00859E90(void) {
         ret
     }
 }
+
+// [0x0085DC90] sub_0085DC90 (224 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085DC90(void) {
+    __asm {
+        mov ax, word ptr [esp + 8]
+        push ebx
+        and ax, 0x8000
+        push esi
+        mov dx, word ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        cmp ax, 1
+        sbb eax, eax
+        add dx, dx
+        inc eax
+        or ax, dx
+        mov word ptr [esp + 0x10], ax
+        xor byte ptr [esp + 0x11], al
+        mov ax, word ptr [esp + 0x10]
+        and ax, 1
+        mov dx, word ptr [esp + 0x10]
+        cmp ax, 1
+        mov eax, 0
+        adc eax, -1
+        and ax, 0x8000
+        _emit 0x66
+        _emit 0xc1
+        _emit 0xea
+        _emit 0x01
+        or ax, dx
+        mov word ptr [esp + 0x10], ax
+        and ax, 1
+        mov dx, word ptr [esp + 0x10]
+        cmp ax, 1
+        mov eax, 0
+        adc eax, -1
+        mov esi, 0x55
+        and ax, 0x8000
+        _emit 0x66
+        _emit 0xc1
+        _emit 0xea
+        _emit 0x01
+        or ax, dx
+        mov word ptr [esp + 0x10], ax
+        mov eax, 0x58
+    loop_top:
+        mov dl, byte ptr [esp + 0x10]
+        mov bl, byte ptr [esp + 0x10]
+        and dl, -0x80
+        add bl, bl
+        shr dl, 7
+        add ecx, 2
+        or dl, bl
+        mov byte ptr [esp + 0x10], dl
+        mov dl, byte ptr [esp + 0x11]
+        and dl, 1
+        mov bl, byte ptr [esp + 0x11]
+        shl dl, 7
+        _emit 0xc0
+        _emit 0xeb
+        _emit 0x01
+        or dl, bl
+        mov byte ptr [esp + 0x11], dl
+        mov bl, byte ptr [esp + 0x10]
+        xor byte ptr [esp + 0x11], bl
+        mov dx, word ptr [esp + 0x10]
+        not dx
+        mov word ptr [esp + 0x10], dx
+        xor word ptr [ecx - 2], dx
+        add word ptr [esp + 0x10], si
+        dec eax
+        jne loop_top
+        pop esi
+        pop ebx
+        ret
+        _emit 0x8b
+        _emit 0xff
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
