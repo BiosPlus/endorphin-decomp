@@ -3399,3 +3399,19 @@ extern "C" __declspec(naked) void fn_006FC670() {
         jmp ext_006FA230
     }
 }
+
+// [0x006FC680] Guarded tiny leaf function (31 bytes) - sub_006FC680
+extern "C" __declspec(naked) void fn_006FC680() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B608B4]
+        __asm _emit 0x3B __asm _emit 0xC1 // cmp eax, ecx
+        jne L_006FC693
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        ret 0x4
+L_006FC693:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
