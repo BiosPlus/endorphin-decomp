@@ -1,0 +1,19 @@
+{
+  "va": "0x00410B20",
+  "size": 36,
+  "sha256": "a45963f7e6d2130aa38d5a02c0612a1db54d9d5e18715b824c435ffa727760da",
+  "symbol": "CMenu::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6166"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00410B25",
+    "0x00410B2A",
+    "0x00410B37"
+  ],
+  "status": "todo"
+}

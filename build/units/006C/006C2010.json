@@ -1,0 +1,18 @@
+{
+  "va": "0x006C2010",
+  "size": 16,
+  "sha256": "034506fcca9d59f1dbe2b4980d69cd63ba2a46568a75e4419af38b82e644fed0",
+  "symbol": "sub_006C2010",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006C2010",
+    "0x006C2014",
+    "0x006C2018",
+    "0x006C201C"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x006C1DD0"
+}

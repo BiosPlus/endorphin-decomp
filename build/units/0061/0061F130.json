@@ -1,7 +1,7 @@
 {
   "va": "0x0061F130",
-  "size": 467,
-  "sha256": "11af6ff5be5c580a282373b853f2f80698911d37c4b8adba9ba9be63a93c8b2f",
+  "size": 232,
+  "sha256": "c33710714ddc72e23d41ae6c1cdcc00bfea6fc7bbfe88175de2d51a17c58b8f4",
   "symbol": "NMData::HingeLimit::vfunc_15",
   "callees": [
     "0x0061ED50",

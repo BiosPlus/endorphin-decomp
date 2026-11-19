@@ -1,0 +1,18 @@
+{
+  "va": "0x007B03FC",
+  "size": 16,
+  "sha256": "abf1005d0a19ce5d8a0153a70eed004a2cef4fdae30fe3b131e61f077c76f436",
+  "symbol": "sub_007B03FC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B03FC",
+    "0x007B0400",
+    "0x007B0404",
+    "0x007B0408"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007AF940"
+}

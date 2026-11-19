@@ -1,0 +1,30 @@
+{
+  "va": "0x0079C96C",
+  "size": 80,
+  "sha256": "b15cd7c2bf4b52c7485bb5df58fb4c94a7331e9475a29b15a1db507d2b2e72bc",
+  "symbol": "sub_0079C96C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0079C97C",
+    "0x0079C980",
+    "0x0079C984",
+    "0x0079C988",
+    "0x0079C98C",
+    "0x0079C990",
+    "0x0079C994",
+    "0x0079C998",
+    "0x0079C99C",
+    "0x0079C9A0",
+    "0x0079C9A4",
+    "0x0079C9A8",
+    "0x0079C9AC",
+    "0x0079C9B0",
+    "0x0079C9B4",
+    "0x0079C9B8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (add\tbyte ptr [eax], al at 0x0079C96C)"
+}

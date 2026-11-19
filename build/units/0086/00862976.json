@@ -8,5 +8,6 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "todo"
+  "status": "skipped",
+  "skip_reason": "resplit: no ret/jmp/no-return call before 0x00862980"
 }

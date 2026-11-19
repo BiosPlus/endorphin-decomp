@@ -1,0 +1,19 @@
+{
+  "va": "0x00681F70",
+  "size": 97,
+  "sha256": "5c83301f6dcbb409c574d0dc24f337547e0727b0ef2fcbb5b1b6e40eff0fc32c",
+  "symbol": "Properties::PropertyIteratorTypes::VectorTypeIterator\u003cNM::Vector3\u003e::vfunc_0",
+  "callees": [
+    "0x004BA740",
+    "0x00671F30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00681F9B",
+    "0x00681FAF",
+    "0x00681FC3"
+  ],
+  "status": "todo"
+}

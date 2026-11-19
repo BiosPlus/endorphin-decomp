@@ -1,0 +1,19 @@
+{
+  "va": "0x007B89A8",
+  "size": 20,
+  "sha256": "3b9de6357dfa09d76d9929ddd41db6ea407902699ecbcbd47d1275cd79b062b0",
+  "symbol": "sub_007B89A8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B89A8",
+    "0x007B89AC",
+    "0x007B89B0",
+    "0x007B89B4",
+    "0x007B89B8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes"
+}

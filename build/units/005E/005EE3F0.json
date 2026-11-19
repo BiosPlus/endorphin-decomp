@@ -1,7 +1,7 @@
 {
   "va": "0x005EE3F0",
-  "size": 414,
-  "sha256": "dd8f74dd55b912e68af643b93dea86c7ed0a61072b1404178c72f3adbcb63c84",
+  "size": 143,
+  "sha256": "c3e806733bb37b0b60e3afdc51479e9b71be4701a9cacc2cf66a892359da69b7",
   "symbol": "NMData::SkeletalJointData::vfunc_15",
   "callees": [
     "0x005EC930",

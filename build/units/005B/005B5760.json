@@ -1,0 +1,18 @@
+{
+  "va": "0x005B5760",
+  "size": 30,
+  "sha256": "fd38d0a31c53f017104a54264e16880f2b551fb21560ad2e92b0e0398beb9dab",
+  "symbol": "Geometry::MeshType::vfunc_0",
+  "callees": [
+    "0x005B5260",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B5764",
+    "0x005B5771"
+  ],
+  "status": "todo"
+}

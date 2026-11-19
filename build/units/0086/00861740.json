@@ -1,0 +1,13 @@
+{
+  "va": "0x00861740",
+  "size": 32,
+  "sha256": "50f4bc2b3cade4dbd4c1c8d5dec75776a4bb6ec1bd7cb24bcb4c07abc5c780ce",
+  "symbol": "sub_00861740",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (push\tes at 0x00861746)"
+}

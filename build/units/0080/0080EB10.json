@@ -1,0 +1,26 @@
+{
+  "va": "0x0080EB10",
+  "size": 108,
+  "sha256": "570af462d439b6aba973f8bcd04988dc1981d27596ce92d9bee7162f5b32f8a2",
+  "symbol": "sub_0080EB10",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0080EB4C",
+    "0x0080EB50",
+    "0x0080EB54",
+    "0x0080EB58",
+    "0x0080EB5C",
+    "0x0080EB60",
+    "0x0080EB64",
+    "0x0080EB68",
+    "0x0080EB6C",
+    "0x0080EB70",
+    "0x0080EB74",
+    "0x0080EB78"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (pop\tes at 0x0080EB27)"
+}

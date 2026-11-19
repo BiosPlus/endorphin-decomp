@@ -1,0 +1,13 @@
+{
+  "va": "0x0085FCD4",
+  "size": 12,
+  "sha256": "c4187a20c5f16cdb1bcece9e528094131063cb4dc0b3aa38dfbd5a7d2c87f467",
+  "symbol": "sub_0085FCD4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "skipped",
+  "skip_reason": "resplit: no ret/jmp/no-return call before 0x0085FCE0"
+}

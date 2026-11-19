@@ -1,12 +1,13 @@
 {
   "va": "0x007C13C1",
-  "size": 143,
-  "sha256": "845df62a2174bd19566936983f4350ce2937636fcab0b54f7c5ad58090c2e272",
+  "size": 131,
+  "sha256": "e5f3581a2c45eb3c1fc917a24ed908ef689a37c0c5a85d1615023d0d9e5cf2f3",
   "symbol": "sub_007C13C1",
   "callees": [],
   "num_callees": 0,
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "todo"
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007BFF40"
 }

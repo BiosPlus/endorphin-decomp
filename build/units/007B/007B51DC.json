@@ -1,0 +1,18 @@
+{
+  "va": "0x007B51DC",
+  "size": 16,
+  "sha256": "80a2f1c76ea93d98c8a7247ec82d409e09020debc8c51ccf5140542ee157adfe",
+  "symbol": "sub_007B51DC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B51DC",
+    "0x007B51E0",
+    "0x007B51E4",
+    "0x007B51E8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes"
+}

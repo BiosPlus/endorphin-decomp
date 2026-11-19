@@ -1,0 +1,26 @@
+{
+  "va": "0x007BA1CC",
+  "size": 48,
+  "sha256": "88298ea2469e55ee7a534794b918a943045d2aab774312f70ef04347bd6fe5c7",
+  "symbol": "sub_007BA1CC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007BA1CC",
+    "0x007BA1D0",
+    "0x007BA1D4",
+    "0x007BA1D8",
+    "0x007BA1DC",
+    "0x007BA1E0",
+    "0x007BA1E4",
+    "0x007BA1E8",
+    "0x007BA1EC",
+    "0x007BA1F0",
+    "0x007BA1F4",
+    "0x007BA1F8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007B9D00"
+}

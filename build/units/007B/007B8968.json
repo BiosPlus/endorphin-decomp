@@ -1,0 +1,13 @@
+{
+  "va": "0x007B8968",
+  "size": 64,
+  "sha256": "74947d996ed2c0138054d53b637847f1920cbc91fb30b91caa0357ea8b0794c0",
+  "symbol": "sub_007B8968",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "skipped",
+  "skip_reason": "resplit: no ret/jmp/no-return call before 0x007B89A8"
+}

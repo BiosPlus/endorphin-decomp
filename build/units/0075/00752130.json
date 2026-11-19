@@ -1,0 +1,26 @@
+{
+  "va": "0x00752130",
+  "size": 48,
+  "sha256": "de7a842ec723efde56717adec53abd8bcae049c7d447cfeae05cdff4608f6062",
+  "symbol": "sub_00752130",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00752130",
+    "0x00752134",
+    "0x00752138",
+    "0x0075213C",
+    "0x00752140",
+    "0x00752144",
+    "0x00752148",
+    "0x0075214C",
+    "0x00752150",
+    "0x00752154",
+    "0x00752158",
+    "0x0075215C"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00751CA0"
+}

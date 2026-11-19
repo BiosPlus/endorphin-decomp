@@ -1,7 +1,7 @@
 {
   "va": "0x0061F310",
-  "size": 508,
-  "sha256": "4ae28c6d10548af463aee711657d7057a65eac2dd63e539a4341835dcf07114c",
+  "size": 274,
+  "sha256": "a88e785d1ecb07357c68cbc203354d01a27fa56d60e59b7da078a915d5d16321",
   "symbol": "NMData::TwistAndSwingLimit::vfunc_15",
   "callees": [
     "0x0061EE50",

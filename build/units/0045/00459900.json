@@ -1,0 +1,18 @@
+{
+  "va": "0x00459900",
+  "size": 30,
+  "sha256": "4a81986e7ee786ccf7f23d3b92b599ab312a1c187c1a7bb49290101749a6b457",
+  "symbol": "MultiTrackView::TimeRulerMarkerTrack::vfunc_0",
+  "callees": [
+    "0x00459250",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00459904",
+    "0x00459911"
+  ],
+  "status": "todo"
+}

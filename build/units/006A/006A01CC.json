@@ -1,0 +1,18 @@
+{
+  "va": "0x006A01CC",
+  "size": 71,
+  "sha256": "ab079ca0a8e6b1d6975e2efc967d6d689138307e51e7675354121c3c76cbc342",
+  "symbol": "sub_006A01CC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A01CC",
+    "0x006A01D0",
+    "0x006A01D4",
+    "0x006A01D8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x0069F040"
+}

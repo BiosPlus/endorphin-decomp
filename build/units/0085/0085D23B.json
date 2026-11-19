@@ -1,0 +1,15 @@
+{
+  "va": "0x0085D23B",
+  "size": 261,
+  "sha256": "12471658f3d52346bd98e3a19e63e7893995b8d248472dd75ba81db6ad0d14d2",
+  "symbol": "sub_0085D23B",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0085D287"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (add\tbyte ptr [eax], al at 0x0085D23B)"
+}

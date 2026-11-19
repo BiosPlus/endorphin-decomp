@@ -1,12 +1,19 @@
 {
   "va": "0x00458DC0",
-  "size": 22,
-  "sha256": "4fbd39341160a6e73bdd891240747e09116d9025781e6a40f7d2a68b49417d64",
+  "size": 20,
+  "sha256": "3f7aeede6cf0e46bda7de7fc1c6a9bc05ad43e4b4e90e28f9a5c7b0c8fd38f74",
   "symbol": "sub_00458DC0",
   "callees": [],
   "num_callees": 0,
   "is_leaf": true,
   "is_thunk": false,
-  "relocations": [],
-  "status": "todo"
+  "relocations": [
+    "0x00458DC0",
+    "0x00458DC4",
+    "0x00458DC8",
+    "0x00458DCC",
+    "0x00458DD0"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00458CA0"
 }

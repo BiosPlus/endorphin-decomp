@@ -1,0 +1,20 @@
+{
+  "va": "0x004852BC",
+  "size": 37,
+  "sha256": "4d927f69474b7f6f114d0932b24633fcbdc61e411a693911823b1cc448a9d192",
+  "symbol": "sub_004852BC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004852BC",
+    "0x004852C0",
+    "0x004852C4",
+    "0x004852C8",
+    "0x004852CC",
+    "0x004852D0"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (retf\t0x4851 at 0x004852BC)"
+}

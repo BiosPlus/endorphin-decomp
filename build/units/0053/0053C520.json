@@ -1,7 +1,7 @@
 {
   "va": "0x0053C520",
-  "size": 908,
-  "sha256": "99ae8a9388cf226d4e0bae6f16164d88ad6b4488a8c1ea6a6b0a84a59a8364e6",
+  "size": 509,
+  "sha256": "12fbb4347a7655fde092d07d9c1fb688b6a914f3a26ad8fedc0b62bb556806f9",
   "symbol": "Primitives::Bone::vfunc_28",
   "callees": [
     "0x00401000",
@@ -25,13 +25,7 @@
     "0x0053C651",
     "0x0053C679",
     "0x0053C6CD",
-    "0x0053C6D3",
-    "0x0053C839",
-    "0x0053C842",
-    "0x0053C851",
-    "0x0053C859",
-    "0x0053C88B",
-    "0x0053C891"
+    "0x0053C6D3"
   ],
   "status": "todo"
 }

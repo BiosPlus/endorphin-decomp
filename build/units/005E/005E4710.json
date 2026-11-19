@@ -1,7 +1,7 @@
 {
   "va": "0x005E4710",
-  "size": 317,
-  "sha256": "d49a736b8e31a534dec5f6c79c7409bbbcb9117ed5037613091c8f1747899ce5",
+  "size": 291,
+  "sha256": "9548d2ab81aabd2d1a4f5309a61aa9e64bb5beca1d58f90eb7c6e5851ec782e2",
   "symbol": "NMData::FixedPathJointData::vfunc_69",
   "callees": [
     "0x005E12D0",

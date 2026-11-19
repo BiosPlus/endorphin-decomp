@@ -1,0 +1,24 @@
+{
+  "va": "0x004F9710",
+  "size": 221,
+  "sha256": "2a41dbd9a128cbfd5d2deab000febc750618a24d37b3284ecf0bc4381dfb0adc",
+  "symbol": "sub_004F9710",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F9710",
+    "0x004F9714",
+    "0x004F9718",
+    "0x004F971C",
+    "0x004F9720",
+    "0x004F9724",
+    "0x004F9728",
+    "0x004F972C",
+    "0x004F9730",
+    "0x004F9734"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x004F9610"
+}

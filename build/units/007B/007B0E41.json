@@ -8,5 +8,6 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "todo"
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007B0A40"
 }

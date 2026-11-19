@@ -1,7 +1,7 @@
 {
   "va": "0x006B0D30",
-  "size": 176,
-  "sha256": "08894c454daf567cb3df26b18c3c6f1e509e0cacb89ac14e3fae0d7c50154a4f",
+  "size": 129,
+  "sha256": "f5ed384143ae81be64fd9f6e0d5b604d3bbaeb15e37764fb4bb60ba69b5acc99",
   "symbol": "GWCPropInPlaceEdit::vfunc_66",
   "callees": [
     "0x006A5DA0",

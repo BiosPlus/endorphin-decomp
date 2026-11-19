@@ -1,25 +1,20 @@
 {
   "va": "0x006E7060",
-  "size": 240,
-  "sha256": "0bee97bd7c0946d8e35eaae2da19dba9f2797e697fc769c67911c050dc8cb7d5",
+  "size": 24,
+  "sha256": "d5e4efce6cb1106cea42870dd3c03f3c8848c0997b8a4298342a9f964ff09792",
   "symbol": "sub_006E7060",
-  "callees": [
-    "0x00711B00"
-  ],
-  "num_callees": 1,
-  "is_leaf": false,
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
   "is_thunk": false,
   "relocations": [
-    "0x006E709C",
-    "0x006E70A1",
-    "0x006E70A7",
-    "0x006E70AD",
-    "0x006E70B3",
-    "0x006E70B9",
-    "0x006E70BF",
-    "0x006E710E",
-    "0x006E7124",
-    "0x006E7135"
+    "0x006E7060",
+    "0x006E7064",
+    "0x006E7068",
+    "0x006E706C",
+    "0x006E7070",
+    "0x006E7074"
   ],
-  "status": "todo"
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x006E7000"
 }

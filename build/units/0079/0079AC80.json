@@ -1,7 +1,7 @@
 {
   "va": "0x0079AC80",
-  "size": 320,
-  "sha256": "c96b6bb452b63e37c66bd0d576feae7e80136f42887b0f16717b9a01d316fde9",
+  "size": 99,
+  "sha256": "1062a433903e4a0f6749adaa54c04d3ae27f1de8c5b0e847fac3267ccee3841b",
   "symbol": "sub_0079AC80",
   "callees": [
     "0x007B1980"
@@ -19,11 +19,7 @@
     "0x0079ACC1",
     "0x0079ACC6",
     "0x0079ACCB",
-    "0x0079ACD3",
-    "0x0079AD08",
-    "0x0079AD38",
-    "0x0079AD91",
-    "0x0079ADA7"
+    "0x0079ACD3"
   ],
   "status": "todo"
 }

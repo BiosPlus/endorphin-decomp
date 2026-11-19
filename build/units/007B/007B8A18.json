@@ -1,0 +1,18 @@
+{
+  "va": "0x007B8A18",
+  "size": 48,
+  "sha256": "a0ab311dc9623b46e769d13f32fabcaf33e5bfc80d6d556ab9eb1ead6bc1712a",
+  "symbol": "sub_007B8A18",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B8A38",
+    "0x007B8A3C",
+    "0x007B8A40",
+    "0x007B8A44"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (add\tbyte ptr [eax], al at 0x007B8A28)"
+}

@@ -1,7 +1,7 @@
 {
   "va": "0x00407DB0",
-  "size": 309,
-  "sha256": "678c084635f63c28f9e2618b9fb8a18ca9f8158880491401a7b67addc7350f21",
+  "size": 289,
+  "sha256": "9e6488fa1924f51e85d6029dfbf91e0e03af33d482b33d81d2203600720d5ba7",
   "symbol": "BottomPanel::vfunc_0_off_AC",
   "callees": [
     "0x00465B30",

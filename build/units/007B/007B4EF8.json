@@ -1,0 +1,20 @@
+{
+  "va": "0x007B4EF8",
+  "size": 24,
+  "sha256": "62405d0919266de52a69f55e65ee4e619e4e8d1b7ea816a29cff7666518774f8",
+  "symbol": "sub_007B4EF8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B4EF8",
+    "0x007B4EFC",
+    "0x007B4F00",
+    "0x007B4F04",
+    "0x007B4F08",
+    "0x007B4F0C"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007B3CF0"
+}

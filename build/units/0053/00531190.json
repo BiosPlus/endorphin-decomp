@@ -7,6 +7,28 @@
   "num_callees": 0,
   "is_leaf": true,
   "is_thunk": false,
-  "relocations": [],
-  "status": "todo"
+  "relocations": [
+    "0x00531190",
+    "0x00531194",
+    "0x00531198",
+    "0x0053119C",
+    "0x005311A0",
+    "0x005311A4",
+    "0x005311A8",
+    "0x005311AC",
+    "0x005311B0",
+    "0x005311B4",
+    "0x005311B8",
+    "0x005311BC",
+    "0x005311C0",
+    "0x005311C4",
+    "0x005311C8",
+    "0x005311CC",
+    "0x005311D0",
+    "0x005311D4",
+    "0x005311D8",
+    "0x005311DC"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00530D80"
 }

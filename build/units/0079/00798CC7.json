@@ -1,0 +1,13 @@
+{
+  "va": "0x00798CC7",
+  "size": 29,
+  "sha256": "a73ee83519199064dc537c8a2aeeb7e099b82e8509ae4179d37dde43e09e0462",
+  "symbol": "sub_00798CC7",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x007B702C",
+  "size": 24,
+  "sha256": "e3de29b55530e5bfed718e51b5292a163ffc815b03336842a2f5230edd9c0556",
+  "symbol": "sub_007B702C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B7034",
+    "0x007B7038",
+    "0x007B703C",
+    "0x007B7040"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (add\tbyte ptr [eax], al at 0x007B702C)"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x007B7070",
+  "size": 20,
+  "sha256": "fd89029782093a5c8e3676d992d4482d1034f89274f9933e745350d5924a3b57",
+  "symbol": "sub_007B7070",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B7070",
+    "0x007B7074",
+    "0x007B7078",
+    "0x007B707C",
+    "0x007B7080"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes"
+}

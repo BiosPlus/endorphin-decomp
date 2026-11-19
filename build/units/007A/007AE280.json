@@ -1,7 +1,7 @@
 {
   "va": "0x007AE280",
-  "size": 320,
-  "sha256": "32859f257d9da65233575cc62f710841382a52824f7b40f8f92bfe6b34c61d81",
+  "size": 283,
+  "sha256": "cc66df26d2266bee28945bbc86a680d729068629c70e23ad5c4b86ca9d8a7959",
   "symbol": "sub_007AE280",
   "callees": [
     "0x006C9F00",
@@ -22,9 +22,7 @@
     "0x007AE356",
     "0x007AE360",
     "0x007AE375",
-    "0x007AE37F",
-    "0x007AE3A1",
-    "0x007AE3AB"
+    "0x007AE37F"
   ],
   "status": "todo"
 }

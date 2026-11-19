@@ -1,0 +1,15 @@
+{
+  "va": "0x00713A40",
+  "size": 10,
+  "sha256": "02a004fc699b71fdc0e925165360057ea7691dac7534229fe87a920ffaa05478",
+  "symbol": "sub_00713A40",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00713A41",
+    "0x00713A46"
+  ],
+  "status": "todo"
+}

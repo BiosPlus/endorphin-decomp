@@ -1,12 +1,13 @@
 {
   "va": "0x00778335",
-  "size": 75,
-  "sha256": "e9ff15a7913b9585cc6dd212c2c1f9eb4d39c5373f83bdb4e1b6d88b6635df7c",
+  "size": 67,
+  "sha256": "bef760adf4383f591fc4fa251519de8abd8272f37145337bebb04188817f787f",
   "symbol": "sub_00778335",
   "callees": [],
   "num_callees": 0,
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "todo"
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00778200"
 }

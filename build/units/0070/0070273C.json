@@ -1,0 +1,19 @@
+{
+  "va": "0x0070273C",
+  "size": 20,
+  "sha256": "2f743b0265a3554d1eacf93c206c2e9e4a040329c3b53b6c1d18b5f16f639f33",
+  "symbol": "sub_0070273C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0070273C",
+    "0x00702740",
+    "0x00702744",
+    "0x00702748",
+    "0x0070274C"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00702660"
+}

@@ -1,7 +1,7 @@
 {
   "va": "0x00456370",
-  "size": 292,
-  "sha256": "9fb2228b7a6bc0020cbab2a4a9783c0386004fe45404815b9be85041e14ffd14",
+  "size": 275,
+  "sha256": "b97220b70b8586d9079fbc2280d893ce795916fb7a57986a08c4b535ffdc60e6",
   "symbol": "CSizingControlBar::vfunc_102",
   "callees": [
     "0x006A63B2"

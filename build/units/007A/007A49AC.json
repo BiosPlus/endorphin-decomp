@@ -1,0 +1,31 @@
+{
+  "va": "0x007A49AC",
+  "size": 200,
+  "sha256": "9f0a0d237969be387112a6f7b3fe2b2f38d99ef333883834e8550c470fea97a2",
+  "symbol": "sub_007A49AC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007A4A30",
+    "0x007A4A34",
+    "0x007A4A38",
+    "0x007A4A3C",
+    "0x007A4A40",
+    "0x007A4A44",
+    "0x007A4A48",
+    "0x007A4A4C",
+    "0x007A4A50",
+    "0x007A4A54",
+    "0x007A4A58",
+    "0x007A4A5C",
+    "0x007A4A60",
+    "0x007A4A64",
+    "0x007A4A68",
+    "0x007A4A6C",
+    "0x007A4A70"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (push\tes at 0x007A49EE)"
+}

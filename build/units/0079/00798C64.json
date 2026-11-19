@@ -1,0 +1,27 @@
+{
+  "va": "0x00798C64",
+  "size": 52,
+  "sha256": "25a46dfa4464a1e11ce88c5e4492e26f5d7503250976b34f247a432e2ac6dfa8",
+  "symbol": "sub_00798C64",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00798C64",
+    "0x00798C68",
+    "0x00798C6C",
+    "0x00798C70",
+    "0x00798C74",
+    "0x00798C78",
+    "0x00798C7C",
+    "0x00798C80",
+    "0x00798C84",
+    "0x00798C88",
+    "0x00798C8C",
+    "0x00798C90",
+    "0x00798C94"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00798910"
+}

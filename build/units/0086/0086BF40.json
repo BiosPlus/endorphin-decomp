@@ -1,25 +1,12 @@
 {
   "va": "0x0086BF40",
-  "size": 224,
-  "sha256": "5a195580e52aa981dff381726d0d62dc0023a8e5b372226404e2ed403e5d0f4b",
+  "size": 53,
+  "sha256": "c85b40283245ef57052db4439360e423d0d01df7ace60217ecd4c4f8b956b616",
   "symbol": "sub_0086BF40",
-  "callees": [
-    "0x0086EE60",
-    "0x0086F050",
-    "0x0086F0A0",
-    "0x0086F240",
-    "0x0086F8A0"
-  ],
-  "num_callees": 5,
-  "is_leaf": false,
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
   "is_thunk": false,
-  "relocations": [
-    "0x0086BF8E",
-    "0x0086BFA0",
-    "0x0086BFB8",
-    "0x0086BFDA",
-    "0x0086BFF2",
-    "0x0086C004"
-  ],
+  "relocations": [],
   "status": "todo"
 }

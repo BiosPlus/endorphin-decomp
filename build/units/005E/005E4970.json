@@ -1,0 +1,17 @@
+{
+  "va": "0x005E4970",
+  "size": 19,
+  "sha256": "649cbadd79edf7a23eaacc4fbe6ac78add1d9ace859a83fdde8d80ed3b369467",
+  "symbol": "sub_005E4970",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E4970",
+    "0x005E4974",
+    "0x005E4978"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x005E4900"
+}

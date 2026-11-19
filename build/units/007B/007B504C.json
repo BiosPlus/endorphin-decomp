@@ -1,0 +1,24 @@
+{
+  "va": "0x007B504C",
+  "size": 40,
+  "sha256": "bc650d8e60840284a594c639df44ece6d1335bcaacee643a542ad13e53ab4310",
+  "symbol": "sub_007B504C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B504C",
+    "0x007B5050",
+    "0x007B5054",
+    "0x007B5058",
+    "0x007B505C",
+    "0x007B5060",
+    "0x007B5064",
+    "0x007B5068",
+    "0x007B506C",
+    "0x007B5070"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes"
+}

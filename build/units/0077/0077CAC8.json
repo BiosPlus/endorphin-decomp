@@ -1,0 +1,18 @@
+{
+  "va": "0x0077CAC8",
+  "size": 16,
+  "sha256": "7fdf2fe185a073d9b2ad4cf1689f3840504f0f0641f7df6acf2bace3b5a859a0",
+  "symbol": "sub_0077CAC8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0077CAC8",
+    "0x0077CACC",
+    "0x0077CAD0",
+    "0x0077CAD4"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x0077CA70"
+}

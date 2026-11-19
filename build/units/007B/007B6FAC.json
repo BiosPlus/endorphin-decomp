@@ -1,0 +1,22 @@
+{
+  "va": "0x007B6FAC",
+  "size": 32,
+  "sha256": "803171f0c00d0bf85dfc659c5cda53e99efd7d48e0e8d9e77e7cc301007f97d4",
+  "symbol": "sub_007B6FAC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B6FAC",
+    "0x007B6FB0",
+    "0x007B6FB4",
+    "0x007B6FB8",
+    "0x007B6FBC",
+    "0x007B6FC0",
+    "0x007B6FC4",
+    "0x007B6FC8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes"
+}

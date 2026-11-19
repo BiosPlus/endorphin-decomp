@@ -1,0 +1,13 @@
+{
+  "va": "0x0079A1A5",
+  "size": 15,
+  "sha256": "5e772ac54dbc7cf4362f9614baef1843e25f61000dc5d2e1583e3320f5182dc1",
+  "symbol": "sub_0079A1A5",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007994D0"
+}

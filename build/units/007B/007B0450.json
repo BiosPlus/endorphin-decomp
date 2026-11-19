@@ -1,0 +1,19 @@
+{
+  "va": "0x007B0450",
+  "size": 88,
+  "sha256": "9b223537b06f4257c799d12d67d7f0feefebc1a60ff01406425b47c9c810ab11",
+  "symbol": "sub_007B0450",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B0494",
+    "0x007B0498",
+    "0x007B049C",
+    "0x007B04A0",
+    "0x007B04A4"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (push\tes at 0x007B0452)"
+}

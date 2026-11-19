@@ -1,7 +1,7 @@
 {
   "va": "0x006F1FA0",
-  "size": 64,
-  "sha256": "0cc815c291c10562aeeedd623aafec807c59ad512f9d17aeba77a0e4ffecc632",
+  "size": 34,
+  "sha256": "060246ea05995d1d9d5d15a428741e9dfc7afafbd5fa2ece95113e405b6c701b",
   "symbol": "sub_006F1FA0",
   "callees": [
     "0x00711D40"

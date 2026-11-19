@@ -1,0 +1,22 @@
+{
+  "va": "0x0080DB10",
+  "size": 32,
+  "sha256": "d3bf6eaadda6eb08b21f3c29a984610d86eef0e7d39cbd024baa600e0799e151",
+  "symbol": "sub_0080DB10",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0080DB10",
+    "0x0080DB14",
+    "0x0080DB18",
+    "0x0080DB1C",
+    "0x0080DB20",
+    "0x0080DB24",
+    "0x0080DB28",
+    "0x0080DB2C"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x0080D6E0"
+}

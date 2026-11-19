@@ -3,22 +3,14 @@
   "size": 656,
   "sha256": "90ac78e82d355ee60f11fd3a1e304bc89d5cc2e61cf771f65fba2954760eeaae",
   "symbol": "sub_00852470",
-  "callees": [
-    "0x008158B7",
-    "0x0081C8A7"
-  ],
-  "num_callees": 2,
-  "is_leaf": false,
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
   "is_thunk": false,
   "relocations": [
-    "0x0085247E",
-    "0x008524EA",
-    "0x008524EF",
-    "0x00852546",
     "0x00852570",
-    "0x008525FC",
-    "0x0085260C",
-    "0x00852617"
+    "0x008525FC"
   ],
-  "status": "todo"
+  "status": "out_of_scope",
+  "skip_reason": "not compiler code: 100% of bytes never occur in MSVC output (data tables or VM/protection code)"
 }

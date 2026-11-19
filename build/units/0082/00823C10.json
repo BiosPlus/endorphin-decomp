@@ -7,9 +7,7 @@
   "num_callees": 0,
   "is_leaf": true,
   "is_thunk": false,
-  "relocations": [
-    "0x00823C8B",
-    "0x00823C92"
-  ],
-  "status": "todo"
+  "relocations": [],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (\u003cunknown\u003e at 0x00823C55)"
 }

@@ -1,0 +1,18 @@
+{
+  "va": "0x00713F58",
+  "size": 16,
+  "sha256": "dee4bc79b78403c3a768a09e4cd289b5dbf1617889f0e39636edf52fb8f05225",
+  "symbol": "sub_00713F58",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00713F58",
+    "0x00713F5C",
+    "0x00713F60",
+    "0x00713F64"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x00713EC0"
+}

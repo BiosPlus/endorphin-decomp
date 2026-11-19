@@ -1,0 +1,13 @@
+{
+  "va": "0x0086862A",
+  "size": 102,
+  "sha256": "42e2099c9992fb63aec0e76ad97dc913c8f47b4450752887695fe27c458555b7",
+  "symbol": "sub_0086862A",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (add\tbyte ptr [eax], al at 0x0086862A)"
+}

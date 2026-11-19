@@ -1,7 +1,7 @@
 {
   "va": "0x00411A80",
-  "size": 3076,
-  "sha256": "5ef24b0d76fc6a6f71613c666afe14ef172e3915849ed6eb09075b1f3bf72cd3",
+  "size": 2947,
+  "sha256": "20a46b52003cf5d066bbd781eaf8539666701601c647df3c35d77f71f1847273",
   "symbol": "MultiTrackView::CompositeEventTrack::vfunc_7",
   "callees": [
     "0x00404F00",

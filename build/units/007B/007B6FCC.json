@@ -1,0 +1,21 @@
+{
+  "va": "0x007B6FCC",
+  "size": 96,
+  "sha256": "1407489bcb9afb3769f8e0b222214f38a696a66b6ad68f42e673947c140f5e51",
+  "symbol": "sub_007B6FCC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007B7010",
+    "0x007B7014",
+    "0x007B7018",
+    "0x007B701C",
+    "0x007B7020",
+    "0x007B7024",
+    "0x007B7028"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (push\tes at 0x007B6FCE)"
+}

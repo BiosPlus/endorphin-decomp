@@ -1,0 +1,21 @@
+{
+  "va": "0x007F5A1C",
+  "size": 28,
+  "sha256": "3729e047766c10400bd00924ff771d5188a45c3508789c56aeb8201b0af0699a",
+  "symbol": "sub_007F5A1C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007F5A1C",
+    "0x007F5A20",
+    "0x007F5A24",
+    "0x007F5A28",
+    "0x007F5A2C",
+    "0x007F5A30",
+    "0x007F5A34"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007F5950"
+}

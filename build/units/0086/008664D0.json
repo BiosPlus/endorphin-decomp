@@ -1,0 +1,20 @@
+{
+  "va": "0x008664D0",
+  "size": 252,
+  "sha256": "52850c7ac86e14d23552368780ccc0cff2237b9535cc89109425ae4345a5fde8",
+  "symbol": "sub_008664D0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x008665B4",
+    "0x008665B8",
+    "0x008665BC",
+    "0x008665C0",
+    "0x008665C4",
+    "0x008665C8"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: undecodable bytes (pop\tes at 0x008664D2)"
+}

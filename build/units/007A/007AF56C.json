@@ -1,0 +1,18 @@
+{
+  "va": "0x007AF56C",
+  "size": 16,
+  "sha256": "bff3e10d80bc4481adcec2eec1bad18ac8bdf4e63c9f3cbadfe29d3799b99b25",
+  "symbol": "sub_007AF56C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007AF56C",
+    "0x007AF570",
+    "0x007AF574",
+    "0x007AF578"
+  ],
+  "status": "out_of_scope",
+  "skip_reason": "data: jump table of 0x007AF500"
+}

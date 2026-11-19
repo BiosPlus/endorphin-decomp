@@ -1,16 +1,14 @@
 {
   "va": "0x004C2070",
-  "size": 446,
-  "sha256": "00180b48a001b485f37a6ecd0bfdd82962bf42d284e7333ce1339aee03ee1ae1",
+  "size": 90,
+  "sha256": "7c032e746be784c05dbe35db322c7bccfc03f300f9c5fd73ae4582c65afccd75",
   "symbol": "NMData::SeverEventData::vfunc_14",
   "callees": [
-    "0x00493D90",
-    "0x004C0350",
     "0x004C1BF0",
     "0x0055DA20",
     "0x0058F6B0"
   ],
-  "num_callees": 5,
+  "num_callees": 3,
   "is_leaf": false,
   "is_thunk": false,
   "relocations": [
@@ -18,14 +16,7 @@
     "0x004C2095",
     "0x004C20A1",
     "0x004C20AD",
-    "0x004C20BF",
-    "0x004C2169",
-    "0x004C2194",
-    "0x004C21AE",
-    "0x004C21C1",
-    "0x004C21D0",
-    "0x004C21FA",
-    "0x004C220D"
+    "0x004C20BF"
   ],
   "status": "todo"
 }
