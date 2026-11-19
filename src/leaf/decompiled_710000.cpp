@@ -6981,3 +6981,45 @@ extern "C" __declspec(naked) int __fastcall fn_007128A0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x007136C0] sub_007136C0 (106 bytes)
+struct Pair_007136C0 {
+    int a;
+    int b;
+};
+
+extern "C" bool __fastcall fn_007136C0(void* self, int edx_unused, Pair_007136C0* arr) {
+    arr[0].a = 0;
+    arr[1].a = 0;
+    arr[2].a = 0;
+    arr[3].a = 0;
+    arr[4].a = 0;
+    arr[5].a = 0;
+    arr[6].a = 0;
+    arr[7].a = 0;
+    arr[8].a = 0;
+    arr[9].a = 0;
+    arr[10].a = 0;
+    arr[11].a = 0;
+    arr[12].a = 0;
+    arr[13].a = 0;
+    arr[14].a = 0;
+    arr[15].a = 0;
+    arr[0].b = 0;
+    arr[1].b = 0;
+    arr[2].b = 0;
+    arr[3].b = 0;
+    arr[4].b = 0;
+    arr[5].b = 0;
+    arr[6].b = 0;
+    arr[7].b = 0;
+    arr[8].b = 0;
+    arr[9].b = 0;
+    arr[10].b = 0;
+    arr[11].b = 0;
+    arr[12].b = 0;
+    arr[13].b = 0;
+    arr[14].b = 0;
+    arr[15].b = 0;
+    return true;
+}
