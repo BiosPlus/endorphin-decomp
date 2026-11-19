@@ -11974,3 +11974,90 @@ extern "C" __declspec(naked) void __fastcall fn_006B9C10(void* self) {
         ret 8
     }
 }
+
+// [0x006BB440] sub_006BB440 (220 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006E7460();
+extern "C" __declspec(naked) void __fastcall fn_006BB440(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8bcb18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        mov eax, dword ptr [esp + 0x5c]
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        push eax
+        lea ecx, [esp + 0x14]
+        xor edi, edi
+        xor ebx, ebx
+        xor ebp, ebp
+        call ext_006B9D80
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        mov dword ptr [esp + 0x64], edi
+        call dword ptr [edx + 0x10]
+        lea ecx, [esp + 0x10]
+        call ext_006E7460
+        cmp byte ptr [eax], 0
+        je done_tail
+    loop_top:
+        lea ecx, [esp + 0x10]
+        call ext_006E7460
+        cmp byte ptr [eax + edi], 0x7e
+        jne skip_tilde
+        lea ecx, [esp + 0x10]
+        call ext_006E7460
+        lea ecx, [esp + 0x10]
+        mov byte ptr [eax + edi], 0
+        call ext_006E7460
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [esi]
+        add eax, ebx
+        push 0
+        push eax
+        push ecx
+        mov ecx, esi
+        call dword ptr [edx + 8]
+        mov ebp, eax
+        lea ebx, [edi + 1]
+    skip_tilde:
+        lea ecx, [esp + 0x10]
+        inc edi
+        call ext_006E7460
+        cmp byte ptr [eax + edi], 0
+        jne loop_top
+        cmp ebx, edi
+        je done_tail
+        lea ecx, [esp + 0x10]
+        call ext_006E7460
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [esi]
+        add eax, ebx
+        push 0
+        push eax
+        push ecx
+        mov ecx, esi
+        call dword ptr [edx + 8]
+        mov ebp, eax
+    done_tail:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 4
+    }
+}
