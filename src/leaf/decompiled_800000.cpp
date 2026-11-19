@@ -9246,3 +9246,24 @@ extern "C" __declspec(naked) void __cdecl fn_0080F860(char* a1, int a2, void* a3
         ret
     }
 }
+
+// [0x0080F890] sub_0080F890 (40 bytes)
+extern "C" void ext_0080DC60();
+extern "C" __declspec(naked) void __cdecl fn_0080F890(char* a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push 0
+        push ecx
+        push 0x0080f830
+        lea edx, [esp + 0x14]
+        push 0
+        push edx
+        call ext_0080DC60
+        mov ecx, dword ptr [esp + 0x1c]
+        add esp, 0x18
+        mov byte ptr [ecx], 0
+        ret
+    }
+}
