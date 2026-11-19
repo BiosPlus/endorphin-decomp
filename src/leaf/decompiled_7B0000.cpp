@@ -9301,3 +9301,85 @@ extern "C" __declspec(naked) int __cdecl fn_007B1030(void* a1, void* a2, int* a3
         ret
     }
 }
+
+// [0x007B7AF0] sub_007B7AF0 (176 bytes)
+extern "C" void ext_007B7A90();
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __cdecl fn_007B7AF0(char** dst, int len) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925208]
+        push esi
+        lea esi, [eax + 0x1]
+        push edi
+        push esi
+        call ebp
+        mov ebx, eax
+        add esp, 0x4
+        test ebx, ebx
+        jne L_007B7B20
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_007B7B95
+    L_007B7B20:
+        push esi
+        push ebx
+        call ext_007B7A90
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test al, al
+        je L_007B7B3C
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_007B7B95
+    L_007B7B3C:
+        mov edi, ebx
+        or ecx, -0x1
+        xor eax, eax
+        repne scasb
+        not ecx
+        push ecx
+        call ebp
+        mov ebp, dword ptr [esp + 0x18]
+        add esp, 0x4
+        test eax, eax
+        mov dword ptr [ebp], eax
+        jne L_007B7B6B
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_007B7B95
+    L_007B7B6B:
+        mov edi, ebx
+        or ecx, -0x1
+        xor eax, eax
+        push ebx
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov edx, ecx
+        mov esi, edi
+        mov edi, dword ptr [ebp]
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+    L_007B7B95:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
