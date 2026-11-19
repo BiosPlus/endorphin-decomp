@@ -6066,3 +6066,39 @@ extern "C" void __fastcall fn_00701B10(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x650) = a5;
     *(int*)(p + 0x654) = a6;
 }
+
+// [0x00709100] sub_00709100 (62 bytes)
+extern "C" void ext_00708FF0();
+extern "C" __declspec(naked) void __fastcall fn_00709100(void* self, int edx_unused, int a1, int flags) {
+    __asm {
+        push ebx
+        mov bl, byte ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        test bl, 0x1
+        je skip1
+        mov eax, dword ptr [esi]
+        push edi
+        call dword ptr [eax + 0xfc]
+    skip1:
+        test bl, 0x4
+        je skip2
+        push edi
+        mov ecx, esi
+        call ext_00708FF0
+    skip2:
+        test bl, 0x8
+        je skip3
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x100]
+    skip3:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
