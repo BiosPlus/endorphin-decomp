@@ -11148,3 +11148,18 @@ extern "C" void __cdecl fn_006BE9A0() {
     mem_00B5D490 = -*(double*)mem_00925284;
     mem_00B5D498 = -*(double*)mem_00925284;
 }
+
+// [0x006BEC70] sub_006BEC70 (41 bytes)
+extern "C" int mem_00B5D450;
+extern "C" int mem_00B5D458;
+extern "C" int mem_00B5D454;
+extern "C" int mem_00B5D45C;
+extern "C" __declspec(naked) void __cdecl fn_006BEC70() {
+    __asm {
+        mov dword ptr [mem_00B5D450], 0xb5d448
+        mov dword ptr [mem_00B5D458], 0xaa88b0
+        mov dword ptr [mem_00B5D454], 0xb5f050
+        mov dword ptr [mem_00B5D45C], 0
+        ret
+    }
+}
