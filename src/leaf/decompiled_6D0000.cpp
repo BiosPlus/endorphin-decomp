@@ -11026,3 +11026,77 @@ L_006DD74D:
         ret
     }
 }
+
+// [0x006D5E30] sub_006D5E30 (228 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void ext_006B9960();
+extern "C" void ext_006BE890();
+extern "C" void ext_006D66A0();
+extern "C" __declspec(naked) void __fastcall fn_006D5E30(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006D66A0
+        mov edi, dword ptr [esi + 0x150]
+        lea ebx, [esi + 0x150]
+        xor ebp, ebp
+        cmp edi, ebp
+        je L_5E6E
+L_5E4D:
+        mov eax, dword ptr [ebx + 0x10]
+        dec edi
+        mov ebp, dword ptr [eax + 4*edi]
+        test ebp, ebp
+        je L_5E68
+        mov ecx, ebp
+        call ext_006BE890
+        push ebp
+        call ext_006A5C5C
+        add esp, 4
+L_5E68:
+        test edi, edi
+        jne L_5E4D
+        xor ebp, ebp
+L_5E6E:
+        mov ecx, ebx
+        call ext_006D2250
+        lea ecx, [esi + 0x16c]
+        call ext_006B9960
+        mov eax, dword ptr [esi + 0x168]
+        cmp eax, ebp
+        je L_5E99
+        mov ecx, dword ptr [esi + 0xa8]
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0xa4]
+L_5E99:
+        mov eax, 0x1010101
+        mov dword ptr [esi + 0x168], ebp
+        mov dword ptr [esi + 0x1b8], eax
+        lea ecx, [esi + 0xb0]
+        mov dword ptr [esi + 0x1bc], eax
+        mov word ptr [esi + 0x1c0], ax
+        mov byte ptr [esi + 0x1c2], al
+        mov dword ptr [esi + 0x1c4], ebp
+        mov dword ptr [esi + 0x1c8], ebp
+        mov dword ptr [esi + 0x1cc], ebp
+        call ext_006B9960
+        lea ecx, [esi + 0x1d4]
+        mov byte ptr [esi + 0x1d0], 0
+        call ext_006B9960
+        lea ecx, [esi + 0x220]
+        call ext_006B9960
+        mov dword ptr [esi + 0x270], ebp
+        mov dword ptr [esi + 0x278], ebp
+        mov dword ptr [esi + 0x274], ebp
+        mov dword ptr [esi + 0x27c], ebp
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
