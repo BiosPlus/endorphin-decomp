@@ -3385,3 +3385,88 @@ fn00734EE0_skip:
         ret 4
     }
 }
+
+// [0x0073C5C0] sub_0073C5C0 (192 bytes)
+extern "C" void ext_006D7ED0();
+extern "C" void ext_006D80A0();
+extern "C" void ext_006D80B0();
+extern "C" void ext_00726900();
+extern "C" void ext_00726AE0();
+extern "C" __declspec(naked) void __fastcall fn_0073C5C0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, ecx
+        push 0aae000h
+        mov ecx, dword ptr [ebp + 0ach]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073C5C0_ret1
+        mov ecx, dword ptr [ebp + 0ach]
+        push edi
+        add ecx, 4
+        call ext_00726900
+        mov edi, eax
+        test edi, edi
+        jle fn0073C5C0_skip
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 14h]
+        push -1
+        push -1
+        push -1
+        mov ecx, esi
+        call ext_006D7ED0
+        xor ebx, ebx
+        test edi, edi
+        jle fn0073C5C0_endloop
+fn0073C5C0_loop:
+        mov ecx, dword ptr [ebp + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        test eax, eax
+        push -1
+        jge fn0073C5C0_pos
+        cdq
+        xor eax, edx
+        mov ecx, esi
+        sub eax, edx
+        dec eax
+        push eax
+        call ext_006D80B0
+        mov ecx, esi
+        call ext_006D80A0
+        lea eax, [edi - 1]
+        cmp ebx, eax
+        jge fn0073C5C0_inc
+        push -1
+        push -1
+        push -1
+        mov ecx, esi
+        call ext_006D7ED0
+        jmp fn0073C5C0_inc
+fn0073C5C0_pos:
+        push eax
+        mov ecx, esi
+        call ext_006D80B0
+fn0073C5C0_inc:
+        inc ebx
+        cmp ebx, edi
+        jl fn0073C5C0_loop
+fn0073C5C0_endloop:
+        pop esi
+        pop ebx
+fn0073C5C0_skip:
+        mov ecx, dword ptr [ebp + 0ach]
+        add ecx, 4
+        call ext_00726840
+        pop edi
+        mov al, 1
+        pop ebp
+        ret 4
+fn0073C5C0_ret1:
+        mov al, 1
+        pop ebp
+        ret 4
+    }
+}
