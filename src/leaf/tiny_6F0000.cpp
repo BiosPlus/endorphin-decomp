@@ -3205,3 +3205,14 @@ L_006F9A98:
         ret 0x4
     }
 }
+
+// [0x006FA190] Boolean predicate (18 bytes) - sub_006FA190
+extern "C" __declspec(naked) void fn_006FA190() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5E400]
+        __asm _emit 0x3B __asm _emit 0xC1 // cmp eax, ecx
+        sete al
+        ret 0x4
+    }
+}
