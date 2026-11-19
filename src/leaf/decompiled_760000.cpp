@@ -1567,3 +1567,20 @@ L_done:
         __asm _emit 0x90
     }
 }
+
+// [0x00766900] sub_00766900 (22 bytes)
+extern "C" void ext_0079F230();
+
+extern "C" __declspec(naked) void* __fastcall fn_00766900(void* self) {
+    __asm {
+        push esi
+        call ext_0079F230
+        mov esi, eax
+        mov ecx, esi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x128]
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
