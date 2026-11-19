@@ -1592,3 +1592,11 @@ L_0070FBE5:
         ret 0x4
     }
 }
+
+// [0x0070FC20] Branchless tiny leaf function (6 bytes) - sub_0070FC20
+extern "C" __declspec(naked) void fn_0070FC20() {
+    __asm {
+        mov eax, offset mem_00AA87B0
+        ret
+    }
+}
