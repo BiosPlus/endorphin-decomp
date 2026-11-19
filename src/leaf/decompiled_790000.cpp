@@ -44,6 +44,7 @@ extern "C" int mem_009251D8; /* "&|b" */
 extern "C" void __stdcall ext_007856F0(int a1, int a2);
 extern "C" void ext_007857A0();
 extern "C" void ext_00791FF0();
+extern "C" void __cdecl ext_00798750(void*, unsigned int);
 
 // [0x0079AFE0] sub_0079AFE0 (48 bytes)
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
@@ -6311,4 +6312,14 @@ extern "C" void ext_007AF040();
 
 extern "C" int __cdecl fn_00798670(int a1, int a2, int a3) {
     return ((int (__cdecl *)(int, int))ext_007AF040)(a2, a3 / 4);
+}
+
+// [0x007987E0] sub_007987E0 (27 bytes)
+extern "C" void __cdecl fn_007987E0(void* a1) {
+    unsigned int val50 = *(unsigned int*)((char*)a1 + 0x50);
+    unsigned int val28 = *(unsigned int*)((char*)a1 + 0x28);
+    if (val50 > val28) {
+        val50 = val28;
+    }
+    ext_00798750(a1, val50);
 }
