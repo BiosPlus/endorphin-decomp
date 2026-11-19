@@ -1332,3 +1332,8 @@ extern "C" __declspec(naked) void fn_00707960() {
 extern "C" unsigned char __stdcall fn_00707FA0(int a1, int a2) {
     return 0x1;
 }
+
+// [0x00709340] Constant byte/bool return (5 bytes) - sub_00709340
+extern "C" unsigned char __stdcall fn_00709340(int a1, int a2, int a3) {
+    return 0x1;
+}
