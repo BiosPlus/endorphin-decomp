@@ -10073,3 +10073,45 @@ L_7BF2E6:
         ret
     }
 }
+
+// [0x007BDC20] sub_007BDC20 (66 bytes)
+extern "C" void ext_007BDC70();
+
+extern "C" __declspec(naked) int __cdecl fn_007BDC20(char* self, char* buf, int count) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        push edi
+        jle L_done
+        mov edi, dword ptr [esp + 0x10]
+    L_loop:
+        mov eax, dword ptr [edi + 0x24]
+        push eax
+        push ebx
+        push edi
+        call ext_007BDC70
+        add esp, 0xc
+        test eax, eax
+        je L_fail
+        mov eax, dword ptr [edi + 0x1d0]
+        sub esi, eax
+        add ebx, eax
+        test esi, esi
+        jg L_loop
+    L_done:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+    L_fail:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
