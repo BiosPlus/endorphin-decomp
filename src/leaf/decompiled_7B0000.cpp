@@ -9708,3 +9708,28 @@ extern "C" __declspec(naked) void __cdecl fn_007BC320(void* self, void* dst, int
         ret
     }
 }
+
+// [0x007B2040] sub_007B2040 (51 bytes)
+extern "C" int mem_00B61D90;
+extern "C" int mem_00B61D98;
+extern "C" void ext_006A6C87();
+extern "C" void ext_007B2220();
+extern "C" __declspec(naked) void __fastcall fn_007B2040(void* self) {
+    __asm {
+        mov cl, byte ptr [mem_00B61D90]
+        mov al, 0x1
+        test cl, al
+        jne L_7b206d
+        mov dl, cl
+        mov ecx, offset mem_00B61D98
+        or dl, al
+        mov byte ptr [mem_00B61D90], dl
+        call ext_007B2220
+        push 0x7b2080
+        call ext_006A6C87
+        add esp, 0x4
+    L_7b206d:
+        mov eax, offset mem_00B61D98
+        ret
+    }
+}
