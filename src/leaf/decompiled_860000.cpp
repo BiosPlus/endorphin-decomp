@@ -8802,3 +8802,173 @@ extern "C" __declspec(naked) void __cdecl fn_00861DF0(void) {
         ret
     }
 }
+
+// [0x00867FC0] sub_00867FC0 (240 bytes)
+extern "C" void ext_00868180();
+extern "C" void ext_0085D510();
+extern "C" int mem_00BC70E4;
+extern "C" int mem_00BC63D0;
+extern "C" int mem_00BC63DC;
+extern "C" int mem_00BC6724;
+extern "C" int mem_00BC7100;
+extern "C" int mem_00BC70EC;
+extern "C" int mem_00BC70C0;
+extern "C" int mem_00BC672C;
+extern "C" int mem_00BC63F0;
+
+extern "C" __declspec(naked) void __cdecl fn_00867FC0(void) {
+    __asm {
+        sub esp, 0x4
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0x10
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push esi
+        _emit 0xe8
+        _emit 0xaf
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        test eax, eax
+        jne L_open
+        mov eax, 0x1
+        pop esi
+        add esp, 0x4
+        ret
+    L_open:
+        push 0x3e8
+        push 0x2
+        push 0x6
+        _emit 0xff
+        _emit 0x15
+        _emit 0xe4
+        _emit 0x70
+        _emit 0xbc
+        _emit 0x00
+        cmp eax, -1
+        mov esi, eax
+        jne L_sock
+        mov eax, 0x1
+        pop esi
+        add esp, 0x4
+        ret
+    L_sock:
+        push 0xe
+        push 0x0
+        push 0xbc63d0
+        _emit 0xe8
+        _emit 0x03
+        _emit 0x55
+        _emit 0xff
+        _emit 0xff
+        _emit 0x66
+        _emit 0xc7
+        _emit 0x05
+        _emit 0xd0
+        _emit 0x63
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x06
+        _emit 0x00
+        add esp, 0xc
+        _emit 0x66
+        _emit 0xc7
+        _emit 0x05
+        _emit 0xdc
+        _emit 0x63
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push 0x10
+        push 0xbc63d0
+        push esi
+        _emit 0xff
+        _emit 0x15
+        _emit 0x24
+        _emit 0x67
+        _emit 0xbc
+        _emit 0x00
+        cmp eax, -1
+        jne L_bind_ok
+        push esi
+        _emit 0xff
+        _emit 0x15
+        _emit 0x00
+        _emit 0x71
+        _emit 0xbc
+        _emit 0x00
+        mov eax, 0x1
+        pop esi
+        add esp, 0x4
+        ret
+    L_bind_ok:
+        lea eax, [esp + 0x4]
+        push eax
+        push 0xbc63f0
+        push esi
+        _emit 0xff
+        _emit 0x15
+        _emit 0xec
+        _emit 0x70
+        _emit 0xbc
+        _emit 0x00
+        cmp eax, -1
+        jne L_listen_ok
+        push esi
+        _emit 0xff
+        _emit 0x15
+        _emit 0x00
+        _emit 0x71
+        _emit 0xbc
+        _emit 0x00
+        mov eax, 0x1
+        pop esi
+        add esp, 0x4
+        ret
+    L_listen_ok:
+        push 0x4
+        push 0xab960c
+        push 0x4000
+        push 0x3e8
+        push esi
+        _emit 0xff
+        _emit 0x15
+        _emit 0xc0
+        _emit 0x70
+        _emit 0xbc
+        _emit 0x00
+        mov eax, dword ptr [esp + 0xc]
+        push 0xab9608
+        push 0x8004667e
+        push esi
+        mov dword ptr [eax], esi
+        _emit 0xff
+        _emit 0x15
+        _emit 0x2c
+        _emit 0x67
+        _emit 0xbc
+        _emit 0x00
+        xor eax, eax
+        pop esi
+        add esp, 0x4
+        ret
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
