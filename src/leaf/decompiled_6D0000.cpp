@@ -8200,3 +8200,45 @@ extern "C" __declspec(naked) void __fastcall fn_006DCF80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D2C30] sub_006D2C30 (73 bytes)
+extern "C" void ext_006D2A90();
+extern "C" void ext_006D2BD0();
+extern "C" __declspec(naked) void* __fastcall fn_006D2C30(void* self, int edx_unused, void* other) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_006D2250
+        mov ebx, dword ptr [esp + 0x14]
+        xor esi, esi
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [edi + 0x8], eax
+        mov ebp, dword ptr [ebx]
+        test ebp, ebp
+        jle L_done
+    L_loop:
+        push esi
+        mov ecx, ebx
+        call ext_006D2A90
+        sub esp, 0x20
+        mov ecx, esp
+        mov dword ptr [esp + 0x34], esp
+        push eax
+        call ext_006D2390
+        mov ecx, edi
+        call ext_006D2BD0
+        inc esi
+        cmp esi, ebp
+        jl L_loop
+    L_done:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
