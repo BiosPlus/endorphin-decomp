@@ -4906,3 +4906,10 @@ extern "C" void __fastcall fn_00704BF0(void* self) {
         call ext_006E73B0
     }
 }
+
+// [0x00703FC0] sub_00703FC0 (21 bytes)
+extern "C" int __cdecl ext_006FC3A0(void*, int);
+extern "C" int mem_00B5E9B8;
+extern "C" void __cdecl fn_00703FC0() {
+    mem_00B5E9B8 = ext_006FC3A0((void*)0xb5e9a8, -1);
+}
