@@ -5539,3 +5539,13 @@ extern "C" bool __stdcall fn_00713540(int a1, void* a2) {
     ((void (__thiscall*)(void*, int, int, int))ext_006D9FC0)(a2, a1, 0, 2);
     return true;
 }
+
+// [0x00713560] sub_00713560 (25 bytes)
+struct TargetObj_006D9940 {
+    void method_006D9940(int a1, int a2, int a3, int a4);
+};
+
+extern "C" bool __fastcall fn_00713560(void* self, int edx_unused, int a1, int a2, TargetObj_006D9940* a3) {
+    a3->method_006D9940(a1, 5, 0, 2);
+    return true;
+}
