@@ -14,5 +14,6 @@
     "0x00700594",
     "0x007005A1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
