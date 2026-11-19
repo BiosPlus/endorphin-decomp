@@ -7856,3 +7856,29 @@ extern "C" __declspec(naked) void* __fastcall fn_006DE660(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006D8CA0] sub_006D8CA0 (44 bytes)
+extern "C" int mem_00B5D8F8;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+
+// Thiscall-style (ret 4): compares arg against three globals; returns true on first two hits.
+extern "C" __declspec(naked) bool __fastcall fn_006D8CA0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5D8F8]
+        cmp eax, ecx
+        jne L_006D8CB3
+        mov al, 0x1
+        ret 0x4
+    L_006D8CB3:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne L_006D8CC0
+        mov al, 0x1
+        ret 0x4
+    L_006D8CC0:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}
