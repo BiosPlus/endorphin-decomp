@@ -3612,3 +3612,66 @@ fn00732BF0_done:
         ret 4
     }
 }
+
+// [0x00737050] sub_00737050 (208 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA660();
+extern "C" void ext_00726AA0();
+
+extern "C" __declspec(naked) void __fastcall fn_00737050(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -0x1
+        push 0x8bcb18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        mov ecx, dword ptr [ecx + 0xac]
+        push 0xb5d2c0
+        push 0xaad950
+        add ecx, 0x4
+        call ext_00726AA0
+        push eax
+        lea ecx, [esp + 0x4]
+        call ext_006B9D80
+        push 0xaad944
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x58], 0x0
+        call ext_006BA660
+        test eax, eax
+        je loc_7370e8
+        push 0xaad934
+        lea ecx, [esp + 0x4]
+        call ext_006BA660
+        test eax, eax
+        jne loc_7370c6
+        mov ecx, dword ptr [esp + 0x5c]
+        mov dword ptr [ecx + 0x540], 0x1
+        jmp loc_7370f6
+loc_7370c6:
+        push 0xaad928
+        lea ecx, [esp + 0x4]
+        call ext_006BA660
+        test eax, eax
+        jne loc_7370e8
+        mov edx, dword ptr [esp + 0x5c]
+        mov dword ptr [edx + 0x540], 0x2
+        jmp loc_7370f6
+loc_7370e8:
+        mov eax, dword ptr [esp + 0x5c]
+        mov dword ptr [eax + 0x540], 0x0
+loc_7370f6:
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov dword ptr [esp + 0x54], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x4c]
+        mov al, 0x1
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 0x4
+    }
+}
