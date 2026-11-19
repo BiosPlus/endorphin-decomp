@@ -22,5 +22,7 @@
     "0x0068D6FC",
     "0x0068D706"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
