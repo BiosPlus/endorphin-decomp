@@ -7289,3 +7289,70 @@ extern "C" __declspec(naked) void __fastcall fn_00702660(void* self) {
         ret 0x4
     }
 }
+
+// [0x0070AEA0] sub_0070AEA0 (140 bytes)
+extern "C" void ext_006B9D80();
+extern "C" void ext_006E8E50();
+extern "C" void ext_006E8EF0();
+extern "C" void ext_007025B0();
+extern "C" void ext_00707A90();
+extern "C" void ext_0070AF50();
+extern "C" __declspec(naked) void __fastcall fn_0070AEA0(void* self, int edx_unused, void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        cmp ebp, esi
+        jne aeA_tail
+        cmp dword ptr [esp + 0x18], 0x5
+        jne aeA_tail
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0x12c]
+        mov ecx, eax
+        call ext_007025B0
+        mov ecx, esi
+        mov ebx, eax
+        call ext_0070AF50
+        mov ecx, eax
+        call ext_006BADB0
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x68], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, ebx
+        call ext_006E8E50
+        test eax, eax
+        jne aeA_tail
+        mov ecx, esi
+        call ext_0070AF50
+        push eax
+        mov ecx, ebx
+        call ext_006E8EF0
+    aeA_tail:
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push edi
+        push eax
+        push ebp
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_00707A90
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x1c
+    }
+}
