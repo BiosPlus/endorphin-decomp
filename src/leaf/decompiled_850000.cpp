@@ -5246,3 +5246,56 @@ extern "C" __declspec(naked) void __fastcall fn_0085F750(void* self) {
         __asm _emit 0x00
     }
 }
+
+// [0x00858A80] sub_00858A80 (97 bytes)
+extern "C" void ext_00853840();
+extern "C" __declspec(naked) unsigned int __cdecl fn_00858A80(void) {
+    __asm {
+        sub esp, 0x14
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        push edi
+        push eax
+        call ext_00853840
+        add esp, 8
+        xor esi, esi
+        xor eax, eax
+        xor ecx, ecx
+    bits_loop:
+        xor edx, edx
+        mov dl, byte ptr [esp + eax + 0xc]
+        mov dl, byte ptr [edx + edi + 0x5c]
+        shr edx, 3
+        and edx, 3
+        shl edx, cl
+        add ecx, 2
+        or esi, edx
+        inc eax
+        cmp ecx, 0x20
+        jb bits_loop
+        mov dword ptr [esp + 0x24], esi
+        xor eax, eax
+        lea ecx, [esp + 0x27]
+    xor_loop:
+        mov dl, byte ptr [esp + eax + 0x1c]
+        mov bl, byte ptr [ecx]
+        xor bl, dl
+        inc eax
+        mov byte ptr [ecx], bl
+        dec ecx
+        cmp eax, 4
+        jb xor_loop
+        mov eax, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
