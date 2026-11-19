@@ -7115,3 +7115,60 @@ extern "C" __declspec(naked) void __fastcall fn_007A6E8C(void* self) {
         ret
     }
 }
+
+// [0x007AECF0] sub_007AECF0 (101 bytes)
+extern "C" __declspec(naked) char* __fastcall fn_007AECF0(void* self, int edx_unused, char* dst, int maxn) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        test ebx, ebx
+        je short L_fail
+        mov eax, dword ptr [ecx + 0x58]
+        test eax, eax
+        je short L_fail
+        mov edx, dword ptr [ecx + 0x60]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [ecx + 0x5c]
+        lea esi, [edx + eax]
+        mov eax, dword ptr [esp + 0x18]
+        sub edi, edx
+        xor edx, edx
+        lea ebp, [eax - 0x1]
+        test ebp, ebp
+        jbe short L_end
+        mov eax, ebx
+        sub eax, esi
+    L_loop:
+        cmp edx, edi
+        jae short L_end
+        mov bl, byte ptr [esi]
+        mov byte ptr [eax + esi], bl
+        mov bl, byte ptr [esi]
+        cmp bl, 0xa
+        je short L_nl
+        inc edx
+        inc esi
+        cmp edx, ebp
+        jb short L_loop
+        jmp short L_end
+    L_nl:
+        inc edx
+    L_end:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        mov byte ptr [edx + eax], 0
+        mov esi, dword ptr [ecx + 0x60]
+        add esi, edx
+        mov dword ptr [ecx + 0x60], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    L_fail:
+        xor eax, eax
+        pop ebx
+        ret 0x8
+    }
+}
