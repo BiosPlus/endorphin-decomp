@@ -141,6 +141,7 @@ extern "C" __declspec(naked) void __fastcall fn_006F79C0(void* self, int edx_unu
         jmp dword ptr [eax + 0x5dc]
     }
 }
+extern "C" void ext_00711D40();
 
 // [0x006FA8F0] sub_006FA8F0 (47 bytes)
 extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, int edx_unused, void* a1) {
@@ -9278,4 +9279,9 @@ extern "C" __declspec(naked) void __fastcall fn_006F0320(void* self, int edx_unu
         call ext_00711D40
         ret 0x8
     }
+}
+
+// [0x006F03A0] sub_006F03A0 (34 bytes)
+extern "C" void __fastcall fn_006F03A0(void* self, int edx_unused, int a1, int a2) {
+    ((void (__thiscall*)(void*, int, int, int, int))ext_00711D40)((char*)self + 0x27d8, a1, a2, 0x6f7b40, 0x6f86d0);
 }
