@@ -9708,3 +9708,79 @@ extern "C" __declspec(naked) void __fastcall fn_006DC200(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006DAB00] sub_006DAB00 (154 bytes)
+extern "C" void ext_006A7310();
+extern "C" void ext_006DA370();
+extern "C" __declspec(naked) void __fastcall fn_006DAB00(void* self, int edx_unused) {
+    __asm {
+        mov eax, dword ptr [esp + 0x18]
+        push esi
+        test eax, eax
+        mov esi, ecx
+        je L71
+        push ebx
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x2c]
+        push edi
+        push 0
+        push eax
+        push 0
+        push 0
+        push 0
+        call ext_006DA370
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 4]
+        add eax, 0x63
+        push 0
+        adc ecx, 0
+        push 0x64
+        push ecx
+        push eax
+        call ext_006A7310
+        mov ecx, dword ptr [esp + 0x1c]
+        mov ebp, edx
+        mov edx, dword ptr [esp + 0x24]
+        mov ebx, eax
+        mov eax, dword ptr [esp + 0x20]
+        push edi
+        push edx
+        mov edx, dword ptr [esp + 0x20]
+        push eax
+        mov eax, dword ptr [esp + 0x20]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_006DA370
+        mov ecx, dword ptr [esi]
+        pop edi
+        add ecx, ebx
+        mov dword ptr [esi], ecx
+        mov eax, dword ptr [esi + 4]
+        adc eax, ebp
+        pop ebp
+        mov dword ptr [esi + 4], eax
+        pop ebx
+        pop esi
+        ret 0x1c
+    L71:
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_006DA370
+        pop esi
+        ret 0x1c
+    }
+}
