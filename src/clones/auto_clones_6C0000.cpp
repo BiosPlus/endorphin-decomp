@@ -127,3 +127,28 @@ extern "C" __declspec(naked) void __fastcall fn_006C1240(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006C8EF0] Identical-shape clone of 0x006EA450 (74 bytes) - sub_006C8EF0
+extern "C" __declspec(naked) void __fastcall fn_006C8EF0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D620], ecx
+        mov dword ptr [mem_00B5D624], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D628], ecx
+        mov dword ptr [mem_00B5D62C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D630], ecx
+        mov dword ptr [mem_00B5D634], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5D638], ecx
+        mov dword ptr [mem_00B5D63C], edx
+        ret
+    }
+}
+

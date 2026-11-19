@@ -18,5 +18,7 @@
     "0x006C8F2F",
     "0x006C8F35"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:25:06Z"
 }
