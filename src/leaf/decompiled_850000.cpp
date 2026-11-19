@@ -4939,3 +4939,37 @@ extern "C" __declspec(naked) char* __cdecl fn_0085E9E0(char* dst, const char* sr
         __emit 0x00
     }
 }
+
+// [0x0085F700] sub_0085F700 (48 bytes)
+extern "C" void __cdecl ext_0085F730(void* ptr, int count);
+extern "C" __declspec(naked) void __cdecl fn_0085F700(char* p) {
+    __asm {
+        push esi
+        push 8
+        mov esi, dword ptr [esp + 0xc]
+        lea eax, [esi + 2]
+        add esi, 0xe
+        push eax
+        call ext_0085F730
+        add esp, 8
+        push 0x18
+        push esi
+        call ext_0085F730
+        add esp, 8
+        pop esi
+        ret
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
