@@ -392,3 +392,11 @@ L_007AE1E8:
         ret 0x4
     }
 }
+
+// [0x007AE1F0] Base destructor tail-call (11 bytes) - sub_007AE1F0
+extern "C" __declspec(naked) void fn_007AE1F0() {
+    __asm {
+        mov dword ptr [ecx], offset mem_00998A0C
+        jmp ext_00785430
+    }
+}
