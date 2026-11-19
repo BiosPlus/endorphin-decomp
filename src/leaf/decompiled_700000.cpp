@@ -6337,3 +6337,25 @@ extern "C" __declspec(naked) void __fastcall fn_00701AC0(void* self, void* dummy
         ret 0x4
     }
 }
+
+// [0x00701B50] sub_00701B50 (74 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00701B50(void* self, void* dummy, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x640]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x644]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x648]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0x64c]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x650]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x654]
+        mov dword ptr [eax + 0x18], 0x0
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x1c], 0x3ff00000
+        ret 0x4
+    }
+}
