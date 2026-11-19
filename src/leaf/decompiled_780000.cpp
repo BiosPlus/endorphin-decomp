@@ -710,8 +710,10 @@ L8_child0:
     }
 }
 extern "C" int mem_009252C8;
+extern "C" void ext_0078C080();
+extern "C" void ext_0078C260();
 
-// [0x007865D0] sub_007865D0 (31 bytes)
+extern "C" void ext_0078C260();
 extern "C" void ext_00722170();
 extern "C" void ext_00722180();
 extern "C" void ext_007857F0();
@@ -8056,6 +8058,72 @@ extern "C" __declspec(naked) void __fastcall fn_0078A20C(void* self) {
         mov eax, dword ptr [esp + 0x4]
         push eax
         call ext_0078A450
+        ret 0x8
+    }
+}
+
+// [0x0078BDE0] sub_0078BDE0 (121 bytes)
+extern "C" __declspec(naked) unsigned int __fastcall fn_0078BDE0(void* self, int edx_unused, void* buf, unsigned int len) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        test esi, esi
+        mov edi, ecx
+        mov ebx, esi
+        jbe L_ret0
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je L_ret0
+        test esi, esi
+        je L_done_no_ebp
+        push ebp
+    L_loop:
+        mov eax, dword ptr [edi + 0x1c]
+        mov ecx, edi
+        push eax
+        call ext_0078C220
+        mov ecx, dword ptr [edi + 0x1c]
+        mov ebp, eax
+        push ecx
+        mov ecx, edi
+        call ext_0078C260
+        mov ecx, esi
+        mov esi, 0x10
+        sub esi, eax
+        sub ecx, ebx
+        cmp esi, ebx
+        jle L_le
+        mov esi, ebx
+    L_le:
+        mov edx, dword ptr [esp + 0x14]
+        add ecx, edx
+        push ecx
+        push esi
+        push eax
+        push ebp
+        mov ecx, edi
+        call ext_0078C080
+        mov ecx, dword ptr [edi + 0x1c]
+        add ecx, esi
+        sub ebx, esi
+        mov esi, dword ptr [esp + 0x18]
+        mov dword ptr [edi + 0x1c], ecx
+        jne L_loop
+        pop ebp
+    L_done_no_ebp:
+        mov eax, esi
+        pop edi
+        sub eax, ebx
+        pop esi
+        pop ebx
+        ret 0x8
+    L_ret0:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
         ret 0x8
     }
 }
