@@ -6557,3 +6557,34 @@ extern "C" __declspec(naked) void __cdecl fn_0086EE30(void) {
         __asm _emit 0x00
     }
 }
+
+// [0x0086EFD0] sub_0086EFD0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086EFD0(void* p) {
+    __asm {
+        xor dx, dx
+        mov ecx, dword ptr [esp + 0x4]
+    loop_start:
+        movsx eax, dx
+        inc dx
+        mov dword ptr [ecx + 4*eax], 0xffffffff
+        movsx eax, dx
+        cmp eax, 0x5
+        jb loop_start
+        and dword ptr [ecx], 0x3fffffff
+        ret
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
