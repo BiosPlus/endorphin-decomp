@@ -1805,3 +1805,12 @@ L_006C1DC8:
         ret 0x4
     }
 }
+
+// [0x006C2070] Virtual dispatch / tail-call thunk (11 bytes) - sub_006C2070
+extern "C" __declspec(naked) void fn_006C2070() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x89 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [ecx + 0xf0]
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x10]
+    }
+}
