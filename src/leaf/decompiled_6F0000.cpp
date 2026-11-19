@@ -9327,3 +9327,26 @@ extern "C" __declspec(naked) void __fastcall fn_006F0120(void* self, int edx_unu
 extern "C" void __fastcall fn_006F0080(void* self, int edx_unused, int a1, int a2) {
     ((void (__thiscall*)(void*, int, int, int, int))ext_00711D40)((char*)self + 0x2178, a1, a2, 0x6c8800, 0x6c8d40);
 }
+
+// [0x006F0420] sub_006F0420 (34 bytes)
+extern "C" void __fastcall fn_006F0420(void* self, int edx_unused, int a1, int a2) {
+    ((void (__thiscall*)(void*, int, int, int, int))ext_00711D40)((char*)self + 0x28e8, a1, a2, 0x6f81c0, 0x6f8020);
+}
+
+// [0x006F0560] Identical-shape clone of 0x006EFCB0 (34 bytes) - sub_006F0560
+
+extern "C" void ext_00711D40();
+
+extern "C" __declspec(naked) void __fastcall fn_006F0560(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push 0x6F8010
+        push 0x6F81B0
+        push eax
+        push edx
+        add ecx, 0x2B90
+        call ext_00711D40
+        ret 0x8
+    }
+}
