@@ -9183,3 +9183,21 @@ extern "C" __declspec(naked) int __cdecl fn_0080BA40(void* a, void* b) {
         ret
     }
 }
+
+// [0x0080EBD0] sub_0080EBD0 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0080EBD0(void* self) {
+    __asm {
+        movsx eax, byte ptr [esp + 4]
+        add eax, -0x20
+        cmp eax, 0x5a
+        ja ret_zero
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x80ec00]
+        jmp dword ptr [4*ecx + 0x80ebf8]
+        mov eax, 1
+        ret
+    ret_zero:
+        xor eax, eax
+        ret
+    }
+}
