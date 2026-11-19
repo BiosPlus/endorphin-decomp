@@ -10712,3 +10712,83 @@ extern "C" __declspec(naked) __int64 __cdecl fn_0080B130(int a1, int a2, int a3)
         ret
     }
 }
+
+// [0x0080C940] sub_0080C940 (208 bytes)
+extern "C" void ext_008596F0();
+extern "C" void ext_00859730();
+extern "C" void ext_00859780();
+extern "C" void ext_00859E90();
+extern "C" __declspec(naked) void __cdecl fn_0080C940(void* p) {
+    __asm {
+        mov edx, dword ptr [mem_00B73C90]
+        sub esp, 0x20
+        mov eax, 0x7d0
+        push esi
+        xor esi, esi
+        push edi
+        test edx, edx
+        jbe fail_out
+        mov ecx, dword ptr [mem_00B73C94]
+        mov edi, dword ptr [esp + 0x2c]
+    scan_loop:
+        cmp dword ptr [ecx], edi
+        je found
+        inc esi
+        add ecx, 4
+        cmp esi, edx
+        jb scan_loop
+        pop edi
+        pop esi
+        add esp, 0x20
+        ret
+    found:
+        lea eax, [esp + 8]
+        mov dword ptr [esp + 8], 1
+        push eax
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esp + 0x14], 0
+        call dword ptr [edi + 4]
+        add esp, 4
+        test eax, eax
+        jne fail_out
+        mov ecx, dword ptr [mem_00B73C90]
+        mov eax, dword ptr [mem_00B73C94]
+        sub ecx, esi
+        dec ecx
+        lea edx, [eax + esi*4 + 4]
+        push ecx
+        lea eax, [eax + esi*4]
+        push edx
+        push eax
+        call ext_00859780
+        mov eax, dword ptr [mem_00B73C90]
+        mov edx, dword ptr [mem_00B73C94]
+        dec eax
+        mov dword ptr [mem_00B73C90], eax
+        lea ecx, [eax*4]
+        push ecx
+        push edx
+        call ext_008596F0
+        add esp, 0x14
+        test eax, eax
+        jne store_head
+        mov ecx, dword ptr [mem_00B73C90]
+        test ecx, ecx
+        jne after_store
+    store_head:
+        mov dword ptr [mem_00B73C94], eax
+    after_store:
+        mov eax, dword ptr [edi]
+        push eax
+        call ext_00859E90
+        push edi
+        call ext_00859730
+        add esp, 8
+        xor eax, eax
+    fail_out:
+        pop edi
+        pop esi
+        add esp, 0x20
+        ret
+    }
+}
