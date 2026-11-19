@@ -5139,3 +5139,48 @@ extern "C" __declspec(naked) void __cdecl fn_0085E420(void) {
         mov edi, edi
     }
 }
+
+// [0x008522E0] sub_008522E0 (91 bytes)
+extern "C" void ext_008179EA();
+extern "C" void ext_008179F2();
+extern "C" void ext_008203F7();
+extern "C" void ext_0083CAAF();
+extern "C" void ext_00852345();
+extern "C" __declspec(naked) void __fastcall fn_008522E0(void* self) {
+    __asm {
+        _emit 0xbf
+        _emit 0x2d
+        _emit 0x66
+        _emit 0x93
+        _emit 0x66
+        _emit 0x93
+        mov edi, dword ptr [ebp - 0x19]
+        mov ecx, dword ptr [ebp - 0x1a]
+        mov edx, dword ptr [ebp - 0x1b]
+        and edi, 0xff
+        jb ext_008179EA
+        _emit 0x66
+        _emit 0x89
+        _emit 0xf6
+        mov eax, dword ptr [ebp - 0x1c]
+        and ecx, 0xff
+        jb ext_008179F2
+        _emit 0x88
+        _emit 0xff
+        shl edi, 8
+        _emit 0x01
+        _emit 0xcf
+        and edx, 0xff
+        jb ext_008203F7
+        shl edi, 8
+        _emit 0x01
+        _emit 0xd7
+        clc
+        and eax, 0xff
+        jb ext_0083CAAF
+        shl edi, 8
+        _emit 0x01
+        _emit 0xc7
+        jmp ext_00852345
+    }
+}
