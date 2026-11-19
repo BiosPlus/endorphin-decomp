@@ -9895,41 +9895,6 @@ extern "C" void __cdecl fn_006FFF80() {
     *(double*)&mem_00B5E650 = -*p;
 }
 
-// [0x006FA830] sub_006FA830 (52 bytes)
-extern "C" __declspec(naked) void __fastcall fn_006FA830(void* self) {
-    __asm {
-        push ebx
-        push edi
-        mov edi, ecx
-        mov ebx, dword ptr [edi + 0x1c]
-        dec ebx
-        js done
-        push esi
-    loop_start:
-        mov eax, dword ptr [edi + 0x2c]
-        mov ecx, edi
-        mov esi, dword ptr [eax + 4*ebx]
-        push esi
-        call ext_006FA460
-        mov ecx, dword ptr [esi + 0x34]
-        and ecx, 0x10
-        cmp cl, 0x10
-        jne next_iter
-        mov edx, dword ptr [esi]
-        push 0x0
-        mov ecx, esi
-        call dword ptr [edx + 0x4]
-    next_iter:
-        dec ebx
-        jns loop_start
-        pop esi
-    done:
-        pop edi
-        pop ebx
-        ret
-    }
-}
-
 // [0x006FC950] sub_006FC950 (55 bytes)
 extern "C" __declspec(naked) int __fastcall fn_006FC950(void* self, int edx_unused, int a1) {
     __asm {
@@ -9984,5 +9949,71 @@ extern "C" __declspec(naked) bool __fastcall fn_006FC610(void* self, int edx_unu
         xor al, al
         pop esi
         ret 4
+    }
+}
+
+// [0x006FA830] sub_006FA830 (52 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FA830(void* self) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, ecx
+        mov ebx, dword ptr [edi + 0x1c]
+        dec ebx
+        js done
+        push esi
+    loop_start:
+        mov eax, dword ptr [edi + 0x2c]
+        mov ecx, edi
+        mov esi, dword ptr [eax + 4 * ebx]
+        push esi
+        call ext_006FA460
+        mov ecx, dword ptr [esi + 0x34]
+        and ecx, 0x10
+        cmp cl, 0x10
+        jne loop_next
+        mov edx, dword ptr [esi]
+        push 0x0
+        mov ecx, esi
+        call dword ptr [edx + 0x4]
+    loop_next:
+        dec ebx
+        jns loop_start
+        pop esi
+    done:
+        pop edi
+        pop ebx
+        ret
+    }
+}
+
+// [0x006F95E0] sub_006F95E0 (57 bytes)
+extern "C" int mem_00B5E240;
+extern "C" int mem_00B5F060;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_006F95E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5E240]
+        cmp eax, ecx
+        jne L_006F95F3
+        mov al, 0x1
+        ret 0x4
+    L_006F95F3:
+        cmp eax, dword ptr [mem_00B5F060]
+        jne L_006F9600
+        mov al, 0x1
+        ret 0x4
+    L_006F9600:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne L_006F960D
+        mov al, 0x1
+        ret 0x4
+    L_006F960D:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
     }
 }
