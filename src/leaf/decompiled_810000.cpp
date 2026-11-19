@@ -909,3 +909,53 @@ extern "C" __declspec(naked) void __cdecl fn_00810660(void) {
         ret
     }
 }
+
+// [0x00810600] sub_00810600 (89 bytes)
+extern "C" int mem_0099F050; /* "(nil)" */
+extern "C" __declspec(naked) void __cdecl fn_00810600(void* self, int flag) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push esi
+        test eax, eax
+        jne nonzero_path
+        mov al, byte ptr [mem_0099F050]
+        mov esi, offset mem_0099F050
+        test al, al
+        je done
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+    loop_top:
+        movsx ecx, al
+        mov eax, dword ptr [edi]
+        push ecx
+        push eax
+        inc esi
+        call dword ptr [eax]
+        mov al, byte ptr [esi]
+        add esp, 8
+        test al, al
+        jne loop_top
+        pop edi
+        pop esi
+        ret
+    nonzero_path:
+        mov ecx, dword ptr [esp + 8]
+        push 0x10
+        push -1
+        push 0xa
+        mov edx, dword ptr [ecx + 4]
+        mov edx, dword ptr [edx + 4]
+        or edx, 0x6010
+        push edx
+        cdq
+        push edx
+        push eax
+        mov eax, dword ptr [ecx]
+        push eax
+        call ext_0080F070
+        add esp, 0x1c
+    done:
+        pop esi
+        ret
+    }
+}
