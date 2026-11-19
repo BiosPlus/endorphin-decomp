@@ -6578,34 +6578,6 @@ L_skip:
     }
 }
 
-// [0x00717D60] sub_00717D60 (79 bytes)
-extern "C" void ext_00717DE0();
-extern "C" void ext_0070CD30();
-extern "C" __declspec(naked) void __fastcall fn_00717D60(void* self) {
-    __asm {
-        push -1
-        push 0x8b9248
-        mov eax, dword ptr fs:[0]
-        push eax
-        mov dword ptr fs:[0], esp
-        push ecx
-        push esi
-        mov esi, ecx
-        mov dword ptr [esp + 0x4], esi
-        mov dword ptr [esi], 0x00996310
-        mov dword ptr [esp + 0x10], 0
-        call ext_00717DE0
-        mov ecx, esi
-        mov dword ptr [esp + 0x10], 0xffffffff
-        call ext_0070CD30
-        mov ecx, dword ptr [esp + 0x8]
-        pop esi
-        mov dword ptr fs:[0], ecx
-        add esp, 0x10
-        ret
-    }
-}
-
 // [0x007135C0] sub_007135C0 (87 bytes)
 extern "C" int mem_00925224;
 

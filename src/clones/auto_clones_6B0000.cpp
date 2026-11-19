@@ -4,7 +4,25 @@
 extern "C" void ext_006B98E0();
 extern "C" void ext_006B98F0();
 
+// [0x006B98D0] Identical-shape clone of 0x005220B0 (10 bytes) - sub_006B98D0
+extern "C" __declspec(naked) void __cdecl fn_006B98D0() {
+    __asm {
+        call ext_006B98E0
+        jmp ext_006B98F0
+    }
+}
+
+
 // [0x006BE9E0] Identical-shape clone of 0x006BBA40 (74 bytes) - sub_006BE9E0
+extern "C" int mem_00925284;
+extern "C" int mem_00B5D4A0;
+extern "C" int mem_00B5D4A4;
+extern "C" int mem_00B5D4A8;
+extern "C" int mem_00B5D4AC;
+extern "C" int mem_00B5D4B0;
+extern "C" int mem_00B5D4B4;
+extern "C" int mem_00B5D4B8;
+extern "C" int mem_00B5D4BC;
 extern "C" __declspec(naked) void __fastcall fn_006BE9E0(void* self) {
     __asm {
         mov eax, dword ptr [mem_00925284]
@@ -27,3 +45,4 @@ extern "C" __declspec(naked) void __fastcall fn_006BE9E0(void* self) {
         ret
     }
 }
+

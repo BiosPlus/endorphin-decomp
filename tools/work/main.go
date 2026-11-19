@@ -1326,7 +1326,10 @@ func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs 
 
 	if isWipPath(cppPath) {
 		// A WIP file is never committed; the match lives in its shard after the merge.
+		// Recompute allowedVAs against the real shard, otherwise the WIP file's 1-VA map
+		// would cause filterCppForCommit to strip every other matched function in the shard.
 		cppPath = lookupCppForVA(va)
+		allowedVAs = allowedVAsForCpp(cppPath)
 	}
 
 	addArgs := []string{"add", "include/", unitstore.Dir + "/", "README.md"}
@@ -1496,7 +1499,7 @@ func commitPendingMatches() int {
 		}
 		runStatusReadme()
 
-		cppPath := findCppFileForVA(p.du.VA)
+		cppPath := lookupCppForVA(p.du.VA)
 		model := p.du.MatchedBy
 		if model == "" {
 			model = "auto-solved" // `work check` always records the agent's model; a match without one came from auto_solve or build_and_match

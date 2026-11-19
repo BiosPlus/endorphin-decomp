@@ -1854,12 +1854,55 @@ func main() {
 		}
 
 		if _, statErr := os.Stat(tuPath); statErr == nil {
+			// Appending to an existing TU: place any #include and extern "C" declarations
+			// inside each function's own `// [0x...]` block so block-level filters (like
+			// filterCppForCommit / stripFunctionFromCpp) never attach them to the preceding function.
+			var app strings.Builder
+			var uniqIncs []string
+			if incs := tuIncludes[tuPath]; len(incs) > 0 {
+				incSet := make(map[string]bool)
+				for _, inc := range incs {
+					if !incSet[inc] {
+						incSet[inc] = true
+						uniqIncs = append(uniqIncs, inc)
+					}
+				}
+			}
+			for _, sf := range funcs {
+				app.WriteString("\n")
+				header, rest, hasNL := strings.Cut(sf.CppCode, "\n")
+				if hasNL && strings.HasPrefix(strings.TrimSpace(header), "// [0x") {
+					app.WriteString(header + "\n")
+					for _, inc := range uniqIncs {
+						app.WriteString(inc + "\n")
+					}
+					if len(sf.ExternSyms) > 0 {
+						extSet := make(map[string]bool)
+						var exts []string
+						for _, ext := range sf.ExternSyms {
+							if !extSet[ext] {
+								extSet[ext] = true
+								exts = append(exts, ext)
+							}
+						}
+						sort.Strings(exts)
+						for _, ext := range exts {
+							app.WriteString(ext + "\n")
+						}
+					}
+					app.WriteString(rest)
+					app.WriteString("\n")
+				} else {
+					app.WriteString(sf.CppCode)
+					app.WriteString("\n")
+				}
+			}
 			f, err := os.OpenFile(tuPath, os.O_APPEND|os.O_WRONLY, 0644)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Error appending to %s: %v\n", tuPath, err)
 				os.Exit(1)
 			}
-			_, err = f.WriteString("\n" + sb.String())
+			_, err = f.WriteString(app.String())
 			_ = f.Close()
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Error appending to %s: %v\n", tuPath, err)
