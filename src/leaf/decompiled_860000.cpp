@@ -113,6 +113,7 @@ extern "C" __declspec(naked) void __cdecl fn_0086B1C0(void* self) {
         ret
     }
 }
+extern "C" { extern void ext_0085D560(); extern int mem_00924248; extern int mem_00BC70E0; extern int mem_00BC70BC; extern int mem_00BC70F4; extern int mem_00BC6410; extern int mem_00BC6578; extern int mem_00924210; }
 
 // [0x0086F0E0] sub_0086F0E0 (61 bytes)
 extern "C" __declspec(naked) void __cdecl fn_0086F0E0(unsigned int* p) {
@@ -8351,6 +8352,75 @@ extern "C" __declspec(naked) void __cdecl fn_008693B0(void* self, const unsigned
         pop esi
         pop ebp
         pop ebx
+        ret
+    }
+}
+
+// [0x00868510] sub_00868510 (174 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00868510(void) {
+    __asm {
+        sub esp, 0x10c
+        push ebx
+        push esi
+        push edi
+        push ebp
+        push 0x7d0
+        call ext_0085D560
+        add esp, 0x4
+        mov edi, eax
+        test edi, edi
+        jne L_48
+        push 0x5
+        call dword ptr [mem_00924248]
+        push 0x7d0
+        call ext_0085D560
+        add esp, 0x4
+        mov edi, eax
+        test edi, edi
+        je L_b3
+    L_48:
+        mov esi, 0x64
+        xor ebx, ebx
+        mov ebp, 0x1
+    L_54:
+        dec esi
+        mov eax, dword ptr [mem_00BC70E0]
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x10], ebx
+        lea eax, [esp + 0x10]
+        inc dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x14], ebp
+        push eax
+        push ebx
+        mov eax, dword ptr [mem_00BC70E0]
+        push ebx
+        inc eax
+        push ecx
+        push eax
+        call dword ptr [mem_00BC70BC]
+        test eax, eax
+        je L_ac
+        push offset mem_00BC6410
+        mov eax, dword ptr [mem_00BC70E0]
+        push offset mem_00BC6578
+        push ebx
+        push 0x5fa
+        push edi
+        push eax
+        call dword ptr [mem_00BC70F4]
+        test esi, esi
+        jne L_54
+    L_ac:
+        push edi
+        call dword ptr [mem_00924210]
+    L_b3:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10c
         ret
     }
 }

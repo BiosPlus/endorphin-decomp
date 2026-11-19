@@ -22,5 +22,7 @@
     "0x008685A4",
     "0x008685AF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-19T16:34:54Z"
 }
