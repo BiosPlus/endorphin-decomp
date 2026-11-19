@@ -5085,3 +5085,57 @@ extern "C" __declspec(naked) void __cdecl fn_0085D890(void) {
         _emit 0x00
     }
 }
+
+// [0x0085E420] sub_0085E420 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085E420(void) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp edx, edi
+        jbe fwd
+        lea ecx, [edi + esi]
+        cmp edx, ecx
+        jae fwd
+        lea edx, [esi + edx - 1]
+        dec ecx
+        mov eax, esi
+        dec esi
+        test eax, eax
+        je fwd_done
+    bwd_loop:
+        mov al, byte ptr [ecx]
+        dec edx
+        dec ecx
+        mov byte ptr [edx + 1], al
+        mov eax, esi
+        dec esi
+        test eax, eax
+        jne bwd_loop
+    bwd_done:
+        pop edi
+        pop esi
+        ret
+    fwd:
+        mov eax, esi
+        dec esi
+        test eax, eax
+        je fwd_done
+    fwd_loop:
+        mov al, byte ptr [edi]
+        inc edx
+        inc edi
+        mov byte ptr [edx - 1], al
+        mov eax, esi
+        dec esi
+        test eax, eax
+        jne fwd_loop
+    fwd_done:
+        pop edi
+        pop esi
+        ret
+        mov edi, edi
+    }
+}
