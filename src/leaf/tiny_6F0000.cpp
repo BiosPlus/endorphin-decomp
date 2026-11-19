@@ -3154,3 +3154,8 @@ L_006F96A8:
         ret 0x4
     }
 }
+
+// [0x006F9740] Return zero (5 bytes) - sub_006F9740
+extern "C" int __stdcall fn_006F9740(int a1) {
+    return 0;
+}
