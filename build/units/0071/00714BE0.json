@@ -18,5 +18,7 @@
     "0x00714C1F",
     "0x00714C25"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:25:06Z"
 }
