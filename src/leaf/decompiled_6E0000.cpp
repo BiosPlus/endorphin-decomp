@@ -5235,3 +5235,39 @@ extern "C" __declspec(naked) void __fastcall fn_006EA190(void* self) {
         ret
     }
 }
+
+// [0x006E6620] sub_006E6620 (166 bytes)
+extern "C" int mem_00B5DE90;
+extern "C" int mem_00B5DE98;
+extern "C" int mem_00B5DEA0;
+extern "C" int mem_00B5DEA8;
+extern "C" int mem_00B5DEB0;
+extern "C" int mem_00B5DEB8;
+extern "C" int mem_00B5DEC0;
+extern "C" int mem_00B5DEC8;
+extern "C" int mem_00B5DED0;
+extern "C" int mem_00B5DED8;
+extern "C" int mem_00B5DEE0;
+extern "C" int mem_00B5DEE8;
+extern "C" int mem_00B5DEF0;
+extern "C" int mem_00B5DEF8;
+extern "C" int mem_00B5DF00;
+extern "C" int mem_00B5DF08;
+extern "C" void __cdecl fn_006E6620() {
+    *(double*)&mem_00B5DE90 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DE98 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEA0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEA8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEB0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEB8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEC0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEC8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DED0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DED8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEE0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEE8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEF0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DEF8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DF00 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DF08 = -*(double*)mem_00925284;
+}
