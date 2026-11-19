@@ -1715,3 +1715,8 @@ L_00711218:
         ret 0x4
     }
 }
+
+// [0x00712440] Empty return (3 bytes) - sub_00712440
+extern "C" void __stdcall fn_00712440(int a1, int a2) {
+    return;
+}
