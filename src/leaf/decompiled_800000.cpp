@@ -9666,3 +9666,44 @@ extern "C" __declspec(naked) void* __cdecl fn_0080D220(void* a, void* b, int c) 
         ret
     }
 }
+
+// [0x0080F720] sub_0080F720 (73 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080F720(void* a, int b) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        je L_done
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [eax + 0x4]
+        push edx
+        push eax
+        call ecx
+        add esp, 0x8
+        test eax, eax
+        jl L_err
+        mov ecx, dword ptr [esi + 0x14]
+        mov eax, dword ptr [esi + 0x10]
+        inc ecx
+        inc eax
+        mov dword ptr [esi + 0x14], ecx
+        mov dword ptr [esi + 0x10], eax
+        pop esi
+        ret
+    L_err:
+        mov ecx, dword ptr [esi + 0x1c]
+        test ecx, ecx
+        jne L_done
+        shl eax, 0x8
+        sub eax, 0x9
+        mov dword ptr [esi + 0x1c], eax
+    L_done:
+        mov eax, dword ptr [esi + 0x10]
+        inc eax
+        mov dword ptr [esi + 0x10], eax
+        pop esi
+        ret
+    }
+}
