@@ -53,6 +53,7 @@ extern "C" __declspec(naked) int __cdecl fn_007CC3D0(int a0, float* a1, float* a
 }
 extern "C" void ext_007C54F0(void* self);
 extern "C" unsigned short mem_0099A538[];
+extern "C" void ext_007C1B00(void* a, int b);
 
 // [0x007C71C0] sub_007C71C0 (12 bytes)
 extern "C" void __cdecl ext_007C7150(int value);
@@ -20249,6 +20250,85 @@ extern "C" __declspec(naked) int __cdecl fn_007C2930(void* self, int pos) {
         pop edi
         pop esi
         pop ebp
+        pop ebx
+        ret
+    }
+}
+
+// [0x007C1A30] sub_007C1A30 (208 bytes)
+// Stack args: a0 = object pointer (object+0x1c = sub-object), a1 = index (-1 -> 6, valid 0..9),
+// a2 = value 0..3 stored at sub+0x80. Returns 0 on success, -2 on invalid input.
+// Table entries are 12 bytes at 0x0099A538: u16 w0,w1,w2,w3; int key (at +8).
+extern "C" __declspec(naked) int __cdecl fn_007C1A30(void* a0, int a1, int a2) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push ebx
+        xor eax, eax
+        push ebp
+        test edx, edx
+        push edi
+        je FAIL_1A30
+        mov edi, dword ptr [edx + 0x1c]
+        test edi, edi
+        je FAIL_1A30
+        mov ebx, dword ptr [esp + 0x14]
+        cmp ebx, -1
+        jne CHK_1A30
+        mov ebx, 0x6
+        jmp SET_1A30
+CHK_1A30:
+        test ebx, ebx
+        jl FAIL_1A30
+        cmp ebx, 0x9
+        jg FAIL_1A30
+SET_1A30:
+        mov ebp, dword ptr [esp + 0x18]
+        test ebp, ebp
+        jl FAIL_1A30
+        cmp ebp, 0x3
+        jg FAIL_1A30
+        mov ecx, dword ptr [edi + 0x7c]
+        push esi
+        lea esi, [ebx + 2*ebx]
+        lea ecx, [ecx + 2*ecx]
+        shl esi, 0x2
+        mov ecx, dword ptr [4*ecx + mem_0099A538 + 8]
+        cmp ecx, dword ptr [esi + mem_0099A538 + 8]
+        je SKIP_1A30
+        mov ecx, dword ptr [edx + 0x8]
+        test ecx, ecx
+        je SKIP_1A30
+        push 0x1
+        push edx
+        call ext_007C1B00
+        add esp, 0x8
+SKIP_1A30:
+        cmp dword ptr [edi + 0x7c], ebx
+        je DONE_1A30
+        xor edx, edx
+        mov dword ptr [edi + 0x7c], ebx
+        mov dx, word ptr [esi + mem_0099A538 + 2]
+        xor ecx, ecx
+        mov dword ptr [edi + 0x78], edx
+        mov cx, word ptr [esi + mem_0099A538]
+        xor edx, edx
+        mov dword ptr [edi + 0x84], ecx
+        mov dx, word ptr [esi + mem_0099A538 + 4]
+        xor ecx, ecx
+        mov dword ptr [edi + 0x88], edx
+        mov cx, word ptr [esi + mem_0099A538 + 6]
+        mov dword ptr [edi + 0x74], ecx
+DONE_1A30:
+        mov dword ptr [edi + 0x80], ebp
+        pop esi
+        pop edi
+        pop ebp
+        pop ebx
+        ret
+FAIL_1A30:
+        pop edi
+        pop ebp
+        mov eax, 0xfffffffe
         pop ebx
         ret
     }
