@@ -172501,3 +172501,67 @@ extern "C" __declspec(naked) bool __fastcall fn_00625190(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x00604EF0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_42 (176 bytes)
+extern "C" int mem_008A7D48;
+extern "C" int mem_009DEC1C;
+extern "C" __declspec(naked) void __fastcall fn_00604EF0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_008A7D48
+        push eax
+        mov eax, dword ptr [esp+0x10]
+        mov dword ptr fs:[0], esp
+        mov ecx, dword ptr [eax]
+        sub esp, 0x40
+        test ecx, ecx
+        je L88
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx+0x38]
+        push ebx
+        lea eax, [esp+0xc]
+        push eax
+        call edx
+        fld dword ptr [eax]
+        fstp dword ptr [esp+0x54]
+        push ecx
+        fld dword ptr [esp+0x58]
+        lea ecx, [esp+8]
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov edx, dword ptr [esp+0x58]
+        mov ecx, dword ptr [esp+8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax+0xa8]
+        push edx
+        lea edx, [esp+8]
+        push edx
+        mov dword ptr [esp+0x54], 0
+        call eax
+        mov ecx, dword ptr [esp+8]
+        test ecx, ecx
+        mov bl, al
+        mov dword ptr [esp+0x4c], 0xffffffff
+        je L74
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx+0x78]
+        lea eax, [esp+4]
+        push eax
+        call edx
+    L74:
+        mov ecx, dword ptr [esp+0x44]
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x4c
+        ret 8
+    L88:
+        lea ecx, [esp+0x18]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp+0x1c]
+        push eax
+        call ext_006A6DD2
+    }
+}
