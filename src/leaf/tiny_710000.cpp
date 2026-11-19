@@ -2357,3 +2357,8 @@ extern "C" void __fastcall fn_00719AE0(void* self, int edx_unused, int a1) {
 extern "C" void __fastcall fn_00719AF0(void* self, int edx_unused, int a1) {
     *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x408) = a1;
 }
+
+// [0x00719B00] Field setter (13 bytes) - sub_00719B00
+extern "C" void __fastcall fn_00719B00(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x490) = a1;
+}
