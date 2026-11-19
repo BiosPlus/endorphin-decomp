@@ -8552,3 +8552,40 @@ extern "C" __declspec(naked) void __fastcall fn_00784570(void* self) {
         ret
     }
 }
+
+// [0x007861C0] sub_007861C0 (166 bytes)
+extern "C" double mem_00B60AB0;
+extern "C" double mem_00B60AB8;
+extern "C" double mem_00B60AC0;
+extern "C" double mem_00B60AC8;
+extern "C" double mem_00B60AD0;
+extern "C" double mem_00B60AD8;
+extern "C" double mem_00B60AE0;
+extern "C" double mem_00B60AE8;
+extern "C" double mem_00B60AF0;
+extern "C" double mem_00B60AF8;
+extern "C" double mem_00B60B00;
+extern "C" double mem_00B60B08;
+extern "C" double mem_00B60B10;
+extern "C" double mem_00B60B18;
+extern "C" double mem_00B60B20;
+extern "C" double mem_00B60B28;
+extern "C" void __cdecl fn_007861C0() {
+    double* h = (double*)mem_00925284;
+    mem_00B60AB0 = -*h;
+    mem_00B60AB8 = -*h;
+    mem_00B60AC0 = -*h;
+    mem_00B60AC8 = -*h;
+    mem_00B60AD0 = -*h;
+    mem_00B60AD8 = -*h;
+    mem_00B60AE0 = -*h;
+    mem_00B60AE8 = -*h;
+    mem_00B60AF0 = -*h;
+    mem_00B60AF8 = -*h;
+    mem_00B60B00 = -*h;
+    mem_00B60B08 = -*h;
+    mem_00B60B10 = -*h;
+    mem_00B60B18 = -*h;
+    mem_00B60B20 = -*h;
+    mem_00B60B28 = -*h;
+}
