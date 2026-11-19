@@ -6983,3 +6983,14 @@ L_78578F:
         nop
     }
 }
+
+// [0x00780250] sub_00780250 (11 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00780250(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        push eax
+        call ext_006A5C5C
+        pop ecx
+        ret
+    }
+}
