@@ -7984,3 +7984,56 @@ extern "C" __declspec(naked) void __fastcall fn_0086F1A0(void* self) {
         _emit 0x00
     }
 }
+
+// [0x00860950] sub_00860950 (164 bytes)
+extern "C" void ext_0085D510();
+extern "C" int mem_00AB98E0;
+extern "C" int mem_00AB98B0;
+extern "C" int mem_00BC66B5;
+extern "C" int mem_00BC6389;
+extern "C" int mem_00BC66B3;
+extern "C" int mem_00BC66AD;
+extern "C" int mem_00BC6672;
+extern "C" int mem_00BC6670;
+extern "C" int mem_00BC6674;
+extern "C" int mem_00BC6671;
+extern "C" int mem_00BC6678;
+extern "C" int mem_00BC66F8;
+extern "C" int mem_00BC6676;
+extern "C" __declspec(naked) void __cdecl fn_00860950(void) {
+    __asm {
+        push 0xa5
+        push 0
+        push offset mem_00BC6670
+        call ext_0085D510
+        add esp, 0xc
+        push 0x3e
+        push 0
+        push offset mem_00BC6389 - 1
+        call ext_0085D510
+        add esp, 0xc
+        mov ecx, dword ptr [mem_00AB98E0]
+        mov eax, dword ptr [mem_00AB98B0]
+        mov dword ptr [mem_00BC66B5], ecx
+        mov byte ptr [mem_00BC6389], 0x8
+        add eax, 0x11
+        mov word ptr [mem_00BC66B3], 0x206c
+        mov word ptr [mem_00BC66AD], 0x2332
+        mov dx, word ptr [esp + 0x8]
+        and eax, 0xff
+        mov word ptr [mem_00BC6672], dx
+        xor cl, al
+        mov dword ptr [mem_00AB98B0], eax
+        mov byte ptr [mem_00BC6670], cl
+        mov cx, word ptr [esp + 0xc]
+        mov al, byte ptr [esp + 0x4]
+        mov word ptr [mem_00BC6674], cx
+        mov dl, byte ptr [esp + 0x14]
+        mov byte ptr [mem_00BC6671], al
+        mov byte ptr [mem_00BC6678], dl
+        mov word ptr [mem_00BC66F8], 0x1bbc
+        mov ax, word ptr [esp + 0x10]
+        mov word ptr [mem_00BC6676], ax
+        ret
+    }
+}

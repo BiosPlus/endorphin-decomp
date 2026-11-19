@@ -25,5 +25,7 @@
     "0x008609DB",
     "0x008609EF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-19T16:23:31Z"
 }
