@@ -10729,3 +10729,43 @@ L_throw:
         call ext_006A6DD2
     }
 }
+
+// [0x0052F540] sub_0052F540 (106 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0052F540(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 0xf
+        ja L_def
+        jmp dword ptr [eax*4 + 0x52F5AC]
+        mov eax, 0x1
+        ret
+        mov eax, 0x2
+        ret
+        mov eax, 0x4000
+        ret
+        mov eax, 0x4
+        ret
+        mov eax, 0x8
+        ret
+        mov eax, 0x10
+        ret
+        mov eax, 0x20
+        ret
+        mov eax, 0x40
+        ret
+        mov eax, 0x80
+        ret
+        mov eax, 0x100
+        ret
+        mov eax, 0x200
+        ret
+        mov eax, 0x400
+        ret
+        mov eax, 0x800
+        ret
+        mov eax, 0x1000
+        ret
+L_def:  mov eax, 0x2000
+        ret
+    }
+}
