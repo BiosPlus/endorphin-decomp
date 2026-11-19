@@ -12087,3 +12087,86 @@ extern "C" __declspec(naked) void __cdecl fn_007B2910() {
         ret
     }
 }
+
+// [0x007B2A60] sub_007B2A60 (176 bytes)
+extern "C" void ext_007A9950();
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2480();
+extern "C" void ext_007B2A10();
+extern "C" void ext_007B3190();
+extern "C" __declspec(naked) void __cdecl fn_007B2A60(int a, int b, int c) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        push esi
+        test ebx, ebx
+        push edi
+        je L_a
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        jne L_b
+    L_a:
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je L_end
+    L_b:
+        push ebx
+        call ext_007A9950
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L_c
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end
+    L_c:
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push ebx
+        call ext_007B2A10
+        mov ecx, dword ptr [esp + 0x24]
+        mov ebp, eax
+        push ebp
+        push ecx
+        call ext_007B3190
+        mov eax, dword ptr [ebx + 0x10]
+        add esp, 0x10
+        xor esi, esi
+        xor edi, edi
+        cmp dword ptr [eax], 0
+        jbe L_end
+    L_loop:
+        cmp edi, ebp
+        jae L_end
+        mov edx, dword ptr [eax + 4]
+        mov ecx, dword ptr [edx + 8*esi + 4]
+        lea eax, [edx + 8*esi]
+        mov edx, dword ptr [esp + 0x18]
+        cmp dword ptr [ecx], edx
+        jne L_next
+        mov eax, dword ptr [eax]
+        push eax
+        call ext_007B2480
+        mov ecx, dword ptr [esp + 0x20]
+        add esp, 4
+        inc edi
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [edx + 8]
+        mov dword ptr [ecx + 4*edi - 4], eax
+    L_next:
+        mov eax, dword ptr [ebx + 0x10]
+        inc esi
+        cmp esi, dword ptr [eax]
+        jb L_loop
+    L_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
