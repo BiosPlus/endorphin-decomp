@@ -184,3 +184,15 @@ extern "C" __declspec(naked) void fn_00852427() {
         jmp dword ptr [esi]
     }
 }
+
+// [0x00856FE0] Branchless tiny leaf function (15 bytes) - sub_00856FE0
+extern "C" __declspec(naked) void fn_00856FE0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x08 // mov eax, dword ptr [esp + 0x8]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x04 // mov edx, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x08 // mov ecx, dword ptr [eax]
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        __asm _emit 0x89 __asm _emit 0x0A // mov dword ptr [edx], ecx
+        ret
+    }
+}
