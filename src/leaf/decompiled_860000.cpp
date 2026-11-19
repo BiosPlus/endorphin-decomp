@@ -6487,3 +6487,39 @@ extern "C" __declspec(naked) void __cdecl fn_0086F000(int* ptr) {
         __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
     }
 }
+
+// [0x0086F020] sub_0086F020 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F020(const int* src, int* dst) {
+    __asm {
+        mov dx, 0x13
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+    loop_top:
+        movsx eax, dx
+        shl eax, 0x2
+        dec dx
+        mov ecx, dword ptr [eax + esi]
+        mov dword ptr [eax + edi], ecx
+        jns loop_top
+        pop edi
+        pop esi
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
