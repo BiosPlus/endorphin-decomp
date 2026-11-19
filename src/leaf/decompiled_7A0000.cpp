@@ -7440,3 +7440,58 @@ extern "C" __declspec(naked) int __cdecl fn_007AF660(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x007AA5A0] sub_007AA5A0 (152 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007AA5A0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 0x16
+        ja L_def
+        jmp dword ptr [eax*4 + 0x7AA638]
+        mov eax, 0xab076c
+        ret
+        mov eax, 0xab0738
+        ret
+        mov eax, 0xab06b0
+        ret
+        mov eax, 0xab0638
+        ret
+        mov eax, 0xab05b0
+        ret
+        mov eax, 0xab055c
+        ret
+        mov eax, 0xab04f4
+        ret
+        mov eax, 0xab0458
+        ret
+        mov eax, 0xab03a4
+        ret
+        mov eax, 0xab0354
+        ret
+        mov eax, 0xab030c
+        ret
+        mov eax, 0xab02dc
+        ret
+        mov eax, 0xab02a8
+        ret
+        mov eax, 0xab0274
+        ret
+        mov eax, 0xab0234
+        ret
+        mov eax, 0xab01f8
+        ret
+        mov eax, 0xab01bc
+        ret
+        mov eax, 0xab0188
+        ret
+        mov eax, 0xab00d8
+        ret
+        mov eax, 0xab0080
+        ret
+        mov eax, 0xab0044
+        ret
+    L_def:
+        mov eax, 0xab0020
+        ret
+    }
+}
