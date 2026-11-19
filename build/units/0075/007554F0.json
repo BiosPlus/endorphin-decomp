@@ -17,5 +17,7 @@
     "0x00755564",
     "0x0075556E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T16:19:21Z"
 }

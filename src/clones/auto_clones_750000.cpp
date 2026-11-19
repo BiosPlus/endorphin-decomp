@@ -91,3 +91,47 @@ extern "C" __declspec(naked) void __fastcall fn_00755270(void* self) {
     }
 }
 
+
+// [0x007554F0] Identical-shape clone of 0x00774A70 (146 bytes) - sub_007554F0
+extern "C" void ext_00754F20();
+extern "C" void ext_00784620();
+extern "C" __declspec(naked) void* __fastcall fn_007554F0(void* self, void* dummy, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8bfa36
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 8], esi
+        call ext_00754F20
+        mov ecx, dword ptr [esp + 0x1c]
+        xor eax, eax
+        mov dword ptr [esi + 0xb0], ecx
+        push 0x14
+        lea ecx, [esi + 0xc4]
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esi + 0xac], eax
+        mov dword ptr [esi + 0xb4], eax
+        mov dword ptr [esi + 0xb8], 1
+        mov dword ptr [esi + 0xbc], eax
+        mov dword ptr [esi + 0xc0], eax
+        call ext_00784620
+        push 0x14
+        lea ecx, [esi + 0xd8]
+        mov byte ptr [esp + 0x14], 1
+        call ext_00784620
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr [esi], 0x996C10
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 8
+    }
+}
+
