@@ -7787,3 +7787,58 @@ extern "C" __declspec(naked) void* __fastcall fn_00783020(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0078A1A0] sub_0078A1A0 (93 bytes)
+extern "C" int mem_0078A200;
+extern "C" int mem_0078A20C;
+extern "C" __declspec(naked) int __fastcall fn_0078A1A0(void* self, int edx_unused, const char* str, int start) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        lea esi, [eax + 0x1]
+        xor al, al
+        mov dl, 0x1
+        mov cl, byte ptr [esi + edi]
+        test cl, cl
+        je L_ret_neg1
+        push ebx
+    L_loop:
+        cmp dl, 0x1
+        jne L_check_found
+        movsx ecx, cl
+        cmp ecx, 0x40
+        ja L_default
+        xor ebx, ebx
+        mov bl, byte ptr [ecx + mem_0078A20C]
+        jmp dword ptr [4 * ebx + mem_0078A200]
+        // case 0:
+        xor al, al
+        xor dl, dl
+        jmp L_next
+        // case 1:
+        mov al, 0x1
+        xor dl, dl
+        jmp L_next
+    L_default:
+        inc esi
+    L_next:
+        mov cl, byte ptr [esi + edi]
+        test cl, cl
+        jne L_loop
+    L_check_found:
+        cmp al, 0x1
+        pop ebx
+        jne L_ret_neg1
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 0x8
+    L_ret_neg1:
+        pop edi
+        or eax, -0x1
+        pop esi
+        ret 0x8
+    }
+}
