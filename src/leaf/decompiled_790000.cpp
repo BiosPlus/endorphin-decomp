@@ -6401,3 +6401,25 @@ extern "C" __declspec(naked) void __fastcall fn_007911E0(void* self) {
         ret 0xc
     }
 }
+
+// [0x0079AD20] sub_0079AD20 (39 bytes)
+extern "C" int mem_00924180; /* u32 0x0062D5C0 */
+extern "C" __declspec(naked) void __fastcall fn_0079AD20(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        lea eax, [esp + 0xc]
+        push 0x0
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        push eax
+        call dword ptr [mem_00924180]
+        mov ecx, dword ptr [esp + 0xc]
+        neg eax
+        sbb eax, eax
+        and eax, ecx
+        ret
+    }
+}
