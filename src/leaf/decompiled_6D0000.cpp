@@ -10746,3 +10746,97 @@ extern "C" __declspec(naked) bool __fastcall fn_006D72B0(void* self) {
         ret
     }
 }
+
+// [0x006DCEA0] sub_006DCEA0 (215 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006C9360();
+extern "C" void ext_006DC510();
+extern "C" void ext_006DC550();
+extern "C" void ext_006DE7C0();
+extern "C" void ext_006E6E60();
+extern "C" void ext_006E7460();
+extern "C" void ext_00710B70();
+
+// [0x006DCEA0] SEH-framed thiscall-like body (ret 4). Hand-written to match original bytes.
+extern "C" __declspec(naked) void __fastcall fn_006DCEA0(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8bcb18
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x50
+        test eax, eax
+        push ebx
+        mov ebx, ecx
+        je L_end
+        push ebp
+        xor ebp, ebp
+        call ext_006DC550
+        test eax, eax
+        jle L_cleanup
+        push esi
+        push edi
+    L_loop:
+        mov ecx, dword ptr [esp + 0x70]
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_006E6E60
+        mov ecx, eax
+        mov dword ptr [esp + 0x68], 0
+        call ext_006E7460
+        push eax
+        push ebp
+        mov ecx, ebx
+        call ext_006DC510
+        mov ecx, eax
+        call ext_006C9360
+        mov ecx, eax
+        call ext_006DE7C0
+        lea ecx, [esp + 0x14]
+        mov esi, eax
+        mov dword ptr [esp + 0x68], -1
+        call ext_006B9D70
+        test esi, esi
+        je L_skip
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x30]
+        mov edi, eax
+        test edi, edi
+        je L_skip
+        mov eax, dword ptr [edi]
+        push esi
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], eax
+        call dword ptr [eax + 0x24]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, edi
+        call dword ptr [eax + 0xc]
+    L_skip:
+        mov ecx, ebx
+        inc ebp
+        call ext_006DC550
+        cmp ebp, eax
+        jl L_loop
+        pop edi
+        pop esi
+    L_cleanup:
+        mov edx, dword ptr [ebx]
+        mov ecx, ebx
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [esp + 0x68]
+        push ecx
+        mov ecx, eax
+        call ext_00710B70
+        pop ebp
+    L_end:
+        mov ecx, dword ptr [esp + 0x54]
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x5c
+        ret 0x4
+    }
+}
