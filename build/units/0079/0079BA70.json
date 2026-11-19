@@ -14,5 +14,6 @@
     "0x0079BA74",
     "0x0079BA81"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
