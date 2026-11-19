@@ -8116,3 +8116,50 @@ extern "C" void __fastcall fn_006D8D00(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x280) = a5;
     *(int*)(p + 0x284) = a6;
 }
+
+// [0x006DE720] sub_006DE720 (66 bytes)
+// Thiscall, one stack arg (ret 0x4). Walks children 0..count-1 via vtable slot 6;
+// returns the first child for which ext_006DE3E0(child) == a1, else 0.
+extern "C" void ext_006DE3E0();
+extern "C" __declspec(naked) void* __fastcall fn_006DE720(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        jle no_match
+        mov ebp, dword ptr [esp + 0x14]
+    loop_top:
+        mov eax, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [eax + 0x18]
+        mov ebx, eax
+        mov ecx, ebx
+        call ext_006DE3E0
+        cmp eax, ebp
+        je found
+        mov eax, dword ptr [esi + 0x20]
+        inc edi
+        cmp edi, eax
+        jl loop_top
+    no_match:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    found:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
