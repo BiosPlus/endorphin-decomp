@@ -6939,3 +6939,53 @@ extern "C" __declspec(naked) void* __fastcall fn_007ABC20(void* self) {
         ret
     }
 }
+
+// [0x007AEC70] sub_007AEC70 (88 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AEC70(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov edx, ecx
+        je L_fail
+        mov ebx, dword ptr [edx + 0x58]
+        test ebx, ebx
+        je L_fail
+        mov esi, dword ptr [edx + 0x60]
+        mov eax, dword ptr [edx + 0x5c]
+        mov ecx, dword ptr [esp + 0x14]
+        sub eax, esi
+        cmp ecx, eax
+        jbe L_use_ecx
+        mov cl, byte ptr [esp + 0x18]
+        test cl, cl
+        jne L_fail
+        jmp L_copy
+    L_use_ecx:
+        mov eax, ecx
+    L_copy:
+        mov ecx, eax
+        add esi, ebx
+        mov ebx, ecx
+        shr ecx, 2
+        rep movsd
+        mov ecx, ebx
+        and ecx, 3
+        rep movsb
+        mov ecx, dword ptr [edx + 0x60]
+        pop edi
+        add ecx, eax
+        pop esi
+        mov dword ptr [edx + 0x60], ecx
+        pop ebx
+        ret 0xc
+    L_fail:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 0xc
+    }
+}
