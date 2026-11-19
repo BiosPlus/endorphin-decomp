@@ -6824,3 +6824,95 @@ L_call:
         ret
     }
 }
+
+// [0x0085FCE0] sub_0085FCE0 (208 bytes)
+extern "C" void ext_0085D560();
+extern "C" int mem_00AB9880;
+extern "C" int mem_00924248;
+extern "C" int mem_00BC5C20;
+extern "C" int mem_00BC70BC;
+extern "C" int mem_00BC70F4;
+extern "C" int mem_00924210;
+
+extern "C" __declspec(naked) void __cdecl fn_0085FCE0(void) {
+    __asm {
+        sub esp, 0x120
+        cmp dword ptr [mem_00AB9880], 0
+        push ebx
+        push esi
+        push edi
+        push ebp
+        je fn85fce0_exit
+        push 0x7d0
+        call ext_0085D560
+        add esp, 4
+        mov edi, eax
+        test edi, edi
+        jne fn85fce0_have
+        push 5
+        call dword ptr [mem_00924248]
+        push 0x7d0
+        call ext_0085D560
+        add esp, 4
+        mov edi, eax
+        test edi, edi
+        je fn85fce0_exit
+    fn85fce0_have:
+        mov esi, 0x64
+        mov ecx, dword ptr [mem_00BC5C20]
+        xor ebx, ebx
+        mov ebp, 1
+    fn85fce0_loop:
+        dec esi
+        lea eax, [esp + 0x14]
+        lea edx, [esp + 0x2c]
+        push eax
+        mov dword ptr [esp + 0x30], ebx
+        push ebx
+        mov dword ptr [esp + 0x38], ecx
+        push ebx
+        inc dword ptr [esp + 0x38]
+        push edx
+        mov dword ptr [esp + 0x24], ebx
+        push ecx
+        mov dword ptr [esp + 0x2c], ebp
+        call dword ptr [mem_00BC70BC]
+        mov ecx, dword ptr [mem_00BC5C20]
+        test eax, eax
+        je fn85fce0_free
+        lea eax, [esp + 0x10]
+        lea edx, [esp + 0x1c]
+        mov dword ptr [esp + 0x10], 0x10
+        push eax
+        push edx
+        push ebx
+        push 0x5fa
+        push edi
+        push ecx
+        call dword ptr [mem_00BC70F4]
+        mov ecx, dword ptr [mem_00BC5C20]
+        test esi, esi
+        jne fn85fce0_loop
+    fn85fce0_free:
+        push edi
+        call dword ptr [mem_00924210]
+    fn85fce0_exit:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x120
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
