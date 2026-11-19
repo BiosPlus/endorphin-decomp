@@ -145,6 +145,7 @@ extern "C" void ext_00711D40();
 extern "C" void ext_00711A70();
 extern "C" void ext_006F8320();
 extern "C" void __fastcall ext_006FA460(void* self, int edx_unused, void* item);
+extern "C" int mem_00B608B0;
 
 // [0x006FA8F0] sub_006FA8F0 (47 bytes)
 extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, int edx_unused, void* a1) {
@@ -9951,5 +9952,37 @@ extern "C" __declspec(naked) int __fastcall fn_006FC950(void* self, int edx_unus
         mov eax, dword ptr [ecx + 0x18]
     done:
         ret 0x4
+    }
+}
+
+// [0x006FC610] sub_006FC610 (54 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_006FC610(void* self, int edx_unused, void* other) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        test esi, esi
+        je _ret_false
+        mov ecx, dword ptr [mem_00B608B0]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je _ret_false
+        mov edx, dword ptr [esi + 0x40]
+        mov eax, dword ptr [edi + 0x40]
+        cmp edx, eax
+        jne _ret_false
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    _ret_false:
+        pop edi
+        xor al, al
+        pop esi
+        ret 4
     }
 }
