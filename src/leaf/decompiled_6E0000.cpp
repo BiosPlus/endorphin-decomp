@@ -4653,3 +4653,27 @@ extern "C" void __cdecl fn_006E9FD0() {
     mem_00B5DF14 = 0xb5f050;
     mem_00B5DF1C = 0;
 }
+
+// [0x006E7120] sub_006E7120 (41 bytes)
+extern "C" void ext_00711BA0();
+extern "C" __declspec(naked) void __fastcall fn_006E7120(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [mem_00925284]
+        fld qword ptr [ecx]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        fchs
+        je short L_zero
+        fstp st(0)
+        jmp ext_00711BA0
+L_zero:
+        mov eax, dword ptr [eax + 0x8]
+        test eax, eax
+        je short L_done
+        fstp st(0)
+        fld qword ptr [eax + 0xa0]
+L_done:
+        ret
+    }
+}
