@@ -5305,3 +5305,31 @@ extern "C" __declspec(naked) void* __stdcall fn_007006B0(int a1) {
         ret 0x4
     }
 }
+
+// [0x00704BB0] sub_00704BB0 (44 bytes)
+extern "C" int mem_00AABD00;
+extern "C" int mem_00AABD08;
+extern "C" int mem_00AABD10;
+
+extern "C" __declspec(naked) void* __stdcall fn_00704BB0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub eax, 0x0
+        je L_case0
+        dec eax
+        je L_case1
+        dec eax
+        je L_case2
+        xor eax, eax
+        ret 0x4
+    L_case2:
+        mov eax, offset mem_00AABD10
+        ret 0x4
+    L_case1:
+        mov eax, offset mem_00AABD08
+        ret 0x4
+    L_case0:
+        mov eax, offset mem_00AABD00
+        ret 0x4
+    }
+}
