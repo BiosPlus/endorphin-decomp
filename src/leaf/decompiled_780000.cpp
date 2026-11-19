@@ -7933,3 +7933,39 @@ extern "C" __declspec(naked) void __fastcall fn_0078FED0(
         ret 0x1c
     }
 }
+
+// [0x0078D260] sub_0078D260 (94 bytes)
+extern "C" void ext_006A6C99();
+extern "C" void ext_0078D330();
+extern "C" __declspec(naked) void* __fastcall fn_0078D260(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x008c17a3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 0x0074adf0
+        push 0x0078d2c0
+        mov esi, ecx
+        push 2
+        push 0x18
+        push esi
+        mov dword ptr [esp + 0x18], esi
+        call ext_006A6C99
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], 0
+        call ext_0078D330
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 8
+    }
+}
