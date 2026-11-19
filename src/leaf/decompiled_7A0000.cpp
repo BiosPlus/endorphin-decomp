@@ -8125,3 +8125,104 @@ extern "C" __declspec(naked) void __cdecl fn_007AA300(void* a1, int a2, int a3) 
         nop
     }
 }
+
+// [0x007A94F0] sub_007A94F0 (208 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007A94F0(void* p, const char* name, void** out) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        xor edi, edi
+        test esi, esi
+        mov dword ptr [esp + 0x8], edi
+        je L_7a9511
+        mov eax, dword ptr [esp + 0x14]
+        test eax, eax
+        je L_7a9511
+        mov eax, dword ptr [esp + 0x18]
+        test eax, eax
+        jne L_7a9528
+    L_7a9511:
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7a95b4
+    L_7a9528:
+        push esi
+        call ext_007A9360
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7a9543
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7a95b4
+    L_7a9543:
+        mov eax, dword ptr [esi + 0x8]
+        push ebx
+        push ebp
+        xor ebp, ebp
+        mov edx, dword ptr [eax]
+        test edx, edx
+        jbe L_7a95ac
+        mov eax, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x18], eax
+        mov edi, eax
+    L_7a9559:
+        mov esi, dword ptr [edi]
+        mov eax, dword ptr [esp + 0x1c]
+    L_7a955f:
+        mov bl, byte ptr [eax]
+        mov cl, bl
+        cmp bl, byte ptr [esi]
+        jne L_7a9583
+        test cl, cl
+        je L_7a957f
+        mov bl, byte ptr [eax + 0x1]
+        mov cl, bl
+        cmp bl, byte ptr [esi + 0x1]
+        jne L_7a9583
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_7a955f
+    L_7a957f:
+        xor eax, eax
+        jmp L_7a9588
+    L_7a9583:
+        sbb eax, eax
+        sbb eax, -0x1
+    L_7a9588:
+        test eax, eax
+        je L_7a95a4
+        inc ebp
+        add edi, 0x8
+        cmp ebp, edx
+        jb L_7a9559
+        mov ecx, dword ptr [esp + 0x20]
+        mov edi, dword ptr [esp + 0x10]
+        pop ebp
+        pop ebx
+        mov dword ptr [ecx], edi
+        pop edi
+        pop esi
+        pop ecx
+        ret
+    L_7a95a4:
+        mov eax, dword ptr [esp + 0x18]
+        mov edi, dword ptr [eax + 8 * ebp + 0x4]
+    L_7a95ac:
+        mov ecx, dword ptr [esp + 0x20]
+        pop ebp
+        pop ebx
+        mov dword ptr [ecx], edi
+    L_7a95b4:
+        pop edi
+        pop esi
+        pop ecx
+        ret
+    }
+}
