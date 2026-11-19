@@ -9620,3 +9620,49 @@ extern "C" __declspec(naked) void __cdecl fn_0080F8C0(void* p) {
         ret
     }
 }
+
+// [0x0080D220] sub_0080D220 (71 bytes)
+extern "C" void ext_0085BF40();
+
+extern "C" __declspec(naked) void* __cdecl fn_0080D220(void* a, void* b, int c) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [eax + 0x14]
+        cmp edi, -1
+        jne notneg1
+        pop edi
+        xor eax, eax
+        pop ebx
+        ret
+    notneg1:
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        je finish
+    loopstart:
+        mov ecx, dword ptr [ebx + 0x4]
+        push esi
+        push ecx
+        call ext_0085BF40
+        add esp, 8
+        test eax, eax
+        jne nextnode
+        cmp edi, dword ptr [esi]
+        je finish
+        cmp edi, -2
+        je finish
+    nextnode:
+        mov esi, dword ptr [esi + 0x1c]
+        test esi, esi
+        jne loopstart
+    finish:
+        mov eax, esi
+        pop esi
+        pop edi
+        pop ebx
+        ret
+    }
+}
