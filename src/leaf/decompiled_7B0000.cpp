@@ -12714,3 +12714,65 @@ extern "C" __declspec(naked) void __cdecl fn_007B32C0(int** pp, int value) {
         ret
     }
 }
+
+// [0x007BF570] sub_007BF570 (192 bytes)
+extern "C" void ext_007BF630();
+extern "C" __declspec(naked) int __cdecl fn_007BF570(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        mov edi, dword ptr [esi + 0x1cc]
+        call dword ptr [edi + 0x28]
+        add esp, 0x4
+        test eax, eax
+        je L_FAIL_007BF570
+        push esi
+        call ext_007BF630
+        add esp, 0x4
+        test eax, eax
+        je L_FAIL_007BF570
+        cmp dword ptr [edi], 0x2
+        jne L_DONE_007BF570
+        xor eax, eax
+        mov ecx, 0x7bf930
+        mov ax, word ptr [esi + 0x40]
+        cmp eax, 0x8
+        je L_EQ8_007BF570
+        cmp eax, 0x10
+        jne L_AFTER_007BF570
+        mov dword ptr [edi + 0xc], ecx
+        jmp L_AFTER_007BF570
+    L_EQ8_007BF570:
+        mov dword ptr [edi + 0xc], 0x7bf760
+    L_AFTER_007BF570:
+        mov eax, dword ptr [esi + 0x1a0]
+        mov dword ptr [edi + 0x10], eax
+        mov edx, dword ptr [esi + 0x1a8]
+        mov dword ptr [esi + 0x1a0], 0x7bf9c0
+        mov dword ptr [edi + 0x14], edx
+        mov edx, dword ptr [esi + 0x1b0]
+        mov eax, 0x7bfa10
+        mov dword ptr [esi + 0x1a8], eax
+        mov dword ptr [edi + 0x18], edx
+        mov dword ptr [esi + 0x1b0], eax
+        mov al, byte ptr [esi + 0xc]
+        test al, 0x80
+        je L_DONE_007BF570
+        cmp dword ptr [edi + 0xc], ecx
+        jne L_DONE_007BF570
+        mov dword ptr [edi + 0xc], 0x7bf890
+        mov dword ptr [esi + 0x210], 0x6d80a0
+    L_DONE_007BF570:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    L_FAIL_007BF570:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
