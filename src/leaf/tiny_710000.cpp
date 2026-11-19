@@ -1788,3 +1788,11 @@ L_007126AA:
 extern "C" int __fastcall fn_00712940(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x88);
 }
+
+// [0x00712950] Branchless tiny leaf function (7 bytes) - sub_00712950
+extern "C" __declspec(naked) void fn_00712950() {
+    __asm {
+        inc dword ptr [ecx + 0x88]
+        ret
+    }
+}
