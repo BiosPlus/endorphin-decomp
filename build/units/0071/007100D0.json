@@ -14,5 +14,6 @@
     "0x007100D4",
     "0x007100E1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
