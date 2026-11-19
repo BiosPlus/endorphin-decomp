@@ -8413,3 +8413,105 @@ extern "C" __declspec(naked) void __cdecl fn_007A64E0(void** pp) {
         ret
     }
 }
+
+// [0x007A7400] sub_007A7400 (224 bytes)
+extern "C" void ext_007A7530();
+extern "C" void ext_007A9360();
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2D80();
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007A7400(void* a1, int a2, unsigned int a3) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        je L_null
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        jne L_have
+    L_null:
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_end
+    L_have:
+        cmp dword ptr [edi], 0x0
+        jne L_chk
+        push 5
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_end
+    L_chk:
+        mov eax, dword ptr [edi]
+        mov eax, dword ptr [eax]
+        cmp eax, 0x4d4d
+        je L_go
+        cmp eax, 0xc23d
+        je L_go
+        push 6
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_end
+    L_go:
+        push edi
+        call ext_007A9360
+        mov eax, dword ptr [edi + 0x8]
+        add esp, 0x4
+        xor esi, esi
+        xor ebx, ebx
+        cmp dword ptr [eax], 0x0
+        jbe L_end
+        mov ebp, dword ptr [esp + 0x18]
+    L_loop:
+        mov edx, dword ptr [eax + 0x4]
+        lea ecx, [esp + 0x14]
+        push ecx
+        push 0x4100
+        mov eax, dword ptr [edx + 8 * esi + 0x4]
+        push eax
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x20]
+        add esp, 0xc
+        test eax, eax
+        je L_next
+        inc ebx
+        lea ecx, [ebx - 0x1]
+        cmp ecx, ebp
+        je L_match
+    L_next:
+        mov eax, dword ptr [edi + 0x8]
+        inc esi
+        cmp esi, dword ptr [eax]
+        jb L_loop
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_match:
+        mov eax, dword ptr [edi + 0x8]
+        mov edx, dword ptr [esp + 0x1c]
+        push edx
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx + 8 * esi + 0x4]
+        push edx
+        call ext_007A7530
+        add esp, 0x8
+    L_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
