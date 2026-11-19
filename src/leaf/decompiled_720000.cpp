@@ -7502,3 +7502,114 @@ extern "C" __declspec(naked) int __fastcall fn_00723950(void* self) {
         ret
     }
 }
+
+// [0x00720170] sub_00720170 (240 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00720170(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x40
+        mov eax, dword ptr [ebp + 0x10]
+        fld qword ptr [eax]
+        fld qword ptr [eax + 0x8]
+        fld qword ptr [eax + 0x10]
+        fld qword ptr [eax + 0x18]
+        mov eax, dword ptr [ebp + 0x14]
+        fld qword ptr [eax]
+        fld qword ptr [eax + 0x8]
+        fld qword ptr [eax + 0x10]
+        fstp qword ptr [esp + 0x30]
+        fld qword ptr [eax + 0x18]
+        fstp qword ptr [esp + 0x38]
+        fld qword ptr [esp + 0x30]
+        fmul st, st(5)
+        fld qword ptr [esp + 0x38]
+        fmul st, st(7)
+        mov eax, dword ptr [ebp + 0xc]
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(1)
+        fmul st, st(5)
+        fsubp st(1), st
+        __asm _emit 0xdd
+        __asm _emit 0x5c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fld st(0)
+        fmul st, st(3)
+        fld qword ptr [esp + 0x30]
+        fmul st, st(7)
+        fsubp st(1), st
+        fld qword ptr [esp + 0x38]
+        fmul st, st(6)
+        faddp st(1), st
+        fld st(4)
+        fmul st, st(3)
+        faddp st(1), st
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x30]
+        fmul st, st(3)
+        fld st(1)
+        fmul st, st(7)
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], edx
+        faddp st(1), st
+        fld st(5)
+        fmul st, st(3)
+        fsubp st(1), st
+        fld qword ptr [esp + 0x38]
+        fmul st, st(5)
+        faddp st(1), st
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x38]
+        fmul st, st(3)
+        fxch st(2)
+        fmul st, st(6)
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 0x10], ecx
+        fsubp st(2), st
+        fmul st, st(4)
+        fsubp st(1), st
+        fld qword ptr [esp + 0x30]
+        fmul st, st(3)
+        fsubp st(1), st
+        fstp qword ptr [esp + 0x18]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        __asm _emit 0xdd
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fstp qword ptr [eax]
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [eax + 0x14], edx
+        mov edx, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1c], edx
+        mov esp, ebp
+        pop ebp
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
