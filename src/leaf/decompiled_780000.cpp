@@ -7359,3 +7359,42 @@ L_exit:
         ret 0x4
     }
 }
+
+// [0x00783470] sub_00783470 (66 bytes)
+extern "C" int mem_009252AC;
+extern "C" __declspec(naked) void __fastcall fn_00783470(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_null
+        mov eax, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push eax
+        push 0x1
+        push 0x4
+        push esi
+        call dword ptr [mem_009252AC]
+        mov al, byte ptr [ebp + 0xc]
+        add esp, 0x10
+        test al, al
+        je short L_noswap
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ebp + 0xc], ecx
+        mov eax, dword ptr [ebp + 0xc]
+        bswap eax
+        mov dword ptr [esi], eax
+L_noswap:
+        mov eax, dword ptr [esi]
+        pop esi
+        pop ebp
+        ret 0x8
+L_null:
+        xor eax, eax
+        pop ebp
+        ret 0x8
+    }
+}
