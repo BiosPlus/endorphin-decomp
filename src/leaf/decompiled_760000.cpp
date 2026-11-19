@@ -2022,3 +2022,77 @@ extern "C" __declspec(naked) void* __fastcall fn_007641D0(void* self, int edx_un
         ret     4
     }
 }
+
+// [0x00763EA0] sub_00763EA0 (176 bytes)
+extern "C" void ext_006BC600();
+extern "C" void ext_006BC730();
+extern "C" void ext_006BC7B0();
+extern "C" void ext_0072CF10();
+extern "C" void ext_0072FB20();
+extern "C" void ext_00759A30();
+extern "C" void ext_00759C60();
+
+extern "C" __declspec(naked) void __fastcall fn_00763EA0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        mov     esi, ecx
+        mov     ecx, edi
+        call    ext_006BC730
+        test    eax, eax
+        jne     short L_00763EDA
+        mov     ecx, edi
+        call    ext_006BC7B0
+        test    eax, eax
+        jne     short L_00763EDA
+        mov     ecx, dword ptr [esi + 0xb4]
+        push    8
+        call    ext_0072CF10
+        test    al, al
+        je      short L_00763F47
+        mov     ecx, edi
+        call    ext_006BC600
+        test    eax, eax
+        je      short L_00763F47
+    L_00763EDA:
+        mov     ecx, dword ptr [esi + 0xac]
+        push    0xaad2d8
+        add     ecx, 4
+        call    ext_007275F0
+        mov     ecx, dword ptr [esi + 0xac]
+        add     ecx, 4
+        call    ext_00728410
+        mov     ecx, dword ptr [esi + 0xb4]
+        push    8
+        call    ext_0072CF10
+        test    al, al
+        je      short L_00763F14
+        push    edi
+        mov     ecx, esi
+        call    ext_00759A30
+    L_00763F14:
+        push    edi
+        mov     ecx, esi
+        call    ext_00759C60
+        mov     ecx, edi
+        call    ext_006BC7B0
+        push    eax
+        mov     ecx, esi
+        call    ext_0072FB20
+        mov     ecx, dword ptr [esi + 0xac]
+        add     ecx, 4
+        call    ext_007284D0
+        mov     ecx, dword ptr [esi + 0xac]
+        add     ecx, 4
+        call    ext_007283B0
+    L_00763F47:
+        pop     edi
+        pop     esi
+        ret     4
+        nop
+        nop
+        nop
+        nop
+    }
+}
