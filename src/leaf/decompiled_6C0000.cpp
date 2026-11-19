@@ -6265,3 +6265,14 @@ extern "C" void __fastcall fn_006C0780(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x478) = a5;
     *(int*)(p + 0x47c) = a6;
 }
+
+// [0x006C06F0] sub_006C06F0 (63 bytes)
+extern "C" void __fastcall fn_006C06F0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    char* p = (char*)self;
+    *(int*)(p + 0x3c8) = a1;
+    *(int*)(p + 0x3cc) = a2;
+    *(int*)(p + 0x3d0) = a3;
+    *(int*)(p + 0x3d4) = a4;
+    *(int*)(p + 0x3d8) = a5;
+    *(int*)(p + 0x3dc) = a6;
+}
