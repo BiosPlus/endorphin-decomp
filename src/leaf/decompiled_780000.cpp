@@ -8923,3 +8923,89 @@ extern "C" __declspec(naked) void __fastcall fn_0078C2F0(void* self) {
         ret
     }
 }
+
+// [0x0078B320] sub_0078B320 (176 bytes)
+// Stack args: a1 (non-null required, else returns -3), a2 (byte, must be 0 or 1), a3 (size 8..256), a4 (optional C-string).
+// Plain ret (caller cleans). Byte-for-byte naked body.
+extern "C" void ext_0078ABD0();
+extern "C" void ext_0078B210();
+extern "C" int mem_00AAF7FC;
+extern "C" __declspec(naked) void __fastcall fn_0078B320(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        jne L_nonnull
+        pop esi
+        mov eax, 0xfffffffd
+        pop ebx
+        ret
+    L_nonnull:
+        mov al, byte ptr [esp + 0x10]
+        test al, al
+        je L_flag_ok
+        cmp al, 0x1
+        je L_flag_ok
+        pop esi
+        or eax, -1
+        pop ebx
+        ret
+    L_flag_ok:
+        mov ebx, dword ptr [esp + 0x14]
+        cmp ebx, 0x100
+        jg L_fail
+        cmp ebx, 0x8
+        jl L_fail
+        mov byte ptr [esi], al
+        lea eax, [ebx + 0x3f]
+        and al, 0xc0
+        mov dword ptr [esi + 0x4c], 0x48534946
+        mov dword ptr [esi + 0x4], eax
+        lea eax, [ebx - 0x1]
+        cdq
+        and edx, 0x3f
+        push edi
+        add eax, edx
+        lea edx, [esi + 0x54]
+        sar eax, 0x6
+        mov edi, edx
+        mov ecx, dword ptr [eax*4 + mem_00AAF7FC]
+        xor eax, eax
+        mov dword ptr [esi + 0x50], ecx
+        mov ecx, 0x8
+        rep stosd
+        mov byte ptr [esi + 0x48], al
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        pop edi
+        je L_ok
+        cmp byte ptr [eax], 0x0
+        je L_ok
+        lea ecx, [esi + 0x8]
+        push ecx
+        push edx
+        push eax
+        push ebx
+        call ext_0078ABD0
+        add esp, 0x10
+        test eax, eax
+        jne L_fail
+        push esi
+        call ext_0078B210
+        add esp, 0x4
+        pop esi
+        pop ebx
+        ret
+    L_ok:
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    L_fail:
+        pop esi
+        mov eax, 0xfffffffe
+        pop ebx
+        ret
+    }
+}
