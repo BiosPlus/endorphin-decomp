@@ -1337,3 +1337,8 @@ extern "C" unsigned char __stdcall fn_00707FA0(int a1, int a2) {
 extern "C" unsigned char __stdcall fn_00709340(int a1, int a2, int a3) {
     return 0x1;
 }
+
+// [0x007097B0] Constant byte/bool return (5 bytes) - sub_007097B0
+extern "C" unsigned char __stdcall fn_007097B0(int a1) {
+    return 0x1;
+}
