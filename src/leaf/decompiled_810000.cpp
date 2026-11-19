@@ -876,3 +876,36 @@ extern "C" __declspec(naked) void __cdecl fn_008106F0(void) {
         ret
     }
 }
+
+// [0x00810660] sub_00810660 (58 bytes)
+extern "C" void ext_0080F700();
+extern "C" void ext_0080EB80();
+extern "C" int mem_00AB6AB0;
+extern "C" char mem_00AB6AB8;
+extern "C" char mem_00AB6ABC;
+
+extern "C" __declspec(naked) void __cdecl fn_00810660(void) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push esi
+        call ext_0080F700
+        add esp, 4
+        cmp eax, 1
+        mov dword ptr [mem_00AB6AB0], eax
+        jne not_one
+        mov al, byte ptr [esi]
+        pop esi
+        mov byte ptr [mem_00AB6AB8], al
+        ret
+    not_one:
+        push esi
+        push 3
+        push offset mem_00AB6ABC
+        mov byte ptr [mem_00AB6AB8], 0
+        call ext_0080EB80
+        add esp, 12
+        pop esi
+        ret
+    }
+}
