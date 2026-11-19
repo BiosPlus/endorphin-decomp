@@ -3423,3 +3423,11 @@ extern "C" __declspec(naked) void fn_006FC6A0() {
         ret
     }
 }
+
+// [0x006FC6B0] Branchless tiny leaf function (6 bytes) - sub_006FC6B0
+extern "C" __declspec(naked) void fn_006FC6B0() {
+    __asm {
+        mov eax, dword ptr [mem_00B608C0]
+        ret
+    }
+}
