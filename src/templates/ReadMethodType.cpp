@@ -308,6 +308,7 @@ extern "C" void ext_006111D0();
 extern "C" void ext_00610CB0();
 extern "C" void ext_00648ED0();
 extern "C" void ext_00648EE0();
+extern "C" void ext_0058F770();
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -171966,5 +171967,26 @@ extern "C" __declspec(naked) void __cdecl fn_004C0880(void* self) {
         push eax
         mov dword ptr [esp + 0x28], 0
         call ext_0046C4E0
+    }
+}
+
+// [0x00591320] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_5 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00591320(void** arg0) {
+    __asm {
+        push    -1
+        push    0x8b56f9
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 0x1c
+        mov     eax, [esp + 0x2c]
+        mov     edx, [eax]
+        push    edx
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_0058F770
+        push    eax
+        mov     dword ptr [esp + 0x28], 0
+        call    ext_0046C4E0
     }
 }
