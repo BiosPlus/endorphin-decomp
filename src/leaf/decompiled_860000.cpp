@@ -7021,3 +7021,44 @@ extern "C" __declspec(naked) void __cdecl fn_0086F050(int* dst, const unsigned i
         mov edi, edi
     }
 }
+
+// [0x0086C180] sub_0086C180 (79 bytes)
+extern "C" void ext_0086AFD0();
+extern "C" void ext_0086C020();
+extern "C" void ext_0086EE60();
+
+extern "C" __declspec(naked) void __cdecl fn_0086C180(void) {
+    __asm {
+        sub esp, 0x3c
+        lea eax, [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x44]
+        push eax
+        mov ecx, dword ptr [esp + 0x4c]
+        push 0x0
+        push 0x0
+        push esi
+        push ecx
+        call ext_0086AFD0
+        mov eax, dword ptr [esp + 0x64]
+        lea ecx, [esp + 0x18]
+        add esp, 0x14
+        push eax
+        push ecx
+        push esi
+        call ext_0086C020
+        mov ecx, dword ptr [esp + 0x58]
+        lea edx, [esp + 0x24]
+        lea eax, [esp + 0x10]
+        add esp, 0xc
+        push esi
+        push ecx
+        push edx
+        push eax
+        call ext_0086EE60
+        add esp, 0x10
+        pop esi
+        add esp, 0x3c
+        ret
+    }
+}
