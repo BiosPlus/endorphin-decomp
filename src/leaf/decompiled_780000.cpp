@@ -7044,3 +7044,30 @@ L_null:
         ret 0x8
     }
 }
+
+// [0x0078BEC0] sub_0078BEC0 (37 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0078BEC0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x2c]
+        test al, al
+        je short L_zero
+        mov ecx, esi
+        call ext_00789650
+        cmp eax, -1
+        jne short L_ret_1c
+        or eax, eax
+        pop esi
+        ret
+    L_ret_1c:
+        mov eax, dword ptr [esi + 0x1c]
+        pop esi
+        ret
+    L_zero:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
