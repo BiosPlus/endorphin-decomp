@@ -20333,3 +20333,85 @@ FAIL_1A30:
         ret
     }
 }
+
+// [0x007C4370] sub_007C4370 (224 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C4370(void* self, const void* tree, int k) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0x18]
+        mov     edx, dword ptr [eax + 0x1448]
+        push    edi
+        mov     ebp, dword ptr [eax + 4*esi + 0xb54]
+        lea     ecx, [esi + esi]
+        cmp     ecx, edx
+        mov     dword ptr [esp + 0x14], ebp
+        jg      L_done_init
+
+        mov     edi, dword ptr [esp + 0x18]
+    L_loop:
+        jge     L_skip_right
+        mov     esi, dword ptr [eax + 4*ecx + 0xb58]
+        mov     ebp, dword ptr [eax + 4*ecx + 0xb54]
+        mov     dx, word ptr [edi + 4*esi]
+        mov     bx, word ptr [edi + 4*ebp]
+        cmp     dx, bx
+        jb      L_inc_j
+        jne     L_no_inc_j
+        mov     dl, byte ptr [esi + eax + 0x1450]
+        mov     bl, byte ptr [eax + ebp + 0x1450]
+        cmp     dl, bl
+        ja      L_no_inc_j
+    L_inc_j:
+        inc     ecx
+    L_no_inc_j:
+        mov     ebp, dword ptr [esp + 0x14]
+    L_skip_right:
+        mov     esi, dword ptr [eax + 4*ecx + 0xb54]
+        mov     dx, word ptr [edi + 4*ebp]
+        mov     bx, word ptr [edi + 4*esi]
+        cmp     dx, bx
+        jb      L_break_1
+        jne     L_move_up
+        mov     dl, byte ptr [eax + ebp + 0x1450]
+        mov     bl, byte ptr [esi + eax + 0x1450]
+        cmp     dl, bl
+        jbe     L_break_2
+    L_move_up:
+        mov     edx, dword ptr [esp + 0x1c]
+        mov     dword ptr [esp + 0x1c], ecx
+        add     ecx, ecx
+        mov     dword ptr [eax + 4*edx + 0xb54], esi
+        mov     edx, dword ptr [eax + 0x1448]
+        cmp     ecx, edx
+        jle     L_loop
+
+    L_break_1:
+        mov     ecx, dword ptr [esp + 0x1c]
+        pop     edi
+        pop     esi
+        mov     dword ptr [eax + 4*ecx + 0xb54], ebp
+        pop     ebp
+        pop     ebx
+        ret
+
+    L_break_2:
+        mov     edx, dword ptr [esp + 0x1c]
+        pop     edi
+        pop     esi
+        mov     dword ptr [eax + 4*edx + 0xb54], ebp
+        pop     ebp
+        pop     ebx
+        ret
+
+    L_done_init:
+        mov     dword ptr [eax + 4*esi + 0xb54], ebp
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret
+    }
+}
