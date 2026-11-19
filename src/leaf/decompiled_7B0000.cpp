@@ -10360,3 +10360,45 @@ extern "C" __declspec(naked) int __cdecl fn_007BBB90(void* self, int a2, int cou
         ret
     }
 }
+
+// [0x007BBC30] sub_007BBC30 (70 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BBC30(char* obj, char* buf, unsigned int size, int a4) {
+    __asm {
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        call ext_007AF200
+        mov ebp, dword ptr [esp + 0x1c]
+        add esp, 0x4
+        test ebp, ebp
+        mov esi, eax
+        je L_done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    L_loop:
+        mov eax, dword ptr [esp + 0x20]
+        push eax
+        push esi
+        push ebx
+        push edi
+        call dword ptr [edi + 0x1a4]
+        add esp, 0x10
+        test eax, eax
+        jne L_break
+        add ebx, esi
+        sub ebp, esi
+        jne L_loop
+    L_break:
+        pop ebx
+    L_done:
+        xor eax, eax
+        pop edi
+        test ebp, ebp
+        pop esi
+        pop ebp
+        sete al
+        ret
+    }
+}
