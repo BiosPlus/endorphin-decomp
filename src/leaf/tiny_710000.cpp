@@ -2559,3 +2559,8 @@ extern "C" void __fastcall fn_00719DD0(void* self, int edx_unused, int a1) {
 extern "C" unsigned char __fastcall fn_00719DE0(void* self) {
     return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0xe38);
 }
+
+// [0x00719DF0] Byte field setter (13 bytes) - sub_00719DF0
+extern "C" void __fastcall fn_00719DF0(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + 0xec0) = static_cast<unsigned char>(a1);
+}
