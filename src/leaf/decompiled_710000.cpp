@@ -5532,3 +5532,10 @@ extern "C" void __fastcall fn_00712690(void* self, int edx_unused, int a1) {
     typedef void (__thiscall *Callee)(void* self, int a, int b);
     ((Callee)ext_00710F80)(static_cast<char*>(self) + 0x40, 0xc, 1);
 }
+
+// [0x00713540] sub_00713540 (23 bytes)
+extern "C" void ext_006D9FC0();
+extern "C" bool __stdcall fn_00713540(int a1, void* a2) {
+    ((void (__thiscall*)(void*, int, int, int))ext_006D9FC0)(a2, a1, 0, 2);
+    return true;
+}
