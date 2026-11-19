@@ -461,3 +461,8 @@ L_007847A4:
         ret
     }
 }
+
+// [0x00784830] Empty return (1 bytes) - sub_00784830
+extern "C" void __cdecl fn_00784830(void) {
+    return;
+}
