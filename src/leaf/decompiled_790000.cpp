@@ -6862,3 +6862,31 @@ extern "C" __declspec(naked) int __cdecl fn_0079D680() {
         ret     0x10
     }
 }
+
+// [0x00792880] sub_00792880 (86 bytes)
+extern "C" void __fastcall ext_0078D7A0(void* self);
+extern "C" unsigned char mem_00997388;
+
+extern "C" __declspec(naked) void* __fastcall fn_00792880(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0078D7A0
+        xor eax, eax
+        mov dword ptr [esi], offset mem_00997388
+        mov dword ptr [esi + 0x250], eax
+        mov dword ptr [esi + 0x268], eax
+        mov dword ptr [esi + 0x264], eax
+        mov dword ptr [esi + 0x26c], eax
+        mov dword ptr [esi + 0x270], eax
+        mov dword ptr [esi + 0x254], eax
+        mov dword ptr [esi + 0x25c], eax
+        mov dword ptr [esi + 0x260], eax
+        mov dword ptr [esi + 0x278], eax
+        mov dword ptr [esi + 0x27c], eax
+        mov dword ptr [esi + 0x258], eax
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
