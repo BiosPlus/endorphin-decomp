@@ -11177,3 +11177,17 @@ extern "C" void __cdecl fn_006BEA40(void) {
     mem_00B5D4D0 = -*(double*)mem_00925284;
     mem_00B5D4D8 = -*(double*)mem_00925284;
 }
+
+// [0x006BBAA0] sub_006BBAA0 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" double mem_00B5D328;
+extern "C" double mem_00B5D330;
+extern "C" double mem_00B5D338;
+extern "C" double mem_00B5D340;
+
+extern "C" void __cdecl fn_006BBAA0() {
+    mem_00B5D328 = -*(double*)mem_00925284;
+    mem_00B5D330 = -*(double*)mem_00925284;
+    mem_00B5D338 = -*(double*)mem_00925284;
+    mem_00B5D340 = -*(double*)mem_00925284;
+}
