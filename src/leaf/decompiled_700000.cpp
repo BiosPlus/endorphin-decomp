@@ -6789,3 +6789,52 @@ extern "C" __declspec(naked) void __fastcall fn_00700650(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00709AB0] sub_00709AB0 (94 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00709AB0(void* self, int edx_unused, int arg1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        jne ret_false
+        mov eax, dword ptr [ecx + 0x14]
+        test eax, eax
+        jne ret_false
+        mov eax, dword ptr [ecx + 0x18]
+        cmp eax, 0x1
+        jg ret_false
+        jne check_arr
+        mov eax, dword ptr [ecx + 0x4c]
+        mov edx, dword ptr [ecx + 0x48]
+        test eax, eax
+        je ret_false
+        cmp dword ptr [eax], edx
+        jne ret_false
+    check_arr:
+        mov eax, dword ptr [ecx + 0xc0]
+        dec eax
+        js ret_true
+        mov ecx, dword ptr [ecx + 0xd0]
+        lea edx, [ecx + 4*eax]
+    loop_start:
+        mov ecx, dword ptr [edx]
+        mov esi, dword ptr [ecx + 0x18]
+        test esi, esi
+        jne ret_false
+        mov esi, dword ptr [ecx + 0x14]
+        test esi, esi
+        jne ret_false
+        dec eax
+        sub edx, 0x4
+        test eax, eax
+        jge loop_start
+    ret_true:
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    ret_false:
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
