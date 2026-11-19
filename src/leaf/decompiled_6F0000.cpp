@@ -10477,3 +10477,74 @@ extern "C" __declspec(naked) void __fastcall fn_006F7080(void* self) {
         ret
     }
 }
+
+// [0x006FA4A0] sub_006FA4A0 (117 bytes)
+extern "C" int __cdecl ext_006FC6E0(int a1);
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void* __fastcall fn_006FA4A0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        test ebx, ebx
+        push edi
+        mov ebp, ecx
+        je loc_6fa50c
+        mov esi, dword ptr [ebx]
+        push -0x1
+        call ext_006FC6E0
+        add esp, 0x4
+        mov ecx, ebx
+        push eax
+        call dword ptr [esi + 0x78]
+        test al, al
+        jne loc_6fa50c
+        mov eax, dword ptr [mem_00B5E400]
+        mov esi, dword ptr [ebx]
+        push eax
+        call ext_006FC6E0
+        add esp, 0x4
+        mov ecx, ebx
+        push eax
+        call dword ptr [esi + 0x78]
+        test al, al
+        jne loc_6fa50c
+        mov edi, dword ptr [ebp + 0x1c]
+        dec edi
+        js loc_6fa4fa
+    loc_6fa4e4:
+        mov ecx, dword ptr [ebp + 0x2c]
+        push ebx
+        mov esi, dword ptr [ecx + 4*edi]
+        mov ecx, dword ptr [esi + 0x38]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x78]
+        test al, al
+        jne loc_6fa503
+        dec edi
+        jns loc_6fa4e4
+    loc_6fa4fa:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    loc_6fa503:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    loc_6fa50c:
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
