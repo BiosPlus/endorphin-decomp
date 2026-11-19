@@ -1814,3 +1814,8 @@ extern "C" __declspec(naked) void fn_007129A0() {
 extern "C" void __stdcall fn_007129C0(int a1, int a2, int a3, int a4) {
     return;
 }
+
+// [0x00712FB0] Return false (5 bytes) - sub_00712FB0
+extern "C" bool __stdcall fn_00712FB0(int a1, int a2) {
+    return false;
+}
