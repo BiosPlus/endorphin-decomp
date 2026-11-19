@@ -3116,3 +3116,8 @@ extern "C" __declspec(naked) void fn_006F9640() {
         ret
     }
 }
+
+// [0x006F9650] Field setter (13 bytes) - sub_006F9650
+extern "C" void __fastcall fn_006F9650(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x168) = a1;
+}
