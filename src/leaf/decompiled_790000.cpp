@@ -41,6 +41,7 @@ extern "C" __declspec(naked) int __cdecl fn_0079EEC0() {
     }
 }
 extern "C" int mem_009251D8; /* "&|b" */
+extern "C" void __stdcall ext_007856F0(int a1, int a2);
 
 // [0x0079AFE0] sub_0079AFE0 (48 bytes)
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
@@ -6203,5 +6204,17 @@ L3:
         pop esi
         pop ebx
         ret
+    }
+}
+
+// [0x0079DB30] sub_0079DB30 (18 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0079DB30(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_007856F0
+        ret 0x8
     }
 }
