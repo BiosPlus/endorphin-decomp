@@ -11163,3 +11163,17 @@ extern "C" __declspec(naked) void __cdecl fn_006BEC70() {
         ret
     }
 }
+
+// [0x006BEA40] sub_006BEA40 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" double mem_00B5D4C0;
+extern "C" double mem_00B5D4C8;
+extern "C" double mem_00B5D4D0;
+extern "C" double mem_00B5D4D8;
+
+extern "C" void __cdecl fn_006BEA40(void) {
+    mem_00B5D4C0 = -*(double*)mem_00925284;
+    mem_00B5D4C8 = -*(double*)mem_00925284;
+    mem_00B5D4D0 = -*(double*)mem_00925284;
+    mem_00B5D4D8 = -*(double*)mem_00925284;
+}
