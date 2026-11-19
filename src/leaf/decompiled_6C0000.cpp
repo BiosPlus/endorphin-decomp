@@ -78,6 +78,7 @@ extern "C" void ext_00722DC0();
 extern "C" void __cdecl fn_006C9570() {
     ext_006C9960(0, 0, (int)0xaa8d5c);
 }
+extern "C" void ext_006C4C90();
 
 // [0x006C9580] sub_006C9580 (15 bytes)
 extern "C" void __cdecl fn_006C9580() {
@@ -7683,5 +7684,89 @@ L_early:
         pop     ebx
         add     esp, 0x10
         ret     8
+    }
+}
+
+// [0x006C4BB0] sub_006C4BB0 (214 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C4BB0(void* self) {
+    __asm {
+        sub esp, 0x18
+        lea eax, [esp + 0x8]
+        _emit 0x8d
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        push eax
+        push edx
+        mov dword ptr [esp + 0x8], 0xffffffff
+        mov dword ptr [esp + 0xc], 0x7fffffff
+        mov dword ptr [esp + 0x10], 0x1
+        mov dword ptr [esp + 0x14], 0x80000000
+        call ext_006C4C90
+        test al, al
+        je L_epi
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x4]
+        push edi
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0x8], edi
+        mov edi, dword ptr [ecx + 0x4]
+        cmp edi, edx
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x1c], edx
+        mov dword ptr [esp + 0xc], edi
+        jg L_a
+        jl L_b
+        mov edx, dword ptr [ecx]
+        cmp edx, esi
+        jae L_a
+    L_b:
+        lea edx, [esp + 0x8]
+        jmp L_c
+    L_a:
+        lea edx, [esp + 0x18]
+    L_c:
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0xc], edx
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esp + 0x18], edi
+        mov edi, dword ptr [ecx + 0x4]
+        cmp edi, edx
+        mov dword ptr [esp + 0x1c], edi
+        jl L_d
+        jg L_e
+        mov edx, dword ptr [ecx]
+        cmp edx, esi
+        jbe L_d
+    L_e:
+        lea edx, [esp + 0x18]
+        pop edi
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        pop esi
+        add esp, 0x18
+        ret 0x8
+    L_d:
+        lea edx, [esp + 0x8]
+        pop edi
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        pop esi
+    L_epi:
+        add esp, 0x18
+        ret 0x8
     }
 }
