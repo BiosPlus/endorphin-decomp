@@ -145,3 +145,11 @@ extern "C" __declspec(naked) void fn_007AA840() {
         ret
     }
 }
+
+// [0x007AA850] Branchless tiny leaf function (6 bytes) - sub_007AA850
+extern "C" __declspec(naked) void fn_007AA850() {
+    __asm {
+        mov eax, offset mem_00B61220
+        ret
+    }
+}
