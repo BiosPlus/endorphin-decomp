@@ -14,5 +14,6 @@
     "0x00754F84",
     "0x00754F91"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
