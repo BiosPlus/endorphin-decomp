@@ -9512,3 +9512,27 @@ extern "C" __declspec(naked) void fn_007BDA20() {
         ret
     }
 }
+
+// [0x007BADF0] sub_007BADF0 (38 bytes)
+extern "C" void ext_0079B140();
+extern "C" void ext_007AF8F0();
+
+extern "C" __declspec(naked) int __cdecl fn_007BADF0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov ax, word ptr [esi + 0x44]
+        push eax
+        call ext_007AF8F0
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esi]
+        push ecx
+        push 0xab19fc
+        push edx
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
