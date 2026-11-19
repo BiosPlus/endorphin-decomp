@@ -7581,3 +7581,37 @@ extern "C" __declspec(naked) void* __fastcall fn_00786270(void* self) {
         ret
     }
 }
+
+// [0x00785810] sub_00785810 (85 bytes)
+extern "C" void ext_007853D0();
+extern "C" void ext_00785E00();
+// SEH-protected constructor-style body: installs an EH frame (handler 0x8c1b28),
+// calls 0x7853D0 with (2, 0xaaf410, 0xaaf418), clears the try level, sets vtable 0x996f00,
+// calls 0x785E00, restores the previous frame and returns self in eax.
+extern "C" __declspec(naked) void* __fastcall fn_00785810(void* self) {
+    __asm {
+        push -1
+        push 0x8c1b28
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 2
+        mov esi, ecx
+        push 0xaaf410
+        push 0xaaf418
+        mov dword ptr [esp + 0x10], esi
+        call ext_007853D0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x996f00
+        call ext_00785E00
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
