@@ -7918,3 +7918,98 @@ extern "C" __declspec(naked) void __fastcall fn_006CA140(void* self) {
         ret
     }
 }
+
+// [0x006CD6D0] sub_006CD6D0 (240 bytes)
+extern "C" int mem_00993810;
+extern "C" int mem_0092A278;
+
+extern "C" __declspec(naked) float __cdecl fn_006CD6D0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 8h]
+        push ebx
+        mov ebx, dword ptr [esp + 14h]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 24h]
+        push edi
+        mov edi, dword ptr [esp + 24h]
+        push esi
+        push edi
+        push ebx
+        push eax
+        call dword ptr [esp + 24h]
+        mov ecx, dword ptr [esp + 2Ch]
+        push esi
+        fstp dword ptr [esp + 3Ch]
+        push edi
+        push ebx
+        push ecx
+        call dword ptr [esp + 34h]
+        fld dword ptr [esp + 48h]
+        fabs
+        fld st(1)
+        fabs
+        fcompp
+        mov edx, dword ptr [esp + 38h]
+        add esp, 20h
+        fnstsw ax
+        test ah, 41h
+        jne loc_6CD734
+        mov ecx, dword ptr [esp + 28h]
+        mov eax, dword ptr [esp + 1Ch]
+        fstp dword ptr [esp + 28h]
+        mov dword ptr [esp + 1Ch], ecx
+        mov dword ptr [esp + 18h], edx
+        fld dword ptr [esp + 1Ch]
+        mov dword ptr [esp + 24h], eax
+        jmp loc_6CD740
+loc_6CD734:
+        mov eax, dword ptr [esp + 1Ch]
+        mov dword ptr [esp + 24h], edx
+        mov dword ptr [esp + 18h], eax
+loc_6CD740:
+        mov ebp, 1
+loc_6CD745:
+        fld dword ptr [esp + 24h]
+        fsub dword ptr [esp + 18h]
+        mov ecx, dword ptr [esp + 18h]
+        push esi
+        push edi
+        push ebx
+        fmul st, st(1)
+        fld st(1)
+        fsub dword ptr [esp + 34h]
+        mov dword ptr [esp + 30h], ecx
+        fdivp st(1), st
+        fstp dword ptr [esp + 28h]
+        fstp dword ptr [esp + 34h]
+        fld dword ptr [esp + 28h]
+        fadd dword ptr [esp + 24h]
+        fstp dword ptr [esp + 24h]
+        mov edx, dword ptr [esp + 24h]
+        push edx
+        call dword ptr [esp + 24h]
+        fld dword ptr [esp + 2Ch]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        add esp, 10h
+        fnstsw ax
+        test ah, 1
+        jne loc_6CD7A8
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 40h
+        jne loc_6CD7A8
+        inc ebp
+        cmp ebp, 0Fh
+        jle loc_6CD745
+loc_6CD7A8:
+        pop edi
+        pop esi
+        fstp st(0)
+        fld dword ptr [esp + 10h]
+        pop ebp
+        pop ebx
+        ret
+    }
+}
