@@ -1920,3 +1920,11 @@ L_00713948:
         ret 0x4
     }
 }
+
+// [0x00713980] Member forwarding thunk (10 bytes) - sub_00713980
+extern "C" __declspec(naked) void fn_00713980() {
+    __asm {
+        mov ecx, offset mem_00B5F3E0
+        jmp ext_00714060
+    }
+}
