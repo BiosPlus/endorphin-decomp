@@ -3193,3 +3193,44 @@ null_path:
         ret 0x4
     }
 }
+
+// [0x0074F910] sub_0074F910 (127 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_0072CFB0();
+extern "C" void ext_007721B0();
+extern "C" void ext_00782D20();
+extern "C" void ext_007ABCA0();
+
+extern "C" __declspec(naked) void __fastcall fn_0074F910(void* self) {
+    __asm {
+        push -1
+        push 0x008BF832
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x00996BBC
+        mov dword ptr [esp + 0x10], 0x3
+        call ext_007721B0
+        lea ecx, [esi + 0x128]
+        mov byte ptr [esp + 0x10], 0x2
+        call ext_00782D20
+        lea ecx, [esi + 0x104]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_007ABCA0
+        lea ecx, [esi + 0xb0]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006B9D70
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0072CFB0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
