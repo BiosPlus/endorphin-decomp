@@ -3675,3 +3675,101 @@ loc_7370f6:
         ret 0x4
     }
 }
+
+// [0x00736CB0] sub_00736CB0 (208 bytes)
+extern "C" void ext_006C30A0();
+extern "C" void ext_006DC460();
+extern "C" void ext_0070D8A0();
+extern "C" void ext_0072CF10();
+extern "C" void ext_00736E20();
+extern "C" void ext_00736EA0();
+extern "C" void ext_00737000();
+extern "C" void ext_00737050();
+extern "C" void ext_00737120();
+extern "C" void ext_00737A70();
+extern "C" void ext_00737BE0();
+extern "C" void ext_007385E0();
+extern "C" void ext_00738B10();
+extern "C" void ext_00738B90();
+extern "C" void ext_00742E60();
+extern "C" void ext_00742ED0();
+extern "C" void ext_0079D6D0();
+
+extern "C" __declspec(naked) void __fastcall fn_00736CB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0ch]
+        mov esi, ecx
+        push edi
+        call ext_00736EA0
+        push edi
+        mov ecx, esi
+        call ext_00737050
+        push edi
+        mov ecx, esi
+        call ext_00737A70
+        push edi
+        mov ecx, esi
+        call ext_00736E20
+        push edi
+        mov ecx, esi
+        call ext_00737BE0
+        mov ecx, dword ptr [esi + 0ach]
+        call ext_0079D6D0
+        test al, al
+        push edi
+        mov ecx, esi
+        jne fn00736CB0_b
+        call ext_00738B90
+        jmp fn00736CB0_c
+fn00736CB0_b:
+        call ext_00737120
+        mov ecx, dword ptr [esi + 0b4h]
+        push 0ah
+        call ext_0072CF10
+        test al, al
+        je fn00736CB0_c
+        push edi
+        mov ecx, esi
+        call ext_007385E0
+fn00736CB0_c:
+        push edi
+        mov ecx, esi
+        call ext_00737000
+        push edi
+        mov ecx, esi
+        call ext_00738B10
+        mov ecx, dword ptr [esi + 0ach]
+        call ext_0079D6D0
+        test al, al
+        je fn00736CB0_d
+        push edi
+        mov ecx, esi
+        call ext_00742ED0
+fn00736CB0_d:
+        push edi
+        mov ecx, esi
+        call ext_00742E60
+        mov ecx, edi
+        call ext_006C30A0
+        test eax, eax
+        je fn00736CB0_e
+        mov ecx, dword ptr [esi + 0ach]
+        call ext_0079D6D0
+        test al, al
+        je fn00736CB0_e
+        mov ecx, edi
+        call ext_006DC460
+        push eax
+        mov ecx, edi
+        call ext_006C30A0
+        mov ecx, eax
+        call ext_0070D8A0
+fn00736CB0_e:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
