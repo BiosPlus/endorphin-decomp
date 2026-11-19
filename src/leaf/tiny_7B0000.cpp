@@ -100,3 +100,11 @@ L_007B1F52:
         ret 0x8
     }
 }
+
+// [0x007B1F70] Member forwarding thunk (10 bytes) - sub_007B1F70
+extern "C" __declspec(naked) void fn_007B1F70() {
+    __asm {
+        mov ecx, offset mem_00B61D20
+        jmp ext_007B1FA0
+    }
+}
