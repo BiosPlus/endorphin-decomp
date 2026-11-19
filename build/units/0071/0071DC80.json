@@ -12,5 +12,7 @@
     "0x0071DC95",
     "0x0071DCA2"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:07:11Z"
 }
