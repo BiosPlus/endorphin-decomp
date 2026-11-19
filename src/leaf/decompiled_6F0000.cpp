@@ -10961,3 +10961,88 @@ extern "C" __declspec(naked) void __fastcall fn_006FE020(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006FE4B0] sub_006FE4B0 (192 bytes)
+extern "C" void ext_006B9D80();
+extern "C" int mem_00925278;
+
+// Copies src into a local buffer, splits off the directory part at the last '\\' or '/',
+// optionally strips the extension (flag == 0), then calls sub_006B9D80(self, tail). Returns self.
+extern "C" __declspec(naked) void* __cdecl fn_006FE4B0(void* self, const char* src, unsigned char flag) {
+    __asm {
+        sub esp, 0x404
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x414]
+        or ecx, -0x1
+        xor eax, eax
+        lea edx, [esp + 0xc]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        push 0x5c
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        mov dword ptr [esp + 0xc], 0x0
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        mov edi, dword ptr [mem_00925278]
+        lea ecx, [esp + 0x10]
+        push ecx
+        call edi
+        add esp, 0x8
+        mov esi, eax
+        test esi, esi
+        push 0x2f
+        jne L_has_bs
+        lea edx, [esp + 0x10]
+        push edx
+        call edi
+        add esp, 0x8
+        jmp L_have_sep
+    L_has_bs:
+        lea eax, [esp + 0x10]
+        push eax
+        call edi
+        add esp, 0x8
+        test eax, eax
+        je L_sep_done
+        cmp eax, esi
+        jbe L_sep_done
+    L_have_sep:
+        mov esi, eax
+    L_sep_done:
+        test esi, esi
+        je L_no_sep
+        mov byte ptr [esi], 0x0
+        inc esi
+        jmp L_strip_check
+    L_no_sep:
+        lea esi, [esp + 0xc]
+    L_strip_check:
+        mov al, byte ptr [esp + 0x418]
+        test al, al
+        jne L_call
+        push 0x2e
+        push esi
+        call edi
+        add esp, 0x8
+        test eax, eax
+        je L_call
+        mov byte ptr [eax], 0x0
+    L_call:
+        push esi
+        mov esi, dword ptr [esp + 0x414]
+        mov ecx, esi
+        call ext_006B9D80
+        mov eax, esi
+        pop edi
+        pop esi
+        add esp, 0x404
+        ret
+    }
+}
