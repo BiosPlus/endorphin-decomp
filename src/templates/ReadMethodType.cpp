@@ -158298,3 +158298,63 @@ extern "C" __declspec(naked) void __fastcall fn_005BB820(void* self, int edx_unu
         call    ext_006A6DD2
     }
 }
+
+// [0x005BB610] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_43 (170 bytes)
+extern "C" void ext_005B7040();
+
+extern "C" __declspec(naked) void __fastcall fn_005BB610(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -1
+        push    offset mem_008A5428
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x30
+        push    esi
+        mov     esi, dword ptr [esp + 0x44]
+        mov     ecx, dword ptr [esi]
+        test    ecx, ecx
+        je      L_throw
+        call    ext_005B7040
+        fstp    dword ptr [esp + 0x44]
+        fld     dword ptr [esp + 0x44]
+        push    ecx
+        lea     ecx, [esp + 0x8]
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        lea     eax, [esp + 0x4]
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x40], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 0x8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x3c], 0xffffffff
+        je      L_skip
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    edx
+    L_skip:
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [esp + 0x48]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0xac]
+        push    edx
+        push    esi
+        call    eax
+        mov     ecx, dword ptr [esp + 0x34]
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x3c
+        ret     8
+    L_throw:
+        lea     ecx, [esp + 0xc]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
