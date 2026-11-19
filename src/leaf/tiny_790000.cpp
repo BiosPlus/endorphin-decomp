@@ -449,3 +449,8 @@ extern "C" __declspec(naked) void fn_0079D990() {
         jmp ext_006E7460
     }
 }
+
+// [0x0079D9A0] Dword field getter (7 bytes) - sub_0079D9A0
+extern "C" int __fastcall fn_0079D9A0(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0xe8);
+}
