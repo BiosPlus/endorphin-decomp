@@ -5558,3 +5558,77 @@ extern "C" __declspec(naked) void __cdecl fn_0085E3A0(char* s) {
         __asm _emit 0x00
     }
 }
+
+// [0x0085F1F0] sub_0085F1F0 (128 bytes)
+extern "C" void ext_0085E690();
+extern "C" void ext_0085F270();
+extern "C" __declspec(naked) unsigned int __cdecl fn_0085F1F0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        xor esi, esi
+        cmp eax, 0x10
+        je hex_branch
+        mov edi, dword ptr [esp + 0xc]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push edi
+        call ext_0085F270
+        add esp, 0xc
+        pop edi
+        pop esi
+        ret
+    hex_branch:
+        mov edi, dword ptr [esp + 0xc]
+        cmp byte ptr [edi], 0x0
+        je finish
+    hex_loop:
+        mov al, byte ptr [edi]
+        push eax
+        call ext_0085E690
+        add esp, 0x4
+        cmp al, 0x30
+        jb finish
+        cmp al, 0x46
+        ja finish
+        cmp al, 0x39
+        jbe digit
+        cmp al, 0x41
+        jb finish
+    digit:
+        xor ecx, ecx
+        mov cl, al
+        sub ecx, 0x30
+        cmp ecx, 0x9
+        jbe have_val
+        sub ecx, 0x7
+    have_val:
+        test esi, 0xf0000000
+        jne finish
+        shl esi, 0x4
+        inc edi
+        or esi, ecx
+        cmp byte ptr [edi], 0x0
+        jne hex_loop
+    finish:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je done
+        mov dword ptr [eax], edi
+    done:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    }
+}
