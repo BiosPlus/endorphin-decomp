@@ -3848,3 +3848,51 @@ extern "C" __declspec(naked) void __fastcall fn_00771B90(void* self) {
         ret
     }
 }
+
+// [0x0077CA70] sub_0077CA70 (87 bytes)
+extern "C" void ext_006D91C0();
+extern "C" void ext_0077CAE0();
+extern "C" void ext_0077CB00();
+
+extern "C" __declspec(naked) void __stdcall fn_0077CA70(void* p) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, edi
+        call ext_006D91C0
+        cmp eax, 3
+        ja L_0077CAC0
+        jmp dword ptr [4*eax + 0x77cac8]
+        push edi
+        mov ecx, esi
+        call ext_0077CAE0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+        push edi
+        mov ecx, esi
+        call ext_0077CAE0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+        push edi
+        mov ecx, esi
+        call ext_0077CAE0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+        push edi
+        mov ecx, esi
+        call ext_0077CB00
+L_0077CAC0:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
