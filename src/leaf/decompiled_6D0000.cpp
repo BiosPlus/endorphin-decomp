@@ -7677,3 +7677,21 @@ extern "C" int mem_00B5D8F8;
 extern "C" void __cdecl fn_006D8AF0() {
     mem_00B5D8F8 = ext_006FC3A0((void*)0x00B5D900, -1);
 }
+
+// [0x006D6CF0] sub_006D6CF0 (24 bytes)
+extern "C" void ext_006D5AD0();
+extern "C" void ext_006D6CB0();
+
+extern "C" __declspec(naked) void __fastcall fn_006D6CF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006D6CB0
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D5AD0
+        pop esi
+        ret 0x4
+    }
+}
