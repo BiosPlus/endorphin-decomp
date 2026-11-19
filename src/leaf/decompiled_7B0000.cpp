@@ -709,6 +709,7 @@ L_END_007B23E0:
     }
 }
 extern "C" void ext_0079B850();
+extern "C" int mem_0092522C;
 
 // [0x007B22B0] sub_007B22B0 (96 bytes)
 extern "C" void ext_006D2160();
@@ -12383,5 +12384,93 @@ extern "C" __declspec(naked) void __cdecl fn_007BC210(void* self, unsigned short
         mov esp, ebp
         pop ebp
         ret
+    }
+}
+
+// [0x007B3060] sub_007B3060 (192 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B3060(void* p1, unsigned int p2) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 0x8]
+        test    esi, esi
+        push    edi
+        jne     L_7B3081
+        push    2
+        call    ext_007AA510
+        mov     al, byte ptr [mem_00B61219]
+        add     esp, 4
+        test    al, al
+        je      L_7B310E
+L_7B3081:
+        cmp     dword ptr [esi], 0
+        jne     L_7B30AA
+        push    8
+        call    dword ptr [mem_00925208]
+        add     esp, 4
+        mov     dword ptr [esi], eax
+        test    eax, eax
+        jne     L_7B30AA
+        push    1
+        call    ext_007AA510
+        mov     al, byte ptr [mem_00B61219]
+        add     esp, 4
+        test    al, al
+        je      L_7B310E
+L_7B30AA:
+        mov     eax, dword ptr [esi]
+        mov     edi, dword ptr [esp + 0x10]
+        test    edi, edi
+        mov     dword ptr [eax], edi
+        mov     ecx, dword ptr [esi]
+        mov     dword ptr [ecx + 4], 0
+        jbe     L_7B30E9
+        push    8
+        push    edi
+        call    dword ptr [mem_0092522C]
+        mov     edx, dword ptr [esi]
+        add     esp, 8
+        mov     dword ptr [edx + 4], eax
+        mov     eax, dword ptr [esi]
+        test    eax, eax
+        jne     L_7B30E9
+        push    1
+        call    ext_007AA510
+        mov     al, byte ptr [mem_00B61219]
+        add     esp, 4
+        test    al, al
+        je      L_7B310E
+L_7B30E9:
+        xor     eax, eax
+        test    edi, edi
+        jbe     L_7B310E
+L_7B30EF:
+        mov     ecx, dword ptr [esi]
+        inc     eax
+        cmp     eax, edi
+        mov     edx, dword ptr [ecx + 4]
+        mov     dword ptr [edx + 8*eax - 8], 0
+        mov     ecx, dword ptr [esi]
+        mov     edx, dword ptr [ecx + 4]
+        mov     dword ptr [edx + 8*eax - 4], 0
+        jb      L_7B30EF
+L_7B310E:
+        pop     edi
+        pop     esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
     }
 }
