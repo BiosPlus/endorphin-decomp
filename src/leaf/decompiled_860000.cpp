@@ -8514,3 +8514,88 @@ extern "C" __declspec(naked) void __cdecl fn_0086C210(void) {
         ret
     }
 }
+
+// [0x00869460] sub_00869460 (208 bytes)
+extern "C" void __cdecl ext_008692F0();
+extern "C" void __cdecl ext_008693B0();
+extern "C" unsigned char mem_00AC3900[];
+
+extern "C" __declspec(naked) void __cdecl fn_00869460(unsigned char* digest, void* context) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        xor esi, esi
+        lea ebp, [edi + 0x10]
+        mov ecx, ebp
+    loop1:
+        mov al, byte ptr [ecx]
+        add ecx, 0x4
+        mov byte ptr [esp + esi + 0xc], al
+        mov eax, dword ptr [ecx - 0x4]
+        mov edx, eax
+        add esi, 0x4
+        shr edx, 0x8
+        mov byte ptr [esp + esi + 0x9], dl
+        mov edx, eax
+        shr edx, 0x10
+        shr eax, 0x18
+        mov byte ptr [esp + esi + 0xa], dl
+        mov byte ptr [esp + esi + 0xb], al
+        cmp esi, 0x8
+        jb loop1
+        mov ecx, dword ptr [ebp]
+        mov eax, 0x38
+        shr ecx, 0x3
+        and ecx, 0x3f
+        cmp ecx, 0x38
+        jb skip_pad
+        mov eax, 0x78
+    skip_pad:
+        sub eax, ecx
+        push eax
+        push offset mem_00AC3900
+        push edi
+        call ext_008693B0
+        lea eax, [esp + 0x18]
+        push 0x8
+        push eax
+        push edi
+        call ext_008693B0
+        mov edx, dword ptr [esp + 0x30]
+        or esi, -0x1
+        add esp, 0x18
+        mov ecx, edi
+        lea eax, [edx + 0x1]
+        sub esi, edx
+    loop2:
+        mov dl, byte ptr [ecx]
+        add ecx, 0x4
+        mov byte ptr [eax - 0x1], dl
+        mov edx, dword ptr [ecx - 0x4]
+        shr edx, 0x8
+        mov byte ptr [eax], dl
+        mov edx, dword ptr [ecx - 0x4]
+        shr edx, 0x10
+        mov byte ptr [eax + 0x1], dl
+        mov edx, dword ptr [ecx - 0x4]
+        shr edx, 0x18
+        mov byte ptr [eax + 0x2], dl
+        add eax, 0x4
+        lea edx, [esi + eax]
+        cmp edx, 0x10
+        jb loop2
+        push 0x58
+        push 0x0
+        push edi
+        call ext_008692F0
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
