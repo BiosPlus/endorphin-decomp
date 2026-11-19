@@ -8242,3 +8242,56 @@ extern "C" __declspec(naked) void* __fastcall fn_006D2C30(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006DE770] sub_006DE770 (74 bytes)
+// Scans self->[0x30] (array of object pointers, count at self->[0x20]) for arg1.
+// Returns 1 if found; if not found and arg2's low byte is set, calls each
+// element's vtable slot 7 with (arg1, arg2) and returns 1 on the first true.
+// Otherwise returns 0. (ret 8)
+extern "C" __declspec(naked) bool __fastcall fn_006DE770(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        xor esi, esi
+        mov eax, dword ptr [edi + 0x20]
+        test eax, eax
+        jle L_none_006DE770
+        mov ebp, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [esp + 0x18]
+    L_loop_006DE770:
+        mov eax, dword ptr [edi + 0x30]
+        mov ecx, dword ptr [eax + 4*esi]
+        cmp ecx, ebp
+        je L_found_006DE770
+        test bl, bl
+        je L_next_006DE770
+        mov edx, dword ptr [ecx]
+        push ebx
+        push ebp
+        call dword ptr [edx + 0x1c]
+        test al, al
+        jne L_found_006DE770
+    L_next_006DE770:
+        mov eax, dword ptr [edi + 0x20]
+        inc esi
+        cmp esi, eax
+        jl L_loop_006DE770
+    L_none_006DE770:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0x8
+    L_found_006DE770:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret 0x8
+    }
+}
