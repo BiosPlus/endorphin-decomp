@@ -6169,3 +6169,28 @@ extern "C" __declspec(naked) void __fastcall fn_00700F50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00701E20] sub_00701E20 (69 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_00701E20(unsigned int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x5
+        ja loc_701e60
+        jmp dword ptr [4*eax + 0x701e68]
+        mov eax, 0xaa8cec
+        ret 0x4
+        mov eax, 0xaabb38
+        ret 0x4
+        mov eax, 0xaabb2c
+        ret 0x4
+        mov eax, 0xaabb20
+        ret 0x4
+        mov eax, 0xaabb14
+        ret 0x4
+        mov eax, 0xaabafc
+        ret 0x4
+    loc_701e60:
+        xor eax, eax
+        ret 0x4
+    }
+}
