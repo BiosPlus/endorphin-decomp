@@ -26,5 +26,7 @@
     "0x0079D952",
     "0x0079D962"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-19T16:44:52Z"
 }
