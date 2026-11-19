@@ -7182,3 +7182,98 @@ extern "C" __declspec(naked) void* __cdecl fn_0085D0C0(void) {
         ret
     }
 }
+
+// [0x00859E90] sub_00859E90 (208 bytes)
+extern "C" void __cdecl ext_00859730(void* p);
+extern "C" void ext_00859E90();
+extern "C" void ext_0086CCE0();
+extern "C" __declspec(naked) void __cdecl fn_00859E90(void) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push esi
+        call ext_0086CCE0
+        and eax, 0xff
+        add esp, 4
+        dec eax
+        je case_a
+        dec eax
+        je case_b
+        dec eax
+        jne cleanup
+        mov eax, dword ptr [esi + 4]
+        push eax
+        call ext_00859E90
+        mov eax, dword ptr [esi + 8]
+        add esp, 4
+        test eax, eax
+        je skip_store
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [eax + 0xc], ecx
+    skip_store:
+        mov eax, dword ptr [esi + 0xc]
+        test eax, eax
+        je cleanup
+        mov edx, dword ptr [esi + 8]
+        push esi
+        mov dword ptr [eax + 8], edx
+        call ext_00859730
+        add esp, 4
+        pop esi
+        ret
+    case_b:
+        mov eax, dword ptr [esi + 4]
+        push ebp
+        xor ebp, ebp
+        test eax, eax
+        jbe after_loop_b
+        push edi
+        xor edi, edi
+    loop_b:
+        mov eax, dword ptr [esi + 8]
+        add eax, edi
+        test byte ptr [eax + 0xc], 1
+        jne loop_b_next
+        mov ecx, dword ptr [eax + 4]
+        push ecx
+        call ext_00859730
+        add esp, 4
+    loop_b_next:
+        mov eax, dword ptr [esi + 4]
+        inc ebp
+        add edi, 0x10
+        cmp ebp, eax
+        jb loop_b
+        pop edi
+    after_loop_b:
+        mov eax, dword ptr [esi + 8]
+        pop ebp
+        test eax, eax
+        je cleanup
+        push eax
+        call ext_00859730
+        add esp, 4
+        push esi
+        call ext_00859730
+        add esp, 4
+        pop esi
+        ret
+    case_a:
+        mov eax, dword ptr [esi + 0xc]
+        test al, 2
+        jne done
+        test al, 1
+        jne cleanup
+        mov edx, dword ptr [esi + 4]
+        push edx
+        call ext_00859730
+        add esp, 4
+    cleanup:
+        push esi
+        call ext_00859730
+        add esp, 4
+    done:
+        pop esi
+        ret
+    }
+}
