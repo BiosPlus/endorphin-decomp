@@ -109,8 +109,10 @@ extern "C" __declspec(naked) void __fastcall fn_0071B040(void* self, int edx_unu
     }
 }
 extern "C" int mem_00B5EB78;
+extern "C" void ext_006D2250();
+extern "C" void ext_0071F090();
 
-// [0x0071C320] sub_0071C320 (16 bytes)
+extern "C" void ext_0071F090();
 extern "C" void ext_006B9EC0();
 extern "C" __declspec(naked) void __fastcall fn_0071C320(void* self, int edx_unused, int a1) {
     __asm {
@@ -7022,4 +7024,36 @@ extern "C" bool __fastcall fn_007136C0(void* self, int edx_unused, Pair_007136C0
     arr[14].b = 0;
     arr[15].b = 0;
     return true;
+}
+
+// [0x0071E5F0] sub_0071E5F0 (110 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071E5F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x28]
+        call ext_006D2250
+        lea ecx, [esi + 0x40]
+        call ext_006D2250
+        lea ecx, [esi + 0x58]
+        call ext_006D2250
+        lea ecx, [esi + 0x70]
+        call ext_006D2250
+        lea ecx, [esi + 0x88]
+        call ext_006D2250
+        lea ecx, [esi + 0xa0]
+        call ext_006D2250
+        lea ecx, [esi + 0xb8]
+        call ext_006D2250
+        lea ecx, [esi + 0xd0]
+        call ext_006D2250
+        lea ecx, [esi + 0xe8]
+        call ext_006D2250
+        lea ecx, [esi + 0x100]
+        call ext_006D2250
+        mov ecx, esi
+        call ext_0071F090
+        pop esi
+        ret
+    }
 }
