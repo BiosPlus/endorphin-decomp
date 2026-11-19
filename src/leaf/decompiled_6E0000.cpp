@@ -6001,3 +6001,76 @@ L_after_loop:
         ret 0x4
     }
 }
+
+// [0x006E3690] sub_006E3690 (208 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006E3690(void* dst, const void* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0xc]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x10], edx
+        mov edx, dword ptr [ecx + 0x14]
+        mov dword ptr [eax + 0x14], edx
+        mov edx, dword ptr [ecx + 0x18]
+        mov dword ptr [eax + 0x18], edx
+        mov edx, dword ptr [ecx + 0x1c]
+        mov dword ptr [eax + 0x1c], edx
+        mov edx, dword ptr [ecx + 0x20]
+        mov dword ptr [eax + 0x20], edx
+        mov edx, dword ptr [ecx + 0x24]
+        mov dword ptr [eax + 0x24], edx
+        mov edx, dword ptr [ecx + 0x28]
+        mov dword ptr [eax + 0x28], edx
+        mov edx, dword ptr [ecx + 0x2c]
+        mov dword ptr [eax + 0x2c], edx
+        mov edx, dword ptr [ecx + 0x30]
+        mov dword ptr [eax + 0x30], edx
+        mov edx, dword ptr [ecx + 0x34]
+        mov dword ptr [eax + 0x34], edx
+        mov edx, dword ptr [ecx + 0x38]
+        mov dword ptr [eax + 0x38], edx
+        mov edx, dword ptr [ecx + 0x3c]
+        mov dword ptr [eax + 0x3c], edx
+        mov edx, dword ptr [ecx + 0x40]
+        mov dword ptr [eax + 0x40], edx
+        mov edx, dword ptr [ecx + 0x44]
+        mov dword ptr [eax + 0x44], edx
+        mov edx, dword ptr [ecx + 0x48]
+        mov dword ptr [eax + 0x48], edx
+        mov edx, dword ptr [ecx + 0x4c]
+        mov dword ptr [eax + 0x4c], edx
+        mov edx, dword ptr [ecx + 0x50]
+        mov dword ptr [eax + 0x50], edx
+        mov edx, dword ptr [ecx + 0x54]
+        mov dword ptr [eax + 0x54], edx
+        mov edx, dword ptr [ecx + 0x58]
+        mov dword ptr [eax + 0x58], edx
+        mov edx, dword ptr [ecx + 0x5c]
+        mov dword ptr [eax + 0x5c], edx
+        mov edx, dword ptr [ecx + 0x60]
+        mov dword ptr [eax + 0x60], edx
+        mov edx, dword ptr [ecx + 0x64]
+        mov dword ptr [eax + 0x64], edx
+        mov edx, dword ptr [ecx + 0x68]
+        mov dword ptr [eax + 0x68], edx
+        mov edx, dword ptr [ecx + 0x6c]
+        mov dword ptr [eax + 0x6c], edx
+        mov edx, dword ptr [ecx + 0x70]
+        mov dword ptr [eax + 0x70], edx
+        mov edx, dword ptr [ecx + 0x74]
+        mov dword ptr [eax + 0x74], edx
+        mov edx, dword ptr [ecx + 0x78]
+        mov dword ptr [eax + 0x78], edx
+        mov ecx, dword ptr [ecx + 0x7c]
+        mov dword ptr [eax + 0x7c], ecx
+        ret
+    }
+}
