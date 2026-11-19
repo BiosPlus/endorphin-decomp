@@ -7436,3 +7436,51 @@ extern "C" __declspec(naked) unsigned short __fastcall fn_007834C0(void* self, i
         ret 0x8
     }
 }
+
+// [0x007856A0] sub_007856A0 (72 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007856A0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        mov esi, ecx
+        test eax, eax
+        mov bl, 0x1
+        jle short L_exit
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ebp, eax
+L_loop:
+        test bl, bl
+        je short L_path2
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x4]
+        jmp short L_next
+L_path2:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x4]
+        mov bl, al
+L_next:
+        add edi, 0x4
+        dec ebp
+        jne short L_loop
+        pop edi
+        pop ebp
+        mov al, bl
+        pop esi
+        pop ebx
+        ret 0x8
+L_exit:
+        mov al, bl
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
