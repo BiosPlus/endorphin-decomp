@@ -8361,3 +8361,77 @@ extern "C" __declspec(naked) bool __fastcall fn_00711960(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0071CE40] sub_0071CE40 (191 bytes)
+extern "C" void ext_006C9590();
+extern "C" void ext_006C95B0();
+extern "C" void ext_006C95D0();
+extern "C" __declspec(naked) void __fastcall fn_0071CE40(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, 0FFFFFFF8h
+        sub esp, 0x20
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0xc], ecx
+        mov ecx, dword ptr [esi + 0x10]
+        mov dword ptr [esp + 0x8], eax
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [esi + 0x14]
+        mov dword ptr [esp + 0x18], ecx
+        mov ecx, dword ptr [edi + 0xc]
+        push 0xaa8d70
+        mov dword ptr [esp + 0x24], 0x0
+        mov dword ptr [esp + 0x28], 0x3ff00000
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x20], edx
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 0x0
+        push 0x0
+        lea ecx, [esp + 0x10]
+        push 0x0
+        push ecx
+        mov ecx, eax
+        call dword ptr [edx + 0x8c]
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        je SHORT fn_0071CE40_done
+        call ext_006DC460
+        fld qword ptr [esi]
+        mov edi, eax
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_006C9590
+        mov ecx, eax
+        call ext_006CD330
+        fld qword ptr [esi + 0x8]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_006C95B0
+        mov ecx, eax
+        call ext_006CD330
+        fld qword ptr [esi + 0x10]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_006C95D0
+        mov ecx, eax
+        call ext_006CD330
+    fn_0071CE40_done:
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
