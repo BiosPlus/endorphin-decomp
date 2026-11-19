@@ -1720,3 +1720,11 @@ L_00711218:
 extern "C" void __stdcall fn_00712440(int a1, int a2) {
     return;
 }
+
+// [0x00712520] Branchless tiny leaf function (6 bytes) - sub_00712520
+extern "C" __declspec(naked) void fn_00712520() {
+    __asm {
+        mov eax, dword ptr [mem_00B5F220]
+        ret
+    }
+}
