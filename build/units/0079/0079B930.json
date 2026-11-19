@@ -14,5 +14,7 @@
     "0x0079B938",
     "0x0079B940"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:56:43Z"
 }
