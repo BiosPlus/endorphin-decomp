@@ -273,6 +273,7 @@ extern "C" void ext_0048FB10();
 extern "C" void ext_0048FAD0();
 extern "C" void ext_004CE580();
 extern "C" void ext_004D0B10();
+extern "C" void ext_004DDE40();
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -149549,6 +149550,64 @@ extern "C" __declspec(naked) void __fastcall fn_004E0A20(void* self) {
         mov     edx, dword ptr [esp + 0x48]
         mov     eax, dword ptr [ecx]
         mov     eax, dword ptr [eax + 0xb4]
+        push    edx
+        push    esi
+        call    eax
+        mov     ecx, dword ptr [esp + 0x34]
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x3c
+        ret     0x8
+    L_throw:
+        lea     ecx, [esp + 0xc]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
+
+// [0x004E1100] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_43 (170 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E1100(void* self) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -1
+        push    offset mem_008A5428
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x30
+        push    esi
+        mov     esi, dword ptr [esp + 0x44]
+        mov     ecx, dword ptr [esi]
+        test    ecx, ecx
+        je      L_throw
+        call    ext_004DDE40
+        fstp    dword ptr [esp + 0x44]
+        fld     dword ptr [esp + 0x44]
+        push    ecx
+        lea     ecx, [esp + 0x8]
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        lea     eax, [esp + 0x4]
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x40], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 0x8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x3c], 0xffffffff
+        je      L_skip
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    edx
+    L_skip:
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [esp + 0x48]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0xac]
         push    edx
         push    esi
         call    eax
