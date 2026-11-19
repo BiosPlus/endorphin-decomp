@@ -4697,3 +4697,17 @@ extern "C" __declspec(naked) void __cdecl fn_006E9D00(void) {
         ret
     }
 }
+
+// [0x006E64B0] sub_006E64B0 (46 bytes)
+extern "C" int mem_00B5DDF0;
+extern "C" int mem_00B5DDF8;
+extern "C" int mem_00B5DE00;
+extern "C" int mem_00B5DE08;
+
+extern "C" void __cdecl fn_006E64B0() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B5DDF0 = -*p;
+    *(double*)&mem_00B5DDF8 = -*p;
+    *(double*)&mem_00B5DE00 = -*p;
+    *(double*)&mem_00B5DE08 = -*p;
+}
