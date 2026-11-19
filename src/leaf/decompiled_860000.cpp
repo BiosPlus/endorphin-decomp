@@ -8424,3 +8424,93 @@ extern "C" __declspec(naked) void __cdecl fn_00868510(void) {
         ret
     }
 }
+
+// [0x0086C210] sub_0086C210 (189 bytes)
+extern "C" void ext_0086B200();
+extern "C" void ext_0086F050();
+
+extern "C" __declspec(naked) void __cdecl fn_0086C210(void) {
+    __asm {
+        sub esp, 0x28
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x38]
+        push edi
+        cmp esi, 0x14
+        jle clamp_done
+        mov esi, 0x14
+    clamp_done:
+        xor eax, eax
+        xor ecx, ecx
+    zero_loop:
+        movsx edx, ax
+        inc ax
+        mov dword ptr [esp + 4*edx + 0x20], ecx
+        cmp ax, 0x5
+        jl zero_loop
+        xor dx, dx
+        test esi, esi
+        jle pack_done
+        mov ecx, dword ptr [esp + 0x38]
+    pack_loop:
+        movsx edi, dx
+        inc dx
+        mov eax, edi
+        shr eax, 0x2
+        movsx eax, ax
+        lea ebx, [esp + 4*eax + 0x20]
+        xor eax, eax
+        mov al, byte ptr [edi + ecx]
+        mov edi, dword ptr [ebx]
+        shl eax, 0x18
+        shr edi, 0x8
+        or eax, edi
+        mov dword ptr [ebx], eax
+        movsx ebx, dx
+        cmp ebx, esi
+        jl pack_loop
+    pack_done:
+        lea eax, [esp + 0xc]
+        xor esi, esi
+        push eax
+        call ext_0086B200
+        xor dx, dx
+        add esp, 0x4
+    copy_loop:
+        movsx edi, si
+        inc dx
+        lea eax, [esp + 0x30]
+        _emit 0x8d
+        _emit 0x0c
+        _emit 0xbd
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        shl edi, 0x2
+        sub eax, ecx
+        lea ecx, [esp + 0x1c]
+        mov ebx, dword ptr [eax]
+        sub ecx, edi
+        cmp dx, 0x4
+        mov dword ptr [ecx], ebx
+        jg copy_done
+        inc si
+        movsx eax, si
+        cmp eax, 0x5
+        jb copy_loop
+    copy_done:
+        mov eax, dword ptr [esp + 0x40]
+        lea ecx, [esp + 0xc]
+        and dword ptr [esp + 0xc], 0x3fffffff
+        push eax
+        push ecx
+        call ext_0086F050
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x28
+        ret
+    }
+}
