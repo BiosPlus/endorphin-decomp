@@ -491,3 +491,15 @@ extern "C" __declspec(naked) void fn_0072DB80() {
         ret
     }
 }
+
+// [0x0072DC50] Tiny indirect/IAT call leaf (15 bytes) - sub_0072DC50
+extern "C" __declspec(naked) void fn_0072DC50() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x04 // mov edx, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push edx
+        push 0x0
+        call dword ptr [eax + 0x1c]
+        ret 0x4
+    }
+}
