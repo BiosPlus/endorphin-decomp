@@ -79,6 +79,7 @@ extern "C" __declspec(naked) void __cdecl fn_0085D510(void) {
         ret
     }
 }
+extern "C" int mem_00924214;
 
 // [0x0085BEA0] sub_0085BEA0 (32 bytes)
 extern "C" void __cdecl ext_00859730(void* p);
@@ -4695,4 +4696,16 @@ extern "C" __declspec(naked) void __cdecl fn_00852860(void) {
 // [0x008570B0] sub_008570B0 (18 bytes)
 extern "C" void __cdecl fn_008570B0(void* a1) {
     ((void (__cdecl*)(void*, int, int))ext_008692F0)(a1, 0, 0x28);
+}
+
+// [0x0085D560] sub_0085D560 (16 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085D560(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        push 0
+        call dword ptr [mem_00924214]
+        ret
+        mov edi, edi
+    }
 }
