@@ -13,5 +13,7 @@
     "0x007BBF94",
     "0x007BBF9A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-19T16:33:30Z"
 }
