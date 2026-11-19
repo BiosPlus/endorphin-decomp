@@ -5299,3 +5299,59 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_00858A80(void) {
         ret
     }
 }
+
+// [0x00858AF0] sub_00858AF0 (105 bytes)
+extern "C" void ext_00853840();
+extern "C" __declspec(naked) void __cdecl fn_00858AF0(void) {
+    __asm {
+        sub esp, 0x14
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        push edi
+        push eax
+        call ext_00853840
+        add esp, 8
+        xor esi, esi
+        xor eax, eax
+        xor ecx, ecx
+    loop1:
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [esp + eax + 0xc]
+        mov bl, byte ptr [edx + edi + 0x5c]
+        and ebx, 0x80000003
+        jns skip
+        dec ebx
+        or ebx, -4
+        inc ebx
+    skip:
+        shl ebx, cl
+        add ecx, 2
+        or esi, ebx
+        inc eax
+        cmp ecx, 0x20
+        jl loop1
+        mov dword ptr [esp + 0x24], esi
+        xor eax, eax
+    loop2:
+        mov cl, byte ptr [esp + eax + 0x1c]
+        mov bl, byte ptr [esp + eax + 0x24]
+        xor bl, cl
+        mov byte ptr [esp + eax + 0x24], bl
+        inc eax
+        cmp eax, 4
+        jb loop2
+        mov eax, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
