@@ -5357,3 +5357,29 @@ extern "C" __declspec(naked) void __stdcall fn_0070FE80() {
         ret 0x1c
     }
 }
+
+// [0x00706CD0] sub_00706CD0 (45 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00706CD0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx]
+        add eax, edx
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je done
+        mov edx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        pop esi
+        jne done
+        mov eax, dword ptr [eax + 0x4]
+        ret 0x4
+    done:
+        xor eax, eax
+        ret 0x4
+    }
+}
