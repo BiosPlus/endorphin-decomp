@@ -17061,3 +17061,101 @@ fn00479620_throw:
         call ext_006A6DD2
     }
 }
+
+// [0x00475160] sub_00475160 (221 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_00472870();
+extern "C" void ext_005C35E0();
+extern "C" void ext_00672D10();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00475160(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x883160
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 8]
+        mov eax, dword ptr [ebx + 4]
+        push esi
+        push edi
+        mov edi, ecx
+        xor ecx, ecx
+        cmp eax, ecx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x18], edi
+        jne L_has_data
+        xor esi, esi
+        jmp L_check_esi
+    L_has_data:
+        mov esi, dword ptr [ebx + 8]
+        sub esi, eax
+        sar esi, 5
+    L_check_esi:
+        cmp esi, ecx
+        mov dword ptr [edi + 4], ecx
+        mov dword ptr [edi + 8], ecx
+        mov dword ptr [edi + 0xc], ecx
+        je L_done_alloc
+        cmp esi, 0x7ffffff
+        jbe L_size_ok
+        call ext_00405FB0
+    L_size_ok:
+        push ecx
+        push esi
+        call ext_005C35E0
+        shl esi, 5
+        add esi, eax
+        mov dword ptr [edi + 4], eax
+        mov dword ptr [edi + 8], eax
+        mov dword ptr [edi + 0xc], esi
+        mov eax, dword ptr [ebx + 8]
+        add esp, 8
+        cmp dword ptr [ebx + 4], eax
+        mov dword ptr [ebp - 4], 0
+        mov dword ptr [ebp - 0x14], eax
+        jbe L_check_first
+        call dword ptr [mem_00925134]
+    L_check_first:
+        mov esi, dword ptr [ebx + 4]
+        cmp esi, dword ptr [ebx + 8]
+        jbe L_check_second
+        call dword ptr [mem_00925134]
+    L_check_second:
+        mov eax, dword ptr [edi + 4]
+        mov byte ptr [ebp + 8], 0
+        mov ecx, dword ptr [ebp + 8]
+        mov edx, dword ptr [ebp + 8]
+        push ecx
+        push edx
+        push edi
+        push eax
+        mov eax, dword ptr [ebp - 0x14]
+        push eax
+        push esi
+        call ext_00472870
+        add esp, 0x18
+        mov dword ptr [edi + 8], eax
+    L_done_alloc:
+        mov ecx, dword ptr [ebp - 0xc]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+        mov ecx, dword ptr [ebp - 0x18]
+        call ext_00672D10
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
