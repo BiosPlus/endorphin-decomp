@@ -10115,3 +10115,19 @@ extern "C" __declspec(naked) int __cdecl fn_007BDC20(char* self, char* buf, int 
         ret
     }
 }
+
+// [0x007BF340] sub_007BF340 (66 bytes)
+extern "C" void ext_007BF430();
+extern "C" void ext_007BF390();
+extern "C" void ext_007BF4A0();
+
+extern "C" int __cdecl fn_007BF340(char* self) {
+    *(void**)(self + 0x1a0) = (void*)ext_007BF430;
+    *(void**)(self + 0x1a8) = (void*)ext_007BF430;
+    *(void**)(self + 0x1b0) = (void*)ext_007BF430;
+    *(void**)(self + 0x1a4) = (void*)ext_007BF390;
+    *(void**)(self + 0x1ac) = (void*)ext_007BF390;
+    *(void**)(self + 0x1b4) = (void*)ext_007BF390;
+    *(void**)(self + 0x1bc) = (void*)ext_007BF4A0;
+    return 1;
+}
