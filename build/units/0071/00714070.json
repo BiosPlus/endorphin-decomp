@@ -13,5 +13,7 @@
     "0x00714071",
     "0x00714076"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
