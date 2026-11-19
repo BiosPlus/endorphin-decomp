@@ -12,5 +12,7 @@
     "0x007AA6C0",
     "0x007AA6CA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:05:19Z"
 }
