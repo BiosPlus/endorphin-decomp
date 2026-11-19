@@ -4777,3 +4777,25 @@ extern "C" __declspec(naked) void __cdecl fn_0085DA40(void) {
         _emit 0x00
     }
 }
+
+// [0x008573F0] sub_008573F0 (35 bytes)
+extern "C" int mem_00AB86EC;
+extern "C" __declspec(naked) int __cdecl fn_008573F0(void) {
+    __asm {
+        mov eax, dword ptr [mem_00AB86EC]
+        test eax, eax
+        je fail
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 8]
+        push ecx
+        mov ecx, dword ptr [esp + 8]
+        push edx
+        push ecx
+        call dword ptr [eax + 4]
+        add esp, 0xc
+        ret
+    fail:
+        or eax, -1
+        ret
+    }
+}
