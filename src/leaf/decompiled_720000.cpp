@@ -6284,3 +6284,86 @@ extern "C" void __cdecl fn_0072B630() {
     mem_00B60278 = -*h;
     mem_00B60280 = -*h;
 }
+
+// [0x0072BE10] sub_0072BE10 (176 bytes)
+extern "C" int __fastcall ext_006BC730(void* self, int edx_unused);
+extern "C" void* __fastcall ext_006BC740(void* self, int edx_unused, int idx);
+extern "C" unsigned char __fastcall ext_0072BEC0(void* self, int edx_unused, int a1, int a2, int a3);
+
+extern "C" __declspec(naked) int __fastcall fn_0072BE10(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, ecx
+        push esi
+        push edi
+        cmp byte ptr [ebp + 0x14c], 0x62
+        jne short L_final
+        mov eax, dword ptr [ebp + 0xb4]
+        xor ebx, ebx
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        jle short L_final
+    L_outer:
+        mov eax, dword ptr [eax + 0x14]
+        xor edi, edi
+        mov esi, dword ptr [eax + ebx*4]
+        mov ecx, esi
+        call ext_006BC730
+        test eax, eax
+        jle short L_next
+    L_inner:
+        push edi
+        mov ecx, esi
+        call ext_006BC740
+        cmp eax, ebp
+        je short L_skip
+        cmp byte ptr [eax + 0x14c], 0x62
+        jne short L_skip
+        mov edx, dword ptr [esp + 0x1c]
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_0072BEC0
+        test al, al
+        je short L_retfalse
+    L_skip:
+        mov ecx, esi
+        inc edi
+        call ext_006BC730
+        cmp edi, eax
+        jl short L_inner
+    L_next:
+        mov eax, dword ptr [ebp + 0xb4]
+        inc ebx
+        cmp ebx, dword ptr [eax + 0x4]
+        jl short L_outer
+    L_final:
+        mov edx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        push edx
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_0072BEC0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0xc
+    L_retfalse:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        pop ecx
+        ret 0xc
+    }
+}
