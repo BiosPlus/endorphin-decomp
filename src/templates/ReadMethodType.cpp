@@ -172013,3 +172013,25 @@ extern "C" __declspec(naked) void __cdecl fn_005132C0(void* a1) {
         call ext_0046C4E0
     }
 }
+
+// [0x004BCCA0] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_5 (55 bytes)
+extern "C" void ext_004BC770();
+extern "C" __declspec(naked) void __cdecl fn_004BCCA0(void) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 4]
+        push eax
+        call ext_004BC770
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call ext_0046C4E0
+    }
+}
