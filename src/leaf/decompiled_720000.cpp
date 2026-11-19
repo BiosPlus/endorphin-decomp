@@ -6015,3 +6015,59 @@ extern "C" __declspec(naked) void* __fastcall fn_0072BA60(void* self, int edx_un
         ret     0x4
     }
 }
+
+// [0x00720260] sub_00720260 (119 bytes)
+extern "C" void ext_0071FCC0();
+extern "C" void ext_0071FD10();
+extern "C" void ext_0071FD60();
+extern "C" void ext_00720170();
+extern "C" __declspec(naked) void __cdecl fn_00720260() {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x54]
+        cmp ecx, 0x4
+        ja short L_ret
+        jmp dword ptr [ecx * 4 + 0x7202d8]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        push ecx
+        push eax
+        call ext_0071FCC0
+        add esp, 0x10
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        push eax
+        call ext_0071FD10
+        add esp, 0x10
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        push ecx
+        push eax
+        call ext_0071FD60
+        add esp, 0x10
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        push eax
+        call ext_00720170
+        add esp, 0x10
+    L_ret:
+        ret
+    }
+}
