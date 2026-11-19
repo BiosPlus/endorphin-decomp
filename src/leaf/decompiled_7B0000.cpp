@@ -10563,3 +10563,37 @@ extern "C" __declspec(naked) void __cdecl fn_007BC400(void* p1, void* p2, int co
         ret
     }
 }
+
+// [0x007BFCF0] sub_007BFCF0 (77 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BFCF0(char* a, int b, unsigned short* c) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp edx, 0x13d
+        push esi
+        mov ecx, dword ptr [eax + 0x1cc]
+        je L_7BFD16
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        push edx
+        push eax
+        call dword ptr [ecx + 0x20]
+        add esp, 0xc
+        pop esi
+        ret
+    L_7BFD16:
+        mov esi, dword ptr [esp + 0x10]
+        xor edx, edx
+        mov dx, word ptr [esi]
+        pop esi
+        mov dword ptr [ecx], edx
+        mov edx, dword ptr [eax + 0x1c]
+        mov ecx, dword ptr [eax + 0xc]
+        or edx, 0x80000000
+        or ecx, 0x8
+        mov dword ptr [eax + 0x1c], edx
+        mov dword ptr [eax + 0xc], ecx
+        mov eax, 0x1
+        ret
+    }
+}
