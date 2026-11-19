@@ -6630,3 +6630,46 @@ extern "C" __declspec(naked) void __fastcall fn_00701D00(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00704B30] sub_00704B30 (85 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00704B30(unsigned int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x7
+        ja t704b30_default
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0x88
+        _emit 0x4b
+        _emit 0x70
+        _emit 0x00
+    t704b30_c0:
+        mov eax, 0xaab920
+        ret 0x4
+    t704b30_c1:
+        mov eax, 0xaabcf8
+        ret 0x4
+    t704b30_c2:
+        mov eax, 0xaabce8
+        ret 0x4
+    t704b30_c3:
+        mov eax, 0xaabcd8
+        ret 0x4
+    t704b30_c4:
+        mov eax, 0xaabcc8
+        ret 0x4
+    t704b30_c5:
+        mov eax, 0xaabcb8
+        ret 0x4
+    t704b30_c6:
+        mov eax, 0xaabca4
+        ret 0x4
+    t704b30_c7:
+        mov eax, 0xaabc90
+        ret 0x4
+    t704b30_default:
+        xor eax, eax
+        ret 0x4
+    }
+}
