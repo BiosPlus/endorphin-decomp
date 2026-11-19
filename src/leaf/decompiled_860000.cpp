@@ -73,8 +73,10 @@ extern "C" __declspec(naked) int __cdecl fn_00867360(const char* s) {
 extern "C" int mem_00AC4A94;
 extern "C" void __cdecl fn_0086F000(int* ptr);
 extern "C" void ext_00864790();
+extern "C" void ext_00869310();
+extern "C" void ext_00869530();
 
-// [0x0086B1C0] sub_0086B1C0 (58 bytes)
+extern "C" void ext_00869530();
 extern "C" __declspec(naked) void __cdecl fn_0086B1C0(void* self) {
     __asm {
         push ebx
@@ -8271,6 +8273,84 @@ extern "C" __declspec(naked) void __cdecl fn_0086CEE0(void) {
         pop edi
         pop esi
         add esp, 8
+        ret
+    }
+}
+
+// [0x008693B0] sub_008693B0 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_008693B0(void* self, const unsigned char* src, unsigned int count) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, ecx
+        lea edx, [8*edi]
+        shr eax, 0x3
+        lea ecx, [ecx + 8*edi]
+        and eax, 0x3f
+        cmp ecx, edx
+        mov dword ptr [esi + 0x10], ecx
+        jae skip_carry
+        inc dword ptr [esi + 0x14]
+    skip_carry:
+        mov ebx, dword ptr [esi + 0x14]
+        mov ecx, edi
+        shr ecx, 0x1d
+        add ebx, ecx
+        mov dword ptr [esi + 0x14], ebx
+        mov ebx, 0x40
+        sub ebx, eax
+        cmp edi, ebx
+        jb partial
+        mov edx, dword ptr [esp + 0x18]
+        push ebx
+        lea eax, [eax + esi + 0x18]
+        push edx
+        push eax
+        call ext_00869310
+        lea ecx, [esi + 0x18]
+        push ecx
+        push esi
+        call ext_00869530
+        mov ebp, ebx
+        add ebx, 0x3f
+        add esp, 0x14
+        cmp ebx, edi
+        jae blocks_done
+    block_loop:
+        mov edx, dword ptr [esp + 0x18]
+        lea eax, [edx + ebx - 0x3f]
+        push eax
+        push esi
+        call ext_00869530
+        add ebx, 0x40
+        add esp, 0x8
+        add ebp, 0x40
+        cmp ebx, edi
+        jb block_loop
+    blocks_done:
+        xor eax, eax
+        jmp tail
+    partial:
+        xor ebp, ebp
+    tail:
+        mov ecx, dword ptr [esp + 0x18]
+        sub edi, ebp
+        add ebp, ecx
+        push edi
+        lea edx, [eax + esi + 0x18]
+        push ebp
+        push edx
+        call ext_00869310
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
         ret
     }
 }
