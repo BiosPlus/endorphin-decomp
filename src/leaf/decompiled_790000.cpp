@@ -6298,3 +6298,10 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_00790E80(void* self) {
         ret
     }
 }
+
+// [0x00798650] sub_00798650 (24 bytes)
+extern "C" void __cdecl ext_007AF010(int, int);
+
+extern "C" void __cdecl fn_00798650(int a1, int a2, int a3) {
+    ext_007AF010(a2, a3 / 2);
+}
