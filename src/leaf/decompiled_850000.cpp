@@ -5701,3 +5701,62 @@ extern "C" __declspec(naked) unsigned short __cdecl fn_0085F9D0(unsigned char ke
         ret
     }
 }
+
+// [0x00857350] sub_00857350 (119 bytes)
+extern "C" void ext_00818AE9();
+extern "C" void ext_0083B5FC();
+extern "C" void ext_00869380();
+extern "C" void ext_008693B0();
+extern "C" void ext_00869460();
+extern "C" __declspec(naked) void __cdecl fn_00857350(void* self) {
+    __asm {
+        sub esp, 0x58
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x64]
+        push esi
+        mov ebx, 0fffffffch
+        push edi
+        lea esi, [ebp + 4]
+        lea edi, [ebp + 0x13]
+        sub ebx, ebp
+    loop_top:
+        call ext_00818AE9
+        mov cl, byte ptr [esi]
+        push 0
+        xor cl, al
+        mov byte ptr [esi], cl
+        call ext_0083B5FC
+        mov cl, byte ptr [edi]
+        add esp, 4
+        xor cl, al
+        inc esi
+        mov byte ptr [edi], cl
+        dec edi
+        lea eax, [ebx + esi]
+        cmp eax, 10h
+        jb loop_top
+        lea ecx, [esp + 10h]
+        push ecx
+        call ext_00869380
+        lea eax, [ebp + 4]
+        push 10h
+        lea edx, [esp + 18h]
+        push eax
+        push edx
+        call ext_008693B0
+        lea eax, [esp + 20h]
+        lea ecx, [ebp + 18h]
+        push eax
+        push ecx
+        call ext_00869460
+        add esp, 18h
+        mov dword ptr [ebp + 14h], 10h
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 58h
+        ret
+    }
+}
