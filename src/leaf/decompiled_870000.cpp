@@ -2178,3 +2178,93 @@ extern "C" __declspec(naked) void __fastcall fn_00871980(void* self) {
         call ext_00870E40
     }
 }
+
+// [0x00871D20] sub_00871D20 (223 bytes)
+extern "C" void ext_0063FEE0();
+extern "C" void ext_00640040();
+extern "C" void ext_006A5C62();
+extern "C" void ext_00870E40();
+extern "C" void ext_00871090();
+extern "C" void ext_00871130();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00871D20(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c20ec
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x20
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        push 0x26
+        mov ecx, edi
+        call ext_00871090
+        test al, al
+        jne L_has_arg
+        xor eax, eax
+        pop edi
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret
+    L_has_arg:
+        push esi
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE8]
+        lea eax, [esp + 0xc]
+        xor esi, esi
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x34], esi
+        call ext_00871130
+        test al, al
+        je L_fail
+        push 0x3b
+        mov ecx, edi
+        call ext_00871090
+        test al, al
+        je L_fail
+        push 0x28
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x8], eax
+        cmp eax, esi
+        mov byte ptr [esp + 0x30], 0x1
+        je L_skip_ctor
+        mov edx, dword ptr [esp + 0x3c]
+        lea ecx, [esp + 0xc]
+        push ecx
+        push edx
+        mov ecx, eax
+        call ext_00640040
+        mov esi, eax
+    L_skip_ctor:
+        mov dword ptr [esp + 0x8], esi
+        mov ecx, esi
+        mov byte ptr [esp + 0x30], 0x2
+        call ext_0063FEE0
+        test al, al
+        jne L_after_fail
+        push 0x9
+        mov ecx, edi
+        call ext_00870E40
+    L_after_fail:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        pop esi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret
+    L_fail:
+        push 0x6
+        mov ecx, edi
+        call ext_00870E40
+    }
+}
