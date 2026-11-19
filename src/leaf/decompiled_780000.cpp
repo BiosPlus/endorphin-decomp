@@ -10252,3 +10252,108 @@ extern "C" __declspec(naked) void __fastcall fn_0078D330(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0078D5C0] sub_0078D5C0 (240 bytes)
+extern "C" void ext_0078D4B0();
+extern "C" void ext_0078D4C0();
+extern "C" void ext_0078D4E0();
+extern "C" void ext_0078D510();
+extern "C" void ext_0078D550();
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) void __fastcall fn_0078D5C0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x1c
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        xor eax, eax
+        test esi, esi
+        push edi
+        mov edi, ecx
+        sete al
+        push esi
+        mov dword ptr [esp + 0x18], eax
+        call ext_0078D4B0
+        xor ebx, ebx
+        mov dword ptr [esp + 0x1c], eax
+        test eax, eax
+        jle L_end
+    L_outer:
+        mov ecx, dword ptr [ebp + 0xc]
+        push ecx
+        push ebx
+        push esi
+        mov ecx, edi
+        call ext_0078D550
+        fstp qword ptr [esp + 0x20]
+        push ebx
+        push esi
+        mov ecx, edi
+        call ext_0078D4C0
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x10], 0x0
+        jle L_outer_next
+    L_inner:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, edi
+        push edx
+        push ebx
+        push esi
+        call ext_0078D4E0
+        mov ecx, dword ptr [esp + 0x14]
+        mov esi, eax
+        push ebx
+        mov eax, dword ptr [esi]
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_0078D510
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push eax
+        mov ecx, edi
+        call ext_0078D4E0
+        fld qword ptr [mem_0092A278]
+        fld qword ptr [esp + 0x20]
+        fcomp qword ptr [mem_0092A278]
+        mov ecx, eax
+        fnstsw ax
+        test ah, 0x40
+        jne L_store
+        mov al, byte ptr [ebp + 0xc]
+        fstp st(0)
+        fld qword ptr [esi + 0x8]
+        fdiv qword ptr [esp + 0x20]
+        test al, al
+        je L_store
+        fabs
+    L_store:
+        fst qword ptr [esi + 0x8]
+        mov eax, dword ptr [esp + 0x10]
+        mov esi, dword ptr [ebp + 0x8]
+        fstp qword ptr [ecx + 0x8]
+        mov ecx, dword ptr [esp + 0x18]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp + 0x10], eax
+        jl L_inner
+    L_outer_next:
+        mov eax, dword ptr [esp + 0x1c]
+        inc ebx
+        cmp ebx, eax
+        jl L_outer
+    L_end:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
