@@ -1304,3 +1304,8 @@ extern "C" __declspec(naked) void fn_006C03F0() {
         ret 0x8
     }
 }
+
+// [0x006C0410] Return -1 (4 bytes) - sub_006C0410
+extern "C" int __cdecl fn_006C0410(void) {
+    return -1;
+}
