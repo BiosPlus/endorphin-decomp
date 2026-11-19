@@ -357,3 +357,8 @@ extern "C" __declspec(naked) void fn_007835F0() {
         ret
     }
 }
+
+// [0x00783600] Subobject address getter (4 bytes) - sub_00783600
+extern "C" void* __fastcall fn_00783600(void* self) {
+    return reinterpret_cast<char*>(self) + 0xc;
+}
