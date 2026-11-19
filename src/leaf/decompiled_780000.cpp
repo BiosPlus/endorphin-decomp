@@ -7297,3 +7297,34 @@ L_fail:
         ret 0x8
     }
 }
+
+// [0x007847E0] sub_007847E0 (57 bytes)
+extern "C" int mem_0092529C;
+extern "C" __declspec(naked) void* __fastcall fn_007847E0(void* self, int edx_unused, int key) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [esp + 0xc]
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        jle L_ret_null
+        mov ecx, dword ptr [ecx]
+        push 0x784790
+        push 0x8
+        push eax
+        lea edx, [esp + 0xc]
+        push ecx
+        push edx
+        call dword ptr [mem_0092529C]
+        add esp, 0x14
+        add esp, 0x8
+        ret 0x4
+    L_ret_null:
+        xor eax, eax
+        add esp, 0x8
+        ret 0x4
+    }
+}
