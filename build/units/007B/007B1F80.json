@@ -13,5 +13,7 @@
     "0x007B1F81",
     "0x007B1F86"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:53:56Z"
 }
