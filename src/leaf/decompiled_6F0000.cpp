@@ -9350,3 +9350,16 @@ extern "C" __declspec(naked) void __fastcall fn_006F0560(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006FD0E0] sub_006FD0E0 (36 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B5E468;
+extern "C" int mem_00B5E470;
+extern "C" int mem_00B5E478;
+
+extern "C" void __cdecl fn_006FD0E0() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B5E468 = -*p;
+    *(double*)&mem_00B5E470 = -*p;
+    *(double*)&mem_00B5E478 = -*p;
+}
