@@ -32,11 +32,12 @@ func acquire() (*os.File, error) {
 	}
 	deadline := time.Now().Add(Timeout)
 	for {
-		err = syscall.Flock(int(f.Fd()), syscall.LOCK_EX|syscall.LOCK_NB)
-		if err == nil {
+		busy, lerr := tryLock(f)
+		if lerr == nil {
 			break
 		}
-		if err != syscall.EWOULDBLOCK && err != syscall.EINTR {
+		if !busy {
+			err = lerr
 			f.Close()
 			return nil, fmt.Errorf("flock %s failed: %v", Path, err)
 		}
@@ -54,7 +55,7 @@ func acquire() (*os.File, error) {
 }
 
 func releaseFile(f *os.File) {
-	_ = syscall.Flock(int(f.Fd()), syscall.LOCK_UN)
+	unlock(f)
 	_ = f.Close()
 }
 
