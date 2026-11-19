@@ -10131,3 +10131,44 @@ extern "C" int __cdecl fn_007BF340(char* self) {
     *(void**)(self + 0x1bc) = (void*)ext_007BF4A0;
     return 1;
 }
+
+// [0x007BF9C0] sub_007BF9C0 (66 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BF9C0(void* a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push eax
+        push ebx
+        mov edi, dword ptr [esi + 0x1cc]
+        push ebp
+        push esi
+        call dword ptr [edi + 0x10]
+        add esp, 0x10
+        test eax, eax
+        je L_7bf9fb
+        push ebx
+        push ebp
+        push esi
+        call dword ptr [edi + 0xc]
+        add esp, 0xc
+        mov eax, 0x1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_7bf9fb:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
