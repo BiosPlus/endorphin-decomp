@@ -8921,3 +8921,72 @@ extern "C" __declspec(naked) void* __fastcall fn_007177C0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0071A880] sub_0071A880 (196 bytes)
+// __thiscall, one stack arg (ret 4). Builds the object at self: base init with arg,
+// five sub-object inits (EH states 0..4), vtable store, heap alloc + init (state 5/6),
+// stores the result at self->[0xC], then calls sub_0071AA20(self). Returns self.
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B9D10();
+extern "C" void ext_006D2370();
+extern "C" void ext_00718620();
+extern "C" void ext_0071AA20();
+extern "C" void ext_0077F9E0();
+extern "C" void ext_0077FB40();
+
+extern "C" __declspec(naked) void* __fastcall fn_0071A880(void* self, int edx_unused, int a1) {
+    __asm {
+        push -0x1
+        push 0x8bd360
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x8], esi
+        call ext_0077F9E0
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_006D2370
+        lea ecx, [esi + 0x30]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_006D2370
+        lea ecx, [esi + 0x50]
+        mov byte ptr [esp + 0x10], 0x2
+        call ext_006B9D10
+        lea ecx, [esi + 0x9c]
+        mov byte ptr [esp + 0x10], 0x3
+        call ext_006B9D10
+        lea ecx, [esi + 0xf0]
+        mov byte ptr [esp + 0x10], 0x4
+        call ext_0077FB40
+        push 0x1d20
+        mov byte ptr [esp + 0x14], 0x5
+        mov dword ptr [esi], 0x996604
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov byte ptr [esp + 0x10], 0x6
+        je short l_null
+        mov ecx, eax
+        call ext_00718620
+        jmp short l_store
+    l_null:
+        xor eax, eax
+    l_store:
+        mov ecx, esi
+        mov byte ptr [esp + 0x10], 0x5
+        mov dword ptr [esi + 0xc], eax
+        call ext_0071AA20
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
