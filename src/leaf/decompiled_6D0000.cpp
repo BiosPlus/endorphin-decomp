@@ -7769,3 +7769,24 @@ extern "C" void __cdecl fn_006DBF40(void) {
     *(double*)&mem_00B5DAC0 = -*(double*)mem_00925284;
     *(double*)&mem_00B5DAC8 = -*(double*)mem_00925284;
 }
+
+// [0x006D75C0] sub_006D75C0 (36 bytes)
+extern "C" int mem_00B5D7A0;
+extern "C" int mem_00B5D7A8;
+extern "C" int mem_00B5D7B0;
+
+extern "C" __declspec(naked) void __cdecl fn_006D75C0() {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D7A0]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D7A8]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D7B0]
+        ret
+    }
+}
