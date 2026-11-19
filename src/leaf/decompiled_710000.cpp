@@ -5968,3 +5968,16 @@ extern "C" void __cdecl fn_0071DB70() {
     mem_00B5FE2C = 0xb5eb50;
     mem_00B5FE34 = 0;
 }
+
+// [0x00711170] sub_00711170 (41 bytes)
+extern "C" int mem_00B5F200;
+extern "C" int mem_00B5F208;
+extern "C" int mem_00B5F204;
+extern "C" int mem_00B5F20C;
+
+extern "C" void __cdecl fn_00711170() {
+    mem_00B5F200 = 0xb5f1f8;
+    mem_00B5F208 = 0xaabf88;
+    mem_00B5F204 = 0xb5e3f0;
+    mem_00B5F20C = 0;
+}
