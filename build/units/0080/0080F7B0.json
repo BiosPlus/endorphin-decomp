@@ -13,5 +13,7 @@
     "0x0080F7D0",
     "0x0080F7DC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-19T15:13:24Z"
 }

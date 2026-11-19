@@ -9425,3 +9425,30 @@ extern "C" __declspec(naked) void __fastcall fn_0080F770(void* self) {
         ret
     }
 }
+
+// [0x0080F7B0] sub_0080F7B0 (52 bytes)
+extern "C" void ext_0080DC60();
+extern "C" __declspec(naked) void __fastcall fn_0080F7B0(void* self) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x10]
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        push 0
+        mov dword ptr [esp + 0xc], ecx
+        push eax
+        push 0x80f720
+        lea ecx, [esp + 0x10]
+        push 0
+        push ecx
+        call ext_0080DC60
+        add esp, 0x20
+        ret
+    }
+}
