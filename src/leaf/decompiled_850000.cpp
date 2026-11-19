@@ -4825,3 +4825,22 @@ extern "C" __declspec(naked) void __cdecl fn_0085D530(void) {
         ret
     }
 }
+
+// [0x00856F00] sub_00856F00 (38 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00856F00(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0x10
+        push 0x0
+        lea eax, [esi + 0x4]
+        push eax
+        call ext_008692F0
+        add esp, 0xc
+        mov dword ptr [esi + 0x14], 0x0
+        mov dword ptr [esi], 0x100
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
