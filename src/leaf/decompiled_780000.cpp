@@ -7484,3 +7484,39 @@ L_exit:
         ret 0x8
     }
 }
+
+// [0x0078BF70] sub_0078BF70 (84 bytes)
+extern "C" int mem_009252B8;
+extern "C" void ext_006A7270();
+extern "C" __declspec(naked) void __fastcall fn_0078BF70(void* self) {
+    __asm {
+        mov eax, 0x4000
+        call ext_006A7270
+        mov ecx, dword ptr [esp + 0x4008]
+        push esi
+        lea eax, [esp + 0x4010]
+        push edi
+        push eax
+        lea edx, [esp + 0xc]
+        push ecx
+        push edx
+        call dword ptr [mem_009252B8]
+        lea edi, [esp + 0x14]
+        or ecx, -1
+        xor eax, eax
+        add esp, 0xc
+        mov edx, dword ptr [esp + 0x400c]
+        repne scasb
+        mov esi, dword ptr [edx]
+        lea eax, [esp + 0x8]
+        not ecx
+        push ecx
+        push eax
+        mov ecx, edx
+        call dword ptr [esi + 0x1c]
+        pop edi
+        pop esi
+        add esp, 0x4000
+        ret
+    }
+}
