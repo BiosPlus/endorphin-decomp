@@ -12624,3 +12624,93 @@ L_7B93C3:
         ret
     }
 }
+
+// [0x007B32C0] sub_007B32C0 (192 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2480();
+extern "C" int mem_00999700;
+extern "C" int mem_009251D8;
+extern "C" __declspec(naked) void __cdecl fn_007B32C0(int** pp, int value) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+    L_32C0_top:
+        test ebp, ebp
+        jne L_32C0_e3
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je L_32C0_exit
+    L_32C0_e3:
+        mov ebx, dword ptr [ebp]
+        mov eax, dword ptr [ebx + 4]
+        mov ecx, dword ptr [ebx]
+        cmp ecx, eax
+        jb L_32C0_append
+        mov ecx, dword ptr [mem_00999700]
+        push 4
+        lea edi, [eax + ecx]
+        push edi
+        call dword ptr [mem_0092522C]
+        mov esi, eax
+        add esp, 8
+        test esi, esi
+        jne L_32C0_copy
+        push 1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je L_32C0_exit
+    L_32C0_copy:
+        xor eax, eax
+        test edi, edi
+        jbe L_32C0_free
+    L_32C0_cl:
+        cmp eax, dword ptr [ebx]
+        jae L_32C0_zero
+        mov edx, dword ptr [ebx + 8]
+        mov ecx, dword ptr [edx + 4*eax]
+        mov dword ptr [esi + 4*eax], ecx
+        jmp L_32C0_inc
+    L_32C0_zero:
+        mov dword ptr [esi + 4*eax], 0
+    L_32C0_inc:
+        inc eax
+        cmp eax, edi
+        jb L_32C0_cl
+    L_32C0_free:
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 8]
+        push eax
+        call dword ptr [mem_009251D8]
+        mov ecx, dword ptr [ebp]
+        add esp, 4
+        mov dword ptr [ecx + 8], esi
+        mov edx, dword ptr [ebp]
+        mov dword ptr [edx + 4], edi
+        jmp L_32C0_top
+    L_32C0_append:
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        call ext_007B2480
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [ebx + 8]
+        add esp, 4
+        mov dword ptr [edx + 4*ecx], eax
+        mov eax, dword ptr [ebx]
+        inc eax
+        mov dword ptr [ebx], eax
+    L_32C0_exit:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
