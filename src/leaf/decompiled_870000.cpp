@@ -2268,3 +2268,99 @@ extern "C" __declspec(naked) void __fastcall fn_00871D20(void* self) {
         call ext_00870E40
     }
 }
+
+// [0x00872510] sub_00872510 (218 bytes)
+extern "C" void ext_00640240();
+extern "C" void ext_00870E40();
+extern "C" void ext_00871330();
+extern "C" void ext_008714E0();
+extern "C" void ext_008715E0();
+extern "C" void ext_00871A70();
+extern "C" void ext_00872490();
+
+extern "C" __declspec(naked) void __fastcall fn_00872510(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c2170
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        push edi
+        mov esi, ecx
+        call ext_008715E0
+        test al, al
+        je L_87254F
+        pop edi
+        mov al, 1
+        pop esi
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x18
+        ret 4
+    L_87254F:
+        push ebx
+        push esi
+        push edi
+        call ext_00871330
+        add esp, 8
+        mov dword ptr [esp + 0x28], eax
+        xor ebx, ebx
+        cmp eax, ebx
+        mov dword ptr [esp + 0x20], ebx
+        je L_87258A
+        mov dword ptr [esp + 0x28], ebx
+    L_87256C:
+        push eax
+        mov ecx, esi
+        call ext_00640240
+        mov ecx, dword ptr [esp + 0x18]
+        pop ebx
+        pop edi
+        xor al, al
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x18
+        ret 4
+    L_87258A:
+        push esi
+        push edi
+        call ext_008714E0
+        add esp, 8
+        mov dword ptr [esp + 0xc], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 1
+        je L_8725A7
+        mov dword ptr [esp + 0xc], ebx
+        jmp L_87256C
+    L_8725A7:
+        push esi
+        push edi
+        call ext_00871A70
+        add esp, 8
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 2
+        je L_8725C4
+        mov dword ptr [esp + 0x10], ebx
+        jmp L_87256C
+    L_8725C4:
+        push esi
+        push edi
+        call ext_00872490
+        add esp, 8
+        mov dword ptr [esp + 0x14], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 3
+        je L_8725E1
+        mov dword ptr [esp + 0x14], ebx
+        jmp L_87256C
+    L_8725E1:
+        push 0xe
+        mov ecx, edi
+        call ext_00870E40
+    }
+}
