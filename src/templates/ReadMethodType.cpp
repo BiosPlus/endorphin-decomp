@@ -172197,3 +172197,65 @@ extern "C" __declspec(naked) void __fastcall fn_0059FAC0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00625540] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_47 (173 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00625540(void* a1) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push offset mem_008A5428
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x30
+        push esi
+        push edi
+        mov edi, [esp + 0x48]
+        mov esi, [edi]
+        test esi, esi
+        je null_path
+        mov eax, [esi]
+        mov edx, [eax + 0x44]
+        mov ecx, esi
+        call edx
+        fstp st(0)
+        mov al, [esi + 0x30]
+        mov [esp + 0x48], al
+        mov ecx, [esp + 0x48]
+        push ecx
+        lea ecx, [esp + 0xc]
+        call ext_006720A0
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, edi
+        mov dword ptr [esp + 0x44], 0
+        call ext_0041CF50
+        mov ecx, [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x40], -1
+        je skip_release
+        mov eax, [ecx]
+        mov eax, [eax + 0x78]
+        lea edx, [esp + 0x8]
+        push edx
+        call eax
+skip_release:
+        mov ecx, [edi + 4]
+        mov edx, [ecx]
+        mov eax, [edx + 0xbc]
+        push edi
+        call eax
+        mov ecx, [esp + 0x38]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x3c
+        ret 4
+null_path:
+        lea ecx, [esp + 0x10]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0x14]
+        push ecx
+        call ext_006A6DD2
+    }
+}
