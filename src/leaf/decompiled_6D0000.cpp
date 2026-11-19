@@ -10840,3 +10840,116 @@ extern "C" __declspec(naked) void __fastcall fn_006DCEA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D49E0] sub_006D49E0 (219 bytes)
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_006C2F50();
+extern "C" void ext_006C3030();
+extern "C" void ext_006E7440();
+extern "C" __declspec(naked) bool __fastcall fn_006D49E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, ecx
+        xor eax, eax
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ebp + 0x1c]
+        lea ecx, [ebp + 0x1c]
+        test edx, edx
+        push edi
+        jle L_notfound_006D49E0
+        mov edi, dword ptr [ecx + 0x10]
+    L_loop_006D49E0:
+        cmp dword ptr [edi], esi
+        je L_found_006D49E0
+        inc eax
+        add edi, 0x4
+        cmp eax, edx
+        jl L_loop_006D49E0
+    L_notfound_006D49E0:
+        or eax, -0x1
+    L_found_006D49E0:
+        mov bl, 0x1
+        cmp eax, -0x1
+        mov byte ptr [esp + 0x14], bl
+        jne L_nonneg_006D49E0
+        push 0x0
+        lea ecx, [ebp + 0x1c4]
+        call ext_006E7440
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0x8
+    L_nonneg_006D49E0:
+        push eax
+        call ext_006D2200
+        mov al, byte ptr [esp + 0x18]
+        test al, al
+        je L_end_006D49E0
+        xor edi, edi
+        mov ecx, esi
+        push edi
+        call ext_006C2860
+        test eax, eax
+        jle L_after_006D49E0
+    L_loop2_006D49E0:
+        mov ebx, dword ptr [ebp]
+        push 0x1
+        push edi
+        mov ecx, esi
+        call ext_006C28D0
+        push eax
+        mov ecx, ebp
+        call dword ptr [ebx + 0x74]
+        test al, al
+        jne L_skipflag_006D49E0
+        mov byte ptr [esp + 0x14], al
+    L_skipflag_006D49E0:
+        push 0x0
+        mov ecx, esi
+        inc edi
+        call ext_006C2860
+        cmp edi, eax
+        jl L_loop2_006D49E0
+        mov bl, byte ptr [esp + 0x14]
+    L_after_006D49E0:
+        mov ecx, esi
+        call ext_006C3030
+        test eax, eax
+        je L_end_006D49E0
+        mov ecx, esi
+        call ext_006C3030
+        push 0x0
+        mov ecx, esi
+        mov edi, eax
+        call ext_006C2F50
+        mov eax, dword ptr [ebp]
+        push edi
+        mov ecx, ebp
+        call dword ptr [eax + 0x78]
+        test al, al
+        jne L_end_006D49E0
+        xor bl, bl
+    L_end_006D49E0:
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x4]
+        test esi, esi
+        je L_done_006D49E0
+        mov eax, dword ptr [esi]
+        push 0x1
+        mov ecx, esi
+        call dword ptr [eax + 0x14]
+    L_done_006D49E0:
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
