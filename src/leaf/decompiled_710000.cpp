@@ -5555,3 +5555,22 @@ extern "C" void __fastcall fn_00711140(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x2c) = a1;
     ((void (__fastcall *)(void*, int, int, bool))ext_00710F80)(self, edx_unused, 0x200, a1 != 0);
 }
+
+// [0x0071A850] sub_0071A850 (33 bytes)
+extern "C" __declspec(naked) int __stdcall fn_0071A850(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub eax, 0x0
+        je zero_case
+        dec eax
+        je one_case
+        xor eax, eax
+        ret 0x4
+one_case:
+        mov eax, 0xaacaa4
+        ret 0x4
+zero_case:
+        mov eax, 0xaaca94
+        ret 0x4
+    }
+}
