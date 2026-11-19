@@ -2161,3 +2161,8 @@ extern "C" unsigned char __fastcall fn_006F0190(void* self) {
 extern "C" unsigned char __fastcall fn_006F01D0(void* self) {
     return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x24a0);
 }
+
+// [0x006F0210] Dword field getter (7 bytes) - sub_006F0210
+extern "C" int __fastcall fn_006F0210(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x2528);
+}
