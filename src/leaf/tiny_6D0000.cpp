@@ -588,3 +588,20 @@ L_006D2FA8:
         ret 0x4
     }
 }
+
+// [0x006D5620] Guarded tiny leaf function (27 bytes) - sub_006D5620
+extern "C" __declspec(naked) void fn_006D5620() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        jl L_006D5636
+        __asm _emit 0x3B __asm _emit 0x41 __asm _emit 0x64 // cmp eax, dword ptr [ecx + 0x64]
+        jge L_006D5636
+        __asm _emit 0x8B __asm _emit 0x49 __asm _emit 0x74 // mov ecx, dword ptr [ecx + 0x74]
+        __asm _emit 0x8B __asm _emit 0x04 __asm _emit 0x81 // mov eax, dword ptr [ecx + 4*eax]
+        ret 0x4
+L_006D5636:
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        ret 0x4
+    }
+}
