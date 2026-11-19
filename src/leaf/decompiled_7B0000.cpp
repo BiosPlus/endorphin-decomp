@@ -12318,3 +12318,70 @@ extern "C" __declspec(naked) int __cdecl fn_007B08E0(void* a1, void* a2, void* a
         ret
     }
 }
+
+// [0x007BC210] sub_007BC210 (183 bytes)
+extern "C" void ext_007BB560();
+extern "C" int mem_00999B60;
+extern "C" __declspec(naked) void __cdecl fn_007BC210(void* self, unsigned short* out, int count) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x14
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0xc]
+        push edi
+        mov edi, dword ptr [eax + 0xc]
+        mov eax, dword ptr [ebp + 0x10]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jle L_7BC2C0
+        lea ebx, [eax + 0x1]
+    L_7BC236:
+        mov edx, dword ptr [edi]
+        lea ecx, [esp + 0x18]
+        shr edx, 0xc
+        and edx, 0xffd
+        add esi, 0x2
+        add edx, 0x3402
+        mov word ptr [esi - 0x2], dx
+        mov eax, dword ptr [edi]
+        and eax, 0x3fff
+        lea edx, [esp + 0x10]
+        push eax
+        push ecx
+        push edx
+        call ext_007BB560
+        add esp, 0xc
+        test eax, eax
+        jge L_7BC28C
+        mov dword ptr [esp + 0x10], 0xbd156c1a
+        mov dword ptr [esp + 0x14], 0x3fcaf286
+        mov dword ptr [esp + 0x18], 0x94b8199e
+        mov dword ptr [esp + 0x1c], 0x3fde50d7
+    L_7BC28C:
+        fld qword ptr [esp + 0x10]
+        fmul qword ptr [mem_00999B60]
+        call ext_00872828
+        fld qword ptr [esp + 0x18]
+        fmul qword ptr [mem_00999B60]
+        mov word ptr [esi], ax
+        add esi, 0x2
+        call ext_00872828
+        mov word ptr [esi], ax
+        add esi, 0x2
+        add edi, 0x4
+        dec ebx
+        jne L_7BC236
+    L_7BC2C0:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
