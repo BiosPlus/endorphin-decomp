@@ -7830,3 +7830,29 @@ extern "C" __declspec(naked) void __cdecl fn_006D8AB0(void) {
         ret
     }
 }
+
+// [0x006DE660] sub_006DE660 (39 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006DE660(void* self, int edx_unused, int index) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl L_null
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x14]
+        cmp edi, eax
+        jge L_null
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx + 4*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    L_null:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    }
+}
