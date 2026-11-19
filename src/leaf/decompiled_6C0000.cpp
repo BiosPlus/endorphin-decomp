@@ -6031,3 +6031,14 @@ extern "C" __declspec(naked) void __fastcall fn_006C1B10(void* self) {
         ret 4
     }
 }
+
+// [0x006CA060] sub_006CA060 (13 bytes)
+extern "C" void ext_006CA020();
+extern "C" __declspec(naked) void __stdcall fn_006CA060(int a) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006CA020
+        ret 4
+    }
+}
