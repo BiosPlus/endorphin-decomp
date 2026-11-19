@@ -564,3 +564,11 @@ extern "C" void __fastcall fn_00713CA0(void* self) {
         call ext_00714440
     }
 }
+
+// [0x00713CD0] Identical-shape clone of 0x005220B0 (10 bytes) - sub_00713CD0
+extern "C" __declspec(naked) void __cdecl fn_00713CD0() {
+    __asm {
+        call ext_00713CE0
+        jmp ext_00713CF0
+    }
+}
