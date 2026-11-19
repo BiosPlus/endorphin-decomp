@@ -6656,3 +6656,53 @@ loc_7135fe:
         ret     0x8
     }
 }
+
+// [0x00713390] sub_00713390 (87 bytes)
+extern "C" int mem_00925224; /* u32 0x00627CF6 */
+extern "C" __declspec(naked) bool __stdcall fn_00713390(const char* s, double* out) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        cmp byte ptr [esi], 0x7b
+        je L_open
+L_fail:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x8
+L_open:
+        mov ebx, dword ptr [esp + 0x14]
+        xor edi, edi
+L_loop:
+        lea eax, [esp + 0x10]
+        inc esi
+        push eax
+        push esi
+        call dword ptr [mem_00925224]
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0x8
+        fstp qword ptr [ebx]
+        cmp esi, eax
+        je L_fail
+        cmp byte ptr [eax], 0x2c
+        je L_comma
+        cmp edi, 0x3
+        jl L_fail
+L_comma:
+        inc edi
+        add ebx, 0x8
+        cmp edi, 0x4
+        mov esi, eax
+        jl L_loop
+        mov cl, byte ptr [eax]
+        pop edi
+        cmp cl, 0x7d
+        pop esi
+        sete al
+        pop ebx
+        ret 0x8
+    }
+}
