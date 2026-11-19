@@ -6743,3 +6743,49 @@ extern "C" __declspec(naked) void __fastcall fn_00704D00(void* self) {
         ret
     }
 }
+
+// [0x00700650] sub_00700650 (82 bytes)
+extern "C" void ext_00712FC0();
+extern "C" void ext_00712A80();
+extern "C" void ext_0071E680();
+extern "C" void ext_00710F80();
+extern "C" void ext_00711CF0();
+extern "C" __declspec(naked) void __fastcall fn_00700650(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        push edi
+        mov esi, ecx
+        push ebx
+        call ext_00712FC0
+        mov edi, eax
+        push edi
+        call ext_00712A80
+        mov edx, dword ptr [esi]
+        add esp, 8
+        mov ecx, esi
+        push 0
+        push 0
+        push 0
+        push edi
+        push eax
+        push ebx
+        call dword ptr [edx + 0xdc]
+        mov esi, eax
+        push 1
+        push 2
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, eax
+        call ext_00710F80
+        push 1
+        push 8
+        mov ecx, esi
+        call ext_00711CF0
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
