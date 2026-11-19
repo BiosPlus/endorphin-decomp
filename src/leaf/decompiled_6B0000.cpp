@@ -11114,3 +11114,25 @@ extern "C" int mem_00B5D448;
 extern "C" void __cdecl fn_006BECB0(void) {
     mem_00B5D448 = ((int (__cdecl*)(int, int))ext_006FC3A0)(0x00B5D450, -1);
 }
+
+// [0x006BBA00] sub_006BBA00 (36 bytes)
+extern "C" int mem_00925284; /* u32 0x0062D360 */
+extern "C" int mem_00B5D2F0;
+extern "C" int mem_00B5D2F8;
+extern "C" int mem_00B5D300;
+
+extern "C" __declspec(naked) void __cdecl fn_006BBA00(void) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D2F0]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D2F8]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D300]
+        ret
+    }
+}
