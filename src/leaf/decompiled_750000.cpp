@@ -4052,3 +4052,89 @@ extern "C" __declspec(naked) bool __fastcall fn_0075F4A0(void* self) {
         ret 4
     }
 }
+
+// [0x00759C60] sub_00759C60 (224 bytes)
+extern "C" void ext_006BC730();
+extern "C" void ext_006BC740();
+extern "C" void ext_007275F0();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006B9D80();
+extern "C" void ext_0072FD70();
+extern "C" void ext_00728410();
+extern "C" void ext_00724BF0();
+extern "C" void ext_00759D40();
+extern "C" void ext_007284D0();
+extern "C" void ext_007283B0();
+
+extern "C" __declspec(naked) void __fastcall fn_00759C60(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edi
+        call ext_006BC730
+        mov ebx, eax
+        xor ebp, ebp
+        test ebx, ebx
+        jle done_loop
+loop_top:
+        mov ecx, dword ptr [esp + 0x18]
+        push ebp
+        call ext_006BC740
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaad3fc
+        add ecx, 4
+        mov edi, eax
+        call ext_007275F0
+        mov ecx, edi
+        call ext_006BADB0
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x5c], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_0072FD70
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00728410
+        mov al, byte ptr [edi + 0x14c]
+        cmp al, 0x62
+        mov eax, 0xaad100
+        je skip_alt
+        mov eax, 0xaad0f4
+skip_alt:
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x5c], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaa8e24
+        add ecx, 4
+        call ext_00724BF0
+        push edi
+        mov ecx, esi
+        call ext_00759D40
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        inc ebp
+        cmp ebp, ebx
+        jl loop_top
+done_loop:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
