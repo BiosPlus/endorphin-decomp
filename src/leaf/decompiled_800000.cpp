@@ -10471,3 +10471,78 @@ extern "C" __declspec(naked) void __cdecl fn_00809480(void* self) {
         ret
     }
 }
+
+// [0x0080A900] sub_0080A900 (208 bytes)
+extern "C" void ext_0080AB80();
+extern "C" void ext_0080ABC0();
+extern "C" int mem_00B73C30;
+
+extern "C" __declspec(naked) void __cdecl fn_0080A900(void) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov eax, esi
+        and eax, 0xffff0000
+        cmp eax, 0xffff0000
+        je L_ok
+        cmp eax, 0xfffe0000
+        je L_ok
+        pop esi
+        mov eax, 0x2ba
+        pop ebx
+        ret
+    L_ok:
+        call ext_0080AB80
+        xor ecx, ecx
+        xor edx, edx
+        mov eax, 0xb62260
+    L_scan:
+        cmp byte ptr [eax], cl
+        je L_found
+        add eax, 0x238
+        inc edx
+        cmp eax, 0xb73e60
+        jl L_scan
+    L_found:
+        cmp edx, 0x80
+        jne L_slot
+        call ext_0080ABC0
+        pop esi
+        mov eax, 4
+        pop ebx
+        ret
+    L_slot:
+        lea eax, [edx + 8*edx]
+        mov ebx, dword ptr [mem_00B73C30]
+        shl eax, 3
+        sub eax, edx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        shl eax, 3
+        shl edx, 0x10
+        mov dword ptr [eax + 0xb62030], edi
+        mov dword ptr [eax + 0xb62034], ecx
+        mov dword ptr [eax + 0xb62048], esi
+        mov esi, dword ptr [esp + 0x18]
+        mov byte ptr [eax + 0xb62261], cl
+        mov byte ptr [eax + 0xb62260], 1
+        mov dword ptr [eax + 0xb6204c], ebx
+        lea edi, [eax + 0xb62050]
+        mov eax, dword ptr [esp + 0x1c]
+        and ebx, 0xffff
+        mov ecx, 0x84
+        or ebx, edx
+        rep movsd
+        mov dword ptr [eax], ebx
+        mov eax, dword ptr [mem_00B73C30]
+        inc eax
+        mov dword ptr [mem_00B73C30], eax
+        call ext_0080ABC0
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
