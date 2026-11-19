@@ -255,3 +255,23 @@ extern "C" __declspec(naked) void __fastcall fn_00703C60(void* self) {
         ret
     }
 }
+
+// [0x0070A2A0] Identical-shape clone of 0x006BB9B0 (57 bytes) - sub_0070A2A0
+extern "C" __declspec(naked) void __fastcall fn_0070A2A0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EBC8], ecx
+        mov dword ptr [mem_00B5EBCC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EBD0], ecx
+        mov dword ptr [mem_00B5EBD4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EBD8], ecx
+        mov dword ptr [mem_00B5EBDC], edx
+        ret
+    }
+}
