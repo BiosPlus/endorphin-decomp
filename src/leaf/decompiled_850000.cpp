@@ -5823,3 +5823,87 @@ extern "C" __declspec(naked) int __cdecl fn_0085DD70(void* buf, unsigned int siz
         _emit 0
     }
 }
+
+// [0x0085E300] sub_0085E300 (160 bytes)
+extern "C" void ext_0085D530();
+extern "C" void ext_0085DE10();
+extern "C" void ext_0085E3A0();
+extern "C" void ext_0085E470();
+extern "C" int mem_00BC6658;
+extern "C" int mem_00BC671C;
+
+extern "C" __declspec(naked) void __cdecl fn_0085E300(void* a1) {
+    __asm {
+        sub esp, 4
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        call ext_0085E3A0
+        add esp, 4
+        push esi
+        call dword ptr [mem_00BC6658]
+        mov dword ptr [esp + 8], eax
+        cmp eax, -1
+        jne ok_path
+        call ext_0085DE10
+        push esi
+        call dword ptr [mem_00BC671C]
+        mov esi, eax
+        test esi, esi
+        je epilogue
+        mov eax, dword ptr [esi + 0xc]
+        cmp dword ptr [eax], 0
+        je epilogue
+        xor edi, edi
+    loop_top:
+        push 4
+        mov eax, dword ptr [esi + 0xc]
+        lea edx, [esp + 0xc]
+        nop
+        mov ecx, dword ptr [eax + edi]
+        add edi, 4
+        push ecx
+        push edx
+        call ext_0085D530
+        mov ecx, dword ptr [esp + 0x14]
+        add esp, 0xc
+        push 0x1db
+        push ecx
+        call ext_0085E470
+        add esp, 8
+        mov ecx, dword ptr [esi + 0xc]
+        cmp dword ptr [ecx + edi], 0
+        jne loop_top
+        pop edi
+        pop esi
+        add esp, 4
+        ret
+    ok_path:
+        mov eax, dword ptr [esp + 8]
+        push 0x1db
+        push eax
+        call ext_0085E470
+        add esp, 8
+    epilogue:
+        pop edi
+        pop esi
+        add esp, 4
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}

@@ -21,5 +21,7 @@
     "0x0085E363",
     "0x0085E384"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-19T16:26:33Z"
 }
