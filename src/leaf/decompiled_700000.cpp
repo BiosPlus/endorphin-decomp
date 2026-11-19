@@ -7966,3 +7966,41 @@ extern "C" void __cdecl fn_0070F9E0() {
     mem_00B5F040 = -*h;
     mem_00B5F048 = -*h;
 }
+
+// [0x0070CB40] sub_0070CB40 (166 bytes)
+// [VA] 0x0070CB40
+extern "C" double mem_00B5EE38;
+extern "C" double mem_00B5EE40;
+extern "C" double mem_00B5EE48;
+extern "C" double mem_00B5EE50;
+extern "C" double mem_00B5EE58;
+extern "C" double mem_00B5EE60;
+extern "C" double mem_00B5EE68;
+extern "C" double mem_00B5EE70;
+extern "C" double mem_00B5EE78;
+extern "C" double mem_00B5EE80;
+extern "C" double mem_00B5EE88;
+extern "C" double mem_00B5EE90;
+extern "C" double mem_00B5EE98;
+extern "C" double mem_00B5EEA0;
+extern "C" double mem_00B5EEA8;
+extern "C" double mem_00B5EEB0;
+extern "C" void __cdecl fn_0070CB40() {
+    double* h = (double*)mem_00925284;
+    mem_00B5EE38 = -*h;
+    mem_00B5EE40 = -*h;
+    mem_00B5EE48 = -*h;
+    mem_00B5EE50 = -*h;
+    mem_00B5EE58 = -*h;
+    mem_00B5EE60 = -*h;
+    mem_00B5EE68 = -*h;
+    mem_00B5EE70 = -*h;
+    mem_00B5EE78 = -*h;
+    mem_00B5EE80 = -*h;
+    mem_00B5EE88 = -*h;
+    mem_00B5EE90 = -*h;
+    mem_00B5EE98 = -*h;
+    mem_00B5EEA0 = -*h;
+    mem_00B5EEA8 = -*h;
+    mem_00B5EEB0 = -*h;
+}
