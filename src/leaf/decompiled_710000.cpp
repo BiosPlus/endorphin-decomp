@@ -8844,3 +8844,80 @@ extern "C" void* __fastcall fn_007145F0(void* self, int edx_unused, void* src) {
     d[0x7c / 4] = s[0x7c / 4];
     return self;
 }
+
+// [0x007177C0] sub_007177C0 (208 bytes)
+extern "C" void ext_006D2370();
+extern "C" void ext_006D2390();
+extern "C" void ext_006D80A0();
+
+// Transforms the 3-double point at a2 by the row-major 4x4 matrix stored at self
+// (translation row at +0x60..+0x70), writes the result into a1 and returns a1.
+// Uses a 3-double temp with an SEH frame, as in the original (ret 8).
+extern "C" __declspec(naked) void* __fastcall fn_007177C0(void* self, int edx_unused, void* a1, const double* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x8bcccf
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0x0
+        call ext_006D2370
+        mov eax, dword ptr [ebp + 0xc]
+        mov dword ptr [esp + 0x30], 0x1
+        fld qword ptr [eax]
+        fld qword ptr [eax + 0x8]
+        fld qword ptr [eax + 0x10]
+        fld st(0)
+        fmul qword ptr [esi + 0x40]
+        fld st(2)
+        fmul qword ptr [esi + 0x20]
+        lea eax, [esp + 0x8]
+        push eax
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [esi]
+        faddp st(1), st
+        fadd qword ptr [esi + 0x60]
+        fstp qword ptr [esp + 0xc]
+        fld st(0)
+        fmul qword ptr [esi + 0x48]
+        fld st(2)
+        fmul qword ptr [esi + 0x28]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [esi + 0x8]
+        faddp st(1), st
+        fadd qword ptr [esi + 0x68]
+        fstp qword ptr [esp + 0x14]
+        fmul qword ptr [esi + 0x50]
+        fxch st(1)
+        fmul qword ptr [esi + 0x30]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [esi + 0x10]
+        faddp st(1), st
+        fadd qword ptr [esi + 0x70]
+        mov esi, dword ptr [ebp + 0x8]
+        mov ecx, esi
+        fstp qword ptr [esp + 0x1c]
+        call ext_006D2390
+        mov dword ptr [esp + 0x4], 0x1
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x30], 0x0
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
