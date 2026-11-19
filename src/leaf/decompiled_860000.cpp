@@ -7911,3 +7911,76 @@ extern "C" __declspec(naked) int __cdecl fn_008635C0(const void* arg) {
         _emit 0x00
     }
 }
+
+// [0x0086F1A0] sub_0086F1A0 (160 bytes)
+extern "C" void ext_0086F000();
+extern "C" void ext_0086F120();
+
+extern "C" __declspec(naked) void __fastcall fn_0086F1A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        sub esp, 0x50
+        push ebx
+        push esi
+        push edi
+        push ebp
+        mov di, 0x13
+        push eax
+        call ext_0086F000
+        mov esi, dword ptr [esp + 0x6c]
+        add esp, 0x4
+    loop_top:
+        mov eax, dword ptr [esp + 0x64]
+        movsx ecx, di
+        mov ebx, dword ptr [eax + 4*ecx]
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_0086F000
+        mov cx, 0x13
+        add esp, 0x4
+    inner:
+        lea eax, [edi + ecx]
+        sub ax, 0x13
+        movsx ebp, ax
+        movsx eax, cx
+        dec cx
+        lea edx, [4*ebp]
+        mov eax, dword ptr [esi + 4*eax]
+        imul eax, ebx
+        add eax, dword ptr [esp + edx + 0x10]
+        mov ebp, eax
+        shr eax, 0x10
+        and ebp, 0xffff
+        mov dword ptr [esp + edx + 0x10], ebp
+        mov dword ptr [esp + edx + 0xc], eax
+        movsx edx, cx
+        cmp edx, 0x9
+        ja inner
+        mov eax, dword ptr [esp + 0x6c]
+        lea ecx, [esp + 0x10]
+        dec di
+        push eax
+        push eax
+        push ecx
+        call ext_0086F120
+        movsx ecx, di
+        add esp, 0xc
+        cmp ecx, 0x9
+        ja loop_top
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x50
+        ret
+        _emit 0x8b
+        _emit 0xff
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
