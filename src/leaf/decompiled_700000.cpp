@@ -5818,3 +5818,23 @@ extern "C" double __fastcall fn_0070D310(void* self, int edx_unused, void* arg) 
     }
     return *(double*)&mem_0092A278;
 }
+
+// [0x0070AC00] sub_0070AC00 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0070AC00(void* self, int edx_unused, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x200]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x204]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x208]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0x20c]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x210]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x214]
+        mov dword ptr [eax + 0x14], ecx
+        ret 0x4
+    }
+}
