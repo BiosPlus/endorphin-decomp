@@ -6498,3 +6498,30 @@ extern "C" int __fastcall fn_0079E690(void* self, int /*edx*/, int a1, int a2, i
     ((void (__thiscall*)(void*, int, int, int))ext_007838E0)((char*)self + 4, a2, a3, 0x7fffffff);
     return 0;
 }
+
+// [0x0079C1B0] sub_0079C1B0 (49 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0079C1B0(void* self, int, int id, int) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        je L_ret
+        cmp ecx, 0x33
+        je L_case_33
+        xor edx, edx
+        cmp ecx, 0x3ea
+        setne dl
+        dec edx
+        and eax, edx
+        ret 0x8
+    L_case_33:
+        test eax, eax
+        je L_zero
+        add eax, 0xf50
+        ret 0x8
+    L_zero:
+        xor eax, eax
+    L_ret:
+        ret 0x8
+    }
+}
