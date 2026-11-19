@@ -4615,3 +4615,99 @@ extern "C" __declspec(naked) void __fastcall fn_0077EDA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0077C990] sub_0077C990 (224 bytes)
+extern "C" void ext_006D2170();
+extern "C" void ext_006D23F0();
+extern "C" __declspec(naked) void __fastcall fn_0077C990(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x14
+        mov eax, dword ptr [ebp + 8]
+        push ebx
+        push esi
+        push edi
+        mov eax, dword ptr [eax]
+        xor edi, edi
+        cmp eax, edi
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x10], edi
+        jle END_L
+        mov dword ptr [esp + 0x14], edi
+        jmp LOOP_HEAD
+    LOOP_TAIL:
+        mov edi, dword ptr [esp + 0x14]
+    LOOP_HEAD:
+        mov ecx, dword ptr [ebp + 8]
+        mov edx, dword ptr [ebp + 0xc]
+        mov esi, edi
+        push 0
+        mov eax, dword ptr [ecx + 0x10]
+        mov ebx, dword ptr [edx + 0x10]
+        add esi, eax
+        add edi, ebx
+        mov ecx, esi
+        call ext_006D23F0
+        push 0
+        mov ecx, edi
+        mov ebx, eax
+        call ext_006D23F0
+        fld qword ptr [ebx]
+        fcomp qword ptr [eax]
+        fnstsw ax
+        test ah, 0x40
+        je CALL_L
+        push 1
+        mov ecx, esi
+        call ext_006D23F0
+        push 1
+        mov ecx, edi
+        mov ebx, eax
+        call ext_006D23F0
+        fld qword ptr [ebx]
+        fcomp qword ptr [eax]
+        fnstsw ax
+        test ah, 0x40
+        je CALL_L
+        push 2
+        mov ecx, esi
+        call ext_006D23F0
+        push 2
+        mov ecx, edi
+        mov esi, eax
+        call ext_006D23F0
+        fld qword ptr [esi]
+        fcomp qword ptr [eax]
+        fnstsw ax
+        test ah, 0x40
+        jne NEXT_L
+    CALL_L:
+        mov eax, dword ptr [esp + 0x10]
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [ebp + 0x10]
+        mov dword ptr [esp + 0x1c], eax
+        mov edx, dword ptr [ecx]
+        push edx
+        call ext_006D2170
+    NEXT_L:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x1c]
+        inc eax
+        add edx, 0x20
+        cmp eax, ecx
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x14], edx
+        jl LOOP_TAIL
+    END_L:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    }
+}
