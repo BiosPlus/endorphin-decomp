@@ -15141,3 +15141,44 @@ extern "C" __declspec(naked) void __cdecl fn_00458C80() {
         call ext_006A6304
     }
 }
+
+// [0x0045D8D0] sub_0045D8D0 (90 bytes)
+// Switch on stack arg (0..9) -> {0,10,3,1,5,2,4,6,7,8}; default returns 10. __thiscall-style stack arg, ret 4.
+extern "C" __declspec(naked) void __fastcall fn_0045D8D0(void* self, int edx_unused, int idx) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        cmp ecx, 9
+        mov eax, 0xa
+        ja L_ret
+        jmp dword ptr [4 * ecx + L_tbl]
+    L_c7:
+        mov eax, 7
+        ret 4
+    L_c4:
+        mov eax, 4
+        ret 4
+    L_c3:
+        mov eax, 3
+        ret 4
+    L_c6:
+        mov eax, 6
+        ret 4
+    L_c5:
+        mov eax, 5
+        ret 4
+    L_c1:
+        mov eax, 1
+        ret 4
+    L_c2:
+        mov eax, 2
+        ret 4
+    L_c0:
+        xor eax, eax
+        ret 4
+    L_c8:
+        mov eax, 8
+    L_ret:
+        ret 4
+    L_tbl:
+    }
+}
