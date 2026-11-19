@@ -7724,3 +7724,115 @@ extern "C" __declspec(naked) void __cdecl fn_008579B0(void) {
         ret
     }
 }
+
+// [0x0085AD60] sub_0085AD60 (208 bytes)
+extern "C" void ext_00859300();
+extern "C" void ext_00859330();
+extern "C" void ext_00859E00();
+extern "C" void ext_0085A270();
+extern "C" unsigned int ext_0085BC20(void*);
+extern "C" void ext_0086D0A0();
+
+// [0x0085AD60] sub_0085AD60 (208 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085AD60(void) {
+    __asm {
+        sub esp, 8
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        push esi
+        push 1
+        push 4
+        push eax
+        call ext_0086D0A0
+        add esp, 0x10
+        cmp eax, 1
+        je short loc_85ad8d
+        pop edi
+        pop esi
+        mov eax, 0x20
+        pop ebx
+        add esp, 8
+        ret
+
+    loc_85ad8d:
+        cmp dword ptr [esp + 0x18], 1
+        jne short loc_85adc5
+        mov ecx, dword ptr [esp + 0xd]
+        mov edx, dword ptr [esp + 0xe]
+        xor ebx, ebx
+        mov eax, dword ptr [esp + 0xf]
+        mov bh, byte ptr [esp + 0xc]
+        and ecx, 0xff
+        or ebx, ecx
+        and edx, 0xff
+        shl ebx, 8
+        or ebx, edx
+        and eax, 0xff
+        shl ebx, 8
+        or ebx, eax
+        jmp short loc_85adc9
+
+    loc_85adc5:
+        mov ebx, dword ptr [esp + 0xc]
+
+    loc_85adc9:
+        push esi
+        call ext_00859330
+        mov edi, eax
+        add esp, 4
+        test edi, edi
+        jne short loc_85ade4
+        pop edi
+        pop esi
+        mov eax, 0x20
+        pop ebx
+        add esp, 8
+        ret
+
+    loc_85ade4:
+        push 0
+        push ebx
+        push esi
+        call ext_0085BC20
+        mov ecx, dword ptr [esp + 0x2c]
+        add esp, 4
+        add eax, edi
+        push eax
+        push ecx
+        call ext_0085A270
+        add esp, 0x10
+        cmp eax, -1
+        jne short loc_85ae11
+        pop edi
+        pop esi
+        mov eax, 0xc
+        pop ebx
+        add esp, 8
+        ret
+
+    loc_85ae11:
+        push edi
+        push esi
+        call ext_00859300
+        push 0
+        push ebx
+        push esi
+        call ext_00859E00
+        add esp, 0x14
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+        nop
+        nop
+        nop
+    }
+}
