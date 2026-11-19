@@ -5994,3 +5994,33 @@ extern "C" __declspec(naked) void __cdecl fn_007A4BE0(void* a1, void* a2, void* 
         nop
     }
 }
+
+// [0x007AF800] sub_007AF800 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AF800(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, 0x71de50
+        mov edx, 0x71de50
+        mov dword ptr [eax + 0x18c], ecx
+        mov dword ptr [eax + 0x194], ecx
+        mov dword ptr [eax + 0x19c], ecx
+        mov ecx, 0x6d80a0
+        mov dword ptr [eax + 0x1b8], ecx
+        mov dword ptr [eax + 0x1c0], ecx
+        mov ecx, dword ptr [eax + 0xc]
+        mov dword ptr [eax + 0x190], edx
+        and ch, -0x2
+        mov dword ptr [eax + 0x1a0], 0x7af730
+        mov dword ptr [eax + 0x1a8], 0x7af7a0
+        mov dword ptr [eax + 0x1b0], 0x7af7c0
+        mov dword ptr [eax + 0x198], edx
+        mov dword ptr [eax + 0x1a4], 0x7af640
+        mov dword ptr [eax + 0x1ac], 0x7af6f0
+        mov dword ptr [eax + 0x1b4], 0x7af710
+        mov dword ptr [eax + 0x1bc], 0x7af7e0
+        mov dword ptr [eax + 0x1c4], 0x798800
+        mov dword ptr [eax + 0x1c8], 0x7af310
+        mov dword ptr [eax + 0xc], ecx
+        ret
+    }
+}
