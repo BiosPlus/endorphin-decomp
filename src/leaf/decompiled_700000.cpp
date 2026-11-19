@@ -5333,3 +5333,27 @@ extern "C" __declspec(naked) void* __stdcall fn_00704BB0(int a1) {
         ret 0x4
     }
 }
+
+// [0x0070FE80] sub_0070FE80 (43 bytes)
+extern "C" void ext_0070FBA0();
+
+extern "C" __declspec(naked) void __stdcall fn_0070FE80() {
+    __asm {
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push eax
+        call ext_0070FBA0
+        ret 0x1c
+    }
+}
