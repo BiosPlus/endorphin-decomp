@@ -10641,3 +10641,32 @@ extern "C" __declspec(naked) void __cdecl fn_007BFC90(void* a, char* b, int c, i
         ret
     }
 }
+
+// [0x007B1E20] sub_007B1E20 (82 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B1E20(void* self, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        cmp ecx, 0x4d4d
+        mov dword ptr [eax + 0x160], 0x999430
+        jne L_7B1E56
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x15c], 0x999464
+        test ecx, ecx
+        jne L_7B1E71
+        mov ecx, dword ptr [eax + 0xc]
+        or cl, 0x80
+        mov dword ptr [eax + 0xc], ecx
+        ret
+L_7B1E56:
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x15c], 0x999498
+        test ecx, ecx
+        je L_7B1E71
+        mov ecx, dword ptr [eax + 0xc]
+        or cl, 0x80
+        mov dword ptr [eax + 0xc], ecx
+L_7B1E71:
+        ret
+    }
+}
