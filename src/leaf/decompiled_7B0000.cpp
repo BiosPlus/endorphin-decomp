@@ -10752,3 +10752,49 @@ extern "C" __declspec(naked) int __cdecl fn_007BEDE0(void* p) {
         ret
     }
 }
+
+// [0x007BD740] sub_007BD740 (85 bytes)
+extern "C" void ext_007C1750();
+extern "C" void ext_0079B140();
+extern "C" int mem_00AB224C;
+extern "C" int mem_00AB2244;
+extern "C" int mem_00999B9C;
+
+extern "C" __declspec(naked) int __cdecl fn_007BD740(void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0x38
+        push offset mem_00AB224C
+        mov esi, dword ptr [edi + 0x1cc]
+        mov eax, dword ptr [esi + 0x68]
+        lea ecx, [esi + 0x30]
+        push eax
+        push ecx
+        call ext_007C1750
+        add esp, 0x10
+        test eax, eax
+        je short L_007BD785
+        mov edx, dword ptr [esi + 0x48]
+        mov eax, dword ptr [edi]
+        push edx
+        push eax
+        push offset mem_00AB2244
+        push offset mem_00999B9C
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop edi
+        pop esi
+        ret
+    L_007BD785:
+        mov ecx, dword ptr [esi + 0x6c]
+        mov eax, 0x1
+        or ecx, eax
+        pop edi
+        mov dword ptr [esi + 0x6c], ecx
+        pop esi
+        ret
+    }
+}

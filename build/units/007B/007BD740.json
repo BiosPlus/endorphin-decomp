@@ -17,5 +17,7 @@
     "0x007BD774",
     "0x007BD779"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-19T15:31:12Z"
 }
