@@ -2312,3 +2312,11 @@ L_00717D58:
         ret 0x4
     }
 }
+
+// [0x00719A90] Branchless tiny leaf function (6 bytes) - sub_00719A90
+extern "C" __declspec(naked) void fn_00719A90() {
+    __asm {
+        mov eax, dword ptr [mem_00B5FC88]
+        ret
+    }
+}
