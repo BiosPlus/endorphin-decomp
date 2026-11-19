@@ -11741,3 +11741,73 @@ extern "C" __declspec(naked) int __cdecl fn_007BD7D0(int a, int b, int c) {
         ret
     }
 }
+
+// [0x007BD870] sub_007BD870 (158 bytes)
+extern "C" void ext_007C1B00();
+extern "C" __declspec(naked) void __cdecl fn_007BD870(void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push 0x4
+        mov edi, dword ptr [esi + 0x1cc]
+        lea ebp, [edi + 0x30]
+        mov dword ptr [edi + 0x34], 0x0
+        push ebp
+        call ext_007C1B00
+        mov ebx, eax
+        add esp, 0x8
+        test ebx, ebx
+        jl L_E4_007BD870
+    L_899_007BD870:
+        cmp ebx, 0x1
+        jg L_E4_007BD870
+        mov ecx, dword ptr [edi + 0x40]
+        mov eax, dword ptr [esi + 0x1dc]
+        cmp ecx, eax
+        je L_CE_007BD870
+        sub eax, ecx
+        push esi
+        mov dword ptr [esi + 0x1e4], eax
+        call ext_0079B850
+        mov eax, dword ptr [esi + 0x1d8]
+        add esp, 0x4
+        mov dword ptr [edi + 0x3c], eax
+        mov ecx, dword ptr [esi + 0x1dc]
+        mov dword ptr [edi + 0x40], ecx
+    L_CE_007BD870:
+        cmp ebx, 0x1
+        je L_RET1_007BD870
+        push 0x4
+        push ebp
+        call ext_007C1B00
+        mov ebx, eax
+        add esp, 0x8
+        test ebx, ebx
+        jge L_899_007BD870
+    L_E4_007BD870:
+        mov edx, dword ptr [edi + 0x48]
+        mov eax, dword ptr [esi]
+        push edx
+        push eax
+        push 0xab2254
+        push 0x999bb8
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_RET1_007BD870:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+    }
+}
