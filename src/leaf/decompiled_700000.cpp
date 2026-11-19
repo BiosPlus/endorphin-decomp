@@ -7038,3 +7038,41 @@ loc_707A63:
         ret     0x18
     }
 }
+
+// [0x0070B040] sub_0070B040 (119 bytes)
+extern "C" void ext_006DC2C0();
+extern "C" void ext_007641C0();
+extern "C" void ext_006B9D70();
+extern "C" __declspec(naked) void __fastcall fn_0070B040(void* self) {
+    __asm {
+        push -1
+        push 0x8bc424
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x995b04
+        mov ecx, dword ptr [esi + 0xf0]
+        push 0
+        mov dword ptr [esp + 0x14], 2
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x4]
+        lea ecx, [esi + 0x140]
+        mov byte ptr [esp + 0x10], 1
+        call ext_007641C0
+        lea ecx, [esi + 0xf4]
+        mov byte ptr [esp + 0x10], 0
+        call ext_006B9D70
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_006DC2C0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
