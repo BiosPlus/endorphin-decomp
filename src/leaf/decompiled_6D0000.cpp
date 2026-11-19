@@ -7747,3 +7747,14 @@ extern "C" __declspec(naked) void __fastcall fn_006D5F20(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006DD9D0] sub_006DD9D0 (36 bytes)
+extern "C" int mem_00B5DC38;
+extern "C" int mem_00B5DC40;
+extern "C" int mem_00B5DC48;
+extern "C" void __cdecl fn_006DD9D0() {
+    double v = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DC38 = v;
+    *(double*)&mem_00B5DC40 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DC48 = -*(double*)mem_00925284;
+}
