@@ -962,3 +962,8 @@ L_00701BF8:
         ret 0x4
     }
 }
+
+// [0x00701E10] Dword field getter (7 bytes) - sub_00701E10
+extern "C" int __fastcall fn_00701E10(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x6f0);
+}
