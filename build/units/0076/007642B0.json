@@ -14,5 +14,6 @@
     "0x007642B4",
     "0x007642C1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
