@@ -12,5 +12,7 @@
     "0x00712505",
     "0x00712512"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:07:11Z"
 }
