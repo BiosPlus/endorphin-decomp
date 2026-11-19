@@ -565,8 +565,10 @@ extern "C" __declspec(naked) void __fastcall fn_007AD6B0(void* self) {
         ret
     }
 }
+extern "C" void ext_0079B140();
+// ext_007AF8F0 is already in shard preamble
 
-// [0x007A67C0] sub_007A67C0 (144 bytes)
+// ext_007AF8F0 is already in shard preamble
 extern "C" void ext_007A9360();
 extern "C" void ext_007AA510();
 extern "C" void ext_007B2D80();
@@ -6680,5 +6682,43 @@ extern "C" __declspec(naked) void __fastcall fn_007AEF80(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0xc
         ret 0x98
+    }
+}
+
+// [0x007AF750] sub_007AF750 (79 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007AF750(void* a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov ax, word ptr [esi + 0x44]
+        push eax
+        call ext_007AF8F0
+        mov ecx, dword ptr [esp + 0x10]
+        add esp, 0x4
+        test eax, eax
+        push ecx
+        je L_null
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esi]
+        push edx
+        push 0xab11b4
+        push eax
+        call ext_0079B140
+        add esp, 0x10
+        or eax, -0x1
+        pop esi
+        ret
+    L_null:
+        mov eax, dword ptr [esi]
+        xor edx, edx
+        mov dx, word ptr [esi + 0x44]
+        push edx
+        push 0xab117c
+        push eax
+        call ext_0079B140
+        add esp, 0x10
+        or eax, -0x1
+        pop esi
+        ret
     }
 }
