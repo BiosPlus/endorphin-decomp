@@ -4900,3 +4900,42 @@ extern "C" __declspec(naked) void __cdecl fn_0085D860(void) {
         mov edi, edi
     }
 }
+
+// [0x0085E9E0] sub_0085E9E0 (48 bytes)
+extern "C" __declspec(naked) char* __cdecl fn_0085E9E0(char* dst, const char* src) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        push esi
+        mov edx, eax
+        cmp byte ptr [eax], 0
+        je copy_start
+    find_end:
+        inc edx
+        cmp byte ptr [edx], 0
+        jne find_end
+    copy_start:
+        mov ecx, dword ptr [esp + 0x10]
+    copy_loop:
+        mov bl, byte ptr [ecx]
+        mov esi, edx
+        inc edx
+        inc ecx
+        mov byte ptr [esi], bl
+        test bl, bl
+        jne copy_loop
+        pop esi
+        pop ebx
+        ret
+        __emit 0x8d
+        __emit 0x49
+        __emit 0x00
+        __emit 0x8d
+        __emit 0xa4
+        __emit 0x24
+        __emit 0x00
+        __emit 0x00
+        __emit 0x00
+        __emit 0x00
+    }
+}
