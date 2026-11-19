@@ -10,5 +10,6 @@
   "relocations": [
     "0x0072B7C1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }
