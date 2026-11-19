@@ -6232,3 +6232,29 @@ L_no_flag:
         ret 0x4
     }
 }
+
+// [0x00712960] sub_00712960 (51 bytes)
+extern "C" void ext_006FA950();
+extern "C" void ext_006FC6E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00712960(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x84], eax
+        mov eax, dword ptr [esi + 0x34]
+        and eax, 0x8
+        mov dword ptr [esi + 0x80], ecx
+        push eax
+        push ecx
+        call ext_006FC6E0
+        add esp, 0x4
+        mov ecx, esi
+        push eax
+        call ext_006FA950
+        pop esi
+        ret 0x8
+    }
+}
