@@ -5912,3 +5912,20 @@ extern "C" void __cdecl fn_00714E70() {
     mem_00B5FA74 = 0xb5eb50;
     mem_00B5FA7C = 0;
 }
+
+// [0x00713F30] sub_00713F30 (40 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00713F30(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x3
+        ja L_00713F50
+        jmp dword ptr [4*eax + 0x713F58]
+        mov eax, 0xaac224
+        ret 0x4
+        mov eax, 0xaac220
+        ret 0x4
+L_00713F50:
+        mov eax, 0xaac03c
+        ret 0x4
+    }
+}
