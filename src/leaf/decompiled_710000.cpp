@@ -7268,3 +7268,75 @@ done_alloc:
         ret 0x4
     }
 }
+
+// [0x0071130C] sub_0071130C (126 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0071130C(void* self, int edx_unused, int a1) {
+    __asm {
+        _emit 0x00
+        _emit 0x01
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x00
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x02
+        _emit 0x01
+        nop
+        nop
+        nop
+        nop
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00711DB0
+        dec eax
+        cmp eax, 0xf
+        ja L_default
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x711398]
+        jmp dword ptr [ecx * 4 + 0x71138c]
+
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi]
+        push 0x0
+        push 0x0
+        test edx, edx
+        lea ecx, [esp + 0xf]
+        push 0x0
+        setne dl
+        push ecx
+        mov ecx, esi
+        mov byte ptr [esp + 0x17], dl
+        call dword ptr [eax + 0x8c]
+        mov al, 0x1
+        pop esi
+        pop ecx
+        ret 0x4
+
+        mov edx, dword ptr [esi]
+        push 0x0
+        push 0x0
+        lea eax, [esp + 0x14]
+        push 0x0
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x8c]
+        mov al, 0x1
+        pop esi
+        pop ecx
+        ret 0x4
+
+    L_default:
+        xor al, al
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
