@@ -52,6 +52,7 @@ extern "C" __declspec(naked) int __cdecl fn_007CC3D0(int a0, float* a1, float* a
     }
 }
 extern "C" void ext_007C54F0(void* self);
+extern "C" unsigned short mem_0099A538[];
 
 // [0x007C71C0] sub_007C71C0 (12 bytes)
 extern "C" void __cdecl ext_007C7150(int value);
@@ -20094,6 +20095,60 @@ extern "C" __declspec(naked) void __cdecl fn_007C5570(void* self, void* data, un
     loc_7c55fe:
         pop     edi
         pop     esi
+        ret
+    }
+}
+
+// [0x007C20C0] sub_007C20C0 (147 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C20C0(char* p) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        xor esi, esi
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, dword ptr [edx + 0x44]
+        add eax, eax
+        push edi
+        mov dword ptr [edx + 0x34], eax
+        mov eax, dword ptr [edx + 0x3c]
+        mov word ptr [eax + 2*ecx - 0x2], si
+        mov ecx, dword ptr [edx + 0x44]
+        mov edi, dword ptr [edx + 0x3c]
+        xor eax, eax
+        lea ecx, [ecx + ecx - 0x2]
+        mov ebx, ecx
+        shr ecx, 0x2
+        rep stosd
+        mov ecx, ebx
+        and ecx, 0x3
+        rep stosb
+        mov eax, dword ptr [edx + 0x7c]
+        xor ecx, ecx
+        pop edi
+        lea eax, [eax + 2*eax]
+        shl eax, 0x2
+        mov cx, word ptr [eax + mem_0099A538 + 0x2]
+        mov dword ptr [edx + 0x78], ecx
+        xor ecx, ecx
+        mov cx, word ptr [eax + mem_0099A538]
+        mov dword ptr [edx + 0x84], ecx
+        xor ecx, ecx
+        mov cx, word ptr [eax + mem_0099A538 + 0x4]
+        mov dword ptr [edx + 0x88], ecx
+        xor ecx, ecx
+        mov cx, word ptr [eax + mem_0099A538 + 0x6]
+        mov dword ptr [edx + 0x64], esi
+        mov dword ptr [edx + 0x54], esi
+        mov dword ptr [edx + 0x6c], esi
+        mov eax, 0x2
+        mov dword ptr [edx + 0x60], esi
+        mov dword ptr [edx + 0x40], esi
+        pop esi
+        mov dword ptr [edx + 0x74], ecx
+        mov dword ptr [edx + 0x70], eax
+        mov dword ptr [edx + 0x58], eax
+        pop ebx
         ret
     }
 }
