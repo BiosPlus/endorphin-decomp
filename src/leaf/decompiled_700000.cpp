@@ -5556,3 +5556,41 @@ extern "C" __declspec(naked) void __fastcall fn_007051B0(void* self) {
         ret
     }
 }
+
+// [0x00708D70] sub_00708D70 (55 bytes)
+extern "C" void ext_00711A80();
+
+extern "C" __declspec(naked) int __fastcall fn_00708D70(void* self) {
+    __asm {
+        push    ebx
+        push    esi
+        push    edi
+        mov     edi, ecx
+        xor     ebx, ebx
+        xor     esi, esi
+        mov     eax, dword ptr [edi + 0xc0]
+        test    eax, eax
+        jle     loc_708da1
+
+    loc_708d83:
+        mov     eax, dword ptr [edi + 0xd0]
+        mov     ecx, dword ptr [eax + 4*esi]
+        call    ext_00711A80
+        test    al, al
+        je      loc_708d96
+        inc     ebx
+
+    loc_708d96:
+        mov     eax, dword ptr [edi + 0xc0]
+        inc     esi
+        cmp     esi, eax
+        jl      loc_708d83
+
+    loc_708da1:
+        pop     edi
+        mov     eax, ebx
+        pop     esi
+        pop     ebx
+        ret
+    }
+}
