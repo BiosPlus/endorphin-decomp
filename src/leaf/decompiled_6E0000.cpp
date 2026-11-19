@@ -113,6 +113,7 @@ extern "C" int mem_00B5E0C0;
 extern "C" int mem_00B5DD98;
 extern "C" int mem_00B5DD9C;
 extern "C" int mem_00B5DD90;
+extern "C" void ext_00711D40();
 
 // [0x006E6360] sub_006E6360 (80 bytes)
 // Two incremental-link style thunks: each jumps over 11 nop padding to a body.
@@ -4463,5 +4464,20 @@ extern "C" __declspec(naked) void __fastcall fn_006E9B00(void* self, int edx_unu
         mov ecx, eax
         call ext_006CD330
         ret 0x4
+    }
+}
+
+// [0x006EFF00] sub_006EFF00 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006EFF00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push 0x6c8bd0
+        push 0x6c8c90
+        push eax
+        push edx
+        add ecx, 0x1ed0
+        call ext_00711D40
+        ret 0x8
     }
 }
