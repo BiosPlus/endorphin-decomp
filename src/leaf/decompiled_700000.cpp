@@ -9877,3 +9877,111 @@ extern "C" __declspec(naked) void __fastcall fn_007024A0(void* self, int edx_unu
     L_tbl:
     }
 }
+
+// [0x00709250] sub_00709250 (234 bytes)
+extern "C" void ext_00708000();
+extern "C" void ext_00708D10();
+extern "C" void ext_00708D70();
+extern "C" void ext_00711A80();
+extern "C" void ext_00712000();
+extern "C" __declspec(naked) void __fastcall fn_00709250(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, ecx
+        cmp edi, esi
+        mov dword ptr [esp + 0xc], edi
+        je t9250_ret
+        mov eax, dword ptr [esi]
+        mov ebx, dword ptr [edi]
+        mov ecx, esi
+        call dword ptr [eax + 0x18]
+        push eax
+        mov ecx, edi
+        call dword ptr [ebx + 0x14]
+        test al, al
+        je t9250_ret
+        xor ebx, ebx
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], ebx
+        call ext_00708D70
+        test eax, eax
+        mov dword ptr [esp + 0x14], eax
+        jbe t9250_ret
+        push ebp
+t9250_loop:
+        push ebx
+        mov ecx, esi
+        call ext_00708D10
+        mov ebp, eax
+        test ebp, ebp
+        je short t9250_next
+        mov ecx, ebp
+        call ext_00712000
+        push eax
+        mov ecx, edi
+        call ext_00708000
+        mov ebx, eax
+        test ebx, ebx
+        je short t9250_next
+        mov ecx, ebx
+        call ext_00711A80
+        test al, al
+        je short t9250_next
+        mov ecx, ebp
+        call ext_00712000
+        mov ecx, ebx
+        mov edi, eax
+        call ext_00712000
+        mov esi, eax
+        mov ecx, edi
+t9250_cmp:
+        mov dl, byte ptr [ecx]
+        mov al, dl
+        cmp dl, byte ptr [esi]
+        jne short t9250_diff
+        test al, al
+        je short t9250_eq
+        mov dl, byte ptr [ecx + 0x1]
+        mov al, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne short t9250_diff
+        add ecx, 0x2
+        add esi, 0x2
+        test al, al
+        jne short t9250_cmp
+t9250_eq:
+        xor eax, eax
+        jmp short t9250_res
+t9250_diff:
+        sbb eax, eax
+        sbb eax, -1
+t9250_res:
+        test eax, eax
+        jne short t9250_skip
+        mov eax, dword ptr [ebx]
+        push ebp
+        mov ecx, ebx
+        call dword ptr [eax + 0x94]
+t9250_skip:
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, dword ptr [esp + 0x20]
+t9250_next:
+        mov ebx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x18]
+        inc ebx
+        cmp ebx, eax
+        mov dword ptr [esp + 0x14], ebx
+        jb t9250_loop
+        pop ebp
+t9250_ret:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    }
+}

@@ -22,5 +22,7 @@
     "0x007092CA",
     "0x007092D3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-19T17:00:58Z"
 }
