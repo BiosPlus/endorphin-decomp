@@ -1372,3 +1372,11 @@ L_00709CA5:
         ret
     }
 }
+
+// [0x0070AB10] Branchless tiny leaf function (6 bytes) - sub_0070AB10
+extern "C" __declspec(naked) void fn_0070AB10() {
+    __asm {
+        mov eax, dword ptr [mem_00B5EBA0]
+        ret
+    }
+}
