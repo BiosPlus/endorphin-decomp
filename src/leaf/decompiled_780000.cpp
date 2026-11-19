@@ -7021,3 +7021,26 @@ extern "C" __declspec(naked) void __fastcall fn_007865B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00783440] sub_00783440 (40 bytes)
+extern "C" int mem_009252C0;
+extern "C" __declspec(naked) void __fastcall fn_00783440(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_null
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        push edx
+        call dword ptr [mem_009252C0]
+        add esp, 0xc
+        ret 0x8
+L_null:
+        xor eax, eax
+        ret 0x8
+    }
+}
