@@ -8805,3 +8805,42 @@ extern "C" __declspec(naked) void __fastcall fn_0071D460(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x007145F0] sub_007145F0 (208 bytes)
+extern "C" void* __fastcall fn_007145F0(void* self, int edx_unused, void* src) {
+    int* d = (int*)self;
+    int* s = (int*)src;
+    d[0x00 / 4] = s[0x00 / 4];
+    d[0x04 / 4] = s[0x04 / 4];
+    d[0x08 / 4] = s[0x08 / 4];
+    d[0x0c / 4] = s[0x0c / 4];
+    d[0x10 / 4] = s[0x10 / 4];
+    d[0x14 / 4] = s[0x14 / 4];
+    d[0x18 / 4] = s[0x18 / 4];
+    d[0x1c / 4] = s[0x1c / 4];
+    d[0x20 / 4] = s[0x20 / 4];
+    d[0x24 / 4] = s[0x24 / 4];
+    d[0x28 / 4] = s[0x28 / 4];
+    d[0x2c / 4] = s[0x2c / 4];
+    d[0x30 / 4] = s[0x30 / 4];
+    d[0x34 / 4] = s[0x34 / 4];
+    d[0x38 / 4] = s[0x38 / 4];
+    d[0x3c / 4] = s[0x3c / 4];
+    d[0x40 / 4] = s[0x40 / 4];
+    d[0x44 / 4] = s[0x44 / 4];
+    d[0x48 / 4] = s[0x48 / 4];
+    d[0x4c / 4] = s[0x4c / 4];
+    d[0x50 / 4] = s[0x50 / 4];
+    d[0x54 / 4] = s[0x54 / 4];
+    d[0x58 / 4] = s[0x58 / 4];
+    d[0x5c / 4] = s[0x5c / 4];
+    d[0x60 / 4] = s[0x60 / 4];
+    d[0x64 / 4] = s[0x64 / 4];
+    d[0x68 / 4] = s[0x68 / 4];
+    d[0x6c / 4] = s[0x6c / 4];
+    d[0x70 / 4] = s[0x70 / 4];
+    d[0x74 / 4] = s[0x74 / 4];
+    d[0x78 / 4] = s[0x78 / 4];
+    d[0x7c / 4] = s[0x7c / 4];
+    return self;
+}
