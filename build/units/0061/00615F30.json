@@ -20,5 +20,7 @@
     "0x00615FCD",
     "0x00615FD7"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
