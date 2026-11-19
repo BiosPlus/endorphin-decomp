@@ -6655,3 +6655,35 @@ extern "C" __declspec(naked) void __cdecl fn_0086C1D0(void) {
         ret
     }
 }
+
+// [0x0086F120] sub_0086F120 (59 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F120(void) {
+    __asm {
+        mov dx, 0x13
+        push ebx
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        xor esi, esi
+        mov edi, dword ptr [esp + 0x10]
+        push ebp
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        movsx eax, dx
+        shl eax, 0x2
+        shr esi, 0x10
+        mov ebp, dword ptr [eax + ebx]
+        add ebp, dword ptr [eax + edi]
+        add esi, ebp
+        mov ebp, esi
+        and ebp, 0xffff
+        dec dx
+        mov dword ptr [eax + ecx], ebp
+        jns loop_top
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
