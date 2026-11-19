@@ -6758,3 +6758,40 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x0071EFD0] sub_0071EFD0 (97 bytes)
+extern "C" void ext_006D2130();
+extern "C" void ext_0071F090();
+extern "C" __declspec(naked) void __fastcall fn_0071EFD0(void* self) {
+    __asm {
+        push -1
+        push 0x8c1ccb
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        push 0x4
+        lea edi, [esi + 0x8]
+        push 0x10
+        mov ecx, edi
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esi + 0x4], 0x0
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esi], 0x9967ac
+        call ext_0071F090
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, esi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
