@@ -3014,3 +3014,25 @@ L_adde:
         ret
     }
 }
+
+// [0x00743C80] sub_00743C80 (38 bytes)
+extern "C" void ext_0079EC50();
+
+extern "C" __declspec(naked) bool __fastcall fn_00743C80(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0xaab92c
+        mov esi, ecx
+        push edi
+        call ext_0079EC50
+        add esp, 0x8
+        mov dword ptr [esi + 0xb8], eax
+        test edi, edi
+        pop edi
+        pop esi
+        setne al
+        ret 0x4
+    }
+}
