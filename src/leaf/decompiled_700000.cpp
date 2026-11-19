@@ -149,8 +149,10 @@ extern "C" void __stdcall ext_006FA920(void* a1);
 extern "C" int mem_00B5D268;
 extern "C" void ext_0070FB00();
 extern "C" int mem_00B5D2C0;
+extern "C" void ext_006D2250();
+extern "C" void* mem_009251D8;
 
-// [0x00708BD0] sub_00708BD0 (64 bytes)
+extern "C" void* mem_009251D8;
 extern "C" void ext_00708C10();
 extern "C" void ext_00711BC0();
 extern "C" void ext_00712150();
@@ -6427,5 +6429,43 @@ extern "C" __declspec(naked) void __fastcall fn_00700B60(void* self, int edx_unu
         call dword ptr [edx + 0x80]
         pop esi
         ret 8
+    }
+}
+
+// [0x00707FB0] sub_00707FB0 (77 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00707FB0(void* self) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0xa4]
+        lea ebp, [esi + 0xa4]
+        dec edi
+        js loc_707ff2
+        push ebx
+        mov ebx, dword ptr [mem_009251D8]
+    loc_707fcb:
+        mov ecx, dword ptr [esi + 0xb4]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [ecx + 4*edi]
+        mov ecx, esi
+        push edx
+        call dword ptr [eax + 0xd8]
+        mov eax, dword ptr [esi + 0xb4]
+        mov ecx, dword ptr [eax + 4*edi]
+        push ecx
+        call ebx
+        add esp, 4
+        dec edi
+        jns loc_707fcb
+        pop ebx
+    loc_707ff2:
+        mov ecx, ebp
+        call ext_006D2250
+        pop edi
+        pop esi
+        pop ebp
+        ret
     }
 }
