@@ -12964,3 +12964,82 @@ extern "C" __declspec(naked) void __fastcall fn_006AF530(void* self, int, void* 
         call ext_006A60EE
     }
 }
+
+// [0x006A8760] sub_006A8760 (150 bytes)
+extern "C" void ext_004B0EB0();
+extern "C" void ext_006A6796();
+extern "C" void ext_006ACFE0();
+extern "C" void ext_006AD0E0();
+extern "C" void ext_006AD0F0();
+extern "C" void ext_006AD1B0();
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void* __fastcall fn_006A8760(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push esi
+        mov ecx, edi
+        call ext_006ACFE0
+        cmp dword ptr [esi + 0x60], 0
+        jne short L_006A877E
+        mov dword ptr [esi + 0x60], edi
+        mov dword ptr [esi + 0x68], edi
+        jmp short L_006A8792
+L_006A877E:
+        mov eax, dword ptr [esi + 0x64]
+        push eax
+        mov ecx, edi
+        call ext_006AD0F0
+        mov ecx, dword ptr [esi + 0x64]
+        push edi
+        call ext_006AD0E0
+L_006A8792:
+        mov eax, dword ptr [esi + 0x7c]
+        test eax, eax
+        je short L_006A87BB
+        add eax, -1
+        js short L_006A87F1
+        cmp eax, dword ptr [esi + 0x7c]
+        jge short L_006A87F1
+        mov ecx, dword ptr [esi + 0x78]
+        push ebx
+        mov ebx, dword ptr [ecx + 4*eax]
+        push edi
+        mov ecx, ebx
+        call ext_004B0EB0
+        push ebx
+        mov ecx, edi
+        call ext_006AD1B0
+        pop ebx
+L_006A87BB:
+        mov edx, dword ptr [esi + 0x7c]
+        lea ecx, [esi + 0x74]
+        push edi
+        push edx
+        call ext_006A6796
+        mov dword ptr [esi + 0x64], edi
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x14]
+        push 0
+        push 1
+        mov ecx, edi
+        call edx
+        mov esi, dword ptr [esi + 0x20]
+        test esi, esi
+        je short L_006A87EA
+        push 1
+        push 0
+        push esi
+        call dword ptr [mem_00925688]
+L_006A87EA:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+L_006A87F1:
+        call ext_006A60EE
+    }
+}
