@@ -913,3 +913,8 @@ extern "C" int __fastcall fn_00701A50(void* self) {
 extern "C" void __fastcall fn_00701A60(void* self, int edx_unused, int a1) {
     *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x518) = a1;
 }
+
+// [0x00701A70] Dword field getter (7 bytes) - sub_00701A70
+extern "C" int __fastcall fn_00701A70(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x518);
+}
