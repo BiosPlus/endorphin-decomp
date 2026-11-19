@@ -21,5 +21,7 @@
     "0x007104E0",
     "0x007104F1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-19T16:24:05Z"
 }
