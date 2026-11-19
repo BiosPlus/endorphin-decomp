@@ -6116,3 +6116,17 @@ extern "C" __declspec(naked) void* __stdcall fn_0071A7C0(int a1) {
         ret 0x4
     }
 }
+
+// [0x00718390] sub_00718390 (46 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B5FD00;
+extern "C" int mem_00B5FD08;
+extern "C" int mem_00B5FD10;
+extern "C" int mem_00B5FD18;
+
+extern "C" void __cdecl fn_00718390() {
+    *(double*)&mem_00B5FD00 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5FD08 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5FD10 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5FD18 = -*(double*)mem_00925284;
+}
