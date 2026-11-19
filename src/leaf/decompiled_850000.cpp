@@ -7362,3 +7362,94 @@ extern "C" __declspec(naked) void __cdecl fn_0085DC90(void) {
         _emit 0x00
     }
 }
+
+// [0x0085BC30] sub_0085BC30 (224 bytes)
+extern "C" void ext_00859DD0();
+extern "C" unsigned int ext_0085BC20(void*);
+extern "C" __declspec(naked) int __cdecl fn_0085BC30(void) {
+    __asm {
+        sub esp, 0ch
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 20h]
+        push edi
+        call ext_0085BC20
+        mov esi, dword ptr [esp + 2ch]
+        mov ebp, dword ptr [esp + 28h]
+        add esp, 4
+        mov dword ptr [esp + 10h], eax
+        mov dword ptr [esi], 0
+        mov dword ptr [esi + 4], 0
+        test ebp, ebp
+        jbe tail
+        push edi
+        call ext_00859DD0
+        add esp, 4
+        cmp eax, 0ff00h
+        je tail
+        cdq
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 4], edx
+        mov ecx, dword ptr [esi]
+        mov eax, edx
+        mov dword ptr [esp + 18h], eax
+        mov eax, ecx
+        and eax, 80h
+        xor edx, edx
+        or eax, edx
+        je skip_sign
+        or ecx, 0ffffff00h
+        mov dword ptr [esi], ecx
+        mov dword ptr [esi + 4], 0ffffffffh
+    skip_sign:
+        mov ebx, 1
+        cmp ebp, ebx
+        jbe tail
+        jmp loop_call
+    loop_top:
+        mov edi, dword ptr [esp + 20h]
+    loop_call:
+        push edi
+        call ext_00859DD0
+        mov edi, eax
+        add esp, 4
+        cmp edi, 0ff00h
+        je loop_exit
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [esi]
+        push 8
+        push ecx
+        push edx
+        call ext_0085BBC0
+        mov dword ptr [esi], eax
+        mov eax, edi
+        mov dword ptr [esi + 4], edx
+        mov ecx, dword ptr [esi]
+        cdq
+        or ecx, eax
+        add esp, 0ch
+        mov dword ptr [esi], ecx
+        mov edi, dword ptr [esi + 4]
+        or edi, edx
+        inc ebx
+        cmp ebx, ebp
+        mov dword ptr [esi + 4], edi
+        jb loop_top
+    loop_exit:
+        mov edi, dword ptr [esp + 20h]
+    tail:
+        push edi
+        call ext_0085BC20
+        mov ecx, dword ptr [esp + 14h]
+        add esp, 4
+        sub eax, ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0ch
+        ret
+    }
+}
