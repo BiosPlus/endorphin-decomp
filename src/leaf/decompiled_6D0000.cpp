@@ -7656,3 +7656,16 @@ extern "C" __declspec(naked) void __cdecl fn_006D2C90() {
         ret
     }
 }
+
+// [0x006D2CA0] sub_006D2CA0 (12 bytes)
+extern "C" void ext_006A6C87();
+extern "C" int mem_006D2CB0;
+
+extern "C" __declspec(naked) void fn_006D2CA0() {
+    __asm {
+        push offset mem_006D2CB0
+        call ext_006A6C87
+        pop ecx
+        ret
+    }
+}
