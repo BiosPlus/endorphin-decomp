@@ -176,3 +176,11 @@ extern "C" __declspec(naked) void fn_008523A4() {
         jmp ext_0084A145
     }
 }
+
+// [0x00852427] Virtual dispatch / tail-call thunk (6 bytes) - sub_00852427
+extern "C" __declspec(naked) void fn_00852427() {
+    __asm {
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x04 // lea esp, [esp + 0x4]
+        jmp dword ptr [esi]
+    }
+}
