@@ -136,3 +136,18 @@ extern "C" __declspec(naked) void __fastcall fn_006F0620(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006F0660] Identical-shape clone of 0x006EFCB0 (34 bytes) - sub_006F0660
+extern "C" __declspec(naked) void __fastcall fn_006F0660(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push 0x6F8000
+        push 0x6F81A0
+        push eax
+        push edx
+        add ecx, 0x2DB0
+        call ext_00711D40
+        ret 0x8
+    }
+}
