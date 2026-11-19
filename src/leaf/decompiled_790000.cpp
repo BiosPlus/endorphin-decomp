@@ -49,6 +49,7 @@ extern "C" void ext_007AF080();
 extern "C" int mem_00924268;
 extern "C" void ext_00783940();
 extern "C" void ext_007838E0();
+extern "C" void ext_00796740();
 
 // [0x0079AFE0] sub_0079AFE0 (48 bytes)
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
@@ -7033,6 +7034,58 @@ L_ok:
         mov dword ptr [eax], edi
         pop edi
         mov eax, 0x1
+        pop esi
+        ret
+    }
+}
+
+// [0x00796660] sub_00796660 (110 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00796660(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x28]
+        test eax, eax
+        jne L_end
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0x48]
+        cmp eax, 1
+        mov eax, dword ptr [esi + 0x10]
+        push edi
+        mov edi, dword ptr [esi + 0x18]
+        push eax
+        je L_else
+        mov edx, dword ptr [esi + 0x264]
+        add ecx, eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_00796740
+        mov ecx, eax
+        inc edi
+        dec ecx
+        mov dword ptr [esi + 0x26c], eax
+        imul ecx, dword ptr [esi + 0x18]
+        lea eax, [ecx + edi]
+        pop edi
+        mov dword ptr [esi + 0x28], eax
+        pop esi
+        ret
+L_else:
+        lea edx, [ecx + 2*eax - 0x1]
+        mov eax, dword ptr [esi + 0x264]
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_00796740
+        mov ecx, eax
+        mov dword ptr [esi + 0x26c], eax
+        dec ecx
+        imul ecx, dword ptr [esi + 0x18]
+        lea eax, [ecx + edi]
+        pop edi
+        mov dword ptr [esi + 0x28], eax
+L_end:
         pop esi
         ret
     }
