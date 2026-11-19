@@ -6329,3 +6329,25 @@ extern "C" void __cdecl fn_007987E0(void* a1) {
 extern "C" int __cdecl fn_00798690(int a1, int a2, int a3) {
     return ((int (__cdecl *)(int, int))ext_007AF080)(a2, a3 / 8);
 }
+
+// [0x0079E5E0] sub_0079E5E0 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0079E5E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, ecx
+        sub edx, 0x0
+        je short L_ret0
+        sub edx, 0x2
+        je short L_ret0
+        dec edx
+        jne short L_zero
+        test eax, eax
+        je short L_zero
+        add eax, 0x4
+        ret 0x8
+L_zero:
+        xor eax, eax
+L_ret0:
+        ret 0x8
+    }
+}
