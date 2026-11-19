@@ -477,3 +477,15 @@ L_0079DB18:
 extern "C" void* __fastcall fn_0079DCD0(void* self) {
     return reinterpret_cast<char*>(self) + 0x78;
 }
+
+// [0x0079DCE0] Branchless tiny leaf function (18 bytes) - sub_0079DCE0
+extern "C" __declspec(naked) void fn_0079DCE0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x10 // mov edx, dword ptr [eax]
+        __asm _emit 0x89 __asm _emit 0x51 __asm _emit 0x78 // mov dword ptr [ecx + 0x78], edx
+        __asm _emit 0x8B __asm _emit 0x40 __asm _emit 0x04 // mov eax, dword ptr [eax + 0x4]
+        __asm _emit 0x89 __asm _emit 0x41 __asm _emit 0x7C // mov dword ptr [ecx + 0x7c], eax
+        ret 0x4
+    }
+}
