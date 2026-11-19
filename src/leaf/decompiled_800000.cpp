@@ -10617,3 +10617,98 @@ extern "C" __declspec(naked) void __cdecl fn_0080A480(void* self) {
         ret
     }
 }
+
+// [0x0080B130] sub_0080B130 (224 bytes)
+extern "C" __declspec(naked) __int64 __cdecl fn_0080B130(int a1, int a2, int a3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        mov esi, edi
+        imul esi, esi, 0x1f
+        lea eax, [ecx + 8*ecx]
+        lea eax, [ecx + 8*eax]
+        add edx, eax
+        cmp edi, 0x2
+        lea eax, [edx + 4*eax]
+        lea esi, [esi + eax - 0x1f]
+        jg loc_80B197
+        cmp edi, 0x1
+        jl loc_80B197
+        dec ecx
+        mov eax, 0x51eb851f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        lea eax, [edx + eax + 0x1]
+        lea eax, [eax + 2*eax]
+        cdq
+        and edx, 0x3
+        add eax, edx
+        mov edi, eax
+        mov eax, ecx
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar edi, 0x2
+        sar eax, 0x2
+        sub eax, edi
+        pop edi
+        add esi, eax
+        lea eax, [esi - 0xafaa8]
+        pop esi
+        cdq
+        ret
+
+    loc_80B197:
+        cmp edi, 0xc
+        jg loc_80B1FA
+        cmp edi, 0x3
+        jl loc_80B1FA
+        mov eax, 0x51eb851f
+        push ebx
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        lea eax, [edx + eax + 0x1]
+        lea eax, [eax + 2*eax]
+        cdq
+        and edx, 0x3
+        add eax, edx
+        lea edx, [4*edi + 0x17]
+        mov ebx, eax
+        mov eax, 0x99999999
+        imul edx
+        sar edx, 0x2
+        mov eax, edx
+        shr eax, 0x1f
+        add edx, eax
+        mov eax, ecx
+        mov edi, edx
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar ebx, 0x2
+        sar eax, 0x2
+        sub edi, ebx
+        add eax, esi
+        pop ebx
+        lea esi, [eax + edi]
+        pop edi
+        lea eax, [esi - 0xafaa8]
+        pop esi
+        cdq
+        ret
+
+    loc_80B1FA:
+        pop edi
+        or eax, -0x1
+        or edx, -0x1
+        pop esi
+        ret
+    }
+}
