@@ -11364,3 +11364,61 @@ L_7BC1C8:
         ret
     }
 }
+
+// [0x007BFBD0] sub_007BFBD0 (119 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007BFBD0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov ecx, dword ptr [eax + 0x1cc]
+        mov eax, dword ptr [esp + 0x10]
+        cdq
+        mov esi, dword ptr [ecx + 0x4]
+        sub eax, edx
+        sar eax, 1
+        cmp eax, esi
+        jle L_END
+        mov edx, dword ptr [esp + 0xc]
+        sub eax, esi
+        push edi
+        lea ecx, [edx + 2*eax - 0x2]
+L_CMP:
+        cmp esi, 0x4
+        ja L_BIG
+        jmp dword ptr [4*esi + 0x7bfc48]
+L_BIG:
+        lea edx, [esi - 0x4]
+        test edx, edx
+        jle L_U1
+L_LOOP:
+        mov di, word ptr [ecx]
+        sub word ptr [ecx + 2*esi], di
+        sub ecx, 0x2
+        dec edx
+        jne L_LOOP
+L_U1:
+        mov dx, word ptr [ecx]
+        sub word ptr [ecx + 2*esi], dx
+        sub ecx, 0x2
+L_U2:
+        mov dx, word ptr [ecx]
+        sub word ptr [ecx + 2*esi], dx
+        sub ecx, 0x2
+L_U3:
+        mov dx, word ptr [ecx]
+        sub word ptr [ecx + 2*esi], dx
+        sub ecx, 0x2
+L_U4:
+        mov dx, word ptr [ecx]
+        sub word ptr [ecx + 2*esi], dx
+        sub ecx, 0x2
+L_E0:
+        sub eax, esi
+        test eax, eax
+        jg L_CMP
+        pop edi
+L_END:
+        pop esi
+        ret
+    }
+}
