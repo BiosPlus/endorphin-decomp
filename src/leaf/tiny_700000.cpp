@@ -1347,3 +1347,8 @@ extern "C" unsigned char __stdcall fn_007097B0(int a1) {
 extern "C" bool __cdecl fn_007098B0(void) {
     return false;
 }
+
+// [0x007098C0] Return false (5 bytes) - sub_007098C0
+extern "C" bool __stdcall fn_007098C0(int a1, int a2, int a3) {
+    return false;
+}
