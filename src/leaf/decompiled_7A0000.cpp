@@ -6219,3 +6219,21 @@ extern "C" bool __fastcall fn_007AE3A0(void* self, int edx, int a1) {
     ((fn_006E7410_t)ext_006E7410)((char*)self + 0x20, edx, 1, 0xab0bb0);
     return false;
 }
+
+// [0x007AEBA0] sub_007AEBA0 (29 bytes)
+extern "C" void ext_007831E0();
+extern "C" __declspec(naked) void* __fastcall fn_007AEBA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_007831E0
+        xor eax, eax
+        mov dword ptr [esi], 0x998a30
+        mov dword ptr [esi + 0x58], eax
+        mov dword ptr [esi + 0x5c], eax
+        mov dword ptr [esi + 0x60], eax
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
