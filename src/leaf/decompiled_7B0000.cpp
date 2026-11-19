@@ -13033,3 +13033,117 @@ extern "C" __declspec(naked) void __cdecl fn_007B25C0(void* self) {
         ret
     }
 }
+
+// [0x007B1590] sub_007B1590 (200 bytes)
+extern "C" void ext_0079AF50();
+extern "C" void ext_007B04C0();
+extern "C" void ext_007B06A0();
+extern "C" void ext_007B09C0();
+extern "C" void ext_007B10D0();
+
+extern "C" __declspec(naked) void __fastcall fn_007B1590(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push ebp
+        push ebx
+        push edi
+        call ext_007B06A0
+        add esp, 0xc
+        test eax, eax
+        jne L_7B15B4
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_7B15B4:
+        mov esi, dword ptr [esp + 0x20]
+        cmp dword ptr [esi], 0x0
+        jne L_7B15DE
+        lea eax, [4*ebp]
+        push 0xab1560
+        push eax
+        push edi
+        call ext_007B04C0
+        add esp, 0xc
+        mov dword ptr [esi], eax
+        test eax, eax
+        jne L_7B15DE
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_7B15DE:
+        cmp word ptr [ebx + 0x2], 0x3
+        mov esi, dword ptr [esi]
+        jne L_7B1646
+        mov ecx, dword ptr [ebx + 0x4]
+        push 0xab154c
+        shl ecx, 1
+        push ecx
+        push edi
+        call ext_007B04C0
+        mov ebp, eax
+        add esp, 0xc
+        test ebp, ebp
+        jne L_7B1606
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_7B1606:
+        push ebp
+        push ebx
+        push edi
+        call ext_007B09C0
+        mov edi, eax
+        add esp, 0xc
+        test edi, edi
+        je L_7B1636
+        mov ecx, dword ptr [esp + 0x1c]
+        mov eax, ebp
+        mov edx, ecx
+        dec ecx
+        test edx, edx
+        jle L_7B1636
+        inc ecx
+L_7B1625:
+        xor edx, edx
+        add esi, 0x4
+        mov dx, word ptr [eax]
+        add eax, 0x2
+        mov dword ptr [esi - 0x4], edx
+        dec ecx
+        jne L_7B1625
+L_7B1636:
+        push ebp
+        call ext_0079AF50
+        add esp, 0x4
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_7B1646:
+        push esi
+        push ebx
+        push edi
+        call ext_007B10D0
+        add esp, 0xc
+        mov edi, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
