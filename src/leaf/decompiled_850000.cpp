@@ -5415,3 +5415,72 @@ extern "C" __declspec(naked) void __cdecl fn_0085D570(void) {
         __asm _emit 0x00
     }
 }
+
+// [0x0085E6A0] sub_0085E6A0 (128 bytes)
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E690();
+
+extern "C" __declspec(naked) int __cdecl fn_0085E6A0(const char* a, const char* b) {
+    __asm {
+        sub esp, 4
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push ebp
+        push esi
+        call ext_0085E1F0
+        mov edi, dword ptr [esp + 0x20]
+        add esp, 4
+        mov ebp, eax
+        push edi
+        call ext_0085E1F0
+        add esp, 4
+        cmp eax, ebp
+        je same_len
+        mov eax, 1
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+    same_len:
+        xor ebx, ebx
+        test ebp, ebp
+        je equal
+    loop_top:
+        mov al, byte ptr [edi + ebx]
+        push eax
+        call ext_0085E690
+        mov byte ptr [esp + 0x14], al
+        add esp, 4
+        mov al, byte ptr [esi + ebx]
+        push eax
+        call ext_0085E690
+        add esp, 4
+        cmp byte ptr [esp + 0x10], al
+        jne differ
+        inc ebx
+        cmp ebp, ebx
+        ja loop_top
+    equal:
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+    differ:
+        mov eax, 1
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00 // lea esp, [esp]
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00 // lea esp, [esp]
+    }
+}
