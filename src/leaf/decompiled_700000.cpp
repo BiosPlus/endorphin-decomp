@@ -5838,3 +5838,23 @@ extern "C" __declspec(naked) void __fastcall fn_0070AC00(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0070AC80] sub_0070AC80 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0070AC80(void* self, int edx_unused, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x2a0]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x2a4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x2a8]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0x2ac]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x2b0]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x2b4]
+        mov dword ptr [eax + 0x14], ecx
+        ret 0x4
+    }
+}
