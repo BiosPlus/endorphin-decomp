@@ -10302,3 +10302,101 @@ extern "C" __declspec(naked) int __fastcall fn_0080A540(void* self) {
         ret
     }
 }
+
+// [0x0080C6D0] sub_0080C6D0 (192 bytes)
+extern "C" void __cdecl ext_008596E0(void* a1);
+extern "C" __declspec(naked) int __cdecl fn_0080C6D0(void** out, int n) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        cmp esi, 0x1
+        mov edi, 0xc
+        jbe ret0
+        dec esi
+        lea ebx, [4*esi]
+        push ebx
+        mov dword ptr [esp + 0x1c], ebx
+        call ext_008596E0
+        mov ebp, eax
+        add esp, 4
+        test ebp, ebp
+        je fail_alloc
+        xor edi, edi
+        test esi, esi
+        jbe skip1
+        mov ebx, ebp
+    loop1:
+        push 4
+        call ext_008596E0
+        add esp, 4
+        mov dword ptr [ebx], eax
+        test eax, eax
+        je fail_loop
+        inc edi
+        add ebx, 4
+        cmp edi, esi
+        jb loop1
+        mov ebx, dword ptr [esp + 0x18]
+    skip1:
+        cmp esi, 0x1
+        jbe skip2
+        lea eax, [ebp + 4]
+        dec esi
+    loop2:
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax - 4]
+        add eax, 4
+        dec esi
+        mov dword ptr [ecx], edx
+        jne loop2
+    skip2:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [ebp]
+        push ebp
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov ecx, dword ptr [ebx + ebp - 4]
+        mov dword ptr [eax], ecx
+        call ext_00859730
+        add esp, 4
+    ret0:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    fail_loop:
+        test edi, edi
+        jbe free_arr
+        mov esi, ebp
+    freeloop:
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_00859730
+        add esp, 4
+        add esi, 4
+        dec edi
+        jne freeloop
+    free_arr:
+        push ebp
+        call ext_00859730
+        add esp, 4
+        mov eax, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    fail_alloc:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
