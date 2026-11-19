@@ -7351,3 +7351,73 @@ throw_path:
         call    ext_006A6DD2
     }
 }
+
+// [0x005E0670] sub_005E0670 (189 bytes)
+extern "C" __declspec(naked) unsigned int __stdcall fn_005E0670(unsigned int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 100h
+        ja above100
+        je eq100
+        cmp eax, 7
+        ja deflt
+        jmp dword ptr [eax*4 + 05E0730h]
+    t0:
+        mov eax, 0B465D0h
+        ret 4
+    t1:
+        mov eax, 0B465ECh
+        ret 4
+    t2:
+        mov eax, 0B46608h
+        ret 4
+    t4:
+        mov eax, 0B46624h
+        ret 4
+    t6:
+        mov eax, 0B46694h
+        ret 4
+    t7:
+        mov eax, 0B466B0h
+        ret 4
+    eq100:
+        mov eax, 0B46640h
+        ret 4
+    above100:
+        cmp eax, 700h
+        ja above700
+        je eq700
+        cmp eax, 200h
+        je eq200
+        cmp eax, 400h
+        jne deflt
+        mov eax, 0B46678h
+        ret 4
+    eq200:
+        mov eax, 0B4665Ch
+        ret 4
+    eq700:
+        mov eax, 0B466CCh
+        ret 4
+    above700:
+        add eax, 0FFFFF8FFh
+        cmp eax, 6
+        ja deflt
+        jmp dword ptr [eax*4 + 05E0750h]
+    u0:
+        mov eax, 0B466E8h
+        ret 4
+    u1:
+        mov eax, 0B46704h
+        ret 4
+    u3:
+        mov eax, 0B46720h
+        ret 4
+    u6:
+        mov eax, 0B46758h
+        ret 4
+    deflt:
+        mov eax, 0B4673Ch
+        ret 4
+    }
+}
