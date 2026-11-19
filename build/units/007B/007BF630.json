@@ -19,5 +19,7 @@
     "0x007BF6AC",
     "0x007BF6BE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-19T16:22:35Z"
 }

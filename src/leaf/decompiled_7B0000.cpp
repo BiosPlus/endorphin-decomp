@@ -11872,3 +11872,75 @@ L_end:
         ret
     }
 }
+
+// [0x007BF630] sub_007BF630 (159 bytes)
+extern "C" void ext_00798840();
+extern "C" void ext_0079B140();
+extern "C" void ext_007AF200();
+extern "C" char mem_00AB25C8[];
+extern "C" char mem_00AB2580[];
+extern "C" __declspec(naked) int __cdecl fn_007BF630(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax + 0x1cc]
+        mov ecx, dword ptr [esi]
+        cmp ecx, 1
+        je L_ret1
+        cmp ecx, 2
+        je L_two
+        mov eax, dword ptr [eax]
+        push ecx
+        push offset mem_00AB25C8
+        push eax
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        ret
+    L_two:
+        mov cx, word ptr [eax + 0x40]
+        cmp cx, 8
+        je L_ok
+        cmp cx, 0x10
+        je L_ok
+        and ecx, 0xffff
+        push ecx
+        mov ecx, dword ptr [eax]
+        push offset mem_00AB2580
+        push ecx
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        ret
+    L_ok:
+        cmp word ptr [eax + 0x72], 1
+        jne L_else
+        xor ecx, ecx
+        mov cx, word ptr [eax + 0x4e]
+        jmp L_st
+    L_else:
+        mov ecx, 1
+    L_st:
+        mov dword ptr [esi + 4], ecx
+        mov ecx, dword ptr [eax + 0xc]
+        test ch, 4
+        push eax
+        je L_b
+        call ext_007AF200
+        add esp, 4
+        mov dword ptr [esi + 8], eax
+        mov eax, 1
+        pop esi
+        ret
+    L_b:
+        call ext_00798840
+        add esp, 4
+        mov dword ptr [esi + 8], eax
+    L_ret1:
+        mov eax, 1
+        pop esi
+        ret
+    }
+}
