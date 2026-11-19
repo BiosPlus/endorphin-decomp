@@ -9070,3 +9070,81 @@ extern "C" __declspec(naked) void __cdecl fn_008074E0(void) {
         ret
     }
 }
+
+// [0x0080A9D0] sub_0080A9D0 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080A9D0(unsigned int key, void* out1, void* out2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, esi
+        shr esi, 0x10
+        and edi, 0xffff
+        cmp esi, 0x80
+        jb L_0080A9F1
+        pop edi
+        mov eax, 0x9
+        pop esi
+        ret
+    L_0080A9F1:
+        call ext_0080ABA0
+        lea eax, [esi + 8*esi]
+        shl eax, 0x3
+        sub eax, esi
+        shl eax, 0x3
+        mov cl, byte ptr [eax + 0xb62260]
+        test cl, cl
+        je L_0080AA13
+        cmp dword ptr [eax + 0xb6204c], edi
+        je L_0080AA20
+    L_0080AA13:
+        call ext_0080ABC0
+        pop edi
+        mov eax, 0x9
+        pop esi
+        ret
+    L_0080AA20:
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        je L_0080AA30
+        mov edx, dword ptr [eax + 0xb62048]
+        mov dword ptr [ecx], edx
+    L_0080AA30:
+        mov ecx, dword ptr [eax + 0xb62048]
+        and ecx, 0xffff0000
+        cmp ecx, 0xffff0000
+        je L_0080AA59
+        cmp ecx, 0xfffe0000
+        je L_0080AA59
+        call ext_0080ABC0
+        pop edi
+        mov eax, 0x2ba
+        pop esi
+        ret
+    L_0080AA59:
+        mov ecx, dword ptr [esp + 0x14]
+        test ecx, ecx
+        je L_0080AA69
+        mov eax, dword ptr [eax + 0xb62030]
+        mov dword ptr [ecx], eax
+    L_0080AA69:
+        call ext_0080ABC0
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
