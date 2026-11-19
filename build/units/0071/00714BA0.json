@@ -13,5 +13,7 @@
     "0x00714BB5",
     "0x00714BBF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:02:54Z"
 }
