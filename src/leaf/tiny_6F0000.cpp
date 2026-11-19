@@ -3066,3 +3066,21 @@ L_006F24D8:
 extern "C" int __fastcall fn_006F3180(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x6958);
 }
+
+// [0x006F7260] Scalar deleting destructor (30 bytes) - sub_006F7260
+extern "C" __declspec(naked) void fn_006F7260() {
+    __asm {
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        call ext_006F7280
+        __asm _emit 0xF6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 // test byte ptr [esp + 0x8], 0x1
+        je L_006F7278
+        push esi
+        call ext_006A5C5C
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 0x4
+L_006F7278:
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
