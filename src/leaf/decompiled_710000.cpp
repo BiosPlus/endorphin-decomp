@@ -8613,3 +8613,94 @@ after_loop:
         ret 0x4
     }
 }
+
+// [0x007159B0] sub_007159B0 (203 bytes)
+extern "C" void ext_006E72A0();
+extern "C" void ext_006E72D0();
+extern "C" void ext_006D2160();
+extern "C" void ext_006D2250();
+
+// SEH-protected (fs:[0] frame, scope 0x8bbd97), __thiscall with one stack arg (ret 4).
+extern "C" __declspec(naked) void __fastcall fn_007159B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8bbd97
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        sub esp, 0x20
+        push ebp
+        push esi
+        push edi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_006E72A0
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push 0x0
+        mov esi, 0x1
+        push 0xaac354
+        push eax
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x40], esi
+        call dword ptr [edx + 0x8]
+        mov ebp, dword ptr [esp + 0x3c]
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, ebp
+        call ext_006E72D0
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esp + 0x10], 0x993ce0
+        mov eax, dword ptr [esp + 0x14]
+        xor edi, edi
+        test eax, eax
+        mov dword ptr [esp + 0x34], 0x2
+        jle done
+    loop_top:
+        mov ecx, dword ptr [esp + 0x24]
+        mov esi, dword ptr [ecx + 4 * edi]
+        test esi, esi
+        je skip
+        mov ecx, esi
+        call ext_006B9D70
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    skip:
+        mov eax, dword ptr [esp + 0x14]
+        inc edi
+        cmp edi, eax
+        jl loop_top
+    done:
+        lea ecx, [esp + 0x14]
+        call ext_006D2250
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x34], 0x0
+        call ext_006D2160
+        mov ecx, dword ptr [esp + 0x2c]
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x2c
+        ret 0x4
+    }
+}
