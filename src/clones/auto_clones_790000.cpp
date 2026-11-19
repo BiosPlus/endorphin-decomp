@@ -146,3 +146,15 @@ extern "C" __declspec(naked) void __cdecl fn_0079B960() {
         ret
     }
 }
+
+// [0x0079F1D0] Identical-shape clone of 0x006BEC70 (41 bytes) - sub_0079F1D0
+extern "C" __declspec(naked) void __cdecl fn_0079F1D0() {
+    __asm {
+        mov dword ptr [mem_00B61158], 0xB61168
+        mov dword ptr [mem_00B61160], 0xAAFF80
+        mov dword ptr [mem_00B6115C], 0xB61220
+        mov dword ptr [mem_00B61164], 0
+        ret
+    }
+}
+
