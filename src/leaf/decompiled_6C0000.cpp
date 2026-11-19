@@ -6727,3 +6727,30 @@ extern "C" __declspec(naked) void __fastcall fn_006C11B0(void* self, void* dummy
         ret 4
     }
 }
+
+// [0x006C1B40] sub_006C1B40 (77 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_006C1B40(unsigned int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x6
+        ja loc_6c1b88
+        jmp dword ptr [4*eax + 0x6c1b90]
+        mov eax, 0xaa8c80
+        ret 0x4
+        mov eax, 0xaa8c74
+        ret 0x4
+        mov eax, 0xaa8c68
+        ret 0x4
+        mov eax, 0xaa8c5c
+        ret 0x4
+        mov eax, 0xaa8c50
+        ret 0x4
+        mov eax, 0xaa8c44
+        ret 0x4
+        mov eax, 0xaa8c38
+        ret 0x4
+    loc_6c1b88:
+        xor eax, eax
+        ret 0x4
+    }
+}
