@@ -420,3 +420,11 @@ L_0072B988:
 extern "C" int __cdecl fn_0072BBB0(void) {
     return 0xb;
 }
+
+// [0x0072CCD0] Branchless tiny leaf function (6 bytes) - sub_0072CCD0
+extern "C" __declspec(naked) void fn_0072CCD0() {
+    __asm {
+        mov eax, dword ptr [mem_00B60288]
+        ret
+    }
+}
