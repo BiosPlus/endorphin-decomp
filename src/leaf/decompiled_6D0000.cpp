@@ -607,8 +607,10 @@ no_shift:
     }
 }
 extern "C" void ext_006DEEA0();
+extern "C" void ext_006D2130();
+extern "C" void ext_006FD3A0();
 
-// [0x006D9470] sub_006D9470 (799 bytes)
+extern "C" void ext_006FD3A0();
 extern "C" __declspec(naked) void __fastcall fn_006D9470(void* self) {
     __asm {
         _emit 0xe9
@@ -8589,6 +8591,43 @@ extern "C" __declspec(naked) void __fastcall fn_006DE5F0(void* self, int edx_unu
         call ext_006DE130
         pop edi
         pop esi
+        ret 0x4
+    }
+}
+
+// [0x006D7880] sub_006D7880 (98 bytes)
+// SEH-guarded constructor-style init: installs an EH frame, calls ext_006FD3A0(arg),
+// calls ext_006D2130 on self+0x28 (0x100 x 0x20), sets self+0x28+0x14 and vtable, restores fs:[0], ret 4.
+extern "C" __declspec(naked) void __fastcall fn_006D7880(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x008b9228
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0xc], esi
+        call ext_006FD3A0
+        lea edi, [esi + 0x28]
+        push 0x20
+        push 0x100
+        mov ecx, edi
+        mov dword ptr [esp + 0x1c], 0x0
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov eax, esi
+        mov dword ptr [edi + 0x14], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi], 0x0099396c
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
         ret 0x4
     }
 }
