@@ -415,3 +415,32 @@ L_4959CC:
         ret 0x8
     }
 }
+
+// [0x004C2160] Properties::SequenceType<std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>>, Properties::GetConstStringProxy, DeRefValue>::vfunc_3 (61 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004C2160(void) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -8
+        push    -1
+        push    0x8b40d8
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 18h
+        mov     eax, dword ptr [ebp+8]
+        push    ebx
+        mov     ebx, dword ptr [eax]
+        push    esi
+        mov     esi, dword ptr [ebx+4]
+        cmp     esi, dword ptr [ebx+8]
+        push    edi
+        mov     dword ptr [esp+14h], ebx
+        jbe     SHORT L_004C2198
+        call    dword ptr [mem_00925134]
+L_004C2198:
+        mov     edi, dword ptr [ebp+0Ch]
+        _emit   0xEB
+        _emit   0x03
+    }
+}
