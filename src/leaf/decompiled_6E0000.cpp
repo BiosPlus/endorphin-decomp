@@ -4605,3 +4605,23 @@ extern "C" __declspec(naked) void __cdecl fn_006E6410(void) {
         ret
     }
 }
+
+// [0x006EA410] sub_006EA410 (36 bytes)
+extern "C" int mem_00B5E0E8;
+extern "C" int mem_00B5E0F0;
+extern "C" int mem_00B5E0F8;
+extern "C" __declspec(naked) void __cdecl fn_006EA410(void) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5E0E8]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5E0F0]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5E0F8]
+        ret
+    }
+}
