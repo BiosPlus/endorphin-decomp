@@ -4973,3 +4973,26 @@ extern "C" __declspec(naked) void __cdecl fn_0085F700(char* p) {
         _emit 0x00
     }
 }
+
+// [0x0085C430] sub_0085C430 (61 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_0085C430(unsigned int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x4
+        ja L_0085C468
+        jmp dword ptr [4*eax + 0x85c470]
+        mov eax, 0x99f0c0
+        ret 0x4
+        mov eax, 0x99f0b0
+        ret 0x4
+        mov eax, 0x99f0d0
+        ret 0x4
+        mov eax, 0x99f0e0
+        ret 0x4
+        mov eax, 0x99f0f0
+        ret 0x4
+    L_0085C468:
+        xor eax, eax
+        ret 0x4
+    }
+}
