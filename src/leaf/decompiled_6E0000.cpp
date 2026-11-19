@@ -5027,3 +5027,25 @@ extern "C" __declspec(naked) void __fastcall fn_006EFC50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006EFC00] sub_006EFC00 (74 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006EFC00(void* self, void* dummy, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [ecx + 0x1948]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x194c]
+        mov dword ptr [eax + 4], edx
+        mov edx, dword ptr [ecx + 0x1950]
+        mov dword ptr [eax + 8], edx
+        mov edx, dword ptr [ecx + 0x1954]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x1958]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x195c]
+        mov dword ptr [eax + 0x18], 0
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x1c], 0x3ff00000
+        ret 4
+    }
+}
