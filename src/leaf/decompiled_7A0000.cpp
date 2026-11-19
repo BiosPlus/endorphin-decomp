@@ -6117,3 +6117,13 @@ extern "C" __declspec(naked) void __cdecl fn_007AF2F0(void* self) {
         ret
     }
 }
+
+// [0x007AEF70] sub_007AEF70 (14 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AEF70(void* self) {
+    __asm {
+        lea ecx, [esp + 0x4]
+        call ext_006B9D70
+        xor al, al
+        ret 0x54
+    }
+}
