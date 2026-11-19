@@ -8011,3 +8011,108 @@ extern "C" __declspec(naked) void __fastcall fn_00859360(void* self) {
         ret
     }
 }
+
+// [0x0085FE90] sub_0085FE90 (240 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_0085D530();
+extern "C" void ext_0085D820();
+extern "C" void ext_0085D8D0();
+extern "C" int mem_00AB9888;
+extern "C" int mem_00BC6400;
+extern "C" int mem_00AB9F28;
+extern "C" int mem_00BC70F8;
+extern "C" int mem_00BC6402;
+extern "C" int mem_00BC5C20;
+extern "C" int mem_00BC70D8;
+extern "C" int mem_00924248;
+
+extern "C" __declspec(naked) void __cdecl fn_0085FE90(int a, void* p) {
+    __asm {
+        sub esp, 0x400
+        push esi
+        push edi
+        xor esi, esi
+        mov edi, dword ptr [esp + 0x410]
+        mov si, word ptr [edi + 6]
+        push 0x10
+        add esi, 8
+        push 0
+        push 0xbc6400
+        inc dword ptr [mem_00AB9888]
+        call ext_0085D510
+        mov eax, dword ptr [esp + 0x418]
+        add esp, 0xc
+        _emit 0x66
+        _emit 0xc7
+        _emit 0x05
+        _emit 0x00
+        _emit 0x64
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x02
+        _emit 0x00
+        push 4
+        inc eax
+        push eax
+        push 0xbc6404
+        call ext_0085D530
+        add esp, 0xc
+        cmp word ptr [mem_00AB9F28], 0
+        jne have_val
+        mov word ptr [mem_00AB9F28], 0x1db
+    have_val:
+        mov ax, word ptr [mem_00AB9F28]
+        push eax
+        call dword ptr [mem_00BC70F8]
+        mov word ptr [mem_00BC6402], ax
+        push esi
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0085D530
+        add esp, 0xc
+        cmp word ptr [esp + 0xc], 0x135
+        jne after_fill
+        xor eax, eax
+        lea ecx, [esp + 0x10]
+        mov ax, word ptr [esp + 0xa]
+        add eax, 0x22030000
+        push eax
+        push 0x36
+        push ecx
+        call ext_0085D8D0
+        add esp, 0xc
+    after_fill:
+        lea eax, [esp + 8]
+        push esi
+        push eax
+        call ext_0085D820
+        lea eax, [esp + 0x10]
+        add esp, 8
+        mov ecx, dword ptr [mem_00BC5C20]
+        push 0x10
+        push 0xbc6400
+        push 0
+        push esi
+        push eax
+        push ecx
+        call dword ptr [mem_00BC70D8]
+        push 1
+        call dword ptr [mem_00924248]
+        pop edi
+        pop esi
+        add esp, 0x400
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
