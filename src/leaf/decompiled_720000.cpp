@@ -6889,3 +6889,102 @@ extern "C" __declspec(naked) void __fastcall fn_0072B990(void* self) {
         ret
     }
 }
+
+// [0x00724190] sub_00724190 (208 bytes)
+extern "C" int mem_009251D0;
+extern "C" __declspec(naked) void __fastcall fn_00724190(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 24h
+        push ebx
+        push esi
+        mov esi, ecx
+        xor bl, bl
+        push edi
+        mov byte ptr [ebp-2], bl
+        mov ecx, dword ptr [esi+10h]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax+2Ch]
+        test al, al
+        je L_ret_bl
+        mov ecx, dword ptr [esi+10h]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx+24h]
+        mov ecx, dword ptr [esi+10h]
+        mov edi, eax
+        lea edx, [ebp-24h]
+        push 15h
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax+14h]
+        lea eax, [ebp-24h]
+        push 0AACDF4h
+        push eax
+        call dword ptr [mem_009251D0]
+        add esp, 8
+        test eax, eax
+        jne short L_skip1
+        mov byte ptr [ebp-2], 1
+L_skip1:
+        mov ecx, dword ptr [esi+10h]
+        lea eax, [ebp-3]
+        push 1
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx+14h]
+        mov ecx, dword ptr [esi+10h]
+        lea eax, [ebp-1]
+        push 1
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx+14h]
+        mov cl, byte ptr [ebp-1]
+        lea eax, [ebp-8]
+        test cl, cl
+        mov ecx, dword ptr [esi+10h]
+        push 4
+        push eax
+        mov edx, dword ptr [ecx]
+        setne bl
+        call dword ptr [edx+14h]
+        test bl, bl
+        je short L_skip2
+        mov eax, dword ptr [ebp-8]
+        bswap eax
+        mov dword ptr [ebp-8], eax
+L_skip2:
+        mov al, byte ptr [ebp-2]
+        cmp al, 1
+        jne short L_else
+        mov ecx, dword ptr [ebp-8]
+        mov byte ptr [esi+16h], bl
+        mov dword ptr [esi+4], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+L_else:
+        mov ecx, dword ptr [esi+10h]
+        push edi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx+28h]
+        mov al, byte ptr [ebp-2]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+L_ret_bl:
+        pop edi
+        mov al, bl
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
