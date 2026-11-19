@@ -9075,3 +9075,11 @@ extern "C" __declspec(naked) void __cdecl fn_006FC700() {
         ret
     }
 }
+
+// [0x006FC310] sub_006FC310 (21 bytes)
+extern "C" int __cdecl ext_006FC3A0(int a, int b);
+extern "C" int mem_00B5E3D8;
+
+extern "C" void __cdecl fn_006FC310() {
+    mem_00B5E3D8 = ext_006FC3A0(0xb5e3e0, -1);
+}
