@@ -9175,3 +9175,85 @@ L7E_go:
         ret 0xc
     }
 }
+
+// [0x0078D940] sub_0078D940 (191 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_00791FF0();
+extern "C" __declspec(naked) void __fastcall fn_0078D940(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x5c]
+        test eax, eax
+        je L_skip1
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x48]
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x4c]
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0x50]
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x54]
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0x58]
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x5c]
+        mov eax, dword ptr [esi + 0x54]
+        test eax, eax
+        je L_a
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    L_a:
+        mov eax, dword ptr [esi + 0x58]
+        test eax, eax
+        je L_b
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    L_b:
+        mov eax, dword ptr [esi + 0x48]
+        imul eax, dword ptr [esi + 0x1c]
+        imul eax, dword ptr [esi + 0x18]
+        imul eax, dword ptr [esi + 0x4c]
+        shl eax, 5
+        push eax
+        call ext_006A5C62
+        mov ecx, dword ptr [esi + 0x48]
+        mov dword ptr [esi + 0x54], eax
+        imul ecx, dword ptr [esi + 0x1c]
+        imul ecx, dword ptr [esi + 0x18]
+        imul ecx, dword ptr [esi + 0x4c]
+        shl ecx, 5
+        push ecx
+        call ext_006A5C62
+        add esp, 8
+        mov dword ptr [esi + 0x58], eax
+        mov dword ptr [esi + 0x5c], 0
+    L_skip1:
+        mov eax, dword ptr [esi + 0x60]
+        test eax, eax
+        je L_c
+        mov ecx, esi
+        call ext_00791FF0
+    L_c:
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x60]
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je L_d
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x64]
+    L_d:
+        pop esi
+        ret 4
+    }
+}
