@@ -243,3 +243,26 @@ L_008574C2:
         ret
     }
 }
+
+// [0x0085E030] Guarded tiny leaf function (27 bytes) - sub_0085E030
+extern "C" __declspec(naked) void fn_0085E030() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        __asm _emit 0x8B __asm _emit 0xD0 // mov edx, eax
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x10 // mov ecx, dword ptr [esp + 0x10]
+L_0085E03C:
+        __asm _emit 0x8A __asm _emit 0x19 // mov bl, byte ptr [ecx]
+        __asm _emit 0x8B __asm _emit 0xF2 // mov esi, edx
+        inc edx
+        inc ecx
+        __asm _emit 0x88 __asm _emit 0x1E // mov byte ptr [esi], bl
+        __asm _emit 0x84 __asm _emit 0xDB // test bl, bl
+        jne L_0085E03C
+        pop esi
+        pop ebx
+        ret
+    }
+}
+
