@@ -6271,3 +6271,47 @@ extern "C" __declspec(naked) void __fastcall fn_00708FF0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00707F50] sub_00707F50 (73 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00707F50(void* self, int dummy_edx, int arg1, int arg2) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [ecx + 0x8c]
+        xor edx, edx
+        push edi
+        test esi, esi
+        jle done_false
+        mov eax, dword ptr [ecx + 0x9c]
+        mov ebx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+    loop_start:
+        mov ecx, dword ptr [eax]
+        cmp ecx, edi
+        jne check_reverse
+        cmp dword ptr [eax + 0x4], ebx
+        je done_true
+    check_reverse:
+        cmp ecx, ebx
+        jne next_iter
+        cmp dword ptr [eax + 0x4], edi
+        je done_true
+    next_iter:
+        inc edx
+        add eax, 0x10
+        cmp edx, esi
+        jl loop_start
+    done_false:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x8
+    done_true:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x8
+    }
+}
