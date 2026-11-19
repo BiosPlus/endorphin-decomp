@@ -108,6 +108,7 @@ extern "C" __declspec(naked) void __fastcall fn_0071B040(void* self, int edx_unu
         ret 0x4
     }
 }
+extern "C" int mem_00B5EB78;
 
 // [0x0071C320] sub_0071C320 (16 bytes)
 extern "C" void ext_006B9EC0();
@@ -6915,6 +6916,68 @@ extern "C" __declspec(naked) void __fastcall fn_0071F0A0(void* self, int edx_unu
         pop edi
         pop esi
         pop ebx
+        ret 0x4
+    }
+}
+
+// [0x007128A0] sub_007128A0 (104 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007128A0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, ecx
+        xor ebx, ebx
+        push esi
+        push edi
+        mov edx, dword ptr [ebp + 0x14]
+        test edx, edx
+        mov dword ptr [esp + 0x10], edx
+        jle L_not_found
+        xor edi, edi
+    L_loop:
+        mov eax, dword ptr [ebp + 0x10]
+        add eax, edi
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je L_next
+        mov esi, dword ptr [ecx]
+        cmp esi, dword ptr [eax]
+        jne L_next
+        mov esi, dword ptr [ecx + 0x4]
+        test esi, esi
+        je L_next
+        mov ecx, dword ptr [mem_00B5EB78]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je L_skip_edx
+        cmp esi, dword ptr [esp + 0x18]
+        je L_found
+    L_skip_edx:
+        mov edx, dword ptr [esp + 0x10]
+    L_next:
+        inc ebx
+        add edi, 0xc
+        cmp ebx, edx
+        jl L_loop
+    L_not_found:
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret 0x4
+    L_found:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        pop ecx
         ret 0x4
     }
 }
