@@ -3138,3 +3138,85 @@ fn0073A120_ret1:
         ret 4
     }
 }
+
+// [0x0073C2A0] sub_0073C2A0 (192 bytes)
+extern "C" void ext_006D2300();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726900();
+extern "C" void ext_00726BE0();
+extern "C" __declspec(naked) void __fastcall fn_0073C2A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 8
+        push edi
+        mov edi, ecx
+        push 0aadfb8h
+        mov dword ptr [esp + 0ch], edi
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073C2A0_ret1
+        mov ecx, dword ptr [edi + 0ach]
+        push esi
+        add ecx, 4
+        call ext_00726900
+        mov ecx, eax
+        mov eax, 55555556h
+        imul ecx
+        mov ecx, dword ptr [esp + 14h]
+        mov eax, edx
+        shr eax, 1fh
+        add edx, eax
+        add ecx, 28h
+        mov esi, edx
+        push esi
+        call ext_006D2300
+        test esi, esi
+        jle fn0073C2A0_tail
+        push ebx
+        push ebp
+        xor ebp, ebp
+        mov dword ptr [esp + 10h], esi
+fn0073C2A0_outer:
+        mov ecx, dword ptr [esp + 1ch]
+        call ext_006DEEC0
+        mov esi, dword ptr [edi + 0ach]
+        add eax, ebp
+        add esi, 4
+        mov edi, eax
+        mov ebx, 3
+fn0073C2A0_inner:
+        mov ecx, esi
+        call ext_00726BE0
+        fstp qword ptr [edi]
+        add edi, 8
+        dec ebx
+        jne fn0073C2A0_inner
+        mov eax, dword ptr [esp + 10h]
+        mov edi, dword ptr [esp + 14h]
+        add ebp, 20h
+        dec eax
+        mov dword ptr [esp + 10h], eax
+        jne fn0073C2A0_outer
+        pop ebp
+        pop ebx
+fn0073C2A0_tail:
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        pop esi
+        mov al, 1
+        pop edi
+        add esp, 8
+        ret 4
+fn0073C2A0_ret1:
+        mov al, 1
+        pop edi
+        add esp, 8
+        ret 4
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
