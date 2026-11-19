@@ -757,3 +757,8 @@ extern "C" __declspec(naked) void fn_00700510() {
         ret
     }
 }
+
+// [0x00700520] Byte/bool field getter (7 bytes) - sub_00700520
+extern "C" unsigned char __fastcall fn_00700520(void* self) {
+    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x2f8);
+}
