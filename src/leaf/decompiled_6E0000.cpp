@@ -4372,3 +4372,20 @@ extern "C" int mem_00B5DF20;
 extern "C" void __cdecl fn_006EA010() {
     mem_00B5DF20 = ext_006FC3A0((void*)0xb5df10, -1);
 }
+
+// [0x006EA030] sub_006EA030 (30 bytes)
+extern "C" int mem_00993D2C;
+extern "C" void ext_007052F0();
+extern "C" __declspec(naked) void __fastcall fn_006EA030(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_007052F0
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [esi], offset mem_00993D2C
+        mov dword ptr [esi + 0xe0], eax
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
