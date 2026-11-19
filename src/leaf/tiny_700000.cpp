@@ -1573,3 +1573,22 @@ L_0070FB98:
         ret 0x4
     }
 }
+
+// [0x0070FBD0] Tiny indirect/IAT call leaf (25 bytes) - sub_0070FBD0
+extern "C" __declspec(naked) void fn_0070FBD0() {
+    __asm {
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        __asm _emit 0x8B __asm _emit 0x06 // mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x10]
+        __asm _emit 0x85 __asm _emit 0xF6 // test esi, esi
+        je L_0070FBE5
+        __asm _emit 0x8B __asm _emit 0x16 // mov edx, dword ptr [esi]
+        push 0x1
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        call dword ptr [edx + 0x8]
+L_0070FBE5:
+        pop esi
+        ret 0x4
+    }
+}
