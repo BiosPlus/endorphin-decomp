@@ -12252,3 +12252,69 @@ extern "C" __declspec(naked) int __cdecl fn_007BBF10(void* self, void* out, int 
         ret
     }
 }
+
+// [0x007B08E0] sub_007B08E0 (183 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007B08E0(void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x4]
+        cmp ecx, 0x4
+        ja L_default_007B08E0
+        mov edx, dword ptr [esp + 0x4]
+        cmp word ptr [edx + 0x150], 0x4d4d
+        lea edx, [ecx - 0x1]
+        jne L_notmm_007B08E0
+        cmp edx, 0x3
+        ja L_ret1_007B08E0
+        mov ecx, dword ptr [esp + 0xc]
+        jmp dword ptr [4*edx + 0x7b0998]
+    L_mmcase_007B08E0:
+        mov dl, byte ptr [eax + 0x8]
+        and edx, 0xff
+        mov word ptr [ecx + 0x6], dx
+        xor edx, edx
+        mov dl, byte ptr [eax + 0x9]
+        mov word ptr [ecx + 0x4], dx
+        xor edx, edx
+        mov dl, byte ptr [eax + 0xa]
+        mov word ptr [ecx + 0x2], dx
+        mov eax, dword ptr [eax + 0x8]
+        shr eax, 0x18
+        mov word ptr [ecx], ax
+        mov eax, 0x1
+        ret
+    L_notmm_007B08E0:
+        cmp edx, 0x3
+        ja L_ret1_007B08E0
+        mov ecx, dword ptr [esp + 0xc]
+        jmp dword ptr [4*edx + 0x7b09a8]
+    L_nonmmcase_007B08E0:
+        mov edx, dword ptr [eax + 0x8]
+        shr edx, 0x18
+        mov word ptr [ecx + 0x6], dx
+        xor edx, edx
+        mov dl, byte ptr [eax + 0xa]
+        mov word ptr [ecx + 0x4], dx
+        xor edx, edx
+        mov dl, byte ptr [eax + 0x9]
+        mov word ptr [ecx + 0x2], dx
+        mov al, byte ptr [eax + 0x8]
+        and eax, 0xff
+        mov word ptr [ecx], ax
+    L_ret1_007B08E0:
+        mov eax, 0x1
+        ret
+    L_default_007B08E0:
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x4]
+        push ecx
+        push eax
+        push edx
+        call ext_007B06F0
+        add esp, 0xc
+        neg eax
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
