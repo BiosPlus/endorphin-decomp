@@ -2726,3 +2726,8 @@ extern "C" unsigned char __fastcall fn_00719FE0(void* self) {
 extern "C" void __fastcall fn_00719FF0(void* self, int edx_unused, int a1) {
     *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x16b8) = a1;
 }
+
+// [0x0071A000] Dword field getter (7 bytes) - sub_0071A000
+extern "C" int __fastcall fn_0071A000(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x16b8);
+}
