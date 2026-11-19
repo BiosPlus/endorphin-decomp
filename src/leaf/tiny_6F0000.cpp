@@ -2829,3 +2829,14 @@ extern "C" double __fastcall fn_006F1F90(void* self) {
 extern "C" int __fastcall fn_006F1FD0(void* self) {
     return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x6240);
 }
+
+// [0x006F2010] Branchless tiny leaf function (23 bytes) - sub_006F2010
+extern "C" __declspec(naked) void fn_006F2010() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x89 __asm _emit 0x81 __asm _emit 0xC8 __asm _emit 0x62 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0x62c8], eax
+        __asm _emit 0x89 __asm _emit 0x91 __asm _emit 0xCC __asm _emit 0x62 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0x62cc], edx
+        ret 0x8
+    }
+}
