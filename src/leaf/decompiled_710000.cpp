@@ -7163,3 +7163,60 @@ L_true:
         ret 0x4
     }
 }
+
+// [0x00712010] sub_00712010 (104 bytes)
+extern "C" int mem_00AAC084;
+extern "C" int mem_00AAC088;
+extern "C" int mem_00AAC08C;
+extern "C" int mem_00AAC090;
+extern "C" int mem_00AAC0E0;
+extern "C" int mem_00AAC0E4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00712010(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_0071E680
+        mov esi, dword ptr [eax + 0xc]
+        test esi, esi
+        jne L_ret
+        mov ecx, edi
+        call ext_00711DB0
+        add eax, -0x4
+        cmp eax, 0xb
+        ja L_ret
+        jmp dword ptr [4*eax + 0x712078]
+        mov esi, dword ptr [mem_00AAC084]
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+        mov esi, dword ptr [mem_00AAC088]
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+        mov esi, dword ptr [mem_00AAC08C]
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+        mov esi, dword ptr [mem_00AAC090]
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+        mov esi, dword ptr [mem_00AAC0E0]
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+        mov esi, dword ptr [mem_00AAC0E4]
+L_ret:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+    }
+}
