@@ -6279,3 +6279,14 @@ L_00715390:
         ret 0x4
     }
 }
+
+// [0x00713E30] sub_00713E30 (56 bytes)
+extern "C" void* __stdcall fn_00713E30(unsigned int a1) {
+    switch (a1) {
+        case 0: return (void*)0x00AAC1F8;
+        case 1: return (void*)0x00AAC1F4;
+        case 2: return (void*)0x00AAC1F0;
+        case 3: return (void*)0x00AAC20C;
+        default: return (void*)0x00AAC03C;
+    }
+}
