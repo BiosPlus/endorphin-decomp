@@ -2939,3 +2939,17 @@ extern "C" __declspec(naked) void fn_006F22E0() {
         ret 0x4
     }
 }
+
+// [0x006F2330] Tiny indirect/IAT call leaf (31 bytes) - sub_006F2330
+extern "C" __declspec(naked) void fn_006F2330() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x8B __asm _emit 0x81 __asm _emit 0x18 __asm _emit 0x67 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [ecx + 0x6718]
+        __asm _emit 0x81 __asm _emit 0xC1 __asm _emit 0x18 __asm _emit 0x67 __asm _emit 0x00 __asm _emit 0x00 // add ecx, 0x6718
+        push edx
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        push edx
+        call dword ptr [eax + 0xb8]
+        ret 0x8
+    }
+}
