@@ -19902,3 +19902,51 @@ extern "C" void __cdecl fn_007CCB00(int* p, unsigned int idx) {
     default: *p = 0; return;
     }
 }
+
+// [0x007C54F0] sub_007C54F0 (121 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C54F0(void* self) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        push    ebx
+        mov     edx, dword ptr [eax + 0x16b4]
+        cmp     edx, 8
+        jle     short loc_7c553c
+        mov     ecx, dword ptr [eax + 8]
+        mov     edx, dword ptr [eax + 0x14]
+        mov     bl, byte ptr [eax + 0x16b0]
+        mov     byte ptr [ecx + edx], bl
+        mov     edx, dword ptr [eax + 0x14]
+        mov     bl, byte ptr [eax + 0x16b1]
+        inc     edx
+        mov     dword ptr [eax + 0x14], edx
+        mov     ecx, edx
+        mov     edx, dword ptr [eax + 8]
+        mov     byte ptr [ecx + edx], bl
+        mov     ecx, dword ptr [eax + 0x14]
+        inc     ecx
+        pop     ebx
+        mov     dword ptr [eax + 0x14], ecx
+        xor     ecx, ecx
+        mov     word ptr [eax + 0x16b0], cx
+        mov     dword ptr [eax + 0x16b4], ecx
+        ret
+    loc_7c553c:
+        xor     ecx, ecx
+        cmp     edx, ecx
+        jle     short loc_7c555a
+        mov     edx, dword ptr [eax + 8]
+        mov     bl, byte ptr [eax + 0x16b0]
+        push    esi
+        mov     esi, dword ptr [eax + 0x14]
+        mov     byte ptr [edx + esi], bl
+        mov     edx, dword ptr [eax + 0x14]
+        inc     edx
+        pop     esi
+        mov     dword ptr [eax + 0x14], edx
+    loc_7c555a:
+        mov     word ptr [eax + 0x16b0], cx
+        mov     dword ptr [eax + 0x16b4], ecx
+        pop     ebx
+        ret
+    }
+}
