@@ -4677,3 +4677,23 @@ L_done:
         ret
     }
 }
+
+// [0x006E9D00] sub_006E9D00 (36 bytes)
+extern "C" int mem_00B5DF50;
+extern "C" int mem_00B5DF58;
+extern "C" int mem_00B5DF60;
+extern "C" __declspec(naked) void __cdecl fn_006E9D00(void) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5DF50]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5DF58]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5DF60]
+        ret
+    }
+}
