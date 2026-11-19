@@ -7934,3 +7934,41 @@ extern "C" void __cdecl fn_006DDA70(void) {
     *(double*)&mem_00B5DC80 = -*p;
     *(double*)&mem_00B5DC88 = -*p;
 }
+
+// [0x006DE6E0] sub_006DE6E0 (55 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006DE6E0(void* self, int edx_unused, void* target) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        jle L_not_found
+        mov ebx, dword ptr [esp + 0x10]
+    L_loop:
+        mov eax, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [eax + 0x18]
+        cmp eax, ebx
+        je L_found
+        mov eax, dword ptr [esi + 0x20]
+        inc edi
+        cmp edi, eax
+        jl L_loop
+    L_not_found:
+        pop edi
+        pop esi
+        or eax, -1
+        pop ebx
+        ret 0x4
+    L_found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
