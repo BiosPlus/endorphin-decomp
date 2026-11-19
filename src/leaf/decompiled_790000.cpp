@@ -7623,3 +7623,89 @@ extern "C" __declspec(naked) void __fastcall fn_0079D8B0(void* self) {
         ret
     }
 }
+
+// [0x00792630] sub_00792630 (205 bytes)
+extern "C" void ext_00790D80();
+extern "C" void ext_00790E00();
+extern "C" void ext_00791210();
+
+extern "C" __declspec(naked) void __fastcall fn_00792630(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        cmp eax, 0x4
+        ja L_end
+        jmp dword ptr [eax*4 + 0x792700]
+L_c0:
+        mov esi, dword ptr [esp + 0x8]
+        push 0x997188
+        mov ecx, esi
+        call ext_00791210
+        push 0x4
+        mov ecx, esi
+        call ext_00790D80
+        push 0x3
+        mov ecx, esi
+        call ext_00790E00
+        mov eax, dword ptr [esi]
+        push 0x4
+        mov ecx, esi
+        call dword ptr [eax + 0x10]
+        pop esi
+        ret
+L_c1:
+        mov esi, dword ptr [esp + 0x8]
+        push 0x997208
+        mov ecx, esi
+        call ext_00791210
+        push 0x3
+        mov ecx, esi
+        call ext_00790D80
+        push 0x2
+        jmp short L_t3
+L_c2:
+        mov esi, dword ptr [esp + 0x8]
+        push 0x997288
+        mov ecx, esi
+        call ext_00791210
+        push 0x4
+        jmp short L_t4
+L_c3:
+        mov esi, dword ptr [esp + 0x8]
+        push 0x997108
+        mov ecx, esi
+        call ext_00791210
+        push 0x4
+        mov ecx, esi
+        call ext_00790D80
+        push 0x1
+L_t3:
+        mov ecx, esi
+        call ext_00790E00
+        mov edx, dword ptr [esi]
+        push 0x4
+        mov ecx, esi
+        call dword ptr [edx + 0x10]
+        pop esi
+        ret
+L_c4:
+        mov esi, dword ptr [esp + 0x8]
+        push 0x997308
+        mov ecx, esi
+        call ext_00791210
+        push 0x2
+L_t4:
+        mov ecx, esi
+        call ext_00790D80
+        push 0x1
+        mov ecx, esi
+        call ext_00790E00
+        mov eax, dword ptr [esi]
+        push 0x4
+        mov ecx, esi
+        call dword ptr [eax + 0x10]
+L_end:
+        pop esi
+        ret
+    }
+}
