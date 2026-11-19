@@ -46,6 +46,7 @@ extern "C" __declspec(naked) void __cdecl fn_0080FB10(void* p) {
         ret
     }
 }
+extern "C" void ext_0080DC60();
 
 // [0x00803990] sub_00803990 (44 bytes)
 extern "C" void fn_00803980();
@@ -9518,6 +9519,37 @@ extern "C" __declspec(naked) void __cdecl fn_0080F980(void* a1, int a2, void* a3
         mov ecx, dword ptr [esp + 0x4]
         mov byte ptr [ecx], 0x0
     loc_ret:
+        ret
+    }
+}
+
+// [0x0080DC20] sub_0080DC20 (60 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080DC20() {
+    __asm {
+        sub esp, 0xc
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x1c]
+        mov dword ptr [esp + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x18]
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push 0x0
+        push eax
+        mov dword ptr [esp + 0x10], edx
+        push ecx
+        push 0x80f720
+        lea edx, [esp + 0x14]
+        push 0x0
+        push edx
+        call ext_0080DC60
+        add esp, 0x24
         ret
     }
 }
