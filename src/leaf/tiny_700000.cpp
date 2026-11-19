@@ -1186,3 +1186,12 @@ L_00704CF8:
         ret 0x4
     }
 }
+
+// [0x00704FD0] Virtual dispatch / tail-call thunk (17 bytes) - sub_00704FD0
+extern "C" __declspec(naked) void fn_00704FD0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x89 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [ecx + 0xf0]
+        __asm _emit 0x81 __asm _emit 0xC1 __asm _emit 0x20 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 // add ecx, 0x820
+        jmp ext_006E7460
+    }
+}
