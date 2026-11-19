@@ -7429,3 +7429,79 @@ L_ret_one:
         ret
     }
 }
+
+// [0x0079DE00] sub_0079DE00 (192 bytes)
+extern "C" void ext_00714860();
+extern "C" void ext_007148A0();
+extern "C" __declspec(naked) void __fastcall fn_0079DE00(void* self, int edx_unused) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        __asm _emit 0x83
+        __asm _emit 0xe8
+        __asm _emit 0x00
+        mov esi, ecx
+        je short L_case0
+        dec eax
+        je short L_case1
+        dec eax
+        jne L_end
+        mov ecx, dword ptr [esi]
+        add ecx, 0x90
+        call ext_007148E0
+        cmp al, byte ptr [esp + 0xc]
+        je L_end
+        mov ecx, dword ptr [esi]
+        push 0x1
+        push 0x1
+        push 0x1
+        add ecx, 0x90
+        call ext_00714860
+        mov ecx, dword ptr [esi]
+        push 0x1
+        push 0x1
+        push 0x1
+        add ecx, 0x90
+        call ext_007148A0
+        pop esi
+        ret 0x8
+L_case1:
+        mov ecx, dword ptr [esi]
+        add ecx, 0x48
+        call ext_007148E0
+        cmp al, byte ptr [esp + 0xc]
+        je L_end
+        mov ecx, dword ptr [esi]
+        push 0x1
+        push 0x1
+        push 0x1
+        add ecx, 0x48
+        call ext_00714860
+        mov ecx, dword ptr [esi]
+        push 0x1
+        push 0x1
+        push 0x1
+        add ecx, 0x48
+        call ext_007148A0
+        pop esi
+        ret 0x8
+L_case0:
+        mov ecx, dword ptr [esi]
+        call ext_007148E0
+        cmp al, byte ptr [esp + 0xc]
+        je short L_end
+        mov ecx, dword ptr [esi]
+        push 0x1
+        push 0x1
+        push 0x1
+        call ext_00714860
+        mov ecx, dword ptr [esi]
+        push 0x1
+        push 0x1
+        push 0x1
+        call ext_007148A0
+L_end:
+        pop esi
+        ret 0x8
+    }
+}
