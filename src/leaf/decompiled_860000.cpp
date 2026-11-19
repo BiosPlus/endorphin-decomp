@@ -6523,3 +6523,37 @@ extern "C" __declspec(naked) void __cdecl fn_0086F020(const int* src, int* dst) 
         __asm _emit 0x00
     }
 }
+
+// [0x0086EE30] sub_0086EE30 (48 bytes)
+extern "C" void ext_0086B220();
+
+extern "C" __declspec(naked) void __cdecl fn_0086EE30(void) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        push esi
+        add edi, 0x14
+        call ext_0086B220
+        add esp, 0x8
+        add esi, 0x14
+        push edi
+        push esi
+        call ext_0086B220
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+        __asm _emit 0x8b
+        __asm _emit 0xff
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
