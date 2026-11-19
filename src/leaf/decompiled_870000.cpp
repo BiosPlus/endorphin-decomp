@@ -1,8 +1,10 @@
 // Decompiled translation unit: src/leaf/decompiled_870000.cpp
 
 #include <string>
+extern "C" void ext_0063E960();
+extern "C" void ext_006A6DD2();
 
-// [0x00871D00] sub_00871D00 (25 bytes)
+extern "C" void ext_006A6DD2();
 extern "C" void ext_00871C50();
 
 extern "C" __declspec(naked) void __fastcall fn_00871D00(void* self) {
@@ -2038,5 +2040,31 @@ extern "C" __declspec(naked) void __fastcall fn_00871A70(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x58
         ret
+    }
+}
+
+// [0x00870E40] sub_00870E40 (70 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00870E40(void* self) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        mov ebx, dword ptr [ecx + 0x10]
+        push esi
+        mov esi, dword ptr [ecx + 0x8]
+        sub esi, dword ptr [ecx + 0x4]
+        push edi
+        mov edi, dword ptr [ecx + 0x14]
+        lea ecx, [esp + 0xc]
+        call ext_0063E960
+        mov eax, dword ptr [esp + 0x24]
+        push 0xa2572c
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov dword ptr [esp + 0x14], 0x99f138
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esp + 0x20], edi
+        mov dword ptr [esp + 0x24], esi
+        call ext_006A6DD2
     }
 }
