@@ -4935,3 +4935,21 @@ extern "C" int mem_00B5EB48;
 extern "C" void __cdecl fn_00709B60() {
     mem_00B5EB48 = ext_006FC3A0((void*)0x00B5EB68, -1);
 }
+
+// [0x00700FA0] sub_00700FA0 (33 bytes)
+extern "C" void ext_006B9D80();
+extern "C" __declspec(naked) void* __fastcall fn_00700FA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0xaaba0c
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D80
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
