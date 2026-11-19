@@ -22,5 +22,7 @@
     "0x0059FCBA",
     "0x0059FCC4"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-19T11:15:45Z"
 }
