@@ -3391,3 +3391,11 @@ L_006FC668:
         ret 0x4
     }
 }
+
+// [0x006FC670] Base destructor tail-call (11 bytes) - sub_006FC670
+extern "C" __declspec(naked) void fn_006FC670() {
+    __asm {
+        mov dword ptr [ecx], offset mem_00995104
+        jmp ext_006FA230
+    }
+}
