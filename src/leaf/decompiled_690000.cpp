@@ -14453,3 +14453,106 @@ L_default:
         ret
     }
 }
+
+// [0x0069B6A0] sub_0069B6A0 (237 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_00699810();
+extern "C" void ext_00699C70();
+extern "C" void ext_00672E70();
+extern "C" int mem_00925134;
+extern "C" int mem_008B6760;
+extern "C" __declspec(naked) void __fastcall fn_0069B6A0(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        push    -1
+        push    offset mem_008B6760
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 0xc
+        push    ebx
+        mov     ebx, dword ptr [ebp + 8]
+        mov     eax, dword ptr [ebx + 4]
+        push    esi
+        push    edi
+        mov     edi, ecx
+        xor     ecx, ecx
+        cmp     eax, ecx
+        mov     dword ptr [ebp - 0x10], esp
+        mov     dword ptr [ebp - 0x18], edi
+        jne     L_nonempty
+        xor     esi, esi
+        jmp     L_check
+    L_nonempty:
+        mov     ecx, dword ptr [ebx + 8]
+        sub     ecx, eax
+        mov     eax, 0x2e8ba2e9
+        imul    ecx
+        sar     edx, 3
+        mov     esi, edx
+        shr     esi, 0x1f
+        add     esi, edx
+        xor     ecx, ecx
+    L_check:
+        cmp     esi, ecx
+        mov     dword ptr [edi + 4], ecx
+        mov     dword ptr [edi + 8], ecx
+        mov     dword ptr [edi + 0xc], ecx
+        je      L_done
+        cmp     esi, 0x5d1745d
+        jbe     L_alloc
+        call    ext_00405FB0
+    L_alloc:
+        push    ecx
+        push    esi
+        call    ext_00699810
+        imul    esi, esi, 0x2c
+        add     esi, eax
+        mov     dword ptr [edi + 4], eax
+        mov     dword ptr [edi + 8], eax
+        mov     dword ptr [edi + 0xc], esi
+        mov     eax, dword ptr [ebx + 8]
+        add     esp, 8
+        cmp     dword ptr [ebx + 4], eax
+        mov     dword ptr [ebp - 4], 0
+        mov     dword ptr [ebp - 0x14], eax
+        jbe     L_ok1
+        call    dword ptr [mem_00925134]
+    L_ok1:
+        mov     esi, dword ptr [ebx + 4]
+        cmp     esi, dword ptr [ebx + 8]
+        jbe     L_ok2
+        call    dword ptr [mem_00925134]
+    L_ok2:
+        mov     eax, dword ptr [edi + 4]
+        mov     byte ptr [ebp + 8], 0
+        mov     ecx, dword ptr [ebp + 8]
+        mov     edx, dword ptr [ebp + 8]
+        push    ecx
+        push    edx
+        push    edi
+        push    eax
+        mov     eax, dword ptr [ebp - 0x14]
+        push    eax
+        push    esi
+        call    ext_00699C70
+        add     esp, 0x18
+        mov     dword ptr [edi + 8], eax
+    L_done:
+        mov     ecx, dword ptr [ebp - 0xc]
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        mov     fs:[0], ecx
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     4
+        mov     ecx, dword ptr [ebp - 0x18]
+        call    ext_00672E70
+        push    0
+        push    0
+        call    ext_006A6DD2
+    }
+}
