@@ -11422,3 +11422,69 @@ L_END:
         ret
     }
 }
+
+// [0x007BF890] sub_007BF890 (129 bytes)
+extern "C" void ext_007AF010();
+
+extern "C" __declspec(naked) void __cdecl fn_007BF890(void* p1, void* p2, int p3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [eax + 0x1cc]
+        mov eax, dword ptr [esp + 0x14]
+        cdq
+        sub eax, edx
+        push edi
+        mov edi, dword ptr [ecx + 0x4]
+        mov ebx, eax
+        sar ebx, 1
+        cmp ebx, edi
+        jle L_ret
+        push ebx
+        push esi
+        call ext_007AF010
+        add esp, 0x8
+        sub ebx, edi
+L_loop:
+        cmp edi, 0x4
+        ja L_above_4
+        jmp dword ptr [4*edi + 0x7bf914]
+L_above_4:
+        lea eax, [edi - 0x4]
+        test eax, eax
+        jle L_case_4
+L_body:
+        mov dx, word ptr [esi]
+        add word ptr [esi + 2*edi], dx
+        add esi, 0x2
+        dec eax
+        jne L_body
+L_case_4:
+        mov ax, word ptr [esi]
+        add word ptr [esi + 2*edi], ax
+        add esi, 0x2
+L_case_3:
+        mov cx, word ptr [esi]
+        add word ptr [esi + 2*edi], cx
+        add esi, 0x2
+L_case_2:
+        mov dx, word ptr [esi]
+        add word ptr [esi + 2*edi], dx
+        add esi, 0x2
+L_case_1:
+        mov ax, word ptr [esi]
+        add word ptr [esi + 2*edi], ax
+        add esi, 0x2
+L_case_0:
+        sub ebx, edi
+        test ebx, ebx
+        jg L_loop
+L_ret:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
