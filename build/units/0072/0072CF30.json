@@ -17,5 +17,7 @@
     "0x0072CF6F",
     "0x0072CF79"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-19T15:32:44Z"
 }
