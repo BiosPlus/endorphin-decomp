@@ -128,6 +128,7 @@ extern "C" int ext_0078C3A0();
 extern "C" int ext_0078CBE0();
 // Isolated WIP translation unit for fn_00724BF0
 extern "C" void ext_0077F9E0();
+extern "C" void ext_006B9E60();
 
 // [0x00726940] sub_00726940 (63 bytes)
 extern "C" int __fastcall fn_00726940(void* self) {
@@ -5897,5 +5898,38 @@ extern "C" __declspec(naked) void __fastcall fn_0072B770(void* self) {
         cmp eax, dword ptr [mem_00B5E400]
         sete al
         ret 0x4
+    }
+}
+
+// [0x0072DBE0] sub_0072DBE0 (97 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_0072DBE0(void* self, int dummy_edx, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0x108]
+        test al, al
+        je L_exit
+        mov ecx, dword ptr [esp + 0x8]
+        lea eax, [esi + 0x10c]
+        push eax
+        call ext_006B9E60
+        lea ecx, [esi + 0x158]
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_006B9E60
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x1a8]
+        mov dword ptr [eax], edx
+        mov ecx, dword ptr [esi + 0x1ac]
+        mov dword ptr [eax + 0x4], ecx
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esi + 0x1b0]
+        mov dword ptr [eax], edx
+        mov ecx, dword ptr [esi + 0x1b4]
+        mov dword ptr [eax + 0x4], ecx
+    L_exit:
+        mov al, byte ptr [esi + 0x108]
+        pop esi
+        ret 0x10
     }
 }
