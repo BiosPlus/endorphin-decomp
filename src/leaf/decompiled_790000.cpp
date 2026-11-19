@@ -7709,3 +7709,85 @@ L_end:
         ret
     }
 }
+
+// [0x0079B5B0] sub_0079B5B0 (208 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50(void*);
+
+extern "C" __declspec(naked) int __cdecl fn_0079B5B0(void* self, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov eax, dword ptr [esi + 0x1d8]
+        test eax, eax
+        je L_clear_1d8
+        mov ecx, dword ptr [esi + 0xc]
+        test ch, 0x2
+        je L_skip_af50
+        push eax
+        call ext_0079AF50
+        mov eax, dword ptr [esi + 0xc]
+        add esp, 0x4
+        and ah, -0x3
+        mov dword ptr [esi + 0xc], eax
+L_skip_af50:
+        mov dword ptr [esi + 0x1d8], 0x0
+L_clear_1d8:
+        mov edi, dword ptr [esp + 0x14]
+        cmp edi, -1
+        jne L_have_a3
+        mov eax, dword ptr [esi + 0xc]
+        test ah, 0x4
+        je L_use_1d0
+        mov edi, dword ptr [esi + 0x188]
+        jmp L_clamp
+L_use_1d0:
+        mov edi, dword ptr [esi + 0x1d0]
+L_clamp:
+        cmp edi, 0x2000
+        jge L_call_af40
+        mov edi, 0x2000
+        jmp L_call_af40
+L_have_a3:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        jne L_set_a2
+L_call_af40:
+        push edi
+        call ext_0079AF40
+        add esp, 0x4
+        test eax, eax
+        jne L_ok
+        mov eax, dword ptr [esi]
+        push eax
+        push 0xaafdb8
+        push 0x997504
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        ret
+L_ok:
+        mov ecx, dword ptr [esi + 0xc]
+        or ch, 0x2
+        jmp L_store
+L_set_a2:
+        mov ecx, dword ptr [esi + 0xc]
+        and ch, -0x3
+L_store:
+        mov dword ptr [esi + 0x1d8], eax
+        mov dword ptr [esi + 0x1e0], eax
+        mov eax, ecx
+        mov dword ptr [esi + 0xc], ecx
+        or al, 0x10
+        mov dword ptr [esi + 0x1dc], edi
+        mov dword ptr [esi + 0x1e4], 0x0
+        mov dword ptr [esi + 0xc], eax
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
