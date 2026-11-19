@@ -59,12 +59,18 @@ extern "C" void ext_006FA5A0();
 extern "C" void ext_006FC6E0();
 extern "C" int mem_00B5D448;
 extern "C" int mem_00B5E400;
+extern "C" void ext_006C9C40();
+extern "C" void ext_006C9D00();
+extern "C" void ext_006C9DA0();
+extern "C" void ext_006C9F20();
+extern "C" void ext_00789BA0();
+extern "C" void ext_0079E5B0();
 
-// [0x006C9560] sub_006C9560 (15 bytes)
-extern "C" void __cdecl fn_006C9560() {
-    ext_006C9960(0, 0, (int)0xaa8d4c);
-}
-
+extern "C" void ext_006C9D00();
+extern "C" void ext_006C9DA0();
+extern "C" void ext_006C9F20();
+extern "C" void ext_00789BA0();
+extern "C" void ext_0079E5B0();
 // [0x006C9570] sub_006C9570 (15 bytes)
 extern "C" void __cdecl fn_006C9570() {
     ext_006C9960(0, 0, (int)0xaa8d5c);
@@ -7463,5 +7469,76 @@ extern "C" __declspec(naked) int __fastcall fn_006C2720(void* self) {
         xor eax, eax
         pop esi
         ret
+    }
+}
+
+// [0x006C9AB0] sub_006C9AB0 (192 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C9AB0(void* self, int edx_pad,
+    int a1, int a2, int a3, int a4, int a5, int a6,
+    int a7, int a8, int a9, int a10, int a11, int a12) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        push eax
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_0079E5B0
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, esi
+        push edx
+        call ext_00789BA0
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, esi
+        push eax
+        call ext_006C9C40
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call ext_006C9D00
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, esi
+        push edx
+        push 0x0
+        call ext_006C9DF0
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, esi
+        push eax
+        push 0x1
+        call ext_006C9DF0
+        mov ecx, dword ptr [esp + 0x24]
+        push 0x3000000
+        push ecx
+        mov ecx, esi
+        call ext_006C9D30
+        mov edx, dword ptr [esp + 0x28]
+        mov ecx, esi
+        push edx
+        push 0x2
+        call ext_006C9DF0
+        mov eax, dword ptr [esp + 0x2c]
+        mov ecx, esi
+        push eax
+        push 0x3
+        call ext_006C9DF0
+        mov ecx, dword ptr [esp + 0x30]
+        push ecx
+        push 0x4
+        mov ecx, esi
+        call ext_006C9DF0
+        mov edx, dword ptr [esp + 0x34]
+        mov ecx, esi
+        push edx
+        push 0x5
+        call ext_006C9DF0
+        push 0x0
+        mov ecx, esi
+        call ext_006C9F20
+        push 0x0
+        mov ecx, esi
+        call ext_006C9DA0
+        pop esi
+        ret 0x30
     }
 }
