@@ -1455,9 +1455,12 @@ extern "C" __declspec(naked) void __fastcall fn_006D8980(void* self) {
         ret
     }
 }
-
-// [0x006D5AD0] sub_006D5AD0 (64 bytes)
+extern "C" void ext_006B9D10();
 extern "C" void ext_006B9D20();
+extern "C" void ext_006B9EC0();
+
+extern "C" void ext_006B9D20();
+extern "C" void ext_006B9EC0();
 extern "C" void ext_006B9EC0();
 extern "C" __declspec(naked) void __fastcall fn_006D5AD0(void* self) {
     __asm {
@@ -10005,4 +10008,53 @@ extern "C" void __cdecl fn_006DDBE0() {
     mem_00B5DD78 = -*h;
     mem_00B5DD80 = -*h;
     mem_00B5DD88 = -*h;
+}
+
+// [0x006D91D0] sub_006D91D0 (153 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006D91D0(void* self, int edx_unused, void* ret) {
+    __asm {
+        push -1
+        push 0x8b93df
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x50
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0
+        call ext_006B9D10
+        mov eax, dword ptr [esi + 0x10]
+        mov dword ptr [esp + 0x5c], 1
+        cmp eax, 3
+        ja L_done_switch
+        jmp dword ptr [eax*4 + 0x6d926c]
+    L_case03:
+        push 0xaa91ac
+        jmp L_assign
+    L_case1:
+        push 0xaa91a4
+        jmp L_assign
+    L_case2:
+        push 0xaa9198
+    L_assign:
+        lea ecx, [esp + 0xc]
+        call ext_006B9EC0
+    L_done_switch:
+        mov esi, dword ptr [esp + 0x64]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call ext_006B9D20
+        mov dword ptr [esp + 0x4], 1
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x5c], 0
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x54]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x5c
+        ret 4
+    }
 }
