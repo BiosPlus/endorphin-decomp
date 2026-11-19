@@ -193,3 +193,77 @@ extern "C" __declspec(naked) void __fastcall fn_00422540(void* self) {
         ret
     }
 }
+
+// [0x00422130] HotkeyEditDialog::vfunc_66 (153 bytes)
+extern "C" void ext_006A5F7A();
+extern "C" int mem_009255F4;
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00422130(void* self) {
+    __asm {
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0Ch]
+        cmp     dword ptr [esi + 4], 100h
+        mov     ebp, ecx
+        jne     L_default
+        mov     eax, dword ptr [esi + 8]
+        add     eax, -8
+        cmp     eax, 88h
+        ja      L_default
+        movzx   eax, byte ptr [eax + 4221d8h]
+        jmp     dword ptr [eax*4 + 4221cch]
+
+    L_ret1:
+        pop     esi
+        mov     eax, 1
+        pop     ebp
+        ret     4
+
+    L_send:
+        push    ebx
+        push    edi
+        mov     edi, dword ptr [mem_009255F4]
+        push    12h
+        xor     ebx, ebx
+        call    edi
+        test    ax, ax
+        jge     L_alt_done
+        mov     ebx, 4
+    L_alt_done:
+        push    11h
+        call    edi
+        test    ax, ax
+        jge     L_ctrl_done
+        or      ebx, 2
+    L_ctrl_done:
+        push    10h
+        call    edi
+        test    ax, ax
+        jge     L_shift_done
+        or      ebx, 1
+    L_shift_done:
+        mov     edx, dword ptr [ebp + 94h]
+        xor     ecx, ecx
+        mov     ch, bl
+        push    0
+        mov     cl, byte ptr [esi + 8]
+        push    ecx
+        push    401h
+        push    edx
+        call    dword ptr [mem_00925694]
+        pop     edi
+        pop     ebx
+        pop     esi
+        mov     eax, 1
+        pop     ebp
+        ret     4
+
+    L_default:
+        push    esi
+        call    ext_006A5F7A
+        pop     esi
+        pop     ebp
+        ret     4
+    }
+}
