@@ -3499,3 +3499,81 @@ L_skip2:
         ret 0x10
     }
 }
+
+// [0x0074B0B0] sub_0074B0B0 (192 bytes)
+extern "C" void ext_0074AEF0();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00784750();
+extern "C" void ext_00784640();
+extern "C" __declspec(naked) void __fastcall fn_0074B0B0(void* self) {
+    __asm {
+        push -1
+        push 0x008BF2A8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        mov dword ptr [esp + 0x8], ecx
+        mov eax, dword ptr [ecx + 0x4]
+        xor ebx, ebx
+        test eax, eax
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esp + 0x4], ebx
+        jle L_done_neg
+        push ebp
+        push esi
+        push edi
+    L_loop:
+        push 0
+        push ebx
+        call ext_00784750
+        mov edi, eax
+        xor esi, esi
+        mov ebp, dword ptr [edi]
+        test ebp, ebp
+        jle L_skip_inner
+    L_inner:
+        mov eax, dword ptr [edi + 0x10]
+        mov ebx, dword ptr [eax + 4*esi]
+        test ebx, ebx
+        je L_inner_next
+        mov ecx, ebx
+        call ext_0074AEF0
+        push ebx
+        call ext_006A5C5C
+        add esp, 0x4
+    L_inner_next:
+        inc esi
+        cmp esi, ebp
+        jl L_inner
+        mov ebx, dword ptr [esp + 0x10]
+    L_skip_inner:
+        test edi, edi
+        je L_skip_free
+        mov ecx, edi
+        call ext_006D2160
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_skip_free:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        inc ebx
+        cmp ebx, eax
+        mov dword ptr [esp + 0x10], ebx
+        jl L_loop
+        pop edi
+        pop esi
+        pop ebp
+    L_done_neg:
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_00784640
+        mov ecx, dword ptr [esp + 0x10]
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret
+    }
+}
