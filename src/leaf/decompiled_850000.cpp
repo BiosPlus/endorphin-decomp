@@ -5632,3 +5632,72 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_0085F1F0(void) {
         __asm _emit 0x00
     }
 }
+
+// [0x0085F9D0] sub_0085F9D0 (148 bytes)
+extern "C" __declspec(naked) unsigned short __cdecl fn_0085F9D0(unsigned char key, unsigned char* buf, unsigned int len) {
+    __asm {
+        xor     ax, ax
+        sub     esp, 8
+        mov     al, byte ptr [esp + 0Ch]
+        push    ebx
+        and     ax, 0Fh
+        push    esi
+        mov     word ptr [esp + 0Ah], ax
+        push    edi
+        mov     eax, dword ptr [esp + 1Ch]
+        push    ebp
+        mov     ebp, dword ptr [esp + 24h]
+        lea     ecx, [eax + ebp - 1]
+        mov     dword ptr [esp + 14h], ecx
+    outer_loop:
+        xor     cl, cl
+        mov     esi, dword ptr [esp + 14h]
+        test    bp, bp
+        lea     eax, [ebp - 1]
+        je      after_inner
+    inner_loop:
+        mov     dl, byte ptr [esi]
+        mov     edi, esi
+        dec     esi
+        mov     bl, cl
+        mov     cl, dl
+        add     dl, dl
+        shr     cl, 7
+        or      dl, bl
+        mov     bx, ax
+        mov     byte ptr [edi], dl
+        dec     ax
+        test    bx, bx
+        jne     inner_loop
+    after_inner:
+        test    cl, cl
+        je      no_carry
+        mov     eax, dword ptr [esp + 14h]
+        or      byte ptr [eax], 1
+    no_carry:
+        mov     ax, word ptr [esp + 12h]
+        dec     word ptr [esp + 12h]
+        test    ax, ax
+        jne     outer_loop
+        xor     si, si
+        test    ebp, ebp
+        je      done
+    xor_loop:
+        mov     dl, byte ptr [esp + 1Ch]
+        mov     eax, dword ptr [esp + 20h]
+        movzx   ecx, si
+        inc     si
+        xor     byte ptr [ecx + eax], dl
+        movzx   ecx, si
+        cmp     ecx, ebp
+        jb      xor_loop
+    done:
+        xor     ax, ax
+        pop     ebp
+        pop     edi
+        pop     esi
+        pop     ebx
+        add     esp, 8
+        ret
+    }
+}
