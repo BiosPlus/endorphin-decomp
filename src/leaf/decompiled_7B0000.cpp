@@ -14165,3 +14165,93 @@ L_7BB828:
         ret
     }
 }
+
+// [0x007BB700] sub_007BB700 (240 bytes)
+extern "C" void ext_007BB140();
+extern "C" void ext_007BB1D0();
+extern "C" int mem_00993840;
+extern "C" int mem_00999B48;
+extern "C" int mem_0092A278;
+extern "C" int mem_0093F7B0;
+extern "C" int mem_00999B30;
+extern "C" __declspec(naked) void __cdecl fn_007BB700(void* self, int arg1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x14
+        push ebx
+        mov ebx, dword ptr [ebp + 0xc]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        push ebx
+        fld dword ptr [esi + 0x4]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        call ext_007BB140
+        fld dword ptr [esi + 0x8]
+        fmul qword ptr [mem_00993840]
+        fld dword ptr [esi + 0x4]
+        fmul qword ptr [mem_00999B48]
+        mov edi, eax
+        add esp, 0xc
+        test edi, edi
+        faddp st(1), st
+        fadd dword ptr [esi]
+        je L_7BB76E
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x41
+        jne L_7BB76E
+        fld dword ptr [esi]
+        fmul qword ptr [mem_0093F7B0]
+        fdiv st, st(1)
+        fstp qword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x4]
+        fmul qword ptr [mem_00999B30]
+        fdiv st, st(1)
+        fstp qword ptr [esp + 0x10]
+        fstp st(0)
+        jmp L_7BB790
+    L_7BB76E:
+        fstp st(0)
+        mov dword ptr [esp + 0x18], 0xbd156c1a
+        mov dword ptr [esp + 0x1c], 0x3fcaf286
+        mov dword ptr [esp + 0x10], 0x94b8199e
+        mov dword ptr [esp + 0x14], 0x3fde50d7
+    L_7BB790:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x1c]
+        push ebx
+        push eax
+        mov eax, dword ptr [esp + 0x20]
+        push ecx
+        push edx
+        push eax
+        call ext_007BB1D0
+        mov ecx, eax
+        add esp, 0x14
+        test ecx, ecx
+        jge L_7BB7D3
+        push 0x0
+        push 0x3fde50d7
+        push 0x94b8199e
+        push 0x3fcaf286
+        push 0xbd156c1a
+        call ext_007BB1D0
+        add esp, 0x14
+        mov ecx, eax
+    L_7BB7D3:
+        mov eax, edi
+        pop edi
+        shl eax, 0xe
+        pop esi
+        or eax, ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
