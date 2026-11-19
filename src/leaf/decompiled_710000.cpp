@@ -6374,3 +6374,14 @@ L_0071A5B8:
         ret 0x4
     }
 }
+
+// [0x00719B70] sub_00719B70 (63 bytes)
+extern "C" void __fastcall fn_00719B70(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    char* p = (char*)self;
+    *(int*)(p + 0x738) = a1;
+    *(int*)(p + 0x73c) = a2;
+    *(int*)(p + 0x740) = a3;
+    *(int*)(p + 0x744) = a4;
+    *(int*)(p + 0x748) = a5;
+    *(int*)(p + 0x74c) = a6;
+}
