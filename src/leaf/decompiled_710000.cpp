@@ -6088,3 +6088,31 @@ extern "C" __declspec(naked) void* __stdcall fn_0071A760(int a1) {
         ret 0x4
     }
 }
+
+// [0x0071A7C0] sub_0071A7C0 (44 bytes)
+extern "C" int mem_00AACA24;
+extern "C" int mem_00AACA30;
+extern "C" int mem_00AACA3C;
+
+extern "C" __declspec(naked) void* __stdcall fn_0071A7C0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub eax, 0x0
+        je L_case0
+        dec eax
+        je L_case1
+        dec eax
+        je L_case2
+        xor eax, eax
+        ret 0x4
+    L_case2:
+        mov eax, offset mem_00AACA3C
+        ret 0x4
+    L_case1:
+        mov eax, offset mem_00AACA30
+        ret 0x4
+    L_case0:
+        mov eax, offset mem_00AACA24
+        ret 0x4
+    }
+}
