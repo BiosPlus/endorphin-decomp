@@ -2421,3 +2421,8 @@ extern "C" double __fastcall fn_006F0E90(void* self) {
 extern "C" double __fastcall fn_006F0ED0(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x4040);
 }
+
+// [0x006F0F10] Byte/bool field getter (7 bytes) - sub_006F0F10
+extern "C" unsigned char __fastcall fn_006F0F10(void* self) {
+    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x40c8);
+}
