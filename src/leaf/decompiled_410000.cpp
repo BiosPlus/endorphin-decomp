@@ -14782,3 +14782,58 @@ extern "C" __declspec(naked) void __cdecl fn_0041D9E0(void) {
         call ext_006A6DD2
     }
 }
+
+// [0x00414530] sub_00414530 (118 bytes)
+extern "C" void ext_0066A180();
+extern "C" void ext_006A5FFE();
+extern "C" int mem_00924084;
+
+extern "C" __declspec(naked) void __cdecl fn_00414530() {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        cmp eax, 0x3
+        ja loc_4145A5
+        jmp dword ptr [4*eax + 0x4145a8]
+
+    loc_case0:
+        mov ecx, dword ptr [esp + 0x8]
+        call ext_0066A180
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        push 0x0
+        call dword ptr [mem_00924084]
+        mov ecx, dword ptr [esp + 0x4]
+        push eax
+        call ext_006A5FFE
+        ret
+
+    loc_case1:
+        mov ecx, dword ptr [esp + 0x8]
+        call ext_0066A180
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push 0x1
+        call dword ptr [mem_00924084]
+        mov ecx, dword ptr [esp + 0x4]
+        push eax
+        call ext_006A5FFE
+        ret
+
+    loc_case2:
+        mov ecx, dword ptr [esp + 0x8]
+        call ext_0066A180
+        mov edx, dword ptr [esp + 0xc]
+        push eax
+        push edx
+        push 0x2
+        call dword ptr [mem_00924084]
+        mov ecx, dword ptr [esp + 0x4]
+        push eax
+        call ext_006A5FFE
+
+    loc_4145A5:
+        ret
+    }
+}
