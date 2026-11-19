@@ -6792,3 +6792,49 @@ extern "C" __declspec(naked) void __fastcall fn_007ABD00(void* self) {
         ret
     }
 }
+
+// [0x007AEE50] sub_007AEE50 (83 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AEE50(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x58]
+        test eax, eax
+        je L_ret
+        mov eax, dword ptr [esp + 0x4]
+        _emit 0x83
+        _emit 0xe8
+        _emit 0x00
+        je L_a2
+        dec eax
+        je L_add
+        dec eax
+        je L_sub
+        xor eax, eax
+    L_clamp:
+        mov edx, dword ptr [ecx + 0x5c]
+        cmp eax, edx
+        jle L_store_v
+        mov dword ptr [ecx + 0x60], edx
+        ret 0x8
+    L_sub:
+        mov eax, dword ptr [ecx + 0x5c]
+        mov edx, dword ptr [esp + 0x8]
+        sub eax, edx
+        jmp L_test
+    L_add:
+        mov eax, dword ptr [ecx + 0x60]
+        mov edx, dword ptr [esp + 0x8]
+        add eax, edx
+        jmp L_test
+    L_a2:
+        mov eax, dword ptr [esp + 0x8]
+    L_test:
+        test eax, eax
+        jge L_clamp
+        mov dword ptr [ecx + 0x60], 0x0
+        ret 0x8
+    L_store_v:
+        mov dword ptr [ecx + 0x60], eax
+    L_ret:
+        ret 0x8
+    }
+}
