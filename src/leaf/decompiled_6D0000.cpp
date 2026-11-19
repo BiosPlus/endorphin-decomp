@@ -8074,3 +8074,34 @@ extern "C" __declspec(naked) void __fastcall fn_006D6CB0(void* self) {
         ret
     }
 }
+
+// [0x006DADA0] sub_006DADA0 (57 bytes)
+extern "C" void __stdcall ext_006DAE30(void* p5, void* p4, void* p3, void* p2, void* p1, void* p0, int a1);
+
+// Reserves a 0x30-byte local block of six 8-byte slots, calls the 7-arg stdcall
+// callee (arg, &slot0..&slot5 pushed so the callee's leftmost arg is &slot5), and
+// returns slot0 as a 64-bit value in edx:eax (ret 4).
+extern "C" __declspec(naked) __int64 __stdcall fn_006DADA0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x30
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x00
+        push eax
+        lea eax, [esp + 0xc]
+        push edx
+        push eax
+        lea edx, [esp + 0x1c]
+        lea eax, [esp + 0x24]
+        push edx
+        push eax
+        lea edx, [esp + 0x34]
+        lea eax, [esp + 0x3c]
+        push edx
+        push eax
+        call ext_006DAE30
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00
+        mov edx, dword ptr [esp + 0x4]
+        add esp, 0x30
+        ret 0x4
+    }
+}
