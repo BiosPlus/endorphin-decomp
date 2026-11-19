@@ -55,3 +55,33 @@ extern "C" __declspec(naked) void __cdecl fn_00704BE0() {
         jmp ext_00704C10
     }
 }
+
+// [0x0070FE20] Identical-shape clone of 0x0048F070 (95 bytes) - sub_0070FE20
+extern "C" __declspec(naked) void __fastcall fn_0070FE20(void* self) {
+    __asm {
+        push -1
+        push 0x8BC986
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x178]
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_00712580
+        lea ecx, [esi + 0xE8]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_00712580
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_00705450
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
+

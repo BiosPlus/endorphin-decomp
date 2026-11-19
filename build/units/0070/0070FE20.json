@@ -16,5 +16,7 @@
     "0x0070FE5C",
     "0x0070FE6B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
