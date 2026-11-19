@@ -6754,3 +6754,54 @@ extern "C" __declspec(naked) void* __stdcall fn_006C1B40(unsigned int a1) {
         ret 0x4
     }
 }
+
+// [0x006C78D0] sub_006C78D0 (100 bytes)
+extern "C" void ext_006C3030();
+extern "C" void ext_006D2170();
+
+extern "C" __declspec(naked) void __fastcall fn_006C78D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ebx, dword ptr [esp + 0x14]
+        xor esi, esi
+        mov eax, dword ptr [edi + 0xf0]
+        mov ebp, dword ptr [eax + 0xc0]
+        test ebp, ebp
+        jle done_loop
+    loop_top:
+        mov ecx, dword ptr [edi + 0xf0]
+        mov edx, dword ptr [ecx + 0xd0]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, ebx
+        mov eax, dword ptr [edx + 4*esi]
+        mov edx, dword ptr [ebx]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_006D2170
+        inc esi
+        cmp esi, ebp
+        jl loop_top
+    done_loop:
+        mov ecx, edi
+        call ext_006C3030
+        test eax, eax
+        je done_end
+        mov ecx, edi
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 0x18]
+    done_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
