@@ -20415,3 +20415,94 @@ extern "C" __declspec(naked) void __cdecl fn_007C4370(void* self, const void* tr
         ret
     }
 }
+
+// [0x007C4750] sub_007C4750 (240 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C4750(void* a1, unsigned short* a2, int a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        xor ecx, ecx
+        push esi
+        mov cx, word ptr [eax + 0x2]
+        push edi
+        xor edi, edi
+        mov dword ptr [esp + 0xc], 0xffffffff
+        test ecx, ecx
+        mov edx, 0x7
+        mov esi, 0x4
+        jne L_setup
+        mov edx, 0x8a
+        mov esi, 0x3
+    L_setup:
+        mov ebx, dword ptr [esp + 0x1c]
+        test ebx, ebx
+        mov word ptr [eax + ebx*4 + 0x6], 0xffff
+        jl L_exit
+        inc ebx
+        push ebp
+        mov dword ptr [esp + 0x1c], ebx
+        mov ebx, dword ptr [esp + 0x18]
+        lea ebp, [eax + 0x6]
+    L_loop:
+        mov eax, ecx
+        xor ecx, ecx
+        mov cx, word ptr [ebp]
+        inc edi
+        cmp edi, edx
+        jge L_chk2
+        cmp eax, ecx
+        je L_tail
+    L_chk2:
+        cmp edi, esi
+        jge L_chk3
+        add word ptr [ebx + eax*4 + 0xa74], di
+        jmp L_reset
+    L_chk3:
+        test eax, eax
+        je L_zero
+        cmp eax, dword ptr [esp + 0x10]
+        je L_nz_inc2
+        inc word ptr [ebx + eax*4 + 0xa74]
+    L_nz_inc2:
+        inc word ptr [ebx + 0xab4]
+        jmp L_reset
+    L_zero:
+        cmp edi, 0xa
+        jg L_zero_hi
+        inc word ptr [ebx + 0xab8]
+        jmp L_reset
+    L_zero_hi:
+        inc word ptr [ebx + 0xabc]
+    L_reset:
+        xor edi, edi
+        mov dword ptr [esp + 0x10], eax
+        test ecx, ecx
+        jne L_nz
+        mov edx, 0x8a
+        mov esi, 0x3
+        jmp L_tail
+    L_nz:
+        cmp eax, ecx
+        jne L_nz_diff
+        mov edx, 0x6
+        mov esi, 0x3
+        jmp L_tail
+    L_nz_diff:
+        mov edx, 0x7
+        mov esi, 0x4
+    L_tail:
+        mov eax, dword ptr [esp + 0x1c]
+        add ebp, 0x4
+        dec eax
+        mov dword ptr [esp + 0x1c], eax
+        jne L_loop
+        pop ebp
+    L_exit:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
