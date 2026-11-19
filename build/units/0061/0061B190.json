@@ -20,5 +20,7 @@
     "0x0061B22D",
     "0x0061B237"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
