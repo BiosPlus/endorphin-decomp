@@ -6613,3 +6613,47 @@ extern "C" __declspec(naked) void __fastcall fn_007AEBE0(void* self) {
         ret
     }
 }
+
+// [0x007AEE00] sub_007AEE00 (77 bytes)
+extern "C" __declspec(naked) unsigned int __fastcall fn_007AEE00(void* self, int dummy_edx, const void* src, unsigned int size) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov edx, ecx
+        test esi, esi
+        je L_ret_zero
+        mov ebx, dword ptr [edx + 0x58]
+        test ebx, ebx
+        je L_ret_zero
+        mov eax, dword ptr [edx + 0x5c]
+        mov ecx, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [edx + 0x60]
+        sub eax, edi
+        cmp ecx, eax
+        ja L_copy
+        mov eax, ecx
+    L_copy:
+        mov ecx, eax
+        add edi, ebx
+        mov ebx, ecx
+        shr ecx, 2
+        rep movsd
+        mov ecx, ebx
+        and ecx, 3
+        rep movsb
+        mov ecx, dword ptr [edx + 0x60]
+        pop edi
+        add ecx, eax
+        pop esi
+        mov dword ptr [edx + 0x60], ecx
+        pop ebx
+        ret 8
+    L_ret_zero:
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 8
+    }
+}
