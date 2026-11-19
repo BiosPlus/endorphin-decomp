@@ -312,8 +312,10 @@ L_006D9088:
 
 extern "C" void ext_006C9A60();
 extern "C" void ext_006D03D0();
+extern "C" void ext_006B9D80();
+extern "C" int mem_00AA9158;
 
-// [0x006D03E0] sub_006D03E0 (112 bytes)
+extern "C" int mem_00AA9158;
 // Thiscall with 2 stack args (ret 0x8).
 extern "C" __declspec(naked) void __fastcall fn_006D03E0(void* self, int edx_unused, int a1, int a2) {
     __asm {
@@ -7713,4 +7715,11 @@ extern "C" __declspec(naked) void* __fastcall fn_006D7E20(void* self, int edx_un
         pop ecx
         ret 0x4
     }
+}
+
+// [0x006D7BA0] sub_006D7BA0 (33 bytes)
+extern "C" void* __fastcall fn_006D7BA0(void* self, int edx_unused, void* a1) {
+    volatile int local = 0;
+    ((void (__thiscall*)(void*, void*))ext_006B9D80)(a1, &mem_00AA9158);
+    return a1;
 }
