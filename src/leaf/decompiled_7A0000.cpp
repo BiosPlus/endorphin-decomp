@@ -6253,3 +6253,14 @@ extern "C" __declspec(naked) int __cdecl fn_007AF7E0(void* a1) {
         ret
     }
 }
+
+// [0x007AEDE0] sub_007AEDE0 (31 bytes)
+extern "C" void ext_007AEC70();
+
+extern "C" unsigned char __stdcall fn_007AEDE0(void* p) {
+    typedef int (__stdcall *fn_007AEC70_t)(void*, int, int);
+    if (((fn_007AEC70_t)ext_007AEC70)(p, 1, 1)) {
+        return *(unsigned char*)p;
+    }
+    return 0;
+}
