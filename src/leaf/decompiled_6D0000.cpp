@@ -7790,3 +7790,28 @@ extern "C" __declspec(naked) void __cdecl fn_006D75C0() {
         ret
     }
 }
+
+// [0x006D66A0] sub_006D66A0 (39 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D66A0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        xor ebx, ebx
+        mov edi, dword ptr [esi + 0xfc]
+        mov ecx, dword ptr [edi + 0x4]
+        cmp ecx, ebx
+        je L_skip_006D66A0
+        mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax]
+    L_skip_006D66A0:
+        mov dword ptr [edi + 0x4], ebx
+        mov byte ptr [esi + 0x100], bl
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
