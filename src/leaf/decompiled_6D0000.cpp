@@ -529,8 +529,10 @@ extern "C" __declspec(naked) void __fastcall fn_006DBE60(void* self, int edx_unu
         ret
     }
 }
+extern "C" void ext_006DE3B0();
+extern "C" int mem_009251D0;
 
-// [0x006D2170] sub_006D2170 (144 bytes)
+extern "C" int mem_009251D0;
 // Insert-at-index into a block-grown array (ret 8): clamps idx to count, grows storage by one block when full,
 // shifts [idx, count) up by one row, copies the src row into slot idx, bumps count, returns idx.
 extern "C" int mem_0092528C;
@@ -8359,5 +8361,56 @@ extern "C" __declspec(naked) void __fastcall fn_006DBF80(void* self) {
         mov dword ptr [mem_00B5DAE8], ecx
         mov dword ptr [mem_00B5DAEC], edx
         ret
+    }
+}
+
+// [0x006DE690] sub_006DE690 (78 bytes)
+// Loops over self->[0x20] items: calls vtable[0x18](self, edi, a1), passes the result to
+// sub_006DE3B0 and calls _stricmp via the pointer at 0x9251D0 with that result and a dword;
+// returns the first matching index, or -1 if none (ret 4).
+extern "C" __declspec(naked) int __fastcall fn_006DE690(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        jle not_found
+        mov ebx, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [mem_009251D0]
+    loop_top:
+        mov eax, dword ptr [esi]
+        push ebx
+        push edi
+        mov ecx, esi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006DE3B0
+        push eax
+        call ebp
+        add esp, 0x8
+        test eax, eax
+        je found
+        mov eax, dword ptr [esi + 0x20]
+        inc edi
+        cmp edi, eax
+        jl loop_top
+    not_found:
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -1
+        pop ebx
+        ret 0x4
+    found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
     }
 }
