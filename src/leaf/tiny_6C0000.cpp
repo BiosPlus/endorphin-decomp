@@ -1682,3 +1682,8 @@ extern "C" void __fastcall fn_006C10A0(void* self, int edx_unused, int a1) {
 extern "C" unsigned char __fastcall fn_006C10B0(void* self) {
     return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + 0x1878);
 }
+
+// [0x006C10C0] Byte field setter (13 bytes) - sub_006C10C0
+extern "C" void __fastcall fn_006C10C0(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + 0x1900) = static_cast<unsigned char>(a1);
+}
