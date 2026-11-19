@@ -480,3 +480,14 @@ L_0072CFA8:
         ret 0x4
     }
 }
+
+// [0x0072DB80] Boolean predicate (14 bytes) - sub_0072DB80
+extern "C" __declspec(naked) void fn_0072DB80() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x91 __asm _emit 0xAC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [ecx + 0xac]
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        __asm _emit 0x85 __asm _emit 0xD2 // test edx, edx
+        setne al
+        ret
+    }
+}
