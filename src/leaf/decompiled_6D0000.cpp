@@ -8026,3 +8026,29 @@ extern "C" __declspec(naked) void __fastcall fn_006DD980(void* self) {
         ret
     }
 }
+
+// [0x006DBEF0] sub_006DBEF0 (57 bytes)
+extern "C" int mem_00B5DAA0;
+extern "C" int mem_00B5DAA4;
+extern "C" int mem_00B5DAA8;
+extern "C" int mem_00B5DAAC;
+extern "C" int mem_00B5DAB0;
+extern "C" int mem_00B5DAB4;
+extern "C" __declspec(naked) void __fastcall fn_006DBEF0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DAA0], ecx
+        mov dword ptr [mem_00B5DAA4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DAA8], ecx
+        mov dword ptr [mem_00B5DAAC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DAB0], ecx
+        mov dword ptr [mem_00B5DAB4], edx
+        ret
+    }
+}
