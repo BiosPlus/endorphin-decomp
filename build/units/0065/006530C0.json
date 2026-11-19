@@ -22,5 +22,7 @@
     "0x0065315C",
     "0x00653166"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }
