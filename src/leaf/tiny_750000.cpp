@@ -95,3 +95,14 @@ L_007555A8:
 extern "C" void __fastcall fn_007558A0(void* self, int edx_unused, int a1) {
     *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0xb8) = a1;
 }
+
+// [0x007558B0] Tiny indirect/IAT call leaf (8 bytes) - sub_007558B0
+extern "C" __declspec(naked) void fn_007558B0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push 0x0
+        call dword ptr [eax + 0x20]
+        ret
+    }
+}
+
