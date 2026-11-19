@@ -5007,3 +5007,34 @@ extern "C" void __cdecl fn_008539E0(unsigned int* ctx) {
     ctx[5] = 0;
     ctx[4] = 0;
 }
+
+// [0x0085D820] sub_0085D820 (59 bytes)
+extern "C" unsigned char mem_00ABB260[];
+extern "C" __declspec(naked) void __cdecl fn_0085D820(unsigned char* buf, int len) {
+    __asm {
+        push ebx
+        xor eax, eax
+        push esi
+        xor ebx, ebx
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, 0x4
+        mov al, byte ptr [esi + 0x2]
+        mov bl, byte ptr mem_00ABB260[eax]
+        mov eax, dword ptr [esp + 0x10]
+        cmp eax, ecx
+        jle done
+    loop_start:
+        mov edx, ebx
+        inc ecx
+        and edx, 0xff
+        inc ebx
+        mov dl, byte ptr mem_00ABB260[edx]
+        xor byte ptr [esi + ecx - 0x1], dl
+        cmp ecx, eax
+        jl loop_start
+    done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
