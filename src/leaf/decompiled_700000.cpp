@@ -5858,3 +5858,33 @@ extern "C" __declspec(naked) void __fastcall fn_0070AC80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x007057F0] sub_007057F0 (62 bytes)
+extern "C" int mem_00B5EB80;
+extern "C" __declspec(naked) void __fastcall fn_007057F0(void* self, int edx_unused, unsigned char a1) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        mov dl, byte ptr [ecx + 0x70]
+        cmp dl, al
+        je done
+        test al, al
+        mov byte ptr [ecx + 0x70], al
+        je second
+        mov eax, dword ptr [ecx]
+        push -1
+        push 0
+        push offset mem_00B5EB80
+        push 0x13
+        call dword ptr [eax + 0xa4]
+        ret 0x4
+    second:
+        mov edx, dword ptr [ecx]
+        push -1
+        push 0
+        push offset mem_00B5EB80
+        push 0x14
+        call dword ptr [edx + 0xa4]
+    done:
+        ret 0x4
+    }
+}
