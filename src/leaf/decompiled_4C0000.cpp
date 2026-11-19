@@ -9953,3 +9953,64 @@ extern "C" __declspec(naked) void __fastcall fn_004C0280(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x004C21A0] sub_004C21A0 (142 bytes)
+extern "C" void ext_00493D90();
+extern "C" void ext_004C0350();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004C21A0(void* self) {
+    __asm {
+    loop_start:
+        mov ebx, dword ptr [ebx + 0x8]
+        mov ecx, dword ptr [esp + 0x14]
+        cmp dword ptr [ecx + 0x4], ebx
+        jbe skip_inv1
+        call dword ptr [mem_00925134]
+    skip_inv1:
+        cmp esi, ebx
+        je exit_fn
+        mov edx, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [edx + 0x8]
+        jb skip_inv2
+        call dword ptr [mem_00925134]
+    skip_inv2:
+        push esi
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x1b]
+        call ext_004C0350
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [eax]
+        mov edx, dword ptr [edx]
+        push ecx
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x34], 0x0
+        call edx
+        lea ecx, [esp + 0x18]
+        mov bl, al
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call ext_00493D90
+        test bl, bl
+        je exit_fn
+        mov eax, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [eax + 0x8]
+        jb skip_inv3
+        call dword ptr [mem_00925134]
+    skip_inv3:
+        mov ebx, dword ptr [esp + 0x14]
+        add esi, 0x1c
+        jmp loop_start
+    exit_fn:
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
