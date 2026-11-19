@@ -9924,3 +9924,64 @@ extern "C" __declspec(naked) void __fastcall fn_0080FCA0(void* self) {
         ret
     }
 }
+
+// [0x0080FCF0] sub_0080FCF0 (122 bytes)
+extern "C" void ext_0080FBC0();
+extern "C" void ext_0080FAC0();
+extern "C" void ext_0080FAF0();
+extern "C" void ext_0080FB10();
+extern "C" void ext_0080DC60();
+extern "C" void ext_0080FC70();
+extern "C" int mem_00B83EB4;
+
+extern "C" __declspec(naked) void __cdecl fn_0080FCF0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        push offset mem_00B83EB4
+        mov dword ptr [ebx], 0
+        call ext_0080FBC0
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        jne L_ok
+        pop esi
+        mov eax, 0xfffffffa
+        pop ebx
+        ret
+    L_ok:
+        mov edx, dword ptr [esp + 0x10]
+        push edi
+        lea ecx, [esp + 0x10]
+        push 0
+        push ecx
+        push edx
+        push offset ext_0080FC70
+        lea eax, [esp + 0x28]
+        push 0
+        push esi
+        mov dword ptr [esp + 0x28], eax
+        call ext_0080DC60
+        mov edi, eax
+        add esp, 0x18
+        test edi, edi
+        mov dword ptr [esp + 0x10], 0
+        jl L_skip
+        push esi
+        call ext_0080FB10
+        push esi
+        call ext_0080FAF0
+        add esp, 8
+        mov dword ptr [ebx], eax
+    L_skip:
+        push esi
+        call ext_0080FAC0
+        add esp, 4
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
