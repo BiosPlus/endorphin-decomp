@@ -959,3 +959,8 @@ extern "C" double __fastcall fn_006EFBE0(void* self) {
 extern "C" double __fastcall fn_006EFBF0(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x18c0);
 }
+
+// [0x006EFCA0] Dword field getter (7 bytes) - sub_006EFCA0
+extern "C" int __fastcall fn_006EFCA0(void* self) {
+    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + 0x1a88);
+}
