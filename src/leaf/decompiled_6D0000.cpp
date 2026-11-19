@@ -7920,3 +7920,17 @@ extern "C" __declspec(naked) void __cdecl fn_006D7660(void) {
         ret
     }
 }
+
+// [0x006DDA70] sub_006DDA70 (46 bytes)
+extern "C" int mem_00B5DC70;
+extern "C" int mem_00B5DC78;
+extern "C" int mem_00B5DC80;
+extern "C" int mem_00B5DC88;
+
+extern "C" void __cdecl fn_006DDA70(void) {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B5DC70 = -*p;
+    *(double*)&mem_00B5DC78 = -*p;
+    *(double*)&mem_00B5DC80 = -*p;
+    *(double*)&mem_00B5DC88 = -*p;
+}
