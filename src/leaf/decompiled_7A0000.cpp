@@ -413,8 +413,10 @@ extern "C" __declspec(naked) void __fastcall fn_007A19E0(void* self) {
         ret
     }
 }
+extern "C" void ext_006E7410();
+typedef void (__fastcall *fn_006E7410_t)(void* self, int edx, int a1, int a2);
 
-// [0x007ACAC0] sub_007ACAC0 (143 bytes)
+typedef void (__fastcall *fn_006E7410_t)(void* self, int edx, int a1, int a2);
 extern "C" void ext_007AC960();
 extern "C" int mem_00998870;
 extern "C" int mem_00998872;
@@ -6210,4 +6212,10 @@ extern "C" __declspec(naked) void __stdcall fn_007AECD0(void* a1, void* a2) {
         call ext_007AEC70
         ret 0x8
     }
+}
+
+// [0x007AE3A0] sub_007AE3A0 (20 bytes)
+extern "C" bool __fastcall fn_007AE3A0(void* self, int edx, int a1) {
+    ((fn_006E7410_t)ext_006E7410)((char*)self + 0x20, edx, 1, 0xab0bb0);
+    return false;
 }
