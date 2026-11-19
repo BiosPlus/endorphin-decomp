@@ -9257,3 +9257,102 @@ extern "C" __declspec(naked) void __fastcall fn_0078D940(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0078ABD0] sub_0078ABD0 (192 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0078ABD0(int ebp_arg, const char* str, unsigned int* out, char* dst) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0xc]
+        push    esi
+        test    ebp, ebp
+        push    edi
+        jle     L_init_done
+        mov     eax, dword ptr [esp + 0x1c]
+        xor     ecx, ecx
+    L_zero_loop:
+        mov     dword ptr [eax], 0
+        add     ecx, 0x20
+        add     eax, 0x4
+        cmp     ecx, ebp
+        jl      L_zero_loop
+    L_init_done:
+        xor     edi, edi
+        test    ebp, ebp
+        jle     L_success
+        mov     eax, dword ptr [esp + 0x18]
+        mov     edx, dword ptr [esp + 0x20]
+        xor     ebx, ebx
+        sub     eax, edx
+        mov     dword ptr [esp + 0x14], eax
+        jmp     L_loop_entry
+    L_loop_body:
+        mov     eax, dword ptr [esp + 0x14]
+        mov     edx, dword ptr [esp + 0x20]
+    L_loop_entry:
+        lea     ecx, [edi + edx]
+        test    edx, edx
+        mov     al, byte ptr [eax + ecx]
+        je      L_skip_write
+        mov     byte ptr [ecx], al
+    L_skip_write:
+        cmp     al, '0'
+        jl      L_check_lower
+        cmp     al, '9'
+        jg      L_check_lower
+        movsx   esi, al
+        sub     esi, 0x30
+        jmp     L_have_nibble
+    L_check_lower:
+        cmp     al, 'a'
+        jl      L_check_upper
+        cmp     al, 'f'
+        jg      L_check_upper
+        movsx   esi, al
+        sub     esi, 0x57
+        jmp     L_have_nibble
+    L_check_upper:
+        cmp     al, 'A'
+        jl      L_error
+        cmp     al, 'F'
+        jg      L_error
+        movsx   esi, al
+        sub     esi, 0x37
+    L_have_nibble:
+        mov     eax, edi
+        mov     ecx, dword ptr [esp + 0x1c]
+        cdq
+        and     edx, 0x7
+        add     ebx, 0x4
+        add     eax, edx
+        sar     eax, 0x3
+        lea     eax, [ecx + 4*eax]
+        mov     ecx, edi
+        xor     ecx, 0x1
+        and     ecx, 0x7
+        shl     ecx, 0x2
+        shl     esi, cl
+        mov     ecx, dword ptr [eax]
+        or      ecx, esi
+        inc     edi
+        cmp     ebx, ebp
+        mov     dword ptr [eax], ecx
+        jl      L_loop_body
+    L_success:
+        pop     edi
+        pop     esi
+        pop     ebp
+        xor     eax, eax
+        pop     ebx
+        ret
+    L_error:
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     eax, 0xfffffffe
+        pop     ebx
+        ret
+        nop
+        nop
+    }
+}
