@@ -228,3 +228,18 @@ L_008574A2:
         ret
     }
 }
+
+// [0x008574B0] Tiny indirect/IAT call leaf (19 bytes) - sub_008574B0
+extern "C" __declspec(naked) void fn_008574B0() {
+    __asm {
+        mov eax, dword ptr [mem_00AB86EC]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        je L_008574C2
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x04 // mov ecx, dword ptr [esp + 0x4]
+        push ecx
+        call dword ptr [eax + 0x14]
+        pop ecx
+L_008574C2:
+        ret
+    }
+}
