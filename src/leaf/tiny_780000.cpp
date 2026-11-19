@@ -330,3 +330,21 @@ extern "C" __declspec(naked) void fn_00780290() {
         jmp ext_00780250
     }
 }
+
+// [0x00783250] Scalar deleting destructor (30 bytes) - sub_00783250
+extern "C" __declspec(naked) void fn_00783250() {
+    __asm {
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        call ext_00783270
+        __asm _emit 0xF6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 // test byte ptr [esp + 0x8], 0x1
+        je L_00783268
+        push esi
+        call ext_006A5C5C
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 0x4
+L_00783268:
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
