@@ -9643,3 +9643,105 @@ c_fail:
         ret
     }
 }
+
+// [0x00706FE0] sub_00706FE0 (230 bytes)
+extern "C" int mem_00B5E400;
+extern "C" int mem_00B5EB78;
+extern "C" void ext_006BDAF0();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" __declspec(naked) void __fastcall fn_00706FE0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        mov byte ptr [edi + 0x64], 0x1
+        call dword ptr [eax + 0x84]
+        mov ebp, eax
+        mov al, byte ptr [esp + 0x18]
+        test al, al
+        je done
+        cmp ebp, -0x1
+        je done
+        xor ebx, ebx
+        mov dword ptr [esp + 0x10], ebx
+loop_head:
+        cmp ebp, dword ptr [mem_00B5E400]
+        je self_count
+        push ebp
+        call ext_006FC6E0
+        add esp, 0x4
+        mov ecx, edi
+        push eax
+        call ext_006FA5A0
+        mov eax, dword ptr [eax + 0x14]
+        jmp cmp_count
+self_count:
+        mov eax, dword ptr [edi + 0x14]
+cmp_count:
+        cmp dword ptr [esp + 0x10], eax
+        jge done
+        cmp ebp, dword ptr [mem_00B5E400]
+        je same_branch
+        push ebp
+        call ext_006FC6E0
+        add esp, 0x4
+        mov ecx, edi
+        push eax
+        call ext_006FA5A0
+        mov esi, dword ptr [eax + 0x10]
+        add esi, ebx
+        mov ecx, esi
+        call ext_006BDAF0
+        test al, al
+        je next
+        mov ecx, dword ptr [esi + 0x4]
+        jmp have_ecx
+same_branch:
+        mov eax, dword ptr [edi + 0x10]
+        add eax, ebx
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je next
+        mov edx, dword ptr [ecx]
+        mov esi, dword ptr [eax]
+        cmp edx, esi
+        jne next
+have_ecx:
+        mov esi, dword ptr [ecx + 0x4]
+        test esi, esi
+        je next
+        mov ecx, dword ptr [mem_00B5EB78]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je next
+        mov esi, dword ptr [esi + 0x4]
+        test esi, esi
+        je next
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0xa0]
+next:
+        mov ecx, dword ptr [esp + 0x10]
+        inc ecx
+        add ebx, 0xc
+        mov dword ptr [esp + 0x10], ecx
+        jmp loop_head
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
