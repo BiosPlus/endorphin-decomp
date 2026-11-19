@@ -12,5 +12,6 @@
     "0x007010BC",
     "0x007010C2"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }

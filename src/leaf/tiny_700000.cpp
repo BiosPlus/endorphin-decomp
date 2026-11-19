@@ -834,3 +834,15 @@ L_00700838:
         ret 0x4
     }
 }
+
+// [0x007010B0] Branchless tiny leaf function (23 bytes) - sub_007010B0
+extern "C" __declspec(naked) void fn_007010B0() {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        __asm _emit 0x8B __asm _emit 0x08 // mov ecx, dword ptr [eax]
+        __asm _emit 0x8B __asm _emit 0x50 __asm _emit 0x04 // mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E7D0], ecx
+        mov dword ptr [mem_00B5E7D4], edx
+        ret
+    }
+}
