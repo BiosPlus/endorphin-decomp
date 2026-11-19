@@ -7526,3 +7526,105 @@ extern "C" __declspec(naked) void __cdecl fn_0085FC10(void) {
         ret
     }
 }
+
+// [0x0085E220] sub_0085E220 (224 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E210();
+extern "C" void ext_0085E300();
+extern "C" int mem_00ABA454;
+extern "C" __declspec(naked) int __cdecl fn_0085E220(void* s) {
+    __asm {
+        sub esp, 80h
+        push ebx
+        push esi
+        push edi
+        push 514h
+        push 0
+        push 0ABA458h
+        call ext_0085D510
+        mov edi, dword ptr [esp + 9Ch]
+        add esp, 0Ch
+        mov dword ptr [mem_00ABA454], 0
+        push edi
+        call ext_0085E1F0
+        add esp, 4
+        test eax, eax
+        jne fn_0085E220_nonzero
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 80h
+        ret
+    fn_0085E220_nonzero:
+        xor esi, esi
+        xor ebx, ebx
+        mov byte ptr [esp + 0Ch], 0
+        push edi
+        call ext_0085E1F0
+        add esp, 4
+        test eax, eax
+        jle fn_0085E220_after_loop
+    fn_0085E220_loop:
+        mov al, byte ptr [edi + ebx]
+        cmp al, 2Ch
+        jne fn_0085E220_store
+        lea eax, [esp + 0Ch]
+        xor esi, esi
+        push eax
+        call ext_0085E300
+        add esp, 4
+        jmp fn_0085E220_next
+    fn_0085E220_store:
+        cmp esi, 7Fh
+        jge fn_0085E220_next
+        mov byte ptr [esp + esi + 0Ch], al
+        inc esi
+        mov byte ptr [esp + esi + 0Ch], 0
+    fn_0085E220_next:
+        inc ebx
+        push edi
+        call ext_0085E1F0
+        add esp, 4
+        cmp eax, ebx
+        jg fn_0085E220_loop
+    fn_0085E220_after_loop:
+        test esi, esi
+        je fn_0085E220_flush_done
+        lea eax, [esp + 0Ch]
+        push eax
+        call ext_0085E300
+        add esp, 4
+    fn_0085E220_flush_done:
+        xor esi, esi
+        cmp dword ptr [mem_00ABA454], esi
+        jle fn_0085E220_ret1
+        mov edi, 0ABA458h
+    fn_0085E220_reg:
+        push edi
+        inc esi
+        add edi, 0Dh
+        call ext_0085E210
+        add esp, 4
+        cmp esi, dword ptr [mem_00ABA454]
+        jl fn_0085E220_reg
+    fn_0085E220_ret1:
+        mov eax, 1
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 80h
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
