@@ -3609,3 +3609,31 @@ extern "C" void __cdecl fn_00774850() {
     *(double*)&mem_00B60610 = -*p;
     *(double*)&mem_00B60618 = -*p;
 }
+
+// [0x0077F5D0] sub_0077F5D0 (51 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0077F5D0(unsigned int n) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, 0xAABB78
+        cmp ecx, 4
+        ja  dflt
+        _emit 0xFF
+        _emit 0x24
+        _emit 0x8D
+        _emit 0x04
+        _emit 0xF6
+        _emit 0x77
+        _emit 0x00
+        mov eax, 0xAABB78
+        ret
+        mov eax, 0xAAE5D4
+        ret
+        mov eax, 0xAABB60
+        ret
+        mov eax, 0xAABB54
+        ret
+        mov eax, 0xAAE5C8
+    dflt:
+        ret
+    }
+}
