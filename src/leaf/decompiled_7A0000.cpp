@@ -6348,3 +6348,36 @@ extern "C" __declspec(naked) unsigned int __stdcall fn_007AED60(unsigned int* p,
         ret 0x8
     }
 }
+
+// [0x007AEDA0] sub_007AEDA0 (56 bytes)
+extern "C" __declspec(naked) unsigned short __stdcall fn_007AEDA0(unsigned short* p, bool flag) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push 0x1
+        push 0x2
+        push esi
+        call ext_007AEC70
+        test eax, eax
+        je L_ret0
+        mov al, byte ptr [ebp + 0xc]
+        test al, al
+        je L_ret_val
+        mov ax, word ptr [esi]
+        mov dword ptr [ebp + 0xc], eax
+        mov ax, word ptr [ebp + 0xc]
+        xchg al, ah
+    L_ret_val:
+        mov ax, word ptr [esi]
+        pop esi
+        pop ebp
+        ret 0x8
+    L_ret0:
+        xor ax, ax
+        pop esi
+        pop ebp
+        ret 0x8
+    }
+}
