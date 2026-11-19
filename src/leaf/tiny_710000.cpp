@@ -2475,3 +2475,14 @@ extern "C" __declspec(naked) void fn_00719CC0() {
 extern "C" double __fastcall fn_00719CE0(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0xb08);
 }
+
+// [0x00719CF0] Branchless tiny leaf function (23 bytes) - sub_00719CF0
+extern "C" __declspec(naked) void fn_00719CF0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x89 __asm _emit 0x81 __asm _emit 0x90 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0xb90], eax
+        __asm _emit 0x89 __asm _emit 0x91 __asm _emit 0x94 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [ecx + 0xb94], edx
+        ret 0x8
+    }
+}
