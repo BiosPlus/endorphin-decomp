@@ -10212,3 +10212,93 @@ extern "C" __declspec(naked) void __cdecl fn_0080A750(void* p) {
         ret
     }
 }
+
+// [0x0080A540] sub_0080A540 (182 bytes)
+extern "C" void ext_0080A750();
+extern "C" void ext_0080B530();
+extern "C" void ext_0080B560();
+extern "C" void ext_0080B5B0();
+extern "C" void ext_008576F0();
+extern "C" int mem_00AB5C38;
+
+extern "C" __declspec(naked) int __fastcall fn_0080A540(void* self) {
+    __asm {
+        push    ecx
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x10]
+        mov     dword ptr [esp + 0x8], 0x101
+        cmp     dword ptr [edi], 0x2400
+        je      L_alloc
+        pop     edi
+        mov     eax, 0x1d
+        pop     esi
+        pop     ecx
+        ret
+    L_alloc:
+        push    0x101
+        call    ext_0080B530
+        mov     esi, eax
+        add     esp, 0x4
+        test    esi, esi
+        jne     L_call_8576f0
+        pop     edi
+        mov     eax, 0x3
+        pop     esi
+        pop     ecx
+        ret
+    L_call_8576f0:
+        mov     eax, dword ptr [esp + 0x18]
+        mov     ecx, dword ptr [edi + 0x4]
+        mov     edx, dword ptr [edi + 0x8]
+        add     eax, 0xc
+        push    eax
+        push    ecx
+        lea     eax, [esp + 0x10]
+        push    edx
+        push    eax
+        push    esi
+        call    ext_008576F0
+        add     esp, 0x14
+        test    eax, eax
+        je      L_check_len
+        push    esi
+        call    ext_0080B560
+        push    offset mem_00AB5C38
+        call    ext_0080A750
+        add     esp, 0x8
+        mov     eax, 0x13
+        pop     edi
+        pop     esi
+        pop     ecx
+        ret
+    L_check_len:
+        cmp     dword ptr [esp + 0x8], 0x14
+        jne     L_fail
+        mov     ecx, dword ptr [esp + 0x14]
+        push    0x14
+        push    ecx
+        push    esi
+        call    ext_0080B5B0
+        add     esp, 0xc
+        test    eax, eax
+        jne     L_fail
+        push    esi
+        call    ext_0080B560
+        add     esp, 0x4
+        xor     eax, eax
+        pop     edi
+        pop     esi
+        pop     ecx
+        ret
+    L_fail:
+        push    esi
+        call    ext_0080B560
+        add     esp, 0x4
+        mov     eax, 0x1e
+        pop     edi
+        pop     esi
+        pop     ecx
+        ret
+    }
+}
