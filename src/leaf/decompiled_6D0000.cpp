@@ -440,9 +440,12 @@ done_early:
         ret 0x4
     }
 }
+extern "C" int mem_00B5DAB8;
+extern "C" int mem_00B5DAC0;
+extern "C" int mem_00B5DAC8;
 
-// [0x006DBE60] sub_006DBE60 (128 bytes)
-// Calls ext_006A7310(*self, *in) (64-bit args, callee-cleaned) and stores the
+extern "C" int mem_00B5DAC0;
+extern "C" int mem_00B5DAC8;
 // 64-bit result into *out (out = arg0, in = arg1, ret 8).
 // The ledger window (128 bytes) also covers the nop padding, two ILT jmp thunks
 // (-> 0x006DBEA0 and 0x006DBED0) and the two small blobs they jump to, so those
@@ -7757,4 +7760,12 @@ extern "C" void __cdecl fn_006DD9D0() {
     *(double*)&mem_00B5DC38 = v;
     *(double*)&mem_00B5DC40 = -*(double*)mem_00925284;
     *(double*)&mem_00B5DC48 = -*(double*)mem_00925284;
+}
+
+// [0x006DBF40] sub_006DBF40 (36 bytes)
+// Stores -(*_HUGE) into three consecutive doubles at 0x00B5DAB8, 0x00B5DAC0, 0x00B5DAC8.
+extern "C" void __cdecl fn_006DBF40(void) {
+    *(double*)&mem_00B5DAB8 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DAC0 = -*(double*)mem_00925284;
+    *(double*)&mem_00B5DAC8 = -*(double*)mem_00925284;
 }
