@@ -9805,3 +9805,75 @@ extern "C" __declspec(naked) void __fastcall fn_0070F070(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x007024A0] sub_007024A0 (238 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007024A0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov dword ptr [ecx + 0x10c], eax
+        dec eax
+        cmp eax, 6
+        ja loc_70257B
+        jmp dword ptr [4*eax + L_tbl]
+
+    loc_7024BB:
+        mov eax, dword ptr [ecx + 0x110]
+        sub eax, 0
+        je loc_7024F6
+        dec eax
+        je loc_7024E3
+        dec eax
+        jne loc_70258B
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x380], 1
+        ret 4
+
+    loc_7024E3:
+        mov ecx, dword ptr [ecx + 0x268]
+        mov dword ptr [ecx + 0x380], 3
+        ret 4
+
+    loc_7024F6:
+        mov edx, dword ptr [ecx + 0x268]
+        mov dword ptr [edx + 0x380], 2
+        ret 4
+
+    loc_702509:
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x380], 4
+        ret 4
+
+    loc_70251C:
+        mov ecx, dword ptr [ecx + 0x268]
+        mov dword ptr [ecx + 0x380], 5
+        ret 4
+
+    loc_70252F:
+        mov edx, dword ptr [ecx + 0x268]
+        mov dword ptr [edx + 0x380], 8
+        ret 4
+
+    loc_702542:
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x380], 9
+        ret 4
+
+    loc_702555:
+        mov ecx, dword ptr [ecx + 0x268]
+        mov dword ptr [ecx + 0x380], 0
+        ret 4
+
+    loc_702568:
+        mov edx, dword ptr [ecx + 0x268]
+        mov dword ptr [edx + 0x380], 6
+        ret 4
+
+    loc_70257B:
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x380], 10
+    loc_70258B:
+        ret 4
+
+    L_tbl:
+    }
+}
