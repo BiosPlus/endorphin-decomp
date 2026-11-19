@@ -7616,3 +7616,87 @@ extern "C" __declspec(naked) void __cdecl fn_00864B80(void) {
         __emit 0x00
     }
 }
+
+// [0x008680B0] sub_008680B0 (144 bytes)
+extern "C" char mem_00AC0668[];
+extern "C" char mem_00AC0670[];
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E690();
+extern "C" void ext_00868140();
+extern "C" __declspec(naked) int __cdecl fn_008680B0(char* s) {
+    __asm {
+        push ebx
+        push esi
+        xor si, si
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        call ext_0085E1F0
+        add esp, 4
+        test eax, eax
+        je after
+    lp:
+        movzx eax, si
+        inc si
+        lea ebx, [eax + edi]
+        mov cl, byte ptr [ebx]
+        push ecx
+        call ext_0085E690
+        add esp, 4
+        mov byte ptr [ebx], al
+        push edi
+        call ext_0085E1F0
+        movzx ecx, si
+        add esp, 4
+        cmp eax, ecx
+        ja lp
+    after:
+        push offset mem_00AC0668
+        push edi
+        call ext_00868140
+        add esp, 8
+        mov esi, eax
+        push offset mem_00AC0670
+        push edi
+        call ext_00868140
+        add esp, 8
+        test eax, eax
+        jne l2
+        pop edi
+        cmp esi, 1
+        sbb eax, eax
+        pop esi
+        neg eax
+        pop ebx
+        ret
+    l2:
+        cmp byte ptr [eax + 2], 0x58
+        je l3
+        cmp eax, esi
+        jb l4
+        test esi, esi
+        jne l3
+    l4:
+        mov eax, 1
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    l3:
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0
+        _emit 0
+        _emit 0
+        _emit 0
+    }
+}
