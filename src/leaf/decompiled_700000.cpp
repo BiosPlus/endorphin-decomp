@@ -5769,3 +5769,34 @@ extern "C" __declspec(naked) void __fastcall fn_0070FB20(void* self) {
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
     }
 }
+
+// [0x007045A0] sub_007045A0 (57 bytes)
+extern "C" int mem_00B5E9B8;
+extern "C" int mem_00B5F060;
+extern "C" int mem_00B5EB78;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_007045A0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5E9B8]
+        cmp eax, ecx
+        jne L_007045B3
+        mov al, 0x1
+        ret 0x4
+    L_007045B3:
+        cmp eax, dword ptr [mem_00B5F060]
+        jne L_007045C0
+        mov al, 0x1
+        ret 0x4
+    L_007045C0:
+        cmp eax, dword ptr [mem_00B5EB78]
+        jne L_007045CD
+        mov al, 0x1
+        ret 0x4
+    L_007045CD:
+        cmp eax, dword ptr [mem_00B5E400]
+        sete al
+        ret 0x4
+    }
+}

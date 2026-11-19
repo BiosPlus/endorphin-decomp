@@ -13,5 +13,7 @@
     "0x007045C2",
     "0x007045CF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-19T15:17:18Z"
 }
