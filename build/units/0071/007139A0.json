@@ -14,5 +14,7 @@
     "0x007139A6",
     "0x007139AB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T14:23:59Z"
 }

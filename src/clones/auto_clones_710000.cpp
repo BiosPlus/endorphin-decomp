@@ -351,3 +351,12 @@ extern "C" __declspec(naked) void __cdecl fn_00713990() {
         jmp ext_007139B0
     }
 }
+
+// [0x007139A0] Identical-shape clone of 0x00430D30 (16 bytes) - sub_007139A0
+extern "C" void __fastcall fn_007139A0(void* self) {
+    __asm {
+        push offset mem_00AA8D00
+        mov ecx, offset mem_00B5F498
+        call ext_00714440
+    }
+}
