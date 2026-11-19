@@ -5415,3 +5415,16 @@ extern "C" void __cdecl fn_007011F0() {
     mem_00B5E838 = -*(double*)mem_00925284;
     mem_00B5E840 = -*(double*)mem_00925284;
 }
+
+// [0x0070F870] sub_0070F870 (46 bytes)
+extern "C" int mem_00B5EF30;
+extern "C" int mem_00B5EF38;
+extern "C" int mem_00B5EF40;
+extern "C" int mem_00B5EF48;
+extern "C" void __cdecl fn_0070F870() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B5EF30 = -*p;
+    *(double*)&mem_00B5EF38 = -*p;
+    *(double*)&mem_00B5EF40 = -*p;
+    *(double*)&mem_00B5EF48 = -*p;
+}
