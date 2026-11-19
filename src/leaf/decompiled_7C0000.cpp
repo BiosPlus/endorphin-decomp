@@ -19796,3 +19796,84 @@ L_exit:
         ret
     }
 }
+
+// [0x007C2010] sub_007C2010 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C2010() {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        push edi
+        je L_ret_neg2
+        mov eax, dword ptr [esi + 0x1c]
+        test eax, eax
+        je L_ret_neg2
+        mov edi, dword ptr [eax + 0x4]
+        cmp edi, 0x2a
+        je L_ok
+        cmp edi, 0x71
+        je L_ok
+        cmp edi, 0x29a
+        jne L_ret_neg2
+    L_ok:
+        mov eax, dword ptr [eax + 0x8]
+        test eax, eax
+        je L_skip_08
+        push eax
+        mov eax, dword ptr [esi + 0x28]
+        push eax
+        call dword ptr [esi + 0x24]
+        add esp, 0x8
+    L_skip_08:
+        mov ecx, dword ptr [esi + 0x1c]
+        mov eax, dword ptr [ecx + 0x3c]
+        test eax, eax
+        je L_skip_3c
+        mov edx, dword ptr [esi + 0x28]
+        push eax
+        push edx
+        call dword ptr [esi + 0x24]
+        add esp, 0x8
+    L_skip_3c:
+        mov eax, dword ptr [esi + 0x1c]
+        mov eax, dword ptr [eax + 0x38]
+        test eax, eax
+        je L_skip_38
+        mov ecx, dword ptr [esi + 0x28]
+        push eax
+        push ecx
+        call dword ptr [esi + 0x24]
+        add esp, 0x8
+    L_skip_38:
+        mov edx, dword ptr [esi + 0x1c]
+        mov eax, dword ptr [edx + 0x30]
+        test eax, eax
+        je L_skip_30
+        push eax
+        mov eax, dword ptr [esi + 0x28]
+        push eax
+        call dword ptr [esi + 0x24]
+        add esp, 0x8
+    L_skip_30:
+        mov ecx, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [esi + 0x28]
+        push ecx
+        push edx
+        call dword ptr [esi + 0x24]
+        add esp, 0x8
+        xor eax, eax
+        cmp edi, 0x71
+        mov dword ptr [esi + 0x1c], 0x0
+        setne al
+        dec eax
+        pop edi
+        and al, -0x3
+        pop esi
+        ret
+    L_ret_neg2:
+        pop edi
+        mov eax, 0xfffffffe
+        pop esi
+        ret
+    }
+}
