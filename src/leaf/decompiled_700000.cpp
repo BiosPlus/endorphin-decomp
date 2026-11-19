@@ -4885,3 +4885,10 @@ extern "C" void __fastcall fn_00706230(void* self) {
     void* p = *(void**)((char*)self + 0x50);
     ((void (__thiscall *)(void*))ext_006E7460)(p ? p : &mem_00B5D268);
 }
+
+// [0x00701460] sub_00701460 (21 bytes)
+extern "C" int __cdecl ext_006FC3A0(void*, int);
+extern "C" int mem_00B5E75C;
+extern "C" void __cdecl fn_00701460() {
+    mem_00B5E75C = ext_006FC3A0((void*)0xb5e760, -1);
+}
