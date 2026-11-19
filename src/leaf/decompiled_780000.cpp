@@ -7842,3 +7842,44 @@ extern "C" __declspec(naked) int __fastcall fn_0078A1A0(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x00789810] sub_00789810 (97 bytes)
+extern "C" void ext_00789260();
+extern "C" void ext_00789940();
+extern "C" int mem_008C16A8;
+extern "C" int mem_00996FE4;
+// SEH-guarded __thiscall(self, a1..a4) ret 0x10: calls sub_00789260(a1..a4) with ecx=self,
+// sets self->vtbl = 0x996fe4, calls sub_00789940 on self, restores the SEH frame, returns self.
+extern "C" __declspec(naked) void* __fastcall fn_00789810(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push -1
+        push offset mem_008C16A8
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x18]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x20]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], esi
+        call ext_00789260
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], offset mem_00996FE4
+        call ext_00789940
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 0x10
+    }
+}
