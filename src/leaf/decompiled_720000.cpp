@@ -6245,3 +6245,42 @@ extern "C" void __cdecl fn_0072D470() {
     mem_00B60410 = -*h;
     mem_00B60418 = -*h;
 }
+
+// [0x0072B630] sub_0072B630 (166 bytes)
+extern "C" int mem_00925284;
+extern "C" double mem_00B60208;
+extern "C" double mem_00B60210;
+extern "C" double mem_00B60218;
+extern "C" double mem_00B60220;
+extern "C" double mem_00B60228;
+extern "C" double mem_00B60230;
+extern "C" double mem_00B60238;
+extern "C" double mem_00B60240;
+extern "C" double mem_00B60248;
+extern "C" double mem_00B60250;
+extern "C" double mem_00B60258;
+extern "C" double mem_00B60260;
+extern "C" double mem_00B60268;
+extern "C" double mem_00B60270;
+extern "C" double mem_00B60278;
+extern "C" double mem_00B60280;
+
+extern "C" void __cdecl fn_0072B630() {
+    double* h = (double*)mem_00925284;
+    mem_00B60208 = -*h;
+    mem_00B60210 = -*h;
+    mem_00B60218 = -*h;
+    mem_00B60220 = -*h;
+    mem_00B60228 = -*h;
+    mem_00B60230 = -*h;
+    mem_00B60238 = -*h;
+    mem_00B60240 = -*h;
+    mem_00B60248 = -*h;
+    mem_00B60250 = -*h;
+    mem_00B60258 = -*h;
+    mem_00B60260 = -*h;
+    mem_00B60268 = -*h;
+    mem_00B60270 = -*h;
+    mem_00B60278 = -*h;
+    mem_00B60280 = -*h;
+}
