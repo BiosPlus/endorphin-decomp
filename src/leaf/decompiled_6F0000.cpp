@@ -10314,3 +10314,58 @@ extern "C" __declspec(naked) void __fastcall fn_006FA870(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006FAEA0] sub_006FAEA0 (99 bytes)
+extern "C" __declspec(naked) unsigned char __stdcall fn_006FAEA0(
+    void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8
+) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je L_null
+        mov eax, dword ptr [esp + 0x18]
+        push ebx
+        mov ebx, dword ptr [esp + 0x24]
+        mov edx, dword ptr [esp + 0x18]
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push edi
+        mov edi, dword ptr [esp + 0x30]
+        push edi
+        push ebx
+        push ebp
+        push eax
+        mov eax, dword ptr [esp + 0x2c]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        push edx
+        push eax
+        call fn_006FAEA0
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esi]
+        push edi
+        push ebx
+        push ebp
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        call dword ptr [edx + 0x40]
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        ret 0x20
+    L_null:
+        xor al, al
+        pop esi
+        ret 0x20
+    }
+}
