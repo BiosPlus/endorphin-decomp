@@ -121,8 +121,10 @@ extern "C" __declspec(naked) void __stdcall fn_006F6E40(int a1) {
         ret 0x4
     }
 }
+extern "C" void ext_006F9E60();
+extern "C" int mem_00B5E438;
 
-// [0x006F79C0] sub_006F79C0 (24 bytes)
+extern "C" int mem_00B5E438;
 extern "C" void ext_00711DA0();
 extern "C" __declspec(naked) void __fastcall fn_006F79C0(void* self, int edx_unused, int a1) {
     __asm {
@@ -9059,4 +9061,17 @@ extern "C" int mem_00B5E240;
 
 extern "C" void __cdecl fn_006F93C0() {
     mem_00B5E240 = ext_006FC3A0(0x00B5E248, -1);
+}
+
+// [0x006FC700] sub_006FC700 (21 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006FC700() {
+    __asm {
+        mov eax, dword ptr [mem_00B5E438]
+        test eax, eax
+        jne skip_init
+        call ext_006F9E60
+    skip_init:
+        inc dword ptr [mem_00B5E438]
+        ret
+    }
 }
