@@ -139,8 +139,8 @@ func IsValidCodeUnit(va string) bool {
 		}
 		insts = append(insts, l)
 	}
-	// Drop trailing alignment padding.
-	for len(insts) > 0 && isPadMnemonic(instMnemonic(insts[len(insts)-1])) {
+	// Drop trailing alignment padding (int3, nop, and multi-byte fillers like lea esp,[esp+0] / mov edi,edi).
+	for len(insts) > 0 && (isPadMnemonic(instMnemonic(insts[len(insts)-1])) || isPadLine(insts[len(insts)-1])) {
 		insts = insts[:len(insts)-1]
 	}
 	if len(insts) == 0 {
@@ -149,7 +149,7 @@ func IsValidCodeUnit(va string) bool {
 	// Interior padding right after an unconditional exit means a glued multi-function unit.
 	for i := 0; i+1 < len(insts); i++ {
 		m := instMnemonic(insts[i])
-		if (m == "ret" || m == "jmp") && isPadMnemonic(instMnemonic(insts[i+1])) {
+		if (m == "ret" || m == "jmp" || IsNoreturnCall(insts[i])) && isPadMnemonic(instMnemonic(insts[i+1])) {
 			return false
 		}
 	}
@@ -158,11 +158,7 @@ func IsValidCodeUnit(va string) bool {
 	case "ret", "jmp":
 		return true
 	case "call":
-		for _, s := range noReturnCallees {
-			if strings.Contains(last, s) {
-				return true
-			}
-		}
+		return IsNoreturnCall(last)
 	}
 	return false
 }

@@ -1945,6 +1945,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work is-matched <address>")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work commit-pending")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work clean")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work hidden [--list]   # open units `next` will not hand out, and why")
 		os.Exit(1)
 	}
 
@@ -1969,8 +1970,10 @@ func main() {
 		cmdSimilar(rest)
 	case "route":
 		cmdRoute(rest)
+	case "hidden":
+		cmdHidden(rest)
 	default:
-		fmt.Fprintf(os.Stderr, "Unknown subcommand %q (expected: next, claim, check, skip, is-matched, commit-pending, clean)\n", subcmd)
+		fmt.Fprintf(os.Stderr, "Unknown subcommand %q (expected: next, claim, check, skip, is-matched, commit-pending, clean, similar, route, hidden)\n", subcmd)
 		os.Exit(1)
 	}
 }

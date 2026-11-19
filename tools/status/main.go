@@ -286,6 +286,22 @@ func parseFlexibleTimestamp(s string) (time.Time, bool) {
 	return time.Time{}, false
 }
 
+// notQueueable counts in-scope, unfinished units that `work next` will never hand out (skipped, deferred,
+// or whose cached disassembly is not one clean function), so they show up instead of silently vanishing.
+func notQueueable(units []decomp.UnitEntry, mfcClasses map[string]bool) (int, uint64) {
+	n, b := 0, uint64(0)
+	for _, u := range units {
+		if decomp.IsCompleted(u.Status) || decomp.IsOutOfScope(u.VA, u.Symbol, u.Status, u.IsThunk, mfcClasses) {
+			continue
+		}
+		if u.Status == "skipped" || u.Status == "deferred" || !decomp.IsValidCodeUnit(u.VA) {
+			n++
+			b += uint64(u.Size)
+		}
+	}
+	return n, b
+}
+
 func isOutOfScope(u decomp.UnitEntry, mfcClasses map[string]bool) (bool, string) {
 	if !decomp.IsOutOfScope(u.VA, u.Symbol, u.Status, u.IsThunk, mfcClasses) {
 		return false, ""
@@ -1826,6 +1842,9 @@ func main() {
 			inScopeMatchedBytes, inScopeBytes, pct(inScopeMatchedBytes, inScopeBytes))
 		fmt.Printf("  - AI Matched   : %5d funcs          | %d deterministic auto_solve stubs\n",
 			aiMatchedFuncs, inScopeMatchedFuncs-aiMatchedFuncs)
+		if n, b := notQueueable(units, mfcClasses); n > 0 {
+			fmt.Printf("  - Not queued   : %5d funcs          | %d bytes skipped/deferred/unparseable (see `work hidden`)\n", n, b)
+		}
 		fmt.Println("--------------------------------------------------------------------------------")
 		fmt.Println("Size Tier (decile)       |   Decompiled / Total Funcs   |     Decompiled / Total Bytes     | Remaining")
 		fmt.Println("-----------------------+------------------------------+----------------------------------+----------")
