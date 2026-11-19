@@ -18,5 +18,7 @@
     "0x0070A36F",
     "0x0070A375"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:25:06Z"
 }
