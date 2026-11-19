@@ -309,6 +309,7 @@ extern "C" void ext_00610CB0();
 extern "C" void ext_00648ED0();
 extern "C" void ext_00648EE0();
 extern "C" void ext_0058F770();
+extern "C" void ext_00511960();
 
 // [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004F4E30(void* a1) {
@@ -172030,6 +172031,27 @@ extern "C" __declspec(naked) void __cdecl fn_004BCCA0(void) {
         lea eax, [esp + 4]
         push eax
         call ext_004BC770
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call ext_0046C4E0
+    }
+}
+
+// [0x00512C20] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_5 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00512C20(void** a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x1c
+        mov eax, [esp + 0x2c]
+        mov edx, [eax]
+        push edx
+        lea eax, [esp + 0x4]
+        push eax
+        call ext_00511960
         push eax
         mov dword ptr [esp + 0x28], 0
         call ext_0046C4E0
