@@ -5141,3 +5141,15 @@ extern "C" void __cdecl fn_00709B20() {
     mem_00B5EB6C = 0xb5eb50;
     mem_00B5EB74 = 0;
 }
+
+// [0x0070A5C0] sub_0070A5C0 (41 bytes)
+extern "C" int mem_00B5EBA8;
+extern "C" int mem_00B5EBB0;
+extern "C" int mem_00B5EBAC;
+extern "C" int mem_00B5EBB4;
+extern "C" void __cdecl fn_0070A5C0() {
+    mem_00B5EBA8 = 0xb5eba0;
+    mem_00B5EBB0 = 0xaabd74;
+    mem_00B5EBAC = 0xb5f050;
+    mem_00B5EBB4 = 0;
+}
