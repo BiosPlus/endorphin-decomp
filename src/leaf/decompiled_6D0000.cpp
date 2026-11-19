@@ -606,6 +606,7 @@ no_shift:
         ret 0x8
     }
 }
+extern "C" void ext_006DEEA0();
 
 // [0x006D9470] sub_006D9470 (799 bytes)
 extern "C" __declspec(naked) void __fastcall fn_006D9470(void* self) {
@@ -8538,5 +8539,56 @@ extern "C" __declspec(naked) int __fastcall fn_006D8A40(void* self, int edx_unus
         pop esi
         add esp, 0xc
         ret 0x14
+    }
+}
+
+// [0x006DE5F0] sub_006DE5F0 (95 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006DE5F0(void* self, int edx_unused, void* item) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        mov esi, ecx
+        je L_after_vcall
+        call ext_006DEEA0
+        test eax, eax
+        jne L_after_vcall
+        mov eax, dword ptr [edi]
+        push 0x0
+        mov ecx, edi
+        call dword ptr [eax + 0x2c]
+    L_after_vcall:
+        mov edx, dword ptr [esi + 0x20]
+        lea ecx, [esi + 0x20]
+        xor eax, eax
+        test edx, edx
+        jle L_tail_call
+        mov esi, dword ptr [ecx + 0x10]
+    L_loop:
+        cmp dword ptr [esi], edi
+        je L_found
+        inc eax
+        add esi, 0x4
+        cmp eax, edx
+        jl L_loop
+        push 0x0
+        mov ecx, edi
+        call ext_006DE130
+        pop edi
+        pop esi
+        ret 0x4
+    L_found:
+        test eax, eax
+        jl L_tail_call
+        push eax
+        call ext_006D2200
+    L_tail_call:
+        push 0x0
+        mov ecx, edi
+        call ext_006DE130
+        pop edi
+        pop esi
+        ret 0x4
     }
 }
