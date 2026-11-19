@@ -402,3 +402,16 @@ L_0079C1FE:
         ret 0x4
     }
 }
+
+// [0x0079D730] Tiny indirect/IAT call leaf (14 bytes) - sub_0079D730
+extern "C" __declspec(naked) void fn_0079D730() {
+    __asm {
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        je L_0079D73B
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax + 0x10]
+L_0079D73B:
+        ret 0x4
+    }
+}
