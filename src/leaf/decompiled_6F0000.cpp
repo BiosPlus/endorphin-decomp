@@ -9468,3 +9468,25 @@ extern "C" void __cdecl fn_006FC340() {
     mem_00B5E40C = 0xb5e3f0;
     mem_00B5E414 = 0;
 }
+
+// [0x006FA1E0] sub_006FA1E0 (41 bytes)
+extern "C" int mem_009251D8; /* "&|b" */
+
+extern "C" __declspec(naked) void __fastcall fn_006FA1E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je done
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+        mov dword ptr [esi], 0x0
+        mov dword ptr [esi + 0x4], 0x0
+        mov dword ptr [esi + 0x8], 0x0
+    done:
+        pop esi
+        ret
+    }
+}
