@@ -433,3 +433,13 @@ extern "C" __declspec(naked) void fn_00784530() {
         ret
     }
 }
+
+// [0x00784550] Branchless tiny leaf function (13 bytes) - sub_00784550
+extern "C" __declspec(naked) void fn_00784550() {
+    __asm {
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        mov dword ptr [mem_00B60904], eax
+        mov dword ptr [mem_00B60900], eax
+        ret
+    }
+}
