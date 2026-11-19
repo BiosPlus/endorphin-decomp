@@ -651,6 +651,7 @@ extern "C" __declspec(naked) void __cdecl fn_007A67C0(void* p) {
         ret
     }
 }
+extern "C" void ext_007AA910();
 
 // [0x007AC840] sub_007AC840 (144 bytes)
 extern "C" void ext_007B2B10();
@@ -6718,6 +6719,37 @@ extern "C" __declspec(naked) int __cdecl fn_007AF750(void* a1, int a2) {
         call ext_0079B140
         add esp, 0x10
         or eax, -0x1
+        pop esi
+        ret
+    }
+}
+
+// [0x007AC510] sub_007AC510 (75 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007AC510(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0x6
+        call ext_007AA910
+        sub eax, 0x0
+        je L_case0
+        dec eax
+        je L_case1
+        dec eax
+        jne L_default
+        mov dword ptr [esi + 0x7d4], 0x1
+        mov eax, dword ptr [esi + 0x7d4]
+        pop esi
+        ret
+    L_case1:
+        mov dword ptr [esi + 0x7d4], 0x2
+        mov eax, dword ptr [esi + 0x7d4]
+        pop esi
+        ret
+    L_case0:
+        mov dword ptr [esi + 0x7d4], 0x0
+    L_default:
+        mov eax, dword ptr [esi + 0x7d4]
         pop esi
         ret
     }
