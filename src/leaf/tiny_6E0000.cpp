@@ -676,3 +676,11 @@ L_006EA188:
         ret 0x4
     }
 }
+
+// [0x006EF8A0] Branchless tiny leaf function (6 bytes) - sub_006EF8A0
+extern "C" __declspec(naked) void fn_006EF8A0() {
+    __asm {
+        mov eax, dword ptr [mem_00B5E0A8]
+        ret
+    }
+}
