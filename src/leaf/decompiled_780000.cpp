@@ -9682,3 +9682,104 @@ extern "C" __declspec(naked) void __fastcall fn_00789AD0(void* self) {
         ret
     }
 }
+
+// [0x0078C920] sub_0078C920 (216 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0078C920(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push ecx
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        push esi
+        push edi
+        lea eax, dword ptr [ebx*4]
+        mov edi, ecx
+        push eax
+        xor esi, esi
+        mov byte ptr [ebp - 0x1], 0x1
+        call dword ptr [mem_00925208]
+        add esp, 0x4
+        mov dword ptr [edi + 0x2c], eax
+        test eax, eax
+        jne short L_ok
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x14
+    L_ok:
+        mov edx, dword ptr [ebp + 0xc]
+        mov ecx, dword ptr [ebp + 0x10]
+        mov al, byte ptr [ebp + 0x18]
+        mov dword ptr [edi + 0x24], edx
+        xor edx, edx
+        mov dword ptr [edi + 0x20], ecx
+        test ebx, ebx
+        mov dword ptr [edi + 0x28], ebx
+        mov dword ptr [edi + 0x30], 0xffffffff
+        mov byte ptr [edi + 0x34], al
+        jle short L_end
+    L_loop:
+        mov eax, dword ptr [edi + 0x2c]
+        lea ecx, dword ptr [esi + 0x1]
+        mov dword ptr [eax + 4*edx], ecx
+        mov ecx, dword ptr [edi + 0x20]
+        lea eax, dword ptr [ecx + esi]
+        movsx ecx, byte ptr [ecx + esi]
+        add ecx, -0x43
+        cmp ecx, 0x10
+        ja short L_def
+        xor ebx, ebx
+        mov bl, byte ptr [ecx + 0x78ca10]
+        jmp dword ptr [ebx*4 + 0x78c9f8]
+    L_add2:
+        add esi, 0x2
+        jmp short L_next
+    L_var1:
+        mov cl, byte ptr [ebp + 0x14]
+        mov eax, dword ptr [eax + 0x1]
+        test cl, cl
+        mov dword ptr [ebp + 0x18], eax
+        je short L_v1
+        mov eax, dword ptr [ebp + 0x18]
+        bswap eax
+    L_v1:
+        lea esi, dword ptr [esi + eax + 0x5]
+        jmp short L_next
+    L_add5:
+        add esi, 0x5
+        jmp short L_next
+    L_add9:
+        add esi, 0x9
+        jmp short L_next
+    L_var2:
+        mov cl, byte ptr [ebp + 0x14]
+        mov eax, dword ptr [eax + 0x1]
+        test cl, cl
+        mov dword ptr [ebp + 0x18], eax
+        je short L_v2
+        mov eax, dword ptr [ebp + 0x18]
+        bswap eax
+    L_v2:
+        lea esi, dword ptr [esi + eax + 0x5]
+        jmp short L_next
+    L_def:
+        mov byte ptr [ebp - 0x1], 0x0
+    L_next:
+        mov eax, dword ptr [edi + 0x28]
+        inc edx
+        cmp edx, eax
+        jl short L_loop
+    L_end:
+        mov al, byte ptr [ebp - 0x1]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x14
+    }
+}
