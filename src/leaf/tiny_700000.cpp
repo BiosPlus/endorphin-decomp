@@ -1307,3 +1307,8 @@ extern "C" __declspec(naked) void fn_007057E0() {
         ret 0x4
     }
 }
+
+// [0x00707450] Return false (5 bytes) - sub_00707450
+extern "C" bool __stdcall fn_00707450(int a1, int a2, int a3, int a4) {
+    return false;
+}
