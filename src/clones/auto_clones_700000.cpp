@@ -295,3 +295,24 @@ extern "C" __declspec(naked) void __fastcall fn_0070C8E0(void* self) {
         ret
     }
 }
+
+// [0x0070F780] Identical-shape clone of 0x006BB9B0 (57 bytes) - sub_0070F780
+extern "C" __declspec(naked) void __fastcall fn_0070F780(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EEE0], ecx
+        mov dword ptr [mem_00B5EEE4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EEE8], ecx
+        mov dword ptr [mem_00B5EEEC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5EEF0], ecx
+        mov dword ptr [mem_00B5EEF4], edx
+        ret
+    }
+}
+
