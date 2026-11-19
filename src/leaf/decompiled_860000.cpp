@@ -6471,3 +6471,19 @@ extern "C" __declspec(naked) int __cdecl fn_0086CFF0(void) {
         ret
     }
 }
+
+// [0x0086F000] sub_0086F000 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F000(int* ptr) {
+    __asm {
+        mov cx, 0x13
+        mov eax, dword ptr [esp + 0x4]
+    loop_start:
+        movsx edx, cx
+        dec cx
+        mov dword ptr [eax + 4*edx], 0x0
+        jns loop_start
+        ret
+        mov edi, edi
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    }
+}
