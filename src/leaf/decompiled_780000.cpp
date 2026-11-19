@@ -7093,3 +7093,14 @@ extern "C" __declspec(naked) int __fastcall fn_007836D0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00782C40] sub_00782C40 (43 bytes)
+extern "C" int __cdecl fn_00782C40(unsigned int idx) {
+    switch (idx) {
+    case 0: return 0xaaf318;
+    case 1: return 0xaaf2e4;
+    case 2: return 0xaaf320;
+    case 3: return 0xaaf304;
+    default: return 0;
+    }
+}
