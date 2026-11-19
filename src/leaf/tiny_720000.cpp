@@ -397,3 +397,21 @@ extern "C" __declspec(naked) void fn_0072B880() {
         jmp ext_006D80A0
     }
 }
+
+// [0x0072B970] Scalar deleting destructor (30 bytes) - sub_0072B970
+extern "C" __declspec(naked) void fn_0072B970() {
+    __asm {
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        call ext_0072B990
+        __asm _emit 0xF6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 // test byte ptr [esp + 0x8], 0x1
+        je L_0072B988
+        push esi
+        call ext_006A5C5C
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 0x4
+L_0072B988:
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
