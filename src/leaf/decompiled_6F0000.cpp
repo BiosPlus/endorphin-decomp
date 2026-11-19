@@ -9455,3 +9455,16 @@ extern "C" void __cdecl fn_006FC2D0() {
     mem_00B5E3E4 = 0xb5e3f0;
     mem_00B5E3EC = 0;
 }
+
+// [0x006FC340] sub_006FC340 (41 bytes)
+extern "C" int mem_00B5E408;
+extern "C" int mem_00B5E410;
+extern "C" int mem_00B5E40C;
+extern "C" int mem_00B5E414;
+
+extern "C" void __cdecl fn_006FC340() {
+    mem_00B5E408 = 0xb5e418;
+    mem_00B5E410 = 0xaab900;
+    mem_00B5E40C = 0xb5e3f0;
+    mem_00B5E414 = 0;
+}
