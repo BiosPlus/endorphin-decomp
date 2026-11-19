@@ -20152,3 +20152,104 @@ extern "C" __declspec(naked) void __cdecl fn_007C20C0(char* p) {
         ret
     }
 }
+
+// [0x007C2930] sub_007C2930 (199 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C2930(void* self, int pos) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [esi + 0x64]
+        add eax, ecx
+        add ecx, ebp
+        mov dl, byte ptr [ecx]
+        mov bl, byte ptr [eax]
+        cmp dl, bl
+        lea edi, [eax + 0x102]
+        jne fail
+        mov dl, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [eax + 0x1]
+        cmp dl, bl
+        jne fail
+        add eax, 0x2
+        add ecx, 0x2
+    loop_top:
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [ecx + 0x1]
+        inc eax
+        inc ecx
+        cmp dl, bl
+        jne done
+        cmp eax, edi
+        jb loop_top
+    done:
+        sub eax, edi
+        add eax, 0x102
+        cmp eax, 0x3
+        jl fail
+        mov ecx, dword ptr [esi + 0x6c]
+        mov dword ptr [esi + 0x68], ebp
+        cmp eax, ecx
+        jbe ret_eax
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ecx
+        pop ebx
+        ret
+    fail:
+        mov eax, 0x2
+    ret_eax:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
