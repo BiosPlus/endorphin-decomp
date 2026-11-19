@@ -6734,3 +6734,93 @@ extern "C" __declspec(naked) int __cdecl fn_008578E0(void) {
         ret
     }
 }
+
+// [0x0085BA70] sub_0085BA70 (208 bytes)
+extern "C" void ext_0085B330();
+
+extern "C" __declspec(naked) void __cdecl fn_0085BA70(void* stream, unsigned int v) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x8
+        cmp eax, 0x80
+        jae L_16
+        _emit 0x88
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov eax, 0x1
+        jmp L_call
+L_16:
+        cmp eax, 0x8000
+        jae L_24
+        mov ecx, eax
+        mov byte ptr [esp + 0x1], al
+        shr ecx, 0x8
+        _emit 0x88
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov eax, 0x2
+        jmp L_call
+L_24:
+        cmp eax, 0x800000
+        jae L_32
+        mov edx, eax
+        mov ecx, eax
+        shr edx, 0x10
+        shr ecx, 0x8
+        mov byte ptr [esp + 0x2], al
+        _emit 0x88
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        mov byte ptr [esp + 0x1], cl
+        mov eax, 0x3
+        jmp L_call
+L_32:
+        cmp eax, 0x80000000
+        jae L_5
+        mov edx, eax
+        mov ecx, eax
+        shr edx, 0x18
+        _emit 0x88
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        mov edx, eax
+        shr ecx, 0x10
+        shr edx, 0x8
+        mov byte ptr [esp + 0x3], al
+        mov byte ptr [esp + 0x1], cl
+        mov byte ptr [esp + 0x2], dl
+        mov eax, 0x4
+        jmp L_call
+L_5:
+        mov ecx, eax
+        mov edx, eax
+        shr ecx, 0x18
+        mov byte ptr [esp + 0x1], cl
+        mov ecx, eax
+        shr edx, 0x10
+        shr ecx, 0x8
+        mov byte ptr [esp + 0x4], al
+        _emit 0xc6
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        mov byte ptr [esp + 0x2], dl
+        mov byte ptr [esp + 0x3], cl
+        mov eax, 0x5
+L_call:
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        lea eax, [esp + 0x8]
+        push 0x1
+        push eax
+        call ext_0085B330
+        add esp, 0x18
+        ret
+    }
+}
