@@ -85,3 +85,18 @@ extern "C" __declspec(naked) void fn_007B1EB0() {
         jmp ext_006B9D70
     }
 }
+
+// [0x007B1F40] Guarded tiny leaf function (21 bytes) - sub_007B1F40
+extern "C" __declspec(naked) void fn_007B1F40() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x04 // mov edx, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0xC1 // mov eax, ecx
+        __asm _emit 0x83 __asm _emit 0xEA __asm _emit 0x00 // sub edx, 0x0
+        je L_007B1F52
+        __asm _emit 0x83 __asm _emit 0xEA __asm _emit 0x02 // sub edx, 0x2
+        je L_007B1F52
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+L_007B1F52:
+        ret 0x8
+    }
+}
