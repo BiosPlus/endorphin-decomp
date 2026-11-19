@@ -6338,3 +6338,95 @@ extern "C" __declspec(naked) int __cdecl fn_00859930(void) {
         ret
     }
 }
+
+// [0x00852910] sub_00852910 (192 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00852910(unsigned __int64 x) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov ecx, eax
+        or ecx, edx
+        jne non_zero
+        mov eax, 0x40
+        ret
+    non_zero:
+        push esi
+        xor esi, esi
+        test edx, edx
+        ja check_16
+        jb do_32
+        cmp eax, -1
+        ja check_16
+    do_32:
+        mov esi, 0x20
+        push esi
+        push edx
+        push eax
+        call ext_0085BBC0
+        add esp, 0xc
+    check_16:
+        cmp edx, 0xffff
+        ja check_8
+        jb do_16
+        cmp eax, -1
+        ja check_8
+    do_16:
+        push 0x10
+        push edx
+        push eax
+        add esi, 0x10
+        call ext_0085BBC0
+        add esp, 0xc
+    check_8:
+        cmp edx, 0xffffff
+        ja check_4
+        jb do_8
+        cmp eax, -1
+        ja check_4
+    do_8:
+        push 8
+        push edx
+        push eax
+        add esi, 8
+        call ext_0085BBC0
+        add esp, 0xc
+    check_4:
+        cmp edx, 0xfffffff
+        ja check_2
+        jb do_4
+        cmp eax, -1
+        ja check_2
+    do_4:
+        push 4
+        push edx
+        push eax
+        add esi, 4
+        call ext_0085BBC0
+        add esp, 0xc
+    check_2:
+        cmp edx, 0x3fffffff
+        ja check_1
+        jb do_2
+        cmp eax, -1
+        ja check_1
+    do_2:
+        push 2
+        push edx
+        push eax
+        add esi, 2
+        call ext_0085BBC0
+        add esp, 0xc
+    check_1:
+        cmp edx, 0x7fffffff
+        ja done
+        jb do_1
+        cmp eax, -1
+        ja done
+    do_1:
+        inc esi
+    done:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
