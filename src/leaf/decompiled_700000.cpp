@@ -9531,3 +9531,115 @@ fn0070cfd0_done:
         ret 8
     }
 }
+
+// [0x007097C0] sub_007097C0 (227 bytes)
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" int mem_00B5E400;
+extern "C" int mem_00B5EB78;
+extern "C" __declspec(naked) void __fastcall fn_007097C0(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [mem_00B5E400]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x14], esi
+        call ext_006FC6E0
+        add esp, 0x4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ebx, eax
+        xor ebp, ebp
+        mov edx, dword ptr [ebx + 0x18]
+        test edx, edx
+        mov dword ptr [esp + 0x18], edx
+        jle c_done
+        mov eax, dword ptr [ebx + 0x14]
+        mov ecx, dword ptr [ebx + 0x10]
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je c_done
+        mov esi, dword ptr [eax]
+        mov edi, dword ptr [ecx]
+        cmp esi, edi
+        jne c_done
+        mov esi, dword ptr [eax + 0x4]
+        test esi, esi
+        je c_done
+c_loop:
+        mov edi, dword ptr [esi + 0x8]
+        test edi, edi
+        je c_alt
+        mov eax, dword ptr [mem_00B5EB78]
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx + 0x14]
+        test al, al
+        je c_next
+        mov ecx, edi
+        jmp c_call
+c_alt:
+        mov eax, dword ptr [mem_00B5EB78]
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x14]
+        test al, al
+        je c_next
+        mov ecx, esi
+c_call:
+        test ecx, ecx
+        je c_next
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ecx]
+        push eax
+        call dword ptr [edx + 0x11c]
+        test al, al
+        je c_fail
+c_next:
+        mov edx, dword ptr [esp + 0x18]
+        inc ebp
+        js c_done
+        cmp ebp, edx
+        jge c_done
+        mov eax, dword ptr [ebx + 0x14]
+        add eax, ebp
+        lea ecx, [eax + 2*eax]
+        mov eax, dword ptr [ebx + 0x10]
+        lea ecx, [eax + 4*ecx]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je c_done
+        mov esi, dword ptr [eax]
+        mov edi, dword ptr [ecx]
+        cmp esi, edi
+        jne c_done
+        mov esi, dword ptr [eax + 0x4]
+        test esi, esi
+        jne c_loop
+c_done:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        add esp, 0x10
+        ret
+c_fail:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
