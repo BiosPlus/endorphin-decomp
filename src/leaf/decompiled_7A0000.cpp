@@ -7172,3 +7172,82 @@ extern "C" __declspec(naked) char* __fastcall fn_007AECF0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x007AF500] sub_007AF500 (105 bytes)
+// Switch jump table lives at 0x007AF56C: {0x7AF54A, 0x7AF531, 0x7AF523, 0x7AF563}.
+// It is emitted by the separate data-only routine jt_007AF56C below so that the 105-byte
+// function body does not swallow it.
+extern "C" __declspec(naked) void __cdecl fn_007AF500(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        xor eax, eax
+        xor ecx, ecx
+        mov ax, word ptr [edx + 0x40]
+        mov cx, word ptr [edx + 0x42]
+        add eax, 0x7
+        shr eax, 0x3
+        dec ecx
+        cmp ecx, 0x3
+        ja L_default
+        jmp dword ptr [4*ecx + 0x7af56c]
+    L_c:
+        xor ecx, ecx
+        cmp eax, 0x4
+        setne cl
+        add ecx, 0xb
+        mov eax, ecx
+        ret
+    L_a:
+        cmp eax, 0x1
+        jg L_a2
+        mov eax, 0x6
+        ret
+    L_a2:
+        xor edx, edx
+        cmp eax, 0x2
+        setg dl
+        add edx, 0x8
+        mov eax, edx
+        ret
+    L_b:
+        cmp eax, 0x1
+        jg L_b2
+        mov eax, 0x1
+        ret
+    L_b2:
+        xor ecx, ecx
+        cmp eax, 0x2
+        setg cl
+        add ecx, 0x3
+        mov eax, ecx
+        ret
+    L_default:
+        mov eax, 0x7
+        ret
+    }
+}
+
+// Data-only block holding the jump table at 0x007AF56C (3 bytes of padding, then 4 dwords).
+extern "C" __declspec(naked) void __cdecl jt_007AF56C() {
+    __asm {
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x4a
+        _emit 0xf5
+        _emit 0x7a
+        _emit 0x00
+        _emit 0x31
+        _emit 0xf5
+        _emit 0x7a
+        _emit 0x00
+        _emit 0x23
+        _emit 0xf5
+        _emit 0x7a
+        _emit 0x00
+        _emit 0x63
+        _emit 0xf5
+        _emit 0x7a
+        _emit 0x00
+    }
+}
