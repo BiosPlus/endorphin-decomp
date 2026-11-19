@@ -4892,3 +4892,17 @@ extern "C" int mem_00B5E75C;
 extern "C" void __cdecl fn_00701460() {
     mem_00B5E75C = ext_006FC3A0((void*)0xb5e760, -1);
 }
+
+// [0x00704BF0] sub_00704BF0 (18 bytes)
+extern "C" void ext_006E73B0();
+extern "C" int mem_00AABBEC;
+extern "C" int mem_00B5E948;
+
+extern "C" void __fastcall fn_00704BF0(void* self) {
+    __asm {
+        push 1
+        push offset mem_00AABBEC
+        mov ecx, offset mem_00B5E948
+        call ext_006E73B0
+    }
+}
