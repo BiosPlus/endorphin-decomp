@@ -4625,3 +4625,18 @@ extern "C" __declspec(naked) void __cdecl fn_006EA410(void) {
         ret
     }
 }
+
+// [0x006EA820] sub_006EA820 (41 bytes)
+extern "C" int mem_00B5E0B0;
+extern "C" int mem_00B5E0B8;
+extern "C" int mem_00B5E0B4;
+extern "C" int mem_00B5E0BC;
+extern "C" __declspec(naked) void __cdecl fn_006EA820(void) {
+    __asm {
+        mov dword ptr [mem_00B5E0B0], 0xb5e0a8
+        mov dword ptr [mem_00B5E0B8], 0xaaa350
+        mov dword ptr [mem_00B5E0B4], 0xb5f050
+        mov dword ptr [mem_00B5E0BC], 0
+        ret
+    }
+}
