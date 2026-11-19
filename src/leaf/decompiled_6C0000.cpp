@@ -6884,3 +6884,38 @@ extern "C" void __cdecl fn_006C90C0() {
     *(double*)&mem_00B5D750 = -*(double*)mem_00925284;
     *(double*)&mem_00B5D758 = -*(double*)mem_00925284;
 }
+
+// [0x006C4B00] sub_006C4B00 (174 bytes)
+struct Elem64 {
+    int lo, hi;
+};
+
+struct Mat3x4d {
+    Elem64 m[3][4];
+};
+
+extern "C" void __cdecl fn_006C4B00(Mat3x4d* dst, const Mat3x4d* src) {
+    if (dst == src) {
+        double t01 = *(double*)&dst->m[0][1];
+        dst->m[0][1] = dst->m[1][0];
+        *(double*)&dst->m[1][0] = t01;
+
+        double t02 = *(double*)&dst->m[0][2];
+        dst->m[0][2] = dst->m[2][0];
+        *(double*)&dst->m[2][0] = t02;
+
+        double t12 = *(double*)&dst->m[1][2];
+        dst->m[1][2] = dst->m[2][1];
+        *(double*)&dst->m[2][1] = t12;
+        return;
+    }
+    dst->m[0][0] = src->m[0][0];
+    dst->m[0][1] = src->m[1][0];
+    dst->m[0][2] = src->m[2][0];
+    dst->m[1][0] = src->m[0][1];
+    dst->m[1][1] = src->m[1][1];
+    dst->m[1][2] = src->m[2][1];
+    dst->m[2][0] = src->m[0][2];
+    dst->m[2][1] = src->m[1][2];
+    dst->m[2][2] = src->m[2][2];
+}
