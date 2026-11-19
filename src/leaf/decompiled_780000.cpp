@@ -7694,3 +7694,48 @@ extern "C" __declspec(naked) void __cdecl fn_00783670(void* self, const char* fm
         ret
     }
 }
+
+// [0x0078BE60] sub_0078BE60 (89 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078BE60(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        cmp eax, 0x1
+        mov esi, ecx
+        jne short L_check2
+        mov ecx, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi]
+        add ecx, edx
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x28]
+        pop esi
+        ret 0x8
+    L_check2:
+        cmp eax, 0x2
+        jne short L_other
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_00789620
+        mov ecx, esi
+        call ext_00789650
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi]
+        add eax, ecx
+        mov ecx, esi
+        push eax
+        call dword ptr [edx + 0x28]
+        pop esi
+        ret 0x8
+    L_other:
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x28]
+        pop esi
+        ret 0x8
+    }
+}
