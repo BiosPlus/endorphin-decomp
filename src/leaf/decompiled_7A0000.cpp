@@ -8226,3 +8226,30 @@ extern "C" __declspec(naked) void __cdecl fn_007A94F0(void* p, const char* name,
         ret
     }
 }
+
+// [0x007A3410] sub_007A3410 (224 bytes)
+extern "C" void __cdecl fn_007A3410(void* p) {
+    typedef void (__cdecl *free_t)(void*);
+    void** esi = (void**)p;
+    if (esi == 0) return;
+    if (*esi == 0) { *esi = 0; return; }
+    free_t fr = (free_t)mem_009251D8;
+    char* o = (char*)*esi;
+    fr(*(void**)(o + 0xe4));
+    fr(*(void**)(*(char**)esi + 0x168));
+    fr(*(void**)(*(char**)esi + 0x1ec));
+    fr(*(void**)(*(char**)esi + 0x270));
+    fr(*(void**)(*(char**)esi + 0x2f4));
+    fr(*(void**)(*(char**)esi + 0x378));
+    fr(*(void**)(*(char**)esi + 0x8b0));
+    fr(*(void**)(*(char**)esi + 0x3fc));
+    fr(*(void**)(*(char**)esi + 0x480));
+    fr(*(void**)(*(char**)esi + 0x504));
+    fr(*(void**)(*(char**)esi + 0x588));
+    fr(*(void**)(*(char**)esi + 0x60c));
+    fr(*(void**)(*(char**)esi + 0x690));
+    fr(*(void**)(*(char**)esi + 0x714));
+    fr(*(void**)(*(char**)esi + 0x798));
+    fr(*esi);
+    *esi = 0;
+}
