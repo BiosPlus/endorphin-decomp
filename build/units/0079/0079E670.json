@@ -12,5 +12,6 @@
     "0x0079E679",
     "0x0079E681"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved"
 }

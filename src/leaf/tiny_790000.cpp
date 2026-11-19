@@ -541,3 +541,13 @@ L_0079E668:
         ret 0x4
     }
 }
+
+// [0x0079E670] Virtual dispatch / tail-call thunk (21 bytes) - sub_0079E670
+extern "C" __declspec(naked) void fn_0079E670() {
+    __asm {
+        mov dword ptr [ecx], offset mem_0099773C
+        mov dword ptr [ecx + 0x4], offset mem_0099772C
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x08 // add ecx, 0x8
+        jmp ext_00783880
+    }
+}
