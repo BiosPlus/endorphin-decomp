@@ -23,6 +23,7 @@ extern "C" __declspec(naked) void __cdecl fn_00810250(void) {
 extern "C" void ext_00810550();
 extern "C" void __cdecl ext_00810550();
 extern "C" void ext_0080F070();
+extern "C" void ext_00810730();
 
 // [0x00810180] sub_00810180 (64 bytes)
 extern "C" __declspec(naked) void __cdecl fn_00810180(void) {
@@ -841,6 +842,37 @@ extern "C" __declspec(naked) void __cdecl fn_008104C0(void) {
         push eax
         call ext_0080F070
         add esp, 0x1c
+        ret
+    }
+}
+
+// [0x008106F0] sub_008106F0 (60 bytes)
+extern "C" __declspec(naked) void __cdecl fn_008106F0(void) {
+    __asm {
+        sub esp, 0xc
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x1c]
+        mov dword ptr [esp + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x18]
+        __emit 0x89
+        __emit 0x44
+        __emit 0x24
+        __emit 0x00
+        __emit 0x8d
+        __emit 0x44
+        __emit 0x24
+        __emit 0x00
+        push 0x0
+        push eax
+        mov dword ptr [esp + 0x10], edx
+        push ecx
+        push 0x8116b0
+        lea edx, [esp + 0x14]
+        push 0x0
+        push edx
+        call ext_00810730
+        add esp, 0x24
         ret
     }
 }
