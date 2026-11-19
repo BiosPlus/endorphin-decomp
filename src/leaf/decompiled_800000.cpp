@@ -9291,3 +9291,29 @@ extern "C" __declspec(naked) int __cdecl fn_0080EB80(char* p1, int p2, int p3) {
         ret
     }
 }
+
+// [0x0080FC70] sub_0080FC70 (45 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080FC70(void* self, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 0x1c]
+        test eax, eax
+        jne skip
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi + 8]
+        push eax
+        push ecx
+        call ext_0080FB20
+        mov ecx, dword ptr [esi + 0x14]
+        add esp, 8
+        inc ecx
+        mov dword ptr [esi + 0x14], ecx
+    skip:
+        mov eax, dword ptr [esi + 0x10]
+        inc eax
+        mov dword ptr [esi + 0x10], eax
+        pop esi
+        ret
+    }
+}
