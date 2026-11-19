@@ -9407,3 +9407,22 @@ extern "C" __declspec(naked) void __cdecl fn_006FFEE0(void) {
         ret
     }
 }
+
+// [0x006F9FD0] sub_006F9FD0 (33 bytes)
+extern "C" int mem_00B5E3F0;
+extern "C" int mem_00B5E3F4;
+extern "C" int mem_00B5E3F8;
+extern "C" int mem_00B5E3FC;
+extern "C" int mem_00B5E400;
+extern "C" int mem_00AAB918;
+
+extern "C" __declspec(naked) void __cdecl fn_006F9FD0() {
+    __asm {
+        xor eax, eax
+        mov dword ptr [mem_00B5E3F0], offset mem_00B5E400
+        mov dword ptr [mem_00B5E3F8], offset mem_00AAB918
+        mov dword ptr [mem_00B5E3F4], eax
+        mov dword ptr [mem_00B5E3FC], eax
+        ret
+    }
+}
