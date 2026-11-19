@@ -7347,3 +7347,80 @@ extern "C" __declspec(naked) void __cdecl fn_00865960(unsigned int* s, const uns
         __asm _emit 0x00
     }
 }
+
+// [0x008671C0] sub_008671C0 (112 bytes)
+extern "C" void ext_0085D560();
+extern "C" int mem_00924224;
+extern "C" __declspec(naked) void* __cdecl fn_008671C0(const char* name) {
+    __asm {
+        sub esp, 0x4
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push 0x0
+        push eax
+        mov edi, dword ptr [mem_00924224]
+        push ebx
+        call edi
+        mov esi, eax
+        test esi, esi
+        jne f8671_have_len
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x4
+        ret
+    f8671_have_len:
+        inc esi
+        push esi
+        call ext_0085D560
+        mov dword ptr [esp + 0x10], eax
+        add esp, 0x4
+        test eax, eax
+        jne f8671_have_buf
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x4
+        ret
+    f8671_have_buf:
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push eax
+        push ebx
+        call edi
+        test eax, eax
+        jne f8671_ok
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x4
+        ret
+    f8671_ok:
+        mov eax, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x4
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
