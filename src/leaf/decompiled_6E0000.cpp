@@ -80,8 +80,10 @@ done:
         ret 8
     }
 }
+extern "C" int mem_00AA96F8;
+extern "C" void ext_006B9D80();
 
-// [0x006E8750] sub_006E8750 (48 bytes)
+extern "C" void ext_006B9D80();
 extern "C" __declspec(naked) void __fastcall fn_006E8750(void* self, int edx_unused, double a1) {
     __asm {
         mov ecx, dword ptr [ecx]
@@ -4387,5 +4389,22 @@ extern "C" __declspec(naked) void __fastcall fn_006EA030(void* self, int edx_unu
         mov eax, esi
         pop esi
         ret 4
+    }
+}
+
+// [0x006EA200] sub_006EA200 (33 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006EA200(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push offset mem_00AA96F8
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D80
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
     }
 }
