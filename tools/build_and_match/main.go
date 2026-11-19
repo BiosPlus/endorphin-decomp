@@ -506,6 +506,9 @@ func markMatched(vas []string) error {
 				continue
 			}
 			obj["status"] = json.RawMessage(`"matched"`)
+			if mb, ok := obj["matched_by"]; !ok || string(mb) == "null" || string(mb) == `""` {
+				obj["matched_by"] = json.RawMessage(`"auto-solved"`) // agents record their model via `work check`
+			}
 			out, err := json.Marshal(obj)
 			if err != nil {
 				return err

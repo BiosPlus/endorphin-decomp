@@ -1499,7 +1499,7 @@ func commitPendingMatches() int {
 		cppPath := findCppFileForVA(p.du.VA)
 		model := p.du.MatchedBy
 		if model == "" {
-			model = "unknown"
+			model = "auto-solved" // `work check` always records the agent's model; a match without one came from auto_solve or build_and_match
 		}
 		if stageAndCommitSingleUnit(p.du.VA, p.du.Symbol, model, cppPath, allowedVAsForCpp(cppPath)) {
 			committed++
