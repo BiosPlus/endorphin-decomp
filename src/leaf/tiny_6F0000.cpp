@@ -3336,3 +3336,8 @@ extern "C" __declspec(naked) void fn_006FC1E0() {
         ret
     }
 }
+
+// [0x006FC2B0] Constant byte/bool return (3 bytes) - sub_006FC2B0
+extern "C" unsigned char __cdecl fn_006FC2B0(void) {
+    return 0x1;
+}
