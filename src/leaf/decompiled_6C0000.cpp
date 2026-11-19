@@ -6998,3 +6998,82 @@ RET0:
         ret
     }
 }
+
+// [0x006C2D30] sub_006C2D30 (176 bytes)
+extern "C" void ext_006C1B30();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_00708000();
+extern "C" int mem_00B5D448;
+extern "C" int mem_00B5E400;
+// [VA] 0x006C2D30
+extern "C" __declspec(naked) void __fastcall fn_006C2D30(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0xf0]
+        push esi
+        push 0xaa8920
+        call ext_00708000
+        mov esi, eax
+        test esi, esi
+        je Lzero
+        mov eax, dword ptr [mem_00B5D448]
+        cmp eax, -1
+        je L78
+        cmp eax, dword ptr [mem_00B5E400]
+        je L78
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 0x14]
+        mov eax, dword ptr [mem_00B5D448]
+        jmp L7b
+    L78:
+        mov ecx, dword ptr [esi + 0x14]
+    L7b:
+        test ecx, ecx
+        jle Lzero
+        cmp eax, -1
+        je Lb1
+        cmp eax, dword ptr [mem_00B5E400]
+        je Lb1
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 0x10]
+        mov eax, dword ptr [ecx + 4]
+        test eax, eax
+        je Lzero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne Lzero
+        jmp Lc3
+    Lb1:
+        mov esi, dword ptr [esi + 0x10]
+        mov eax, dword ptr [esi + 4]
+        test eax, eax
+        je Lzero
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esi]
+        cmp ecx, edx
+        jne Lzero
+    Lc3:
+        mov eax, dword ptr [eax + 4]
+        test eax, eax
+        je Lzero
+        mov ecx, eax
+        call ext_006C1B30
+        pop esi
+        ret
+    Lzero:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
