@@ -50,8 +50,10 @@ extern "C" int mem_00924268;
 extern "C" void ext_00783940();
 extern "C" void ext_007838E0();
 extern "C" void ext_00796740();
+extern "C" void ext_0079B750();
+extern "C" void ext_007AF0C0(void*, int);
 
-// [0x0079AFE0] sub_0079AFE0 (48 bytes)
+extern "C" void ext_007AF0C0(void*, int);
 extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
     __asm {
         mov eax, dword ptr [esp + 0x8]
@@ -7185,6 +7187,59 @@ L_after_ctor:
         pop esi
         mov dword ptr fs:[0x0], ecx
         add esp, 0x10
+        ret
+    }
+}
+
+// [0x0079B850] sub_0079B850 (130 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0079B850(void* self) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 0x8]
+        mov     eax, dword ptr [esi + 0x1e4]
+        test    eax, eax
+        jle     short L_ret1
+        mov     ecx, dword ptr [esi + 0xc]
+        xor     edx, edx
+        mov     dx, word ptr [esi + 0x4a]
+        _emit   0x85
+        _emit   0xd1
+        jne     short L_skip_call
+        test    ch, 0x1
+        jne     short L_skip_call
+        push    eax
+        mov     eax, dword ptr [esi + 0x1d8]
+        push    eax
+        call    ext_007AF0C0
+        add     esp, 0x8
+    L_skip_call:
+        mov     eax, dword ptr [esi + 0xc]
+        test    ah, 0x4
+        je      short L_use_16c
+        mov     eax, dword ptr [esi + 0x184]
+        jmp     short L_call_b750
+    L_use_16c:
+        mov     eax, dword ptr [esi + 0x16c]
+    L_call_b750:
+        mov     ecx, dword ptr [esi + 0x1e4]
+        mov     edx, dword ptr [esi + 0x1d8]
+        push    ecx
+        push    edx
+        push    eax
+        push    esi
+        call    ext_0079B750
+        add     esp, 0x10
+        test    eax, eax
+        jne     short L_reset
+        pop     esi
+        ret
+    L_reset:
+        mov     eax, dword ptr [esi + 0x1d8]
+        mov     dword ptr [esi + 0x1e4], 0x0
+        mov     dword ptr [esi + 0x1e0], eax
+    L_ret1:
+        mov     eax, 0x1
+        pop     esi
         ret
     }
 }
