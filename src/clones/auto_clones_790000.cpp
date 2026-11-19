@@ -71,3 +71,8 @@ extern "C" void ext_006FC3A0();
 extern "C" void __cdecl fn_0079B930(void) {
     mem_00B60FAC = ((int (__cdecl*)(int, int))ext_006FC3A0)(0xB60F48, -1);
 }
+
+// [0x0079B9A0] Identical-shape clone of 0x006BECB0 (21 bytes) - sub_0079B9A0
+extern "C" void __cdecl fn_0079B9A0(void) {
+    mem_00B60F58 = ((int (__cdecl*)(int, int))ext_006FC3A0)(0xB60FB0, -1);
+}
