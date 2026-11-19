@@ -6765,3 +6765,44 @@ extern "C" __declspec(naked) void __cdecl fn_0086F0A0(void) {
         _emit 0x00
     }
 }
+
+// [0x0086F8F0] sub_0086F8F0 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F8F0(unsigned int* p) {
+    __asm {
+        push esi
+        push edi
+        mov di, 0x13
+        mov esi, dword ptr [esp + 0xc]
+    loop_top:
+        test di, di
+        mov edx, 0x0
+        je skip_carry
+        movsx eax, di
+        mov edx, dword ptr [esi + 4*eax - 0x4]
+        and edx, 0x1
+        shl edx, 0x10
+    skip_carry:
+        movsx eax, di
+        lea eax, [esi + 4*eax]
+        mov ecx, dword ptr [eax]
+        or ecx, edx
+        _emit 0xc1
+        _emit 0xe9
+        _emit 0x01
+        dec di
+        mov dword ptr [eax], ecx
+        jns loop_top
+        pop edi
+        pop esi
+        ret
+        _emit 0x8b
+        _emit 0xff
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
