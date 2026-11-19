@@ -3908,3 +3908,74 @@ extern "C" __declspec(naked) void __fastcall fn_0075D230(void* self) {
         ret 4
     }
 }
+
+// [0x00759960] sub_00759960 (208 bytes)
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006F9080();
+extern "C" void ext_006F90D0();
+extern "C" void ext_007025B0();
+extern "C" void ext_00724BF0();
+extern "C" void ext_007275F0();
+extern "C" void ext_007283B0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+extern "C" __declspec(naked) void __fastcall fn_00759960(void* self, int edx_unused, void* a1, void* a2, int a3) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp+10h]
+        lea eax, [esp+10h]
+        mov esi, ecx
+        push 1
+        mov ecx, dword ptr [esp+10h]
+        push eax
+        push edi
+        call ext_006F9080
+        test al, al
+        je L_end_00759960
+        mov ecx, dword ptr [esp+10h]
+        call ext_007025B0
+        cmp eax, dword ptr [esp+14h]
+        jne L_end_00759960
+        mov ecx, dword ptr [esi+0ach]
+        push 0aad6ach
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, dword ptr [esi+0ach]
+        add ecx, 4
+        call ext_00728410
+        push edi
+        call ext_006F90D0
+        sub esp, 48h
+        mov ecx, esp
+        mov dword ptr [esp+58h], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, dword ptr [esi+0ach]
+        push 0aad720h
+        add ecx, 4
+        call ext_00724BF0
+        mov ecx, dword ptr [esp+10h]
+        call ext_006BADB0
+        sub esp, 4ch
+        mov ecx, esp
+        mov dword ptr [esp+58h], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, dword ptr [esi+0ach]
+        push 0aad728h
+        add ecx, 4
+        call ext_00724BF0
+        mov ecx, dword ptr [esi+0ach]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi+0ach]
+        add ecx, 4
+        call ext_007283B0
+    L_end_00759960:
+        pop edi
+        pop esi
+        ret 0ch
+    }
+}
