@@ -9707,3 +9707,36 @@ extern "C" __declspec(naked) void __cdecl fn_0080F720(void* a, int b) {
         ret
     }
 }
+
+// [0x0080F9C0] sub_0080F9C0 (75 bytes)
+extern "C" void ext_0080F700();
+extern "C" __declspec(naked) void __fastcall fn_0080F9C0(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 8]
+        lea eax, [esp + 20]
+        push ecx
+        mov dword ptr [esp + 4], eax
+        call ext_0080F700
+        mov ecx, dword ptr [esp + 12]
+        lea edx, [esp + 4]
+        push 0
+        add ecx, eax
+        push edx
+        mov edx, dword ptr [esp + 24]
+        mov dword ptr [esp + 20], ecx
+        mov ecx, dword ptr [esp + 28]
+        sub edx, eax
+        push ecx
+        dec edx
+        push offset mem_0080F910
+        lea eax, [esp + 28]
+        push edx
+        push eax
+        call ext_0080DC60
+        mov ecx, dword ptr [esp + 36]
+        mov byte ptr [ecx], 0
+        add esp, 32
+        ret
+    }
+}
