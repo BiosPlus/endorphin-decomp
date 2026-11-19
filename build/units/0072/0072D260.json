@@ -13,5 +13,7 @@
     "0x0072D275",
     "0x0072D27F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:02:54Z"
 }
