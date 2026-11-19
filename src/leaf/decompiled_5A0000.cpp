@@ -16,8 +16,10 @@ extern "C" void ext_004142E0();
 extern "C" void ext_006A6DD2();
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
+extern "C" void ext_005AF230();
+extern "C" void ext_005AF4D0();
 
-// [0x005A3610] sub_005A3610 (8 bytes)
+extern "C" void ext_005AF4D0();
 extern "C" __declspec(naked) void __cdecl fn_005A3610() {
     __asm {
         push 3
@@ -18225,5 +18227,67 @@ extern "C" __declspec(naked) void __fastcall fn_005A6380(void* self) {
     default_case:
         xor al, al
         ret 0x4
+    }
+}
+
+// [0x005AF820] sub_005AF820 (122 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005AF820(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        cmp eax, 0x3
+        ja L_default
+        push edi
+        jmp dword ptr [4*eax + 0x5af89c]
+    L_case0:
+        lea edi, [esi + 0x88]
+        push edi
+        lea eax, [esi + 0x10]
+        push eax
+        call ext_005AF230
+        push edi
+        lea ecx, [esi + 0x4]
+        push ecx
+        mov ecx, esi
+        call ext_005AF4D0
+        pop edi
+        pop esi
+        ret
+    L_case1:
+        lea edi, [esi + 0x88]
+        push edi
+        lea edx, [esi + 0x4]
+        push edx
+        call ext_005AF230
+        push edi
+        lea eax, [esi + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_005AF4D0
+        pop edi
+        pop esi
+        ret
+    L_case2:
+        lea ecx, [esi + 0x88]
+        push ecx
+        lea edx, [esi + 0x4]
+        push edx
+        mov ecx, esi
+        call ext_005AF4D0
+        pop edi
+        pop esi
+        ret
+    L_case3:
+        lea eax, [esi + 0x88]
+        push eax
+        lea ecx, [esi + 0x10]
+        push ecx
+        mov ecx, esi
+        call ext_005AF4D0
+        pop edi
+    L_default:
+        pop esi
+        ret
     }
 }
