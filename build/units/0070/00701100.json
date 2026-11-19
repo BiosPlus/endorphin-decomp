@@ -16,5 +16,7 @@
     "0x0070112E",
     "0x00701134"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-19T15:15:49Z"
 }
