@@ -21,5 +21,7 @@
     "0x008719CC",
     "0x008719E1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-19T15:38:59Z"
 }
