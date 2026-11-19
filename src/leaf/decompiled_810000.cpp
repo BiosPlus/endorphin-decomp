@@ -665,3 +665,21 @@ extern "C" void __cdecl fn_008104F0(int* a1, int a2) {
     typedef void (__cdecl *F5)(int, int, int, int, int);
     ((F5)ext_0080F600)(a1[0], a2, e[1], e[2], e[3]);
 }
+
+// [0x00810320] sub_00810320 (38 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00810320(void) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je clear_bit
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        or dword ptr [eax + 4], 0x1000000
+        ret
+    clear_bit:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        and dword ptr [eax + 4], 0xfeffffff
+        ret
+    }
+}
