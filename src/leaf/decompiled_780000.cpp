@@ -9356,3 +9356,101 @@ extern "C" __declspec(naked) int __cdecl fn_0078ABD0(int ebp_arg, const char* st
         nop
     }
 }
+
+// [0x007855E0] sub_007855E0 (189 bytes)
+extern "C" void ext_006DEEC0();
+
+extern "C" __declspec(naked) void __fastcall fn_007855E0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push    ecx
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x10]
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0x14]
+        push    edi
+        test    bl, bl
+        mov     edi, ecx
+        mov     byte ptr [esp + 0x13], 0x1
+        je      L_78564F
+        mov     eax, dword ptr [esi]
+        mov     ecx, esi
+        xor     ebp, ebp
+        call    dword ptr [eax + 0x14]
+        test    eax, eax
+        jle     L_78564F
+        jmp     L_78560B
+L_785607:
+        mov     ebx, dword ptr [esp + 0x1c]
+L_78560B:
+        mov     al, byte ptr [esp + 0x13]
+        mov     edx, dword ptr [edi]
+        test    al, al
+        mov     eax, dword ptr [esi]
+        push    ebx
+        push    ebp
+        mov     ecx, esi
+        je      L_78562E
+        mov     dword ptr [esp + 0x20], edx
+        call    dword ptr [eax + 0x18]
+        mov     edx, dword ptr [esp + 0x1c]
+        push    eax
+        mov     ecx, edi
+        call    dword ptr [edx + 0xc]
+        jmp     L_785643
+L_78562E:
+        mov     dword ptr [esp + 0x20], edx
+        call    dword ptr [eax + 0x18]
+        mov     edx, dword ptr [esp + 0x1c]
+        push    eax
+        mov     ecx, edi
+        call    dword ptr [edx + 0xc]
+        mov     byte ptr [esp + 0x13], al
+L_785643:
+        mov     eax, dword ptr [esi]
+        mov     ecx, esi
+        inc     ebp
+        call    dword ptr [eax + 0x14]
+        cmp     ebp, eax
+        jl      L_785607
+L_78564F:
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x1c], 0x0
+        call    ext_006DEEC0
+        test    eax, eax
+        mov     dword ptr [esp + 0x1c], eax
+        je      L_785691
+        mov     bl, byte ptr [esp + 0x13]
+        mov     edx, dword ptr [edi]
+        lea     eax, [esp + 0x1c]
+        push    0x1
+        test    bl, bl
+        push    eax
+        mov     ecx, edi
+        je      L_785686
+        call    dword ptr [edx + 0x8]
+        pop     edi
+        pop     esi
+        mov     al, bl
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x8
+L_785686:
+        call    dword ptr [edx + 0x8]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x8
+L_785691:
+        mov     al, byte ptr [esp + 0x13]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x8
+    }
+}
