@@ -1041,3 +1041,8 @@ extern "C" __declspec(naked) void fn_00704630() {
 extern "C" double __fastcall fn_00704650(void* self) {
     return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + 0x160);
 }
+
+// [0x00704660] Field setter (13 bytes) - sub_00704660
+extern "C" void __fastcall fn_00704660(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x1e8) = a1;
+}
