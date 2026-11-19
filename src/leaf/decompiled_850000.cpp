@@ -6916,3 +6916,80 @@ extern "C" __declspec(naked) void __cdecl fn_0085FCE0(void) {
         _emit 0x00
     }
 }
+
+// [0x0085FB40] sub_0085FB40 (203 bytes)
+extern "C" {
+    void ext_0085D510();
+    void ext_0085D530();
+    void ext_0085E210();
+    void ext_0085F9D0();
+    int mem_00BC6670;
+    int mem_00AB9898;
+    int mem_00BC70F8;
+    int mem_00BC6720;
+    int mem_00BC70D8;
+    int mem_00924248;
+}
+
+extern "C" __declspec(naked) void __cdecl fn_0085FB40(void) {
+    __asm {
+        sub esp, 0x410
+        lea eax, [esp + 0x10]
+        push esi
+        push 0x400
+        push 0
+        push eax
+        call ext_0085D510
+        lea eax, [esp + 0x20]
+        add esp, 0xc
+        push 0xa5
+        push offset mem_00BC6670
+        push eax
+        call ext_0085D530
+        lea eax, [esp + 0x21]
+        add esp, 0xc
+        mov cl, byte ptr [mem_00BC6670]
+        push 0xa4
+        push eax
+        push ecx
+        call ext_0085F9D0
+        lea ecx, [esp + 0x10]
+        add esp, 0xc
+        inc dword ptr [mem_00AB9898]
+        push 0xe
+        push 0
+        push ecx
+        call ext_0085D510
+        mov esi, dword ptr [esp + 0x424]
+        lea eax, [esp + 0x12]
+        mov word ptr [esp + 0x10], 6
+        add esp, 0xc
+        lea ecx, [esi + 1]
+        push 0xa
+        push ecx
+        push eax
+        call ext_0085D530
+        add esp, 0xc
+        push 0x7483
+        call dword ptr [mem_00BC70F8]
+        mov word ptr [esp + 0x10], ax
+        push esi
+        call ext_0085E210
+        lea ecx, [esp + 8]
+        lea edx, [esp + 0x18]
+        add esp, 4
+        mov eax, dword ptr [mem_00BC6720]
+        push 0xe
+        push ecx
+        push 0
+        push 0xa5
+        push edx
+        push eax
+        call dword ptr [mem_00BC70D8]
+        push 1
+        call dword ptr [mem_00924248]
+        pop esi
+        add esp, 0x410
+        ret
+    }
+}
