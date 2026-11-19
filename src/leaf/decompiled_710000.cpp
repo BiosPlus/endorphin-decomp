@@ -6311,3 +6311,23 @@ L_007134f0:
         ret 0x4
     }
 }
+
+// [0x00719BB0] sub_00719BB0 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00719BB0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x738]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x73c]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x740]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0x744]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x748]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x74c]
+        mov dword ptr [eax + 0x14], ecx
+        ret 0x4
+    }
+}
