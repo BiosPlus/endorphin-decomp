@@ -1,13 +1,21 @@
 // Decompiled translation unit: src/leaf/decompiled_590000.cpp
 #include <vector>
+extern "C" void ext_005937B0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00A9ED98;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00A9F180;
+extern "C" int mem_00A9F414;
 
-// [0x005940D0] sub_005940D0 (15 bytes)
-extern "C" void ext_006425D0();
-extern "C" int __fastcall fn_005940D0(void* self) {
-    typedef int (__fastcall *Callee)(void*);
-    void* inner = *(void**)((char*)self + 0xf8);
-    return ((Callee)ext_006425D0)(inner) - 1;
-}
+extern "C" int mem_00924FE8;
+extern "C" int mem_00A9ED98;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00A9F180;
+extern "C" int mem_00A9F414;
 
 // [0x0059AE20] sub_0059AE20 (19 bytes)
 extern "C" void ext_0041A920();
@@ -12698,5 +12706,60 @@ extern "C" __declspec(naked) void* __fastcall fn_00597D00(void* self, int edx_un
         push 0
         push 0
         call ext_006A6DD2
+    }
+}
+
+// [0x005937B0] sub_005937B0 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005937B0() {
+    __asm {
+        push -0x1
+        push 0x88afd3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push esi
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0x0
+        call dword ptr [mem_00924FE8]
+        mov eax, dword ptr [esp + 0x38]
+        cmp eax, 0x3
+        mov dword ptr [esp + 0x2c], 0x1
+        ja L_00593803
+        jmp dword ptr [4*eax + 0x593860]
+        mov eax, dword ptr [mem_00A9ED98]
+        push eax
+    L_005937F9:
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FD4]
+    L_00593803:
+        mov esi, dword ptr [esp + 0x34]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+    L_00593814:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x2c], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret
+        mov ecx, dword ptr [mem_00A9F180]
+        push ecx
+        jmp L_005937F9
+        mov edx, dword ptr [mem_00A9F414]
+        push edx
+        jmp L_005937F9
+        mov esi, dword ptr [esp + 0x34]
+        push 0x2
+        push esi
+        call ext_005937B0
+        add esp, 0x8
+        jmp L_00593814
     }
 }
