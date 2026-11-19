@@ -6472,3 +6472,96 @@ L_epi:
         ret 0x8
     }
 }
+
+// [0x006E71C0] sub_006E71C0 (224 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA7C0();
+extern "C" int mem_008BCB18;
+extern "C" int mem_00AA94AC;
+extern "C" int mem_00AA94A4;
+extern "C" int mem_00AA8CEC;
+extern "C" int mem_00AA949C;
+extern "C" int mem_00AA9494;
+
+extern "C" __declspec(naked) void __fastcall fn_006E71C0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push 0xffffffff
+        push offset mem_008BCB18
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x4c
+        push esi
+        xor esi, esi
+        cmp eax, esi
+        je loc_6E7281
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_006B9D80
+        push offset mem_00AA94AC
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x5c], esi
+        call ext_006BA7C0
+        test al, al
+        je loc_6E720E
+        mov esi, 1
+        jmp loc_6E7270
+loc_6E720E:
+        push offset mem_00AA94A4
+        lea ecx, [esp + 0x8]
+        call ext_006BA7C0
+        test al, al
+        je loc_6E7227
+        mov esi, 2
+        jmp loc_6E7270
+loc_6E7227:
+        push offset mem_00AA8CEC
+        lea ecx, [esp + 0x8]
+        call ext_006BA7C0
+        test al, al
+        je loc_6E7240
+        mov esi, 3
+        jmp loc_6E7270
+loc_6E7240:
+        push offset mem_00AA949C
+        lea ecx, [esp + 0x8]
+        call ext_006BA7C0
+        test al, al
+        je loc_6E7259
+        mov esi, 4
+        jmp loc_6E7270
+loc_6E7259:
+        push offset mem_00AA9494
+        lea ecx, [esp + 0x8]
+        call ext_006BA7C0
+        test al, al
+        je loc_6E7270
+        mov esi, 5
+loc_6E7270:
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x58], 0xffffffff
+        call ext_006B9D70
+loc_6E7281:
+        mov ecx, dword ptr [esp + 0x50]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x58
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
