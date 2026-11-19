@@ -7181,3 +7181,16 @@ extern "C" void* __cdecl fn_00782C00(unsigned int a) {
         default: return 0;
     }
 }
+
+// [0x007875C0] sub_007875C0 (46 bytes)
+extern "C" double mem_00B60B90;
+extern "C" double mem_00B60B98;
+extern "C" double mem_00B60BA0;
+extern "C" double mem_00B60BA8;
+
+extern "C" void __cdecl fn_007875C0() {
+    mem_00B60B90 = -*(double*)mem_00925284;
+    mem_00B60B98 = -*(double*)mem_00925284;
+    mem_00B60BA0 = -*(double*)mem_00925284;
+    mem_00B60BA8 = -*(double*)mem_00925284;
+}
