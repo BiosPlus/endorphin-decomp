@@ -9821,3 +9821,38 @@ extern "C" __declspec(naked) int __cdecl fn_007BD9E0(void* self, unsigned int pa
         ret
     }
 }
+
+// [0x007BC120] sub_007BC120 (55 bytes)
+extern "C" void ext_007BAE40();
+
+extern "C" __declspec(naked) void __cdecl fn_007BC120(void* a1, void* a2, int count) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, dword ptr [eax + 0xc]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jle L_7BC154
+        push ebx
+        lea ebx, [eax + 0x1]
+    L_7BC13C:
+        movsx eax, word ptr [esi]
+        push eax
+        add esi, 0x2
+        call ext_007BAE40
+        fstp dword ptr [edi]
+        add esp, 0x4
+        add edi, 0x4
+        dec ebx
+        jne L_7BC13C
+        pop ebx
+    L_7BC154:
+        pop edi
+        pop esi
+        ret
+    }
+}
