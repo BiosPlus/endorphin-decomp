@@ -171944,3 +171944,27 @@ extern "C" __declspec(naked) void __cdecl fn_005B2620(void) {
         call ext_0046C4E0
     }
 }
+
+// [0x004C0880] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_5 (55 bytes)
+extern "C" void ext_004C0280();
+extern "C" void ext_0046C4E0();
+
+extern "C" __declspec(naked) void __cdecl fn_004C0880(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 4]
+        push eax
+        call ext_004C0280
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call ext_0046C4E0
+    }
+}
