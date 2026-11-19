@@ -6919,3 +6919,82 @@ extern "C" void __cdecl fn_006C4B00(Mat3x4d* dst, const Mat3x4d* src) {
     dst->m[2][1] = src->m[1][2];
     dst->m[2][2] = src->m[2][2];
 }
+
+// [0x006C2BB0] sub_006C2BB0 (176 bytes)
+extern "C" void ext_006C1B30();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_00708000();
+extern "C" int mem_00B5D448;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_006C2BB0(void* self) {
+    __asm {
+        mov ecx, [ecx + 0xf0]
+        push esi
+        push 0xaa8934
+        call ext_00708000
+        mov esi, eax
+        test esi, esi
+        je RET0
+        mov eax, mem_00B5D448
+        cmp eax, -1
+        je LA
+        cmp eax, mem_00B5E400
+        je LA
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, [eax + 0x14]
+        mov eax, mem_00B5D448
+        jmp LB
+LA:
+        mov ecx, [esi + 0x14]
+LB:
+        test ecx, ecx
+        jle RET0
+        cmp eax, -1
+        je LC
+        cmp eax, mem_00B5E400
+        je LC
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, [eax + 0x10]
+        mov eax, [ecx + 4]
+        test eax, eax
+        je RET0
+        mov edx, [eax]
+        mov esi, [ecx]
+        cmp edx, esi
+        jne RET0
+        jmp LD
+LC:
+        mov esi, [esi + 0x10]
+        mov eax, [esi + 4]
+        test eax, eax
+        je RET0
+        mov ecx, [eax]
+        mov edx, [esi]
+        cmp ecx, edx
+        jne RET0
+LD:
+        mov eax, [eax + 4]
+        test eax, eax
+        je RET0
+        mov ecx, eax
+        call ext_006C1B30
+        pop esi
+        ret
+RET0:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
