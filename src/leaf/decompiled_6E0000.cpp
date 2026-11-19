@@ -4564,3 +4564,8 @@ extern "C" void __fastcall fn_006EFE60(void* self, int edx_unused, int a1, int a
     ((void (__thiscall *)(void*, int, int, void*, void*))ext_00711D40)(
         (char*)self + 0x1dc0, a1, a2, (void*)ext_006C89A0, (void*)ext_006C88E0);
 }
+
+// [0x006EFF40] sub_006EFF40 (34 bytes)
+extern "C" void __fastcall fn_006EFF40(void* self, int edx_unused, int a1, int a2) {
+    ((void (__thiscall*)(void*, int, int, int, int))ext_00711D40)((char*)self + 0x1f58, a1, a2, 0x6c8810, 0x6c8d50);
+}
