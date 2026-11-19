@@ -30,6 +30,7 @@ extern "C" void ext_007D8F60();
 extern "C" void ext_007DA220();
 extern "C" void ext_007DA2D0();
 extern "C" void ext_007C5440();
+extern "C" void ext_007C38E0(void* a, void* b);
 
 // [0x007CC3D0] sub_007CC3D0 (32 bytes)
 // Zeroes the float triple at arg2[0..2] (stores 0.0 to [+8], [+4], [0]), then stores
@@ -19875,5 +19876,18 @@ extern "C" __declspec(naked) void __cdecl fn_007C2010() {
         mov eax, 0xfffffffe
         pop esi
         ret
+    }
+}
+
+// [0x007C38C0] sub_007C38C0 (18 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C38C0(void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        jne loc_7c38c9
+        ret
+    loc_7c38c9:
+        mov dword ptr [esp + 8], eax
+        jmp ext_007C38E0
     }
 }
