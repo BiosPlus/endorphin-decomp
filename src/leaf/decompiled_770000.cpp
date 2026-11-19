@@ -3581,3 +3581,17 @@ extern "C" __declspec(naked) void __fastcall fn_00771AF0(void* self) {
         ret
     }
 }
+
+// [0x0077F7C0] sub_0077F7C0 (46 bytes)
+extern "C" int mem_00B60780;
+extern "C" int mem_00B60788;
+extern "C" int mem_00B60790;
+extern "C" int mem_00B60798;
+
+extern "C" void __cdecl fn_0077F7C0() {
+    double* p = *(double**)&mem_00925284;
+    *(double*)&mem_00B60780 = -*p;
+    *(double*)&mem_00B60788 = -*p;
+    *(double*)&mem_00B60790 = -*p;
+    *(double*)&mem_00B60798 = -*p;
+}
