@@ -1368,3 +1368,22 @@ extern "C" __declspec(naked) void __fastcall fn_007124F0(void* self) {
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
     }
 }
+
+// [0x00715130] Identical-shape clone of 0x006C0470 (44 bytes) - sub_00715130
+extern "C" __declspec(naked) void __fastcall fn_00715130(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B5FA80]
+        __asm _emit 0x3B __asm _emit 0xC1 // cmp eax, ecx
+        __asm _emit 0x75 __asm _emit 0x05 // jne +5
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+        cmp eax, dword ptr [mem_00B5EB78]
+        __asm _emit 0x75 __asm _emit 0x05 // jne +5
+        __asm _emit 0xB0 __asm _emit 0x01 // mov al, 0x1
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+        cmp eax, dword ptr [mem_00B5E400]
+        __asm _emit 0x0F __asm _emit 0x94 __asm _emit 0xC0 // sete al
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+    }
+}
