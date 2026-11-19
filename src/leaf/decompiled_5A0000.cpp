@@ -18195,3 +18195,35 @@ L_throw_005A1F90:
         call    ext_006A6DD2
     }
 }
+
+// [0x005A6380] sub_005A6380 (58 bytes)
+extern "C" void ext_004103F0();
+extern "C" void ext_00410420();
+extern "C" void ext_005A6130();
+
+extern "C" __declspec(naked) void __fastcall fn_005A6380(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x9
+        ja default_case
+        jmp dword ptr [4*eax + 0x5a63bc]
+    case_ret1:
+        mov al, 0x1
+        ret 0x4
+    case_call410420:
+        call ext_00410420
+        ret 0x4
+    case_call4103f0_a:
+        call ext_004103F0
+        ret 0x4
+    case_call4103f0_b:
+        call ext_004103F0
+        ret 0x4
+    case_call5a6130:
+        call ext_005A6130
+        ret 0x4
+    default_case:
+        xor al, al
+        ret 0x4
+    }
+}
