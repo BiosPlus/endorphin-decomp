@@ -42,8 +42,10 @@ extern "C" __declspec(naked) void __cdecl fn_0086AF30(void) {
         ret
     }
 }
+extern "C" void ext_008599F0();
+extern "C" void ext_0086CCC0();
 
-// [0x00867360] sub_00867360 (42 bytes)
+extern "C" void ext_0086CCC0();
 extern "C" __declspec(naked) int __cdecl fn_00867360(const char* s) {
     __asm {
         push esi
@@ -6377,6 +6379,95 @@ extern "C" __declspec(naked) __int64 __cdecl fn_0086D160(__int64 val, unsigned i
     done:
         pop edi
         pop esi
+        ret
+    }
+}
+
+// [0x0086CFF0] sub_0086CFF0 (176 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0086CFF0(void) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        xor ebx, ebx
+        cmp esi, edi
+        mov dword ptr [esp + 0x10], ebx
+        jne L_0086D013
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    L_0086D013:
+        push esi
+        call ext_0086CCC0
+        push edi
+        mov dword ptr [esp + 0x20], eax
+        call ext_0086CCC0
+        push esi
+        mov dword ptr [esp + 0x28], eax
+        call ext_008599F0
+        push edi
+        mov esi, eax
+        call ext_008599F0
+        mov ecx, dword ptr [esp + 0x30]
+        add esp, 0x10
+        cmp ecx, esi
+        jbe L_0086D042
+        mov ebp, esi
+    L_0086D042:
+        cmp ebp, eax
+        jbe L_0086D048
+        mov ebp, eax
+    L_0086D048:
+        test ebp, ebp
+        jbe L_0086D06F
+        mov ecx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x1c]
+        sub edi, ecx
+    L_0086D056:
+        movsx edx, byte ptr [edi + ecx]
+        movsx ebx, byte ptr [ecx]
+        sub ebx, edx
+        jne L_0086D091
+        mov edx, dword ptr [esp + 0x10]
+        inc edx
+        inc ecx
+        cmp edx, ebp
+        mov dword ptr [esp + 0x10], edx
+        jb L_0086D056
+    L_0086D06F:
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x10]
+        cmp edx, ecx
+        jae L_0086D091
+        cmp esi, eax
+        jae L_0086D08A
+        or ebx, -0x1
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    L_0086D08A:
+        jbe L_0086D091
+        mov ebx, 0x1
+    L_0086D091:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        pop ecx
         ret
     }
 }
