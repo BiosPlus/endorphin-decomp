@@ -240,6 +240,7 @@ extern "C" int mem_00925284;
 extern "C" int mem_00B60B38;
 extern "C" int mem_00B60B3C;
 extern "C" int mem_00B60B30;
+extern "C" int mem_00925198;
 
 // [0x00787430] sub_00787430 (144 bytes)
 // Copies eight stack args into self->[0..0x1C]; ret 0x20. The block also holds two
@@ -7069,5 +7070,26 @@ extern "C" __declspec(naked) int __fastcall fn_0078BEC0(void* self) {
         xor eax, eax
         pop esi
         ret
+    }
+}
+
+// [0x007836D0] sub_007836D0 (39 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007836D0(void* self, int edx_unused, int size) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_fail
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x4]
+        push ecx
+        mov eax, dword ptr [edx + 0x10]
+        push eax
+        call dword ptr [mem_00925198]
+        add esp, 0x8
+        ret 0x4
+    L_fail:
+        or eax, -0x1
+        ret 0x4
     }
 }
