@@ -10670,3 +10670,53 @@ L_7B1E71:
         ret
     }
 }
+
+// [0x007BFA10] sub_007BFA10 (84 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BFA10(char* a1, char* a2, int a3, int a4) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [eax + 0x1cc]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push ecx
+        push edi
+        push ebx
+        push eax
+        call dword ptr [ebp + 0x18]
+        add esp, 0x10
+        test eax, eax
+        je L_7bfa5e
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        test edi, edi
+        jle L_7bfa54
+    L_7bfa3f:
+        mov edx, dword ptr [esp + 0x14]
+        push esi
+        push ebx
+        push edx
+        call dword ptr [ebp + 0xc]
+        sub edi, esi
+        add esp, 0xc
+        add ebx, esi
+        test edi, edi
+        jg L_7bfa3f
+    L_7bfa54:
+        pop esi
+        pop edi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+    L_7bfa5e:
+        pop edi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
