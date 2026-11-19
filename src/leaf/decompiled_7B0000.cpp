@@ -9576,3 +9576,20 @@ extern "C" __declspec(naked) void fn_007BD640() {
         ret
     }
 }
+
+// [0x007BF4A0] sub_007BF4A0 (49 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BF4A0(char* self, int scale) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x1d0]
+        mov edx, dword ptr [eax + 0x1e0]
+        imul ecx, dword ptr [esp + 0x8]
+        add edx, ecx
+        mov dword ptr [eax + 0x1e0], edx
+        mov edx, dword ptr [eax + 0x1e4]
+        sub edx, ecx
+        mov dword ptr [eax + 0x1e4], edx
+        mov eax, 0x1
+        ret
+    }
+}
