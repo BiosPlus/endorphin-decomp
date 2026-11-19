@@ -432,3 +432,19 @@ L_007AEEBB:
         ret
     }
 }
+
+// [0x007AEEC0] Guarded tiny leaf function (24 bytes) - sub_007AEEC0
+extern "C" __declspec(naked) void fn_007AEEC0() {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x58 // mov eax, dword ptr [ecx + 0x58]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        je L_007AEED5
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x8B __asm _emit 0x51 __asm _emit 0x5C // mov edx, dword ptr [ecx + 0x5c]
+        __asm _emit 0x3B __asm _emit 0xC2 // cmp eax, edx
+        jg L_007AEED5
+        __asm _emit 0x89 __asm _emit 0x41 __asm _emit 0x60 // mov dword ptr [ecx + 0x60], eax
+L_007AEED5:
+        ret 0x4
+    }
+}
