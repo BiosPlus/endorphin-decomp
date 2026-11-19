@@ -771,3 +771,25 @@ extern "C" __declspec(naked) void __cdecl fn_008102D0(void) {
         ret
     }
 }
+
+// [0x00810410] sub_00810410 (42 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00810410(void) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je clear_bit
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        mov ecx, dword ptr [eax + 4]
+        or ch, 8
+        mov dword ptr [eax + 4], ecx
+        ret
+    clear_bit:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        mov ecx, dword ptr [eax + 4]
+        and ch, -9
+        mov dword ptr [eax + 4], ecx
+        ret
+    }
+}
