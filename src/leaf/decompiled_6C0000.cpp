@@ -6069,3 +6069,27 @@ extern "C" void __cdecl fn_006C8EB0() {
     *(double*)&mem_00B5D610 = -*p;
     *(double*)&mem_00B5D618 = -*p;
 }
+
+// [0x006C1BB0] sub_006C1BB0 (36 bytes)
+extern "C" int mem_00AA8C8C;
+extern "C" int mem_00AA8C94;
+
+extern "C" __declspec(naked) void* __stdcall fn_006C1BB0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub eax, 0x0
+        je L_case01
+        dec eax
+        je L_case01
+        dec eax
+        je L_case2
+        xor eax, eax
+        ret 0x4
+    L_case2:
+        mov eax, offset mem_00AA8C94
+        ret 0x4
+    L_case01:
+        mov eax, offset mem_00AA8C8C
+        ret 0x4
+    }
+}
