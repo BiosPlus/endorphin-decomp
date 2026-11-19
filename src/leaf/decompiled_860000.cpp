@@ -7167,3 +7167,57 @@ extern "C" __declspec(naked) void __cdecl fn_0086FF80(void) {
         ret
     }
 }
+
+// [0x0086A240] sub_0086A240 (100 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_0086A240(unsigned int* dst, const unsigned int* src, unsigned int shift, unsigned int count) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        xor eax, eax
+        cmp edi, 0x20
+        jae done_early
+        mov ebx, dword ptr [esp + 0x18]
+        test ebx, ebx
+        je done_early
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, 0x20
+        sub ecx, edi
+        push ebp
+        mov dword ptr [esp + 0x1c], ecx
+        mov ecx, dword ptr [esp + 0x14]
+        sub ecx, edx
+        push esi
+        lea esi, [edx + 4*ebx]
+        mov dword ptr [esp + 0x1c], ecx
+        jmp loop_entry
+    loop_top:
+        mov ecx, dword ptr [esp + 0x1c]
+    loop_entry:
+        mov edx, dword ptr [ecx + esi - 0x4]
+        sub esi, 0x4
+        mov ebp, edx
+        mov ecx, edi
+        shr ebp, cl
+        dec ebx
+        or ebp, eax
+        test edi, edi
+        mov dword ptr [esi], ebp
+        je zero_carry
+        mov ecx, dword ptr [esp + 0x20]
+        shl edx, cl
+        mov eax, edx
+        jmp next_iter
+    zero_carry:
+        xor eax, eax
+    next_iter:
+        test ebx, ebx
+        jne loop_top
+        pop esi
+        pop ebp
+    done_early:
+        pop edi
+        pop ebx
+        ret
+    }
+}
