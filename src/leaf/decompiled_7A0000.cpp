@@ -6540,3 +6540,48 @@ extern "C" __declspec(naked) void __fastcall fn_007ABF90(void* self) {
         ret 0x4
     }
 }
+
+// [0x007AE020] sub_007AE020 (77 bytes)
+extern "C" int mem_009251D8;
+extern "C" __declspec(naked) void __fastcall fn_007AE020(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi], 0
+        je L_done
+        push ebx
+        push esi
+        xor esi, esi
+    L_loop:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [edi + 0x4]
+        mov bl, byte ptr [esi + edx]
+        mov ecx, dword ptr [eax + 4*esi]
+        lea eax, [eax + 4*esi]
+        test bl, bl
+        je L_next
+        test ecx, ecx
+        je L_next
+        mov dword ptr [eax], 0
+        mov eax, dword ptr [ecx]
+        push 0
+        call dword ptr [eax + 0x4]
+    L_next:
+        inc esi
+        cmp esi, 0x7
+        jl L_loop
+        mov ecx, dword ptr [edi]
+        mov esi, dword ptr [mem_009251D8]
+        push ecx
+        call esi
+        mov edx, dword ptr [edi + 0x4]
+        push edx
+        call esi
+        add esp, 0x8
+        pop esi
+        pop ebx
+    L_done:
+        pop edi
+        ret
+    }
+}
