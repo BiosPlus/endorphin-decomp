@@ -16,8 +16,10 @@ extern "C" __declspec(naked) void __fastcall fn_005E09B0(void* self) {
 }
 
 extern "C" void __fastcall ext_005EBC10(void* self, int edx_unused, float* p);
+extern "C" void ext_005E12F0();
+extern "C" void ext_006622D0();
 
-// [0x005ECCF0] NMData::FixedPathJointData::vfunc_4_off_C (26 bytes)
+extern "C" void ext_006622D0();
 extern "C" __declspec(naked) void __fastcall fn_005ECCF0(void* self, int edx_unused, float* a1) {
     __asm {
         mov eax, dword ptr [esp + 0x4]
@@ -1667,5 +1669,54 @@ L_caseC:
         lea ecx, [esi+4]
         pop esi
         jmp edx
+    }
+}
+
+// [0x005E4850] NMData::FixedPathJointData::vfunc_68 (140 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E4850(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x194]
+        add eax, -0x1
+        cmp eax, 0x5
+        ja L_ret
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        jmp dword ptr [4*eax + 0x5e48dc]
+
+    L_5:
+        mov dword ptr [esi + 0x194], 0x5
+        cmp edi, 0x5
+        je L_pop_edi
+        call ext_005E12F0
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [esi + 0x154]
+        push eax
+        call ext_006622D0
+    L_4:
+        mov dword ptr [esi + 0x194], 0x4
+        cmp edi, 0x4
+        je L_pop_edi
+    L_3:
+        mov dword ptr [esi + 0x194], 0x3
+        cmp edi, 0x3
+        je L_pop_edi
+    L_2:
+        mov dword ptr [esi + 0x194], 0x2
+        cmp edi, 0x2
+        je L_pop_edi
+    L_1:
+        mov dword ptr [esi + 0x194], 0x1
+        cmp edi, 0x1
+        je L_pop_edi
+    L_0:
+        mov dword ptr [esi + 0x194], 0x0
+
+    L_pop_edi:
+        pop edi
+    L_ret:
+        pop esi
+        ret 0x8
     }
 }
