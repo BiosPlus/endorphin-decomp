@@ -6757,3 +6757,56 @@ extern "C" __declspec(naked) void __stdcall fn_005B3630(int a1) {
         ret 4
     }
 }
+
+// [0x005B1FA0] sub_005B1FA0 (88 bytes)
+extern "C" int mem_00993CA0;
+
+extern "C" __declspec(naked) void __fastcall fn_005B1FA0(void* self) {
+    __asm {
+        sub esp, 8
+        mov eax, dword ptr [ecx + 8]
+        fldz
+        add eax, -1
+        fst dword ptr [esp]
+        cmp eax, 4
+        ja L_005B1FCE
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0xf8
+        _emit 0x1f
+        _emit 0x5b
+        _emit 0x00
+
+    L_005B1FBA:
+        fld dword ptr [ecx + 0x14]
+        fadd dword ptr [ecx + 0x10]
+        fmul qword ptr [mem_00993CA0]
+        jmp L_005B1FCB
+
+    L_005B1FC8:
+        fld dword ptr [ecx + 0x10]
+
+    L_005B1FCB:
+        fstp dword ptr [esp]
+
+    L_005B1FCE:
+        fst dword ptr [esp + 4]
+        fcom dword ptr [esp]
+        fnstsw ax
+        test ah, 0x41
+        lea eax, [esp + 4]
+        je L_005B1FE3
+        lea eax, [esp]
+
+    L_005B1FE3:
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [ecx + 0x10]
+        fst dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x18]
+        add esp, 8
+        ret
+    }
+}
