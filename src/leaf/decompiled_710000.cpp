@@ -53,6 +53,7 @@ extern "C" bool __fastcall fn_00712150(void* self) {
     return ext_00711DB0() == 0x11;
 }
 extern "C" void ext_006A6C87();
+extern "C" void ext_006B9D80();
 
 // [0x00714910] sub_00714910 (16 bytes)
 extern "C" void ext_007873F0();
@@ -5583,6 +5584,23 @@ extern "C" __declspec(naked) void* __fastcall fn_0071D530(void* self, int edx_un
         push esi
         mov esi, dword ptr [esp + 0xc]
         push 0xaacab8
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D80
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
+
+// [0x00717DB0] sub_00717DB0 (33 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00717DB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0xaac46c
         mov ecx, esi
         mov dword ptr [esp + 0x8], 0x0
         call ext_006B9D80
