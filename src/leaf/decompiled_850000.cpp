@@ -6573,3 +6573,82 @@ extern "C" __declspec(naked) void __fastcall fn_0085E050(void* self) {
         __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
     }
 }
+
+// [0x0085F130] sub_0085F130 (192 bytes)
+extern "C" void ext_0085E030();
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E420();
+extern "C" void ext_0085F1F0();
+extern "C" int mem_00ABB25C;
+extern "C" int mem_00AB98F0;
+extern "C" int mem_00AB98EC;
+extern "C" __declspec(naked) void __cdecl fn_0085F130(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x110
+        lea ecx, [esp + 4]
+        push esi
+        push eax
+        push ecx
+        call ext_0085E030
+        lea ecx, [esp + 0x10]
+        add esp, 8
+        push ecx
+        call ext_0085E1F0
+        add esp, 4
+        mov esi, eax
+        test esi, esi
+        jne L_181
+        mov ecx, dword ptr [mem_00ABB25C]
+        mov eax, dword ptr [esp + 0x11c]
+        pop esi
+        mov dword ptr [mem_00AB98F0], ecx
+        mov dword ptr [mem_00AB98EC], 0x13
+        add esp, 0x110
+        ret
+    L_181:
+        cmp byte ptr [esp + esi + 7], 0x48
+        jne L_1AA
+        lea eax, [esp + 8]
+        push esi
+        lea ecx, [esp + 0xe]
+        push eax
+        push ecx
+        call ext_0085E420
+        mov byte ptr [esp + 0x14], 0x30
+        mov byte ptr [esp + 0x15], 0x78
+        mov byte ptr [esp + esi + 0x15], 0
+        add esp, 0xc
+    L_1AA:
+        lea eax, [esp + 4]
+        push 0
+        lea ecx, [esp + 0xc]
+        push eax
+        push ecx
+        call ext_0085F1F0
+        add esp, 0xc
+        test eax, eax
+        jg L_1D1
+        mov eax, dword ptr [esp + 0x11c]
+        pop esi
+        add esp, 0x110
+        ret
+    L_1D1:
+        cmp eax, 0xffff
+        jl L_1DF
+        mov eax, dword ptr [esp + 0x11c]
+    L_1DF:
+        pop esi
+        add esp, 0x110
+        ret
+        __asm _emit 0x8b
+        __asm _emit 0xff
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
