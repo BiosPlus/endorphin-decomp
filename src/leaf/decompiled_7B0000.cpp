@@ -15510,3 +15510,107 @@ extern "C" __declspec(naked) void __cdecl fn_007B94E0(void* p) {
         ret
     }
 }
+
+// [0x007BAE90] sub_007BAE90 (304 bytes)
+extern "C" int mem_00999A90;
+extern "C" int mem_00999A88;
+extern "C" int mem_00999A80;
+extern "C" int mem_00999A78;
+extern "C" int mem_00999A70;
+extern "C" int mem_00999A68;
+extern "C" int mem_00999A60;
+extern "C" int mem_00993828;
+extern "C" int mem_00999A58;
+
+extern "C" __declspec(naked) int __cdecl fn_007BAE90(double x, int seed) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00999A90]
+        fnstsw ax
+        test ah, 0x1
+        jne L_7BAEA7
+        mov eax, 0x7fff
+        ret
+L_7BAEA7:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00999A88]
+        fnstsw ax
+        test ah, 0x41
+        je L_7BAEBE
+        mov eax, 0xffff
+        ret
+L_7BAEBE:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00999A80]
+        fnstsw ax
+        test ah, 0x41
+        jne L_7BAF33
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        jne L_7BAEF7
+        fldln2
+        fld qword ptr [esp + 0x4]
+        fyl2x
+        fmul qword ptr [mem_00999A78]
+        fadd qword ptr [mem_00999A70]
+        fmul qword ptr [mem_00999A68]
+        call ext_00872828
+        ret
+L_7BAEF7:
+        call dword ptr [mem_009252B4]
+        mov dword ptr [esp + 0xc], eax
+        fild dword ptr [esp + 0xc]
+        fmul qword ptr [mem_00999A60]
+        fldln2
+        fld qword ptr [esp + 0x4]
+        fyl2x
+        fmul qword ptr [mem_00999A78]
+        fadd qword ptr [mem_00999A70]
+        fmul qword ptr [mem_00999A68]
+        faddp st(1), st
+        fsub qword ptr [mem_00993828]
+        call ext_00872828
+        ret
+L_7BAF33:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00999A58]
+        fnstsw ax
+        test ah, 0x1
+        je L_7BAFBA
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        jne L_7BAF75
+        fld qword ptr [esp + 0x4]
+        fchs
+        fldln2
+        fxch st(1)
+        fyl2x
+        fmul qword ptr [mem_00999A78]
+        fadd qword ptr [mem_00999A70]
+        fmul qword ptr [mem_00999A68]
+        call ext_00872828
+        or eax, 0xffff8000
+        ret
+L_7BAF75:
+        call dword ptr [mem_009252B4]
+        mov dword ptr [esp + 0xc], eax
+        fild dword ptr [esp + 0xc]
+        fmul qword ptr [mem_00999A60]
+        fld qword ptr [esp + 0x4]
+        fchs
+        fldln2
+        fxch st(1)
+        fyl2x
+        fmul qword ptr [mem_00999A78]
+        fadd qword ptr [mem_00999A70]
+        fmul qword ptr [mem_00999A68]
+        faddp st(1), st
+        fsub qword ptr [mem_00993828]
+        call ext_00872828
+        or eax, 0xffff8000
+        ret
+L_7BAFBA:
+        xor eax, eax
+        ret
+    }
+}
