@@ -12893,3 +12893,119 @@ extern "C" __declspec(naked) void __fastcall fn_006D56C0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006DBB60] sub_006DBB60 (272 bytes)
+extern "C" void ext_006A6F00();
+extern "C" void ext_006A7310();
+
+// 64-bit arithmetic chain. Args: x (int64 on stack), c..g (int* out slots); callee-cleans nothing (ret 0).
+// Returns int64 in edx:eax. Each step: r = ext_006A7310(acc, K); *slot = lo(r); acc += ext_006A6F00(sext(lo(r)), K2).
+extern "C" __declspec(naked) __int64 __cdecl fn_006DBB60(__int64 x, int* c, int* d, int* e, int* f, int* g) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        jg L_pos_006DBB60
+        jl L_neg_006DBB60
+        test esi, esi
+        jae L_pos_006DBB60
+L_neg_006DBB60:
+        mov eax, 1
+        jmp L_join_006DBB60
+L_pos_006DBB60:
+        xor eax, eax
+L_join_006DBB60:
+        cdq
+        neg eax
+        adc edx, 0
+        and eax, 0x82148c3f
+        neg edx
+        mov ecx, esi
+        and edx, 0x975f
+        sub ecx, eax
+        mov eax, edi
+        sbb eax, edx
+        push 0x975f
+        push 0x82148c40
+        push eax
+        push ecx
+        call ext_006A7310
+        mov ecx, dword ptr [esp + 0x14]
+        push 0xffff68a0
+        push 0x7deb73c0
+        mov dword ptr [ecx], eax
+        cdq
+        push edx
+        push eax
+        call ext_006A6F00
+        add esi, eax
+        push 0x285
+        adc edi, edx
+        push 0xdbc49bf0
+        push edi
+        push esi
+        call ext_006A7310
+        mov edx, dword ptr [esp + 0x18]
+        push 0xfffffd7a
+        push 0x243b6410
+        mov dword ptr [edx], eax
+        cdq
+        push edx
+        push eax
+        call ext_006A6F00
+        add esi, eax
+        push 0xa
+        adc edi, edx
+        push 0xc3a9ad44
+        push edi
+        push esi
+        call ext_006A7310
+        mov ecx, dword ptr [esp + 0x1c]
+        push -0xb
+        push 0x3c5652bc
+        mov dword ptr [ecx], eax
+        cdq
+        push edx
+        push eax
+        call ext_006A6F00
+        add esi, eax
+        push 0x0
+        adc edi, edx
+        push 0x5bdafd3e
+        push edi
+        push esi
+        call ext_006A7310
+        mov edx, dword ptr [esp + 0x20]
+        push -0x1
+        push 0xa42502c2
+        mov dword ptr [edx], eax
+        cdq
+        push edx
+        push eax
+        call ext_006A6F00
+        add esi, eax
+        push 0x0
+        adc edi, edx
+        push 0x2ded7e9f
+        push edi
+        push esi
+        call ext_006A7310
+        mov ecx, dword ptr [esp + 0x24]
+        push 0x0
+        push 0x2ded7e9f
+        mov dword ptr [ecx], eax
+        cdq
+        push edx
+        push eax
+        call ext_006A6F00
+        sub esi, eax
+        sbb edi, edx
+        mov eax, esi
+        mov edx, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
