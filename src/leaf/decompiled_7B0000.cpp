@@ -15128,3 +15128,156 @@ extern "C" __declspec(naked) void __cdecl fn_007B81C0(void* p) {
         ret
     }
 }
+
+// [0x007B91B0] sub_007B91B0 (288 bytes)
+extern "C" void ext_007B2480();
+extern "C" int mem_00B61DB8;
+extern "C" int mem_009252DC;
+extern "C" int mem_009251D8;
+extern "C" __declspec(naked) void* __cdecl fn_007B91B0(const char* s) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00B61DB8]
+        push esi
+        mov esi, dword ptr [mem_009252DC]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push 0x2e
+        push edi
+        call esi
+        add esp, 0x8
+        test eax, eax
+        je L_7B926F
+        push edi
+        call ext_007B2480
+        mov ebx, eax
+        push 0x2e
+        push ebx
+        call esi
+        push 0x2e
+        push edi
+        mov byte ptr [eax], 0x0
+        call esi
+        mov edi, eax
+        add esp, 0x14
+        inc edi
+        test ebp, ebp
+        je L_7B925E
+L_7B91F3:
+        mov ecx, dword ptr [ebp + 0x8]
+        mov esi, ebx
+L_7B91F8:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne L_7B921C
+        test dl, dl
+        je L_7B9218
+        mov al, byte ptr [ecx + 0x1]
+        mov dl, al
+        cmp al, byte ptr [esi + 0x1]
+        jne L_7B921C
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne L_7B91F8
+L_7B9218:
+        xor ecx, ecx
+        jmp L_7B9221
+L_7B921C:
+        sbb ecx, ecx
+        sbb ecx, -1
+L_7B9221:
+        test ecx, ecx
+        jne L_7B9257
+        mov ecx, dword ptr [ebp + 0xc]
+        mov esi, edi
+L_7B922A:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne L_7B924E
+        test dl, dl
+        je L_7B924A
+        mov al, byte ptr [ecx + 0x1]
+        mov dl, al
+        cmp al, byte ptr [esi + 0x1]
+        jne L_7B924E
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne L_7B922A
+L_7B924A:
+        xor ecx, ecx
+        jmp L_7B9253
+L_7B924E:
+        sbb ecx, ecx
+        sbb ecx, -1
+L_7B9253:
+        test ecx, ecx
+        je L_7B925E
+L_7B9257:
+        mov ebp, dword ptr [ebp + 0x14]
+        test ebp, ebp
+        jne L_7B91F3
+L_7B925E:
+        push ebx
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+        mov eax, ebp
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_7B926F:
+        test ebp, ebp
+        je L_7B92BC
+L_7B9273:
+        mov eax, dword ptr [ebp + 0x8]
+        mov esi, edi
+L_7B9278:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne L_7B92A0
+        test cl, cl
+        je L_7B929C
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne L_7B92A0
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_7B9278
+L_7B929C:
+        xor eax, eax
+        jmp L_7B92A5
+L_7B92A0:
+        sbb eax, eax
+        sbb eax, -1
+L_7B92A5:
+        test eax, eax
+        jne L_7B92B5
+        mov eax, dword ptr [ebp + 0xc]
+        test eax, eax
+        je L_7B92BC
+        cmp byte ptr [eax], 0x0
+        je L_7B92BC
+L_7B92B5:
+        mov ebp, dword ptr [ebp + 0x14]
+        test ebp, ebp
+        jne L_7B9273
+L_7B92BC:
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
