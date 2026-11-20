@@ -10063,3 +10063,118 @@ L_join:
         ret 8
     }
 }
+
+// [0x00709140] sub_00709140 (263 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00709140(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x10
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        push esi
+        mov esi, ecx
+        cmp esi, ebx
+        push edi
+        mov dword ptr [ebp - 0x10], esi
+        je f9_done
+        mov eax, dword ptr [ebx]
+        mov edi, dword ptr [esi]
+        mov ecx, ebx
+        call dword ptr [eax + 0x18]
+        push eax
+        mov ecx, esi
+        call dword ptr [edi + 0x14]
+        test al, al
+        je f9_done
+        mov ecx, dword ptr [ebx + 0xc0]
+        mov edx, dword ptr [esi + 0xc0]
+        xor edi, edi
+        mov dword ptr [ebp - 0x8], ecx
+        mov dword ptr [ebp - 0x4], edi
+        mov dword ptr [ebp - 0xc], edx
+        mov edx, dword ptr [ebp - 0xc]
+        mov ecx, dword ptr [ebp - 0x8]
+        xor eax, eax
+        sub edx, ecx
+        setg al
+        dec eax
+        and eax, edx
+        add eax, ecx
+        test eax, eax
+        mov dword ptr [ebp - 0x8], eax
+        jbe f9_done
+        jmp f9_body
+f9_reload:
+        mov esi, dword ptr [ebp - 0x10]
+        mov ebx, dword ptr [ebp + 0x8]
+f9_body:
+        mov eax, dword ptr [ebx + 0xd0]
+        mov ecx, dword ptr [esi + 0xd0]
+        mov ebx, dword ptr [eax + 4*edi]
+        mov esi, dword ptr [ecx + 4*edi]
+        test ebx, ebx
+        mov dword ptr [ebp - 0xc], esi
+        je f9_next
+        test esi, esi
+        je f9_next
+        mov ecx, ebx
+        call ext_00711A50
+        test al, al
+        jne f9_next
+        mov ecx, esi
+        call ext_00711A50
+        test al, al
+        jne f9_next
+        mov ecx, ebx
+        call ext_00712000
+        mov ecx, esi
+        mov edi, eax
+        call ext_00712000
+        mov esi, eax
+        mov ecx, edi
+f9_cmp:
+        mov dl, byte ptr [ecx]
+        mov al, dl
+        cmp dl, byte ptr [esi]
+        jne f9_diff
+        test al, al
+        je f9_eq
+        mov dl, byte ptr [ecx + 0x1]
+        mov al, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne f9_diff
+        add ecx, 0x2
+        add esi, 0x2
+        test al, al
+        jne f9_cmp
+f9_eq:
+        xor eax, eax
+        jmp f9_after
+f9_diff:
+        sbb eax, eax
+        sbb eax, -1
+f9_after:
+        test eax, eax
+        jne f9_skip2
+        mov ecx, dword ptr [ebp - 0xc]
+        push ebx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x94]
+f9_skip2:
+        mov edi, dword ptr [ebp - 0x4]
+f9_next:
+        mov eax, dword ptr [ebp - 0x8]
+        inc edi
+        cmp edi, eax
+        mov dword ptr [ebp - 0x4], edi
+        jb f9_reload
+f9_done:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
