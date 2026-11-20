@@ -42,5 +42,7 @@
     "0x007184DB",
     "0x007184E1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-20T15:18:42Z"
 }
