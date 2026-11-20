@@ -13365,3 +13365,135 @@ common_tail:
         ret 0ch
     }
 }
+
+// [0x006A3E10] sub_006A3E10 (354 bytes)
+extern "C" void ext_006A34B0();
+extern "C" void ext_006A34D0();
+extern "C" void ext_006A3BB0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00925120;
+extern "C" int mem_009250F4;
+extern "C" int mem_00925100;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FCC;
+extern "C" int mem_00924ECC;
+
+extern "C" __declspec(naked) void __fastcall fn_006A3E10(void* self) {
+    __asm {
+        push    ebp
+        lea     ebp, [esp - 0x54]
+        sub     esp, 0x54
+        push    -0x1
+        push    0x8b6fef
+        mov     eax, dword ptr fs:[0x0]
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x9c
+        push    ebx
+        push    esi
+        push    edi
+        lea     ecx, [ebp + 0x38]
+        mov     dword ptr [ebp - 0x10], esp
+        call    dword ptr [mem_00924FE8]
+        mov     ecx, dword ptr [ebp + 0x5c]
+        lea     eax, [ebp + 0x38]
+        push    eax
+        xor     ebx, ebx
+        push    ecx
+        mov     dword ptr [ebp - 0x4], ebx
+        call    ext_006A34D0
+        mov     edi, dword ptr [ebp + 0x64]
+        mov     esi, dword ptr [edi + 0x14]
+        add     esp, 0x8
+        push    esi
+        push    ebx
+        lea     edx, [ebp + 0x1c]
+        push    edx
+        lea     ecx, [ebp + 0x38]
+        call    dword ptr [mem_00925120]
+        push    edi
+        lea     ecx, [ebp + 0x1c]
+        mov     byte ptr [ebp - 0x4], 0x1
+        call    dword ptr [mem_009250F4]
+        test    eax, eax
+        jne     loc_6a3e89
+        push    esi
+        push    ebx
+        lea     ecx, [ebp + 0x38]
+        call    dword ptr [mem_00925100]
+    loc_6a3e89:
+        mov     eax, dword ptr [ebp + 0x60]
+        push    edi
+        push    eax
+        lea     ecx, [ebp + 0x38]
+        push    ecx
+        mov     byte ptr [ebp - 0x4], 0x2
+        call    ext_006A3BB0
+        add     esp, 0xc
+        lea     ecx, [ebp + 0x1c]
+        mov     dword ptr [ebp - 0x4], ebx
+        call    dword ptr [mem_00924FF4]
+        lea     ecx, [ebp + 0x38]
+        mov     dword ptr [ebp - 0x4], 0xffffffff
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, dword ptr [ebp - 0xc]
+        pop     edi
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        pop     ebx
+        add     ebp, 0x54
+        mov     esp, ebp
+        pop     ebp
+        ret
+        mov     edx, dword ptr [ebp + 0x5c]
+        push    edx
+        lea     ecx, [ebp - 0x48]
+        call    dword ptr [mem_00924FE4]
+        lea     eax, [ebp - 0x48]
+        push    eax
+        lea     ecx, [ebp - 0x2c]
+        push    0x990588
+        push    ecx
+        mov     byte ptr [ebp - 0x4], 0x4
+        call    dword ptr [mem_00924FCC]
+        mov     esi, dword ptr [mem_00924ECC]
+        push    0x92ab70
+        push    eax
+        lea     edx, [ebp - 0x80]
+        push    edx
+        mov     byte ptr [ebp - 0x4], 0x5
+        call    esi
+        push    0x941f08
+        push    eax
+        lea     eax, [ebp]
+        push    eax
+        mov     byte ptr [ebp - 0x4], 0x6
+        call    esi
+        push    0x990540
+        push    eax
+        lea     ecx, [ebp - 0x64]
+        push    ecx
+        mov     byte ptr [ebp - 0x4], 0x7
+        call    esi
+        add     esp, 0x30
+        lea     ecx, [ebp]
+        mov     byte ptr [ebp - 0x4], 0x9
+        call    dword ptr [mem_00924FF4]
+        lea     ecx, [ebp - 0x80]
+        mov     byte ptr [ebp - 0x4], 0xa
+        call    dword ptr [mem_00924FF4]
+        lea     ecx, [ebp - 0x2c]
+        mov     byte ptr [ebp - 0x4], 0xb
+        call    dword ptr [mem_00924FF4]
+        lea     edx, [ebp - 0x64]
+        push    edx
+        lea     ecx, [ebp - 0xa8]
+        call    ext_006A34B0
+        push    0xa1b424
+        lea     eax, [ebp - 0xa8]
+        push    eax
+        call    ext_006A6DD2
+    }
+}
