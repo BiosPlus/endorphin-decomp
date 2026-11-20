@@ -10254,3 +10254,119 @@ extern "C" __declspec(naked) void __fastcall fn_0086BE10(void* self) {
         _emit 0x00
     }
 }
+
+// [0x0086C020] sub_0086C020 (345 bytes)
+extern "C" void ext_0086BF40();
+extern "C" void ext_0086F000();
+extern "C" void ext_0086F050();
+extern "C" void ext_0086F0A0();
+extern "C" void ext_0086F120();
+extern "C" void ext_0086F1A0();
+extern "C" void ext_0086F8A0();
+extern "C" void ext_0086F930();
+extern "C" void ext_0086FC60();
+
+extern "C" __declspec(naked) void __fastcall fn_0086C020(void* self) {
+    __asm {
+        sub esp, 0x244
+        lea eax, [esp + 0x104]
+        push esi
+        push eax
+        call ext_0086F000
+        lea eax, [esp + 0x15c]
+        mov esi, dword ptr [esp + 0x250]
+        mov dword ptr [esp + 0x158], 0x2
+        add esp, 0x4
+        lea ecx, [esi + 0x52]
+        add esi, 0x66
+        push eax
+        push ecx
+        call ext_0086F050
+        lea eax, [esp + 0x1b0]
+        add esp, 0x8
+        push eax
+        push esi
+        call ext_0086F050
+        lea ecx, [esp + 0xc0]
+        lea eax, [esp + 0x160]
+        lea edx, [esp + 0x1b0]
+        add esp, 0x8
+        push ecx
+        push eax
+        push edx
+        call ext_0086F1A0
+        lea ecx, [esp + 0x10]
+        add esp, 0xc
+        push ecx
+        call ext_0086F8A0
+        lea ecx, [esp + 0x1c]
+        lea edx, [esp + 0x8]
+        or dword ptr [esp + 0x18], 0x1
+        add esp, 0x4
+        push ecx
+        push edx
+        call ext_0086F050
+        lea ecx, [esp + 0x70]
+        lea edx, [esp + 0xc0]
+        lea eax, [esp + 0x20]
+        add esp, 0x8
+        push ecx
+        push edx
+        push eax
+        call ext_0086F930
+        lea ecx, [esp + 0x74]
+        add esp, 0xc
+        push ecx
+        call ext_0086BF40
+        add esp, 0x4
+        test ax, ax
+        jne L_match
+    L_loop:
+        lea eax, [esp + 0x18]
+        lea ecx, [esp + 0x108]
+        push eax
+        lea eax, [esp + 0x1c]
+        push eax
+        push ecx
+        call ext_0086F120
+        lea ecx, [esp + 0x74]
+        lea edx, [esp + 0xc4]
+        lea eax, [esp + 0x24]
+        add esp, 0xc
+        push ecx
+        push edx
+        push eax
+        call ext_0086F930
+        lea ecx, [esp + 0x74]
+        add esp, 0xc
+        push ecx
+        call ext_0086BF40
+        add esp, 0x4
+        test ax, ax
+        je L_loop
+    L_match:
+        lea eax, [esp + 0x1f8]
+        lea ecx, [esp + 0xb8]
+        lea edx, [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_0086FC60
+        mov ecx, dword ptr [esp + 0x25c]
+        lea edx, [esp + 0x24]
+        add esp, 0xc
+        push ecx
+        push edx
+        call ext_0086F0A0
+        mov ecx, dword ptr [esp + 0x25c]
+        lea edx, [esp + 0x200]
+        add esp, 0x8
+        push ecx
+        push edx
+        call ext_0086F0A0
+        add esp, 0x8
+        pop esi
+        add esp, 0x244
+        ret
+    }
+}
