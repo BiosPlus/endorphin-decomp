@@ -15850,3 +15850,130 @@ L_7BBDAE:
         ret
     }
 }
+
+// [0x007BAFC0] sub_007BAFC0 (320 bytes)
+extern "C" int mem_00999AD8;
+extern "C" int mem_00999AD0;
+extern "C" int mem_00999AC8;
+extern "C" int mem_00999AC0;
+extern "C" int mem_00999AB8;
+extern "C" int mem_00999AB0;
+extern "C" int mem_00999AA8;
+extern "C" int mem_00999AA0;
+extern "C" int mem_00999A98;
+extern "C" int mem_0092A278;
+extern "C" int mem_0092A270;
+extern "C" int mem_00999A68;
+extern "C" __declspec(naked) void __cdecl fn_007BAFC0(void* src, void* dst) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x14]
+        fld dword ptr [eax]
+        fmul qword ptr [mem_00999AD8]
+        fld dword ptr [eax + 0x4]
+        fmul qword ptr [mem_00999AD0]
+        fld dword ptr [eax + 0x8]
+        fmul qword ptr [mem_00999AC8]
+        faddp st(1), st
+        fsubp st(1), st
+        fld dword ptr [eax + 0x8]
+        fmul qword ptr [mem_00999AC0]
+        fld dword ptr [eax + 0x4]
+        fmul qword ptr [mem_00999AB8]
+        faddp st(1), st
+        fld dword ptr [eax]
+        fmul qword ptr [mem_00999AB0]
+        fsubp st(1), st
+        __asm _emit 0xdd
+        __asm _emit 0x5c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fld dword ptr [eax + 0x8]
+        fmul qword ptr [mem_00999AA8]
+        fld dword ptr [eax + 0x4]
+        fmul qword ptr [mem_00999AA0]
+        fsubp st(1), st
+        fld dword ptr [eax]
+        fmul qword ptr [mem_00999A98]
+        faddp st(1), st
+        fstp qword ptr [esp + 0x8]
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x41
+        je L_c1
+        fstp st(0)
+        xor eax, eax
+        jmp L_e1
+L_c1:
+        fcom qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x1
+        jne L_s1
+        fstp st(0)
+        mov eax, 0xff
+        jmp L_e1
+L_s1:
+        fsqrt
+        fmul qword ptr [mem_00999A68]
+        call ext_00872828
+L_e1:
+        __asm _emit 0xdd
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        fcomp qword ptr [mem_0092A278]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        mov byte ptr [esi], al
+        fnstsw ax
+        test ah, 0x41
+        je L_c2
+        xor eax, eax
+        jmp L_e2
+L_c2:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x1
+        jne L_s2
+        mov eax, 0xff
+        jmp L_e2
+L_s2:
+        fld qword ptr [esp + 0x4]
+        fsqrt
+        fmul qword ptr [mem_00999A68]
+        call ext_00872828
+L_e2:
+        fld qword ptr [esp + 0xc]
+        fcomp qword ptr [mem_0092A278]
+        mov byte ptr [esi + 0x1], al
+        fnstsw ax
+        test ah, 0x41
+        je L_c3
+        xor eax, eax
+        mov byte ptr [esi + 0x2], al
+        pop esi
+        add esp, 0x10
+        ret
+L_c3:
+        fld qword ptr [esp + 0xc]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x1
+        jne L_s3
+        mov eax, 0xff
+        mov byte ptr [esi + 0x2], al
+        pop esi
+        add esp, 0x10
+        ret
+L_s3:
+        fld qword ptr [esp + 0xc]
+        fsqrt
+        fmul qword ptr [mem_00999A68]
+        call ext_00872828
+        mov byte ptr [esi + 0x2], al
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
