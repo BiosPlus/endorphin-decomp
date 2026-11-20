@@ -10733,3 +10733,132 @@ L_nogrow:
         ret 0x4
     }
 }
+
+// [0x007842E0] sub_007842E0 (307 bytes)
+extern "C" void ext_0071E680();
+extern "C" void ext_007AD5E0();
+extern "C" void ext_007ADDF0();
+extern "C" int mem_00B6167C;
+extern "C" __declspec(naked) void __fastcall fn_007842E0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov ebp, ecx
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], ebp
+        call ext_0071E680
+        movsx ebx, word ptr [eax + 0x30]
+        mov ecx, esi
+        call ext_0071E680
+        mov word ptr [eax + 0x30], 0xffff
+        mov edx, dword ptr [ebp + 0x30]
+        mov dword ptr [esp + 0x14], edx
+        mov eax, dword ptr [edx]
+        test eax, eax
+        mov dword ptr [esp + 0x1c], eax
+        je short L_zero_count
+        mov edi, dword ptr [eax + 0x4]
+        jmp short L_have_count
+L_zero_count:
+        xor edi, edi
+L_have_count:
+        dec edi
+        test edi, edi
+        jl L_ret_zero
+L_loop:
+        lea ebp, [eax + 4*edi + 0xc]
+L_body:
+        mov esi, dword ptr [ebp]
+        test esi, esi
+        je short L_next
+        mov ecx, dword ptr [mem_00B6167C]
+        mov eax, ebx
+        sar eax, cl
+        sub eax, dword ptr [esi]
+        js short L_next
+        cmp eax, dword ptr [esi + 0x4]
+        jl short L_found
+L_next:
+        dec edi
+        sub ebp, 0x4
+        test edi, edi
+        jl L_notfound
+        jmp short L_body
+L_found:
+        mov dword ptr [edx + 0x4], 0xffffffff
+        mov ecx, dword ptr [mem_00B6167C]
+        mov eax, dword ptr [ebp]
+        mov edi, ebx
+        sar edi, cl
+        mov esi, dword ptr [eax]
+        mov ecx, ebx
+        sub edi, esi
+        and ecx, 0x8000001f
+        mov eax, dword ptr [eax + 4*edi + 0xc]
+        jns short L_shift
+        dec ecx
+        or ecx, -0x20
+        inc ecx
+L_shift:
+        mov esi, 0x1
+        shl esi, cl
+        not esi
+        and esi, eax
+        cmp esi, eax
+        je L_notfound
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je short L_a
+        cmp dword ptr [eax + 0x8], 0x1
+        jle short L_a
+        mov ecx, edx
+        call ext_007ADDF0
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [eax]
+        sub ecx, edx
+        sar ecx, 0x2
+        lea ebp, [ebp + 4*ecx]
+L_a:
+        mov edx, dword ptr [ebp]
+        cmp dword ptr [edx + 0x8], 0x1
+        jle short L_b
+        mov ecx, ebp
+        call ext_007AD5E0
+L_b:
+        mov eax, dword ptr [ebp]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 4*edi + 0xc], esi
+        mov edx, dword ptr [ecx + 0x44]
+        pop edi
+        pop esi
+        mov dword ptr [edx + 4*ebx], 0x0
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+L_ret_zero:
+        mov edx, dword ptr [ebp + 0x44]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [edx + 4*ebx], 0x0
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+L_notfound:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov ecx, dword ptr [eax + 0x44]
+        mov dword ptr [ecx + 4*ebx], 0x0
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
