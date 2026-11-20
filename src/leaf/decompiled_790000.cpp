@@ -9278,3 +9278,105 @@ L_end:
         ret 0x8
     }
 }
+
+// [0x0079BEF0] sub_0079BEF0 (327 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_0071F100();
+extern "C" void ext_00722E20();
+extern "C" void ext_00782D00();
+extern "C" void ext_00784620();
+extern "C" __declspec(naked) void __fastcall fn_0079BEF0(void* self) {
+    __asm {
+        push -1
+        push 0x8c182a
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        lea edi, [esi + 0x4]
+        mov dword ptr [esi], 0x995080
+        mov ecx, edi
+        call ext_00722E20
+        xor ebx, ebx
+        lea ecx, [esi + 0xf54]
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esi + 0xf50], 0x995080
+        call ext_0071F100
+        mov dword ptr [esi + 0xf70], ebx
+        mov dword ptr [esi + 0xf6c], ebx
+        mov dword ptr [esi + 0xf80], ebx
+        mov dword ptr [esi + 0xf7c], ebx
+        push 0x14
+        mov byte ptr [esp + 0x20], 0x1
+        mov byte ptr [esi + 0xf88], bl
+        mov byte ptr [esi + 0xf89], bl
+        mov byte ptr [esi + 0xf8a], bl
+        mov dword ptr [esi], 0x997670
+        mov dword ptr [edi], 0x997668
+        mov dword ptr [esi + 0xf50], 0x99765c
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x1c], 0x2
+        je short L_a
+        push 0x14
+        mov ecx, eax
+        call ext_00782D00
+        jmp short L_b
+L_a:
+        xor eax, eax
+L_b:
+        mov dword ptr [esi + 0xf64], eax
+        push 0x14
+        mov byte ptr [esp + 0x20], 0x1
+        mov byte ptr [eax + 0x11], 0x1
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x1c], 0x3
+        je short L_c
+        push 0x14
+        mov ecx, eax
+        call ext_00782D00
+        jmp short L_d
+L_c:
+        xor eax, eax
+L_d:
+        mov dword ptr [esi + 0xf68], eax
+        push 0x14
+        mov byte ptr [esp + 0x20], 0x1
+        mov byte ptr [eax + 0x11], 0x1
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x1c], 0x4
+        je short L_e
+        push 0x14
+        mov ecx, eax
+        call ext_00784620
+        jmp short L_f
+L_e:
+        xor eax, eax
+L_f:
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 0xf74], eax
+        mov byte ptr [esi + 0xf78], bl
+        mov dword ptr [esi + 0xf84], ebx
+        mov dword ptr [esi + 0xf5d], ebx
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
