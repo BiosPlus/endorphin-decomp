@@ -8465,3 +8465,77 @@ L_after:
         ret 0x8
     }
 }
+
+// [0x0079E6F0] sub_0079E6F0 (250 bytes)
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2160();
+extern "C" void ext_007839F0();
+extern "C" int mem_00B5D2C0;
+
+extern "C" __declspec(naked) void __fastcall fn_0079E6F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x008c1a7b
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x130
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        push 4
+        push 0x10
+        lea ecx, [esp + 0x12c]
+        mov dword ptr [esp + 0x14], 0x200
+        mov byte ptr [esp + 0x18], 0
+        call ext_006D2130
+        lea eax, [esp + 0x134]
+        mov edi, offset mem_00B5D2C0
+        mov dword ptr [esp + 0x138], eax
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0x1c]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+        mov dword ptr [esp + 0x11c], 1
+        mov dword ptr [esp + 0x120], 0
+        mov dword ptr [esp + 0xc], 0x34538402
+        mov ecx, dword ptr [esp + 0x150]
+        mov edx, dword ptr [esp + 0x14c]
+        test ebp, ebp
+        mov dword ptr [esp + 0x144], 0
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x18], edx
+        je short L_null
+        lea eax, [ebp + 4]
+        jmp short L_join
+L_null:
+        xor eax, eax
+L_join:
+        lea ecx, [esp + 0xc]
+        push ecx
+        push eax
+        lea ecx, [ebp + 8]
+        call ext_007839F0
+        lea ecx, [esp + 0x124]
+        mov dword ptr [esp + 0x144], -1
+        call ext_006D2160
+        mov ecx, dword ptr [esp + 0x13c]
+        pop edi
+        pop esi
+        pop ebp
+        mov fs:[0], ecx
+        add esp, 0x13c
+        ret 8
+    }
+}
