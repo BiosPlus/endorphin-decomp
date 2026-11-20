@@ -11687,3 +11687,107 @@ extern "C" __declspec(naked) void __fastcall fn_006D73A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D5300] sub_006D5300 (238 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006D57D0();
+extern "C" void ext_006E7440();
+extern "C" void ext_006E7460();
+
+// Naked: SEH-guarded frame with a local string object at [esp+0x10]; arg1 is
+// reused as a match counter and arg2 is the target index (ret 8).
+extern "C" __declspec(naked) void __fastcall fn_006D5300(void* self) {
+    __asm {
+        push -1
+        push 0x8bcb18
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x4c
+        mov eax, dword ptr [esp + 0x5c]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        push eax
+        lea ecx, [esp + 0x14]
+        push 0xaa86ec
+        push ecx
+        call ext_006D57D0
+        add esp, 0xc
+        mov eax, dword ptr [edi + 0x64]
+        xor ebp, ebp
+        cmp eax, ebp
+        mov dword ptr [esp + 0x64], ebp
+        mov dword ptr [esp + 0x6c], ebp
+        jle short L_53A4
+    L_5346:
+        mov edx, dword ptr [edi + 0x74]
+        lea ecx, [esp + 0x10]
+        mov ebx, dword ptr [edx + 4*ebp]
+        call ext_006E7460
+        mov ecx, ebx
+        mov esi, eax
+        call ext_006BADB0
+    L_535E:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne short L_5382
+        test cl, cl
+        je short L_537E
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne short L_5382
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_535E
+    L_537E:
+        xor eax, eax
+        jmp short L_5387
+    L_5382:
+        sbb eax, eax
+        sbb eax, -1
+    L_5387:
+        test eax, eax
+        jne short L_539C
+        mov eax, dword ptr [esp + 0x6c]
+        mov ecx, dword ptr [esp + 0x70]
+        cmp eax, ecx
+        je short L_53D9
+        inc eax
+        mov dword ptr [esp + 0x6c], eax
+    L_539C:
+        mov eax, dword ptr [edi + 0x64]
+        inc ebp
+        cmp ebp, eax
+        jl short L_5346
+    L_53A4:
+        push 0x0
+        lea ecx, [edi + 0x1c4]
+        call ext_006E7440
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        xor eax, eax
+    L_53C4:
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x58
+        ret 0x8
+    L_53D9:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        mov eax, ebx
+        jmp short L_53C4
+    }
+}
