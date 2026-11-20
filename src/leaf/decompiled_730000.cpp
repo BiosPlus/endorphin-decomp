@@ -4085,3 +4085,122 @@ fn0073CD30_end:
         ret 4
     }
 }
+
+// [0x007318F0] sub_007318F0 (288 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006C2720();
+extern "C" void ext_006C27E0();
+extern "C" void ext_006C59C0();
+extern "C" void ext_006C59E0();
+extern "C" void ext_006D57D0();
+extern "C" void ext_006E7460();
+extern "C" void ext_00736C90();
+extern "C" void ext_00782F00();
+extern "C" void ext_00782F70();
+
+extern "C" __declspec(naked) void __fastcall fn_007318F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 8bcb18h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 58h
+        push ebx
+        mov ebx, ecx
+        push ebp
+        push esi
+        lea esi, [ebx+0b8h]
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp+18h], esi
+        call ext_00782F70
+        mov ebp, dword ptr [ebx+0bch]
+        mov dword ptr [esp+10h], 0
+        test ebp, ebp
+        mov dword ptr [esp+14h], ebp
+        jle fn007318F0_after_outer
+        jmp fn007318F0_outer_body
+fn007318F0_outer_top:
+        mov esi, dword ptr [esp+18h]
+fn007318F0_outer_body:
+        mov eax, dword ptr [esp+10h]
+        mov ecx, esi
+        push eax
+        call ext_00782F00
+        mov edi, dword ptr [eax]
+        mov ecx, edi
+        call ext_006C59E0
+        mov ebp, eax
+        xor esi, esi
+        test ebp, ebp
+        jle fn007318F0_inner_end
+fn007318F0_inner_top:
+        push esi
+        mov ecx, edi
+        call ext_006C59C0
+        push eax
+        lea ecx, [esp+20h]
+        push 0aa8704h
+        push ecx
+        call ext_006D57D0
+        add esp, 0ch
+        lea ecx, [esp+1ch]
+        mov dword ptr [esp+70h], 0
+        call ext_006E7460
+        push eax
+        mov ecx, ebx
+        call ext_00736C90
+        test eax, eax
+        je fn007318F0_skip
+        push eax
+        mov ecx, edi
+        call ext_006C27E0
+fn007318F0_skip:
+        lea ecx, [esp+1ch]
+        mov dword ptr [esp+70h], 0ffffffffh
+        call ext_006B9D70
+        inc esi
+        cmp esi, ebp
+        jl fn007318F0_inner_top
+fn007318F0_inner_end:
+        mov eax, dword ptr [esp+10h]
+        mov ecx, dword ptr [esp+14h]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp+10h], eax
+        jl fn007318F0_outer_top
+        mov esi, dword ptr [esp+18h]
+        mov ebp, ecx
+fn007318F0_after_outer:
+        xor ebx, ebx
+        test ebp, ebp
+        jle fn007318F0_end
+fn007318F0_second:
+        push ebx
+        mov ecx, esi
+        call ext_00782F00
+        mov edi, dword ptr [eax]
+        mov ecx, edi
+        call ext_006C2720
+        test eax, eax
+        jne fn007318F0_nx
+        mov ecx, dword ptr [esp+78h]
+        push edi
+        call ext_006C27E0
+fn007318F0_nx:
+        inc ebx
+        cmp ebx, ebp
+        jl fn007318F0_second
+fn007318F0_end:
+        mov ecx, dword ptr [esp+68h]
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 64h
+        ret 4
+    }
+}
