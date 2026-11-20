@@ -11816,3 +11816,117 @@ extern "C" __declspec(naked) void __cdecl fn_00807580(void* p) {
         _emit 0x90
     }
 }
+
+// [0x0080AF20] sub_0080AF20 (320 bytes)
+extern "C" __int64 __cdecl fn_0080B130(int a1, int a2, int a3);
+extern "C" void ext_00859360();
+extern "C" void ext_00852700();
+extern "C" int mem_009242C8; /* u32 0x0062D72A */
+extern "C" __declspec(naked) int __cdecl fn_0080AF20(unsigned int lo, unsigned int hi, int* pDay, int* pMonth, int* pYear, int* pHour, int* pMinute, int* pSecond) {
+    __asm {
+        sub esp, 0x18
+        mov eax, dword ptr [esp + 0x20]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push esi
+        push edi
+        push 0
+        push 0x989680
+        push eax
+        push ebp
+        mov dword ptr [esp + 0x24], eax
+        call ext_00859360
+        add esp, 0x10
+        add eax, 0xd53e8000
+        mov dword ptr [esp + 0x2c], eax
+        lea eax, [esp + 0x18]
+        lea ecx, [esp + 0x2c]
+        push eax
+        adc edx, 0x19db1de
+        push ecx
+        mov dword ptr [esp + 0x38], edx
+        call dword ptr [mem_009242C8]
+        test eax, eax
+        jne ok_path
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x18
+        pop ebx
+        add esp, 0x18
+        ret
+    ok_path:
+        mov edx, dword ptr [esp + 0x1e]
+        mov esi, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x1a]
+        mov edi, dword ptr [esp + 0x38]
+        mov ecx, dword ptr [esp + 0x18]
+        mov ebx, dword ptr [esp + 0x3c]
+        and edx, 0xffff
+        and eax, 0xffff
+        mov dword ptr [esi], edx
+        mov edx, dword ptr [esp + 0x20]
+        mov dword ptr [edi], eax
+        mov eax, dword ptr [esp + 0x40]
+        and ecx, 0xffff
+        and edx, 0xffff
+        mov dword ptr [ebx], ecx
+        mov ecx, dword ptr [esp + 0x22]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esp + 0x24]
+        and ecx, 0xffff
+        mov dword ptr [edx], ecx
+        mov ecx, dword ptr [esp + 0x48]
+        and eax, 0xffff
+        mov dword ptr [ecx], eax
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esi]
+        push edx
+        push eax
+        push ecx
+        call fn_0080B130
+        mov edx, dword ptr [esp + 0x20]
+        push 0
+        push 0x15180
+        mov ecx, eax
+        push edx
+        push ebp
+        mov dword ptr [esp + 0x50], ecx
+        call ext_00852700
+        mov ecx, dword ptr [esp + 0x50]
+        add esp, 0x1c
+        sub eax, ecx
+        cdq
+        xor eax, edx
+        sub eax, edx
+        cmp eax, 1
+        jle within_tol
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esp + 0x40]
+        __asm _emit 0xC7 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0xC7 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0xC7 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0xC7 __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0xC7 __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0xC7 __asm _emit 0x06 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x18
+        pop ebx
+        add esp, 0x18
+        ret
+    within_tol:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x18
+        ret
+    }
+}
