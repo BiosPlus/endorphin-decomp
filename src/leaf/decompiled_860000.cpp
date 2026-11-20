@@ -9512,3 +9512,118 @@ extern "C" __declspec(naked) void __cdecl fn_0086AD30(void) {
         ret
     }
 }
+
+// [0x008683F0] sub_008683F0 (288 bytes)
+extern "C" void ext_00867850();
+extern "C" int mem_00AB9624;
+extern "C" __declspec(naked) int __cdecl fn_008683F0(void* a1, int a2) {
+    __asm {
+        sub esp, 0x110
+        push ebx
+        push esi
+        mov dword ptr [esp + 0x8], 0x10
+        mov bx, word ptr [esp + 0x120]
+        push edi
+        mov edi, dword ptr [esp + 0x120]
+        push ebp
+        mov word ptr [edi + 0x26], 0x8
+        xor ebp, ebp
+        mov word ptr [edi + 0x2a], bp
+    restart:
+        xor esi, esi
+        mov eax, dword ptr [mem_00BC70E0]
+        mov dword ptr [esp + 0x1c], ebp
+        push 0x5
+        mov dword ptr [esp + 0x24], eax
+        push 0x1
+        lea eax, [esp + 0x134]
+        inc dword ptr [esp + 0x24]
+        push eax
+        call ext_00867850
+        mov eax, dword ptr [mem_00AB9624]
+        imul eax, dword ptr [esp + 0x138]
+        mov dword ptr [esp + 0x20], ebp
+        add esp, 0xc
+        lea ecx, [eax + 4*eax]
+        lea edx, [ecx + 4*ecx]
+        lea ecx, [esp + 0x14]
+        push ecx
+        push ebp
+        lea eax, [edx + 4*edx]
+        push ebp
+        shl eax, 0x3
+        lea edx, [esp + 0x28]
+        mov dword ptr [esp + 0x24], eax
+        push edx
+        mov eax, dword ptr [mem_00BC70E0]
+        inc eax
+        push eax
+        call dword ptr [mem_00BC70BC]
+        test eax, eax
+        je no_match
+        lea eax, [esp + 0x10]
+        mov ecx, dword ptr [mem_00BC70E0]
+        push eax
+        push offset mem_00BC6578
+        push ebp
+        push 0x5fa
+        push edi
+        push ecx
+        call dword ptr [mem_00BC70F4]
+        mov ecx, eax
+        and ecx, 0xffff0000
+        cmp ecx, 0x1
+        sbb edx, edx
+        neg edx
+        cmp eax, -0x1
+        jne not_m1
+        xor edx, edx
+        jmp after_test
+    not_m1:
+        test ecx, ecx
+        jne after_test
+        cmp word ptr [edi], 0x802a
+        jne set_esi
+        cmp word ptr [edi + 0xda], bx
+        jne set_esi
+        cmp word ptr [edi + 0x22], 0x16
+        ja set_esi
+        mov edx, 0x1
+        jmp after_test
+    set_esi:
+        mov esi, 0x1
+    after_test:
+        test esi, esi
+        jne restart
+        mov eax, edx
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x110
+        ret
+    no_match:
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x110
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
