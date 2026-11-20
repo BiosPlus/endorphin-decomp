@@ -10704,3 +10704,133 @@ L_7073B9:
         ret 0x10
     }
 }
+
+// [0x00705830] sub_00705830 (302 bytes)
+extern "C" int mem_00AABD24;
+extern "C" __declspec(naked) void __fastcall fn_00705830(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x84]
+        cmp ebx, eax
+        je eq_path
+        xor ebx, eax
+        mov dword ptr [esi + 0x84], eax
+        test bl, 1
+        je bit0_same
+        test al, 1
+        je bit0_clear
+        mov eax, dword ptr [mem_00AABD24]
+        push -1
+        inc eax
+        push 0
+        mov dword ptr [mem_00AABD24], eax
+        mov dword ptr [esi + 0x88], eax
+        mov eax, dword ptr [esi]
+        push 0xb5eb80
+        push 6
+        call dword ptr [eax + 0xa4]
+        mov edx, dword ptr [esi]
+        push 0
+        push 0
+        push 0
+        push esi
+        push 0x18
+        jmp tail
+    bit0_clear:
+        mov eax, dword ptr [esi]
+        push -1
+        push 0
+        push 0xb5eb80
+        push 7
+        mov ecx, esi
+        call dword ptr [eax + 0xa4]
+        mov edx, dword ptr [esi]
+        push 0
+        push 0
+        push 0
+        push esi
+        push 0x19
+        jmp tail
+    bit0_same:
+        test al, 1
+        je bit1_check
+        mov eax, dword ptr [mem_00AABD24]
+        push -1
+        inc eax
+        push 0
+        mov dword ptr [mem_00AABD24], eax
+        mov dword ptr [esi + 0x88], eax
+        mov eax, dword ptr [esi]
+        push 0xb5eb80
+        push 0x19
+        mov ecx, esi
+        call dword ptr [eax + 0xa4]
+        mov edx, dword ptr [esi]
+        push 0
+        push 0
+        push 0
+        push esi
+        push 0x1a
+    tail:
+        push 0
+        mov ecx, esi
+        call dword ptr [edx + 0x3c]
+        mov eax, dword ptr [esp + 0xc]
+    bit1_check:
+        test bl, 2
+        je ret_one
+        test al, 2
+        je bit1_clear
+        mov eax, dword ptr [esi]
+        push -1
+        push 0
+        push 0xb5eb80
+        push 0x10
+        mov ecx, esi
+        call dword ptr [eax + 0xa4]
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+    bit1_clear:
+        mov edx, dword ptr [esi]
+        push -1
+        push 0
+        push 0xb5eb80
+        push 0x11
+        mov ecx, esi
+        call dword ptr [edx + 0xa4]
+    ret_one:
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+    eq_path:
+        test bl, 1
+        je eq_end
+        mov eax, dword ptr [esi]
+        push -1
+        push 0
+        push 0xb5eb80
+        push 0x19
+        mov ecx, esi
+        call dword ptr [eax + 0xa4]
+        mov edx, dword ptr [esi]
+        push 0
+        push 0
+        push 0
+        push esi
+        push 0x1a
+        push 0
+        mov ecx, esi
+        call dword ptr [edx + 0x3c]
+    eq_end:
+        pop esi
+        xor al, al
+        pop ebx
+        ret 4
+    }
+}
