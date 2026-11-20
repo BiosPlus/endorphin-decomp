@@ -7886,3 +7886,79 @@ extern "C" __declspec(naked) int __fastcall fn_00725F40(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00723A40] sub_00723A40 (240 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_00724F00();
+extern "C" void ext_00782D30();
+extern "C" void ext_00789AD0();
+extern "C" __declspec(naked) void __fastcall fn_00723A40(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        mov ecx, dword ptr [esi + 0x10]
+        mov byte ptr [esi + 0x14], bl
+        cmp ecx, ebx
+        mov byte ptr [esi + 0x15], bl
+        mov byte ptr [esi + 0x16], bl
+        mov byte ptr [esi + 0x17], bl
+        mov dword ptr [esi + 0x4], 0x1770
+        mov dword ptr [esi + 0x8], ebx
+        je short L_skip_release
+        mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax]
+    L_skip_release:
+        push offset mem_00B5D2C0
+        lea ecx, [esi + 0x18]
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        call ext_006B9EC0
+        push offset mem_00B5D2C0
+        lea ecx, [esi + 0x64]
+        call ext_006B9EC0
+        push offset mem_00B5D2C0
+        lea ecx, [esi + 0xb0]
+        call ext_006B9EC0
+        push offset mem_00B5D2C0
+        lea ecx, [esi + 0xfc]
+        call ext_006B9EC0
+        push offset mem_00B5D2C0
+        lea ecx, [esi + 0x148]
+        call ext_006B9EC0
+        lea ecx, [esi + 0x194]
+        call ext_006D2250
+        lea ecx, [esi + 0x1ac]
+        call ext_006D2250
+        lea ecx, [esi + 0x238]
+        call ext_00782D30
+        mov ecx, esi
+        call ext_00724F00
+        cmp byte ptr [esi + 0x254], bl
+        je short L_clear_flag
+        push edi
+        mov edi, dword ptr [esi + 0x258]
+        cmp edi, ebx
+        je short L_no_obj
+        mov ecx, edi
+        call ext_00789AD0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_no_obj:
+        mov dword ptr [esi + 0x258], ebx
+        mov byte ptr [esi + 0x254], bl
+        mov byte ptr [esi + 0xf48], bl
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_clear_flag:
+        mov byte ptr [esi + 0xf48], bl
+        pop esi
+        pop ebx
+        ret
+    }
+}
