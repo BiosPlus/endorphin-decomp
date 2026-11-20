@@ -16095,3 +16095,142 @@ L_7BA65F:
         ret
     }
 }
+
+// [0x007B27D0] sub_007B27D0 (320 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B2DF0();
+extern "C" void ext_007B3CF0();
+extern "C" void ext_007B7110();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+extern "C" __declspec(naked) void __cdecl fn_007B27D0(void) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        test esi, esi
+        je L_27ED_007B27D0
+        test ebx, ebx
+        je L_27ED_007B27D0
+        mov eax, dword ptr [esp + 0x24]
+        test eax, eax
+        jne L_2804_007B27D0
+    L_27ED_007B27D0:
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_28FF_007B27D0
+    L_2804_007B27D0:
+        mov ecx, dword ptr [esi]
+        lea eax, [esp + 0x10]
+        push eax
+        push 0xb000
+        push ecx
+        call ext_007B2D80
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0xc
+        test al, al
+        je L_282F_007B27D0
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_28FF_007B27D0
+    L_282F_007B27D0:
+        mov ebp, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x18]
+        push eax
+        push ebp
+        push ecx
+        mov dword ptr [edx], 0
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x24]
+        add esp, 0xc
+        test eax, eax
+        je L_28FF_007B27D0
+    L_285C_007B27D0:
+        mov eax, dword ptr [eax + 0x14]
+        lea edx, [esp + 0x1c]
+        push edx
+        push 0xb010
+        push eax
+        call ext_007B2DF0
+        mov eax, dword ptr [esp + 0x28]
+        add esp, 0xc
+        test eax, eax
+        je L_28C4_007B27D0
+        push eax
+        call ext_007B3CF0
+        mov edi, dword ptr [esp + 0x20]
+        add esp, 0x4
+        mov eax, ebx
+        mov ecx, dword ptr [edi + 0xc]
+        mov esi, dword ptr [ecx]
+    L_288E_007B27D0:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_28B2_007B27D0
+        test cl, cl
+        je L_28AE_007B27D0
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_28B2_007B27D0
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_288E_007B27D0
+    L_28AE_007B27D0:
+        xor eax, eax
+        jmp L_28B7_007B27D0
+    L_28B2_007B27D0:
+        sbb eax, eax
+        sbb eax, -1
+    L_28B7_007B27D0:
+        test eax, eax
+        je L_28EC_007B27D0
+        push edi
+        call ext_007B7110
+        add esp, 0x4
+    L_28C4_007B27D0:
+        mov ecx, dword ptr [esp + 0x18]
+        lea eax, [esp + 0x18]
+        push eax
+        push ebp
+        mov edx, dword ptr [ecx + 0x10]
+        push edx
+        call ext_007B2DF0
+        mov eax, dword ptr [esp + 0x24]
+        add esp, 0xc
+        test eax, eax
+        jne L_285C_007B27D0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    L_28EC_007B27D0:
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x18]
+        push edi
+        mov dword ptr [ecx], eax
+        call ext_007B7110
+        add esp, 0x4
+    L_28FF_007B27D0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
