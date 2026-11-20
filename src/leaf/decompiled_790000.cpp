@@ -8539,3 +8539,96 @@ L_join:
         ret 8
     }
 }
+
+// [0x0079B750] sub_0079B750 (256 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0079B750(void* self, int idx, int a3, int a4) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esi + 0xd0]
+        mov eax, dword ptr [eax + 4*edi]
+        test eax, eax
+        je L_create
+        mov ecx, dword ptr [esi + 0x170]
+        test ecx, ecx
+        jne L_check2
+        test eax, eax
+        je L_create
+        mov ecx, dword ptr [esi + 0x1f8]
+        push 0
+        push eax
+        push ecx
+        call dword ptr [esi + 0x204]
+        mov edx, dword ptr [esi + 0xd0]
+        add esp, 0xc
+        cmp eax, dword ptr [edx + 4*edi]
+        je L_store170
+        mov eax, dword ptr [esi + 0x164]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        push 0xaafe1c
+        push 0x99751c
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_create:
+        mov edx, dword ptr [esi + 0x1f8]
+        push 2
+        push 0
+        push edx
+        call dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esi + 0xd0]
+        add esp, 0xc
+        mov dword ptr [ecx + 4*edi], eax
+L_store170:
+        mov edx, dword ptr [esi + 0xd0]
+        mov eax, dword ptr [edx + 4*edi]
+        mov dword ptr [esi + 0x170], eax
+L_check2:
+        mov ebx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esi + 0x1f8]
+        push ebx
+        push ecx
+        push edx
+        call dword ptr [esi + 0x200]
+        add esp, 0xc
+        cmp eax, ebx
+        je L_ok
+        mov eax, dword ptr [esi + 0x164]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        push 0xaafdfc
+        push 0x99751c
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_ok:
+        mov edx, dword ptr [esi + 0x170]
+        add edx, ebx
+        mov dword ptr [esi + 0x170], edx
+        mov edx, dword ptr [esi + 0xd4]
+        mov ecx, dword ptr [edx + 4*edi]
+        lea eax, [edx + 4*edi]
+        add ecx, ebx
+        pop edi
+        mov dword ptr [eax], ecx
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+    }
+}
