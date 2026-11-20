@@ -12627,3 +12627,167 @@ extern "C" __declspec(naked) void __fastcall fn_006BBAE0(void* self) {
         ret
     }
 }
+
+// [0x006BC800] sub_006BC800 (352 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006BA220();
+extern "C" void ext_006E7410();
+extern "C" void ext_006E7460();
+
+// Frame has an EH record (fs:[0] push, state -1) with two local objects whose
+// destructors run on the success path; kept as a verbatim naked transcription.
+extern "C" __declspec(naked) bool __fastcall fn_006BC800(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 8BCB18h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 4Ch
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 64h]
+        push esi
+        mov esi, ecx
+        push edi
+        push ebp
+        lea ecx, [esi + 78h]
+        call ext_006B9EC0
+        mov ecx, dword ptr [esi + 8h]
+        push ebp
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 28h]
+        mov bl, al
+        mov eax, dword ptr [esi + 4h]
+        xor edi, edi
+        mov ecx, dword ptr [eax + 4h]
+        test ecx, ecx
+        jle short L1_006BC800
+L2_006BC800:
+        mov ecx, dword ptr [eax + 14h]
+        push ebp
+        mov ecx, dword ptr [ecx + edi*4]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 28h]
+        test al, al
+        je short L3_006BC800
+        test bl, bl
+        je short L3_006BC800
+        mov bl, 1
+        jmp short L4_006BC800
+L3_006BC800:
+        xor bl, bl
+L4_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        inc edi
+        cmp edi, dword ptr [eax + 4h]
+        jl short L2_006BC800
+L1_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        xor edi, edi
+        mov ecx, dword ptr [eax + 34h]
+        test ecx, ecx
+        jle short L5_006BC800
+L6_006BC800:
+        mov eax, dword ptr [eax + 44h]
+        push ebp
+        mov ecx, dword ptr [eax + edi*4]
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 28h]
+        test al, al
+        je short L7_006BC800
+        test bl, bl
+        je short L7_006BC800
+        mov bl, 1
+        jmp short L8_006BC800
+L7_006BC800:
+        xor bl, bl
+L8_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        inc edi
+        cmp edi, dword ptr [eax + 34h]
+        jl short L6_006BC800
+L5_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        xor edi, edi
+        mov ecx, dword ptr [eax + 1ch]
+        test ecx, ecx
+        jle short L9_006BC800
+L10_006BC800:
+        mov eax, dword ptr [eax + 2ch]
+        push ebp
+        mov ecx, dword ptr [eax + edi*4]
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 28h]
+        test al, al
+        je short L11_006BC800
+        test bl, bl
+        je short L11_006BC800
+        mov bl, 1
+        jmp short L12_006BC800
+L11_006BC800:
+        xor bl, bl
+L12_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        inc edi
+        cmp edi, dword ptr [eax + 1ch]
+        jl short L10_006BC800
+L9_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        xor edi, edi
+        mov ecx, dword ptr [eax + 64h]
+        test ecx, ecx
+        jle short L13_006BC800
+L14_006BC800:
+        mov eax, dword ptr [eax + 74h]
+        push ebp
+        mov ecx, dword ptr [eax + edi*4]
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 28h]
+        test al, al
+        je short L15_006BC800
+        test bl, bl
+        je short L15_006BC800
+        mov bl, 1
+        jmp short L16_006BC800
+L15_006BC800:
+        xor bl, bl
+L16_006BC800:
+        mov eax, dword ptr [esi + 4h]
+        inc edi
+        cmp edi, dword ptr [eax + 64h]
+        jl short L14_006BC800
+L13_006BC800:
+        test bl, bl
+        jne short L17_006BC800
+        push 0AA874Ch
+        lea ecx, [esp + 14h]
+        call ext_006B9D80
+        push ebp
+        lea ecx, [esp + 14h]
+        mov dword ptr [esp + 68h], 0
+        call ext_006BA220
+        lea ecx, [esp + 10h]
+        call ext_006E7460
+        push eax
+        push 0
+        lea ecx, [esi + 0E0h]
+        call ext_006E7410
+        lea ecx, [esp + 10h]
+        mov dword ptr [esp + 64h], -1
+        call ext_006B9D70
+L17_006BC800:
+        mov ecx, dword ptr [esp + 5Ch]
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 58h
+        ret 4
+    }
+}
