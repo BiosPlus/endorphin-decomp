@@ -33,5 +33,7 @@
     "0x0070E83F",
     "0x0070E84F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-20T15:39:04Z"
 }
