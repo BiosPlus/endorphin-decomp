@@ -8453,3 +8453,110 @@ extern "C" __declspec(naked) int __cdecl fn_008529D0(void* p, unsigned char flag
         ret
     }
 }
+
+// [0x0085DE20] sub_0085DE20 (272 bytes)
+extern "C" int mem_00AB990C;
+extern "C" int mem_00AB9910;
+extern "C" int mem_00AB9B20;
+extern "C" int mem_00AB9B24;
+extern "C" int mem_00AB9F30;
+extern "C" int mem_00AB9F34;
+
+extern "C" __declspec(naked) void __fastcall fn_0085DE20(void* self) {
+    __asm {
+        mov edx, dword ptr [mem_00AB990C]
+        cmp edx, 1
+        jge L1
+        mov edx, 2
+    L1:
+        mov dword ptr [mem_00AB990C], edx
+        cmp edx, 60
+        jle L2
+        mov edx, 60
+    L2:
+        mov ecx, dword ptr [mem_00AB9910]
+        cmp ecx, 1
+        jge L3
+        mov ecx, 1
+    L3:
+        mov dword ptr [mem_00AB9910], ecx
+        cmp ecx, 30
+        jle L4
+        mov ecx, 30
+    L4:
+        mov eax, dword ptr [mem_00AB9B20]
+        test eax, eax
+        jne L5
+        mov eax, edx
+    L5:
+        mov dword ptr [mem_00AB9B20], eax
+        cmp eax, 1
+        jge L6
+        mov eax, 1
+    L6:
+        mov dword ptr [mem_00AB9B20], eax
+        cmp eax, 60
+        jle L7
+        mov dword ptr [mem_00AB9B20], 60
+    L7:
+        mov eax, dword ptr [mem_00AB9B24]
+        test eax, eax
+        jne L8
+        mov eax, ecx
+    L8:
+        mov dword ptr [mem_00AB9B24], eax
+        cmp eax, 1
+        jge L9
+        mov eax, 1
+    L9:
+        mov dword ptr [mem_00AB9B24], eax
+        cmp eax, 30
+        jle L10
+        mov dword ptr [mem_00AB9B24], 30
+    L10:
+        mov eax, dword ptr [mem_00AB9F30]
+        mov dword ptr [mem_00AB990C], edx
+        test eax, eax
+        jne L11
+        mov eax, edx
+    L11:
+        mov dword ptr [mem_00AB9F30], eax
+        cmp eax, 1
+        jge L12
+        mov eax, 1
+    L12:
+        mov dword ptr [mem_00AB9F30], eax
+        cmp eax, 60
+        jle L13
+        mov dword ptr [mem_00AB9F30], 60
+    L13:
+        mov eax, dword ptr [mem_00AB9F34]
+        mov dword ptr [mem_00AB9910], ecx
+        test eax, eax
+        jne L14
+        mov eax, ecx
+    L14:
+        mov dword ptr [mem_00AB9F34], eax
+        cmp eax, 1
+        jge L15
+        mov eax, 1
+    L15:
+        mov dword ptr [mem_00AB9F34], eax
+        cmp eax, 30
+        jle L16
+        mov dword ptr [mem_00AB9F34], 30
+    L16:
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
