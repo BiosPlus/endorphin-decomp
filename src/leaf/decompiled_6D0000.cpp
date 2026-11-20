@@ -11998,3 +11998,108 @@ extern "C" __declspec(naked) void __fastcall fn_006D54F0(void* self, int edx_unu
         jmp short L_epilogue
     }
 }
+
+// [0x006DC7E0] sub_006DC7E0 (256 bytes)
+extern "C" void ext_006C9360();
+extern "C" void ext_006DC480();
+extern "C" void ext_006E5150();
+extern "C" __declspec(naked) void __fastcall fn_006DC7E0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        mov dword ptr [esp + 0x4], 0xffffffff
+        mov dword ptr [esp + 0x8], 0x7fffffff
+        mov dword ptr [esp + 0xc], 0x1
+        mov dword ptr [esp + 0x10], 0x80000000
+        xor bl, bl
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C9360
+        test eax, eax
+        je L_006DC8D1
+        lea ecx, [esp + 0xc]
+        lea edx, [esp + 0x4]
+        push ecx
+        push edx
+        mov ecx, eax
+        call ext_006E5150
+        test al, al
+        je L_006DC8D3
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0xc], edi
+        mov edi, dword ptr [ecx + 0x4]
+        cmp edi, edx
+        mov dword ptr [esp + 0x1c], esi
+        mov dword ptr [esp + 0x20], edx
+        mov dword ptr [esp + 0x10], edi
+        jg L_006DC868
+        jl L_006DC862
+        mov edx, dword ptr [ecx]
+        cmp edx, esi
+        jae L_006DC868
+    L_006DC862:
+        lea edx, [esp + 0xc]
+        jmp L_006DC86C
+    L_006DC868:
+        lea edx, [esp + 0x1c]
+    L_006DC86C:
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x18]
+        mov esi, dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0x10], edx
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esp + 0x1c], edi
+        mov edi, dword ptr [ecx + 0x4]
+        cmp edi, edx
+        mov dword ptr [esp + 0x20], edi
+        jl L_006DC8BA
+        jg L_006DC8A3
+        mov edx, dword ptr [ecx]
+        cmp edx, esi
+        jbe L_006DC8BA
+    L_006DC8A3:
+        lea edx, [esp + 0x1c]
+        pop edi
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        pop esi
+        mov dword ptr [ecx + 0x4], edx
+        pop ebx
+        add esp, 0x18
+        ret 0x8
+    L_006DC8BA:
+        lea edx, [esp + 0xc]
+        pop edi
+        mov esi, dword ptr [edx]
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [ecx], esi
+        pop esi
+        mov dword ptr [ecx + 0x4], edx
+        pop ebx
+        add esp, 0x18
+        ret 0x8
+    L_006DC8D1:
+        mov al, bl
+    L_006DC8D3:
+        pop ebx
+        add esp, 0x18
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
