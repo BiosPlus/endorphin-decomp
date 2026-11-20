@@ -14255,3 +14255,74 @@ extern "C" __declspec(naked) void __cdecl fn_007BB700(void* self, int arg1) {
         ret
     }
 }
+
+// [0x007BD4E0] sub_007BD4E0 (252 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079B140();
+extern "C" void ext_007AF420();
+extern "C" void ext_007BF4E0();
+
+extern "C" __declspec(naked) int __cdecl fn_007BD4E0(void* a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        push 0x78
+        call ext_0079AF40
+        mov esi, dword ptr [esp + 0x14]
+        mov edi, eax
+        xor ebx, ebx
+        add esp, 0x4
+        cmp edi, ebx
+        mov dword ptr [esi + 0x1cc], edi
+        jne L_7BD517
+        push 0xab2224
+        push 0xab2218
+        call ext_0079B140
+        add esp, 0x8
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_7BD517:
+        push 0x1
+        push 0x999bd8
+        push esi
+        mov dword ptr [edi + 0x50], ebx
+        mov dword ptr [edi + 0x54], ebx
+        mov dword ptr [edi + 0x58], ebx
+        mov dword ptr [edi + 0x5c], ebx
+        call ext_007AF420
+        mov eax, dword ptr [esi + 0x220]
+        push esi
+        mov dword ptr [edi + 0x70], eax
+        mov ecx, dword ptr [esi + 0x21c]
+        mov dword ptr [esi + 0x220], 0x7bd9e0
+        mov dword ptr [edi + 0x74], ecx
+        mov dword ptr [esi + 0x21c], 0x7bd960
+        mov eax, 0x7bd670
+        mov dword ptr [edi + 0x68], 0xffffffff
+        mov dword ptr [edi + 0x6c], ebx
+        mov dword ptr [esi + 0x1a0], eax
+        mov dword ptr [esi + 0x1a8], eax
+        mov dword ptr [esi + 0x1b0], eax
+        mov eax, 0x7bd7d0
+        mov dword ptr [esi + 0x18c], 0x7bd5e0
+        mov dword ptr [esi + 0x190], 0x7bd640
+        mov dword ptr [esi + 0x194], 0x7bd740
+        mov dword ptr [esi + 0x198], 0x7bd7a0
+        mov dword ptr [esi + 0x19c], 0x7bd870
+        mov dword ptr [esi + 0x1a4], eax
+        mov dword ptr [esi + 0x1ac], eax
+        mov dword ptr [esi + 0x1b4], eax
+        mov dword ptr [esi + 0x1c0], 0x7bd910
+        call ext_007BF4E0
+        add esp, 0x10
+        mov eax, 0x1
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
