@@ -2562,3 +2562,109 @@ extern "C" __declspec(naked) void __fastcall fn_00872070(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00871330] sub_00871330 (273 bytes)
+// Reads its first stack arg (self) with `mov ecx,[esp+4]` and a second stack arg at [esp+8] -> __cdecl.
+// SEH frame (state -1) + std::string local at esp+0x18; naked to pin the exact encoding.
+extern "C" void ext_0063E050();
+extern "C" void ext_0063E460();
+extern "C" void ext_006A5C62();
+extern "C" void ext_00870E40();
+extern "C" void ext_00870E90();
+extern "C" void ext_00870F40();
+extern "C" void ext_00871090();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_00871330(void* self, int arg1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        mov ecx, dword ptr [esp + 0x4]
+        push -1
+        push 0x8c2074
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x30
+        push 0x97cd2c
+        call ext_00870F40
+        test al, al
+        jne L_87136b
+        xor eax, eax
+        mov ecx, dword ptr [esp + 0x30]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret
+    L_87136b:
+        mov eax, dword ptr [ecx + 0x8]
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [esp + 0x8], eax
+        mov eax, dword ptr [ecx + 0x14]
+        push 0x99f144
+        mov dword ptr [esp + 0x8], ecx
+        mov dword ptr [esp + 0x10], edx
+        mov dword ptr [esp + 0x14], eax
+        call ext_00870F40
+        test al, al
+        jne L_8713b9
+    L_871392:
+        call ext_00870E90
+        cmp al, 0x9
+        je L_8713ab
+        cmp al, 0xa
+        je L_8713ab
+        cmp al, 0xd
+        je L_8713ab
+        cmp al, 0x20
+        jl L_87143a
+    L_8713ab:
+        push 0x99f144
+        call ext_00870F40
+        test al, al
+        je L_871392
+    L_8713b9:
+        push 0x3e
+        call ext_00871090
+        test al, al
+        jne L_8713cb
+        push 0x17
+        call ext_00870E40
+    L_8713cb:
+        push esi
+        lea ecx, [esp + 0x18]
+        call dword ptr [mem_00924FE8]
+        push 0x3
+        lea ecx, [esp + 0x1c]
+        push ecx
+        xor esi, esi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x44], esi
+        call ext_0063E050
+        push 0x40
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        cmp eax, esi
+        mov byte ptr [esp + 0x3c], 0x1
+        je L_871416
+        mov ecx, dword ptr [esp + 0x48]
+        lea edx, [esp + 0x18]
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_0063E460
+        mov esi, eax
+    L_871416:
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x34]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x3c
+        ret
+    L_87143a:
+        push 0x2
+        call ext_00870E40
+    }
+}
