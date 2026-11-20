@@ -5735,3 +5735,129 @@ extern "C" __declspec(naked) void __fastcall fn_00778200(void* self) {
 
     }
 }
+
+// [0x00771E00] sub_00771E00 (344 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00771E00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8c0f43
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x64]
+        mov ebx, ecx
+        push esi
+        push edi
+        mov ecx, ebp
+        call ext_006E6340
+        mov dword ptr [esp + 0x6c], eax
+        lea eax, [esp + 0x6c]
+        push eax
+        mov ecx, ebx
+        call ext_00771FC0
+        mov edi, dword ptr [esp + 0x6c]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        mov eax, dword ptr [esp + 0x70]
+        not ecx
+        dec ecx
+        lea edx, [eax - 3]
+        cmp ecx, edx
+        jbe t771e_a
+        add eax, -3
+        mov ecx, ebx
+        push eax
+        lea eax, [esp + 0x70]
+        push eax
+        call ext_00772010
+    t771e_a:
+        mov eax, dword ptr [ebx + 0x1c]
+        lea edi, [ebx + 0x1c]
+        xor esi, esi
+        test eax, eax
+        jle t771e_b
+    t771e_loop:
+        mov ecx, dword ptr [esp + 0x6c]
+        mov edx, dword ptr [ebx + 0x2c]
+        push ecx
+        mov ecx, dword ptr [edx + 4*esi]
+        call ext_006BA7C0
+        test al, al
+        jne t771e_found
+        mov eax, dword ptr [edi]
+        inc esi
+        cmp esi, eax
+        jl t771e_loop
+    t771e_b:
+        push 0x50
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x70], esi
+        test esi, esi
+        mov dword ptr [esp + 0x64], 1
+        je t771e_null
+        mov ecx, ebp
+        call ext_006E6340
+        push eax
+        mov ecx, esi
+        call ext_006B9D80
+        mov dword ptr [esi + 0x4c], 0
+        jmp t771e_join
+    t771e_found:
+        lea ecx, [esp + 0x10]
+        call ext_006B9D10
+        mov eax, dword ptr [ebx + 0x2c]
+        mov dword ptr [esp + 0x64], 0
+        mov eax, dword ptr [eax + 4*esi]
+        mov ecx, dword ptr [eax + 0x4c]
+        inc ecx
+        mov dword ptr [eax + 0x4c], ecx
+        mov ecx, dword ptr [ebx + 0x2c]
+        mov edx, dword ptr [ecx + 4*esi]
+        lea ecx, [esp + 0x10]
+        push edx
+        call ext_006B9E60
+        mov eax, dword ptr [ebx + 0x2c]
+        mov ecx, dword ptr [eax + 4*esi]
+        mov edx, dword ptr [ecx + 0x4c]
+        lea ecx, [esp + 0x10]
+        push edx
+        call ext_006BA260
+        lea ecx, [esp + 0x10]
+        call ext_006E7460
+        push eax
+        mov ecx, ebp
+        call ext_006E6350
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        mov al, 1
+        jmp t771e_end
+    t771e_null:
+        xor esi, esi
+    t771e_join:
+        mov ecx, dword ptr [edi]
+        lea eax, [esp + 0x70]
+        push eax
+        push ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x6c], -1
+        mov dword ptr [esp + 0x78], esi
+        call ext_006D2170
+        xor al, al
+    t771e_end:
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 8
+    }
+}
