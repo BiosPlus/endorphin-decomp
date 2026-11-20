@@ -21020,3 +21020,158 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_007C3790(unsigned int adler
         nop
     }
 }
+
+// [0x007C2160] sub_007C2160 (324 bytes)
+extern "C" void ext_007C1F90();
+extern "C" void ext_007C22B0();
+extern "C" void ext_007C3F60();
+
+// Two stack arguments (self, arg2), caller-cleaned (ret 0).
+extern "C" __declspec(naked) int __cdecl fn_007C2160(void* self, int arg2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, 0xffff
+L2168:
+        mov eax, dword ptr [esi + 0xc]
+        add eax, -5
+        cmp eax, edi
+        jae L2177
+        mov edi, eax
+L2177:
+        mov eax, dword ptr [esi + 0x6c]
+        cmp eax, 1
+        ja L2193
+        push esi
+        call ext_007C22B0
+        mov eax, dword ptr [esi + 0x6c]
+        add esp, 4
+        test eax, eax
+        je L223E
+L2193:
+        mov ecx, dword ptr [esi + 0x64]
+        mov dword ptr [esi + 0x6c], 0
+        add ecx, eax
+        mov dword ptr [esi + 0x64], ecx
+        mov ecx, dword ptr [esi + 0x54]
+        mov edx, dword ptr [esi + 0x64]
+        lea eax, [ecx + edi]
+        je L21B1
+        cmp edx, eax
+        jb L21EC
+L21B1:
+        sub edx, eax
+        mov dword ptr [esi + 0x64], eax
+        test ecx, ecx
+        mov dword ptr [esi + 0x6c], edx
+        jl L21C4
+        mov edx, dword ptr [esi + 0x30]
+        add edx, ecx
+        jmp L21C6
+L21C4:
+        xor edx, edx
+L21C6:
+        sub eax, ecx
+        push 0
+        push eax
+        push edx
+        push esi
+        call ext_007C3F60
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [esi + 0x64]
+        push ecx
+        mov dword ptr [esi + 0x54], eax
+        call ext_007C1F90
+        mov edx, dword ptr [esi]
+        add esp, 0x14
+        mov eax, dword ptr [edx + 0x10]
+        test eax, eax
+        je L2239
+L21EC:
+        mov ecx, dword ptr [esi + 0x54]
+        mov edx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [esi + 0x24]
+        sub edx, ecx
+        sub eax, 0x106
+        cmp edx, eax
+        jb L2177
+        test ecx, ecx
+        jl L220F
+        mov eax, dword ptr [esi + 0x30]
+        add eax, ecx
+        jmp L2211
+L220F:
+        xor eax, eax
+L2211:
+        push 0
+        push edx
+        push eax
+        push esi
+        call ext_007C3F60
+        mov edx, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x64]
+        push edx
+        mov dword ptr [esi + 0x54], ecx
+        call ext_007C1F90
+        mov eax, dword ptr [esi]
+        add esp, 0x14
+        mov ecx, dword ptr [eax + 0x10]
+        test ecx, ecx
+        jne L2177
+L2239:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+L223E:
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        je L2239
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        jl L2254
+        mov eax, dword ptr [esi + 0x30]
+        add eax, ecx
+        jmp L2256
+L2254:
+        xor eax, eax
+L2256:
+        xor edx, edx
+        cmp edi, 4
+        sete dl
+        push edx
+        mov edx, dword ptr [esi + 0x64]
+        sub edx, ecx
+        push edx
+        push eax
+        push esi
+        call ext_007C3F60
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [esi + 0x64]
+        push ecx
+        mov dword ptr [esi + 0x54], eax
+        call ext_007C1F90
+        mov edx, dword ptr [esi]
+        add esp, 0x14
+        mov eax, dword ptr [edx + 0x10]
+        test eax, eax
+        jne L2295
+        xor eax, eax
+        cmp edi, 4
+        setne al
+        dec eax
+        pop edi
+        and eax, 2
+        pop esi
+        ret
+L2295:
+        xor eax, eax
+        cmp edi, 4
+        sete al
+        pop edi
+        pop esi
+        lea eax, [eax + eax + 1]
+        ret
+    }
+}
