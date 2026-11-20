@@ -13,5 +13,7 @@
     "0x007258FA",
     "0x00725918"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-20T15:08:45Z"
 }
