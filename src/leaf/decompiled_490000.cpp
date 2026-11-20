@@ -15952,3 +15952,133 @@ extern "C" __declspec(naked) void* __fastcall fn_0049FD50(void* self, int, const
         call ext_006A6DD2
     }
 }
+
+// [0x00491B60] sub_00491B60 (304 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_0048FB80();
+extern "C" void ext_00491620();
+extern "C" void ext_00491730();
+extern "C" void ext_006A5C5C(void* arg);
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_00491B60(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x885890
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        cmp edi, 0x2108421
+        mov dword ptr [ebp - 0x10], esp
+        mov esi, ecx
+        jbe short L_491B93
+        call ext_00405FB0
+    L_491B93:
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je short L_491BB2
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        mov eax, 0x84210843
+        imul ecx
+        add edx, ecx
+        sar edx, 0x6
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_491BB2:
+        cmp eax, edi
+        jae L_491C68
+        push 0x0
+        push edi
+        call ext_0048FB80
+        mov ebx, dword ptr [esi + 0x8]
+        add esp, 0x8
+        cmp dword ptr [esi + 0x4], ebx
+        mov dword ptr [ebp - 0x14], eax
+        mov dword ptr [ebp - 0x4], 0x0
+        jbe short L_491BDD
+        call dword ptr [mem_00925134]
+    L_491BDD:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_491BEB
+        call dword ptr [mem_00925134]
+    L_491BEB:
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp - 0x14]
+        mov byte ptr [ebp - 0x18], 0x0
+        mov eax, dword ptr [ebp - 0x18]
+        push eax
+        push ecx
+        push esi
+        push edx
+        push ebx
+        push edi
+        call ext_00491620
+        mov ebx, dword ptr [esi + 0x4]
+        add esp, 0x18
+        test ebx, ebx
+        mov dword ptr [ebp - 0x4], 0xffffffff
+        jne short L_491C18
+        xor edi, edi
+        jmp short L_491C30
+    L_491C18:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, ebx
+        mov eax, 0x84210843
+        imul ecx
+        add edx, ecx
+        sar edx, 0x6
+        mov edi, edx
+        shr edi, 0x1f
+        add edi, edx
+    L_491C30:
+        test ebx, ebx
+        je short L_491C4F
+        mov eax, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [esi + 0x8]
+        push eax
+        push esi
+        push ecx
+        push ebx
+        call ext_00491730
+        mov edx, dword ptr [esi + 0x4]
+        push edx
+        call ext_006A5C5C
+        add esp, 0x14
+    L_491C4F:
+        mov eax, dword ptr [ebp + 0x8]
+        imul edi, edi, 0x7c
+        mov ecx, dword ptr [ebp - 0x14]
+        imul eax, eax, 0x7c
+        add eax, ecx
+        add edi, ecx
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x8], edi
+        mov dword ptr [esi + 0x4], ecx
+    L_491C68:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+        mov eax, dword ptr [ebp - 0x14]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    }
+}
