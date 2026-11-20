@@ -13564,3 +13564,132 @@ extern "C" __declspec(naked) void* __fastcall fn_006FDD40(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x006FE2A0] sub_006FE2A0 (320 bytes)
+extern "C" int mem_00925278;
+extern "C" int mem_009252A0;
+extern "C" void ext_006FF230();
+
+extern "C" __declspec(naked) void __cdecl fn_006FE2A0(void) {
+    __asm {
+        sub esp, 0x404
+        push ebx
+        mov ebx, dword ptr [esp + 0x414]
+        push esi
+        push edi
+        push 0x3a
+        push ebx
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00925278]
+        add esp, 0x8
+        test eax, eax
+        jne L_copy_a1
+        push 0x2
+        push 0xaab928
+        push ebx
+        call dword ptr [mem_009252A0]
+        add esp, 0xc
+        test eax, eax
+        je L_copy_a1
+        mov edi, dword ptr [esp + 0x418]
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0x10]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        xor eax, eax
+        and ecx, 0x3
+        rep movsb
+        lea edi, [esp + 0x10]
+        or ecx, -1
+        repne scasb
+        not ecx
+        dec ecx
+        cmp byte ptr [esp + ecx + 0xf], 0x2f
+        je L_after_sep
+        lea edi, [esp + 0x10]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        cmp byte ptr [esp + ecx + 0xf], 0x5c
+        je L_after_sep
+        mov edi, 0xaa9444
+        or ecx, -1
+        xor eax, eax
+        push ebp
+        repne scasb
+        not ecx
+        sub edi, ecx
+        lea edx, [esp + 0x14]
+        mov esi, edi
+        mov ebp, ecx
+        mov edi, edx
+        or ecx, -1
+        repne scasb
+        mov ecx, ebp
+        dec edi
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, ebp
+        pop ebp
+        and ecx, 0x3
+        rep movsb
+    L_after_sep:
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0x10]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov esi, edi
+        mov ebx, ecx
+        mov edi, edx
+        or ecx, -1
+        repne scasb
+        mov ecx, ebx
+        dec edi
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, ebx
+        jmp L_join
+    L_copy_a1:
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0x10]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+    L_join:
+        and ecx, 0x3
+        rep movsb
+        mov esi, dword ptr [esp + 0x414]
+        lea ecx, [esp + 0x10]
+        push ecx
+        push esi
+        call ext_006FF230
+        add esp, 0x8
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x404
+        ret
+    }
+}
