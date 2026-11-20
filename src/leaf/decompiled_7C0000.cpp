@@ -20623,3 +20623,128 @@ L_err_fe:
         ret
     }
 }
+
+// [0x007C22B0] sub_007C22B0 (272 bytes)
+extern "C" void ext_007C23C0();
+
+extern "C" __declspec(naked) void __cdecl fn_007C22B0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        mov ebp, dword ptr [ebx + 0x24]
+        push edi
+    L007C22BB:
+        mov edx, dword ptr [ebx + 0x34]
+        mov ecx, dword ptr [ebx + 0x6c]
+        mov eax, dword ptr [ebx + 0x64]
+        sub edx, ecx
+        mov ecx, dword ptr [ebx + 0x24]
+        sub edx, eax
+        lea ecx, [ecx + ebp - 0x106]
+        cmp eax, ecx
+        jb L007C2347
+        mov edi, dword ptr [ebx + 0x30]
+        mov ecx, ebp
+        mov eax, ecx
+        lea esi, [edi + ebp]
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        mov esi, dword ptr [ebx + 0x68]
+        mov ecx, dword ptr [ebx + 0x64]
+        mov eax, dword ptr [ebx + 0x54]
+        sub esi, ebp
+        sub ecx, ebp
+        mov dword ptr [ebx + 0x68], esi
+        mov esi, dword ptr [ebx + 0x44]
+        mov dword ptr [ebx + 0x64], ecx
+        mov ecx, dword ptr [ebx + 0x3c]
+        sub eax, ebp
+        mov dword ptr [ebx + 0x54], eax
+        lea ecx, [ecx + esi * 2]
+    L007C230D:
+        sub ecx, 0x2
+        xor eax, eax
+        mov ax, word ptr [ecx]
+        cmp eax, ebp
+        jb L007C231D
+        sub eax, ebp
+        jmp L007C231F
+    L007C231D:
+        xor eax, eax
+    L007C231F:
+        dec esi
+        mov word ptr [ecx], ax
+        jne L007C230D
+        mov eax, dword ptr [ebx + 0x38]
+        mov esi, ebp
+        lea ecx, [eax + ebp * 2]
+    L007C232D:
+        sub ecx, 0x2
+        xor eax, eax
+        mov ax, word ptr [ecx]
+        cmp eax, ebp
+        jb L007C233D
+        sub eax, ebp
+        jmp L007C233F
+    L007C233D:
+        xor eax, eax
+    L007C233F:
+        dec esi
+        mov word ptr [ecx], ax
+        jne L007C232D
+        add edx, ebp
+    L007C2347:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je L007C23B0
+        mov ecx, dword ptr [ebx + 0x6c]
+        mov esi, dword ptr [ebx + 0x64]
+        push edx
+        mov edx, dword ptr [ebx + 0x30]
+        add ecx, esi
+        add ecx, edx
+        push ecx
+        push eax
+        call ext_007C23C0
+        mov ecx, dword ptr [ebx + 0x6c]
+        add esp, 0xc
+        add ecx, eax
+        mov esi, ecx
+        mov dword ptr [ebx + 0x6c], ecx
+        cmp esi, 0x3
+        jb L007C239B
+        mov edx, dword ptr [ebx + 0x64]
+        mov eax, dword ptr [ebx + 0x30]
+        mov ecx, dword ptr [ebx + 0x50]
+        lea edi, [edx + eax]
+        xor eax, eax
+        mov al, byte ptr [edi]
+        mov dword ptr [ebx + 0x40], eax
+        shl eax, cl
+        xor ecx, ecx
+        mov cl, byte ptr [edi + 0x1]
+        xor eax, ecx
+        mov ecx, dword ptr [ebx + 0x4c]
+        and eax, ecx
+        mov dword ptr [ebx + 0x40], eax
+    L007C239B:
+        cmp esi, 0x106
+        jae L007C23B0
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edx + 0x4]
+        test eax, eax
+        jne L007C22BB
+    L007C23B0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
