@@ -3696,3 +3696,112 @@ extern "C" __declspec(naked) void __fastcall fn_0074B860(void* self) {
         ret
     }
 }
+
+// [0x0074D170] sub_0074D170 (256 bytes)
+extern "C" int mem_00925184;
+extern "C" int mem_00AAE638;
+extern "C" int mem_009252C4;
+extern "C" int mem_0092528C;
+extern "C" int mem_009252AC;
+
+extern "C" __declspec(naked) void __cdecl fn_0074D170(void* f) {
+    __asm {
+        sub esp, 0x404
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x418]
+        push edi
+        call dword ptr [mem_00925184]
+        push 0x0
+        push 0x0
+        push edi
+        mov dword ptr [esp + 0x20], eax
+        xor bl, bl
+        mov dword ptr [mem_00AAE638], 0x400
+        call dword ptr [mem_009252C4]
+        mov ebp, dword ptr [mem_0092528C]
+        add esp, 0x10
+    L_read:
+        push edi
+        push 0x400
+        lea eax, [esp + 0x1c]
+        push 0x1
+        push eax
+        call dword ptr [mem_009252AC]
+        mov esi, eax
+        add esp, 0x10
+        test esi, esi
+        je L_eof
+        lea ecx, [esp + esi + 0x14]
+        lea eax, [esp + 0x14]
+        cmp eax, ecx
+        lea edx, [esp + 0x14]
+        jae L_eof
+    L_loop:
+        mov ecx, edx
+        lea eax, [esp + 0x14]
+        sub ecx, eax
+        mov al, byte ptr [edx]
+        cmp al, 0xa
+        je L_nl
+        cmp al, 0xd
+        je L_nl
+        cmp al, 0x5c
+        jne L_notbs
+        mov bl, 1
+        jmp L_adv
+    L_notbs:
+        inc edx
+        jmp L_adv
+    L_nl:
+        test bl, bl
+        jne L_bl
+        cmp dword ptr [mem_00AAE638], ecx
+        ja L_skipstore
+        mov dword ptr [mem_00AAE638], ecx
+    L_skipstore:
+        sub esi, ecx
+        inc edx
+        lea ecx, [esi - 0x1]
+        push ecx
+        push edx
+        lea edx, [esp + 0x1c]
+        push edx
+        call ebp
+        add esp, 0xc
+        dec esi
+        lea edx, [esp + 0x14]
+    L_adv:
+        lea eax, [esp + esi + 0x14]
+        cmp edx, eax
+        jb L_loop
+    L_eof:
+        test byte ptr [edi + 0xc], 0x10
+        je L_read
+        mov ebx, dword ptr [mem_00AAE638]
+        mov ecx, dword ptr [esp + 0x10]
+        push 0x0
+        add ebx, 0x2
+        push ecx
+        push edi
+        mov dword ptr [mem_00AAE638], ebx
+        call dword ptr [mem_009252C4]
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x404
+        ret
+    L_bl:
+        lea eax, [esi - 0x1]
+        cmp ecx, eax
+        jge L_adv
+        cmp byte ptr [edx + 0x1], 0xa
+        je L_adv
+        xor bl, bl
+        jmp L_adv
+    }
+}
