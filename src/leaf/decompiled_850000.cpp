@@ -8212,3 +8212,128 @@ extern "C" __declspec(naked) void __fastcall fn_0085DF30(void* self) {
         ret
     }
 }
+
+// [0x0085D8D0] sub_0085D8D0 (256 bytes)
+extern "C" void ext_0085D860();
+extern "C" void ext_0085D890();
+extern "C" __declspec(naked) void __cdecl fn_0085D8D0(void) {
+    __asm {
+        sub esp, 4
+        push ebx
+        push esi
+        mov si, word ptr [esp + 0x14]
+        push edi
+        test si, si
+        mov ebx, dword ptr [esp + 0x14]
+        je done
+    outer:
+        mov di, 0x10
+    inner:
+        mov eax, dword ptr [ebx + 4]
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0xc], eax
+        mov eax, dword ptr [esp + 0x1c]
+        and eax, 0xf
+        push eax
+        push ecx
+        call ext_0085D860
+        mov ecx, dword ptr [esp + 0x24]
+        lea eax, [esp + 0x24]
+        xor dword ptr [esp + 0x14], ecx
+        add esp, 8
+        mov edx, dword ptr [ebx]
+        push 2
+        xor dword ptr [esp + 0x10], edx
+        push eax
+        call ext_0085D890
+        add esp, 8
+        mov ecx, dword ptr [ebx + 4]
+        dec di
+        mov dword ptr [ebx], ecx
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [ebx + 4], edx
+        jne inner
+        add ebx, 8
+        inc dword ptr [esp + 0x1c]
+        dec si
+        jne outer
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        sub esp, 4
+        push ebx
+        push esi
+        mov si, word ptr [esp + 0x14]
+        push edi
+        test si, si
+        mov edi, dword ptr [esp + 0x14]
+        je done2
+    outer2:
+        mov bx, 0x10
+    inner2:
+        lea eax, [esp + 0x1c]
+        push 2
+        push eax
+        call ext_0085D860
+        lea ecx, [esp + 0x14]
+        add esp, 8
+        mov eax, dword ptr [edi]
+        mov dword ptr [esp + 0xc], eax
+        mov eax, dword ptr [esp + 0x1c]
+        and eax, 0xf
+        push eax
+        push ecx
+        call ext_0085D860
+        mov ecx, dword ptr [esp + 0x24]
+        xor dword ptr [esp + 0x14], ecx
+        add esp, 8
+        mov edx, dword ptr [edi + 0x4]
+        xor dword ptr [esp + 0xc], edx
+        dec bx
+        mov eax, dword ptr [edi]
+        mov dword ptr [edi + 0x4], eax
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [edi], ecx
+        jne inner2
+        add edi, 8
+        inc dword ptr [esp + 0x1c]
+        dec si
+        jne outer2
+    done2:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
