@@ -10204,3 +10204,150 @@ cb_ret_local:
         ret     4
     }
 }
+
+// [0x006CA3A0] sub_006CA3A0 (336 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9C40();
+extern "C" void ext_006C9DA0();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006C9F50();
+extern "C" void ext_006CA060();
+extern "C" void ext_006CB190();
+extern "C" void ext_006CB8E0();
+extern "C" void ext_006CBF00();
+extern "C" void ext_006CC310();
+extern "C" void ext_006D03E0();
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) void __fastcall fn_006CA3A0(void* self) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esi + 0x48], 0xffffffff
+        mov dword ptr [esi + 0x4c], 0x7fffffff
+        mov edi, dword ptr [esi + 0x24]
+        test edi, edi
+        jle end_6CA3A0
+        push ebx
+        lea ebx, [edi - 1]
+        push ebp
+        mov dword ptr [esp + 0x10], ebx
+loop_6CA3A0:
+        mov al, byte ptr [esp + 0x20]
+        test al, al
+        je skip1_6CA3A0
+        push ebx
+        mov ecx, esi
+        call ext_006CA060
+        mov ecx, eax
+        call ext_006C9F50
+        test al, al
+        je next_6CA3A0
+skip1_6CA3A0:
+        push ebx
+        mov ecx, esi
+        call ext_006CA060
+        mov ecx, eax
+        call ext_006C9C30
+        cmp dword ptr [esp + 0x24], eax
+        je next_6CA3A0
+        cmp edi, dword ptr [esi + 0x24]
+        jge ge1_6CA3A0
+        push ebx
+        mov ecx, esi
+        call ext_006CBF00
+        jmp after1_6CA3A0
+ge1_6CA3A0:
+        fld qword ptr [mem_0092A278]
+after1_6CA3A0:
+        mov eax, dword ptr [esi + 0x24]
+        fstp dword ptr [esp + 0x14]
+        cmp edi, eax
+        jge ge2_6CA3A0
+        push edi
+        mov ecx, esi
+        call ext_006CB190
+        jmp after2_6CA3A0
+ge2_6CA3A0:
+        fld qword ptr [mem_0092A278]
+after2_6CA3A0:
+        fstp dword ptr [esp + 0x18]
+        push ebx
+        mov ecx, esi
+        call ext_006CA060
+        mov ebp, eax
+        mov eax, dword ptr [esi + 0x24]
+        cmp edi, eax
+        jge ge3_6CA3A0
+        push edi
+        mov ecx, esi
+        call ext_006CA060
+        mov ebx, eax
+        jmp after3_6CA3A0
+ge3_6CA3A0:
+        xor ebx, ebx
+after3_6CA3A0:
+        push 0
+        push 0
+        mov ecx, ebp
+        call ext_006C9DF0
+        push 0
+        push 1
+        mov ecx, ebp
+        call ext_006C9DF0
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, ebp
+        push eax
+        call ext_006C9C40
+        push 0
+        mov ecx, ebp
+        call ext_006C9DA0
+        test ebx, ebx
+        je noebx_6CA3A0
+        push 0
+        mov ecx, ebx
+        call ext_006C9DA0
+noebx_6CA3A0:
+        cmp edi, dword ptr [esi + 0x24]
+        jge noupd_6CA3A0
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006CC310
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, esi
+        push eax
+        push edi
+        call ext_006CB8E0
+noupd_6CA3A0:
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push 0x10
+        mov ecx, esi
+        call ext_006D03E0
+        cmp edi, dword ptr [esi + 0x24]
+        jge tail_6CA3A0
+        push edi
+        push 0x10
+        mov ecx, esi
+        call ext_006D03E0
+tail_6CA3A0:
+        mov ebx, dword ptr [esp + 0x10]
+next_6CA3A0:
+        dec edi
+        dec ebx
+        test edi, edi
+        mov dword ptr [esp + 0x10], ebx
+        jg loop_6CA3A0
+        pop ebp
+        pop ebx
+end_6CA3A0:
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret 8
+    }
+}
