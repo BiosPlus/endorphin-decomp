@@ -15348,3 +15348,148 @@ extern "C" __declspec(naked) void __fastcall fn_004573A0(void* self) {
         call ext_006A60EE
     }
 }
+
+// [0x00456510] sub_00456510 (334 bytes)
+extern "C" int mem_00925678;
+
+// Stack args (ret 0x18): a0, a1, a2, a3 -> RECT {l,t,r,b} written to *out; mode selects a rect adjust.
+extern "C" __declspec(naked) int __fastcall fn_00456510(void* self, int edx_unused, int a0, int a1, int a2, int a3, int mode, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [mem_00925678]
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [esp + 0x18]
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 4], ecx
+        mov dword ptr [esi + 8], edx
+        mov dword ptr [esi + 0xc], eax
+        test byte ptr [edi + 0x94], 0x10
+        je L456_noinf
+        push -1
+        push -1
+        push esi
+        call ebx
+L456_noinf:
+        mov ecx, edi
+        call ext_00455CB0
+        mov ecx, dword ptr [esp + 0x20]
+        add ecx, -0xa
+        cmp ecx, 5
+        ja L456_ret1
+        jmp dword ptr [4*ecx + 0x456660]
+L456_c0:
+        test byte ptr [edi + 0x94], 1
+        jne L456_c0go
+L456_ret0:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 0x18
+L456_c0go:
+        mov ecx, dword ptr [edi + 0xf8]
+        add ecx, dword ptr [esi]
+        test eax, eax
+        mov dword ptr [esi + 8], ecx
+        je L456_c00
+        mov edi, dword ptr [edi + 0xf8]
+        neg edi
+        push edi
+        push 0
+        push esi
+        call ebx
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 0x18
+L456_c00:
+        xor edi, edi
+        neg edi
+        push edi
+        push 0
+        push esi
+        call ebx
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 0x18
+L456_c2:
+        test byte ptr [edi + 0x94], 4
+        je L456_ret0
+        mov edx, dword ptr [esi + 4]
+        add edx, dword ptr [edi + 0xf8]
+        test eax, eax
+        mov dword ptr [esi + 0xc], edx
+        je L456_c2call
+        xor edi, edi
+        push edi
+        neg edi
+        push edi
+        push esi
+        call ebx
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 0x18
+L456_c1:
+        test byte ptr [edi + 0x94], 2
+        je L456_ret0
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, dword ptr [edi + 0xf8]
+        test eax, eax
+        mov dword ptr [esi], ecx
+        je L456_c00
+        mov edi, dword ptr [edi + 0xf8]
+        neg edi
+        push edi
+        push 0
+        push esi
+        call ebx
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 0x18
+L456_c5:
+        test byte ptr [edi + 0x94], 8
+        je L456_ret0
+        mov edx, dword ptr [esi + 0xc]
+        sub edx, dword ptr [edi + 0xf8]
+        test eax, eax
+        mov dword ptr [esi + 4], edx
+        je L456_c2call
+        xor edi, edi
+        push edi
+        neg edi
+        push edi
+        push esi
+        call ebx
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 0x18
+L456_c2call:
+        mov edi, dword ptr [edi + 0xf8]
+        push 0
+        neg edi
+        push edi
+        push esi
+        call ebx
+L456_ret1:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 0x18
+    }
+}
