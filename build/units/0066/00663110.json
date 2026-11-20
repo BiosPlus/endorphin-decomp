@@ -36,5 +36,6 @@
     "0x00663297",
     "0x0066329C"
   ],
-  "status": "todo"
+  "status": "deferred",
+  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
 }
