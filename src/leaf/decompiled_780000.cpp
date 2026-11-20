@@ -10489,3 +10489,116 @@ extern "C" __declspec(naked) int __fastcall fn_0078A090(void* self, int edx_unus
         nop
     }
 }
+
+// [0x0078B210] sub_0078B210 (272 bytes)
+extern "C" void ext_0078AC90();
+extern "C" void ext_0078B180();
+// Cdecl(p): fills a 2-level table on the stack from p->[4] and p->[0x50], recursing via ext_0078B180 / ext_0078AC90; returns 1, or -3 on range failure.
+extern "C" __declspec(naked) int __cdecl fn_0078B210(void* p) {
+    __asm {
+        sub esp, 0x28
+        push ebp
+        mov ebp, dword ptr [esp + 0x30]
+        push edi
+        mov ecx, dword ptr [ebp + 0x4]
+        mov eax, dword ptr [ebp + 0x50]
+        mov edx, ecx
+        mov dword ptr [esp + 0x8], ecx
+        lea edi, [eax + eax + 0x8]
+        and edx, 0x8000003f
+        mov dword ptr [esp + 0xc], edi
+        jns L_skip_fix
+        dec edx
+        or edx, -0x40
+        inc edx
+    L_skip_fix:
+        jne L_fail
+        cmp ecx, 0x80
+        jl L_fail
+        cmp edi, 0x28
+        jg L_fail
+        lea eax, [ecx + 0x3f]
+        push ebx
+        cdq
+        and edx, 0x3f
+        push esi
+        add eax, edx
+        xor esi, esi
+        mov ebx, eax
+        sar ebx, 0x6
+        test ebx, ebx
+        jle L_after_first
+        lea edi, [ebp + 0x58]
+        lea ebp, [ebp + 4*ebx + 0x70]
+    L_first_loop:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [edi - 0x4]
+        push ecx
+        push eax
+        mov dword ptr [esp + 4*esi + 0x20], eax
+        mov dword ptr [esp + 4*esi + 0x30], ecx
+        call ext_0078B180
+        add esp, 0x8
+        mov dword ptr [ebp], eax
+        inc esi
+        add edi, 0x8
+        sub ebp, 0x4
+        cmp esi, ebx
+        jl L_first_loop
+        mov ecx, dword ptr [esp + 0x10]
+        mov ebp, dword ptr [esp + 0x3c]
+        mov edi, dword ptr [esp + 0x14]
+    L_after_first:
+        mov eax, edi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        test eax, eax
+        jle L_done
+        lea edi, [ebp + 0x88]
+        xor esi, esi
+        mov ebp, eax
+        jmp L_body
+    L_reload:
+        mov ecx, dword ptr [esp + 0x10]
+    L_body:
+        lea eax, [esp + 0x18]
+        push ecx
+        push eax
+        push esi
+        call ext_0078AC90
+        mov ecx, dword ptr [esp + 0x1c]
+        mov ebx, eax
+        lea edx, [esp + 0x34]
+        push ecx
+        lea eax, [esi + 0x1010101]
+        push edx
+        push eax
+        call ext_0078AC90
+        add esp, 0x18
+        add esi, 0x2020202
+        rol eax, 0x8
+        add edi, 0x8
+        dec ebp
+        lea edx, [ebx + 2*eax]
+        lea ecx, [eax + ebx]
+        rol edx, 0x9
+        mov dword ptr [edi - 0xc], ecx
+        mov dword ptr [edi - 0x8], edx
+        jne L_reload
+    L_done:
+        pop esi
+        pop ebx
+        pop edi
+        mov eax, 0x1
+        pop ebp
+        add esp, 0x28
+        ret
+    L_fail:
+        pop edi
+        mov eax, 0xfffffffd
+        pop ebp
+        add esp, 0x28
+        ret
+    }
+}
