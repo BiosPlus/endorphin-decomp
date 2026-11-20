@@ -3885,3 +3885,105 @@ extern "C" __declspec(naked) void* __fastcall fn_0074B230(void* self, int edx_un
         ret 0x18
     }
 }
+
+// [0x00742970] sub_00742970 (256 bytes)
+extern "C" void ext_006FDF30();
+extern "C" void ext_006FDF90();
+extern "C" void ext_00715550();
+extern "C" __declspec(naked) void __fastcall fn_00742970(void* self, int edx_unused, void* obj) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        mov ebx, ecx
+        push 0x3
+        mov ecx, edi
+        call ext_006FDF30
+        cmp eax, 0x1
+        jle fn_00742970_end
+        push 0x3
+        mov ecx, edi
+        call ext_006FDF30
+        xor esi, esi
+        mov dword ptr [esp + 0x1c], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], esi
+        jle fn_00742970_end
+        push ebp
+fn_00742970_outer:
+        push 0x3
+        push esi
+        mov ecx, edi
+        call ext_006FDF90
+        mov ecx, eax
+        call ext_00715550
+        mov ebp, eax
+        cmp dword ptr [ebp + 0x4], 0x2
+        jne fn_00742970_next
+        mov eax, dword ptr [ebx + 0x1b8]
+        test eax, eax
+        je fn_00742970_next
+        mov edx, dword ptr [ebp + 0x20]
+        xor ecx, ecx
+        test edx, edx
+        mov dword ptr [esp + 0x1c], edx
+        mov dword ptr [esp + 0x10], ecx
+        jle fn_00742970_next
+        lea esi, [ebp + 0x8]
+fn_00742970_jloop:
+        mov eax, dword ptr [ebp + 0x30]
+        mov edi, dword ptr [eax + 4*ecx]
+        mov eax, dword ptr [esi]
+        cmp eax, edi
+        jg fn_00742970_jnext
+fn_00742970_inner:
+        cmp eax, dword ptr [ebx + 0x1b8]
+        jge fn_00742970_bpath
+        mov ecx, dword ptr [ebx + 0x1c8]
+        mov edx, dword ptr [ecx + 4*eax]
+        mov ecx, dword ptr [esi]
+        lea eax, [esp + 0x18]
+        mov dword ptr [esp + 0x18], edx
+        push eax
+        push ecx
+        jmp fn_00742970_call
+fn_00742970_bpath:
+        mov edx, dword ptr [ebx + 0x1c8]
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov eax, dword ptr [edx]
+        mov edx, dword ptr [esi]
+        mov dword ptr [esp + 0x1c], eax
+        push edx
+fn_00742970_call:
+        mov ecx, esi
+        call ext_006D2170
+        mov eax, dword ptr [esi]
+        cmp eax, edi
+        jle fn_00742970_inner
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x10]
+fn_00742970_jnext:
+        inc ecx
+        cmp ecx, edx
+        mov dword ptr [esp + 0x10], ecx
+        jl fn_00742970_jloop
+        mov edi, dword ptr [esp + 0x28]
+        mov esi, dword ptr [esp + 0x14]
+fn_00742970_next:
+        mov eax, dword ptr [esp + 0x20]
+        inc esi
+        cmp esi, eax
+        mov dword ptr [esp + 0x14], esi
+        jl fn_00742970_outer
+        pop ebp
+fn_00742970_end:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret 0x4
+    }
+}
