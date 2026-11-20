@@ -4793,3 +4793,91 @@ L_done:
         ret 4
     }
 }
+
+// [0x0075DB50] sub_0075DB50 (288 bytes)
+extern "C" void ext_0071DEA0();
+extern "C" void ext_007275F0();
+extern "C" void ext_007279A0();
+extern "C" void ext_00727C80();
+extern "C" void ext_00727FE0();
+extern "C" void ext_007283B0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+
+extern "C" __declspec(naked) bool __fastcall fn_0075DB50(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp+16]
+        push edi
+        test ecx, ecx
+        mov dword ptr [esp+8], 0
+        mov dword ptr [esp+12], 0x40590000
+        je L_skip
+        call ext_0071DEA0
+        fstp qword ptr [esp+8]
+    L_skip:
+        mov edi, dword ptr [esi+172]
+        push 0xaa8e24
+        add edi, 4
+        mov ecx, edi
+        call ext_007275F0
+        push 0xaa8cc4
+        mov ecx, edi
+        call ext_007279A0
+        mov ecx, edi
+        call ext_007283B0
+        mov edi, dword ptr [esi+172]
+        push 0xaaeb08
+        add edi, 4
+        mov ecx, edi
+        call ext_007275F0
+        push 0xaa8cc4
+        mov ecx, edi
+        call ext_007279A0
+        mov ecx, edi
+        call ext_007283B0
+        mov ecx, dword ptr [esi+172]
+        push 0xaadb18
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, dword ptr [esi+172]
+        add ecx, 4
+        call ext_00728410
+        mov edi, dword ptr [esi+172]
+        push 0xaacd0c
+        add edi, 4
+        mov ecx, edi
+        call ext_007275F0
+        push 100
+        mov ecx, edi
+        call ext_00727C80
+        mov ecx, edi
+        call ext_007283B0
+        mov edi, dword ptr [esi+172]
+        push 0xaa9190
+        add edi, 4
+        mov ecx, edi
+        call ext_007275F0
+        mov eax, dword ptr [esp+12]
+        mov ecx, dword ptr [esp+8]
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_00727FE0
+        mov ecx, edi
+        call ext_007283B0
+        mov ecx, dword ptr [esi+172]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi+172]
+        add ecx, 4
+        call ext_007283B0
+        pop edi
+        mov al, 1
+        pop esi
+        add esp, 8
+        ret 4
+    }
+}
