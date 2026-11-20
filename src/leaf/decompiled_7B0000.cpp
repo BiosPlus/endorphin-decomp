@@ -15281,3 +15281,113 @@ L_7B92BC:
         ret
     }
 }
+
+// [0x007BD030] sub_007BD030 (300 bytes)
+extern "C" void ext_007BB1D0();
+extern "C" int mem_00999B70;
+extern "C" int mem_00993CA0;
+extern "C" int mem_00999B68;
+extern "C" __declspec(naked) void __cdecl fn_007BD030(void* a, short* b, int n) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x1c
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push esi
+        mov ebx, dword ptr [ebp + 0xc]
+        push edi
+        mov edi, dword ptr [eax + 0xc]
+        mov eax, dword ptr [ebp + 0x10]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jle L_END_7BD030
+        inc eax
+        mov dword ptr [esp + 0x10], eax
+L_LOOP_7BD030:
+        mov ax, word ptr [ebx]
+        test ax, ax
+        jg L_POS_7BD030
+        xor esi, esi
+        jmp L_AFTER_7BD030
+L_POS_7BD030:
+        cmp ax, 0x1cf2
+        jl L_LT_7BD030
+        mov esi, 0x3ff
+        jmp L_AFTER_7BD030
+L_LT_7BD030:
+        mov edx, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [edx + 0x4]
+        test ecx, ecx
+        jne L_RAND_7BD030
+        movsx esi, ax
+        sub esi, 0xcf2
+        sar esi, 0x2
+        jmp L_AFTER_7BD030
+L_RAND_7BD030:
+        call dword ptr [mem_009252B4]
+        mov dword ptr [esp + 0x14], eax
+        fild dword ptr [esp + 0x14]
+        movsx eax, word ptr [ebx]
+        fmul qword ptr [mem_00999A60]
+        mov dword ptr [esp + 0x14], eax
+        fild dword ptr [esp + 0x14]
+        fsub qword ptr [mem_00999B70]
+        fmul qword ptr [mem_00993CA0]
+        faddp st(1), st
+        fsub qword ptr [mem_00993828]
+        call ext_00872828
+        mov esi, eax
+L_AFTER_7BD030:
+        mov eax, dword ptr [edi + 0x8]
+        mov ecx, dword ptr [ebp + 0x8]
+        mov dword ptr [esp + 0x18], eax
+        xor eax, eax
+        mov dword ptr [esp + 0x1c], eax
+        mov edx, dword ptr [ecx + 0x4]
+        fild qword ptr [esp + 0x18]
+        mov ecx, dword ptr [edi + 0x4]
+        push edx
+        sub esp, 0x8
+        mov dword ptr [esp + 0x2c], ecx
+        fadd qword ptr [mem_00993828]
+        mov dword ptr [esp + 0x30], eax
+        sub esp, 0x8
+        fmul qword ptr [mem_00999B68]
+        fstp qword ptr [esp + 0x8]
+        fild qword ptr [esp + 0x34]
+        fadd qword ptr [mem_00993828]
+        fmul qword ptr [mem_00999B68]
+        fstp qword ptr [esp]
+        call ext_007BB1D0
+        add esp, 0x14
+        test eax, eax
+        jge L_SKIP_7BD030
+        push 0x0
+        push 0x3fde50d7
+        push 0x94b8199e
+        push 0x3fcaf286
+        push 0xbd156c1a
+        call ext_007BB1D0
+        add esp, 0x14
+L_SKIP_7BD030:
+        shl esi, 0xe
+        or esi, eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [edi], esi
+        add edi, 0x4
+        add ebx, 0x6
+        dec eax
+        mov dword ptr [esp + 0x10], eax
+        jne L_LOOP_7BD030
+L_END_7BD030:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
