@@ -1720,3 +1720,98 @@ extern "C" __declspec(naked) void __fastcall fn_005E4850(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005E4710] NMData::FixedPathJointData::vfunc_69 (291 bytes)
+extern "C" void ext_005E12D0();
+extern "C" void ext_005E1310();
+extern "C" void ext_00662400();
+extern "C" __declspec(naked) void __fastcall fn_005E4710(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x194]
+        cmp eax, 5
+        ja L_ret
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        jmp dword ptr [eax*4 + 0x005E4834]
+    L_s0:
+        mov dword ptr [esi + 0x194], 1
+    L_c1:
+        cmp edi, 1
+        je L_pop
+        mov dword ptr [esi + 0x194], 2
+    L_c2:
+        cmp edi, 2
+        je L_pop
+        mov dword ptr [esi + 0x194], 3
+    L_c3:
+        cmp edi, 3
+        je L_pop
+        mov dword ptr [esi + 0x194], 4
+    L_c4:
+        cmp edi, 4
+        je L_pop
+        call ext_005E12D0
+        mov eax, dword ptr [esi + 4]
+        mov edx, dword ptr [eax + 0x1c]
+        lea ecx, [esi + 4]
+        call edx
+        test al, al
+        je L_5
+        mov ecx, dword ptr [esi + 0x190]
+        test ecx, ecx
+        je L_null
+        call ext_005E1310
+        test al, al
+        mov eax, dword ptr [esi + 0x190]
+        je L_altA
+        mov eax, dword ptr [eax + 0x234]
+        test eax, eax
+        je L_zero1
+        mov ecx, dword ptr [esi + 0x234]
+        add eax, 4
+        mov dword ptr [ecx + 0x5c], eax
+        jmp L_after
+    L_zero1:
+        mov ecx, dword ptr [esi + 0x234]
+        xor eax, eax
+        mov dword ptr [ecx + 0x5c], eax
+        jmp L_after
+    L_altA:
+        test eax, eax
+        je L_zero2
+        mov edx, dword ptr [esi + 0x234]
+        add eax, 0x150
+        mov dword ptr [edx + 0x5c], eax
+        jmp L_5
+    L_zero2:
+        mov edx, dword ptr [esi + 0x234]
+        xor eax, eax
+        mov dword ptr [edx + 0x5c], eax
+        jmp L_5
+    L_null:
+        mov eax, dword ptr [esi + 0x18c]
+        test eax, eax
+        je L_5
+        mov ecx, dword ptr [esi + 0x234]
+        add eax, 0x154
+        mov dword ptr [ecx + 0x5c], eax
+    L_5:
+        mov ecx, dword ptr [esp + 0x10]
+        lea edx, [esi + 0x154]
+        push edx
+        call ext_00662400
+    L_after:
+        mov dword ptr [esi + 0x194], 5
+    L_c5:
+        cmp edi, 5
+        je L_pop
+        mov dword ptr [esi + 0x194], 6
+    L_pop:
+        pop edi
+    L_ret:
+        pop esi
+        ret 8
+    }
+}
