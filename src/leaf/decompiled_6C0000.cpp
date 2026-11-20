@@ -9541,3 +9541,131 @@ extern "C" __declspec(naked) void __fastcall fn_006C25E0(void* self) {
         ret
     }
 }
+
+// [0x006CEBB0] sub_006CEBB0 (320 bytes)
+extern "C" void ext_006CAEF0();
+extern "C" void ext_006CE8B0();
+extern "C" void ext_00872828();
+
+// x87 rounding (ceil/floor via RC toggling + frndint) and CRT _ftol; asm mirrors the original encoding.
+extern "C" __declspec(naked) int __fastcall fn_006CEBB0(void* self, int edx_unused, double a1, double a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        call ext_006CA6A0
+        test eax, eax
+        je L_fail
+        push edi
+        mov ecx, esi
+        call ext_006CA6A0
+        mov ecx, dword ptr [ebp+8]
+        dec eax
+        mov dword ptr [ebp-4], eax
+        mov eax, dword ptr [ebp+0xc]
+        push 0
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006CAEF0
+        mov eax, dword ptr [ebp+0x14]
+        mov ecx, dword ptr [ebp+0x10]
+        fstp qword ptr [ebp+8]
+        lea edx, [ebp-4]
+        push edx
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006CAEF0
+        mov edx, dword ptr [ebp+8]
+        mov eax, dword ptr [ebp+0xc]
+        fstp qword ptr [ebp+0x10]
+        mov dword ptr [ebp-0xc], edx
+        mov dword ptr [ebp-8], eax
+        fld qword ptr [ebp-0xc]
+        wait
+        fnstcw word ptr [ebp-0xc]
+        xor word ptr [ebp-0xc], 0x800
+        fldcw word ptr [ebp-0xc]
+        frndint
+        xor word ptr [ebp-0xc], 0x800
+        fldcw word ptr [ebp-0xc]
+        fstp qword ptr [ebp-0x14]
+        fld qword ptr [ebp-0x14]
+        call ext_00872828
+        mov ecx, dword ptr [ebp+0x10]
+        mov edx, dword ptr [ebp+0x14]
+        mov edi, eax
+        mov dword ptr [ebp-0xc], ecx
+        mov dword ptr [ebp-8], edx
+        fld qword ptr [ebp-0xc]
+        wait
+        fnstcw word ptr [ebp-0xc]
+        xor word ptr [ebp-0xc], 0x400
+        fldcw word ptr [ebp-0xc]
+        frndint
+        xor word ptr [ebp-0xc], 0x400
+        fldcw word ptr [ebp-0xc]
+        fstp qword ptr [ebp-0x14]
+        fld qword ptr [ebp-0x14]
+        call ext_00872828
+        mov edx, dword ptr [ebp+0xc]
+        mov ecx, eax
+        mov eax, dword ptr [ebp+8]
+        mov dword ptr [ebp-8], edx
+        mov dword ptr [ebp-0xc], eax
+        fld qword ptr [ebp-0xc]
+        wait
+        fnstcw word ptr [ebp-0xc]
+        xor word ptr [ebp-0xc], 0x800
+        fldcw word ptr [ebp-0xc]
+        frndint
+        xor word ptr [ebp-0xc], 0x800
+        fldcw word ptr [ebp-0xc]
+        fstp qword ptr [ebp-0x14]
+        fld qword ptr [ebp-0x14]
+        fcomp qword ptr [ebp+8]
+        fnstsw ax
+        test ah, 0x40
+        je L_skip1
+        inc edi
+L_skip1:
+        mov eax, dword ptr [ebp+0x10]
+        mov edx, dword ptr [ebp+0x14]
+        mov dword ptr [ebp+8], eax
+        mov dword ptr [ebp+0xc], edx
+        fld qword ptr [ebp+8]
+        wait
+        fnstcw word ptr [ebp+8]
+        xor word ptr [ebp+8], 0x400
+        fldcw word ptr [ebp+8]
+        frndint
+        xor word ptr [ebp+8], 0x400
+        fldcw word ptr [ebp+8]
+        fstp qword ptr [ebp-0x14]
+        fld qword ptr [ebp-0x14]
+        fcomp qword ptr [ebp+0x10]
+        fnstsw ax
+        test ah, 0x40
+        je L_skip2
+        dec ecx
+L_skip2:
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_006CE8B0
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+L_fail:
+        xor al, al
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+    }
+}
