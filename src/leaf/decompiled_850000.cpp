@@ -94,6 +94,7 @@ extern "C" void __cdecl fn_0085BEA0(void* self) {
     }
     ext_00859730(self);
 }
+extern "C" { void ext_00857440(); void ext_00857470(); void ext_00857490(); void ext_0085D510(); void ext_0085D530(); void ext_0085D560(); void ext_0086D480(); void ext_0086D4D0(); int mem_00924210; }
 
 // [0x00859A20] sub_00859A20 (47 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_00859A20(char* dst, const char* src) {
@@ -10488,6 +10489,170 @@ extern "C" __declspec(naked) void __cdecl fn_008536D0(void) {
         pop esi
         pop ebp
         pop ebx
+        ret
+    }
+}
+
+// [0x0085D390] sub_0085D390 (372 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085D390(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        sub esp, 0x40
+        test eax, eax
+        push ebx
+        push esi
+        push edi
+        push ebp
+        jne L_85d3ac
+        mov eax, 0xc9
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x40
+        ret
+    L_85d3ac:
+        mov ebx, dword ptr [esp + 0x58]
+        mov esi, dword ptr [esp + 0x5c]
+        and ebx, -8
+        test esi, esi
+        lea ecx, [ebx + 0x10]
+        jne L_85d3ca
+        pop ebp
+        mov dword ptr [eax], ecx
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x40
+        ret
+    L_85d3ca:
+        cmp dword ptr [eax], ecx
+        jae L_85d3dd
+        pop ebp
+        mov dword ptr [eax], ecx
+        mov eax, 0xca
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x40
+        ret
+    L_85d3dd:
+        mov ebp, dword ptr [esp + 0x54]
+        test ebp, ebp
+        je L_85d4f7
+        cmp dword ptr [esp + 0x64], 0
+        je L_85d4f7
+        lea eax, [esp + 0x28]
+        push eax
+        call ext_00857490
+        lea eax, [esp + 0x2c]
+        lea ecx, [esp + 0x14]
+        add esp, 4
+        push eax
+        push 8
+        push ecx
+        call ext_00857440
+        lea ecx, [esp + 0x34]
+        add esp, 0xc
+        push ecx
+        call ext_00857470
+        add esp, 4
+        push 0x105c
+        call ext_0085D560
+        add esp, 4
+        mov edi, eax
+        test edi, edi
+        jne L_85d442
+        mov eax, 0xc
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x40
+        ret
+    L_85d442:
+        lea eax, [esp + 0x10]
+        push 1
+        mov ecx, dword ptr [esp + 0x68]
+        push eax
+        push 0x10
+        push ecx
+        push edi
+        call ext_0086D480
+        lea ecx, [esp + 0x24]
+        add esp, 0x14
+        push 8
+        push ecx
+        push esi
+        call ext_0085D530
+        add esp, 0xc
+        add esi, 8
+        test ebx, ebx
+        je L_85d47e
+        push ebx
+        push ebp
+        push esi
+        push edi
+        add esi, ebx
+        call ext_0086D4D0
+        add esp, 0x10
+    L_85d47e:
+        push 8
+        mov cl, 8
+        mov eax, dword ptr [esp + 0x5c]
+        and al, 7
+        sub cl, al
+        xor eax, eax
+        mov al, cl
+        lea ecx, [esp + 0x1c]
+        push eax
+        push ecx
+        add ebx, ebp
+        call ext_0085D510
+        mov eax, dword ptr [esp + 0x64]
+        lea ecx, [esp + 0x24]
+        add esp, 0xc
+        and eax, 7
+        push eax
+        push ebx
+        push ecx
+        call ext_0085D530
+        lea eax, [esp + 0x24]
+        add esp, 0xc
+        push 8
+        push eax
+        push esi
+        push edi
+        call ext_0086D4D0
+        lea eax, [esp + 0x20]
+        add esp, 0x10
+        push 8
+        push 0
+        push eax
+        call ext_0085D510
+        add esp, 0xc
+        push 0x105c
+        push 0
+        push edi
+        call ext_0085D510
+        add esp, 0xc
+        push edi
+        call dword ptr [mem_00924210]
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x40
+        ret
+    L_85d4f7:
+        mov eax, 0xc9
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x40
         ret
     }
 }
