@@ -4777,3 +4777,156 @@ fn00732460_end:
         ret 4
     }
 }
+
+// [0x007313F0] sub_007313F0 (352 bytes)
+typedef unsigned char (__thiscall *Fn_00726770)(void*, const char*);
+typedef void* (__thiscall *Fn_006D3CF0)(void*);
+typedef unsigned char (__thiscall *Fn_00726860)(void*);
+typedef int (__thiscall *Fn_00726B40)(void*, const char*, int);
+typedef void (__thiscall *Fn_006BB750)(void*, int);
+typedef void (__thiscall *Fn_0072B1E0)(void*, int);
+typedef int (__thiscall *Fn_0072B1C0)(void*);
+typedef unsigned char* (__thiscall *Fn_006BB7C0)(void*);
+typedef unsigned int (__thiscall *Fn_0072B1D0)(void*);
+typedef unsigned char (__thiscall *Fn_00726AE0)(void*);
+typedef void (__thiscall *Fn_00726840)(void*);
+typedef void (__thiscall *Fn_007268D0)(void*);
+
+extern "C" void ext_006BB750();
+extern "C" void ext_006BB7C0();
+extern "C" void ext_006D3CF0();
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726860();
+extern "C" void ext_007268D0();
+extern "C" void ext_00726AE0();
+extern "C" void ext_00726B40();
+extern "C" void ext_0072B1C0();
+extern "C" void ext_0072B1D0();
+extern "C" void ext_0072B1E0();
+
+#define READER(s) ((char*)(*(void**)((char*)(s) + 0xac)) + 4)
+
+extern "C" __declspec(naked) void __fastcall fn_007313F0(void* self) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        push 0aad34ch
+        xor edi, edi
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn007313F0_ret_edi
+        mov ecx, dword ptr [esi + 4]
+        push ebx
+        call ext_006D3CF0
+        mov ecx, dword ptr [esi + 0ach]
+        mov ebp, eax
+        add ecx, 4
+        xor bl, bl
+        call ext_00726860
+        test al, al
+        je fn007313F0_end_outer
+        mov ecx, dword ptr [esi + 0ach]
+        push 64h
+        push 0aacd0ch
+        add ecx, 4
+        call ext_00726B40
+        mov ecx, dword ptr [esi + 0ach]
+        push 0
+        push 0aad344h
+        add ecx, 4
+        call ext_00726B40
+        push eax
+        mov ecx, ebp
+        call ext_006BB750
+        mov ecx, dword ptr [esi + 0ach]
+        push 0
+        push 0aa9190h
+        add ecx, 4
+        call ext_00726B40
+        push eax
+        mov ecx, ebp
+        call ext_0072B1E0
+        mov ecx, dword ptr [esi + 0ach]
+        push 0
+        push 0aad334h
+        add ecx, 4
+        call ext_00726B40
+        test eax, eax
+        jne fn007313F0_end_mid
+        mov ecx, ebp
+        call ext_0072B1C0
+        test eax, eax
+        je fn007313F0_end_mid
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aad328h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn007313F0_set_bl
+        mov ecx, ebp
+        call ext_006BB7C0
+        mov ecx, ebp
+        mov dword ptr [esp + 10h], eax
+        call ext_0072B1D0
+        mov ebx, eax
+        test ebx, ebx
+        jbe fn007313F0_loop_done
+fn007313F0_loop:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov ecx, dword ptr [esp + 10h]
+        inc edi
+        cmp edi, ebx
+        mov byte ptr [edi + ecx - 1], al
+        jb fn007313F0_loop
+fn007313F0_loop_done:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+fn007313F0_set_bl:
+        mov bl, 1
+fn007313F0_end_mid:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_007268D0
+fn007313F0_end_outer:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        test bl, bl
+        pop ebx
+        je fn007313F0_destroy
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+fn007313F0_destroy:
+        mov esi, dword ptr [esi + 4]
+        push ebp
+        mov ecx, esi
+        mov edx, dword ptr [esi]
+        call dword ptr [edx + 0a0h]
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebp
+        pop ecx
+        ret
+fn007313F0_ret_edi:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+    }
+}
