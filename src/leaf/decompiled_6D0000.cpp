@@ -13725,3 +13725,133 @@ dED80_fail:
         ret 0x8
     }
 }
+
+// [0x006D2810] sub_006D2810 (304 bytes)
+extern "C" int mem_0092A278;
+extern "C" int mem_0092C510;
+extern "C" int mem_0092A270;
+// Quaternion-to-3x3-rotation (4-double row stride). Args on stack: [ebp+8] = out, [ebp+0xc] = in (4 doubles).
+// s = (N == 0.0) ? 0.0 : 2.0 / N, N = a^2+b^2+c^2+d^2.
+extern "C" __declspec(naked) void __fastcall fn_006D2810(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x40
+        mov ecx, dword ptr [ebp + 0xc]
+        fld qword ptr [ecx + 0x18]
+        fld qword ptr [ecx + 0x10]
+        fld qword ptr [ecx + 0x8]
+        fld qword ptr [ecx]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fld st(4)
+        fmul st, st(5)
+        faddp st(1), st
+        fstp st(4)
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld st(0)
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        jne skip_div
+        fdivr qword ptr [mem_0092C510]
+skip_div:
+        fld st(0)
+        fmul qword ptr [ecx]
+        mov eax, dword ptr [ebp + 0x8]
+        fstp qword ptr [esp + 0x8]
+        fld st(0)
+        fmul qword ptr [ecx + 0x8]
+        _emit 0xdd
+        _emit 0x5c
+        _emit 0x24
+        _emit 0x00
+        fmul qword ptr [ecx + 0x10]
+        fld qword ptr [esp + 0x8]
+        fmul qword ptr [ecx + 0x18]
+        fstp qword ptr [esp + 0x28]
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        fmul qword ptr [ecx + 0x18]
+        fstp qword ptr [esp + 0x20]
+        fld st(0)
+        fmul qword ptr [ecx + 0x18]
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x8]
+        fmul qword ptr [ecx]
+        fstp qword ptr [esp + 0x38]
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        fmul qword ptr [ecx]
+        fstp qword ptr [esp + 0x8]
+        fld st(0)
+        fmul qword ptr [ecx]
+        fstp qword ptr [esp + 0x18]
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        fmul qword ptr [ecx + 0x8]
+        fstp qword ptr [esp + 0x30]
+        fld st(0)
+        fmul qword ptr [ecx + 0x8]
+        _emit 0xdd
+        _emit 0x5c
+        _emit 0x24
+        _emit 0x00
+        fmul qword ptr [ecx + 0x10]
+        fld qword ptr [mem_0092A270]
+        fsub qword ptr [esp + 0x30]
+        fsub st, st(1)
+        fstp qword ptr [eax]
+        fld qword ptr [esp + 0x8]
+        fadd qword ptr [esp + 0x10]
+        fstp qword ptr [eax + 0x8]
+        fld qword ptr [esp + 0x18]
+        fsub qword ptr [esp + 0x20]
+        fstp qword ptr [eax + 0x10]
+        fld qword ptr [esp + 0x8]
+        fsub qword ptr [esp + 0x10]
+        fstp qword ptr [eax + 0x20]
+        fld qword ptr [mem_0092A270]
+        fsub qword ptr [esp + 0x38]
+        fst qword ptr [esp + 0x10]
+        fsub st, st(1)
+        fstp qword ptr [eax + 0x28]
+        fstp st(0)
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        fadd qword ptr [esp + 0x28]
+        fstp qword ptr [eax + 0x30]
+        fld qword ptr [esp + 0x18]
+        fadd qword ptr [esp + 0x20]
+        fstp qword ptr [eax + 0x40]
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        fsub qword ptr [esp + 0x28]
+        fstp qword ptr [eax + 0x48]
+        fld qword ptr [esp + 0x10]
+        fsub qword ptr [esp + 0x30]
+        fstp qword ptr [eax + 0x50]
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
