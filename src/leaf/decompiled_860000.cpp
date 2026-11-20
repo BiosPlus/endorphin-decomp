@@ -9267,3 +9267,118 @@ extern "C" __declspec(naked) void __cdecl fn_008688E0(void* self) {
         ret
     }
 }
+
+// [0x00865370] sub_00865370 (256 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_0085F740();
+extern "C" void ext_00860670();
+extern "C" void ext_00860950();
+extern "C" void ext_008656E0();
+extern "C" void ext_008659D0();
+extern "C" int mem_00BC6388;
+extern "C" int mem_00BC6389;
+
+extern "C" __declspec(naked) void __cdecl fn_00865370(void) {
+    __asm {
+        mov dword ptr [mem_00AB98EC], 0
+        push ebx
+        push esi
+        call ext_00860670
+        test eax, eax
+        jne L_8d
+        mov eax, 0xfffffef2
+        pop esi
+        pop ebx
+        ret
+    L_8d:
+        mov bl, byte ptr [esp + 0xc]
+        cmp bl, 0x58
+        je L_d2
+        cmp bl, 0x59
+        je L_d2
+        push 0x3e
+        push 0
+        push offset mem_00BC6388
+        call ext_0085D510
+        add esp, 0xc
+        mov byte ptr [mem_00BC6389], 0xa
+        push offset mem_00BC6388
+        call ext_0085F740
+        add esp, 4
+        mov eax, 0xa
+        mov dword ptr [mem_00AB98EC], 0x8d
+        pop esi
+        pop ebx
+        ret
+    L_d2:
+        cmp dword ptr [esp + 0x28], 0
+        je L_eb
+        mov eax, 0xa
+        pop esi
+        mov dword ptr [mem_00AB98EC], 0x18
+        pop ebx
+        ret
+    L_eb:
+        mov esi, dword ptr [esp + 0x24]
+        cmp esi, 8
+        jae L_406
+        mov eax, 0x18
+        pop esi
+        mov dword ptr [mem_00AB98EC], 0x9d
+        pop ebx
+        ret
+    L_406:
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push ecx
+        push edx
+        push eax
+        push ebx
+        call ext_00860950
+        add esp, 0x14
+        xor eax, eax
+        mov al, bl
+        cmp eax, 0x58
+        je L_433
+        cmp eax, 0x59
+        je L_440
+        jmp L_44e
+    L_433:
+        mov eax, dword ptr [esp + 0x20]
+        push esi
+        push eax
+        call ext_008656E0
+        jmp L_44b
+    L_440:
+        mov eax, dword ptr [esp + 0x20]
+        push esi
+        push eax
+        call ext_008659D0
+    L_44b:
+        add esp, 8
+    L_44e:
+        mov eax, 0
+        pop esi
+        cmp dword ptr [mem_00AB98EC], 1
+        adc eax, -1
+        pop ebx
+        and eax, 0x19
+        ret
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
