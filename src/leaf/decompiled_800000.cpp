@@ -10934,3 +10934,113 @@ no_flag:
         ret
     }
 }
+
+// [0x0080DB30] sub_0080DB30 (227 bytes)
+extern "C" void ext_00859DA0();
+extern "C" void ext_0085BFB0();
+extern "C" void ext_0085BFE0();
+extern "C" void ext_0085BFF0();
+extern "C" void ext_0085C260();
+extern "C" void ext_0085C270();
+extern "C" void ext_00859AF0();
+extern "C" void ext_00859A90();
+extern "C" __declspec(naked) int __cdecl fn_0080DB30(void* a1, void* a2, void** a3, void* a4, void** a5) {
+    __asm {
+        sub esp, 14h
+        push ebx
+        mov ebx, dword ptr [esp + 24h]
+        push ebp
+        xor ebp, ebp
+        mov eax, dword ptr [ebx]
+        push esi
+        test eax, eax
+        push edi
+        je l_50
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0ddh
+        pop ebx
+        add esp, 14h
+        ret
+    l_50:
+        call ext_00859DA0
+        mov esi, eax
+        test esi, esi
+        jne l_68
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0ch
+        pop ebx
+        add esp, 14h
+        ret
+    l_68:
+        call ext_0085BFB0
+        mov edi, eax
+        xor eax, eax
+        cmp edi, eax
+        jne l_82
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0ch
+        pop ebx
+        add esp, 14h
+        ret
+    l_82:
+        mov edx, dword ptr [esp + 28h]
+        mov dword ptr [esp + 10h], eax
+        mov dword ptr [esp + 14h], eax
+        mov dword ptr [esp + 18h], eax
+        mov dword ptr [esp + 1ch], eax
+        mov eax, dword ptr [esp + 2ch]
+        lea ecx, [esp + 10h]
+        push 80d820h
+        mov dword ptr [esp + 24h], 1
+        push edi
+        mov dword ptr [edi + 4], eax
+        mov dword ptr [edi + 14h], ecx
+        mov dword ptr [edi + 10h], edx
+        call ext_0085BFF0
+        add esp, 8
+        test eax, eax
+        jne l_dbe5
+        mov eax, dword ptr [esp + 10h]
+        push eax
+        push esi
+        call ext_0085C270
+        push esi
+        mov ebp, eax
+        call ext_0085C260
+        push esi
+        call ext_00859E50
+        push esi
+        mov dword ptr [ebx], eax
+        call ext_00859A90
+        add esp, 14h
+    l_dbe5:
+        mov eax, dword ptr [esp + 10h]
+        test eax, eax
+        je l_dbf6
+        push eax
+        call ext_00859AF0
+        add esp, 4
+    l_dbf6:
+        push edi
+        call ext_0085BFE0
+        mov eax, dword ptr [esp + 38h]
+        add esp, 4
+        test eax, eax
+        je l_dc09
+        mov dword ptr [eax], ebp
+    l_dc09:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 14h
+        ret
+    }
+}
