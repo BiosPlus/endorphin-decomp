@@ -10370,3 +10370,150 @@ extern "C" __declspec(naked) void __fastcall fn_0086C020(void* self) {
         ret
     }
 }
+
+// [0x0086EC60] sub_0086EC60 (352 bytes)
+extern "C" void ext_0086B180();
+extern "C" void ext_0086B220();
+extern "C" void ext_0086B510();
+extern "C" void ext_0086B850();
+
+extern "C" __declspec(naked) void __cdecl fn_0086EC60(void* self) {
+    __asm {
+        sub esp, 0x64
+        lea eax, [esp + 0x28]
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0x74]
+        push eax
+        push esi
+        call ext_0086B850
+        lea ecx, [esp + 0x14]
+        lea edx, [esp + 0x3c]
+        add esp, 0x8
+        lea eax, [esi + 0x14]
+        push ecx
+        push eax
+        push edx
+        call ext_0086B510
+        xor dx, dx
+        add esp, 0xc
+    L_loop1:
+        movsx eax, dx
+        shl eax, 0x2
+        inc dx
+        mov ecx, dword ptr [eax + esi]
+        xor ecx, dword ptr [esp + eax + 0xc]
+        mov dword ptr [esp + eax + 0x20], ecx
+        movsx eax, dx
+        cmp eax, 0x5
+        jb L_loop1
+        lea eax, [esp + 0x48]
+        lea ecx, [esp + 0x20]
+        push eax
+        push ecx
+        call ext_0086B220
+        lea ecx, [esp + 0x50]
+        add esp, 0x8
+        push ecx
+        call ext_0086B180
+        mov edx, dword ptr [esp + 0x80]
+        add esp, 0x4
+        cmp word ptr [edx], 0x0
+        je L_zero
+        xor cx, cx
+        mov edi, dword ptr [esp + 0x78]
+    L_loop2:
+        movsx eax, cx
+        shl eax, 0x2
+        inc cx
+        mov ebx, dword ptr [eax + edx + 0x2]
+        xor ebx, dword ptr [esp + eax + 0x20]
+        xor ebx, dword ptr [esp + eax + 0x48]
+        mov dword ptr [eax + edi], ebx
+        movsx eax, cx
+        cmp eax, 0x5
+        jb L_loop2
+        jmp L_after
+    L_zero:
+        xor dx, dx
+        mov edi, dword ptr [esp + 0x78]
+    L_loop3:
+        movsx eax, dx
+        shl eax, 0x2
+        inc dx
+        mov ecx, dword ptr [esp + eax + 0x20]
+        xor ecx, dword ptr [esp + eax + 0x48]
+        mov dword ptr [eax + edi], ecx
+        movsx eax, dx
+        cmp eax, 0x5
+        jb L_loop3
+    L_after:
+        xor cx, cx
+        mov edx, 0xffffffff
+    L_loop4:
+        movsx eax, cx
+        inc cx
+        mov dword ptr [esp + 4*eax + 0xc], edx
+        movsx ebx, cx
+        cmp ebx, 0x5
+        jb L_loop4
+        and dword ptr [esp + 0xc], 0x3fffffff
+        xor dx, dx
+    L_loop5:
+        movsx eax, dx
+        shl eax, 0x2
+        inc dx
+        mov ecx, dword ptr [esp + eax + 0x20]
+        xor dword ptr [esp + eax + 0xc], ecx
+        movsx eax, dx
+        cmp eax, 0x5
+        jb L_loop5
+        lea eax, [esp + 0x5c]
+        lea ecx, [esp + 0xc]
+        push eax
+        push edi
+        push ecx
+        call ext_0086B510
+        lea ecx, [esp + 0x40]
+        add esp, 0xc
+        push ecx
+        push esi
+        call ext_0086B220
+        lea ecx, [esp + 0x3c]
+        add esp, 0x8
+        push ecx
+        call ext_0086B180
+        xor dx, dx
+        add esp, 0x4
+    L_loop6:
+        movsx eax, dx
+        shl eax, 0x2
+        inc dx
+        mov ecx, dword ptr [esp + eax + 0x5c]
+        xor ecx, dword ptr [esp + eax + 0x34]
+        mov dword ptr [eax + edi + 0x14], ecx
+        movsx eax, dx
+        cmp eax, 0x5
+        jb L_loop6
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x64
+        ret
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
