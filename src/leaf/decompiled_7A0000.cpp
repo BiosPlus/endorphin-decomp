@@ -9449,3 +9449,150 @@ extern "C" __declspec(naked) void __cdecl fn_007A1C80(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x007AD3F0] sub_007AD3F0 (336 bytes)
+extern "C" void ext_0078CD30();
+extern "C" void ext_007AD540();
+extern "C" void ext_007AD660();
+extern "C" int mem_00B61680;
+
+extern "C" __declspec(naked) void __fastcall fn_007AD3F0(void* self, int edx_unused, void* a1, unsigned int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x1c
+        mov eax, dword ptr [ecx]
+        push ebx
+        xor ebx, ebx
+        push esi
+        cmp eax, ebx
+        push edi
+        mov dword ptr [ebp - 0x4], ecx
+        mov dword ptr [ebp - 0x1c], ebx
+        mov dword ptr [ebp - 0x10], ebx
+        je L_null
+        mov edi, dword ptr [ebp + 0x8]
+        mov esi, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ebp - 0x1c], esi
+        mov ecx, dword ptr [edi]
+        cmp esi, ecx
+        jne L_diff
+        cmp edx, dword ptr [edi + 0x4]
+        jne L_diff
+        mov eax, edx
+        mov ebx, esi
+        mov dword ptr [ebp - 0x10], eax
+        jmp L_have
+    L_diff:
+        xor eax, eax
+        cmp esi, ecx
+        setl al
+        dec eax
+        mov ebx, eax
+        and eax, esi
+        not ebx
+        and ebx, ecx
+        or ebx, eax
+        mov eax, dword ptr [edi + 0x4]
+        sub eax, ebx
+        sub edx, ebx
+        lea ecx, [eax + ecx - 0x1]
+        lea edx, [edx + esi - 0x1]
+        mov dword ptr [ebp - 0x8], ecx
+        mov dword ptr [ebp - 0xc], edx
+        mov edx, dword ptr [ebp - 0xc]
+        mov ecx, dword ptr [ebp - 0x8]
+        xor eax, eax
+        sub edx, ecx
+        setg al
+        dec eax
+        and eax, edx
+        add eax, ecx
+        inc eax
+        mov dword ptr [ebp - 0x10], eax
+        jmp L_have
+    L_null:
+        mov edi, dword ptr [ebp + 0x8]
+    L_have:
+        mov eax, dword ptr [edi + 0x4]
+        lea esi, [4*eax + 0xc]
+        mov eax, dword ptr [mem_00B61680]
+        test eax, eax
+        jne L_alloc_done
+        push 0x200000
+        push eax
+        push 0x2
+        push 0x20000
+        call ext_0078CD30
+        add esp, 0x10
+        mov dword ptr [mem_00B61680], eax
+    L_alloc_done:
+        push esi
+        mov ecx, eax
+        call ext_007AD540
+        mov edi, eax
+        mov eax, dword ptr [ebp + 0xc]
+        and eax, 0xff
+        mov ecx, esi
+        mov dl, al
+        mov dword ptr [ebp - 0x8], edi
+        mov dh, dl
+        mov eax, edx
+        shl eax, 0x10
+        mov ax, dx
+        shr ecx, 0x2
+        rep stosd
+        mov ecx, esi
+        and ecx, 0x3
+        rep stosb
+        mov ecx, dword ptr [ebp - 0x10]
+        test ecx, ecx
+        jle L_noqcopy
+        mov eax, dword ptr [ebp - 0x1c]
+        mov edx, ebx
+        sub edx, eax
+        mov eax, dword ptr [ebp - 0x4]
+        mov esi, dword ptr [eax]
+        lea esi, [esi + 4*edx + 0xc]
+        mov edx, dword ptr [ebp + 0x8]
+        mov edi, dword ptr [edx]
+        mov edx, dword ptr [ebp - 0x8]
+        sub ebx, edi
+        lea edi, [edx + 4*ebx + 0xc]
+        rep movsd
+        jmp L_after_copy
+    L_noqcopy:
+        mov eax, dword ptr [ebp - 0x4]
+    L_after_copy:
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        je L_store
+        mov esi, dword ptr [ecx + 0x8]
+        dec esi
+        mov edx, esi
+        mov dword ptr [ecx + 0x8], esi
+        test edx, edx
+        jne L_store
+        mov ecx, eax
+        call ext_007AD660
+        mov eax, dword ptr [ebp - 0x4]
+    L_store:
+        mov ecx, dword ptr [ebp - 0x8]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [ecx + 0x8], 0x1
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        mov dword ptr [edx], esi
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop esi
+        mov dword ptr [eax + 0x4], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
