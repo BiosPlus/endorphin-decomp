@@ -9382,3 +9382,133 @@ extern "C" __declspec(naked) void __cdecl fn_00865370(void) {
         _emit 0x00
     }
 }
+
+// [0x0086AD30] sub_0086AD30 (273 bytes)
+extern "C" void ext_0086A2B0();
+extern "C" __declspec(naked) void __cdecl fn_0086AD30(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        sub esp, 0x514
+        push esi
+        mov esi, dword ptr [esp + 0x528]
+        test esi, esi
+        push edi
+        mov ecx, esi
+        je f86ad30_l1
+        lea edx, [esp + 0x8]
+        sub edx, eax
+    f86ad30_c1:
+        mov edi, dword ptr [eax]
+        mov dword ptr [edx + eax], edi
+        add eax, 0x4
+        dec ecx
+        jne f86ad30_c1
+    f86ad30_l1:
+        mov eax, dword ptr [esp + 0x524]
+        mov ecx, esi
+        test esi, esi
+        je f86ad30_l2
+        lea edx, [esp + 0x10c]
+        sub edx, eax
+    f86ad30_c2:
+        mov edi, dword ptr [eax]
+        mov dword ptr [edx + eax], edi
+        add eax, 0x4
+        dec ecx
+        jne f86ad30_c2
+    f86ad30_l2:
+        push ebx
+        push ebp
+        mov ebx, 0x1
+    f86ad30_top:
+        movsx edi, bx
+        mov eax, edi
+        mov ecx, esi
+        shl eax, 0x6
+        add eax, edi
+        test esi, esi
+        lea edx, [esp + eax*4 + 0x10]
+        mov eax, edx
+        je f86ad30_end
+    f86ad30_scan:
+        mov ebp, dword ptr [eax]
+        add eax, 0x4
+        test ebp, ebp
+        jne f86ad30_found
+    f86ad30_scan2:
+        dec ecx
+        je f86ad30_end
+        mov ebp, dword ptr [eax]
+        add eax, 0x4
+        test ebp, ebp
+        je f86ad30_scan2
+    f86ad30_found:
+        test bx, bx
+        jne f86ad30_nz
+        mov ecx, 0x2
+    f86ad30_lea:
+        lea eax, [edi + 0x1]
+    f86ad30_setup_entry:
+        push esi
+        push edx
+        mov edx, ecx
+        push esi
+        shl edx, 0x6
+        add edx, ecx
+        lea ecx, [esp + edx*4 + 0x1c]
+        mov edx, eax
+        shl edx, 0x6
+        add edx, eax
+        push ecx
+        lea ecx, [esp + 0x32c]
+        lea eax, [esp + edx*4 + 0x20]
+        push eax
+        push ecx
+        call ext_0086A2B0
+        add esp, 0x18
+        cmp bx, 0x2
+        jne f86ad30_inc
+        xor ebx, ebx
+        jmp f86ad30_top
+    f86ad30_nz:
+        cmp bx, 0x2
+        lea ecx, [edi - 0x1]
+        jne f86ad30_lea
+        xor eax, eax
+        jmp f86ad30_setup_entry
+    f86ad30_inc:
+        lea ebx, [edi + 0x1]
+        jmp f86ad30_top
+    f86ad30_end:
+        test bx, bx
+        jne f86ad30_bx
+        mov eax, 0x2
+        jmp f86ad30_idx
+    f86ad30_bx:
+        movsx eax, bx
+        dec eax
+    f86ad30_idx:
+        mov edx, eax
+        pop ebp
+        shl edx, 0x6
+        add edx, eax
+        mov ecx, esi
+        test esi, esi
+        lea eax, [esp + edx*4 + 0xc]
+        pop ebx
+        je f86ad30_done
+        mov edx, dword ptr [esp + 0x520]
+        sub edx, eax
+    f86ad30_c3:
+        mov esi, dword ptr [eax]
+        mov dword ptr [edx + eax], esi
+        add eax, 0x4
+        dec ecx
+        jne f86ad30_c3
+    f86ad30_done:
+        pop edi
+        pop esi
+        add esp, 0x514
+        ret
+    }
+}
