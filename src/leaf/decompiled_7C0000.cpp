@@ -20877,3 +20877,146 @@ extern "C" __declspec(naked) int __cdecl fn_007C1480(void* self, unsigned int po
         ret
     }
 }
+
+// [0x007C3790] sub_007C3790 (304 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_007C3790(unsigned int adler, const unsigned char* buf, unsigned int len) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov ecx, edi
+        and ecx, 0xffff
+        shr edi, 0x10
+        test esi, esi
+        jne L_nonnull
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    L_nonnull:
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        test ebx, ebx
+        jbe L_done
+        push ebp
+    L_outer:
+        cmp ebx, 0x15b0
+        mov eax, ebx
+        jb L_k
+        mov eax, 0x15b0
+    L_k:
+        sub ebx, eax
+        cmp eax, 0x10
+        jl L_tail
+        mov ebp, eax
+        shr ebp, 0x4
+        mov edx, ebp
+        neg edx
+        shl edx, 0x4
+        add eax, edx
+    L_blk:
+        xor edx, edx
+        mov dl, byte ptr [esi]
+        add esi, 0x10
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0xf]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0xe]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0xd]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0xc]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0xb]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0xa]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x9]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x8]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x7]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x6]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x5]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x4]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x3]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x2]
+        add edi, ecx
+        add ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 0x1]
+        add edi, ecx
+        add ecx, edx
+        add edi, ecx
+        dec ebp
+        jne L_blk
+    L_tail:
+        test eax, eax
+        je L_mod
+    L_tl:
+        xor edx, edx
+        mov dl, byte ptr [esi]
+        add ecx, edx
+        inc esi
+        add edi, ecx
+        dec eax
+        jne L_tl
+    L_mod:
+        mov eax, ecx
+        xor edx, edx
+        mov ecx, 0xfff1
+        div ecx
+        mov eax, edi
+        mov edi, 0xfff1
+        mov ecx, edx
+        xor edx, edx
+        div edi
+        test ebx, ebx
+        mov edi, edx
+        ja L_outer
+        pop ebp
+    L_done:
+        mov eax, edi
+        pop ebx
+        shl eax, 0x10
+        pop edi
+        or eax, ecx
+        pop esi
+        ret
+        nop
+        nop
+    }
+}
