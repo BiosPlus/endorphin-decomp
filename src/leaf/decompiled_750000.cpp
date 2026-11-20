@@ -5526,3 +5526,160 @@ extern "C" __declspec(naked) void __fastcall fn_0075CFE0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0075FBC0] sub_0075FBC0 (352 bytes)
+extern "C" void ext_006BC380();
+extern "C" void ext_006D7A90();
+extern "C" void ext_006D81F0();
+extern "C" void ext_006D8680();
+extern "C" void ext_006D86C0();
+extern "C" void ext_006FD980();
+extern "C" void ext_006FDF70();
+extern "C" void ext_007275F0();
+extern "C" void ext_007279A0();
+extern "C" void ext_00727C80();
+extern "C" void ext_007283B0();
+
+extern "C" int mem_00AADFEC;
+extern "C" int mem_00AADFCC;
+extern "C" int mem_00AADFD4;
+extern "C" int mem_00AADFE0;
+extern "C" int mem_00AADC04;
+
+extern "C" __declspec(naked) bool __fastcall fn_0075FBC0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, ebx
+        call ext_006D86C0
+        dec eax
+        je loc_75FC33
+        mov esi, dword ptr [edi + 0xac]
+        sub eax, 2
+        je loc_75FC08
+        add esi, 4
+        push offset mem_00AADFEC
+        mov ecx, esi
+        call ext_007275F0
+        push offset mem_00AADFCC
+        mov ecx, esi
+        call ext_007279A0
+        mov ecx, esi
+        call ext_007283B0
+        mov ebp, 1
+        jmp loc_75FC64
+
+    loc_75FC08:
+        add esi, 4
+        push offset mem_00AADFEC
+        mov ecx, esi
+        call ext_007275F0
+        push offset mem_00AADFD4
+        mov ecx, esi
+        call ext_007279A0
+        mov ecx, esi
+        call ext_007283B0
+        mov ecx, ebx
+        call ext_006D81F0
+        jmp loc_75FC62
+
+    loc_75FC33:
+        mov esi, dword ptr [edi + 0xac]
+        push offset mem_00AADFEC
+        add esi, 4
+        mov ecx, esi
+        call ext_007275F0
+        push offset mem_00AADFE0
+        mov ecx, esi
+        call ext_007279A0
+        mov ecx, esi
+        call ext_007283B0
+        mov ecx, ebx
+        call ext_006D7A90
+
+    loc_75FC62:
+        mov ebp, eax
+
+    loc_75FC64:
+        push 0
+        mov ecx, ebx
+        mov dword ptr [esp + 0x18], 0
+        call ext_006FDF70
+        mov esi, eax
+        test esi, esi
+        je loc_75FC94
+        mov ecx, esi
+        call ext_006BC380
+        test eax, eax
+        je loc_75FC94
+        mov ecx, esi
+        call ext_006BC380
+        mov eax, dword ptr [eax + 4]
+        mov dword ptr [esp + 0x14], eax
+
+    loc_75FC94:
+        mov ecx, dword ptr [edi + 0xac]
+        push offset mem_00AADC04
+        add ecx, 4
+        call ext_007275F0
+        xor esi, esi
+        test ebp, ebp
+        jle loc_75FD01
+
+    loc_75FCAD:
+        push 0
+        mov ecx, ebx
+        call ext_006FD980
+        test eax, eax
+        je loc_75FCEB
+        mov eax, dword ptr [esp + 0x14]
+        cmp eax, 2
+        je loc_75FCC8
+        cmp eax, 1
+        jne loc_75FCDF
+
+    loc_75FCC8:
+        mov ecx, ebx
+        call ext_006D8680
+        test eax, eax
+        je loc_75FCDF
+        mov ecx, ebx
+        call ext_006D8680
+        mov eax, dword ptr [eax + esi * 4]
+        jmp loc_75FCED
+
+    loc_75FCDF:
+        push 0
+        mov ecx, ebx
+        call ext_006FD980
+        dec eax
+        jmp loc_75FCED
+
+    loc_75FCEB:
+        xor eax, eax
+
+    loc_75FCED:
+        mov ecx, dword ptr [edi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_00727C80
+        inc esi
+        cmp esi, ebp
+        jl loc_75FCAD
+
+    loc_75FD01:
+        mov ecx, dword ptr [edi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}

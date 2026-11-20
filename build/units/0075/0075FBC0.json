@@ -50,5 +50,7 @@
     "0x0075FCF8",
     "0x0075FD0B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-20T16:00:47Z"
 }
