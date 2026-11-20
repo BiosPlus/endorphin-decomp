@@ -8738,3 +8738,116 @@ L_ret:
         ret
     }
 }
+
+// [0x0079B3B0] sub_0079B3B0 (272 bytes)
+extern "C" void ext_00798840();
+extern "C" void ext_0079B4C0();
+extern "C" void ext_007AF2F0();
+
+extern "C" __declspec(naked) int __cdecl fn_0079B3B0(void* a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        jne short L_B3D5
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        push 0xaafd98
+        push ecx
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        ret
+L_B3D5:
+        mov edx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [esp + 0xc]
+        shr edx, 0xa
+        and edx, 0x1
+        xor edx, eax
+        je short L_B404
+        test eax, eax
+        mov eax, 0xaafd70
+        jne short L_B3F4
+        mov eax, 0xaafd44
+L_B3F4:
+        push eax
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_0079B140
+        add esp, 0x8
+        xor eax, eax
+        pop esi
+        ret
+L_B404:
+        mov eax, dword ptr [esi + 0x18]
+        test al, 0x2
+        jne short L_B424
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        push 0xaafd14
+        push edx
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        ret
+L_B424:
+        test eax, 0x100000
+        jne short L_B444
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        push 0xaafcdc
+        push ecx
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        ret
+L_B444:
+        mov eax, dword ptr [esi + 0xd0]
+        test eax, eax
+        jne short L_B48D
+        push esi
+        call ext_0079B4C0
+        add esp, 0x4
+        test eax, eax
+        jne short L_B48D
+        mov dword ptr [esi + 0xcc], eax
+        mov eax, dword ptr [esi + 0xc]
+        test ah, 0x4
+        mov eax, 0xaafcd4
+        jne short L_B473
+        mov eax, 0xaafccc
+L_B473:
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        push 0xaafcb0
+        push eax
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop esi
+        ret
+L_B48D:
+        push esi
+        call ext_007AF2F0
+        push esi
+        mov dword ptr [esi + 0x188], eax
+        call ext_00798840
+        mov dword ptr [esi + 0x1d0], eax
+        mov eax, dword ptr [esi + 0xc]
+        add esp, 0x8
+        or al, 0x40
+        mov dword ptr [esi + 0xc], eax
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
