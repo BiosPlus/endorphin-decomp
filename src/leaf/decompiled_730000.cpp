@@ -3773,3 +3773,110 @@ fn00736CB0_e:
         ret 4
     }
 }
+
+// [0x00731CE0] sub_00731CE0 (256 bytes)
+extern "C" void ext_006B99C0();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006C9FD0();
+extern "C" void ext_006E9000();
+extern "C" void ext_0071C2A0();
+extern "C" void ext_00782EC0();
+extern "C" void ext_00782F00();
+extern "C" void ext_00782F70();
+
+extern "C" __declspec(naked) void __fastcall fn_00731CE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 18h
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0f4h]
+        mov ecx, edi
+        mov dword ptr [esp + 20h], edi
+        call ext_00782F70
+        mov eax, dword ptr [esi + 0f8h]
+        mov ecx, dword ptr [esp + 28h]
+        mov dword ptr [esp + 14h], eax
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006C9FD0
+        mov esi, eax
+        mov eax, dword ptr [esp + 14h]
+        xor ebp, ebp
+        mov dword ptr [esp + 1ch], esi
+        test eax, eax
+        jle loc_end
+loc_outer:
+        push ebp
+        mov ecx, edi
+        call ext_00782F00
+        mov ecx, dword ptr [eax]
+        lea edx, [esp + 0ch]
+        mov dword ptr [esp + 18h], ecx
+        push edx
+        push ebp
+        mov ecx, edi
+        mov dword ptr [esp + 14h], 0
+        call ext_00782EC0
+        test esi, esi
+        jle loc_next
+        mov dword ptr [esp + 10h], esi
+loc_inner:
+        mov ecx, dword ptr [esp + 28h]
+        push ebp
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006E9000
+        mov esi, dword ptr [esp + 0ch]
+        mov edi, eax
+        mov ecx, edi
+        call ext_006BADB0
+loc_cmp:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne loc_neq
+        test cl, cl
+        je loc_eqend
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne loc_neq
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne loc_cmp
+loc_eqend:
+        xor eax, eax
+        jmp loc_cmpdone
+loc_neq:
+        sbb eax, eax
+        sbb eax, -1
+loc_cmpdone:
+        test eax, eax
+        jne loc_skip
+        mov ecx, dword ptr [esp + 18h]
+        push edi
+        call ext_0071C2A0
+loc_skip:
+        mov eax, dword ptr [esp + 10h]
+        dec eax
+        mov dword ptr [esp + 10h], eax
+        jne loc_inner
+        mov esi, dword ptr [esp + 1ch]
+        mov edi, dword ptr [esp + 20h]
+loc_next:
+        mov eax, dword ptr [esp + 14h]
+        inc ebp
+        cmp ebp, eax
+        jl loc_outer
+loc_end:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebp
+        add esp, 18h
+        ret 4
+    }
+}
