@@ -9011,3 +9011,128 @@ L_ret_edi:
         ret 0x8
     }
 }
+
+// [0x00720D80] sub_00720D80 (288 bytes)
+// Recursive helper: 7 stack args, cdecl (caller pops 0x1c).
+extern "C" void ext_006CD320();
+extern "C" void ext_006E3870();
+extern "C" void ext_00720260();
+extern "C" void ext_00720D80();
+
+extern "C" __declspec(naked) void __cdecl fn_00720D80(int a0, int a1, int a2, int a3, int a4, int a5, int a6) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x24
+        push ebx
+        mov ebx, dword ptr [ebp + 0x18]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        test ebx, ebx
+        push edi
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0x1c], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        mov dword ptr [esp + 0x24], 0x0
+        mov dword ptr [esp + 0x28], 0x0
+        mov dword ptr [esp + 0x2c], 0x0
+        je short L_else
+        mov eax, dword ptr [ebx + 0x10]
+        mov edi, dword ptr [ebp + 0x1c]
+        mov ecx, dword ptr [esi + 0x58]
+        mov eax, dword ptr [eax + 4*edi]
+        cmp ecx, eax
+        je short L_else
+        jle short L_le
+        mov ecx, dword ptr [ebp + 0x20]
+        mov edx, dword ptr [ebp + 0x14]
+        mov eax, dword ptr [ebp + 0x10]
+        inc edi
+        push ecx
+        mov ecx, dword ptr [ebp + 0xc]
+        push edi
+        push ebx
+        push edx
+        push eax
+        push ecx
+        push esi
+        call ext_00720D80
+        add esp, 0x1c
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    L_le:
+        cmp ecx, eax
+        jge short L_epi
+        mov ecx, esi
+        call ext_006CD320
+        test eax, eax
+        je short L_epi
+        mov edx, dword ptr [ebp + 0x20]
+        mov eax, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [ebp + 0x10]
+        push edx
+        mov edx, dword ptr [ebp + 0xc]
+        push edi
+        push ebx
+        push eax
+        push ecx
+        push edx
+        jmp short L_call
+    L_else:
+        mov eax, dword ptr [ebp + 0x20]
+        mov ecx, dword ptr [esi + 0x58]
+        mov edx, dword ptr [ebp + 0x14]
+        push eax
+        mov eax, dword ptr [ebp + 0x10]
+        push ecx
+        push edx
+        lea ecx, [esp + 0x1c]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006E3870
+        mov edi, dword ptr [ebp + 0xc]
+        lea edx, [esp + 0x10]
+        push edx
+        push edi
+        push edi
+        push esi
+        call ext_00720260
+        add esp, 0x10
+        mov ecx, esi
+        call ext_006CD320
+        test eax, eax
+        je short L_epi
+        mov ecx, dword ptr [ebp + 0x1c]
+        mov eax, dword ptr [ebp + 0x20]
+        mov edx, dword ptr [ebp + 0x14]
+        inc ecx
+        push eax
+        mov eax, dword ptr [ebp + 0x10]
+        push ecx
+        push ebx
+        push edx
+        push eax
+        push edi
+    L_call:
+        mov ecx, esi
+        call ext_006CD320
+        push eax
+        call ext_00720D80
+        add esp, 0x1c
+    L_epi:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
