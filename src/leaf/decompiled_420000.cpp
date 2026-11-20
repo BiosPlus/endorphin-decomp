@@ -13567,3 +13567,118 @@ extern "C" __declspec(naked) void __fastcall fn_0042E2C0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0042F970] sub_0042F970 (303 bytes)
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A64BA();
+extern "C" void ext_006A64C0();
+extern "C" void ext_006A64C6();
+extern "C" void ext_006A64CC();
+
+extern "C" __declspec(naked) int __fastcall fn_0042F970(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 879e08h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 4ch
+        push ebx
+        push ebp
+        push esi
+        mov dword ptr [esp + 0ch], ecx
+        push edi
+        lea ecx, [esp + 14h]
+        call ext_006A64CC
+        mov eax, dword ptr [esp + 6ch]
+        push eax
+        lea ecx, [esp + 18h]
+        mov dword ptr [esp + 68h], 0
+        call ext_006A64C6
+        mov eax, dword ptr [esp + 20h]
+        xor ebp, ebp
+        test eax, eax
+        jle L_done
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_outer:
+        test ebp, ebp
+        jl L_fail
+        cmp ebp, eax
+        jge L_fail
+        mov ecx, dword ptr [esp + 1ch]
+        mov edi, dword ptr [ecx + ebp*4]
+        mov ebx, dword ptr [edi + 4ch]
+        test ebx, ebx
+        jle L_after_inner
+        xor esi, esi
+        test ebx, ebx
+        jle L_after_inner
+L_inner:
+        test esi, esi
+        jl L_fail
+        cmp esi, dword ptr [edi + 4ch]
+        jge L_fail
+        mov edx, dword ptr [edi + 48h]
+        lea eax, [edx + esi*4]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        je L_inc
+        cmp eax, 0ffffh
+        jbe L_mask_done
+        and eax, 0ffffh
+L_mask_done:
+        mov ecx, dword ptr [esp + 10h]
+        push eax
+        call ext_006A64C0
+        test eax, eax
+        je L_fail_cleanup
+L_inc:
+        add esi, 1
+        cmp esi, ebx
+        jl L_inner
+L_after_inner:
+        cmp dword ptr [edi + 8], 0
+        jne L_cont
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esp + 10h]
+        push eax
+        call ext_006A64C0
+        test eax, eax
+        je L_fail_cleanup
+L_cont:
+        mov eax, dword ptr [esp + 20h]
+        add ebp, 1
+        cmp ebp, eax
+        jl L_outer
+L_done:
+        lea ecx, [esp + 14h]
+        mov dword ptr [esp + 64h], 0ffffffffh
+        call ext_006A64BA
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 4ch]
+        mov dword ptr fs:[0], ecx
+        add esp, 58h
+        ret 4
+L_fail_cleanup:
+        lea ecx, [esp + 14h]
+        mov dword ptr [esp + 64h], 0ffffffffh
+        call ext_006A64BA
+        mov ecx, dword ptr [esp + 5ch]
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 58h
+        ret 4
+L_fail:
+        call ext_006A60EE
+    }
+}
