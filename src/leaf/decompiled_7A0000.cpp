@@ -9873,3 +9873,139 @@ extern "C" __declspec(naked) void __cdecl fn_007A6660(void* p) {
         ret
     }
 }
+
+// [0x007AA190] sub_007AA190 (368 bytes)
+extern "C" void ext_0079EBB0();
+extern "C" void ext_0079EED0();
+extern "C" void ext_007A9E90();
+extern "C" void ext_007B7D10();
+extern "C" void ext_007B8AE0();
+
+extern "C" __declspec(naked) void __cdecl fn_007AA190(void* a1, void** a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        mov dword ptr [esp + 0x8], 0x0
+        je L_7aa1ab
+        test esi, esi
+        jne L_7aa1c2
+    L_7aa1ab:
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7aa2f3
+    L_7aa1c2:
+        mov eax, dword ptr [esi + 0x8]
+        cmp eax, 0x1
+        je L_7aa1d3
+        cmp eax, 0x3
+        jne L_7aa2f3
+    L_7aa1d3:
+        lea eax, [esp + 0x8]
+        push eax
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7aa200
+        push 0xe
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7aa2f3
+    L_7aa200:
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov dword ptr [edi], eax
+        mov cl, byte ptr [esi + 0xc]
+        mov byte ptr [eax + 0x18], cl
+        call ext_0079EBB0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7aa235
+        push 0xe
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7aa2f3
+    L_7aa235:
+        push 0x0
+        call ext_0079EED0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7aa25f
+        push 0xe
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7aa2f3
+    L_7aa25f:
+        mov eax, dword ptr [esp + 0x8]
+        lea edx, [eax + 0x4]
+        push edx
+        push eax
+        call ext_007B7D10
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test al, al
+        je L_7aa295
+        push 0xe
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7aa295
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7aa2f3
+    L_7aa295:
+        mov eax, dword ptr [esp + 0x8]
+        mov eax, dword ptr [eax]
+        cmp eax, 0x4d4d
+        je L_7aa2b0
+        cmp eax, 0xc23d
+        je L_7aa2b0
+        cmp eax, 0x3daa
+        jne L_7aa2f3
+    L_7aa2b0:
+        mov ecx, dword ptr [edi]
+        push ecx
+        call ext_007A9E90
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7aa2d7
+        push 0xe
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7aa2f3
+    L_7aa2d7:
+        push edi
+        call ext_007B8AE0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7aa2f3
+        push 0xe
+        call ext_007AA510
+        add esp, 0x4
+    L_7aa2f3:
+        pop edi
+        pop esi
+        pop ecx
+        ret
+    }
+}
