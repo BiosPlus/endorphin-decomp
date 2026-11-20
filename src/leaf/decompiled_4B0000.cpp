@@ -11770,3 +11770,126 @@ extern "C" __declspec(naked) void __fastcall fn_004B70B0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x004BA950] sub_004BA950 (251 bytes)
+extern "C" void ext_00499130();
+extern "C" void ext_004BA740();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) int __fastcall fn_004BA950(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x305
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        jg short L_sw_gt
+        je short L_case_1c
+        add eax, 0xfffffd96
+        cmp eax, 0x89
+        ja short L_default
+        movzx eax, byte ptr [eax + 0x4baa60]
+        jmp dword ptr [4*eax + 0x4baa4c]
+
+    L_case_20:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x20
+        push ecx
+        push esi
+        call ext_004BA740
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_case_24:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x24
+        push ecx
+        push esi
+        call ext_004BA740
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_case_2c:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x2c
+        push ecx
+        push esi
+        call ext_004BA740
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_case_1c:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x1c
+        push ecx
+        push esi
+        call ext_004BA740
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_sw_gt:
+        sub eax, 0x31c
+        je short L_case_28
+        sub eax, 0xf
+        je short L_case_30
+        sub eax, 0x5b
+        je short L_case_0e
+
+    L_default:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_case_0e:
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        call ext_00499130
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_case_30:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x30
+        push ecx
+        push esi
+        call ext_004BA740
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+
+    L_case_28:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x28
+        push ecx
+        push esi
+        call ext_004BA740
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
