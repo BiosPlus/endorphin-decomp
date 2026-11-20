@@ -10357,3 +10357,135 @@ extern "C" __declspec(naked) void __fastcall fn_0078D5C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0078A090] sub_0078A090 (272 bytes)
+extern "C" void ext_0078A1A0();
+extern "C" int mem_0092531C;
+extern "C" __declspec(naked) int __fastcall fn_0078A090(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        sub esp, 0x8
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+        push esi
+        push edi
+        mov dword ptr [esp + 0x14], ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        xor esi, esi
+        xor edi, edi
+        mov bl, 0x1
+        mov dword ptr [edx], edi
+        mov dword ptr [eax], 0xffffffff
+        mov byte ptr [esp + 0x13], 0x0
+        mov byte ptr [ecx], 0x0
+        jmp short L_loop
+    L_top:
+        mov edx, dword ptr [esp + 0x20]
+    L_loop:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov al, byte ptr [esi + ecx]
+        cmp al, 0x40
+        jne short L_not40
+        mov edi, esi
+        mov byte ptr [ebp], al
+        jmp near ptr L_173
+    L_not40:
+        cmp al, 0x3a
+        jne short L_not3a
+        mov edi, esi
+        mov byte ptr [ebp], al
+        jmp near ptr L_173
+    L_not3a:
+        cmp al, 0x2c
+        jne short L_not2c
+        mov edi, esi
+        mov byte ptr [ebp], al
+        jmp short L_173
+    L_not2c:
+        cmp al, 0x22
+        jne short L_not22
+        inc esi
+        mov dword ptr [edx], esi
+        mov al, byte ptr [esi + ecx]
+        cmp al, 0x22
+        je short L_q_end
+    L_q_scan:
+        test al, al
+        je short L_q_end
+        mov al, byte ptr [esi + ecx + 0x1]
+        inc esi
+        cmp al, 0x22
+        jne short L_q_scan
+    L_q_end:
+        mov eax, dword ptr [esp + 0x24]
+        mov dword ptr [eax], esi
+        mov eax, dword ptr [edx]
+        cmp eax, esi
+        jne short L_q_nz
+        mov ecx, dword ptr [esp + 0x2c]
+        mov byte ptr [ecx], 0x1
+    L_q_nz:
+        mov byte ptr [esp + 0x13], 0x0
+        jmp short L_175
+    L_not22:
+        cmp al, 0xa
+        je short L_ws
+        cmp al, 0xd
+        je short L_ws
+        movsx edx, al
+        push edx
+        call dword ptr [mem_0092531C]
+        add esp, 0x4
+        test eax, eax
+        je short L_nonspace
+        cmp byte ptr [esp + 0x13], 0x1
+        jne short L_ws
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x14]
+        push esi
+        push eax
+        call ext_0078A1A0
+        cmp eax, -1
+        je short L_ws
+        mov edi, eax
+        mov byte ptr [ebp], 0x3a
+        jmp short L_173
+    L_nonspace:
+        mov byte ptr [esp + 0x13], 0x1
+        jmp short L_175
+    L_ws:
+        mov edi, esi
+        mov byte ptr [ebp], 0x20
+    L_173:
+        xor bl, bl
+    L_175:
+        inc esi
+        test bl, bl
+        jne near ptr L_top
+        mov eax, dword ptr [esp + 0x24]
+        cmp dword ptr [eax], -1
+        jne short L_skip
+        mov dword ptr [eax], edi
+    L_skip:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x14
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
