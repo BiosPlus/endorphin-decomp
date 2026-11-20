@@ -4306,3 +4306,111 @@ fn0073A260_fail:
         ret 4
     }
 }
+
+// [0x00736EA0] sub_00736EA0 (295 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006C2E60();
+extern "C" void ext_006C2F10();
+extern "C" void ext_006E7460();
+extern "C" void ext_007269C0();
+
+// Uses an EH frame (fs:[0] registration, handler 0x8bcb18) and a switch via
+// absolute jump table at 0x736FC8 / index byte table at 0x736FE0, so naked asm.
+extern "C" __declspec(naked) void __fastcall fn_00736EA0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 8bcb18h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 4Ch
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 64h]
+        mov esi, ecx
+        push 1
+        mov ecx, edi
+        call ext_006C2E60
+        mov ecx, dword ptr [esi + 0ACh]
+        push 0AAD908h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je L_43
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_00726A40
+        push eax
+        lea ecx, [esp + 0Ch]
+        call ext_006B9D80
+        push 0AAC078h
+        lea ecx, [esp + 0Ch]
+        mov dword ptr [esp + 60h], 0
+        call ext_006E7460
+        push eax
+        call dword ptr [mem_009251D0]
+        add esp, 8
+        test eax, eax
+        jne L_24
+        push eax
+        mov ecx, edi
+        call ext_006C2E60
+L_24:
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_00726840
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 5Ch], -1
+        call ext_006B9D70
+L_43:
+        push 0
+        mov ecx, edi
+        call ext_006C2F10
+        mov ecx, dword ptr [esi + 0ACh]
+        push 0AAD900h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je L_B2
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_007269C0
+        movsx eax, al
+        add eax, -46h
+        cmp eax, 13h
+        ja L_A4
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 736FE0h]
+        jmp dword ptr [ecx*4 + 736FC8h]
+L_8B:
+        push 1
+        jmp L_9D
+L_8F:
+        push 2
+        jmp L_9D
+L_93:
+        push 3
+        jmp L_9D
+L_97:
+        push 4
+        jmp L_9D
+L_9B:
+        push 5
+L_9D:
+        mov ecx, edi
+        call ext_006C2F10
+L_A4:
+        mov ecx, dword ptr [esi + 0ACh]
+        add ecx, 4
+        call ext_00726840
+L_B2:
+        mov ecx, dword ptr [esp + 54h]
+        pop edi
+        mov al, 1
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 58h
+        ret 4
+    }
+}
