@@ -16796,3 +16796,137 @@ extern "C" __declspec(naked) void __cdecl fn_007BFA70(void* a, void* b, int c) {
         ret
     }
 }
+
+// [0x007B17C0] sub_007B17C0 (352 bytes)
+extern "C" void ext_007AF240();
+extern "C" void ext_007B04C0();
+extern "C" void ext_00798FF0();
+extern "C" void ext_0079AF50();
+
+extern "C" __declspec(naked) void __fastcall fn_007B17C0(void* self) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        push 0x1
+        push edi
+        mov ecx, dword ptr [edi + 0xd0]
+        mov eax, dword ptr [edi + 0xd4]
+        mov edx, dword ptr [ecx]
+        mov ebx, dword ptr [eax]
+        mov dword ptr [esp + 0x18], edx
+        call ext_007AF240
+        mov ecx, eax
+        add esp, 0x8
+        cmp ecx, 0x2000
+        jle L_7B17C0_a
+        mov esi, ecx
+        mov dword ptr [esp + 0x24], 0x1
+        jmp L_7B17C0_b
+L_7B17C0_a:
+        mov eax, 0x2000
+        cdq
+        idiv ecx
+        mov esi, eax
+        mov dword ptr [esp + 0x24], eax
+        imul esi, ecx
+L_7B17C0_b:
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [edi + 0x50]
+        cmp eax, ecx
+        jae L_7B17C0_end
+        lea eax, [esi + ebx - 0x1]
+        xor edx, edx
+        div esi
+        push 0xab1594
+        mov dword ptr [esp + 0x1c], eax
+        lea ebp, [4*eax]
+        push ebp
+        push edi
+        call ext_007B04C0
+        push 0xab1570
+        push ebp
+        push edi
+        mov dword ptr [esp + 0x34], eax
+        call ext_007B04C0
+        mov edx, dword ptr [esp + 0x34]
+        add esp, 0x18
+        test edx, edx
+        mov ebp, eax
+        je L_7B17C0_fail
+        test ebp, ebp
+        je L_7B17C0_nullarr
+        mov ecx, dword ptr [esp + 0x18]
+        test ecx, ecx
+        jbe L_7B17C0_fill_done
+        sub edx, ebp
+        mov dword ptr [esp + 0x14], ecx
+L_7B17C0_loop:
+        cmp esi, ebx
+        jle L_7B17C0_skip
+        mov esi, ebx
+L_7B17C0_skip:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [edx + eax], esi
+        mov dword ptr [eax], ecx
+        add ecx, esi
+        mov dword ptr [esp + 0x10], ecx
+        mov ecx, dword ptr [esp + 0x14]
+        sub ebx, esi
+        add eax, 0x4
+        dec ecx
+        mov dword ptr [esp + 0x14], ecx
+        jne L_7B17C0_loop
+        mov ecx, dword ptr [esp + 0x18]
+L_7B17C0_fill_done:
+        mov dword ptr [edi + 0xcc], ecx
+        mov dword ptr [edi + 0xc8], ecx
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        push 0x116
+        push edi
+        call ext_00798FF0
+        mov edx, dword ptr [edi + 0xd4]
+        push edx
+        call ext_0079AF50
+        mov eax, dword ptr [edi + 0xd0]
+        push eax
+        call ext_0079AF50
+        mov ecx, dword ptr [esp + 0x30]
+        add esp, 0x14
+        mov dword ptr [edi + 0xd4], ecx
+        mov dword ptr [edi + 0xd0], ebp
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_7B17C0_nullarr:
+        push edx
+        call ext_0079AF50
+        add esp, 0x4
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_7B17C0_fail:
+        test ebp, ebp
+        je L_7B17C0_end
+        push ebp
+        call ext_0079AF50
+        add esp, 0x4
+L_7B17C0_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
