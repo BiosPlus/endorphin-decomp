@@ -8515,3 +8515,108 @@ extern "C" __declspec(naked) void __cdecl fn_007A7400(void* a1, int a2, unsigned
         ret
     }
 }
+
+// [0x007AA410] sub_007AA410 (256 bytes)
+extern "C" void ext_0079EBB0();
+extern "C" void ext_0079EED0();
+extern "C" void ext_007AA030();
+extern "C" void ext_007AA510();
+extern "C" void ext_007B8B20();
+extern "C" void ext_007B9620();
+extern "C" int mem_00B61219;
+extern "C" int mem_00B61218;
+
+extern "C" __declspec(naked) void __cdecl fn_007AA410(void* a1, void* a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        je L422
+        test esi, esi
+        jne L439
+    L422:
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je LEND
+    L439:
+        push 2
+        push esi
+        call ext_007B9620
+        mov eax, dword ptr [edi + 8]
+        add esp, 8
+        cmp eax, 2
+        jne LEND
+        push esi
+        call ext_007B8B20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L482
+        push 0x10
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L482
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LEND
+    L482:
+        push edi
+        call ext_0079EBB0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L4B0
+        push 0x10
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L4B0
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LEND
+    L4B0:
+        push 0
+        call ext_0079EED0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L4DF
+        push 0x10
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L4DF
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LEND
+    L4DF:
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [edi + 0xc]
+        mov byte ptr [eax + 0x19], cl
+        mov dl, byte ptr [edi + 0xc]
+        mov eax, dword ptr [esi]
+        push edx
+        push eax
+        call ext_007AA030
+        mov al, byte ptr [mem_00B61218]
+        add esp, 8
+        test al, al
+        je LEND
+        push 0x10
+        call ext_007AA510
+        add esp, 4
+    LEND:
+        pop edi
+        pop esi
+        ret
+    }
+}
