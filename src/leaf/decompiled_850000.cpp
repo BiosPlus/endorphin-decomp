@@ -9709,3 +9709,172 @@ extern "C" __declspec(naked) void __cdecl fn_0085A430(void* self, unsigned int i
         ret
     }
 }
+
+// [0x0085CF60] sub_0085CF60 (342 bytes)
+extern "C" void ext_0081CEBA();
+extern "C" void ext_0084D8E8();
+extern "C" void ext_0085CF60();
+
+extern "C" __declspec(naked) void* __cdecl fn_0085CF60(void) {
+    __asm {
+        sub esp, 4
+        push ebx
+        push esi
+        push edi
+        xor ebx, ebx
+        mov dword ptr [esp + 0xc], ebx
+        push ebp
+        push 0x1c
+        call ext_0081CEBA
+        add esp, 4
+        mov edi, eax
+        test edi, edi
+        je epilogue
+        xor eax, eax
+        mov esi, dword ptr [esp + 0x18]
+        mov al, byte ptr [esi]
+        inc esi
+        xor edx, edx
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 0x4], edx
+        mov dword ptr [edi + 0x8], edx
+        mov dword ptr [edi + 0x14], edx
+        mov dword ptr [edi + 0x18], edx
+        mov dword ptr [edi + 0x10], edx
+        mov dword ptr [edi + 0xc], 1
+        mov al, byte ptr [esi]
+        test al, 0x80
+        je single_len
+        and al, 0x7f
+        xor ebx, ebx
+        mov bl, al
+        test ebx, ebx
+        jle after_len
+    len_loop:
+        xor eax, eax
+        mov ecx, dword ptr [edi + 0x4]
+        shl ecx, 8
+        mov al, byte ptr [esi + edx + 1]
+        or eax, ecx
+        inc edx
+        mov dword ptr [edi + 0x4], eax
+        cmp edx, ebx
+        jl len_loop
+        jmp after_len
+    single_len:
+        xor ecx, ecx
+        mov cl, al
+        mov dword ptr [edi + 0x4], ecx
+    after_len:
+        mov ecx, dword ptr [edi + 0x4]
+        cmp dword ptr [esp + 0x1c], ecx
+        jae have_len
+        push edi
+        call ext_0084D8E8
+        add esp, 4
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+    have_len:
+        lea ebp, [ebx + 2]
+        lea esi, [ebx + esi + 1]
+        test byte ptr [edi], 0x20
+        je plain_data
+        lea eax, [esp + 0x10]
+        push eax
+        push ecx
+        push esi
+        call ext_0085CF60
+        add esp, 0xc
+        mov dword ptr [edi + 0x14], eax
+        add ebp, dword ptr [esp + 0x10]
+        add esi, dword ptr [esp + 0x10]
+        jmp check_rest
+    plain_data:
+        mov dword ptr [edi + 0x8], esi
+        mov eax, dword ptr [edi + 0x4]
+        add ebp, eax
+        add esi, eax
+    check_rest:
+        cmp dword ptr [esp + 0x1c], ebp
+        jbe store_out
+        lea eax, [esp + 0x10]
+        push eax
+        mov eax, dword ptr [esp + 0x20]
+        sub eax, ebp
+        push eax
+        push esi
+        call ext_0085CF60
+        add esp, 0xc
+        mov dword ptr [edi + 0x18], eax
+        add ebp, dword ptr [esp + 0x10]
+    store_out:
+        mov eax, dword ptr [esp + 0x20]
+        test eax, eax
+        je no_out
+        mov dword ptr [eax], ebp
+    no_out:
+        mov eax, edi
+    epilogue:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 4
+        ret
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    free_tree:
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        jne free_tree_nonnull
+        xor eax, eax
+        pop esi
+        ret
+    free_tree_nonnull:
+        mov eax, dword ptr [esi + 0x18]
+        test eax, eax
+        je skip_child2
+        push eax
+        call free_tree
+        add esp, 4
+    skip_child2:
+        mov eax, dword ptr [esi + 0x14]
+        test eax, eax
+        je skip_child1
+        push eax
+        call free_tree
+        add esp, 4
+    skip_child1:
+        cmp dword ptr [esi + 0x10], 0
+        je skip_data
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je skip_data
+        push eax
+        call ext_0084D8E8
+        add esp, 4
+    skip_data:
+        cmp dword ptr [esi + 0xc], 0
+        je skip_node
+        push esi
+        call ext_0084D8E8
+        add esp, 4
+    skip_node:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
