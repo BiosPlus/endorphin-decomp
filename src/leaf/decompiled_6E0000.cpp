@@ -7634,3 +7634,95 @@ L_end:
         ret 4
     }
 }
+
+// [0x006E6C30] sub_006E6C30 (320 bytes)
+extern "C" void ext_006E6AF0();
+extern "C" void ext_00711DB0();
+extern "C" void ext_0077FB40();
+extern "C" __declspec(naked) void __fastcall fn_006E6C30(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -1
+        push 0x008bfd88
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x44
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_epilog
+        call ext_00711DB0
+        cmp eax, 0xe
+        je L_special
+        mov ecx, dword ptr [esi]
+        call ext_00711DB0
+        cmp eax, 0xf
+        je L_special
+        mov ecx, dword ptr [esi]
+        call ext_00711DB0
+        cmp eax, 0xd
+        jne L_epilog
+        mov ecx, dword ptr [esi]
+        push 0
+        mov dword ptr [esp + 0x1c], 0
+        mov dword ptr [esp + 0x20], 0
+        mov dword ptr [esp + 0x14], 0
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [esp + 0xc], 0
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esp + 0x24], 0
+        mov dword ptr [esp + 0x28], 0x3ff00000
+        mov eax, dword ptr [ecx]
+        push 0
+        lea edx, [esp + 0x10]
+        push 0
+        push edx
+        call dword ptr [eax + 0x88]
+        fld qword ptr [esp + 0x8]
+        mov eax, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [ebp + 0xc]
+        mov edx, dword ptr [ebp + 0x10]
+        fstp qword ptr [eax]
+        fld qword ptr [esp + 0x10]
+        fstp qword ptr [ecx]
+        fld qword ptr [esp + 0x18]
+        fstp qword ptr [edx]
+        mov ecx, dword ptr [esp + 0x48]
+        mov dword ptr fs:[0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+L_special:
+        lea ecx, [esp + 0x28]
+        call ext_0077FB40
+        lea eax, [esp + 0x28]
+        mov ecx, esi
+        push eax
+        mov dword ptr [esp + 0x54], 0
+        call ext_006E6AF0
+        fld qword ptr [esp + 0x28]
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp + 0xc]
+        mov eax, dword ptr [ebp + 0x10]
+        mov dword ptr [esp + 0x50], -1
+        fstp qword ptr [ecx]
+        fld qword ptr [esp + 0x30]
+        lea ecx, [esp + 0x28]
+        fstp qword ptr [edx]
+        fld qword ptr [esp + 0x38]
+        fstp qword ptr [eax]
+        call ext_006D80A0
+L_epilog:
+        mov ecx, dword ptr [esp + 0x48]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    }
+}
