@@ -10091,3 +10091,166 @@ extern "C" __declspec(naked) void __cdecl fn_00867230(void* a) {
         _emit 0x00
     }
 }
+
+// [0x0086BE10] sub_0086BE10 (304 bytes)
+extern "C" void ext_0086B3D0();
+extern "C" int mem_00BC7D80;
+extern "C" int mem_00BC7888;
+extern "C" int mem_00BC7FF8;
+extern "C" int mem_00BC7D78;
+extern "C" int mem_00BC8000;
+extern "C" int mem_00BC7EBC;
+extern "C" int mem_00BC7B00;
+extern "C" int mem_00BC8800;
+extern "C" __declspec(naked) void __fastcall fn_0086BE10(void* self) {
+    __asm {
+        push ebx
+        push esi
+        xor si, si
+        push edi
+        push ebp
+        call ext_0086B3D0
+        mov dx, 1
+    loop_top:
+        movsx eax, si
+        mov cx, 9
+        _emit 0x8d
+        _emit 0x1c
+        _emit 0x45
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        movsx edi, dx
+        inc si
+        mov ebp, edi
+        shr ebp, 5
+        sub cx, bp
+        _emit 0x8d
+        _emit 0x2c
+        _emit 0x85
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        mov word ptr [ebx + 0xbc7D80], cx
+        mov eax, 1
+        mov cl, dl
+        and cl, 0x1f
+        shl eax, cl
+        mov ecx, 0x13d
+        mov dword ptr [ebp + 0xbc7888], eax
+        mov ax, 9
+        sub ecx, edi
+        shr ecx, 5
+        sub ax, cx
+        mov cl, -3
+        mov word ptr [ebx + 0xbc7EBC], ax
+        sub cl, dl
+        mov eax, 1
+        and cl, 0x1f
+        shl eax, cl
+        mov ebx, 0x13d
+        mov dword ptr [ebp + 0xbc7B00], eax
+        _emit 0x8d
+        _emit 0x04
+        _emit 0x7d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        cdq
+        idiv ebx
+        cmp si, 0x9e
+        jl loop_top
+        _emit 0x66
+        _emit 0xa1
+        _emit 0x80
+        _emit 0x7d
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x0d
+        _emit 0x88
+        _emit 0x78
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x66
+        _emit 0xa3
+        _emit 0xf8
+        _emit 0x7f
+        _emit 0xbc
+        _emit 0x00
+        mov edi, 0xbc8001
+        xor eax, eax
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x78
+        _emit 0x7d
+        _emit 0xbc
+        _emit 0x00
+        mov ecx, 0x3f
+        rep stosd
+        stosw
+        mov cx, 2
+        stosb
+        _emit 0xc6
+        _emit 0x05
+        _emit 0x00
+        _emit 0x80
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x01
+    outer_a:
+        xor ax, ax
+    loop_a:
+        movsx edx, ax
+        add ax, cx
+        inc byte ptr [edx + 0xbc8000]
+        cmp ax, 0x100
+        jl loop_a
+        add cx, cx
+        cmp cx, 0x100
+        jl outer_a
+        mov edi, 0xbc8800
+        xor eax, eax
+        mov ecx, 0x40
+        rep stosd
+        mov cx, 1
+    outer_b:
+        mov ax, cx
+        cmp cx, 0x100
+        jge skip_b
+        mov ebx, 1
+    inner_b:
+        _emit 0x66
+        _emit 0x85
+        _emit 0xc8
+        je no_xor
+        movsx esi, ax
+        xor byte ptr [esi + 0xbc8800], bl
+    no_xor:
+        inc ax
+        cmp ax, 0x100
+        jl inner_b
+    skip_b:
+        add cx, cx
+        cmp cx, 0x100
+        jl outer_b
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
