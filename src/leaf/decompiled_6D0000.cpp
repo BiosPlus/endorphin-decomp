@@ -12574,3 +12574,110 @@ L_6D7A78:
         ret 0x4
     }
 }
+
+// [0x006DC8E0] sub_006DC8E0 (256 bytes)
+extern "C" void ext_006C9360();
+extern "C" void ext_006DC460();
+extern "C" void ext_006DC480();
+extern "C" void ext_006DD300();
+extern "C" void ext_006DD6C0();
+extern "C" void ext_006DE7C0();
+extern "C" void ext_006E6DE0();
+extern "C" void ext_006E6E60();
+extern "C" void ext_006E7460();
+
+// SEH-guarded (try/__finally style) thiscall with one stack arg (ret 4). Byte-for-byte reproduction
+// of the prolog/epilog and call sequence; the 10 trailing nops pad the function to its 256-byte extent.
+extern "C" __declspec(naked) void __fastcall fn_006DC8E0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8bcb18
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x50
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x68]
+        sub esp, 0x4c
+        mov esi, ecx
+        mov eax, esp
+        mov dword ptr [esp + 0x54], esp
+        push eax
+        mov ecx, edi
+        call ext_006E6E60
+        lea ecx, [esp + 0x58]
+        push ecx
+        call ext_006DD6C0
+        add esp, 0x50
+        test edi, edi
+        mov dword ptr [esp + 0x60], 0x0
+        je L_end_006DC8E0
+        push 0x1
+        mov ecx, edi
+        call ext_006E6DE0
+        test al, al
+        je short L_end_006DC8E0
+        mov ecx, esi
+        call ext_006DC480
+        test eax, eax
+        je short L_end_006DC8E0
+        mov ecx, esi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C9360
+        test eax, eax
+        je short L_end_006DC8E0
+        lea ecx, [esp + 0xc]
+        call ext_006E7460
+        push eax
+        mov ecx, esi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C9360
+        mov ecx, eax
+        call ext_006DE7C0
+        test eax, eax
+        je short L_skip2_006DC8E0
+        push edi
+        push eax
+        call ext_006DD300
+        add esp, 0x8
+    L_skip2_006DC8E0:
+        lea ecx, [esp + 0xc]
+        call ext_006E7460
+        push eax
+        mov ecx, esi
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C9360
+        mov ecx, eax
+        call ext_006DE7C0
+        test eax, eax
+        je short L_end_006DC8E0
+        push edi
+        push eax
+        call ext_006DD300
+        add esp, 0x8
+    L_end_006DC8E0:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x60], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x58]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0x5c
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
