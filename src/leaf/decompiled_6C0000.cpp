@@ -8317,3 +8317,126 @@ extern "C" __declspec(naked) void __cdecl fn_006C4340(void* out, double a, doubl
         ret
     }
 }
+
+// [0x006CA6D0] sub_006CA6D0 (256 bytes)
+extern "C" void ext_006C9F00();
+extern "C" void ext_006CA020();
+extern "C" void ext_006CA060();
+extern "C" void ext_006D03E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006CA6D0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 10h
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push ebx
+        push esi
+        mov esi, dword ptr [esp+20h]
+        push edi
+        mov edi, ecx
+        push eax
+        mov ecx, esi
+        call ext_006C9F00
+        mov ebx, dword ptr [esp+20h]
+        mov dword ptr [edi+48h], 0xffffffff
+        test ebx, ebx
+        mov dword ptr [edi+4Ch], 0x7fffffff
+        jle L_73A
+        lea ecx, [esp+14h]
+        lea edx, [ebx-1]
+        push ecx
+        push edx
+        mov ecx, edi
+        call ext_006CA060
+        mov ecx, eax
+        call ext_006C9F00
+        mov ecx, dword ptr [esp+10h]
+        mov edx, dword ptr [eax+4]
+        cmp ecx, edx
+        jg L_73A
+        jl L_72C
+        mov edx, dword ptr [esp+0ch]
+        mov ecx, dword ptr [eax]
+        cmp edx, ecx
+        ja L_73A
+L_72C:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        add esp, 10h
+        ret 8
+L_73A:
+        mov eax, dword ptr [edi+24h]
+        dec eax
+        cmp ebx, eax
+        jge L_77E
+        lea ecx, [esp+14h]
+        lea edx, [ebx+1]
+        push ecx
+        push edx
+        mov ecx, edi
+        call ext_006CA060
+        mov ecx, eax
+        call ext_006C9F00
+        mov ecx, dword ptr [esp+10h]
+        mov edx, dword ptr [eax+4]
+        cmp ecx, edx
+        jl L_77E
+        jg L_770
+        mov edx, dword ptr [esp+0ch]
+        mov ecx, dword ptr [eax]
+        cmp edx, ecx
+        jb L_77E
+L_770:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        add esp, 10h
+        ret 8
+L_77E:
+        push ebx
+        mov ecx, edi
+        call ext_006CA020
+        mov ecx, dword ptr [esi]
+        mov dword ptr [eax], ecx
+        mov edx, dword ptr [esi+8]
+        mov dword ptr [eax+8], edx
+        mov ecx, dword ptr [esi+0ch]
+        mov dword ptr [eax+0ch], ecx
+        mov edx, dword ptr [esi+10h]
+        mov dword ptr [eax+10h], edx
+        lea ecx, [eax+14h]
+        sub esi, eax
+        mov eax, 4
+L_7A6:
+        mov edx, dword ptr [esi+ecx]
+        mov dword ptr [ecx], edx
+        add ecx, 4
+        dec eax
+        jne L_7A6
+        push ebx
+        push 10h
+        mov ecx, edi
+        call ext_006D03E0
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 10h
+        ret 8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
