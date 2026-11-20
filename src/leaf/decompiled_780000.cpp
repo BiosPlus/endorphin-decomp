@@ -10982,3 +10982,130 @@ extern "C" __declspec(naked) void __fastcall fn_00789120(void* self, int edx_unu
         jmp short L_epilogue
     }
 }
+
+// [0x00783FD0] sub_00783FD0 (320 bytes)
+extern "C" void ext_00784160();
+extern "C" void ext_007AD5E0();
+extern "C" void ext_007ADDF0();
+extern "C" int mem_00B6167C;
+extern "C" __declspec(naked) void __fastcall fn_00783FD0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov ebp, ecx
+        mov ebx, dword ptr [esi + 0x44]
+        push esi
+        mov dword ptr [esp + 0x14], ebp
+        call ext_00784160
+        mov dword ptr [esi + 0x40], 0
+        mov dword ptr [esi + 0x44], 0xffffffff
+        mov edx, dword ptr [ebp + 0x14]
+        mov dword ptr [esp + 0x14], edx
+        mov eax, dword ptr [edx]
+        test eax, eax
+        mov dword ptr [esp + 0x1c], eax
+        je L783FD0_zero
+        mov edi, dword ptr [eax + 0x4]
+        jmp L783FD0_dec
+    L783FD0_zero:
+        xor edi, edi
+    L783FD0_dec:
+        dec edi
+        test edi, edi
+        jl L783FD0_out1
+        lea ebp, dword ptr [eax + 4*edi + 0xc]
+    L783FD0_loop:
+        mov esi, dword ptr [ebp]
+        test esi, esi
+        je L783FD0_next
+        mov ecx, dword ptr [mem_00B6167C]
+        mov eax, ebx
+        sar eax, cl
+        sub eax, dword ptr [esi]
+        js L783FD0_next
+        cmp eax, dword ptr [esi + 0x4]
+        jl L783FD0_found
+    L783FD0_next:
+        dec edi
+        sub ebp, 0x4
+        test edi, edi
+        jl L783FD0_out2
+        jmp L783FD0_loop
+    L783FD0_found:
+        mov dword ptr [edx + 0x4], 0xffffffff
+        mov ecx, dword ptr [mem_00B6167C]
+        mov eax, dword ptr [ebp]
+        mov edi, ebx
+        sar edi, cl
+        mov esi, dword ptr [eax]
+        mov ecx, ebx
+        sub edi, esi
+        and ecx, 0x8000001f
+        mov eax, dword ptr [eax + 4*edi + 0xc]
+        jns L783FD0_mask
+        dec ecx
+        or ecx, -0x20
+        inc ecx
+    L783FD0_mask:
+        mov esi, 0x1
+        shl esi, cl
+        not esi
+        and esi, eax
+        cmp esi, eax
+        je L783FD0_out2
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je L783FD0_adj
+        cmp dword ptr [eax + 0x8], 0x1
+        jle L783FD0_adj
+        mov ecx, edx
+        call ext_007ADDF0
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [eax]
+        sub ecx, edx
+        sar ecx, 0x2
+        lea ebp, dword ptr [ebp + 4*ecx]
+    L783FD0_adj:
+        mov edx, dword ptr [ebp]
+        cmp dword ptr [edx + 0x8], 0x1
+        jle L783FD0_skip2
+        mov ecx, ebp
+        call ext_007AD5E0
+    L783FD0_skip2:
+        mov eax, dword ptr [ebp]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 4*edi + 0xc], esi
+        mov edx, dword ptr [ecx + 0x28]
+        pop edi
+        pop esi
+        mov dword ptr [edx + 4*ebx], 0
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    L783FD0_out1:
+        mov edx, dword ptr [ebp + 0x28]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [edx + 4*ebx], 0
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    L783FD0_out2:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov ecx, dword ptr [eax + 0x28]
+        mov dword ptr [ecx + 4*ebx], 0
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
