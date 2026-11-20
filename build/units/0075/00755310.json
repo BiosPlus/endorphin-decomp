@@ -42,5 +42,7 @@
     "0x0075541B",
     "0x00755421"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-20T15:18:42Z"
 }
