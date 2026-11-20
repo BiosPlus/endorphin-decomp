@@ -14561,3 +14561,122 @@ L_770:
         ret 10h
     }
 }
+
+// [0x00446790] sub_00446790 (242 bytes)
+extern "C" void ext_00430310();
+extern "C" void ext_004444B0();
+extern "C" void ext_004461B0();
+extern "C" void ext_00446240();
+extern "C" void ext_004462D0();
+extern "C" void ext_00446360();
+extern "C" void ext_00446430();
+extern "C" void ext_004464D0();
+extern "C" void ext_00446560();
+extern "C" void ext_004465F0();
+extern "C" void ext_00446680();
+extern "C" int mem_00ACDB40;
+
+extern "C" __declspec(naked) void __fastcall fn_00446790(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        je L_end
+        mov eax, dword ptr [esp + 0Ch]
+        lea edx, [eax - 6]
+        cmp edx, 14h
+        ja L_default
+        movzx edx, byte ptr [edx + 0x4468ac]
+        jmp dword ptr [edx*4 + 0x446884]
+L_case_a:
+        cmp eax, 10h
+        setl al
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_004461B0
+        push 0Bh
+        jmp L_store
+L_case_b:
+        cmp eax, 10h
+        setl dl
+        push edx
+        push ecx
+        mov ecx, esi
+        call ext_00446240
+        push 0
+        jmp L_store
+L_case_c:
+        cmp eax, 10h
+        setl al
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_004462D0
+        push 4
+        jmp L_store
+L_case_d:
+        cmp eax, 10h
+        setl dl
+        push edx
+        push ecx
+        mov ecx, esi
+        call ext_004465F0
+        push 7
+        jmp L_store
+L_case_e:
+        cmp eax, 10h
+        setl al
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_004464D0
+        push 1
+        jmp L_store
+L_case_f:
+        cmp eax, 10h
+        setl dl
+        push edx
+        push ecx
+        mov ecx, esi
+        call ext_00446560
+        push 2
+        jmp L_store
+L_case_g:
+        cmp eax, 10h
+        setl al
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00446680
+        push 5
+        jmp L_store
+L_case_h:
+        cmp eax, 10h
+        setl dl
+        push edx
+        push ecx
+        mov ecx, esi
+        call ext_00446430
+        push 0Ch
+        jmp L_store
+L_case_i:
+        cmp eax, 10h
+        setl al
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00446360
+        push 0Ah
+L_store:
+        mov ecx, dword ptr [mem_00ACDB40]
+        call ext_00430310
+L_default:
+        mov ecx, esi
+        call ext_004444B0
+L_end:
+        pop esi
+        ret 8
+    }
+}
