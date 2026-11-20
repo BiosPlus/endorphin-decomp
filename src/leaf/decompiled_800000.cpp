@@ -11276,3 +11276,137 @@ extern "C" __declspec(naked) void __cdecl fn_0080AE20(void* self) {
         ret
     }
 }
+
+// [0x0080FDE0] sub_0080FDE0 (261 bytes)
+extern "C" void ext_0080EFD0();
+extern "C" void ext_0080F700();
+extern "C" void ext_0080FEF0();
+extern "C" void ext_0080FF10();
+extern "C" void __cdecl ext_008596E0(void* a1);
+extern "C" int mem_00B83EA0;
+extern "C" int mem_00B83EA4;
+extern "C" int mem_00B83EA8;
+extern "C" __declspec(naked) void __cdecl fn_0080FDE0(int a1, const char* a2) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        test ebx, ebx
+        push edi
+        mov dword ptr [esp + 0x8], 0x0
+        jne L_nonnull
+        pop edi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    L_nonnull:
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        je L_alloc
+        cmp byte ptr [edi], 0x3a
+        jne L_notcolon
+        push 0xab6b14
+        push edi
+        call ext_0080FF10
+        add esp, 0x8
+        test eax, eax
+        je L_try2
+        mov dword ptr [mem_00B83EA0], ebx
+        pop edi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    L_try2:
+        push 0xab6b1c
+        push edi
+        call ext_0080FF10
+        add esp, 0x8
+        test eax, eax
+        je L_ret0
+        mov dword ptr [mem_00B83EA4], ebx
+    L_ret0:
+        pop edi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    L_notcolon:
+        push edi
+        call ext_0080F700
+        add esp, 0x4
+        cmp eax, 0x40
+        jb L_small
+        pop edi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    L_small:
+        lea eax, [esp + 0x8]
+        push eax
+        push edi
+        call ext_0080EFD0
+        add esp, 0x8
+        test eax, eax
+        je L_alloc
+        pop edi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    L_alloc:
+        push esi
+        push 0xc
+        call ext_008596E0
+        mov esi, eax
+        add esp, 0x4
+        test esi, esi
+        je L_end
+        mov eax, dword ptr [mem_00B83EA0]
+        test eax, eax
+        je L_skip1
+        push 0x0
+        mov ecx, dword ptr [mem_00B83EA0]
+        call ecx
+        add esp, 0x4
+    L_skip1:
+        test edi, edi
+        je L_skip2
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        jne L_store_out
+        mov dword ptr [mem_00B83EA8], esi
+        jmp L_skip2
+    L_store_out:
+        mov dword ptr [eax], esi
+    L_skip2:
+        test edi, edi
+        mov dword ptr [esi + 0x4], ebx
+        jne L_hasstr
+        xor eax, eax
+        jmp L_setdata
+    L_hasstr:
+        push edi
+        call ext_0080FEF0
+        add esp, 0x4
+    L_setdata:
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi], 0x0
+        mov eax, dword ptr [mem_00B83EA4]
+        test eax, eax
+        je L_end
+        push 0x0
+        mov edx, dword ptr [mem_00B83EA4]
+        call edx
+        add esp, 0x4
+    L_end:
+        mov eax, esi
+        pop esi
+        pop edi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
