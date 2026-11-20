@@ -8790,3 +8790,106 @@ extern "C" __declspec(naked) void __fastcall fn_00724260(void* self) {
         ret
     }
 }
+
+// [0x00725940] sub_00725940 (288 bytes)
+extern "C" int mem_00AACF60;
+extern "C" int mem_00AACF58;
+extern "C" int mem_00AACF48;
+extern "C" void ext_00724F00();
+extern "C" void ext_00724FB0();
+extern "C" void ext_00725650();
+extern "C" void ext_007257F0();
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_007289E0();
+extern "C" void ext_00789BE0();
+extern "C" __declspec(naked) void __fastcall fn_00725940(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x1c8]
+        cmp eax, 0x1
+        jne near ptr L_not1
+        mov al, byte ptr [esi + 0x15]
+        test al, al
+        je near ptr L_52
+        cmp dword ptr [esi + 0x1c4], -1
+        je near ptr L_52
+        jmp near ptr L_44
+    L_not1:
+        test eax, eax
+        jne near ptr L_52
+        mov al, byte ptr [esi + 0x15]
+        test al, al
+        je near ptr L_52
+        cmp dword ptr [esi + 0x8], 0x2
+        jne near ptr L_52
+        mov eax, dword ptr [esi + 0x1c4]
+        test eax, eax
+        jne near ptr L_52
+        mov ecx, esi
+        call ext_00724FB0
+        test eax, eax
+        jne near ptr L_52
+        mov ecx, dword ptr [esi + 0x24c]
+        push ebx
+        call ext_00789BE0
+        xor bl, bl
+        push offset mem_00AACF60
+        mov ecx, esi
+        mov byte ptr [esp + 0xf], bl
+        call ext_00726770
+        test al, al
+        jne short L_d8
+        push offset mem_00AACF58
+        mov ecx, esi
+        call ext_00726770
+        test al, al
+        je short L_e1
+    L_d8:
+        mov ecx, esi
+        call ext_00726840
+        mov bl, 0x1
+    L_e1:
+        push offset mem_00AACF48
+        mov ecx, esi
+        call ext_00726770
+        test al, al
+        je short L_fc
+        mov ecx, esi
+        call ext_00726840
+        mov al, 0x1
+        jmp short L_00
+    L_fc:
+        mov al, byte ptr [esp + 0xb]
+    L_00:
+        test bl, bl
+        pop ebx
+        jne near ptr L_52
+        test al, al
+        jne near ptr L_52
+        mov ecx, dword ptr [esi + 0x10]
+        mov dword ptr [esi + 0x1c8], 0x1
+        mov dword ptr [esi + 0x25c], 0x0
+        mov dword ptr [esi + 0x260], 0x0
+        mov dword ptr [esi + 0x264], 0x0
+        mov eax, dword ptr [ecx]
+        push -0xd
+        push 0x2
+        call dword ptr [eax + 0x20]
+        mov ecx, esi
+        call ext_00725650
+    L_44:
+        mov ecx, esi
+        call ext_007289E0
+        mov ecx, esi
+        call ext_007257F0
+    L_52:
+        mov ecx, esi
+        call ext_00724F00
+        pop esi
+        pop ecx
+        ret
+    }
+}
