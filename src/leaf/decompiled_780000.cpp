@@ -11539,3 +11539,150 @@ extern "C" __declspec(naked) void __fastcall fn_0078C6F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00785CA0] sub_00785CA0 (341 bytes)
+extern "C" void ext_006C9E80();
+extern "C" void ext_006CA020();
+extern "C" void ext_006CA2F0();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006CD330();
+extern "C" void ext_006CE8B0();
+extern "C" void ext_006E7410();
+extern "C" void ext_007854A0();
+extern "C" void ext_00785550();
+extern "C" void ext_00785E70();
+extern "C" __declspec(naked) void __fastcall fn_00785CA0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov ebp, ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x8], ebp
+        call ext_006CA6A0
+        test eax, eax
+        jne c785_main
+        push 0xaaf430
+        push eax
+        lea ecx, [ebp + 0x20]
+        call ext_006E7410
+        pop edi
+        xor al, al
+        pop ebp
+        add esp, 0x10
+        ret 0x4
+    c785_main:
+        push ebx
+        push esi
+        push edi
+        mov ecx, ebp
+        call ext_00785550
+        mov esi, eax
+        mov dword ptr [esp + 0x14], 0x0
+        dec esi
+        jmp c785_loop
+    c785_top:
+        mov ebp, dword ptr [esp + 0x10]
+    c785_loop:
+        push esi
+        mov ecx, edi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9E80
+        fstp dword ptr [esp + 0x24]
+        push edi
+        mov ecx, ebp
+        call ext_007854A0
+        push edi
+        mov ecx, ebp
+        mov ebx, eax
+        call ext_00785550
+        fld dword ptr [esp + 0x24]
+        mov ebp, eax
+        mov eax, dword ptr [esp + 0x10]
+        dec ebp
+        cmp esi, ebx
+        fsub qword ptr [eax + 0x80]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x24]
+        fadd qword ptr [eax + 0x80]
+        mov dword ptr [esp + 0x24], 0x0
+        fstp dword ptr [esp + 0x18]
+        jl c785_exit
+    c785_inner:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        push ebp
+        push ebx
+        push esi
+        push edi
+        call ext_00785E70
+        add esp, 0x18
+        test al, al
+        je c785_else
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x14], esi
+        dec esi
+        inc ecx
+        cmp esi, ebx
+        mov dword ptr [esp + 0x24], ecx
+        jge c785_inner
+        jmp c785_after
+    c785_else:
+        dec esi
+    c785_after:
+        mov eax, dword ptr [esp + 0x24]
+        test eax, eax
+        jle c785_tail
+        mov ecx, edi
+        call ext_006CA6A0
+        mov ecx, dword ptr [esp + 0x24]
+        cmp ecx, eax
+        je c785_eqcase
+        mov eax, dword ptr [esp + 0x14]
+        lea edx, [ecx + eax - 0x1]
+        mov ecx, edi
+        push edx
+        push eax
+        call ext_006CE8B0
+        jmp c785_tail
+    c785_eqcase:
+        mov eax, dword ptr [esp + 0x10]
+        mov cl, byte ptr [eax + 0xa9]
+        test cl, cl
+        je c785_zero
+        lea ecx, [ebx + 0x1]
+        push ebp
+        push ecx
+        mov ecx, edi
+        call ext_006CE8B0
+        jmp c785_tail
+    c785_zero:
+        push 0x0
+        mov ecx, edi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9E80
+        fstp dword ptr [esp + 0x24]
+        mov ecx, edi
+        call ext_006CA2F0
+        mov edx, dword ptr [esp + 0x24]
+        mov ecx, edi
+        push edx
+        call ext_006CD330
+    c785_tail:
+        cmp esi, ebx
+        jge c785_top
+    c785_exit:
+        pop esi
+        pop ebx
+        pop edi
+        mov al, 0x1
+        pop ebp
+        add esp, 0x10
+        ret 0x4
+    }
+}
