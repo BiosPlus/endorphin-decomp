@@ -13309,3 +13309,107 @@ extern "C" __declspec(naked) void __fastcall fn_006DDAB0(void* self) {
         ret
     }
 }
+
+// [0x006D9280] sub_006D9280 (275 bytes)
+// SEH-framed thiscall (ret 4). Switch on self->[0x10] (0..3) through a 4-entry table at 0x006D9394
+// that selects one of two call sequences; then calls sub_006E72D0 on the stack arg, walks a
+// pointer array (count at local+0, data at local+0x10) deleting each element, and tears down.
+extern "C" void ext_006E72A0();
+extern "C" void ext_006E72D0();
+extern "C" void ext_006D2160();
+extern "C" void ext_006D2250();
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void ext_006B9D70();
+
+extern "C" __declspec(naked) void __fastcall fn_006D9280(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8bbd97
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x20
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_006E72A0
+        mov eax, dword ptr [esi + 0x10]
+        mov edi, 0x1
+        cmp eax, 0x3
+        mov dword ptr [esp + 0x34], edi
+        ja L_006D9314
+        jmp dword ptr [4*eax + 0x6d9394]
+    L_006D92C6:
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push 0x0
+        push 0xaa8cc4
+        push eax
+        lea ecx, [esp + 0x1c]
+        call dword ptr [edx + 0x8]
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push 0x0
+        push 0xaa91b4
+        push eax
+        lea ecx, [esp + 0x1c]
+        call dword ptr [edx + 0x8]
+        push 0x0
+        push 0xaa91ac
+        jmp L_006D9304
+    L_006D92FD:
+        push 0x0
+        push 0xaa91b4
+    L_006D9304:
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        lea ecx, [esp + 0x1c]
+        call dword ptr [edx + 0x8]
+    L_006D9314:
+        mov ebp, dword ptr [esp + 0x3c]
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, ebp
+        call ext_006E72D0
+        mov dword ptr [esp + 0xc], edi
+        mov dword ptr [esp + 0x10], 0x993ce0
+        mov eax, dword ptr [esp + 0x14]
+        xor edi, edi
+        test eax, eax
+        mov dword ptr [esp + 0x34], 0x2
+        jle L_006D9366
+    L_006D9342:
+        mov ecx, dword ptr [esp + 0x24]
+        mov esi, dword ptr [ecx + 4*edi]
+        test esi, esi
+        je L_006D935D
+        mov ecx, esi
+        call ext_006B9D70
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_006D935D:
+        mov eax, dword ptr [esp + 0x14]
+        inc edi
+        cmp edi, eax
+        jl L_006D9342
+    L_006D9366:
+        lea ecx, [esp + 0x14]
+        call ext_006D2250
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x34], 0x0
+        call ext_006D2160
+        mov ecx, dword ptr [esp + 0x2c]
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret 0x4
+    }
+}
