@@ -13413,3 +13413,85 @@ extern "C" __declspec(naked) void __fastcall fn_006D9280(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D5B10] sub_006D5B10 (288 bytes)
+extern "C" void ext_006B9950();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA1C0();
+extern "C" void ext_006BA220();
+extern "C" void ext_006E7460();
+
+extern "C" __declspec(naked) void __fastcall fn_006D5B10(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b9073
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x98
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        je L_6D5B10_exit
+        mov edi, dword ptr [esp + 0xb8]
+        test edi, edi
+        je L_6D5B10_else
+        mov eax, dword ptr [esp + 0xb4]
+        lea ecx, [esp + 0x8]
+        push eax
+        call ext_006B9D80
+        push edi
+        lea ecx, [esp + 0x58]
+        mov dword ptr [esp + 0xac], 0
+        call ext_006B9D80
+        lea ecx, [esp + 0x54]
+        mov byte ptr [esp + 0xa8], 1
+        call ext_006B9950
+        test al, al
+        jne L_6D5B10_after
+        push 0xaa8fd0
+        lea ecx, [esp + 0xc]
+        call ext_006BA220
+        lea ecx, [esp + 0x54]
+        push ecx
+        lea ecx, [esp + 0xc]
+        call ext_006BA1C0
+    L_6D5B10_after:
+        mov edx, dword ptr [esp + 0xbc]
+        mov esi, dword ptr [esi + 0xac]
+        push edx
+        lea ecx, [esp + 0xc]
+        call ext_006E7460
+        push eax
+        mov eax, dword ptr [esp + 0xb8]
+        push eax
+        call dword ptr [esi + 0xe0]
+        add esp, 0xc
+        lea ecx, [esp + 0x54]
+        mov byte ptr [esp + 0xa8], 0
+        call ext_006B9D70
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0xa8], -1
+        call ext_006B9D70
+        jmp L_6D5B10_exit
+    L_6D5B10_else:
+        mov ecx, dword ptr [esp + 0xbc]
+        mov edx, dword ptr [esp + 0xb4]
+        push ecx
+        mov ecx, dword ptr [esp + 0xb4]
+        push edx
+        push ecx
+        call dword ptr [eax + 0xe0]
+        add esp, 0xc
+    L_6D5B10_exit:
+        mov ecx, dword ptr [esp + 0xa0]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0xa4
+        ret 0x10
+    }
+}
