@@ -15728,3 +15728,125 @@ L_end_7B8090:
         ret
     }
 }
+
+// [0x007BBC80] sub_007BBC80 (310 bytes)
+extern "C" void ext_0079B140();
+extern "C" void ext_007BC450();
+extern "C" void ext_007BC550();
+
+extern "C" __declspec(naked) int __cdecl fn_007BBC80(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        xor eax, eax
+        push edi
+        mov edi, dword ptr [esi + 0x1cc]
+        mov dword ptr [esi + 0x210], 0x6d80a0
+        mov ax, word ptr [esi + 0x46]
+        mov ecx, eax
+        sub ecx, 0x804c
+        je L_7BBD71
+        dec ecx
+        je L_7BBCC8
+        push 0xab1fcc
+        push eax
+        mov eax, dword ptr [esi]
+        push 0xab1f84
+        push eax
+        call ext_0079B140
+        add esp, 0x10
+        xor eax, eax
+        pop edi
+        pop esi
+        ret
+L_7BBCC8:
+        push esi
+        call ext_007BC550
+        add esp, 0x4
+        test eax, eax
+        je L_7BBD7E
+        cmp word ptr [esi + 0x44], 0x8775
+        jne L_7BBD2B
+        mov dword ptr [esi + 0x1a0], 0x7bbf10
+        mov eax, dword ptr [edi]
+        sub eax, 0x0
+        je L_7BBD1C
+        dec eax
+        je L_7BBD0D
+        sub eax, 0x2
+        jne L_7BBDAE
+        mov dword ptr [edi + 0x14], 0x7bc2d0
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBD0D:
+        mov dword ptr [edi + 0x14], 0x7bc210
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBD1C:
+        mov dword ptr [edi + 0x14], 0x7bc1d0
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBD2B:
+        mov dword ptr [esi + 0x1a0], 0x7bbfd0
+        mov eax, dword ptr [edi]
+        sub eax, 0x0
+        je L_7BBD62
+        dec eax
+        je L_7BBD53
+        sub eax, 0x2
+        jne L_7BBDAE
+        mov dword ptr [edi + 0x14], 0x7bc400
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBD53:
+        mov dword ptr [edi + 0x14], 0x7bc360
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBD62:
+        mov dword ptr [edi + 0x14], 0x7bc320
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBD71:
+        push esi
+        call ext_007BC450
+        add esp, 0x4
+        test eax, eax
+        jne L_7BBD83
+L_7BBD7E:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+L_7BBD83:
+        mov dword ptr [esi + 0x1a0], 0x7bbdc0
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je L_7BBDA7
+        cmp eax, 0x3
+        jne L_7BBDAE
+        mov dword ptr [edi + 0x14], 0x7bc160
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+L_7BBDA7:
+        mov dword ptr [edi + 0x14], 0x7bc120
+L_7BBDAE:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
