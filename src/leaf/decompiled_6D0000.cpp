@@ -14235,3 +14235,143 @@ L_join:
         ret 0x14
     }
 }
+
+// [0x006DD560] sub_006DD560 (352 bytes)
+extern "C" void ext_00712010();
+extern "C" void ext_006BC380();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_006D0370();
+extern "C" void ext_006CD330();
+extern "C" void ext_006D03D0();
+extern "C" void ext_00711DB0();
+
+extern "C" __declspec(naked) void __cdecl fn_006DD560() {
+    __asm {
+        sub esp, 0x28
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x38]
+        push edi
+        mov ecx, esi
+        call ext_00712010
+        test eax, eax
+        mov ecx, esi
+        je dd560_f2
+        call ext_00712010
+        mov ecx, eax
+        call ext_006BC380
+        mov ebx, eax
+        cmp ebx, 0x3
+        mov dword ptr [esp + 0x3c], ebx
+        je dd560_638
+        cmp ebx, 0x4
+        je dd560_638
+dd560_59b:
+        mov eax, dword ptr [esi]
+        push 0
+        push 0
+        lea ecx, [esp + 0x14]
+        push 0
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x88]
+        mov ecx, dword ptr [esp + 0x38]
+        call ext_006DEEC0
+        mov esi, eax
+        test esi, esi
+        je dd560_6a9
+        push 0
+        mov ecx, esi
+        call ext_006D0370
+        fld qword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_006CD330
+        mov ecx, esi
+        call ext_006D03D0
+        push 1
+        mov ecx, esi
+        call ext_006D0370
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x28
+        ret
+dd560_f2:
+        call ext_00711DB0
+        cmp eax, 0xd
+        je dd560_6b0
+        mov ecx, esi
+        call ext_00711DB0
+        cmp eax, 0xe
+        je dd560_6b0
+        mov ecx, esi
+        call ext_00711DB0
+        cmp eax, 0xc
+        je dd560_62c
+        mov ecx, esi
+        call ext_00711DB0
+        cmp eax, 0xf
+        jne dd560_59b
+dd560_62c:
+        mov dword ptr [esp + 0x3c], 0x4
+        mov ebx, dword ptr [esp + 0x3c]
+dd560_638:
+        mov edx, dword ptr [esi]
+        push 0
+        push 0
+        lea eax, [esp + 0x1c]
+        push 0
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x88]
+        xor edi, edi
+        test ebx, ebx
+        jle dd560_6a9
+        push ebp
+        mov ebp, dword ptr [esp + 0x3c]
+        lea ebx, [esp + 0x18]
+dd560_65c:
+        mov edx, dword ptr [ebp]
+        push edi
+        mov ecx, ebp
+        call dword ptr [edx + 0x18]
+        test eax, eax
+        je dd560_69c
+        mov ecx, eax
+        call ext_006DEEC0
+        mov esi, eax
+        test esi, esi
+        je dd560_69c
+        push 0
+        mov ecx, esi
+        call ext_006D0370
+        fld qword ptr [ebx]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_006CD330
+        mov ecx, esi
+        call ext_006D03D0
+        push 1
+        mov ecx, esi
+        call ext_006D0370
+dd560_69c:
+        mov eax, dword ptr [esp + 0x40]
+        inc edi
+        add ebx, 0x8
+        cmp edi, eax
+        jl dd560_65c
+        pop ebp
+dd560_6a9:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x28
+        ret
+dd560_6b0:
+        mov dword ptr [esp + 0x3c], 0x3
+        jmp dd560_638
+    }
+}
