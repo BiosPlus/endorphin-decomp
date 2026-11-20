@@ -2516,3 +2516,156 @@ extern "C" __declspec(naked) void __fastcall fn_00483910(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00485170] ToolEngine::vfunc_6 (332 bytes)
+extern "C" void ext_0047FFF0();
+extern "C" void ext_00480010();
+extern "C" void ext_00480430();
+extern "C" void ext_004806C0();
+extern "C" void ext_004809B0();
+extern "C" void ext_00481300();
+extern "C" void ext_00484770();
+extern "C" void ext_004E7A20();
+extern "C" void ext_006A6E8C();
+
+// Switch on the int argument (0..12): index-byte table at 0x4852D4,
+// dword jump table at 0x4852BC; values > 12 go to the default block (0x485268).
+extern "C" __declspec(naked) void __fastcall fn_00485170(void* self, int edx_unused, int a1) {
+    __asm {
+        fld1
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0xc
+        push ebx
+        push ebp
+        mov ebp, ecx
+        lea ebx, [ebp + 0x370]
+        fst dword ptr [ebx]
+        push esi
+        fldz
+        push edi
+        fst dword ptr [ebx + 0x4]
+        fst dword ptr [ebx + 0x8]
+        fst dword ptr [ebx + 0xc]
+        fst dword ptr [ebx + 0x10]
+        fst dword ptr [ebx + 0x18]
+        fst dword ptr [ebx + 0x1c]
+        fst dword ptr [ebx + 0x20]
+        fst dword ptr [ebx + 0x24]
+        fst dword ptr [ebx + 0x2c]
+        fst dword ptr [ebx + 0x30]
+        fst dword ptr [ebx + 0x34]
+        fstp dword ptr [ebx + 0x38]
+        fst dword ptr [ebx + 0x14]
+        fst dword ptr [ebx + 0x28]
+        fstp dword ptr [ebx + 0x3c]
+        ja  fn485170_default
+        movzx ecx, byte ptr [eax + 0x4852d4]
+        jmp dword ptr [4*ecx + 0x4852bc]
+
+    fn485170_case0:
+        lea ecx, [ebp + 0x10]
+        call ext_004809B0
+        test al, al
+        je  fn485170_case0_else
+        push 0x40
+        push 0x0
+        push ebx
+        call ext_006A6E8C
+        add esp, 0xc
+        jmp fn485170_tail
+
+    fn485170_case0_else:
+        mov ecx, ebp
+        call ext_00484770
+    fn485170_fld_common:
+        fld dword ptr [eax]
+        fstp dword ptr [ebx + 0x30]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ebx + 0x34]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ebx + 0x38]
+        fld1
+        fstp dword ptr [ebx + 0x3c]
+        jmp fn485170_tail
+
+    fn485170_case1:
+        lea ecx, [ebp + 0x10]
+        call ext_004E7A20
+        jmp fn485170_fld_common
+
+    fn485170_case3:
+        mov ecx, ebp
+        call ext_00481300
+        mov esi, eax
+        mov edi, ebx
+        mov ecx, 0x10
+        rep movsd
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        ret 0x4
+
+    fn485170_case2:
+        mov ecx, ebp
+        call ext_00481300
+        mov ecx, 0x10
+        mov esi, eax
+        mov edi, ebx
+        rep movsd
+        jmp fn485170_tail
+
+    fn485170_case4:
+        push eax
+        mov ecx, ebp
+        call ext_004806C0
+        mov ecx, 0x10
+        mov esi, eax
+        mov edi, ebx
+        rep movsd
+        cmp byte ptr [ebp + 0x36c], 0x0
+        jne fn485170_tail
+        mov ecx, ebx
+        call ext_0047FFF0
+        jmp fn485170_tail
+
+    fn485170_default:
+    fn485170_case5:
+        mov ecx, ebp
+        call ext_00481300
+        mov ecx, 0x10
+        mov esi, eax
+        mov edi, ebx
+        rep movsd
+        cmp byte ptr [ebp + 0x36c], 0x0
+        jne fn485170_tail
+        fld1
+        fst dword ptr [ebx]
+        fldz
+        fst dword ptr [ebx + 0x10]
+        fst dword ptr [ebx + 0x20]
+        fst dword ptr [ebx + 0x4]
+        fst dword ptr [ebx + 0x24]
+        fst dword ptr [ebx + 0x8]
+        fstp dword ptr [ebx + 0x18]
+        fst dword ptr [ebx + 0x14]
+        fstp dword ptr [ebx + 0x28]
+
+    fn485170_tail:
+        mov ecx, ebx
+        call ext_00480010
+        test al, al
+        jne fn485170_epilogue
+        mov ecx, ebx
+        call ext_00480430
+
+    fn485170_epilogue:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        ret 0x4
+    }
+}
