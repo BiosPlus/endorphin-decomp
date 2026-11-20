@@ -11497,3 +11497,105 @@ fn_6D8F66_join:
         ret
     }
 }
+
+// [0x006D5210] sub_006D5210 (238 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006D57D0();
+extern "C" void ext_006E7440();
+extern "C" void ext_006E7460();
+
+extern "C" __declspec(naked) void __fastcall fn_006D5210(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8bcb18
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x4c
+        mov eax, dword ptr [esp + 0x5c]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        push eax
+        lea ecx, [esp + 0x14]
+        push 0xaa8704
+        push ecx
+        call ext_006D57D0
+        add esp, 0xc
+        mov eax, dword ptr [edi + 0x1c]
+        xor ebp, ebp
+        cmp eax, ebp
+        mov dword ptr [esp + 0x64], ebp
+        mov dword ptr [esp + 0x6c], ebp
+        jle L_after_loop
+    L_loop_top:
+        mov edx, dword ptr [edi + 0x2c]
+        lea ecx, [esp + 0x10]
+        mov ebx, dword ptr [edx + 4*ebp]
+        call ext_006E7460
+        mov ecx, ebx
+        mov esi, eax
+        call ext_006BADB0
+    L_cmp_loop:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_cmp_diff
+        test cl, cl
+        je L_cmp_equal
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L_cmp_diff
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L_cmp_loop
+    L_cmp_equal:
+        xor eax, eax
+        jmp L_cmp_done
+    L_cmp_diff:
+        sbb eax, eax
+        sbb eax, -1
+    L_cmp_done:
+        test eax, eax
+        jne L_next
+        mov eax, dword ptr [esp + 0x6c]
+        mov ecx, dword ptr [esp + 0x70]
+        cmp eax, ecx
+        je L_found_bail
+        inc eax
+        mov dword ptr [esp + 0x6c], eax
+    L_next:
+        mov eax, dword ptr [edi + 0x1c]
+        inc ebp
+        cmp ebp, eax
+        jl L_loop_top
+    L_after_loop:
+        push 0
+        lea ecx, [edi + 0x1c4]
+        call ext_006E7440
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        xor eax, eax
+    L_epilogue:
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x58
+        ret 0x8
+    L_found_bail:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        mov eax, ebx
+        jmp L_epilogue
+    }
+}
