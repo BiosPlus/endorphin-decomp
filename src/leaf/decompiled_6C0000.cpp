@@ -9194,3 +9194,128 @@ extern "C" __declspec(naked) void __fastcall fn_006C8F90(void* self) {
         _emit 0xC3
     }
 }
+
+// [0x006CCD20] sub_006CCD20 (288 bytes)
+extern "C" int mem_00993838;
+extern "C" int mem_00991558;
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9E80();
+extern "C" void ext_006C9F00();
+extern "C" void ext_006CA020();
+extern "C" void ext_006CA060();
+extern "C" void ext_006CB190();
+extern "C" void ext_006DADE0();
+extern "C" void ext_006DBE10();
+extern "C" void ext_00872828();
+
+extern "C" __declspec(naked) void __fastcall fn_006CCD20(void* self, int edx_unused, int arg) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        jne fn006CCD20_L40
+        fld dword ptr [mem_00993838]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+fn006CCD20_L40:
+        cmp eax, 1
+        je fn006CCD20_L1CE1C
+        mov eax, dword ptr [esp + 0x2c]
+        test eax, eax
+        je fn006CCD20_L1CE1C
+        fild dword ptr [esp + 0x2c]
+        dec eax
+        mov dword ptr [esp + 0x2c], eax
+        fstp dword ptr [esp + 0x10]
+        fild dword ptr [esp + 0x2c]
+        call ext_00872828
+        push eax
+        mov ecx, esi
+        call ext_006CA060
+        fld dword ptr [esp + 0x10]
+        mov edi, eax
+        call ext_00872828
+        mov ebx, eax
+        mov ecx, esi
+        push ebx
+        call ext_006CA060
+        mov ecx, edi
+        mov ebp, eax
+        call ext_006C9C30
+        sub eax, 2
+        je fn006CCD20_LCCE0B
+        sub eax, 2
+        je fn006CCD20_LCDB0
+        sub eax, 4
+        je fn006CCD20_LCDB0
+        fld dword ptr [mem_00993838]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+fn006CCD20_LCDB0:
+        lea eax, [esp + 0x10]
+        mov ecx, edi
+        push eax
+        call ext_006C9F00
+        lea ecx, [esp + 0x18]
+        push eax
+        lea edx, [esp + 0x24]
+        push ecx
+        push edx
+        mov ecx, ebp
+        call ext_006C9F00
+        mov ecx, eax
+        call ext_006DBE10
+        mov ecx, eax
+        call ext_006DADE0
+        fstp dword ptr [esp + 0x2c]
+        push ebx
+        mov ecx, esi
+        call ext_006CB190
+        fmul dword ptr [esp + 0x2c]
+        mov ecx, ebp
+        fmul qword ptr [mem_00991558]
+        fstp dword ptr [esp + 0x2c]
+        call ext_006C9E80
+        pop edi
+        pop esi
+        fsub dword ptr [esp + 0x24]
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+fn006CCD20_LCCE0B:
+        mov ecx, ebp
+        call ext_006C9E80
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+fn006CCD20_L1CE1C:
+        push 0
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9E80
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+    }
+}
