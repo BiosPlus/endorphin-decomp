@@ -1915,3 +1915,108 @@ extern "C" __declspec(naked) void __fastcall fn_007152D0(void* self) {
     }
 }
 
+
+// [0x007106C0] Identical-shape clone of 0x006BEA80 (278 bytes) - sub_007106C0
+extern "C" int mem_00925284;
+extern "C" int mem_00B5F0E8;
+extern "C" int mem_00B5F0EC;
+extern "C" int mem_00B5F0F0;
+extern "C" int mem_00B5F0F4;
+extern "C" int mem_00B5F0F8;
+extern "C" int mem_00B5F0FC;
+extern "C" int mem_00B5F100;
+extern "C" int mem_00B5F104;
+extern "C" int mem_00B5F108;
+extern "C" int mem_00B5F10C;
+extern "C" int mem_00B5F110;
+extern "C" int mem_00B5F114;
+extern "C" int mem_00B5F118;
+extern "C" int mem_00B5F11C;
+extern "C" int mem_00B5F120;
+extern "C" int mem_00B5F124;
+extern "C" int mem_00B5F128;
+extern "C" int mem_00B5F12C;
+extern "C" int mem_00B5F130;
+extern "C" int mem_00B5F134;
+extern "C" int mem_00B5F138;
+extern "C" int mem_00B5F13C;
+extern "C" int mem_00B5F140;
+extern "C" int mem_00B5F144;
+extern "C" int mem_00B5F148;
+extern "C" int mem_00B5F14C;
+extern "C" int mem_00B5F150;
+extern "C" int mem_00B5F154;
+extern "C" int mem_00B5F158;
+extern "C" int mem_00B5F15C;
+extern "C" int mem_00B5F160;
+extern "C" int mem_00B5F164;
+extern "C" __declspec(naked) void __fastcall fn_007106C0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F0E8], ecx
+        mov dword ptr [mem_00B5F0EC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F0F0], ecx
+        mov dword ptr [mem_00B5F0F4], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F0F8], ecx
+        mov dword ptr [mem_00B5F0FC], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F100], ecx
+        mov dword ptr [mem_00B5F104], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F108], ecx
+        mov dword ptr [mem_00B5F10C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F110], ecx
+        mov dword ptr [mem_00B5F114], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F118], ecx
+        mov dword ptr [mem_00B5F11C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F120], ecx
+        mov dword ptr [mem_00B5F124], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F128], ecx
+        mov dword ptr [mem_00B5F12C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F130], ecx
+        mov dword ptr [mem_00B5F134], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F138], ecx
+        mov dword ptr [mem_00B5F13C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F140], ecx
+        mov dword ptr [mem_00B5F144], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F148], ecx
+        mov dword ptr [mem_00B5F14C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F150], ecx
+        mov dword ptr [mem_00B5F154], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F158], ecx
+        mov dword ptr [mem_00B5F15C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F160], ecx
+        mov dword ptr [mem_00B5F164], edx
+        ret
+    }
+}
