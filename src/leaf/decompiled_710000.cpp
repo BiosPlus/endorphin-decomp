@@ -9583,3 +9583,75 @@ extern "C" __declspec(naked) void __fastcall fn_00711DE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00715A90] sub_00715A90 (321 bytes)
+extern "C" int mem_00B5FC80;
+extern "C" int mem_00B5FC84;
+extern "C" int mem_00B5FC58;
+extern "C" int mem_00B5FC5C;
+extern "C" int mem_00B5FC30;
+extern "C" int mem_00B5FC34;
+extern "C" int mem_00B5FC08;
+extern "C" int mem_00B5FC0C;
+extern "C" int mem_00B5FC78;
+extern "C" int mem_00B5FC7C;
+extern "C" int mem_00B5FC70;
+extern "C" int mem_00B5FC74;
+extern "C" int mem_00B5FC68;
+extern "C" int mem_00B5FC6C;
+extern "C" int mem_00B5FC60;
+extern "C" int mem_00B5FC64;
+extern "C" int mem_00B5FC50;
+extern "C" int mem_00B5FC54;
+extern "C" int mem_00B5FC48;
+extern "C" int mem_00B5FC4C;
+extern "C" int mem_00B5FC40;
+extern "C" int mem_00B5FC44;
+extern "C" int mem_00B5FC38;
+extern "C" int mem_00B5FC3C;
+extern "C" int mem_00B5FC28;
+extern "C" int mem_00B5FC2C;
+extern "C" int mem_00B5FC20;
+extern "C" int mem_00B5FC24;
+extern "C" int mem_00B5FC18;
+extern "C" int mem_00B5FC1C;
+extern "C" int mem_00B5FC10;
+extern "C" int mem_00B5FC14;
+
+extern "C" __declspec(naked) void __cdecl fn_00715A90(void) {
+    __asm {
+        mov dword ptr [mem_00B5FC80], 0
+        mov dword ptr [mem_00B5FC84], 0x3ff00000
+        mov dword ptr [mem_00B5FC58], 0
+        mov dword ptr [mem_00B5FC5C], 0x3ff00000
+        mov dword ptr [mem_00B5FC30], 0
+        mov dword ptr [mem_00B5FC34], 0x3ff00000
+        mov dword ptr [mem_00B5FC08], 0
+        mov dword ptr [mem_00B5FC0C], 0x3ff00000
+        mov dword ptr [mem_00B5FC78], 0
+        mov dword ptr [mem_00B5FC7C], 0
+        mov dword ptr [mem_00B5FC70], 0
+        mov dword ptr [mem_00B5FC74], 0
+        mov dword ptr [mem_00B5FC68], 0
+        mov dword ptr [mem_00B5FC6C], 0
+        mov dword ptr [mem_00B5FC60], 0
+        mov dword ptr [mem_00B5FC64], 0
+        mov dword ptr [mem_00B5FC50], 0
+        mov dword ptr [mem_00B5FC54], 0
+        mov dword ptr [mem_00B5FC48], 0
+        mov dword ptr [mem_00B5FC4C], 0
+        mov dword ptr [mem_00B5FC40], 0
+        mov dword ptr [mem_00B5FC44], 0
+        mov dword ptr [mem_00B5FC38], 0
+        mov dword ptr [mem_00B5FC3C], 0
+        mov dword ptr [mem_00B5FC28], 0
+        mov dword ptr [mem_00B5FC2C], 0
+        mov dword ptr [mem_00B5FC20], 0
+        mov dword ptr [mem_00B5FC24], 0
+        mov dword ptr [mem_00B5FC18], 0
+        mov dword ptr [mem_00B5FC1C], 0
+        mov dword ptr [mem_00B5FC10], 0
+        mov dword ptr [mem_00B5FC14], 0
+        ret
+    }
+}
