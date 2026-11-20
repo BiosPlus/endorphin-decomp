@@ -20748,3 +20748,132 @@ extern "C" __declspec(naked) void __cdecl fn_007C22B0(void* self) {
         ret
     }
 }
+
+// [0x007C1480] sub_007C1480 (288 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C1480(void* self, unsigned int pos) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        xor esi, esi
+        mov ebx, dword ptr [ebp + 0x1c]
+        cmp dword ptr [ebx + 0x2c], esi
+        jne L14B8
+        mov ecx, dword ptr [ebx + 0x1c]
+        mov eax, 0x1
+        shl eax, cl
+        mov ecx, dword ptr [ebp + 0x28]
+        push 0x1
+        push eax
+        push ecx
+        call dword ptr [ebp + 0x20]
+        add esp, 0xc
+        cmp eax, esi
+        mov dword ptr [ebx + 0x2c], eax
+        jne L14B8
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+    L14B8:
+        cmp dword ptr [ebx + 0x20], esi
+        jne L14D0
+        mov ecx, dword ptr [ebx + 0x1c]
+        mov edx, 0x1
+        shl edx, cl
+        mov dword ptr [ebx + 0x28], esi
+        mov dword ptr [ebx + 0x24], esi
+        mov dword ptr [ebx + 0x20], edx
+    L14D0:
+        mov eax, dword ptr [esp + 0x14]
+        mov esi, dword ptr [ebp + 0x10]
+        mov ecx, dword ptr [ebx + 0x20]
+        sub eax, esi
+        cmp eax, ecx
+        push edi
+        jb L150B
+        mov esi, dword ptr [ebp + 0xc]
+        mov edi, dword ptr [ebx + 0x2c]
+        sub esi, ecx
+        mov eax, ecx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        xor eax, eax
+        rep movsb
+        mov ecx, dword ptr [ebx + 0x20]
+        pop edi
+        pop esi
+        mov dword ptr [ebx + 0x28], 0x0
+        mov dword ptr [ebx + 0x24], ecx
+        pop ebp
+        pop ebx
+        ret
+    L150B:
+        sub ecx, dword ptr [ebx + 0x28]
+        cmp ecx, eax
+        mov dword ptr [esp + 0x14], ecx
+        jbe L151C
+        mov ecx, eax
+        mov dword ptr [esp + 0x14], ecx
+    L151C:
+        mov edi, dword ptr [ebx + 0x2c]
+        mov edx, dword ptr [ebx + 0x28]
+        mov esi, dword ptr [ebp + 0xc]
+        add edi, edx
+        mov edx, ecx
+        sub esi, eax
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov ecx, dword ptr [esp + 0x14]
+        sub eax, ecx
+        je L1567
+        mov esi, dword ptr [ebp + 0xc]
+        mov edi, dword ptr [ebx + 0x2c]
+        mov ecx, eax
+        sub esi, eax
+        mov edx, ecx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov dword ptr [ebx + 0x28], eax
+        mov eax, dword ptr [ebx + 0x20]
+        pop edi
+        pop esi
+        mov dword ptr [ebx + 0x24], eax
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L1567:
+        mov edi, dword ptr [ebx + 0x28]
+        mov eax, dword ptr [ebx + 0x20]
+        add edi, ecx
+        mov edx, edi
+        mov dword ptr [ebx + 0x28], edi
+        cmp edx, eax
+        jne L157F
+        mov dword ptr [ebx + 0x28], 0x0
+    L157F:
+        mov edx, dword ptr [ebx + 0x24]
+        cmp edx, eax
+        jae L158B
+        add edx, ecx
+        mov dword ptr [ebx + 0x24], edx
+    L158B:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
