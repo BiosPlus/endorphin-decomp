@@ -14756,3 +14756,127 @@ extern "C" __declspec(naked) void __fastcall fn_007B8C70(void* self) {
         ret
     }
 }
+
+// [0x007BF760] sub_007BF760 (274 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BF760(void* self, unsigned char* buf, int len) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x1cc]
+        mov eax, dword ptr [esp + 0x10]
+        push edi
+        mov ecx, dword ptr [ecx + 0x4]
+        cmp esi, ecx
+        jle L_END_7BF760
+        sub esi, ecx
+        cmp ecx, 0x3
+        jne L_NOT3_7BF760
+        movsx ecx, byte ptr [eax]
+        movsx edx, byte ptr [eax + 0x1]
+        movsx ebx, byte ptr [eax + 0x2]
+        add eax, 0x2
+    L_LOOP3_7BF760:
+        movsx edi, byte ptr [eax + 0x1]
+        add eax, 0x3
+        add ecx, edi
+        sub esi, 0x3
+        movsx edi, byte ptr [eax - 0x1]
+        add edx, edi
+        mov byte ptr [eax - 0x2], cl
+        movsx edi, byte ptr [eax]
+        add ebx, edi
+        mov byte ptr [eax - 0x1], dl
+        test esi, esi
+        mov byte ptr [eax], bl
+        jg L_LOOP3_7BF760
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_NOT3_7BF760:
+        cmp ecx, 0x4
+        jne L_GEN_7BF760
+        movsx ecx, byte ptr [eax]
+        movsx edx, byte ptr [eax + 0x1]
+        movsx ebx, byte ptr [eax + 0x2]
+        lea edi, [eax + 0x2]
+        movsx eax, byte ptr [eax + 0x3]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, edi
+        jmp L_N4BODY_7BF760
+    L_N4LOOP_7BF760:
+        mov ebx, dword ptr [esp + 0x14]
+    L_N4BODY_7BF760:
+        movsx edi, byte ptr [eax + 0x2]
+        add eax, 0x4
+        add ecx, edi
+        sub esi, 0x4
+        movsx edi, byte ptr [eax - 0x1]
+        add edx, edi
+        mov byte ptr [eax - 0x2], cl
+        movsx edi, byte ptr [eax]
+        add ebx, edi
+        mov byte ptr [eax - 0x1], dl
+        movsx edi, byte ptr [eax + 0x1]
+        mov dword ptr [esp + 0x14], ebx
+        mov byte ptr [eax], bl
+        mov ebx, dword ptr [esp + 0x10]
+        add ebx, edi
+        test esi, esi
+        mov dword ptr [esp + 0x10], ebx
+        mov byte ptr [eax + 0x1], bl
+        jg L_N4LOOP_7BF760
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_CMP_7BF760:
+        cmp ecx, 0x4
+    L_GEN_7BF760:
+        ja L_BIG_7BF760
+        jmp dword ptr [4*ecx + 0x7bf874]
+    L_BIG_7BF760:
+        lea edi, [ecx - 0x4]
+        test edi, edi
+        jle L_TAIL_7BF760
+    L_GLOOP_7BF760:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        add bl, dl
+        mov byte ptr [eax + ecx], bl
+        inc eax
+        dec edi
+        jne L_GLOOP_7BF760
+    L_TAIL_7BF760:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        add bl, dl
+        mov byte ptr [eax + ecx], bl
+        inc eax
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        add bl, dl
+        mov byte ptr [eax + ecx], bl
+        inc eax
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        add bl, dl
+        mov byte ptr [eax + ecx], bl
+        inc eax
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        add bl, dl
+        mov byte ptr [eax + ecx], bl
+        inc eax
+        sub esi, ecx
+        test esi, esi
+        jg L_CMP_7BF760
+    L_END_7BF760:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
