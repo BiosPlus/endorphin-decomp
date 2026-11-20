@@ -42,5 +42,7 @@
     "0x0070F9BB",
     "0x0070F9C1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-20T15:18:42Z"
 }
