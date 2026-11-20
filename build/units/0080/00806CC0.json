@@ -24,5 +24,7 @@
     "0x00806DDB",
     "0x00806E18"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-20T16:01:15Z"
 }

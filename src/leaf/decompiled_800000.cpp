@@ -12063,3 +12063,180 @@ extern "C" __declspec(naked) int __cdecl fn_0080D6E0(int a1, int a2, int a3, int
         ret
     }
 }
+
+// [0x00806CC0] sub_00806CC0 (368 bytes)
+extern "C" void ext_00806E30();
+extern "C" void ext_008071E0();
+extern "C" void ext_00809A50();
+extern "C" void ext_0080A800();
+extern "C" char mem_00AB4198[];
+extern "C" char mem_00AB41C4[];
+extern "C" char mem_00AB4204[];
+
+extern "C" __declspec(naked) int __cdecl fn_00806CC0(int a1, int a2, unsigned int a3, unsigned int a4, unsigned int a5, unsigned int a6, int a7) {
+    __asm {
+        mov eax, dword ptr [esp + 0ch]
+        push ebx
+        push ebp
+        push esi
+        cmp eax, 0fff2h
+        push edi
+        jne L_806cff
+        mov eax, dword ptr [esp + 2ch]
+        mov ecx, dword ptr [esp + 28h]
+        mov edx, dword ptr [esp + 24h]
+        push eax
+        mov eax, dword ptr [esp + 24h]
+        push ecx
+        mov ecx, dword ptr [esp + 20h]
+        push edx
+        mov edx, dword ptr [esp + 20h]
+        push eax
+        push 0fff2h
+        push ecx
+        push edx
+        call ext_008071E0
+        add esp, 1ch
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_806cff:
+        cmp eax, 0fff0h
+        je L_806d1e
+        push eax
+        push offset mem_00AB4198
+        call ext_0080A800
+        add esp, 8
+        mov eax, 0ah
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_806d1e:
+        mov edi, dword ptr [esp + 20h]
+        cmp edi, 0ffffh
+        ja L_806e24
+        mov ebp, dword ptr [esp + 24h]
+        cmp ebp, 0ffffh
+        ja L_806e24
+        test ebp, ebp
+        jne L_806d49
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L_806d49:
+        mov edx, dword ptr [esp + 18h]
+        mov ebx, dword ptr [esp + 14h]
+        lea eax, [esp + 24h]
+        push 0
+        push eax
+        lea ecx, [esp + 28h]
+        push 0
+        push ecx
+        push edx
+        push ebx
+        call ext_00809A50
+        mov esi, eax
+        add esp, 18h
+        test esi, esi
+        je L_806d8c
+        cmp esi, 258h
+        je L_806d99
+        push esi
+        push offset mem_00AB41C4
+        call ext_0080A800
+        add esp, 8
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_806d8c:
+        mov eax, dword ptr [esp + 20h]
+        sub eax, 10h
+        mov dword ptr [esp + 20h], eax
+        jmp L_806d9d
+    L_806d99:
+        mov eax, dword ptr [esp + 20h]
+    L_806d9d:
+        mov ecx, dword ptr [esp + 24h]
+        lea edx, [edi + ebp]
+        shl ecx, 2
+        sub eax, ecx
+        cmp edx, eax
+        ja L_806e24
+        cmp edi, 30h
+        jae L_806e0d
+        cmp edx, 30h
+        jbe L_806e0f
+        mov edx, dword ptr [esp + 28h]
+        mov esi, 30h
+        sub esi, edi
+        push edx
+        push esi
+        push edi
+        push ebx
+        call ext_00806E30
+        mov ebx, eax
+        add esp, 10h
+        test ebx, ebx
+        je L_806de9
+        push ebx
+        push offset mem_00AB4204
+        call ext_0080A800
+        add esp, 8
+        mov eax, ebx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_806de9:
+        sub ebp, esi
+        jne L_806df4
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L_806df4:
+        mov ecx, dword ptr [esp + 28h]
+        mov eax, dword ptr [esp + 24h]
+        mov ebx, dword ptr [esp + 14h]
+        add ecx, esi
+        mov dword ptr [esp + 28h], ecx
+        lea ecx, [esi + 4*eax]
+        add edi, ecx
+        jmp L_806e0f
+    L_806e0d:
+        add edi, ecx
+    L_806e0f:
+        mov edx, dword ptr [esp + 28h]
+        push edx
+        push ebp
+        push edi
+        push ebx
+        call ext_00806E30
+        add esp, 10h
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_806e24:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        ret
+    }
+}
