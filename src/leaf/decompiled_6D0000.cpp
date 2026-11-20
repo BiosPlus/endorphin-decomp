@@ -13121,3 +13121,86 @@ L_6D891F:
         ret 0x4
     }
 }
+
+// [0x006DC020] sub_006DC020 (278 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B5DB10; extern "C" int mem_00B5DB14; extern "C" int mem_00B5DB18; extern "C" int mem_00B5DB1C;
+extern "C" int mem_00B5DB20; extern "C" int mem_00B5DB24; extern "C" int mem_00B5DB28; extern "C" int mem_00B5DB2C;
+extern "C" int mem_00B5DB30; extern "C" int mem_00B5DB34; extern "C" int mem_00B5DB38; extern "C" int mem_00B5DB3C;
+extern "C" int mem_00B5DB40; extern "C" int mem_00B5DB44; extern "C" int mem_00B5DB48; extern "C" int mem_00B5DB4C;
+extern "C" int mem_00B5DB50; extern "C" int mem_00B5DB54; extern "C" int mem_00B5DB58; extern "C" int mem_00B5DB5C;
+extern "C" int mem_00B5DB60; extern "C" int mem_00B5DB64; extern "C" int mem_00B5DB68; extern "C" int mem_00B5DB6C;
+extern "C" int mem_00B5DB70; extern "C" int mem_00B5DB74; extern "C" int mem_00B5DB78; extern "C" int mem_00B5DB7C;
+extern "C" int mem_00B5DB80; extern "C" int mem_00B5DB84; extern "C" int mem_00B5DB88; extern "C" int mem_00B5DB8C;
+
+// Copies the 128-byte block pointed to by *mem_00925284 into the global block at 0xB5DB10 (16 qwords).
+extern "C" __declspec(naked) void __fastcall fn_006DC020(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB10], ecx
+        mov dword ptr [mem_00B5DB14], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB18], ecx
+        mov dword ptr [mem_00B5DB1C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB20], ecx
+        mov dword ptr [mem_00B5DB24], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB28], ecx
+        mov dword ptr [mem_00B5DB2C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB30], ecx
+        mov dword ptr [mem_00B5DB34], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB38], ecx
+        mov dword ptr [mem_00B5DB3C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB40], ecx
+        mov dword ptr [mem_00B5DB44], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB48], ecx
+        mov dword ptr [mem_00B5DB4C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB50], ecx
+        mov dword ptr [mem_00B5DB54], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB58], ecx
+        mov dword ptr [mem_00B5DB5C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB60], ecx
+        mov dword ptr [mem_00B5DB64], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB68], ecx
+        mov dword ptr [mem_00B5DB6C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB70], ecx
+        mov dword ptr [mem_00B5DB74], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB78], ecx
+        mov dword ptr [mem_00B5DB7C], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB80], ecx
+        mov dword ptr [mem_00B5DB84], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DB88], ecx
+        mov dword ptr [mem_00B5DB8C], edx
+        ret
+    }
+}
