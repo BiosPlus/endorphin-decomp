@@ -32,5 +32,7 @@
     "0x00872168",
     "0x00872171"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-20T15:16:42Z"
 }
