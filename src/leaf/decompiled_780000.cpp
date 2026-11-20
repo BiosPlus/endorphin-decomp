@@ -10862,3 +10862,123 @@ L_notfound:
         ret 0x4
     }
 }
+
+// [0x00789120] sub_00789120 (320 bytes)
+extern "C" void ext_00788D00();
+extern "C" void ext_00788D10();
+extern "C" void ext_00788D20();
+extern "C" void ext_00788DF0();
+extern "C" void ext_00788E20();
+extern "C" void ext_00788E50();
+extern "C" int mem_00AA93A0;
+extern "C" int mem_00AAB940;
+extern "C" __declspec(naked) void __fastcall fn_00789120(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 008C168Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 658h
+        push ebx
+        push esi
+        lea ecx, [esp + 8]
+        call ext_00788D00
+        mov eax, dword ptr [esp + 670h]
+        lea ecx, [esp + 8]
+        push eax
+        mov dword ptr [esp + 66ch], 0
+        call ext_00788D20
+        test al, al
+        je L_fail
+        lea ecx, [esp + 8]
+        call ext_00788DF0
+        test al, al
+        je L_cleanup_e20
+    L_loop_top:
+        lea ecx, [esp + 8]
+        mov esi, offset mem_00AA93A0
+        call ext_00788E50
+    L_cmp1:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_ne1
+        test cl, cl
+        je short L_z1
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_ne1
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne short L_cmp1
+    L_z1:
+        xor eax, eax
+        jmp short L_r1
+    L_ne1:
+        sbb eax, eax
+        sbb eax, -1
+    L_r1:
+        test eax, eax
+        je short L_retry
+        lea ecx, [esp + 8]
+        mov esi, offset mem_00AAB940
+        call ext_00788E50
+    L_cmp2:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_ne2
+        test cl, cl
+        je short L_z2
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_ne2
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne short L_cmp2
+    L_z2:
+        xor eax, eax
+        jmp short L_r2
+    L_ne2:
+        sbb eax, eax
+        sbb eax, -1
+    L_r2:
+        test eax, eax
+        jne short L_second_ne
+    L_retry:
+        lea ecx, [esp + 8]
+        call ext_00788DF0
+        test al, al
+        jne L_loop_top
+    L_cleanup_e20:
+        lea ecx, [esp + 8]
+        call ext_00788E20
+    L_fail:
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 668h], -1
+        call ext_00788D10
+        mov al, 1
+    L_epilogue:
+        mov ecx, dword ptr [esp + 660h]
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 664h
+        ret 4
+    L_second_ne:
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 668h], -1
+        call ext_00788D10
+        xor al, al
+        jmp short L_epilogue
+    }
+}
