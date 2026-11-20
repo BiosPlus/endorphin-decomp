@@ -10063,3 +10063,144 @@ L_4B:
         ret 8
     }
 }
+
+// [0x006CBDB0] sub_006CBDB0 (336 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_006C9DC0();
+extern "C" void ext_006CA060();
+extern "C" void ext_006CB190();
+extern "C" void ext_00722D00();
+extern "C" int mem_00993838;
+extern "C" int mem_00943350;
+
+extern "C" __declspec(naked) void __fastcall fn_006CBDB0(void* self) {
+    __asm {
+        sub     esp, 0x10
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x24]
+        mov     esi, ecx
+        test    edi, edi
+        mov     dword ptr [esp + 0x10], 0
+        jle     cb_nonpos
+        push    edi
+        call    ext_006CA060
+        lea     ebx, [edi - 1]
+        mov     ecx, esi
+        push    ebx
+        mov     dword ptr [esp + 0x28], eax
+        call    ext_006CA060
+        mov     ebp, eax
+        mov     ecx, ebp
+        call    ext_006C9C30
+        cmp     eax, 2
+        jne     cb_not2
+        fld     dword ptr [mem_00993838]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret     4
+cb_not2:
+        mov     ecx, ebp
+        call    ext_006C9C30
+        cmp     eax, 4
+        jne     cb_not4
+        fld     dword ptr [mem_00943350]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret     4
+cb_not4:
+        mov     ebp, dword ptr [esp + 0x24]
+        mov     ecx, ebp
+        call    ext_006C9C30
+        cmp     eax, 8
+        jne     cb_generic
+        mov     ecx, ebp
+        call    ext_006C9CD0
+        cmp     eax, 0x100
+        je      cb_special
+        mov     ecx, ebp
+        call    ext_006C9CD0
+        cmp     eax, 0x900
+        jne     cb_generic
+cb_special:
+        push    ebx
+        mov     ecx, esi
+        call    ext_006CA060
+        push    1
+        mov     ecx, eax
+        call    ext_006C9DC0
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret     4
+cb_generic:
+        push    edi
+        mov     ecx, esi
+        call    ext_006CB190
+        fstp    qword ptr [esp + 0x18]
+        push    edi
+        lea     eax, [esp + 0x1c]
+        push    esi
+        lea     ecx, [esp + 0x18]
+        push    eax
+        push    ecx
+        mov     dword ptr [esp + 0x20], 0
+        mov     dword ptr [esp + 0x24], 0
+        call    ext_00722D00
+        fld     qword ptr [esp + 0x20]
+        add     esp, 0x10
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret     4
+cb_nonpos:
+        jne     cb_ret_local
+        push    0
+        mov     ecx, esi
+        call    ext_006CA060
+        mov     esi, eax
+        mov     ecx, esi
+        call    ext_006C9C30
+        cmp     eax, 8
+        jne     cb_ret_local
+        mov     ecx, esi
+        call    ext_006C9CD0
+        cmp     eax, 0x100
+        je      cb_zero_special
+        mov     ecx, esi
+        call    ext_006C9CD0
+        cmp     eax, 0x900
+        jne     cb_ret_local
+cb_zero_special:
+        push    0
+        mov     ecx, esi
+        call    ext_006C9DC0
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret     4
+cb_ret_local:
+        fld     dword ptr [esp + 0x10]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret     4
+    }
+}
