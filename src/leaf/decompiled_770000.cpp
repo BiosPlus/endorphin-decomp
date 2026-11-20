@@ -4799,3 +4799,88 @@ extern "C" __declspec(naked) void __fastcall fn_00778060(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0077E620] sub_0077E620 (240 bytes)
+extern "C" void ext_006BADB0();
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_007279A0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+extern "C" void ext_0077E620();
+extern "C" __declspec(naked) void __fastcall fn_0077E620(void* self) {
+    __asm {
+        push -1
+        push 0x8bcb18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        push 0xaad264
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007275F0
+        mov edi, dword ptr [esp + 0x6c]
+        mov ecx, edi
+        call ext_006BADB0
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        mov eax, dword ptr [edi]
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x18]
+        xor ebx, ebx
+        mov ecx, eax
+        mov dword ptr [esp + 0x64], ebx
+        call ext_006E7460
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00728410
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        push ebx
+        mov ecx, edi
+        call ext_006C2860
+        mov ebp, eax
+        cmp ebp, ebx
+        jle done
+    loop_top:
+        push ebx
+        mov ecx, edi
+        call ext_006C28D0
+        push eax
+        mov ecx, esi
+        call ext_0077E620
+        inc ebx
+        cmp ebx, ebp
+        jl loop_top
+    done:
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 4
+    }
+}
