@@ -8582,3 +8582,100 @@ extern "C" __declspec(naked) void __fastcall fn_0072AE70(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0072BCA0] sub_0072BCA0 (272 bytes)
+extern "C" void ext_006B9D80();
+extern "C" void ext_0072BE10();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D10();
+extern "C" void ext_00714570();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_007145F0();
+extern "C" void ext_006D2170();
+extern "C" __declspec(naked) int __fastcall fn_0072BCA0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push -1
+        push 0x8bdc1b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x64]
+        push esi
+        push edi
+        mov edi, ecx
+        push ebp
+        lea ecx, [esp + 0x14]
+        call ext_006B9D80
+        mov ebx, dword ptr [esp + 0x70]
+        lea eax, [esp + 0x6c]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ebx
+        push ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x70], 0
+        call ext_0072BE10
+        test al, al
+        jne short L_ok
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        or eax, -1
+        jmp L_epilogue
+    L_ok:
+        mov esi, dword ptr [esp + 0x6c]
+        cmp esi, -1
+        jne short L_nonnew
+        push 0xd8
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x70], esi
+        test esi, esi
+        mov byte ptr [esp + 0x64], 1
+        je short L_null
+        mov ecx, esi
+        call ext_006B9D10
+        lea ecx, [esi + 0x50]
+        mov byte ptr [esp + 0x64], 2
+        call ext_00714570
+        jmp short L_after
+    L_null:
+        xor esi, esi
+    L_after:
+        push ebp
+        mov ecx, esi
+        mov byte ptr [esp + 0x68], 0
+        call ext_006B9EC0
+        push ebx
+        lea ecx, [esi + 0x50]
+        call ext_007145F0
+        mov dl, byte ptr [esp + 0x74]
+        lea ecx, [edi + 0x150]
+        mov byte ptr [esi + 0xd0], dl
+        lea edx, [esp + 0x74]
+        mov eax, dword ptr [ecx]
+        push edx
+        push eax
+        mov dword ptr [esp + 0x7c], esi
+        call ext_006D2170
+        mov esi, eax
+    L_nonnew:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], -1
+        call ext_006B9D70
+        mov eax, esi
+    L_epilogue:
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 0xc
+    }
+}
