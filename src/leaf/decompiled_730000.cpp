@@ -4204,3 +4204,105 @@ fn007318F0_end:
         ret 4
     }
 }
+
+// [0x0073A260] sub_0073A260 (288 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006D3880();
+extern "C" void ext_006E7460();
+extern "C" void ext_0070D0B0();
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726A40();
+extern "C" void ext_0072CF10();
+extern "C" void ext_007415F0();
+
+extern "C" __declspec(naked) void __fastcall fn_0073A260(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -0x1
+        push 0x8bcb18
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push esi
+        mov esi, ecx
+        push 0x5
+        mov ecx, dword ptr [esi + 0b4h]
+        call ext_0072CF10
+        test al, al
+        je fn0073A260_fail
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aabebch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073A260_fail
+        push ebx
+        mov ebx, dword ptr [esp + 64h]
+        push edi
+fn0073A260_loop:
+        mov ecx, dword ptr [esi + 4]
+        call ext_006D3880
+        mov ecx, dword ptr [esi + 0ach]
+        mov edi, eax
+        add ecx, 4
+        call ext_00726A40
+        push eax
+        lea ecx, [esp + 10h]
+        call ext_006B9D80
+        push ebx
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 68h], 0
+        call ext_007415F0
+        test al, al
+        je fn0073A260_else
+        lea ecx, [esp + 0ch]
+        call ext_006E7460
+        push eax
+        push edi
+        mov ecx, ebx
+        call ext_0070D0B0
+        cmp eax, -1
+        jne fn0073A260_join
+        mov ecx, dword ptr [esi + 4]
+        push edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 84h]
+        jmp fn0073A260_join
+fn0073A260_else:
+        mov ecx, dword ptr [esi + 4]
+        push edi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 84h]
+fn0073A260_join:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        lea ecx, [esp + 0ch]
+        mov dword ptr [esp + 60h], 0ffffffffh
+        call ext_006B9D70
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aabebch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        jne fn0073A260_loop
+        pop edi
+        pop ebx
+        mov al, 1
+        pop esi
+        mov ecx, dword ptr [esp + 4ch]
+        mov dword ptr fs:[0], ecx
+        add esp, 58h
+        ret 4
+fn0073A260_fail:
+        mov ecx, dword ptr [esp + 50h]
+        mov al, 1
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 58h
+        ret 4
+    }
+}
