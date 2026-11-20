@@ -9878,3 +9878,140 @@ extern "C" __declspec(naked) void* __cdecl fn_0085CF60(void) {
         ret
     }
 }
+
+// [0x00859450] sub_00859450 (352 bytes)
+extern "C" char mem_00AB8D30[];
+
+extern "C" __declspec(naked) void __cdecl fn_00859450(void) {
+    __asm {
+        sub esp, 0ch
+        push ebx
+        mov ebx, dword ptr [esp + 20h]
+        cmp ebx, 1
+        jae nonzero
+        mov eax, dword ptr [esp + 18h]
+        pop ebx
+        mov dword ptr [eax], 0
+        xor eax, eax
+        add esp, 0ch
+        ret
+    nonzero:
+        mov ecx, dword ptr [esp + 18h]
+        mov dword ptr [esp + 4], ebx
+        test ebx, ebx
+        mov dword ptr [ecx], 0
+        jbe ret0
+        mov eax, dword ptr [esp + 1ch]
+        or ecx, -1
+        push ebp
+        push esi
+        sub ecx, eax
+        push edi
+        mov dword ptr [esp + 14h], 0
+        lea edi, [eax + 1]
+        mov dword ptr [esp + 18h], ecx
+        jmp loop_check
+    loop_top:
+        mov ebx, dword ptr [esp + 10h]
+    loop_check:
+        cmp ebx, 3
+        jb L1
+        mov ebx, 3
+    L1:
+        mov eax, 0aaaaaaabh
+        mul dword ptr [esp + 14h]
+        mov eax, dword ptr [esp + 20h]
+        shr edx, 1
+        add edx, eax
+        xor eax, eax
+        mov al, byte ptr [edi - 1]
+        mov esi, eax
+        shr esi, 2
+        cmp ebx, 1
+        jle L2
+        xor ecx, ecx
+        and eax, 3
+        mov cl, byte ptr [edi]
+        shr ecx, 4
+        shl eax, 4
+        or ecx, eax
+        jmp L3
+    L2:
+        and eax, 3
+        shl eax, 4
+        mov ecx, eax
+    L3:
+        cmp ebx, 2
+        jle L4
+        xor eax, eax
+        mov al, byte ptr [edi + 1]
+        mov ebp, eax
+        mov al, byte ptr [edi]
+        and eax, 0fh
+        shr ebp, 6
+        shl eax, 2
+        or ebp, eax
+        jmp L5
+    L4:
+        mov al, byte ptr [edi]
+        and eax, 0fh
+        shl eax, 2
+        mov ebp, eax
+    L5:
+        mov al, byte ptr [edi + 1]
+        and esi, 3fh
+        and eax, 3fh
+        and ecx, 3fh
+        mov dword ptr [esp + 28h], eax
+        mov al, byte ptr [esi + mem_00AB8D30]
+        mov byte ptr [edx], al
+        mov cl, byte ptr [ecx + mem_00AB8D30]
+        inc edx
+        mov byte ptr [edx], cl
+        inc edx
+        cmp ebx, 1
+        jne L6
+        mov byte ptr [edx], 3dh
+        mov byte ptr [edx + 1], 3dh
+        jmp L9
+    L6:
+        and ebp, 3fh
+        inc edx
+        cmp ebx, 2
+        mov al, byte ptr [ebp + mem_00AB8D30]
+        mov byte ptr [edx - 1], al
+        jne L7
+        mov byte ptr [edx], 3dh
+        jmp L9
+    L7:
+        mov eax, dword ptr [esp + 28h]
+        and eax, 3fh
+        mov cl, byte ptr [eax + mem_00AB8D30]
+        mov byte ptr [edx], cl
+    L9:
+        mov eax, dword ptr [esp + 24h]
+        mov edx, dword ptr [esp + 18h]
+        mov ebx, dword ptr [esp + 10h]
+        mov ecx, dword ptr [esp + 14h]
+        mov esi, dword ptr [eax]
+        add edi, 3
+        add esi, 4
+        add edx, edi
+        mov dword ptr [eax], esi
+        mov eax, dword ptr [esp + 2ch]
+        sub ebx, 3
+        add ecx, 0ch
+        cmp edx, eax
+        mov dword ptr [esp + 10h], ebx
+        mov dword ptr [esp + 14h], ecx
+        jb loop_top
+        pop edi
+        pop esi
+        pop ebp
+    ret0:
+        xor eax, eax
+        pop ebx
+        add esp, 0ch
+        ret
+    }
+}
