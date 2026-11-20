@@ -5354,3 +5354,175 @@ extern "C" __declspec(naked) void __fastcall fn_00757010(void* self) {
         ret 4
     }
 }
+
+// [0x0075CFE0] sub_0075CFE0 (329 bytes)
+extern "C" void ext_006C3030();
+extern "C" void ext_006C3040();
+extern "C" void ext_0072CF10();
+extern "C" void ext_0075DB50();
+extern "C" void ext_0075DC70();
+extern "C" void ext_0075E200();
+extern "C" void ext_0075E260();
+extern "C" void ext_0075F4A0();
+extern "C" void ext_0075F580();
+extern "C" void ext_00760490();
+extern "C" void ext_00760700();
+extern "C" void ext_00760CD0();
+extern "C" void ext_007611C0();
+
+extern "C" __declspec(naked) void __fastcall fn_0075CFE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        mov ecx, esi
+        call ext_006C3030
+        test eax, eax
+        push 0
+        je L_D11B
+        mov ecx, dword ptr [edi + 0xb4]
+        call ext_0072CF10
+        test al, al
+        mov ecx, esi
+        je L_D068
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        dec eax
+        cmp eax, 9
+        ja L_D122
+        jmp dword ptr [eax * 4 + 0x75d12c]
+
+    L_D026:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_00760490
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D03C:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_00760700
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D052:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_00760CD0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D068:
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        dec eax
+        cmp eax, 9
+        ja L_D119
+        jmp dword ptr [eax * 4 + 0x75d154]
+
+    L_D084:
+        mov ecx, esi
+        call ext_006C3040
+        push eax
+        mov ecx, edi
+        call ext_0075DB50
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D09A:
+        push esi
+        mov ecx, edi
+        call ext_0075DC70
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D0A9:
+        push 0
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0075E260
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D0C1:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0075F4A0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D0D7:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0075F580
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D0ED:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_007611C0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D103:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0075E200
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_D119:
+        push 0
+    L_D11B:
+        mov ecx, edi
+        call ext_0075DB50
+    L_D122:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
