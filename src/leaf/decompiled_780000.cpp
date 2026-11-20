@@ -11389,3 +11389,153 @@ L_done:
         __asm _emit 0x90
     }
 }
+
+// [0x0078C6F0] sub_0078C6F0 (320 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078C6F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x10
+        fld qword ptr [mem_0092A278]
+        push esi
+        mov esi, ecx
+        fst qword ptr [ebp - 0x8]
+        mov eax, dword ptr [esi + 0x20]
+        push edi
+        test eax, eax
+        je L_c7c5
+        mov edi, dword ptr [ebp + 0x8]
+        mov eax, dword ptr [esi + 0x28]
+        cmp edi, eax
+        jge L_822
+        push edi
+        fstp st(0)
+        call ext_0078C410
+        cmp al, 0x44
+        jne L_not_d
+        mov al, byte ptr [ebp + 0xc]
+        test al, al
+        jne L_d_swap
+        mov eax, dword ptr [esi + 0x2c]
+        mov ecx, dword ptr [eax + 4*edi]
+        mov eax, dword ptr [esi + 0x20]
+        add ecx, eax
+        pop edi
+        pop esi
+        fld qword ptr [ecx]
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_d_swap:
+        mov edx, dword ptr [esi + 0x2c]
+        mov ecx, dword ptr [esi + 0x20]
+        mov eax, dword ptr [edx + 4*edi]
+        add eax, ecx
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ebp - 0x8], ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ebp - 0x4], edx
+        mov edx, dword ptr [ebp - 0x8]
+        mov ecx, dword ptr [ebp - 0x4]
+        bswap edx
+        bswap ecx
+        mov dword ptr [ebp - 0x8], ecx
+        mov dword ptr [ebp - 0x4], edx
+        fld qword ptr [ebp - 0x8]
+        fstp qword ptr [ebp - 0x10]
+        fld qword ptr [ebp - 0x10]
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_not_d:
+        push edi
+        mov ecx, esi
+        call ext_0078C410
+        cmp al, 0x46
+        jne L_81f
+        mov al, byte ptr [ebp + 0xc]
+        mov edx, dword ptr [esi + 0x20]
+        test al, al
+        mov eax, dword ptr [esi + 0x2c]
+        mov ecx, dword ptr [eax + 4*edi]
+        jne L_f_swap
+        fld dword ptr [ecx + edx]
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_f_swap:
+        fld dword ptr [ecx + edx]
+        fstp dword ptr [ebp + 0xc]
+        mov edx, dword ptr [ebp + 0xc]
+        bswap edx
+        mov dword ptr [ebp + 0xc], edx
+        fld dword ptr [ebp + 0xc]
+        fstp dword ptr [ebp + 0x8]
+        fld dword ptr [ebp + 0x8]
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_c7c5:
+        mov eax, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [esi + 0x4]
+        cmp eax, ecx
+        jge L_822
+        mov ecx, dword ptr [esi + 0x14]
+        fstp st(0)
+        mov edx, dword ptr [ecx + 4*eax]
+        push edx
+        _emit 0xff
+        _emit 0x15
+        _emit 0xf0
+        _emit 0x51
+        _emit 0x92
+        _emit 0x00
+        fcom qword ptr [mem_0092A278]
+        fst qword ptr [ebp - 0x8]
+        add esp, 0x4
+        fnstsw ax
+        test ah, 0x40
+        jne L_822
+        mov eax, dword ptr [ebp - 0x4]
+        mov ecx, dword ptr [ebp - 0x8]
+        push eax
+        push ecx
+        fstp st(0)
+        _emit 0xff
+        _emit 0x15
+        _emit 0xa0
+        _emit 0x51
+        _emit 0x92
+        _emit 0x00
+        _emit 0xdc
+        _emit 0x1d
+        _emit 0x78
+        _emit 0x70
+        _emit 0x99
+        _emit 0x00
+        add esp, 0x8
+        fnstsw ax
+        test ah, 0x1
+        je L_81f
+        fld qword ptr [mem_0092A278]
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_81f:
+        fld qword ptr [ebp - 0x8]
+    L_822:
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
