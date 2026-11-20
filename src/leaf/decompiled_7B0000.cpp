@@ -14326,3 +14326,115 @@ extern "C" __declspec(naked) int __cdecl fn_007BD4E0(void* a1) {
         ret
     }
 }
+
+// [0x007BD380] sub_007BD380 (263 bytes)
+extern "C" void ext_00798840();
+extern "C" void ext_00798FF0();
+extern "C" void ext_007AF2F0();
+extern "C" void ext_0079B140();
+
+extern "C" __declspec(naked) int __cdecl fn_007BD380(void* a1, int a2, int* a3) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov eax, edx
+        push edi
+        mov ecx, dword ptr [esi + 0x1cc]
+        sub eax, 0x10018
+        je L_DF
+        dec eax
+        je L_AE
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push edx
+        push esi
+        call dword ptr [ecx + 0x1c]
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_AE:
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [edx]
+        test eax, eax
+        mov dword ptr [ecx + 0x4], eax
+        je L_RET1
+        cmp eax, 0x1
+        je L_RET1
+        push eax
+        mov eax, dword ptr [esi]
+        push 0xab21ec
+        push eax
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_DF:
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [edx]
+        cmp eax, 0x3
+        mov dword ptr [ecx], eax
+        ja L_ERR
+        jmp dword ptr [4*eax + 0x7bd488]
+L_F7:
+        mov edi, 0x20
+        mov ebx, 0x3
+        jmp L_COMMON
+L_403:
+        mov edi, 0x10
+        mov ebx, 0x2
+        jmp L_COMMON
+L_40F:
+        mov ebx, 0x1
+        mov edi, 0x20
+        push ebx
+        push 0x115
+        push esi
+        call ext_00798FF0
+        add esp, 0xc
+        jmp L_COMMON
+L_42A:
+        mov edi, 0x8
+        mov ebx, 0x1
+L_COMMON:
+        push edi
+        push 0x102
+        push esi
+        call ext_00798FF0
+        push ebx
+        push 0x153
+        push esi
+        call ext_00798FF0
+        push esi
+        call ext_007AF2F0
+        push esi
+        mov dword ptr [esi + 0x188], eax
+        call ext_00798840
+        add esp, 0x20
+        mov dword ptr [esi + 0x1d0], eax
+L_RET1:
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+L_ERR:
+        push eax
+        mov eax, dword ptr [esi]
+        push 0xab21bc
+        push eax
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
