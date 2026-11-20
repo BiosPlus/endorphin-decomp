@@ -15614,3 +15614,117 @@ L_7BAFBA:
         ret
     }
 }
+
+// [0x007B8090] sub_007B8090 (304 bytes)
+extern "C" int mem_0099971A;
+extern "C" int mem_0099971C;
+extern "C" int mem_0099971E;
+extern "C" int mem_00999720;
+extern "C" int mem_00999722;
+extern "C" void ext_007B7790(unsigned short);
+extern "C" void ext_007B7890();
+extern "C" void ext_007B78D0();
+extern "C" __declspec(naked) void __fastcall fn_007B8090(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_007B7890
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_b6_7B8090
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end_7B8090
+L_b6_7B8090:
+        mov cx, word ptr [esi + 0x4]
+        push ecx
+        call ext_007B7790
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_d9_7B8090
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end_7B8090
+L_d9_7B8090:
+        mov ax, word ptr [mem_0099971A]
+        mov dx, ax
+        and dx, word ptr [esi + 0x4]
+        cmp dx, ax
+        jne L_10d_7B8090
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        call ext_007B78D0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_10d_7B8090
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end_7B8090
+L_10d_7B8090:
+        mov eax, dword ptr [mem_0099971C]
+        mov ecx, eax
+        and cx, word ptr [esi + 0x4]
+        cmp cx, ax
+        jne L_13b_7B8090
+        mov edx, dword ptr [esi + 0xc]
+        push edx
+        call ext_007B78D0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_13b_7B8090
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end_7B8090
+L_13b_7B8090:
+        mov ax, word ptr [mem_0099971E]
+        mov cx, ax
+        and cx, word ptr [esi + 0x4]
+        cmp cx, ax
+        jne L_16b_7B8090
+        mov edx, dword ptr [esi + 0x10]
+        push edx
+        call ext_007B78D0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_16b_7B8090
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end_7B8090
+L_16b_7B8090:
+        mov eax, dword ptr [mem_00999720]
+        mov ecx, eax
+        and cx, word ptr [esi + 0x4]
+        cmp cx, ax
+        jne L_199_7B8090
+        mov edx, dword ptr [esi + 0x14]
+        push edx
+        call ext_007B78D0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_199_7B8090
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_end_7B8090
+L_199_7B8090:
+        mov ax, word ptr [mem_00999722]
+        mov cx, ax
+        and cx, word ptr [esi + 0x4]
+        cmp cx, ax
+        jne L_end_7B8090
+        mov edx, dword ptr [esi + 0x18]
+        push edx
+        call ext_007B78D0
+        add esp, 0x4
+L_end_7B8090:
+        pop esi
+        ret
+    }
+}
