@@ -8160,3 +8160,73 @@ extern "C" __declspec(naked) void __fastcall fn_00725840(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00725E40] sub_00725E40 (256 bytes)
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA780();
+extern "C" void ext_00726180();
+extern "C" __declspec(naked) int __fastcall fn_00725E40(void* self, int edx_unused, int arg) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b9073
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x9c
+        push ebx
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        cmp byte ptr [esi + 0x1e8], bl
+        je L_false
+        lea ecx, [esp + 0xc]
+        call ext_006B9D10
+        lea eax, [esp + 0xc]
+        lea edx, [esi + 0x1ec]
+        push eax
+        mov dword ptr [esp + 0xb0], ebx
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x58], esp
+        push edx
+        call ext_006B9D20
+        mov ecx, esi
+        call ext_00726180
+        mov eax, dword ptr [esp + 0xb4]
+        lea ecx, [esp + 0x58]
+        push eax
+        call ext_006B9D80
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0xac], 0x1
+        push ecx
+        lea ecx, [esp + 0x5c]
+        call ext_006BA780
+        test al, al
+        je short L_fail
+        lea ecx, [esp + 0x58]
+        mov byte ptr [esi + 0x1e8], bl
+        mov byte ptr [esp + 0xac], bl
+        call ext_006B9D70
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0xac], 0xffffffff
+        call ext_006B9D70
+    L_false:
+        mov al, 1
+    L_epilogue:
+        mov ecx, dword ptr [esp + 0xa4]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xa8
+        ret 0x4
+    L_fail:
+        lea ecx, [esp + 0x58]
+        mov byte ptr [esp + 0xac], bl
+        call ext_006B9D70
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0xac], 0xffffffff
+        call ext_006B9D70
+        xor al, al
+        jmp short L_epilogue
+    }
+}
