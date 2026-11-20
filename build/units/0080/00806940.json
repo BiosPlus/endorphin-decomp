@@ -24,6 +24,8 @@
     "0x00806A5B",
     "0x00806A98"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "skip_reason": "Unmatched after escalation through all eligible models in the chain",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-20T16:03:51Z"
 }
