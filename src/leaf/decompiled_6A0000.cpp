@@ -13251,3 +13251,117 @@ extern "C" __declspec(naked) void __fastcall fn_006AE230(void* self) {
         ret 0x1c
     }
 }
+
+// [0x006ACC60] sub_006ACC60 (267 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006A8140();
+extern "C" void ext_006A9210();
+extern "C" void ext_006ABF70();
+extern "C" void ext_006ACE20();
+extern "C" void ext_006AD110();
+extern "C" void ext_00872772();
+extern "C" int mem_0092557C;
+
+extern "C" __declspec(naked) void __fastcall fn_006ACC60(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+loop_top:
+        mov edx, edi
+        sub edi, 1
+        test edx, edx
+        je after_loop
+        mov ecx, ebx
+        call ext_006AD110
+        mov ebx, eax
+        lea eax, [esp + 4ch]
+        push eax
+        mov ecx, ebx
+        call ext_006ACE20
+        mov ecx, dword ptr [eax + 4]
+        cmp ecx, dword ptr [esp + 14h]
+        jge skip_call
+        mov edx, dword ptr [esi + 20h]
+        push 0
+        push 0
+        push 115h
+        push edx
+        call ebp
+skip_call:
+        mov ecx, ebx
+        call ext_006AD110
+        test eax, eax
+        jne loop_top
+after_loop:
+        push ebx
+        jmp common_tail
+sub_a:
+        mov eax, dword ptr [esi + 128h]
+        push 1
+        push 0
+        push 2
+        push eax
+        call dword ptr [mem_0092557C]
+        mov eax, dword ptr [esi + 58h]
+        mov dword ptr [esi + 68h], eax
+        push eax
+        jmp common_tail
+sub_b:
+        lea ecx, [esp + 2ch]
+        push ecx
+        mov ecx, esi
+        call ext_006A9210
+        mov eax, dword ptr [esp + 38h]
+        sub eax, dword ptr [esp + 30h]
+        mov edi, dword ptr [esi + 5ch]
+        cdq
+        idiv dword ptr [esi + 0e8h]
+        mov ecx, edi
+        mov ebx, eax
+        sub ebx, 1
+        call ext_006AD110
+        test eax, eax
+        je tail_b
+inner_loop:
+        mov edx, ebx
+        sub ebx, 1
+        test edx, edx
+        je tail_b
+        mov ecx, edi
+        call ext_006AD110
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esi + 68h], edi
+        call ext_006AD110
+        test eax, eax
+        jne inner_loop
+tail_b:
+        push 17h
+        lea eax, [esp + 14h]
+        push eax
+        lea edi, [esi + 108h]
+        push 2
+        mov ecx, edi
+        mov dword ptr [esp + 1ch], 1ch
+        mov dword ptr [esp + 20h], 3
+        call ext_00872772
+        mov ecx, dword ptr [esp + 1ch]
+        sub ecx, dword ptr [esp + 20h]
+        push 1
+        add ecx, 1
+        push ecx
+        mov ecx, edi
+        call ext_006A8140
+        mov edx, dword ptr [esi + 5ch]
+        push edx
+common_tail:
+        mov ecx, esi
+        call ext_006ABF70
+        pop edi
+        pop ebp
+        pop ebx
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        add esp, 4ch
+        ret 0ch
+    }
+}
