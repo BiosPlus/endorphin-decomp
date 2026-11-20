@@ -14834,3 +14834,108 @@ extern "C" __declspec(naked) void __fastcall fn_005119F0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0051F730] sub_0051F730 (240 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_0051DEA0();
+extern "C" void ext_0051F4A0();
+extern "C" void ext_0051F6A0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0051F730(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x893220
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        mov ebx, dword ptr [ebp+8]
+        mov eax, dword ptr [ebx+4]
+        push esi
+        push edi
+        mov edi, ecx
+        xor ecx, ecx
+        cmp eax, ecx
+        mov dword ptr [ebp-10h], esp
+        mov dword ptr [ebp-18h], edi
+        jne short fn0051F730_L766
+        xor esi, esi
+        jmp short fn0051F730_L77E
+fn0051F730_L766:
+        mov ecx, dword ptr [ebx+8]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 5
+        mov esi, edx
+        shr esi, 1Fh
+        add esi, edx
+        xor ecx, ecx
+fn0051F730_L77E:
+        cmp esi, ecx
+        mov dword ptr [edi+4], ecx
+        mov dword ptr [edi+8], ecx
+        mov dword ptr [edi+0Ch], ecx
+        je fn0051F730_LEND
+        cmp esi, 0x1555555
+        jbe short fn0051F730_L798
+        call ext_00405FB0
+fn0051F730_L798:
+        push ecx
+        push esi
+        call ext_0051DEA0
+        lea ecx, [esi+esi*2]
+        shl ecx, 6
+        add ecx, eax
+        mov dword ptr [edi+4], eax
+        mov dword ptr [edi+8], eax
+        mov dword ptr [edi+0Ch], ecx
+        mov eax, dword ptr [ebx+8]
+        add esp, 8
+        cmp dword ptr [ebx+4], eax
+        mov dword ptr [ebp-4], 0
+        mov dword ptr [ebp-14h], eax
+        jbe short fn0051F730_L7CB
+        call dword ptr [mem_00925134]
+fn0051F730_L7CB:
+        mov esi, dword ptr [ebx+4]
+        cmp esi, dword ptr [ebx+8]
+        jbe short fn0051F730_L7D9
+        call dword ptr [mem_00925134]
+fn0051F730_L7D9:
+        mov eax, dword ptr [edi+4]
+        mov byte ptr [ebp+8], 0
+        mov edx, dword ptr [ebp+8]
+        mov ecx, dword ptr [ebp+8]
+        push edx
+        mov edx, dword ptr [ebp-14h]
+        push ecx
+        push edi
+        push eax
+        push edx
+        push esi
+        call ext_0051F4A0
+        add esp, 18h
+        mov dword ptr [edi+8], eax
+fn0051F730_LEND:
+        mov ecx, dword ptr [ebp-0Ch]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+        mov ecx, dword ptr [ebp-18h]
+        call ext_0051F6A0
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}

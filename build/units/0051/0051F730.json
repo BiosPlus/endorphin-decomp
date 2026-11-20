@@ -23,5 +23,7 @@
     "0x0051F813",
     "0x0051F81C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-20T15:05:41Z"
 }
