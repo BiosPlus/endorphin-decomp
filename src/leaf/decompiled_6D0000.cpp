@@ -11599,3 +11599,91 @@ extern "C" __declspec(naked) void __fastcall fn_006D5210(void* self, int edx_unu
         jmp L_epilogue
     }
 }
+
+// [0x006D73A0] sub_006D73A0 (240 bytes)
+extern "C" void ext_006B9950();
+extern "C" void ext_006B9E60();
+extern "C" void ext_0072CEF0();
+// __thiscall, one stack arg (ret 0x4). Calls a virtual on arg, then conditionally a helper on this+0x15c,
+// then a series of 0x72CEF0(idx, byte-value) calls on arg with bytes from this+0x14c..0x156.
+extern "C" __declspec(naked) void __fastcall fn_006D73A0(void* self, int edx_unused, void* other) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0x128]
+        lea ebx, [edi + 0x100]
+        mov ecx, ebx
+        call ext_006B9950
+        test al, al
+        jne short L_skip_006D73A0
+        push ebx
+        lea ecx, [esi + 0x15c]
+        mov byte ptr [esi + 0x158], 0x1
+        call ext_006B9E60
+    L_skip_006D73A0:
+        mov cl, byte ptr [edi + 0x14c]
+        push ecx
+        push 0x0
+        mov ecx, esi
+        call ext_0072CEF0
+        mov dl, byte ptr [edi + 0x14d]
+        mov ecx, esi
+        push edx
+        push 0x1
+        call ext_0072CEF0
+        mov al, byte ptr [edi + 0x14e]
+        mov ecx, esi
+        push eax
+        push 0x2
+        call ext_0072CEF0
+        mov cl, byte ptr [edi + 0x150]
+        push ecx
+        push 0x4
+        mov ecx, esi
+        call ext_0072CEF0
+        mov dl, byte ptr [edi + 0x151]
+        mov ecx, esi
+        push edx
+        push 0x5
+        call ext_0072CEF0
+        mov al, byte ptr [edi + 0x152]
+        mov ecx, esi
+        push eax
+        push 0x6
+        call ext_0072CEF0
+        mov cl, byte ptr [edi + 0x153]
+        push ecx
+        push 0x7
+        mov ecx, esi
+        call ext_0072CEF0
+        mov dl, byte ptr [edi + 0x154]
+        mov ecx, esi
+        push edx
+        push 0x8
+        call ext_0072CEF0
+        mov al, byte ptr [edi + 0x155]
+        mov ecx, esi
+        push eax
+        push 0x9
+        call ext_0072CEF0
+        mov cl, byte ptr [edi + 0x156]
+        push ecx
+        push 0xa
+        mov ecx, esi
+        call ext_0072CEF0
+        mov dl, byte ptr [edi + 0x14f]
+        mov ecx, esi
+        push edx
+        push 0xc
+        call ext_0072CEF0
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
