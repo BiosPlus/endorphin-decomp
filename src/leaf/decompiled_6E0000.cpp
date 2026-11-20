@@ -6924,3 +6924,120 @@ L_tail:
         ret 0x8
     }
 }
+
+// [0x006E3870] sub_006E3870 (256 bytes)
+extern "C" void ext_006CD350();
+extern "C" void ext_006E0990();
+extern "C" void ext_006E3870();
+extern "C" void ext_006E5710();
+extern "C" __declspec(naked) int __fastcall fn_006E3870(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        call ext_006E5710
+        mov ebp, dword ptr [esp + 0x1c]
+        mov edi, eax
+        mov eax, dword ptr [esi + 0x58]
+        cmp eax, edi
+        je short L_3870_match
+        cmp eax, edi
+L_3870_check:
+        jge L_3870_fail
+        mov esi, dword ptr [esi + 0x40]
+        test esi, esi
+        je L_3870_fail
+        mov eax, dword ptr [esp + 0x18]
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], eax
+        call ext_006E5710
+        mov edi, eax
+        mov eax, dword ptr [esi + 0x58]
+        cmp eax, edi
+        jne L_3870_check
+L_3870_match:
+        mov ecx, dword ptr [esi + 0x38]
+        test ecx, ecx
+        je short L_3870_nofn
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push ebp
+        push eax
+        call ext_006CD350
+        mov ebx, dword ptr [esp + 0x14]
+        fstp qword ptr [ebx]
+        add ebx, 0x8
+        jmp short L_3870_after
+L_3870_nofn:
+        mov ebx, dword ptr [esp + 0x14]
+L_3870_after:
+        cmp dword ptr [esi + 0x54], 0x2
+        je L_3870_special
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [edx + 0x14]
+        test eax, eax
+        jle short L_3870_done
+L_3870_body:
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edi
+        push ebp
+        push ecx
+        push ebx
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006E3870
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, esi
+        inc edx
+        mov ebx, eax
+        mov dword ptr [esp + 0x14], edx
+        mov edx, dword ptr [esi]
+        call dword ptr [edx + 0x14]
+        cmp dword ptr [esp + 0x14], eax
+        jl L_3870_body
+L_3870_done:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret 0x14
+L_3870_special:
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x18]
+        push 0x0
+        push eax
+        push ebp
+        push ecx
+        push ebx
+        mov ecx, esi
+        call ext_006E0990
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret 0x14
+L_3870_fail:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x14
+    }
+}
