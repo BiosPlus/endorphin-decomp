@@ -12510,3 +12510,88 @@ extern "C" __declspec(naked) void __fastcall fn_006FD870(void* self, int edx_unu
         __asm _emit 0x90
     }
 }
+
+// [0x006FED50] sub_006FED50 (272 bytes)
+extern "C" void ext_006FE610();
+extern "C" void ext_006B9950();
+extern "C" void ext_006FEFF0();
+extern "C" void ext_006B9E60();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006BA220();
+extern "C" void ext_006FE6A0();
+extern "C" int __fastcall ext_006B99C0(void* self);
+extern "C" void ext_006BA920();
+
+extern "C" __declspec(naked) void __fastcall fn_006FED50(void* self) {
+    __asm {
+        push -1
+        push 0x8bb665
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x9c
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xb8]
+        lea eax, [esp + 0xc]
+        push esi
+        push eax
+        mov dword ptr [esp + 0x10], 0
+        call ext_006FE610
+        add esp, 0x8
+        mov ebx, 1
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0xac], ebx
+        call ext_006B9950
+        test al, al
+        je L_else
+        lea ecx, [esp + 0x58]
+        push ecx
+        call ext_006FEFF0
+        add esp, 0x4
+        push eax
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0xb0], 0x2
+        call ext_006B9E60
+        lea ecx, [esp + 0x58]
+        mov byte ptr [esp + 0xac], bl
+        call ext_006B9D70
+        jmp L_join
+    L_else:
+        push 0xaa9444
+        lea ecx, [esp + 0x10]
+        call ext_006BA220
+    L_join:
+        lea edx, [esp + 0x58]
+        push esi
+        push edx
+        call ext_006FE6A0
+        add esp, 0x8
+        mov ecx, eax
+        mov byte ptr [esp + 0xac], 0x3
+        call ext_006B99C0
+        lea ecx, [esp + 0xc]
+        mov esi, eax
+        call ext_006B99C0
+        sub eax, esi
+        mov esi, dword ptr [esp + 0xb4]
+        push eax
+        push esi
+        lea ecx, [esp + 0x14]
+        call ext_006BA920
+        mov dword ptr [esp + 0x8], ebx
+        lea ecx, [esp + 0x58]
+        mov byte ptr [esp + 0xac], bl
+        call ext_006B9D70
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0xac], 0x0
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0xa4]
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0xa8
+        ret
+    }
+}
