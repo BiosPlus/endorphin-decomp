@@ -13599,3 +13599,129 @@ extern "C" __declspec(naked) void __fastcall fn_006D76A0(void* self) {
         ret
     }
 }
+
+// [0x006DED80] sub_006DED80 (288 bytes)
+extern "C" void ext_006CA2D0();
+extern "C" void ext_006CD330();
+extern "C" void ext_006D89C0();
+extern "C" void ext_006DE1C0();
+extern "C" void ext_006DEC60();
+extern "C" void ext_006DEEB0();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_006E3EA0();
+extern "C" __declspec(naked) void __fastcall fn_006DED80(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        call ext_006DEEB0
+        test eax, eax
+        je dED80_fail
+        mov eax, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [esp + 0x28]
+        push eax
+        push ecx
+        push 1
+        push 0
+        push 0
+        mov ecx, esi
+        call ext_006DE1C0
+        push eax
+        mov ecx, esi
+        call ext_006DEC60
+        lea edx, [esp + 4]
+        mov ecx, esi
+        push edx
+        call ext_006E3EA0
+        mov ecx, esi
+        call ext_006DEEC0
+        test eax, eax
+        je dED80_skip
+        fld qword ptr [esp + 4]
+        push ecx
+        mov ecx, dword ptr [esi + 0x40]
+        fstp dword ptr [esp]
+        call ext_006DEEC0
+        mov ecx, eax
+        call ext_006CD330
+        mov ecx, esi
+        call ext_006DEEC0
+        mov ecx, eax
+        call ext_006D89C0
+        mov ecx, dword ptr [esi + 0x40]
+        push eax
+        call ext_006DEEC0
+        mov ecx, eax
+        call ext_006CA2D0
+dED80_skip:
+        mov ecx, dword ptr [esi + 0x40]
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        test eax, eax
+        jle dED80_end
+        push ebx
+        push ebp
+        lea ebp, [esp + 0x10]
+dED80_loop:
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        je dED80_next
+        mov ecx, dword ptr [esi + 0x40]
+        fld qword ptr [ebp]
+        mov eax, dword ptr [ecx]
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006DEEC0
+        mov ecx, eax
+        call ext_006CD330
+        mov edx, dword ptr [esi]
+        mov ebx, dword ptr [esi + 0x40]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006DEEC0
+        mov ecx, eax
+        call ext_006D89C0
+        push eax
+        mov eax, dword ptr [ebx]
+        push edi
+        mov ecx, ebx
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006DEEC0
+        mov ecx, eax
+        call ext_006CA2D0
+dED80_next:
+        mov ecx, dword ptr [esi + 0x40]
+        inc edi
+        add ebp, 8
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x14]
+        cmp edi, eax
+        jl dED80_loop
+        pop ebp
+        pop ebx
+dED80_end:
+        mov eax, dword ptr [esi + 0x40]
+        pop edi
+        pop esi
+        add esp, 0x20
+        ret 0x8
+dED80_fail:
+        xor eax, eax
+        pop esi
+        add esp, 0x20
+        ret 0x8
+    }
+}
