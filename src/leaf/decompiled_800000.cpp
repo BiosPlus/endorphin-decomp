@@ -11044,3 +11044,134 @@ extern "C" __declspec(naked) int __cdecl fn_0080DB30(void* a1, void* a2, void** 
         ret
     }
 }
+
+// [0x0080F600] sub_0080F600 (256 bytes)
+extern "C" void ext_0080F480();
+extern "C" void ext_0080F700();
+
+extern "C" __declspec(naked) void __fastcall fn_0080F600(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        test ebp, ebp
+        push edi
+        jne L62c
+        mov edi, dword ptr [esp + 0x1c]
+        mov eax, 5
+        and edi, 0xfeffffff
+        mov ebp, 0x99f050
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x1c], edi
+        xor ebx, ebx
+        jmp L641
+    L62c:
+        push ebp
+        call ext_0080F700
+        mov ebx, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x20]
+        add esp, 4
+        mov dword ptr [esp + 0x18], eax
+    L641:
+        mov ecx, dword ptr [esp + 0x24]
+        cmp ecx, -1
+        je L654
+        cmp ecx, eax
+        jge L654
+        mov dword ptr [esp + 0x18], ecx
+        mov eax, ecx
+    L654:
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, edi
+        sub ebx, eax
+        and ecx, 0x1000000
+        mov dword ptr [esp + 0x24], ecx
+        je L674
+        push 0x22
+        push esi
+        call dword ptr [esi]
+        mov eax, dword ptr [esp + 0x20]
+        add esp, 8
+    L674:
+        mov ecx, edi
+        and ecx, 8
+        mov dword ptr [esp + 0x20], ecx
+        jne L69f
+        mov ecx, ebx
+        dec ebx
+        test ecx, ecx
+        jle L69f
+        lea edi, [ebx + 1]
+    L689:
+        push 0x20
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        dec edi
+        dec ebx
+        test edi, edi
+        ja L689
+        mov edi, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esp + 0x18]
+    L69f:
+        mov edx, eax
+        dec eax
+        test edx, edx
+        jle L6c7
+        inc eax
+        mov dword ptr [esp + 0x1c], eax
+    L6ab:
+        xor eax, eax
+        push edi
+        mov al, byte ptr [ebp]
+        inc ebp
+        push eax
+        push esi
+        call ext_0080F480
+        mov eax, dword ptr [esp + 0x28]
+        add esp, 0xc
+        dec eax
+        mov dword ptr [esp + 0x1c], eax
+        jne L6ab
+    L6c7:
+        mov eax, dword ptr [esp + 0x20]
+        test eax, eax
+        je L6e2
+        mov eax, ebx
+        dec ebx
+        test eax, eax
+        jle L6e2
+        inc ebx
+    L6d7:
+        push 0x20
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        dec ebx
+        jne L6d7
+    L6e2:
+        mov eax, dword ptr [esp + 0x24]
+        test eax, eax
+        je L6f2
+        push 0x22
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+    L6f2:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
