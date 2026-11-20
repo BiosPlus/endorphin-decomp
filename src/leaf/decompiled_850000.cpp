@@ -9322,3 +9322,115 @@ extern "C" __declspec(naked) void __cdecl fn_0085A130(void* self, unsigned int i
         ret
     }
 }
+
+// [0x0085DB40] sub_0085DB40 (336 bytes)
+extern "C" void ext_0085DC90();
+
+extern "C" __declspec(naked) void __cdecl fn_0085DB40(void) {
+    __asm {
+        mov cx, word ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x10]
+        xor cx, 0x2203
+        sub esp, 0xdc
+        xor edx, 0x31011964
+        push ebx
+        push esi
+        push edi
+        mov si, word ptr [esp + 0xf0]
+        mov ax, si
+        shr ax, 0x8
+        movzx edi, ax
+        mov ax, word ptr [esp + 0xec]
+        mov bl, byte ptr [edi + 0xabb260]
+        mov di, ax
+        shr di, 0x8
+        movzx edi, di
+        xor bl, byte ptr [edi + 0xabb260]
+        xor edi, edi
+        mov di, si
+        and edi, 0xff
+        xor bl, byte ptr [edi + 0xabb260]
+        xor edi, edi
+        mov di, ax
+        and edi, 0xff
+        xor bl, byte ptr [edi + 0xabb260]
+        mov edi, edx
+        and edi, 0xff
+        mov byte ptr [esp + 0xc], bl
+        mov bl, byte ptr [edi + 0xabb260]
+        xor edi, edi
+        mov di, cx
+        mov byte ptr [esp + 0xd], bl
+        and edi, 0xff
+        mov bl, byte ptr [edi + 0xabb260]
+        mov edi, edx
+        and edi, 0xff0000
+        mov byte ptr [esp + 0xe], bl
+        shr edi, 0x10
+        mov bl, byte ptr [edi + 0xabb260]
+        mov di, cx
+        mov byte ptr [esp + 0xf], bl
+        shr di, 0x8
+        movzx edi, di
+        mov bl, byte ptr [edi + 0xabb260]
+        mov edi, edx
+        shr edi, 0x18
+        mov byte ptr [esp + 0x10], bl
+        xor ebx, ebx
+        lea eax, [eax + esi]
+        mov bl, dh
+        add al, dl
+        add al, cl
+        mov bl, byte ptr [ebx + 0xabb260]
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0x11], bl
+        movzx ax, al
+        mov bl, byte ptr [edi + 0xabb260]
+        push eax
+        mov byte ptr [esp + 0x16], bl
+        push ecx
+        mov esi, 0xac02b4
+        call ext_0085DC90
+        mov edx, dword ptr [esp + 0x104]
+        add esp, 0x8
+        mov edi, edx
+        mov ecx, 0x6
+        rep movsd
+        movsb
+        mov esi, 0x8
+        xor eax, eax
+    loop_top:
+        mov cl, byte ptr [esp + eax + 0xc]
+        inc esi
+        mov bl, cl
+        inc esi
+        shr cl, 0x4
+        and bl, 0xf
+        add bl, 0x61
+        inc eax
+        mov byte ptr [edx + esi - 0x2], bl
+        mov bl, 0x7a
+        sub bl, cl
+        cmp eax, 0x7
+        mov byte ptr [edx + esi - 0x1], bl
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xdc
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    }
+}
