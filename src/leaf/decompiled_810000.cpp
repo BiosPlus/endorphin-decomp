@@ -24,6 +24,7 @@ extern "C" void ext_00810550();
 extern "C" void __cdecl ext_00810550();
 extern "C" void ext_0080F070();
 extern "C" void ext_00810730();
+extern "C" int __cdecl ext_008111B0(void* self, unsigned char* buf, int a, int digits, int base);
 
 // [0x00810180] sub_00810180 (64 bytes)
 extern "C" __declspec(naked) void __cdecl fn_00810180(void) {
@@ -1015,6 +1016,129 @@ extern "C" __declspec(naked) int __cdecl fn_00810550(void) {
         pop esi
         pop ebx
         pop edi
+        ret
+    }
+}
+
+// [0x008113E0] sub_008113E0 (262 bytes)
+extern "C" __declspec(naked) int __cdecl fn_008113E0(void* self, char* p, int flags, int limit) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        xor edi, edi
+        cmp dword ptr [esi + 0xc], -1
+        je exit_one
+        mov ebp, dword ptr [esp + 0x20]
+    loop_top:
+        cmp edi, dword ptr [esp + 0x28]
+        jge exit_one
+        mov bl, byte ptr [esi + 0xc]
+        push 0
+        push esi
+        call dword ptr [esi + 4]
+        mov al, byte ptr [esp + 0x2c]
+        add esp, 8
+        test al, 0x10
+        je store
+        cmp bl, 0x5c
+        jne store
+        mov eax, dword ptr [esi + 0xc]
+        lea ecx, [eax - 0x5c]
+        cmp ecx, 0x1a
+        ja default_esc
+        xor edx, edx
+        mov dl, byte ptr [ecx + 0x81150c]
+        jmp dword ptr [4*edx + 0x8114e8]
+    esc_bs:
+        mov bl, 0x5c
+        jmp store
+    esc_a:
+        mov bl, 0x07
+        jmp store
+    esc_b:
+        mov bl, 0x08
+        jmp store
+    esc_f:
+        mov bl, 0x0c
+        jmp store
+    esc_n:
+        mov bl, 0x0a
+        jmp store
+    esc_r:
+        mov bl, 0x0d
+        jmp store
+    esc_t:
+        mov bl, 0x09
+        jmp store
+    esc_v:
+        mov bl, 0x0b
+        jmp store
+    default_esc:
+        test byte ptr [eax*2 + 0xab8e00], 4
+        je not_digit
+        push 8
+        push 3
+        lea eax, [esp + 0x18]
+        push 0
+        push eax
+        push esi
+        call ext_008111B0
+        add esp, 0x14
+        test eax, eax
+        je fail
+        mov bl, byte ptr [esp + 0x10]
+        jmp store
+    not_digit:
+        push eax
+        call ext_008110F0
+        add esp, 4
+        cmp eax, 0x58
+        jne not_hex
+        push 0
+        push esi
+        call dword ptr [esi + 4]
+        push 0x10
+        push 2
+        lea ecx, [esp + 0x20]
+        push 0
+        push ecx
+        push esi
+        call ext_008111B0
+        add esp, 0x1c
+        test eax, eax
+        je fail
+        mov bl, byte ptr [esp + 0x10]
+        jmp store
+    not_hex:
+        mov bl, byte ptr [esi + 0xc]
+    store:
+        test ebp, ebp
+        je skip_store
+        mov byte ptr [edi + ebp], bl
+    skip_store:
+        mov eax, dword ptr [esi + 0xc]
+        inc edi
+        cmp eax, -1
+        jne loop_top
+    exit_one:
+        lea eax, [edi + 1]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    fail:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 8
         ret
     }
 }
