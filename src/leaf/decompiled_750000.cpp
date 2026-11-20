@@ -4881,3 +4881,217 @@ extern "C" __declspec(naked) bool __fastcall fn_0075DB50(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00751230] sub_00751230 (290 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_007515F0();
+extern "C" int mem_00925184;
+extern "C" int mem_0092521C;
+extern "C" int mem_009252C4;
+
+extern "C" __declspec(naked) void __fastcall fn_00751230(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor ebx, ebx
+        mov edi, ecx
+        push 4D8h
+        mov dword ptr [esp+14h], ebx
+        call ext_006A5C62
+        mov esi, eax
+        mov eax, dword ptr [edi+0ACh]
+        push eax
+        call dword ptr [mem_00925184]
+        mov ebp, eax
+        mov eax, dword ptr [esp+20h]
+        mov ecx, dword ptr [esp+2Ch]
+        add esp, 8
+        mov dword ptr [eax], ebx
+        mov dword ptr [eax+4], ebx
+        mov eax, dword ptr [esp+1Ch]
+        lea edx, [esp+10h]
+        push esi
+        push edx
+        mov dword ptr [eax], ebx
+        mov dword ptr [eax+4], ebx
+        mov eax, dword ptr [esp+28h]
+        mov dword ptr [eax], ebx
+        mov dword ptr [eax+4], ebx
+        mov dword ptr [ecx], ebx
+        mov ecx, edi
+        call ext_007515F0
+        test al, al
+        jne L_7512A0
+L_75128D:
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+        xor al, al
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 10h
+L_7512A0:
+        cmp dword ptr [esp+10h], ebx
+        je L_751330
+        mov ebx, dword ptr [mem_0092521C]
+L_7512B0:
+        mov eax, dword ptr [edi+0ACh]
+        push eax
+        call dword ptr [mem_00925184]
+        mov ecx, dword ptr [esp+14h]
+        mov ebp, eax
+        add esp, 4
+        lea eax, [ecx-0Ah]
+        cmp eax, 3Ch
+        ja L_751311
+        xor edx, edx
+        mov dl, byte ptr [eax+0751368h]
+        jmp dword ptr [edx*4+0751354h]
+L_7512DD:
+        mov eax, dword ptr [esp+18h]
+        push eax
+        push 0AAE640h
+        jmp L_75130B
+L_7512E9:
+        mov ecx, dword ptr [esp+1Ch]
+        push ecx
+        push 0AAE640h
+        jmp L_75130B
+L_7512F5:
+        mov edx, dword ptr [esp+20h]
+        push edx
+        push 0AAE640h
+        jmp L_75130B
+L_751301:
+        mov eax, dword ptr [esp+24h]
+        push eax
+        push 0AA86A4h
+L_75130B:
+        push esi
+        call ebx
+        add esp, 0Ch
+L_751311:
+        lea ecx, [esp+10h]
+        push esi
+        push ecx
+        mov ecx, edi
+        call ext_007515F0
+        test al, al
+        je L_75128D
+        mov eax, dword ptr [esp+10h]
+        test eax, eax
+        jne L_7512B0
+        xor ebx, ebx
+L_751330:
+        mov edx, dword ptr [edi+0ACh]
+        push ebx
+        push ebp
+        push edx
+        call dword ptr [mem_009252C4]
+        push esi
+        call ext_006A5C5C
+        add esp, 10h
+        mov al, 1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 10h
+    }
+}
+
+extern "C" __declspec(naked) void tbl_00751352() {
+    __asm {
+        _emit 08Bh
+        _emit 0FFh
+        _emit 0DDh
+        _emit 012h
+        _emit 075h
+        _emit 000h
+        _emit 0E9h
+        _emit 012h
+        _emit 075h
+        _emit 000h
+        _emit 0F5h
+        _emit 012h
+        _emit 075h
+        _emit 000h
+        _emit 001h
+        _emit 013h
+        _emit 075h
+        _emit 000h
+        _emit 011h
+        _emit 013h
+        _emit 075h
+        _emit 000h
+        _emit 000h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 001h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 002h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 004h
+        _emit 003h
+    }
+}
