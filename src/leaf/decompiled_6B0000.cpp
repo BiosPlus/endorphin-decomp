@@ -12244,3 +12244,113 @@ __declspec(naked) void __fastcall fn_006BA570(void* self, int edx, void* ret_obj
         ret     0x0C
     }
 }
+
+// [0x006BA3D0] sub_006BA3D0 (256 bytes)
+// Builds a 4 KiB local buffer: strncpy(buf, *self, n); buf[n]=0; strcat(buf, arg2);
+// then strncat the tail of *self after the match, and hands buf to 0x006B9B40.
+extern "C" void ext_006A7270();
+extern "C" void ext_006BA370();
+extern "C" void ext_006B99C0();
+extern "C" void ext_006B9B40();
+extern "C" int mem_009252D0; /* u32 0x00627E0C */
+extern "C" int mem_00925280; /* u32 0x0062D356 */
+
+extern "C" __declspec(naked) void __fastcall fn_006BA3D0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, 0x1000
+        call ext_006A7270
+        mov eax, dword ptr [esp + 0x100c]
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov ecx, dword ptr [esp + 0x100c]
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_006BA370
+        mov ebx, eax
+        cmp ebx, 0x1000
+        jge fail_006BA3D0
+        cmp ebx, -1
+        je fail_006BA3D0
+        mov edx, dword ptr [ebp]
+        push esi
+        push edi
+        push ebx
+        lea eax, [esp + 0x14]
+        push edx
+        push eax
+        call dword ptr [mem_009252D0]
+        mov edi, dword ptr [esp + 0x1024]
+        or ecx, -1
+        xor eax, eax
+        add esp, 0xc
+        repne scasb
+        not ecx
+        sub edi, ecx
+        lea edx, [esp + 0x10]
+        mov esi, edi
+        mov edi, edx
+        mov edx, ecx
+        or ecx, -1
+        mov byte ptr [esp + ebx + 0x10], 0
+        repne scasb
+        mov ecx, edx
+        dec edi
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        mov ecx, ebp
+        call ext_006B99C0
+        mov edx, dword ptr [esp + 0x1014]
+        mov esi, eax
+        mov edi, edx
+        or ecx, -1
+        xor eax, eax
+        sub esi, ebx
+        repne scasb
+        not ecx
+        dec ecx
+        mov edi, edx
+        sub esi, ecx
+        or ecx, -1
+        repne scasb
+        mov edi, dword ptr [ebp]
+        push esi
+        not ecx
+        dec ecx
+        lea eax, [esp + 0x14]
+        add ecx, edi
+        add ecx, ebx
+        push ecx
+        push eax
+        call dword ptr [mem_00925280]
+        add esp, 0xc
+        lea ecx, [esp + 0x10]
+        lea edi, [esp + 0x10]
+        xor eax, eax
+        push ecx
+        or ecx, -1
+        repne scasb
+        not ecx
+        dec ecx
+        push ecx
+        mov ecx, ebp
+        call ext_006B9B40
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        add esp, 0x1000
+        ret 0xc
+    fail_006BA3D0:
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 0x1000
+        ret 0xc
+    }
+}
