@@ -3988,3 +3988,100 @@ fn0073CE30_fail_end:
         ret 4
     }
 }
+
+// [0x0073CD30] sub_0073CD30 (256 bytes)
+extern "C" void ext_006FDF70();
+extern "C" void ext_006FC930();
+extern "C" void ext_006D83C0();
+extern "C" void ext_006D8520();
+extern "C" void ext_006D23F0();
+extern "C" void ext_00726900();
+extern "C" void ext_00726BE0();
+extern "C" __declspec(naked) void __fastcall fn_0073CD30(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0ch
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        push 0aae03ch
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        jne fn0073CD30_body
+        mov ecx, dword ptr [edi + 0ach]
+        push 0aae030h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CD30_end
+fn0073CD30_body:
+        mov esi, dword ptr [ebp + 8]
+        push 0
+        mov ecx, esi
+        mov ebx, dword ptr [esi + 28h]
+        call ext_006FDF70
+        mov ecx, eax
+        call ext_006FC930
+        cmp dword ptr [eax], 2
+        jne fn0073CD30_skip
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726900
+        cdq
+        sub eax, edx
+        mov ebx, eax
+        sar ebx, 1
+fn0073CD30_skip:
+        push ebx
+        mov ecx, esi
+        call ext_006D83C0
+        mov ecx, esi
+        call ext_006D8520
+        test ebx, ebx
+        jle fn0073CD30_fin
+        mov esi, eax
+fn0073CD30_loop:
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726BE0
+        fstp qword ptr [esp + 10h]
+        push 0
+        mov ecx, esi
+        call ext_006D23F0
+        mov ecx, dword ptr [esp + 10h]
+        mov edx, dword ptr [esp + 14h]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 4], edx
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726BE0
+        fstp qword ptr [esp + 10h]
+        push 1
+        mov ecx, esi
+        call ext_006D23F0
+        mov ecx, dword ptr [esp + 10h]
+        mov edx, dword ptr [esp + 14h]
+        mov dword ptr [eax], ecx
+        add esi, 10h
+        dec ebx
+        mov dword ptr [eax + 4], edx
+        jne fn0073CD30_loop
+fn0073CD30_fin:
+        mov ecx, dword ptr [edi + 0ach]
+        add ecx, 4
+        call ext_00726840
+fn0073CD30_end:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}

@@ -33,5 +33,7 @@
     "0x0073CDF4",
     "0x0073CE15"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-20T15:11:32Z"
 }
