@@ -44,5 +44,6 @@
     "0x00737BAB",
     "0x00737BBC"
   ],
-  "status": "todo"
+  "status": "deferred",
+  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
 }
