@@ -44,5 +44,7 @@
     "0x00777CD4",
     "0x00777CE2"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-20T16:06:30Z"
 }
