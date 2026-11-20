@@ -5069,3 +5069,100 @@ extern "C" __declspec(naked) void __fastcall fn_007709E0(void* self, int edx_unu
         ret 0x18
     }
 }
+
+// [0x007713B0] sub_007713B0 (272 bytes)
+extern "C" void ext_006C9F60();
+extern "C" void ext_006CD350();
+extern "C" void ext_006DAB00();
+extern "C" __declspec(naked) void __fastcall fn_007713B0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x9c
+        push ebx
+        push esi
+        xor ebx, ebx
+        push edi
+        lea ecx, [esp + 0x30]
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esp + 0x38], ebx
+        mov dword ptr [esp + 0x3c], ebx
+        call ext_006C9F60
+        lea ecx, [esp + 0x58]
+        mov dword ptr [esp + 0x60], ebx
+        mov dword ptr [esp + 0x64], ebx
+        call ext_006C9F60
+        lea ecx, [esp + 0x80]
+        mov dword ptr [esp + 0x88], ebx
+        mov dword ptr [esp + 0x8c], ebx
+        call ext_006C9F60
+        cmp dword ptr [ebp + 0x1c], ebx
+        jbe done
+        mov eax, dword ptr [ebp + 0xc]
+        mov ecx, dword ptr [ebp + 0x8]
+        lea edi, [eax + 8]
+        lea esi, [ecx + 8]
+    loop_top:
+        push 6
+        push 0
+        push 0
+        push ebx
+        push 0
+        push 0
+        push 0
+        lea ecx, [esp + 0x2c]
+        call ext_006DAB00
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [ebp + 0x10]
+        push 0
+        push edx
+        push eax
+        call ext_006CD350
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        fstp qword ptr [esp + 0x18]
+        push 0
+        push ecx
+        mov ecx, dword ptr [ebp + 0x14]
+        push edx
+        call ext_006CD350
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x10]
+        fstp qword ptr [esp + 0x20]
+        push 0
+        push eax
+        push ecx
+        mov ecx, dword ptr [ebp + 0x18]
+        call ext_006CD350
+        fld qword ptr [esp + 0x18]
+        mov dword ptr [esi - 8], ebx
+        xor eax, eax
+        mov word ptr [esi - 4], 7
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], eax
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x10], eax
+        fstp dword ptr [edi - 8]
+        fld qword ptr [esp + 0x20]
+        mov eax, dword ptr [ebp + 0x1c]
+        inc ebx
+        fstp dword ptr [edi - 4]
+        add esi, 0x1c
+        fstp dword ptr [edi]
+        add edi, 0xc
+        cmp ebx, eax
+        jb loop_top
+    done:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x18
+    }
+}
