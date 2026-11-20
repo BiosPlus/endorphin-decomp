@@ -8926,3 +8926,78 @@ extern "C" __declspec(naked) void __fastcall fn_007910C0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00790FA0] sub_00790FA0 (275 bytes)
+extern "C" void ext_00790D80();
+extern "C" void ext_00790E00();
+extern "C" void ext_00791210();
+extern "C" int mem_009324A8; /* double -0.5 */
+extern "C" int mem_00993828; /* double 0.5 */
+extern "C" int mem_0092C510; /* double 2 */
+extern "C" double mem_00993840; /* double 3 */
+extern "C" __declspec(naked) void __fastcall fn_00790FA0(void* self, int edx_unused, double a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x84
+        fld qword ptr [ebp + 0x8]
+        fmul qword ptr [mem_009324A8]
+        mov eax, dword ptr [ebp + 0x8]
+        push esi
+        mov esi, ecx
+        mov edx, eax
+        mov ecx, dword ptr [ebp + 0xc]
+        mov dword ptr [esp + 0x10], edx
+        fst qword ptr [esp + 0x8]
+        fst qword ptr [esp + 0x18]
+        fld qword ptr [ebp + 0x8]
+        fmul qword ptr [mem_00993828]
+        fld qword ptr [mem_0092C510]
+        mov dword ptr [esi + 0x38], eax
+        mov dword ptr [esi + 0x3c], ecx
+        fsub st, st(1)
+        mov eax, ecx
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x24], 0
+        fstp qword ptr [esp + 0x2c]
+        mov dword ptr [esp + 0x28], 0
+        mov dword ptr [esp + 0x3c], 0
+        fld st(0)
+        fsub qword ptr [mem_00993840]
+        mov dword ptr [esp + 0x40], 0
+        mov dword ptr [esp + 0x44], 0
+        mov dword ptr [esp + 0x48], 0x3ff00000
+        mov dword ptr [esp + 0x64], 0
+        mov dword ptr [esp + 0x68], 0
+        mov dword ptr [esp + 0x7c], 0
+        fstp qword ptr [esp + 0x34]
+        mov dword ptr [esp + 0x80], 0
+        mov dword ptr [esp + 0x84], 0
+        fld st(0)
+        fsub qword ptr [mem_0092C510]
+        mov dword ptr [esp + 0x88], 0
+        fstp qword ptr [esp + 0x4c]
+        fld qword ptr [mem_00993840]
+        fsub qword ptr [ebp + 0x8]
+        fstp qword ptr [esp + 0x54]
+        fst qword ptr [esp + 0x5c]
+        fstp qword ptr [esp + 0x6c]
+        fstp qword ptr [esp + 0x74]
+        call ext_00791210
+        push 4
+        mov ecx, esi
+        call ext_00790D80
+        push 1
+        mov ecx, esi
+        call ext_00790E00
+        mov dword ptr [esi + 0x5c], 1
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 8
+    }
+}
