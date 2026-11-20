@@ -13466,3 +13466,104 @@ extern "C" __declspec(naked) void* __fastcall fn_00428AB0(void* self, void* dumm
         call ext_006A6DD2
     }
 }
+
+// [0x0042E2C0] sub_0042E2C0 (261 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_00420600();
+extern "C" void ext_004278C0();
+extern "C" void ext_00429100();
+extern "C" void ext_0042BD00();
+extern "C" void ext_0042C600();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_0042E2C0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x879ba3
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xa4
+        push ebx
+        push esi
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0x24]
+        mov edx, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [esp + 0xc0]
+        lea esi, [ebx + 0x24]
+        push edi
+        mov ecx, esi
+        call edx
+        test eax, eax
+        je L_check2
+        xor al, al
+        jmp L_epilogue
+    L_check2:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc8]
+        push ebp
+        mov ecx, esi
+        call edx
+        test eax, eax
+        mov ecx, esi
+        je L_else
+        push edi
+        push ebp
+        call ext_004278C0
+        push eax
+        push ebx
+        lea ecx, [esp + 0x4c]
+        call ext_0042BD00
+        push eax
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0xc4], 0
+        call ext_0042C600
+        lea ecx, [esp + 0x40]
+        jmp L_common
+    L_else:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 0xacdab0
+        call edx
+        test eax, eax
+        je L_throw
+        push edi
+        push eax
+        push ebx
+        lea ecx, [esp + 0x1c]
+        call ext_0042BD00
+        push eax
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0xc4], 1
+        call ext_0042C600
+        lea ecx, [esp + 0x10]
+    L_common:
+        mov dword ptr [esp + 0xbc], 0xffffffff
+        call ext_00429100
+        mov al, 1
+        pop ebp
+    L_epilogue:
+        mov ecx, dword ptr [esp + 0xb0]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0xb0
+        ret 8
+    L_throw:
+        push 0xacdab0
+        call ext_00420600
+        push eax
+        lea ecx, [esp + 0x78]
+        call ext_0041FF30
+        push 0x9d3748
+        lea eax, [esp + 0x74]
+        push eax
+        call ext_006A6DD2
+    }
+}
