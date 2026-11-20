@@ -9732,3 +9732,125 @@ extern "C" __declspec(naked) void __fastcall fn_0086E760(void* self) {
         ret
     }
 }
+
+// [0x00865240] sub_00865240 (293 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_0085D530();
+extern "C" void ext_00860670();
+extern "C" void ext_00860950();
+extern "C" int ext_00865470();
+extern "C" int mem_00AB98EC;
+extern "C" int mem_00BC6389;
+extern "C" short mem_00BC667B;
+extern "C" short mem_00BC6679;
+
+extern "C" __declspec(naked) void __fastcall fn_00865240(void* self) {
+    __asm {
+        mov dword ptr [mem_00AB98EC], 0
+        push ebx
+        push esi
+        push edi
+        call ext_00860670
+        test eax, eax
+        jne has_ret
+        mov eax, 0xfffffef2
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    has_ret:
+        mov cl, byte ptr [esp + 0x10]
+        cmp cl, 0x58
+        je chk_len
+        cmp cl, 0x59
+        je chk_len
+        push 0x3e
+        push 0x0
+        push 0xbc6388
+        call ext_0085D510
+        add esp, 0xc
+        mov eax, 0xa
+        mov dword ptr [mem_00AB98EC], 0x8d
+        mov byte ptr [mem_00BC6389], 0xa
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    chk_len:
+        mov esi, dword ptr [esp + 0x28]
+        test esi, esi
+        jne len_nz
+        mov eax, 0x18
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0x9d
+        mov byte ptr [mem_00BC6389], 0x18
+        pop esi
+        pop ebx
+        ret
+    len_nz:
+        cmp esi, 0x30
+        jbe len_small
+        mov eax, 0xa
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0x18
+        mov byte ptr [mem_00BC6389], 0xa
+        pop esi
+        pop ebx
+        ret
+    len_small:
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        mov ebx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push ebx
+        push eax
+        push ecx
+        call ext_00860950
+        mov edi, dword ptr [esp + 0x38]
+        add esp, 0x14
+        push esi
+        push edi
+        push 0xbc667d
+        call ext_0085D530
+        mov word ptr [mem_00BC667B], si
+        add esp, 0xc
+        mov word ptr [mem_00BC6679], 0
+        call ext_00865470
+        cmp eax, 0x18
+        mov ebx, eax
+        je code_98
+        cmp ebx, 0x19
+        je code_99
+        mov eax, dword ptr [mem_00AB98EC]
+    store_ret:
+        mov dword ptr [mem_00AB98EC], eax
+        test eax, eax
+        je fail_log
+        mov eax, ebx
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    code_98:
+        mov eax, 0x98
+        mov ebx, eax
+        jmp store_ret
+    code_99:
+        mov ebx, 0x99
+        mov eax, ebx
+        jmp store_ret
+    fail_log:
+        push esi
+        push 0xbc6396
+        push edi
+        call ext_0085D530
+        add esp, 0xc
+        mov eax, ebx
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
