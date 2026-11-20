@@ -8116,3 +8116,99 @@ extern "C" __declspec(naked) void __cdecl fn_0085FE90(int a, void* p) {
         _emit 0x00
     }
 }
+
+// [0x0085DF30] sub_0085DF30 (244 bytes)
+extern "C" void ext_0085DE20();
+extern "C" void ext_0085E030();
+extern "C" void ext_0085E050();
+extern "C" void ext_0085E0E0();
+extern "C" void ext_0085E220();
+extern "C" void ext_0085E510();
+extern "C" void ext_0085E770();
+extern "C" int mem_009242D0;
+extern "C" int mem_00AB98EC;
+extern "C" int mem_00AB9920;
+extern "C" int mem_00AB9B20;
+extern "C" int mem_00AB9B24;
+extern "C" int mem_00AB9B28;
+extern "C" int mem_00AB9D28;
+extern "C" int mem_00AB9F30;
+extern "C" int mem_00AB9F34;
+
+extern "C" __declspec(naked) void __fastcall fn_0085DF30(void* self) {
+    __asm {
+        sub esp, 0x404
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        lea ecx, [esp + 0x8]
+        push eax
+        mov edx, dword ptr [esp + 0x410]
+        push ecx
+        push 0x200
+        mov esi, dword ptr [mem_009242D0]
+        push 0
+        push edx
+        push 0
+        call esi
+        test eax, eax
+        jne L_found
+        mov eax, 1
+        pop esi
+        mov dword ptr [mem_00AB98EC], 0x14
+        add esp, 0x404
+        ret
+    L_found:
+        call ext_0085E050
+        xor eax, eax
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov dword ptr [mem_00AB9B20], eax
+        mov dword ptr [mem_00AB9B24], eax
+        mov dword ptr [mem_00AB9F30], eax
+        mov dword ptr [mem_00AB9F34], eax
+        call ext_0085E770
+        add esp, 0x4
+        call ext_0085DE20
+        cmp dword ptr [mem_00AB98EC], 0x1
+        jle L_cont
+        mov eax, 1
+        pop esi
+        add esp, 0x404
+        ret
+    L_cont:
+        lea eax, [esp + 0x4]
+        lea ecx, [esp + 0x208]
+        push eax
+        push ecx
+        push 0x200
+        push 0
+        push offset mem_00AB9920
+        push 0
+        call esi
+        test eax, eax
+        je L_skip
+        lea eax, [esp + 0x208]
+        push eax
+        push offset mem_00AB9920
+        call ext_0085E030
+        add esp, 0x8
+    L_skip:
+        push offset mem_00AB9920
+        call ext_0085E0E0
+        add esp, 0x4
+        call ext_0085DE20
+        push offset mem_00AB9B28
+        call ext_0085E220
+        add esp, 0x4
+        push offset mem_00AB9D28
+        call ext_0085E510
+        add esp, 0x4
+        xor eax, eax
+        pop esi
+        add esp, 0x404
+        ret
+    }
+}
