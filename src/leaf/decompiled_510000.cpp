@@ -15044,3 +15044,115 @@ extern "C" __declspec(naked) void* __fastcall fn_0051E5B0(void* self, void* dumm
         call    ext_006A6DD2
     }
 }
+
+// [0x005148F0] sub_005148F0 (249 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_004148F0();
+extern "C" void ext_00519D50();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005148F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 08926b0h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 10h
+        mov edx, dword ptr [ebp + 8]
+        cmp edx, 1fffffffh
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 10h], esp
+        mov esi, ecx
+        jbe short L_514923
+        call ext_00405FB0
+L_514923:
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        jne short L_51492E
+        xor eax, eax
+        jmp short L_514936
+L_51492E:
+        mov eax, dword ptr [esi + 0ch]
+        sub eax, ecx
+        sar eax, 3
+L_514936:
+        cmp eax, edx
+        jae L_5149C1
+        push 0
+        push edx
+        call ext_00519D50
+        mov ebx, eax
+        mov eax, dword ptr [esi + 8]
+        add esp, 8
+        cmp dword ptr [esi + 4], eax
+        mov dword ptr [ebp - 1ch], ebx
+        mov dword ptr [ebp - 4], 0
+        mov dword ptr [ebp - 18h], eax
+        jbe short L_514966
+        call dword ptr [mem_00925134]
+L_514966:
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe short L_514974
+        call dword ptr [mem_00925134]
+L_514974:
+        mov ecx, dword ptr [ebp + 8]
+        mov edx, dword ptr [ebp - 18h]
+        mov byte ptr [ebp - 14h], 0
+        mov eax, dword ptr [ebp - 14h]
+        push eax
+        push ecx
+        push esi
+        push ebx
+        push edx
+        push edi
+        call ext_004148F0
+        mov eax, dword ptr [esi + 4]
+        add esp, 18h
+        test eax, eax
+        jne short L_51499A
+        xor edi, edi
+        jmp short L_5149A2
+L_51499A:
+        mov edi, dword ptr [esi + 8]
+        sub edi, eax
+        sar edi, 3
+L_5149A2:
+        test eax, eax
+        je short L_5149AF
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_5149AF:
+        mov eax, dword ptr [ebp + 8]
+        lea ecx, [ebx + 8*eax]
+        lea edx, [ebx + 8*edi]
+        mov dword ptr [esi + 0ch], ecx
+        mov dword ptr [esi + 8], edx
+        mov dword ptr [esi + 4], ebx
+L_5149C1:
+        mov ecx, dword ptr [ebp - 0ch]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+L_5149D4:
+        mov eax, dword ptr [ebp - 1ch]
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
