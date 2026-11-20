@@ -13990,3 +13990,138 @@ L_tail:
         ret 0x8
     }
 }
+
+// [0x006DC6A0] sub_006DC6A0 (320 bytes)
+extern "C" void ext_006C9170();
+extern "C" void ext_006C91E0();
+extern "C" void ext_006C9320();
+extern "C" const char* __fastcall ext_006C9330(void* self);
+extern "C" void ext_006DC460();
+
+// thiscall(self, a1) with ret 4: SEH-framed; scans self->[0xc8][i] strings for a1, else creates a new object.
+extern "C" __declspec(naked) void __fastcall fn_006DC6A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x008c17c6
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ebx, dword ptr [esp + 0x24]
+        xor ebp, ebp
+        lea eax, [edi + 0xb8]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [eax]
+        test eax, eax
+        jle L_notfound_6DC6A0
+    L_outer_6DC6A0:
+        mov eax, dword ptr [edi + 0xc8]
+        mov esi, ebx
+        mov ecx, dword ptr [eax + 4*ebp]
+        call ext_006C9330
+    L_cmp_6DC6A0:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_diff_6DC6A0
+        test cl, cl
+        je L_equal_6DC6A0
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L_diff_6DC6A0
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L_cmp_6DC6A0
+    L_equal_6DC6A0:
+        xor eax, eax
+        jmp L_cmpdone_6DC6A0
+    L_diff_6DC6A0:
+        sbb eax, eax
+        sbb eax, -1
+    L_cmpdone_6DC6A0:
+        test eax, eax
+        je L_dup_6DC6A0
+        mov eax, dword ptr [esp + 0x10]
+        inc ebp
+        cmp ebp, dword ptr [eax]
+        jl L_outer_6DC6A0
+    L_notfound_6DC6A0:
+        mov ecx, edi
+        call ext_006DC460
+        mov esi, eax
+        push 0xa8
+        test esi, esi
+        je L_null_6DC6A0
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x24], eax
+        test eax, eax
+        mov dword ptr [esp + 0x1c], 0
+        je L_zero_6DC6A0
+        push esi
+        mov ecx, eax
+        call ext_006C91E0
+        jmp L_join_6DC6A0
+    L_dup_6DC6A0:
+        mov ecx, dword ptr [edi + 0xec]
+        push 0xaa9428
+        push 0
+        call ext_006E7410
+        xor eax, eax
+        jmp L_epi_6DC6A0
+    L_zero_6DC6A0:
+        xor eax, eax
+    L_join_6DC6A0:
+        push ebx
+        mov ecx, eax
+        mov dword ptr [esp + 0x20], 0xffffffff
+        mov esi, eax
+        call ext_006C9320
+        jmp L_store_6DC6A0
+    L_null_6DC6A0:
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x24], eax
+        test eax, eax
+        mov dword ptr [esp + 0x1c], 0x1
+        je L_zero2_6DC6A0
+        push ebx
+        mov ecx, eax
+        call ext_006C9170
+        jmp L_call_6DC6A0
+    L_zero2_6DC6A0:
+        xor eax, eax
+    L_call_6DC6A0:
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x20], 0xffffffff
+        mov esi, eax
+        call dword ptr [edx + 0x34]
+    L_store_6DC6A0:
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x24]
+        push eax
+        mov dword ptr [esp + 0x28], esi
+        mov edx, dword ptr [ecx]
+        push edx
+        call ext_006D2170
+        mov eax, esi
+    L_epi_6DC6A0:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
