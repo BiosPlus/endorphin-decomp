@@ -4398,3 +4398,103 @@ extern "C" __declspec(naked) void __fastcall fn_00757DC0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00754760] sub_00754760 (264 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2170();
+extern "C" void ext_00782D90();
+
+extern "C" __declspec(naked) bool __fastcall fn_00754760(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push -1
+        push 08bf9f6h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 8
+        push esi
+        push edi
+        push 18h
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov [esp+0ch], esi
+        test esi, esi
+        mov dword ptr [esp+18h], 0
+        je L_alloc2
+        push 20h
+        push 10h
+        mov ecx, esi
+        call ext_006D2130
+        lea eax, [esi+10h]
+        mov edi, esi
+        mov [esi+14h], eax
+        jmp L_after1
+L_alloc2:
+        xor edi, edi
+L_after1:
+        push 18h
+        mov dword ptr [esp+1ch], 0ffffffffh
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov [esp+0ch], esi
+        test esi, esi
+        mov dword ptr [esp+18h], 1
+        je L_null2
+        push 4
+        push 10h
+        mov ecx, esi
+        call ext_006D2130
+        lea ecx, [esi+10h]
+        mov [esi+14h], ecx
+        jmp L_after2
+L_null2:
+        xor esi, esi
+L_after2:
+        test edi, edi
+        mov dword ptr [esp+18h], 0ffffffffh
+        je L_fail
+        test esi, esi
+        je L_fail
+        mov eax, [esi]
+        lea edx, [esp+8]
+        push edx
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp+10h], 0
+        call ext_006D2170
+        mov edx, [esi]
+        lea ecx, [esp+0ch]
+        push ecx
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp+14h], 0
+        call ext_006D2170
+        mov ecx, [esp+24h]
+        push edi
+        mov edi, [esp+24h]
+        push edi
+        call ext_00782D90
+        mov ecx, [esp+28h]
+        push esi
+        push edi
+        call ext_00782D90
+        pop edi
+        mov al, 1
+        pop esi
+        mov ecx, [esp+8]
+        mov fs:[0], ecx
+        add esp, 14h
+        ret 0ch
+L_fail:
+        mov ecx, [esp+10h]
+        pop edi
+        xor al, al
+        pop esi
+        mov fs:[0], ecx
+        add esp, 14h
+        ret 0ch
+    }
+}
