@@ -8893,3 +8893,121 @@ extern "C" __declspec(naked) void __fastcall fn_00725940(void* self) {
         ret
     }
 }
+
+// [0x0072DDD0] sub_0072DDD0 (288 bytes)
+extern "C" void ext_006E7440();
+extern "C" void ext_00724FA0();
+extern "C" void ext_00725940();
+extern "C" void ext_0072CB90();
+extern "C" void ext_0072E570();
+extern "C" void ext_0072EFC0();
+extern "C" void ext_0072F230();
+extern "C" void ext_0072FDD0();
+extern "C" __declspec(naked) void __fastcall fn_0072DDD0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        xor ebp, ebp
+        push edi
+        mov dword ptr [esi + 0xb4], ebp
+        mov bl, 0x1
+        call ext_0072CB90
+        mov edi, eax
+        test edi, edi
+        je L_fail
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0xb4], edi
+        test eax, eax
+        je L_nothat
+        mov ebp, dword ptr [esi + 0xac]
+        mov dword ptr [esi + 0xac], eax
+L_loop:
+        mov eax, dword ptr [esi + 0xac]
+        cmp dword ptr [eax + 0x1c8], -1
+        jne L_else
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, esi
+        call ext_0072EFC0
+        test al, al
+        jne L_match
+        mov al, byte ptr [esp + 0x1c]
+        test al, al
+        je L_fail
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00724FA0
+        mov bl, al
+        test bl, bl
+        je L_end
+        push 0x0
+        mov ecx, esi
+        call ext_0072FDD0
+        mov ecx, esi
+        call ext_0072E570
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 0x4
+        call ext_00725940
+        push 0x0
+        mov ecx, esi
+        call ext_0072F230
+        jmp L_end
+L_nothat:
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        jne L_loop
+        push 0x3
+        lea ecx, [esi + 0x8]
+        call ext_006E7440
+        xor bl, bl
+        jmp L_after
+L_match:
+        push 0x1
+        mov ecx, esi
+        call ext_0072FDD0
+        jmp L_end
+L_else:
+        mov al, byte ptr [esp + 0x1c]
+        test al, al
+        je L_fail
+        mov ecx, esi
+        call ext_0072E570
+        jmp L_end
+L_fail:
+        xor bl, bl
+L_end:
+        mov eax, dword ptr [esp + 0x18]
+        test eax, eax
+        je L_after
+        mov dword ptr [esi + 0xac], ebp
+L_after:
+        test bl, bl
+        mov dword ptr [esi + 0xb4], 0x0
+        jne L_ret_edi
+        test edi, edi
+        je L_noRelease
+        mov edx, dword ptr [edi]
+        push 0x0
+        mov ecx, edi
+        call dword ptr [edx + 0x4]
+L_noRelease:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret 0x8
+L_ret_edi:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
