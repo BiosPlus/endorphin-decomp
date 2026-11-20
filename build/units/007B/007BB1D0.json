@@ -35,5 +35,7 @@
     "0x007BB30E",
     "0x007BB320"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-20T15:40:58Z"
 }
