@@ -3987,3 +3987,156 @@ fn_00742970_end:
         ret 0x4
     }
 }
+
+// [0x00743480] sub_00743480 (288 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00743480(const char* s) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        xor ebp, ebp
+        mov esi, 0xaadfe0
+        mov ecx, edi
+    L1A:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne L1B
+        test dl, dl
+        je L1C
+        mov al, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov dl, al
+        cmp al, bl
+        jne L1B
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne L1A
+    L1C:
+        xor ecx, ecx
+        jmp L1D
+    L1B:
+        sbb ecx, ecx
+        sbb ecx, -1
+    L1D:
+        test ecx, ecx
+        jne L2
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+    L2:
+        mov esi, 0xaae0d4
+        mov ecx, edi
+    L2A:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne L2B
+        test dl, dl
+        je L2C
+        mov al, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov dl, al
+        cmp al, bl
+        jne L2B
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne L2A
+    L2C:
+        xor ecx, ecx
+        jmp L2D
+    L2B:
+        sbb ecx, ecx
+        sbb ecx, -1
+    L2D:
+        test ecx, ecx
+        jne L3
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x2
+        pop ebx
+        ret
+    L3:
+        mov esi, 0xaadfd4
+        mov ecx, edi
+    L3A:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne L3B
+        test dl, dl
+        je L3C
+        mov al, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov dl, al
+        cmp al, bl
+        jne L3B
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne L3A
+    L3C:
+        xor ecx, ecx
+        jmp L3D
+    L3B:
+        sbb ecx, ecx
+        sbb ecx, -1
+    L3D:
+        test ecx, ecx
+        jne L4
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x3
+        pop ebx
+        ret
+    L4:
+        mov esi, 0xaadfcc
+        mov ecx, edi
+    L4A:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne L4B
+        test dl, dl
+        je L4C
+        mov al, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov dl, al
+        cmp al, bl
+        jne L4B
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne L4A
+    L4C:
+        xor ecx, ecx
+        jmp L4D
+    L4B:
+        sbb ecx, ecx
+        sbb ecx, -1
+    L4D:
+        test ecx, ecx
+        mov eax, 0x4
+        je L5
+        mov eax, ebp
+    L5:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
