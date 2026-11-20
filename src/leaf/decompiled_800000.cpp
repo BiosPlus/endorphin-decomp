@@ -11175,3 +11175,104 @@ extern "C" __declspec(naked) void __fastcall fn_0080F600(void* self) {
         nop
     }
 }
+
+// [0x0080AE20] sub_0080AE20 (256 bytes)
+extern "C" void ext_0080B570();
+extern "C" void ext_0080B130();
+extern "C" void ext_00852700();
+extern "C" int mem_009242C0;
+
+extern "C" __declspec(naked) void __cdecl fn_0080AE20(void* self) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push 0x10
+        lea eax, [esp + 0x1c]
+        push 0
+        push eax
+        call ext_0080B570
+        mov cx, word ptr [esp + 0x44]
+        mov dx, word ptr [esp + 0x48]
+        mov edi, dword ptr [esp + 0x38]
+        mov ebx, dword ptr [esp + 0x3c]
+        mov ebp, dword ptr [esp + 0x40]
+        mov ax, word ptr [esp + 0x4c]
+        add esp, 0xc
+        mov word ptr [esp + 0x20], cx
+        mov word ptr [esp + 0x22], dx
+        lea ecx, [esp + 0x10]
+        lea edx, [esp + 0x18]
+        push ecx
+        push edx
+        mov word ptr [esp + 0x26], di
+        mov word ptr [esp + 0x22], bx
+        mov word ptr [esp + 0x20], bp
+        mov word ptr [esp + 0x2c], ax
+        call dword ptr [mem_009242C0]
+        test eax, eax
+        jne ok_path
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x18
+        pop ebx
+        add esp, 0x18
+        ret
+    ok_path:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        xor eax, eax
+        xor esi, esi
+        or eax, edx
+        or ecx, esi
+        sub eax, 0xd53e8000
+        push 0
+        sbb ecx, 0x19db1de
+        push 0x989680
+        push ecx
+        push eax
+        call ext_00852700
+        mov esi, dword ptr [esp + 0x54]
+        push ebp
+        push ebx
+        push edi
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 4], edx
+        call ext_0080B130
+        mov ecx, dword ptr [esi]
+        mov edi, eax
+        mov eax, dword ptr [esi + 4]
+        push 0
+        push 0x15180
+        push eax
+        push ecx
+        call ext_00852700
+        sub eax, edi
+        add esp, 0x2c
+        cdq
+        xor eax, edx
+        sub eax, edx
+        cmp eax, 1
+        jle fine_path
+        mov dword ptr [esi], 0
+        mov dword ptr [esi + 4], 0
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x18
+        pop ebx
+        add esp, 0x18
+        ret
+    fine_path:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x18
+        ret
+    }
+}
