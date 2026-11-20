@@ -9066,3 +9066,115 @@ extern "C" __declspec(naked) int __cdecl fn_0086E670(void) {
         ret
     }
 }
+
+// [0x00860700] sub_00860700 (244 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_00860800();
+extern "C" int mem_00AB9894;
+extern "C" int mem_00BC70E4;
+extern "C" int mem_00BC6720;
+extern "C" int mem_00BC6648;
+extern "C" int mem_00BC6724;
+extern "C" int mem_00BC7100;
+extern "C" int mem_00BC70EC;
+extern "C" int mem_00BC6594;
+extern "C" int mem_00BC6728;
+extern "C" int mem_00BC70DC;
+extern "C" int mem_00AB98A4;
+extern "C" int mem_00BC6588;
+
+extern "C" __declspec(naked) void __fastcall fn_00860700(void* self) {
+    __asm {
+        sub esp, 0x4
+        cmp dword ptr [mem_00AB9894], 0x0
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0x10
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        je t_init
+        mov eax, 0x1
+        add esp, 0x4
+        ret
+    t_init:
+        push 0x3e8
+        push 0x2
+        push 0x6
+        call dword ptr [mem_00BC70E4]
+        mov dword ptr [mem_00BC6720], eax
+        cmp eax, -0x1
+        jne t_sock_ok
+        xor eax, eax
+        add esp, 0x4
+        ret
+    t_sock_ok:
+        push 0xe
+        push 0x0
+        push offset mem_00BC6648
+        call ext_0085D510
+        add esp, 0xc
+        mov eax, dword ptr [mem_00BC6720]
+        mov word ptr [mem_00BC6648], 0x6
+        push 0x10
+        push offset mem_00BC6648
+        push eax
+        call dword ptr [mem_00BC6724]
+        cmp eax, -0x1
+        jne t_bind_ok
+        mov eax, dword ptr [mem_00BC6720]
+        push eax
+        call dword ptr [mem_00BC7100]
+        xor eax, eax
+        add esp, 0x4
+        ret
+    t_bind_ok:
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov ecx, dword ptr [mem_00BC6720]
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0x10
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        push offset mem_00BC6588
+        push ecx
+        call dword ptr [mem_00BC70EC]
+        cmp eax, -0x1
+        jne t_name_ok
+        mov eax, dword ptr [mem_00BC6720]
+        push eax
+        call dword ptr [mem_00BC7100]
+        xor eax, eax
+        add esp, 0x4
+        ret
+    t_name_ok:
+        mov ax, word ptr [mem_00BC6594]
+        push eax
+        call dword ptr [mem_00BC6728]
+        mov word ptr [mem_00BC70DC], ax
+        mov eax, dword ptr [mem_00BC6720]
+        push eax
+        call ext_00860800
+        add esp, 0x4
+        test eax, eax
+        je t_success
+        xor eax, eax
+        add esp, 0x4
+        ret
+    t_success:
+        mov eax, 0x1
+        add esp, 0x4
+        mov dword ptr [mem_00AB98A4], eax
+        mov dword ptr [mem_00AB9894], eax
+        ret
+    }
+}
