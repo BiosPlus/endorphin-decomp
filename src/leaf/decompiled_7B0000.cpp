@@ -16660,3 +16660,139 @@ L_7BC0EB:
         ret
     }
 }
+
+// [0x007BFA70] sub_007BFA70 (328 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BFA70(void* a, void* b, int c) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x1cc]
+        mov ecx, dword ptr [ecx + 4]
+        cmp esi, ecx
+        jle Lend
+        sub esi, ecx
+        cmp ecx, 3
+        jne L4
+        mov eax, dword ptr [esp + 0x10]
+        movsx ecx, byte ptr [eax + 1]
+        movsx edx, byte ptr [eax]
+        mov dword ptr [esp + 0x10], ecx
+        movsx ecx, byte ptr [eax + 2]
+        mov dword ptr [esp + 0xc], ecx
+        add eax, 4
+    L3loop:
+        movsx ecx, byte ptr [eax - 1]
+        mov bl, cl
+        sub esi, 3
+        sub bl, dl
+        mov edx, ecx
+        movsx ecx, byte ptr [eax]
+        mov byte ptr [eax - 1], bl
+        mov bl, cl
+        sub bl, byte ptr [esp + 0x10]
+        mov dword ptr [esp + 0x10], ecx
+        movsx ecx, byte ptr [eax + 1]
+        mov byte ptr [eax], bl
+        mov bl, cl
+        sub bl, byte ptr [esp + 0xc]
+        add eax, 3
+        test esi, esi
+        mov byte ptr [eax - 2], bl
+        mov dword ptr [esp + 0xc], ecx
+        jg L3loop
+        pop esi
+        pop ebx
+        ret
+    L4:
+        cmp ecx, 4
+        jne Lgen
+        mov eax, dword ptr [esp + 0x10]
+        movsx ecx, byte ptr [eax + 1]
+        mov dword ptr [esp + 0x10], ecx
+        movsx ecx, byte ptr [eax + 2]
+        movsx edx, byte ptr [eax]
+        mov dword ptr [esp + 0xc], ecx
+        movsx ecx, byte ptr [eax + 3]
+        mov dword ptr [esp + 0x14], ecx
+        add eax, 5
+    L4loop:
+        movsx ecx, byte ptr [eax - 1]
+        mov bl, cl
+        sub esi, 4
+        sub bl, dl
+        mov edx, ecx
+        movsx ecx, byte ptr [eax]
+        mov byte ptr [eax - 1], bl
+        mov bl, cl
+        sub bl, byte ptr [esp + 0x10]
+        mov dword ptr [esp + 0x10], ecx
+        movsx ecx, byte ptr [eax + 1]
+        mov byte ptr [eax], bl
+        mov bl, cl
+        sub bl, byte ptr [esp + 0xc]
+        mov dword ptr [esp + 0xc], ecx
+        movsx ecx, byte ptr [eax + 2]
+        mov byte ptr [eax + 1], bl
+        mov bl, cl
+        sub bl, byte ptr [esp + 0x14]
+        add eax, 4
+        test esi, esi
+        mov byte ptr [eax - 2], bl
+        mov dword ptr [esp + 0x14], ecx
+        jg L4loop
+        pop esi
+        pop ebx
+        ret
+    Lgen:
+        mov edx, dword ptr [esp + 0x10]
+        push edi
+        lea eax, [edx + esi - 1]
+    Lg:
+        cmp ecx, 4
+        ja Lbig
+        jmp dword ptr [4*ecx + 0x7bfbb8]
+    Lbig:
+        lea edi, [ecx - 4]
+        test edi, edi
+        jle Lrest
+    Lb2:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        sub bl, dl
+        mov byte ptr [eax + ecx], bl
+        dec eax
+        dec edi
+        jne Lb2
+    Lrest:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        sub bl, dl
+        mov byte ptr [eax + ecx], bl
+        dec eax
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        sub bl, dl
+        mov byte ptr [eax + ecx], bl
+        dec eax
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        sub bl, dl
+        mov byte ptr [eax + ecx], bl
+        dec eax
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [eax + ecx]
+        sub bl, dl
+        mov byte ptr [eax + ecx], bl
+        dec eax
+        sub esi, ecx
+        test esi, esi
+        jg Lg
+        pop edi
+    Lend:
+        pop esi
+        pop ebx
+        ret
+    }
+}
