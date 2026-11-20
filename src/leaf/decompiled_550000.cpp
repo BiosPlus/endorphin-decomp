@@ -21137,3 +21137,108 @@ extern "C" __declspec(naked) void __fastcall fn_005586F0(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x00557820] sub_00557820 (240 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_00553F90();
+extern "C" void ext_00555A10();
+extern "C" void ext_005577E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_00557820(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89a350
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        mov ebx, dword ptr [ebp+8]
+        mov eax, dword ptr [ebx+4]
+        push esi
+        push edi
+        mov edi, ecx
+        xor ecx, ecx
+        cmp eax, ecx
+        mov dword ptr [ebp-10h], esp
+        mov dword ptr [ebp-18h], edi
+        jne short fn00557820_L856
+        xor esi, esi
+        jmp short fn00557820_L86E
+fn00557820_L856:
+        mov ecx, dword ptr [ebx+8]
+        sub ecx, eax
+        mov eax, 0x66666667
+        imul ecx
+        sar edx, 6
+        mov esi, edx
+        shr esi, 1Fh
+        add esi, edx
+        xor ecx, ecx
+fn00557820_L86E:
+        cmp esi, ecx
+        mov dword ptr [edi+4], ecx
+        mov dword ptr [edi+8], ecx
+        mov dword ptr [edi+0ch], ecx
+        je short fn00557820_L8EA
+        cmp esi, 0x1999999
+        jbe short fn00557820_L888
+        call ext_00405FB0
+fn00557820_L888:
+        push ecx
+        push esi
+        call ext_00553F90
+        lea ecx, [esi+esi*4]
+        shl ecx, 5
+        add ecx, eax
+        mov dword ptr [edi+4], eax
+        mov dword ptr [edi+8], eax
+        mov dword ptr [edi+0ch], ecx
+        mov eax, dword ptr [ebx+8]
+        add esp, 8
+        cmp dword ptr [ebx+4], eax
+        mov dword ptr [ebp-4], 0
+        mov dword ptr [ebp-14h], eax
+        jbe short fn00557820_L8BB
+        call dword ptr [mem_00925134]
+fn00557820_L8BB:
+        mov esi, dword ptr [ebx+4]
+        cmp esi, dword ptr [ebx+8]
+        jbe short fn00557820_L8C9
+        call dword ptr [mem_00925134]
+fn00557820_L8C9:
+        mov eax, dword ptr [edi+4]
+        mov byte ptr [ebp+8], 0
+        mov edx, dword ptr [ebp+8]
+        mov ecx, dword ptr [ebp+8]
+        push edx
+        mov edx, dword ptr [ebp-14h]
+        push ecx
+        push edi
+        push eax
+        push edx
+        push esi
+        call ext_00555A10
+        add esp, 18h
+        mov dword ptr [edi+8], eax
+fn00557820_L8EA:
+        mov ecx, dword ptr [ebp-0ch]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+        mov ecx, dword ptr [ebp-18h]
+        call ext_005577E0
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
