@@ -6751,3 +6751,99 @@ L_join:
         ret 0x10
     }
 }
+
+// [0x006E00F0] sub_006E00F0 (256 bytes)
+extern "C" int mem_00993CA0;
+extern "C" int mem_00993C88;
+extern "C" __declspec(naked) void __cdecl fn_006E00F0(void* a1, void* a2) {
+    __asm {
+        mov edx, dword ptr [esp + 8]
+        push esi
+        fld qword ptr [edx + 0x28]
+        fadd qword ptr [edx]
+        fadd qword ptr [edx + 0x50]
+        fadd qword ptr [mem_0092A270]
+        fmul qword ptr [mem_00993CA0]
+        fld st(0)
+        fcomp qword ptr [mem_00993C88]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_else1
+        fsqrt
+        mov eax, dword ptr [esp + 8]
+        pop esi
+        fld st(0)
+        fstp qword ptr [eax + 0x18]
+        fdivr qword ptr [mem_00993CA0]
+        fld qword ptr [edx + 0x30]
+        fsub qword ptr [edx + 0x48]
+        fmul st, st(1)
+        fstp qword ptr [eax]
+        fld qword ptr [edx + 0x40]
+        fsub qword ptr [edx + 0x10]
+        fmul st, st(1)
+        fstp qword ptr [eax + 0x8]
+        fld qword ptr [edx + 0x8]
+        fsub qword ptr [edx + 0x20]
+        fmul st, st(1)
+        fstp qword ptr [eax + 0x10]
+        fstp st(0)
+        ret
+L_else1:
+        mov ecx, dword ptr [esp + 8]
+        xor esi, esi
+        fstp st(0)
+        mov dword ptr [ecx + 0x18], esi
+        mov dword ptr [ecx + 0x1c], esi
+        fld qword ptr [edx + 0x28]
+        fadd qword ptr [edx + 0x50]
+        fmul qword ptr [mem_009324A8]
+        fld st(0)
+        fcomp qword ptr [mem_00993C88]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_else2
+        fsqrt
+        mov eax, ecx
+        pop esi
+        fst qword ptr [ecx]
+        fdivr qword ptr [mem_00993828]
+        fld st(0)
+        fmul qword ptr [edx + 0x8]
+        fstp qword ptr [ecx + 0x8]
+        fmul qword ptr [edx + 0x10]
+        fstp qword ptr [ecx + 0x10]
+        ret
+L_else2:
+        fstp st(0)
+        fld qword ptr [mem_0092A270]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], esi
+        fsub qword ptr [edx + 0x50]
+        fmul qword ptr [mem_00993828]
+        fld st(0)
+        fcomp qword ptr [mem_00993C88]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_else3
+        fsqrt
+        mov eax, ecx
+        pop esi
+        fst qword ptr [ecx + 0x8]
+        fld qword ptr [mem_00993828]
+        fdiv st, st(1)
+        fmul qword ptr [edx + 0x30]
+        fstp qword ptr [ecx + 0x10]
+        fstp st(0)
+        ret
+L_else3:
+        mov dword ptr [ecx + 0x8], esi
+        mov dword ptr [ecx + 0xc], esi
+        mov dword ptr [ecx + 0x10], esi
+        mov dword ptr [ecx + 0x14], 0x3ff00000
+        fstp st(0)
+        mov eax, ecx
+        pop esi
+        ret
+    }
+}
