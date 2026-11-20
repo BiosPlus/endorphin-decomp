@@ -10792,3 +10792,145 @@ extern "C" __declspec(naked) void __cdecl fn_0080C940(void* p) {
         ret
     }
 }
+
+// [0x0080F480] sub_0080F480 (245 bytes)
+extern "C" void ext_0080F070();
+
+extern "C" __declspec(naked) void __cdecl fn_0080F480(void* a1, int a2, unsigned char a3) {
+    __asm {
+        mov al, byte ptr [esp + 0xc]
+        push esi
+        test al, 0x10
+        push edi
+        je no_flag
+        mov edi, dword ptr [esp + 0x10]
+        test word ptr [2*edi + 0xab8e00], 0x157
+        jne special
+        mov esi, dword ptr [esp + 0xc]
+        push 0x5c
+        push esi
+        call dword ptr [esi]
+        lea eax, [edi - 0x7]
+        add esp, 0x8
+        cmp eax, 0x55
+        ja default_case
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x80f59c]
+        jmp dword ptr [4*ecx + 0x80f578]
+c_61:
+        push 0x61
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_62:
+        push 0x62
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_66:
+        push 0x66
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_6e:
+        push 0x6e
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_72:
+        push 0x72
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_74:
+        push 0x74
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_76:
+        push 0x76
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+c_5c:
+        push 0x5c
+        push esi
+        call dword ptr [esi]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+default_case:
+        push 0x78
+        push esi
+        call dword ptr [esi]
+        mov eax, edi
+        push 0x10
+        push 0x2
+        push 0x2
+        cdq
+        push 0x6000
+        push edx
+        push eax
+        push esi
+        call ext_0080F070
+        add esp, 0x24
+        pop edi
+        pop esi
+        ret
+special:
+        cmp edi, 0x5c
+        jne special_other
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        push esi
+        call dword ptr [esi]
+        push edi
+        push esi
+        call dword ptr [esi]
+        add esp, 0x10
+        pop edi
+        pop esi
+        ret
+special_other:
+        mov eax, dword ptr [esp + 0xc]
+        push edi
+        push eax
+        call dword ptr [eax]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+no_flag:
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        call dword ptr [eax]
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+    }
+}
