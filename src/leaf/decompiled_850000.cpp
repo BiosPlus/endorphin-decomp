@@ -9434,3 +9434,136 @@ extern "C" __declspec(naked) void __cdecl fn_0085DB40(void) {
         __asm _emit 0x00
     }
 }
+
+// [0x00859FC0] sub_00859FC0 (336 bytes)
+extern "C" void ext_0085A110();
+extern "C" __declspec(naked) void __cdecl fn_00859FC0(void* a, unsigned int idx) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        cmp ebp, dword ptr [ebx + 0xc]
+        jae end_fn
+        mov eax, dword ptr [ebx + 0x4]
+        push esi
+        xor esi, esi
+        push edi
+        cmp eax, esi
+        mov dword ptr [esp + 0x20], esi
+        jbe skip_outer
+        mov dword ptr [esp + 0x10], esi
+    outer_loop:
+        add esi, dword ptr [ebx + 0x10]
+        mov dword ptr [esp + 0x14], esi
+        lea eax, [esi + 0x10]
+        push eax
+        push ebp
+        call ext_0085A110
+        lea ecx, [esi + 0x14]
+        push ecx
+        push ebp
+        call ext_0085A110
+        lea edx, [esi + 0x3c]
+        push edx
+        push ebp
+        call ext_0085A110
+        mov eax, dword ptr [esi + 0x5c]
+        add esp, 0x18
+        test eax, eax
+        mov dword ptr [esp + 0x1c], 0
+        jbe short after_inner
+        xor esi, esi
+    inner_loop:
+        mov edx, dword ptr [ebx + 0x14]
+        mov eax, esi
+        add eax, edx
+        push eax
+        push ebp
+        call ext_0085A110
+        mov eax, dword ptr [ebx + 0x14]
+        add esp, 8
+        xor edi, edi
+        mov ecx, dword ptr [esi + eax + 0x4]
+        test ecx, ecx
+        jbe short inner_done
+    elem_loop:
+        mov ecx, dword ptr [esi + eax + 0x8]
+        cmp dword ptr [ecx + edi*8], 1
+        jne short elem_next
+        mov edx, ecx
+        lea eax, [edx + edi*8 + 0x4]
+        push eax
+        push ebp
+        call ext_0085A110
+        add esp, 8
+    elem_next:
+        mov eax, dword ptr [ebx + 0x14]
+        inc edi
+        cmp edi, dword ptr [esi + eax + 0x4]
+        jb short elem_loop
+    inner_done:
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x1c]
+        inc eax
+        add esi, 0x10
+        mov edx, dword ptr [ecx + 0x5c]
+        mov dword ptr [esp + 0x1c], eax
+        cmp eax, edx
+        jb short inner_loop
+    after_inner:
+        mov eax, dword ptr [esp + 0x20]
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [ebx + 0x4]
+        inc eax
+        add esi, 0x64
+        cmp eax, ecx
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x10], esi
+        jb outer_loop
+    skip_outer:
+        mov edx, dword ptr [ebx + 0x18]
+        mov eax, dword ptr [edx + ebp*8 + 0x4]
+        push eax
+        call ext_00859730
+        mov edi, dword ptr [ebx + 0xc]
+        lea eax, [ebp + 0x1]
+        mov ecx, dword ptr [ebx + 0x18]
+        mov edx, eax
+        shl edx, 0x1d
+        sub edx, eax
+        lea eax, [ecx + eax*8]
+        add edx, edi
+        lea ecx, [ecx + ebp*8]
+        shl edx, 0x3
+        push edx
+        push eax
+        push ecx
+        call ext_00859780
+        mov ebp, dword ptr [ebx + 0xc]
+        dec ebp
+        mov eax, ebp
+        mov dword ptr [ebx + 0xc], ebp
+        lea edx, [eax*8]
+        mov eax, dword ptr [ebx + 0x18]
+        push edx
+        push eax
+        call ext_008596F0
+        add esp, 0x18
+        test eax, eax
+        pop edi
+        pop esi
+        jne short store_root
+        mov ecx, dword ptr [ebx + 0xc]
+        test ecx, ecx
+        jne short end_fn
+    store_root:
+        mov dword ptr [ebx + 0x18], eax
+    end_fn:
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
