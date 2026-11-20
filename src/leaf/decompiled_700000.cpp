@@ -11830,3 +11830,171 @@ loc_70556A:
         ret
     }
 }
+
+// [0x00709630] sub_00709630 (384 bytes)
+extern "C" void ext_006FA5A0();
+extern "C" int __stdcall ext_006FBC70(int a1);
+extern "C" void ext_006FBF10();
+extern "C" void ext_006FC200();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_007094A0();
+extern "C" void ext_00709BF0();
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void __fastcall fn_00709630(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [mem_00B5E400]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push eax
+        call ext_006FC6E0
+        mov esi, dword ptr [esp + 0x1c]
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ebp, eax
+        mov eax, dword ptr [esp + 0x1c]
+        test ebp, ebp
+        mov ecx, dword ptr [eax + 0x14]
+        mov dword ptr [esp + 0x10], ecx
+        je loc_709665
+        mov eax, dword ptr [ebp + 0x14]
+        jmp loc_709667
+    loc_709665:
+        xor eax, eax
+    loc_709667:
+        lea ebx, [eax - 1]
+        test ebx, ebx
+        jl loc_7097A4
+        cmp ebx, eax
+        jge loc_7097A4
+        mov eax, dword ptr [ebp + 0x10]
+        lea edx, [ebx + ebx * 2]
+        lea ecx, [eax + edx * 4]
+        mov eax, dword ptr [eax + edx * 4 + 4]
+        test eax, eax
+        je loc_7097A4
+        mov edx, dword ptr [eax]
+        mov edi, dword ptr [ecx]
+        cmp edx, edi
+        jne loc_7097A4
+        mov edi, dword ptr [eax + 4]
+        test edi, edi
+        je loc_7097A4
+        jmp loc_7096AC
+    loc_7096A8:
+        mov esi, dword ptr [esp + 0x18]
+    loc_7096AC:
+        push esi
+        call ext_007094A0
+        add esp, 4
+        test eax, eax
+        je loc_7096D5
+        push esi
+        call ext_007094A0
+        mov edx, dword ptr [eax]
+        add esp, 4
+        mov ecx, eax
+        push edi
+        call dword ptr [edx + 0x11c]
+        test al, al
+        je loc_70976D
+    loc_7096D5:
+        push edi
+        call ext_007094A0
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        je loc_70973F
+        mov ecx, dword ptr [mem_00B5EB78]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je loc_70973F
+        mov ecx, esi
+        call ext_00706380
+        mov edx, dword ptr [esp + 0x20]
+        push eax
+        lea ecx, [edx + 0x40c]
+        call ext_00709BF0
+        mov ecx, dword ptr [eax + 4]
+        test ecx, ecx
+        je loc_70971C
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        cmp ecx, edx
+        je loc_709763
+    loc_70971C:
+        mov ecx, esi
+        call ext_00706380
+        mov edx, dword ptr [esp + 0x20]
+        push eax
+        lea ecx, [edx + 0x1c]
+        call ext_00709BF0
+        mov ecx, dword ptr [eax + 4]
+        test ecx, ecx
+        je loc_70973F
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        cmp ecx, edx
+        je loc_709763
+    loc_70973F:
+        mov esi, dword ptr [esp + 0x1c]
+        push edi
+        mov ecx, esi
+        call ext_006FC200
+        test al, al
+        jne loc_709763
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push esi
+        push eax
+        mov ecx, edi
+        call ext_006FBF10
+        jmp loc_70976D
+    loc_709763:
+        mov ecx, dword ptr [esp + 0x18]
+        push edi
+        call ext_006FBC70
+    loc_70976D:
+        mov eax, dword ptr [ebp + 0x14]
+        cmp ebx, eax
+        jle loc_709779
+    loc_709774:
+        dec ebx
+        cmp ebx, eax
+        jg loc_709774
+    loc_709779:
+        dec ebx
+        js loc_7097A4
+        cmp ebx, eax
+        jge loc_7097A4
+        mov edx, dword ptr [ebp + 0x10]
+        lea ecx, [ebx + ebx * 2]
+        mov eax, dword ptr [edx + ecx * 4 + 4]
+        lea ecx, [edx + ecx * 4]
+        test eax, eax
+        je loc_7097A4
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne loc_7097A4
+        mov edi, dword ptr [eax + 4]
+        test edi, edi
+        jne loc_7096A8
+    loc_7097A4:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
