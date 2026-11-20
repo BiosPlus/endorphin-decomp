@@ -11245,3 +11245,147 @@ extern "C" __declspec(naked) void __fastcall fn_00783BC0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0078CF70] sub_0078CF70 (336 bytes)
+extern "C" void ext_0078D1C0();
+extern "C" int mem_009242E0;
+extern "C" int mem_009241BC;
+// SEH-framed __thiscall with two stack args (ret 0x8); byte-for-byte asm.
+extern "C" __declspec(naked) void __fastcall fn_0078CF70(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8c1778
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, 1
+        mov ecx, dword ptr [edi + 0x18]
+        mov esi, dword ptr [edi + 0x14]
+        shl eax, cl
+        mov ecx, dword ptr [esp + 0x28]
+        mov ebx, dword ptr [edi]
+        push ebx
+        mov dword ptr [esp + 0x2c], ebx
+        dec eax
+        lea eax, [eax + ecx + 0x8]
+        mov ecx, dword ptr [edi + 0x10]
+        and esi, eax
+        neg esi
+        sbb esi, esi
+        shr eax, cl
+        neg esi
+        add esi, eax
+        mov ebp, esi
+        shl ebp, cl
+        call dword ptr [mem_009242E0]
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esp + 0x1c], 0
+        test eax, eax
+        je short L_fail
+        cmp ebp, 0x8
+        jb short L_fail
+        cmp ebp, dword ptr [edi + 0x8]
+        jae short L_fail
+        mov ecx, dword ptr [eax + 4*esi]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], ecx
+        je short L_fail
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax + 4*esi], edx
+        mov eax, dword ptr [edi + 0x18]
+        push eax
+        call ext_0078D1C0
+        mov ecx, dword ptr [esp + 0x14]
+        add esp, 0x4
+        lea edx, [ecx + 0x8]
+        __asm _emit 0x85
+        __asm _emit 0xc2
+        je short L_z1
+        mov ecx, dword ptr [edi + 0x18]
+        mov eax, edx
+        shr eax, cl
+        inc al
+        shl al, cl
+        sub al, dl
+        jmp short L_j1
+L_z1:
+        xor al, al
+L_j1:
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0x28], al
+        mov esi, dword ptr [esp + 0x28]
+        push ebx
+        and esi, 0xff
+        add esi, ecx
+        mov dword ptr [esi], ebp
+        mov byte ptr [esi + 0x4], al
+        call dword ptr [mem_009241BC]
+        lea eax, [esi + 0x8]
+        jmp short L_done
+L_fail:
+        push ebx
+        mov dword ptr [esp + 0x20], -1
+        call dword ptr [mem_009241BC]
+        mov ecx, dword ptr [esp + 0x24]
+        push ebp
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x4]
+        mov esi, eax
+        test esi, esi
+        je short L_null
+        mov ebx, dword ptr [edi + 0x20]
+        mov edx, dword ptr [edi + 0x24]
+        mov eax, dword ptr [edi + 0x18]
+        add ebx, ebp
+        inc edx
+        mov dword ptr [edi + 0x20], ebx
+        push eax
+        mov dword ptr [edi + 0x24], edx
+        lea ebx, [esi + 0x8]
+        call ext_0078D1C0
+        add esp, 0x4
+        __asm _emit 0x85
+        __asm _emit 0xc3
+        je short L_z2
+        mov ecx, dword ptr [edi + 0x18]
+        mov eax, ebx
+        shr eax, cl
+        inc al
+        shl al, cl
+        sub al, bl
+        jmp short L_j2
+L_z2:
+        xor al, al
+L_j2:
+        mov byte ptr [esp + 0x28], al
+        mov ecx, dword ptr [esp + 0x28]
+        and ecx, 0xff
+        add ecx, esi
+        mov byte ptr [ecx + 0x4], al
+        mov dword ptr [ecx], ebp
+        lea eax, [ecx + 0x8]
+        jmp short L_done
+L_null:
+        xor eax, eax
+L_done:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
