@@ -8773,3 +8773,123 @@ extern "C" __declspec(naked) void __fastcall fn_006CC3E0(void* self) {
         ret 0x1c
     }
 }
+
+// [0x006CBAC0] sub_006CBAC0 (272 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006CA6B0();
+extern "C" void ext_006CB8E0();
+extern "C" void ext_006CBBD0();
+extern "C" void ext_006CC740();
+extern "C" void ext_006CC890();
+extern "C" void ext_006CC9E0();
+extern "C" void ext_006CCB30();
+
+extern "C" __declspec(naked) void __fastcall fn_006CBAC0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        sub esp, 28h
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp+38h]
+        test edi, edi
+        mov esi, ecx
+        jle L_exit
+        call ext_006CA6A0
+        cmp edi, eax
+        jge L_exit
+        mov eax, dword ptr [esp+40h]
+        mov ecx, esi
+        push eax
+        push edi
+        call ext_006CC890
+        mov ecx, dword ptr [esp+44h]
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_006CC740
+        mov edx, dword ptr [esp+48h]
+        mov ecx, esi
+        push edx
+        push edi
+        call ext_006CCB30
+        mov eax, dword ptr [esp+4ch]
+        mov ecx, esi
+        push eax
+        push edi
+        call ext_006CC9E0
+        lea ecx, [esp+0ch]
+        push edi
+        push ecx
+        mov ecx, esi
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9C30
+        cmp eax, 8
+        jne L_47
+        lea edx, [esp+0ch]
+        push edi
+        push edx
+        mov ecx, esi
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 1
+        jne L_call_bbd0
+    L_47:
+        lea eax, [esp+0ch]
+        push edi
+        push eax
+        mov ecx, esi
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9C30
+        cmp eax, 8
+        je L_bbaf
+        lea ebx, [edi-1]
+        test ebx, ebx
+        jl L_bbaf
+        lea ecx, [esp+0ch]
+        push ebx
+        push ecx
+        mov ecx, esi
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9C30
+        cmp eax, 8
+        jne L_bbaf
+        lea edx, [esp+0ch]
+        push ebx
+        push edx
+        mov ecx, esi
+        call ext_006CA6B0
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 1
+        je L_bbaf
+    L_call_bbd0:
+        mov eax, dword ptr [esp+50h]
+        mov ecx, esi
+        push eax
+        push edi
+        call ext_006CBBD0
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 28h
+        ret 1ch
+    L_bbaf:
+        mov ecx, dword ptr [esp+3ch]
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_006CB8E0
+    L_exit:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 28h
+        ret 1ch
+    }
+}
