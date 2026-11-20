@@ -11332,3 +11332,152 @@ extern "C" __declspec(naked) void __fastcall fn_00709350(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x007094E0] sub_007094E0 (336 bytes)
+extern "C" int mem_00B5E400;
+extern "C" int mem_00B608E8;
+extern "C" int mem_00B5EB78;
+extern "C" void ext_006BDAF0();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FBC50();
+extern "C" void ext_006FC010();
+extern "C" void ext_006FC250();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_00706CD0();
+extern "C" void ext_007094A0();
+extern "C" void ext_00709BF0();
+
+extern "C" __declspec(naked) void __fastcall fn_007094E0(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [mem_00B5E400]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push eax
+        call ext_006FC6E0
+        mov ecx, dword ptr [esp + 0x28]
+        add esp, 0x4
+        push eax
+        call ext_006FA5A0
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x14], ecx
+        mov edx, dword ptr [eax + 0x18]
+        mov eax, dword ptr [ecx + 0x18]
+        mov dword ptr [esp + 0x10], edx
+        lea ebx, [eax - 1]
+        test ebx, ebx
+        jl done
+        cmp ebx, eax
+        jge done
+        mov eax, dword ptr [ecx + 0x14]
+        add ecx, 0x10
+        add eax, ebx
+        mov ecx, dword ptr [ecx]
+        lea eax, [eax + 2*eax]
+        lea esi, [ecx + 4*eax]
+        mov ecx, esi
+        call ext_006BDAF0
+        test al, al
+        je done
+        mov edx, dword ptr [esi + 0x4]
+        mov edi, dword ptr [edx + 0x4]
+        test edi, edi
+        je done
+        mov ebp, dword ptr [esp + 0x2c]
+loop_top:
+        mov ecx, dword ptr [mem_00B608E8]
+        mov eax, dword ptr [edi]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x14]
+        test al, al
+        jne next_iter
+        push edi
+        call ext_007094A0
+        mov esi, eax
+        add esp, 0x4
+        test esi, esi
+        je check_fc250
+        mov eax, dword ptr [mem_00B5EB78]
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x14]
+        test al, al
+        je check_fc250
+        mov ecx, esi
+        call ext_00706380
+        push eax
+        lea ecx, [ebp + 0x40c]
+        call ext_00709BF0
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je second_cmp
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        cmp ecx, edx
+        je take_fc6_path
+second_cmp:
+        mov ecx, esi
+        call ext_00706380
+        push eax
+        lea ecx, [ebp + 0x1c]
+        call ext_00709BF0
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je check_fc250
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [eax]
+        cmp edx, ecx
+        je take_fc6_path
+check_fc250:
+        mov esi, dword ptr [esp + 0x28]
+        push edi
+        mov ecx, esi
+        call ext_006FC250
+        test al, al
+        jne take_fc6_path
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x24]
+        push eax
+        push esi
+        push ecx
+        mov ecx, edi
+        call ext_006FC010
+        jmp next_iter
+take_fc6_path:
+        mov ecx, dword ptr [esp + 0x24]
+        push edi
+        call ext_006FBC50
+next_iter:
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ecx + 0x18]
+        cmp ebx, eax
+        jle dec_loop
+dec_skip:
+        dec ebx
+        cmp ebx, eax
+        jg dec_skip
+dec_loop:
+        dec ebx
+        js done
+        cmp ebx, eax
+        jge done
+        push ebx
+        add ecx, 0x10
+        call ext_00706CD0
+        mov edi, eax
+        test edi, edi
+        jne loop_top
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
