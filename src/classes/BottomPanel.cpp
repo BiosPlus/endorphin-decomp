@@ -444,3 +444,117 @@ extern "C" __declspec(naked) void __fastcall fn_00407D60(void* self) {
         jmp ext_006A5D94
     }
 }
+
+// [0x00407EF0] BottomPanel::vfunc_1_off_AC (307 bytes)
+extern "C" void ext_004686A0();
+extern "C" void ext_00469530();
+extern "C" void ext_0046FA50();
+extern "C" int mem_0092A280;
+
+extern "C" __declspec(naked) void __fastcall fn_00407EF0(void* self, int edx_unused, int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        add eax, 0xfffffbbf
+        cmp eax, 0x3
+        ja  bp_default
+        jmp dword ptr [eax * 4 + 0x408024]
+
+bp_case0:
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x9c]
+        call eax
+        add eax, -1
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004686A0
+        push 0
+        push 5
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469530
+        ret 4
+
+bp_case1:
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x6c]
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, eax
+        call edx
+        cmp dword ptr [esp + 4], 0
+        jle bp_default
+        call ext_00465B40
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x70]
+        add ecx, -1
+        push ecx
+        mov ecx, eax
+        call edx
+        push 0
+        push 5
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469530
+        ret 4
+
+bp_case2:
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x74]
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, eax
+        call edx
+        cmp dword ptr [esp + 4], 1
+        jle bp_default
+        call ext_00465B40
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x78]
+        add ecx, -1
+        push ecx
+        mov ecx, eax
+        call edx
+        push 0
+        push 5
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469530
+        ret 4
+
+bp_case3:
+        call ext_00465B30
+        mov eax, dword ptr [eax + 0x14]
+        fld dword ptr [eax + 0x28c]
+        fstp dword ptr [esp + 4]
+        fldz
+        fcomp dword ptr [esp + 4]
+        fnstsw ax
+        test ah, 0x5
+        jp  bp_default
+        call ext_00465B30
+        fld dword ptr [esp + 4]
+        fadd qword ptr [mem_0092A280]
+        push ecx
+        mov ecx, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 8]
+        fstp dword ptr [esp]
+        call ext_0046FA50
+
+bp_default:
+        push 0
+        push 5
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469530
+        ret 4
+    }
+}
