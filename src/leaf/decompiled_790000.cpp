@@ -9380,3 +9380,141 @@ L_f:
         ret
     }
 }
+
+// [0x0079DB70] sub_0079DB70 (337 bytes)
+extern "C" void ext_006C9F00();
+extern "C" void ext_006CA020();
+extern "C" void ext_006CA4F0();
+extern "C" void ext_006CA520();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006D03E0();
+extern "C" void ext_006DADE0();
+extern "C" void ext_006DAE00();
+extern "C" void ext_006E7410();
+extern "C" void ext_0079E5B0();
+extern "C" int mem_0092A278;
+
+extern "C" __declspec(naked) void __fastcall fn_0079DB70(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x14
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        fld qword ptr [esi + 0x80]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x41
+        jne L_79DB70_A
+        mov eax, dword ptr [esi + 0x80]
+        test eax, eax
+        jne L_79DB70_B
+        cmp dword ptr [esi + 0x84], 0x3ff00000
+        jne L_79DB70_B
+L_79DB70_A:
+        mov eax, dword ptr [esi + 0x78]
+        mov ecx, dword ptr [esi + 0x7c]
+        or eax, ecx
+        jne L_79DB70_B
+        push 0xaaff3c
+        push 1
+        lea ecx, [esi + 0x20]
+        call ext_006E7410
+        xor al, al
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+L_79DB70_B:
+        mov edi, dword ptr [ebp + 0x8]
+        mov ecx, edi
+        call ext_006CA6A0
+        xor ebx, ebx
+        mov dword ptr [esp + 0xc], eax
+        cmp eax, ebx
+        jne L_79DB70_C
+        push 0xaaff0c
+        push ebx
+        lea ecx, [esi + 0x20]
+        call ext_006E7410
+        xor al, al
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+L_79DB70_C:
+        mov ecx, edi
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x14], ebx
+        call ext_006CA4F0
+        cmp dword ptr [esp + 0xc], ebx
+        jle L_79DB70_END
+L_79DB70_LOOP:
+        push ebx
+        mov ecx, edi
+        call ext_006CA020
+        lea ecx, [esp + 0x18]
+        mov edi, eax
+        push ecx
+        mov ecx, edi
+        call ext_006C9F00
+        mov edx, dword ptr [esi + 0x78]
+        mov ecx, dword ptr [eax]
+        add edx, ecx
+        mov ecx, dword ptr [esi + 0x7c]
+        mov dword ptr [esp + 0x10], edx
+        adc ecx, dword ptr [eax + 0x4]
+        mov eax, dword ptr [esi + 0x80]
+        test eax, eax
+        mov dword ptr [esp + 0x14], ecx
+        jne L_79DB70_D
+        cmp dword ptr [esi + 0x84], 0x3ff00000
+        je L_79DB70_SKIP
+L_79DB70_D:
+        fld qword ptr [esi + 0x80]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x41
+        jne L_79DB70_SKIP
+        lea ecx, [esp + 0x10]
+        call ext_006DADE0
+        fmul qword ptr [esi + 0x80]
+        sub esp, 0x8
+        lea ecx, [esp + 0x18]
+        fstp qword ptr [esp]
+        call ext_006DAE00
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+L_79DB70_SKIP:
+        push ecx
+        push edx
+        mov ecx, edi
+        call ext_0079E5B0
+        mov eax, dword ptr [esp + 0xc]
+        mov edi, dword ptr [ebp + 0x8]
+        inc ebx
+        cmp ebx, eax
+        jl L_79DB70_LOOP
+L_79DB70_END:
+        push -0x1
+        push 0x10
+        mov ecx, edi
+        call ext_006D03E0
+        mov ecx, edi
+        call ext_006CA520
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
