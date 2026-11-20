@@ -3,6 +3,7 @@
 #include <string>
 
 extern "C" int mem_00924FE8;
+extern "C" void ext_0053ACF0();
 
 // [0x004B6CC0] sub_004B6CC0 (33 bytes)
 extern "C" __declspec(naked) void __fastcall fn_004B6CC0(void* self) {
@@ -11890,6 +11891,78 @@ extern "C" __declspec(naked) int __fastcall fn_004BA950(void* self, int edx_unus
         mov eax, esi
         pop esi
         pop ecx
+        ret 0x8
+    }
+}
+
+// [0x004B0930] sub_004B0930 (263 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B0930(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0xe
+        ja  L_default
+        jmp dword ptr [4*eax + 0x4b0a38]
+L_c0:
+        mov dword ptr [esp + 0x4], 0x1
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c1:
+        mov dword ptr [esp + 0x4], 0x2
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c2:
+        mov dword ptr [esp + 0x4], 0x4000
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c3:
+        mov dword ptr [esp + 0x4], 0x4
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c4:
+        mov dword ptr [esp + 0x4], 0x8
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c5:
+        mov dword ptr [esp + 0x4], 0x10
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c6:
+        mov dword ptr [esp + 0x4], 0x20
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c7:
+        mov dword ptr [esp + 0x4], 0x40
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c8:
+        mov dword ptr [esp + 0x4], 0x80
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c9:
+        mov dword ptr [esp + 0x4], 0x100
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c10:
+        mov dword ptr [esp + 0x4], 0x200
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c11:
+        mov dword ptr [esp + 0x4], 0x400
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c12:
+        mov dword ptr [esp + 0x4], 0x800
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c13:
+        mov dword ptr [esp + 0x4], 0x1000
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_c14:
+        mov dword ptr [esp + 0x4], 0x2000
+        add ecx, 0xc
+        jmp ext_0053ACF0
+L_default:
         ret 0x8
     }
 }
