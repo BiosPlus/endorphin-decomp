@@ -11998,3 +11998,157 @@ extern "C" __declspec(naked) void __fastcall fn_00709630(void* self) {
         ret
     }
 }
+
+// [0x007048B0] sub_007048B0 (366 bytes)
+extern "C" void ext_006C31E0();
+extern "C" void ext_006E9210();
+extern "C" void ext_006E92B0();
+extern "C" void ext_007008D0();
+extern "C" void ext_00702360();
+extern "C" void ext_007023A0();
+extern "C" void ext_007025B0();
+extern "C" void ext_00703B60();
+extern "C" void ext_00704B20();
+extern "C" void ext_00704EB0();
+extern "C" void ext_00707A90();
+extern "C" __declspec(naked) void __fastcall fn_007048B0(void* self, int edx_unused, int a1, int a2, void* a3, int a4, void* a5, int a6, int a7) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        mov ebx, ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        cmp eax, ebx
+        jne loc_7049F1
+        cmp dword ptr [esp + 0x18], 0x5
+        jne loc_7049F1
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0x12c]
+        mov esi, eax
+        mov ecx, esi
+        mov edx, dword ptr [esi]
+        call dword ptr [edx + 0x8]
+        cmp eax, 0x2
+        jne loc_70492D
+        mov ecx, ebx
+        call ext_00704B20
+        mov ecx, eax
+        call ext_00704EB0
+        push eax
+        mov ecx, esi
+        call ext_00702360
+        mov ecx, ebx
+        call ext_00704B20
+        mov ecx, eax
+        call ext_00704FD0
+        push eax
+        mov ecx, esi
+        call ext_007023A0
+        mov ecx, ebx
+        call ext_00704B20
+        mov ecx, eax
+        call ext_006BADB0
+        push eax
+        mov ecx, esi
+        call ext_00703B60
+        jmp loc_70495C
+    loc_70492D:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0x8]
+        cmp eax, 0x1
+        jne loc_70495C
+        mov ecx, esi
+        call ext_006C31E0
+        mov esi, eax
+        test esi, esi
+        je loc_70495C
+        mov ecx, ebx
+        call ext_00704B20
+        mov ecx, eax
+        call ext_00704EB0
+        push eax
+        mov ecx, esi
+        call ext_007008D0
+    loc_70495C:
+        mov byte ptr [esp + 0x24], 0x0
+        xor ebp, ebp
+    loc_704963:
+        cmp ebp, dword ptr [edi + 0x18]
+        jge loc_7049F1
+        mov eax, dword ptr [edi + 0x14]
+        mov edx, dword ptr [edi + 0x10]
+        add eax, ebp
+        lea ecx, [eax + eax * 2]
+        mov eax, dword ptr [edx + ecx * 4 + 0x4]
+        test eax, eax
+        lea ecx, [edx + ecx * 4]
+        je loc_70498F
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne loc_70498F
+        mov eax, dword ptr [eax + 0x4]
+        jmp loc_704991
+    loc_70498F:
+        xor eax, eax
+    loc_704991:
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx + 0x12c]
+        test eax, eax
+        je loc_7049E4
+        mov ecx, eax
+        call ext_007025B0
+        mov ecx, ebx
+        mov esi, eax
+        call ext_00704B20
+        mov ecx, eax
+        call ext_006BADB0
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x70], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, esi
+        call ext_006E9210
+        test eax, eax
+        jne loc_7049DF
+        mov ecx, ebx
+        call ext_00704B20
+        push eax
+        mov ecx, esi
+        call ext_006E92B0
+    loc_7049DF:
+        mov byte ptr [esp + 0x24], 0x1
+    loc_7049E4:
+        mov al, byte ptr [esp + 0x24]
+        inc ebp
+        test al, al
+        je loc_704963
+    loc_7049F1:
+        mov eax, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x20]
+        push eax
+        mov eax, dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, dword ptr [esp + 0x20]
+        push edi
+        push edx
+        mov edx, dword ptr [esp + 0x24]
+        push eax
+        push ecx
+        push edx
+        mov ecx, ebx
+        call ext_00707A90
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x1c
+    }
+}

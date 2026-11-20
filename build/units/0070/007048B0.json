@@ -45,5 +45,7 @@
     "0x007049DB",
     "0x00704A13"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-20T16:03:47Z"
 }
