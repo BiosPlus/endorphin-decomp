@@ -10769,3 +10769,132 @@ L_def:  mov eax, 0x2000
         ret
     }
 }
+
+// [0x00520BF0] sub_00520BF0 (307 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_0051DF00();
+extern "C" void ext_0051E530();
+extern "C" void ext_00520380();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00520BF0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8933a0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        cmp edi, 0xb60b60
+        mov dword ptr [ebp - 0x10], esp
+        mov esi, ecx
+        jbe short L_520C23
+        call ext_00405FB0
+    L_520C23:
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je short L_520C42
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        mov eax, 0xb60b60b7
+        imul ecx
+        add edx, ecx
+        sar edx, 0x8
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_520C42:
+        cmp eax, edi
+        jae L_520CFB
+        push 0x0
+        push edi
+        call ext_0051DF00
+        mov ebx, dword ptr [esi + 0x8]
+        add esp, 0x8
+        cmp dword ptr [esi + 0x4], ebx
+        mov dword ptr [ebp - 0x14], eax
+        mov dword ptr [ebp - 0x4], 0x0
+        jbe short L_520C6D
+        call dword ptr [mem_00925134]
+    L_520C6D:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_520C7B
+        call dword ptr [mem_00925134]
+    L_520C7B:
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp - 0x14]
+        mov byte ptr [ebp - 0x18], 0x0
+        mov eax, dword ptr [ebp - 0x18]
+        push eax
+        push ecx
+        push esi
+        push edx
+        push ebx
+        push edi
+        call ext_00520380
+        mov ebx, dword ptr [esi + 0x4]
+        add esp, 0x18
+        test ebx, ebx
+        mov dword ptr [ebp - 0x4], 0xffffffff
+        jne short L_520CA8
+        xor edi, edi
+        jmp short L_520CC0
+    L_520CA8:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, ebx
+        mov eax, 0xb60b60b7
+        imul ecx
+        add edx, ecx
+        sar edx, 0x8
+        mov edi, edx
+        shr edi, 0x1f
+        add edi, edx
+    L_520CC0:
+        test ebx, ebx
+        je short L_520CDC
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        push ebx
+        mov ecx, esi
+        call ext_0051E530
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        call ext_006A5C5C
+        add esp, 0x4
+    L_520CDC:
+        mov eax, dword ptr [ebp + 0x8]
+        imul edi, edi, 0x168
+        mov ecx, dword ptr [ebp - 0x14]
+        imul eax, eax, 0x168
+        add eax, ecx
+        add edi, ecx
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x8], edi
+        mov dword ptr [esi + 0x4], ecx
+    L_520CFB:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    L_520D0E:
+        mov edx, dword ptr [ebp - 0x14]
+        push edx
+        call ext_006A5C5C
+        add esp, 0x4
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    }
+}
