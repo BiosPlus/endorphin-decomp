@@ -14776,3 +14776,137 @@ extern "C" __declspec(naked) __int64 __cdecl fn_006DBC70(__int64 t, int* p1, int
         ret
     }
 }
+
+// [0x006D8B10] sub_006D8B10 (387 bytes)
+extern "C" void ext_006D7E50();
+extern "C" void ext_007052F0();
+extern "C" void ext_00708B00();
+extern "C" void ext_007111D0();
+extern "C" void ext_00711CF0();
+extern "C" void ext_00711D40();
+extern "C" void ext_00711DA0();
+extern "C" void ext_00712A60();
+extern "C" void ext_008B9382();
+extern "C" void ext_006D9450();
+extern "C" void ext_006D9460();
+extern "C" void ext_006C8C70();
+extern "C" void ext_006C8D30();
+extern "C" void ext_006C8DF0();
+extern "C" void ext_006C88B0();
+extern "C" int mem_009934B0;
+extern "C" int mem_00993B20;
+extern "C" int mem_009939E0;
+extern "C" int mem_00AA9190;
+extern "C" int mem_00AA9184;
+extern "C" int mem_00AA8CEC;
+
+extern "C" __declspec(naked) void __fastcall fn_006D8B10(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push offset ext_008B9382
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov dword ptr [esp + 0x14], edi
+        call ext_007052F0
+        lea ebp, [edi + 0xe0]
+        xor esi, esi
+        mov ecx, ebp
+        mov dword ptr [esp + 0x20], esi
+        call ext_007111D0
+        mov dword ptr [ebp + 0x80], esi
+        mov dword ptr [ebp + 0x84], esi
+        mov dword ptr [ebp], offset mem_009934B0
+        lea ebx, [edi + 0x168]
+        mov byte ptr [esp + 0x20], 0x1
+        mov ecx, ebx
+        call ext_007111D0
+        mov dword ptr [ebx + 0x80], esi
+        mov dword ptr [ebx + 0x84], esi
+        mov dword ptr [ebx], offset mem_009934B0
+        lea esi, [edi + 0x1f0]
+        mov byte ptr [esp + 0x20], 0x2
+        mov ecx, esi
+        call ext_007111D0
+        xor eax, eax
+        mov dword ptr [esi + 0x90], eax
+        mov dword ptr [esi + 0x88], eax
+        mov dword ptr [esi + 0x80], eax
+        mov dword ptr [esi + 0x98], eax
+        mov dword ptr [esi + 0x94], eax
+        mov dword ptr [esi + 0x8c], eax
+        mov dword ptr [esi + 0x84], eax
+        mov dword ptr [esi + 0x9c], 0x3ff00000
+        mov dword ptr [esi], offset mem_00993B20
+        push ebp
+        mov ecx, edi
+        mov byte ptr [esp + 0x24], 0x3
+        mov dword ptr [edi], offset mem_009939E0
+        call ext_00708B00
+        push 0x0
+        call ext_006D7E50
+        add esp, 0x4
+        mov ecx, ebp
+        push eax
+        call ext_00711DA0
+        push offset ext_006D9450
+        push offset ext_006D9460
+        push edi
+        push offset mem_00AA9190
+        mov ecx, ebp
+        call ext_00711D40
+        push ebx
+        mov ecx, edi
+        call ext_00708B00
+        push 0x0
+        call ext_006D7E50
+        add esp, 0x4
+        mov ecx, ebx
+        push eax
+        call ext_00711DA0
+        push offset ext_006C8C70
+        push offset ext_006C8D30
+        push edi
+        push offset mem_00AA9184
+        mov ecx, ebx
+        call ext_00711D40
+        push esi
+        mov ecx, edi
+        call ext_00708B00
+        push 0x0
+        call ext_00712A60
+        add esp, 0x4
+        mov ecx, esi
+        push eax
+        call ext_00711DA0
+        push offset ext_006C8DF0
+        push offset ext_006C88B0
+        push edi
+        push offset mem_00AA8CEC
+        mov ecx, esi
+        call ext_00711D40
+        push 0x1
+        push 0x1
+        mov ecx, ebx
+        call ext_00711CF0
+        mov ecx, dword ptr [esp + 0x18]
+        mov eax, edi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
