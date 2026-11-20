@@ -106,7 +106,7 @@ func loadConfig(args []string) (*config, error) {
 	c.Efforts = strings.Fields(envStr("AGENT_EFFORTS", envStr("AGENT_EFFORT", "low medium")))
 	c.SkipMedBelowPct, _ = strconv.ParseFloat(envStr("SKIP_MED_BELOW_PCT", "0"), 64)
 	c.CooldownBaseSecs = envInt("COOLDOWN_BASE_SECS", 180)
-	c.PreferAgyClaude = envBool("PREFER_AGY_CLAUDE", false)
+	c.PreferAgyClaude = envBool("PREFER_AGY_CLAUDE", true) // sonnet/opus: agy first, claude harness when agy quota cools down
 	c.DepsFirst = envBool("DEPS_FIRST", true)
 	c.RunAutoSolve = envBool("RUN_AUTO_SOLVE", true)
 	c.AutoSolveEvery = envInt("AUTO_SOLVE_EVERY", 25)
@@ -127,7 +127,7 @@ func loadConfig(args []string) (*config, error) {
 	c.RouteMinTrials = envStr("ROUTE_MIN_TRIALS", "20")
 	c.RouteMinYield = envStr("ROUTE_MIN_YIELD", "0.05")
 	for _, t := range strings.Split(envStr("MODEL_TIERS",
-		"claude-haiku-5.5 gemini-3.8-flash gemini-4-hydrogen agy/claude-sonnet-5.5|gemini-4-argon claude-opus-5.5|gemini-4-carbon"), "|") {
+		"claude-haiku-5.5|claude-sonnet-5.5|gemini-4-hydrogen|claude-opus-5.5 gemini-4-neon|gemini-4-carbon"), "|") {
 		if f := strings.Fields(t); len(f) > 0 {
 			c.Tiers = append(c.Tiers, f)
 		}
