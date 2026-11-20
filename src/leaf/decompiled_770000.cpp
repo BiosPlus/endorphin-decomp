@@ -4711,3 +4711,91 @@ extern "C" __declspec(naked) void __fastcall fn_0077C990(void* self) {
         ret 0xc
     }
 }
+
+// [0x00778060] sub_00778060 (229 bytes)
+extern "C" void ext_006C2ED0();
+extern "C" void ext_006C2F20();
+extern "C" void ext_007275F0();
+extern "C" void ext_00727800();
+extern "C" void ext_007279A0();
+extern "C" void ext_007283B0();
+extern "C" __declspec(naked) void __fastcall fn_00778060(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, ebx
+        call ext_006C2ED0
+        test al, al
+        jne L_after
+        push edi
+        mov edi, dword ptr [esi + 0xac]
+        add edi, 0x4
+        push 0xaad908
+        mov ecx, edi
+        call ext_007275F0
+        push 0xaac078
+        mov ecx, edi
+        call ext_007279A0
+        mov ecx, edi
+        call ext_007283B0
+        pop edi
+    L_after:
+        mov ecx, ebx
+        call ext_006C2F20
+        dec eax
+        cmp eax, 0x4
+        ja L_end
+        jmp dword ptr [eax * 4 + 0x778148]
+    L_c0:
+        mov esi, dword ptr [esi + 0xac]
+        push 0xaad900
+        add esi, 0x4
+        mov ecx, esi
+        call ext_007275F0
+        push 0x57
+        jmp L_common
+    L_c1:
+        mov esi, dword ptr [esi + 0xac]
+        push 0xaad900
+        add esi, 0x4
+        mov ecx, esi
+        call ext_007275F0
+        push 0x46
+        jmp L_common
+    L_c2:
+        mov esi, dword ptr [esi + 0xac]
+        push 0xaad900
+        add esi, 0x4
+        mov ecx, esi
+        call ext_007275F0
+        push 0x59
+        jmp L_common
+    L_c3:
+        mov esi, dword ptr [esi + 0xac]
+        push 0xaad900
+        add esi, 0x4
+        mov ecx, esi
+        call ext_007275F0
+        push 0x54
+        jmp L_common
+    L_c4:
+        mov esi, dword ptr [esi + 0xac]
+        push 0xaad900
+        add esi, 0x4
+        mov ecx, esi
+        call ext_007275F0
+        push 0x55
+    L_common:
+        mov ecx, esi
+        call ext_00727800
+        mov ecx, esi
+        call ext_007283B0
+    L_end:
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
