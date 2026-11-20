@@ -15977,3 +15977,121 @@ L_s3:
         ret
     }
 }
+
+// [0x007BA550] sub_007BA550 (320 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079AF50();
+extern "C" void ext_007AF5E0();
+extern "C" void ext_007AF620();
+extern "C" int mem_00993838;
+extern "C" int mem_009999EC;
+extern "C" int mem_009518D8;
+extern "C" int mem_00993828;
+extern "C" __declspec(naked) void __cdecl fn_007BA550(int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0xc
+        mov ax, word ptr [ebp + 0x10]
+        mov cx, word ptr [ebp + 0xc]
+        push ebx
+        mov ebx, dword ptr [ebp + 0x14]
+        push esi
+        mov esi, dword ptr [ebp + 0x18]
+        push edi
+        mov word ptr [ebx], ax
+        lea edx, [esi*8]
+        mov word ptr [ebx + 2], cx
+        push edx
+        mov dword ptr [ebx + 4], esi
+        call ext_0079AF40
+        add esp, 4
+        mov dword ptr [esp + 0x14], eax
+        test esi, esi
+        jbe L_7BA65F
+        mov ebx, dword ptr [ebp + 0x1c]
+        mov edi, eax
+        mov dword ptr [esp + 0x10], esi
+L_7BA599:
+        fld dword ptr [ebx]
+        fcom dword ptr [mem_00993838]
+        mov dword ptr [esp + 0xc], 1
+        fnstsw ax
+        test ah, 1
+        je L_7BA5F2
+        cmp dword ptr [ebp + 0xc], 5
+        jne L_7BA5E8
+        mov eax, dword ptr [ebp + 0x10]
+        mov esi, dword ptr [ebp + 8]
+        sub esp, 8
+        fstp qword ptr [esp]
+        push eax
+        push esi
+        call ext_007AF5E0
+        mov ecx, dword ptr [eax + 0x10]
+        mov edx, dword ptr [esi]
+        add esp, 8
+        push ecx
+        push 0xab179c
+        push edx
+        call ext_007AF620
+        fld dword ptr [mem_00993838]
+        add esp, 0x14
+        jmp L_7BA5F2
+L_7BA5E8:
+        fchs
+        mov dword ptr [esp + 0xc], 0xffffffff
+L_7BA5F2:
+        fcom dword ptr [mem_00993838]
+        mov esi, 1
+        fnstsw ax
+        test ah, 0x41
+        jne L_7BA62F
+        fcom dword ptr [mem_009999EC]
+        fnstsw ax
+        test ah, 1
+        je L_7BA62F
+L_7BA611:
+        cmp esi, 0x10000000
+        jae L_7BA62F
+        fmul dword ptr [mem_009518D8]
+        shl esi, 3
+        fcom dword ptr [mem_009999EC]
+        fnstsw ax
+        test ah, 1
+        jne L_7BA611
+L_7BA62F:
+        fadd qword ptr [mem_00993828]
+        fimul dword ptr [esp + 0xc]
+        call ext_00872828
+        mov dword ptr [edi], eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [edi + 4], esi
+        add ebx, 4
+        add edi, 8
+        dec eax
+        mov dword ptr [esp + 0x10], eax
+        jne L_7BA599
+        mov eax, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [ebp + 0x14]
+L_7BA65F:
+        push eax
+        mov eax, dword ptr [ebp + 8]
+        push ebx
+        push eax
+        call ext_007BAA40
+        mov ecx, dword ptr [esp + 0x20]
+        mov esi, eax
+        push ecx
+        call ext_0079AF50
+        add esp, 0x10
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
