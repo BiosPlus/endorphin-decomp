@@ -4884,3 +4884,90 @@ extern "C" __declspec(naked) void __fastcall fn_0077E620(void* self) {
         ret 4
     }
 }
+
+// [0x0077FB70] sub_0077FB70 (256 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0077FB70(void* self) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je L1
+        fld qword ptr [mem_0092A278]
+        jmp L2
+    L1:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L3
+        fld qword ptr [mem_0092A270]
+        jmp L2
+    L3:
+        fld qword ptr [esp + 0x4]
+    L2:
+        fstp qword ptr [ecx]
+        fld qword ptr [esp + 0xc]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je L4
+        fld qword ptr [mem_0092A278]
+        jmp L5
+    L4:
+        fld qword ptr [esp + 0xc]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L6
+        fld qword ptr [mem_0092A270]
+        jmp L5
+    L6:
+        fld qword ptr [esp + 0xc]
+    L5:
+        fstp qword ptr [ecx + 0x8]
+        fld qword ptr [esp + 0x14]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je L7
+        fld qword ptr [mem_0092A278]
+        jmp L8
+    L7:
+        fld qword ptr [esp + 0x14]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L9
+        fld qword ptr [mem_0092A270]
+        jmp L8
+    L9:
+        fld qword ptr [esp + 0x14]
+    L8:
+        fstp qword ptr [ecx + 0x10]
+        fld qword ptr [esp + 0x1c]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je L10
+        fld qword ptr [mem_0092A278]
+        mov eax, ecx
+        fstp qword ptr [ecx + 0x18]
+        ret 0x20
+    L10:
+        fld qword ptr [esp + 0x1c]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L11
+        fld qword ptr [mem_0092A270]
+        mov eax, ecx
+        fstp qword ptr [ecx + 0x18]
+        ret 0x20
+    L11:
+        fld qword ptr [esp + 0x1c]
+        mov eax, ecx
+        fstp qword ptr [ecx + 0x18]
+        ret 0x20
+    }
+}
