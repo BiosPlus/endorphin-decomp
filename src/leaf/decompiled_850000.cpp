@@ -8802,3 +8802,128 @@ extern "C" __declspec(naked) void __cdecl fn_00859BD0(void) {
         ret
     }
 }
+
+// [0x008595B0] sub_008595B0 (304 bytes)
+extern "C" int mem_00AB8D74;
+extern "C" __declspec(naked) int __cdecl fn_008595B0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        push esi
+        test al, 3
+        push edi
+        je aligned
+    bad:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x403
+        pop ebx
+        ret
+    aligned:
+        cmp eax, 1
+        jae nonzero
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax], 0
+        xor eax, eax
+        pop ebx
+        ret
+    nonzero:
+        mov esi, dword ptr [esp + 0x1c]
+        xor ebp, ebp
+        test eax, eax
+        jbe finish
+        mov edi, dword ptr [esp + 0x14]
+    loop_top:
+        mov al, byte ptr [esi]
+        test al, 0x80
+        jne bad
+        and eax, 0xff
+        xor edx, edx
+        mov dl, byte ptr [eax + mem_00AB8D74]
+        test dl, 0x80
+        jne bad
+        mov al, byte ptr [esi + 1]
+        inc esi
+        test al, 0x80
+        jne bad
+        and eax, 0xff
+        xor ebx, ebx
+        mov bl, byte ptr [eax + mem_00AB8D74]
+        test bl, 0x80
+        mov dword ptr [esp + 0x1c], ebx
+        jne bad
+        mov cl, byte ptr [esi + 1]
+        inc esi
+        cmp cl, 0x3d
+        jne not_pad2
+        xor ecx, ecx
+        xor eax, eax
+        inc ebp
+        inc esi
+        cmp byte ptr [esi], 0x3d
+        jne bad
+        jmp store
+    not_pad2:
+        test cl, 0x80
+        jne bad
+        and ecx, 0xff
+        xor eax, eax
+        mov al, byte ptr [ecx + mem_00AB8D74]
+        test al, 0x80
+        jne bad
+        mov bl, byte ptr [esi + 1]
+        inc esi
+        cmp bl, 0x3d
+        jne not_pad3
+        xor ecx, ecx
+        add ebp, 2
+        jmp store_mid
+    not_pad3:
+        test bl, 0x80
+        jne bad
+        and ebx, 0xff
+        xor ecx, ecx
+        mov cl, byte ptr [ebx + mem_00AB8D74]
+        test cl, 0x80
+        jne bad
+        add ebp, 3
+    store_mid:
+        mov ebx, dword ptr [esp + 0x1c]
+    store:
+        shr ebx, 4
+        shl dl, 2
+        or bl, dl
+        mov dl, byte ptr [esp + 0x1c]
+        mov byte ptr [edi], bl
+        mov ebx, eax
+        inc esi
+        inc edi
+        shr ebx, 2
+        shl dl, 4
+        or bl, dl
+        mov byte ptr [edi], bl
+        inc edi
+        shl al, 6
+        or al, cl
+        mov byte ptr [edi], al
+        mov eax, dword ptr [esp + 0x20]
+        inc edi
+        sub eax, 4
+        mov dword ptr [esp + 0x20], eax
+        jne loop_top
+    finish:
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        xor eax, eax
+        mov dword ptr [ecx], ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
