@@ -9641,3 +9641,126 @@ extern "C" __declspec(naked) void __fastcall fn_0072DC80(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00728880] sub_00728880 (352 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00728880(void* self, int edx_unused, int arg) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0x15]
+        test al, al
+        je L_end2
+        mov eax, dword ptr [esi + 0x260]
+        shl eax, 0x4
+        mov ecx, dword ptr [eax + esi + 0x264]
+        test ecx, ecx
+        je L_end2
+        mov ecx, dword ptr [esi + 0x10]
+        push edi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x24]
+        mov edx, dword ptr [esi + 0x260]
+        mov ecx, dword ptr [esi + 0x10]
+        shl edx, 0x4
+        mov edi, eax
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [edx + esi + 0x264]
+        push edx
+        call dword ptr [eax + 0x28]
+        mov eax, dword ptr [esi + 0x260]
+        mov ecx, dword ptr [ebp + 0x8]
+        shl eax, 0x4
+        mov dword ptr [eax + esi + 0x268], ecx
+        mov al, byte ptr [esi + 0x16]
+        test al, al
+        je L_else
+        mov edx, dword ptr [esi + 0x260]
+        shl edx, 0x4
+        mov eax, dword ptr [edx + esi + 0x268]
+        mov dword ptr [ebp - 0xc], eax
+        mov eax, dword ptr [ebp - 0xc]
+        bswap eax
+        mov ecx, dword ptr [esi + 0x260]
+        mov dword ptr [ebp + 0x8], eax
+        shl ecx, 0x4
+        mov edx, dword ptr [ecx + esi + 0x26c]
+        mov dword ptr [ebp - 0xc], edx
+        mov eax, dword ptr [ebp - 0xc]
+        bswap eax
+        mov dword ptr [ebp - 0x4], eax
+        mov eax, dword ptr [esi + 0x260]
+        add eax, 0x27
+        shl eax, 0x4
+        mov ecx, dword ptr [eax + esi]
+        mov dword ptr [ebp - 0xc], ecx
+        mov eax, dword ptr [ebp - 0xc]
+        bswap eax
+        mov ecx, dword ptr [esi + 0x10]
+        mov dword ptr [ebp - 0x8], eax
+        lea eax, [ebp + 0x8]
+        push 0x4
+        mov edx, dword ptr [ecx]
+        push eax
+        call dword ptr [edx + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        lea eax, [ebp - 0x4]
+        push 0x4
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        push 0x4
+        lea eax, [ebp - 0x8]
+        mov edx, dword ptr [ecx]
+        jmp L_common
+    L_else:
+        mov eax, dword ptr [esi + 0x260]
+        mov ecx, dword ptr [esi + 0x10]
+        shl eax, 0x4
+        mov edx, dword ptr [ecx]
+        push 0x4
+        lea eax, [eax + esi + 0x268]
+        push eax
+        call dword ptr [edx + 0x1c]
+        mov eax, dword ptr [esi + 0x260]
+        mov ecx, dword ptr [esi + 0x10]
+        shl eax, 0x4
+        mov edx, dword ptr [ecx]
+        push 0x4
+        lea eax, [eax + esi + 0x26c]
+        push eax
+        call dword ptr [edx + 0x1c]
+        mov eax, dword ptr [esi + 0x260]
+        mov ecx, dword ptr [esi + 0x10]
+        add eax, 0x27
+        push 0x4
+        mov edx, dword ptr [ecx]
+        shl eax, 0x4
+        add eax, esi
+    L_common:
+        push eax
+        call dword ptr [edx + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        push edi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x28]
+        pop edi
+    L_end2:
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x30]
+        test eax, eax
+        je L_done
+        push 0xb
+        lea ecx, [esi + 0xef0]
+        call ext_006E7440
+    L_done:
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
