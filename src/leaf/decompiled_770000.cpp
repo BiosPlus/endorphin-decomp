@@ -5575,3 +5575,163 @@ extern "C" __declspec(naked) void __fastcall fn_0077CFB0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00778200] sub_00778200 (301 bytes)
+extern "C" void ext_006C3030();
+extern "C" void ext_006C3040();
+extern "C" void ext_0072CF10();
+extern "C" void ext_00778B20();
+extern "C" void ext_00778D50();
+extern "C" void ext_00778D60();
+extern "C" void ext_007790E0();
+extern "C" void ext_00779200();
+extern "C" void ext_0077A840();
+extern "C" void ext_0077A880();
+extern "C" void ext_0077AE10();
+extern "C" void ext_0077CA70();
+
+extern "C" __declspec(naked) void __fastcall fn_00778200(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        mov ecx, esi
+        call ext_006C3030
+        test eax, eax
+        push 0
+        je L_TAIL_CALL
+        mov ecx, dword ptr [edi + 0xb4]
+        call ext_0072CF10
+        test al, al
+        mov ecx, esi
+        je L_SECOND
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        dec eax
+        cmp eax, 8
+        ja L_RET_TRUE
+        jmp dword ptr [eax * 4 + 0x778330]
+
+    L_CASE_7790E0:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_007790E0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_77A840:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0077A840
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_77A880:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0077A880
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_77AE10:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0077AE10
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_SECOND:
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        dec eax
+        cmp eax, 8
+        ja L_PUSH_ZERO
+        jmp dword ptr [eax * 4 + 0x778354]
+
+    L_CASE_6C3040:
+        mov ecx, esi
+        call ext_006C3040
+        push eax
+        mov ecx, edi
+        call ext_00778B20
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_778D50:
+        push esi
+        mov ecx, edi
+        call ext_00778D50
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_778D60:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_00778D60
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_779200:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_00779200
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_CASE_77CA70:
+        mov ecx, esi
+        call ext_006C3030
+        push eax
+        mov ecx, edi
+        call ext_0077CA70
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    L_PUSH_ZERO:
+        push 0
+    L_TAIL_CALL:
+        mov ecx, edi
+        call ext_00778B20
+    L_RET_TRUE:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+
+    }
+}
