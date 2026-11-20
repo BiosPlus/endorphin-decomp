@@ -19,5 +19,7 @@
     "0x006A1F99",
     "0x006A1FAB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-20T15:13:19Z"
 }
