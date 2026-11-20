@@ -15018,3 +15018,113 @@ extern "C" __declspec(naked) void __cdecl fn_007B06F0(void* self, void* a2, int 
         ret
     }
 }
+
+// [0x007B81C0] sub_007B81C0 (288 bytes)
+extern "C" unsigned short ext_007B77D0();
+extern "C" unsigned short ext_007B7830();
+extern "C" void ext_007B7910();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+extern "C" int mem_0099971A;
+extern "C" int mem_0099971C;
+extern "C" int mem_0099971E;
+extern "C" int mem_00999720;
+extern "C" int mem_00999722;
+
+extern "C" __declspec(naked) void __cdecl fn_007B81C0(void* p) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov ecx, 0x7
+        mov esi, 0x999768
+        mov edi, ebx
+        rep movsd
+        call ext_007B7830
+        mov dword ptr [ebx], eax
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_F2
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_END
+    L_F2:
+        call ext_007B77D0
+        mov word ptr [ebx + 0x4], ax
+        mov cl, byte ptr [mem_00B61218]
+        test cl, cl
+        je L_213
+        mov cl, byte ptr [mem_00B61219]
+        test cl, cl
+        je L_END
+    L_213:
+        mov cx, word ptr [mem_0099971A]
+        and ax, cx
+        cmp ax, cx
+        jne L_240
+        call ext_007B7910
+        fstp dword ptr [ebx + 0x8]
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_240
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_END
+    L_240:
+        mov eax, dword ptr [mem_0099971C]
+        mov ecx, eax
+        and cx, word ptr [ebx + 0x4]
+        cmp cx, ax
+        jne L_26A
+        call ext_007B7910
+        fstp dword ptr [ebx + 0xc]
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_26A
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_END
+    L_26A:
+        mov ax, word ptr [mem_0099971E]
+        mov dx, ax
+        and dx, word ptr [ebx + 0x4]
+        cmp dx, ax
+        jne L_296
+        call ext_007B7910
+        fstp dword ptr [ebx + 0x10]
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_296
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_END
+    L_296:
+        mov eax, dword ptr [mem_00999720]
+        mov ecx, eax
+        and cx, word ptr [ebx + 0x4]
+        cmp cx, ax
+        jne L_2C0
+        call ext_007B7910
+        fstp dword ptr [ebx + 0x14]
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_2C0
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_END
+    L_2C0:
+        mov ax, word ptr [mem_00999722]
+        mov dx, ax
+        and dx, word ptr [ebx + 0x4]
+        cmp dx, ax
+        jne L_END
+        call ext_007B7910
+        fstp dword ptr [ebx + 0x18]
+    L_END:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
