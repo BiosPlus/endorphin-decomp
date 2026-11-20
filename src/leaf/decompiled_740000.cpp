@@ -4693,3 +4693,125 @@ extern "C" __declspec(naked) void __fastcall fn_0074B6F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00748440] sub_00748440 (336 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006DC6A0();
+extern "C" void ext_006E7460();
+extern "C" void ext_00748A00();
+extern "C" void ext_00749050();
+extern "C" void ext_00749950();
+extern "C" __declspec(naked) void __fastcall fn_00748440(void* self) {
+    __asm {
+        push -1
+        push 0x008BCB18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x50
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x14]
+        call ext_006B9D10
+        xor ebx, ebx
+        push 0x00AAE5DC
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x6c], ebx
+        call ext_006B9EC0
+        cmp dword ptr [esi + 0x110], ebx
+        jbe L_EXIT_FAIL_TRUE
+L_LOOP:
+        mov ecx, dword ptr [esi + 0x13c]
+        mov eax, dword ptr [esi + 0x124]
+        mov ebp, dword ptr [ecx + 4*ebx]
+        mov edi, dword ptr [eax + 4*ebx]
+        lea ecx, [esp + 0x14]
+        call ext_006E7460
+        push eax
+        mov ecx, ebp
+        call ext_006DC6A0
+        mov edx, dword ptr [esi + 0x13c]
+        lea ecx, [esp + 0x14]
+        mov eax, dword ptr [edx + 4*ebx]
+        mov dword ptr [esp + 0x10], eax
+        mov ebp, dword ptr [eax]
+        call ext_006E7460
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        call dword ptr [ebp + 0x28]
+        mov ecx, dword ptr [edi + 0x64]
+        mov eax, dword ptr [esi + 0x13c]
+        mov edx, dword ptr [edi + 0x60]
+        push ecx
+        mov ecx, dword ptr [edi + 0x58]
+        mov eax, dword ptr [eax + 4*ebx]
+        push edx
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_00748A00
+        test al, al
+        je L_EXIT_FAIL
+        mov edx, dword ptr [esi + 0x13c]
+        mov ecx, dword ptr [edi + 0x74]
+        push ecx
+        mov ecx, dword ptr [edi + 0x68]
+        mov eax, dword ptr [edx + 4*ebx]
+        mov edx, dword ptr [edi + 0x70]
+        push edx
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_00749050
+        test al, al
+        je L_EXIT_FAIL
+        mov edx, dword ptr [esi + 0x13c]
+        mov ecx, dword ptr [edi + 0x84]
+        push ecx
+        mov ecx, dword ptr [edi + 0x78]
+        mov eax, dword ptr [edx + 4*ebx]
+        mov edx, dword ptr [edi + 0x80]
+        push edx
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_00749950
+        test al, al
+        je L_EXIT_FAIL
+        mov eax, dword ptr [esi + 0x110]
+        inc ebx
+        cmp ebx, eax
+        jb L_LOOP
+L_EXIT_FAIL_TRUE:
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x68], 0xffffffff
+        call ext_006B9D70
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x50]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x5c
+        ret
+L_EXIT_FAIL:
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x68], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x60]
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x5c
+        ret
+    }
+}
