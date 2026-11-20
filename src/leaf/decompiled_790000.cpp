@@ -9518,3 +9518,175 @@ L_79DB70_END:
         ret 0x4
     }
 }
+
+// [0x00792470] sub_00792470 (400 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00792470(void* self) {
+    __asm {
+        mov     al, byte ptr [ecx + 0x64]
+        push    ebx
+        push    esi
+        push    edi
+        mov     edi, dword ptr [ecx + 0x28]
+        shl     edi, 0x2
+        test    al, al
+        je      short L_check_65
+        mov     edx, dword ptr [ecx + 0x54]
+        mov     eax, dword ptr [ecx + 0x58]
+        add     eax, 0x20
+        mov     esi, dword ptr [ecx + 0x34]
+        fld     qword ptr [edx + 0x10]
+        fmul    qword ptr [eax + 0x8]
+        fld     qword ptr [edx + 0x8]
+        fmul    qword ptr [eax + 0x10]
+        mov     ebx, dword ptr [ecx + 0x2c]
+        fsubp   st(1), st
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x10]
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x8]
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x8]
+        lea     eax, [8*edi]
+        fsubp   st(1), st
+    L_loop_64:
+        fld     st(2)
+        fstp    qword ptr [esi]
+        fld     st(1)
+        fstp    qword ptr [esi + 0x8]
+        fst     qword ptr [esi + 0x10]
+        add     esi, eax
+        dec     ebx
+        jne     short L_loop_64
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+    L_check_65:
+        mov     al, byte ptr [ecx + 0x65]
+        test    al, al
+        je      short L_check_66
+        mov     eax, dword ptr [ecx + 0x54]
+        mov     edx, dword ptr [ecx + 0x58]
+        lea     ebx, [8*edi - 0x20]
+        mov     esi, dword ptr [ecx + 0x34]
+        add     eax, ebx
+        lea     edx, [edx + 8*edi - 0x40]
+        add     esi, ebx
+        mov     ebx, dword ptr [ecx + 0x2c]
+        fld     qword ptr [eax + 0x10]
+        fmul    qword ptr [edx + 0x8]
+        fld     qword ptr [eax + 0x8]
+        fmul    qword ptr [edx + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x10]
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x8]
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x8]
+        lea     eax, [8*edi]
+        fsubp   st(1), st
+    L_loop_65:
+        fld     st(2)
+        fstp    qword ptr [esi]
+        fld     st(1)
+        fstp    qword ptr [esi + 0x8]
+        fst     qword ptr [esi + 0x10]
+        add     esi, eax
+        dec     ebx
+        jne     short L_loop_65
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+    L_check_66:
+        mov     al, byte ptr [ecx + 0x66]
+        test    al, al
+        je      short L_check_67
+        mov     eax, dword ptr [ecx + 0x54]
+        mov     edx, dword ptr [ecx + 0x58]
+        mov     esi, dword ptr [ecx + 0x34]
+        mov     ebx, dword ptr [ecx + 0x28]
+        fld     qword ptr [eax + 8*edi + 0x10]
+        fmul    qword ptr [edx + 0x8]
+        fld     qword ptr [eax + 8*edi + 0x8]
+        lea     eax, [eax + 8*edi]
+        fmul    qword ptr [edx + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x10]
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x8]
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x8]
+        fsubp   st(1), st
+    L_loop_66:
+        fld     st(2)
+        fstp    qword ptr [esi]
+        fld     st(1)
+        fstp    qword ptr [esi + 0x8]
+        fst     qword ptr [esi + 0x10]
+        add     esi, 0x20
+        dec     ebx
+        jne     short L_loop_66
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+    L_check_67:
+        mov     al, byte ptr [ecx + 0x67]
+        test    al, al
+        je      short L_done
+        mov     eax, dword ptr [ecx + 0x2c]
+        mov     esi, dword ptr [ecx + 0x54]
+        lea     edx, [eax - 0x2]
+        imul    edx, edi
+        fld     qword ptr [esi + 8*edx + 0x10]
+        lea     edx, [esi + 8*edx]
+        lea     esi, [eax - 0x1]
+        imul    esi, edi
+        mov     eax, dword ptr [ecx + 0x58]
+        mov     edi, dword ptr [ecx + 0x34]
+        shl     esi, 0x3
+        add     eax, esi
+        mov     ecx, dword ptr [ecx + 0x28]
+        add     edi, esi
+        fmul    qword ptr [eax + 0x8]
+        fld     qword ptr [edx + 0x8]
+        fmul    qword ptr [eax + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x10]
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x10]
+        fsubp   st(1), st
+        fld     qword ptr [eax]
+        fmul    qword ptr [edx + 0x8]
+        fld     qword ptr [edx]
+        fmul    qword ptr [eax + 0x8]
+        fsubp   st(1), st
+    L_loop_67:
+        fld     st(2)
+        fstp    qword ptr [edi]
+        fld     st(1)
+        fstp    qword ptr [edi + 0x8]
+        fst     qword ptr [edi + 0x10]
+        add     edi, 0x20
+        dec     ecx
+        jne     short L_loop_67
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+    L_done:
+        pop     edi
+        pop     esi
+        pop     ebx
+        ret
+    }
+}
