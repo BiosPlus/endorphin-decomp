@@ -7962,3 +7962,99 @@ extern "C" __declspec(naked) void __fastcall fn_00723A40(void* self) {
         ret
     }
 }
+
+// [0x00725340] sub_00725340 (256 bytes)
+extern "C" int mem_00AACB3C;
+extern "C" __declspec(naked) void __fastcall fn_00725340(void* self, int edx_unused, int a1, int* a2, int* a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x98
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        mov eax, ebx
+        push esi
+        mov esi, ecx
+        and eax, 0xf
+        sub ebx, eax
+        mov dword ptr [ebp - 0x8], esi
+        mov ecx, dword ptr [esi + 0x10]
+        sub ebx, 0x90
+        push ebx
+        push 0x0
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x20]
+        mov ecx, dword ptr [esi + 0x10]
+        lea edx, [ebp - 0x98]
+        push 0x80
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp eax, 0x80
+        sete al
+        test al, al
+        mov byte ptr [ebp - 0x1], al
+        je L_end2
+        mov al, byte ptr [esi + 0x16]
+        test al, al
+        je short L_s1
+        mov eax, dword ptr [ebp - 0x98]
+        bswap eax
+        mov dword ptr [ebp - 0x98], eax
+        mov al, byte ptr [esi + 0x16]
+        test al, al
+        je short L_s1
+        mov eax, dword ptr [ebp - 0x94]
+        bswap eax
+        mov dword ptr [ebp - 0x94], eax
+    L_s1:
+        mov ecx, dword ptr [esi + 0x10]
+        lea edx, [ebp - 0x18]
+        push 0x10
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp eax, 0x10
+        sete al
+        test al, al
+        mov byte ptr [ebp - 0x1], al
+        je short L_end2
+        push edi
+        mov ecx, 0x4
+        mov edi, offset mem_00AACB3C
+        lea esi, [ebp - 0x18]
+        xor eax, eax
+        repe cmpsd
+        sete al
+        test al, al
+        mov byte ptr [ebp - 0x1], al
+        pop edi
+        je short L_416
+        mov eax, dword ptr [ebp + 0xc]
+        mov ecx, dword ptr [ebp - 0x98]
+        test ecx, ecx
+        mov dword ptr [eax], 0x0
+        jbe short L_540b
+        sub ebx, ecx
+        mov dword ptr [eax], ebx
+    L_540b:
+        mov ecx, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [ebp - 0x94]
+        mov dword ptr [ecx], edx
+    L_416:
+        mov esi, dword ptr [ebp - 0x8]
+    L_end2:
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [ebp + 0x8]
+        push edx
+        push 0x0
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x20]
+        mov al, byte ptr [ebp - 0x1]
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    }
+}
