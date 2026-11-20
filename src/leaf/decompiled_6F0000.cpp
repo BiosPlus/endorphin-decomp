@@ -13146,3 +13146,133 @@ extern "C" __declspec(naked) void __fastcall fn_006FD740(void* self, int edx_unu
         __asm _emit 0x90
     }
 }
+
+// [0x006FDB00] sub_006FDB00 (304 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+extern "C" void ext_006BC380();
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2170();
+extern "C" void ext_006D91C0();
+extern "C" void ext_006E8EF0();
+extern "C" void ext_006FC9B0();
+extern "C" void ext_006FDE80();
+extern "C" void ext_006FDF70();
+
+extern "C" __declspec(naked) int __fastcall fn_006FDB00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8bb536
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        call ext_006D91C0
+        mov esi, dword ptr [esp + 0x24]
+        cmp eax, esi
+        jg after_loop
+    loop_top:
+        mov ecx, ebp
+        call ext_006FDE80
+        mov ecx, ebp
+        call ext_006D91C0
+        cmp eax, esi
+        jle loop_top
+    after_loop:
+        push esi
+        mov ecx, ebp
+        call ext_006FDF70
+        mov ebx, eax
+        test ebx, ebx
+        je ret_fail
+        mov ecx, ebx
+        call ext_006BC380
+        mov esi, eax
+        test esi, esi
+        jne have_obj
+        push 0x38
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0x24], esi
+        test esi, esi
+        mov dword ptr [esp + 0x18], 0x0
+        je no_alloc
+        lea edi, [esi + 0x8]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov dword ptr [esi], 0x0
+        mov dword ptr [esi + 0x4], 0x0
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0x20]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x1
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        jmp set_state
+    no_alloc:
+        xor esi, esi
+    set_state:
+        or eax, -1
+        test esi, esi
+        mov dword ptr [esp + 0x18], eax
+        je epilogue
+        push esi
+        mov ecx, ebx
+        call ext_006FC9B0
+    have_obj:
+        mov ecx, dword ptr [esi + 0x8]
+        mov edi, dword ptr [esp + 0x20]
+        add esi, 0x8
+        xor eax, eax
+        test ecx, ecx
+        jle no_match
+        mov edx, dword ptr [esi + 0x10]
+    scan_top:
+        cmp dword ptr [edx], edi
+        je found
+        inc eax
+        add edx, 0x4
+        cmp eax, ecx
+        jl scan_top
+        jmp no_match
+    found:
+        cmp eax, -1
+        jne ret_fail
+    no_match:
+        mov ecx, dword ptr [ebp + 0xc]
+        test ecx, ecx
+        je skip_call_e8
+        push edi
+        call ext_006E8EF0
+    skip_call_e8:
+        mov eax, dword ptr [esi]
+        lea edx, [esp + 0x24]
+        push edx
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], edi
+        call ext_006D2170
+        jmp epilogue
+    ret_fail:
+        or eax, -1
+    epilogue:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    }
+}
