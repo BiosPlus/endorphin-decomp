@@ -9234,3 +9234,78 @@ extern "C" __declspec(naked) void __fastcall fn_00724D00(void* self) {
         ret
     }
 }
+
+// [0x00722040] sub_00722040 (304 bytes)
+extern "C" void ext_00785450();
+extern "C" void ext_00785480();
+extern "C" void ext_00786270();
+extern "C" void ext_007862F0();
+extern "C" void ext_00786300();
+extern "C" void ext_007877E0();
+extern "C" void ext_00787860();
+extern "C" void ext_00787870();
+extern "C" int mem_00AACAD8;
+
+extern "C" __declspec(naked) void __fastcall fn_00722040(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8bd5a6
+        push eax
+        mov eax, dword ptr [mem_00AACAD8]
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x108
+        dec eax
+        je L_case1
+        dec eax
+        jne L_epilogue
+        lea ecx, [esp + 0x80]
+        call ext_00786270
+        lea eax, [esp + 0x11c]
+        lea ecx, [esp + 0x80]
+        push eax
+        mov dword ptr [esp + 0x114], 0x0
+        call ext_00785450
+        lea ecx, [esp + 0x124]
+        push ecx
+        lea ecx, [esp + 0x84]
+        call ext_00785480
+        mov edx, dword ptr [esp + 0x118]
+        push 0x1
+        push edx
+        lea ecx, [esp + 0x88]
+        call ext_00786300
+        lea ecx, [esp + 0x80]
+        mov dword ptr [esp + 0x110], 0xffffffff
+        call ext_007862F0
+        mov ecx, dword ptr [esp + 0x108]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x114
+        ret
+    L_case1:
+        __asm _emit 0x8d __asm _emit 0x4c __asm _emit 0x24 __asm _emit 0x00
+        call ext_007877E0
+        lea eax, [esp + 0x11c]
+        __asm _emit 0x8d __asm _emit 0x4c __asm _emit 0x24 __asm _emit 0x00
+        push eax
+        mov dword ptr [esp + 0x114], 0x1
+        call ext_00785450
+        lea ecx, [esp + 0x124]
+        push ecx
+        lea ecx, [esp + 0x4]
+        call ext_00785480
+        mov edx, dword ptr [esp + 0x118]
+        push 0x1
+        push edx
+        lea ecx, [esp + 0x8]
+        call ext_00787870
+        __asm _emit 0x8d __asm _emit 0x4c __asm _emit 0x24 __asm _emit 0x00
+        mov dword ptr [esp + 0x110], 0xffffffff
+        call ext_00787860
+    L_epilogue:
+        mov ecx, dword ptr [esp + 0x108]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x114
+        ret
+    }
+}
