@@ -4414,3 +4414,117 @@ L_B2:
         ret 4
     }
 }
+
+// [0x0073A380] sub_0073A380 (304 bytes)
+extern "C" void ext_006FD740();
+extern "C" void ext_006FDE80();
+extern "C" void ext_00726860();
+extern "C" void ext_007268D0();
+extern "C" void ext_0073A4B0();
+
+extern "C" __declspec(naked) void __fastcall fn_0073A380(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        push 0aadcbch
+        mov ecx, dword ptr [esi + 0ach]
+        mov byte ptr [esp + 17h], 1
+        add ecx, 4
+        xor edi, edi
+        call ext_00726770
+        mov ebx, dword ptr [esp + 18h]
+        test al, al
+        je fn0073A380_L466
+fn0073A380_L3AD:
+        mov ecx, dword ptr [esi + 0ach]
+        inc edi
+        add ecx, 4
+        call ext_00726860
+        test al, al
+        je fn0073A380_L439
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aadca8h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073A380_L42B
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726860
+        test al, al
+        je fn0073A380_L41D
+        mov ecx, ebx
+        call ext_006FDE80
+        push eax
+        push ebx
+        mov ecx, esi
+        call ext_0073A4B0
+        test al, al
+        je fn0073A380_L40A
+        mov al, byte ptr [esp + 13h]
+        mov byte ptr [esp + 13h], 1
+        test al, al
+        jne fn0073A380_L40F
+fn0073A380_L40A:
+        mov byte ptr [esp + 13h], 0
+fn0073A380_L40F:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_007268D0
+fn0073A380_L41D:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+fn0073A380_L42B:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_007268D0
+fn0073A380_L439:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aadcbch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        jne fn0073A380_L3AD
+        test edi, edi
+        jne fn0073A380_L49F
+fn0073A380_L466:
+        mov eax, dword ptr [esi + 1b8h]
+        test eax, eax
+        je fn0073A380_L49F
+        mov eax, dword ptr [ebx]
+        mov ecx, ebx
+        call dword ptr [eax]
+        cmp eax, 4
+        jne fn0073A380_L49F
+        mov ebp, dword ptr [esi + 1b8h]
+        xor edi, edi
+        test ebp, ebp
+        jle fn0073A380_L49F
+fn0073A380_L487:
+        mov ecx, dword ptr [esi + 1c8h]
+        push 0
+        mov edx, dword ptr [ecx + edi*4]
+        mov ecx, ebx
+        push edx
+        call ext_006FD740
+        inc edi
+        cmp edi, ebp
+        jl fn0073A380_L487
+fn0073A380_L49F:
+        mov al, byte ptr [esp + 13h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
