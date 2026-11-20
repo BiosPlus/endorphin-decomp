@@ -9178,3 +9178,92 @@ extern "C" __declspec(naked) void __fastcall fn_00860700(void* self) {
         ret
     }
 }
+
+// [0x008688E0] sub_008688E0 (272 bytes)
+extern "C" __declspec(naked) void __cdecl fn_008688E0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        cmp ecx, 0x1
+        jle zero_ret
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        add eax, 0x16
+        push esi
+        dec ecx
+    loop_top:
+        xor ebx, ebx
+        xor edx, edx
+        mov bl, byte ptr [eax - 0x4]
+        mov dl, byte ptr [eax - 0x3]
+        add eax, 0x10
+        mov esi, dword ptr [4*ebx + 0xac3080]
+        mov edx, dword ptr [4*edx + 0xac3480]
+        xor ebx, ebx
+        xor edx, esi
+        mov bl, byte ptr [eax - 0x15]
+        mov esi, dword ptr [4*ebx + 0xac2c80]
+        xor ebx, ebx
+        mov bl, byte ptr [eax - 0x16]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac2880]
+        xor ebx, ebx
+        xor edx, esi
+        mov dword ptr [eax - 0x16], edx
+        mov bl, byte ptr [eax - 0x11]
+        xor edx, edx
+        mov dl, byte ptr [eax - 0xf]
+        mov esi, dword ptr [4*ebx + 0xac2c80]
+        xor ebx, ebx
+        mov edx, dword ptr [4*edx + 0xac3480]
+        mov bl, byte ptr [eax - 0x10]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac3080]
+        xor ebx, ebx
+        mov bl, byte ptr [eax - 0x12]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac2880]
+        xor ebx, ebx
+        xor edx, esi
+        mov dword ptr [eax - 0x12], edx
+        mov bl, byte ptr [eax - 0xc]
+        xor edx, edx
+        mov dl, byte ptr [eax - 0xb]
+        mov esi, dword ptr [4*ebx + 0xac3080]
+        xor ebx, ebx
+        mov edx, dword ptr [4*edx + 0xac3480]
+        mov bl, byte ptr [eax - 0xd]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac2c80]
+        xor ebx, ebx
+        mov bl, byte ptr [eax - 0xe]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac2880]
+        xor ebx, ebx
+        xor edx, esi
+        mov dword ptr [eax - 0xe], edx
+        mov bl, byte ptr [eax - 0x8]
+        xor edx, edx
+        mov dl, byte ptr [eax - 0x7]
+        mov esi, dword ptr [4*ebx + 0xac3080]
+        xor ebx, ebx
+        mov edx, dword ptr [4*edx + 0xac3480]
+        mov bl, byte ptr [eax - 0x9]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac2c80]
+        xor ebx, ebx
+        mov bl, byte ptr [eax - 0xa]
+        xor edx, esi
+        mov esi, dword ptr [4*ebx + 0xac2880]
+        xor edx, esi
+        dec ecx
+        mov dword ptr [eax - 0xa], edx
+        jne loop_top
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    zero_ret:
+        xor eax, eax
+        ret
+    }
+}
