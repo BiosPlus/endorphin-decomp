@@ -6280,3 +6280,213 @@ fn0073CF30_j:
         ret 4
     }
 }
+
+// [0x0073CB50] sub_0073CB50 (480 bytes)
+extern "C" void ext_006D8830();
+extern "C" void ext_00726AA0();
+extern "C" void ext_00726B40();
+
+extern "C" __declspec(naked) void __fastcall fn_0073CB50(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        push 0b5d2c0h
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aadc2ch
+        add ecx, 4
+        call ext_00726AA0
+        mov edi, eax
+        mov ebp, 4
+        test edi, edi
+        je fn0073CB50_c21
+        mov esi, 0aadfe0h
+        mov ecx, edi
+fn0073CB50_l1:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne fn0073CB50_n1
+        test dl, dl
+        je fn0073CB50_e1
+        mov al, byte ptr [ecx + 1]
+        mov bl, byte ptr [esi + 1]
+        mov dl, al
+        cmp al, bl
+        jne fn0073CB50_n1
+        add ecx, 2
+        add esi, 2
+        test dl, dl
+        jne fn0073CB50_l1
+fn0073CB50_e1:
+        xor ecx, ecx
+        jmp fn0073CB50_c1
+fn0073CB50_n1:
+        sbb ecx, ecx
+        sbb ecx, -1
+fn0073CB50_c1:
+        test ecx, ecx
+        jne fn0073CB50_b
+        mov ecx, dword ptr [esp + 14h]
+        mov ebp, 1
+        push ebp
+        call ext_006D8830
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+fn0073CB50_b:
+        mov esi, 0aadfd4h
+        mov eax, edi
+fn0073CB50_l2:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne fn0073CB50_n2
+        test cl, cl
+        je fn0073CB50_e2
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne fn0073CB50_n2
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne fn0073CB50_l2
+fn0073CB50_e2:
+        xor eax, eax
+        jmp fn0073CB50_c2
+fn0073CB50_n2:
+        sbb eax, eax
+        sbb eax, -1
+fn0073CB50_c2:
+        test eax, eax
+        jne fn0073CB50_d10
+        mov ecx, dword ptr [esp + 14h]
+        mov ebp, 2
+        push ebp
+        call ext_006D8830
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+fn0073CB50_c21:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0
+        push 0aae028h
+        add ecx, 4
+        call ext_00726B40
+        cmp eax, 1
+        jne fn0073CB50_c53
+        mov ecx, dword ptr [esp + 14h]
+        mov ebp, 2
+        push ebp
+        call ext_006D8830
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+fn0073CB50_c53:
+        cmp eax, 2
+        je fn0073CB50_d0b
+        mov ecx, dword ptr [esi + 0ach]
+        push 0b5d2c0h
+        push 0aae01ch
+        add ecx, 4
+        call ext_00726AA0
+        mov edi, eax
+        mov ebp, 2
+        test edi, edi
+        je fn0073CB50_d10
+        mov esi, 0aadfe0h
+        mov ecx, edi
+fn0073CB50_l3:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne fn0073CB50_n3
+        test dl, dl
+        je fn0073CB50_e3
+        mov al, byte ptr [ecx + 1]
+        mov bl, byte ptr [esi + 1]
+        mov dl, al
+        cmp al, bl
+        jne fn0073CB50_n3
+        add ecx, 2
+        add esi, 2
+        test dl, dl
+        jne fn0073CB50_l3
+fn0073CB50_e3:
+        xor ecx, ecx
+        jmp fn0073CB50_c3
+fn0073CB50_n3:
+        sbb ecx, ecx
+        sbb ecx, -1
+fn0073CB50_c3:
+        test ecx, ecx
+        jne fn0073CB50_e
+        mov ecx, dword ptr [esp + 14h]
+        mov ebp, 2
+        push ebp
+        call ext_006D8830
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+fn0073CB50_e:
+        mov esi, 0aae014h
+        mov eax, edi
+fn0073CB50_l4:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne fn0073CB50_n4
+        test cl, cl
+        je fn0073CB50_e4
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne fn0073CB50_n4
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne fn0073CB50_l4
+fn0073CB50_e4:
+        xor eax, eax
+        jmp fn0073CB50_c4
+fn0073CB50_n4:
+        sbb eax, eax
+        sbb eax, -1
+fn0073CB50_c4:
+        test eax, eax
+        jne fn0073CB50_d10
+fn0073CB50_d0b:
+        mov ebp, 3
+fn0073CB50_d10:
+        mov ecx, dword ptr [esp + 14h]
+        push ebp
+        call ext_006D8830
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
