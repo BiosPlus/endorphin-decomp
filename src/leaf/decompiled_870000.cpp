@@ -2955,3 +2955,258 @@ extern "C" __declspec(naked) void fn_008722F0() {
         call ext_00870E40
     }
 }
+
+// [0x00870040] sub_00870040 (688 bytes)
+extern "C" void ext_00857440(); extern "C" void ext_008692F0(); extern "C" void ext_00869E50(); extern "C" void ext_00869F30(); extern "C" void ext_00869F90(); extern "C" void ext_0086A800(); extern "C" void ext_0086A8A0(); extern "C" void ext_0086AEB0(); extern "C" void ext_0086AF00(); extern "C" void ext_0086AF30(); extern "C" void ext_0086AF80();
+extern "C" int mem_00AC4AF0;
+
+extern "C" __declspec(naked) void __fastcall fn_00870040(void* self) {
+    __asm {
+        sub esp, 0x514
+        mov eax, dword ptr [esp + 0x52c]
+        lea ecx, [esp + 0x410]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x534]
+        push edi
+        push eax
+        lea edi, [esi*4]
+        push edi
+        push ecx
+        call ext_00857440
+        add esp, 0xc
+        test eax, eax
+        jne fail_8702DE
+        lea edx, [esp + 0x420]
+        push edi
+        mov edi, dword ptr [esp + 0x52c]
+        push edx
+        push esi
+        push edi
+        call ext_00869E50
+        mov ebx, dword ptr [esp + 0x53c]
+        mov ebp, dword ptr [esp + 0x540]
+        push esi
+        push ebx
+        lea eax, [esp + 0x12c]
+        push ebp
+        push eax
+        call ext_00869F90
+        lea ecx, [esp + 0x238]
+        push esi
+        push ecx
+        call ext_00869F30
+        lea edx, [esp + 0x240]
+        push esi
+        lea eax, [esp + 0x140]
+        push edx
+        lea ecx, [esp + 0x144]
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x250], 1
+        call ext_0086AF80
+        lea edx, [esp + 0x14c]
+        push esi
+        push edx
+        push esi
+        push edi
+        push edi
+        call ext_0086A800
+        add esp, 0x4c
+        push esi
+        push ebx
+        push edi
+        push edi
+        call ext_0086AF80
+        mov eax, dword ptr [esp + 0x544]
+        push esi
+        push eax
+        push esi
+        lea ecx, [esp + 0x130]
+        push edi
+        push ecx
+        call ext_0086A800
+        lea edx, [esp + 0x138]
+        push esi
+        push edx
+        push edi
+        push edi
+        call ext_00869F90
+        lea eax, [esp + 0x24c]
+        push esi
+        push eax
+        push edi
+        push edi
+        call ext_0086AF80
+        add esp, 0x44
+        push esi
+        push ebx
+        push edi
+        call ext_0086AEB0
+        add esp, 0xc
+        test eax, eax
+        jge skip_87015F
+        mov ecx, dword ptr [esp + 0x534]
+        push esi
+        push ecx
+        push edi
+        push edi
+        call ext_0086AF80
+        add esp, 0x10
+    skip_87015F:
+        push esi
+        push ebp
+        push edi
+        call ext_0086AEB0
+        add esp, 0xc
+        test eax, eax
+        jle skip_870181
+        mov edx, dword ptr [esp + 0x534]
+        push esi
+        push edx
+        push edi
+        push edi
+        call ext_00869F90
+        add esp, 0x10
+    skip_870181:
+        push esi
+        lea eax, [esp + 0x118]
+        push ebp
+        push eax
+        call ext_0086AF30
+        mov ecx, dword ptr [esp + 0x540]
+        push esi
+        lea edx, [esp + 0x124]
+        push ecx
+        lea eax, [esp + 0x128]
+        push edx
+        push eax
+        call ext_00869F90
+        add esp, 0x1c
+    loop_8701B1:
+        lea ecx, [esp + 0x10]
+        push esi
+        push ecx
+        mov ebp, 1
+        call ext_00869F30
+        mov eax, dword ptr [mem_00AC4AF0]
+        add esp, 8
+        test eax, eax
+        je done_870228
+        mov eax, offset mem_00AC4AF0
+        mov ebx, eax
+    loop_8701D4:
+        mov edx, dword ptr [eax]
+        cmp esi, 1
+        mov dword ptr [esp + 0x10], edx
+        jne skip_8701F2
+        lea eax, [esp + 0x10]
+        push esi
+        push eax
+        push edi
+        call ext_0086AEB0
+        add esp, 0xc
+        test eax, eax
+        je done_870228
+    skip_8701F2:
+        lea ecx, [esp + 0x10]
+        push 1
+        push ecx
+        push esi
+        lea edx, [esp + 0x1c]
+        push edi
+        push edx
+        call ext_0086A800
+        lea eax, [esp + 0x24]
+        push 1
+        push eax
+        call ext_0086AF00
+        add esp, 0x1c
+        test eax, eax
+        jne clear_870226
+        mov ecx, dword ptr [ebx + 4]
+        add ebx, 4
+        test ecx, ecx
+        mov eax, ebx
+        jne loop_8701D4
+        jmp done_870228
+    clear_870226:
+        xor ebp, ebp
+    done_870228:
+        push 0x104
+        lea ecx, [esp + 0x14]
+        push 0
+        push ecx
+        call ext_008692F0
+        add esp, 0xc
+        test ebp, ebp
+        je skip_87029E
+        lea edx, [esp + 0x10]
+        push esi
+        push edx
+        call ext_00869F30
+        push esi
+        push edi
+        push esi
+        lea eax, [esp + 0x24]
+        push edi
+        lea ecx, [esp + 0x334]
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x30], 2
+        call ext_0086A8A0
+        lea edx, [esp + 0x33c]
+        push esi
+        lea eax, [esp + 0x34]
+        push edx
+        push eax
+        call ext_0086AEB0
+        mov ebx, eax
+        push 0x104
+        neg ebx
+        lea ecx, [esp + 0x34c]
+        push 0
+        sbb ebx, ebx
+        push ecx
+        inc ebx
+        call ext_008692F0
+        add esp, 0x38
+        test ebx, ebx
+        jne zero_8702DC
+    skip_87029E:
+        lea edx, [esp + 0x114]
+        push esi
+        push edx
+        push edi
+        call ext_0086AEB0
+        add esp, 0xc
+        test eax, eax
+        jg ret1_8702CC
+        mov eax, dword ptr [esp + 0x534]
+        push esi
+        push eax
+        push edi
+        push edi
+        call ext_0086AF80
+        add esp, 0x10
+        jmp loop_8701B1
+    ret1_8702CC:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x401
+        pop ebx
+        add esp, 0x514
+        ret
+    zero_8702DC:
+        xor eax, eax
+    fail_8702DE:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x514
+        ret
+    }
+}
