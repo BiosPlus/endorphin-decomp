@@ -16298,3 +16298,265 @@ extern "C" __declspec(naked) void __cdecl fn_00863B40(void) {
         ret
     }
 }
+
+// [0x00864430] sub_00864430 (757 bytes)
+extern "C" void ext_00860670();
+extern "C" void ext_00860950();
+extern "C" void ext_0085F7E0();
+extern "C" void ext_0085FF80();
+extern "C" void ext_0085F750();
+extern "C" void ext_0085E720();
+extern "C" void ext_0085F700();
+extern "C" void ext_0085F740();
+extern "C" void ext_0085D530();
+extern "C" int mem_00AB98EC;
+extern "C" short mem_00BC6679;
+extern "C" short mem_00BC667B;
+extern "C" int mem_00AB9864;
+extern "C" int mem_00BC6389;
+
+extern "C" __declspec(naked) void __cdecl fn_00864430(void) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push esi
+        mov si, word ptr [esp + 0x30]
+        push edi
+        test si, si
+        jne L_456
+        mov eax, 1
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0x17
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_456:
+        cmp si, 0x18
+        jbe L_472
+        mov eax, 1
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0x17
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_472:
+        mov di, word ptr [esp + 0x30]
+        mov ebx, dword ptr [esp + 0x3c]
+        test ebx, ebx
+        jne L_49c
+        cmp di, 0xf7
+        jbe L_49c
+        mov eax, 0x2b
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0x17
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_49c:
+        mov dword ptr [mem_00AB98EC], 0
+        call ext_00860670
+        test eax, eax
+        jne L_4bb
+        mov eax, 0xfffffef2
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_4bb:
+        mov cl, 0x34
+        test ebx, ebx
+        je L_4c3
+        mov cl, 0xf1
+    L_4c3:
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x28]
+        mov ebx, dword ptr [esp + 0x24]
+        push eax
+        mov eax, dword ptr [esp + 0x24]
+        push edx
+        push ebx
+        push eax
+        push ecx
+        call ext_00860950
+        mov word ptr [mem_00BC6679], di
+        add esp, 0x14
+        mov word ptr [mem_00BC667B], si
+        push 1
+        push 0xab98b8
+        call ext_0085F7E0
+        add esp, 8
+        test eax, eax
+        jne L_71e
+        xor edi, edi
+    L_507:
+        lea eax, [esp + 0xc]
+        push 1
+        push eax
+        push 0xab98b8
+        call ext_0085FF80
+        add esp, 0xc
+        test eax, eax
+        je L_56e
+        cmp eax, 0x3e
+        je L_529
+        cmp eax, 0x46
+        jne L_562
+    L_529:
+        lea eax, [esp + 0xc]
+        push 0xab98b8
+        push eax
+        call ext_0085F750
+        add esp, 8
+        test eax, eax
+        je L_544
+        mov edi, 1
+    L_544:
+        test edi, edi
+        je L_507
+        test edi, edi
+        jne L_584
+        mov eax, 0xffffffff
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0xf
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_562:
+        mov eax, 0xfffffef0
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_56e:
+        mov eax, 0xffffffff
+        pop edi
+        mov dword ptr [mem_00AB98EC], 0xf
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_584:
+        mov eax, dword ptr [mem_00AB9864]
+        test eax, eax
+        je L_5b7
+        push 0xac05b4
+        push 0x3e
+        push 0xbc6388
+        call ext_0085E720
+        add esp, 0xc
+        mov eax, dword ptr [mem_00AB9864]
+        test eax, eax
+        je L_5b7
+        push 0xbc6388
+        call ext_0085F700
+        add esp, 4
+    L_5b7:
+        cmp byte ptr [mem_00BC6389], 0
+        jne L_5d8
+        movzx eax, si
+        add eax, eax
+        mov ecx, dword ptr [esp + 0x38]
+        push eax
+        push 0xbc6396
+        push ecx
+        call ext_0085D530
+        add esp, 0xc
+    L_5d8:
+        push 0xbc6388
+        call ext_0085F740
+        add esp, 4
+        xor eax, eax
+        mov al, byte ptr [mem_00BC6389]
+        mov dword ptr [mem_00AB98EC], 0
+        lea ecx, [eax - 1]
+        cmp ecx, 0x1a
+        ja L_6fc
+        xor edx, edx
+        mov dl, byte ptr [ecx + 0x864774]
+        jmp dword ptr [4*edx + 0x864728]
+    L_81:
+        mov dword ptr [mem_00AB98EC], 0x81
+        jmp L_6fc
+    L_82:
+        mov dword ptr [mem_00AB98EC], 0x82
+        jmp L_6fc
+    L_83:
+        mov dword ptr [mem_00AB98EC], 0x83
+        jmp L_6fc
+    L_84:
+        mov dword ptr [mem_00AB98EC], 0x84
+        jmp L_6fc
+    L_85:
+        mov dword ptr [mem_00AB98EC], 0x85
+        jmp L_6fc
+    L_86:
+        mov dword ptr [mem_00AB98EC], 0x86
+        jmp L_6fc
+    L_87:
+        mov dword ptr [mem_00AB98EC], 0x87
+        jmp L_6fc
+    L_88:
+        mov dword ptr [mem_00AB98EC], 0x88
+        jmp L_6fc
+    L_89:
+        mov dword ptr [mem_00AB98EC], 0x89
+        jmp L_6fc
+    L_8a:
+        mov dword ptr [mem_00AB98EC], 0x8a
+        jmp L_6fc
+    L_0a:
+        mov dword ptr [mem_00AB98EC], 0xa
+        jmp L_6fc
+    L_8c:
+        mov dword ptr [mem_00AB98EC], 0x8c
+        jmp L_6fc
+    L_8d:
+        mov dword ptr [mem_00AB98EC], 0x8d
+        jmp L_6fc
+    L_8e:
+        mov dword ptr [mem_00AB98EC], 0x8e
+        jmp L_6fc
+    L_8f:
+        mov dword ptr [mem_00AB98EC], 0x8f
+        jmp L_6fc
+    L_90:
+        mov dword ptr [mem_00AB98EC], 0x90
+        jmp L_6fc
+    L_91:
+        mov dword ptr [mem_00AB98EC], 0x91
+        jmp L_6fc
+    L_92:
+        mov dword ptr [mem_00AB98EC], 0x92
+    L_6fc:
+        cmp eax, 3
+        je L_70d
+        cmp eax, 4
+        je L_719
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_70d:
+        mov eax, 0x2b
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    L_719:
+        mov eax, 0x2b
+    L_71e:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
