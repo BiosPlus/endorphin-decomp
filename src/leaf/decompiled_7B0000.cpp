@@ -18958,3 +18958,276 @@ extern "C" __declspec(naked) int __cdecl fn_007BDC70(void* self) {
         ret
     }
 }
+
+// [0x007BCCA0] sub_007BCCA0 (744 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BCCA0(void* self, int a2, int a3) {
+    __asm {
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x28]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x30]
+        cdq
+        mov ecx, dword ptr [edi + 0x1cc]
+        mov dword ptr [esp + 0x10], 0x0
+        idiv dword ptr [ecx + 0x8]
+        mov esi, eax
+        mov eax, dword ptr [ecx]
+        cmp eax, 0x2
+        mov dword ptr [esp + 0x1c], esi
+        jne W_CCD8
+        mov eax, dword ptr [esp + 0x34]
+        mov dword ptr [esp + 0x14], eax
+        jmp W_CCEC
+W_CCD8:
+        mov eax, dword ptr [esp + 0x34]
+        mov edx, dword ptr [ecx + 0xc]
+        push esi
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x20], edx
+        call dword ptr [ecx + 0x14]
+        add esp, 0xc
+W_CCEC:
+        mov eax, dword ptr [edi + 0x1dc]
+        mov ecx, dword ptr [edi + 0x1e4]
+        mov edx, dword ptr [edi + 0x1e0]
+        sub eax, ecx
+        mov dword ptr [esp + 0x34], eax
+        mov dword ptr [esp + 0x18], 0x18
+W_CD0C:
+        xor ebx, ebx
+        test esi, esi
+        mov dword ptr [esp + 0x38], ebx
+        jle W_CF4E
+        jmp W_CD20
+W_CD1C:
+        mov eax, dword ptr [esp + 0x34]
+W_CD20:
+        cmp eax, 0x4
+        jge W_CD62
+        mov ecx, dword ptr [edi + 0x1dc]
+        push edi
+        sub ecx, eax
+        mov dword ptr [edi + 0x1e0], edx
+        mov dword ptr [edi + 0x1e4], ecx
+        call ext_0079B850
+        add esp, 0x4
+        test eax, eax
+        je W_CF7D
+        mov eax, dword ptr [edi + 0x1dc]
+        mov ecx, dword ptr [edi + 0x1e4]
+        mov edx, dword ptr [edi + 0x1e0]
+        sub eax, ecx
+        mov dword ptr [esp + 0x34], eax
+W_CD62:
+        mov ecx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0x1c]
+        mov esi, 0xff
+        mov ebp, ebx
+        shl esi, cl
+        cmp ebx, eax
+        jge W_CDC6
+W_CD77:
+        mov ebx, dword ptr [esp + 0x14]
+        mov eax, 0x1
+        mov dword ptr [esp + 0x10], eax
+        mov ecx, dword ptr [ebx + 4*ebp]
+        lea ebx, [ebx + 4*ebp + 0x4]
+        and ecx, esi
+W_CD8D:
+        lea edi, [eax + ebp]
+        cmp edi, dword ptr [esp + 0x1c]
+        jge W_CDA9
+        mov edi, dword ptr [ebx]
+        and edi, esi
+        cmp edi, ecx
+        jne W_CDA9
+        inc eax
+        add ebx, 0x4
+        cmp eax, 0x81
+        jl W_CD8D
+W_CDA9:
+        cmp eax, 0x4
+        mov dword ptr [esp + 0x10], eax
+        jge W_CDBE
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x1c]
+        add ebp, ecx
+        cmp ebp, eax
+        jl W_CD77
+W_CDBE:
+        mov edi, dword ptr [esp + 0x30]
+        mov ebx, dword ptr [esp + 0x38]
+W_CDC6:
+        mov eax, ebp
+        sub eax, ebx
+        cmp eax, 0x1
+        jle W_CE21
+        cmp eax, 0x4
+        jge W_CE21
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 4*ebx]
+        lea eax, [ebx + 0x1]
+        mov ebx, dword ptr [esp + 0x14]
+        and ecx, esi
+        mov dword ptr [esp + 0x24], ecx
+        mov ebx, dword ptr [ebx + 4*eax]
+        and ebx, esi
+        inc eax
+        cmp ebx, ecx
+        jne W_CE1D
+        mov ebx, dword ptr [esp + 0x14]
+        lea ebx, [ebx + 4*eax]
+        jmp W_CDFF
+W_CDFB:
+        mov ebx, dword ptr [esp + 0x20]
+W_CDFF:
+        cmp eax, ebp
+        je W_CF02
+        mov ecx, esi
+        and ecx, dword ptr [ebx]
+        add ebx, 0x4
+        mov dword ptr [esp + 0x20], ebx
+        inc eax
+        mov ebx, ecx
+        mov ecx, dword ptr [esp + 0x24]
+        cmp ebx, ecx
+        je W_CDFB
+W_CE1D:
+        mov ebx, dword ptr [esp + 0x38]
+W_CE21:
+        cmp ebx, ebp
+        jge W_CED6
+W_CE29:
+        mov eax, dword ptr [esp + 0x38]
+        mov ebx, ebp
+        sub ebx, eax
+        cmp ebx, 0x7f
+        jle W_CE3B
+        mov ebx, 0x7f
+W_CE3B:
+        mov ecx, dword ptr [esp + 0x34]
+        lea esi, [ebx + 0x3]
+        cmp ecx, esi
+        jge W_CE87
+        mov dword ptr [edi + 0x1e0], edx
+        mov edx, dword ptr [edi + 0x1dc]
+        sub edx, ecx
+        push edi
+        mov dword ptr [edi + 0x1e4], edx
+        call ext_0079B850
+        add esp, 0x4
+        test eax, eax
+        je W_CF7D
+        mov eax, dword ptr [edi + 0x1dc]
+        mov ecx, dword ptr [edi + 0x1e4]
+        mov edx, dword ptr [edi + 0x1e0]
+        sub eax, ecx
+        mov dword ptr [esp + 0x34], eax
+        mov eax, dword ptr [esp + 0x38]
+W_CE87:
+        mov ecx, dword ptr [esp + 0x34]
+        mov byte ptr [edx], bl
+        inc edx
+        dec ecx
+        mov dword ptr [esp + 0x34], ecx
+        mov ecx, ebx
+        dec ebx
+        test ecx, ecx
+        je W_CECA
+        mov ecx, dword ptr [esp + 0x14]
+        lea esi, [ebx + 0x1]
+        mov ebx, dword ptr [esp + 0x34]
+        lea edi, [ecx + 4*eax]
+        sub ebx, esi
+        add eax, esi
+        mov dword ptr [esp + 0x34], ebx
+        mov dword ptr [esp + 0x38], eax
+W_CEB4:
+        mov ebx, dword ptr [edi]
+        mov ecx, dword ptr [esp + 0x18]
+        shr ebx, cl
+        inc edx
+        add edi, 0x4
+        dec esi
+        mov byte ptr [edx - 0x1], bl
+        jne W_CEB4
+        mov edi, dword ptr [esp + 0x30]
+W_CECA:
+        cmp eax, ebp
+        jl W_CE29
+W_CED2:
+        mov ebx, dword ptr [esp + 0x38]
+W_CED6:
+        mov eax, dword ptr [esp + 0x10]
+        cmp eax, 0x4
+        jl W_CF2A
+        mov ecx, dword ptr [esp + 0x18]
+        add al, 0x7e
+        mov byte ptr [edx], al
+        mov eax, dword ptr [esp + 0x14]
+        inc edx
+        mov eax, dword ptr [eax + 4*ebp]
+        shr eax, cl
+        inc edx
+        mov byte ptr [edx - 0x1], al
+        mov eax, dword ptr [esp + 0x34]
+        sub eax, 0x2
+        mov dword ptr [esp + 0x34], eax
+        jmp W_CF32
+W_CF02:
+        mov bl, byte ptr [esp + 0x38]
+        mov dword ptr [esp + 0x38], ebp
+        sub al, bl
+        add al, 0x7e
+        mov byte ptr [edx], al
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x18]
+        inc edx
+        shr eax, cl
+        inc edx
+        mov byte ptr [edx - 0x1], al
+        mov eax, dword ptr [esp + 0x34]
+        sub eax, 0x2
+        mov dword ptr [esp + 0x34], eax
+        jmp W_CED2
+W_CF2A:
+        mov dword ptr [esp + 0x10], 0x0
+W_CF32:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x1c]
+        add ebx, ecx
+        cmp ebx, eax
+        mov dword ptr [esp + 0x38], ebx
+        jl W_CD1C
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x34]
+W_CF4E:
+        mov ecx, dword ptr [esp + 0x18]
+        sub ecx, 0x8
+        mov dword ptr [esp + 0x18], ecx
+        jns W_CD0C
+        mov ecx, dword ptr [edi + 0x1dc]
+        mov dword ptr [edi + 0x1e0], edx
+        sub ecx, eax
+        xor eax, eax
+        mov dword ptr [edi + 0x1e4], ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x1c
+        ret
+W_CF7D:
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        add esp, 0x1c
+        ret
+    }
+}
