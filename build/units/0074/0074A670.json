@@ -67,5 +67,7 @@
     "0x0074A9AB",
     "0x0074A9BF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T16:08:34Z"
 }
