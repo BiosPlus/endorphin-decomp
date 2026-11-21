@@ -18484,3 +18484,216 @@ extern "C" __declspec(naked) int __cdecl fn_007BA700(int a1, int type, int a3, v
         ret
     }
 }
+
+// [0x007BAB60] sub_007BAB60 (609 bytes)
+extern "C" void ext_007AEFD0();
+extern "C" void ext_007AEFF0();
+extern "C" __declspec(naked) void __cdecl fn_007BAB60(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push 0x2
+        push 0x0
+        mov eax, dword ptr [esi + 0x1f8]
+        push eax
+        call dword ptr [esi + 0x204]
+        add esp, 0xc
+        inc eax
+        and al, 0xfe
+        mov bl, 0x80
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esp + 0x8], eax
+        test byte ptr [esi + 0xc], bl
+        je L_7BAB9B
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_007AEFF0
+        add esp, 0x4
+    L_7BAB9B:
+        mov eax, dword ptr [esi + 0xc]
+        test ah, 0x20
+        je L_7BAC35
+        mov edx, dword ptr [esi + 0x17c]
+        mov eax, dword ptr [esi + 0x1f8]
+        push 0x0
+        push edx
+        push eax
+        call dword ptr [esi + 0x204]
+        mov edx, dword ptr [esi + 0x1f8]
+        lea ecx, [esp + 0x14]
+        push 0x4
+        push ecx
+        push edx
+        call dword ptr [esi + 0x200]
+        add esp, 0x18
+        cmp eax, 0x4
+        je L_7BABF6
+        mov eax, dword ptr [esi]
+        push eax
+        push 0xab1844
+        push 0x9999d8
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    L_7BABF6:
+        dec word ptr [esi + 0x178]
+        cmp word ptr [esi + 0x178], 0x0
+        je L_7BAC21
+        mov eax, dword ptr [esi + 0x17c]
+        add eax, 0x4
+        mov dword ptr [esi + 0x17c], eax
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        add esp, 0x8
+        ret
+    L_7BAC21:
+        mov eax, dword ptr [esi + 0xc]
+        and ah, 0xdf
+        mov dword ptr [esi + 0xc], eax
+    L_7BAC2A:
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        add esp, 0x8
+        ret
+    L_7BAC35:
+        mov eax, dword ptr [esi + 0x154]
+        test eax, eax
+        jne L_7BAC8C
+        mov edx, dword ptr [esi + 0x1f8]
+        mov ecx, dword ptr [esi + 0x10]
+        push eax
+        push 0x4
+        push edx
+        mov dword ptr [esi + 0x154], ecx
+        call dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esi + 0x1f8]
+        lea eax, [esp + 0x14]
+        push 0x4
+        push eax
+        push ecx
+        call dword ptr [esi + 0x200]
+        add esp, 0x18
+        cmp eax, 0x4
+        je L_7BAC2A
+        mov edx, dword ptr [esi]
+        push 0xab1664
+        push edx
+        call ext_0079B140
+        add esp, 0x8
+        xor eax, eax
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    L_7BAC8C:
+        push 0x0
+        mov dword ptr [esp + 0x18], eax
+        push eax
+        mov eax, dword ptr [esi + 0x1f8]
+        push eax
+        call dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esp + 0x20]
+        add esp, 0xc
+        cmp eax, ecx
+        jne L_7BAD55
+    L_7BACAF:
+        mov edx, dword ptr [esi + 0x1f8]
+        lea ecx, [esp + 0xc]
+        push 0x2
+        push ecx
+        push edx
+        call dword ptr [esi + 0x1fc]
+        add esp, 0xc
+        cmp eax, 0x2
+        jne L_7BAD55
+        test byte ptr [esi + 0xc], bl
+        je L_7BACE1
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_007AEFD0
+        add esp, 0x4
+    L_7BACE1:
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi + 0x1f8]
+        and eax, 0xffff
+        push 0x1
+        lea ecx, [eax + 2*eax]
+        shl ecx, 0x2
+        push ecx
+        push edx
+        call dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esi + 0x1f8]
+        lea eax, [esp + 0x20]
+        push 0x4
+        push eax
+        push ecx
+        call dword ptr [esi + 0x1fc]
+        add esp, 0x18
+        cmp eax, 0x4
+        jne L_7BAD6F
+        test byte ptr [esi + 0xc], bl
+        je L_7BAD2E
+        lea edx, [esp + 0x14]
+        push edx
+        call ext_007AEFF0
+        add esp, 0x4
+    L_7BAD2E:
+        mov eax, dword ptr [esp + 0x14]
+        test eax, eax
+        je L_7BAD76
+        push 0x0
+        push eax
+        mov eax, dword ptr [esi + 0x1f8]
+        push eax
+        call dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esp + 0x20]
+        add esp, 0xc
+        cmp eax, ecx
+        je L_7BACAF
+    L_7BAD55:
+        push 0xab1824
+    L_7BAD5A:
+        push 0x9999d8
+        call ext_0079B140
+        add esp, 0x8
+        xor eax, eax
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    L_7BAD6F:
+        push 0xab1804
+        jmp L_7BAD5A
+    L_7BAD76:
+        mov ecx, dword ptr [esi + 0x1f8]
+        push 0x1
+        push 0x0
+        push ecx
+        call dword ptr [esi + 0x204]
+        mov edx, dword ptr [esi + 0x1f8]
+        add eax, -0x4
+        push 0x0
+        push eax
+        push edx
+        call dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esi + 0x1f8]
+        lea eax, [esp + 0x20]
+        push 0x4
+        push eax
+        push ecx
+        call dword ptr [esi + 0x200]
+        add esp, 0x24
+        cmp eax, 0x4
+        je L_7BAC2A
+        push 0xaafc08
+        jmp L_7BAD5A
+    }
+}
