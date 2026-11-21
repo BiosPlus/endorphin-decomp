@@ -51,5 +51,7 @@
     "0x004E946D",
     "0x004E948A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T16:02:24Z"
 }
