@@ -15030,3 +15030,222 @@ L_e:
         ret
     }
 }
+
+// [0x006DE7C0] sub_006DE7C0 (432 bytes)
+extern "C" void ext_006DE3E0();
+extern "C" void ext_006DE7C0();
+extern "C" int mem_00925240;
+extern "C" int mem_00AAC100;
+extern "C" int mem_00AAC104;
+extern "C" int mem_00AAC108;
+extern "C" int mem_00AA9444;
+extern "C" int mem_00AA8CAC;
+extern "C" int mem_00AA8C9C;
+extern "C" int mem_00AA8C98;
+
+// Path-segment walker (ret 4): splits arg on '/' via strstr, tests each segment with
+// vtable calls and _stricmp/inline compares, recursing on the result of a vtable call.
+extern "C" __declspec(naked) int __fastcall fn_006DE7C0(void* self, int edx_unused, const char* path) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, ecx
+    scan_top:
+        push offset mem_00AA9444
+        push ebp
+        call dword ptr [mem_00925240]
+        mov esi, eax
+        add esp, 0x8
+        test esi, esi
+        mov dword ptr [esp + 0x14], esi
+        je short nul_done
+        mov byte ptr [esi], 0x0
+    nul_done:
+        xor ebx, ebx
+    idx_loop:
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0x14]
+        cmp ebx, eax
+        jge idx_end
+        mov edx, dword ptr [edi]
+        push ebp
+        push ebx
+        mov ecx, edi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006DE3B0
+        push eax
+        call dword ptr [mem_009251D0]
+        add esp, 0x8
+        test eax, eax
+        je match_1
+
+        mov esi, ebp
+        mov eax, offset mem_00AA8CAC
+    cmp1_loop:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne cmp1_ne
+        test cl, cl
+        je cmp1_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne cmp1_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne cmp1_loop
+    cmp1_eq:
+        xor eax, eax
+        jmp cmp1_done
+    cmp1_ne:
+        sbb eax, eax
+        sbb eax, -1
+    cmp1_done:
+        test eax, eax
+        jne block_b
+        mov eax, dword ptr [edi]
+        push ebx
+        mov ecx, edi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006DE3E0
+        cmp eax, dword ptr [mem_00AAC100]
+        je match_0
+
+    block_b:
+        mov esi, ebp
+        mov eax, offset mem_00AA8C9C
+    cmp2_loop:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne cmp2_ne
+        test cl, cl
+        je cmp2_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne cmp2_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne cmp2_loop
+    cmp2_eq:
+        xor eax, eax
+        jmp cmp2_done
+    cmp2_ne:
+        sbb eax, eax
+        sbb eax, -1
+    cmp2_done:
+        test eax, eax
+        jne block_c
+        mov eax, dword ptr [edi]
+        push ebx
+        mov ecx, edi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006DE3E0
+        cmp eax, dword ptr [mem_00AAC108]
+        je match_0
+
+    block_c:
+        mov esi, ebp
+        mov eax, offset mem_00AA8C98
+    cmp3_loop:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne cmp3_ne
+        test cl, cl
+        je cmp3_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne cmp3_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne cmp3_loop
+    cmp3_eq:
+        xor eax, eax
+        jmp cmp3_done
+    cmp3_ne:
+        sbb eax, eax
+        sbb eax, -1
+    cmp3_done:
+        test eax, eax
+        jne block_d
+        mov eax, dword ptr [edi]
+        push ebx
+        mov ecx, edi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call ext_006DE3E0
+        cmp eax, dword ptr [mem_00AAC104]
+        je match_0
+
+    block_d:
+        mov edx, dword ptr [edi]
+        push ebp
+        push ebx
+        mov ecx, edi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006DE7C0
+        test eax, eax
+        jne recurse_ok
+        mov esi, dword ptr [esp + 0x14]
+        inc ebx
+        jmp idx_loop
+
+    recurse_ok:
+        mov ebp, dword ptr [esp + 0x14]
+        test ebp, ebp
+        je ret_eax
+        mov byte ptr [ebp], 0x2f
+        inc ebp
+        mov edi, eax
+        jmp scan_top
+
+    match_0:
+        mov esi, dword ptr [esp + 0x14]
+    match_1:
+        test esi, esi
+        je no_slash
+        mov byte ptr [esi], 0x2f
+        mov eax, dword ptr [edi]
+        push ebx
+        mov ecx, edi
+        lea ebp, [esi + 0x1]
+        call dword ptr [eax + 0x18]
+        mov edi, eax
+        jmp scan_top
+
+    no_slash:
+        mov edx, dword ptr [edi]
+        push ebx
+        mov ecx, edi
+        call dword ptr [edx + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+
+    idx_end:
+        xor eax, eax
+    ret_eax:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
