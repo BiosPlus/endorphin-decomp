@@ -12409,3 +12409,298 @@ extern "C" __declspec(naked) void __cdecl fn_008570D0(void* self) {
         ret
     }
 }
+
+// [0x0085FF80] sub_0085FF80 (656 bytes)
+extern "C" void ext_0085F7E0();
+extern "C" void ext_0085D820();
+extern "C" void ext_00860210();
+extern "C" void ext_008602A0();
+extern "C" void ext_00860380();
+extern "C" void ext_008604E0();
+extern "C" int mem_00BC6388;
+extern "C" __declspec(naked) void __fastcall fn_0085FF80(void* self) {
+    __asm {
+        sub esp, 8
+        lea eax, [esp + 4]
+        push ebx
+        lea ecx, [esp + 4]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        push ebp
+        push eax
+        push ecx
+        push esi
+        call ext_008602A0
+        add esp, 0Ch
+        cmp dword ptr [esp + 10h], 1
+        jge chk_hi
+        mov dword ptr [esp + 10h], 1
+    chk_hi:
+        cmp dword ptr [esp + 10h], 1Eh
+        jle sel
+        mov dword ptr [esp + 10h], 1Eh
+    sel:
+        xor eax, eax
+        mov al, byte ptr [esi]
+        cmp eax, 1
+        je case1
+        cmp eax, 8
+        je case8
+        xor eax, eax
+        pop ebp
+        _emit 0C7h
+        _emit 05h
+        _emit 0ECh
+        _emit 98h
+        _emit 0ABh
+        _emit 00h
+        _emit 0Fh
+        _emit 00h
+        _emit 00h
+        _emit 00h
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+
+    case1:
+        mov eax, dword ptr [esp + 14h]
+        mov edi, dword ptr [esp + 20h]
+        push eax
+        push edi
+        push 3E8h
+        push 0BC5C28h
+        call ext_00860380
+        add esp, 10h
+        mov ebp, eax
+        cmp dword ptr [esp + 24h], 0
+        je tail1
+        xor ebx, ebx
+        cmp dword ptr [esp + 10h], ebx
+        jle tail1
+    body1:
+        test ebp, ebp
+        jne skip1
+        push 0
+        push esi
+        call ext_0085F7E0
+        mov eax, dword ptr [esp + 1Ch]
+        add esp, 8
+        push eax
+        push edi
+        push 3E8h
+        push 0BC5C28h
+        call ext_00860380
+        add esp, 10h
+        mov ebp, eax
+    skip1:
+        inc ebx
+        cmp dword ptr [esp + 10h], ebx
+        jg body1
+    tail1:
+        test ebp, ebp
+        je zero1
+        cmp ebp, 3Eh
+        je case_3e_1
+        cmp ebp, 46h
+        je case_46_1
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    zero1:
+        _emit 0C7h
+        _emit 05h
+        _emit 0ECh
+        _emit 98h
+        _emit 0ABh
+        _emit 00h
+        _emit 0Fh
+        _emit 00h
+        _emit 00h
+        _emit 00h
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    case_3e_1:
+        push 3Eh
+        push 0BC5C28h
+        push offset mem_00BC6388
+        call ext_0085D530
+        add esp, 0Ch
+        mov al, byte ptr [mem_00BC6388]
+        push 3Dh
+        push 0BC6389h
+        push eax
+        call ext_00860210
+        add esp, 0Ch
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    case_46_1:
+        push 46h
+        push 0BC5C28h
+        push 0BC6498h
+        call ext_0085D530
+        add esp, 0Ch
+        push 46h
+        push 0BC6498h
+        call ext_0085D820
+        add esp, 8
+        push 3Eh
+        push 0BC64A0h
+        push offset mem_00BC6388
+        call ext_0085D530
+        add esp, 0Ch
+        mov al, byte ptr [mem_00BC6388]
+        push 3Dh
+        push 0BC6389h
+        push eax
+        call ext_00860210
+        add esp, 0Ch
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+
+    case8:
+        mov eax, dword ptr [esp + 14h]
+        mov edi, dword ptr [esp + 20h]
+        push eax
+        push edi
+        push 3E8h
+        push 0BC5C28h
+        call ext_008604E0
+        add esp, 10h
+        mov ebp, eax
+        cmp dword ptr [esp + 24h], 0
+        je tail8
+        xor ebx, ebx
+        cmp dword ptr [esp + 10h], ebx
+        jle tail8
+    body8:
+        test ebp, ebp
+        jne skip8
+        push 0
+        push esi
+        call ext_0085F7E0
+        mov eax, dword ptr [esp + 1Ch]
+        add esp, 8
+        push eax
+        push edi
+        push 3E8h
+        push 0BC5C28h
+        call ext_008604E0
+        add esp, 10h
+        mov ebp, eax
+    skip8:
+        inc ebx
+        cmp dword ptr [esp + 10h], ebx
+        jg body8
+    tail8:
+        test ebp, ebp
+        je zero8
+        cmp ebp, 3Eh
+        je case_3e_8
+        cmp ebp, 46h
+        je case_46_8
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    zero8:
+        _emit 0C7h
+        _emit 05h
+        _emit 0ECh
+        _emit 98h
+        _emit 0ABh
+        _emit 00h
+        _emit 0Fh
+        _emit 00h
+        _emit 00h
+        _emit 00h
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    case_3e_8:
+        push 3Eh
+        push 0BC5C28h
+        push offset mem_00BC6388
+        call ext_0085D530
+        add esp, 0Ch
+        mov al, byte ptr [mem_00BC6388]
+        push 3Dh
+        push 0BC6389h
+        push eax
+        call ext_00860210
+        add esp, 0Ch
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    case_46_8:
+        push 46h
+        push 0BC5C28h
+        push 0BC6498h
+        call ext_0085D530
+        add esp, 0Ch
+        push 46h
+        push 0BC6498h
+        call ext_0085D820
+        add esp, 8
+        push 3Eh
+        push 0BC64A0h
+        push offset mem_00BC6388
+        call ext_0085D530
+        add esp, 0Ch
+        mov al, byte ptr [mem_00BC6388]
+        push 3Dh
+        push 0BC6389h
+        push eax
+        call ext_00860210
+        add esp, 0Ch
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+        _emit 8Dh
+        _emit 49h
+        _emit 00h
+        _emit 8Dh
+        _emit 0A4h
+        _emit 24h
+        _emit 00h
+        _emit 00h
+        _emit 00h
+        _emit 00h
+    }
+}

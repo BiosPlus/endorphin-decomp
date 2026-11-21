@@ -62,5 +62,7 @@
     "0x008601EF",
     "0x008601F5"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:56:58Z"
 }
