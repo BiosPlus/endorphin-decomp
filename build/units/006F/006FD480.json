@@ -28,6 +28,7 @@
     "0x006FD597",
     "0x006FD5C6"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:31:45Z"
 }
