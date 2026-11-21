@@ -16862,3 +16862,196 @@ loc_69E5:
         ret 0x4
     }
 }
+
+// [0x006D2D20] sub_006D2D20 (616 bytes)
+extern "C" void ext_006D2130();
+extern "C" void ext_006E73B0();
+extern "C" void ext_00728D90();
+extern "C" int mem_00B5D770;
+
+extern "C" __declspec(naked) void __fastcall fn_006D2D20(void* self) {
+    __asm {
+        push -1
+        push 0x8b8f78
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        push 0x4
+        push 0x10
+        lea edi, [esi + 0x4]
+        mov dword ptr [esp + 0x14], esi
+        mov ecx, edi
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0x1c]
+        xor ebx, ebx
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov dword ptr [esp + 0x20], ebx
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        lea edi, [esi + 0x34]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x1
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], edx
+        lea edi, [esi + 0x4c]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x2
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0x64]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x3
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        lea edi, [esi + 0x7c]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x4
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], edx
+        lea edi, [esi + 0x94]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x5
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0xac]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x6
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        push 0x4
+        mov byte ptr [esp + 0x1c], 0x7
+        lea edi, [esi + 0xc4]
+        push 0x10
+        mov ecx, edi
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], edx
+        lea edi, [esi + 0xdc]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x8
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0xf4]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x9
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        lea edi, [esi + 0x10c]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0xa
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], edx
+        lea edi, [esi + 0x124]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0xb
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0x13c]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0xc
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        lea edi, [esi + 0x154]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0xd
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], edx
+        lea edi, [esi + 0x16c]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0xe
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0x184]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0xf
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        push 0x4
+        mov byte ptr [esp + 0x1c], 0x10
+        lea edi, [esi + 0x19c]
+        push 0x10
+        mov ecx, edi
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], edx
+        push 0x2
+        push 0xaa8e58
+        lea ecx, [esi + 0x1c4]
+        mov byte ptr [esp + 0x20], 0x11
+        mov dword ptr [esi + 0x1b4], ebx
+        mov dword ptr [esi + 0x1b8], ebx
+        mov dword ptr [esi + 0x1bc], ebx
+        mov dword ptr [esi + 0x1c0], ebx
+        call ext_006E73B0
+        mov dword ptr [esi], 0x993874
+        mov eax, dword ptr [mem_00B5D770]
+        cmp eax, ebx
+        mov byte ptr [esp + 0x18], 0x12
+        jne L_skip_728d90
+        call ext_00728D90
+L_skip_728d90:
+        mov eax, dword ptr [mem_00B5D770]
+        mov ecx, dword ptr [esp + 0x10]
+        inc eax
+        pop edi
+        mov dword ptr [mem_00B5D770], eax
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
