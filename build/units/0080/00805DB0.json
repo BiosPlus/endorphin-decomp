@@ -25,5 +25,7 @@
     "0x00805F0C",
     "0x00805F11"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@medium",
+  "matched_at": "2026-11-21T15:37:42Z"
 }
