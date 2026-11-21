@@ -14044,3 +14044,136 @@ loc_join:
         ret 0xc
     }
 }
+
+// [0x00705B60] sub_00705B60 (528 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006B9E60();
+extern "C" void ext_006B9F80();
+extern "C" void ext_006BA0C0();
+
+// Stack args (cdecl-style, callee does plain ret): [esp+4]=a1 (returned in eax, used as this),
+// [esp+0xc]=s1, [esp+0x10]=s2 (both char*, null-checked). SEH frame (handler 0x8bbe8c) with 0x134 locals.
+extern "C" __declspec(naked) void* __cdecl fn_00705B60(void* a1, void* a2, const char* s1, const char* s2) {
+    __asm {
+        push -1
+        push 0x8bbe8c
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x134
+        push ebx
+        push esi
+        push edi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0xc], 0
+        call ext_006B9D10
+        mov edi, dword ptr [esp + 0x158]
+        mov ebx, 1
+        test edi, edi
+        mov dword ptr [esp + 0x148], ebx
+        je L_gate1
+        cmp byte ptr [edi], 0
+        je L_gate1
+        push 0xaa870c
+        lea ecx, [esp + 0x60]
+        call ext_006B9D80
+        mov esi, eax
+        lea eax, [esp + 0x10]
+        push edi
+        lea ecx, [esp + 0xf8]
+        push eax
+        push ecx
+        mov byte ptr [esp + 0x154], 2
+        call ext_006BA0C0
+        push esi
+        lea edx, [esp + 0xb8]
+        push eax
+        push edx
+        mov byte ptr [esp + 0x160], 3
+        call ext_006B9F80
+        add esp, 0x18
+        push eax
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x14c], 4
+        call ext_006B9E60
+        lea ecx, [esp + 0xa8]
+        mov byte ptr [esp + 0x148], 3
+        call ext_006B9D70
+        lea ecx, [esp + 0xf4]
+        mov byte ptr [esp + 0x148], 2
+        call ext_006B9D70
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x148], bl
+        call ext_006B9D70
+L_gate1:
+        mov edi, dword ptr [esp + 0x15c]
+        test edi, edi
+        je L_gate2
+        cmp byte ptr [edi], 0
+        je L_gate2
+        push 0xaab948
+        lea ecx, [esp + 0xac]
+        call ext_006B9D80
+        mov esi, eax
+        lea eax, [esp + 0x10]
+        push edi
+        lea ecx, [esp + 0xf8]
+        push eax
+        push ecx
+        mov byte ptr [esp + 0x154], 5
+        call ext_006BA0C0
+        push esi
+        lea edx, [esp + 0x6c]
+        push eax
+        push edx
+        mov byte ptr [esp + 0x160], 6
+        call ext_006B9F80
+        add esp, 0x18
+        push eax
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x14c], 7
+        call ext_006B9E60
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x148], 6
+        call ext_006B9D70
+        lea ecx, [esp + 0xf4]
+        mov byte ptr [esp + 0x148], 5
+        call ext_006B9D70
+        lea ecx, [esp + 0xa8]
+        mov byte ptr [esp + 0x148], bl
+        call ext_006B9D70
+L_gate2:
+        mov eax, dword ptr [esp + 0x160]
+        lea ecx, [esp + 0x10]
+        push eax
+        lea edx, [esp + 0x60]
+        push ecx
+        push edx
+        call ext_006BA0C0
+        add esp, 0xc
+        push eax
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x14c], 8
+        call ext_006B9E60
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x148], bl
+        call ext_006B9D70
+        mov esi, dword ptr [esp + 0x150]
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_006B9D20
+        mov dword ptr [esp + 0xc], ebx
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0x148], 0
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x140]
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x140
+        ret
+    }
+}
