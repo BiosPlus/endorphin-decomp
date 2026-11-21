@@ -49,5 +49,7 @@
     "0x0056860A",
     "0x0056860F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:49:13Z"
 }
