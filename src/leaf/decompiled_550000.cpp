@@ -21242,3 +21242,189 @@ fn00557820_L8EA:
         call ext_006A6DD2
     }
 }
+
+// [0x00550FD0] sub_00550FD0 (548 bytes)
+extern "C" void ext_006A7270();
+extern "C" void ext_0066A8B0();
+extern "C" void ext_00403560();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_009252C0;
+extern "C" int mem_009252C8;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void __fastcall fn_00550FD0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8999b8
+        push eax
+        mov eax, 0x1090
+        mov dword ptr fs:[0x0], esp
+        call ext_006A7270
+        push ebp
+        mov ebp, dword ptr [esp + 0x10a4]
+        push ebp
+        lea eax, [esp + 0x98]
+        push 0x800
+        push eax
+        mov dword ptr [esp + 0x10], ecx
+        call dword ptr [mem_009252C0]
+        add esp, 0xc
+        test eax, eax
+        je epilogue
+        push esi
+        lea esi, [esp + 0x98]
+        sub esi, 0x2
+        push ebx
+        mov dword ptr [esp + 0x10], esi
+        push edi
+        jmp loop_top
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+loop_top:
+        lea eax, [esp + 0xa0]
+        lea edx, [eax + 0x1]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+len1:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne len1
+        sub eax, edx
+        mov ebx, eax
+        cmp byte ptr [esi + ebx], 0x5c
+        jne skip_cont
+        jmp cont_60
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+cont_60:
+        push ebp
+        lea ecx, [esp + 0x8a4]
+        push 0x800
+        push ecx
+        call dword ptr [mem_009252C0]
+        add esp, 0xc
+        test eax, eax
+        je no_more_lines
+        lea eax, [esp + 0x8a0]
+        lea edx, [eax + 0x1]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+len2:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne len2
+        sub eax, edx
+        add eax, ebx
+        cmp eax, 0x800
+        jae overflow
+        lea eax, [esp + 0x8a0]
+        mov byte ptr [esp + ebx + 0x9e], cl
+        mov ecx, eax
+copy_len:
+        mov dl, byte ptr [eax]
+        add eax, 0x1
+        test dl, dl
+        jne copy_len
+        lea edi, [esp + 0xa0]
+        sub eax, ecx
+        mov esi, ecx
+        add edi, -1
+        __asm _emit 0x90
+copy_scan:
+        mov cl, byte ptr [edi + 0x1]
+        add edi, 0x1
+        test cl, cl
+        jne copy_scan
+        mov ecx, eax
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        cmp byte ptr [esp + ebx + 0x9e], 0x5c
+        je cont_60
+        mov esi, dword ptr [esp + 0x14]
+skip_cont:
+        mov edx, dword ptr [esp + 0x10b4]
+        push edx
+        lea eax, [esp + 0xa4]
+        push eax
+        call dword ptr [mem_009252C8]
+        push ebp
+        lea ecx, [esp + 0xac]
+        push 0x800
+        push ecx
+        call dword ptr [mem_009252C0]
+        add esp, 0x14
+        test eax, eax
+        jne loop_top
+        pop edi
+        pop ebx
+        pop esi
+epilogue:
+        mov ecx, dword ptr [esp + 0x1094]
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x109c
+        ret 0x8
+no_more_lines:
+        mov esi, dword ptr [esp + 0x10]
+        add esi, 0x820
+        push 0x957140
+        push esi
+        call ext_0066A8B0
+        mov esi, dword ptr [esi]
+        add esp, 0x8
+        push esi
+        lea ecx, [esp + 0x88]
+        call dword ptr [mem_00924FE4]
+        push eax
+        lea ecx, [esp + 0x44]
+        mov dword ptr [esp + 0x10ac], 0x0
+        call ext_00403560
+        push 0x9f8908
+        lea edx, [esp + 0x44]
+        push edx
+        mov dword ptr [esp + 0x48], 0x9570dc
+        call ext_006A6DD2
+overflow:
+        mov esi, dword ptr [esp + 0x10]
+        push 0x800
+        add esi, 0x820
+        push 0x9570e8
+        push esi
+        call ext_0066A8B0
+        mov esi, dword ptr [esi]
+        add esp, 0xc
+        push esi
+        lea ecx, [esp + 0x6c]
+        call dword ptr [mem_00924FE4]
+        push eax
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x10ac], 0x1
+        call ext_00403560
+        push 0x9f8908
+        lea eax, [esp + 0x1c]
+        push eax
+        mov dword ptr [esp + 0x20], 0x9570dc
+        call ext_006A6DD2
+    }
+}
