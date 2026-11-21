@@ -6286,3 +6286,127 @@ extern "C" __declspec(naked) void __fastcall fn_0077EE70(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00771240] sub_00771240 (368 bytes)
+extern "C" void ext_006C9F60();
+extern "C" void ext_006CD350();
+extern "C" void ext_006DAB00();
+extern "C" int mem_0098F3E0;
+extern "C" int mem_0092A270;
+extern "C" __declspec(naked) void __fastcall fn_00771240(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x9c
+        push ebx
+        push esi
+        push edi
+        xor edi, edi
+        lea ecx, [esp+0x30]
+        mov dword ptr [esp+0x10], edi
+        mov dword ptr [esp+0x14], edi
+        mov dword ptr [esp+0x38], edi
+        mov dword ptr [esp+0x3c], edi
+        call ext_006C9F60
+        lea ecx, [esp+0x58]
+        mov dword ptr [esp+0x60], edi
+        mov dword ptr [esp+0x64], edi
+        call ext_006C9F60
+        lea ecx, [esp+0x80]
+        mov dword ptr [esp+0x88], edi
+        mov dword ptr [esp+0x8c], edi
+        call ext_006C9F60
+        cmp dword ptr [ebp+0x1c], edi
+        jbe f1240_done
+        mov eax, dword ptr [ebp+0xc]
+        mov ecx, dword ptr [ebp+0x8]
+        lea ebx, [eax+8]
+        lea esi, [ecx+8]
+    f1240_top:
+        push 6
+        push 0
+        push 0
+        push edi
+        push 0
+        push 0
+        push 0
+        lea ecx, [esp+0x2c]
+        call ext_006DAB00
+        mov edx, dword ptr [esp+0x14]
+        mov eax, dword ptr [esp+0x10]
+        mov ecx, dword ptr [ebp+0x10]
+        push 0
+        push edx
+        push eax
+        call ext_006CD350
+        mov ecx, dword ptr [esp+0x14]
+        mov edx, dword ptr [esp+0x10]
+        fstp qword ptr [esp+0x18]
+        push 0
+        push ecx
+        mov ecx, dword ptr [ebp+0x14]
+        push edx
+        call ext_006CD350
+        mov eax, dword ptr [esp+0x14]
+        mov ecx, dword ptr [esp+0x10]
+        fstp qword ptr [esp+0x20]
+        push 0
+        push eax
+        push ecx
+        mov ecx, dword ptr [ebp+0x18]
+        call ext_006CD350
+        fld qword ptr [esp+0x18]
+        mov dword ptr [esi-8], edi
+        xor eax, eax
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        mov word ptr [esi-4], 7
+        mov dword ptr [esi], eax
+        mov dword ptr [esi+4], eax
+        mov dword ptr [esi+8], eax
+        mov dword ptr [esi+0xc], eax
+        mov dword ptr [esi+0x10], eax
+        fnstsw ax
+        test ah, 1
+        je f1240_store
+        fld qword ptr [esp+0x20]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 1
+        je f1240_store
+        fld st(0)
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 1
+        je f1240_store
+        fstp st(0)
+        fld qword ptr [mem_0092A270]
+        mov dword ptr [esp+0x18], 0
+        mov dword ptr [esp+0x1c], 0x3ff00000
+        mov dword ptr [esp+0x20], 0
+        mov dword ptr [esp+0x24], 0x3ff00000
+    f1240_store:
+        fld qword ptr [esp+0x18]
+        mov eax, dword ptr [ebp+0x1c]
+        inc edi
+        fstp dword ptr [ebx-8]
+        add esi, 0x1c
+        fstp dword ptr [ebx-4]
+        fld qword ptr [esp+0x20]
+        fstp dword ptr [ebx]
+        add ebx, 0xc
+        cmp edi, eax
+        jb f1240_top
+    f1240_done:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x18
+    }
+}
