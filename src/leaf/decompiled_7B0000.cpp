@@ -17869,3 +17869,175 @@ extern "C" __declspec(naked) int __cdecl fn_007BC6B0(void* self) {
         ret
     }
 }
+
+// [0x007BDA50] sub_007BDA50 (408 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BDA50(void* ctx, char* dst, int len) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        test esi, esi
+        push edi
+        jle L_a
+        lea ecx, [esi]
+        or eax, -1
+        mov ebx, ecx
+        mov edi, edx
+        shr ecx, 2
+        rep stosd
+        mov ecx, ebx
+        and ecx, 3
+        rep stosb
+L_a:
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x20], edx
+        test esi, esi
+        mov ebx, dword ptr [eax + 0x1d0]
+        mov edi, dword ptr [eax + 0x1e0]
+        mov ebp, dword ptr [eax + 0x1e4]
+        mov dword ptr [esp + 0x14], ebx
+        jle L_end
+L_top:
+        xor eax, eax
+        mov al, byte ptr [edi]
+        inc edi
+        dec ebp
+        test eax, eax
+        je L_zero
+        cmp eax, 0x40
+        je L_40
+        mov ecx, dword ptr [esp + 0x1c]
+        xor esi, esi
+        mov edx, dword ptr [ecx + 0x24]
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [esp + 0x20]
+L_c2:
+        mov ecx, eax
+        and eax, 0x3f
+        sar ecx, 6
+        and ecx, 3
+        mov ebx, eax
+        dec eax
+        test ebx, ebx
+        jle L_c0e
+        lea ebx, [eax + 1]
+L_d7:
+        mov eax, esi
+        and eax, 3
+        inc esi
+        cmp eax, 3
+        ja L_b0b
+        jmp dword ptr [4*eax + 0x7bdbe8]
+        mov al, cl
+        shl al, 6
+        mov byte ptr [edx], al
+        jmp L_b0b
+        mov al, cl
+        shl al, 4
+        or byte ptr [edx], al
+        jmp L_b0b
+        mov al, cl
+        shl al, 2
+        or byte ptr [edx], al
+        jmp L_b0b
+        mov al, byte ptr [edx]
+        or al, cl
+        mov byte ptr [edx], al
+        inc edx
+L_b0b:
+        dec ebx
+        jne L_d7
+L_c0e:
+        cmp esi, dword ptr [esp + 0x10]
+        jge L_b86
+        test ebp, ebp
+        je L_fail
+        xor eax, eax
+        mov al, byte ptr [edi]
+        inc edi
+        dec ebp
+        jmp L_c2
+L_40:
+        xor ecx, ecx
+        xor edx, edx
+        mov cl, byte ptr [edi + 2]
+        mov dl, byte ptr [edi + 3]
+        mov esi, ecx
+        shl esi, 8
+        add esi, edx
+        lea eax, [esi + 4]
+        cmp ebp, eax
+        jl L_fail
+        xor edx, edx
+        lea ecx, [edi + 4]
+        mov dl, byte ptr [edi]
+        push esi
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        shl edx, 8
+        xor eax, eax
+        add ecx, edx
+        mov al, byte ptr [edi + 1]
+        add eax, ecx
+        push eax
+        call ext_0079B010
+        mov edx, 0xfffffffc
+        add esp, 0xc
+        sub edx, esi
+        lea edi, [edi + esi + 4]
+        add ebp, edx
+        jmp L_b8a
+L_zero:
+        cmp ebp, ebx
+        jl L_fail
+        push ebx
+        push edi
+        push edx
+        call ext_0079B010
+        add esp, 0xc
+        add edi, ebx
+        sub ebp, ebx
+        jmp L_b8a
+L_b86:
+        mov ebx, dword ptr [esp + 0x14]
+L_b8a:
+        mov eax, dword ptr [esp + 0x24]
+        mov edx, dword ptr [esp + 0x20]
+        sub eax, ebx
+        add edx, ebx
+        test eax, eax
+        mov dword ptr [esp + 0x24], eax
+        mov dword ptr [esp + 0x20], edx
+        jg L_top
+        mov eax, dword ptr [esp + 0x1c]
+L_end:
+        mov dword ptr [eax + 0x1e0], edi
+        pop edi
+        mov dword ptr [eax + 0x1e4], ebp
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        add esp, 8
+        ret
+L_fail:
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [eax + 0x164]
+        mov edx, dword ptr [eax]
+        push ecx
+        push 0xab22dc
+        push edx
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}

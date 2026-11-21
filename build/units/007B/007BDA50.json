@@ -17,5 +17,7 @@
     "0x007BDBD1",
     "0x007BDBD7"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:45:41Z"
 }
