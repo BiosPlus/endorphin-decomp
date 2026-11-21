@@ -13299,3 +13299,243 @@ extern "C" __declspec(naked) void __cdecl fn_0086AB00(void* a, void* b, int n) {
         ret
     }
 }
+
+// [0x0086D250] sub_0086D250 (560 bytes)
+extern "C" int mem_00AB8E00;
+extern "C" int mem_00AC4AA0;
+extern "C" __declspec(naked) unsigned long __cdecl fn_0086D250(const char* nptr, char** endptr, int base) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        push esi
+        movsx eax, byte ptr [ecx]
+        mov edx, 0x8
+        xor esi, esi
+        xor ebx, ebx
+        xor ebp, ebp
+        test byte ptr [eax*2 + mem_00AB8E00], dl
+        push edi
+        je skip_ws
+    ws_loop:
+        movsx eax, byte ptr [ecx + 0x1]
+        inc ecx
+        test byte ptr [eax*2 + mem_00AB8E00], dl
+        jne ws_loop
+    skip_ws:
+        mov al, byte ptr [ecx]
+        cmp al, 0x2d
+        jne not_minus
+        mov dword ptr [esp + 0x10], 0x1
+        jmp sign_inc
+    not_minus:
+        cmp al, 0x2b
+        mov dword ptr [esp + 0x10], 0x0
+        jne sign_done
+    sign_inc:
+        inc ecx
+    sign_done:
+        mov edi, dword ptr [esp + 0x20]
+        test edi, edi
+        jne base_nonzero
+        cmp byte ptr [ecx], 0x30
+        jne dec_loop
+        mov al, byte ptr [ecx + 0x1]
+        inc ecx
+        cmp al, 0x78
+        je hex_prefix
+        cmp al, 0x58
+        je hex_prefix
+        cmp al, 0x62
+        je bin_prefix
+        cmp al, 0x42
+        je bin_prefix
+        mov ebx, 0x1
+        jmp oct_loop
+    bin_prefix:
+        inc ecx
+        mov edi, 0x2
+        jmp gen_loop
+    hex_prefix:
+        inc ecx
+    hex_loop:
+        movsx eax, byte ptr [ecx]
+        sub eax, 0x30
+        cmp eax, 0x4a
+        ja bad_char
+    hex_lookup:
+        movsx eax, byte ptr [eax + mem_00AC4AA0]
+        cmp eax, 0xf
+        ja bad_char_chk
+        cmp esi, 0x0fffffff
+        jbe hex_c1
+        mov ebp, 0x1
+    hex_c1:
+        shl esi, 0x4
+        or edx, -0x1
+        sub edx, esi
+        cmp eax, edx
+        jbe hex_c2
+        mov ebp, 0x1
+    hex_c2:
+        add esi, eax
+        inc ecx
+        mov ebx, 0x1
+        movsx eax, byte ptr [ecx]
+        sub eax, 0x30
+        cmp eax, 0x4a
+        jbe hex_lookup
+        jmp end_scan
+    base_nonzero:
+        cmp edi, 0x10
+        jne not_base16
+        cmp byte ptr [ecx], 0x30
+        jne hex_loop
+        mov al, byte ptr [ecx + 0x1]
+        cmp al, 0x78
+        je hex_skip2
+        cmp al, 0x58
+        jne hex_loop
+    hex_skip2:
+        add ecx, 0x2
+        jmp hex_loop
+    not_base16:
+        cmp edi, 0x2
+        jne not_base2
+        cmp byte ptr [ecx], 0x30
+        jne gen_loop
+        mov al, byte ptr [ecx + 0x1]
+        cmp al, 0x62
+        je bin_skip2
+        cmp al, 0x42
+        jne gen_loop
+    bin_skip2:
+        add ecx, 0x2
+        jmp gen_loop
+    not_base2:
+        cmp edi, edx
+        jne not_base8
+    oct_loop:
+        movsx eax, byte ptr [ecx]
+        sub eax, 0x30
+        cmp eax, 0x7
+        ja bad_char_chk
+    oct_mid:
+        cmp esi, 0x1fffffff
+        jbe oct_c1
+        mov ebp, 0x1
+    oct_c1:
+        shl esi, 0x3
+        or edx, -0x1
+        sub edx, esi
+        cmp eax, edx
+        jbe oct_c2
+        mov ebp, 0x1
+    oct_c2:
+        add esi, eax
+        inc ecx
+        movsx eax, byte ptr [ecx]
+        sub eax, 0x30
+        cmp eax, 0x7
+        jbe oct_mid
+        jmp end_scan
+    not_base8:
+        cmp edi, 0xa
+        jne not_base10
+    dec_loop:
+        movsx eax, byte ptr [ecx]
+        sub eax, 0x30
+        cmp eax, 0x9
+        ja bad_char
+    dec_mid:
+        cmp esi, 0x19999999
+        jbe dec_c1
+        mov ebp, 0x1
+    dec_c1:
+        lea esi, [esi + 4*esi]
+        or edx, -0x1
+        shl esi, 1
+        sub edx, esi
+        cmp eax, edx
+        jbe dec_c2
+        mov ebp, 0x1
+    dec_c2:
+        add esi, eax
+        inc ecx
+        movsx eax, byte ptr [ecx]
+        sub eax, 0x30
+        cmp eax, 0x9
+        jbe dec_mid
+        jmp end_scan
+    not_base10:
+        cmp edi, 0x2
+        jl bad_char
+        cmp edi, 0x24
+        jg bad_char
+    gen_loop:
+        or eax, -0x1
+        xor edx, edx
+        div edi
+        movsx edx, byte ptr [ecx]
+        sub edx, 0x30
+        cmp edx, 0x4a
+        ja bad_char
+    gen_lookup:
+        movsx edx, byte ptr [edx + mem_00AC4AA0]
+        cmp edx, edi
+        jae bad_char_chk
+        cmp esi, eax
+        jbe gen_c1
+        mov ebp, 0x1
+    gen_c1:
+        imul esi, edi
+        or ebx, -0x1
+        sub ebx, esi
+        cmp edx, ebx
+        jbe gen_c2
+        mov ebp, 0x1
+    gen_c2:
+        add esi, edx
+        inc ecx
+        mov ebx, 0x1
+        movsx edx, byte ptr [ecx]
+        sub edx, 0x30
+        cmp edx, 0x4a
+        jbe gen_lookup
+        jmp end_scan
+    bad_char_chk:
+        test ebx, ebx
+        jne end_scan
+    bad_char:
+        mov ecx, dword ptr [esp + 0x18]
+    end_scan:
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je no_endptr
+        mov dword ptr [eax], ecx
+    no_endptr:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je no_neg
+        neg esi
+    no_neg:
+        test ebp, ebp
+        je ret_value
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+    ret_value:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
