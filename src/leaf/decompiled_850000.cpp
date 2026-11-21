@@ -95,6 +95,7 @@ extern "C" void __cdecl fn_0085BEA0(void* self) {
     ext_00859730(self);
 }
 extern "C" { void ext_00857440(); void ext_00857470(); void ext_00857490(); void ext_0085D510(); void ext_0085D530(); void ext_0085D560(); void ext_0086D480(); void ext_0086D4D0(); int mem_00924210; }
+extern "C" void ext_0085B330();
 
 // [0x00859A20] sub_00859A20 (47 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_00859A20(char* dst, const char* src) {
@@ -13526,5 +13527,305 @@ extern "C" __declspec(naked) int __cdecl fn_0085B020(void* fp, void** out) {
         pop ebx
         add esp, 0x20
         ret
+    }
+}
+
+// [0x0085B6D0] sub_0085B6D0 (768 bytes)
+// Stack-based cdecl (ret 0): reads (lo=[esp+4], hi=[esp+0xc]) as a 64-bit value, emits a variable-length byte encoding.
+extern "C" __declspec(naked) void __cdecl fn_0085B6D0(void) {
+    __asm {
+        sub esp, 0ch
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        test esi, esi
+        ja b6_big
+        jb b6_c1
+        cmp ebx, 80h
+        jae b6_big
+    b6_c1:
+        mov byte ptr [esp + 8], bl
+        mov eax, 1
+        jmp b6_end
+    b6_big:
+        test esi, esi
+        ja b6_gt
+        jb b6_c2
+        cmp ebx, 8000h
+        jae b6_c3
+    b6_c2:
+        push 8
+        push esi
+        push ebx
+        call ext_00868690
+        mov byte ptr [esp + 0x14], al
+        add esp, 0ch
+        mov byte ptr [esp + 9], bl
+        mov eax, 2
+        jmp b6_end
+    b6_c3:
+        test esi, esi
+        ja b6_gt
+        jb b6_c4
+        cmp ebx, 800000h
+        jae b6_c5
+    b6_c4:
+        push 10h
+        push esi
+        push ebx
+        call ext_00868690
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x20], al
+        call ext_00868690
+        mov byte ptr [esp + 0x21], al
+        add esp, 18h
+        mov byte ptr [esp + 0ah], bl
+        mov eax, 3
+        jmp b6_end
+    b6_c5:
+        test esi, esi
+        ja b6_gt
+        jb b6_c6
+        cmp ebx, 80000000h
+        jae b6_gt
+    b6_c6:
+        push 18h
+        push esi
+        push ebx
+        call ext_00868690
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x20], al
+        call ext_00868690
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x2d], al
+        call ext_00868690
+        mov byte ptr [esp + 0x2e], al
+        add esp, 24h
+        mov byte ptr [esp + 0bh], bl
+        mov eax, 4
+        jmp b6_end
+    b6_gt:
+        cmp esi, -80h
+        ja b6_gt2
+        jb b6_c7
+        test ebx, ebx
+        jae b6_gt2
+    b6_c7:
+        push 20h
+        push esi
+        push ebx
+        call ext_00868690
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x20], al
+        call ext_00868690
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x2d], al
+        call ext_00868690
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x3a], al
+        call ext_00868690
+        mov byte ptr [esp + 0x3b], al
+        add esp, 30h
+        mov byte ptr [esp + 0ch], bl
+        mov eax, 5
+        jmp b6_end
+    b6_gt2:
+        cmp esi, 0ffff8000h
+        ja b6_gt3
+        jb b6_c8
+        test ebx, ebx
+        jae b6_gt3
+    b6_c8:
+        push 28h
+        push esi
+        push ebx
+        call ext_00868690
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x20], al
+        call ext_00868690
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x2d], al
+        call ext_00868690
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x3a], al
+        call ext_00868690
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x47], al
+        call ext_00868690
+        mov byte ptr [esp + 0x48], al
+        add esp, 3ch
+        mov byte ptr [esp + 0dh], bl
+        mov eax, 6
+        jmp b6_end
+    b6_gt3:
+        cmp esi, 0ff800000h
+        ja b6_gt4
+        jb b6_c9
+        test ebx, ebx
+        jae b6_gt4
+    b6_c9:
+        push 30h
+        push esi
+        push ebx
+        call ext_00868690
+        push 28h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x20], al
+        call ext_00868690
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x2d], al
+        call ext_00868690
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x3a], al
+        call ext_00868690
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x47], al
+        call ext_00868690
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x54], al
+        call ext_00868690
+        mov byte ptr [esp + 0x55], al
+        add esp, 48h
+        mov byte ptr [esp + 0eh], bl
+        mov eax, 7
+        jmp b6_end
+    b6_gt4:
+        cmp esi, 80000000h
+        ja b6_gt5
+        jb b6_c10
+        test ebx, ebx
+        jae b6_gt5
+    b6_c10:
+        push 38h
+        push esi
+        push ebx
+        call ext_00868690
+        push 30h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x20], al
+        call ext_00868690
+        push 28h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x2d], al
+        call ext_00868690
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x3a], al
+        call ext_00868690
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x47], al
+        call ext_00868690
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 0x54], al
+        call ext_00868690
+        add esp, 48h
+        mov byte ptr [esp + 0dh], al
+        push 8
+        push esi
+        push ebx
+        call ext_00868690
+        mov byte ptr [esp + 1ah], al
+        add esp, 0ch
+        mov byte ptr [esp + 0fh], bl
+        mov eax, 8
+        jmp b6_end
+    b6_gt5:
+        push 38h
+        push esi
+        push ebx
+        mov byte ptr [esp + 14h], 0
+        call ext_00868690
+        push 30h
+        push esi
+        push ebx
+        mov byte ptr [esp + 21h], al
+        call ext_00868690
+        push 28h
+        push esi
+        push ebx
+        mov byte ptr [esp + 2eh], al
+        call ext_00868690
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 3bh], al
+        call ext_00868690
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 48h], al
+        call ext_00868690
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 55h], al
+        call ext_00868690
+        add esp, 48h
+        mov byte ptr [esp + 0eh], al
+        push 8
+        push esi
+        push ebx
+        call ext_00868690
+        mov byte ptr [esp + 1bh], al
+        add esp, 0ch
+        mov byte ptr [esp + 10h], bl
+        mov eax, 9
+    b6_end:
+        mov ecx, dword ptr [esp + 0x18]
+        lea edx, [esp + 8]
+        push ecx
+        push eax
+        push 1
+        push edx
+        call ext_0085B330
+        add esp, 10h
+        pop esi
+        pop ebx
+        add esp, 0ch
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
     }
 }
