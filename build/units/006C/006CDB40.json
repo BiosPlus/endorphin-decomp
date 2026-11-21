@@ -50,5 +50,7 @@
     "0x006CDD74",
     "0x006CDD87"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:54:35Z"
 }
