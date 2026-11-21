@@ -41,5 +41,7 @@
     "0x0070DA60",
     "0x0070DA74"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:34:08Z"
 }
