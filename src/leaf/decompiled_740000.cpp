@@ -5073,3 +5073,97 @@ extern "C" __declspec(naked) void __fastcall fn_00748890(void* self) {
         ret
     }
 }
+
+// [0x00743AD0] sub_00743AD0 (431 bytes)
+extern "C" void ext_0072CFB0();
+extern "C" void ext_00743CB0();
+extern "C" __declspec(naked) void __fastcall fn_00743AD0(void* self) {
+    __asm {
+        push -1
+        push 0x008BEDFC
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x996b60
+        mov dword ptr [esp + 0x10], 0x16
+        call ext_00743CB0
+        lea ecx, [esi + 0x304]
+        mov byte ptr [esp + 0x10], 0x15
+        call ext_006D2160
+        lea ecx, [esi + 0x2ec]
+        mov byte ptr [esp + 0x10], 0x14
+        call ext_006D2160
+        lea ecx, [esi + 0x2d4]
+        mov byte ptr [esp + 0x10], 0x13
+        call ext_006D2160
+        lea ecx, [esi + 0x2bc]
+        mov byte ptr [esp + 0x10], 0x12
+        call ext_006D2160
+        lea ecx, [esi + 0x2a4]
+        mov byte ptr [esp + 0x10], 0x11
+        call ext_006D2160
+        lea ecx, [esi + 0x28c]
+        mov byte ptr [esp + 0x10], 0x10
+        call ext_006D2160
+        lea ecx, [esi + 0x270]
+        mov byte ptr [esp + 0x10], 0xf
+        call ext_006D2160
+        lea ecx, [esi + 0x254]
+        mov byte ptr [esp + 0x10], 0xe
+        call ext_006D2160
+        lea ecx, [esi + 0x238]
+        mov byte ptr [esp + 0x10], 0xd
+        call ext_006D2160
+        lea ecx, [esi + 0x220]
+        mov byte ptr [esp + 0x10], 0xc
+        call ext_006D2160
+        lea ecx, [esi + 0x208]
+        mov byte ptr [esp + 0x10], 0xb
+        call ext_006D2160
+        lea ecx, [esi + 0x1f0]
+        mov byte ptr [esp + 0x10], 0xa
+        call ext_006D2160
+        lea ecx, [esi + 0x1d8]
+        mov byte ptr [esp + 0x10], 0x9
+        call ext_006D2160
+        lea ecx, [esi + 0x1bc]
+        mov byte ptr [esp + 0x10], 0x8
+        call ext_006D2160
+        lea ecx, [esi + 0x1a0]
+        mov byte ptr [esp + 0x10], 0x7
+        call ext_006D2160
+        lea ecx, [esi + 0x188]
+        mov byte ptr [esp + 0x10], 0x6
+        call ext_006D2160
+        lea ecx, [esi + 0x170]
+        mov byte ptr [esp + 0x10], 0x5
+        call ext_006D2160
+        mov byte ptr [esp + 0x10], 0x4
+        lea ecx, [esi + 0x150]
+        call ext_006D2160
+        lea ecx, [esi + 0x12c]
+        mov byte ptr [esp + 0x10], 0x3
+        call ext_006D2160
+        lea ecx, [esi + 0x114]
+        mov byte ptr [esp + 0x10], 0x2
+        call ext_006D2160
+        lea ecx, [esi + 0xf8]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_006D2160
+        lea ecx, [esi + 0xe0]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006D2160
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0072CFB0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
