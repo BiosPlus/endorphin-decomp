@@ -9728,3 +9728,321 @@ L_5A34:
         ret 0x1c
     }
 }
+
+// [0x006E4D30] sub_006E4D30 (912 bytes)
+extern "C" void ext_006E5230();
+extern "C" void ext_006DF100();
+extern "C" void ext_006E4CD0();
+extern "C" void ext_006A73CC();
+extern "C" int mem_00993C78;
+extern "C" int mem_00993C68;
+extern "C" int mem_00993810;
+extern "C" int mem_00993CB8;
+
+extern "C" __declspec(naked) void __fastcall fn_006E4D30(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 74h
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 38h]
+        test eax, eax
+        jne L_epi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 14h]
+        cmp eax, 3
+        jne L_epi
+        mov ecx, dword ptr [ebp + 14h]
+        mov edx, dword ptr [ebp + 10h]
+        push 0
+        push ecx
+        lea eax, [esp + 60h]
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_006E5230
+        mov eax, dword ptr [esp + 58h]
+        mov ecx, dword ptr [esp + 5ch]
+        cmp eax, 1
+        jne short L_a
+        cmp ecx, 80000000h
+        je short L_b
+L_a:
+        push 0
+        push ecx
+        lea ecx, [esp + 70h]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006DF100
+L_b:
+        mov eax, dword ptr [esi + 60h]
+        cmp eax, 0ch
+        je L_copy
+        lea edx, [eax + 2*eax]
+        mov eax, dword ptr [edx*4 + 0x996d70]
+        shl eax, 3
+        lea esi, [edx*4 + 0x996d70]
+        mov edi, dword ptr [ebp + 0ch]
+        fld qword ptr [esp + eax + 68h]
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [esi + 8]
+        fstp qword ptr [esp + 20h]
+        shl ecx, 3
+        shl edx, 3
+        fld qword ptr [esp + ecx + 68h]
+        fstp qword ptr [esp + 50h]
+        fld qword ptr [esp + edx + 68h]
+        fstp qword ptr [esp + 10h]
+        fld qword ptr [eax + edi]
+        fstp qword ptr [esp + 28h]
+        fld qword ptr [ecx + edi]
+        fstp qword ptr [esp + 30h]
+        fld qword ptr [edx + edi]
+        fstp qword ptr [esp + 38h]
+        fld qword ptr [eax + edi]
+        fadd qword ptr [mem_00993C78]
+        lea eax, [esp + 18h]
+        push eax
+        sub esp, 8
+        fstp qword ptr [esp + 4ch]
+        fld qword ptr [mem_00993C78]
+        fsub qword ptr [ecx + edi]
+        fstp qword ptr [esp + 54h]
+        fld qword ptr [edx + edi]
+        fadd qword ptr [mem_00993C78]
+        fstp qword ptr [esp + 6ch]
+        fld qword ptr [esp + 2ch]
+        fsub qword ptr [esp + 34h]
+        fmul qword ptr [mem_00993CC8]
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925294]
+        fcom qword ptr [mem_00993828]
+        add esp, 0ch
+        fnstsw ax
+        test ah, 41h
+        jne short L_c
+        fld qword ptr [esp + 18h]
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 18h]
+L_c:
+        fcomp qword ptr [mem_009324A8]
+        fnstsw ax
+        test ah, 1
+        je short L_d
+        fld qword ptr [esp + 18h]
+        fsub qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 18h]
+L_d:
+        fld qword ptr [esp + 18h]
+        fmul qword ptr [mem_00993CC0]
+        mov edi, dword ptr [esp + 54h]
+        mov ebx, dword ptr [esp + 50h]
+        mov ecx, dword ptr [esp + 34h]
+        mov edx, dword ptr [esp + 30h]
+        fadd qword ptr [esp + 28h]
+        push edi
+        push ebx
+        push ecx
+        push edx
+        fstp qword ptr [esp + 38h]
+        call ext_006E4CD0
+        mov eax, dword ptr [esp + 24h]
+        mov ecx, dword ptr [esp + 20h]
+        mov edx, dword ptr [esp + 4ch]
+        push eax
+        mov eax, dword ptr [esp + 4ch]
+        push ecx
+        fstp qword ptr [esp + 48h]
+        push edx
+        push eax
+        call ext_006E4CD0
+        mov ecx, dword ptr [esp + 44h]
+        mov edx, dword ptr [esp + 40h]
+        mov eax, dword ptr [esp + 64h]
+        push ecx
+        mov ecx, dword ptr [esp + 64h]
+        push edx
+        fstp qword ptr [esp + 60h]
+        push eax
+        push ecx
+        call ext_006E4CD0
+        mov edx, dword ptr [esp + 7ch]
+        mov eax, dword ptr [esp + 78h]
+        fstp qword ptr [esp + 70h]
+        push edi
+        push ebx
+        push edx
+        push eax
+        call ext_006E4CD0
+        mov ecx, dword ptr [esp + 54h]
+        mov edx, dword ptr [esp + 50h]
+        mov eax, dword ptr [esp + 0a4h]
+        add esp, 40h
+        fstp qword ptr [esp + 48h]
+        push ecx
+        mov ecx, dword ptr [esp + 64h]
+        push edx
+        push eax
+        push ecx
+        call ext_006E4CD0
+        fld qword ptr [esp + 30h]
+        fsub qword ptr [esp + 38h]
+        fld qword ptr [esp + 60h]
+        fsub qword ptr [esp + 40h]
+        fld qword ptr [esp + 20h]
+        fsub qword ptr [esp + 48h]
+        fld qword ptr [esp + 30h]
+        fsub qword ptr [esp + 50h]
+        fld qword ptr [esp + 60h]
+        fsub qword ptr [esp + 58h]
+        add esp, 10h
+        fstp qword ptr [esp + 50h]
+        fld qword ptr [esp + 10h]
+        fsub st, st(5)
+        fstp qword ptr [esp + 60h]
+        fld st(1)
+        fmul st, st(2)
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fld st(4)
+        fmul st, st(5)
+        faddp st(1), st
+        fld qword ptr [esp + 60h]
+        fmul qword ptr [esp + 60h]
+        fld qword ptr [esp + 50h]
+        fmul qword ptr [esp + 50h]
+        faddp st(1), st
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fcompp
+        fstp st(0)
+        fstp st(0)
+        fnstsw ax
+        fstp st(0)
+        test ah, 41h
+        fstp st(0)
+        jne short L_e
+        mov edx, dword ptr [esi]
+        mov edi, dword ptr [ebp + 8]
+        fstp st(0)
+        fld qword ptr [esp + 28h]
+        fstp qword ptr [edi + 8*edx]
+        mov eax, dword ptr [esi + 4]
+        fld qword ptr [esp + 30h]
+        fstp qword ptr [edi + 8*eax]
+        mov ecx, dword ptr [esi + 8]
+        fld qword ptr [esp + 38h]
+        jmp short L_f
+L_e:
+        mov edx, dword ptr [esi]
+        mov edi, dword ptr [ebp + 8]
+        fld qword ptr [esp + 40h]
+        fstp qword ptr [edi + 8*edx]
+        mov eax, dword ptr [esi + 4]
+        fld qword ptr [esp + 48h]
+        fstp qword ptr [edi + 8*eax]
+        mov ecx, dword ptr [esi + 8]
+L_f:
+        fstp qword ptr [edi + 8*ecx]
+        mov edx, dword ptr [esi + 4]
+        fld qword ptr [edi + 8*edx]
+        fld qword ptr [mem_00993CC0]
+        call ext_006A73CC
+        fadd qword ptr [mem_00993CC0]
+        fld qword ptr [mem_00993CC0]
+        call ext_006A73CC
+        fld st(0)
+        fsub qword ptr [mem_00993C68]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 41h
+        je short L_g
+        mov ecx, dword ptr [esi + 8]
+        mov eax, dword ptr [esi]
+        shl ecx, 3
+        fstp st(0)
+        fld qword ptr [esp + ecx + 68h]
+        fsub qword ptr [ecx + edi]
+        shl eax, 3
+        fld qword ptr [esp + eax + 68h]
+        fsub qword ptr [eax + edi]
+        faddp st(1), st
+        fmul qword ptr [mem_00993828]
+        fld st(0)
+        fadd qword ptr [eax + edi]
+        fstp qword ptr [eax + edi]
+        mov eax, dword ptr [esi + 8]
+        fadd qword ptr [edi + 8*eax]
+        lea eax, [edi + 8*eax]
+        fstp qword ptr [eax]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+L_g:
+        fsub qword ptr [mem_00993CB8]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 41h
+        je short L_epi
+        mov ecx, dword ptr [esi + 8]
+        mov eax, dword ptr [esi]
+        shl ecx, 3
+        shl eax, 3
+        fld qword ptr [esp + ecx + 68h]
+        fsub qword ptr [ecx + edi]
+        fchs
+        fld qword ptr [esp + eax + 68h]
+        fsub qword ptr [eax + edi]
+        faddp st(1), st
+        fmul qword ptr [mem_00993828]
+        fld st(0)
+        fadd qword ptr [eax + edi]
+        fstp qword ptr [eax + edi]
+        mov ecx, dword ptr [esi + 8]
+        fld qword ptr [edi + 8*ecx]
+        lea eax, [edi + 8*ecx]
+        fsub st, st(1)
+        fstp qword ptr [eax]
+        fstp st(0)
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+L_copy:
+        mov eax, dword ptr [ebp + 0ch]
+        mov ecx, dword ptr [ebp + 8]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [ecx + 4], edx
+        mov edx, dword ptr [eax + 8]
+        mov dword ptr [ecx + 8], edx
+        mov edx, dword ptr [eax + 0ch]
+        mov dword ptr [ecx + 0ch], edx
+        mov edx, dword ptr [eax + 10h]
+        mov dword ptr [ecx + 10h], edx
+        mov eax, dword ptr [eax + 14h]
+        mov dword ptr [ecx + 14h], eax
+L_epi:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+    }
+}
