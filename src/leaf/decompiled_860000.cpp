@@ -10839,3 +10839,176 @@ extern "C" __declspec(naked) void __fastcall fn_0086EE60(void* self) {
         _emit 0
     }
 }
+
+// [0x0086AFD0] sub_0086AFD0 (432 bytes)
+extern "C" void ext_0086B220();
+extern "C" void ext_0086E880();
+extern "C" void ext_0086EA60();
+extern "C" void ext_0086EAF0();
+extern "C" void ext_0086EE60();
+extern "C" int mem_00BC8900;
+
+extern "C" __declspec(naked) void __fastcall fn_0086AFD0(void* self) {
+    __asm {
+        sub esp, 0x3c
+        push ebx
+        push esi
+        push edi
+        mov di, word ptr [esp + 0x54]
+        test di, di
+        jl clamp
+        movsx eax, di
+        cmp eax, 0x4
+        jbe ok_idx
+    clamp:
+        xor di, di
+    ok_idx:
+        mov esi, dword ptr [esp + 0x5c]
+        mov eax, dword ptr [esp + 0x4c]
+        push esi
+        push eax
+        call ext_0086B220
+        lea eax, [esp + 0x14]
+        mov ebx, dword ptr [esp + 0x58]
+        add esp, 0x8
+        push eax
+        push ebx
+        push esi
+        call ext_0086EA60
+        lea ecx, [esp + 0x2c]
+        lea eax, [esp + 0x18]
+        add esp, 0xc
+        push ecx
+        push eax
+        push esi
+        call ext_0086E880
+        add esp, 0xc
+        test eax, eax
+        je after_loop
+        movsx eax, di
+        lea edi, [esi + 4*eax]
+    loop_top:
+        lea eax, [esp + 0xc]
+        inc dword ptr [edi]
+        push eax
+        push ebx
+        push esi
+        call ext_0086EA60
+        lea eax, [esp + 0x2c]
+        lea ecx, [esp + 0x18]
+        add esp, 0xc
+        push eax
+        push ecx
+        push esi
+        call ext_0086E880
+        add esp, 0xc
+        test eax, eax
+        jne loop_top
+    after_loop:
+        add esi, 0x14
+        xor eax, eax
+        mov ax, word ptr [esp + 0x58]
+        push esi
+        and eax, 0x1
+        shl eax, 0x2
+        lea ecx, [eax + 4*eax]
+        lea edx, [esp + ecx + 0x24]
+        push edx
+        call ext_0086B220
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x3c
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    tail_block:
+        sub esp, 0x78
+        lea eax, [esp + 0x28]
+        push esi
+        push offset mem_00BC8900
+        push eax
+        mov eax, dword ptr [esp + 0x98]
+        push eax
+        push eax
+        call ext_0086EE60
+        lea ecx, [esp + 0x14]
+        lea edx, [esp + 0x3c]
+        mov esi, dword ptr [esp + 0xa4]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push edx
+        push esi
+        call ext_0086EE60
+        lea ecx, [esp + 0x64]
+        lea eax, [esp + 0x14]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push eax
+        push esi
+        call ext_0086EAF0
+        lea ecx, [esp + 0x3c]
+        lea edx, [esp + 0x64]
+        mov eax, dword ptr [esp + 0x90]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push edx
+        push eax
+        call ext_0086EE60
+        lea ecx, [esp + 0x14]
+        lea edx, [esp + 0x3c]
+        mov eax, dword ptr [esp + 0x94]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push edx
+        push eax
+        call ext_0086EE60
+        lea ecx, [esp + 0x3c]
+        lea edx, [esp + 0x14]
+        mov eax, dword ptr [esp + 0x9c]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push edx
+        push eax
+        call ext_0086EE60
+        lea ecx, [esp + 0x14]
+        lea edx, [esp + 0x64]
+        mov eax, dword ptr [esp + 0x98]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push edx
+        push eax
+        call ext_0086EE60
+        mov ecx, dword ptr [esp + 0xa8]
+        lea edx, [esp + 0x14]
+        lea eax, [esp + 0x3c]
+        add esp, 0x10
+        push offset mem_00BC8900
+        push ecx
+        push edx
+        push eax
+        call ext_0086EAF0
+        add esp, 0x10
+        pop esi
+        add esp, 0x78
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
