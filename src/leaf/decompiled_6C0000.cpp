@@ -11187,3 +11187,209 @@ extern "C" __declspec(naked) void __fastcall fn_006CB8E0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006C7BC0] sub_006C7BC0 (496 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C7BC0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [esp + 8]
+        sub esp, 8
+        cmp eax, ecx
+        jne alias_path
+        fld qword ptr [ecx + 10h]
+        fld qword ptr [ecx + 30h]
+        fld qword ptr [ecx + 40h]
+        fld qword ptr [ecx + 48h]
+        fld qword ptr [ecx + 50h]
+        mov edx, dword ptr [esp + 14h]
+        push esi
+        fld st(2)
+        fmul qword ptr [edx + 40h]
+        fld st(1)
+        fmul qword ptr [edx + 50h]
+        push edi
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [edx + 48h]
+        faddp st(1), st
+        fstp qword ptr [eax + 50h]
+        fld st(2)
+        fmul qword ptr [edx + 20h]
+        fld st(1)
+        fmul qword ptr [edx + 30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [edx + 28h]
+        faddp st(1), st
+        fstp qword ptr [eax + 30h]
+        fxch st(2)
+        fmul qword ptr [edx]
+        fxch st(2)
+        fmul qword ptr [edx + 10h]
+        faddp st(2), st
+        fmul qword ptr [edx + 8h]
+        faddp st(1), st
+        fstp qword ptr [eax + 10h]
+        fld qword ptr [ecx + 20h]
+        fld qword ptr [ecx + 28h]
+        fld st(1)
+        fmul qword ptr [edx + 40h]
+        fld st(1)
+        fmul qword ptr [edx + 48h]
+        mov esi, dword ptr [ecx + 8]
+        mov edi, dword ptr [ecx + 0ch]
+        mov dword ptr [esp + 8], esi
+        mov dword ptr [esp + 0ch], edi
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [edx + 50h]
+        faddp st(1), st
+        fstp qword ptr [eax + 48h]
+        fld st(1)
+        fmul qword ptr [edx + 20h]
+        fld st(1)
+        fmul qword ptr [edx + 28h]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [edx + 30h]
+        faddp st(1), st
+        fstp qword ptr [eax + 28h]
+        fxch st(1)
+        fmul qword ptr [edx]
+        fxch st(1)
+        fmul qword ptr [edx + 8h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [edx + 10h]
+        faddp st(1), st
+        fstp qword ptr [eax + 8h]
+        fld qword ptr [ecx]
+        fld st(0)
+        fmul qword ptr [edx + 40h]
+        fld qword ptr [esp + 8]
+        fmul qword ptr [edx + 48h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [edx + 50h]
+        faddp st(1), st
+        fstp qword ptr [eax + 40h]
+        fld st(0)
+        fmul qword ptr [edx + 20h]
+        fld qword ptr [esp + 8]
+        fmul qword ptr [edx + 28h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [edx + 30h]
+        pop edi
+        pop esi
+        faddp st(1), st
+        fstp qword ptr [eax + 20h]
+        fmul qword ptr [edx]
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        fmul qword ptr [edx + 8h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [edx + 10h]
+        faddp st(1), st
+        fstp qword ptr [eax]
+        add esp, 8
+        ret
+    alias_path:
+        mov edx, dword ptr [esp + 14h]
+        fld qword ptr [edx]
+        fld qword ptr [edx + 8h]
+        fld qword ptr [edx + 10h]
+        fld st(1)
+        fmul qword ptr [ecx + 8h]
+        fld st(1)
+        fmul qword ptr [ecx + 10h]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fstp qword ptr [eax]
+        fld st(2)
+        fmul qword ptr [ecx + 20h]
+        fld st(2)
+        fmul qword ptr [ecx + 28h]
+        faddp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx + 30h]
+        faddp st(1), st
+        fstp qword ptr [eax + 8h]
+        fxch st(2)
+        fmul qword ptr [ecx + 40h]
+        fxch st(1)
+        fmul qword ptr [ecx + 48h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [ecx + 50h]
+        faddp st(1), st
+        fstp qword ptr [eax + 10h]
+        fld qword ptr [edx + 20h]
+        fld qword ptr [edx + 28h]
+        fld qword ptr [edx + 30h]
+        fld st(1)
+        fmul qword ptr [ecx + 8h]
+        fld st(1)
+        fmul qword ptr [ecx + 10h]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fstp qword ptr [eax + 20h]
+        fld st(2)
+        fmul qword ptr [ecx + 20h]
+        fld st(2)
+        fmul qword ptr [ecx + 28h]
+        faddp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx + 30h]
+        faddp st(1), st
+        fstp qword ptr [eax + 28h]
+        fxch st(2)
+        fmul qword ptr [ecx + 40h]
+        fxch st(1)
+        fmul qword ptr [ecx + 48h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [ecx + 50h]
+        faddp st(1), st
+        fstp qword ptr [eax + 30h]
+        fld qword ptr [edx + 40h]
+        fld qword ptr [edx + 48h]
+        fld qword ptr [edx + 50h]
+        fld st(1)
+        fmul qword ptr [ecx + 8h]
+        fld st(1)
+        fmul qword ptr [ecx + 10h]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fstp qword ptr [eax + 40h]
+        fld st(2)
+        fmul qword ptr [ecx + 20h]
+        fld st(2)
+        fmul qword ptr [ecx + 28h]
+        faddp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx + 30h]
+        faddp st(1), st
+        fstp qword ptr [eax + 48h]
+        fxch st(2)
+        fmul qword ptr [ecx + 40h]
+        fxch st(1)
+        fmul qword ptr [ecx + 48h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [ecx + 50h]
+        faddp st(1), st
+        fstp qword ptr [eax + 50h]
+        add esp, 8
+        ret
+    }
+}
