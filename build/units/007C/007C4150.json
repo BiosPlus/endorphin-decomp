@@ -18,5 +18,7 @@
     "0x007C4348",
     "0x007C435A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-21T16:03:20Z"
 }
