@@ -44,5 +44,7 @@
     "0x00777532",
     "0x00777546"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:41:13Z"
 }
