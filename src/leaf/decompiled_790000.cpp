@@ -11571,3 +11571,281 @@ L_2b0:
         ret
     }
 }
+
+// [0x00799150] sub_00799150 (848 bytes)
+extern "C" void ext_0079AF50(void*);
+extern "C" __declspec(naked) void __cdecl fn_00799150(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [esi + 0x80]
+        cmp eax, edi
+        je short L_80
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x80], edi
+L_80:
+        mov eax, dword ptr [esi + 0x84]
+        cmp eax, edi
+        je short L_84
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x84], edi
+L_84:
+        mov eax, dword ptr [esi + 0x88]
+        cmp eax, edi
+        je short L_88
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x88], edi
+L_88:
+        mov eax, dword ptr [esi + 0xa0]
+        cmp eax, edi
+        je short L_a0
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xa0], edi
+L_a0:
+        mov eax, dword ptr [esi + 0xa4]
+        cmp eax, edi
+        je short L_a4
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xa4], edi
+L_a4:
+        mov eax, dword ptr [esi + 0xa8]
+        cmp eax, edi
+        je short L_a8
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xa8], edi
+L_a8:
+        mov eax, dword ptr [esi + 0xac]
+        cmp eax, edi
+        je short L_ac
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xac], edi
+L_ac:
+        mov eax, dword ptr [esi + 0xb0]
+        cmp eax, edi
+        je short L_b0
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xb0], edi
+L_b0:
+        mov eax, dword ptr [esi + 0xb4]
+        cmp eax, edi
+        je short L_b4
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xb4], edi
+L_b4:
+        mov eax, dword ptr [esi + 0xb8]
+        cmp eax, edi
+        je short L_b8
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xb8], edi
+L_b8:
+        mov eax, dword ptr [esi + 0xbc]
+        cmp eax, edi
+        je short L_bc
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xbc], edi
+L_bc:
+        mov eax, dword ptr [esi + 0xc0]
+        cmp eax, edi
+        je short L_c0
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xc0], edi
+L_c0:
+        mov eax, dword ptr [esi + 0xc4]
+        cmp eax, edi
+        je short L_c4
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xc4], edi
+L_c4:
+        mov eax, dword ptr [esi + 0x94]
+        cmp eax, edi
+        je short L_94
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x94], edi
+L_94:
+        mov eax, dword ptr [esi + 0xdc]
+        cmp eax, edi
+        je short L_dc
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xdc], edi
+L_dc:
+        mov eax, dword ptr [esi + 0xe0]
+        cmp eax, edi
+        je short L_e0
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xe0], edi
+L_e0:
+        mov eax, dword ptr [esi + 0x110]
+        cmp eax, edi
+        je short L_110
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x110], edi
+L_110:
+        mov eax, dword ptr [esi + 0x114]
+        cmp eax, edi
+        je short L_114
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x114], edi
+L_114:
+        mov eax, dword ptr [esi + 0xec]
+        cmp eax, edi
+        je short L_ec
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xec], edi
+L_ec:
+        mov eax, dword ptr [esi + 0xf0]
+        cmp eax, edi
+        je short L_f0
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xf0], edi
+L_f0:
+        mov eax, dword ptr [esi + 0xf4]
+        cmp eax, edi
+        je short L_f4
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xf4], edi
+L_f4:
+        mov eax, dword ptr [esi + 0xf8]
+        cmp eax, edi
+        je short L_f8
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xf8], edi
+L_f8:
+        mov eax, dword ptr [esi + 0xfc]
+        cmp eax, edi
+        je short L_fc
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xfc], edi
+L_fc:
+        mov eax, dword ptr [esi + 0x100]
+        cmp eax, edi
+        je short L_100
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x100], edi
+L_100:
+        mov eax, dword ptr [esi + 0x11c]
+        cmp eax, edi
+        je short L_11c
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x11c], edi
+L_11c:
+        mov eax, dword ptr [esi + 0x124]
+        cmp eax, edi
+        je short L_124
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x124], edi
+L_124:
+        mov eax, dword ptr [esi + 0x12c]
+        cmp eax, edi
+        je short L_12c
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x12c], edi
+L_12c:
+        mov eax, dword ptr [esi + 0xd0]
+        cmp eax, edi
+        je short L_d0
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xd0], edi
+L_d0:
+        mov eax, dword ptr [esi + 0xd4]
+        cmp eax, edi
+        je short L_d4
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0xd4], edi
+L_d4:
+        mov eax, dword ptr [esi + 0x138]
+        cmp eax, edi
+        je short L_138
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x138], edi
+L_138:
+        mov eax, dword ptr [esi + 0x13c]
+        cmp eax, edi
+        je short L_13c
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x13c], edi
+L_13c:
+        mov eax, dword ptr [esi + 0x144]
+        cmp eax, edi
+        je short L_144
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x144], edi
+L_144:
+        mov eax, dword ptr [esi + 0x148]
+        cmp eax, edi
+        je short L_148
+        push eax
+        call ext_0079AF50
+        add esp, 0x4
+        mov dword ptr [esi + 0x148], edi
+L_148:
+        pop edi
+        pop esi
+        ret
+    }
+}
