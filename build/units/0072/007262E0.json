@@ -55,5 +55,7 @@
     "0x007264AD",
     "0x007264C1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:46:01Z"
 }
