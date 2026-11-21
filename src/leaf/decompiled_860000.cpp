@@ -13077,3 +13077,225 @@ extern "C" __declspec(naked) void __cdecl fn_0086C840(void) {
         ret
     }
 }
+
+// [0x0086AB00] sub_0086AB00 (559 bytes)
+extern "C" void ext_0086A2B0();
+extern "C" void ext_00869FE0();
+extern "C" __declspec(naked) void __cdecl fn_0086AB00(void* a, void* b, int n) {
+    __asm {
+        sub esp, 0x928
+        lea eax, [esp + 0x4]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x944]
+        test esi, esi
+        push edi
+        mov ecx, esi
+        je ab_z1
+    ab_l1:
+        mov dword ptr [eax], 0x0
+        add eax, 0x4
+        dec ecx
+        jne ab_l1
+    ab_z1:
+        mov edi, 0x1
+        mov ecx, esi
+        test esi, esi
+        mov dword ptr [esp + 0x14], edi
+        lea eax, [esp + 0x21c]
+        je ab_z2
+    ab_l2:
+        mov dword ptr [eax], 0x0
+        add eax, 0x4
+        dec ecx
+        jne ab_l2
+    ab_z2:
+        mov eax, dword ptr [esp + 0x940]
+        mov ecx, esi
+        test esi, esi
+        je ab_z3
+        lea edx, [esp + 0x320]
+        sub edx, eax
+    ab_l3:
+        mov ebx, dword ptr [eax]
+        mov dword ptr [edx + eax], ebx
+        add eax, 0x4
+        dec ecx
+        jne ab_l3
+    ab_z3:
+        mov eax, dword ptr [esp + 0x944]
+        mov ecx, esi
+        test esi, esi
+        je ab_z4
+        lea edx, [esp + 0x118]
+        sub edx, eax
+    ab_l4:
+        mov ebx, dword ptr [eax]
+        mov dword ptr [edx + eax], ebx
+        add eax, 0x4
+        dec ecx
+        jne ab_l4
+    ab_z4:
+        mov dword ptr [esp + 0x10], edi
+        test esi, esi
+        mov ecx, esi
+        je ab_post
+    ab_outer:
+        mov edx, dword ptr [esp + 0x118]
+        lea eax, [esp + 0x11c]
+        test edx, edx
+        jne ab_call
+    ab_scan:
+        dec ecx
+        je ab_post
+        mov edx, dword ptr [eax]
+        add eax, 0x4
+        test edx, edx
+        je ab_scan
+    ab_call:
+        lea eax, [esp + 0x118]
+        push esi
+        push eax
+        lea ecx, [esp + 0x328]
+        push esi
+        lea edx, [esp + 0x534]
+        push ecx
+        lea eax, [esp + 0x63c]
+        push edx
+        push eax
+        call ext_0086A2B0
+        lea ecx, [esp + 0x234]
+        push esi
+        lea edx, [esp + 0x648]
+        push ecx
+        lea eax, [esp + 0x750]
+        push edx
+        push eax
+        call ext_00869FE0
+        add esp, 0x28
+        mov ebp, esi
+        lea edx, [esp + 0x730]
+        lea ebx, [esp + 0x14]
+        lea edi, [esp + 0x424]
+        xor ecx, ecx
+    ab_add:
+        mov eax, dword ptr [ebx]
+        add ebx, 0x4
+        add eax, ecx
+        cmp eax, ecx
+        jae ab_carry
+        mov eax, dword ptr [edx]
+        jmp ab_store
+    ab_carry:
+        mov ecx, dword ptr [edx]
+        add eax, ecx
+        cmp eax, ecx
+        sbb ecx, ecx
+        neg ecx
+    ab_store:
+        mov dword ptr [edi], eax
+        add edx, 0x4
+        add edi, 0x4
+        dec ebp
+        jne ab_add
+        mov ecx, esi
+        xor eax, eax
+    ab_c1:
+        mov edx, dword ptr [esp + eax + 0x21c]
+        mov dword ptr [esp + eax + 0x14], edx
+        add eax, 0x4
+        dec ecx
+        jne ab_c1
+        mov ecx, esi
+        xor eax, eax
+    ab_c2:
+        mov edx, dword ptr [esp + eax + 0x424]
+        mov dword ptr [esp + eax + 0x21c], edx
+        add eax, 0x4
+        dec ecx
+        jne ab_c2
+        mov ecx, esi
+        xor eax, eax
+    ab_c3:
+        mov edx, dword ptr [esp + eax + 0x118]
+        mov dword ptr [esp + eax + 0x320], edx
+        add eax, 0x4
+        dec ecx
+        jne ab_c3
+        mov ecx, esi
+        xor eax, eax
+    ab_c4:
+        mov edx, dword ptr [esp + eax + 0x528]
+        mov dword ptr [esp + eax + 0x118], edx
+        add eax, 0x4
+        dec ecx
+        jne ab_c4
+        mov eax, dword ptr [esp + 0x10]
+        neg eax
+        mov dword ptr [esp + 0x10], eax
+        jmp ab_outer
+    ab_post:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        jge ab_pos
+        mov edi, dword ptr [esp + 0x944]
+        mov ebx, dword ptr [esp + 0x93c]
+        xor ecx, ecx
+        lea edx, [esp + 0x14]
+        test esi, esi
+        je ab_done2
+    ab_diff:
+        mov eax, dword ptr [edi]
+        add edi, 0x4
+        sub eax, ecx
+        cmp eax, -0x1
+        jne ab_nm1
+        mov ebp, dword ptr [edx]
+        or eax, eax
+        sub eax, ebp
+        jmp ab_dstore
+    ab_nm1:
+        mov ecx, dword ptr [edx]
+        or ebp, -0x1
+        sub eax, ecx
+        sub ebp, ecx
+        cmp ebp, eax
+        sbb ecx, ecx
+        neg ecx
+    ab_dstore:
+        mov dword ptr [ebx], eax
+        add edx, 0x4
+        add ebx, 0x4
+        dec esi
+        jne ab_diff
+    ab_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x928
+        ret
+    ab_pos:
+        test esi, esi
+        mov ecx, esi
+        lea eax, [esp + 0x14]
+        je ab_done2
+        mov edx, dword ptr [esp + 0x93c]
+        lea esi, [esp + 0x14]
+        sub edx, esi
+    ab_cp:
+        mov esi, dword ptr [eax]
+        mov dword ptr [edx + eax], esi
+        add eax, 0x4
+        dec ecx
+        jne ab_cp
+    ab_done2:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x928
+        ret
+    }
+}
