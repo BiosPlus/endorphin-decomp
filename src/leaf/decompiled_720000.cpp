@@ -12767,3 +12767,193 @@ L10:    mov ecx, dword ptr [esp+8]
         ret 4
     }
 }
+
+// [0x0072C600] sub_0072C600 (544 bytes)
+// cdecl(src, dst, n, width, const float* coeffs, flag): per-row YCbCr -> 3-byte pixel conversion
+// (row stride = width + 2; the last two bytes of each row are the chroma pair).
+extern "C" void ext_00872828();
+extern "C" int mem_009969E8;
+extern "C" int mem_009969E0;
+extern "C" int mem_009969D8;
+extern "C" int mem_009969D0;
+extern "C" int mem_009969C8;
+extern "C" int mem_0092C518;
+extern "C" int mem_0092A278;
+
+extern "C" __declspec(naked) void __cdecl fn_0072C600(const unsigned char* src, unsigned char* dst, unsigned int n, unsigned int w, const float* coeffs, unsigned char flag) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x3c
+        mov eax, dword ptr [ebp + 0x10]
+        push ebx
+        xor ecx, ecx
+        push esi
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        cmp eax, ecx
+        mov dword ptr [esp + 0x18], ecx
+        mov dword ptr [esp + 0x10], ecx
+        jbe L_done
+        mov esi, dword ptr [ebp + 0x14]
+        and esi, 0xffff
+        mov dword ptr [esp + 0x14], esi
+        jmp short L_rowstart
+L_rowcont:
+        mov ecx, dword ptr [esp + 0x10]
+L_rowstart:
+        xor ebx, ebx
+        test esi, esi
+        jbe L_rowend
+        mov eax, dword ptr [ebp + 0x8]
+        add esi, ecx
+        add ecx, eax
+        mov dword ptr [esp + 0x1c], ecx
+        jmp short L_pix
+L_pixrow:
+        mov eax, dword ptr [ebp + 0x8]
+L_pix:
+        mov edx, dword ptr [esp + 0x1c]
+        xor ecx, ecx
+        mov cl, byte ptr [edx + ebx]
+        xor edx, edx
+        mov dl, byte ptr [esi + eax + 0x1]
+        mov dword ptr [esp + 0x20], ecx
+        fild dword ptr [esp + 0x20]
+        xor ecx, ecx
+        mov cl, byte ptr [esi + eax]
+        mov al, byte ptr [ebp + 0x1c]
+        fstp qword ptr [esp + 0x30]
+        mov dword ptr [esp + 0x20], ecx
+        fild dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x20], edx
+        fild dword ptr [esp + 0x20]
+        test al, al
+        fstp qword ptr [esp + 0x28]
+        je L_zero
+        mov eax, dword ptr [ebp + 0x18]
+        fld dword ptr [eax + 0x8]
+        _emit 0xd8
+        _emit 0xe9
+        fstp qword ptr [esp + 0x20]
+        _emit 0xdd
+        _emit 0xd8
+        fld dword ptr [eax]
+        fsubr qword ptr [esp + 0x30]
+        fmul qword ptr [mem_009969E8]
+        fst qword ptr [esp + 0x38]
+        fld qword ptr [esp + 0x20]
+        fmul qword ptr [mem_009969E0]
+        _emit 0xde
+        _emit 0xc1
+        fld dword ptr [eax + 0x10]
+        fsubr qword ptr [esp + 0x28]
+        fld qword ptr [esp + 0x20]
+        fmul qword ptr [mem_009969D8]
+        fsubr qword ptr [esp + 0x38]
+        _emit 0xd9
+        _emit 0xc1
+        fmul qword ptr [mem_009969D0]
+        _emit 0xde
+        _emit 0xe9
+        fstp qword ptr [esp + 0x28]
+        fmul qword ptr [mem_009969C8]
+        fadd qword ptr [esp + 0x38]
+        fst qword ptr [esp + 0x20]
+        fcomp qword ptr [mem_0092C518]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_bchk
+        mov dword ptr [esp + 0x20], 0x0
+        mov dword ptr [esp + 0x24], 0x406fe000
+        jmp short L_g
+L_bchk:
+        fld qword ptr [esp + 0x20]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je short L_g
+        mov dword ptr [esp + 0x20], 0x0
+        mov dword ptr [esp + 0x24], 0x0
+L_g:
+        fld qword ptr [esp + 0x28]
+        fcomp qword ptr [mem_0092C518]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_gchk
+        mov dword ptr [esp + 0x28], 0x0
+        mov dword ptr [esp + 0x2c], 0x406fe000
+        jmp short L_r
+L_gchk:
+        fld qword ptr [esp + 0x28]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je short L_r
+        mov dword ptr [esp + 0x28], 0x0
+        mov dword ptr [esp + 0x2c], 0x0
+L_r:
+        fcom qword ptr [mem_0092C518]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_rchk
+        _emit 0xdd
+        _emit 0xd8
+        fld qword ptr [mem_0092C518]
+        jmp short L_rdone
+L_rchk:
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je short L_rdone
+        _emit 0xdd
+        _emit 0xd8
+        fld qword ptr [mem_0092A278]
+L_rdone:
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x30], eax
+        mov eax, dword ptr [esp + 0x2c]
+        mov dword ptr [esp + 0x40], edx
+        fstp qword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x44], eax
+        mov dword ptr [esp + 0x34], ecx
+        fld qword ptr [esp + 0x40]
+L_zero:
+        fld qword ptr [esp + 0x30]
+        call ext_00872828
+        mov byte ptr [edi], al
+        inc edi
+        call ext_00872828
+        fld qword ptr [esp + 0x28]
+        mov byte ptr [edi], al
+        inc edi
+        call ext_00872828
+        mov byte ptr [edi], al
+        mov eax, dword ptr [esp + 0x14]
+        inc edi
+        inc ebx
+        cmp ebx, eax
+        jb L_pixrow
+        mov ecx, dword ptr [esp + 0x10]
+        mov esi, eax
+L_rowend:
+        mov eax, dword ptr [esp + 0x18]
+        lea ecx, [ecx + esi + 0x2]
+        mov dword ptr [esp + 0x10], ecx
+        mov ecx, dword ptr [ebp + 0x10]
+        add eax, esi
+        cmp eax, ecx
+        mov dword ptr [esp + 0x18], eax
+        jb L_rowcont
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
