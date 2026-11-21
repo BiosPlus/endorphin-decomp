@@ -18287,3 +18287,193 @@ cold_path:
         call ext_006A60EE
     }
 }
+
+// [0x0040F7D0] sub_0040F7D0 (541 bytes)
+extern "C" void ext_0040F290();
+extern "C" void ext_0040F550();
+extern "C" void ext_0040F700();
+extern "C" void ext_006A6010();
+extern "C" void ext_0040FA9F();
+extern "C" int mem_00925644;
+extern "C" int mem_009244F0;
+extern "C" int mem_009244EC;
+extern "C" int mem_00924494;
+extern "C" int mem_009242F4;
+extern "C" int mem_009244E8;
+extern "C" int mem_0092431C;
+extern "C" int mem_00924300;
+extern "C" int mem_00924080;
+extern "C" __declspec(naked) void __fastcall fn_0040F7D0(void* self) {
+    __asm {
+        push -1
+        push 0x874f55
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov eax, dword ptr [ecx + 0x20]
+        push -0x10
+        push eax
+        mov dword ptr [esp + 0x58], 0
+        call dword ptr [mem_00925644]
+        lea ecx, [esp + 0x34]
+        mov esi, eax
+        call ext_0040F290
+        test esi, 0x2000
+        mov byte ptr [esp + 0x50], 1
+        je L_40F8F1
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+L_40F820:
+        push 0
+        push 0xa
+        lea ecx, [esp + 0x74]
+        call dword ptr [mem_009244F0]
+        mov ebx, eax
+        cmp ebx, -1
+        jle L_40F8A3
+        push ebx
+        lea ecx, [esp + 0x18]
+        push ecx
+        lea ecx, [esp + 0x74]
+        call dword ptr [mem_009244EC]
+        lea edx, [esp + 0x14]
+        push edx
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x54], 2
+        call dword ptr [mem_00924494]
+        push ecx
+        lea eax, [esp + 0x14]
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        mov byte ptr [esp + 0x58], 3
+        call dword ptr [mem_00924494]
+        mov ecx, dword ptr [esp + 0x40]
+        push ecx
+        lea ecx, [esp + 0x3c]
+        call ext_0040F550
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0x50], 2
+        call dword ptr [mem_009242F4]
+        lea edx, [ebx + 0x1]
+        push edx
+        push 0
+        lea ecx, [esp + 0x74]
+        call dword ptr [mem_009244E8]
+        lea ecx, [esp + 0x14]
+        jmp L_40F8DB
+L_40F8A3:
+        lea eax, [esp + 0x6c]
+        push eax
+        lea ecx, [esp + 0x1c]
+        call dword ptr [mem_00924494]
+        push ecx
+        lea edx, [esp + 0x1c]
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push edx
+        mov byte ptr [esp + 0x58], 4
+        call dword ptr [mem_00924494]
+        mov eax, dword ptr [esp + 0x40]
+        push eax
+        lea ecx, [esp + 0x3c]
+        call ext_0040F550
+        lea ecx, [esp + 0x18]
+L_40F8DB:
+        mov byte ptr [esp + 0x50], 1
+        call dword ptr [mem_009242F4]
+        cmp ebx, -1
+        jne L_40F820
+        jmp L_40F90C
+L_40F8F1:
+        push ecx
+        lea edx, [esp + 0x70]
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push edx
+        call dword ptr [mem_00924494]
+        lea ecx, [esp + 0x38]
+        call ext_0040F700
+L_40F90C:
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x70]
+        call dword ptr [mem_0092431C]
+        push eax
+        lea ecx, [esp + 0x74]
+        call dword ptr [mem_00924300]
+        mov ebx, dword ptr [esp + 0x60]
+        mov ecx, dword ptr [ebx + 0x4]
+        push eax
+        push ecx
+        call dword ptr [mem_00924080]
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [esp + 0x70]
+        mov edx, dword ptr [edx + 0x38]
+        push eax
+        mov ecx, ebx
+        call edx
+        push 1
+        mov ecx, ebx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_006A6010
+        mov eax, dword ptr [esp + 0x20]
+        imul eax, dword ptr [esp + 0x3c]
+        mov edi, dword ptr [esp + 0x68]
+        mov ecx, dword ptr [esp + 0x60]
+        sub edi, eax
+        mov eax, edi
+        sub eax, ecx
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add eax, -1
+        test esi, 0x400
+        mov ebp, eax
+        je L_40F97C
+        lea ebp, [ecx + 0x2]
+L_40F97C:
+        test esi, 0x800
+        je L_40F987
+        lea ebp, [edi - 0x2]
+L_40F987:
+        mov edx, esi
+        and edx, 0xc00
+        cmp edx, 0xc00
+        jne L_40F999
+        mov ebp, eax
+L_40F999:
+        mov eax, esi
+        xor edi, edi
+        and eax, 0x300
+        cmp eax, 0x300
+        mov dword ptr [esp + 0x58], edi
+        jne L_40F9B7
+        mov dword ptr [esp + 0x58], 1
+        jmp L_40F9D9
+L_40F9B7:
+        test esi, 0x100
+        jne L_40F9D9
+        and esi, 0x200
+        sub esi, 0x200
+        neg esi
+        sbb esi, esi
+        and esi, 0x23
+        add esi, 0x2
+        mov dword ptr [esp + 0x58], esi
+L_40F9D9:
+        cmp dword ptr [esp + 0x3c], edi
+        jle ext_0040FA9F
+        mov eax, dword ptr [esp + 0x38]
+        mov dword ptr [esp + 0x10], eax
+        __asm _emit 0xeb
+        __asm _emit 0x07
+    }
+}
