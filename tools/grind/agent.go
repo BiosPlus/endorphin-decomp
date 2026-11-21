@@ -143,11 +143,11 @@ type rlInfo struct {
 func (g *grind) runAgent(model, effort, backend, addr, logPath string, timeout time.Duration) (int, rlInfo) {
 	tag := model + "@" + effort
 	editRule := "Edit only TARGET_CPP (and include/ if needed)."
-	srcTools := []string{"Edit(src/**)", "Edit(include/**)", "Write(src/**)", "Write(include/**)"}
+	srcTools := []string{"Edit(src/**)", "Edit(include/**)"} // Edit rules also cover the Write tool
 	gitWrite := []string{"Bash(git add*)", "Bash(git commit*)", "Bash(git checkout -- src/*)"}
 	if g.cfg.WorkIsolated {
 		editRule = "Edit only TARGET_CPP (your own src/wip file). Other agents are working in the same shard: never edit the shard .cpp or include/, and never run git add/commit/checkout/restore (work check commits for you)."
-		srcTools = []string{"Edit(src/wip/**)", "Write(src/wip/**)"}
+		srcTools = []string{"Edit(src/wip/**)"}
 		gitWrite = nil // `work check` commits under the lock; an agent's checkout could wipe another agent's merge
 	}
 	claim := exec.Command(g.bin("work"), "claim", addr)
@@ -196,6 +196,9 @@ Rules:
 		rc = g.runTracked(c, logPath, timeout)
 	} else {
 		switch model {
+		case "claude-haiku-5.5":
+			rc = g.runAgyFirstValidSlug("haiku."+effort, effort, prompt, model, addr, logPath, timeout,
+				[]string{"claude-haiku-5-5", "claude-haiku-5-5-" + effort, "claude-haiku-5.5", "claude-haiku-5-5@default", "claude-haiku-4-5@default"})
 		case "claude-sonnet-5.5":
 			rc = g.runAgyFirstValidSlug("sonnet."+effort, effort, prompt, model, addr, logPath, timeout,
 				[]string{"claude-sonnet-5-5", "claude-sonnet-5-5-" + effort, "claude-sonnet-5.5", "claude-sonnet-5-5@default", "claude-sonnet-4-6@default"})
@@ -224,7 +227,7 @@ func (g *grind) backendUsable(backend, model string) bool {
 	case "claude":
 		return strings.HasPrefix(model, "claude-") && g.hasClaude && !g.pools.coolingDown("claude")
 	case "agy":
-		return model != "claude-haiku-5.5" && g.hasAgy && !g.pools.coolingDown(poolOf("agy", model))
+		return g.hasAgy && !g.pools.coolingDown(poolOf("agy", model))
 	}
 	return false
 }
@@ -243,7 +246,7 @@ func (g *grind) resolveBackend(spec string) string {
 	var order []string
 	switch {
 	case model == "claude-haiku-5.5":
-		order = []string{"claude"}
+		order = []string{"claude", "agy"} // claude harness first, agy when the claude pool is cooling down
 	case model == "claude-sonnet-5.5" || model == "claude-opus-5.5":
 		order = []string{"claude", "agy"}
 		if g.cfg.PreferAgyClaude {
@@ -265,6 +268,6 @@ func (g *grind) resolveBackend(spec string) string {
 func (g *grind) installed(spec string) bool {
 	model, pin := baseModel(spec), pinOf(spec)
 	claudeOK := g.hasClaude && strings.HasPrefix(model, "claude-") && (pin == "" || pin == "claude")
-	agyOK := g.hasAgy && model != "claude-haiku-5.5" && (pin == "" || pin == "agy")
+	agyOK := g.hasAgy && (pin == "" || pin == "agy")
 	return claudeOK || agyOK
 }
