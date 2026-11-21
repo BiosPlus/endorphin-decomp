@@ -34,5 +34,7 @@
     "0x007BA916",
     "0x007BA93B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:53:52Z"
 }
