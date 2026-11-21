@@ -10896,3 +10896,159 @@ L_end:
         ret 0x8
     }
 }
+
+// [0x007254A0] sub_007254A0 (432 bytes)
+extern "C" void ext_006D2170();
+extern "C" void ext_006D2200();
+extern "C" void ext_00725340();
+extern "C" void ext_00725650();
+extern "C" void ext_00725840();
+
+extern "C" __declspec(naked) void __fastcall fn_007254A0(void* self, int edx_unused, int arg) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 10h]
+        test ecx, ecx
+        je short L_254A0_7bd
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 2ch]
+        test al, al
+        jne short L_254A0_7bd
+        pop esi
+        add esp, 8
+        ret 4
+L_254A0_7bd:
+        cmp dword ptr [esi + 1c4h], -1
+        je short L_254A0_7cf
+        xor al, al
+        pop esi
+        add esp, 8
+        ret 4
+L_254A0_7cf:
+        mov al, byte ptr [esi + 15h]
+        test al, al
+        jne short L_254A0_7df
+        xor al, al
+        pop esi
+        add esp, 8
+        ret 4
+L_254A0_7df:
+        mov eax, dword ptr [esi + 8]
+        push ebx
+        cmp eax, 1
+        push edi
+        jne short L_254A0_7f0
+        mov bl, al
+        jmp L_254A0_7fa
+L_254A0_7f0:
+        cmp eax, 2
+        jne L_254A0_7da
+        mov al, byte ptr [esi + 17h]
+        test al, al
+        jne L_254A0_7da
+        mov ecx, dword ptr [esi + 10h]
+        push 0
+        push 2
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 20h]
+        mov ecx, dword ptr [esi + 10h]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 24h]
+        lea ecx, [esp + 10h]
+        lea edx, [esp + 0ch]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 18h], 0
+        mov dword ptr [esp + 1ch], 0
+        call ext_00725340
+        test al, al
+        je L_254A0_7e7
+        mov al, byte ptr [esp + 18h]
+        mov bl, 1
+        test al, al
+        je L_254A0_7fa
+        mov eax, dword ptr [esp + 0ch]
+        test eax, eax
+        je L_254A0_7fa
+        mov ecx, dword ptr [esi + 10h]
+        push eax
+        push 0
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 20h]
+        mov ecx, dword ptr [esi + 10h]
+        mov edx, dword ptr [esp + 0ch]
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 40h]
+        mov eax, dword ptr [esi + 194h]
+        lea edi, [esi + 194h]
+        mov edx, dword ptr [esi + 4]
+        dec eax
+        mov dword ptr [esi + 1c4h], eax
+        mov ecx, dword ptr [esi + 1bch]
+        mov dword ptr [ecx + eax*4], edx
+L_254A0_593:
+        mov ecx, esi
+        mov dword ptr [esi + 1c8h], 1
+        call ext_00725650
+        test al, al
+        jne L_254A0_7dc
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        dec eax
+        push eax
+        call ext_006D2200
+        mov edx, dword ptr [esi + 1ach]
+        lea ecx, [esi + 1ach]
+        dec edx
+        push edx
+        call ext_006D2200
+        mov dword ptr [esi + 1c4h], -1
+        mov dword ptr [esi + 1c8h], 0
+L_254A0_7da:
+        xor bl, bl
+L_254A0_7dc:
+        mov al, bl
+        pop edi
+        pop ebx
+        pop esi
+        add esp, 8
+        ret 4
+L_254A0_7e7:
+        mov eax, dword ptr [esi + 4]
+        mov ecx, esi
+        push eax
+        push 0
+        call ext_00725840
+        mov bl, al
+        test bl, bl
+        je L_254A0_7dc
+L_254A0_7fa:
+        mov ecx, dword ptr [esi + 10h]
+        lea edi, [esi + 194h]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 24h]
+        mov dword ptr [esp + 18h], eax
+        mov eax, dword ptr [edi]
+        lea ecx, [esp + 18h]
+        push ecx
+        push eax
+        mov ecx, edi
+        call ext_006D2170
+        mov edx, dword ptr [esi + 4]
+        lea ecx, [esi + 1ach]
+        mov dword ptr [esp + 18h], edx
+        mov dword ptr [esi + 1c4h], eax
+        mov eax, dword ptr [ecx]
+        lea edx, [esp + 18h]
+        push edx
+        push eax
+        call ext_006D2170
+        mov dword ptr [esi + 1c4h], eax
+        jmp L_254A0_593
+    }
+}
