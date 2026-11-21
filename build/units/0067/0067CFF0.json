@@ -84,5 +84,7 @@
     "0x0067D30F",
     "0x0067D31B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T16:04:22Z"
 }
