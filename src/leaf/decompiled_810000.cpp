@@ -1142,3 +1142,221 @@ extern "C" __declspec(naked) int __cdecl fn_008113E0(void* self, char* p, int fl
         ret
     }
 }
+
+// [0x008111B0] sub_008111B0 (522 bytes)
+extern "C" void ext_00859740();
+extern "C" void ext_00859360();
+extern "C" __declspec(naked) int __cdecl fn_008111B0(void* a1, void* a2, int a3, int a4, int a5) {
+    __asm {
+        sub esp, 8
+        __asm _emit 0xa1
+        __asm _emit 0x04
+        __asm _emit 0x6b
+        __asm _emit 0xab
+        __asm _emit 0x00
+        push ebx
+        push ebp
+        xor ebx, ebx
+        xor ebp, ebp
+        push esi
+        cmp eax, ebx
+        push edi
+        mov dword ptr [esp + 14h], ebx
+        mov dword ptr [esp + 10h], ebx
+        je L_120A
+        push 200h
+        push -1
+        push 0b73ca0h
+        call ext_00859740
+        add esp, 0ch
+        xor eax, eax
+    L_81E2:
+        movsx ecx, byte ptr [eax + 99f058h]
+        movsx edx, byte ptr [eax + 99f080h]
+        mov dword ptr [ecx*4 + 0b73ca0h], eax
+        mov dword ptr [edx*4 + 0b73ca0h], eax
+        inc eax
+        cmp eax, 24h
+        jl L_81E2
+        __asm _emit 0x89
+        __asm _emit 0x1d
+        __asm _emit 0x04
+        __asm _emit 0x6b
+        __asm _emit 0xab
+        __asm _emit 0x00
+    L_120A:
+        mov esi, dword ptr [esp + 1ch]
+        push esi
+        call ext_00810C30
+        mov eax, dword ptr [esp + 28h]
+        add esp, 4
+        test ah, 40h
+        jne L_1247
+        mov eax, dword ptr [esi + 0ch]
+        cmp eax, 2bh
+        jne L_1232
+        push ebx
+        push esi
+        call dword ptr [esi + 4]
+        add esp, 8
+        jmp L_1247
+    L_1232:
+        cmp eax, 2dh
+        jne L_1247
+        push ebx
+        push esi
+        call dword ptr [esi + 4]
+        add esp, 8
+        mov dword ptr [esp + 14h], 1
+    L_1247:
+        mov eax, dword ptr [esi + 10h]
+        mov dword ptr [esp + 1ch], eax
+        mov al, byte ptr [esp + 24h]
+        test al, 10h
+        je L_12BA
+        mov edi, dword ptr [esp + 2ch]
+        lea eax, [edi + 1]
+        cmp eax, 11h
+        ja L_12BA
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 8113c4h]
+        jmp dword ptr [ecx*4 + 8113bch]
+    L_1271:
+        cmp dword ptr [esi + 0ch], 30h
+        jne L_1383
+        push 0
+        push esi
+        call dword ptr [esi + 4]
+        mov eax, dword ptr [esi + 0ch]
+        add esp, 8
+        test eax, eax
+        je L_12BA
+        cmp edi, 10h
+        jne L_129E
+        push eax
+        call ext_008110F0
+        add esp, 4
+        cmp eax, 58h
+        jmp L_12AF
+    L_129E:
+        cmp edi, 2
+        jne L_12BA
+        push eax
+        call ext_008110F0
+        add esp, 4
+        cmp eax, 42h
+    L_12AF:
+        jne L_12BA
+        push 0
+        push esi
+        call dword ptr [esi + 4]
+        add esp, 8
+    L_12BA:
+        mov eax, dword ptr [esp + 28h]
+        test eax, eax
+        je L_12D3
+        mov edx, dword ptr [esi + 10h]
+        mov edi, dword ptr [esp + 1ch]
+        sub edx, edi
+        cmp edx, eax
+        jge L_137B
+    L_12D3:
+        mov eax, dword ptr [esi + 0ch]
+        cmp eax, -1
+        je L_137B
+        test byte ptr [eax*2 + 0ab8e00h], 8
+        jne L_137B
+        cmp eax, 80h
+        jae L_1332
+        mov edi, dword ptr [eax*4 + 0b73ca0h]
+        cmp edi, -1
+        je L_137B
+        mov eax, dword ptr [esp + 2ch]
+        cmp edi, eax
+        jge L_137B
+        cdq
+        push edx
+        push eax
+        push ebp
+        push ebx
+        call ext_00859360
+        mov ecx, eax
+        mov eax, edi
+        mov ebp, edx
+        push 0
+        cdq
+        add ecx, eax
+        push esi
+        adc ebp, edx
+        mov ebx, ecx
+        mov dword ptr [esp + 28h], 1
+        call dword ptr [esi + 4]
+        add esp, 18h
+        jmp L_12BA
+    L_1332:
+        test dword ptr [esp + 24h], 1000000h
+        je L_137B
+        __asm _emit 0xa0
+        __asm _emit 0xc0
+        __asm _emit 0x6a
+        __asm _emit 0xab
+        __asm _emit 0x00
+        xor edi, edi
+        test al, al
+        je L_136D
+    L_1347:
+        mov eax, dword ptr [esi + 0ch]
+        test eax, eax
+        je L_136D
+        movsx edx, byte ptr [edi + 0ab6ac0h]
+        cmp edx, eax
+        jne L_136D
+        push 0
+        push esi
+        call dword ptr [esi + 4]
+        mov al, byte ptr [edi + 0ab6ac1h]
+        add esp, 8
+        inc edi
+        test al, al
+        jne L_1347
+    L_136D:
+        mov al, byte ptr [edi + 0ab6ac0h]
+        test al, al
+        je L_12BA
+    L_137B:
+        mov eax, dword ptr [esp + 10h]
+        test eax, eax
+        jne L_138D
+    L_1383:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 8
+        ret
+    L_138D:
+        mov edx, dword ptr [esp + 20h]
+        test edx, edx
+        je L_13AD
+        mov eax, dword ptr [esp + 14h]
+        test eax, eax
+        je L_13A4
+        neg ebx
+        adc ebp, 0
+        neg ebp
+    L_13A4:
+        mov eax, ebx
+        mov ecx, ebp
+        mov dword ptr [edx], eax
+        mov dword ptr [edx + 4], ecx
+    L_13AD:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
