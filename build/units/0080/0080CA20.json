@@ -33,5 +33,7 @@
     "0x0080CC2B",
     "0x0080CC5B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:53:21Z"
 }

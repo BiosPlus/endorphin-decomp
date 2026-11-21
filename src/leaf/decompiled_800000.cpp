@@ -14372,3 +14372,275 @@ extern "C" __declspec(naked) void __cdecl fn_0080C090(void* a1, void* a2, void* 
         ret
     }
 }
+
+// [0x0080CA20] sub_0080CA20 (597 bytes)
+extern "C" void ext_0080C6A0();
+extern "C" void ext_0085B330();
+extern "C" void ext_0085B3F0();
+extern "C" void ext_0085B6D0();
+extern "C" void ext_0085B9D0();
+extern "C" void ext_0085BA70();
+extern "C" void ext_0085BB40();
+extern "C" __declspec(naked) int __cdecl fn_0080CA20(void* a1, int a2, int* out) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        xor ebp, ebp
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0x4]
+        mov ebx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [ecx + 0x10]
+        lea eax, [eax + 4*eax]
+        lea eax, [eax + 4*eax]
+        mov ecx, dword ptr [edx + 4*eax + 0x30]
+        lea edi, [edx + 4*eax]
+        add ecx, ebx
+        mov al, byte ptr [edi + 0x28]
+        test al, al
+        jbe L80CA20_B4B
+        and eax, 0xff
+        inc eax
+        push eax
+        push ecx
+        call ext_0080C6A0
+        mov ecx, eax
+        add esp, 8
+        test ecx, ecx
+        jne L80CA20_A7B
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je L80CA20_C6E
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L80CA20_A7B:
+        mov eax, dword ptr [edi + 0x38]
+        mov ebx, dword ptr [edi + 0x2c]
+        xor edx, edx
+        div ebx
+        mov edx, dword ptr [edi + 0x4]
+        test dh, 0x40
+        je L80CA20_B46
+        test dh, 0x10
+        je L80CA20_ADC
+        mov edx, dword ptr [edi + 0x4c]
+        mov ebx, dword ptr [esi + 0x4]
+        mov ebx, dword ptr [ebx + 0x10]
+        lea edx, [edx + 4*edx]
+        lea edx, [edx + 4*edx]
+        lea edx, [ebx + 4*edx]
+        mov ebx, dword ptr [edx + 0x30]
+        mov edx, dword ptr [edx + 0x34]
+        add ebx, dword ptr [esi + 0x10]
+        dec edx
+        cmp edx, 7
+        ja L80CA20_B5B
+        jmp dword ptr [4*edx + 0x80cc78]
+    L80CA20_C2:
+        xor edx, edx
+        mov dl, byte ptr [ebx]
+        jmp L80CA20_B5F
+    L80CA20_CB:
+        xor edx, edx
+        mov dx, word ptr [ebx]
+        jmp L80CA20_B5F
+    L80CA20_D5:
+        mov edx, dword ptr [ebx]
+        jmp L80CA20_B5F
+    L80CA20_ADC:
+        lea esi, [eax - 0x1]
+        xor edx, edx
+        cmp esi, 7
+        ja L80CA20_B5F
+        jmp dword ptr [4*esi + 0x80cc98]
+    L80CA20_ED:
+        cmp byte ptr [ecx], 0
+        je L80CA20_B5F
+    L80CA20_EF2:
+        mov bl, byte ptr [edx + ecx + 0x1]
+        inc edx
+        test bl, bl
+        jne L80CA20_EF2
+        jmp L80CA20_B5F
+    L80CA20_FD:
+        cmp word ptr [ecx], 0
+        je L80CA20_B0F
+        mov esi, ecx
+    L80CA20_B05:
+        add esi, 2
+        inc edx
+        cmp word ptr [esi], 0
+        jne L80CA20_B05
+    L80CA20_B0F:
+        shl edx, 1
+        jmp L80CA20_B5F
+    L80CA20_B13:
+        cmp dword ptr [ecx], 0
+        je L80CA20_B25
+        mov esi, ecx
+    L80CA20_B1A:
+        mov ebx, dword ptr [esi + 0x4]
+        add esi, 4
+        inc edx
+        test ebx, ebx
+        jne L80CA20_B1A
+    L80CA20_B25:
+        shl edx, 2
+        jmp L80CA20_B5F
+    L80CA20_B2A:
+        mov esi, dword ptr [ecx]
+        mov ebx, dword ptr [ecx + 0x4]
+        or esi, ebx
+        je L80CA20_B41
+        mov esi, ecx
+    L80CA20_B35:
+        mov ebx, dword ptr [esi + 0x8]
+        add esi, 8
+        inc edx
+        or ebx, dword ptr [esi + 0x4]
+        jne L80CA20_B35
+    L80CA20_B41:
+        shl edx, 3
+        jmp L80CA20_B5F
+    L80CA20_B46:
+        mov edx, dword ptr [edi + 0x38]
+        jmp L80CA20_B5F
+    L80CA20_B4B:
+        mov esi, dword ptr [edi + 0x34]
+        mov ebx, dword ptr [edi + 0x2c]
+        mov eax, esi
+        xor edx, edx
+        div ebx
+        mov edx, esi
+        jmp L80CA20_B5F
+    L80CA20_B5B:
+        mov edx, dword ptr [esp + 0x18]
+    L80CA20_B5F:
+        cmp dword ptr [edi + 0x2c], 1
+        ja L80CA20_C42
+        mov ebx, dword ptr [edi + 0x4]
+        test bh, 0x40
+        je L80CA20_B79
+        cmp edx, eax
+        ja L80CA20_C42
+    L80CA20_B79:
+        mov dl, byte ptr [edi]
+        cmp dl, 0x6
+        jb L80CA20_B89
+        cmp dl, 0x8
+        jbe L80CA20_C64
+    L80CA20_B89:
+        dec eax
+        cmp eax, 7
+        ja L80CA20_C64
+        jmp dword ptr [4*eax + 0x80ccb8]
+    L80CA20_B9A:
+        mov eax, dword ptr [esp + 0x18]
+        xor edx, edx
+        mov dl, byte ptr [ecx]
+        push eax
+        push edx
+        call ext_0085BB40
+        add esp, 8
+        mov ebp, 1
+        jmp L80CA20_C64
+    L80CA20_BB6:
+        test bl, 0x2
+        je L80CA20_BD4
+        mov cx, word ptr [ecx]
+        mov eax, dword ptr [esp + 0x18]
+        and ecx, 0xffff
+        push ecx
+        push eax
+        call ext_0085BA70
+        add esp, 8
+        jmp L80CA20_C32
+    L80CA20_BD4:
+        movsx ecx, word ptr [ecx]
+        mov edx, dword ptr [esp + 0x18]
+        push ecx
+        push edx
+        call ext_0085B9D0
+        add esp, 8
+        jmp L80CA20_C32
+    L80CA20_BE7:
+        mov ecx, dword ptr [ecx]
+        test bl, 0x2
+        push ecx
+        je L80CA20_BFE
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        call ext_0085BA70
+        add esp, 8
+        jmp L80CA20_C32
+    L80CA20_BFE:
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        call ext_0085B9D0
+        add esp, 8
+        jmp L80CA20_C32
+    L80CA20_C0D:
+        mov eax, dword ptr [ecx]
+        mov ecx, dword ptr [ecx + 0x4]
+        test bl, 0x2
+        push ecx
+        push eax
+        je L80CA20_C25
+        mov edx, dword ptr [esp + 0x20]
+        push edx
+        call ext_0085B6D0
+        jmp L80CA20_C2F
+    L80CA20_C25:
+        mov eax, dword ptr [esp + 0x20]
+        push eax
+        call ext_0085B3F0
+    L80CA20_C2F:
+        add esp, 0xc
+    L80CA20_C32:
+        mov ebp, eax
+        test ebp, ebp
+        jne L80CA20_C64
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x20
+        pop ebx
+        ret
+    L80CA20_C42:
+        mov bl, byte ptr [edi]
+        cmp bl, 0x6
+        jb L80CA20_C4E
+        cmp bl, 0x8
+        jbe L80CA20_C64
+    L80CA20_C4E:
+        dec eax
+        jne L80CA20_C64
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push edx
+        push 1
+        push ecx
+        call ext_0085B330
+        add esp, 0x10
+        mov ebp, eax
+    L80CA20_C64:
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je L80CA20_C6E
+        mov dword ptr [eax], ebp
+    L80CA20_C6E:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
