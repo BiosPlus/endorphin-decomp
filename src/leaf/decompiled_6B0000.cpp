@@ -13137,3 +13137,222 @@ L_6BD620_460:
         ret
     }
 }
+
+// [0x006BD000] sub_006BD000 (528 bytes)
+extern "C" void ext_006BC380();
+extern "C" void ext_006BD210();
+extern "C" void ext_006C3030();
+extern "C" void ext_006C30F0();
+extern "C" void ext_006C3120();
+extern "C" void ext_006C3150();
+extern "C" void ext_006FB520();
+extern "C" void ext_006FB650();
+extern "C" void ext_006FDF30();
+extern "C" void ext_006FDF90();
+
+extern "C" __declspec(naked) void __fastcall fn_006BD000(void* self) {
+    __asm {
+        sub esp, 34h
+        push ebp
+        mov ebp, ecx
+        mov dword ptr [esp + 28h], ebp
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006B99C0
+        xor ecx, ecx
+        mov dword ptr [esp + 2Ch], eax
+        test eax, eax
+        mov dword ptr [esp + 1Ch], ecx
+        jle l_end_006BD000
+        push ebx
+        push esi
+        push edi
+    l_outer_006BD000:
+        lea esi, [ecx*4]
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 14h]
+        add eax, esi
+        mov edi, dword ptr [eax]
+        mov ecx, edi
+        mov dword ptr [esp + 1Ch], edi
+        call ext_006C3030
+        test eax, eax
+        je l_next_006BD000
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        sub eax, 4
+        je l_case0_006BD000
+        dec eax
+        je l_case1_006BD000
+        dec eax
+        jne l_next_006BD000
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 14h]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C3150
+        jmp l_after_006BD000
+    l_case1_006BD000:
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 14h]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C3120
+        jmp l_after_006BD000
+    l_case0_006BD000:
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 14h]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C30F0
+    l_after_006BD000:
+        mov esi, eax
+        mov dword ptr [esp + 10h], eax
+        test esi, esi
+        je l_next_006BD000
+        push 2
+        mov ecx, esi
+        call ext_006FDF30
+        xor ebx, ebx
+        mov dword ptr [esp + 30h], eax
+        test eax, eax
+        mov dword ptr [esp + 24h], ebx
+        jle l_next_006BD000
+        jmp l_inner_006BD000
+    l_innerreload_006BD000:
+        mov esi, dword ptr [esp + 10h]
+    l_inner_006BD000:
+        push 2
+        push ebx
+        mov ecx, esi
+        call ext_006FDF90
+        mov ecx, eax
+        call ext_006BC380
+        mov ebp, eax
+        mov dword ptr [esp + 14h], ebp
+        mov eax, dword ptr [ebp + 4]
+        test eax, eax
+        je l_block_006BD000
+        cmp eax, 2
+        jne l_skip_006BD000
+    l_block_006BD000:
+        mov edx, dword ptr [ebp + 8]
+        mov dword ptr [esp + 18h], 0
+        test edx, edx
+        mov dword ptr [esp + 20h], edx
+        jle l_fix_006BD000
+        jmp l_loop1_006BD000
+    l_loop1_reload_006BD000:
+        mov edi, dword ptr [esp + 1Ch]
+    l_loop1_006BD000:
+        mov eax, dword ptr [ebp + 18h]
+        mov ecx, dword ptr [esp + 18h]
+        mov ebx, dword ptr [eax + 4*ecx]
+        mov ecx, ebx
+        mov edx, dword ptr [ebx]
+        call dword ptr [edx + 0ch]
+        mov dword ptr [esp + 2Ch], eax
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0ch]
+        mov edi, eax
+        add edi, 10h
+        mov esi, dword ptr [edi + 4]
+        dec esi
+        js l_notfound2_006BD000
+        lea ebp, [esi + 2*esi]
+        shl ebp, 2
+    l_loop2_006BD000:
+        mov ecx, dword ptr [esp + 2Ch]
+        push ecx
+        lea ecx, [esp + 40h]
+        call ext_006FB520
+        mov ecx, dword ptr [edi]
+        lea edx, [esp + 3Ch]
+        push edx
+        add ecx, ebp
+        call ext_006BD210
+        test al, al
+        jne l_found_006BD000
+        dec esi
+        sub ebp, 0Ch
+        test esi, esi
+        jge l_loop2_006BD000
+        jmp l_notfound_006BD000
+    l_found_006BD000:
+        test esi, esi
+        jge l_found2_006BD000
+    l_notfound_006BD000:
+        mov ebp, dword ptr [esp + 14h]
+    l_notfound2_006BD000:
+        mov eax, dword ptr [ebx]
+        push 0
+        mov ecx, ebx
+        call dword ptr [eax + 0ch]
+        mov ecx, dword ptr [esp + 20h]
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0ch]
+        mov ecx, eax
+        call ext_006FB650
+        jmp l_incr1_006BD000
+    l_found2_006BD000:
+        mov ebp, dword ptr [esp + 14h]
+    l_incr1_006BD000:
+        mov eax, dword ptr [esp + 18h]
+        mov ecx, dword ptr [esp + 20h]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp + 18h], eax
+        jl l_loop1_reload_006BD000
+        mov ebx, dword ptr [esp + 24h]
+        mov edi, dword ptr [esp + 1Ch]
+        mov edx, ecx
+    l_fix_006BD000:
+        cmp dword ptr [ebp + 4], 2
+        jne l_skip_006BD000
+        mov esi, dword ptr [ebp + 20h]
+        xor ecx, ecx
+        test esi, esi
+        jle l_skip_006BD000
+    l_fixloop_006BD000:
+        mov eax, dword ptr [ebp + 30h]
+        cmp dword ptr [eax + 4*ecx], edx
+        lea eax, [eax + 4*ecx]
+        jl l_fixinc_006BD000
+        mov dword ptr [eax], 0FFFFFFFFh
+    l_fixinc_006BD000:
+        inc ecx
+        cmp ecx, esi
+        jl l_fixloop_006BD000
+    l_skip_006BD000:
+        mov eax, dword ptr [esp + 30h]
+        inc ebx
+        cmp ebx, eax
+        mov dword ptr [esp + 24h], ebx
+        jl l_innerreload_006BD000
+        mov ebp, dword ptr [esp + 34h]
+    l_next_006BD000:
+        mov ecx, dword ptr [esp + 28h]
+        mov eax, dword ptr [esp + 38h]
+        inc ecx
+        cmp ecx, eax
+        mov dword ptr [esp + 28h], ecx
+        jl l_outer_006BD000
+        pop edi
+        pop esi
+        pop ebx
+    l_end_006BD000:
+        pop ebp
+        add esp, 34h
+        ret
+        nop
+        nop
+        nop
+    }
+}
