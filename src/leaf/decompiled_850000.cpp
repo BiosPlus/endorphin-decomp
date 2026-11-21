@@ -13271,3 +13271,260 @@ extern "C" __declspec(naked) void __fastcall fn_0085B3F0(void* self) {
         ret
     }
 }
+
+// [0x0085B020] sub_0085B020 (672 bytes)
+extern "C" void ext_0085A620();
+extern "C" void ext_0085A650();
+extern "C" void ext_0085A6B0();
+extern "C" void ext_0085AD60();
+extern "C" void ext_0085AE30();
+extern "C" void ext_0086D0A0();
+
+extern "C" __declspec(naked) int __cdecl fn_0085B020(void* fp, void** out) {
+    __asm {
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x38]
+        cmp dword ptr [edi], 0x0
+        je null_out
+        mov esi, 0xdd
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    null_out:
+        call ext_0085A620
+        test eax, eax
+        mov dword ptr [edi], eax
+        je fail_c
+        mov ebp, dword ptr [esp + 0x34]
+        lea eax, [esp + 0x10]
+        push ebp
+        push 0x1
+        push 0x20
+        push eax
+        call ext_0086D0A0
+        add esp, 0x10
+        cmp eax, 0x1
+        je read_ok
+        mov ecx, dword ptr [edi]
+        mov esi, 0x20
+        push ecx
+        call ext_0085A650
+        add esp, 0x4
+        mov dword ptr [edi], 0x0
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    read_ok:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x11]
+        xor edx, edx
+        and ecx, 0xff
+        mov dh, al
+        or edx, ecx
+        mov ecx, dword ptr [esp + 0x12]
+        shl edx, 0x8
+        and ecx, 0xff
+        or edx, ecx
+        mov ecx, dword ptr [esp + 0x13]
+        shl edx, 0x8
+        and ecx, 0xff
+        or edx, ecx
+        cmp edx, 0x54534421
+        jne le_magic
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x15]
+        mov edx, dword ptr [esp + 0x16]
+        and eax, 0xff
+        shl eax, 0x8
+        and ecx, 0xff
+        and edx, 0xff
+        or eax, ecx
+        mov ecx, dword ptr [esp + 0x17]
+        shl eax, 0x8
+        or eax, edx
+        and ecx, 0xff
+        shl eax, 0x8
+        mov ebx, 0x1
+        or eax, ecx
+        jmp store_count
+    le_magic:
+        xor ebx, ebx
+        cmp eax, 0x54534421
+        je le_count
+        mov edx, dword ptr [edi]
+        push edx
+        call ext_0085A650
+        add esp, 0x4
+        mov esi, 0xd8
+        mov dword ptr [edi], ebx
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    le_count:
+        mov eax, dword ptr [esp + 0x14]
+    store_count:
+        mov edx, dword ptr [edi]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [edi]
+        cmp dword ptr [eax], 0x2
+        je loops
+        push eax
+        call ext_0085A650
+        add esp, 0x4
+        mov esi, 0xdf
+        mov dword ptr [edi], 0x0
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    loops:
+        mov dword ptr [esp + 0x38], 0x0
+    loop1:
+        mov eax, dword ptr [esp + 0x18]
+        cmp ebx, 0x1
+        jne loop1_cmp
+        mov ecx, dword ptr [esp + 0x19]
+        mov edx, dword ptr [esp + 0x1a]
+        and eax, 0xff
+        and ecx, 0xff
+        shl eax, 0x8
+        or eax, ecx
+        mov ecx, dword ptr [esp + 0x1b]
+        shl eax, 0x8
+        and edx, 0xff
+        and ecx, 0xff
+        or eax, edx
+        shl eax, 0x8
+        or eax, ecx
+    loop1_cmp:
+        cmp dword ptr [esp + 0x38], eax
+        jae loop1_end
+        mov edx, dword ptr [edi]
+        push edx
+        push ebp
+        push ebx
+        call ext_0085A6B0
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        jne error_exit
+        inc dword ptr [esp + 0x38]
+        jmp loop1
+    loop1_end:
+        mov dword ptr [esp + 0x38], 0x0
+    loop2:
+        mov eax, dword ptr [esp + 0x1c]
+        cmp ebx, 0x1
+        jne loop2_cmp
+        mov ecx, dword ptr [esp + 0x1d]
+        mov edx, dword ptr [esp + 0x1e]
+        and eax, 0xff
+        and ecx, 0xff
+        shl eax, 0x8
+        or eax, ecx
+        mov ecx, dword ptr [esp + 0x1f]
+        shl eax, 0x8
+        and edx, 0xff
+        and ecx, 0xff
+        or eax, edx
+        shl eax, 0x8
+        or eax, ecx
+    loop2_cmp:
+        cmp dword ptr [esp + 0x38], eax
+        jae loop2_end
+        mov edx, dword ptr [edi]
+        push edx
+        push ebp
+        push ebx
+        call ext_0085AE30
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        jne error_exit
+        inc dword ptr [esp + 0x38]
+        jmp loop2
+    loop2_end:
+        mov dword ptr [esp + 0x38], 0x0
+    loop3:
+        mov eax, dword ptr [esp + 0x20]
+        cmp ebx, 0x1
+        jne loop3_cmp
+        mov ecx, dword ptr [esp + 0x21]
+        mov edx, dword ptr [esp + 0x22]
+        and eax, 0xff
+        and ecx, 0xff
+        shl eax, 0x8
+        or eax, ecx
+        mov ecx, dword ptr [esp + 0x23]
+        shl eax, 0x8
+        and edx, 0xff
+        and ecx, 0xff
+        or eax, edx
+        shl eax, 0x8
+        or eax, ecx
+    loop3_cmp:
+        cmp dword ptr [esp + 0x38], eax
+        jae ok_exit
+        mov edx, dword ptr [edi]
+        push edx
+        push ebp
+        push ebx
+        call ext_0085AD60
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        jne error_exit
+        inc dword ptr [esp + 0x38]
+        jmp loop3
+    error_exit:
+        mov eax, dword ptr [edi]
+        push eax
+        call ext_0085A650
+        add esp, 0x4
+        mov dword ptr [edi], 0x0
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    ok_exit:
+        xor esi, esi
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    fail_c:
+        mov esi, 0xc
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    }
+}
