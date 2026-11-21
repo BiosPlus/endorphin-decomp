@@ -4706,3 +4706,301 @@ extern "C" __declspec(naked) void __fastcall fn_00765AE0(void* self, int edx_unu
         ret     0xc
     }
 }
+
+// [0x00763AF0] sub_00763AF0 (848 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B99C0();
+extern "C" void ext_006C9FD0();
+extern "C" void ext_006D55F0();
+extern "C" void ext_006DCB60();
+extern "C" void ext_006E8E20();
+extern "C" void ext_006E9000();
+extern "C" void ext_00784650();
+
+extern "C" __declspec(naked) void __fastcall fn_00763AF0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     dword ptr [esp + 0x8], ecx
+        push    esi
+        mov     ecx, dword ptr [esp + 0x14]
+        push    edi
+        xor     ebx, ebx
+        call    ext_006B99C0
+        mov     ecx, eax
+        call    ext_006C9FD0
+        mov     ebp, eax
+        test    ebp, ebp
+        jle     L_763C53
+    L_763B15:
+        push    0x4
+        call    ext_006A5C62
+        mov     ecx, dword ptr [esp + 0x1c]
+        add     esp, 0x4
+        mov     edi, eax
+        push    ebx
+        call    ext_006B99C0
+        mov     ecx, eax
+        call    ext_006E9000
+        mov     esi, eax
+        push    0xaa8ca8
+        push    0xaa8d90
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763B7D
+        push    0xaa8ca4
+        push    0xaa8d90
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763B7D
+        push    0xaa8ca0
+        push    0xaa8d90
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763B7D
+        xor     eax, eax
+        jmp     L_763B82
+    L_763B7D:
+        mov     eax, 0x1
+    L_763B82:
+        push    0xaa8ca8
+        push    0xaa8d9c
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi], al
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763BCD
+        push    0xaa8ca4
+        push    0xaa8d9c
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763BCD
+        push    0xaa8ca0
+        push    0xaa8d9c
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763BCD
+        xor     eax, eax
+        jmp     L_763BD2
+    L_763BCD:
+        mov     eax, 0x1
+    L_763BD2:
+        push    0xaa8ca8
+        push    0xaa8da8
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x1], al
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763C1E
+        push    0xaa8ca4
+        push    0xaa8da8
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763C1E
+        push    0xaa8ca0
+        push    0xaa8da8
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763C1E
+        xor     eax, eax
+        jmp     L_763C23
+    L_763C1E:
+        mov     eax, 0x1
+    L_763C23:
+        push    0xaa8db0
+        push    0x0
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x2], al
+        call    ext_006DCB60
+        mov     byte ptr [edi + 0x3], al
+        mov     eax, dword ptr [esp + 0x10]
+        push    edi
+        push    esi
+        lea     ecx, [eax + 0xc4]
+        call    ext_00784650
+        inc     ebx
+        cmp     ebx, ebp
+        jl      L_763B15
+    L_763C53:
+        mov     ecx, dword ptr [esp + 0x18]
+        xor     ebx, ebx
+        call    ext_006B99C0
+        mov     ecx, eax
+        call    ext_006D55F0
+        mov     ebp, eax
+        test    ebp, ebp
+        jle     L_763E2C
+        mov     ecx, dword ptr [esp + 0x10]
+        add     ecx, 0xd8
+        mov     dword ptr [esp + 0x10], ecx
+    L_763C7D:
+        push    0x7
+        call    ext_006A5C62
+        mov     ecx, dword ptr [esp + 0x1c]
+        add     esp, 0x4
+        mov     edi, eax
+        push    ebx
+        call    ext_006B99C0
+        mov     ecx, eax
+        call    ext_006E8E20
+        mov     esi, eax
+        push    0xaa8ca8
+        push    0xaa8dc4
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763CE5
+        push    0xaa8ca4
+        push    0xaa8dc4
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763CE5
+        push    0xaa8ca0
+        push    0xaa8dc4
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763CE5
+        xor     eax, eax
+        jmp     L_763CEA
+    L_763CE5:
+        mov     eax, 0x1
+    L_763CEA:
+        push    0xaa8ca8
+        push    0xaa8dcc
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi], al
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763D35
+        push    0xaa8ca4
+        push    0xaa8dcc
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763D35
+        push    0xaa8ca0
+        push    0xaa8dcc
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763D35
+        xor     eax, eax
+        jmp     L_763D3A
+    L_763D35:
+        mov     eax, 0x1
+    L_763D3A:
+        push    0xaa8ca8
+        push    0xaa8dd4
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x1], al
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763D86
+        push    0xaa8ca4
+        push    0xaa8dd4
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763D86
+        push    0xaa8ca0
+        push    0xaa8dd4
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763D86
+        xor     eax, eax
+        jmp     L_763D8B
+    L_763D86:
+        mov     eax, 0x1
+    L_763D8B:
+        push    0xaa8ca8
+        push    0xaa8db8
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x2], al
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763DD7
+        push    0xaa8ca4
+        push    0xaa8db8
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763DD7
+        push    0xaa8ca0
+        push    0xaa8db8
+        push    0x0
+        mov     ecx, esi
+        call    ext_006DCB60
+        test    al, al
+        jne     L_763DD7
+        xor     eax, eax
+        jmp     L_763DDC
+    L_763DD7:
+        mov     eax, 0x1
+    L_763DDC:
+        push    0xaa8de0
+        push    0x0
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x3], al
+        call    ext_006DCB60
+        push    0xaa8de8
+        push    0x0
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x4], al
+        call    ext_006DCB60
+        push    0xaa8df8
+        push    0x0
+        push    0x0
+        mov     ecx, esi
+        mov     byte ptr [edi + 0x6], al
+        call    ext_006DCB60
+        mov     ecx, dword ptr [esp + 0x10]
+        push    edi
+        push    esi
+        mov     byte ptr [edi + 0x5], al
+        call    ext_00784650
+        inc     ebx
+        cmp     ebx, ebp
+        jl      L_763C7D
+    L_763E2C:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x4
+    }
+}
