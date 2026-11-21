@@ -36,5 +36,7 @@
     "0x0080EEFB",
     "0x0080EF2B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T16:05:21Z"
 }

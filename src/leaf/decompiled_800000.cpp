@@ -15331,3 +15331,334 @@ extern "C" __declspec(naked) void __fastcall fn_0080B740(void* self) {
         ret
     }
 }
+
+// [0x0080ECA0] sub_0080ECA0 (755 bytes)
+extern "C" void ext_0080EFC0();
+extern "C" void ext_0080EFD0();
+extern "C" void ext_0080F070();
+extern "C" void ext_0080F480();
+extern "C" void ext_0080F600();
+extern "C" void ext_00810600();
+
+// Switch jump table for the argument-type dispatch (original lives at 0x0080EF94, outside the 755 bytes).
+static const int tbl_0080EF94[10] = {
+    0x0080EE0A, 0x0080EF51, 0x0080ED8F, 0x0080EE24, 0x0080EE39,
+    0x0080EE57, 0x0080EF51, 0x0080EF51, 0x0080EEC6, 0x0080EF04
+};
+
+extern "C" __declspec(naked) int __cdecl fn_0080ECA0(void* ctx, const char* fmt, void* args) {
+    __asm {
+        sub esp, 1Ch
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 2Ch]
+        push edi
+        xor ebx, ebx
+        xor edi, edi
+        mov al, byte ptr [ebp]
+        mov dword ptr [esp + 0Ch], edi
+        test al, al
+        je L_ret_early
+        push esi
+        mov esi, dword ptr [esp + 30h]
+    L_loop:
+        mov al, byte ptr [ebx + ebp]
+        cmp al, 25h
+        jne L_plain
+        cmp byte ptr [ebx + ebp + 1], 25h
+        jne L_fmt
+        push 25h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        add ebx, 2
+        jmp L_next
+    L_fmt:
+        mov edx, dword ptr [esp + 38h]
+        lea eax, [edi + 4*edi]
+        lea eax, [eax + 8*eax]
+        mov ecx, dword ptr [edx + 8*eax]
+        lea eax, [edx + 8*eax]
+        cmp ecx, 7
+        jne L_ED0E
+    L_w:
+        mov ecx, dword ptr [eax + 168h]
+        add eax, 168h
+        inc edi
+        cmp ecx, 7
+        je L_w
+        mov dword ptr [esp + 10h], edi
+    L_ED0E:
+        lea eax, [edi + 4*edi]
+        lea ecx, [eax + 8*eax]
+        mov ebx, dword ptr [edx + 8*ecx + 4]
+        mov edi, dword ptr [edx + 8*ecx + 8]
+        lea ecx, [edx + 8*ecx]
+        test ebx, 20000h
+        mov dword ptr [esp + 30h], ecx
+        je L_ED41
+        lea edi, [edi + 4*edi]
+        lea eax, [edi + 8*edi]
+        mov edi, dword ptr [edx + 8*eax + 20h]
+        test edi, edi
+        jge L_ED41
+        and bh, -21h
+        or ebx, 8
+        neg edi
+    L_ED41:
+        test ebx, 40000h
+        je L_ED64
+        mov ebp, dword ptr [ecx + 0Ch]
+        test ebx, 80000h
+        je L_ED67
+        lea ebp, [ebp + 4*ebp]
+        lea eax, [ebp + 8*ebp]
+        mov ebp, dword ptr [edx + 8*eax + 20h]
+        test ebp, ebp
+        jge L_ED67
+    L_ED64:
+        or ebp, -1
+    L_ED67:
+        mov eax, dword ptr [ecx + 10h]
+        test ebx, 200000h
+        je L_ED7C
+        lea eax, [eax + 4*eax]
+        lea eax, [eax + 8*eax]
+        mov eax, dword ptr [edx + 8*eax + 20h]
+    L_ED7C:
+        mov edx, dword ptr [ecx]
+        dec edx
+        cmp edx, 9
+        ja L_EF51
+        jmp dword ptr [tbl_0080EF94 + edx*4]
+    L_case3:
+        mov eax, ebx
+        and eax, 1000000h
+        mov dword ptr [esp + 18h], eax
+        je L_EDA8
+        push 22h
+        push esi
+        call dword ptr [esi]
+        mov ecx, dword ptr [esp + 38h]
+        add esp, 8
+    L_EDA8:
+        mov ebp, ebx
+        and ebp, 8
+        mov dword ptr [esp + 14h], ebp
+        jne L_EDCF
+        dec edi
+        test edi, edi
+        jle L_EDCF
+        mov ebp, edi
+        xor edi, edi
+    L_EDBC:
+        push 20h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        dec ebp
+        jne L_EDBC
+        mov ecx, dword ptr [esp + 30h]
+        mov ebp, dword ptr [esp + 14h]
+    L_EDCF:
+        mov ecx, dword ptr [ecx + 20h]
+        push ebx
+        push ecx
+        push esi
+        call ext_0080F480
+        add esp, 0Ch
+        test ebp, ebp
+        je L_EDF1
+        dec edi
+        test edi, edi
+        jle L_EDF1
+    L_EDE6:
+        push 20h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        dec edi
+        jne L_EDE6
+    L_EDF1:
+        mov eax, dword ptr [esp + 18h]
+        test eax, eax
+        je L_EF4D
+        push 22h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        jmp L_EF4D
+    L_EE0A:
+        mov edx, dword ptr [ecx + 24h]
+        push eax
+        mov eax, dword ptr [ecx + 20h]
+        push ebp
+        push edi
+        push ebx
+        push edx
+        push eax
+        push esi
+        call ext_0080F070
+        add esp, 1Ch
+        jmp L_EF4D
+    L_EE24:
+        mov ecx, dword ptr [ecx + 20h]
+        push ebp
+        push edi
+        push ebx
+        push ecx
+        push esi
+        call ext_0080F600
+        add esp, 14h
+        jmp L_EF4D
+    L_EE39:
+        mov edx, dword ptr [ecx + 20h]
+        lea eax, [esp + 1Ch]
+        push edx
+        push eax
+        mov dword ptr [esp + 24h], esi
+        mov dword ptr [esp + 28h], ecx
+        call ext_00810600
+        add esp, 8
+        jmp L_EF4D
+    L_EE57:
+        mov edi, dword ptr [ecx + 20h]
+        test edi, edi
+        je L_EF51
+        test bh, 4
+        je L_EE71
+        mov edx, dword ptr [esi + 14h]
+        mov dword ptr [edi], edx
+        jmp L_EF51
+    L_EE71:
+        test bh, 8
+        je L_EE80
+        mov eax, dword ptr [esi + 14h]
+        mov dword ptr [edi], eax
+        jmp L_EF51
+    L_EE80:
+        test bh, 10h
+        je L_EE93
+        mov eax, dword ptr [esi + 14h]
+        cdq
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 4], edx
+        jmp L_EF51
+    L_EE93:
+        test bh, 1
+        je L_EEA6
+        mov eax, dword ptr [esi + 14h]
+        cdq
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 4], edx
+        jmp L_EF51
+    L_EEA6:
+        test bl, -80h
+        je L_EEB5
+    L_EEAB:
+        mov edx, dword ptr [esi + 14h]
+        mov dword ptr [edi], edx
+        jmp L_EF51
+    L_EEB5:
+        test bl, 20h
+        je L_EEAB
+        mov ax, word ptr [esi + 14h]
+        mov word ptr [edi], ax
+        jmp L_EF51
+    L_EEC6:
+        mov eax, dword ptr [ecx + 20h]
+        push eax
+        call ext_0080EFC0
+        add esp, 4
+        test eax, eax
+        je L_EEE5
+        push ebp
+        push edi
+        push ebx
+        push eax
+        push esi
+        call ext_0080F600
+        add esp, 14h
+        jmp L_EF4D
+    L_EEE5:
+        push 23h
+        push esi
+        call dword ptr [esi]
+        mov ecx, dword ptr [esp + 38h]
+        push 0Ah
+        push ebp
+        push edi
+        mov eax, dword ptr [ecx + 20h]
+        push ebx
+        cdq
+        push edx
+        push eax
+        push esi
+        call ext_0080F070
+        add esp, 24h
+        jmp L_EF4D
+    L_EF04:
+        mov dl, byte ptr [ecx + 28h]
+        lea eax, [ecx + 28h]
+        test dl, dl
+        jne L_EF27
+        mov eax, dword ptr [esp + 10h]
+        test eax, eax
+        jg L_EF1F
+        cmp dword ptr [ecx - 168h], 7
+        jne L_EF51
+    L_EF1F:
+        mov eax, dword ptr [ecx - 148h]
+        jmp L_EF36
+    L_EF27:
+        push 0
+        push eax
+        call ext_0080EFD0
+        mov ecx, dword ptr [esp + 38h]
+        add esp, 8
+    L_EF36:
+        test eax, eax
+        je L_EF51
+        lea edx, [esp + 24h]
+        mov dword ptr [esp + 24h], esi
+        push edx
+        mov dword ptr [esp + 2Ch], ecx
+        call dword ptr [eax + 4]
+        add esp, 4
+    L_EF4D:
+        mov ecx, dword ptr [esp + 30h]
+    L_EF51:
+        mov eax, dword ptr [esp + 10h]
+        mov ebx, dword ptr [ecx + 18h]
+        mov ebp, dword ptr [esp + 34h]
+        inc eax
+        mov dword ptr [esp + 10h], eax
+        mov edi, eax
+        jmp L_next
+    L_plain:
+        movsx eax, al
+        push eax
+        push esi
+        inc ebx
+        call dword ptr [esi]
+        add esp, 8
+    L_next:
+        cmp byte ptr [ebx + ebp], 0
+        jne L_loop
+        mov eax, dword ptr [esi + 10h]
+        pop esi
+        pop edi
+        pop ebp
+        pop ebx
+        add esp, 1Ch
+        ret
+    L_ret_early:
+        mov eax, dword ptr [esp + 2Ch]
+        pop edi
+        pop ebp
+        pop ebx
+        mov eax, dword ptr [eax + 10h]
+        add esp, 1Ch
+        ret
+    }
+}
