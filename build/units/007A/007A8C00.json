@@ -55,5 +55,7 @@
     "0x007A8F67",
     "0x007A8F88"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@medium",
+  "matched_at": "2026-11-21T16:18:07Z"
 }
