@@ -9345,3 +9345,265 @@ extern "C" __declspec(naked) void __fastcall fn_007785B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0077F250] sub_0077F250 (656 bytes)
+extern "C" void ext_006BDAF0();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_0077F020();
+extern "C" void ext_0077F250();
+extern "C" void ext_0077F4E0();
+extern "C" void ext_0077F520();
+extern "C" int mem_00B5E400;
+extern "C" int mem_00B5F060;
+
+extern "C" __declspec(naked) void __fastcall fn_0077F250(void* self) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x28]
+        mov ebp, ecx
+        push edi
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], ebp
+        call dword ptr [eax + 0xc]
+        mov edi, eax
+        mov eax, dword ptr [mem_00B5E400]
+        or ebx, -1
+        push eax
+        mov dword ptr [esp + 0x24], 0
+        mov dword ptr [esp + 0x28], ebx
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, edi
+        push eax
+        call ext_006FA5A0
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x1c], eax
+        call ext_0077F520
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je L_zero_a
+        mov eax, dword ptr [eax + 0x14]
+        jmp L_join_a
+    L_zero_a:
+        xor eax, eax
+    L_join_a:
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x24], ebx
+        call ext_0077F4E0
+        mov edi, eax
+        test edi, edi
+        je L_end
+    L_loop1:
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0xc]
+        push eax
+        push edi
+        mov ecx, ebp
+        call ext_0077F020
+        mov eax, dword ptr [esp + 0x24]
+        inc eax
+        mov dword ptr [esp + 0x24], eax
+        js L_end
+        cmp eax, dword ptr [esp + 0x20]
+        jge L_end
+        mov ecx, dword ptr [esp + 0x1c]
+        lea eax, [eax + 2*eax]
+        mov edx, dword ptr [ecx + 0x10]
+        lea edi, [edx + 4*eax]
+        mov ecx, edi
+        call ext_006BDAF0
+        test al, al
+        je L_end
+        mov eax, dword ptr [edi + 0x4]
+        mov edi, dword ptr [eax + 0x4]
+        test edi, edi
+        jne L_loop1
+    L_end:
+        mov edx, dword ptr [esi]
+        xor ebx, ebx
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], ebx
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax + 0xc0]
+        add eax, 0xc0
+        test ecx, ecx
+        jle L_after2
+    L_loop2:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0xc]
+        mov ecx, dword ptr [eax + 0xd0]
+        add eax, 0xc0
+        mov eax, dword ptr [mem_00B5E400]
+        mov edi, dword ptr [ecx + 4*ebx]
+        push eax
+        mov dword ptr [esp + 0x1c], edi
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, edi
+        push eax
+        call ext_006FA5A0
+        mov ebp, eax
+        xor edi, edi
+        cmp ebp, edi
+        je L_zero_b
+        mov edx, dword ptr [ebp + 0x14]
+        mov dword ptr [esp + 0x2c], edx
+        jmp L_join_b
+    L_zero_b:
+        mov dword ptr [esp + 0x2c], edi
+    L_join_b:
+        cmp dword ptr [esp + 0x2c], edi
+        jle L_next2
+        mov ebx, dword ptr [ebp + 0x10]
+        mov ecx, ebx
+        call ext_006BDAF0
+        test al, al
+        je L_next2_restore
+        mov eax, dword ptr [ebx + 0x4]
+        mov eax, dword ptr [eax + 0x4]
+        test eax, eax
+        je L_next2_restore
+    L_inner:
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        call ext_0077F020
+        inc edi
+        js L_next2_restore
+        cmp edi, dword ptr [esp + 0x2c]
+        jge L_next2_restore
+        mov eax, dword ptr [ebp + 0x10]
+        lea edx, [edi + 2*edi]
+        lea ecx, [eax + 4*edx]
+        mov eax, dword ptr [eax + 4*edx + 0x4]
+        test eax, eax
+        je L_next2_restore
+        mov edx, dword ptr [eax]
+        mov ebx, dword ptr [ecx]
+        cmp edx, ebx
+        jne L_next2_restore
+        mov eax, dword ptr [eax + 0x4]
+        test eax, eax
+        jne L_inner
+    L_next2_restore:
+        mov ebx, dword ptr [esp + 0x10]
+    L_next2:
+        mov eax, dword ptr [esi]
+        inc ebx
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], ebx
+        call dword ptr [eax + 0xc]
+        mov ecx, dword ptr [eax + 0xc0]
+        add eax, 0xc0
+        cmp ebx, ecx
+        jl L_loop2
+    L_after2:
+        mov al, byte ptr [esp + 0x30]
+        test al, al
+        je L_done
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx + 0x8]
+        mov ebp, eax
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0xc]
+        mov esi, eax
+        mov eax, dword ptr [mem_00B5F060]
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ebx, eax
+        xor edi, edi
+        cmp ebx, edi
+        je L_zero_c
+        mov ecx, dword ptr [ebx + 0x14]
+        mov dword ptr [esp + 0x2c], ecx
+        jmp L_join_c
+    L_zero_c:
+        mov dword ptr [esp + 0x2c], edi
+    L_join_c:
+        cmp dword ptr [esp + 0x2c], edi
+        jle L_done
+        mov ecx, dword ptr [ebx + 0x10]
+        mov eax, dword ptr [ecx + 0x4]
+        cmp eax, edi
+        je L_done
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_done
+        mov esi, dword ptr [eax + 0x4]
+        cmp esi, edi
+        je L_done
+    L_loop3:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0x12c]
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx + 0x8]
+        mov ecx, ebp
+        dec ecx
+        je L_flag1
+        sub ecx, 0x9
+        je L_flag_chk
+        mov byte ptr [esp + 0x30], 0
+        jmp L_push3
+    L_flag_chk:
+        cmp eax, 0x1
+        je L_flag0
+        cmp eax, 0xa
+        jne L_flag1
+    L_flag0:
+        mov byte ptr [esp + 0x30], 0
+        jmp L_push3
+    L_flag1:
+        mov byte ptr [esp + 0x30], 1
+    L_push3:
+        mov eax, dword ptr [esp + 0x30]
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x12c]
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        call ext_0077F250
+        inc edi
+        js L_done
+        cmp edi, dword ptr [esp + 0x2c]
+        jge L_done
+        mov ecx, dword ptr [ebx + 0x10]
+        lea eax, [edi + 2*edi]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je L_done
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_done
+        mov esi, dword ptr [eax + 0x4]
+        test esi, esi
+        jne L_loop3
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x8
+    }
+}
