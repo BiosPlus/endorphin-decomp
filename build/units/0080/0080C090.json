@@ -33,5 +33,7 @@
     "0x0080C271",
     "0x0080C27E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T15:52:06Z"
 }
