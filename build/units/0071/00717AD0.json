@@ -18,5 +18,7 @@
     "0x00717CA1",
     "0x00717CAA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:43:55Z"
 }
