@@ -68,5 +68,7 @@
     "0x00734E9F",
     "0x00734EB3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T15:59:37Z"
 }
