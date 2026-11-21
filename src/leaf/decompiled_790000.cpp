@@ -10553,3 +10553,117 @@ L_end:
         ret
     }
 }
+
+// [0x00791400] sub_00791400 (525 bytes)
+extern "C" double mem_00993840; /* double 3 */
+extern "C" __declspec(naked) void __fastcall fn_00791400(void* self, int edx_unused, const void* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx + 0xe8], edx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ecx + 0xec], edx
+        mov edx, dword ptr [eax + 0x8]
+        mov dword ptr [ecx + 0xf0], edx
+        mov edx, dword ptr [eax + 0xc]
+        mov dword ptr [ecx + 0xf4], edx
+        mov edx, dword ptr [eax + 0x10]
+        mov dword ptr [ecx + 0xf8], edx
+        mov edx, dword ptr [eax + 0x14]
+        mov dword ptr [ecx + 0xfc], edx
+        mov edx, dword ptr [eax + 0x18]
+        mov dword ptr [ecx + 0x100], edx
+        mov edx, dword ptr [eax + 0x1c]
+        mov dword ptr [ecx + 0x104], edx
+        mov edx, dword ptr [eax + 0x20]
+        mov dword ptr [ecx + 0x108], edx
+        mov edx, dword ptr [eax + 0x24]
+        mov dword ptr [ecx + 0x10c], edx
+        mov edx, dword ptr [eax + 0x28]
+        mov dword ptr [ecx + 0x110], edx
+        mov edx, dword ptr [eax + 0x2c]
+        mov dword ptr [ecx + 0x114], edx
+        mov edx, dword ptr [eax + 0x30]
+        mov dword ptr [ecx + 0x118], edx
+        mov edx, dword ptr [eax + 0x34]
+        mov dword ptr [ecx + 0x11c], edx
+        mov edx, dword ptr [eax + 0x38]
+        mov dword ptr [ecx + 0x120], edx
+        mov edx, dword ptr [eax + 0x3c]
+        mov dword ptr [ecx + 0x124], edx
+        mov edx, dword ptr [eax + 0x40]
+        mov dword ptr [ecx + 0x128], edx
+        mov edx, dword ptr [eax + 0x44]
+        mov dword ptr [ecx + 0x12c], edx
+        mov edx, dword ptr [eax + 0x48]
+        mov dword ptr [ecx + 0x130], edx
+        mov edx, dword ptr [eax + 0x4c]
+        mov dword ptr [ecx + 0x134], edx
+        mov edx, dword ptr [eax + 0x50]
+        mov dword ptr [ecx + 0x138], edx
+        mov edx, dword ptr [eax + 0x54]
+        mov dword ptr [ecx + 0x13c], edx
+        mov edx, dword ptr [eax + 0x58]
+        mov dword ptr [ecx + 0x140], edx
+        mov edx, dword ptr [eax + 0x5c]
+        mov dword ptr [ecx + 0x144], edx
+        mov edx, dword ptr [eax + 0x60]
+        mov dword ptr [ecx + 0x148], edx
+        mov edx, dword ptr [eax + 0x64]
+        mov dword ptr [ecx + 0x14c], edx
+        mov edx, dword ptr [eax + 0x68]
+        fld qword ptr [ecx + 0xe8]
+        mov dword ptr [ecx + 0x150], edx
+        mov edx, dword ptr [eax + 0x6c]
+        fmul qword ptr [mem_00993840]
+        mov dword ptr [ecx + 0x154], edx
+        mov edx, dword ptr [eax + 0x70]
+        mov dword ptr [ecx + 0x158], edx
+        mov edx, dword ptr [eax + 0x74]
+        mov dword ptr [ecx + 0x15c], edx
+        mov edx, dword ptr [eax + 0x78]
+        mov dword ptr [ecx + 0x160], edx
+        mov eax, dword ptr [eax + 0x7c]
+        fstp qword ptr [ecx + 0x1c8]
+        fld qword ptr [ecx + 0xf0]
+        fadd st(0), st
+        mov edx, dword ptr [ecx + 0xf8]
+        mov dword ptr [ecx + 0x164], eax
+        mov eax, dword ptr [ecx + 0xfc]
+        mov dword ptr [ecx + 0x1d8], edx
+        mov dword ptr [ecx + 0x1dc], eax
+        fstp qword ptr [ecx + 0x1d0]
+        fld qword ptr [ecx + 0x108]
+        fmul qword ptr [mem_00993840]
+        fstp qword ptr [ecx + 0x1e0]
+        fld qword ptr [ecx + 0x110]
+        fadd st(0), st
+        fstp qword ptr [ecx + 0x1e8]
+        fld qword ptr [ecx + 0x128]
+        fmul qword ptr [mem_00993840]
+        mov edx, dword ptr [ecx + 0x118]
+        mov eax, dword ptr [ecx + 0x11c]
+        mov dword ptr [ecx + 0x1f0], edx
+        mov edx, dword ptr [ecx + 0x138]
+        mov dword ptr [ecx + 0x1f4], eax
+        mov eax, dword ptr [ecx + 0x13c]
+        fstp qword ptr [ecx + 0x1f8]
+        fld qword ptr [ecx + 0x130]
+        fadd st(0), st
+        mov dword ptr [ecx + 0x208], edx
+        mov edx, dword ptr [ecx + 0x158]
+        mov dword ptr [ecx + 0x20c], eax
+        mov eax, dword ptr [ecx + 0x15c]
+        mov dword ptr [ecx + 0x220], edx
+        mov dword ptr [ecx + 0x224], eax
+        fstp qword ptr [ecx + 0x200]
+        fld qword ptr [ecx + 0x148]
+        fmul qword ptr [mem_00993840]
+        mov dword ptr [ecx + 0x5c], 0x1
+        fstp qword ptr [ecx + 0x210]
+        fld qword ptr [ecx + 0x150]
+        fadd st(0), st
+        fstp qword ptr [ecx + 0x218]
+        ret 0x4
+    }
+}
