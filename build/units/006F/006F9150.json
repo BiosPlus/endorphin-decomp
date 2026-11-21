@@ -36,5 +36,7 @@
     "0x006F9323",
     "0x006F9351"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T15:48:41Z"
 }
