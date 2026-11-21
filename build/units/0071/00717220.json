@@ -25,5 +25,7 @@
     "0x0071750E",
     "0x0071755E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T16:04:44Z"
 }
