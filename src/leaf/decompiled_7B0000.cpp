@@ -18697,3 +18697,264 @@ extern "C" __declspec(naked) void __cdecl fn_007BAB60(void* self) {
         jmp L_7BAD5A
     }
 }
+
+// [0x007BDC70] sub_007BDC70 (627 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BDC70(void* self) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        xor edx, edx
+        push edi
+        mov eax, dword ptr [esi + 0x1e0]
+        mov ebx, dword ptr [esi + 0x1e4]
+        mov dword ptr [esp + 0x10], eax
+        xor eax, eax
+        test ebx, ebx
+        jle L_7bded0
+        mov edi, dword ptr [esp + 0x28]
+        jmp L_7bdca1
+    L_7bdc9d:
+        mov esi, dword ptr [esp + 0x24]
+    L_7bdca1:
+        mov ebp, dword ptr [esp + 0x2c]
+        cmp eax, ebp
+        jge L_7bde8c
+        mov esi, dword ptr [esp + 0x10]
+        xor ecx, ecx
+        mov cl, byte ptr [esi]
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov ebp, esi
+        inc ecx
+        and ebp, 0xc0
+        dec ebx
+        cmp ebp, 0xc0
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esp + 0x1c], ebx
+        ja L_7bde7c
+        xor ecx, ecx
+        mov cl, byte ptr [ebp + 0x7bdef8]
+        jmp dword ptr [4*ecx + 0x7bdee4]
+    L_7bdce8:
+        test al, 0x1
+        je L_7bdd03
+        mov cl, byte ptr [edi]
+        or cl, dl
+        mov dl, cl
+        mov byte ptr [edi], cl
+        and edx, 0xff
+        inc edi
+        inc eax
+        mov dword ptr [esp + 0x28], edi
+        dec esi
+        jmp L_7bdd0a
+    L_7bdd03:
+        mov ecx, edx
+        shl ecx, 0x4
+        or edx, ecx
+    L_7bdd0a:
+        add eax, esi
+        test esi, esi
+        mov dword ptr [esp + 0x18], eax
+        jle L_7bdd52
+        mov al, dl
+        lea ecx, [esi + 0x1]
+        mov bl, al
+        mov bh, bl
+        shr ecx, 1
+        mov eax, ebx
+        mov dword ptr [esp + 0x14], ecx
+        mov ebp, ecx
+        shl eax, 0x10
+        mov ax, bx
+        mov ebx, dword ptr [esp + 0x1c]
+        shr ecx, 2
+        rep stosd
+        mov ecx, ebp
+        and ecx, 0x3
+        rep stosb
+        mov edi, dword ptr [esp + 0x28]
+        mov eax, ebp
+        add edi, eax
+        neg eax
+        mov dword ptr [esp + 0x28], edi
+        lea esi, [esi + 2*eax]
+        mov eax, dword ptr [esp + 0x18]
+    L_7bdd52:
+        cmp esi, -0x1
+        jne L_7bdd64
+        mov cl, byte ptr [edi - 0x1]
+        dec edi
+        and cl, 0xf0
+        mov dword ptr [esp + 0x28], edi
+        mov byte ptr [edi], cl
+    L_7bdd64:
+        and edx, 0xf
+        jmp L_7bde7c
+    L_7bdd6c:
+        mov ecx, esi
+        sar ecx, 0x4
+        and ecx, 0x3
+        cmp ecx, 0x2
+        je L_7bdda5
+        mov ecx, dword ptr [4*ecx + 0x999bec]
+        add ecx, edx
+        and ecx, 0xf
+        mov edx, ecx
+        mov ecx, eax
+        and cl, 0x1
+        inc eax
+        test cl, cl
+        je L_7bdd9e
+        mov cl, byte ptr [edi]
+        or cl, dl
+        mov byte ptr [edi], cl
+        inc edi
+        mov dword ptr [esp + 0x28], edi
+        jmp L_7bdda5
+    L_7bdd9e:
+        mov cl, dl
+        shl cl, 0x4
+        mov byte ptr [edi], cl
+    L_7bdda5:
+        mov ecx, esi
+        sar ecx, 0x2
+        and ecx, 0x3
+        cmp ecx, 0x2
+        je L_7bddde
+        mov ecx, dword ptr [4*ecx + 0x999bec]
+        add ecx, edx
+        and ecx, 0xf
+        mov edx, ecx
+        mov ecx, eax
+        and cl, 0x1
+        inc eax
+        test cl, cl
+        je L_7bddd7
+        mov cl, byte ptr [edi]
+        or cl, dl
+        mov byte ptr [edi], cl
+        inc edi
+        mov dword ptr [esp + 0x28], edi
+        jmp L_7bddde
+    L_7bddd7:
+        mov cl, dl
+        shl cl, 0x4
+        mov byte ptr [edi], cl
+    L_7bddde:
+        and esi, 0x3
+        cmp esi, 0x2
+        je L_7bde7c
+        mov ecx, dword ptr [4*esi + 0x999bec]
+        jmp L_7bde3b
+    L_7bddf3:
+        mov ecx, esi
+        sar ecx, 0x3
+        and ecx, 0x7
+        cmp ecx, 0x4
+        je L_7bde2c
+        mov ecx, dword ptr [4*ecx + 0x999bfc]
+        add ecx, edx
+        and ecx, 0xf
+        mov edx, ecx
+        mov ecx, eax
+        and cl, 0x1
+        inc eax
+        test cl, cl
+        je L_7bde25
+        mov cl, byte ptr [edi]
+        or cl, dl
+        mov byte ptr [edi], cl
+        inc edi
+        mov dword ptr [esp + 0x28], edi
+        jmp L_7bde2c
+    L_7bde25:
+        mov cl, dl
+        shl cl, 0x4
+        mov byte ptr [edi], cl
+    L_7bde2c:
+        and esi, 0x7
+        cmp esi, 0x4
+        je L_7bde7c
+        mov ecx, dword ptr [4*esi + 0x999bfc]
+    L_7bde3b:
+        add ecx, edx
+        and ecx, 0xf
+        mov edx, ecx
+        mov ecx, eax
+        and cl, 0x1
+        inc eax
+        test cl, cl
+        je L_7bde75
+        mov cl, byte ptr [edi]
+        or cl, dl
+        mov byte ptr [edi], cl
+        inc edi
+        mov dword ptr [esp + 0x28], edi
+        jmp L_7bde7c
+    L_7bde59:
+        mov ecx, eax
+        and esi, 0xf
+        and cl, 0x1
+        inc eax
+        test cl, cl
+        mov edx, esi
+        je L_7bde75
+        mov cl, byte ptr [edi]
+        or cl, dl
+        mov byte ptr [edi], cl
+        inc edi
+        mov dword ptr [esp + 0x28], edi
+        jmp L_7bde7c
+    L_7bde75:
+        mov cl, dl
+        shl cl, 0x4
+        mov byte ptr [edi], cl
+    L_7bde7c:
+        test ebx, ebx
+        jg L_7bdc9d
+        mov ebp, dword ptr [esp + 0x2c]
+        mov esi, dword ptr [esp + 0x24]
+    L_7bde8c:
+        mov edx, dword ptr [esp + 0x10]
+        cmp eax, ebp
+        mov dword ptr [esi + 0x1e0], edx
+        mov dword ptr [esi + 0x1e4], ebx
+        je L_7bded6
+        mov ecx, 0xab234c
+        jl L_7bdeac
+        mov ecx, 0xab2340
+    L_7bdeac:
+        push ebp
+        push eax
+        mov eax, dword ptr [esi + 0x164]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esi]
+        push 0xab230c
+        push ecx
+        call ext_0079B140
+        add esp, 0x18
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    L_7bded0:
+        mov ebp, dword ptr [esp + 0x2c]
+        jmp L_7bde8c
+    L_7bded6:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
