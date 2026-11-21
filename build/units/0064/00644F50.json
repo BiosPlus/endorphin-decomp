@@ -32,5 +32,5 @@
     "0x0064509D"
   ],
   "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "skip_reason": "inline asm lacks dd jump tables; switch reconstruction with float locals not matched"
 }
