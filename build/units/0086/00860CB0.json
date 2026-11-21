@@ -42,5 +42,7 @@
     "0x00860E2E",
     "0x00860E70"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:39:12Z"
 }
