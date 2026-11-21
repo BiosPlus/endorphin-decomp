@@ -11849,3 +11849,360 @@ L_148:
         ret
     }
 }
+
+// [0x00798910] sub_00798910 (852 bytes)
+extern "C" void ext_00798DB0();
+extern "C" void ext_00798EA0();
+extern "C" void ext_007990F0(void* a0, void* a1, void* a2);
+extern "C" void ext_0079AF40();
+extern "C" __declspec(naked) int __cdecl fn_00798910(void* a1, int a2, ...) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        push ebx
+        push eax
+        lea esi, [eax + 0x18]
+        call ext_007990F0
+        add esp, 0xc
+        test eax, eax
+        jne near ptr L_798C5B
+        cmp ebx, 0x14c
+        ja near ptr L_798A93
+        je near ptr L_798A7E
+        lea eax, [ebx - 0xfe]
+        cmp eax, 0x2f
+        ja near ptr L_798C3E
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x798c98]
+        jmp dword ptr [4*ecx + 0x798c64]
+L_798965:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798975:
+        mov ecx, dword ptr [edi]
+        mov dx, word ptr [esi + 0x28]
+        pop edi
+        pop esi
+        mov word ptr [ecx], dx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798987:
+        mov eax, dword ptr [edi]
+        mov cx, word ptr [esi + 0x30]
+        pop edi
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798999:
+        mov edx, dword ptr [edi]
+        mov ax, word ptr [esi + 0x32]
+        pop edi
+        pop esi
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_7989AB:
+        mov ecx, dword ptr [edi]
+        mov dx, word ptr [esi + 0x34]
+        pop edi
+        pop esi
+        mov word ptr [ecx], dx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_7989BD:
+        mov eax, dword ptr [edi]
+        mov cx, word ptr [esi + 0x36]
+        pop edi
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_7989CF:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi + 0x38]
+        pop edi
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_7989DF:
+        mov ecx, dword ptr [edi]
+        mov dx, word ptr [esi + 0x3c]
+        pop edi
+        pop esi
+        mov word ptr [ecx], dx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_7989F1:
+        mov eax, dword ptr [edi]
+        mov cx, word ptr [esi + 0x3e]
+        pop edi
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798A03:
+        mov edx, dword ptr [edi]
+        mov ax, word ptr [esi + 0x5a]
+        pop edi
+        pop esi
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798A15:
+        mov ecx, dword ptr [edi]
+        mov dx, word ptr [esi + 0x58]
+        pop edi
+        pop esi
+        mov word ptr [ecx], dx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798A27:
+        mov eax, dword ptr [esi + 0xe0]
+        test eax, eax
+        jne short L_798A3A
+        push esi
+        call ext_00798DB0
+        add esp, 0x4
+L_798A3A:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esi + 0xe0]
+        add edi, 0x4
+        xor edx, edx
+        mov dword ptr [eax], ecx
+        mov dx, word ptr [esi + 0x78]
+        xor eax, eax
+        mov ax, word ptr [esi + 0x36]
+        sub eax, edx
+        cmp eax, 0x1
+        jle near ptr L_798C5B
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [esi + 0xe4]
+        add edi, 0x4
+        mov dword ptr [ecx], edx
+        mov ecx, dword ptr [esi + 0xe8]
+        mov eax, dword ptr [edi]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L_798A7E:
+        mov edx, dword ptr [edi]
+        mov ax, word ptr [esi + 0xec]
+        pop edi
+        pop esi
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798A93:
+        cmp ebx, 0x213
+        ja near ptr L_798BB1
+        je near ptr L_798B9C
+        lea eax, [ebx - 0x14e]
+        cmp eax, 0xc4
+        ja near ptr L_798C3E
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x798ce4]
+        jmp dword ptr [4*ecx + 0x798cc8]
+L_798AC5:
+        mov edx, dword ptr [edi]
+        add edi, 0x4
+        mov eax, 0x1
+        mov word ptr [edx], 0x0
+        mov cl, byte ptr [esi + 0x28]
+        shl eax, cl
+        mov ecx, dword ptr [edi]
+        pop edi
+        pop esi
+        pop ebx
+        dec eax
+        mov word ptr [ecx], ax
+        mov eax, 0x1
+        ret
+L_798AE8:
+        mov edx, dword ptr [edi]
+        mov ax, word ptr [esi + 0xee]
+        pop edi
+        pop esi
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798AFD:
+        mov ecx, dword ptr [edi]
+        mov dx, word ptr [esi + 0x78]
+        add edi, 0x4
+        mov word ptr [ecx], dx
+        mov ecx, dword ptr [esi + 0x7c]
+        mov eax, dword ptr [edi]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L_798B19:
+        mov edx, dword ptr [edi]
+        mov ax, word ptr [esi + 0x2a]
+        pop edi
+        pop esi
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798B2B:
+        mov eax, dword ptr [esi + 0xc8]
+        test eax, eax
+        jne short L_798B65
+        push 0xc
+        call ext_0079AF40
+        mov dword ptr [esi + 0xc8], eax
+        mov dword ptr [eax], 0x3e991687
+        mov ecx, dword ptr [esi + 0xc8]
+        add esp, 0x4
+        mov dword ptr [ecx + 0x4], 0x3f1645a2
+        mov edx, dword ptr [esi + 0xc8]
+        mov dword ptr [edx + 0x8], 0x3de978d5
+L_798B65:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esi + 0xc8]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798B78:
+        mov edx, dword ptr [edi]
+        mov ax, word ptr [esi + 0xcc]
+        add edi, 0x4
+        mov word ptr [edx], ax
+        mov dx, word ptr [esi + 0xce]
+        mov ecx, dword ptr [edi]
+        pop edi
+        pop esi
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        pop ebx
+        ret
+L_798B9C:
+        mov eax, dword ptr [edi]
+        mov cx, word ptr [esi + 0xd0]
+        pop edi
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798BB1:
+        cmp ebx, 0x80e4
+        ja short L_798C33
+        je short L_798C1F
+        cmp ebx, 0x214
+        je short L_798BF9
+        cmp ebx, 0x80e3
+        jne short L_798C3E
+        cmp word ptr [esi + 0x78], 0x1
+        jne short L_798BE9
+        mov edx, dword ptr [esi + 0x7c]
+        cmp word ptr [edx], 0x1
+        jne short L_798BE9
+        mov ecx, dword ptr [edi]
+        mov eax, 0x1
+        pop edi
+        pop esi
+        mov word ptr [ecx], ax
+        pop ebx
+        ret
+L_798BE9:
+        mov ecx, dword ptr [edi]
+        xor eax, eax
+        pop edi
+        pop esi
+        mov word ptr [ecx], ax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798BF9:
+        mov eax, dword ptr [esi + 0xdc]
+        test eax, eax
+        jne short L_798C0C
+        push esi
+        call ext_00798EA0
+        add esp, 0x4
+L_798C0C:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi + 0xdc]
+        pop edi
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798C1F:
+        mov cx, word ptr [esi + 0x2a]
+        mov edx, dword ptr [edi]
+        dec cx
+        pop edi
+        pop esi
+        mov word ptr [edx], cx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798C33:
+        sub ebx, 0x80e5
+        je short L_798C54
+        dec ebx
+        je short L_798C44
+L_798C3E:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+L_798C44:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esi + 0x20]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        pop ebx
+        ret
+L_798C54:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi + 0x14]
+        mov dword ptr [edx], eax
+L_798C5B:
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    }
+}
