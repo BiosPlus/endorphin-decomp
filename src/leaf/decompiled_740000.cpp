@@ -7859,3 +7859,375 @@ extern "C" __declspec(naked) void __fastcall fn_0074FA50(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0074FDB0] sub_0074FDB0 (864 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_007515F0();
+extern "C" void ext_00782D90();
+extern "C" __declspec(naked) void __fastcall fn_0074FDB0(void* self) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov dword ptr [esp + 0x14], ecx
+        push 0x4d8
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_006A5C62
+        push 0x4d8
+        mov ebp, eax
+        call ext_006A5C62
+        mov edi, dword ptr [esp + 0x18]
+        add esp, 0x8
+        mov ebx, eax
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0x1c], 0x1
+L_FDF2:
+        test edi, edi
+        jne L_FE2E
+        mov esi, 0xaae834
+        mov eax, ebp
+L_FDFD:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_FE21
+        test cl, cl
+        je L_FE1D
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_FE21
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_FDFD
+L_FE1D:
+        xor eax, eax
+        jmp L_FE26
+L_FE21:
+        sbb eax, eax
+        sbb eax, -0x1
+L_FE26:
+        test eax, eax
+        je L_D7
+L_FE2E:
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x10]
+        push ebp
+        push eax
+        call ext_007515F0
+        test al, al
+        je L_F0
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        jne L_FE2E
+        mov esi, 0xaae82c
+        mov eax, ebp
+L_FE54:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_FE78
+        test cl, cl
+        je L_FE74
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_FE78
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_FE54
+L_FE74:
+        xor eax, eax
+        jmp L_FE7D
+L_FE78:
+        sbb eax, eax
+        sbb eax, -0x1
+L_FE7D:
+        test eax, eax
+        jne L_FDF2
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x10]
+        push ebp
+        push eax
+        call ext_007515F0
+        test al, al
+        je L_F0
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, 0x2
+        jne L_0082
+        mov esi, 0xaae824
+        mov eax, ebp
+L_FEB0:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_FED4
+        test cl, cl
+        je L_FED0
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_FED4
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_FEB0
+L_FED0:
+        xor eax, eax
+        jmp L_FED9
+L_FED4:
+        sbb eax, eax
+        sbb eax, -0x1
+L_FED9:
+        test eax, eax
+        jne L_0082
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x10]
+        push ebp
+        push eax
+        call ext_007515F0
+        test al, al
+        je L_F0
+L_FEF8:
+        mov edi, dword ptr [esp + 0x10]
+L_FEFC:
+        test edi, edi
+        jne L_006A
+        mov esi, 0xaae81c
+        mov eax, ebp
+L_FF0B:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_FF2F
+        test cl, cl
+        je L_FF2B
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_FF2F
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_FF0B
+L_FF2B:
+        xor eax, eax
+        jmp L_FF34
+L_FF2F:
+        sbb eax, eax
+        sbb eax, -0x1
+L_FF34:
+        test eax, eax
+        je L_FDF2
+        mov esi, 0xaae824
+        mov eax, ebp
+L_FF43:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_FF67
+        test cl, cl
+        je L_FF63
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_FF67
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_FF43
+L_FF63:
+        xor eax, eax
+        jmp L_FF6C
+L_FF67:
+        sbb eax, eax
+        sbb eax, -0x1
+L_FF6C:
+        test eax, eax
+        jne L_006A
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x10]
+        push ebp
+        push eax
+        call ext_007515F0
+        test al, al
+        je L_F0
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        je L_0018
+        __asm _emit 0x8b
+        __asm _emit 0x35
+        __asm _emit 0x1c
+        __asm _emit 0x52
+        __asm _emit 0x92
+        __asm _emit 0x00
+L_FF9D:
+        mov eax, edi
+        sub eax, 0x2
+        je L_FFD4
+        sub eax, 0x3c
+        je L_FFC2
+        sub eax, 0xe4
+        jne L_FFF9
+        lea ecx, [esp + 0x1c]
+        push ecx
+        push 0xaa86a4
+        push ebp
+        call esi
+        add esp, 0xc
+        jmp L_FFF9
+L_FFC2:
+        lea edx, [esp + 0x18]
+        push edx
+        push 0xaa86a4
+        push ebp
+        call esi
+        add esp, 0xc
+        jmp L_FFF9
+L_FFD4:
+        mov edi, ebp
+        or ecx, -0x1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, ebx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        __asm _emit 0x8b
+        __asm _emit 0x35
+        __asm _emit 0x1c
+        __asm _emit 0x52
+        __asm _emit 0x92
+        __asm _emit 0x00
+L_FFF9:
+        lea ecx, [esp + 0x10]
+        push ebp
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        call ext_007515F0
+        test al, al
+        je L_F0
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        jne L_FF9D
+L_0018:
+        mov esi, 0xb5d2c0
+        mov eax, ebx
+L_001F:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_0043
+        test cl, cl
+        je L_003F
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_0043
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_001F
+L_003F:
+        xor eax, eax
+        jmp L_0048
+L_0043:
+        sbb eax, eax
+        sbb eax, -0x1
+L_0048:
+        test eax, eax
+        je L_FEFC
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        push ebx
+        add ecx, 0x128
+        call ext_00782D90
+        jmp L_FEF8
+L_006A:
+        mov ecx, dword ptr [esp + 0x14]
+        lea edx, [esp + 0x10]
+        push ebp
+        push edx
+        call ext_007515F0
+        test al, al
+        je L_F0
+        jmp L_FEF8
+L_0082:
+        test edi, edi
+        jne L_00BE
+        mov esi, 0xaae81c
+        mov eax, ebp
+L_008D:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L_00B1
+        test cl, cl
+        je L_00AD
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 0x1]
+        jne L_00B1
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_008D
+L_00AD:
+        xor eax, eax
+        jmp L_00B6
+L_00B1:
+        sbb eax, eax
+        sbb eax, -0x1
+L_00B6:
+        test eax, eax
+        je L_FDF2
+L_00BE:
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x10]
+        push ebp
+        push eax
+        call ext_007515F0
+        test al, al
+        je L_F0
+        mov edi, dword ptr [esp + 0x10]
+        jmp L_0082
+L_D7:
+        push ebp
+        call ext_006A5C5C
+        push ebx
+        call ext_006A5C5C
+        add esp, 0x8
+        mov al, 0x1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_F0:
+        push ebp
+        call ext_006A5C5C
+        push ebx
+        call ext_006A5C5C
+        add esp, 0x8
+        xor al, al
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
