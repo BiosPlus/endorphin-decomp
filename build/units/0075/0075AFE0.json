@@ -73,5 +73,7 @@
     "0x0075B2D3",
     "0x0075B2E7"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@medium",
+  "matched_at": "2026-11-21T16:09:07Z"
 }
