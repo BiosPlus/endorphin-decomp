@@ -8388,3 +8388,158 @@ L_sub7490_after:
         ret 0x8
     }
 }
+
+// [0x006E01F0] sub_006E01F0 (416 bytes)
+// [VA] 0x006E01F0
+extern "C" int mem_00993CA8;
+extern "C" int mem_009937F8;
+extern "C" int mem_00996D70;
+extern "C" __declspec(naked) void* __cdecl fn_006E01F0(void* out, double* m, int idx, int flags) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        lea eax, [ebx + 2*ebx]
+        push edi
+        shl eax, 2
+        test bl, 1
+        mov ecx, dword ptr [eax + mem_00996D70]
+        mov edx, dword ptr [eax + mem_00996D70 + 4]
+        mov esi, dword ptr [eax + mem_00996D70 + 8]
+        je L2b5
+        mov edi, dword ptr [esp + 0x18]
+        lea eax, [ecx + 4*esi]
+        fld qword ptr [edi + 8*eax]
+        lea ebp, [edi + 8*eax]
+        lea eax, [ecx + 4*edx]
+        fld qword ptr [edi + 8*eax]
+        lea ebx, [edi + 8*eax]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fsqrt
+        fstp st(2)
+        fstp st(0)
+        fcom qword ptr [mem_00993CA8]
+        fnstsw ax
+        test ah, 0x41
+        jne L28e
+        fld qword ptr [ebx]
+        fld qword ptr [ebp]
+        fpatan
+        mov eax, dword ptr [esp + 0x14]
+        lea ebx, [ecx + 4*ecx]
+        lea edx, [edx + 4*ecx]
+        lea ecx, [esi + 4*ecx]
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax]
+        fld qword ptr [edi + 8*ebx]
+        fpatan
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax + 8]
+        fld qword ptr [edi + 8*edx]
+        fld qword ptr [edi + 8*ecx]
+        fchs
+        fpatan
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax + 0x10]
+        jmp L362
+L28e:
+        lea eax, [edx + 4*esi]
+        lea edx, [edx + 4*edx]
+        lea ecx, [ecx + 4*ecx]
+        fld qword ptr [edi + 8*eax]
+        fchs
+        fld qword ptr [edi + 8*edx]
+        fpatan
+        mov eax, dword ptr [esp + 0x14]
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax]
+        fld qword ptr [edi + 8*ecx]
+        jmp L34f
+L2b5:
+        mov edi, dword ptr [esp + 0x18]
+        lea eax, [edx + 4*ecx]
+        fld qword ptr [edi + 8*eax]
+        lea ebp, [edi + 8*eax]
+        lea eax, [ecx + 4*ecx]
+        fld qword ptr [edi + 8*eax]
+        lea ebx, [edi + 8*eax]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fsqrt
+        fstp st(2)
+        fstp st(0)
+        fcom qword ptr [mem_00993CA8]
+        fnstsw ax
+        test ah, 0x41
+        jne L329
+        lea edx, [esi + 4*edx]
+        lea eax, [esi + 4*esi]
+        lea ecx, [esi + 4*ecx]
+        fld qword ptr [edi + 8*edx]
+        fld qword ptr [edi + 8*eax]
+        fpatan
+        mov eax, dword ptr [esp + 0x14]
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax]
+        fld qword ptr [edi + 8*ecx]
+        fchs
+        fxch st(1)
+        fpatan
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax + 8]
+        fld qword ptr [ebp]
+        fld qword ptr [ebx]
+        fpatan
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax + 0x10]
+        jmp L362
+L329:
+        lea eax, [edx + 4*esi]
+        lea edx, [edx + 4*edx]
+        lea ecx, [esi + 4*ecx]
+        fld qword ptr [edi + 8*eax]
+        fchs
+        fld qword ptr [edi + 8*edx]
+        fpatan
+        mov eax, dword ptr [esp + 0x14]
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax]
+        fld qword ptr [edi + 8*ecx]
+        fchs
+        fxch st(1)
+L34f:
+        fpatan
+        xor ecx, ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x14], ecx
+        fmul qword ptr [mem_009937F8]
+        fstp qword ptr [eax + 8]
+L362:
+        mov cl, byte ptr [esp + 0x1c]
+        pop edi
+        pop esi
+        pop ebp
+        test cl, 2
+        pop ebx
+        je Ldone
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [eax]
+        fld qword ptr [eax + 8]
+        fchs
+        fstp qword ptr [eax + 8]
+        fld qword ptr [eax + 0x10]
+        fchs
+        fstp qword ptr [eax + 0x10]
+Ldone:
+        ret
+    }
+}

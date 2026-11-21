@@ -25,5 +25,7 @@
     "0x006E0342",
     "0x006E035B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:45:26Z"
 }
