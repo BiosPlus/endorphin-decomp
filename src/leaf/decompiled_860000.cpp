@@ -11682,3 +11682,163 @@ extern "C" __declspec(naked) void __cdecl fn_008656E0(void* p, unsigned int nbit
         _emit 0x00
     }
 }
+
+// [0x0086C2D0] sub_0086C2D0 (479 bytes)
+extern "C" void ext_0086C210();
+extern "C" void ext_0086EE60();
+extern "C" void ext_0086F050();
+extern "C" void ext_0086F0A0();
+extern "C" void ext_0086F120();
+extern "C" void ext_0086F160();
+extern "C" void ext_0086F1A0();
+extern "C" void ext_0086F240();
+extern "C" void ext_0086F8A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0086C2D0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        sub esp, 0x2bc
+        lea eax, [esp + 0x64]
+        push esi
+        mov edx, dword ptr [esp + 0x2c4]
+        push edi
+        push eax
+        push ecx
+        push edx
+        call ext_0086C210
+        lea ecx, [esp + 0xc8]
+        mov esi, dword ptr [esp + 0x2dc]
+        add esp, 0xc
+        lea eax, [esi + 0x52]
+        push ecx
+        push eax
+        call ext_0086F050
+        lea eax, [esp + 0x18c]
+        lea ecx, [esp + 0x114]
+        lea edx, [esp + 0xc4]
+        add esp, 0x8
+        push eax
+        push ecx
+        lea eax, [esp + 0x74]
+        push edx
+        push eax
+        call ext_0086F240
+        lea ecx, [esp + 0x68]
+        add esp, 0x10
+        push ecx
+        call ext_0086F8A0
+        lea ecx, [esp + 0x160]
+        lea eax, [esp + 0x5c]
+        add esp, 0x4
+        push esi
+        push ecx
+        add esi, 0x2a
+        push esi
+        push eax
+        call ext_0086EE60
+        lea eax, [esp + 0x1e4]
+        lea ecx, [esp + 0x16c]
+        add esp, 0x10
+        push eax
+        push ecx
+        call ext_0086F050
+        lea ecx, [esp + 0x74]
+        lea edx, [esp + 0x18c]
+        lea eax, [esp + 0x1dc]
+        add esp, 0x8
+        push ecx
+        push edx
+        push eax
+        call ext_0086F120
+        lea ecx, [esp + 0x14]
+        lea edx, [esp + 0x118]
+        lea eax, [esp + 0xc8]
+        add esp, 0xc
+        push ecx
+        push edx
+        push eax
+        lea ecx, [esp + 0x78]
+        push ecx
+        call ext_0086F240
+        mov esi, dword ptr [esp + 0x2e8]
+        lea ecx, [esp + 0x18]
+        add esp, 0x10
+        push esi
+        push ecx
+        call ext_0086F0A0
+        lea eax, [esp + 0x27c]
+        lea ecx, [esp + 0x60]
+        add esp, 0x8
+        push eax
+        push ecx
+        call ext_0086F050
+        lea ecx, [esp + 0x22c]
+        mov edx, dword ptr [esp + 0x2dc]
+        add esp, 0x8
+        push ecx
+        push edx
+        call ext_0086F050
+        lea ecx, [esp + 0x74]
+        lea edx, [esp + 0x10]
+        lea eax, [esp + 0x22c]
+        add esp, 0x8
+        push ecx
+        push edx
+        push eax
+        call ext_0086F1A0
+        lea ecx, [esp + 0x14]
+        lea edx, [esp + 0x118]
+        lea eax, [esp + 0xc8]
+        add esp, 0xc
+        push ecx
+        push edx
+        lea ecx, [esp + 0x74]
+        push eax
+        push ecx
+        call ext_0086F240
+        lea ecx, [esp + 0x18]
+        lea eax, [esp + 0x284]
+        add esp, 0x10
+        mov edi, 0x8000
+        push ecx
+        lea ecx, [esp + 0xc]
+        push ecx
+        push eax
+        call ext_0086F160
+        add esp, 0xc
+        test dword ptr [esp + 0x8], edi
+        je after_loop
+    loop_top:
+        lea eax, [esp + 0x8]
+        lea ecx, [esp + 0xbc]
+        push eax
+        lea eax, [esp + 0xc]
+        push eax
+        push ecx
+        call ext_0086F120
+        add esp, 0xc
+        test dword ptr [esp + 0x8], edi
+        jne loop_top
+    after_loop:
+        lea eax, [esp + 0x6c]
+        lea ecx, [esp + 0x10c]
+        lea edx, [esp + 0xbc]
+        push eax
+        lea eax, [esp + 0xc]
+        push ecx
+        push edx
+        add esi, 0x14
+        push eax
+        call ext_0086F240
+        lea ecx, [esp + 0x18]
+        add esp, 0x10
+        push esi
+        push ecx
+        call ext_0086F0A0
+        add esp, 0x8
+        pop edi
+        pop esi
+        add esp, 0x2bc
+        ret
+    }
+}
