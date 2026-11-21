@@ -44,6 +44,7 @@
     "0x00737BAB",
     "0x00737BBC"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:29:43Z"
 }
