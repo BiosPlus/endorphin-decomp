@@ -31,6 +31,7 @@
     "0x00645092",
     "0x0064509D"
   ],
-  "status": "deferred",
-  "skip_reason": "inline asm lacks dd jump tables; switch reconstruction with float locals not matched"
+  "status": "matched",
+  "matched_by": "claude-opus-5.5@low",
+  "matched_at": "2026-11-21T15:39:50Z"
 }
