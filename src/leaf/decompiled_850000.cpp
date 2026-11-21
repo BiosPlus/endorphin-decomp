@@ -96,8 +96,10 @@ extern "C" void __cdecl fn_0085BEA0(void* self) {
 }
 extern "C" { void ext_00857440(); void ext_00857470(); void ext_00857490(); void ext_0085D510(); void ext_0085D530(); void ext_0085D560(); void ext_0086D480(); void ext_0086D4D0(); int mem_00924210; }
 extern "C" void ext_0085B330();
+extern "C" void ext_008689F0();
+extern "C" void __cdecl ext_00868E70(const void* src, void* dst, void* key, int rounds);
 
-// [0x00859A20] sub_00859A20 (47 bytes)
+extern "C" void __cdecl ext_00868E70(const void* src, void* dst, void* key, int rounds);
 extern "C" __declspec(naked) char* __cdecl fn_00859A20(char* dst, const char* src) {
     __asm {
         mov ecx, dword ptr [esp + 0x4]
@@ -14087,6 +14089,325 @@ extern "C" __declspec(naked) int __cdecl fn_0085F3B0(void) {
         pop edi
         pop esi
         add esp, 0x10
+        ret
+    }
+}
+
+// [0x008530B0] sub_008530B0 (864 bytes)
+extern "C" __declspec(naked) int __cdecl fn_008530B0(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        sub esp, 0x20
+        test ecx, ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        je ERR_NEG
+        mov ebx, dword ptr [esp + 0x38]
+        test ebx, ebx
+        je ERR_NEG
+        mov al, byte ptr [ecx]
+        cmp al, 0x3
+        mov byte ptr [esp + 0x34], al
+        je SKIPCHK
+        cmp byte ptr [ebx], 0x0
+        je ERR_NEG
+    SKIPCHK:
+        mov edi, dword ptr [esp + 0x3c]
+        test edi, edi
+        je ERR_ZERO
+        mov eax, dword ptr [esp + 0x40]
+        test eax, eax
+        jle ERR_ZERO
+        cdq
+        and edx, 0x7f
+        add eax, edx
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x34]
+        and eax, 0xff
+        sar esi, 0x7
+        dec eax
+        mov dword ptr [esp + 0x3c], esi
+        je MODE1
+        dec eax
+        je MODE2
+        dec eax
+        jne ERR_NEG
+        mov eax, dword ptr [ecx + 0x1]
+        mov edx, dword ptr [ecx + 0x5]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [ecx + 0x9]
+        mov ecx, dword ptr [ecx + 0xd]
+        mov dword ptr [esp + 0x14], edx
+        test esi, esi
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x1c], ecx
+        jle ZERO_RET
+        mov ebp, dword ptr [esp + 0x44]
+        mov dword ptr [esp + 0x34], esi
+        xor esi, esi
+        jmp BODY
+    OUTER:
+        mov ebx, dword ptr [esp + 0x38]
+        xor esi, esi
+        jmp BODY
+    INNER:
+        mov ebx, dword ptr [esp + 0x38]
+    BODY:
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x24], eax
+        mov eax, dword ptr [ebx + 0x4c]
+        mov dword ptr [esp + 0x20], edx
+        mov edx, dword ptr [esp + 0x1c]
+        push eax
+        mov dword ptr [esp + 0x2c], ecx
+        lea eax, [ebx + 0x54]
+        mov dword ptr [esp + 0x30], edx
+        lea ecx, [esp + 0x24]
+        push eax
+        lea edx, [esp + 0x28]
+        push ecx
+        push edx
+        call ext_008689F0
+        mov al, byte ptr [esp + 0x21]
+        mov dl, byte ptr [esp + 0x20]
+        mov cl, al
+        add esp, 0x10
+        shr cl, 0x7
+        shl dl, 1
+        or cl, dl
+        mov byte ptr [esp + 0x10], cl
+        mov cl, byte ptr [esp + 0x12]
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x13]
+        mov byte ptr [esp + 0x11], dl
+        mov dl, al
+        shr dl, 0x7
+        shl cl, 1
+        or dl, cl
+        mov cl, byte ptr [esp + 0x14]
+        mov byte ptr [esp + 0x12], dl
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x15]
+        mov byte ptr [esp + 0x13], dl
+        mov dl, al
+        shr dl, 0x7
+        shl cl, 1
+        or dl, cl
+        mov cl, byte ptr [esp + 0x16]
+        mov byte ptr [esp + 0x14], dl
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x17]
+        mov byte ptr [esp + 0x15], dl
+        mov dl, al
+        shr dl, 0x7
+        shl cl, 1
+        or dl, cl
+        mov cl, byte ptr [esp + 0x18]
+        mov byte ptr [esp + 0x16], dl
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x19]
+        mov byte ptr [esp + 0x17], dl
+        mov dl, al
+        shr dl, 0x7
+        shl cl, 1
+        or dl, cl
+        mov cl, byte ptr [esp + 0x1a]
+        mov byte ptr [esp + 0x18], dl
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x1b]
+        mov byte ptr [esp + 0x19], dl
+        mov dl, al
+        shr dl, 0x7
+        shl cl, 1
+        or dl, cl
+        mov cl, byte ptr [esp + 0x1c]
+        mov byte ptr [esp + 0x1a], dl
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x1d]
+        mov byte ptr [esp + 0x1b], dl
+        mov dl, al
+        shr dl, 0x7
+        shl cl, 1
+        or dl, cl
+        mov cl, byte ptr [esp + 0x1e]
+        mov byte ptr [esp + 0x1c], dl
+        mov dl, cl
+        shr dl, 0x7
+        shl al, 1
+        or dl, al
+        mov al, byte ptr [esp + 0x1f]
+        shr al, 0x7
+        shl cl, 1
+        or al, cl
+        mov byte ptr [esp + 0x1d], dl
+        mov byte ptr [esp + 0x1e], al
+        mov eax, esi
+        cdq
+        and edx, 0x7
+        mov ebx, esi
+        add eax, edx
+        and ebx, 0x7
+        sar eax, 0x3
+        mov cl, 0x7
+        mov dl, byte ptr [eax + edi]
+        sub cl, bl
+        shr dl, cl
+        mov cl, byte ptr [esp + 0x1f]
+        shl cl, 1
+        and dl, 0x1
+        or dl, cl
+        mov cl, bl
+        mov byte ptr [esp + 0x1f], dl
+        mov dl, byte ptr [esp + 0x20]
+        mov bl, byte ptr [eax + ebp]
+        and dl, 0x80
+        shr dl, cl
+        xor bl, dl
+        inc esi
+        cmp esi, 0x80
+        mov byte ptr [eax + ebp], bl
+        jl INNER
+        mov eax, dword ptr [esp + 0x34]
+        dec eax
+        mov dword ptr [esp + 0x34], eax
+        jne OUTER
+        mov esi, dword ptr [esp + 0x3c]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        shl eax, 0x7
+        add esp, 0x20
+        ret
+    MODE2:
+        mov eax, dword ptr [ecx + 0x5]
+        mov edx, dword ptr [ecx + 0x9]
+        mov ebp, dword ptr [ecx + 0x1]
+        mov dword ptr [esp + 0x14], eax
+        mov eax, dword ptr [ecx + 0xd]
+        mov dword ptr [esp + 0x18], edx
+        test esi, esi
+        mov dword ptr [esp + 0x1c], eax
+        jle ZERO_RET
+        mov dword ptr [esp + 0x38], esi
+        mov esi, dword ptr [esp + 0x44]
+    M2LOOP:
+        mov ecx, dword ptr [ebx + 0x4c]
+        lea eax, [ebx + 0x54]
+        push ecx
+        lea edx, [esp + 0x24]
+        push eax
+        push edx
+        push edi
+        call ext_00868E70
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x34]
+        mov edx, dword ptr [esp + 0x24]
+        xor eax, ebp
+        mov ebp, dword ptr [esp + 0x28]
+        xor ecx, edx
+        mov edx, dword ptr [esp + 0x38]
+        mov dword ptr [esp + 0x30], eax
+        xor edx, ebp
+        mov ebp, dword ptr [esp + 0x2c]
+        xor dword ptr [esp + 0x3c], ebp
+        mov ebp, dword ptr [edi]
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esp + 0x34], ecx
+        mov dword ptr [esi + 0x4], ecx
+        mov ecx, dword ptr [edi + 0x8]
+        mov dword ptr [esp + 0x24], eax
+        mov eax, dword ptr [esp + 0x3c]
+        mov dword ptr [esp + 0x38], edx
+        mov dword ptr [esi + 0x8], edx
+        mov edx, dword ptr [edi + 0xc]
+        mov dword ptr [esi + 0xc], eax
+        mov eax, dword ptr [esp + 0x48]
+        add esp, 0x10
+        add edi, 0x10
+        add esi, 0x10
+        dec eax
+        mov dword ptr [esp + 0x18], ecx
+        mov dword ptr [esp + 0x1c], edx
+        mov dword ptr [esp + 0x38], eax
+        jne M2LOOP
+        mov esi, dword ptr [esp + 0x3c]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        shl eax, 0x7
+        add esp, 0x20
+        ret
+    MODE1:
+        test esi, esi
+        jle ZERO_RET
+        mov ebp, dword ptr [esp + 0x44]
+        mov dword ptr [esp + 0x38], esi
+    M1LOOP:
+        mov ecx, dword ptr [ebx + 0x4c]
+        lea eax, [ebx + 0x54]
+        push ecx
+        push eax
+        push ebp
+        push edi
+        call ext_00868E70
+        mov eax, dword ptr [esp + 0x48]
+        add esp, 0x10
+        add edi, 0x10
+        add ebp, 0x10
+        dec eax
+        mov dword ptr [esp + 0x38], eax
+        jne M1LOOP
+    ZERO_RET:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        shl eax, 0x7
+        pop ebx
+        add esp, 0x20
+        ret
+    ERR_ZERO:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x20
+        ret
+    ERR_NEG:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0xfffffffb
+        pop ebx
+        add esp, 0x20
         ret
     }
 }
