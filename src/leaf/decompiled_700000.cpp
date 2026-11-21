@@ -12487,3 +12487,144 @@ extern "C" __declspec(naked) void __fastcall fn_0070E160(void* self, int edx_unu
         ret     0x8
     }
 }
+
+// [0x0070F570] sub_0070F570 (423 bytes)
+extern "C" int mem_008BC928;
+extern "C" void ext_006B9D20();
+extern "C" void ext_006D2170();
+extern "C" void ext_006D2250();
+extern "C" void ext_0070E870();
+extern "C" void ext_0070EB40();
+extern "C" void ext_0070EC20();
+extern "C" void ext_0070EED0();
+extern "C" void ext_0070EFA0();
+extern "C" void ext_0070F070();
+extern "C" void ext_0070F140();
+extern "C" void ext_00710300();
+extern "C" __declspec(naked) void __fastcall fn_0070F570(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push offset mem_008BC928
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        mov ebx, ecx
+        call ext_0070E870
+        mov esi, dword ptr [ebp + 0x8]
+        mov ecx, esi
+        call ext_00710300
+        cmp eax, 0x2
+        jne L_end
+        mov eax, dword ptr [esi + 0x160]
+        mov ecx, ebx
+        push eax
+        call ext_0070EC20
+        sub esp, 0x4c
+        lea edx, [esi + 0x1b0]
+        mov ecx, esp
+        mov dword ptr [esp + 0x64], esp
+        push edx
+        call ext_006B9D20
+        sub esp, 0x4c
+        lea eax, [esi + 0x164]
+        mov ecx, esp
+        mov dword ptr [esp + 0xac], esp
+        push eax
+        mov dword ptr [esp + 0xcc], 0x0
+        call ext_006B9D20
+        mov ecx, ebx
+        mov dword ptr [esp + 0xc8], 0xffffffff
+        call ext_0070EB40
+        lea edi, [ebx + 0x2d0]
+        mov ecx, edi
+        call ext_006D2250
+        mov ecx, dword ptr [esi + 0x204]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [edi + 0x8], ecx
+        mov eax, dword ptr [esi + 0x1fc]
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        jle L_loop1_end
+L_loop1:
+        mov edx, dword ptr [esi + 0x20c]
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [edx + 4*eax]
+        mov eax, dword ptr [edi]
+        lea edx, [esp + 0x14]
+        mov dword ptr [esp + 0x14], ecx
+        push edx
+        push eax
+        mov ecx, edi
+        call ext_006D2170
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x18]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp + 0x10], eax
+        jl L_loop1
+L_loop1_end:
+        lea edi, [ebx + 0x2e8]
+        mov ecx, edi
+        call ext_006D2250
+        mov ecx, dword ptr [esi + 0x21c]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [edi + 0x8], ecx
+        mov eax, dword ptr [esi + 0x214]
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        jle L_loop2_end
+L_loop2:
+        mov edx, dword ptr [esi + 0x224]
+        mov eax, dword ptr [esp + 0x10]
+        lea ecx, [esp + 0x1c]
+        fld qword ptr [edx + 8*eax]
+        mov edx, dword ptr [edi]
+        push ecx
+        fstp qword ptr [esp + 0x20]
+        push edx
+        mov ecx, edi
+        call ext_006D2170
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x18]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp + 0x10], eax
+        jl L_loop2
+L_loop2_end:
+        lea eax, [esi + 0x230]
+        mov ecx, ebx
+        push eax
+        call ext_0070EED0
+        lea ecx, [esi + 0x2b0]
+        push ecx
+        mov ecx, ebx
+        call ext_0070EFA0
+        lea edx, [esi + 0x330]
+        mov ecx, ebx
+        push edx
+        call ext_0070F070
+        lea eax, [esi + 0x3b0]
+        mov ecx, ebx
+        push eax
+        call ext_0070F140
+        mov cl, byte ptr [esi + 0x430]
+        mov byte ptr [ebx + 0x268], cl
+L_end:
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        mov eax, ebx
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}
