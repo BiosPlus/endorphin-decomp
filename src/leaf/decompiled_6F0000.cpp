@@ -14899,3 +14899,142 @@ extern "C" __declspec(naked) int __cdecl fn_006FC3A0(void* p, int id) {
         ret
     }
 }
+
+// [0x006FE6A0] sub_006FE6A0 (464 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA9B0();
+extern "C" int mem_00925278;
+
+// Splits a path: returns a string holding the prefix up to the last ':' (inclusive),
+// or the UNC share root "\\server\share" truncated before any 4th separator.
+extern "C" __declspec(naked) void __fastcall fn_006FE6A0(void* self) {
+    __asm {
+        push -1
+        push 0x008bb561
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x49c
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x4b8]
+        or ecx, -1
+        xor eax, eax
+        lea edx, [esp + 0xa4]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        push 0x3a
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        mov dword ptr [esp + 0xc], 0x0
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        lea ecx, [esp + 0xa8]
+        push ecx
+        call dword ptr [mem_00925278]
+        add esp, 0x8
+        test eax, eax
+        je L_nocolon
+        lea edx, [esp + 0xa4]
+        lea ecx, [esp + 0xc]
+        push edx
+        mov byte ptr [eax + 0x1], 0x0
+        call ext_006B9D80
+        mov esi, dword ptr [esp + 0x4b4]
+        mov ecx, eax
+        push esi
+        mov dword ptr [esp + 0x4b0], 0x0
+        call ext_006BA9B0
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x4ac], -1
+        call ext_006B9D70
+        jmp L_done
+    L_nocolon:
+        lea edi, [esp + 0xa4]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        cmp ecx, 0x2
+        jbe L_default
+        mov al, byte ptr [esp + 0xa4]
+        cmp al, 0x2f
+        jne L_chk5c
+        cmp byte ptr [esp + 0xa5], al
+        je L_unc
+    L_default:
+        mov esi, dword ptr [esp + 0x4b4]
+        push 0x00b5d2c0
+        mov ecx, esi
+        call ext_006B9D80
+    L_done:
+        mov ecx, dword ptr [esp + 0x4a4]
+        mov eax, esi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x4a8
+        ret
+    L_chk5c:
+        cmp al, 0x5c
+        jne L_default
+        cmp byte ptr [esp + 0xa5], al
+        jne L_default
+    L_unc:
+        xor edx, edx
+        lea ecx, [esp + 0xa4]
+        test al, al
+        je L_default
+    L_loop:
+        cmp al, 0x5c
+        je L_inc
+        cmp al, 0x2f
+        jne L_chk4
+    L_inc:
+        inc edx
+    L_chk4:
+        cmp edx, 0x4
+        je L_trunc
+        mov al, byte ptr [ecx + 0x1]
+        inc ecx
+        test al, al
+        jne L_loop
+        cmp edx, 0x3
+        jne L_default
+        lea ecx, [esp + 0xa4]
+        push ecx
+        lea ecx, [esp + 0x5c]
+        call ext_006B9D80
+        mov esi, dword ptr [esp + 0x4b4]
+        mov ecx, eax
+        push esi
+        mov dword ptr [esp + 0x4b0], 0x2
+        call ext_006BA9B0
+        lea ecx, [esp + 0x58]
+        mov dword ptr [esp + 0x4ac], -1
+        call ext_006B9D70
+        jmp L_done
+    L_trunc:
+        lea eax, [esp + 0xa4]
+        mov byte ptr [ecx], 0x0
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_006B9D80
+        mov esi, dword ptr [esp + 0x4b4]
+        mov ecx, eax
+        push esi
+        mov dword ptr [esp + 0x4b0], 0x1
+        call ext_006BA9B0
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x4ac], -1
+        call ext_006B9D70
+        jmp L_done
+    }
+}
