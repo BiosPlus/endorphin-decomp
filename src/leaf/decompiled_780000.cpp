@@ -11895,3 +11895,162 @@ extern "C" __declspec(naked) bool __fastcall fn_0078A280(void* self, int edx_unu
         __asm _emit 0x90
     }
 }
+
+// [0x00788F40] sub_00788F40 (480 bytes)
+// __thiscall(self, path-arg) ret 4: builds two wide paths on the stack via
+// MultiByteToWideChar/wcscpy/wcscat, enumerates the directory with
+// FindFirstFileW/FindNextFileW, deletes files (clearing read-only attr), then
+// removes the directory.
+extern "C" void ext_006A7270();
+extern "C" void ext_006FF870();
+extern "C" int mem_009241FC;
+extern "C" int mem_0092515C;
+extern "C" int mem_00925164;
+extern "C" int mem_00924168;
+extern "C" int mem_00924170;
+extern "C" int mem_0092417C;
+extern "C" int mem_00924178;
+extern "C" int mem_009241CC;
+extern "C" int mem_00924174;
+extern "C" __declspec(naked) void __fastcall fn_00788F40(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, 0x3004
+        call ext_006A7270
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_009241FC]
+        push esi
+        push edi
+        mov ebx, ecx
+        mov ecx, dword ptr [esp + 0x3018]
+        lea eax, [esp + 0x1814]
+        push 0x400
+        push eax
+        push -1
+        push ecx
+        push 0
+        push 0xfde9
+        mov dword ptr [esp + 0x28], ebx
+        call ebp
+        lea edx, [esp + 0x1814]
+        lea eax, [esp + 0x1014]
+        push edx
+        push eax
+        call dword ptr [mem_0092515C]
+        add esp, 8
+        lea ecx, [esp + 0x2014]
+        push 0x400
+        push ecx
+        push -1
+        push 0xaab938
+        push 0
+        push 0xfde9
+        call ebp
+        mov edi, dword ptr [mem_00925164]
+        lea edx, [esp + 0x2014]
+        lea eax, [esp + 0x1014]
+        push edx
+        push eax
+        call edi
+        lea ecx, [esp + 0x101c]
+        lea edx, [esp + 0x101c]
+        push ecx
+        push edx
+        call ext_006FF870
+        add esp, 0x10
+        add ebx, 4
+        lea eax, [esp + 0x1014]
+        push ebx
+        push eax
+        call dword ptr [mem_00924168]
+        mov esi, eax
+        cmp esi, -1
+        je L_end
+        push ebx
+        push esi
+        call dword ptr [mem_00924170]
+        push ebx
+        push esi
+        call dword ptr [mem_00924170]
+        test eax, eax
+        je L_close
+        mov ecx, dword ptr [esp + 0x10]
+        add ecx, 0x30
+        mov dword ptr [esp + 0x10], ecx
+    L_loop:
+        lea edx, [esp + 0x1814]
+        lea eax, [esp + 0x14]
+        push edx
+        push eax
+        call dword ptr [mem_0092515C]
+        add esp, 8
+        lea ecx, [esp + 0x2814]
+        push 0x400
+        push ecx
+        push -1
+        push 0xaa9444
+        push 0
+        push 0xfde9
+        call ebp
+        lea edx, [esp + 0x2814]
+        lea eax, [esp + 0x14]
+        push edx
+        push eax
+        call edi
+        mov ecx, dword ptr [esp + 0x18]
+        lea edx, [esp + 0x1c]
+        push ecx
+        push edx
+        call edi
+        lea eax, [esp + 0x24]
+        lea ecx, [esp + 0x24]
+        push eax
+        push ecx
+        call ext_006FF870
+        add esp, 0x18
+        lea edx, [esp + 0x14]
+        push 0x80
+        push edx
+        call dword ptr [mem_0092417C]
+        lea eax, [esp + 0x14]
+        push eax
+        call dword ptr [mem_00924178]
+        push ebx
+        push esi
+        call dword ptr [mem_00924170]
+        test eax, eax
+        jne L_loop
+    L_close:
+        push esi
+        call dword ptr [mem_009241CC]
+        mov edx, dword ptr [esp + 0x3018]
+        lea ecx, [esp + 0x814]
+        push 0x400
+        push ecx
+        push -1
+        push edx
+        push 0
+        push 0xfde9
+        call ebp
+        lea eax, [esp + 0x814]
+        lea ecx, [esp + 0x814]
+        push eax
+        push ecx
+        call ext_006FF870
+        add esp, 0x8
+        lea edx, [esp + 0x814]
+        push 0x80
+        push edx
+        call dword ptr [mem_0092417C]
+        lea eax, [esp + 0x814]
+        push eax
+        call dword ptr [mem_00924174]
+    L_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x3004
+        ret 0x4
+    }
+}
