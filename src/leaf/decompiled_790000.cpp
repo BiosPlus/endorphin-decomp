@@ -10168,3 +10168,214 @@ L_end:
         ret
     }
 }
+
+// [0x0079EFE0] sub_0079EFE0 (469 bytes)
+// Reads its single stack argument ([esp+4] at entry) and never touches ecx, so the
+// convention is __cdecl/__stdcall-style (plain `ret`), not __fastcall.
+extern "C" int mem_00925264;
+extern "C" int mem_00925208;
+extern "C" int mem_009251B0;
+extern "C" int mem_009252A4;
+extern "C" int mem_009252A8;
+extern "C" int mem_009251AC;
+extern "C" int mem_009252C4;
+extern "C" int mem_00B61219;
+extern "C" int mem_00997748;
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2480();
+
+extern "C" __declspec(naked) void __cdecl fn_0079EFE0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov eax, dword ptr [ebp]
+        push eax
+        call dword ptr [mem_00925184]
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [esp + 0x14], eax
+        push ecx
+        call dword ptr [mem_00925264]
+        add esp, 0x8
+        test eax, eax
+        je short L_malloc
+        push 0xc
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_ret
+L_malloc:
+        push 0x200
+        call dword ptr [mem_00925208]
+        mov ebx, eax
+        add esp, 0x4
+        test ebx, ebx
+        jne short L_copy
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_ret
+L_copy:
+        push edi
+        mov edi, dword ptr [ebp + 0x4]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov edx, ecx
+        mov esi, edi
+        mov edi, ebx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov edi, ebx
+        or ecx, -1
+        repne scasb
+        not ecx
+        dec ecx
+        lea eax, [ecx + ebx - 0x1]
+        cmp eax, ebx
+        jbe short L_nosep
+L_sepLoop:
+        mov cl, byte ptr [eax]
+        cmp cl, 0x5c
+        je short L_sepFound
+        cmp cl, 0x2f
+        je short L_sepFound
+        cmp cl, 0x3a
+        je short L_sepFound
+        dec eax
+        cmp eax, ebx
+        ja short L_sepLoop
+        jmp short L_nosep
+L_sepFound:
+        inc eax
+L_nosep:
+        push 0x0
+        mov byte ptr [eax], 0x0
+        call dword ptr [mem_009251B0]
+        mov edx, eax
+        or ecx, -1
+        mov edi, edx
+        xor eax, eax
+        add esp, 0x4
+        repne scasb
+        not ecx
+        dec ecx
+        lea esi, [ecx + edx - 0x1]
+        cmp esi, edx
+        jbe short L_base
+L_bLoop:
+        mov al, byte ptr [esi]
+        cmp al, 0x5c
+        je short L_bFound
+        cmp al, 0x2f
+        je short L_bFound
+        cmp al, 0x3a
+        je short L_bFound
+        dec esi
+        cmp esi, edx
+        ja short L_bLoop
+        jmp short L_base
+L_bFound:
+        lea edx, [esi + 0x1]
+L_base:
+        mov edi, edx
+        or ecx, -1
+        xor eax, eax
+        push ebx
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov esi, edi
+        mov edx, ecx
+        mov edi, ebx
+        or ecx, -1
+        repne scasb
+        mov ecx, edx
+        dec edi
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov eax, dword ptr [ebp + 0x4]
+        push eax
+        call dword ptr [mem_009252A4]
+        add esp, 0x8
+        test eax, eax
+        pop edi
+        je short L_afterRename
+        push 0xb
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_ret
+L_afterRename:
+        mov edx, dword ptr [ebp + 0x4]
+        mov cl, byte ptr [mem_00997748]
+        mov esi, dword ptr [mem_009251D8]
+        push edx
+        mov byte ptr [ebp + 0x18], cl
+        call esi
+        push ebx
+        call ext_007B2480
+        add esp, 0x8
+        mov dword ptr [ebp + 0x4], eax
+        test eax, eax
+        jne short L_haveName
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je short L_ret
+L_haveName:
+        push ebx
+        call esi
+        mov eax, dword ptr [ebp + 0x4]
+        push 0xaab92c
+        push eax
+        call dword ptr [mem_009252A8]
+        add esp, 0xc
+        mov dword ptr [ebp], eax
+        test eax, eax
+        jne short L_setbuf
+        push 0xb
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je short L_ret
+L_setbuf:
+        mov eax, dword ptr [ebp + 0x10]
+        test eax, eax
+        je short L_seek
+        mov ecx, dword ptr [ebp]
+        push eax
+        push ecx
+        call dword ptr [mem_009251AC]
+        add esp, 0x8
+L_seek:
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ebp]
+        push 0x0
+        push edx
+        push eax
+        call dword ptr [mem_009252C4]
+        add esp, 0xc
+L_ret:
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
