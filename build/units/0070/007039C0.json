@@ -31,5 +31,7 @@
     "0x00703B21",
     "0x00703B32"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T15:34:49Z"
 }
