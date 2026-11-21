@@ -11555,3 +11555,136 @@ L_00715D39:
         ret
     }
 }
+
+// [0x007146C0] sub_007146C0 (416 bytes)
+extern "C" int mem_00993810; /* double 1e-06 */
+extern "C" __declspec(naked) bool __fastcall fn_007146C0(void* self, int edx_unused, void* other) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        fld qword ptr [ecx]
+        fsub qword ptr [edx]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x8]
+        fsub qword ptr [edx + 0x8]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x10]
+        fsub qword ptr [edx + 0x10]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x18]
+        fsub qword ptr [edx + 0x18]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x20]
+        fsub qword ptr [edx + 0x20]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x28]
+        fsub qword ptr [edx + 0x28]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x30]
+        fsub qword ptr [edx + 0x30]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x38]
+        fsub qword ptr [edx + 0x38]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x40]
+        fsub qword ptr [edx + 0x40]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x48]
+        fsub qword ptr [edx + 0x48]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x50]
+        fsub qword ptr [edx + 0x50]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x58]
+        fsub qword ptr [edx + 0x58]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x60]
+        fsub qword ptr [edx + 0x60]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x68]
+        fsub qword ptr [edx + 0x68]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x70]
+        fsub qword ptr [edx + 0x70]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        fld qword ptr [ecx + 0x78]
+        fsub qword ptr [edx + 0x78]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je L_ne
+        xor eax, eax
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret 4
+L_ne:
+        mov eax, 1
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret 4
+    }
+}
