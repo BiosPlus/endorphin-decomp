@@ -7419,3 +7419,296 @@ L_5BEC2A:
         ret     0x8
     }
 }
+
+// [0x005B5380] sub_005B5380 (894 bytes)
+extern "C" void ext_005B1830();
+extern "C" void ext_005B1930();
+extern "C" void ext_005B51E0();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_005B5380(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x894cc6
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, ecx
+        mov ecx, 0x1
+        cmp dword ptr [esi*4 + 0x95f750], ecx
+        jbe after_loop
+        fldz
+        lea edx, [edi + 0x14]
+    loop_top:
+        fcom dword ptr [edx]
+        fnstsw ax
+        test ah, 0x44
+        jp loop_skip
+        fld dword ptr [edi + 0x10]
+        fstp dword ptr [edx]
+    loop_skip:
+        add ecx, 0x1
+        add edx, 0x4
+        cmp ecx, dword ptr [esi*4 + 0x95f750]
+        jb loop_top
+        fstp st(0)
+    after_loop:
+        cmp esi, 0x17
+        ja epilogue
+        jmp dword ptr [esi*4 + 0x5b5700]
+
+    case_1:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95f8e4
+        mov esi, eax
+        jmp done
+    case_4:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95f934
+        mov esi, eax
+        jmp done
+    case_5:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95f984
+        mov esi, eax
+        jmp done
+    case_2:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95f9d4
+        mov esi, eax
+        jmp done
+    case_3:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fa24
+        mov esi, eax
+        jmp done
+    case_6:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fa74
+        mov esi, eax
+        jmp done
+    case_7:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fac4
+        mov esi, eax
+        jmp done
+    case_8:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fb14
+        mov esi, eax
+        jmp done
+    case_9:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fb64
+        mov esi, eax
+        jmp done
+    case_10:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fbb4
+        mov esi, eax
+        jmp done
+    case_22:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fc04
+        mov esi, eax
+        jmp done
+    case_11:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fc54
+        mov esi, eax
+        jmp done
+    case_12:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fca4
+        mov esi, eax
+        jmp done
+    case_13:
+        push 0x20
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x0
+        je null_case
+        mov ecx, eax
+        call ext_005B1930
+        mov esi, eax
+        mov dword ptr [esp + 0x10], 0xffffffff
+        jmp done
+    null_case:
+        xor esi, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        jmp done
+    case_14:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fd44
+        mov esi, eax
+        jmp done
+    case_15:
+        push 0x44
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x1
+        je null_case
+        mov ecx, eax
+        call ext_005B51E0
+        mov esi, eax
+        mov dword ptr [esp + 0x10], 0xffffffff
+        jmp done
+    case_0:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fd94
+        mov esi, eax
+        jmp done
+    case_16:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fde4
+        mov esi, eax
+        jmp done
+    case_17:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fe34
+        mov esi, eax
+        jmp done
+    case_18:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fe84
+        mov esi, eax
+        jmp done
+    case_19:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95fed4
+        mov esi, eax
+        jmp done
+    case_20:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95ff24
+        mov esi, eax
+        jmp done
+    case_21:
+        push 0x4
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov dword ptr [eax], 0x95ff74
+        mov esi, eax
+        jmp done
+    case_23:
+        push 0xc
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je fail
+        mov ecx, eax
+        call ext_005B1830
+        mov esi, eax
+        jmp done
+    fail:
+        xor esi, esi
+    done:
+        mov ecx, dword ptr [edi + 0xc]
+        cmp esi, ecx
+        je store
+        test ecx, ecx
+        je store
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+    store:
+        mov dword ptr [edi + 0xc], esi
+    epilogue:
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
