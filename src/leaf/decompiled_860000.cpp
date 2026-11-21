@@ -11996,3 +11996,167 @@ extern "C" __declspec(naked) void __fastcall fn_00860CB0(void* self) {
         ret
     }
 }
+
+// [0x0086FC60] sub_0086FC60 (480 bytes)
+extern "C" void ext_0086F000();
+extern "C" void ext_0086F020();
+extern "C" void ext_0086F120();
+extern "C" void ext_0086F160();
+extern "C" void ext_0086F1A0();
+extern "C" void ext_0086F240();
+
+extern "C" __declspec(naked) void __cdecl fn_0086FC60(void* arg) {
+    __asm {
+        sub esp, 0x2d0
+        lea eax, [esp + 0x140]
+        push esi
+        mov esi, dword ptr [esp + 0x2dc]
+        push edi
+        mov edi, 1
+        push eax
+        push esi
+        call ext_0086F020
+        lea ecx, [esp + 0x60]
+        mov eax, dword ptr [esp + 0x2e4]
+        add esp, 8
+        push ecx
+        push eax
+        call ext_0086F020
+        lea ecx, [esp + 0x10]
+        add esp, 8
+        push ecx
+        call ext_0086F000
+        lea ecx, [esp + 0xfc]
+        lea edx, [esp + 0xac]
+        lea eax, [esp + 0x5c]
+        mov dword ptr [esp + 0x58], edi
+        add esp, 4
+        push ecx
+        push edx
+        lea ecx, [esp + 0x150]
+        push eax
+        push ecx
+        call ext_0086F240
+        lea ecx, [esp + 0x1f8]
+        lea edx, [esp + 0xb8]
+        add esp, 0x10
+        push ecx
+        push edx
+        call ext_0086F020
+        mov cx, 0x13
+        add esp, 8
+        xor eax, eax
+    loop1:
+        movsx edx, cx
+        or eax, dword ptr [esp + 4*edx + 0xf8]
+        dec cx
+        jns loop1
+        test eax, eax
+        je not_taken
+    retry:
+        lea eax, [esp + 0x148]
+        lea ecx, [esp + 0x58]
+        push eax
+        push ecx
+        call ext_0086F020
+        lea ecx, [esp + 0x60]
+        lea edx, [esp + 0x100]
+        add esp, 8
+        neg di
+        push ecx
+        push edx
+        call ext_0086F020
+        lea ecx, [esp + 0x100]
+        lea edx, [esp + 0x1f0]
+        lea eax, [esp + 0x60]
+        add esp, 8
+        push ecx
+        push edx
+        lea ecx, [esp + 0x150]
+        push eax
+        push ecx
+        call ext_0086F240
+        lea ecx, [esp + 0x1a8]
+        lea edx, [esp + 0xb8]
+        lea eax, [esp + 0x1f8]
+        add esp, 0x10
+        push ecx
+        push edx
+        push eax
+        call ext_0086F1A0
+        lea ecx, [esp + 0x1a4]
+        lea edx, [esp + 0x14]
+        add esp, 0xc
+        push ecx
+        push edx
+        lea ecx, [esp + 0x1a0]
+        push ecx
+        call ext_0086F120
+        lea ecx, [esp + 0x244]
+        lea edx, [esp + 0x294]
+        lea eax, [esp + 0x1a4]
+        add esp, 0xc
+        push ecx
+        push edx
+        push esi
+        push eax
+        call ext_0086F240
+        lea ecx, [esp + 0x18]
+        lea edx, [esp + 0xb8]
+        add esp, 0x10
+        push ecx
+        push edx
+        call ext_0086F020
+        lea ecx, [esp + 0xb0]
+        lea edx, [esp + 0x240]
+        add esp, 8
+        push ecx
+        push edx
+        call ext_0086F020
+        add esp, 8
+        xor eax, eax
+        mov cx, 0x13
+    loop2:
+        movsx edx, cx
+        or eax, dword ptr [esp + 4*edx + 0xf8]
+        dec cx
+        jns loop2
+        test eax, eax
+        jne retry
+    not_taken:
+        test di, di
+        mov eax, dword ptr [esp + 0x2e4]
+        lea ecx, [esp + 8]
+        push eax
+        push ecx
+        jge positive
+        push esi
+        call ext_0086F160
+        add esp, 0xc
+        pop edi
+        pop esi
+        add esp, 0x2d0
+        ret
+    positive:
+        call ext_0086F020
+        add esp, 8
+        pop edi
+        pop esi
+        add esp, 0x2d0
+        ret
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
