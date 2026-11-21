@@ -14049,3 +14049,209 @@ extern "C" __declspec(naked) void __fastcall fn_006F70F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006FA5E0] sub_006FA5E0 (432 bytes)
+extern "C" void ext_006FA790();
+extern "C" void ext_006FA990();
+extern "C" void ext_006FA9C0();
+extern "C" int mem_00925290;
+extern "C" int mem_0092528C;
+
+// Two-pass merge of self's entry tables into a->table (ret 0x4).
+extern "C" __declspec(naked) void __fastcall fn_006FA5E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, ecx
+        push ebp
+        push esi
+        mov eax, dword ptr [ebx + 0x14]
+        xor esi, esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        cmp eax, esi
+        mov dword ptr [esp + 0x10], esi
+        jle L_fa5e0_pass2
+    L_fa5e0_loop1:
+        mov ebp, dword ptr [ebx + 0x10]
+        mov eax, esi
+        add eax, ebp
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je L_fa5e0_l1_zero
+        mov edx, dword ptr [ecx]
+        mov ebp, dword ptr [eax]
+        cmp edx, ebp
+        jne L_fa5e0_l1_zero
+        mov ecx, dword ptr [ecx + 0x4]
+        jmp L_fa5e0_l1_go
+    L_fa5e0_l1_zero:
+        xor ecx, ecx
+    L_fa5e0_l1_go:
+        push 0x0
+        push ecx
+        mov ecx, edi
+        call ext_006FA990
+        test al, al
+        je L_fa5e0_l1_next
+        mov eax, dword ptr [ebx + 0x10]
+        add eax, esi
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je L_fa5e0_l2_zero
+        mov ebp, dword ptr [ecx]
+        cmp ebp, dword ptr [eax]
+        jne L_fa5e0_l2_zero
+        mov ecx, dword ptr [ecx + 0x4]
+        jmp L_fa5e0_l2_go
+    L_fa5e0_l2_zero:
+        xor ecx, ecx
+    L_fa5e0_l2_go:
+        push edx
+        push ecx
+        mov ecx, dword ptr [edi + 0x14]
+        push ecx
+        lea ecx, [edi + 0x10]
+        call ext_006FA790
+    L_fa5e0_l1_next:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [ebx + 0x14]
+        inc eax
+        add esi, 0xc
+        cmp eax, ecx
+        mov dword ptr [esp + 0x10], eax
+        jl L_fa5e0_loop1
+    L_fa5e0_pass2:
+        mov eax, dword ptr [ebx + 0x18]
+        xor esi, esi
+        test eax, eax
+        mov dword ptr [esp + 0x10], esi
+        jle L_fa5e0_done
+    L_fa5e0_loop2:
+        mov eax, dword ptr [ebx + 0x14]
+        add eax, esi
+        lea edx, [eax + 2*eax]
+        mov eax, dword ptr [ebx + 0x10]
+        lea ecx, [eax + 4*edx]
+        mov eax, dword ptr [eax + 4*edx + 0x4]
+        test eax, eax
+        je L_fa5e0_l3_zero
+        mov edx, dword ptr [eax]
+        mov ebp, dword ptr [ecx]
+        cmp edx, ebp
+        jne L_fa5e0_l3_zero
+        mov eax, dword ptr [eax + 0x4]
+        jmp L_fa5e0_l3_go
+    L_fa5e0_l3_zero:
+        xor eax, eax
+    L_fa5e0_l3_go:
+        push 0x0
+        push eax
+        mov ecx, edi
+        call ext_006FA9C0
+        test al, al
+        je L_fa5e0_l2_next
+        mov eax, dword ptr [ebx + 0x14]
+        mov ecx, dword ptr [ebx + 0x10]
+        add eax, esi
+        lea eax, [eax + 2*eax]
+        mov edx, dword ptr [ecx + 4*eax + 0x8]
+        mov eax, dword ptr [ebx + 0x14]
+        add eax, esi
+        mov dword ptr [esp + 0x18], edx
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je L_fa5e0_l4_zero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_fa5e0_l4_zero
+        mov ebp, dword ptr [eax + 0x4]
+        jmp L_fa5e0_l4_go
+    L_fa5e0_l4_zero:
+        xor ebp, ebp
+    L_fa5e0_l4_go:
+        mov esi, dword ptr [edi + 0x18]
+        mov eax, dword ptr [edi + 0x14]
+        mov ecx, esi
+        lea eax, [eax + ecx + 0x1]
+        lea edx, [eax + 2*eax]
+        mov eax, dword ptr [edi + 0x10]
+        shl edx, 0x2
+        push edx
+        push eax
+        call dword ptr [mem_00925290]
+        mov edx, dword ptr [edi + 0x14]
+        mov ecx, dword ptr [edi + 0x18]
+        add esi, edx
+        add esp, 0x8
+        sub ecx, esi
+        mov dword ptr [edi + 0x10], eax
+        add ecx, edx
+        js L_fa5e0_noshift
+        lea ecx, [ecx + 2*ecx]
+        lea edx, [esi + 2*esi]
+        shl ecx, 0x2
+        push ecx
+        lea ecx, [eax + 4*edx]
+        lea edx, [esi + 2*esi + 0x3]
+        push ecx
+        lea eax, [eax + 4*edx]
+        push eax
+        call dword ptr [mem_0092528C]
+        add esp, 0xc
+    L_fa5e0_noshift:
+        mov eax, dword ptr [edi + 0x10]
+        lea ecx, [esi + 2*esi]
+        shl ecx, 0x2
+        add eax, ecx
+        test ebp, ebp
+        je L_fa5e0_l5_zero
+        mov edx, dword ptr [ebp + 0x4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [edx]
+        mov dword ptr [eax], edx
+        jmp L_fa5e0_l5_go
+    L_fa5e0_l5_zero:
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], 0x0
+    L_fa5e0_l5_go:
+        mov eax, dword ptr [edi + 0x10]
+        mov edx, dword ptr [esp + 0x18]
+        mov esi, dword ptr [esp + 0x10]
+        mov dword ptr [eax + ecx + 0x8], edx
+        mov eax, dword ptr [edi + 0x18]
+        inc eax
+        mov dword ptr [edi + 0x18], eax
+    L_fa5e0_l2_next:
+        mov eax, dword ptr [ebx + 0x18]
+        inc esi
+        cmp esi, eax
+        mov dword ptr [esp + 0x10], esi
+        jl L_fa5e0_loop2
+    L_fa5e0_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
