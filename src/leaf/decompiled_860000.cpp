@@ -12350,3 +12350,195 @@ extern "C" __declspec(naked) void __fastcall fn_00869FE0(void* self) {
         ret
     }
 }
+
+// [0x008686E0] sub_008686E0 (512 bytes)
+extern "C" __declspec(naked) void __fastcall fn_008686E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        lea esi, [eax - 0x6]
+        push edi
+        lea ecx, [esi - 0x1]
+        test ecx, ecx
+        jl L_870F
+        mov edx, dword ptr [esp + 0x34]
+        lea edi, [esp + 0x10]
+        lea eax, [esp + 4*ecx + 0x10]
+        sub edx, edi
+        inc ecx
+    L_8704:
+        mov edi, dword ptr [edx + eax]
+        mov dword ptr [eax], edi
+        sub eax, 0x4
+        dec ecx
+        jne L_8704
+    L_870F:
+        mov ebx, dword ptr [esp + 0x38]
+        xor edi, edi
+        xor eax, eax
+        xor ecx, ecx
+        test esi, esi
+        mov dword ptr [esp + 0x34], edi
+        jle L_875C
+    L_8721:
+        mov edx, dword ptr [esp + 0x3c]
+        inc edx
+        cmp edi, edx
+        jge L_875C
+        cmp ecx, esi
+        jge L_874C
+        lea edx, [esp + 4*ecx + 0x10]
+    L_8732:
+        cmp eax, 0x4
+        jge L_874F
+        mov ebp, dword ptr [edx]
+        lea edi, [eax + 4*edi]
+        inc ecx
+        add edx, 0x4
+        inc eax
+        mov dword ptr [ebx + 4*edi], ebp
+        mov edi, dword ptr [esp + 0x34]
+        cmp ecx, esi
+        jl L_8732
+    L_874C:
+        cmp eax, 0x4
+    L_874F:
+        jne L_8758
+        inc edi
+        xor eax, eax
+        mov dword ptr [esp + 0x34], edi
+    L_8758:
+        cmp ecx, esi
+        jl L_8721
+    L_875C:
+        mov ecx, dword ptr [esp + 0x3c]
+        inc ecx
+        cmp edi, ecx
+        mov dword ptr [esp + 0x38], ecx
+        jge L_88C7
+        mov dword ptr [esp + 0x3c], 0xac3880
+    L_8775:
+        mov cl, byte ptr [esp + 0x10]
+        xor edx, edx
+        mov dl, byte ptr [esp + 4*esi + 0xd]
+        xor cl, byte ptr [edx + 0xac0680]
+        xor edx, edx
+        mov byte ptr [esp + 0x10], cl
+        mov dl, byte ptr [esp + 4*esi + 0xe]
+        mov dl, byte ptr [edx + 0xac0680]
+        xor byte ptr [esp + 0x11], dl
+        xor edx, edx
+        mov dl, byte ptr [esp + 4*esi + 0xf]
+        mov dl, byte ptr [edx + 0xac0680]
+        xor byte ptr [esp + 0x12], dl
+        xor edx, edx
+        mov dl, byte ptr [esp + 4*esi + 0xc]
+        mov dl, byte ptr [edx + 0xac0680]
+        xor byte ptr [esp + 0x13], dl
+        mov edx, dword ptr [esp + 0x3c]
+        xor cl, byte ptr [edx]
+        add edx, 0x4
+        cmp esi, 0x8
+        mov dword ptr [esp + 0x3c], edx
+        mov byte ptr [esp + 0x10], cl
+        je L_87EF
+        cmp esi, 0x1
+        jle L_887F
+        lea ecx, [esp + 0x14]
+        lea edx, [esi - 0x1]
+    L_87DF:
+        mov ebp, dword ptr [ecx - 0x4]
+        xor dword ptr [ecx], ebp
+        add ecx, 0x4
+        dec edx
+        jne L_87DF
+        jmp L_887F
+    L_87EF:
+        lea ecx, [esp + 0x14]
+        mov edx, 0x3
+    L_87F8:
+        mov ebp, dword ptr [ecx - 0x4]
+        xor dword ptr [ecx], ebp
+        add ecx, 0x4
+        dec edx
+        jne L_87F8
+        mov ecx, dword ptr [esp + 0x1c]
+        and ecx, 0xff
+        mov dl, byte ptr [ecx + 0xac0680]
+        mov cl, byte ptr [esp + 0x20]
+        xor cl, dl
+        mov byte ptr [esp + 0x20], cl
+        mov ecx, dword ptr [esp + 0x1d]
+        and ecx, 0xff
+        mov dl, byte ptr [ecx + 0xac0680]
+        mov cl, byte ptr [esp + 0x21]
+        xor cl, dl
+        mov byte ptr [esp + 0x21], cl
+        mov ecx, dword ptr [esp + 0x1e]
+        and ecx, 0xff
+        mov dl, byte ptr [ecx + 0xac0680]
+        mov cl, byte ptr [esp + 0x22]
+        xor cl, dl
+        mov byte ptr [esp + 0x22], cl
+        mov ecx, dword ptr [esp + 0x1f]
+        and ecx, 0xff
+        mov dl, byte ptr [ecx + 0xac0680]
+        mov cl, byte ptr [esp + 0x23]
+        xor cl, dl
+        mov edx, 0x3
+        mov byte ptr [esp + 0x23], cl
+        lea ecx, [esp + 0x24]
+    L_8874:
+        mov ebp, dword ptr [ecx - 0x4]
+        xor dword ptr [ecx], ebp
+        add ecx, 0x4
+        dec edx
+        jne L_8874
+    L_887F:
+        xor ecx, ecx
+        test esi, esi
+        jle L_88BD
+    L_8885:
+        cmp edi, dword ptr [esp + 0x38]
+        jge L_88C7
+        cmp ecx, esi
+        jge L_88AD
+        lea edx, [esp + 4*ecx + 0x10]
+    L_8893:
+        cmp eax, 0x4
+        jge L_88B0
+        mov ebp, dword ptr [edx]
+        lea edi, [eax + 4*edi]
+        inc ecx
+        add edx, 0x4
+        inc eax
+        mov dword ptr [ebx + 4*edi], ebp
+        mov edi, dword ptr [esp + 0x34]
+        cmp ecx, esi
+        jl L_8893
+    L_88AD:
+        cmp eax, 0x4
+    L_88B0:
+        jne L_88B9
+        inc edi
+        xor eax, eax
+        mov dword ptr [esp + 0x34], edi
+    L_88B9:
+        cmp ecx, esi
+        jl L_8885
+    L_88BD:
+        cmp edi, dword ptr [esp + 0x38]
+        jl L_8775
+    L_88C7:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x20
+        ret
+    }
+}
