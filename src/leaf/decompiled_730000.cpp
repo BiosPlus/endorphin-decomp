@@ -62,6 +62,7 @@ fn00736E20_ret1:
         ret 4
     }
 }
+extern "C" void ext_006D8580(); extern "C" void ext_006D8730(); extern "C" void ext_00726AA0(); extern "C" void ext_0079D6D0();
 
 // [0x0073AA20] sub_0073AA20 (144 bytes)
 extern "C" void ext_0071DE80();
@@ -6819,6 +6820,203 @@ fn00739E90_ret0:
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 14h
+        ret 4
+    }
+}
+
+// [0x0073C420] sub_0073C420 (416 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0073C420(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, ecx
+        mov ecx, dword ptr [ebp+0ach]
+        call ext_0079D6D0
+        test al, al
+        jne Lgo
+        mov al, 1
+        pop ebp
+        ret 4
+Lgo:
+        mov ecx, dword ptr [ebp+0ach]
+        push ebx
+        push esi
+        push edi
+        push 0b5d2c0h
+        push 0aadfech
+        add ecx, 4
+        call ext_00726AA0
+        mov ebx, dword ptr [esp+14h]
+        mov edi, eax
+        test edi, edi
+        je Lsec
+        mov esi, 0aadfe0h
+        mov ecx, edi
+L1a:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne L1d
+        test dl, dl
+        je L1c
+        mov al, byte ptr [ecx+1]
+        mov dl, al
+        cmp al, byte ptr [esi+1]
+        jne L1d
+        add ecx, 2
+        add esi, 2
+        test dl, dl
+        jne L1a
+L1c:
+        xor ecx, ecx
+        jmp L1e
+L1d:
+        sbb ecx, ecx
+        sbb ecx, -1
+L1e:
+        test ecx, ecx
+        jne Lb
+        push 1
+        jmp Lcall
+Lb:
+        mov esi, 0aadfd4h
+        mov ecx, edi
+L2a:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne L2d
+        test dl, dl
+        je L2c
+        mov al, byte ptr [ecx+1]
+        mov dl, al
+        cmp al, byte ptr [esi+1]
+        jne L2d
+        add ecx, 2
+        add esi, 2
+        test dl, dl
+        jne L2a
+L2c:
+        xor ecx, ecx
+        jmp L2e
+L2d:
+        sbb ecx, ecx
+        sbb ecx, -1
+L2e:
+        test ecx, ecx
+        jne Lc
+        push 3
+        jmp Lcall
+Lc:
+        mov esi, 0aadfcch
+        mov eax, edi
+L3a:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L3d
+        test cl, cl
+        je L3c
+        mov dl, byte ptr [eax+1]
+        mov cl, dl
+        cmp dl, byte ptr [esi+1]
+        jne L3d
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L3a
+L3c:
+        xor eax, eax
+        jmp L3e
+L3d:
+        sbb eax, eax
+        sbb eax, -1
+L3e:
+        test eax, eax
+        jne Lsec
+        push 4
+Lcall:
+        mov ecx, ebx
+        call ext_006D8580
+Lsec:
+        mov ecx, dword ptr [ebp+0ach]
+        push 0b5d2c0h
+        push 0aadd14h
+        add ecx, 4
+        call ext_00726AA0
+        mov edi, eax
+        test edi, edi
+        je Lend
+        mov esi, 0aadfd4h
+        mov ecx, edi
+L4a:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne L4d
+        test dl, dl
+        je L4c
+        mov al, byte ptr [ecx+1]
+        mov dl, al
+        cmp al, byte ptr [esi+1]
+        jne L4d
+        add ecx, 2
+        add esi, 2
+        test dl, dl
+        jne L4a
+L4c:
+        xor ecx, ecx
+        jmp L4e
+L4d:
+        sbb ecx, ecx
+        sbb ecx, -1
+L4e:
+        test ecx, ecx
+        jne Ld
+        push 3
+        mov ecx, ebx
+        call ext_006D8730
+        pop edi
+        pop esi
+        pop ebx
+        mov al, 1
+        pop ebp
+        ret 4
+Ld:
+        mov esi, 0aadfc4h
+        mov eax, edi
+L5a:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L5d
+        test cl, cl
+        je L5c
+        mov dl, byte ptr [eax+1]
+        mov cl, dl
+        cmp dl, byte ptr [esi+1]
+        jne L5d
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L5a
+L5c:
+        xor eax, eax
+        jmp L5e
+L5d:
+        sbb eax, eax
+        sbb eax, -1
+L5e:
+        test eax, eax
+        jne Lend
+        push 4
+        mov ecx, ebx
+        call ext_006D8730
+Lend:
+        pop edi
+        pop esi
+        pop ebx
+        mov al, 1
+        pop ebp
         ret 4
     }
 }
