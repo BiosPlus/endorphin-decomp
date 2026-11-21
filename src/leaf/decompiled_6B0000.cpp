@@ -13471,3 +13471,222 @@ extern "C" __declspec(naked) void __fastcall fn_006BADC0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006BD240] sub_006BD240 (544 bytes)
+extern "C" void ext_006C3030();
+extern "C" void ext_006C30F0();
+extern "C" void ext_006C3120();
+extern "C" void ext_006C3150();
+extern "C" void ext_006FB520();
+extern "C" void ext_006FB650();
+extern "C" void ext_006FDF30();
+extern "C" void ext_006FDF90();
+extern "C" void ext_00715550();
+
+// Naked transcription of the original instruction stream (loop back-edges kept verbatim).
+extern "C" __declspec(naked) void __fastcall fn_006BD240(void* self) {
+    __asm {
+        sub esp, 0x34
+        push ebx
+        mov ebx, ecx
+        mov dword ptr [esp + 0x28], ebx
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006B99C0
+        xor ecx, ecx
+        mov dword ptr [esp + 0x2c], eax
+        test eax, eax
+        mov dword ptr [esp + 0x1c], ecx
+        jle L_end_006BD240
+        push ebp
+        push esi
+        push edi
+    L_outer_006BD240:
+        lea esi, [ecx*4]
+        mov ecx, ebx
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov edi, dword ptr [eax]
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], edi
+        call ext_006C3030
+        test eax, eax
+        je L_next_006BD240
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        sub eax, 4
+        je L_case0_006BD240
+        dec eax
+        je L_case1_006BD240
+        dec eax
+        jne L_next_006BD240
+        mov ecx, ebx
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C3150
+        jmp L_join_006BD240
+    L_case1_006BD240:
+        mov ecx, ebx
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C3120
+        jmp L_join_006BD240
+    L_case0_006BD240:
+        mov ecx, ebx
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C30F0
+    L_join_006BD240:
+        mov esi, eax
+        mov dword ptr [esp + 0x10], eax
+        test esi, esi
+        je L_next_006BD240
+        push 3
+        mov ecx, esi
+        call ext_006FDF30
+        xor ebp, ebp
+        mov dword ptr [esp + 0x30], eax
+        test eax, eax
+        mov dword ptr [esp + 0x24], ebp
+        jle L_next_006BD240
+        jmp L_body2_006BD240
+    L_top2_006BD240:
+        mov esi, dword ptr [esp + 0x10]
+    L_body2_006BD240:
+        push 3
+        push ebp
+        mov ecx, esi
+        call ext_006FDF90
+        mov ecx, eax
+        call ext_00715550
+        mov ebx, eax
+        mov dword ptr [esp + 0x1c], ebx
+        mov eax, dword ptr [ebx + 4]
+        test eax, eax
+        je L_s_006BD240
+        cmp eax, 2
+        jne L_next2_006BD240
+    L_s_006BD240:
+        mov edx, dword ptr [ebx + 8]
+        mov dword ptr [esp + 0x14], 0
+        test edx, edx
+        mov dword ptr [esp + 0x20], edx
+        jle L_after_inner_006BD240
+        jmp L_inner2_006BD240
+    L_inner_006BD240:
+        mov edi, dword ptr [esp + 0x18]
+    L_inner2_006BD240:
+        mov eax, dword ptr [ebx + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [eax + 4*ecx]
+        mov ecx, ebp
+        mov edx, dword ptr [ebp]
+        call dword ptr [edx + 0xc]
+        mov dword ptr [esp + 0x2c], eax
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0xc]
+        mov edi, eax
+        add edi, 0x10
+        mov esi, dword ptr [edi + 4]
+        dec esi
+        js L_notfound_006BD240
+        lea ebx, [esi + 2*esi]
+        shl ebx, 2
+    L_bs_006BD240:
+        mov ecx, dword ptr [esp + 0x2c]
+        push ecx
+        lea ecx, [esp + 0x40]
+        call ext_006FB520
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [esp + 0x3c]
+        add eax, ebx
+        cmp edx, dword ptr [eax]
+        jne L_bsn_006BD240
+        mov ecx, dword ptr [esp + 0x40]
+        mov edx, dword ptr [eax + 4]
+        cmp ecx, edx
+        je L_found_006BD240
+    L_bsn_006BD240:
+        dec esi
+        sub ebx, 0xc
+        test esi, esi
+        jl L_notfound2_006BD240
+        jmp L_bs_006BD240
+    L_found_006BD240:
+        test esi, esi
+        jge L_foundok_006BD240
+    L_notfound2_006BD240:
+        mov ebx, dword ptr [esp + 0x1c]
+    L_notfound_006BD240:
+        mov edx, dword ptr [ebp]
+        push 0
+        mov ecx, ebp
+        call dword ptr [edx + 0xc]
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0xc]
+        mov ecx, eax
+        call ext_006FB650
+        jmp L_inc_006BD240
+    L_foundok_006BD240:
+        mov ebx, dword ptr [esp + 0x1c]
+    L_inc_006BD240:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x20]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp + 0x14], eax
+        jl L_inner_006BD240
+        mov ebp, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x18]
+        mov edx, ecx
+    L_after_inner_006BD240:
+        cmp dword ptr [ebx + 4], 2
+        jne L_next2_006BD240
+        mov esi, dword ptr [ebx + 0x20]
+        xor ecx, ecx
+        test esi, esi
+        jle L_next2_006BD240
+    L_l3_006BD240:
+        mov eax, dword ptr [ebx + 0x30]
+        cmp dword ptr [eax + 4*ecx], edx
+        lea eax, [eax + 4*ecx]
+        jl L_l3n_006BD240
+        mov dword ptr [eax], 0xffffffff
+    L_l3n_006BD240:
+        inc ecx
+        cmp ecx, esi
+        jl L_l3_006BD240
+    L_next2_006BD240:
+        mov eax, dword ptr [esp + 0x30]
+        inc ebp
+        cmp ebp, eax
+        mov dword ptr [esp + 0x24], ebp
+        jl L_top2_006BD240
+        mov ebx, dword ptr [esp + 0x34]
+    L_next_006BD240:
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esp + 0x38]
+        inc ecx
+        cmp ecx, eax
+        mov dword ptr [esp + 0x28], ecx
+        jl L_outer_006BD240
+        pop edi
+        pop esi
+        pop ebp
+    L_end_006BD240:
+        pop ebx
+        add esp, 0x34
+        ret
+    }
+}
