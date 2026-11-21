@@ -13940,3 +13940,191 @@ extern "C" __declspec(naked) void __cdecl fn_0086E430(void) {
         ret
     }
 }
+
+// [0x00860A00] sub_00860A00 (580 bytes)
+extern "C" void ext_00860670();
+extern "C" void ext_00860950();
+extern "C" void ext_0085F7E0();
+extern "C" void ext_0085FF80();
+extern "C" void ext_0085F750();
+extern "C" void ext_0085E720();
+extern "C" void ext_0085F700();
+extern "C" void ext_0085F740();
+extern "C" int mem_00AB9864;
+extern "C" int mem_00BC6389;
+
+extern "C" __declspec(naked) int __cdecl fn_00860A00(void) {
+    __asm {
+        sub esp, 0x10
+        mov dword ptr [mem_00AB98EC], 0
+        push esi
+        call ext_00860670
+        test eax, eax
+        jne t_main
+        mov eax, 0xfffffef2
+        pop esi
+        add esp, 0x10
+        ret
+    t_main:
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push ecx
+        push edx
+        push eax
+        push 0x30
+        call ext_00860950
+        add esp, 0x14
+        push 1
+        push 0xab98b8
+        call ext_0085F7E0
+        add esp, 8
+        test eax, eax
+        jne t_epi
+        xor esi, esi
+    t_loop:
+        lea eax, [esp + 4]
+        push 1
+        push eax
+        push 0xab98b8
+        call ext_0085FF80
+        add esp, 0xc
+        test eax, eax
+        je t_m1
+        cmp eax, 0x3e
+        je t_match
+        cmp eax, 0x46
+        jne t_skip
+    t_match:
+        lea eax, [esp + 4]
+        push 0xab98b8
+        push eax
+        call ext_0085F750
+        add esp, 8
+        test eax, eax
+        je t_skip
+        mov esi, 1
+    t_skip:
+        test esi, esi
+        je t_loop
+        test esi, esi
+        jne t_after
+        mov eax, 0xffffffff
+        pop esi
+        mov dword ptr [mem_00AB98EC], 0xf
+        add esp, 0x10
+        ret
+    t_m1:
+        mov eax, 0xffffffff
+        pop esi
+        add esp, 0x10
+        ret
+    t_after:
+        mov eax, dword ptr [mem_00AB9864]
+        test eax, eax
+        je t_call740
+        push 0xac056c
+        push 0x3e
+        push 0xbc6388
+        call ext_0085E720
+        add esp, 0xc
+        mov eax, dword ptr [mem_00AB9864]
+        test eax, eax
+        je t_call740
+        push 0xbc6388
+        call ext_0085F700
+        add esp, 4
+    t_call740:
+        push 0xbc6388
+        call ext_0085F740
+        add esp, 4
+        xor eax, eax
+        mov al, byte ptr [mem_00BC6389]
+        mov dword ptr [mem_00AB98EC], 0
+        lea ecx, [eax - 1]
+        cmp ecx, 0x1b
+        ja t_epi
+        xor edx, edx
+        mov dl, byte ptr [ecx + 0x860c94]
+        jmp dword ptr [4*edx + 0x860c44]
+        mov dword ptr [mem_00AB98EC], 0x81
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x82
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x83
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x84
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x85
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x86
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x87
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x88
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x89
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x8a
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x0a
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x8c
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x8d
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x8e
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x94
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x98
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x99
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x9b
+        pop esi
+        add esp, 0x10
+        ret
+        mov dword ptr [mem_00AB98EC], 0x9c
+    t_epi:
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
