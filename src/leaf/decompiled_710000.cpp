@@ -10565,3 +10565,187 @@ extern "C" __declspec(naked) int __fastcall fn_00717920(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x007122B0] sub_007122B0 (393 bytes)
+extern "C" void ext_00711BC0();
+extern "C" void ext_006E7460();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_00712000();
+extern "C" void ext_006A7270();
+extern "C" void ext_006BA7C0();
+extern "C" int mem_00925218;
+extern "C" int mem_009251E4;
+extern "C" __declspec(naked) void __fastcall fn_007122B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x14
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp-0x14], ecx
+        call ext_00711BC0
+        xor ecx, ecx
+        mov dword ptr [ebp-0x10], eax
+        cmp eax, ecx
+        je short L1
+        mov eax, dword ptr [eax+0xc0]
+        mov dword ptr [ebp-0xc], eax
+        jmp short L2
+L1:
+        mov dword ptr [ebp-0xc], ecx
+L2:
+        mov eax, 0x400
+        mov dword ptr [ebp-0x8], ecx
+        call ext_006A7270
+        mov ecx, dword ptr [ebp+8]
+        mov ebx, esp
+        call ext_006E7460
+        mov edi, eax
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov edx, ecx
+        mov esi, edi
+        mov edi, ebx
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        cmp byte ptr [ebx], 0x20
+        jne short L4
+L3:
+        test ebx, ebx
+        je short L4
+        mov al, byte ptr [ebx+1]
+        inc ebx
+        cmp al, 0x20
+        je short L3
+L4:
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        add ecx, -2
+        cmp byte ptr [ebx+ecx], 0x20
+        jne short L6
+L5:
+        test ecx, ecx
+        jle short L6
+        mov byte ptr [ebx+ecx], 0
+        mov al, byte ptr [ebx+ecx-1]
+        dec ecx
+        cmp al, 0x20
+        je short L5
+L6:
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        jne short L7
+        push 0xaabd68
+        push ebx
+        call dword ptr [mem_00925218]
+        add esp, 8
+L7:
+        mov ecx, dword ptr [ebp+8]
+        push ebx
+        call ext_006B9EC0
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        mov al, byte ptr [ebx+ecx-1]
+        cmp al, 0x30
+        jl short L10
+L8:
+        cmp al, 0x39
+        jg short L10
+        test ecx, ecx
+        jle short L10
+        mov esi, dword ptr [ebp-8]
+        mov al, byte ptr [ebx+ecx-2]
+        dec ecx
+        inc esi
+        cmp al, 0x30
+        mov dword ptr [ebp-8], esi
+        jge short L8
+L10:
+        mov eax, dword ptr [ebp-8]
+        lea esi, [ebx+ecx]
+        test eax, eax
+        jle short L11
+        push esi
+        call dword ptr [mem_009251E4]
+        add esp, 4
+        inc eax
+        mov dword ptr [ebp-8], eax
+        jmp short L12
+L11:
+        mov byte ptr [esi], 0x20
+        mov byte ptr [esi+1], 0
+        mov dword ptr [ebp-8], 1
+        inc esi
+L12:
+        mov eax, dword ptr [ebp-0xc]
+        xor edi, edi
+        test eax, eax
+        mov byte ptr [ebp-1], 0
+        jle short L20
+L13:
+        mov eax, dword ptr [ebp-0x10]
+        mov ecx, dword ptr [eax+0xd0]
+        mov eax, dword ptr [ebp-0x14]
+        mov ecx, dword ptr [ecx+4*edi]
+        cmp ecx, eax
+        je short L15
+        call ext_00712000
+        mov ecx, dword ptr [ebp+8]
+        push eax
+        call ext_006BA7C0
+        test al, al
+        jne short L16
+L15:
+        mov eax, dword ptr [ebp-0xc]
+        inc edi
+        cmp edi, eax
+        jl short L13
+        jmp short L20
+L16:
+        test esi, esi
+        je short L17
+        mov edx, dword ptr [ebp-8]
+        push edx
+        push 0xaa86a4
+        push esi
+        call dword ptr [mem_00925218]
+        add esp, 0xc
+L17:
+        mov ecx, dword ptr [ebp+8]
+        push ebx
+        call ext_006B9EC0
+        mov byte ptr [ebp-1], 1
+L20:
+        mov ecx, dword ptr [ebp-8]
+        mov al, byte ptr [ebp-1]
+        inc ecx
+        test al, al
+        mov dword ptr [ebp-8], ecx
+        jne L12
+        lea esp, [ebp-0x20]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}
