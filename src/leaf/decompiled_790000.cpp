@@ -10379,3 +10379,177 @@ L_ret:
         ret
     }
 }
+
+// [0x00791C30] sub_00791C30 (472 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" int mem_0092A270; /* double 1 */
+extern "C" int mem_00993828; /* double 0.5 */
+
+extern "C" __declspec(naked) void __fastcall fn_00791C30(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x20], 0x0
+        push edi
+        mov ebx, dword ptr [esi + 0x20]
+        mov edi, dword ptr [esi + 0x24]
+        imul ebx, dword ptr [esi + 0x18]
+        imul edi, dword ptr [esi + 0x1c]
+        mov dword ptr [esp + 0x20], ebx
+        mov eax, dword ptr [esi + 0x23c]
+        fild qword ptr [esp + 0x20]
+        test eax, eax
+        fdivr qword ptr [mem_0092A270]
+        fmul qword ptr [mem_00993828]
+        fstp qword ptr [esp + 0x20]
+        je L_end
+        mov eax, dword ptr [esi + 0x238]
+        test eax, eax
+        je L_end
+        mov eax, dword ptr [esi + 0x248]
+        test eax, eax
+        je L_nofree
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+L_nofree:
+        inc ebx
+        inc edi
+        mov eax, edi
+        imul eax, ebx
+        shl eax, 0x7
+        push eax
+        call ext_006A5C62
+        mov edx, dword ptr [esi + 0x238]
+        add esp, 0x4
+        test edi, edi
+        mov dword ptr [esi + 0x248], eax
+        jbe L_end
+        fld qword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x14], edi
+L_outer:
+        fld st(0)
+        fmul qword ptr [edx]
+        add edx, 0x8
+        mov ecx, dword ptr [esi + 0x23c]
+        fld st(1)
+        fmul qword ptr [edx]
+        add edx, 0x8
+        fld st(2)
+        fmul qword ptr [edx]
+        add edx, 0x8
+        fld st(3)
+        fmul qword ptr [edx]
+        add edx, 0x8
+        test ebx, ebx
+        jbe L_inner_done
+        mov dword ptr [esp + 0x10], ebx
+L_inner:
+        fld qword ptr [ecx]
+        fld qword ptr [ecx + 0x8]
+        add ecx, 0x8
+        add eax, 0x8
+        fst qword ptr [esp + 0x28]
+        mov edi, dword ptr [ecx + 0x8]
+        mov ebp, dword ptr [ecx + 0xc]
+        add ecx, 0x8
+        mov dword ptr [esp + 0x18], edi
+        fld st(1)
+        mov edi, dword ptr [ecx + 0x8]
+        add ecx, 0x8
+        fmul st, st(6)
+        mov dword ptr [esp + 0x1c], ebp
+        mov ebp, dword ptr [ecx + 0x4]
+        add eax, 0x8
+        mov dword ptr [esp + 0x20], edi
+        mov dword ptr [esp + 0x24], ebp
+        mov edi, dword ptr [esp + 0x10]
+        fstp qword ptr [eax - 0x10]
+        add eax, 0x8
+        add ecx, 0x8
+        fld st(0)
+        fmul st, st(6)
+        add eax, 0x8
+        add eax, 0x8
+        fstp qword ptr [eax - 0x20]
+        fld qword ptr [esp + 0x18]
+        fmul st, st(6)
+        add eax, 0x8
+        add eax, 0x8
+        fstp qword ptr [eax - 0x28]
+        fld qword ptr [esp + 0x20]
+        fmul st, st(6)
+        add eax, 0x8
+        add eax, 0x8
+        fstp qword ptr [eax - 0x30]
+        fld st(1)
+        fmul st, st(5)
+        add eax, 0x8
+        add eax, 0x8
+        fstp qword ptr [eax - 0x38]
+        add eax, 0x8
+        fld st(0)
+        fmul st, st(5)
+        add eax, 0x8
+        add eax, 0x8
+        fstp qword ptr [eax - 0x48]
+        fld qword ptr [esp + 0x18]
+        fmul st, st(5)
+        add eax, 0x8
+        add eax, 0x8
+        dec edi
+        mov dword ptr [esp + 0x10], edi
+        fstp qword ptr [eax - 0x50]
+        fld qword ptr [esp + 0x20]
+        fmul st, st(5)
+        fstp qword ptr [eax - 0x48]
+        fld st(1)
+        fmul st, st(4)
+        fstp qword ptr [eax - 0x40]
+        fmul st, st(3)
+        fstp qword ptr [eax - 0x38]
+        fld qword ptr [esp + 0x18]
+        fmul st, st(3)
+        fstp qword ptr [eax - 0x30]
+        fld qword ptr [esp + 0x20]
+        fmul st, st(3)
+        fstp qword ptr [eax - 0x28]
+        fmul st, st(1)
+        fstp qword ptr [eax - 0x20]
+        fld qword ptr [esp + 0x28]
+        fmul st, st(1)
+        fstp qword ptr [eax - 0x18]
+        fld qword ptr [esp + 0x18]
+        fmul st, st(1)
+        fstp qword ptr [eax - 0x10]
+        fld qword ptr [esp + 0x20]
+        fmul st, st(1)
+        fstp qword ptr [eax - 0x8]
+        jne L_inner
+L_inner_done:
+        mov ecx, dword ptr [esp + 0x14]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        dec ecx
+        fstp st(0)
+        mov dword ptr [esp + 0x14], ecx
+        jne L_outer
+        fstp st(0)
+L_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
