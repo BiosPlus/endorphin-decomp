@@ -10656,3 +10656,174 @@ extern "C" __declspec(naked) int __cdecl fn_0085D390(void) {
         ret
     }
 }
+
+// [0x00858B90] sub_00858B90 (432 bytes)
+extern "C" void ext_00853840();
+extern "C" void ext_00858850();
+
+extern "C" __declspec(naked) void __cdecl fn_00858B90(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x174
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x198]
+        mov dword ptr [edi], 0x0
+        mov eax, dword ptr [eax]
+        test eax, eax
+        jne L_nonzero
+        pop edi
+        pop esi
+        mov ax, 0xcc
+        pop ebx
+        add esp, 0x174
+        ret
+    L_nonzero:
+        mov edx, dword ptr [esp + 0x188]
+        lea ecx, [esp + 0x24]
+        push ecx
+        push edx
+        push eax
+        call ext_00858850
+        add esp, 0xc
+        test ax, ax
+        jne L_ret_ax
+        mov eax, dword ptr [esp + 0x194]
+        and eax, 0xff
+        sub eax, 0
+        je L_mode0
+        dec eax
+        je L_mode1
+        mov dword ptr [edi], 0x0
+        pop edi
+        pop esi
+        mov ax, 0xa
+        pop ebx
+        add esp, 0x174
+        ret
+    L_mode1:
+        mov eax, dword ptr [esp + 0x18c]
+        test eax, eax
+        je L_after_call1
+        lea ecx, [esp + 0x24]
+        test ecx, ecx
+        je L_after_call1
+        mov edx, dword ptr [esp + 0x190]
+        push edx
+        push eax
+        lea eax, [esp + 0x2c]
+        push eax
+        call ext_008536D0
+        add esp, 0xc
+    L_after_call1:
+        lea ecx, [esp + 0x24]
+        lea edx, [esp + 0x10]
+        push ecx
+        push edx
+        call ext_00853840
+        add esp, 0x8
+        xor esi, esi
+        xor eax, eax
+        xor ecx, ecx
+    L_loop1:
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [esp + eax + 0x10]
+        mov bl, byte ptr [esp + edx + 0x80]
+        and ebx, 0x80000003
+        jns L_pos
+        dec ebx
+        or ebx, -0x4
+        inc ebx
+    L_pos:
+        shl ebx, cl
+        add ecx, 0x2
+        or esi, ebx
+        inc eax
+        cmp ecx, 0x20
+        jl L_loop1
+        mov dword ptr [esp + 0xc], esi
+        xor eax, eax
+    L_xor1:
+        mov cl, byte ptr [esp + eax + 0x20]
+        mov bl, byte ptr [esp + eax + 0xc]
+        xor bl, cl
+        mov byte ptr [esp + eax + 0xc], bl
+        inc eax
+        cmp eax, 0x4
+        jb L_xor1
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [edi], edx
+        jmp L_tail
+    L_mode0:
+        mov eax, dword ptr [esp + 0x18c]
+        test eax, eax
+        je L_after_call0
+        lea ecx, [esp + 0x24]
+        test ecx, ecx
+        je L_after_call0
+        mov edx, dword ptr [esp + 0x190]
+        push edx
+        push eax
+        lea eax, [esp + 0x2c]
+        push eax
+        call ext_008536D0
+        add esp, 0xc
+    L_after_call0:
+        lea ecx, [esp + 0x24]
+        lea edx, [esp + 0x10]
+        push ecx
+        push edx
+        call ext_00853840
+        add esp, 0x8
+        xor esi, esi
+        xor eax, eax
+        xor ecx, ecx
+    L_loop0:
+        xor edx, edx
+        mov dl, byte ptr [esp + eax + 0x10]
+        mov dl, byte ptr [esp + edx + 0x80]
+        shr edx, 0x3
+        and edx, 0x3
+        shl edx, cl
+        add ecx, 0x2
+        or esi, edx
+        inc eax
+        cmp ecx, 0x20
+        jb L_loop0
+        mov dword ptr [esp + 0xc], esi
+        xor eax, eax
+        lea ecx, [esp + 0xf]
+    L_xor0:
+        mov dl, byte ptr [esp + eax + 0x20]
+        mov bl, byte ptr [ecx]
+        xor bl, dl
+        inc eax
+        mov byte ptr [ecx], bl
+        dec ecx
+        cmp eax, 0x4
+        jb L_xor0
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [edi], eax
+    L_tail:
+        push 0x0
+        lea ecx, [esp + 0x28]
+        push 0x15c
+        push ecx
+        call ext_008692F0
+        add esp, 0xc
+        xor ax, ax
+    L_ret_ax:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x174
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
