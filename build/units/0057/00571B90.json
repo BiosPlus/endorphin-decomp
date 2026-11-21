@@ -56,5 +56,7 @@
     "0x00571DBC",
     "0x00571DC1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:53:04Z"
 }
