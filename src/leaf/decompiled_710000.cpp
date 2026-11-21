@@ -151,9 +151,12 @@ L_0071C316:
         ret
     }
 }
+extern "C" void ext_0071B110();
+extern "C" int mem_00993868; /* double 0.001 */
+extern "C" int mem_0092A270; /* double 1 */
 
-// [0x00711DC0] sub_00711DC0 (32 bytes)
-extern "C" void ext_0071E680();
+extern "C" int mem_00993868; /* double 0.001 */
+extern "C" int mem_0092A270; /* double 1 */
 extern "C" __declspec(naked) void __fastcall fn_00711DC0(void* self, int edx_unused, int a1) {
     __asm {
         call ext_0071E680
@@ -10279,5 +10282,135 @@ extern "C" __declspec(naked) void __fastcall fn_00717570(void* self, int edx_unu
         mov esp, ebp
         pop ebp
         ret 0xc
+    }
+}
+
+// [0x0071B500] sub_0071B500 (420 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071B500(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        cmp edi, 0x4
+        ja L_tail
+        jmp dword ptr [edi*4 + 0x71b6a4]
+L_c0:
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 0x518], ecx
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [eax + 0x51c], edx
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x5a0], ecx
+        mov dword ptr [eax + 0x5a4], edx
+        jmp L_tail
+L_c1:
+        fld qword ptr [esp + 0x10]
+        fcomp qword ptr [mem_00993868]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c1_a
+        fld qword ptr [esp + 0x10]
+        jmp L_c1_b
+L_c1_a:
+        fld qword ptr [mem_00993868]
+L_c1_b:
+        mov eax, dword ptr [esi + 0xc]
+        fstp qword ptr [eax + 0x518]
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x5a0], 0x0
+        mov dword ptr [ecx + 0x5a4], 0x3ff00000
+        jmp L_tail
+L_c2:
+        fld qword ptr [esp + 0x10]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c2_a
+        fld qword ptr [esp + 0x10]
+        jmp L_c2_b
+L_c2_a:
+        fld qword ptr [mem_0092A270]
+L_c2_b:
+        mov edx, dword ptr [esi + 0xc]
+        fstp qword ptr [edx + 0x518]
+        fld qword ptr [esp + 0x18]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c2_c
+        fld qword ptr [esp + 0x18]
+        mov eax, dword ptr [esi + 0xc]
+        fstp qword ptr [eax + 0x5a0]
+        jmp L_tail
+L_c2_c:
+        fld qword ptr [mem_0092A270]
+        mov eax, dword ptr [esi + 0xc]
+        fstp qword ptr [eax + 0x5a0]
+        jmp L_tail
+L_c3:
+        fld qword ptr [esp + 0x10]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c3_a
+        fld qword ptr [esp + 0x10]
+        jmp L_c3_b
+L_c3_a:
+        fld qword ptr [mem_0092A270]
+L_c3_b:
+        mov ecx, dword ptr [esi + 0xc]
+        fstp qword ptr [ecx + 0x518]
+        fld qword ptr [esp + 0x18]
+        fcomp qword ptr [mem_00993868]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c3_c
+        fld qword ptr [esp + 0x18]
+        mov edx, dword ptr [esi + 0xc]
+        fstp qword ptr [edx + 0x5a0]
+        jmp L_tail
+L_c3_c:
+        fld qword ptr [mem_00993868]
+        mov edx, dword ptr [esi + 0xc]
+        fstp qword ptr [edx + 0x5a0]
+        jmp L_tail
+L_c4:
+        fld qword ptr [esp + 0x10]
+        fcomp qword ptr [mem_00993868]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c4_a
+        fld qword ptr [esp + 0x10]
+        jmp L_c4_b
+L_c4_a:
+        fld qword ptr [mem_00993868]
+L_c4_b:
+        mov eax, dword ptr [esi + 0xc]
+        fstp qword ptr [eax + 0x518]
+        fld qword ptr [esp + 0x18]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x41
+        jne L_c4_c
+        fld qword ptr [esp + 0x18]
+        jmp L_c4_d
+L_c4_c:
+        fld qword ptr [mem_0092A270]
+L_c4_d:
+        mov ecx, dword ptr [esi + 0xc]
+        fstp qword ptr [ecx + 0x5a0]
+L_tail:
+        push 0x0
+        mov ecx, esi
+        call ext_0071B110
+        mov edx, dword ptr [esi + 0xc]
+        mov dword ptr [edx + 0x380], edi
+        pop edi
+        pop esi
+        ret 0x14
     }
 }
