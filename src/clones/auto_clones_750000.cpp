@@ -241,3 +241,135 @@ extern "C" __declspec(naked) void __fastcall fn_00755310(void* self) {
     }
 }
 
+
+// [0x00759D40] Identical-shape clone of 0x00777B90 (384 bytes) - sub_00759D40
+extern "C" void ext_006B9D80();
+extern "C" void ext_00724BF0();
+extern "C" void ext_007275F0();
+extern "C" void ext_00727C80();
+extern "C" void ext_00727FE0();
+extern "C" void ext_007283B0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+extern "C" void ext_0072BDB0();
+extern "C" void ext_0072BDD0();
+extern "C" void ext_0072BDF0();
+extern "C" __declspec(naked) void __fastcall fn_00759D40(void* self, int edx_unused, void* arg) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x14
+        push    ebx
+        mov     ebx, dword ptr [ebp + 0x8]
+        push    esi
+        mov     esi, ecx
+        mov     eax, dword ptr [ebx + 0x150]
+        push    edi
+        mov     edi, dword ptr [esi + 0xac]
+        push    0xaad808
+        add     edi, 0x4
+        mov     dword ptr [esp + 0x18], eax
+        mov     ecx, edi
+        call    ext_007275F0
+        mov     ecx, dword ptr [esp + 0x14]
+        push    ecx
+        mov     ecx, edi
+        call    ext_00727C80
+        mov     ecx, edi
+        call    ext_007283B0
+        mov     eax, dword ptr [esp + 0x14]
+        xor     edi, edi
+        test    eax, eax
+        mov     dword ptr [esp + 0x10], edi
+        jle     L_end
+        jmp     short L_loop_body
+    L_loop_top:
+        mov     edi, dword ptr [esp + 0x10]
+        mov     ebx, dword ptr [ebp + 0x8]
+    L_loop_body:
+        mov     ecx, dword ptr [esi + 0xac]
+        push    0xaad7fc
+        add     ecx, 0x4
+        call    ext_007275F0
+        mov     ecx, dword ptr [esi + 0xac]
+        add     ecx, 0x4
+        call    ext_00728410
+        push    edi
+        mov     ecx, ebx
+        call    ext_0072BDB0
+        sub     esp, 0x4c
+        mov     ecx, esp
+        mov     dword ptr [esp + 0x64], esp
+        push    eax
+        call    ext_006B9D80
+        mov     ecx, dword ptr [esi + 0xac]
+        push    0xaad7f4
+        add     ecx, 0x4
+        call    ext_00724BF0
+        push    edi
+        mov     ecx, ebx
+        call    ext_0072BDD0
+        mov     edi, dword ptr [esi + 0xac]
+        push    0xaac1d4
+        add     edi, 0x4
+        mov     ebx, eax
+        mov     ecx, edi
+        call    ext_007275F0
+        mov     dword ptr [esp + 0x18], 0x10
+    L_mat_loop:
+        mov     edx, dword ptr [ebx + 0x4]
+        mov     eax, dword ptr [ebx]
+        push    edx
+        push    eax
+        mov     ecx, edi
+        call    ext_00727FE0
+        mov     eax, dword ptr [esp + 0x18]
+        add     ebx, 0x8
+        dec     eax
+        mov     dword ptr [esp + 0x18], eax
+        jne     L_mat_loop
+        mov     ecx, edi
+        call    ext_007283B0
+        mov     ecx, dword ptr [ebp + 0x8]
+        cmp     byte ptr [ecx + 0x14c], 0x62
+        je      L_skip_byte
+        mov     edx, dword ptr [esp + 0x10]
+        push    edx
+        call    ext_0072BDF0
+        mov     edi, dword ptr [esi + 0xac]
+        push    0xaad7ec
+        add     edi, 0x4
+        mov     byte ptr [esp + 0x20], al
+        mov     ecx, edi
+        call    ext_007275F0
+        mov     eax, dword ptr [esp + 0x1c]
+        mov     ecx, edi
+        and     eax, 0xff
+        push    eax
+        call    ext_00727C80
+        mov     ecx, edi
+        call    ext_007283B0
+    L_skip_byte:
+        mov     ecx, dword ptr [esi + 0xac]
+        add     ecx, 0x4
+        call    ext_007284D0
+        mov     ecx, dword ptr [esi + 0xac]
+        add     ecx, 0x4
+        call    ext_007283B0
+        mov     eax, dword ptr [esp + 0x10]
+        mov     ecx, dword ptr [esp + 0x14]
+        inc     eax
+        cmp     eax, ecx
+        mov     dword ptr [esp + 0x10], eax
+        jl      L_loop_top
+    L_end:
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     0x4
+    }
+}
+

@@ -44,5 +44,7 @@
     "0x00759E84",
     "0x00759E92"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "auto-solved",
+  "matched_at": "2026-11-21T15:23:26Z"
 }
