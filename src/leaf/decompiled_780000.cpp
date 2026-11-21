@@ -11686,3 +11686,212 @@ extern "C" __declspec(naked) void __fastcall fn_00785CA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0078A280] sub_0078A280 (464 bytes)
+// Naked translation: frame size 0x114 (no /GS cookie), byte-for-byte locals layout.
+extern "C" __declspec(naked) bool __fastcall fn_0078A280(void* self, int edx_unused, const char* name, unsigned int* out) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x114
+        push ebx
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x4], ebx
+        mov dword ptr [ebp - 0x10], ebx
+        mov ecx, dword ptr [esi + 0x18]
+        mov dword ptr [ebp - 0x8], ebx
+        mov byte ptr [ebp - 0xc], bl
+        push edi
+        mov eax, dword ptr [ecx]
+        mov edi, dword ptr [esi + 0x1c]
+        mov byte ptr [ebp - 0x11], bl
+        call dword ptr [eax + 0x2c]
+        test al, al
+        jne L_cont
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_cont:
+        mov ecx, dword ptr [esi + 0x18]
+        push edi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x28]
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0x4]
+        push 0x4
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [esi + 0x21], bl
+        je L_s1
+        mov eax, dword ptr [ebp - 0x4]
+        bswap eax
+        mov dword ptr [ebp - 0x4], eax
+    L_s1:
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0x10]
+        push 0x4
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [esi + 0x21], bl
+        je L_s2
+        mov eax, dword ptr [ebp - 0x10]
+        bswap eax
+        mov dword ptr [ebp - 0x10], eax
+    L_s2:
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0x8]
+        push 0x4
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [esi + 0x21], bl
+        je L_s3
+        mov eax, dword ptr [ebp - 0x8]
+        bswap eax
+        mov dword ptr [ebp - 0x8], eax
+    L_s3:
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0xc]
+        push 0x1
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [ebp - 0xc], bl
+        je L_zero
+        mov edx, dword ptr [ebp - 0xc]
+        mov ecx, dword ptr [esi + 0x18]
+        and edx, 0xff
+        mov eax, dword ptr [ecx]
+        push edx
+        lea edx, dword ptr [ebp - 0x114]
+        push edx
+        call dword ptr [eax + 0x14]
+        mov eax, dword ptr [ebp - 0xc]
+        and eax, 0xff
+        mov byte ptr [ebp + eax - 0x114], bl
+        jmp L_after_buf
+    L_zero:
+        mov byte ptr [ebp - 0x114], bl
+    L_after_buf:
+        cmp dword ptr [ebp - 0x4], ebx
+        je L_end
+        mov edi, dword ptr [ebp + 0x8]
+        lea eax, dword ptr [ebp - 0x114]
+    L_cmp_loop:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [edi]
+        jne L_cmp_ne
+        cmp cl, bl
+        je L_cmp_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov cl, dl
+        cmp dl, byte ptr [edi + 0x1]
+        jne L_cmp_ne
+        add eax, 0x2
+        add edi, 0x2
+        cmp cl, bl
+        jne L_cmp_loop
+    L_cmp_eq:
+        xor eax, eax
+        jmp L_cmp_done
+    L_cmp_ne:
+        sbb eax, eax
+        sbb eax, -1
+    L_cmp_done:
+        cmp eax, ebx
+        jne L_end
+        mov ecx, dword ptr [esi + 0x18]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x24]
+        mov edx, dword ptr [ebp - 0x8]
+        add eax, edx
+        mov edx, dword ptr [ebp - 0x4]
+        cmp eax, edx
+        jae L_end
+        mov ecx, dword ptr [esi + 0x18]
+        mov dword ptr [esi + 0x1c], eax
+        push edx
+        mov byte ptr [ebp - 0x11], 0x1
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x28]
+        mov ecx, dword ptr [esi + 0x18]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x24]
+        mov edi, dword ptr [ebp + 0xc]
+        lea edx, dword ptr [ebp - 0x4]
+        push 0x4
+        push edx
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [esi + 0x18]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [esi + 0x21], bl
+        je L_t1
+        mov eax, dword ptr [ebp - 0x4]
+        bswap eax
+        mov dword ptr [ebp - 0x4], eax
+    L_t1:
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0x10]
+        push 0x4
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [esi + 0x21], bl
+        je L_t2
+        mov eax, dword ptr [ebp - 0x10]
+        bswap eax
+        mov dword ptr [ebp - 0x10], eax
+    L_t2:
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0x8]
+        push 0x4
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp byte ptr [esi + 0x21], bl
+        je L_t3
+        mov eax, dword ptr [ebp - 0x8]
+        bswap eax
+        mov dword ptr [ebp - 0x8], eax
+    L_t3:
+        mov ecx, dword ptr [esi + 0x18]
+        lea edx, dword ptr [ebp - 0xc]
+        push 0x1
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x14]
+        cmp dword ptr [ebp - 0x4], ebx
+        jne L_end
+        mov ecx, dword ptr [esi + 0x18]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x24]
+        mov dword ptr [edi], eax
+    L_end:
+        mov al, byte ptr [ebp - 0x11]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
