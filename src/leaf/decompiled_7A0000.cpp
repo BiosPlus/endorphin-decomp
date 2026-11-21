@@ -11925,3 +11925,261 @@ extern "C" __declspec(naked) void __cdecl fn_007AD1C0(void** pp, unsigned short 
         ret
     }
 }
+
+// [0x007AD740] sub_007AD740 (608 bytes)
+extern "C" int mem_00B6167C;
+extern "C" int mem_00BC87CC;
+extern "C" int mem_00BC87D0;
+extern "C" __declspec(naked) void __fastcall fn_007AD740(void* self, int edx_unused, void* a1, void* a2, int* a3, int* a4, unsigned char* a5) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0x28
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, dword ptr [ebp + 0x18]
+        xor ebx, ebx
+        or edi, -0x1
+        cmp ecx, ebx
+        mov dword ptr [ebp - 0x24], esi
+        mov dword ptr [ebp - 0xc], edi
+        mov al, 0x1
+        je L_a5_null
+        mov dl, byte ptr [ecx]
+        mov byte ptr [ebp - 0x1], bl
+        test dl, dl
+        jne L_after_a5
+    L_a5_null:
+        mov byte ptr [ebp - 0x1], 0x1
+    L_after_a5:
+        mov ecx, dword ptr [ebp + 0x10]
+        cmp ecx, ebx
+        je L_a3_null
+        mov edx, dword ptr [ecx]
+        jmp L_after_a3
+    L_a3_null:
+        xor edx, edx
+    L_after_a3:
+        mov ecx, dword ptr [esi]
+        cmp ecx, ebx
+        je L_self_null
+        mov ecx, dword ptr [ecx + 0x4]
+        mov dword ptr [ebp - 0x14], ecx
+        jmp L_after_self
+    L_self_null:
+        mov dword ptr [ebp - 0x14], ebx
+    L_after_self:
+        mov ecx, dword ptr [ebp - 0x14]
+        mov dword ptr [ebp - 0x1c], ebx
+        cmp ecx, ebx
+        jle L_zero_out
+        mov ecx, 0xc
+        mov dword ptr [ebp - 0x20], ecx
+        jmp L_loop_top
+    L_loop_next_reload:
+        mov esi, dword ptr [ebp - 0x24]
+    L_loop_top:
+        test al, al
+        je L_final_store_nofound
+        add ecx, dword ptr [esi]
+        mov dword ptr [ebp - 0x18], ecx
+        mov ecx, dword ptr [ecx]
+        test ecx, ecx
+        je L_loop_continue
+        mov ebx, dword ptr [ecx + 0x4]
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [mem_00B6167C]
+        lea esi, [edi + ebx - 0x1]
+        shl esi, cl
+        add esi, 0x1f
+        cmp esi, edx
+        jl L_loop_continue
+        mov cl, byte ptr [ebp - 0x1]
+        test cl, cl
+        je L_skip_scan
+        mov ecx, dword ptr [mem_00B6167C]
+        mov esi, edi
+        shl esi, cl
+        mov ecx, edx
+        cmp edx, esi
+        jge L_skip_scan
+    L_scan_inner:
+        test al, al
+        je L_loop_continue
+        mov dword ptr [ebp - 0xc], ecx
+        xor al, al
+        inc ecx
+        cmp ecx, esi
+        jl L_scan_inner
+        jmp L_loop_continue
+    L_skip_scan:
+        lea eax, [ebp + 0x8]
+        mov byte ptr [ebp + 0x13], 0x1
+        test eax, eax
+        je L_else_shift
+        mov ecx, dword ptr [mem_00B6167C]
+        mov eax, edx
+        sar eax, cl
+        sub eax, edi
+        js L_else_shift
+        mov ecx, edx
+        mov dword ptr [ebp - 0x10], eax
+        and ecx, 0x8000001f
+        mov dword ptr [ebp - 0x8], edx
+        jns L_shl_pos
+        dec ecx
+        or ecx, -0x20
+        inc ecx
+    L_shl_pos:
+        mov esi, 0x1
+        shl esi, cl
+        jmp L_have_bit
+    L_else_shift:
+        mov ecx, dword ptr [mem_00B6167C]
+        mov eax, edi
+        shl eax, cl
+        mov dword ptr [ebp - 0x10], 0x0
+        mov esi, 0x1
+        mov dword ptr [ebp - 0x8], eax
+        mov eax, dword ptr [ebp - 0x10]
+    L_have_bit:
+        mov ecx, dword ptr [ebp + 0x14]
+        test ecx, ecx
+        je L_a4_null
+        mov ebx, dword ptr [ecx]
+        mov ecx, dword ptr [mem_00B6167C]
+        sar ebx, cl
+        sub ebx, edi
+        jmp L_after_a4
+    L_a4_null:
+        dec ebx
+    L_after_a4:
+        cmp eax, ebx
+        jg L_bitloop_exit
+        lea edi, [4 * eax + 0xc]
+    L_bit_outer:
+        mov al, byte ptr [ebp + 0x13]
+        test al, al
+        je L_bitloop_exit
+    L_bit_inner:
+        mov ecx, dword ptr [ebp - 0x18]
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ebp + 0x18]
+        test dword ptr [edx + edi], esi
+        setne al
+        test ecx, ecx
+        je L_store_flag
+        mov cl, byte ptr [ecx]
+        test cl, cl
+        je L_cl_zero
+        test al, al
+        jne L_store_flag
+        test cl, cl
+        jne L_no_store
+    L_cl_zero:
+        test al, al
+        jne L_no_store
+    L_store_flag:
+        mov eax, dword ptr [ebp - 0x8]
+        mov byte ptr [ebp + 0x13], 0x0
+        mov dword ptr [ebp - 0xc], eax
+    L_no_store:
+        mov al, byte ptr [mem_00BC87CC]
+        test al, 0x1
+        jne L_have_cached
+        mov cl, al
+        mov dword ptr [ebp - 0x28], -0x1
+        or cl, 0x1
+        mov byte ptr [mem_00BC87CC], cl
+        mov ecx, dword ptr [ebp - 0x28]
+        xor eax, eax
+        bsr edx, ecx
+        setne al
+        dec eax
+        or eax, edx
+        mov edx, 0x1
+        mov ecx, eax
+        shl edx, cl
+        mov dword ptr [mem_00BC87D0], edx
+        jmp L_cmp_bit
+    L_have_cached:
+        mov edx, dword ptr [mem_00BC87D0]
+    L_cmp_bit:
+        cmp edx, esi
+        je L_bit_equal
+        mov ecx, dword ptr [ebp - 0x8]
+        mov al, byte ptr [ebp + 0x13]
+        shl esi, 0x1
+        inc ecx
+        test al, al
+        mov dword ptr [ebp - 0x8], ecx
+        jne L_bit_inner
+        jmp L_bit_adv
+    L_bit_equal:
+        inc dword ptr [ebp - 0x8]
+    L_bit_adv:
+        mov eax, dword ptr [ebp - 0x10]
+        add edi, 0x4
+        inc eax
+        mov esi, 0x1
+        cmp eax, ebx
+        mov dword ptr [ebp - 0x10], eax
+        jle L_bit_outer
+    L_bitloop_exit:
+        mov ecx, dword ptr [ebp - 0x18]
+        mov al, byte ptr [ebp + 0x13]
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [ecx]
+        lea edx, [edx + ecx - 0x1]
+        mov ecx, dword ptr [mem_00B6167C]
+        shl edx, cl
+        mov ecx, dword ptr [ebp + 0x14]
+        add edx, 0x20
+        test ecx, ecx
+        je L_loop_continue
+        cmp edx, dword ptr [ecx]
+        jge L_done_found
+    L_loop_continue:
+        mov esi, dword ptr [ebp - 0x1c]
+        mov ecx, dword ptr [ebp - 0x20]
+        mov edi, dword ptr [ebp - 0x14]
+        inc esi
+        add ecx, 0x4
+        cmp esi, edi
+        mov dword ptr [ebp - 0x1c], esi
+        mov dword ptr [ebp - 0x20], ecx
+        jl L_loop_next_reload
+    L_done_found:
+        mov edx, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr [edx], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x14
+    L_zero_out:
+        mov edx, dword ptr [ebp + 0x8]
+        mov dword ptr [edx], edi
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x14
+    L_final_store_nofound:
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr [ecx], edx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x14
+    }
+}
