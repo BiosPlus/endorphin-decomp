@@ -18460,3 +18460,225 @@ extern "C" __declspec(naked) void __fastcall fn_0067FAB0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0067FD90] sub_0067FD90 (619 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_004E3D30();
+extern "C" int ext_00671100(int);
+extern "C" void ext_0067FBC0();
+extern "C" void ext_0067FD90();
+extern "C" void ext_006A0AC0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0067FD90(void* self) {
+    __asm {
+        push -0x1
+        mov eax, dword ptr fs:[0x0]
+        push 0x8b33b8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov edi, edi
+    L_top_0067FD90:
+        mov edi, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edi + 0x4]
+        test eax, eax
+        je L_reset_0067FD90
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        je L_reset_0067FD90
+        mov ebx, dword ptr [edi + 0x8]
+        cmp eax, ebx
+        jbe L_ok1_0067FD90
+        call dword ptr [mem_00925134]
+    L_ok1_0067FD90:
+        lea eax, [ebx - 0x4]
+        cmp eax, dword ptr [edi + 0x8]
+        mov ebp, edi
+        mov dword ptr [esp + 0x14], ebx
+        ja L_bad2_0067FD90
+        cmp eax, dword ptr [edi + 0x4]
+        jae L_ok2_0067FD90
+    L_bad2_0067FD90:
+        call dword ptr [mem_00925134]
+    L_ok2_0067FD90:
+        lea edi, [ebx - 0x4]
+        cmp edi, dword ptr [ebp + 0x8]
+        jb L_ok3_0067FD90
+        call dword ptr [mem_00925134]
+    L_ok3_0067FD90:
+        mov ecx, dword ptr [edi]
+        mov dword ptr [esi + 0x20], ecx
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+        mov dword ptr [esi + 0x14], eax
+        jmp L_dispatch_0067FD90
+    L_reset_0067FD90:
+        mov dword ptr [esi + 0x20], 0x0
+        mov dword ptr [esi + 0x14], 0xf
+    L_dispatch_0067FD90:
+        mov ecx, dword ptr [esi + 0x14]
+        shl ecx, 0x4
+        add ecx, dword ptr [esi + 0x18]
+        mov eax, dword ptr [4*ecx + 0x98c7d8]
+        cmp eax, 0x8
+        ja L_throw5_0067FD90
+        jmp dword ptr [4*eax + 0x67fffc]
+    L_caseA_0067FD90:
+        mov ecx, dword ptr [esi + 0x20]
+        test ecx, ecx
+        je L_afterA_0067FD90
+        mov eax, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x8]
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        push eax
+        call edx
+    L_afterA_0067FD90:
+        mov eax, dword ptr [esi + 0x14]
+        cmp eax, 0xe
+        je L_top_0067FD90
+        cmp eax, 0xa
+        je L_top_0067FD90
+        mov eax, dword ptr [esi + 0x18]
+        cmp eax, 0xb
+        je L_top_0067FD90
+        cmp eax, 0x2
+        je L_top_0067FD90
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call ext_006A0AC0
+        add esp, 0x4
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x10], eax
+        push ecx
+    L_tail_0067FD90:
+        mov ecx, dword ptr [esi + 0x4]
+        call ext_0041A920
+    L_epi_0067FD90:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret
+    L_caseB_0067FD90:
+        mov edx, dword ptr [esi + 0x1c]
+        push edx
+        call ext_006A0AC0
+        mov dword ptr [esp + 0x14], eax
+        add esp, 0x4
+        lea eax, [esp + 0x10]
+        push eax
+        jmp L_tail_0067FD90
+    L_caseC_0067FD90:
+        mov ecx, esi
+        call ext_0067FBC0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret
+    L_case5_0067FD90:
+        push 0xa183e8
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov dword ptr [esp + 0x20], 0x4
+        call ext_006A6DD2
+    L_case6_0067FD90:
+        mov ecx, esi
+        mov dword ptr [esi + 0x18], 0xd
+        call ext_0067FD90
+        mov edi, dword ptr [esi + 0x4]
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_c6a_0067FD90
+        call dword ptr [mem_00925134]
+    L_c6a_0067FD90:
+        lea eax, [ebx - 0x4]
+        cmp eax, dword ptr [edi + 0x8]
+        mov ebp, edi
+        mov dword ptr [esp + 0x14], ebx
+        ja L_c6b_0067FD90
+        cmp eax, dword ptr [edi + 0x4]
+        jae L_c6c_0067FD90
+    L_c6b_0067FD90:
+        call dword ptr [mem_00925134]
+    L_c6c_0067FD90:
+        lea edi, [ebx - 0x4]
+        cmp edi, dword ptr [ebp + 0x8]
+        jb L_c6d_0067FD90
+        call dword ptr [mem_00925134]
+    L_c6d_0067FD90:
+        push 0x39
+        call ext_006A0AC0
+        push 0x3f
+        mov dword ptr [edi], eax
+        call ext_006A0AC0
+        mov ecx, dword ptr [esi + 0x4]
+        add esp, 0x8
+        lea edx, [esp + 0x10]
+        push edx
+        mov dword ptr [esp + 0x14], eax
+        call ext_0041A920
+        push 0x17
+        call ext_00671100
+        add esp, 0x4
+        mov dword ptr [esp + 0x28], 0x39
+        mov dword ptr [esp + 0x2c], eax
+        mov ecx, dword ptr [esi + 0x8]
+        lea eax, [esp + 0x28]
+        push eax
+        mov dword ptr [esp + 0x3c], 0x0
+        call ext_004E3D30
+        mov ecx, dword ptr [esp + 0x2c]
+        test ecx, ecx
+        mov dword ptr [esp + 0x38], 0xffffffff
+        je L_epi_0067FD90
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x28]
+        push eax
+        call edx
+        mov ecx, dword ptr [esp + 0x30]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret
+    L_case7_0067FD90:
+        push 0xa183e8
+        lea eax, [esp + 0x20]
+        push eax
+        mov dword ptr [esp + 0x24], 0x3
+        call ext_006A6DD2
+    L_case8_0067FD90:
+        push 0xa183e8
+        lea ecx, [esp + 0x24]
+        push ecx
+        mov dword ptr [esp + 0x28], 0x7
+        call ext_006A6DD2
+    L_throw5_0067FD90:
+        push 0xa183e8
+        lea edx, [esp + 0x28]
+        push edx
+        mov dword ptr [esp + 0x2c], 0x5
+        call ext_006A6DD2
+    }
+}
