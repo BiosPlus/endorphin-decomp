@@ -7966,3 +7966,218 @@ extern "C" __declspec(naked) void __fastcall fn_00778410(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0077F020] sub_0077F020 (560 bytes)
+extern "C" void ext_006BADB0();
+extern "C" void ext_00712000();
+extern "C" void ext_007275F0();
+extern "C" void ext_007279A0();
+extern "C" void ext_007283B0();
+extern "C" int mem_00B5F1F8;
+extern "C" int mem_00B5F060;
+
+extern "C" __declspec(naked) void __fastcall fn_0077F020(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        xor ebp, ebp
+        push esi
+        cmp ebx, ebp
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0x10], ebp
+        je f20_L04B
+        mov ecx, dword ptr [mem_00B5F1F8]
+        mov eax, dword ptr [ebx]
+        push ecx
+        mov ecx, ebx
+        call dword ptr [eax + 0x14]
+        test al, al
+        mov dword ptr [esp + 0x1c], ebx
+        jne f20_L04F
+    f20_L04B:
+        mov dword ptr [esp + 0x1c], ebp
+    f20_L04F:
+        mov edi, dword ptr [esp + 0x18]
+        test edi, edi
+        je f20_L07D
+        mov eax, dword ptr [mem_00B5F060]
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx + 0x14]
+        test al, al
+        je f20_L07D
+        mov eax, dword ptr [mem_00B5F060]
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx + 0x14]
+        neg al
+        sbb eax, eax
+        and eax, edi
+        mov ebp, eax
+    f20_L07D:
+        test ebx, ebx
+        je f20_L0A9
+        mov eax, dword ptr [mem_00B5F060]
+        mov edx, dword ptr [ebx]
+        push eax
+        mov ecx, ebx
+        call dword ptr [edx + 0x14]
+        test al, al
+        je f20_L0A9
+        mov eax, dword ptr [mem_00B5F060]
+        mov edx, dword ptr [ebx]
+        push eax
+        mov ecx, ebx
+        call dword ptr [edx + 0x14]
+        neg al
+        sbb eax, eax
+        and eax, ebx
+        mov dword ptr [esp + 0x10], eax
+    f20_L0A9:
+        test ebp, ebp
+        je f20_L239
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je f20_L15E
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaae58c
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaae588
+        add ecx, 4
+        call ext_007279A0
+        test edi, edi
+        je f20_L0FC
+        mov eax, dword ptr [mem_00B5F060]
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx + 0x14]
+        test al, al
+        je f20_L0FC
+        mov ecx, edi
+        jmp f20_L0FE
+    f20_L0FC:
+        xor ecx, ecx
+    f20_L0FE:
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x12c]
+        mov ecx, eax
+        call ext_006BADB0
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        test ebx, ebx
+        je f20_L148
+        mov ecx, dword ptr [mem_00B5F060]
+        mov eax, dword ptr [ebx]
+        push ecx
+        mov ecx, ebx
+        call dword ptr [eax + 0x14]
+        test al, al
+        je f20_L148
+        mov ecx, ebx
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x12c]
+        mov ecx, eax
+        call ext_006BADB0
+        jmp f20_L212
+    f20_L148:
+        xor ecx, ecx
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x12c]
+        mov ecx, eax
+        call ext_006BADB0
+        jmp f20_L212
+    f20_L15E:
+        mov eax, dword ptr [esp + 0x1c]
+        test eax, eax
+        je f20_L239
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaae58c
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaae580
+        add ecx, 4
+        call ext_007279A0
+        test edi, edi
+        je f20_L1AA
+        mov ecx, dword ptr [mem_00B5F060]
+        mov eax, dword ptr [edi]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je f20_L1AA
+        mov ecx, edi
+        jmp f20_L1AC
+    f20_L1AA:
+        xor ecx, ecx
+    f20_L1AC:
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x12c]
+        mov ecx, eax
+        call ext_006BADB0
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        mov ebx, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [ebx + 8]
+        test edi, edi
+        je f20_L1EB
+        mov ecx, dword ptr [mem_00B5F060]
+        mov eax, dword ptr [edi]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je f20_L1EB
+        mov ecx, edi
+        jmp f20_L1ED
+    f20_L1EB:
+        xor ecx, ecx
+    f20_L1ED:
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x12c]
+        mov ecx, eax
+        call ext_006BADB0
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        mov ecx, ebx
+        call ext_00712000
+    f20_L212:
+        mov ecx, dword ptr [esi + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        pop ecx
+        ret 8
+    f20_L239:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        pop ecx
+        ret 8
+    }
+}
