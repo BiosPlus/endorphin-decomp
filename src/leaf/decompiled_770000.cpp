@@ -6517,3 +6517,151 @@ extern "C" __declspec(naked) void __fastcall fn_0077D0D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x007779C0] sub_007779C0 (464 bytes)
+extern "C" void ext_006BC730();
+extern "C" void ext_006BC740();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006B9D80();
+extern "C" void ext_0072FD70();
+extern "C" void ext_006B9D70();
+extern "C" void ext_00728410();
+extern "C" void ext_00724BF0();
+extern "C" void ext_00727C80();
+extern "C" void ext_007283B0();
+extern "C" void ext_006D2130();
+extern "C" void ext_0079C4F0();
+extern "C" void ext_00777B90();
+extern "C" void ext_006D2160();
+extern "C" void ext_007284D0();
+extern "C" void ext_006E7460();
+extern "C" void ext_007275F0();
+
+extern "C" __declspec(naked) void __fastcall fn_007779C0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8c1270
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x6c
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x88]
+        push edi
+        call ext_006BC730
+        xor ebx, ebx
+        mov dword ptr [esp + 0x10], eax
+        test eax, eax
+        jle DONE
+    LOOP_TOP:
+        mov ecx, dword ptr [esp + 0x8c]
+        push ebx
+        call ext_006BC740
+        mov edi, eax
+        mov ebp, 0xaad100
+        cmp byte ptr [edi + 0x14c], 0x62
+        je SKIP1
+        mov ebp, 0xaad0f4
+    SKIP1:
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaad3fc
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, edi
+        call ext_006BADB0
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x60], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_0072FD70
+        mov eax, dword ptr [edi]
+        lea ecx, [esp + 0x30]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        mov dword ptr [esp + 0x84], 0
+        call ext_006E7460
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x60], esp
+        push eax
+        call ext_006B9D80
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_0072FD70
+        lea ecx, [esp + 0x30]
+        mov dword ptr [esp + 0x84], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00728410
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x60], esp
+        push ebp
+        call ext_006B9D80
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaa8e24
+        add ecx, 4
+        call ext_00724BF0
+        mov ebp, dword ptr [esi + 0xac]
+        push 0xaacd0c
+        add ebp, 4
+        mov ecx, ebp
+        call ext_007275F0
+        push 0x64
+        mov ecx, ebp
+        call ext_00727C80
+        mov ecx, ebp
+        call ext_007283B0
+        push 4
+        push 0x10
+        lea ecx, [esp + 0x20]
+        call ext_006D2130
+        lea edx, [esp + 0x28]
+        mov dword ptr [esp + 0x2c], edx
+        mov eax, dword ptr [edi]
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x88], 1
+        call dword ptr [eax + 0x10]
+        mov ecx, dword ptr [esi + 0xac]
+        lea edx, [esp + 0x18]
+        push edx
+        call ext_0079C4F0
+        push edi
+        mov ecx, esi
+        call ext_00777B90
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x84], -1
+        call ext_006D2160
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        mov eax, dword ptr [esp + 0x10]
+        inc ebx
+        cmp ebx, eax
+        jl LOOP_TOP
+    DONE:
+        mov ecx, dword ptr [esp + 0x7c]
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0x78
+        ret 4
+    }
+}
