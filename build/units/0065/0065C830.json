@@ -74,5 +74,7 @@
     "0x0065CB01",
     "0x0065CB0D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T16:05:05Z"
 }
