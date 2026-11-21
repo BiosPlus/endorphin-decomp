@@ -14759,3 +14759,307 @@ L_end:
         ret 0x10
     }
 }
+
+// [0x007222D0] sub_007222D0 (672 bytes)
+extern "C" void ext_00722570();
+extern "C" void ext_00722A50();
+extern "C" int mem_0098F3E0;
+extern "C" int mem_009967E0;
+extern "C" int mem_009967D8;
+extern "C" int mem_009967D0;
+extern "C" int mem_00993828;
+extern "C" int mem_0093F7B0;
+extern "C" int mem_009967C8;
+extern "C" int mem_0099D180;
+extern "C" int mem_009334D8;
+
+extern "C" __declspec(naked) void __cdecl fn_007222D0(void* out, void* x, void* a, void* b) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, 0FFFFFFF8h
+        sub esp, 1Ch
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp+10h]
+        push edi
+        mov edi, dword ptr [ebp+14h]
+        fld qword ptr [esi]
+        fcomp qword ptr [edi]
+        fnstsw ax
+        test ah, 41h
+        jne short s22_xor
+        mov bl, 1
+        jmp short s22_push
+s22_xor:
+        xor bl, bl
+s22_push:
+        push edi
+        lea eax, [esp+1Ch]
+        push esi
+        lea ecx, [esp+28h]
+        push eax
+        push ecx
+        mov dword ptr [esp+30h], 0
+        mov dword ptr [esp+34h], 0
+        mov dword ptr [esp+20h], 0
+        mov dword ptr [esp+24h], 0
+        mov dword ptr [esp+28h], 0
+        mov dword ptr [esp+2Ch], 407f4000h
+        call ext_00722570
+        push edi
+        lea edx, [esp+2Ch]
+        push esi
+        lea eax, [esp+28h]
+        push edx
+        push eax
+        call ext_00722A50
+        fld qword ptr [esp+40h]
+        _emit 0D9h
+        _emit 0C0h
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        add esp, 20h
+        fnstsw ax
+        test ah, 1
+        je short s22_c365
+        _emit 0DDh
+        _emit 0D8h
+        fld qword ptr [mem_0092A278]
+s22_c365:
+        fld qword ptr [esp+10h]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 1
+        je short s22_c388
+        mov dword ptr [esp+10h], 0
+        mov dword ptr [esp+14h], 0
+s22_c388:
+        mov ecx, dword ptr [ebp+0Ch]
+        fld qword ptr [ecx]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 1
+        je short s22_c3a9
+        mov dword ptr [ecx], 0
+        mov dword ptr [ecx+4], 0
+s22_c3a9:
+        fcomp qword ptr [ecx]
+        test bl, bl
+        fnstsw ax
+        je short s22_c3cc
+        test ah, 1
+        jne short s22_c3d5
+        fld qword ptr [ecx]
+        fcomp qword ptr [esp+10h]
+        fnstsw ax
+        test ah, 1
+        jne s22_L481
+        jmp s22_L51c
+s22_c3cc:
+        test ah, 41h
+        jne s22_L470
+s22_c3d5:
+        _emit 0F6h
+        _emit 0DBh
+        sbb ebx, ebx
+        and ebx, 7D0h
+        add ebx, 0FFFFFC18h
+        mov dword ptr [esp+10h], ebx
+        fild dword ptr [esp+10h]
+        fst qword ptr [esp+20h]
+        _emit 0D9h
+        _emit 0C0h
+        fmul qword ptr [mem_009967E0]
+        fstp qword ptr [esp+10h]
+        fld qword ptr [esi]
+        fsub qword ptr [edi]
+        fmul qword ptr [mem_009967D8]
+        _emit 0D9h
+        _emit 0C9h
+        fmul qword ptr [mem_009967D0]
+        _emit 0DEh
+        _emit 0C1h
+        fld qword ptr [esi]
+        fadd qword ptr [edi]
+        fmul qword ptr [mem_00993828]
+        fadd qword ptr [esp+20h]
+        fsub qword ptr [ecx]
+        _emit 0D9h
+        _emit 0C1h
+        _emit 0D8h
+        _emit 0CAh
+        _emit 0D9h
+        _emit 0C9h
+        fmul qword ptr [esp+10h]
+        fmul qword ptr [mem_0093F7B0]
+        _emit 0DEh
+        _emit 0E9h
+        _emit 0D9h
+        _emit 0FAh
+        fld qword ptr [esp+10h]
+        _emit 0DCh
+        _emit 0C0h
+        _emit 0D9h
+        _emit 0C2h
+        _emit 0D9h
+        _emit 0E0h
+        _emit 0D8h
+        _emit 0E2h
+        _emit 0D8h
+        _emit 0F1h
+        fstp qword ptr [esp+20h]
+        _emit 0D9h
+        _emit 0C9h
+        _emit 0DEh
+        _emit 0E2h
+        _emit 0D9h
+        _emit 0C9h
+        _emit 0D8h
+        _emit 0F1h
+        _emit 0D9h
+        _emit 0C9h
+        _emit 0DDh
+        _emit 0D8h
+        fcom qword ptr [esp+20h]
+        fnstsw ax
+        test ah, 41h
+        je short s22_c464
+        _emit 0DDh
+        _emit 0D8h
+        fld qword ptr [esp+20h]
+s22_c464:
+        mov ecx, dword ptr [ebp+8]
+        fstp qword ptr [ecx]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+s22_L470:
+        fld qword ptr [ecx]
+        fcomp qword ptr [esp+10h]
+        fnstsw ax
+        test ah, 41h
+        jne s22_L51c
+s22_L481:
+        _emit 0F6h
+        _emit 0DBh
+        sbb ebx, ebx
+        and ebx, 0FFFFF830h
+        add ebx, 3E8h
+        mov dword ptr [esp+10h], ebx
+        fild dword ptr [esp+10h]
+        fst qword ptr [esp+20h]
+        _emit 0D9h
+        _emit 0C0h
+        fmul qword ptr [mem_009967E0]
+        fstp qword ptr [esp+10h]
+        fld qword ptr [esi]
+        fsub qword ptr [edi]
+        fmul qword ptr [mem_009967D8]
+        _emit 0D9h
+        _emit 0C9h
+        fmul qword ptr [mem_009967C8]
+        _emit 0DEh
+        _emit 0C1h
+        fld qword ptr [esi]
+        fadd qword ptr [edi]
+        fmul qword ptr [mem_00993828]
+        fadd qword ptr [esp+20h]
+        fsub qword ptr [ecx]
+        _emit 0D9h
+        _emit 0C1h
+        _emit 0D8h
+        _emit 0CAh
+        _emit 0D9h
+        _emit 0C9h
+        fmul qword ptr [esp+10h]
+        fmul qword ptr [mem_0093F7B0]
+        _emit 0DEh
+        _emit 0E9h
+        _emit 0D9h
+        _emit 0FAh
+        fld qword ptr [esp+10h]
+        _emit 0DCh
+        _emit 0C0h
+        _emit 0D9h
+        _emit 0C2h
+        _emit 0D9h
+        _emit 0E0h
+        _emit 0D8h
+        _emit 0E2h
+        _emit 0D8h
+        _emit 0F1h
+        fstp qword ptr [esp+20h]
+        _emit 0D9h
+        _emit 0C9h
+        _emit 0DEh
+        _emit 0E2h
+        _emit 0D9h
+        _emit 0C9h
+        _emit 0D8h
+        _emit 0F1h
+        _emit 0D9h
+        _emit 0C9h
+        _emit 0DDh
+        _emit 0D8h
+        fcom qword ptr [esp+20h]
+        fnstsw ax
+        test ah, 1
+        jne short s22_L510
+        _emit 0DDh
+        _emit 0D8h
+        fld qword ptr [esp+20h]
+s22_L510:
+        mov edx, dword ptr [ebp+8]
+        fstp qword ptr [edx]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+s22_L51c:
+        fld qword ptr [esi]
+        fcomp qword ptr [edi]
+        fnstsw ax
+        test ah, 40h
+        je short s22_L53e
+        mov eax, dword ptr [ebp+8]
+        mov dword ptr [eax], 0
+        mov dword ptr [eax+4], 0
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+s22_L53e:
+        fld qword ptr [ecx]
+        fmul qword ptr [mem_0099D180]
+        fld qword ptr [esi]
+        fmul qword ptr [mem_009334D8]
+        mov eax, dword ptr [ebp+8]
+        _emit 0DEh
+        _emit 0E9h
+        fld qword ptr [edi]
+        fmul qword ptr [mem_009334D8]
+        _emit 0DEh
+        _emit 0E9h
+        fld qword ptr [esi]
+        fsub qword ptr [edi]
+        pop edi
+        pop esi
+        _emit 0DEh
+        _emit 0F9h
+        pop ebx
+        fstp qword ptr [eax]
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
