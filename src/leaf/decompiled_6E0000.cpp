@@ -8543,3 +8543,280 @@ Ldone:
         ret
     }
 }
+
+// [0x006E7D50] sub_006E7D50 (576 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006BC370();
+extern "C" void ext_006C2990();
+extern "C" void ext_006E7440();
+extern "C" __declspec(naked) void __fastcall fn_006E7D50(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ebp, ecx
+        test edi, edi
+        jne short L_nonzero
+        push edi
+L_after_push:
+        mov ecx, dword ptr [ebp]
+        add ecx, 0x90
+        call ext_006E7440
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 4
+L_nonzero:
+        mov esi, 0xaa9554
+        mov eax, edi
+L_c1_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c1_ne
+        test cl, cl
+        je short L_c1_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c1_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c1_loop
+L_c1_eq:
+        xor eax, eax
+        jmp short L_c1_done
+L_c1_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c1_done:
+        test eax, eax
+        je L_fail
+        mov esi, 0xaa9544
+        mov eax, edi
+L_c2_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c2_ne
+        test cl, cl
+        je short L_c2_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c2_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c2_loop
+L_c2_eq:
+        xor eax, eax
+        jmp short L_c2_done
+L_c2_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c2_done:
+        test eax, eax
+        je L_fail
+        mov esi, 0xaa9534
+        mov eax, edi
+L_c3_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c3_ne
+        test cl, cl
+        je short L_c3_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c3_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c3_loop
+L_c3_eq:
+        xor eax, eax
+        jmp short L_c3_done
+L_c3_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c3_done:
+        test eax, eax
+        je L_fail
+        mov esi, 0xaa9524
+        mov eax, edi
+L_c4_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c4_ne
+        test cl, cl
+        je short L_c4_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c4_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c4_loop
+L_c4_eq:
+        xor eax, eax
+        jmp short L_c4_done
+L_c4_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c4_done:
+        test eax, eax
+        je L_fail
+        mov esi, 0xaa9514
+        mov eax, edi
+L_c5_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c5_ne
+        test cl, cl
+        je short L_c5_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c5_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c5_loop
+L_c5_eq:
+        xor eax, eax
+        jmp short L_c5_done
+L_c5_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c5_done:
+        test eax, eax
+        je L_fail
+        mov esi, 0xaa9504
+        mov eax, edi
+L_c6_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c6_ne
+        test cl, cl
+        je short L_c6_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c6_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c6_loop
+L_c6_eq:
+        xor eax, eax
+        jmp short L_c6_done
+L_c6_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c6_done:
+        test eax, eax
+        je L_fail
+        mov esi, 0xaa94f4
+        mov eax, edi
+L_c7_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c7_ne
+        test cl, cl
+        je short L_c7_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c7_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c7_loop
+L_c7_eq:
+        xor eax, eax
+        jmp short L_c7_done
+L_c7_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c7_done:
+        test eax, eax
+        je short L_fail
+        mov esi, 0xaa873c
+        mov eax, edi
+L_c8_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c8_ne
+        test cl, cl
+        je short L_c8_eq
+        mov dl, byte ptr [eax + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov cl, dl
+        cmp dl, bl
+        jne short L_c8_ne
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne short L_c8_loop
+L_c8_eq:
+        xor eax, eax
+        jmp short L_c8_done
+L_c8_ne:
+        sbb eax, eax
+        sbb eax, -1
+L_c8_done:
+        test eax, eax
+        je short L_fail
+        mov eax, dword ptr [ebp]
+        push 0
+        push 1
+        push edi
+        mov ecx, dword ptr [eax + 0x4]
+        call ext_006BC370
+        mov ecx, eax
+        call ext_006C2990
+        test eax, eax
+        jne short L_fail
+        push 1
+        jmp L_after_push
+L_fail:
+        mov ecx, dword ptr [ebp]
+        push edi
+        add ecx, 0x8
+        call ext_006B9EC0
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
