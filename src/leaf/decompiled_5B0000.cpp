@@ -7201,3 +7201,221 @@ extern "C" __declspec(naked) void __fastcall fn_005B0080(void* self) {
         ret
     }
 }
+
+// [0x005BE9F0] sub_005BE9F0 (578 bytes)
+extern "C" void ext_0046F7F0();
+extern "C" void ext_00474EE0();
+extern "C" void ext_004758C0();
+extern "C" void ext_005C3760();
+extern "C" void ext_005C8560();
+extern "C" void ext_005CE920();
+extern "C" void ext_005CE930();
+extern "C" void ext_005CE940();
+extern "C" void ext_006622D0();
+extern "C" void ext_00662400();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005BE9F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub     esp, 0xc
+        push    ebp
+        mov     ebp, ecx
+        mov     eax, dword ptr [ebp + 0x184]
+        push    esi
+        add     eax, -2
+        mov     esi, 4
+        cmp     eax, esi
+        mov     dword ptr [esp + 0x8], ebp
+        ja      L_5BEC2A
+        push    ebx
+        push    edi
+        mov     ecx, 5
+        jmp     dword ptr [eax*4 + 0x5BEC34]
+L_5BEA1F:
+        mov     dword ptr [ebp + 0x184], ecx
+L_5BEA25:
+        cmp     dword ptr [esp + 0x20], ecx
+        je      L_5BEC28
+        lea     eax, [ebp + 0x154]
+        push    eax
+        call    ext_0046F7F0
+        mov     ecx, eax
+        call    ext_004758C0
+        mov     ecx, dword ptr [ebp + 0x158]
+        test    ecx, ecx
+        je      L_5BEA53
+        call    ext_005CE930
+        fstp    st(0)
+L_5BEA53:
+        mov     dword ptr [ebp + 0x184], esi
+L_5BEA59:
+        cmp     dword ptr [esp + 0x20], esi
+        je      L_5BEC28
+        lea     ecx, [ebp + 0x154]
+        push    ecx
+        call    ext_0046F7F0
+        mov     ecx, eax
+        call    ext_00474EE0
+        mov     ecx, dword ptr [ebp + 0x158]
+        test    ecx, ecx
+        je      L_5BEB12
+        call    ext_005CE940
+        mov     edx, dword ptr [ebp + 0x160]
+        mov     edi, dword ptr [edx]
+        lea     ebx, [ebp + 0x15c]
+        mov     esi, ebx
+        mov     dword ptr [esp + 0x14], esi
+        mov     dword ptr [esp + 0x18], edi
+L_5BEAA1:
+        test    esi, esi
+        mov     ebp, dword ptr [ebx + 0x4]
+        je      L_5BEAAC
+        cmp     esi, ebx
+        je      L_5BEAB2
+L_5BEAAC:
+        call    dword ptr [mem_00925134]
+L_5BEAB2:
+        cmp     edi, ebp
+        je      L_5BEAFF
+        test    esi, esi
+        jne     L_5BEAC0
+        call    dword ptr [mem_00925134]
+L_5BEAC0:
+        cmp     edi, dword ptr [esi + 0x4]
+        jne     L_5BEACB
+        call    dword ptr [mem_00925134]
+L_5BEACB:
+        mov     ecx, dword ptr [esp + 0x10]
+        mov     eax, dword ptr [ecx + 0x4]
+        mov     edx, dword ptr [esp + 0x24]
+        mov     eax, dword ptr [eax + 0x14]
+        add     ecx, 0x4
+        push    0x0
+        push    edx
+        call    eax
+        mov     ecx, dword ptr [edi + 0x28]
+        push    eax
+        push    0x0
+        call    ext_005C8560
+        lea     ecx, [esp + 0x14]
+        call    ext_00673C20
+        mov     edi, dword ptr [esp + 0x18]
+        mov     esi, dword ptr [esp + 0x14]
+        jmp     L_5BEAA1
+L_5BEAFF:
+        mov     ecx, dword ptr [esp + 0x10]
+        mov     ecx, dword ptr [ecx + 0x158]
+        call    ext_005CE920
+        mov     ebp, dword ptr [esp + 0x10]
+L_5BEB12:
+        mov     dword ptr [ebp + 0x184], 0x2
+L_5BEB1C:
+        cmp     dword ptr [esp + 0x20], 0x2
+        jne     L_5BEB9B
+        mov     edx, dword ptr [ebp + 0x160]
+        mov     eax, dword ptr [edx]
+        add     ebp, 0x15c
+        mov     esi, ebp
+        mov     ebx, eax
+        mov     dword ptr [esp + 0x14], esi
+        mov     dword ptr [esp + 0x18], ebx
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_5BEB40:
+        test    esi, esi
+        mov     edi, dword ptr [ebp + 0x4]
+        je      L_5BEB4B
+        cmp     esi, ebp
+        je      L_5BEB51
+L_5BEB4B:
+        call    dword ptr [mem_00925134]
+L_5BEB51:
+        cmp     ebx, edi
+        je      L_5BEC28
+        test    esi, esi
+        jne     L_5BEB63
+        call    dword ptr [mem_00925134]
+L_5BEB63:
+        cmp     ebx, dword ptr [esi + 0x4]
+        jne     L_5BEB6E
+        call    dword ptr [mem_00925134]
+L_5BEB6E:
+        mov     eax, dword ptr [ebx + 0x28]
+        test    eax, eax
+        je      L_5BEB7C
+        add     eax, 0x154
+        jmp     L_5BEB7E
+L_5BEB7C:
+        xor     eax, eax
+L_5BEB7E:
+        mov     ecx, dword ptr [esp + 0x24]
+        push    eax
+        call    ext_00662400
+        lea     ecx, [esp + 0x14]
+        call    ext_00673C20
+        mov     ebx, dword ptr [esp + 0x18]
+        mov     esi, dword ptr [esp + 0x14]
+        jmp     L_5BEB40
+L_5BEB9B:
+        mov     eax, dword ptr [ebp + 0x160]
+        mov     edi, dword ptr [eax]
+        lea     esi, [ebp + 0x15c]
+        mov     dword ptr [esp + 0x14], esi
+        mov     dword ptr [esp + 0x18], edi
+L_5BEBB1:
+        test    esi, esi
+        mov     ebx, dword ptr [ebp + 0x160]
+        lea     eax, [ebp + 0x15c]
+        je      L_5BEBC5
+        cmp     esi, eax
+        je      L_5BEBCB
+L_5BEBC5:
+        call    dword ptr [mem_00925134]
+L_5BEBCB:
+        cmp     edi, ebx
+        je      L_5BEC1E
+        test    esi, esi
+        mov     ebx, dword ptr [mem_00925134]
+        jne     L_5BEBDB
+        call    ebx
+L_5BEBDB:
+        cmp     edi, dword ptr [esi + 0x4]
+        jne     L_5BEBE2
+        call    ebx
+L_5BEBE2:
+        mov     ecx, dword ptr [edi + 0x28]
+        call    ext_005C3760
+        cmp     edi, dword ptr [esi + 0x4]
+        jne     L_5BEBF1
+        call    ebx
+L_5BEBF1:
+        mov     eax, dword ptr [edi + 0x28]
+        test    eax, eax
+        je      L_5BEBFF
+        add     eax, 0x154
+        jmp     L_5BEC01
+L_5BEBFF:
+        xor     eax, eax
+L_5BEC01:
+        mov     ecx, dword ptr [esp + 0x24]
+        push    eax
+        call    ext_006622D0
+        lea     ecx, [esp + 0x14]
+        call    ext_00673C20
+        mov     edi, dword ptr [esp + 0x18]
+        mov     esi, dword ptr [esp + 0x14]
+        jmp     L_5BEBB1
+L_5BEC1E:
+        mov     dword ptr [ebp + 0x184], 0x0
+L_5BEC28:
+        pop     edi
+        pop     ebx
+L_5BEC2A:
+        pop     esi
+        pop     ebp
+        add     esp, 0xc
+        ret     0x8
+    }
+}
