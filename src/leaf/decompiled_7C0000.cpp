@@ -69,6 +69,7 @@ extern "C" __declspec(naked) void __cdecl fn_007C71C0(int a0) {
         ret
     }
 }
+extern "C" void ext_007C5460();
 
 // [0x007C8B30] sub_007C8B30 (22 bytes)
 extern "C" void __cdecl ext_007DD0A0();
@@ -21353,6 +21354,167 @@ extern "C" __declspec(naked) void __cdecl fn_007C3F60(void* self, int a2, int a3
         pop esi
         pop ebp
         pop ebx
+        ret
+    }
+}
+
+// [0x007C3D50] sub_007C3D50 (528 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C3D50(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, 0x2
+        mov ecx, dword ptr [esi + 0x16b4]
+        shl eax, cl
+        or word ptr [esi + 0x16b0], ax
+        cmp ecx, 0xd
+        jle short BLK1_ELSE
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [esi + 0x14]
+        mov al, byte ptr [esi + 0x16b0]
+        mov byte ptr [ecx + edx], al
+        mov ecx, dword ptr [esi + 0x14]
+        mov dl, byte ptr [esi + 0x16b1]
+        inc ecx
+        mov dword ptr [esi + 0x14], ecx
+        mov eax, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [eax + ecx], dl
+        mov eax, dword ptr [esi + 0x14]
+        inc eax
+        mov cl, 0x10
+        mov dword ptr [esi + 0x14], eax
+        mov eax, dword ptr [esi + 0x16b4]
+        sub cl, al
+        mov edx, 0x2
+        shr dx, cl
+        add eax, -0xd
+        mov dword ptr [esi + 0x16b4], eax
+        mov word ptr [esi + 0x16b0], dx
+        jmp short BLK1_END
+BLK1_ELSE:
+        add ecx, 0x3
+        mov dword ptr [esi + 0x16b4], ecx
+BLK1_END:
+        mov ecx, dword ptr [esi + 0x16b4]
+        cmp ecx, 0x9
+        jle short BLK1_B
+        mov eax, dword ptr [esi + 0x8]
+        xor edx, edx
+        shl edx, cl
+        mov ecx, dword ptr [esi + 0x14]
+        or word ptr [esi + 0x16b0], dx
+        mov dl, byte ptr [esi + 0x16b0]
+        mov byte ptr [eax + ecx], dl
+        mov ecx, dword ptr [esi + 0x14]
+        mov dl, byte ptr [esi + 0x16b1]
+        inc ecx
+        mov dword ptr [esi + 0x14], ecx
+        mov eax, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [eax + ecx], dl
+        mov eax, dword ptr [esi + 0x14]
+        inc eax
+        mov cl, 0x10
+        mov dword ptr [esi + 0x14], eax
+        mov eax, dword ptr [esi + 0x16b4]
+        sub cl, al
+        xor edx, edx
+        shr dx, cl
+        add eax, -0x9
+        mov dword ptr [esi + 0x16b4], eax
+        mov word ptr [esi + 0x16b0], dx
+        jmp short BLK1_CALL
+BLK1_B:
+        xor eax, eax
+        shl eax, cl
+        or word ptr [esi + 0x16b0], ax
+        add ecx, 0x7
+        mov dword ptr [esi + 0x16b4], ecx
+BLK1_CALL:
+        push esi
+        call ext_007C5460
+        mov ecx, dword ptr [esi + 0x16b4]
+        mov edx, dword ptr [esi + 0x16ac]
+        sub edx, ecx
+        add esp, 0x4
+        add edx, 0xb
+        cmp edx, 0x9
+        jge BLK_DONE
+        mov eax, 0x2
+        shl eax, cl
+        or word ptr [esi + 0x16b0], ax
+        cmp ecx, 0xd
+        jle short BLK2_ELSE
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [esi + 0x14]
+        mov al, byte ptr [esi + 0x16b0]
+        mov byte ptr [ecx + edx], al
+        mov ecx, dword ptr [esi + 0x14]
+        mov dl, byte ptr [esi + 0x16b1]
+        inc ecx
+        mov dword ptr [esi + 0x14], ecx
+        mov eax, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [eax + ecx], dl
+        mov eax, dword ptr [esi + 0x14]
+        inc eax
+        mov cl, 0x10
+        mov dword ptr [esi + 0x14], eax
+        mov eax, dword ptr [esi + 0x16b4]
+        sub cl, al
+        mov edx, 0x2
+        shr dx, cl
+        add eax, -0xd
+        mov dword ptr [esi + 0x16b4], eax
+        mov word ptr [esi + 0x16b0], dx
+        jmp short BLK2_END
+BLK2_ELSE:
+        add ecx, 0x3
+        mov dword ptr [esi + 0x16b4], ecx
+BLK2_END:
+        mov ecx, dword ptr [esi + 0x16b4]
+        cmp ecx, 0x9
+        jle short BLK2_B
+        mov eax, dword ptr [esi + 0x8]
+        xor edx, edx
+        shl edx, cl
+        mov ecx, dword ptr [esi + 0x14]
+        or word ptr [esi + 0x16b0], dx
+        mov dl, byte ptr [esi + 0x16b0]
+        mov byte ptr [eax + ecx], dl
+        mov ecx, dword ptr [esi + 0x14]
+        mov dl, byte ptr [esi + 0x16b1]
+        inc ecx
+        mov dword ptr [esi + 0x14], ecx
+        mov eax, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [eax + ecx], dl
+        mov eax, dword ptr [esi + 0x14]
+        inc eax
+        mov cl, 0x10
+        mov dword ptr [esi + 0x14], eax
+        mov eax, dword ptr [esi + 0x16b4]
+        sub cl, al
+        xor edx, edx
+        shr dx, cl
+        add eax, -0x9
+        mov dword ptr [esi + 0x16b4], eax
+        mov word ptr [esi + 0x16b0], dx
+        jmp short BLK2_CALL
+BLK2_B:
+        xor eax, eax
+        shl eax, cl
+        or word ptr [esi + 0x16b0], ax
+        add ecx, 0x7
+        mov dword ptr [esi + 0x16b4], ecx
+BLK2_CALL:
+        push esi
+        call ext_007C5460
+        add esp, 0x4
+BLK_DONE:
+        mov dword ptr [esi + 0x16ac], 0x7
+        pop esi
         ret
     }
 }
