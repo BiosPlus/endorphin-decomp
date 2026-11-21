@@ -14727,3 +14727,175 @@ extern "C" __declspec(naked) unsigned char __cdecl fn_006FF070(const char* path)
         ret
     }
 }
+
+// [0x006FC3A0] sub_006FC3A0 (460 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2170();
+extern "C" void ext_006FA030();
+extern "C" void ext_00782D00();
+extern "C" void ext_00782D90();
+extern "C" int mem_00AAB8F4;
+extern "C" void* mem_00B5E430;
+extern "C" void* mem_00B5E434;
+
+// Cdecl (void* p, int id): id == -1 means allocate next id from mem_00AAB8F4; registers p in a growable table.
+extern "C" __declspec(naked) int __cdecl fn_006FC3A0(void* p, int id) {
+    __asm {
+        push -0x1
+        push 0x8bb43c
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        cmp edi, -0x1
+        jne L_has_id
+        mov eax, dword ptr [mem_00AAB8F4]
+        mov dword ptr [esp + 0x28], eax
+        mov edi, dword ptr [esp + 0x28]
+        inc eax
+        mov dword ptr [mem_00AAB8F4], eax
+    L_has_id:
+        mov ecx, dword ptr [mem_00B5E430]
+        xor ebp, ebp
+        cmp ecx, ebp
+        jne L_have_430
+        push 0x14
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, ebp
+        mov dword ptr [esp + 0x1c], ebp
+        je L_null_430
+        push 0x14
+        mov ecx, eax
+        call ext_00782D00
+        jmp L_store_430
+    L_null_430:
+        xor eax, eax
+    L_store_430:
+        mov ecx, eax
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        mov dword ptr [mem_00B5E430], ecx
+    L_have_430:
+        mov ebx, dword ptr [esp + 0x24]
+        push edi
+        mov eax, dword ptr [ebx + 0x8]
+        push eax
+        call ext_00782D90
+        mov ecx, dword ptr [mem_00B5E434]
+        cmp ecx, ebp
+        jne L_have_434
+        push 0x18
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0x24], esi
+        cmp esi, ebp
+        mov dword ptr [esp + 0x1c], 0x1
+        je L_null_18
+        push 0x4
+        push 0x10
+        mov ecx, esi
+        call ext_006D2130
+        lea eax, [esi + 0x10]
+        mov dword ptr [esi + 0x14], eax
+        jmp L_after_18
+    L_null_18:
+        xor esi, esi
+    L_after_18:
+        push 0x10
+        mov dword ptr [esp + 0x20], 0xffffffff
+        mov dword ptr [mem_00B5E434], esi
+        call ext_006A5C62
+        add esp, 0x4
+        cmp eax, ebp
+        je L_null_10
+        mov dword ptr [eax], 0xaab8fc
+        mov dword ptr [eax + 0x8], 0xaab920
+        mov dword ptr [eax + 0x4], ebp
+        mov dword ptr [eax + 0xc], ebp
+        mov edi, eax
+        jmp L_after_10
+    L_null_10:
+        xor edi, edi
+    L_after_10:
+        mov ecx, dword ptr [mem_00B5E434]
+        lea edx, [esp + 0x24]
+        push edx
+        mov dword ptr [esp + 0x28], edi
+        mov eax, dword ptr [ecx]
+        push eax
+        call ext_006D2170
+        push 0x44
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0x24], esi
+        cmp esi, ebp
+        mov dword ptr [esp + 0x1c], 0x2
+        je L_null_44
+        mov ecx, esi
+        call ext_006FA030
+        mov dword ptr [esi + 0x40], 0xffffffff
+        mov dword ptr [esi], 0x995088
+        jmp L_after_44
+    L_null_44:
+        xor esi, esi
+    L_after_44:
+        mov dword ptr [edi + 0xc], esi
+        mov ecx, dword ptr [mem_00B5E434]
+        mov edi, dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x1c], 0xffffffff
+    L_have_434:
+        mov eax, dword ptr [ecx]
+        lea esi, [edi + 0x1]
+        cmp eax, esi
+        jg L_grow_done
+    L_grow_loop:
+        lea edx, [esp + 0x28]
+        mov dword ptr [esp + 0x28], ebp
+        push edx
+        push eax
+        call ext_006D2170
+        mov ecx, dword ptr [mem_00B5E434]
+        mov eax, dword ptr [ecx]
+        cmp eax, esi
+        jle L_grow_loop
+    L_grow_done:
+        mov ecx, dword ptr [ecx + 0x10]
+        push 0x44
+        mov dword ptr [ecx + 4*esi], ebx
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0x28], esi
+        cmp esi, ebp
+        mov dword ptr [esp + 0x1c], 0x3
+        je L_null_44b
+        mov ecx, esi
+        call ext_006FA030
+        mov dword ptr [esi + 0x40], edi
+        mov dword ptr [esi], 0x995088
+        mov dword ptr [ebx + 0xc], esi
+        jmp L_exit
+    L_null_44b:
+        xor eax, eax
+        mov dword ptr [ebx + 0xc], eax
+    L_exit:
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
