@@ -21923,3 +21923,237 @@ L_after_loop:
         ret
     }
 }
+
+// [0x007C38E0] sub_007C38E0 (737 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_007C38E0(unsigned int a0, const unsigned char* a1, unsigned int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        test edi, edi
+        not eax
+        je L_chk
+    L_bytehead:
+        test cl, 0x3
+        je L_chk
+        mov edx, eax
+        xor ebx, ebx
+        mov bl, byte ptr [ecx]
+        and edx, 0xff
+        xor edx, ebx
+        shr eax, 0x8
+        mov edx, dword ptr [4*edx + 0x99a710]
+        xor eax, edx
+        inc ecx
+        dec edi
+        jne L_bytehead
+    L_chk:
+        cmp edi, 0x20
+        mov esi, ecx
+        jb L_tail4
+        mov ebp, edi
+        shr ebp, 0x5
+    L_big:
+        mov edx, dword ptr [esi]
+        xor ecx, ecx
+        xor eax, edx
+        xor edx, edx
+        mov dl, ah
+        mov dword ptr [esp + 0x18], eax
+        mov cl, byte ptr [esp + 0x1a]
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, eax
+        mov ecx, dword ptr [4*ecx + 0x99ab10]
+        and eax, 0xff
+        shr edx, 0x18
+        xor ecx, ebx
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi - 0x4]
+        xor ecx, ebx
+        mov ebx, dword ptr [4*eax + 0x99b310]
+        xor ecx, ebx
+        xor eax, eax
+        xor ecx, edx
+        xor edx, edx
+        mov dl, ch
+        mov dword ptr [esp + 0x18], ecx
+        mov al, byte ptr [esp + 0x1a]
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, ecx
+        mov eax, dword ptr [4*eax + 0x99ab10]
+        and ecx, 0xff
+        shr edx, 0x18
+        xor eax, ebx
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi - 0x8]
+        xor eax, ebx
+        mov ebx, dword ptr [4*ecx + 0x99b310]
+        xor eax, ebx
+        xor ecx, ecx
+        xor eax, edx
+        xor edx, edx
+        mov dl, ah
+        mov dword ptr [esp + 0x18], eax
+        mov cl, byte ptr [esp + 0x1a]
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, eax
+        mov ecx, dword ptr [4*ecx + 0x99ab10]
+        and eax, 0xff
+        shr edx, 0x18
+        xor ecx, ebx
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi - 0x8]
+        xor ecx, ebx
+        mov ebx, dword ptr [4*eax + 0x99b310]
+        xor ecx, ebx
+        xor eax, eax
+        xor ecx, edx
+        xor edx, edx
+        mov dl, ch
+        mov dword ptr [esp + 0x18], ecx
+        mov al, byte ptr [esp + 0x1a]
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, ecx
+        mov eax, dword ptr [4*eax + 0x99ab10]
+        and ecx, 0xff
+        shr edx, 0x18
+        xor eax, ebx
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi - 0x4]
+        xor eax, ebx
+        mov ebx, dword ptr [4*ecx + 0x99b310]
+        xor eax, ebx
+        xor ecx, ecx
+        xor eax, edx
+        xor edx, edx
+        mov dword ptr [esp + 0x18], eax
+        mov dl, ah
+        mov cl, byte ptr [esp + 0x1a]
+        mov ecx, dword ptr [4*ecx + 0x99ab10]
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, eax
+        shr edx, 0x18
+        xor ecx, ebx
+        and eax, 0xff
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi]
+        xor ecx, ebx
+        mov ebx, dword ptr [4*eax + 0x99b310]
+        xor ecx, ebx
+        xor eax, eax
+        xor ecx, edx
+        xor edx, edx
+        mov dl, ch
+        mov dword ptr [esp + 0x18], ecx
+        mov al, byte ptr [esp + 0x1a]
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, ecx
+        mov eax, dword ptr [4*eax + 0x99ab10]
+        and ecx, 0xff
+        shr edx, 0x18
+        xor eax, ebx
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi - 0x4]
+        xor eax, ebx
+        mov ebx, dword ptr [4*ecx + 0x99b310]
+        xor eax, ebx
+        xor ecx, ecx
+        xor eax, edx
+        xor edx, edx
+        mov dl, ah
+        mov dword ptr [esp + 0x18], eax
+        mov cl, byte ptr [esp + 0x1a]
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, eax
+        mov ecx, dword ptr [4*ecx + 0x99ab10]
+        and eax, 0xff
+        shr edx, 0x18
+        xor ecx, ebx
+        sub edi, 0x20
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        mov edx, dword ptr [esi - 0x4]
+        xor ecx, ebx
+        mov ebx, dword ptr [4*eax + 0x99b310]
+        xor ecx, ebx
+        xor eax, eax
+        xor ecx, edx
+        xor edx, edx
+        mov dl, ch
+        mov dword ptr [esp + 0x18], ecx
+        mov al, byte ptr [esp + 0x1a]
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, ecx
+        mov eax, dword ptr [4*eax + 0x99ab10]
+        and ecx, 0xff
+        shr edx, 0x18
+        xor eax, ebx
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        xor eax, ebx
+        mov ebx, dword ptr [4*ecx + 0x99b310]
+        xor eax, ebx
+        dec ebp
+        jne L_big
+    L_tail4:
+        cmp edi, 0x4
+        jb L_rem
+        mov ebp, edi
+        shr ebp, 0x2
+    L_loop4:
+        mov edx, dword ptr [esi]
+        xor ecx, ecx
+        xor eax, edx
+        xor edx, edx
+        mov dl, ah
+        mov dword ptr [esp + 0x18], eax
+        mov cl, byte ptr [esp + 0x1a]
+        add esi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99af10]
+        mov edx, eax
+        mov ecx, dword ptr [4*ecx + 0x99ab10]
+        and eax, 0xff
+        shr edx, 0x18
+        xor ecx, ebx
+        sub edi, 0x4
+        mov ebx, dword ptr [4*edx + 0x99a710]
+        xor ecx, ebx
+        mov ebx, dword ptr [4*eax + 0x99b310]
+        xor ecx, ebx
+        dec ebp
+        mov eax, ecx
+        jne L_loop4
+    L_rem:
+        test edi, edi
+        je L_done
+    L_bytetail:
+        mov ecx, eax
+        xor edx, edx
+        mov dl, byte ptr [esi]
+        and ecx, 0xff
+        xor ecx, edx
+        shr eax, 0x8
+        mov ecx, dword ptr [4*ecx + 0x99a710]
+        xor eax, ecx
+        inc esi
+        dec edi
+        jne L_bytetail
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        not eax
+        ret
+    }
+}
