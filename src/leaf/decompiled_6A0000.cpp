@@ -13497,3 +13497,316 @@ extern "C" __declspec(naked) void __fastcall fn_006A3E10(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x006AA590] sub_006AA590 (730 bytes)
+extern "C" void ext_006A60D0();
+extern "C" void ext_006A65FE();
+extern "C" void ext_006A7C20();
+extern "C" void ext_006A7C30();
+extern "C" void ext_006A8140();
+extern "C" void ext_006A88A0();
+extern "C" void ext_006A9210();
+extern "C" void ext_006AA2E0();
+extern "C" void ext_006AD110();
+extern "C" void ext_006AD120();
+extern "C" void ext_00872772();
+extern "C" int mem_00925580;
+extern "C" int mem_0092557C;
+extern "C" int mem_00925688;
+extern "C" int mem_00925578;
+extern "C" int mem_00925654;
+
+extern "C" __declspec(naked) void __fastcall fn_006AA590(void* self) {
+    __asm {
+        sub esp, 0x2c
+        push ebx
+        push ebp
+        push esi
+        push edi
+        lea eax, [esp + 0x10]
+        push eax
+        mov esi, ecx
+        call ext_006A9210
+        mov eax, dword ptr [esp + 0x1c]
+        sub eax, dword ptr [esp + 0x14]
+        push 0x17
+        cdq
+        idiv dword ptr [esi + 0xe8]
+        lea ecx, [esp + 0x24]
+        push ecx
+        lea ebx, [esi + 0x108]
+        push 2
+        mov ecx, ebx
+        mov dword ptr [esp + 0x2c], 0x1c
+        mov dword ptr [esp + 0x30], 3
+        mov ebp, eax
+        call ext_00872772
+        mov eax, dword ptr [esp + 0x40]
+        cmp eax, 5
+        mov edi, dword ptr [mem_00925580]
+        ja L_CASE_DEFAULT
+        jmp dword ptr [eax*4 + 0x6AA86C]
+
+    L_CASE_5F4:
+        cmp dword ptr [esp + 0x30], 0
+        je L_CASE_DEFAULT
+        mov edx, dword ptr [esi + 0x128]
+        push 2
+        push edx
+        call edi
+        mov ecx, dword ptr [esp + 0x2c]
+        sub ecx, dword ptr [esp + 0x30]
+        add ecx, 1
+        cmp eax, ecx
+        jge L_CASE_DEFAULT
+        mov ecx, dword ptr [esi + 0x68]
+        call ext_006AD120
+        mov edx, dword ptr [esi + 0x128]
+        push 1
+        push 2
+        push edx
+        mov dword ptr [esi + 0x68], eax
+        call edi
+        add eax, 1
+        push eax
+        mov ecx, ebx
+        call ext_006A8140
+        jmp L_AFTER_SETSCROLL_B9
+
+    L_CASE_645:
+        mov ecx, dword ptr [esi + 0x128]
+        push 2
+        push ecx
+        call edi
+        test eax, eax
+        jle L_CASE_DEFAULT
+        mov ecx, dword ptr [esi + 0x68]
+        call ext_006AD110
+        mov edx, dword ptr [esi + 0x128]
+        push 2
+        push edx
+        mov dword ptr [esi + 0x68], eax
+        call edi
+        push 1
+        sub eax, 1
+        push eax
+        mov eax, dword ptr [esi + 0x128]
+        push 2
+        push eax
+        call dword ptr [mem_0092557C]
+        mov ecx, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push ecx
+        jmp L_INVALIDATE
+
+    L_CASE_690:
+        mov edx, dword ptr [esi + 0x128]
+        push 2
+        push edx
+        call edi
+        mov ebx, eax
+        mov ecx, esi
+        add ebx, ebp
+        call ext_006A88A0
+        sub eax, ebp
+        cmp ebx, eax
+        jle L_690_SKIP
+        mov ebx, eax
+    L_690_SKIP:
+        mov eax, dword ptr [esi + 0x128]
+        push 2
+        push eax
+        xor ebp, ebp
+        call edi
+        mov ecx, ebx
+        sub ecx, eax
+        test ecx, ecx
+        jle L_690_DONE
+    L_690_LOOP:
+        mov edx, dword ptr [esi + 0x68]
+        push edx
+        mov ecx, esi
+        call ext_006A7C20
+        mov dword ptr [esi + 0x68], eax
+        mov eax, dword ptr [esi + 0x128]
+        push 2
+        push eax
+        add ebp, 1
+        call edi
+        mov ecx, ebx
+        sub ecx, eax
+        cmp ebp, ecx
+        jl L_690_LOOP
+    L_690_DONE:
+        push 1
+        push ebx
+        jmp L_SETSCROLL_AA
+
+    L_CASE_6EF:
+        mov ecx, dword ptr [esi + 0x128]
+        push 2
+        push ecx
+        call edi
+        mov ebx, eax
+        sub ebx, ebp
+        jns L_6EF_NONNEG
+        xor ebx, ebx
+    L_6EF_NONNEG:
+        mov edx, dword ptr [esi + 0x128]
+        push 2
+        push edx
+        xor ebp, ebp
+        call edi
+        sub eax, ebx
+        test eax, eax
+        jle L_6EF_DONE
+    L_6EF_LOOP:
+        mov eax, dword ptr [esi + 0x68]
+        push eax
+        mov ecx, esi
+        call ext_006A7C30
+        mov dword ptr [esi + 0x68], eax
+        mov ecx, dword ptr [esi + 0x128]
+        push 2
+        push ecx
+        add ebp, 1
+        call edi
+        sub eax, ebx
+        cmp ebp, eax
+        jl L_6EF_LOOP
+    L_6EF_DONE:
+        push 1
+        push ebx
+        jmp L_SETSCROLL_AA
+
+    L_CASE_73C:
+        mov ecx, dword ptr [esi + 0x128]
+        push 2
+        push ecx
+        xor ebx, ebx
+        call edi
+        mov ebp, dword ptr [esp + 0x44]
+        mov edx, ebp
+        sub edx, eax
+        mov eax, edx
+        cdq
+        xor eax, edx
+        sub eax, edx
+        test eax, eax
+        jle L_73C_DONE
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00
+    L_73C_LOOP:
+        mov eax, dword ptr [esi + 0x128]
+        push 2
+        push eax
+        call edi
+        cmp ebp, eax
+        jle L_73C_ELSE
+        mov ecx, dword ptr [esi + 0x68]
+        push ecx
+        mov ecx, esi
+        call ext_006A7C20
+        jmp L_73C_STORE
+    L_73C_ELSE:
+        mov edx, dword ptr [esi + 0x68]
+        push edx
+        mov ecx, esi
+        call ext_006A7C30
+    L_73C_STORE:
+        mov dword ptr [esi + 0x68], eax
+        mov eax, dword ptr [esi + 0x128]
+        push 2
+        push eax
+        add ebx, 1
+        call edi
+        mov ecx, ebp
+        sub ecx, eax
+        mov eax, ecx
+        cdq
+        xor eax, edx
+        sub eax, edx
+        cmp ebx, eax
+        jl L_73C_LOOP
+    L_73C_DONE:
+        push 1
+        push ebp
+    L_SETSCROLL_AA:
+        mov edx, dword ptr [esi + 0x128]
+        push 2
+        push edx
+        call dword ptr [mem_0092557C]
+    L_AFTER_SETSCROLL_B9:
+        mov eax, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push eax
+    L_INVALIDATE:
+        call dword ptr [mem_00925688]
+
+    L_CASE_DEFAULT:
+        push 0x17
+        lea ecx, [esp + 0x24]
+        push ecx
+        push 2
+        lea ecx, [esi + 0x108]
+        call ext_00872772
+        mov edx, dword ptr [esi + 0x128]
+        mov ebx, dword ptr [mem_00925578]
+        push 0
+        push 2
+        push edx
+        call ebx
+        mov eax, dword ptr [esi + 0x128]
+        push 2
+        push eax
+        call edi
+        mov ecx, dword ptr [esp + 0x2c]
+        sub ecx, dword ptr [esp + 0x30]
+        push 2
+        add ecx, 1
+        cmp eax, ecx
+        jne L_NOTEQ
+        mov edx, dword ptr [esi + 0x128]
+        push 2
+        push edx
+        jmp L_CALL_EB
+    L_NOTEQ:
+        mov eax, dword ptr [esi + 0x128]
+        push eax
+        call edi
+        test eax, eax
+        jne L_AFTER_EB
+        mov ecx, dword ptr [esi + 0x128]
+        push 1
+        push 2
+        push ecx
+    L_CALL_EB:
+        call ebx
+    L_AFTER_EB:
+        mov ecx, esi
+        call ext_006AA2E0
+        mov edi, dword ptr [esi + 0x20]
+        call dword ptr [mem_00925654]
+        cmp eax, edi
+        je L_FOCUS_OK
+        mov ecx, esi
+        call ext_006A60D0
+    L_FOCUS_OK:
+        mov edx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esp + 0x40]
+        push edx
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006A65FE
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x2c
+        ret 0xc
+
+    }
+}
