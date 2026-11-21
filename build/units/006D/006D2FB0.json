@@ -39,5 +39,7 @@
     "0x006D313F",
     "0x006D314F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:34:44Z"
 }
