@@ -32,5 +32,7 @@
     "0x0086C81A",
     "0x0086C82F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T15:34:40Z"
 }
