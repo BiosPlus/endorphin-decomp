@@ -9088,3 +9088,223 @@ f739970_epilogue:
         ret 4
     }
 }
+
+// [0x00731F10] sub_00731F10 (592 bytes)
+extern "C" void ext_006BC380(); extern "C" void ext_006C31B0(); extern "C" void ext_006C95F0(); extern "C" void ext_006C9E80();
+extern "C" void ext_006C9F70(); extern "C" void ext_006CA020(); extern "C" void ext_006CA6A0(); extern "C" void ext_006CD330();
+extern "C" void ext_006DC510(); extern "C" void ext_006DC550(); extern "C" void ext_006E8D10(); extern "C" void ext_006E9C30();
+extern "C" void ext_006BADB0(); extern "C" void ext_00789BA0(); extern "C" void ext_00872828();
+extern "C" __declspec(naked) void __fastcall fn_00731F10(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 8bdaa0h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 44h
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp+60h]
+        push edi
+        mov ecx, esi
+        call ext_006BC380
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp+14h], edi
+        call ext_006C31B0
+        mov ebx, eax
+        push 4
+        push 10h
+        lea ecx, [esp+44h]
+        mov dword ptr [esp+20h], ebx
+        call ext_006D2130
+        lea eax, [esp+4ch]
+        mov dword ptr [esp+50h], eax
+        xor ebp, ebp
+        push 4
+        push 10h
+        lea ecx, [esp+2ch]
+        mov dword ptr [esp+64h], ebp
+        call ext_006D2130
+        lea ecx, [esp+34h]
+        mov dword ptr [esp+38h], ecx
+        mov ecx, ebx
+        mov byte ptr [esp+5ch], 1
+        call ext_00715550
+        mov ebx, eax
+        cmp ebx, ebp
+        mov dword ptr [esp+64h], ebx
+        je fn00731F10_L2125
+        push 1
+        lea edx, [esp+40h]
+        push 7
+        push edx
+        mov ecx, esi
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006E8D10
+        mov eax, dword ptr [esp+3ch]
+        test ebx, ebx
+        mov dword ptr [esp+10h], eax
+        jle fn00731F10_L203F
+fn00731F10_L1FBB:
+        mov eax, dword ptr [esp+10h]
+        xor edi, edi
+        test eax, eax
+        jle fn00731F10_L2017
+fn00731F10_L1FC5:
+        mov ecx, dword ptr [esp+4ch]
+        mov ecx, dword ptr [ecx+edi*4]
+        call ext_006BADB0
+        mov ecx, dword ptr [esp+18h]
+        push ebp
+        mov esi, eax
+        call ext_006E9C30
+fn00731F10_L1FDD:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne fn00731F10_L2005
+        test cl, cl
+        je fn00731F10_L2001
+        mov dl, byte ptr [eax+1]
+        mov bl, byte ptr [esi+1]
+        mov cl, dl
+        cmp dl, bl
+        jne fn00731F10_L2005
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne fn00731F10_L1FDD
+fn00731F10_L2001:
+        xor eax, eax
+        jmp fn00731F10_L200A
+fn00731F10_L2005:
+        sbb eax, eax
+        sbb eax, -1
+fn00731F10_L200A:
+        test eax, eax
+        je fn00731F10_L2058
+        mov eax, dword ptr [esp+10h]
+        inc edi
+        cmp edi, eax
+        jl fn00731F10_L1FC5
+fn00731F10_L2017:
+        mov eax, dword ptr [esp+24h]
+        lea edx, [esp+20h]
+        push edx
+        mov dword ptr [esp+24h], -1
+        push eax
+fn00731F10_L2029:
+        lea ecx, [esp+2ch]
+        call ext_006D2170
+        mov eax, dword ptr [esp+64h]
+        inc ebp
+        cmp ebp, eax
+        jl fn00731F10_L1FBB
+        mov edi, dword ptr [esp+14h]
+fn00731F10_L203F:
+        mov ecx, edi
+        call ext_006DC550
+        mov esi, eax
+        xor ebx, ebx
+        test esi, esi
+        mov dword ptr [esp+1ch], esi
+        jle fn00731F10_L2125
+        jmp fn00731F10_L206D
+fn00731F10_L2058:
+        mov ecx, dword ptr [esp+24h]
+        lea eax, [esp+1ch]
+        inc edi
+        push eax
+        mov dword ptr [esp+20h], edi
+        push ecx
+        jmp fn00731F10_L2029
+fn00731F10_L2069:
+        mov edi, dword ptr [esp+14h]
+fn00731F10_L206D:
+        push ebx
+        mov ecx, edi
+        call ext_006DC510
+        mov ecx, eax
+        call ext_006C95F0
+        mov edi, eax
+        test edi, edi
+        je fn00731F10_L211C
+        mov ecx, edi
+        call ext_006C9F70
+        call ext_00872828
+        cmp eax, 1
+        jl fn00731F10_L20BD
+        cmp eax, dword ptr [esp+64h]
+        jg fn00731F10_L20BD
+        mov ecx, dword ptr [esp+34h]
+        mov eax, dword ptr [ecx+eax*4-4]
+        cmp eax, -1
+        mov dword ptr [esp+10h], eax
+        je fn00731F10_L20BD
+        fild dword ptr [esp+10h]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_006CD330
+fn00731F10_L20BD:
+        mov ecx, edi
+        call ext_006CA6A0
+        mov ebp, eax
+        xor esi, esi
+        test ebp, ebp
+        jle fn00731F10_L2118
+fn00731F10_L20CC:
+        push esi
+        mov ecx, edi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9E80
+        call ext_00872828
+        cmp eax, 1
+        jl fn00731F10_L2113
+        cmp eax, dword ptr [esp+64h]
+        jg fn00731F10_L2113
+        mov edx, dword ptr [esp+34h]
+        mov eax, dword ptr [edx+eax*4-4]
+        cmp eax, -1
+        mov dword ptr [esp+10h], eax
+        je fn00731F10_L2113
+        fild dword ptr [esp+10h]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        push esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_00789BA0
+fn00731F10_L2113:
+        inc esi
+        cmp esi, ebp
+        jl fn00731F10_L20CC
+fn00731F10_L2118:
+        mov esi, dword ptr [esp+1ch]
+fn00731F10_L211C:
+        inc ebx
+        cmp ebx, esi
+        jl fn00731F10_L2069
+fn00731F10_L2125:
+        lea ecx, [esp+24h]
+        mov byte ptr [esp+5ch], 0
+        call ext_006D2160
+        lea ecx, [esp+3ch]
+        mov dword ptr [esp+5ch], -1
+        call ext_006D2160
+        mov ecx, dword ptr [esp+54h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 50h
+        ret 4
+    }
+}

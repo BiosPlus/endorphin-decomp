@@ -56,5 +56,7 @@
     "0x0073212F",
     "0x00732140"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-21T15:58:35Z"
 }
