@@ -11025,3 +11025,260 @@ L_end:
         ret
     }
 }
+
+// [0x0079B160] sub_0079B160 (592 bytes)
+extern "C" void ext_0079B3B0();
+extern "C" void ext_0079B5B0();
+extern "C" void ext_0079B680();
+extern "C" void ext_007AF3A0();
+
+// Stack args (cdecl): self, a2, idx (ebx), n (ebp). Naked: C++03 register/branch shape does not
+// reproduce the stack-local flag and early-return layout, so the body is transcribed from the bytes.
+extern "C" __declspec(naked) int __cdecl fn_0079B160(void* self, int a2, unsigned int idx, unsigned int n) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov dword ptr [esp + 0x10], 0x0
+        test byte ptr [esi + 0xc], 0x40
+        jne short L194
+        push 0x997498
+        push 0x0
+        push esi
+        call ext_0079B3B0
+        add esp, 0xc
+        test eax, eax
+        jne short L194
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L194:
+        test byte ptr [esi + 0xc], 0x10
+        je short L1A4
+        mov eax, dword ptr [esi + 0x1d8]
+        test eax, eax
+        jne short L1BE
+L1A4:
+        push -0x1
+        push 0x0
+        push esi
+        call ext_0079B5B0
+        add esp, 0xc
+        test eax, eax
+        jne short L1BE
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L1BE:
+        mov ebx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi + 0x28]
+        cmp ebx, ecx
+        mov eax, 0x2
+        jb short L1FB
+        cmp word ptr [esi + 0x72], ax
+        jne short L1ED
+        mov eax, dword ptr [esi]
+        push 0xaafc78
+        push eax
+        call ext_0079B140
+        add esp, 0x8
+        or eax, -0x1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+L1ED:
+        lea ecx, [ebx + 0x1]
+        mov dword ptr [esp + 0x10], 0x1
+        mov dword ptr [esi + 0x28], ecx
+L1FB:
+        cmp word ptr [esi + 0x72], ax
+        mov ebp, dword ptr [esp + 0x24]
+        jne short L24F
+        mov ax, word ptr [esi + 0x4e]
+        cmp bp, ax
+        jb short L234
+        mov edx, dword ptr [esi]
+        and eax, 0xffff
+        and ebp, 0xffff
+        push eax
+        push ebp
+        push 0xaafc58
+        push edx
+        call ext_0079B140
+        add esp, 0x10
+        or eax, -0x1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+L234:
+        mov edi, dword ptr [esi + 0xc8]
+        mov eax, ebp
+        and eax, 0xffff
+        xor edx, edx
+        imul edi, eax
+        mov eax, ebx
+        div dword ptr [esi + 0x50]
+        add edi, eax
+        jmp short L258
+L24F:
+        mov eax, ebx
+        xor edx, edx
+        div dword ptr [esi + 0x50]
+        mov edi, eax
+L258:
+        cmp edi, dword ptr [esi + 0x16c]
+        je L301
+        push esi
+        call ext_007AF3A0
+        add esp, 0x4
+        test eax, eax
+        jne short L27A
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L27A:
+        mov dword ptr [esi + 0x16c], edi
+        mov eax, dword ptr [esi + 0xc8]
+        cmp edi, eax
+        jb short L2A6
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je short L2A6
+        mov ecx, dword ptr [esi + 0x50]
+        mov edx, dword ptr [esi + 0x28]
+        lea eax, [edx + ecx - 0x1]
+        xor edx, edx
+        div ecx
+        mov dword ptr [esi + 0xc8], eax
+L2A6:
+        mov eax, edi
+        xor edx, edx
+        div dword ptr [esi + 0xc8]
+        mov al, byte ptr [esi + 0xc]
+        imul edx, dword ptr [esi + 0x50]
+        test al, 0x20
+        mov dword ptr [esi + 0x164], edx
+        jne short L2E0
+        push esi
+        call dword ptr [esi + 0x194]
+        add esp, 0x4
+        test eax, eax
+        jne short L2D8
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L2D8:
+        mov eax, dword ptr [esi + 0xc]
+        or al, 0x20
+        mov dword ptr [esi + 0xc], eax
+L2E0:
+        push ebp
+        push esi
+        call dword ptr [esi + 0x198]
+        add esp, 0x8
+        test eax, eax
+        jne short L2F8
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L2F8:
+        mov eax, dword ptr [esi + 0xc]
+        or ah, 0x10
+        mov dword ptr [esi + 0xc], eax
+L301:
+        cmp edi, dword ptr [esi + 0xcc]
+        jb short L326
+        push 0x997498
+        push 0x1
+        push esi
+        call ext_0079B680
+        add esp, 0xc
+        test eax, eax
+        jne short L326
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L326:
+        mov eax, dword ptr [esi + 0x164]
+        cmp ebx, eax
+        je L37A
+        jae short L352
+        mov eax, edi
+        xor edx, edx
+        div dword ptr [esi + 0xc8]
+        mov eax, dword ptr [esi + 0x1d8]
+        imul edx, dword ptr [esi + 0x50]
+        mov dword ptr [esi + 0x164], edx
+        mov dword ptr [esi + 0x1e0], eax
+L352:
+        mov edx, dword ptr [esi + 0x164]
+        mov ecx, ebx
+        sub ecx, edx
+        push ecx
+        push esi
+        call dword ptr [esi + 0x1bc]
+        add esp, 0x8
+        test eax, eax
+        jne short L374
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        pop ecx
+        ret
+L374:
+        mov dword ptr [esi + 0x164], ebx
+L37A:
+        mov edx, dword ptr [esi + 0x1d0]
+        mov eax, dword ptr [esp + 0x1c]
+        push ebp
+        push edx
+        push eax
+        push esi
+        call dword ptr [esi + 0x1a4]
+        mov ecx, dword ptr [esi + 0x164]
+        add esp, 0x10
+        inc ecx
+        mov dword ptr [esi + 0x164], ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
