@@ -68,5 +68,7 @@
     "0x0070E12D",
     "0x0070E141"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-21T16:12:16Z"
 }
