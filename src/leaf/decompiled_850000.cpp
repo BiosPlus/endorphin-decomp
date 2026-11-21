@@ -12985,3 +12985,289 @@ extern "C" __declspec(naked) void __fastcall fn_0085C6E0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0085B3F0] sub_0085B3F0 (736 bytes)
+extern "C" void ext_0085B330();
+extern "C" void ext_0086D160();
+extern "C" __declspec(naked) void __fastcall fn_0085B3F0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0ch]
+        push esi
+        mov esi, dword ptr [esp + 14h]
+        cmp esi, -1
+        jl L41F
+        jg L406
+        cmp ebx, -80h
+        jb L41F
+    L406:
+        test esi, esi
+        jg L41F
+        jl L411
+        cmp ebx, 7fh
+        ja L41F
+    L411:
+        mov byte ptr [esp + 10h], bl
+        mov eax, 1
+        jmp TAIL
+    L41F:
+        cmp esi, -1
+        jl L4AA
+        jg L432
+        cmp ebx, 0ffff8000h
+        jb L45E
+    L432:
+        test esi, esi
+        jg L45E
+        jl L440
+        cmp ebx, 7fffh
+        ja L45E
+    L440:
+        push 8
+        push esi
+        push ebx
+        call ext_0086D160
+        mov byte ptr [esp + 1ch], al
+        add esp, 0ch
+        mov byte ptr [esp + 11h], bl
+        mov eax, 2
+        jmp TAIL
+    L45E:
+        cmp esi, -1
+        jl L4AA
+        jg L46D
+        cmp ebx, 0ff800000h
+        jb L4AA
+    L46D:
+        test esi, esi
+        jg L4FE
+        jl L47F
+        cmp ebx, 7fffffh
+        ja L4AA
+    L47F:
+        push 10h
+        push esi
+        push ebx
+        call ext_0086D160
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 28h], al
+        call ext_0086D160
+        mov byte ptr [esp + 29h], al
+        add esp, 18h
+        mov byte ptr [esp + 12h], bl
+        mov eax, 3
+        jmp TAIL
+    L4AA:
+        test esi, esi
+        jl L4FE
+        jg L4B8
+        cmp ebx, 80000000h
+        jb L4FE
+    L4B8:
+        test esi, esi
+        jg L4FE
+        jl L4C6
+        cmp ebx, 7fffffffh
+        ja L4FE
+    L4C6:
+        push 18h
+        push esi
+        push ebx
+        call ext_0086D160
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 28h], al
+        call ext_0086D160
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 35h], al
+        call ext_0086D160
+        mov byte ptr [esp + 36h], al
+        add esp, 24h
+        mov byte ptr [esp + 13h], bl
+        mov eax, 4
+        jmp TAIL
+    L4FE:
+        cmp esi, -80h
+        jl L55A
+        jg L509
+        test ebx, ebx
+        jb L55A
+    L509:
+        cmp esi, 7fh
+        jg L55A
+        jl L515
+        cmp ebx, -1
+        ja L55A
+    L515:
+        push 20h
+        push esi
+        push ebx
+        call ext_0086D160
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 28h], al
+        call ext_0086D160
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 35h], al
+        call ext_0086D160
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 42h], al
+        call ext_0086D160
+        mov byte ptr [esp + 43h], al
+        add esp, 30h
+        mov byte ptr [esp + 14h], bl
+        mov eax, 5
+        jmp TAIL
+    L55A:
+        cmp esi, 0ffff8000h
+        jl L5C9
+        jg L568
+        test ebx, ebx
+        jb L5C9
+    L568:
+        cmp esi, 7fffh
+        jg L5C9
+        jl L577
+        cmp ebx, -1
+        ja L5C9
+    L577:
+        push 28h
+        push esi
+        push ebx
+        call ext_0086D160
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 28h], al
+        call ext_0086D160
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 35h], al
+        call ext_0086D160
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 42h], al
+        call ext_0086D160
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 4fh], al
+        call ext_0086D160
+        mov byte ptr [esp + 50h], al
+        add esp, 3ch
+        mov byte ptr [esp + 15h], bl
+        mov eax, 6
+        jmp TAIL
+    L5C9:
+        cmp esi, 0ff800000h
+        jl L642
+        jg L5D7
+        test ebx, ebx
+        jb L642
+    L5D7:
+        cmp esi, 7fffffh
+        jg L642
+        jl L5E6
+        cmp ebx, -1
+        ja L642
+    L5E6:
+        push 30h
+        push esi
+        push ebx
+        call ext_0086D160
+        push 28h
+        push esi
+        push ebx
+        mov byte ptr [esp + 28h], al
+        call ext_0086D160
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 35h], al
+        call ext_0086D160
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 42h], al
+        call ext_0086D160
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 4fh], al
+        call ext_0086D160
+        push 8
+        push esi
+        push ebx
+        mov byte ptr [esp + 5ch], al
+        call ext_0086D160
+        mov byte ptr [esp + 5dh], al
+        add esp, 48h
+        mov byte ptr [esp + 16h], bl
+        mov eax, 7
+        jmp TAIL
+    L642:
+        push 38h
+        push esi
+        push ebx
+        call ext_0086D160
+        push 30h
+        push esi
+        push ebx
+        mov byte ptr [esp + 28h], al
+        call ext_0086D160
+        push 28h
+        push esi
+        push ebx
+        mov byte ptr [esp + 35h], al
+        call ext_0086D160
+        push 20h
+        push esi
+        push ebx
+        mov byte ptr [esp + 42h], al
+        call ext_0086D160
+        push 18h
+        push esi
+        push ebx
+        mov byte ptr [esp + 4fh], al
+        call ext_0086D160
+        push 10h
+        push esi
+        push ebx
+        mov byte ptr [esp + 5ch], al
+        call ext_0086D160
+        add esp, 48h
+        mov byte ptr [esp + 15h], al
+        push 8
+        push esi
+        push ebx
+        call ext_0086D160
+        mov byte ptr [esp + 22h], al
+        add esp, 0ch
+        mov byte ptr [esp + 17h], bl
+        mov eax, 8
+    TAIL:
+        mov ecx, dword ptr [esp + 0ch]
+        lea edx, [esp + 10h]
+        push ecx
+        push eax
+        push 1
+        push edx
+        call ext_0085B330
+        add esp, 10h
+        pop esi
+        pop ebx
+        ret
+    }
+}
