@@ -13574,3 +13574,154 @@ L_epilogue:
         ret 0x8
     }
 }
+
+// [0x0070E870] sub_0070E870 (512 bytes)
+extern "C" void ext_00787430();
+extern "C" __declspec(naked) void __fastcall fn_0070E870(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0xb5d2c0
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esi + 0x8], 0x0
+        call ext_006B9EC0
+        push 0xb5d2c0
+        lea ecx, [esi + 0x60]
+        mov dword ptr [esi + 0x5c], 0x0
+        call ext_006B9EC0
+        push 0xb5d2c0
+        lea ecx, [esi + 0xac]
+        call ext_006B9EC0
+        push 0xb5d2c0
+        lea ecx, [esi + 0xf8]
+        call ext_006B9EC0
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x168]
+        mov dword ptr [esi + 0x58], 0x1
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x148]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        lea ecx, [esi + 0x188]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x1c8]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x1a8]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        lea ecx, [esi + 0x1e8]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x228]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x208]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        lea ecx, [esi + 0x248]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x290]
+        mov byte ptr [esi + 0x268], 0x0
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esi + 0x270]
+        call ext_00787430
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        lea ecx, [esi + 0x2b0]
+        call ext_00787430
+        lea ecx, [esi + 0x2d0]
+        call ext_006D2250
+        lea ecx, [esi + 0x2e8]
+        call ext_006D2250
+        pop esi
+        ret
+    }
+}
