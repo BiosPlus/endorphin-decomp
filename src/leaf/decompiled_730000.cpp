@@ -6147,3 +6147,136 @@ fn00731A10_L731BB6:
         ret 8
     }
 }
+
+// [0x0073CF30] sub_0073CF30 (480 bytes)
+extern "C" void ext_00726AE0();
+extern "C" __declspec(naked) void __fastcall fn_0073CF30(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        push 0aae0c4h
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726770
+        mov edi, dword ptr [esp + 0ch]
+        test al, al
+        je fn0073CF30_a
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [edi + 1b0h], eax
+fn0073CF30_a:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae0bch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_b
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        cmp eax, 1
+        sete al
+        mov byte ptr [edi + 1c0h], al
+fn0073CF30_b:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae0b4h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_c
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        cmp eax, 1
+        sete cl
+        mov byte ptr [edi + 1c2h], cl
+fn0073CF30_c:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae0ach
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_d
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [edi + 1b8h], eax
+fn0073CF30_d:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae0a4h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_e
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [edi + 1a8h], eax
+fn0073CF30_e:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae094h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_f
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [edi + 1b4h], eax
+fn0073CF30_f:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae08ch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_g
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        cmp eax, 1
+        sete dl
+        mov byte ptr [edi + 1c1h], dl
+fn0073CF30_g:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae084h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_h
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        cmp eax, 1
+        sete al
+        mov byte ptr [edi + 1c3h], al
+fn0073CF30_h:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae07ch
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_i
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [edi + 1bch], eax
+fn0073CF30_i:
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aae074h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je fn0073CF30_j
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [edi + 1ach], eax
+fn0073CF30_j:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
