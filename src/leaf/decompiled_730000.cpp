@@ -6656,3 +6656,169 @@ fn007391F0_ret_early:
         ret 4
     }
 }
+
+// [0x00739E90] sub_00739E90 (496 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2170();
+extern "C" void ext_00726860();
+extern "C" void ext_007268D0();
+extern "C" void ext_00726900();
+extern "C" void ext_00726AA0();
+extern "C" void ext_00726AE0();
+extern "C" void ext_00726B40();
+extern "C" void ext_00743480();
+extern "C" void ext_007435A0();
+
+extern "C" __declspec(naked) void __fastcall fn_00739E90(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 8be636h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        push 0aadb60h
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je near ptr fn00739E90_ret0
+        push ebx
+        push ebp
+        push edi
+fn00739E90_38:
+        push 38h
+        call ext_006A5C62
+        mov edi, eax
+        add esp, 4
+        mov dword ptr [esp + 10h], edi
+        xor ebx, ebx
+        cmp edi, ebx
+        mov dword ptr [esp + 20h], ebx
+        je short fn00739E90_nul
+        lea ebp, [edi + 8]
+        push 4
+        push 10h
+        mov ecx, ebp
+        mov dword ptr [edi], ebx
+        mov dword ptr [edi + 4], ebx
+        call ext_006D2130
+        lea eax, [ebp + 10h]
+        mov dword ptr [ebp + 14h], eax
+        lea ebp, [edi + 20h]
+        push 4
+        push 10h
+        mov ecx, ebp
+        mov byte ptr [esp + 28h], 1
+        call ext_006D2130
+        lea ecx, [ebp + 10h]
+        mov dword ptr [ebp + 14h], ecx
+        jmp short fn00739E90_s1
+fn00739E90_nul:
+        xor edi, edi
+fn00739E90_s1:
+        mov ecx, dword ptr [esi + 0ach]
+        mov dword ptr [esp + 20h], 0ffffffffh
+        add ecx, 4
+        call ext_00726AE0
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726860
+        test al, al
+        je near ptr fn00739E90_s2
+        mov ecx, dword ptr [esi + 0ach]
+        push ebx
+        push 0aacd0ch
+        add ecx, 4
+        call ext_00726B40
+        mov ecx, dword ptr [esi + 0ach]
+        push 0b5d2c0h
+        push 0aadc2ch
+        add ecx, 4
+        call ext_00726AA0
+        mov ecx, dword ptr [esi + 0ach]
+        push 0b5d2c0h
+        push 0aadc10h
+        add ecx, 4
+        mov ebp, eax
+        call ext_00726AA0
+        push ebp
+        mov ebx, eax
+        call ext_00743480
+        push ebx
+        mov dword ptr [edi], eax
+        call ext_007435A0
+        add esp, 8
+        mov dword ptr [edi + 4], eax
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aadc90h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        je short fn00739E90_s3
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726900
+        test eax, eax
+        lea ebx, [edi + 20h]
+        jle short fn00739E90_s4
+        mov ebp, eax
+fn00739E90_loop:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726AE0
+        mov dword ptr [esp + 10h], eax
+        mov eax, dword ptr [ebx]
+        lea edx, [esp + 10h]
+        mov ecx, ebx
+        push edx
+        push eax
+        call ext_006D2170
+        dec ebp
+        jne short fn00739E90_loop
+fn00739E90_s4:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+fn00739E90_s3:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_007268D0
+fn00739E90_s2:
+        mov ecx, dword ptr [esi + 0ach]
+        add ecx, 4
+        call ext_00726840
+        lea ecx, [esp + 14h]
+        mov dword ptr [esp + 14h], edi
+        push ecx
+        mov ecx, dword ptr [esp + 2ch]
+        mov edx, dword ptr [ecx]
+        push edx
+        call ext_006D2170
+        mov ecx, dword ptr [esi + 0ach]
+        push 0aadb60h
+        add ecx, 4
+        call ext_00726770
+        test al, al
+        jne near ptr fn00739E90_38
+        pop edi
+        pop ebp
+        pop ebx
+        mov al, 1
+        pop esi
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        add esp, 14h
+        ret 4
+fn00739E90_ret0:
+        mov ecx, dword ptr [esp + 0ch]
+        mov al, 1
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 14h
+        ret 4
+    }
+}
