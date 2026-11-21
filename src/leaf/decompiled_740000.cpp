@@ -5167,3 +5167,168 @@ extern "C" __declspec(naked) void __fastcall fn_00743AD0(void* self) {
         ret
     }
 }
+
+// [0x00748290] sub_00748290 (432 bytes)
+extern "C" void ext_006BC370();
+extern "C" void ext_006C27E0();
+extern "C" void ext_006C2B60();
+extern "C" void ext_00747FA0();
+
+
+extern "C" __declspec(naked) bool __fastcall fn_00748290(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0xb5]
+        test al, al
+        je L_NOFLAG
+        mov eax, dword ptr [esi + 0x148]
+        jmp L_HAVEBASE
+L_NOFLAG:
+        mov ecx, dword ptr [esp + 0x14]
+        call ext_006BC370
+L_HAVEBASE:
+        mov dword ptr [esp + 0x14], eax
+        mov eax, dword ptr [esi + 0x288]
+        xor ebp, ebp
+        test eax, eax
+        jbe L_RET1
+        push ebx
+        push edi
+L_LOOP:
+        mov ecx, dword ptr [esi + 0x29c]
+        mov edi, dword ptr [ecx + 4*ebp]
+        lea eax, [ecx + 4*ebp]
+        add edi, 0xb
+        or ecx, -1
+        mov dword ptr [esp + 0x14], edi
+        mov edx, dword ptr [eax]
+        add edx, 0x58
+        xor eax, eax
+        mov dword ptr [esp + 0x10], edx
+        repne scasb
+        not ecx
+        dec ecx
+        jne L_P1NZ
+        mov eax, dword ptr [esi + 0x2e4]
+        mov ebx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [eax + 4*ebp]
+        push ecx
+        mov ecx, ebx
+        call ext_006C27E0
+        mov edi, dword ptr [esp + 0x10]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        jne L_P0NZ_A
+        mov edx, dword ptr [esi + 0x2fc]
+        mov ecx, ebx
+        mov eax, dword ptr [edx + 4*ebp]
+        push eax
+        jmp L_CALL_7483F4
+L_P0NZ_A:
+        mov ecx, dword ptr [esi + 0x2fc]
+        lea edx, [esp + 0x10]
+        push edx
+        mov eax, dword ptr [ecx + 4*ebp]
+        mov ecx, esi
+        push eax
+        call ext_00747FA0
+        cmp al, 0x1
+        je L_DONE_ITER
+        mov eax, dword ptr [esi + 0x2fc]
+        mov ecx, dword ptr [eax + 4*ebp]
+        push ecx
+        mov ecx, ebx
+        jmp L_CALL_7483F4
+L_P1NZ:
+        mov edx, dword ptr [esi + 0x2e4]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov eax, dword ptr [edx + 4*ebp]
+        push eax
+        call ext_00747FA0
+        mov bl, al
+        cmp bl, 0x1
+        je L_748385
+        mov edx, dword ptr [esi + 0x2e4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [edx + 4*ebp]
+        push eax
+        call ext_006C27E0
+L_748385:
+        mov edi, dword ptr [esp + 0x10]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        jne L_P0NZ_B
+        cmp bl, 0x1
+        je L_7483A6
+        mov ecx, dword ptr [esi + 0x2fc]
+        mov edx, dword ptr [ecx + 4*ebp]
+        push edx
+        jmp L_7483F0
+L_7483A6:
+        mov eax, dword ptr [esi + 0x2fc]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov eax, dword ptr [eax + 4*ebp]
+        push eax
+        call ext_00747FA0
+        cmp al, 0x1
+        je L_DONE_ITER
+        mov edx, dword ptr [esi + 0x2fc]
+        mov eax, dword ptr [edx + 4*ebp]
+        push eax
+        jmp L_7483F0
+L_P0NZ_B:
+        mov ecx, dword ptr [esi + 0x2fc]
+        lea edx, [esp + 0x10]
+        push edx
+        mov eax, dword ptr [ecx + 4*ebp]
+        mov ecx, esi
+        push eax
+        call ext_00747FA0
+        cmp al, 0x1
+        je L_DONE_ITER
+        mov eax, dword ptr [esi + 0x2fc]
+        mov ecx, dword ptr [eax + 4*ebp]
+        push ecx
+L_7483F0:
+        mov ecx, dword ptr [esp + 0x20]
+L_CALL_7483F4:
+        call ext_006C27E0
+L_DONE_ITER:
+        mov edx, dword ptr [esi + 0x2fc]
+        mov ecx, dword ptr [esi + 0x2e4]
+        mov eax, dword ptr [edx + 4*ebp]
+        mov ecx, dword ptr [ecx + 4*ebp]
+        push eax
+        call ext_006C2B60
+        mov eax, dword ptr [esi + 0x288]
+        inc ebp
+        cmp ebp, eax
+        jb L_LOOP
+        pop edi
+        pop ebx
+        pop esi
+        mov al, 0x1
+        pop ebp
+        add esp, 0x8
+        ret 0x4
+L_RET1:
+        pop esi
+        mov al, 0x1
+        pop ebp
+        add esp, 0x8
+        ret 0x4
+    }
+}
