@@ -7815,3 +7815,154 @@ extern "C" __declspec(naked) void __fastcall fn_007718D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00778410] sub_00778410 (416 bytes)
+extern "C" void ext_006BADB0(); extern "C" void ext_006C9360(); extern "C" void ext_006C98F0(); extern "C" void ext_006CA940(); extern "C" void ext_006DC460(); extern "C" void ext_006DC480(); extern "C" void ext_006E57B0(); extern "C" void ext_007275F0(); extern "C" void ext_007279A0(); extern "C" void ext_00727FE0(); extern "C" void ext_007283B0(); extern "C" void ext_00728410(); extern "C" void ext_007284D0();
+extern "C" __declspec(naked) void __fastcall fn_00778410(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ecx
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebp, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0x8], ebp
+        mov eax, dword ptr [edi]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax + 0x28]
+        cmp al, 1
+        jne fail
+        mov edx, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [ebp + 0xac]
+        push esi
+        push edx
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, edi
+        call ext_006BADB0
+        mov ecx, dword ptr [ebp + 0xac]
+        push eax
+        add ecx, 4
+        call ext_007279A0
+        mov ecx, dword ptr [ebp + 0xac]
+        add ecx, 4
+        call ext_00728410
+        mov esi, dword ptr [ebp + 0xac]
+        push 0xaacd0c
+        add esi, 4
+        mov ecx, esi
+        call ext_007275F0
+        push 0x3ff19999
+        push 0x9999999a
+        mov ecx, esi
+        call ext_00727FE0
+        mov ecx, esi
+        call ext_007283B0
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, edi
+        mov esi, eax
+        call ext_006DC460
+        cmp esi, eax
+        je done
+        push ebx
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C9360
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx + 0x14]
+        mov ebx, eax
+        mov al, byte ptr [esp + 0x24]
+        test al, al
+        je l1
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C98F0
+        test eax, eax
+        je l1
+        push 0x42c80000
+        push 0
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C98F0
+        mov ecx, eax
+        call ext_006CA940
+    l1:
+        xor esi, esi
+        test ebx, ebx
+        jle l4
+    l2:
+        mov eax, dword ptr [ebp + 0xac]
+        test eax, eax
+        je l3
+        lea ebp, [eax + 4]
+        jmp l3b
+    l3:
+        xor ebp, ebp
+    l3b:
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C9360
+        mov edx, dword ptr [eax]
+        push 0
+        push 1
+        push 0xaa9470
+        push 1
+        push 1
+        push 0
+        push ebp
+        push esi
+        mov ecx, eax
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006E57B0
+        mov ebp, dword ptr [esp + 0x10]
+        inc esi
+        cmp esi, ebx
+        jl l2
+    l4:
+        mov al, byte ptr [esp + 0x24]
+        pop ebx
+        test al, al
+        je done
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C98F0
+        test eax, eax
+        je done
+        push 0x3c23d70a
+        push 0
+        mov ecx, edi
+        call ext_006DC480
+        mov ecx, eax
+        call ext_006C98F0
+        mov ecx, eax
+        call ext_006CA940
+    done:
+        mov ecx, dword ptr [ebp + 0xac]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [ebp + 0xac]
+        add ecx, 4
+        call ext_007283B0
+        pop esi
+        pop edi
+        mov al, 1
+        pop ebp
+        pop ecx
+        ret 0x10
+    fail:
+        pop edi
+        xor al, al
+        pop ebp
+        pop ecx
+        ret 0x10
+    }
+}
