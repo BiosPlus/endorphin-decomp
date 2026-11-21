@@ -69,5 +69,7 @@
     "0x00779F0D",
     "0x00779F1B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T16:03:09Z"
 }
