@@ -10445,3 +10445,161 @@ extern "C" __declspec(naked) void __fastcall fn_007AC690(void* self) {
         ret
     }
 }
+
+// [0x007A9CE0] sub_007A9CE0 (432 bytes)
+extern "C" void ext_0079EA90();
+extern "C" void ext_0079EB70();
+extern "C" void ext_0079EEC0();
+extern "C" void ext_0079EED0();
+extern "C" void ext_007A9CE0();
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2CD0();
+extern "C" void ext_007B2E20();
+extern "C" void ext_007B7D10();
+extern "C" void ext_007B82E0();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007A9CE0(void* p) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov al, byte ptr [edi + 0x18]
+        push eax
+        call ext_0079EA90
+        push edi
+        call ext_007B82E0
+        mov esi, dword ptr [edi + 0x8]
+        mov edx, dword ptr [edi + 0x4]
+        add esp, 0x8
+        add esi, edx
+        call ext_0079EEC0
+        cmp eax, esi
+        jae LX_end
+    LX_loop:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0xc], 0x0
+        push ecx
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_4b
+        push 0xf
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_4b
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LX_end
+    LX_4b:
+        call ext_0079EEC0
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [edx + 0x8], eax
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je LX_80
+        push 0xf
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_80
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LX_end
+    LX_80:
+        call ext_0079EB70
+        mov ecx, dword ptr [esp + 0xc]
+        mov byte ptr [ecx + 0x18], al
+        mov eax, dword ptr [esp + 0xc]
+        lea edx, [eax + 0x4]
+        push edx
+        push eax
+        call ext_007B7D10
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test al, al
+        je LX_c6
+        push 0xf
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_c6
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LX_end
+    LX_c6:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        cmp ecx, 0x8002
+        jl LX_5e
+        cmp ecx, 0x800f
+        jg LX_5e
+        mov ecx, dword ptr [eax + 0x8]
+        mov edx, dword ptr [eax + 0x4]
+        add ecx, edx
+        cmp ecx, esi
+        ja LX_4f
+        push eax
+        push edi
+        call ext_007B2E20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test al, al
+        je LX_1b
+        push 0xf
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_1b
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LX_end
+    LX_1b:
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        call ext_007A9CE0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_71
+        push 0xf
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je LX_71
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je LX_end
+        jmp LX_71
+    LX_4f:
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_007B2CD0
+        add esp, 0x4
+        jmp LX_71
+    LX_5e:
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_007B2CD0
+        push esi
+        call ext_0079EED0
+        add esp, 0x8
+    LX_71:
+        call ext_0079EEC0
+        cmp eax, esi
+        jb LX_loop
+    LX_end:
+        pop edi
+        pop esi
+        ret
+    }
+}
