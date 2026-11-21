@@ -15443,3 +15443,192 @@ dabA_alt:
         ret 0x8
     }
 }
+
+// [0x006DEF30] sub_006DEF30 (464 bytes)
+extern "C" void ext_006DE7C0();
+extern "C" void ext_006DE970();
+extern "C" void ext_006DEEC0();
+extern "C" int mem_00AAC100;
+extern "C" int mem_00AAC104;
+extern "C" int mem_00AAC108;
+extern "C" int mem_00AA8C98;
+extern "C" int mem_00AA8C9C;
+extern "C" int mem_00AA8CA0;
+extern "C" int mem_00AA8CA4;
+extern "C" int mem_00AA8CA8;
+extern "C" int mem_00AA8CAC;
+
+// [0x006DEF30] __thiscall, ret 0xc: three out-pointer stack args (a1 at esp+0x10 after pushes).
+extern "C" __declspec(naked) void __fastcall fn_006DEF30(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov ebx, ecx
+        push offset mem_00AA8CAC
+        call ext_006DE7C0
+        mov esi, eax
+        test esi, esi
+        jne L_DEF58
+        mov eax, dword ptr [mem_00AAC100]
+        mov ecx, ebx
+        push eax
+        call ext_006DE970
+        mov esi, eax
+        test esi, esi
+        je L_DEF5C
+L_DEF58:
+        mov al, 1
+        jmp L_DEF5E
+L_DEF5C:
+        xor al, al
+L_DEF5E:
+        test esi, esi
+        je L_DF024
+L_DEF66:
+        test al, al
+        je L_DEFBB
+        push offset mem_00AA8CA8
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        mov edi, dword ptr [esp + 0x10]
+        test eax, eax
+        mov dword ptr [edi], eax
+        je L_DEFBB
+        push offset mem_00AA8CA4
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        mov dword ptr [edi + 0x4], eax
+        je L_DEFBB
+        push offset mem_00AA8CA0
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        mov dword ptr [edi + 0x8], eax
+        jne L_DF028
+L_DEFBB:
+        xor al, al
+L_DEFBD:
+        test esi, esi
+        je L_DF059
+        test al, al
+        je L_DF087
+        push offset mem_00AA8CA8
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        mov edi, dword ptr [esp + 0x14]
+        test eax, eax
+        mov dword ptr [edi], eax
+        je L_DF087
+        push offset mem_00AA8CA4
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        mov dword ptr [edi + 0x4], eax
+        je L_DF087
+        push offset mem_00AA8CA0
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        mov dword ptr [edi + 0x8], eax
+        jne L_DF05D
+        jmp L_DF087
+L_DF024:
+        test al, al
+        je L_DEFBB
+L_DF028:
+        push offset mem_00AA8C9C
+        mov ecx, ebx
+        call ext_006DE7C0
+        mov esi, eax
+        test esi, esi
+        jne L_DF052
+        mov ecx, dword ptr [mem_00AAC108]
+        push ecx
+        mov ecx, ebx
+        call ext_006DE970
+        mov esi, eax
+        test esi, esi
+        je L_DEFBB
+L_DF052:
+        mov al, 1
+        jmp L_DEFBD
+L_DF059:
+        test al, al
+        je L_DF087
+L_DF05D:
+        push offset mem_00AA8C98
+        mov ecx, ebx
+        call ext_006DE7C0
+        mov esi, eax
+        test esi, esi
+        jne L_DF083
+        mov edx, dword ptr [mem_00AAC104]
+        mov ecx, ebx
+        push edx
+        call ext_006DE970
+        mov esi, eax
+        test esi, esi
+        je L_DF087
+L_DF083:
+        mov al, 1
+        jmp L_DF089
+L_DF087:
+        xor al, al
+L_DF089:
+        test esi, esi
+        je L_DF0EC
+        test al, al
+        je L_DF0EA
+        push offset mem_00AA8CA8
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        mov edi, dword ptr [esp + 0x18]
+        test eax, eax
+        mov dword ptr [edi], eax
+        je L_DF0EA
+        push offset mem_00AA8CA4
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        mov dword ptr [edi + 0x4], eax
+        je L_DF0EA
+        push offset mem_00AA8CA0
+        mov ecx, esi
+        call ext_006DE7C0
+        mov ecx, eax
+        call ext_006DEEC0
+        test eax, eax
+        mov dword ptr [edi + 0x8], eax
+        je L_DF0EA
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 0xc
+L_DF0EA:
+        xor al, al
+L_DF0EC:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
