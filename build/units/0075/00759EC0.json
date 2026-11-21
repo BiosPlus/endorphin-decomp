@@ -64,5 +64,7 @@
     "0x0075A08B",
     "0x0075A099"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-21T15:42:49Z"
 }
