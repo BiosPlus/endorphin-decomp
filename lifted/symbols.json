@@ -7337,6 +7337,13 @@
     "summary": "Lazily initializes a static local object at 0x00B4359C, registers its atexit destructor, and returns its address.",
     "lifted_path": "lifted/Geometry/AnimationType.cpp"
   },
+  "0x005B5320": {
+    "name": "Geometry::AnimationType::getStaticList",
+    "class": "Geometry::AnimationType",
+    "signature": "void* fn_005B5320(void* self)",
+    "summary": "Lazily initializes a static container (zeroing fields at +0x4/+0x8/+0xC and registering its atexit destructor) and returns its address",
+    "lifted_path": "lifted/Geometry/AnimationType.cpp"
+  },
   "0x005B5760": {
     "name": "Geometry::MeshType::vfunc_0",
     "class": "Geometry::MeshType",

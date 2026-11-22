@@ -29,20 +29,21 @@ void* fn_005B4860() {
     }
     return static_cast<void*>(&mem_00B43574);
 }
-extern "C" void ext_006A6C87(uint32_t func);
 extern "C" uint32_t mem_00B435B0;
 extern "C" uint32_t mem_00B435B4;
 extern "C" uint32_t mem_00B435B8;
 extern "C" uint32_t mem_00B435BC;
 extern "C" uint32_t mem_00B435C0;
+extern "C" uint32_t mem_00B43588;
+extern "C" uint32_t mem_00B4358C;
+extern "C" uint32_t mem_00B43590;
+extern "C" uint32_t mem_00B43594;
+extern "C" uint32_t mem_00B43598;
 
-extern "C" uint32_t mem_00B435B0;
-extern "C" uint32_t mem_00B435B4;
-extern "C" uint32_t mem_00B435B8;
-extern "C" uint32_t mem_00B435BC;
-extern "C" uint32_t mem_00B435C0;
-    (void)self;
-    if ((mem_00B435AC & 1u) == 0) {
+extern "C" uint32_t mem_00B4358C;
+extern "C" uint32_t mem_00B43590;
+extern "C" uint32_t mem_00B43594;
+extern "C" uint32_t mem_00B43598;
         mem_00B435AC |= 1u;
         mem_00B435A0 = 0;
         mem_00B435A4 = 0;
@@ -51,6 +52,16 @@ extern "C" uint32_t mem_00B435C0;
     }
     return &mem_00B4359C;
 }
+extern "C" uint32_t mem_00B43588;
+extern "C" uint32_t mem_00B4358C;
+extern "C" uint32_t mem_00B43590;
+extern "C" uint32_t mem_00B43594;
+extern "C" uint32_t mem_00B43598;
+
+extern "C" uint32_t mem_00B4358C;
+extern "C" uint32_t mem_00B43590;
+extern "C" uint32_t mem_00B43594;
+extern "C" uint32_t mem_00B43598;
 
 // [0x005B5320] Geometry::AnimationType::vfunc_15 (89 bytes)
 // @name Geometry::AnimationType::getStaticList
@@ -63,32 +74,23 @@ void* fn_005B5320(void* self) {
         mem_00B435B4 = 0;
         mem_00B435B8 = 0;
         mem_00B435BC = 0;
-        ext_006A6C87(0x0091DDC0u);
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091DDC0u)));
     }
     return &mem_00B435B0;
 }
 
-// [0x005B48C0]
-// @name Geometry::AnimationType::vfunc_13
+// [0x005B48C0] Geometry::AnimationType::vfunc_13 (89 bytes)
+// @name Geometry::AnimationType::getStaticList13
 // @class Geometry::AnimationType
-// @summary Lazily initializes shared static state guarded by bit 0 of mem_00B43598, then returns the address of the static object at mem_00B43588.
-
-#include "lift_compat.h"
-
-extern uint32_t mem_00B43588;
-extern uint32_t mem_00B4358C;
-extern uint32_t mem_00B43590;
-extern uint32_t mem_00B43594;
-extern uint32_t mem_00B43598;
-extern void ext_006A6C87(const void* arg);
-
-void* fn_005B48C0() {
+// @summary Lazily initializes a static container at 0x00B43588 (zeroing fields at +0x4/+0x8/+0xC and registering its atexit destructor) and returns its address
+void* fn_005B48C0(void* self) {
+    (void)self;
     if ((mem_00B43598 & 1u) == 0u) {
         mem_00B43598 |= 1u;
-        mem_00B4358C = 0u;
-        mem_00B43590 = 0u;
-        mem_00B43594 = 0u;
-        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091DD40u)));
+        mem_00B4358C = 0;
+        mem_00B43590 = 0;
+        mem_00B43594 = 0;
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091DD40u)));
     }
-    return static_cast<void*>(&mem_00B43588);
+    return &mem_00B43588;
 }
