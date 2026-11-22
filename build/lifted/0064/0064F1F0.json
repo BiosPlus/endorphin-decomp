@@ -1,0 +1,14 @@
+{
+  "va": "0x0064F1F0",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e::vfunc_16",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)",
+  "class": "ExprParser::ROWriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e",
+  "signature": "void* fn_0064F1F0(void* self)",
+  "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BDC8, source mem_00A2E2F8) and returns the result or NULL.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:40:21Z"
+}

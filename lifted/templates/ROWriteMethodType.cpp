@@ -114,19 +114,12 @@ extern "C" int mem_00A9BD54;
 void* fn_00630CE0(void* self) {
     return self;
 }
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk to MSVCR80!__RTDynamicCast, cdecl, 5 args).
+// Signature: void* __RTDynamicCast(void* inptr, long VfDelta, void* SrcType, void* TargetType, int isReference)
+extern "C" int mem_00A9BDC8;
 
-// [0x0064F1F0] ExprParser::ROWriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)
-// @class ExprParser::ROWriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
-// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
-// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
-// MSVC type descriptors (0x00A2E2F8, 0x00A9BDC8), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
-void* fn_0064F1F0(void* self) {
-    return self;
-}
-
-// [0x0051A4D0] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_13 (13 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)
+// Signature: void* __RTDynamicCast(void* inptr, long VfDelta, void* SrcType, void* TargetType, int isReference)
+extern "C" int mem_00A9BDC8;
 // @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
 // @summary Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).
 // No object fields are accessed directly.
@@ -190,4 +183,14 @@ void* fn_0063CA50(void* self) {
 void* fn_0064B0A0(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00A9BD54), 0);
+}
+
+// [0x0064F1F0] ExprParser::ROWriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)
+// @class ExprParser::ROWriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
+// @summary RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BDC8, source mem_00A2E2F8) and returns the result or NULL.
+// No object fields are accessed directly.
+void* fn_0064F1F0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A9BDC8), 0);
 }
