@@ -3,6 +3,7 @@
 extern "C" int mem_0092BD10;
 extern "C" int mem_0092C6E8;
 extern "C" DWORD mem_0092D020;
+extern "C" int mem_0092D778;
 
 // [0x00410350] sub_00410350 (6 bytes)
 // @name GetStringConstant_00410350
@@ -48,4 +49,11 @@ extern "C" const char* fn_00417300() {
 // @summary Returns the address of the read-only global mem_0092D020 (initialised to 0x006A5FCE); leaf getter with no side effects.
 extern "C" const DWORD* fn_00419700(void) {
     return &mem_0092D020;
+}
+
+// [0x0041B580] sub_0041B580 (6 bytes)
+// @name sub_0041B580
+// @summary Returns the address of the read-only string constant ".cj" stored in .rdata (mem_0092D778).
+extern "C" const char* __cdecl fn_0041B580() {
+    return reinterpret_cast<const char*>(&mem_0092D778);
 }
