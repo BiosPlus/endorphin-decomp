@@ -12185,3 +12185,399 @@ L_752103:
         ret 8
     }
 }
+
+// [0x007558D0] sub_007558D0 (1184 bytes)
+extern "C" void ext_006BC370();
+extern "C" void ext_006C2860();
+extern "C" void ext_006E7440();
+extern "C" void ext_00725940();
+extern "C" void ext_00728D40();
+extern "C" void ext_0072CBF0();
+extern "C" void ext_0072CD20();
+extern "C" void ext_0072CEF0();
+extern "C" void ext_0072CF10();
+extern "C" void ext_00732CB0();
+extern "C" void ext_00755D70();
+extern "C" void ext_00756420();
+extern "C" void ext_00756F80();
+extern "C" void ext_00757010();
+extern "C" void ext_00757150();
+extern "C" void ext_007577E0();
+extern "C" void ext_00757EC0();
+extern "C" void ext_00759EC0();
+extern "C" void ext_0075A0B0();
+extern "C" void ext_0075A890();
+extern "C" void ext_007639F0();
+extern "C" void ext_00763A70();
+extern "C" void ext_00763AF0();
+extern "C" void ext_00763E40();
+extern "C" void ext_00763EA0();
+extern "C" void ext_0077D910();
+extern "C" void ext_0079D7A0();
+extern "C" int mem_00B60288;
+extern "C" int mem_00B61278;
+
+extern "C" __declspec(naked) void __fastcall fn_007558D0(void* self) {
+    __asm {
+        push -1
+        push 008bfb8bh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 1d8h
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esp+18h]
+        call ext_0072CBF0
+        xor eax, eax
+        mov bl, 1
+        mov [esp+1f0h], eax
+        mov [esi+0b4h], eax
+        mov [esp+14h], eax
+        mov [esp+10h], eax
+        mov ebp, 1
+        call ext_0079D7A0
+        mov edx, [eax]
+        mov ecx, eax
+        call dword ptr [edx+48h]
+        mov edi, [esp+1fch]
+        test edi, edi
+        je L_755952
+        mov ecx, dword ptr [mem_00B60288]
+        mov eax, [edi]
+        push ecx
+        mov ecx, edi
+        call dword ptr [eax+14h]
+        test al, al
+        jne L_755963
+        mov eax, dword ptr [mem_00B61278]
+        mov edx, [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx+14h]
+        test al, al
+        jne L_755963
+L_755952:
+        push 4
+        lea ecx, [esi+8]
+        call ext_006E7440
+        xor bl, bl
+        jmp L_755A60
+L_755963:
+        mov eax, dword ptr [mem_00B61278]
+        mov edx, [edi]
+        push eax
+        mov ecx, edi
+        call dword ptr [edx+14h]
+        test al, al
+        je L_755A13
+        push 0
+        push 0
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 1
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 2
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 4
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 5
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 6
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 1
+        push 7
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 8
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 9
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 0ah
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        push 0
+        push 0ch
+        lea ecx, [esp+20h]
+        call ext_0072CEF0
+        lea ecx, [esp+18h]
+        mov [esi+0b4h], ecx
+        jmp L_755A19
+L_755A13:
+        mov [esi+0b4h], edi
+L_755A19:
+        mov eax, [esp+200h]
+        test eax, eax
+        je L_755CC8
+        mov edx, [esi+0ach]
+        mov [esi+0ach], eax
+        mov [esp+14h], edx
+L_755A38:
+        mov eax, [esi+0b4h]
+        mov ecx, [eax+0f0h]
+        test ecx, ecx
+        jle L_755A60
+        mov eax, [eax+100h]
+L_755A4E:
+        mov edx, [eax]
+        cmp byte ptr [edx+0e4h], 0
+        je L_755A5A
+        inc ebp
+L_755A5A:
+        add eax, 4
+        dec ecx
+        jne L_755A4E
+L_755A60:
+        call ext_0079D7A0
+        mov edx, [eax]
+        push ebp
+        mov ecx, eax
+        call dword ptr [edx+60h]
+        mov edi, [esp+1f8h]
+        mov ecx, edi
+        call ext_006BC370
+        push eax
+        mov ecx, esi
+        call ext_007639F0
+        test bl, bl
+        je L_755BAF
+        mov ecx, [esi+0b4h]
+        push 2
+        call ext_0072CF10
+        test al, al
+        je L_755ACE
+        mov ecx, [esi+0b4h]
+        lea eax, [esp+10h]
+        push eax
+        push 0ch
+        call ext_0072CF10
+        push eax
+        push edi
+        mov ecx, esi
+        call ext_0075A890
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755BA3
+L_755ACE:
+        push edi
+        mov ecx, esi
+        call ext_00757010
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755BA3
+        push edi
+        mov ecx, esi
+        call ext_00763AF0
+        mov ecx, [esi+0b0h]
+        push 0
+        push 0
+        push 0aae894h
+        mov edx, [ecx]
+        push 0
+        call dword ptr [edx+8]
+        push 1
+        mov ecx, edi
+        mov dword ptr [esi+0bch], 0
+        call ext_006BC370
+        mov ecx, eax
+        call ext_006C2860
+        mov ecx, edi
+        mov [esi+0c0h], eax
+        call ext_006BC370
+        push eax
+        mov ecx, esi
+        call ext_00756F80
+        call ext_0079D7A0
+        mov edx, [eax]
+        push 0
+        push 0
+        mov ecx, eax
+        call dword ptr [edx+64h]
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755BA3
+        mov ecx, esi
+        call ext_0077D910
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755BA3
+        mov ecx, [esi+0b4h]
+        push 7
+        call ext_0072CF10
+        test al, al
+        je L_755BAF
+        push edi
+        mov ecx, esi
+        call ext_00756420
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jle L_755BAF
+L_755BA3:
+        push 3
+        lea ecx, [esi+8]
+        call ext_006E7440
+        xor bl, bl
+L_755BAF:
+        mov ecx, esi
+        call ext_00763E40
+        test bl, bl
+        je L_755CB1
+        mov ecx, [esi+0b4h]
+        push 6
+        call ext_0072CF10
+        test al, al
+        je L_755BEE
+        push edi
+        mov ecx, esi
+        call ext_007577E0
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755CA5
+L_755BEE:
+        mov ecx, [esi+0b4h]
+        push 8
+        call ext_0072CF10
+        test al, al
+        je L_755C2A
+        push edi
+        mov ecx, esi
+        call ext_00732CB0
+        push edi
+        mov ecx, esi
+        call ext_00732CB0
+        push edi
+        mov ecx, esi
+        call ext_00757EC0
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755CA5
+L_755C2A:
+        push edi
+        mov ecx, esi
+        call ext_00763EA0
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755CA5
+        mov ecx, [esi+0b4h]
+        push 8
+        call ext_0072CF10
+        test al, al
+        je L_755C71
+        push edi
+        mov ecx, esi
+        call ext_00759EC0
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jg L_755CA5
+L_755C71:
+        mov ecx, [esi+0b4h]
+        push 9
+        call ext_0072CF10
+        test al, al
+        je L_755CB1
+        push edi
+        mov ecx, esi
+        call ext_00757150
+        push edi
+        mov ecx, esi
+        call ext_0075A0B0
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00728D40
+        cmp eax, -1
+        jle L_755CB1
+L_755CA5:
+        push 3
+        lea ecx, [esi+8]
+        call ext_006E7440
+        xor bl, bl
+L_755CB1:
+        mov eax, [esp+200h]
+        test eax, eax
+        je L_755CE7
+        mov eax, [esp+14h]
+        mov [esi+0ach], eax
+        jmp L_755D02
+L_755CC8:
+        mov eax, [esi+0ach]
+        test eax, eax
+        jne L_755A38
+        push 2
+        lea ecx, [esi+8]
+        call ext_006E7440
+        xor bl, bl
+        jmp L_755A60
+L_755CE7:
+        mov ecx, [esi+0ach]
+        add ecx, 4
+        call ext_00725940
+        mov ecx, [esp+10h]
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_00755D70
+L_755D02:
+        mov ecx, edi
+        mov dword ptr [esi+0b4h], 0
+        call ext_006BC370
+        push eax
+        mov ecx, esi
+        call ext_00763A70
+        call ext_0079D7A0
+        mov edx, [eax]
+        mov ecx, eax
+        call dword ptr [edx+68h]
+        call ext_0079D7A0
+        mov edx, [eax]
+        mov ecx, eax
+        call dword ptr [edx+4ch]
+        lea ecx, [esp+18h]
+        mov dword ptr [esp+1f0h], -1
+        call ext_0072CD20
+        mov ecx, [esp+1e8h]
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebp
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 1e4h
+        ret 0ch
+    }
+}

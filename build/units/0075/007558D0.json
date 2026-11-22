@@ -107,5 +107,7 @@
     "0x00755D28",
     "0x00755D43"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:33:00Z"
 }
