@@ -7827,6 +7827,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005B65E0": {
+    "name": "ExprParser::BoolType::vfunc_5",
+    "class": "ExprParser::BoolType",
+    "signature": "extern \"C\" void fn_005B65E0(void)",
+    "summary": "Builds a local exception object via sub_0046C3C0, then throws it through _CxxThrowException.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x005B6600": {
     "name": "sub_005B6600",
     "signature": "extern \"C\" void __fastcall fn_005B6600(void* self)",
