@@ -22956,3 +22956,882 @@ extern "C" __declspec(naked) void __cdecl fn_00862010(void* self) {
         ret
     }
 }
+
+// [0x00869530] sub_00869530 (2336 bytes)
+extern "C" void ext_008692F0();
+
+extern "C" __declspec(naked) void __cdecl fn_00869530(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        mov eax, dword ptr [esp + 4]
+        sub esp, 40h
+        push ebx
+        push ebp
+        push esi
+        mov ebp, 0fffffffeh
+        push edi
+        lea esi, [ecx + 2]
+        lea edi, [esp + 10h]
+        sub ebp, ecx
+    load_loop:
+        xor ecx, ecx
+        xor edx, edx
+        mov ch, byte ptr [esi + 1]
+        mov dl, byte ptr [esi - 1]
+        mov cl, byte ptr [esi]
+        add esi, 4
+        shl ecx, 8
+        or ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi - 6]
+        add edi, 4
+        shl ecx, 8
+        or ecx, edx
+        mov dword ptr [edi - 4], ecx
+        lea ecx, [esi + ebp]
+        cmp ecx, 40h
+        jb load_loop
+        mov esi, dword ptr [eax + 4]
+        mov edi, dword ptr [eax + 8]
+        mov edx, dword ptr [eax + 0ch]
+        mov ebp, dword ptr [esp + 10h]
+        mov ecx, esi
+        mov eax, dword ptr [eax]
+        not ecx
+        mov ebx, edi
+        and ecx, edx
+        and ebx, esi
+        or ecx, ebx
+        mov ebx, esi
+        add ecx, ebp
+        mov ebp, dword ptr [esp + 14h]
+        lea ecx, [eax + ecx - 28955b88h]
+        mov eax, ecx
+        shr eax, 19h
+        shl ecx, 7
+        or eax, ecx
+        add eax, esi
+        mov ecx, eax
+        and ebx, eax
+        not ecx
+        and ecx, edi
+        or ecx, ebx
+        add ecx, ebp
+        mov ebp, dword ptr [esp + 18h]
+        lea edx, [edx + ecx - 173848aah]
+        mov ecx, edx
+        shr ecx, 14h
+        shl edx, 0ch
+        or ecx, edx
+        add ecx, eax
+        mov edx, ecx
+        mov ebx, ecx
+        not edx
+        and edx, esi
+        and ebx, eax
+        or edx, ebx
+        mov ebx, ecx
+        add edx, ebp
+        mov ebp, dword ptr [esp + 1ch]
+        lea edi, [edi + edx + 242070dbh]
+        mov edx, edi
+        shr edx, 0fh
+        shl edi, 11h
+        or edx, edi
+        add edx, ecx
+        mov edi, edx
+        and ebx, edx
+        not edi
+        and edi, eax
+        or edi, ebx
+        mov ebx, edx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 20h]
+        lea edi, [esi + edi - 3e423112h]
+        mov esi, edi
+        shl esi, 16h
+        shr edi, 0ah
+        or esi, edi
+        add esi, edx
+        mov edi, esi
+        and ebx, esi
+        not edi
+        and edi, ecx
+        or edi, ebx
+        mov ebx, esi
+        add edi, ebp
+        mov ebp, dword ptr [esp + 24h]
+        lea edi, [eax + edi - 0a83f051h]
+        mov eax, edi
+        shr eax, 19h
+        shl edi, 7
+        or eax, edi
+        add eax, esi
+        mov edi, eax
+        and ebx, eax
+        not edi
+        and edi, edx
+        or edi, ebx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 28h]
+        lea edi, [ecx + edi + 4787c62ah]
+        mov ecx, edi
+        shl edi, 0ch
+        shr ecx, 14h
+        or ecx, edi
+        add ecx, eax
+        mov edi, ecx
+        mov ebx, ecx
+        not edi
+        and edi, esi
+        and ebx, eax
+        or edi, ebx
+        mov ebx, ecx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 2ch]
+        lea edi, [edx + edi - 57cfb9edh]
+        mov edx, edi
+        shl edi, 11h
+        shr edx, 0fh
+        or edx, edi
+        add edx, ecx
+        mov edi, edx
+        and ebx, edx
+        not edi
+        and edi, eax
+        or edi, ebx
+        mov ebx, edx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 30h]
+        lea edi, [esi + edi - 2b96affh]
+        mov esi, edi
+        shl esi, 16h
+        shr edi, 0ah
+        or esi, edi
+        add esi, edx
+        mov edi, esi
+        and ebx, esi
+        not edi
+        and edi, ecx
+        or edi, ebx
+        mov ebx, esi
+        add edi, ebp
+        mov ebp, dword ptr [esp + 34h]
+        lea edi, [eax + edi + 698098d8h]
+        mov eax, edi
+        shr eax, 19h
+        shl edi, 7
+        or eax, edi
+        add eax, esi
+        mov edi, eax
+        and ebx, eax
+        not edi
+        and edi, edx
+        or edi, ebx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 38h]
+        lea edi, [ecx + edi - 74bb0851h]
+        mov ecx, edi
+        shr ecx, 14h
+        shl edi, 0ch
+        or ecx, edi
+        add ecx, eax
+        mov edi, ecx
+        mov ebx, ecx
+        not edi
+        and edi, esi
+        and ebx, eax
+        or edi, ebx
+        mov ebx, ecx
+        add edi, ebp
+        lea edi, [edx + edi - 0a44fh]
+        mov edx, edi
+        shr edx, 0fh
+        shl edi, 11h
+        or edx, edi
+        add edx, ecx
+        mov edi, edx
+        not edi
+        and edi, eax
+        mov ebp, dword ptr [esp + 3ch]
+        and ebx, edx
+        or edi, ebx
+        mov ebx, edx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 40h]
+        lea edi, [esi + edi - 76a32842h]
+        mov esi, edi
+        shl esi, 16h
+        shr edi, 0ah
+        or esi, edi
+        add esi, edx
+        mov edi, esi
+        and ebx, esi
+        not edi
+        and edi, ecx
+        or edi, ebx
+        mov ebx, esi
+        add edi, ebp
+        mov ebp, dword ptr [esp + 44h]
+        lea edi, [eax + edi + 6b901122h]
+        mov eax, edi
+        shr eax, 19h
+        shl edi, 7
+        or eax, edi
+        add eax, esi
+        mov edi, eax
+        and ebx, eax
+        not edi
+        and edi, edx
+        or edi, ebx
+        add edi, ebp
+        lea edi, [ecx + edi - 2678e6dh]
+        mov ecx, edi
+        shr ecx, 14h
+        shl edi, 0ch
+        or ecx, edi
+        add ecx, eax
+        mov edi, ecx
+        mov ebp, ecx
+        not edi
+        mov ebx, edi
+        and ebp, eax
+        and ebx, esi
+        or ebx, ebp
+        mov ebp, dword ptr [esp + 48h]
+        add ebx, ebp
+        mov ebp, ecx
+        lea ebx, [edx + ebx - 5986bc72h]
+        mov edx, ebx
+        shr edx, 0fh
+        shl ebx, 11h
+        or edx, ebx
+        add edx, ecx
+        mov ebx, edx
+        and ebp, edx
+        not ebx
+        mov dword ptr [esp + 58h], ebx
+        and ebx, eax
+        or ebx, ebp
+        mov ebp, dword ptr [esp + 4ch]
+        add ebx, ebp
+        and edi, edx
+        lea ebx, [esi + ebx + 49b40821h]
+        mov esi, ebx
+        shl esi, 16h
+        shr ebx, 0ah
+        or esi, ebx
+        mov ebx, ecx
+        add esi, edx
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 14h]
+        add edi, ebx
+        lea edi, [eax + edi - 9e1da9eh]
+        mov eax, edi
+        shr eax, 1bh
+        shl edi, 5
+        or eax, edi
+        mov edi, dword ptr [esp + 58h]
+        add eax, esi
+        mov ebx, edx
+        and edi, esi
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 28h]
+        add edi, ebx
+        lea edi, [ecx + edi - 3fbf4cc0h]
+        mov ecx, edi
+        shl edi, 9
+        shr ecx, 17h
+        or ecx, edi
+        mov edi, esi
+        add ecx, eax
+        not edi
+        mov ebx, ecx
+        and edi, eax
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 3ch]
+        add edi, ebx
+        lea edi, [edx + edi + 265e5a51h]
+        mov edx, edi
+        shr edx, 12h
+        shl edi, 0eh
+        or edx, edi
+        mov edi, eax
+        add edx, ecx
+        not edi
+        mov ebx, edx
+        and edi, ecx
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 10h]
+        add edi, ebx
+        mov ebx, ecx
+        lea edi, [esi + edi - 16493856h]
+        mov esi, edi
+        shl esi, 14h
+        shr edi, 0ch
+        or esi, edi
+        mov edi, ecx
+        add esi, edx
+        not edi
+        and edi, edx
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 24h]
+        add edi, ebx
+        mov ebx, edx
+        lea edi, [eax + edi - 29d0efa3h]
+        mov eax, edi
+        shr eax, 1bh
+        shl edi, 5
+        or eax, edi
+        mov edi, edx
+        add eax, esi
+        not edi
+        and edi, esi
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 38h]
+        add edi, ebx
+        lea edi, [ecx + edi + 02441453h]
+        mov ecx, edi
+        shr ecx, 17h
+        shl edi, 9
+        or ecx, edi
+        mov edi, esi
+        add ecx, eax
+        not edi
+        mov ebx, ecx
+        and edi, eax
+        and ebx, esi
+        or edi, ebx
+        add edi, ebp
+        lea edi, [edx + edi - 275e197fh]
+        mov edx, edi
+        shr edx, 12h
+        shl edi, 0eh
+        or edx, edi
+        add edx, ecx
+        mov edi, eax
+        mov ebx, edx
+        not edi
+        and edi, ecx
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 20h]
+        add edi, ebx
+        mov ebx, ecx
+        lea edi, [esi + edi - 182c0438h]
+        mov esi, edi
+        shr edi, 0ch
+        shl esi, 14h
+        or esi, edi
+        mov edi, ecx
+        not edi
+        add esi, edx
+        and edi, edx
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 34h]
+        add edi, ebx
+        mov ebx, edx
+        lea edi, [eax + edi + 21e1cde6h]
+        mov eax, edi
+        shr eax, 1bh
+        shl edi, 5
+        or eax, edi
+        mov edi, edx
+        add eax, esi
+        not edi
+        and edi, esi
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 48h]
+        add edi, ebx
+        lea edi, [ecx + edi - 3cc8f82ah]
+        mov ecx, edi
+        shr ecx, 17h
+        shl edi, 9
+        or ecx, edi
+        mov edi, esi
+        add ecx, eax
+        not edi
+        mov ebx, ecx
+        and edi, eax
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 1ch]
+        add edi, ebx
+        lea edi, [edx + edi - 0b2af279h]
+        mov edx, edi
+        shr edx, 12h
+        shl edi, 0eh
+        or edx, edi
+        mov edi, eax
+        add edx, ecx
+        not edi
+        mov ebx, edx
+        and edi, ecx
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 30h]
+        add edi, ebx
+        mov ebx, ecx
+        lea edi, [esi + edi + 455a14edh]
+        mov esi, edi
+        shl esi, 14h
+        shr edi, 0ch
+        or esi, edi
+        mov edi, ecx
+        add esi, edx
+        not edi
+        and edi, edx
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 44h]
+        add edi, ebx
+        lea edi, [eax + edi - 561c16fbh]
+        mov eax, edi
+        shr eax, 1bh
+        shl edi, 5
+        or eax, edi
+        mov edi, edx
+        not edi
+        add eax, esi
+        mov ebx, edx
+        and edi, esi
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 18h]
+        add edi, ebx
+        lea edi, [ecx + edi - 3105c08h]
+        mov ecx, edi
+        shr ecx, 17h
+        shl edi, 9
+        or ecx, edi
+        mov edi, esi
+        add ecx, eax
+        not edi
+        mov ebx, ecx
+        and edi, eax
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [esp + 2ch]
+        add edi, ebx
+        lea edi, [edx + edi + 676f02d9h]
+        mov edx, edi
+        shr edx, 12h
+        shl edi, 0eh
+        or edx, edi
+        mov edi, eax
+        add edx, ecx
+        not edi
+        mov ebx, edx
+        and edi, ecx
+        and ebx, eax
+        or edi, ebx
+        mov ebx, dword ptr [esp + 40h]
+        add edi, ebx
+        mov ebx, dword ptr [esp + 24h]
+        lea edi, [esi + edi - 72d5b376h]
+        mov esi, edi
+        shl esi, 14h
+        shr edi, 0ch
+        or esi, edi
+        mov edi, ecx
+        add esi, edx
+        xor edi, edx
+        xor edi, esi
+        add edi, ebx
+        mov ebx, dword ptr [esp + 30h]
+        lea edi, [eax + edi - 5c6beh]
+        mov eax, edi
+        shr eax, 1ch
+        shl edi, 4
+        or eax, edi
+        mov edi, edx
+        add eax, esi
+        xor edi, esi
+        xor edi, eax
+        add edi, ebx
+        mov ebx, dword ptr [esp + 3ch]
+        lea ecx, [ecx + edi - 788e097fh]
+        mov edi, ecx
+        shr edi, 15h
+        shl ecx, 0bh
+        or edi, ecx
+        add edi, eax
+        mov ecx, edi
+        xor ecx, esi
+        xor ecx, eax
+        add ecx, ebx
+        mov ebx, edi
+        lea ecx, [edx + ecx + 6d9d6122h]
+        mov edx, ecx
+        shr edx, 10h
+        shl ecx, 10h
+        or edx, ecx
+        add edx, edi
+        xor ebx, edx
+        mov ecx, ebx
+        xor ecx, eax
+        add ecx, dword ptr [esp + 48h]
+        lea esi, [esi + ecx - 21ac7f4h]
+        mov ecx, esi
+        shl ecx, 17h
+        shr esi, 9
+        or ecx, esi
+        mov esi, dword ptr [esp + 14h]
+        add ecx, edx
+        xor ebx, ecx
+        add ebx, esi
+        mov esi, edx
+        xor esi, ecx
+        lea ebx, [eax + ebx - 5b4115bch]
+        mov eax, ebx
+        shr eax, 1ch
+        shl ebx, 4
+        or eax, ebx
+        mov ebx, dword ptr [esp + 20h]
+        add eax, ecx
+        xor esi, eax
+        add esi, ebx
+        mov ebx, dword ptr [esp + 2ch]
+        lea edi, [edi + esi + 4bdecfa9h]
+        mov esi, edi
+        shr esi, 15h
+        shl edi, 0bh
+        or esi, edi
+        add esi, eax
+        mov edi, esi
+        xor edi, ecx
+        xor edi, eax
+        add edi, ebx
+        lea edi, [edx + edi - 944b4a0h]
+        mov edx, edi
+        shr edx, 10h
+        shl edi, 10h
+        or edx, edi
+        mov edi, esi
+        add edx, esi
+        xor edi, edx
+        mov ebx, edi
+        xor ebx, eax
+        add ebx, dword ptr [esp + 38h]
+        lea ebx, [ecx + ebx - 41404390h]
+        mov ecx, ebx
+        shl ecx, 17h
+        shr ebx, 9
+        or ecx, ebx
+        mov ebx, dword ptr [esp + 44h]
+        add ecx, edx
+        xor edi, ecx
+        add edi, ebx
+        mov ebx, dword ptr [esp + 10h]
+        lea edi, [eax + edi + 289b7ec6h]
+        mov eax, edi
+        shr eax, 1ch
+        shl edi, 4
+        or eax, edi
+        mov edi, edx
+        add eax, ecx
+        xor edi, ecx
+        xor edi, eax
+        add edi, ebx
+        mov ebx, dword ptr [esp + 1ch]
+        lea edi, [esi + edi - 155ed806h]
+        mov esi, edi
+        shr esi, 15h
+        shl edi, 0bh
+        or esi, edi
+        add esi, eax
+        mov edi, esi
+        xor edi, ecx
+        xor edi, eax
+        add edi, ebx
+        lea edx, [edx + edi - 2b10cf7bh]
+        mov edi, edx
+        shr edi, 10h
+        shl edx, 10h
+        or edi, edx
+        add edi, esi
+        mov edx, esi
+        xor edx, edi
+        mov ebx, edx
+        xor ebx, eax
+        add ebx, dword ptr [esp + 28h]
+        lea ebx, [ecx + ebx + 4881d05h]
+        mov ecx, ebx
+        shl ecx, 17h
+        shr ebx, 9
+        or ecx, ebx
+        mov ebx, dword ptr [esp + 34h]
+        add ecx, edi
+        xor edx, ecx
+        add edx, ebx
+        mov ebx, dword ptr [esp + 40h]
+        lea edx, [eax + edx - 262b2fc7h]
+        mov eax, edx
+        shr eax, 1ch
+        shl edx, 4
+        or eax, edx
+        mov edx, edi
+        add eax, ecx
+        xor edx, ecx
+        xor edx, eax
+        add edx, ebx
+        mov ebx, dword ptr [esp + 18h]
+        lea esi, [esi + edx - 1924661bh]
+        mov edx, esi
+        shr edx, 15h
+        shl esi, 0bh
+        or edx, esi
+        add edx, eax
+        mov esi, edx
+        xor esi, ecx
+        xor esi, eax
+        add esi, ebp
+        lea edi, [edi + esi + 1fa27cf8h]
+        mov esi, edi
+        shr esi, 10h
+        shl edi, 10h
+        or esi, edi
+        mov edi, edx
+        add esi, edx
+        xor edi, esi
+        xor edi, eax
+        add edi, ebx
+        mov ebx, dword ptr [esp + 10h]
+        lea edi, [ecx + edi - 3b53a99bh]
+        mov ecx, edi
+        shl ecx, 17h
+        shr edi, 9
+        or ecx, edi
+        mov edi, edx
+        add ecx, esi
+        not edi
+        or edi, ecx
+        xor edi, esi
+        add edi, ebx
+        mov ebx, dword ptr [esp + 2ch]
+        lea edi, [eax + edi - 0bd6ddbch]
+        mov eax, edi
+        shr eax, 1ah
+        shl edi, 6
+        or eax, edi
+        mov edi, esi
+        add eax, ecx
+        not edi
+        or edi, eax
+        xor edi, ecx
+        add edi, ebx
+        mov ebx, dword ptr [esp + 48h]
+        lea edi, [edx + edi + 432aff97h]
+        mov edx, edi
+        shr edx, 16h
+        shl edi, 0ah
+        or edx, edi
+        mov edi, ecx
+        add edx, eax
+        not edi
+        or edi, edx
+        xor edi, eax
+        add edi, ebx
+        mov ebx, dword ptr [esp + 24h]
+        lea edi, [esi + edi - 546bdc59h]
+        mov esi, edi
+        shl edi, 0fh
+        shr esi, 11h
+        or esi, edi
+        mov edi, eax
+        not edi
+        add esi, edx
+        or edi, esi
+        xor edi, edx
+        add edi, ebx
+        mov ebx, dword ptr [esp + 40h]
+        lea edi, [ecx + edi - 036c5fc7h]
+        mov ecx, edi
+        shr edi, 0bh
+        shl ecx, 15h
+        or ecx, edi
+        mov edi, edx
+        not edi
+        add ecx, esi
+        or edi, ecx
+        xor edi, esi
+        add edi, ebx
+        mov ebx, dword ptr [esp + 1ch]
+        lea edi, [eax + edi + 655b59c3h]
+        mov eax, edi
+        shl edi, 6
+        shr eax, 1ah
+        or eax, edi
+        mov edi, esi
+        add eax, ecx
+        not edi
+        or edi, eax
+        xor edi, ecx
+        add edi, ebx
+        mov ebx, dword ptr [esp + 38h]
+        lea edi, [edx + edi - 70f3336eh]
+        mov edx, edi
+        shr edx, 16h
+        shl edi, 0ah
+        or edx, edi
+        mov edi, ecx
+        add edx, eax
+        not edi
+        or edi, edx
+        xor edi, eax
+        add edi, ebx
+        mov ebx, dword ptr [esp + 14h]
+        lea edi, [esi + edi - 100b83h]
+        mov esi, edi
+        shr esi, 11h
+        shl edi, 0fh
+        or esi, edi
+        mov edi, eax
+        add esi, edx
+        not edi
+        or edi, esi
+        xor edi, edx
+        add edi, ebx
+        mov ebx, dword ptr [esp + 30h]
+        lea edi, [ecx + edi - 7a7ba22fh]
+        mov ecx, edi
+        shl ecx, 15h
+        shr edi, 0bh
+        or ecx, edi
+        mov edi, edx
+        add ecx, esi
+        not edi
+        or edi, ecx
+        xor edi, esi
+        add edi, ebx
+        lea edi, [eax + edi + 6fa87e4fh]
+        mov eax, edi
+        shr eax, 1ah
+        shl edi, 6
+        or eax, edi
+        mov edi, esi
+        add eax, ecx
+        not edi
+        or edi, eax
+        xor edi, ecx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 28h]
+        lea edi, [edx + edi - 01d31920h]
+        mov edx, edi
+        shl edi, 0ah
+        shr edx, 16h
+        or edx, edi
+        mov edi, ecx
+        not edi
+        add edx, eax
+        or edi, edx
+        xor edi, eax
+        add edi, ebp
+        mov ebp, dword ptr [esp + 44h]
+        lea edi, [esi + edi - 5cfebcech]
+        mov esi, edi
+        shl edi, 0fh
+        shr esi, 11h
+        or esi, edi
+        mov edi, eax
+        add esi, edx
+        not edi
+        or edi, esi
+        xor edi, edx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 20h]
+        lea edi, [ecx + edi + 4e0811a1h]
+        mov ecx, edi
+        shl ecx, 15h
+        shr edi, 0bh
+        or ecx, edi
+        mov edi, edx
+        add ecx, esi
+        not edi
+        or edi, ecx
+        xor edi, esi
+        add edi, ebp
+        mov ebp, dword ptr [esp + 3ch]
+        lea edi, [eax + edi - 08ac817eh]
+        mov eax, edi
+        shr eax, 1ah
+        shl edi, 6
+        or eax, edi
+        mov edi, esi
+        add eax, ecx
+        not edi
+        or edi, eax
+        xor edi, ecx
+        add edi, ebp
+        mov ebp, dword ptr [esp + 18h]
+        lea edi, [edx + edi - 42c50dcbh]
+        mov edx, edi
+        shr edx, 16h
+        shl edi, 0ah
+        or edx, edi
+        mov edi, ecx
+        add edx, eax
+        not edi
+        or edi, edx
+        xor edi, eax
+        add edi, ebp
+        mov ebp, dword ptr [esp + 34h]
+        lea esi, [esi + edi + 2ad7d2bbh]
+        mov edi, esi
+        shr edi, 11h
+        shl esi, 0fh
+        or edi, esi
+        mov esi, eax
+        add edi, edx
+        not esi
+        or esi, edi
+        xor esi, edx
+        add esi, ebp
+        lea ecx, [ecx + esi - 14792c6fh]
+        mov esi, dword ptr [esp + 54h]
+        mov ebx, dword ptr [esi]
+        add eax, ebx
+        mov dword ptr [esi], eax
+        mov eax, ecx
+        mov ebp, dword ptr [esi + 4]
+        push 40h
+        shl eax, 15h
+        shr ecx, 0bh
+        or eax, ecx
+        lea ecx, [esp + 14h]
+        add eax, ebp
+        push 0
+        add eax, edi
+        push ecx
+        mov dword ptr [esi + 4], eax
+        mov eax, dword ptr [esi + 8]
+        add eax, edi
+        mov dword ptr [esi + 8], eax
+        mov eax, dword ptr [esi + 0ch]
+        add eax, edx
+        mov dword ptr [esi + 0ch], eax
+        call ext_008692F0
+        add esp, 0ch
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 40h
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
