@@ -8385,6 +8385,13 @@
     "summary": "Forwards a float argument to vfunc_7 of the object held by the proxied pointer's inner target.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066BBC0": {
+    "name": "ExprParser::VPtrProxyType::vfunc_8",
+    "class": "ExprParser::VPtrProxyType",
+    "signature": "uint32_t fn_0066BBC0(void* self, void* ctx)",
+    "summary": "Forwarding tail-call: invokes virtual slot 8 (+0x20) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BCE0": {
     "name": "ExprParser::VPtrProxyType::vfunc_47",
     "class": "ExprParser::VPtrProxyType",
