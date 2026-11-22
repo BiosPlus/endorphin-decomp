@@ -16524,3 +16524,729 @@ L_69D49B:
         call ext_006A6DD2
     }
 }
+
+// [0x0069DDB0] sub_0069DDB0 (1996 bytes)
+extern "C" void ext_0069B5A0();
+extern "C" void ext_0069C400();
+extern "C" void ext_0069ABD0();
+extern "C" void ext_0041CF50();
+extern "C" void ext_006720C0();
+extern "C" void ext_00672080();
+extern "C" void ext_00671100();
+extern "C" void ext_00671F30();
+extern "C" void ext_00681020();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924EA8;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925018;
+extern "C" int mem_0092531C;
+extern "C" int mem_00925320;
+extern "C" int mem_009251F0;
+extern "C" int mem_0092A278;
+extern "C" int mem_00B599BC;
+
+// Switch dispatch tables for fn_0069DDB0 (kept at their original VAs; code refers to them via offset).
+extern "C" const unsigned int jt_0069DDB0_a[6] = {
+    0x0069DE79u, 0x0069DE95u, 0x0069DEB2u, 0x0069DECEu, 0x0069DEEAu, 0x0069DF09u };
+extern "C" const unsigned char jt_0069DDB0_b[21] = {
+    0x00, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x01, 0x05, 0x05, 0x05,
+    0x05, 0x05, 0x05, 0x05, 0x05, 0x02, 0x03, 0x05, 0x05, 0x04 };
+extern "C" const unsigned int jt_0069DDB0_c[5] = {
+    0x0069DFE0u, 0x0069DFDBu, 0x0069DFCFu, 0x0069DFC3u, 0x0069E4C3u };
+extern "C" const unsigned char jt_0069DDB0_d[62] = {
+    0x00, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x01, 0x04,
+    0x04, 0x02, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x03 };
+
+extern "C" __declspec(naked) void __fastcall fn_0069DDB0(void* self, int edx_unused, char** cur, void* out) {
+    __asm {
+        push -1
+        push 08b69f5h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 13ch
+        push ebx
+        push ebp
+        push esi
+        mov dword ptr [esp + 14h], ecx
+        push edi
+        lea ecx, [esp + 90h]
+        mov dword ptr [esp + 1ch], 7
+        call dword ptr [mem_00924FE8]
+        xor ebx, ebx
+        lea ecx, [esp + 68h]
+        mov dword ptr [esp + 154h], ebx
+        call dword ptr [mem_00924FE8]
+        mov eax, dword ptr [mem_00B599BC]
+        mov dword ptr [esp + 10h], ebx
+        mov dword ptr [esp + 14h], eax
+        mov esi, dword ptr [esp + 15ch]
+        mov ecx, dword ptr [esi]
+        cmp byte ptr [ecx], bl
+        mov byte ptr [esp + 154h], 2
+        je L69E462
+        mov ebp, dword ptr [mem_0092531C]
+L69DE27:
+        mov edx, dword ptr [esi]
+        movsx eax, byte ptr [edx]
+        push eax
+        call ebp
+        add esp, 4
+        test eax, eax
+        je L69DE48
+L69DE36:
+        add dword ptr [esi], 1
+        mov ecx, dword ptr [esi]
+        movsx edx, byte ptr [ecx]
+        push edx
+        call ebp
+        add esp, 4
+        test eax, eax
+        jne L69DE36
+L69DE48:
+        mov eax, dword ptr [esi]
+        mov al, byte ptr [eax]
+        test al, al
+        je L69E462
+        test ebx, ebx
+        jne L69DF09
+        movsx eax, al
+        add eax, -42h
+        cmp eax, 14h
+        ja L69DF09
+        movzx ecx, byte ptr [eax + 069e594h]
+        jmp dword ptr [ecx * 4 + 069e57ch]
+L69DE79:
+        push 098beb4h
+        push esi
+        call ext_0069B5A0
+        add esp, 8
+        test al, al
+        je L69DF09
+        mov dword ptr [esp + 1ch], 2
+        jmp L69DF04
+L69DE95:
+        push 098bebch
+        push esi
+        call ext_0069B5A0
+        add esp, 8
+        test al, al
+        je L69DF09
+        mov ebx, 1
+        mov dword ptr [esp + 1ch], ebx
+        jmp L69DF09
+L69DEB2:
+        push 098bec0h
+        push esi
+        call ext_0069B5A0
+        add esp, 8
+        test al, al
+        je L69DF09
+        mov dword ptr [esp + 1ch], 0
+        jmp L69DF04
+L69DECE:
+        push 098beach
+        push esi
+        call ext_0069B5A0
+        add esp, 8
+        test al, al
+        je L69DF09
+        mov dword ptr [esp + 1ch], 3
+        jmp L69DF04
+L69DEEA:
+        push 096e578h
+        push esi
+        call ext_0069B5A0
+        add esp, 8
+        test al, al
+        je L69DF09
+        mov dword ptr [esp + 1ch], 4
+L69DF04:
+        mov ebx, 1
+L69DF09:
+        mov edx, dword ptr [esi]
+        movsx eax, byte ptr [edx]
+        push eax
+        call ebp
+        add esp, 4
+        test eax, eax
+        je L69DF2A
+L69DF18:
+        add dword ptr [esi], 1
+        mov ecx, dword ptr [esi]
+        movsx edx, byte ptr [ecx]
+        push edx
+        call ebp
+        add esp, 4
+        test eax, eax
+        jne L69DF18
+L69DF2A:
+        test ebx, ebx
+        je L69DF33
+        cmp ebx, 1
+        jne L69DF7B
+L69DF33:
+        mov edx, dword ptr [esi]
+        movzx eax, byte ptr [edx]
+        push eax
+        call ext_0069B100
+        add esp, 4
+        test al, al
+        je L69E557
+        _emit 08dh
+        _emit 0a4h
+        _emit 024h
+        _emit 000h
+        _emit 000h
+        _emit 000h
+        _emit 000h
+L69DF50:
+        add dword ptr [esi], 1
+        mov ecx, dword ptr [esi]
+        mov eax, ecx
+        movzx eax, byte ptr [eax]
+        push eax
+        call ext_0069B100
+        add esp, 4
+        test al, al
+        jne L69DF50
+        push ecx
+        push edx
+        lea ecx, [esp + 98h]
+        call dword ptr [mem_00925018]
+        mov ebx, 2
+L69DF7B:
+        mov ecx, dword ptr [esi]
+        movsx edx, byte ptr [ecx]
+        push edx
+        call ebp
+        add esp, 4
+        test eax, eax
+        je L69DFA2
+        _emit 08dh
+        _emit 09bh
+        _emit 000h
+        _emit 000h
+        _emit 000h
+        _emit 000h
+L69DF90:
+        add dword ptr [esi], 1
+        mov eax, dword ptr [esi]
+        movsx ecx, byte ptr [eax]
+        push ecx
+        call ebp
+        add esp, 4
+        test eax, eax
+        jne L69DF90
+L69DFA2:
+        cmp ebx, 2
+        jne L69DFE5
+        mov eax, dword ptr [esi]
+        movsx ecx, byte ptr [eax]
+        cmp ecx, 3dh
+        ja L69E4C3
+        movzx edx, byte ptr [ecx + 069e5c0h]
+        jmp dword ptr [edx * 4 + 069e5ach]
+L69DFC3:
+        add eax, 1
+        mov ebx, 3
+        mov dword ptr [esi], eax
+        jmp L69DFE5
+L69DFCF:
+        add eax, 1
+        mov ebx, 5
+        mov dword ptr [esi], eax
+        jmp L69DFE5
+L69DFDB:
+        add eax, 1
+        mov dword ptr [esi], eax
+L69DFE0:
+        mov ebx, 6
+L69DFE5:
+        mov eax, dword ptr [esi]
+        movsx ecx, byte ptr [eax]
+        push ecx
+        call ebp
+        add esp, 4
+        test eax, eax
+        je L69E006
+L69DFF4:
+        add dword ptr [esi], 1
+        mov edx, dword ptr [esi]
+        movsx eax, byte ptr [edx]
+        push eax
+        call ebp
+        add esp, 4
+        test eax, eax
+        jne L69DFF4
+L69E006:
+        cmp ebx, 3
+        jne L69E27E
+        mov edi, dword ptr [esi]
+        mov al, byte ptr [edi]
+        cmp al, 22h
+        je L69E1B4
+        cmp al, 56h
+        je L69E136
+        mov ebx, dword ptr [mem_00925320]
+        movsx ecx, al
+        push ecx
+        call ebx
+        add esp, 4
+        test eax, eax
+        jne L69E041
+        mov edx, dword ptr [esi]
+        cmp byte ptr [edx], 2eh
+        jne L69E4E8
+L69E041:
+        xor edi, edi
+L69E043:
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [eax]
+        add eax, 1
+        mov byte ptr [esp + edi + 0d4h], cl
+        mov dword ptr [esi], eax
+        movsx edx, byte ptr [eax]
+        push edx
+        add edi, 1
+        call ebx
+        add esp, 4
+        test eax, eax
+        jne L69E06A
+        mov eax, dword ptr [esi]
+        cmp byte ptr [eax], 2eh
+        jne L69E06F
+L69E06A:
+        cmp edi, 28h
+        jl L69E043
+L69E06F:
+        lea ecx, [esp + 0d4h]
+        push ecx
+        mov byte ptr [esp + edi + 0d8h], 0
+        call dword ptr [mem_009251F0]
+        fld st(0)
+        add esp, 4
+        call ext_006A6DE0
+        mov ecx, eax
+        mov dword ptr [esp + 20h], ecx
+        fild dword ptr [esp + 20h]
+        push ecx
+        fsubr st, st(1)
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 44h
+        jp L69E0EF
+        lea ecx, [esp + 28h]
+        fstp st(0)
+        call ext_006720C0
+        lea edx, [esp + 24h]
+        push edx
+        lea ecx, [esp + 14h]
+        mov byte ptr [esp + 158h], 5
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 28h]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 2
+        je L69E279
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 78h]
+        lea edx, [esp + 24h]
+        push edx
+        call eax
+        jmp L69E279
+L69E0EF:
+        fstp dword ptr [esp + 24h]
+        lea ecx, [esp + 3ch]
+        fld dword ptr [esp + 24h]
+        fstp dword ptr [esp]
+        call ext_00672080
+        lea ecx, [esp + 38h]
+        push ecx
+        lea ecx, [esp + 14h]
+        mov byte ptr [esp + 158h], 6
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 3ch]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 2
+        je L69E279
+        lea eax, [esp + 38h]
+        jmp L69E271
+L69E136:
+        push 096e578h
+        push esi
+        call ext_0069B5A0
+        add esp, 8
+        test al, al
+        je L69E50D
+        mov ecx, dword ptr [esp + 18h]
+        push esi
+        call ext_0069C400
+        test al, al
+        je L69E50D
+        add dword ptr [esi], 1
+        mov eax, dword ptr [esi]
+        push eax
+        push edi
+        lea ecx, [esp + 70h]
+        call dword ptr [mem_00925018]
+        push 0
+        push 0
+        lea eax, [esp + 70h]
+        push eax
+        lea ecx, [esp + 6ch]
+        push ecx
+        call ext_00681020
+        add esp, 10h
+        push eax
+        lea ecx, [esp + 14h]
+        mov byte ptr [esp + 158h], 4
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 64h]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 2
+        je L69E279
+        lea eax, [esp + 60h]
+        jmp L69E271
+L69E1B4:
+        lea eax, [edi + 1]
+        mov dword ptr [esi], eax
+        cmp byte ptr [eax], 0
+        je L69E1D1
+        mov edi, edi
+L69E1C0:
+        cmp byte ptr [eax], 22h
+        je L69E1D1
+        add eax, 1
+        mov ecx, eax
+        mov dword ptr [esi], eax
+        cmp byte ptr [ecx], 0
+        jne L69E1C0
+L69E1D1:
+        mov eax, dword ptr [esi]
+        cmp byte ptr [eax], 22h
+        jne L69E532
+        add eax, 1
+        push eax
+        push edi
+        lea ecx, [esp + 70h]
+        mov dword ptr [esi], eax
+        call dword ptr [mem_00925018]
+        push 0
+        push 0
+        lea edx, [esp + 70h]
+        push edx
+        lea eax, [esp + 5ch]
+        push eax
+        call ext_00681020
+        add esp, 10h
+        mov edi, eax
+        lea ecx, [esp + 10h]
+        cmp ecx, edi
+        mov byte ptr [esp + 154h], 3
+        je L69E25D
+        mov ecx, dword ptr [esp + 14h]
+        test ecx, ecx
+        je L69E229
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 10h]
+        push eax
+        call edx
+L69E229:
+        mov eax, dword ptr [edi + 4]
+        mov dword ptr [esp + 14h], eax
+        cmp dword ptr [edi + 4], 0
+        je L69E24B
+        mov ecx, dword ptr [edi + 4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 70h]
+        push edi
+        lea eax, [esp + 8ch]
+        push eax
+        call edx
+        jmp L69E257
+L69E24B:
+        mov dword ptr [esp + 30h], 0
+        lea eax, [esp + 30h]
+L69E257:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esp + 10h], eax
+L69E25D:
+        mov ecx, dword ptr [esp + 54h]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 2
+        je L69E279
+        lea eax, [esp + 50h]
+L69E271:
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        push eax
+        call edx
+L69E279:
+        mov ebx, 4
+L69E27E:
+        mov eax, dword ptr [esi]
+        movsx ecx, byte ptr [eax]
+        push ecx
+        call ebp
+        add esp, 4
+        test eax, eax
+        je L69E2A2
+        _emit 08dh
+        _emit 049h
+        _emit 000h
+L69E290:
+        add dword ptr [esi], 1
+        mov edx, dword ptr [esi]
+        movsx eax, byte ptr [edx]
+        push eax
+        call ebp
+        add esp, 4
+        test eax, eax
+        jne L69E290
+L69E2A2:
+        cmp ebx, 4
+        jne L69E2CA
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [eax]
+        cmp cl, 29h
+        je L69E2C0
+        cmp cl, 2ch
+        jne L69E557
+        mov ebx, 5
+        jmp L69E2C5
+L69E2C0:
+        mov ebx, 6
+L69E2C5:
+        add eax, 1
+        mov dword ptr [esi], eax
+L69E2CA:
+        mov ecx, dword ptr [esi]
+        movsx edx, byte ptr [ecx]
+        push edx
+        call ebp
+        add esp, 4
+        test eax, eax
+        je L69E2F2
+        _emit 08dh
+        _emit 0a4h
+        _emit 024h
+        _emit 000h
+        _emit 000h
+        _emit 000h
+        _emit 000h
+L69E2E0:
+        add dword ptr [esi], 1
+        mov eax, dword ptr [esi]
+        movsx ecx, byte ptr [eax]
+        push ecx
+        call ebp
+        add esp, 4
+        test eax, eax
+        jne L69E2E0
+L69E2F2:
+        cmp ebx, 5
+        je L69E300
+        cmp ebx, 6
+        jne L69E457
+L69E300:
+        mov ebp, dword ptr [esp + 160h]
+        mov eax, dword ptr [ebp + 20h]
+        add ebp, 1ch
+        test eax, eax
+        jne L69E315
+        xor edi, edi
+        jmp L69E32B
+L69E315:
+        mov ecx, dword ptr [ebp + 8]
+        sub ecx, eax
+        mov eax, 02e8ba2e9h
+        imul ecx
+        sar edx, 3
+        mov edi, edx
+        shr edi, 1fh
+        add edi, edx
+L69E32B:
+        mov edx, dword ptr [esp + 1ch]
+        push edx
+        call ext_00671100
+        mov ecx, dword ptr [esp + 18h]
+        add esp, 4
+        test ecx, ecx
+        mov dword ptr [esp + 40h], edi
+        mov dword ptr [esp + 44h], eax
+        je L69E362
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 70h]
+        lea edx, [esp + 10h]
+        push edx
+        lea edx, [esp + 88h]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 14h]
+        jmp L69E36E
+L69E362:
+        mov dword ptr [esp + 2ch], 0
+        lea eax, [esp + 2ch]
+L69E36E:
+        mov edx, dword ptr [eax]
+        mov dword ptr [esp + 48h], edx
+        mov dword ptr [esp + 4ch], ecx
+        push 1
+        lea eax, [esp + 44h]
+        push eax
+        lea ecx, [esp + 98h]
+        push ecx
+        mov ecx, ebp
+        mov byte ptr [esp + 160h], 7
+        call ext_0069ABD0
+        mov ecx, dword ptr [esp + 4ch]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 2
+        je L69E3B2
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 48h]
+        push eax
+        call edx
+L69E3B2:
+        lea ecx, [esp + 90h]
+        call dword ptr [mem_00924EA8]
+        lea eax, [esp + 58h]
+        push eax
+        mov dword ptr [esp + 20h], 7
+        call ext_00671F30
+        add esp, 4
+        mov edi, eax
+        lea ecx, [esp + 10h]
+        cmp ecx, edi
+        mov byte ptr [esp + 154h], 8
+        je L69E42E
+        mov ecx, dword ptr [esp + 14h]
+        test ecx, ecx
+        je L69E3FA
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 10h]
+        push eax
+        call edx
+L69E3FA:
+        mov eax, dword ptr [edi + 4]
+        mov dword ptr [esp + 14h], eax
+        cmp dword ptr [edi + 4], 0
+        je L69E41C
+        mov ecx, dword ptr [edi + 4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 70h]
+        push edi
+        lea eax, [esp + 90h]
+        push eax
+        call edx
+        jmp L69E428
+L69E41C:
+        mov dword ptr [esp + 34h], 0
+        lea eax, [esp + 34h]
+L69E428:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esp + 10h], eax
+L69E42E:
+        mov ecx, dword ptr [esp + 5ch]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 2
+        je L69E44A
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 58h]
+        push eax
+        call edx
+L69E44A:
+        cmp ebx, 6
+        je L69E462
+        mov ebp, dword ptr [mem_0092531C]
+        xor ebx, ebx
+L69E457:
+        mov eax, dword ptr [esi]
+        cmp byte ptr [eax], 0
+        jne L69DE27
+L69E462:
+        mov ecx, dword ptr [esp + 14h]
+        test ecx, ecx
+        mov byte ptr [esp + 154h], 1
+        je L69E47E
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 10h]
+        push eax
+        call edx
+L69E47E:
+        lea ecx, [esp + 68h]
+        mov byte ptr [esp + 154h], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 90h]
+        mov dword ptr [esp + 154h], 0ffffffffh
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 14ch]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 148h
+        ret 8
+L69E4C3:
+        mov ecx, dword ptr [esp + 18h]
+        push ecx
+        push 7
+        lea ecx, [esp + 0dch]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea edx, [esp + 0d8h]
+        push edx
+        call ext_006A6DD2
+L69E4E8:
+        mov eax, dword ptr [esp + 18h]
+        push eax
+        push 7
+        lea ecx, [esp + 104h]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea ecx, [esp + 100h]
+        push ecx
+        call ext_006A6DD2
+L69E50D:
+        mov edx, dword ptr [esp + 18h]
+        push edx
+        push 7
+        lea ecx, [esp + 12ch]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea eax, [esp + 128h]
+        push eax
+        call ext_006A6DD2
+L69E532:
+        mov ecx, dword ptr [esp + 18h]
+        push ecx
+        push 11h
+        lea ecx, [esp + 0b4h]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea edx, [esp + 0b0h]
+        push edx
+        call ext_006A6DD2
+L69E557:
+        mov eax, dword ptr [esp + 18h]
+        push eax
+        push 7
+        lea ecx, [esp + 0b4h]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea ecx, [esp + 0b0h]
+        push ecx
+        call ext_006A6DD2
+    }
+}

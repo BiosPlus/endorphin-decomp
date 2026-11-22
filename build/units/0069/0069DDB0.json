@@ -86,5 +86,7 @@
     "0x0069E56B",
     "0x0069E578"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T02:04:04Z"
 }
