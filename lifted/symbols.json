@@ -2408,6 +2408,13 @@
     "summary": "Pure jump thunk forwarding to AnimatableTransform::vfunc_29.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00611C90": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "uint8_t fn_00611C90(void* self, uint32_t index)",
+    "summary": "Returns the byte at this + index + 0x328 (index is the single stack argument, thiscall).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x006122F0": {
     "name": "NMData::TwistAndSwingLimit::vfunc_0",
     "class": "NMData::TwistAndSwingLimit",

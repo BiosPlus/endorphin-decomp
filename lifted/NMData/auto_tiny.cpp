@@ -1697,3 +1697,14 @@ void* fn_0049FAB0(void* self) {
     }
     return reinterpret_cast<void*>(p + 8);
 }
+
+// [0x00611C90] NMData::PrimaryTwistAndSwingConstraint::vfunc_76 (14 bytes)
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_76
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Returns the byte at this + index + 0x328 (index is the single stack argument, thiscall).
+// @field NMData::PrimaryTwistAndSwingConstraint +0x328 uint8_t field_0x328
+uint8_t fn_00611C90(void* self, uint32_t index) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    const uint32_t offset = index + 0x328u;
+    return base[offset];
+}

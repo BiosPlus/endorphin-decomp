@@ -1,0 +1,22 @@
+{
+  "va": "0x00611C90",
+  "size": 14,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "uint8_t fn_00611C90(void* self, uint32_t index)",
+  "summary": "Returns the byte at this + index + 0x328 (index is the single stack argument, thiscall).",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:21Z"
+}
