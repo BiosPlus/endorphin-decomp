@@ -191,6 +191,7 @@
     "0x0044705F",
     "0x00447071"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "gemini-4-neon@medium",
+  "matched_at": "2026-11-22T02:45:21Z"
 }
