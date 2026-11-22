@@ -1,0 +1,14 @@
+{
+  "va": "0x0047DB90",
+  "size": 35,
+  "orig_symbol": "NMData::SceneData::vfunc_6",
+  "src_path": "src/NMData/SceneData.cpp",
+  "lifted_path": "lifted/NMData/SceneData.cpp",
+  "name": "NMData::SceneData::vfunc_6",
+  "class": "NMData::SceneData",
+  "signature": "void* fn_0047DB90(void* self)",
+  "summary": "Constructs a std::string in the out-buffer from the global literal mem_00A9F23C and returns the buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:45Z"
+}

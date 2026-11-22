@@ -2845,6 +2845,13 @@
     "summary": "Pure jump thunk forwarding to sub_005A6650.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0047DB90": {
+    "name": "NMData::SceneData::vfunc_6",
+    "class": "NMData::SceneData",
+    "signature": "void* fn_0047DB90(void* self)",
+    "summary": "Constructs a std::string in the out-buffer from the global literal mem_00A9F23C and returns the buffer.",
+    "lifted_path": "lifted/NMData/SceneData.cpp"
+  },
   "0x0047FF80": {
     "name": "NMData::SceneData::vfunc_0",
     "class": "NMData::SceneData",
