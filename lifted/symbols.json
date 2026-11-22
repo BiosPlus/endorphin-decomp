@@ -10469,6 +10469,13 @@
     "summary": "Forwards (a, b) to virtual slot +0xAC of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006A1860": {
+    "name": "ExprParser::Operators::Asin::vfunc_3",
+    "class": "ExprParser::Operators::Asin",
+    "signature": "void __thiscall fn_006A1860(void* self, void* ctx)",
+    "summary": "Evaluates the unary operand via vfunc_1, clamps it to [-1, 1], applies asin, and stores the result via vfunc_7.",
+    "lifted_path": "lifted/ExprParser/Operators/Asin.cpp"
+  },
   "0x006A18D0": {
     "name": "ExprParser::Operators::Atan::vfunc_3",
     "class": "ExprParser::Operators::Atan",

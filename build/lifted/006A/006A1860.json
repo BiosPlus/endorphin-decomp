@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1860",
+  "size": 106,
+  "orig_symbol": "ExprParser::Operators::Asin::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Asin.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Asin.cpp",
+  "name": "ExprParser::Operators::Asin::vfunc_3",
+  "class": "ExprParser::Operators::Asin",
+  "signature": "void __thiscall fn_006A1860(void* self, void* ctx)",
+  "summary": "Evaluates the unary operand via vfunc_1, clamps it to [-1, 1], applies asin, and stores the result via vfunc_7.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Asin",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:58Z"
+}
