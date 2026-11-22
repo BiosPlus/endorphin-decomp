@@ -250,3 +250,14 @@ void fn_0052FB60(void* self, float* out) {
     out[1] = 0.0f;
     out[2] = 0.0f;
 }
+
+// [0x0052FA20] Primitives::Marker::vfunc_20 (20 bytes)
+// @name Primitives::Marker::vfunc_20
+// @class Primitives::Marker
+// @summary Writes a 3-float vector to the out pointer: x = this+0x50, y = z = 0 (thiscall, one stack arg, ret 4).
+// @field Primitives::Marker +0x50 float field_0x50
+void fn_0052FA20(const void* self, float* out) {
+    out[0] = lift_field<const float>(self, 0x50);
+    out[1] = 0.0f;
+    out[2] = 0.0f;
+}

@@ -1658,6 +1658,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0052F920 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052FA20": {
+    "name": "Primitives::Marker::vfunc_20",
+    "class": "Primitives::Marker",
+    "signature": "void fn_0052FA20(const void* self, float* out)",
+    "summary": "Writes a 3-float vector to the out pointer: x = this+0x50, y = z = 0 (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0052FB60": {
     "name": "Primitives::Hinge::vfunc_20",
     "class": "Primitives::Hinge",
