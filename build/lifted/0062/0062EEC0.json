@@ -1,0 +1,94 @@
+{
+  "va": "0x0062EEC0",
+  "size": 561,
+  "orig_symbol": "Sensors::CompoundSensorFrontalPlane::vfunc_27",
+  "src_path": "src/Sensors/CompoundSensorFrontalPlane.cpp",
+  "lifted_path": "lifted/Sensors/CompoundSensorFrontalPlane.cpp",
+  "name": "Sensors::CompoundSensorFrontalPlane::vfunc_27",
+  "class": "Sensors::CompoundSensorFrontalPlane",
+  "signature": "extern \"C\" const void* __thiscall ext_005B6930(void* self);   // sub_005B6930: returns const float[3]* namespace",
+  "summary": "Takes the first two vectors from the child-sensor array at +0x2c, caches them at +0x78..+0x8c, then derives four plane coefficients (doubles at +0x58..+0x70) from the normal of (a,b) and the vector from ext_005B6930(+0x38).",
+  "fields": [
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x30",
+      "type": "void**",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x60",
+      "type": "double",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x68",
+      "type": "double",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x70",
+      "type": "double",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x88",
+      "type": "float",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Sensors::CompoundSensorFrontalPlane",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:22:20Z"
+}

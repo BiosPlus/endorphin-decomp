@@ -8873,6 +8873,13 @@
     "summary": "RTTI-checked cast of self to the CompoundSensorPlanes::checkDistance FunctionType descriptor; returns the cast pointer or NULL.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x0062EEC0": {
+    "name": "Sensors::CompoundSensorFrontalPlane::vfunc_27",
+    "class": "Sensors::CompoundSensorFrontalPlane",
+    "signature": "extern \"C\" const void* __thiscall ext_005B6930(void* self);   // sub_005B6930: returns const float[3]* namespace",
+    "summary": "Takes the first two vectors from the child-sensor array at +0x2c, caches them at +0x78..+0x8c, then derives four plane coefficients (doubles at +0x58..+0x70) from the normal of (a,b) and the vector from ext_005B6930(+0x38).",
+    "lifted_path": "lifted/Sensors/CompoundSensorFrontalPlane.cpp"
+  },
   "0x00630C90": {
     "name": "EffectorSkeletal::vfunc_31",
     "class": "EffectorSkeletal",
