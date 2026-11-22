@@ -4387,6 +4387,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CCD70": {
+    "name": "ExprParser::Method0Type\u003cMetaBodyConstraintData, fireDisable\u003e::vfunc_3",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
+    "signature": "bool fn_004CCD70(void* self)",
+    "summary": "Loads the first dword of the object pointed to by the stack argument, passes it to ext_004CCB00 (fireDisable helper), and returns false.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CCD80": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
