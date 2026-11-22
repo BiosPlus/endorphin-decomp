@@ -6468,10 +6468,10 @@
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x005A9960": {
-    "name": "NMData::BackGroundData::vfunc_1",
+    "name": "NMData::BackGroundData::vfunc_6",
     "class": "NMData::BackGroundData",
-    "signature": "void fn_005A9960(void* arg)",
-    "summary": "Stdcall (ret 4) thunk: forwards its single argument to ext_005A7FA0 together with a zero flag.",
+    "signature": "std::string* fn_005A98F0(void* self, std::string* out)",
+    "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
   "0x005A9C80": {

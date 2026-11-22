@@ -4,11 +4,25 @@
   "orig_symbol": "NMData::BackGroundData::vfunc_1",
   "src_path": "src/NMData/BackGroundData.cpp",
   "lifted_path": "lifted/NMData/BackGroundData.cpp",
-  "name": "NMData::BackGroundData::vfunc_1",
+  "name": "NMData::BackGroundData::vfunc_6",
   "class": "NMData::BackGroundData",
-  "signature": "void fn_005A9960(void* arg)",
-  "summary": "Stdcall (ret 4) thunk: forwards its single argument to ext_005A7FA0 together with a zero flag.",
+  "signature": "std::string* fn_005A98F0(void* self, std::string* out)",
+  "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4DC",
+      "type": "float",
+      "name": "field_0x4dc"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:43:04Z"
+  "lifted_at": "2026-11-22T07:44:00Z"
 }
