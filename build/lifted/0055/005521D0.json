@@ -1,0 +1,22 @@
+{
+  "va": "0x005521D0",
+  "size": 13,
+  "orig_symbol": "NMCamera::Perspective::vfunc_3",
+  "src_path": "src/NMCamera/auto_tiny.cpp",
+  "lifted_path": "lifted/NMCamera/auto_tiny.cpp",
+  "name": "NMCamera::Perspective::vfunc_3",
+  "class": "NMCamera::Perspective",
+  "signature": "void fn_005521D0(void* self, double value)",
+  "summary": "Stores the double argument (passed on the stack) into the Perspective object at +0xF8.",
+  "fields": [
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xF8",
+      "type": "double",
+      "name": "field_0xF8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:13:08Z"
+}
