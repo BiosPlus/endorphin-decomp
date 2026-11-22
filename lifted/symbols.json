@@ -5903,6 +5903,13 @@
     "summary": "Constructs a std::string in the caller-supplied buffer from the literal pointer in mem_00A9F1E8.",
     "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
   },
+  "0x00584FD0": {
+    "name": "NMData::RPROJointData::vfunc_59",
+    "class": "NMData::RPROJointData",
+    "signature": "std::string* fn_00584FD0(void* self, std::string* out)",
+    "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9F1E4; this is unused.",
+    "lifted_path": "lifted/NMData/RPROJointData.cpp"
+  },
   "0x00585000": {
     "name": "sub_00585000",
     "signature": "extern \"C\" void fn_00585000(void)",
