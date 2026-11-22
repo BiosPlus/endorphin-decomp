@@ -117,3 +117,87 @@ float fn_0066BD40(void* self, void* arg) {
 
     return value;
 }
+
+// [0x0066BF10] ExprParser::SubComponentType::vfunc_0 (134 bytes)
+// @name ExprParser::SubComponentType::vfunc_0
+// @class ExprParser::SubComponentType
+// @summary Calls the sub-component's vfunc_0 and the member's vfunc_0 to fill a two-word out struct, then releases out[1] via its vtable slot 30 when non-null; returns the first stack argument.
+// @field ExprParser::SubComponentType +0x04 void* field_0x04 (sub-component object; vtable slot 0 called)
+// @field ExprParser::SubComponentType +0x08 void* field_0x08 (member object; vtable slot 0 called)
+uint32_t fn_0066BF10(void* self, uint32_t firstArg, uint32_t arg) {
+    // The SEH frame (handler 0x008B33A1, state slot) is compiler-generated
+    // exception bookkeeping with no portable equivalent; it is omitted here.
+    // The original also writes a local flag (esp+4) that is never read; omitted.
+
+    // Two-word out struct shared by both vtable calls (E+8 / E+0xc in the original).
+    // Slot 0 of the sub-component: (out, arg); slot 0 of the member: (firstArg, out).
+    void* out[2] = {nullptr, nullptr};
+
+    // Sub-component call: sub->vt[0](&out, arg).
+    void* sub = lift_field<void*>(self, 4);
+    void** subVt = *static_cast<void***>(sub);
+    auto subGet = reinterpret_cast<void* (__thiscall*)(void* self, void** out, uint32_t arg)>(subVt[0]);
+    subGet(sub, out, arg);
+
+    // Member call: member->vt[0](firstArg, &out).
+    void* member = lift_field<void*>(self, 8);
+    void** memberVt = *static_cast<void***>(member);
+    auto memberGet = reinterpret_cast<void (__thiscall*)(void* self, uint32_t first, void** out)>(memberVt[0]);
+    memberGet(member, firstArg, out);
+
+    // Release out[1] if it was produced: out[1]->vt[30](&out) (offset 0x78).
+    void* released = out[1];
+    if (released != nullptr) {
+        void** relVt = *static_cast<void***>(released);
+        auto release = reinterpret_cast<void (__thiscall*)(void* self, void** out)>(relVt[30]);
+        release(released, out);
+    }
+
+    // The original returns the first stack argument (esi reloaded from esp+0x20).
+    return firstArg;
+}
+
+// [0x0066BFA0] ExprParser::SubComponentType::vfunc_41 (143 bytes)
+// @name ExprParser::SubComponentType::vfunc_41
+// @class ExprParser::SubComponentType
+// @summary Calls vfunc_0 on the +0x04 sub-component, vfunc_41 on the +0x08 member and the sub-component, then releases out[1] via its vfunc_30.
+// @field ExprParser::SubComponentType +0x04 void* field_0x04
+// @field ExprParser::SubComponentType +0x08 void* field_0x08
+
+// Thiscall slot shapes used here (stack arguments only; ecx carries `this`):
+//   (out, arg)   : vtable slots 0 and 41 on the member, and slot 0 on the sub-component.
+//   (first, out) : vtable slot 41 on the sub-component.
+//   (out)        : vtable slot 30 (offset 0x78) on out[1].
+using OutArgFn   = void (__thiscall*)(void* self, void** out, uint32_t arg);
+using FirstOutFn = void (__thiscall*)(void* self, uint32_t first, void** out);
+using ReleaseFn  = void (__thiscall*)(void* self, void** out);
+
+// Reads slot `index` of the vtable of `obj`. Offsets in the original are
+// 4 * index (e.g. 0xA4 -> 41, 0x78 -> 30).
+static inline void* vtable_slot(void* obj, size_t index) {
+    return (*static_cast<void***>(obj))[index];
+}
+
+// The original's MSVC SEH frame (fs:[0] prologue/epilogue) only scaffolds the
+// body; the body has no handlers or destructible locals, so it is omitted.
+void fn_0066BFA0(void* self, uint32_t arg1, uint32_t arg2) {
+    void* sub    = lift_field<void*>(self, 0x04);
+    void* member = lift_field<void*>(self, 0x08);
+
+    // Two-slot out-pair shared by every call (out[0], out[1]).
+    void* out[2] = {nullptr, nullptr};
+
+    // 1) sub->vfunc_0(&out, arg1). Its result is overwritten by step 3.
+    reinterpret_cast<OutArgFn>(vtable_slot(sub, 0))(sub, out, arg1);
+
+    // 2) member->vfunc_41(&out, arg2). Also overwritten by step 3.
+    reinterpret_cast<OutArgFn>(vtable_slot(member, 41))(member, out, arg2);
+
+    // 3) sub->vfunc_41(arg1, &out). This is the value that is kept.
+    reinterpret_cast<FirstOutFn>(vtable_slot(sub, 41))(sub, arg1, out);
+
+    // 4) If out[1] was produced, release it through its vfunc_30.
+    if (out[1] != nullptr) {
+        reinterpret_cast<ReleaseFn>(vtable_slot(out[1], 30))(out[1], out);
+    }
+}

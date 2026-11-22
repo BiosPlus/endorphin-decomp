@@ -1,0 +1,28 @@
+{
+  "va": "0x0066BFA0",
+  "size": 143,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_41",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_41",
+  "class": "ExprParser::SubComponentType",
+  "signature": "static inline void* vtable_slot(void* obj, size_t index)",
+  "summary": "Calls vfunc_0 on the +0x04 sub-component, vfunc_41 on the +0x08 member and the sub-component, then releases out[1] via its vfunc_30.",
+  "fields": [
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:18:34Z"
+}

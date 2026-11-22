@@ -9883,6 +9883,13 @@
     "summary": "Calls vtable slot 0 to fetch a sub-object, queries its vtable slot 3 for a bool, then releases the temporary via vtable slot 30 and returns the bool.",
     "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
   },
+  "0x0066BFA0": {
+    "name": "ExprParser::SubComponentType::vfunc_41",
+    "class": "ExprParser::SubComponentType",
+    "signature": "static inline void* vtable_slot(void* obj, size_t index)",
+    "summary": "Calls vfunc_0 on the +0x04 sub-component, vfunc_41 on the +0x08 member and the sub-component, then releases out[1] via its vfunc_30.",
+    "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
+  },
   "0x0066CBA0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3\u003e::vfunc_16",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
