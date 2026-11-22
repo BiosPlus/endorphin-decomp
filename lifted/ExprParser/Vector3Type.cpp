@@ -7,9 +7,12 @@ void fn_0066D0C0(void* self, void** slot) {
     ext_0066C030(static_cast<char*>(self) + 0x08, *slot);
     *slot = nullptr;
 }
+// Shared zero vector (float[3] at 0x00B5963C) and its lazy-init flag (bit 0 at 0x00B59648).
+extern float mem_00B5963C[3];
+extern uint32_t mem_00B59648;
 
-// [0x0066B530] ExprParser::Vector3Type::vfunc_0 (41 bytes)
-// @name ExprParser::Vector3Type::vfunc_0
+extern float mem_00B5963C[3];
+extern uint32_t mem_00B59648;
 // @class ExprParser::Vector3Type
 // @summary Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.
 // @field ExprParser::Vector3Type +0x00 void* vtable
@@ -56,4 +59,23 @@ void fn_0066B6B0(void* self, void** a1, void* a2) {
     for (int i = 0; i < 3; ++i) {
         dst[i] -= src[i];
     }
+}
+
+// [0x0066B560] ExprParser::Vector3Type::vfunc_5 (57 bytes)
+// @name ExprParser::Vector3Type::vfunc_5
+// @class ExprParser::Vector3Type
+// @summary Returns the float[3] already held in *a1, or lazily initialises and returns the shared zero vector.
+// @field Unknown +0x00 void* field_0x00
+void* fn_0066B560(void* self, void** a1) {
+    (void)self;
+    if (*a1 != nullptr) {
+        return *a1;
+    }
+    if ((mem_00B59648 & 1u) == 0) {
+        mem_00B59648 |= 1u;
+        mem_00B5963C[0] = 0.0f;
+        mem_00B5963C[1] = 0.0f;
+        mem_00B5963C[2] = 0.0f;
+    }
+    return mem_00B5963C;
 }

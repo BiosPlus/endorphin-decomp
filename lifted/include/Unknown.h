@@ -10,6 +10,7 @@ namespace lifted_layout {
 struct Unknown_Fields {
     // +0x0   float*                   field_0x00  (evidence: 0x0066B680, 0x0066B6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0053F894) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x0066B560) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4

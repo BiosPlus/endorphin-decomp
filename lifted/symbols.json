@@ -8259,6 +8259,13 @@
     "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B560": {
+    "name": "ExprParser::Vector3Type::vfunc_5",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void* fn_0066B560(void* self, void** a1)",
+    "summary": "Returns the float[3] already held in *a1, or lazily initialises and returns the shared zero vector.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B680": {
     "name": "ExprParser::Vector3Type::vfunc_43",
     "class": "ExprParser::Vector3Type",
