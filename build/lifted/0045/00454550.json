@@ -1,0 +1,14 @@
+{
+  "va": "0x00454550",
+  "size": 6,
+  "orig_symbol": "CSizingControlBarCF::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CSizingControlBarCF::vfunc_0",
+  "class": "CSizingControlBarCF",
+  "signature": "extern \"C\" const void* __fastcall fn_00454550(void* self)",
+  "summary": "Returns the address of the read-only global mem_009362B4 (0x009362B4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:53:51Z"
+}

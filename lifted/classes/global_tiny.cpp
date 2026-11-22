@@ -308,3 +308,14 @@ int* fn_00454B60(void* self) {
     (void)self;
     return &mem_009364A0;
 }
+
+// [0x00454550] CSizingControlBarCF::vfunc_0
+#include "lift_compat.h"
+
+// @name CSizingControlBarCF::vfunc_0
+// @class CSizingControlBarCF
+// @summary Returns the address of the read-only global mem_009362B4 (0x009362B4).
+extern "C" const void* __fastcall fn_00454550(void* self) {
+    (void)self;
+    return reinterpret_cast<const void*>(0x009362B4u);
+}
