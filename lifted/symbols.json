@@ -7541,6 +7541,13 @@
     "summary": "If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E29F0": {
+    "name": "NMData::FixedPathJointData::vfunc_14",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void* fn_005E29F0(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Dispatches on the request code: for codes 0x40/0x137 (and 0x158 via the second slot) forwards arg1 to sub_00661650 with a non-zero stored value, otherwise defers to AxisDefineSensorData::vfunc_14; always returns arg1.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E2A50": {
     "name": "NMData::SkeletalJointData::vfunc_14",
     "class": "NMData::SkeletalJointData",

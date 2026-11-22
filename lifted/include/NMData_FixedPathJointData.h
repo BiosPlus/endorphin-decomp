@@ -12,6 +12,8 @@ namespace lifted_layout {
 struct NMData_FixedPathJointData_Fields {
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E0E70)
     // +0x140 int32_t field_0x140 (non-zero disables the function)  (evidence: 0x005E0E70)
+    // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E29F0)
+    // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E29F0)
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
 };
 } // namespace lifted_layout

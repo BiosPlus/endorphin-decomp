@@ -4,10 +4,14 @@
 #include <string>
 // C string literal at VA 0x0096B92C.
 extern "C" const char mem_0096B92C[];
+// Known callee 0x0058F6B0: NMData::AxisDefineSensorData::vfunc_14 (self, arg1, arg2); returns arg1 in the default path.
+extern "C" void* ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+// Known callee 0x00661650: sub_00661650 (35B, thiscall-style: this = arg1, one stack argument).
+extern "C" void ext_00661650(void* self, uint32_t value);
 
-// [0x005EFF60] NMData::FixedPathJointData::vfunc_59 (34 bytes)
-// @name NMData::FixedPathJointData::vfunc_59
-// @class NMData::FixedPathJointData
+extern "C" void* ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+// Known callee 0x00661650: sub_00661650 (35B, thiscall-style: this = arg1, one stack argument).
+extern "C" void ext_00661650(void* self, uint32_t value);
 // @summary Constructs a std::string from the literal at 0x0096B92C in the caller's sret buffer and returns that buffer.
 void* __thiscall fn_005EFF60(void* self, void* out) {
     (void)self;
@@ -56,4 +60,33 @@ void __fastcall NMData_FixedPathJointData_vfunc_0_off_154(void* ecx, std::uint32
     void** objVptr = *reinterpret_cast<void***>(obj);
     auto forwardFn = reinterpret_cast<SlotSetFn>(objVptr[0xAC / sizeof(void*)]);
     forwardFn(obj, result);
+}
+
+// [0x005E29F0]
+// @name NMData::FixedPathJointData::vfunc_14
+// @class NMData::FixedPathJointData
+// @summary Dispatches on the request code: for codes 0x40/0x137 (and 0x158 via the second slot) forwards arg1 to sub_00661650 with a non-zero stored value, otherwise defers to AxisDefineSensorData::vfunc_14; always returns arg1.
+// @field NMData::FixedPathJointData +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)
+// @field NMData::FixedPathJointData +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)
+void* fn_005E29F0(void* self, void* arg1, uint32_t arg2) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t v = 0;
+    bool useTail = false;
+
+    if (arg2 == 0x40u || arg2 == 0x137u) {
+        v = *reinterpret_cast<uint32_t*>(base + 0x17C);
+        useTail = (v != 0);
+    }
+    if (!useTail && (arg2 == 0x40u || arg2 == 0x137u || arg2 == 0x158u)) {
+        v = *reinterpret_cast<uint32_t*>(base + 0x180);
+        useTail = (v != 0);
+    }
+
+    if (useTail) {
+        ext_00661650(arg1, v);
+        return arg1;
+    }
+
+    ext_0058F6B0(self, arg1, arg2);
+    return arg1;
 }
