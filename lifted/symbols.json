@@ -8580,6 +8580,13 @@
     "summary": "Constructs a std::string from the literal at 0x0097778C in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
     "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
   },
+  "0x00626850": {
+    "name": "NMData::EffectorSkeletalData::vfunc_20",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "void* fn_00626850(void* self, void* dst, int unused_arg)",
+    "summary": "Builds into the caller's result slot (first stack argument) the std::string concatenation: literal at 0x009777A0 + this-\u003efield_0x04 + literal at 0x0093BF0C, and returns that slot. The second stack argument is unused.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x006268F0": {
     "name": "sub_006268F0",
     "signature": "extern \"C\" void __fastcall fn_006268F0(void* self)",
