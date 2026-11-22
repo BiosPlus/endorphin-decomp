@@ -76,9 +76,12 @@ float fn_0060A150(void* self) {
     ext_00493D90(vtbl);
     return 0.0f;
 }
+// AddCharacterDialog::vfunc_3 (1B stub), called with the target object.
+extern "C" void ext_00493D90(void* self);
+// Helper sub_006720C0 (thiscall: ECX = object, one stack int arg).
 
-// [0x0048B050] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_1 (16 bytes)
-// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_1
+extern "C" void ext_00493D90(void* self);
+// Helper sub_006720C0 (thiscall: ECX = object, one stack int arg).
 // @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>
 // @summary Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_1).
 extern "C" float __stdcall fn_0048B050(void* self) {
@@ -86,9 +89,12 @@ extern "C" float __stdcall fn_0048B050(void* self) {
     ext_0048A9F0(target);
     return 0.0f;
 }
+// AddCharacterDialog::vfunc_3 (1B stub), called with the target object.
+void ext_00493D90(void* self);
+// Helper sub_006720C0 (thiscall: ECX = object, one stack int arg).
 
-// [0x004CCCB0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_1 (16 bytes)
-// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_1
+void ext_00493D90(void* self);
+// Helper sub_006720C0 (thiscall: ECX = object, one stack int arg).
 // @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>
 // @summary Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_1).
 extern "C" float __stdcall fn_004CCCB0(void* self) {
@@ -253,6 +259,19 @@ void* fn_00489540(void* unused, void* out) {
     (void)unused;
     void* target = lift_field<void*>(out, 0x00);
     ext_004CA560(target);
+    ext_006720C0(out, 0);
+    return out;
+}
+
+// [0x0060A040] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_0 (41 bytes)
+// @name ExprParser::Method0Type<NMData::DisabledCollisionPairList, addSelectedCollisionModels>::vfunc_0
+// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+// @summary Stdcall (ret 8) thunk: passes the target pointer stored in the out-param to ext_00493D90, runs ext_006720C0 on the out-param with flag 0, and returns the out-param.
+// @field ExprParser::Method0Type +0x00 void* field_0x00
+void* fn_0060A040(void* unused, void* out) {
+    (void)unused;
+    void* target = lift_field<void*>(out, 0x00);
+    ext_00493D90(target);
     ext_006720C0(out, 0);
     return out;
 }
