@@ -503,6 +503,13 @@
     "summary": "This-adjustor thunk: rebases this by -0xC (to the primary base subobject) and tail-forwards to vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CE8C0": {
+    "name": "NMData::IncarnationEventData::vfunc_88",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void fn_004CE8C0(void* self)",
+    "summary": "Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0053B790": {
     "name": "Primitives::Marker::vfunc_30",
     "class": "Primitives::Marker",

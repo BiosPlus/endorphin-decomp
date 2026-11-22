@@ -34,3 +34,23 @@ extern "C" void __fastcall fn_006744A0(void* self) {
     ForwardFn target = reinterpret_cast<ForwardFn>(static_cast<uintptr_t>(mem_00924FDC));
     target(adjusted);
 }
+
+// [0x004CE8C0] NMData::IncarnationEventData::vfunc_88 (10 bytes)
+// @name NMData::IncarnationEventData::vfunc_88
+// @class NMData::IncarnationEventData
+// @summary Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.
+// @field NMData::IncarnationEventData +0x00 void* vtable
+
+// Forwarding target signature: the original thunk does not know or touch the
+// callee's arguments; it only swaps in the vtable slot and jumps. The C++
+// stand-in takes only `self`, so the callee's extra arguments are not forwarded.
+typedef void (*VirtualForwardFn)(void* self);
+
+void fn_004CE8C0(void* self) {
+    // vtable pointer is the first dword of the object.
+    char* vtable = *reinterpret_cast<char**>(self);
+    // Slot at byte offset 0x158 inside the vtable.
+    VirtualForwardFn target =
+        *reinterpret_cast<VirtualForwardFn*>(vtable + 0x158);
+    target(self);
+}

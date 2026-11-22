@@ -1,0 +1,22 @@
+{
+  "va": "0x004CE8C0",
+  "size": 10,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_88",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_88",
+  "class": "NMData::IncarnationEventData",
+  "signature": "void fn_004CE8C0(void* self)",
+  "summary": "Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:06:37Z"
+}
