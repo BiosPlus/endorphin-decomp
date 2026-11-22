@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B0A0",
+  "size": 13,
+  "orig_symbol": "ExprParser::RealType::vfunc_7",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::RealType::vfunc_7",
+  "class": "ExprParser::RealType",
+  "signature": "void fn_0066B0A0(void* self, float value)",
+  "summary": "Stores a float value into the object's float slot at +0x00 (RealType setter).",
+  "fields": [
+    {
+      "class": "ExprParser::RealType",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:13:24Z"
+}

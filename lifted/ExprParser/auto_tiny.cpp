@@ -93,3 +93,12 @@ void* fn_006992D0(void* self) {
     void** vtbl = *reinterpret_cast<void***>(self);
     return vtbl[2];
 }
+
+// [0x0066B0A0] ExprParser::RealType::vfunc_7 (13 bytes)
+// @name ExprParser::RealType::vfunc_7
+// @class ExprParser::RealType
+// @summary Stores a float value into the object's float slot at +0x00 (RealType setter).
+// @field ExprParser::RealType +0x00 float field_0x00
+void fn_0066B0A0(void* self, float value) {
+    *static_cast<float*>(self) = value;
+}

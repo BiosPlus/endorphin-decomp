@@ -819,6 +819,13 @@
     "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066B0A0": {
+    "name": "ExprParser::RealType::vfunc_7",
+    "class": "ExprParser::RealType",
+    "signature": "void fn_0066B0A0(void* self, float value)",
+    "summary": "Stores a float value into the object's float slot at +0x00 (RealType setter).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BA30": {
     "name": "ExprParser::ExtROType::vfunc_38",
     "class": "ExprParser::ExtROType",
