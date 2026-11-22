@@ -7196,6 +7196,13 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::HingeLimit\u003e object (getLowerDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061A530": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit\u003e::vfunc_16 (NMData::TwistAndSwingLimit::getLinearDamping)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e",
+    "signature": "void* fn_0061A530(void* self)",
+    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::TwistAndSwingLimit\u003e object (getLinearDamping), else NULL; identity for valid objects.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0061D370": {
     "name": "NMData::HingeConstraint::vfunc_1_off_C",
     "class": "NMData::HingeConstraint",
