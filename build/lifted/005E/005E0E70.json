@@ -1,0 +1,28 @@
+{
+  "va": "0x005E0E70",
+  "size": 63,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_0_off_154",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_0_off_154",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void __fastcall NMData_FixedPathJointData_vfunc_0_off_154(void* ecx, std::uint32_t arg)",
+  "summary": "If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0xE0",
+      "type": "void* field_0xe0 (object pointer; its vtable slot at +0xAC is",
+      "name": "called)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x140",
+      "type": "int32_t field_0x140 (non-zero disables the",
+      "name": "function)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:55Z"
+}

@@ -7373,6 +7373,13 @@
     "summary": "Calls virtual slot 55 (0xDC) on self for indices 0..5 and returns how many calls returned true.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
+  "0x005E0E70": {
+    "name": "NMData::FixedPathJointData::vfunc_0_off_154",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void __fastcall NMData_FixedPathJointData_vfunc_0_off_154(void* ecx, std::uint32_t arg)",
+    "summary": "If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E2A50": {
     "name": "NMData::SkeletalJointData::vfunc_14",
     "class": "NMData::SkeletalJointData",
