@@ -5013,7 +5013,7 @@
   "0x00528540": {
     "name": "Interpolator::Const::vfunc_3",
     "class": "Interpolator::Const",
-    "signature": "[[noreturn]] static void invalid_parameter()",
+    "signature": "float fn_00528540(void* self, const void* table, const void* at, uint32_t extra)",
     "summary": "Checks that `at` lies before the table end (table+0x8) and returns the float at at+0x4.",
     "lifted_path": "lifted/Interpolator/Const.cpp"
   },
