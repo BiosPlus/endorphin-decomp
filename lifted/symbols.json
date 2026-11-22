@@ -1714,6 +1714,13 @@
     "summary": "Loads a float through the pointer argument and stores it at this+0x60 (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053C980": {
+    "name": "Primitives::Sensor2::vfunc_20",
+    "class": "Primitives::Sensor2",
+    "signature": "float* fn_0053C980(void* self, float* out)",
+    "summary": "Writes a 3-float vector {field_0x60, 0, 0} to the caller-supplied out buffer and returns it.",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0053CA40": {
     "name": "Primitives::Sphyl::vfunc_0",
     "class": "Primitives::Sphyl",

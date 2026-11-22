@@ -261,3 +261,17 @@ void fn_0052FA20(const void* self, float* out) {
     out[1] = 0.0f;
     out[2] = 0.0f;
 }
+
+// [0x0053C980] Primitives::Sensor2::vfunc_20 (20 bytes)
+// @name Primitives::Sensor2::vfunc_20
+// @class Primitives::Sensor2
+// @summary Writes a 3-float vector {field_0x60, 0, 0} to the caller-supplied out buffer and returns it.
+// @field Primitives::Sensor2 +0x60 float field_0x60
+float* fn_0053C980(void* self, float* out) {
+    float v;
+    std::memcpy(&v, static_cast<const unsigned char*>(self) + 0x60, sizeof v);
+    out[0] = v;
+    out[1] = 0.0f;
+    out[2] = 0.0f;
+    return out;
+}
