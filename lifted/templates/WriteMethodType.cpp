@@ -17,6 +17,7 @@ void fn_00604C40(void* self, void* arg) {
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x18 / 4])(sub, arg);
     ext_006036A0(target, value);
 }
+extern "C" void ext_0064DDE0(void* self, uint32_t value);
 
 // [0x00594520] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_41 (37 bytes)
 // @name ExprParser::WriteMethodType<World, float, setFriction>::vfunc_41
@@ -32,4 +33,21 @@ void __stdcall fn_00594520(void* a1, void* a2) {
     auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
     float value = getFloat(reader, a2);
     ext_005940A0(target, value);
+}
+
+// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
+// @summary Evaluates an NM::Vector3 const& address from the source value via its type vtable slot +0x14 and calls SkeletalJoint::setDriveAngularVel (ext_0064DDE0) on the target joint.
+// @field TargetWrapper +0x00 void* field_0x00
+// @field ValueWrapper +0x04 void* field_0x04
+void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr) {
+    (void)self;
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    void* typeObj = lift_field<void*>(valuePtr, 0x04);
+    void** vtable = lift_field<void**>(typeObj, 0x00);
+    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
+    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
+    uint32_t value = getVec3(typeObj, valuePtr);
+    ext_0064DDE0(target, value);
 }

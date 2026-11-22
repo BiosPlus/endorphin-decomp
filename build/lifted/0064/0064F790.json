@@ -1,0 +1,28 @@
+{
+  "va": "0x0064F790",
+  "size": 34,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr)",
+  "summary": "Evaluates an NM::Vector3 const\u0026 address from the source value via its type vtable slot +0x14 and calls SkeletalJoint::setDriveAngularVel (ext_0064DDE0) on the target joint.",
+  "fields": [
+    {
+      "class": "TargetWrapper",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ValueWrapper",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-carbon@low",
+  "lifted_at": "2026-11-22T08:19:59Z"
+}
