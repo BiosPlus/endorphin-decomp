@@ -398,3 +398,20 @@ void __stdcall fn_00699070(void** dst, void* const* src) {
 extern "C" uint32_t __stdcall fn_0067A690(const uint32_t* self, const uint32_t* other) {
     return (self[0] == other[0]) ? 1u : 0u;
 }
+
+// [0x0066BB70] ExprParser::ExtROType::vfunc_13 (21 bytes)
+// @name ExprParser::ExtROType::vfunc_13
+// @class ExprParser::ExtROType
+// @summary Returns the field at +0x04 of the inner object at (*arg)+0x00, or 0 if arg is null.
+// @field ExprParser::ExtROType +0x00 void* inner
+// @field ? +0x04 uint32_t field_0x04   (accessed on the inner object; owning class not yet established)
+
+// Original: mov eax,[esp+4]; test eax,eax; je null; mov eax,[eax]; mov eax,[eax+4]; ret 4
+// null: xor eax,eax; ret 4
+uint32_t fn_0066BB70(void* self) {
+    if (self == nullptr) {
+        return 0;
+    }
+    void* inner = *reinterpret_cast<void**>(self);                                  // self +0x00
+    return *reinterpret_cast<uint32_t*>(static_cast<char*>(inner) + 0x04);          // inner +0x04
+}

@@ -3017,6 +3017,13 @@
     "summary": "Forwards the object pointer to ExprParser::ExtROType helper at 0x00672000.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066BB70": {
+    "name": "ExprParser::ExtROType::vfunc_13",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t fn_0066BB70(void* self)",
+    "summary": "Returns the field at +0x04 of the inner object at (*arg)+0x00, or 0 if arg is null.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BB90": {
     "name": "ExprParser::VPtrProxyType::vfunc_37",
     "class": "ExprParser::VPtrProxyType",

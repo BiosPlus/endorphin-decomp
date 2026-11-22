@@ -1,0 +1,28 @@
+{
+  "va": "0x0066BB70",
+  "size": 21,
+  "orig_symbol": "ExprParser::ExtROType::vfunc_13",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExtROType::vfunc_13",
+  "class": "ExprParser::ExtROType",
+  "signature": "uint32_t fn_0066BB70(void* self)",
+  "summary": "Returns the field at +0x04 of the inner object at (*arg)+0x00, or 0 if arg is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ExtROType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "?",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (accessed on the inner object; owning class not yet",
+      "name": "established)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:51Z"
+}
