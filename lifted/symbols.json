@@ -5096,6 +5096,13 @@
     "summary": "Secondary-base thunk: adjusts this by -8 and forwards to sub_0050D7C0, then pops the 8-byte stack argument block.",
     "lifted_path": "lifted/NMData/TaskManager.cpp"
   },
+  "0x0050E0A0": {
+    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::TaskManager, randomizeTasks\u003e::vfunc_41",
+    "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::TaskManager, {public: void __thiscall NMData::TaskManager::randomizeTasks(void), 0}\u003e",
+    "signature": "void fn_0050E0A0(void* self)",
+    "summary": "Loads the target object pointer from the first argument's leading dword and forwards it to the shared method-invoke helper (randomizeTasks path); pops 8 bytes of stack args.",
+    "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
+  },
   "0x0050E4C0": {
     "name": "NMData::PopulationData::vfunc_0",
     "class": "NMData::PopulationData",

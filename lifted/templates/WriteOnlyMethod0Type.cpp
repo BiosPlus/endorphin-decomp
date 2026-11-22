@@ -26,6 +26,7 @@ void fn_00516B10(void* proxy, void* unused) {
     void* target = *static_cast<void**>(proxy);
     ext_00516890(target);
 }
+extern "C" void ext_0050DBE0(void* thisPtr);
 
 // [0x00516B20] ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::evaluateCurrentIndividual(void)>::vfunc_41 (14 bytes)
 // @name ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::evaluateCurrentIndividual(void)>::vfunc_41
@@ -35,4 +36,15 @@ void fn_00516B20(void* proxy, void* unused) {
     (void)unused;
     void* target = *static_cast<void**>(proxy);
     ext_00516980(target);
+}
+
+// [0x0050E0A0] ExprParser::WriteOnlyMethod0Type<NMData::TaskManager, {public: void __thiscall NMData::TaskManager::randomizeTasks(void), 0}>::vfunc_41 (14 bytes)
+// @name ExprParser::WriteOnlyMethod0Type<NMData::TaskManager, randomizeTasks>::vfunc_41
+// @class ExprParser::WriteOnlyMethod0Type<NMData::TaskManager, {public: void __thiscall NMData::TaskManager::randomizeTasks(void), 0}>
+// @summary Loads the target object pointer from the first argument's leading dword and forwards it to the shared method-invoke helper (randomizeTasks path); pops 8 bytes of stack args.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_0050E0A0(void* self) {
+    void** argSlot = reinterpret_cast<void**>(self);
+    void* thisPtr = argSlot[0];
+    ext_0050DBE0(thisPtr);
 }

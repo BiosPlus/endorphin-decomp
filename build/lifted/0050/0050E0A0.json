@@ -1,0 +1,22 @@
+{
+  "va": "0x0050E0A0",
+  "size": 14,
+  "orig_symbol": "ExprParser::WriteOnlyMethod0Type\u003cNMData::TaskManager, {public: void __thiscall NMData::TaskManager::randomizeTasks(void), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteOnlyMethod0Type.cpp",
+  "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp",
+  "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::TaskManager, randomizeTasks\u003e::vfunc_41",
+  "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::TaskManager, {public: void __thiscall NMData::TaskManager::randomizeTasks(void), 0}\u003e",
+  "signature": "void fn_0050E0A0(void* self)",
+  "summary": "Loads the target object pointer from the first argument's leading dword and forwards it to the shared method-invoke helper (randomizeTasks path); pops 8 bytes of stack args.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:25Z"
+}
