@@ -6751,6 +6751,13 @@
     "summary": "Forwards a string argument's c_str() to a virtual method on the object at NMCIO+0x418, after first calling ext_006619D0 on the object at NMCIO+0x420 with its member's +0xCC sub-object.",
     "lifted_path": "lifted/classes/NMCIO.cpp"
   },
+  "0x0056DA30": {
+    "name": "BVHIO::vfunc_3",
+    "class": "BVHIO",
+    "signature": "void* __thiscall fn_0056DA30(void* self, void* arg0)",
+    "summary": "Formats or resolves a path/string using sub_00640390 and delegates to NMFileIO::vfunc_3, returning arg0.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
   "0x005731A0": {
     "name": "OBJIO::vfunc_3",
     "class": "OBJIO",
