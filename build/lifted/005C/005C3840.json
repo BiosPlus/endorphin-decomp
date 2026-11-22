@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3840",
+  "size": 71,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_6_off_C",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_6_off_C",
+  "class": "NMData::CollisionModelData",
+  "signature": "void __thiscall fn_005C3840(void* self, float* out_vec4)",
+  "summary": "Queries OglRenderer::vfunc_118 on field_0x150 and writes vec3 with w=0.0f to output",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x150",
+      "type": "void*",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T07:45:32Z"
+}
