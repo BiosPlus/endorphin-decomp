@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::HingeConstraint:
 namespace lifted_layout {
 struct NMData_HingeConstraint_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x006116B0)
+    // +0x0   void**                   vtable  (evidence: 0x006116B0, 0x00611740)
 };
 } // namespace lifted_layout

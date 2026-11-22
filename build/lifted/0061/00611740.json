@@ -1,0 +1,22 @@
+{
+  "va": "0x00611740",
+  "size": 47,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_67",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::getValueAtIndex",
+  "class": "NMData::HingeConstraint",
+  "signature": "float fn_00611740(void* self, int32_t index)",
+  "summary": "When index \u003c 1, calls virtual slot 68 (offset 0x110) to obtain a float array and returns element[index]; otherwise returns 0.0.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:45Z"
+}

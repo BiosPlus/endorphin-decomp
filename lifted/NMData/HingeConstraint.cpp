@@ -13,3 +13,18 @@ void fn_006116B0(void* self, int32_t index, float value) {
         reinterpret_cast<void (*)(void*, const float*)>(vtbl[0xF4 / 4])(self, vec);
     }
 }
+
+// [0x00611740] NMData::HingeConstraint::vfunc_67 (47 bytes)
+// @name NMData::HingeConstraint::getValueAtIndex
+// @class NMData::HingeConstraint
+// @summary When index < 1, calls virtual slot 68 (offset 0x110) to obtain a float array and returns element[index]; otherwise returns 0.0.
+// @field NMData::HingeConstraint +0x00 void** vtable
+float fn_00611740(void* self, int32_t index) {
+    if (index < 1) {
+        float scratch[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+        void** vtbl = *reinterpret_cast<void***>(self);
+        float* arr = reinterpret_cast<float* (*)(void*, void*)>(vtbl[0x110 / 4])(self, scratch);
+        return arr[index];
+    }
+    return 0.0f;
+}

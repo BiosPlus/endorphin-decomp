@@ -7672,6 +7672,13 @@
     "summary": "When index \u003c 1, forwards the vector (value, 0, 0) to virtual slot 61 (offset 0xF4) on self.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x00611740": {
+    "name": "NMData::HingeConstraint::getValueAtIndex",
+    "class": "NMData::HingeConstraint",
+    "signature": "float fn_00611740(void* self, int32_t index)",
+    "summary": "When index \u003c 1, calls virtual slot 68 (offset 0x110) to obtain a float array and returns element[index]; otherwise returns 0.0.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x00611C90": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
