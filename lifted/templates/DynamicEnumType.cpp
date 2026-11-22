@@ -183,6 +183,15 @@ void DynamicEnumType_vfunc_9(void* thisptr, DynEnumVfunc9Arg* arg1, void* arg2) 
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
+
+// [0x004D3E20]
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (returns null on failure).
+void* fn_004D3E20(void* self) {
+    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
+}
 
 // [0x00515850]
 // @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions,...>::vfunc_16
@@ -202,12 +211,4 @@ void* fn_00515850(void* self, void* obj) {
 // which has no portable equivalent; the cast succeeds for a valid self, so it returns self.
 void* fn_005C4870(void* self) {
     return self;
-}
-
-// [0x004D3E20]
-// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::RigEventData>
-// @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (returns null on failure).
-void* fn_004D3E20(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
 }
