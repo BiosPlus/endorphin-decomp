@@ -291,5 +291,7 @@
     "0x0076915E",
     "0x00769171"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T04:01:22Z"
 }
