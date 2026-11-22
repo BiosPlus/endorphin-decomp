@@ -6215,6 +6215,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0065F440 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0059E9B0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)",
+    "class": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+    "signature": "void fn_0059E9B0(void* arg)",
+    "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0059EB40": {
     "name": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData\u003e::vfunc_16",
     "class": "ExprParser::ROWriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0059E9B0",
+  "size": 13,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_13",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)",
+  "class": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+  "signature": "void fn_0059E9B0(void* arg)",
+  "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:32Z"
+}

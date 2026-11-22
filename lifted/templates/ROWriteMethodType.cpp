@@ -124,26 +124,6 @@ extern "C" int mem_00A9BDC8;
 // single stack argument sits directly after the selector, so it is passed through as the second parameter.
 
 // single stack argument sits directly after the selector, so it is passed through as the second parameter.
-// @name ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)
-// @class ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
-// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).
-// No object fields are accessed directly.
-void fn_0059E9B0(void* arg) {
-    ext_00671100(22, arg);
-}
-// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
-// single stack argument sits directly after the selector, so it is passed through as the second parameter.
-
-// single stack argument sits directly after the selector, so it is passed through as the second parameter.
-// @name ExprParser::ROWriteMethodType::vfunc_13 (NM::Vector3::convertEtoTS)
-// @class ExprParser::ROWriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const &)>
-// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 4 (dispatcher not yet lifted).
-// No object fields are accessed directly.
-void fn_0064F830(void* arg) {
-    ext_00671100(4, arg);
-}
-
-// [0x005F35A0] ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_16 (30 bytes)
 // @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorGroup vcall 84)
 // @class ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
 // @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
@@ -200,4 +180,13 @@ void* fn_0064F1F0(void* self) {
 // No object fields are accessed directly.
 void fn_0051A4D0(void* arg) {
     ext_00671100(8, arg);
+}
+
+// [0x0059E9B0] ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_13 (13 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)
+// @class ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
+// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).
+// No object fields are accessed directly.
+void fn_0059E9B0(void* arg) {
+    ext_00671100(22, arg);
 }
