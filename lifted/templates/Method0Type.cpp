@@ -549,3 +549,18 @@ void fn_0048B150(void* proxy, void* unused) {
     void* target = *static_cast<void**>(proxy);
     ext_0048ABB0(target);
 }
+
+// [0x0048B0B0]
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, capturePoseForBlend>::vfunc_41
+// @class ExprParser::Method0Type
+// @summary Reads the first dword of the stack-supplied object and forwards it to helper sub_0048A9F0; pops 8 bytes on return.
+// @field ExprParser::Method0Type +0x00 void* field_0x00
+
+// Helper at 0x0048A9F0 consumes the value passed in ECX (thiscall-style).
+extern void ext_0048A9F0(void* ecx_this);
+
+void fn_0048B0B0(void* a1, uint32_t a2) {
+    (void)a2;
+    void* ecx = *reinterpret_cast<void**>(a1);
+    ext_0048A9F0(ecx);
+}

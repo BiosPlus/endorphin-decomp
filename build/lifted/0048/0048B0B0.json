@@ -1,0 +1,22 @@
+{
+  "va": "0x0048B0B0",
+  "size": 14,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, capturePoseForBlend\u003e::vfunc_41",
+  "class": "ExprParser::Method0Type",
+  "signature": "void fn_0048B0B0(void* a1, uint32_t a2)",
+  "summary": "Reads the first dword of the stack-supplied object and forwards it to helper sub_0048A9F0; pops 8 bytes on return.",
+  "fields": [
+    {
+      "class": "ExprParser::Method0Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:12Z"
+}
