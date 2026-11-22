@@ -76,3 +76,13 @@ void* fn_0062A0F0(void* self) {
 void* fn_0062A560(void* self) {
     return self;
 }
+
+// [0x00630CE0] ExprParser::ROWriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorSkeletal vcall 60)
+// @class ExprParser::ROWriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A947D0), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_00630CE0(void* self) {
+    return self;
+}

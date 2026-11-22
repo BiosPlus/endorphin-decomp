@@ -7382,6 +7382,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B10B0 (Geometry::FrustumType::vfunc_2).",
     "lifted_path": "lifted/classes/EffectorSkeletal.cpp"
   },
+  "0x00630CE0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorSkeletal vcall 60)",
+    "class": "ExprParser::ROWriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e",
+    "signature": "void* fn_00630CE0(void* self)",
+    "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0063DFF4": {
     "name": "thunk_GLU32_gluErrorString",
     "signature": "extern \"C\" void fn_0063DFF4(void)",

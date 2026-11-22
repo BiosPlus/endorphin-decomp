@@ -1,0 +1,14 @@
+{
+  "va": "0x00630CE0",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e::vfunc_16",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorSkeletal vcall 60)",
+  "class": "ExprParser::ROWriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e",
+  "signature": "void* fn_00630CE0(void* self)",
+  "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:37:11Z"
+}
