@@ -27328,3 +27328,33 @@ extern "C" __declspec(naked) void __fastcall fn_007B7044(void* self) {
         _emit 0x03
     }
 }
+
+// [0x007B501C] sub_007B501C (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B501C() {
+    __asm {
+        add byte ptr [edx], al
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add byte ptr [edx], al
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add byte ptr [edx], al
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+    }
+}
