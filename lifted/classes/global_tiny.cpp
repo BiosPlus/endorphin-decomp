@@ -569,3 +569,18 @@ extern "C" void* __fastcall fn_005B3590(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x00584690] AcclaimIO::vfunc_47 (18 bytes)
+// @name AcclaimIO::vfunc_47
+// @class AcclaimIO
+// @summary Calls virtual slot 57 (offset 0xE4) on this and returns true if the low bit of its result is set.
+// @field AcclaimIO +0x00 void** vtable
+// Disassembly: mov eax,[ecx]; mov edx,[eax+0xE4]; call edx; and al,1; cmp al,1; sete al; ret.
+// Slot index is 0xE4 / 4 = 57 on the 32-bit target (vtable entries are 4 bytes there).
+bool __thiscall fn_00584690(void* self) {
+    void** vtable = *reinterpret_cast<void***>(self);
+    using SlotFn = uint32_t(__thiscall*)(void*);
+    SlotFn slot = reinterpret_cast<SlotFn>(vtable[57]);
+    uint8_t al = static_cast<uint8_t>(slot(self));
+    return (al & 1) == 1;
+}

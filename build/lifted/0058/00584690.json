@@ -1,0 +1,22 @@
+{
+  "va": "0x00584690",
+  "size": 18,
+  "orig_symbol": "AcclaimIO::vfunc_47",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AcclaimIO::vfunc_47",
+  "class": "AcclaimIO",
+  "signature": "bool __thiscall fn_00584690(void* self)",
+  "summary": "Calls virtual slot 57 (offset 0xE4) on this and returns true if the low bit of its result is set.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:43Z"
+}
