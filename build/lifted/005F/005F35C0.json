@@ -1,0 +1,21 @@
+{
+  "va": "0x005F35C0",
+  "size": 5,
+  "orig_symbol": "sub_005F35C0",
+  "src_path": "src/leaf/tiny_5F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5F0000.cpp",
+  "name": "VirtualSlot22Dispatch",
+  "signature": "void fn_005F35C0(void* self)",
+  "summary": "Loads the vtable pointer from self and tail-dispatches to the virtual slot at byte offset 0x58 (index 22), passing self through.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:42:07Z"
+}

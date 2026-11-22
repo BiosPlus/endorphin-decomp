@@ -105,6 +105,12 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 27 (offset +0x6C) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005F35C0": {
+    "name": "VirtualSlot22Dispatch",
+    "signature": "void fn_005F35C0(void* self)",
+    "summary": "Loads the vtable pointer from self and tail-dispatches to the virtual slot at byte offset 0x58 (index 22), passing self through.",
+    "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
