@@ -16968,3 +16968,672 @@ extern "C" __declspec(naked) void __fastcall fn_0085A6B0(void* self) {
         ret
     }
 }
+
+// [0x00858060] sub_00858060 (1888 bytes)
+extern "C" void ext_0081CEBA();
+extern "C" void ext_0086AFD0();
+extern "C" void ext_0086BE10();
+
+extern "C" __declspec(naked) void __fastcall fn_00858060(void* self) {
+    __asm {
+        sub esp, 0x148
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x154]
+        xor edx, edx
+        push esi
+        push edi
+        lea eax, [ebp + 0xd]
+        mov dword ptr [esp + 0x28], edx
+        mov dword ptr [esp + 0x14], eax
+        xor eax, eax
+        lea ecx, [esp + 0x58]
+    L8084:
+        mov byte ptr [ecx], al
+        inc eax
+        inc ecx
+        cmp ax, 0x100
+        jl L8084
+        mov byte ptr [esp + 0x10], dl
+        xor eax, eax
+        lea edi, [esp + 0x58]
+        mov dword ptr [esp + 0x18], 0x100
+    L80A0:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dl, byte ptr [edi]
+        and ecx, 0xff
+        xor ebx, ebx
+        mov esi, edx
+        mov bl, byte ptr [ecx + ebp]
+        and esi, 0xff
+        sub ebx, esi
+        add ebx, eax
+        and ebx, 0x800000ff
+        jns L80CD
+        dec ebx
+        or ebx, 0xffffff00
+        inc ebx
+    L80CD:
+        mov byte ptr [esp + 0x24], bl
+        mov eax, dword ptr [esp + 0x24]
+        and eax, 0xff
+        inc ecx
+        and ecx, 0x80000007
+        mov bl, byte ptr [esp + eax + 0x58]
+        mov byte ptr [edi], bl
+        mov byte ptr [esp + eax + 0x58], dl
+        jns L80F2
+        dec ecx
+        or ecx, -0x8
+        inc ecx
+    L80F2:
+        mov byte ptr [esp + 0x10], cl
+        mov ecx, dword ptr [esp + 0x18]
+        inc edi
+        dec ecx
+        mov dword ptr [esp + 0x18], ecx
+        jne L80A0
+        lea edi, [ebp + 0x8]
+        xor eax, eax
+        mov dword ptr [esp + 0x30], edi
+        xor ecx, ecx
+        mov esi, 0x4
+    L8112:
+        inc eax
+        and eax, 0x800000ff
+        jns L8121
+        dec eax
+        or eax, 0xffffff00
+        inc eax
+    L8121:
+        mov byte ptr [esp + 0x24], al
+        xor edx, edx
+        mov eax, dword ptr [esp + 0x24]
+        and eax, 0xff
+        mov dl, byte ptr [esp + eax + 0x58]
+        add edx, ecx
+        and edx, 0x800000ff
+        jns L8146
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L8146:
+        mov byte ptr [esp + 0x1c], dl
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov ecx, dword ptr [esp + 0x1c]
+        and ecx, 0xff
+        mov bl, byte ptr [esp + ecx + 0x58]
+        mov byte ptr [esp + eax + 0x58], bl
+        mov byte ptr [esp + ecx + 0x58], dl
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov bl, byte ptr [esp + ecx + 0x58]
+        add edx, ebx
+        and edx, 0x800000ff
+        jns L8182
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L8182:
+        mov bl, byte ptr [edi]
+        and edx, 0xff
+        mov dl, byte ptr [esp + edx + 0x58]
+        xor bl, dl
+        mov byte ptr [edi], bl
+        inc edi
+        dec esi
+        jne L8112
+        mov ax, word ptr [ebp + 0x6]
+        xor edx, edx
+        mov word ptr [esp + 0x1c], ax
+        mov word ptr [ebp + 0x6], dx
+        mov esi, ebp
+        mov edi, 0xc
+    L81B0:
+        xor ecx, ecx
+        mov eax, edx
+        mov cl, byte ptr [esi]
+        and eax, 0xf
+        mov ebx, ecx
+        mov eax, dword ptr [4*eax + 0xab8c70]
+        and ebx, 0xf
+        shr dx, 4
+        xor ax, word ptr [4*ebx + 0xab8c70]
+        shr ecx, 4
+        xor eax, edx
+        mov edx, eax
+        and edx, 0xf
+        shr ax, 4
+        mov edx, dword ptr [4*edx + 0xab8c70]
+        xor dx, word ptr [4*ecx + 0xab8c70]
+        xor edx, eax
+        inc esi
+        dec edi
+        jne L81B0
+        cmp word ptr [esp + 0x1c], dx
+        je L8208
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x148
+        ret
+    L8208:
+        mov eax, dword ptr [esp + 0x30]
+        add ebp, 0xc
+        mov dword ptr [esp + 0x10], ebp
+        xor esi, esi
+        mov ax, word ptr [eax]
+        and eax, 0xffff
+        mov dword ptr [esp + 0x20], eax
+        lea ebp, [eax - 0xc]
+        test ebp, ebp
+        mov dword ptr [esp + 0x24], ebp
+        jle L82C7
+        xor eax, eax
+        xor ecx, ecx
+        xor edi, edi
+    L8236:
+        inc eax
+        and eax, 0x800000ff
+        jns L8245
+        dec eax
+        or eax, 0xffffff00
+        inc eax
+    L8245:
+        mov byte ptr [esp + 0x18], al
+        xor edx, edx
+        mov eax, dword ptr [esp + 0x18]
+        and eax, 0xff
+        mov dl, byte ptr [esp + eax + 0x58]
+        add edx, ecx
+        and edx, 0x800000ff
+        jns L826A
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L826A:
+        mov byte ptr [esp + 0x2c], dl
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov ecx, dword ptr [esp + 0x2c]
+        and ecx, 0xff
+        mov bl, byte ptr [esp + ecx + 0x58]
+        mov byte ptr [esp + eax + 0x58], bl
+        mov byte ptr [esp + ecx + 0x58], dl
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov bl, byte ptr [esp + ecx + 0x58]
+        add edx, ebx
+        and edx, 0x800000ff
+        jns L82A6
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L82A6:
+        and edx, 0xff
+        mov bl, byte ptr [esp + edx + 0x58]
+        mov edx, dword ptr [esp + 0x10]
+        xor byte ptr [edx + edi], bl
+        inc esi
+        movsx edi, si
+        cmp edi, ebp
+        jl L8236
+        mov eax, dword ptr [esp + 0x20]
+    L82C7:
+        mov ebx, dword ptr [esp + 0x10]
+        add eax, -0xc
+        xor edx, edx
+        mov esi, ebx
+        test eax, eax
+        jbe L831C
+        mov edi, eax
+    L82D8:
+        xor ecx, ecx
+        mov eax, edx
+        mov cl, byte ptr [esi]
+        and eax, 0xf
+        mov ebp, ecx
+        mov eax, dword ptr [4*eax + 0xab8c70]
+        and ebp, 0xf
+        shr dx, 4
+        xor ax, word ptr [4*ebp + 0xab8c70]
+        shr ecx, 4
+        xor eax, edx
+        mov edx, eax
+        and edx, 0xf
+        shr ax, 4
+        mov edx, dword ptr [4*edx + 0xab8c70]
+        xor dx, word ptr [4*ecx + 0xab8c70]
+        xor edx, eax
+        inc esi
+        dec edi
+        jne L82D8
+    L831C:
+        mov eax, dword ptr [esp + 0x15c]
+        cmp word ptr [eax + 0xa], dx
+        je L8336
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x148
+        ret
+    L8336:
+        xor edx, edx
+        xor eax, eax
+        mov al, byte ptr [ebx]
+        mov dword ptr [esp + 0x34], edx
+        mov dword ptr [esp + 0x38], edx
+        xor ecx, ecx
+        mov dword ptr [esp + 0x3c], edx
+        test eax, eax
+        mov dword ptr [esp + 0x40], edx
+        jbe L83D8
+        mov ebx, eax
+        mov ebp, 0x29
+        mov edi, 0x203
+    L8362:
+        mov esi, dword ptr [esp + 0x14]
+        xor eax, eax
+        mov al, byte ptr [esi]
+        sub eax, 0x0
+        je L83A8
+        dec eax
+        je L8385
+        dec eax
+        jne L83D5
+        add ecx, ebp
+        add esi, 0x2a
+        mov word ptr [esp + 0x38], bp
+        mov dword ptr [esp + 0x14], esi
+        jmp L83D5
+    L8385:
+        xor eax, eax
+        add ecx, edi
+        mov ax, word ptr [esi + 0x1]
+        mov word ptr [esp + 0x36], di
+        add eax, 0x7
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        lea eax, [esi + eax + 0x2]
+        mov dword ptr [esp + 0x14], eax
+        jmp L83D5
+    L83A8:
+        xor eax, eax
+        mov ax, word ptr [esi + 0x1]
+        add eax, 0x7
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        add eax, 0x2
+        mov word ptr [esp + 0x34], ax
+        mov eax, dword ptr [esp + 0x34]
+        add ecx, eax
+        and eax, 0xffff
+        lea edx, [esi + eax + 0x1]
+        mov dword ptr [esp + 0x14], edx
+    L83D5:
+        dec ebx
+        jne L8362
+    L83D8:
+        add ecx, 0x20
+        mov esi, ecx
+        and esi, 0xffff
+        push esi
+        call ext_0081CEBA
+        mov edi, dword ptr [esp + 0x164]
+        add esp, 0x4
+        mov dword ptr [edi], eax
+        xor eax, eax
+        test esi, esi
+        jbe L8407
+    L83FB:
+        mov ecx, dword ptr [edi]
+        inc eax
+        cmp eax, esi
+        mov byte ptr [ecx + eax - 0x1], 0x0
+        jb L83FB
+    L8407:
+        lea edx, [esp + 0x34]
+        xor ebp, ebp
+        xor ecx, ecx
+        mov dword ptr [esp + 0x14], edx
+    L8413:
+        mov eax, dword ptr [esp + 0x14]
+        cmp word ptr [eax], 0x0
+        je L8442
+        mov eax, dword ptr [edi]
+        test ecx, ecx
+        lea edx, [eax + 0x20]
+        mov dword ptr [ecx + eax], edx
+        jle L844B
+        lea edx, [esp + 0x34]
+        mov esi, ebp
+    L842F:
+        mov eax, dword ptr [edi]
+        xor ebx, ebx
+        mov bx, word ptr [edx]
+        add eax, ecx
+        add edx, 0x2
+        add dword ptr [eax], ebx
+        dec esi
+        jne L842F
+        jmp L844B
+    L8442:
+        mov edx, dword ptr [edi]
+        mov dword ptr [ecx + edx], 0x0
+    L844B:
+        mov esi, dword ptr [esp + 0x14]
+        add ecx, 0x4
+        inc ebp
+        add esi, 0x2
+        cmp ecx, 0x20
+        mov dword ptr [esp + 0x14], esi
+        jl L8413
+        mov eax, dword ptr [esp + 0x10]
+        mov ebp, dword ptr [esp + 0x15c]
+        mov dword ptr [esp + 0x18], 0x0
+        mov cl, byte ptr [eax]
+        lea esi, [ebp + 0xd]
+        test cl, cl
+        jbe L85DF
+    L847F:
+        xor eax, eax
+        mov bl, 0x1
+        mov al, byte ptr [esi]
+        sub eax, 0x0
+        je L859F
+        dec eax
+        je L8528
+        dec eax
+        jne L85C6
+        call ext_0086BE10
+        xor eax, eax
+    L84A3:
+        mov edx, 0x13
+        mov ecx, 0x4
+        sub edx, eax
+        shr edx, 0x2
+        sub ecx, edx
+        xor edx, edx
+        mov dl, byte ptr [esi + eax + 0x3]
+        mov ebx, dword ptr [esp + 4*ecx + 0x44]
+        lea ecx, [esp + 4*ecx + 0x44]
+        shl ebx, 0x8
+        or edx, ebx
+        inc eax
+        cmp eax, 0x14
+        mov dword ptr [ecx], edx
+        jb L84A3
+        mov eax, dword ptr [esp + 0x44]
+        test eax, 0x40000000
+        je L8507
+        mov ebx, eax
+        mov eax, dword ptr [edi]
+        and ebx, 0xbfffffff
+        lea edx, [esp + 0x44]
+        mov dword ptr [esp + 0x44], ebx
+        mov ecx, dword ptr [eax + 0x8]
+        push ecx
+        push 0x1
+        push 0x4
+        push 0xab8cb0
+        push edx
+        call ext_0086AFD0
+        add esp, 0x14
+        jmp L85C6
+    L8507:
+        mov eax, dword ptr [edi]
+        lea edx, [esp + 0x44]
+        mov ecx, dword ptr [eax + 0x8]
+        push ecx
+        push 0x0
+        push 0x4
+        push 0xab8cb0
+        push edx
+        call ext_0086AFD0
+        add esp, 0x14
+        jmp L85C6
+    L8528:
+        mov eax, dword ptr [edi]
+        mov dx, word ptr [esi + 0x1]
+        mov ecx, dword ptr [eax + 0x4]
+        xor eax, eax
+        mov word ptr [ecx], dx
+        mov ax, word ptr [esi + 0x1]
+        add eax, 0x7
+        xor ecx, ecx
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        je L8571
+    L854A:
+        mov eax, dword ptr [edi]
+        inc ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov al, byte ptr [esi + ecx + 0x2]
+        mov byte ptr [edx + ecx + 0xc1], al
+        xor eax, eax
+        mov ax, word ptr [esi + 0x1]
+        add eax, 0x7
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        cmp ecx, eax
+        jb L854A
+    L8571:
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [ecx + 0x4]
+        mov byte ptr [edx + 0x1ff], bl
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [eax + 0x4]
+        xor eax, eax
+        mov byte ptr [ecx + 0x201], bl
+        mov ax, word ptr [esi + 0x1]
+        add eax, 0x7
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        lea esi, [esi + eax + 0x2]
+        jmp L85C2
+    L859F:
+        mov ecx, dword ptr [esp + 0x34]
+        xor eax, eax
+        and ecx, 0xffff
+        jbe L85BE
+    L85AD:
+        mov edx, dword ptr [edi]
+        mov bl, byte ptr [esi + eax + 0x1]
+        inc eax
+        mov edx, dword ptr [edx]
+        cmp eax, ecx
+        mov byte ptr [edx + eax - 0x1], bl
+        jb L85AD
+    L85BE:
+        lea esi, [esi + ecx + 0x1]
+    L85C2:
+        inc dword ptr [esp + 0x28]
+    L85C6:
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x18]
+        xor ecx, ecx
+        inc eax
+        mov cl, byte ptr [edx]
+        mov dword ptr [esp + 0x18], eax
+        cmp eax, ecx
+        jb L847F
+    L85DF:
+        mov ax, word ptr [esp + 0x1c]
+        lea ecx, [esp + 0x58]
+        mov word ptr [ebp + 0x6], ax
+        xor eax, eax
+    L85EE:
+        mov byte ptr [ecx], al
+        inc eax
+        inc ecx
+        cmp ax, 0x100
+        jl L85EE
+        mov byte ptr [esp + 0x1c], 0x0
+        xor eax, eax
+        lea esi, [esp + 0x58]
+        mov edi, 0x100
+    L8608:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov ebp, dword ptr [esp + 0x15c]
+        mov dl, byte ptr [esi]
+        and ecx, 0xff
+        xor ebx, ebx
+        mov bl, byte ptr [ecx + ebp]
+        mov ebp, edx
+        and ebp, 0xff
+        sub ebx, ebp
+        add ebx, eax
+        and ebx, 0x800000ff
+        jns L863C
+        dec ebx
+        or ebx, 0xffffff00
+        inc ebx
+    L863C:
+        mov byte ptr [esp + 0x20], bl
+        mov eax, dword ptr [esp + 0x20]
+        and eax, 0xff
+        inc ecx
+        and ecx, 0x80000007
+        mov bl, byte ptr [esp + eax + 0x58]
+        mov byte ptr [esi], bl
+        mov byte ptr [esp + eax + 0x58], dl
+        jns L8661
+        dec ecx
+        or ecx, -0x8
+        inc ecx
+    L8661:
+        inc esi
+        dec edi
+        mov byte ptr [esp + 0x1c], cl
+        jne L8608
+        mov esi, dword ptr [esp + 0x30]
+        xor eax, eax
+        xor ecx, ecx
+        mov edi, 0x4
+    L8676:
+        inc eax
+        and eax, 0x800000ff
+        jns L8685
+        dec eax
+        or eax, 0xffffff00
+        inc eax
+    L8685:
+        mov byte ptr [esp + 0x20], al
+        xor edx, edx
+        mov eax, dword ptr [esp + 0x20]
+        and eax, 0xff
+        mov dl, byte ptr [esp + eax + 0x58]
+        add edx, ecx
+        and edx, 0x800000ff
+        jns L86AA
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L86AA:
+        mov byte ptr [esp + 0x2c], dl
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov ecx, dword ptr [esp + 0x2c]
+        and ecx, 0xff
+        mov bl, byte ptr [esp + ecx + 0x58]
+        mov byte ptr [esp + eax + 0x58], bl
+        mov byte ptr [esp + ecx + 0x58], dl
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [esp + ecx + 0x58]
+        mov bl, byte ptr [esp + eax + 0x58]
+        add edx, ebx
+        and edx, 0x800000ff
+        jns L86E6
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L86E6:
+        mov bl, byte ptr [esi]
+        and edx, 0xff
+        mov dl, byte ptr [esp + edx + 0x58]
+        xor bl, dl
+        mov byte ptr [esi], bl
+        inc esi
+        dec edi
+        jne L8676
+        mov eax, dword ptr [esp + 0x24]
+        xor edi, edi
+        test eax, eax
+        jle L87A8
+        mov ebp, dword ptr [esp + 0x10]
+        xor eax, eax
+        xor ecx, ecx
+        xor esi, esi
+    L8716:
+        inc eax
+        and eax, 0x800000ff
+        jns L8725
+        dec eax
+        or eax, 0xffffff00
+        inc eax
+    L8725:
+        mov byte ptr [esp + 0x20], al
+        xor edx, edx
+        mov eax, dword ptr [esp + 0x20]
+        and eax, 0xff
+        mov dl, byte ptr [esp + eax + 0x58]
+        add edx, ecx
+        and edx, 0x800000ff
+        jns L874A
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L874A:
+        mov byte ptr [esp + 0x2c], dl
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov ecx, dword ptr [esp + 0x2c]
+        and ecx, 0xff
+        mov bl, byte ptr [esp + ecx + 0x58]
+        mov byte ptr [esp + eax + 0x58], bl
+        mov byte ptr [esp + ecx + 0x58], dl
+        xor edx, edx
+        xor ebx, ebx
+        mov dl, byte ptr [esp + eax + 0x58]
+        mov bl, byte ptr [esp + ecx + 0x58]
+        add edx, ebx
+        and edx, 0x800000ff
+        jns L8786
+        dec edx
+        or edx, 0xffffff00
+        inc edx
+    L8786:
+        mov bl, byte ptr [esi + ebp]
+        and edx, 0xff
+        mov dl, byte ptr [esp + edx + 0x58]
+        xor bl, dl
+        mov edx, dword ptr [esp + 0x24]
+        inc edi
+        mov byte ptr [esi + ebp], bl
+        movsx esi, di
+        cmp esi, edx
+        jl L8716
+    L87A8:
+        mov eax, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x148
+        ret
+    }
+}
