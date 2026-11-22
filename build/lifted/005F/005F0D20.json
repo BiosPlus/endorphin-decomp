@@ -1,0 +1,14 @@
+{
+  "va": "0x005F0D20",
+  "size": 32,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_8",
+  "src_path": "src/NMData/MagnetJointData.cpp",
+  "lifted_path": "lifted/NMData/MagnetJointData.cpp",
+  "name": "NMData::MagnetJointData::vfunc_8",
+  "class": "NMData::MagnetJointData",
+  "signature": "void* fn_005F0D20(void* self, void* arg)",
+  "summary": "Calls vtable slot 59 on self with (arg, 0) and returns arg.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:31Z"
+}
