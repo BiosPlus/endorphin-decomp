@@ -10975,6 +10975,13 @@
     "summary": "Resolves self via ext_006999B0, then tail-dispatches to vtable slot 5 of the sub-object at +0x04.",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00670D60": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_6",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void* fn_00670D60(void* self)",
+    "summary": "Resolves a helper object from self, then tail-dispatches vtable slot 6 on its sub-object at +0x04 with the helper as argument.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x00671030": {
     "name": "ExprParser::Vector3Type::vfunc_0_off_4",
     "class": "ExprParser::Vector3Type",

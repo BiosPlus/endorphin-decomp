@@ -155,3 +155,16 @@ void* fn_00670CF0(void* self) {
     auto slot3 = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x0c));
     return slot3(obj, r);
 }
+
+// [0x00670D60]
+// @name ExprParser::ExpressionContainerType::vfunc_6
+// @class ExprParser::ExpressionContainerType
+// @summary Resolves a helper object from self, then tail-dispatches vtable slot 6 on its sub-object at +0x04 with the helper as argument.
+// @field ExprParser::ExpressionContainerType +0x04 void* field_0x04 (type of ext_006999B0 result unknown; +0x04 sub-object pointer used as this)
+void* fn_00670D60(void* self) {
+    void* r = ext_006999B0(self);
+    void* obj = lift_field<void*>(r, 0x04);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto slot6 = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x18));
+    return slot6(obj, r);
+}
