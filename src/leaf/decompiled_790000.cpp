@@ -16503,3 +16503,1298 @@ extern "C" __declspec(naked) void __cdecl fn_007995B0() {
         jmp L_007996D2
     }
 }
+
+// [0x00795350] sub_00795350 (4873 bytes)
+// Naked translation: the body is a register-spilling blit/convolution loop nest; C++ register
+// allocation does not reproduce the original spill pattern, so the asm is transcribed directly.
+extern "C" __declspec(naked) void __fastcall fn_00795350(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 43ch
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp+5ch], 0
+        mov edx, dword ptr [esi+48h]
+        mov eax, dword ptr [esi+254h]
+        mov ecx, dword ptr [esi+250h]
+        imul edx, dword ptr [esi+4ch]
+L_79537c:
+        mov edi, dword ptr [ecx]
+        add ecx, 8
+        mov dword ptr [eax], edi
+        mov edi, dword ptr [ecx-4]
+        mov dword ptr [eax+4], edi
+        mov edi, dword ptr [ecx-8]
+        add eax, 8
+        mov dword ptr [eax], edi
+        mov edi, dword ptr [ecx-4]
+        mov dword ptr [eax+4], edi
+        mov edi, dword ptr [ecx-8]
+        add eax, 8
+        mov dword ptr [eax], edi
+        mov edi, dword ptr [ecx-4]
+        mov dword ptr [eax+4], edi
+        add eax, 8
+        dec edx
+        jne short L_79537c
+        mov eax, dword ptr [esi+258h]
+        mov ecx, dword ptr [esi+18h]
+        mov dword ptr [esp+58h], eax
+        mov dword ptr [esp+68h], ecx
+        mov ecx, dword ptr [esi+8]
+        mov eax, 1
+        cmp ecx, eax
+        je short L_7953cc
+        inc dword ptr [esp+68h]
+L_7953cc:
+        mov ecx, dword ptr [esi+0ch]
+        mov edx, dword ptr [esi+1ch]
+        cmp ecx, eax
+        mov dword ptr [esp+70h], edx
+        je short L_7953e1
+        mov eax, edx
+        inc eax
+        mov dword ptr [esp+70h], eax
+L_7953e1:
+        mov eax, dword ptr [esi+244h]
+        mov ecx, dword ptr [esi+270h]
+        mov edx, dword ptr [esi+26ch]
+        mov dword ptr [esp+48h], eax
+        mov eax, dword ptr [esi+48h]
+        mov dword ptr [esp+84h], ecx
+        mov ecx, dword ptr [esi+254h]
+        mov dword ptr [esp+78h], edx
+        lea eax, [eax+2*eax]
+        mov dword ptr [esp+44h], 0
+        mov dword ptr [esp+40h], eax
+        lea ebx, [ecx+18h]
+        lea eax, [ecx+8*eax]
+        mov dword ptr [esp+30h], ebx
+        mov dword ptr [esp+34h], eax
+        add ebx, 18h
+        lea edx, [eax+18h]
+        mov dword ptr [esp+28h], edx
+        add edx, 18h
+        mov dword ptr [esp+1ch], edx
+        add edx, 18h
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+40h]
+        lea edi, [ebx+18h]
+        lea eax, [eax+8*edx]
+        mov dword ptr [esp+3ch], eax
+        lea edx, [eax+18h]
+        mov dword ptr [esp+14h], edx
+        add edx, 18h
+        mov dword ptr [esp+0ch], edx
+        add edx, 18h
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+40h]
+        lea eax, [eax+8*edx]
+        mov dword ptr [esp+38h], eax
+        add eax, 18h
+        mov dword ptr [esp+24h], eax
+        add eax, 18h
+        mov dword ptr [esp+10h], eax
+        add eax, 18h
+        mov dword ptr [esp+20h], eax
+        mov eax, dword ptr [esi+4ch]
+        imul eax, edx
+        shl eax, 3
+        mov dword ptr [esp+74h], eax
+        add eax, ecx
+        mov dword ptr [esp+7ch], eax
+        mov eax, dword ptr [esp+84h]
+        mov dword ptr [esp+6ch], eax
+        jmp short L_7954a7
+L_7954a3:
+        mov ecx, dword ptr [esp+4ch]
+L_7954a7:
+        mov edx, dword ptr [esi+270h]
+        mov eax, dword ptr [esp+6ch]
+        sub edx, eax
+        mov eax, dword ptr [esi+27ch]
+        mov eax, dword ptr [eax+4*edx]
+        mov edx, dword ptr [esp+30h]
+        imul eax, dword ptr [esp+40h]
+        shl eax, 3
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+30h], edx
+        mov edx, dword ptr [esp+34h]
+        add edx, eax
+        add ebx, eax
+        mov dword ptr [esp+34h], edx
+        mov edx, dword ptr [esp+28h]
+        add edx, eax
+        add edi, eax
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+1ch]
+        add edx, eax
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+2ch]
+        add edx, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+3ch]
+        add edx, eax
+        mov dword ptr [esp+3ch], edx
+        mov edx, dword ptr [esp+14h]
+        add edx, eax
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+0ch]
+        add edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+18h]
+        add edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+38h]
+        add edx, eax
+        mov dword ptr [esp+38h], edx
+        mov edx, dword ptr [esp+24h]
+        add edx, eax
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [esp+10h]
+        add edx, eax
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [esp+20h]
+        add edx, eax
+        mov eax, dword ptr [esp+7ch]
+        mov dword ptr [esp+20h], edx
+        mov edx, dword ptr [esp+38h]
+        cmp edx, eax
+        jb short L_795580
+        mov eax, dword ptr [esp+74h]
+        sub edx, eax
+        mov dword ptr [esp+38h], edx
+        mov edx, dword ptr [esp+24h]
+        sub edx, eax
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [esp+10h]
+        sub edx, eax
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [esp+20h]
+        sub edx, eax
+        mov dword ptr [esp+20h], edx
+L_795580:
+        mov eax, dword ptr [esp+3ch]
+        mov edx, dword ptr [esp+7ch]
+        cmp eax, edx
+        jb short L_7955b8
+        mov eax, dword ptr [esp+74h]
+        mov edx, dword ptr [esp+3ch]
+        sub edx, eax
+        mov dword ptr [esp+3ch], edx
+        mov edx, dword ptr [esp+14h]
+        sub edx, eax
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+0ch]
+        sub edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+18h]
+        sub edx, eax
+        mov dword ptr [esp+18h], edx
+L_7955b8:
+        mov edx, dword ptr [esp+34h]
+        mov eax, dword ptr [esp+7ch]
+        cmp edx, eax
+        jb short L_7955ec
+        mov eax, dword ptr [esp+74h]
+        sub edx, eax
+        mov dword ptr [esp+34h], edx
+        mov edx, dword ptr [esp+28h]
+        sub edx, eax
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+1ch]
+        sub edx, eax
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+2ch]
+        sub edx, eax
+        mov dword ptr [esp+2ch], edx
+L_7955ec:
+        mov eax, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+78h]
+        shl eax, 3
+        add eax, ecx
+        mov dword ptr [esp+64h], 0
+        mov dword ptr [esp+60h], eax
+        mov dword ptr [esp+50h], edx
+        jmp short L_79560f
+L_79560b:
+        mov ecx, dword ptr [esp+4ch]
+L_79560f:
+        mov eax, dword ptr [esi+26ch]
+        mov edx, dword ptr [esp+50h]
+        sub eax, edx
+        mov edx, dword ptr [esi+278h]
+        mov eax, dword ptr [edx+4*eax]
+        mov edx, dword ptr [esp+30h]
+        mov dword ptr [esp+54h], eax
+        shl eax, 3
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+30h], edx
+        mov edx, dword ptr [esp+34h]
+        add edx, eax
+        add ebx, eax
+        mov dword ptr [esp+34h], edx
+        mov edx, dword ptr [esp+28h]
+        add edx, eax
+        add edi, eax
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+1ch]
+        add edx, eax
+        mov dword ptr [esp+4ch], ecx
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+2ch]
+        add edx, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+3ch]
+        add edx, eax
+        mov dword ptr [esp+3ch], edx
+        mov edx, dword ptr [esp+14h]
+        add edx, eax
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+0ch]
+        add edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+18h]
+        add edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+38h]
+        add edx, eax
+        mov dword ptr [esp+38h], edx
+        mov edx, dword ptr [esp+24h]
+        add edx, eax
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [esp+10h]
+        add edx, eax
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [esp+20h]
+        add edx, eax
+        mov eax, dword ptr [esp+54h]
+        mov dword ptr [esp+20h], edx
+        mov edx, dword ptr [esp+64h]
+        add edx, eax
+        mov eax, dword ptr [esp+60h]
+        cmp edi, eax
+        mov dword ptr [esp+64h], edx
+        jb short L_795702
+        mov edx, dword ptr [esp+40h]
+        lea eax, [edx*8]
+        mov edx, dword ptr [esp+2ch]
+        sub edx, eax
+        sub edi, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+18h]
+        sub edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+20h]
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        or al, 1
+        mov dword ptr [esp+20h], edx
+        mov dword ptr [esp+44h], eax
+L_795702:
+        cmp ebx, dword ptr [esp+60h]
+        jb short L_795739
+        mov eax, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+1ch]
+        shl eax, 3
+        sub edx, eax
+        sub ebx, eax
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+0ch]
+        sub edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+10h]
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        or al, 2
+        mov dword ptr [esp+10h], edx
+        mov dword ptr [esp+44h], eax
+L_795739:
+        mov eax, dword ptr [esp+30h]
+        mov edx, dword ptr [esp+60h]
+        cmp eax, edx
+        jb short L_79577e
+        mov edx, dword ptr [esp+40h]
+        shl edx, 3
+        sub eax, edx
+        mov dword ptr [esp+30h], eax
+        mov eax, dword ptr [esp+28h]
+        sub eax, edx
+        mov dword ptr [esp+28h], eax
+        mov eax, dword ptr [esp+14h]
+        sub eax, edx
+        mov dword ptr [esp+14h], eax
+        mov eax, dword ptr [esp+24h]
+        sub eax, edx
+        mov dword ptr [esp+24h], eax
+        mov eax, dword ptr [esp+44h]
+        or al, 4
+        mov dword ptr [esp+44h], eax
+        mov eax, dword ptr [esp+30h]
+L_79577e:
+        mov edx, dword ptr [esp+34h]
+        mov dword ptr [esp+8ch], eax
+        mov dword ptr [esp+98h], edx
+        mov edx, dword ptr [esp+28h]
+        mov dword ptr [esp+9ch], edx
+        mov edx, dword ptr [esp+1ch]
+        mov dword ptr [esp+0a0h], edx
+        mov edx, dword ptr [esp+2ch]
+        mov dword ptr [esp+0a4h], edx
+        mov edx, dword ptr [esp+3ch]
+        mov dword ptr [esp+0a8h], edx
+        mov edx, dword ptr [esp+14h]
+        mov dword ptr [esp+0ach], edx
+        mov edx, dword ptr [esp+0ch]
+        mov dword ptr [esp+0b0h], edx
+        mov edx, dword ptr [esp+18h]
+        mov dword ptr [esp+0b4h], edx
+        mov edx, dword ptr [esp+38h]
+        mov dword ptr [esp+0b8h], edx
+        mov edx, dword ptr [esp+24h]
+        mov dword ptr [esp+0bch], edx
+        mov edx, dword ptr [esp+10h]
+        mov dword ptr [esp+0c0h], edx
+        mov edx, dword ptr [esp+20h]
+        mov dword ptr [esp+0c4h], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp+188h], edx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [esp+190h], edx
+        mov edx, dword ptr [ebx+4]
+        mov dword ptr [esp+194h], eax
+        mov eax, dword ptr [edi]
+        mov dword ptr [esp+88h], ecx
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+1a0h], eax
+        mov eax, dword ptr [esp+34h]
+        mov dword ptr [esp+19ch], edx
+        mov dword ptr [esp+18ch], ecx
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [esp+198h], ecx
+        mov ecx, dword ptr [edi+4]
+        mov dword ptr [esp+1ach], eax
+        mov eax, dword ptr [esp+28h]
+        mov dword ptr [esp+1a4h], ecx
+        mov dword ptr [esp+1a8h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+1ch]
+        mov dword ptr [esp+1b0h], ecx
+        mov dword ptr [esp+1b4h], edx
+        mov dword ptr [esp+90h], ebx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+2ch]
+        mov dword ptr [esp+1b8h], ecx
+        mov dword ptr [esp+1bch], edx
+        mov dword ptr [esp+94h], edi
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+3ch]
+        mov dword ptr [esp+1c0h], ecx
+        mov dword ptr [esp+1c4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+14h]
+        mov dword ptr [esp+1c8h], ecx
+        mov dword ptr [esp+1cch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+0ch]
+        mov dword ptr [esp+1d0h], ecx
+        mov dword ptr [esp+1d4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+18h]
+        mov dword ptr [esp+1d8h], ecx
+        mov dword ptr [esp+1dch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+38h]
+        mov dword ptr [esp+1e0h], ecx
+        mov dword ptr [esp+1e4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+24h]
+        mov dword ptr [esp+1e8h], ecx
+        mov dword ptr [esp+1ech], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+10h]
+        mov dword ptr [esp+1f0h], ecx
+        mov dword ptr [esp+1f4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+20h]
+        mov dword ptr [esp+1f8h], ecx
+        mov dword ptr [esp+1fch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [esp+200h], ecx
+        mov dword ptr [esp+204h], edx
+        mov eax, dword ptr [esi]
+        lea ecx, [esp+388h]
+        lea edx, [esp+3c8h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esp+50h]
+        lea ecx, [esp+190h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esi+254h]
+        lea ecx, [esp+98h]
+        push 3
+        push ecx
+        push edx
+        mov ecx, esi
+        call dword ptr [eax+68h]
+        mov ecx, dword ptr [esp+5ch]
+        mov edx, dword ptr [esi]
+        mov eax, ecx
+        inc ecx
+        push eax
+        lea eax, [esp+38ch]
+        mov dword ptr [esp+60h], ecx
+        push eax
+        mov eax, dword ptr [ebp+8]
+        lea ecx, [esp+3d0h]
+        push ecx
+        push eax
+        mov ecx, esi
+        call dword ptr [edx+6ch]
+        mov edx, dword ptr [esp+48h]
+        mov ecx, dword ptr [esp+58h]
+        mov eax, dword ptr [esp+50h]
+        add edx, 80h
+        add ecx, 18h
+        cmp eax, 1
+        mov dword ptr [esp+48h], edx
+        mov dword ptr [esp+58h], ecx
+        jbe short L_795a01
+        mov eax, dword ptr [esi+18h]
+        jmp short L_795a05
+L_795a01:
+        mov eax, dword ptr [esp+68h]
+L_795a05:
+        dec eax
+        je L_795c9f
+        mov edx, dword ptr [esp+58h]
+        lea ecx, [eax+2*eax]
+        mov dword ptr [esp+54h], eax
+        lea eax, [edx+8*ecx]
+        mov dword ptr [esp+58h], eax
+L_795a1e:
+        mov edx, dword ptr [esp+30h]
+        mov ecx, dword ptr [esp+4ch]
+        mov dword ptr [esp+10ch], edx
+        mov edx, dword ptr [esp+28h]
+        mov dword ptr [esp+11ch], edx
+        mov edx, dword ptr [esp+3ch]
+        mov dword ptr [esp+128h], edx
+        mov edx, dword ptr [esp+14h]
+        mov dword ptr [esp+12ch], edx
+        mov edx, dword ptr [esp+0ch]
+        mov dword ptr [esp+130h], edx
+        mov edx, dword ptr [esp+18h]
+        mov dword ptr [esp+134h], edx
+        mov edx, dword ptr [esp+38h]
+        mov dword ptr [esp+138h], edx
+        mov edx, dword ptr [esp+24h]
+        mov dword ptr [esp+13ch], edx
+        mov edx, dword ptr [esp+10h]
+        mov dword ptr [esp+140h], edx
+        mov edx, dword ptr [esp+20h]
+        mov dword ptr [esp+144h], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp+108h], ecx
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+30ch], ecx
+        mov ecx, dword ptr [esp+30h]
+        mov dword ptr [esp+308h], edx
+        mov eax, dword ptr [esp+34h]
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+314h], ecx
+        mov ecx, dword ptr [ebx+4]
+        mov dword ptr [esp+310h], edx
+        mov edx, dword ptr [ebx]
+        mov dword ptr [esp+31ch], ecx
+        mov ecx, dword ptr [edi+4]
+        mov dword ptr [esp+318h], edx
+        mov edx, dword ptr [edi]
+        mov dword ptr [esp+324h], ecx
+        mov ecx, dword ptr [esp+34h]
+        mov dword ptr [esp+320h], edx
+        mov dword ptr [esp+118h], eax
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov eax, dword ptr [esp+1ch]
+        mov dword ptr [esp+32ch], ecx
+        mov ecx, dword ptr [esp+28h]
+        mov dword ptr [esp+328h], edx
+        mov dword ptr [esp+120h], eax
+        mov eax, dword ptr [esp+2ch]
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+334h], ecx
+        mov ecx, dword ptr [esp+1ch]
+        mov dword ptr [esp+330h], edx
+        mov dword ptr [esp+124h], eax
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+338h], edx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [esp+33ch], ecx
+        mov dword ptr [esp+344h], eax
+        mov eax, dword ptr [esp+3ch]
+        mov dword ptr [esp+340h], edx
+        mov dword ptr [esp+110h], ebx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+14h]
+        mov dword ptr [esp+348h], ecx
+        mov dword ptr [esp+34ch], edx
+        mov dword ptr [esp+114h], edi
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+0ch]
+        mov dword ptr [esp+350h], ecx
+        mov dword ptr [esp+354h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [esp+358h], ecx
+        mov dword ptr [esp+35ch], edx
+        mov eax, dword ptr [esp+18h]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+38h]
+        mov dword ptr [esp+360h], ecx
+        mov dword ptr [esp+364h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+24h]
+        mov dword ptr [esp+368h], ecx
+        mov dword ptr [esp+36ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+10h]
+        mov dword ptr [esp+370h], ecx
+        mov dword ptr [esp+374h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+20h]
+        mov dword ptr [esp+378h], ecx
+        mov dword ptr [esp+37ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [esp+380h], ecx
+        mov dword ptr [esp+384h], edx
+        mov eax, dword ptr [esi]
+        lea ecx, [esp+388h]
+        lea edx, [esp+3c8h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esp+50h]
+        lea ecx, [esp+310h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esi+254h]
+        lea ecx, [esp+118h]
+        push 3
+        push ecx
+        push edx
+        mov ecx, esi
+        call dword ptr [eax+68h]
+        mov ecx, dword ptr [esp+5ch]
+        mov edx, dword ptr [esi]
+        mov eax, ecx
+        inc ecx
+        push eax
+        lea eax, [esp+38ch]
+        mov dword ptr [esp+60h], ecx
+        push eax
+        mov eax, dword ptr [ebp+8]
+        lea ecx, [esp+3d0h]
+        push ecx
+        push eax
+        mov ecx, esi
+        call dword ptr [edx+6ch]
+        mov ecx, dword ptr [esp+48h]
+        mov eax, dword ptr [esp+54h]
+        add ecx, 80h
+        dec eax
+        mov dword ptr [esp+48h], ecx
+        mov dword ptr [esp+54h], eax
+        jne L_795a1e
+L_795c9f:
+        mov eax, dword ptr [esp+50h]
+        dec eax
+        mov dword ptr [esp+50h], eax
+        jne L_79560b
+        mov ecx, dword ptr [esp+64h]
+        mov edx, dword ptr [esp+34h]
+        lea eax, [ecx*8]
+        mov ecx, dword ptr [esp+4ch]
+        sub edx, eax
+        sub ecx, eax
+        mov dword ptr [esp+34h], edx
+        mov edx, dword ptr [esp+28h]
+        sub edx, eax
+        mov dword ptr [esp+4ch], ecx
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+1ch]
+        sub edx, eax
+        mov ecx, dword ptr [esp+30h]
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+2ch]
+        sub edx, eax
+        sub ecx, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+3ch]
+        sub edx, eax
+        sub ebx, eax
+        mov dword ptr [esp+3ch], edx
+        mov edx, dword ptr [esp+14h]
+        sub edx, eax
+        sub edi, eax
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+0ch]
+        sub edx, eax
+        mov dword ptr [esp+30h], ecx
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+18h]
+        sub edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+38h]
+        sub edx, eax
+        mov dword ptr [esp+38h], edx
+        mov edx, dword ptr [esp+24h]
+        sub edx, eax
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [esp+10h]
+        sub edx, eax
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [esp+20h]
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        dec eax
+        mov dword ptr [esp+20h], edx
+        je short L_795db4
+        sub eax, 2
+        je short L_795d8d
+        sub eax, 4
+        jne L_795ddf
+        mov edx, dword ptr [esp+40h]
+        lea eax, [edx*8]
+        mov edx, dword ptr [esp+28h]
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+14h]
+        add edx, eax
+        mov dword ptr [esp+30h], ecx
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+24h]
+        add edx, eax
+        mov dword ptr [esp+24h], edx
+L_795d8d:
+        mov eax, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+1ch]
+        shl eax, 3
+        add edx, eax
+        add ebx, eax
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+0ch]
+        add edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+10h]
+        add edx, eax
+        mov dword ptr [esp+10h], edx
+L_795db4:
+        mov edx, dword ptr [esp+40h]
+        lea eax, [edx*8]
+        mov edx, dword ptr [esp+2ch]
+        add edx, eax
+        add edi, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+18h]
+        add edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+20h]
+        add edx, eax
+        mov dword ptr [esp+20h], edx
+L_795ddf:
+        mov edx, dword ptr [esp+6ch]
+        mov eax, dword ptr [esi+1ch]
+        cmp edx, 1
+        mov dword ptr [esp+44h], 0
+        jne short L_795df7
+        mov eax, dword ptr [esp+70h]
+L_795df7:
+        dec eax
+        je L_79661a
+        mov dword ptr [esp+80h], eax
+        jmp short L_795e0b
+L_795e07:
+        mov ecx, dword ptr [esp+30h]
+L_795e0b:
+        mov eax, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+4ch]
+        shl eax, 3
+        add eax, edx
+        mov dword ptr [esp+64h], 0
+        mov dword ptr [esp+60h], eax
+        mov eax, dword ptr [esp+78h]
+        mov dword ptr [esp+50h], eax
+        jmp short L_795e32
+L_795e2e:
+        mov ecx, dword ptr [esp+30h]
+L_795e32:
+        mov edx, dword ptr [esi+26ch]
+        mov eax, dword ptr [esp+50h]
+        sub edx, eax
+        mov eax, dword ptr [esi+278h]
+        mov eax, dword ptr [eax+4*edx]
+        mov edx, dword ptr [esp+4ch]
+        mov dword ptr [esp+54h], eax
+        shl eax, 3
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+4ch], edx
+        mov edx, dword ptr [esp+34h]
+        add edx, eax
+        add ebx, eax
+        mov dword ptr [esp+34h], edx
+        mov edx, dword ptr [esp+28h]
+        add edx, eax
+        add edi, eax
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+1ch]
+        add edx, eax
+        mov dword ptr [esp+30h], ecx
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+2ch]
+        add edx, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+3ch]
+        add edx, eax
+        mov dword ptr [esp+3ch], edx
+        mov edx, dword ptr [esp+14h]
+        add edx, eax
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+0ch]
+        add edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+18h]
+        add edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+38h]
+        add edx, eax
+        mov dword ptr [esp+38h], edx
+        mov edx, dword ptr [esp+24h]
+        add edx, eax
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [esp+10h]
+        add edx, eax
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [esp+20h]
+        add edx, eax
+        mov eax, dword ptr [esp+64h]
+        mov dword ptr [esp+20h], edx
+        mov edx, dword ptr [esp+54h]
+        add eax, edx
+        mov dword ptr [esp+64h], eax
+        mov eax, dword ptr [esp+60h]
+        cmp edi, eax
+        jb short L_795f21
+        mov eax, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+2ch]
+        shl eax, 3
+        sub edx, eax
+        sub edi, eax
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+18h]
+        sub edx, eax
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+20h]
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        or al, 1
+        mov dword ptr [esp+20h], edx
+        mov dword ptr [esp+44h], eax
+L_795f21:
+        cmp ebx, dword ptr [esp+60h]
+        jb short L_795f5c
+        mov edx, dword ptr [esp+40h]
+        lea eax, [edx*8]
+        mov edx, dword ptr [esp+1ch]
+        sub edx, eax
+        sub ebx, eax
+        mov dword ptr [esp+1ch], edx
+        mov edx, dword ptr [esp+0ch]
+        sub edx, eax
+        mov dword ptr [esp+0ch], edx
+        mov edx, dword ptr [esp+10h]
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        or al, 2
+        mov dword ptr [esp+10h], edx
+        mov dword ptr [esp+44h], eax
+L_795f5c:
+        cmp ecx, dword ptr [esp+60h]
+        jb short L_795f97
+        mov eax, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+28h]
+        shl eax, 3
+        sub edx, eax
+        sub ecx, eax
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+14h]
+        sub edx, eax
+        mov dword ptr [esp+30h], ecx
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+24h]
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        or al, 4
+        mov dword ptr [esp+24h], edx
+        mov dword ptr [esp+44h], eax
+L_795f97:
+        mov edx, dword ptr [esp+34h]
+        mov eax, dword ptr [esp+4ch]
+        mov dword ptr [esp+0d8h], edx
+        mov edx, dword ptr [esp+28h]
+        mov dword ptr [esp+0dch], edx
+        mov edx, dword ptr [esp+1ch]
+        mov dword ptr [esp+0e0h], edx
+        mov edx, dword ptr [esp+2ch]
+        mov dword ptr [esp+0e4h], edx
+        mov edx, dword ptr [esp+3ch]
+        mov dword ptr [esp+0e8h], edx
+        mov edx, dword ptr [esp+14h]
+        mov dword ptr [esp+0ech], edx
+        mov edx, dword ptr [esp+0ch]
+        mov dword ptr [esp+0f0h], edx
+        mov edx, dword ptr [esp+18h]
+        mov dword ptr [esp+0f4h], edx
+        mov edx, dword ptr [esp+38h]
+        mov dword ptr [esp+0f8h], edx
+        mov edx, dword ptr [esp+24h]
+        mov dword ptr [esp+0fch], edx
+        mov edx, dword ptr [esp+10h]
+        mov dword ptr [esp+100h], edx
+        mov edx, dword ptr [esp+20h]
+        mov dword ptr [esp+104h], edx
+        mov edx, dword ptr [eax]
+        mov dword ptr [esp+0c8h], eax
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [esp+20ch], eax
+        mov eax, dword ptr [ecx+4]
+        mov dword ptr [esp+208h], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp+214h], eax
+        mov eax, dword ptr [edi]
+        mov dword ptr [esp+210h], edx
+        mov edx, dword ptr [ebx+4]
+        mov dword ptr [esp+220h], eax
+        mov eax, dword ptr [esp+34h]
+        mov dword ptr [esp+21ch], edx
+        mov dword ptr [esp+0cch], ecx
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [ebx]
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [esp+218h], ecx
+        mov ecx, dword ptr [edi+4]
+        mov dword ptr [esp+22ch], eax
+        mov eax, dword ptr [esp+28h]
+        mov dword ptr [esp+224h], ecx
+        mov dword ptr [esp+228h], edx
+        mov dword ptr [esp+0d0h], ebx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+1ch]
+        mov dword ptr [esp+230h], ecx
+        mov dword ptr [esp+234h], edx
+        mov dword ptr [esp+0d4h], edi
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+2ch]
+        mov dword ptr [esp+238h], ecx
+        mov dword ptr [esp+23ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+3ch]
+        mov dword ptr [esp+240h], ecx
+        mov dword ptr [esp+244h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+14h]
+        mov dword ptr [esp+248h], ecx
+        mov dword ptr [esp+24ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+0ch]
+        mov dword ptr [esp+250h], ecx
+        mov dword ptr [esp+254h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+18h]
+        mov dword ptr [esp+258h], ecx
+        mov dword ptr [esp+25ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+38h]
+        mov dword ptr [esp+260h], ecx
+        mov dword ptr [esp+264h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+24h]
+        mov dword ptr [esp+268h], ecx
+        mov dword ptr [esp+26ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+10h]
+        mov dword ptr [esp+270h], ecx
+        mov dword ptr [esp+274h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+20h]
+        mov dword ptr [esp+278h], ecx
+        mov dword ptr [esp+27ch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [esp+280h], ecx
+        mov dword ptr [esp+284h], edx
+        mov eax, dword ptr [esi]
+        lea ecx, [esp+388h]
+        lea edx, [esp+3c8h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esp+50h]
+        lea ecx, [esp+210h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esi+254h]
+        lea ecx, [esp+0d8h]
+        push 3
+        push ecx
+        push edx
+        mov ecx, esi
+        call dword ptr [eax+68h]
+        mov ecx, dword ptr [esp+5ch]
+        mov edx, dword ptr [esi]
+        mov eax, ecx
+        inc ecx
+        push eax
+        lea eax, [esp+38ch]
+        mov dword ptr [esp+60h], ecx
+        push eax
+        mov eax, dword ptr [ebp+8]
+        lea ecx, [esp+3d0h]
+        push ecx
+        push eax
+        mov ecx, esi
+        call dword ptr [edx+6ch]
+        mov eax, dword ptr [esp+48h]
+        mov edx, dword ptr [esp+58h]
+        mov ecx, dword ptr [esp+50h]
+        add eax, 80h
+        add edx, 18h
+        mov dword ptr [esp+48h], eax
+        mov eax, dword ptr [esi+18h]
+        cmp ecx, 1
+        mov dword ptr [esp+58h], edx
+        jne short L_79621f
+        mov eax, dword ptr [esp+68h]
+L_79621f:
+        dec eax
+        je L_7964b9
+        mov edx, dword ptr [esp+58h]
+        lea ecx, [eax+2*eax]
+        mov dword ptr [esp+54h], eax
+        lea eax, [edx+8*ecx]
+        mov dword ptr [esp+58h], eax
+L_796238:
+        mov edx, dword ptr [esp+30h]
+        mov ecx, dword ptr [esp+4ch]
+        mov dword ptr [esp+14ch], edx
+        mov edx, dword ptr [esp+28h]
+        mov dword ptr [esp+15ch], edx
+        mov edx, dword ptr [esp+3ch]
+        mov dword ptr [esp+168h], edx
+        mov edx, dword ptr [esp+14h]
+        mov dword ptr [esp+16ch], edx
+        mov edx, dword ptr [esp+0ch]
+        mov dword ptr [esp+170h], edx
+        mov edx, dword ptr [esp+18h]
+        mov dword ptr [esp+174h], edx
+        mov edx, dword ptr [esp+38h]
+        mov dword ptr [esp+178h], edx
+        mov edx, dword ptr [esp+24h]
+        mov dword ptr [esp+17ch], edx
+        mov edx, dword ptr [esp+10h]
+        mov dword ptr [esp+180h], edx
+        mov edx, dword ptr [esp+20h]
+        mov dword ptr [esp+184h], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp+148h], ecx
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+28ch], ecx
+        mov ecx, dword ptr [esp+30h]
+        mov dword ptr [esp+288h], edx
+        mov eax, dword ptr [esp+34h]
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+294h], ecx
+        mov ecx, dword ptr [ebx+4]
+        mov dword ptr [esp+290h], edx
+        mov edx, dword ptr [ebx]
+        mov dword ptr [esp+29ch], ecx
+        mov ecx, dword ptr [edi+4]
+        mov dword ptr [esp+298h], edx
+        mov edx, dword ptr [edi]
+        mov dword ptr [esp+2a4h], ecx
+        mov ecx, dword ptr [esp+34h]
+        mov dword ptr [esp+2a0h], edx
+        mov dword ptr [esp+158h], eax
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov eax, dword ptr [esp+1ch]
+        mov dword ptr [esp+2ach], ecx
+        mov ecx, dword ptr [esp+28h]
+        mov dword ptr [esp+2a8h], edx
+        mov dword ptr [esp+160h], eax
+        mov eax, dword ptr [esp+2ch]
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+2b4h], ecx
+        mov ecx, dword ptr [esp+1ch]
+        mov dword ptr [esp+2b0h], edx
+        mov dword ptr [esp+164h], eax
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+4]
+        mov dword ptr [esp+2b8h], edx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [esp+2bch], ecx
+        mov dword ptr [esp+2c4h], eax
+        mov eax, dword ptr [esp+3ch]
+        mov dword ptr [esp+2c0h], edx
+        mov dword ptr [esp+150h], ebx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+14h]
+        mov dword ptr [esp+2c8h], ecx
+        mov dword ptr [esp+2cch], edx
+        mov dword ptr [esp+154h], edi
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+0ch]
+        mov dword ptr [esp+2d0h], ecx
+        mov dword ptr [esp+2d4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [esp+2d8h], ecx
+        mov dword ptr [esp+2dch], edx
+        mov eax, dword ptr [esp+18h]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+38h]
+        mov dword ptr [esp+2e0h], ecx
+        mov dword ptr [esp+2e4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+24h]
+        mov dword ptr [esp+2e8h], ecx
+        mov dword ptr [esp+2ech], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+10h]
+        mov dword ptr [esp+2f0h], ecx
+        mov dword ptr [esp+2f4h], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov eax, dword ptr [esp+20h]
+        mov dword ptr [esp+2f8h], ecx
+        mov dword ptr [esp+2fch], edx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [esp+300h], ecx
+        mov dword ptr [esp+304h], edx
+        mov eax, dword ptr [esi]
+        lea ecx, [esp+388h]
+        lea edx, [esp+3c8h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esp+50h]
+        lea ecx, [esp+290h]
+        push ecx
+        push edx
+        mov edx, dword ptr [esi+254h]
+        lea ecx, [esp+158h]
+        push 3
+        push ecx
+        push edx
+        mov ecx, esi
+        call dword ptr [eax+68h]
+        mov ecx, dword ptr [esp+5ch]
+        mov edx, dword ptr [esi]
+        mov eax, ecx
+        inc ecx
+        push eax
+        lea eax, [esp+38ch]
+        mov dword ptr [esp+60h], ecx
+        push eax
+        mov eax, dword ptr [ebp+8]
+        lea ecx, [esp+3d0h]
+        push ecx
+        push eax
+        mov ecx, esi
+        call dword ptr [edx+6ch]
+        mov ecx, dword ptr [esp+48h]
+        mov eax, dword ptr [esp+54h]
+        add ecx, 80h
+        dec eax
+        mov dword ptr [esp+48h], ecx
+        mov dword ptr [esp+54h], eax
+        jne L_796238
+L_7964b9:
+        mov eax, dword ptr [esp+50h]
+        dec eax
+        mov dword ptr [esp+50h], eax
+        jne L_795e2e
+        mov ecx, dword ptr [esp+64h]
+        mov edx, dword ptr [esp+30h]
+        lea eax, [ecx*8]
+        mov ecx, dword ptr [esp+4ch]
+        sub ecx, eax
+        sub edx, eax
+        mov dword ptr [esp+4ch], ecx
+        mov ecx, dword ptr [esp+34h]
+        mov dword ptr [esp+30h], edx
+        mov edx, dword ptr [esp+28h]
+        sub ecx, eax
+        sub edx, eax
+        mov dword ptr [esp+34h], ecx
+        mov ecx, dword ptr [esp+1ch]
+        mov dword ptr [esp+28h], edx
+        mov edx, dword ptr [esp+2ch]
+        sub ecx, eax
+        sub edx, eax
+        mov dword ptr [esp+1ch], ecx
+        mov ecx, dword ptr [esp+3ch]
+        mov dword ptr [esp+2ch], edx
+        mov edx, dword ptr [esp+14h]
+        sub ecx, eax
+        sub edx, eax
+        mov dword ptr [esp+3ch], ecx
+        mov ecx, dword ptr [esp+0ch]
+        mov dword ptr [esp+14h], edx
+        mov edx, dword ptr [esp+18h]
+        sub ecx, eax
+        sub edx, eax
+        mov dword ptr [esp+0ch], ecx
+        mov ecx, dword ptr [esp+38h]
+        mov dword ptr [esp+18h], edx
+        mov edx, dword ptr [esp+24h]
+        sub ecx, eax
+        sub edx, eax
+        mov dword ptr [esp+38h], ecx
+        mov ecx, dword ptr [esp+10h]
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [esp+20h]
+        sub ebx, eax
+        sub edi, eax
+        sub ecx, eax
+        sub edx, eax
+        mov eax, dword ptr [esp+44h]
+        mov dword ptr [esp+10h], ecx
+        dec eax
+        mov dword ptr [esp+20h], edx
+        je short L_7965d2
+        sub eax, 2
+        je short L_7965ab
+        sub eax, 4
+        jne L_7965fd
+        mov edx, dword ptr [esp+40h]
+        mov ecx, dword ptr [esp+28h]
+        lea eax, [edx*8]
+        mov edx, dword ptr [esp+30h]
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+30h], edx
+        mov edx, dword ptr [esp+14h]
+        mov dword ptr [esp+28h], ecx
+        mov ecx, dword ptr [esp+24h]
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+14h], edx
+        mov dword ptr [esp+24h], ecx
+L_7965ab:
+        mov eax, dword ptr [esp+40h]
+        mov ecx, dword ptr [esp+1ch]
+        mov edx, dword ptr [esp+0ch]
+        shl eax, 3
+        add ecx, eax
+        add ebx, eax
+        mov dword ptr [esp+1ch], ecx
+        mov ecx, dword ptr [esp+10h]
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+0ch], edx
+        mov dword ptr [esp+10h], ecx
+L_7965d2:
+        mov ecx, dword ptr [esp+40h]
+        mov edx, dword ptr [esp+18h]
+        lea eax, [ecx*8]
+        mov ecx, dword ptr [esp+2ch]
+        add ecx, eax
+        add edi, eax
+        mov dword ptr [esp+2ch], ecx
+        mov ecx, dword ptr [esp+20h]
+        add edx, eax
+        add ecx, eax
+        mov dword ptr [esp+18h], edx
+        mov dword ptr [esp+20h], ecx
+L_7965fd:
+        mov eax, dword ptr [esp+80h]
+        mov dword ptr [esp+44h], 0
+        dec eax
+        mov dword ptr [esp+80h], eax
+        jne L_795e07
+L_79661a:
+        mov eax, dword ptr [esp+6ch]
+        dec eax
+        mov dword ptr [esp+6ch], eax
+        jne L_7954a3
+        mov edx, dword ptr [esp+84h]
+        mov edi, dword ptr [esp+70h]
+        dec edx
+        mov eax, dword ptr [esp+78h]
+        imul edx, dword ptr [esi+1ch]
+        add edx, edi
+        dec eax
+        imul eax, dword ptr [esi+18h]
+        mov ecx, dword ptr [esp+68h]
+        mov dword ptr [esi+2ch], edx
+        add eax, ecx
+        pop edi
+        mov dword ptr [esi+28h], eax
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}
