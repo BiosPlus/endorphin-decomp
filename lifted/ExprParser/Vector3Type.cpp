@@ -100,3 +100,28 @@ int fn_0066B620(void* self, void* a1, void* a2) {
     }
     return 1;
 }
+
+// [0x0066D120] ExprParser::Vector3Type::vfunc_46 (98 bytes)
+// @name ExprParser::Vector3Type::vfunc_46
+// @class ExprParser::Vector3Type
+// @summary Replaces the float[3] at *a1 with the cross product of itself and the vector returned by a2->+0x04->vfunc_5(a2).
+// @field Unknown +0x04 void* field_0x04
+
+#include "lift_compat.h"
+
+void fn_0066D120(void* self, void** a1, void* a2) {
+    (void)self;
+    // Source vector: a2->+0x04->vfunc_5(a2) (vtable slot 5, offset 0x14).
+    void* sub = *reinterpret_cast<void**>(static_cast<char*>(a2) + 0x04);
+    void** vtbl = *static_cast<void***>(sub);
+    float* b = static_cast<float*>(reinterpret_cast<void* (*)(void*, void*)>(vtbl[5])(sub, a2));
+
+    // Destination vector a = *a1, updated in place with a x b.
+    float* a = static_cast<float*>(*a1);
+    float a0 = a[0], a1c = a[1], a2c = a[2];
+    float b0 = b[0], b1 = b[1], b2 = b[2];
+
+    a[0] = a1c * b2 - a2c * b1;
+    a[1] = a2c * b0 - a0 * b2;
+    a[2] = a0 * b1 - a1c * b0;
+}

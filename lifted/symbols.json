@@ -9638,6 +9638,13 @@
     "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066D120": {
+    "name": "ExprParser::Vector3Type::vfunc_46",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_0066D120(void* self, void** a1, void* a2)",
+    "summary": "Replaces the float[3] at *a1 with the cross product of itself and the vector returned by a2-\u003e+0x04-\u003evfunc_5(a2).",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066DCB0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
