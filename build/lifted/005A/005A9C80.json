@@ -1,0 +1,14 @@
+{
+  "va": "0x005A9C80",
+  "size": 5,
+  "orig_symbol": "NMData::BackGroundData::vfunc_34_off_4",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMData::BackGroundData::vfunc_34_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "extern \"C\" void fn_005A9C80(void)",
+  "summary": "Pure jump thunk forwarding to AnimatableTransform::vfunc_34.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005F30D0",
+  "size": 5,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_21",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_21",
+  "class": "NMData::FixedPathJointData",
+  "signature": "extern \"C\" void fn_005F30D0(void)",
+  "summary": "Pure jump thunk forwarding to NMData::NullRelationshipData::vfunc_21.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

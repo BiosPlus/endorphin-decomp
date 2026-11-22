@@ -1,0 +1,14 @@
+{
+  "va": "0x0066EDA0",
+  "size": 8,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_0_off_4",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_0_off_4",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "extern \"C\" void __fastcall fn_0066EDA0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0066EDB0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

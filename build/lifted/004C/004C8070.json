@@ -1,0 +1,14 @@
+{
+  "va": "0x004C8070",
+  "size": 11,
+  "orig_symbol": "NMData::SeverEventData::vfunc_3_off_158",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::SeverEventData::vfunc_3_off_158",
+  "class": "NMData::SeverEventData",
+  "signature": "extern \"C\" void __fastcall fn_004C8070(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::SeverEventData::vfunc_22.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

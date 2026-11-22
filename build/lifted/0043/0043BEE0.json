@@ -1,0 +1,14 @@
+{
+  "va": "0x0043BEE0",
+  "size": 30,
+  "orig_symbol": "MultiTrackView::MarkerTrack::vfunc_0",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::MarkerTrack::vfunc_0",
+  "class": "MultiTrackView::MarkerTrack",
+  "signature": "extern \"C\" void* __fastcall fn_0043BEE0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0043BBD0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

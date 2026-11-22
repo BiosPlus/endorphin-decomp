@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1170",
+  "size": 12,
+  "orig_symbol": "Geometry::CylinderType::vfunc_1",
+  "src_path": "src/Geometry/CylinderType.cpp",
+  "lifted_path": "lifted/Geometry/CylinderType.cpp",
+  "name": "Geometry::CylinderType::vfunc_1",
+  "class": "Geometry::CylinderType",
+  "signature": "void fn_005B1170(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

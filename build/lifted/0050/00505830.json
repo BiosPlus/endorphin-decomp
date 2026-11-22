@@ -1,0 +1,14 @@
+{
+  "va": "0x00505830",
+  "size": 30,
+  "orig_symbol": "Chromosome::Descriptor::vfunc_0",
+  "src_path": "src/Chromosome/auto_tiny.cpp",
+  "lifted_path": "lifted/Chromosome/auto_tiny.cpp",
+  "name": "Chromosome::Descriptor::vfunc_0",
+  "class": "Chromosome::Descriptor",
+  "signature": "extern \"C\" void* __fastcall fn_00505830(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00504B80 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

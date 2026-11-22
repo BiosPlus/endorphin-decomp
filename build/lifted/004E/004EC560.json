@@ -1,0 +1,14 @@
+{
+  "va": "0x004EC560",
+  "size": 8,
+  "orig_symbol": "NMData::TopLevelState::vfunc_0_off_10",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::TopLevelState::vfunc_0_off_10",
+  "class": "NMData::TopLevelState",
+  "signature": "extern \"C\" void __fastcall fn_004EC560(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x10 and tail-calls NMData::TopLevelState::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

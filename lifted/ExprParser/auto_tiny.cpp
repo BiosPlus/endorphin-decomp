@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/ExprParser/auto_tiny.cpp
 #include "lift_compat.h"
+extern "C" void __fastcall ext_00420070(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 
-// [0x0049C000] ExprParser::BoolType::vfunc_14 (9 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 // @name ExprParser::BoolType::vfunc_14
 // @class ExprParser::BoolType
 // @summary Stdcall leaf (ret 4): takes one pointer argument and returns the 32-bit value stored at its first dword.
@@ -9,6 +11,14 @@
 extern "C" uint32_t __stdcall fn_0049C000(const uint32_t* self) {
     return *self;
 }
+extern "C" void __fastcall ext_0065F440(void* self);
+extern "C" void __fastcall ext_0066EDB0(void* self);
+extern "C" void __fastcall ext_006710E0(void* self);
+extern "C" void __fastcall ext_006737B0(void* self);
+extern "C" void __fastcall ext_006991A0(void* self);
+extern "C" void __fastcall ext_0069AA80(void* self);
+extern "C" void __fastcall ext_0069A830(void* self);
+extern "C" void __fastcall ext_006A2C20(void* self);
 
 // [0x0066AD70] ExprParser::RealType::vfunc_1 (9 bytes)
 // @name ExprParser::RealType::vfunc_1
@@ -119,4 +129,117 @@ void fn_0066B110(void* self, int32_t value) {
 // Note: no field offsets off the object are accessed; ecx is loaded from the first stack argument, not from `this`.
 void fn_0066B170(uint8_t* dst, uint8_t value) {
     *dst = value;
+}
+
+// [0x00420660] ExprParser::ExpressionException::vfunc_0 (30 bytes)
+// @name ExprParser::ExpressionException::vfunc_0
+// @class ExprParser::ExpressionException
+// @summary MSVC scalar deleting destructor: calls sub_00420070 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00420660(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00420070(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0059E1E0] ExprParser::SingleVariableContainer::vfunc_0 (30 bytes)
+// @name ExprParser::SingleVariableContainer::vfunc_0
+// @class ExprParser::SingleVariableContainer
+// @summary MSVC scalar deleting destructor: calls sub_0065F440 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0059E1E0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0065F440(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0066CE20] ExprParser::Vector3Type::vfunc_24 (15 bytes)
+// @name ExprParser::Vector3Type::vfunc_24
+// @class ExprParser::Vector3Type
+// @summary Null-safe subobject pointer adjustment: returns `this +0x4` if non-null, else nullptr.
+extern "C" void* __fastcall fn_0066CE20(void* self, int edx_unused, int a1) {
+    if (self == nullptr) {
+        return nullptr;
+    }
+    return static_cast<char*>(self) + 0x4;
+}
+
+// [0x0066EDA0] ExprParser::ExpressionContainerType::vfunc_0_off_4 (8 bytes)
+// @name ExprParser::ExpressionContainerType::vfunc_0_off_4
+// @class ExprParser::ExpressionContainerType
+// @summary This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0066EDB0.
+extern "C" void __fastcall fn_0066EDA0(void* self) {
+    ext_0066EDB0(static_cast<char*>(self) - 0x4);
+}
+
+// [0x00671030] ExprParser::Vector3Type::vfunc_0_off_4 (8 bytes)
+// @name ExprParser::Vector3Type::vfunc_0_off_4
+// @class ExprParser::Vector3Type
+// @summary This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_006710E0.
+extern "C" void __fastcall fn_00671030(void* self) {
+    ext_006710E0(static_cast<char*>(self) - 0x4);
+}
+
+// [0x006738B0] ExprParser::DeclarationsParser::vfunc_0 (30 bytes)
+// @name ExprParser::DeclarationsParser::vfunc_0
+// @class ExprParser::DeclarationsParser
+// @summary MSVC scalar deleting destructor: calls sub_006737B0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_006738B0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_006737B0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00699340] ExprParser::ObjectContainer::vfunc_0 (30 bytes)
+// @name ExprParser::ObjectContainer::vfunc_0
+// @class ExprParser::ObjectContainer
+// @summary MSVC scalar deleting destructor: calls sub_006991A0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00699340(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_006991A0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0069A820] ExprParser::ExpressionContainer::vfunc_0_off_4 (8 bytes)
+// @name ExprParser::ExpressionContainer::vfunc_0_off_4
+// @class ExprParser::ExpressionContainer
+// @summary This-adjustor thunk: adjusts `this` by -0x4 and tail-calls ExprParser::ExpressionContainer::vfunc_0.
+extern "C" void __fastcall fn_0069A820(void* self) {
+    ext_0069AA80(static_cast<char*>(self) - 0x4);
+}
+
+// [0x0069AA80] ExprParser::ExpressionContainer::vfunc_0 (30 bytes)
+// @name ExprParser::ExpressionContainer::vfunc_0
+// @class ExprParser::ExpressionContainer
+// @summary MSVC scalar deleting destructor: calls sub_0069A830 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0069AA80(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0069A830(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0069B580] ExprParser::ParseException::vfunc_0 (30 bytes)
+// @name ExprParser::ParseException::vfunc_0
+// @class ExprParser::ParseException
+// @summary MSVC scalar deleting destructor: calls sub_006A2C20 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0069B580(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_006A2C20(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
 }

@@ -1,0 +1,14 @@
+{
+  "va": "0x00477450",
+  "size": 30,
+  "orig_symbol": "NMData::MaterialPair::vfunc_0",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::MaterialPair::vfunc_0",
+  "class": "NMData::MaterialPair",
+  "signature": "extern \"C\" void* __fastcall fn_00477450(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_004773D0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

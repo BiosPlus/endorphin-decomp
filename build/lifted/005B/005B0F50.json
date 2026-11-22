@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F50",
+  "size": 5,
+  "orig_symbol": "Geometry::NullRelationshipType::vfunc_6",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "Geometry::NullRelationshipType::vfunc_6",
+  "class": "Geometry::NullRelationshipType",
+  "signature": "extern \"C\" void fn_005B0F50(void)",
+  "summary": "Pure jump thunk forwarding to sub_005300D0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

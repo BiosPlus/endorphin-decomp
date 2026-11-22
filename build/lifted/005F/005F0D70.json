@@ -1,0 +1,14 @@
+{
+  "va": "0x005F0D70",
+  "size": 8,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_1_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::MagnetJointData::vfunc_1_off_C",
+  "class": "NMData::MagnetJointData",
+  "signature": "extern \"C\" void __fastcall fn_005F0D70(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::MagnetJointData::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

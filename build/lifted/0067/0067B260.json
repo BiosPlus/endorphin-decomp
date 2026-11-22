@@ -1,0 +1,14 @@
+{
+  "va": "0x0067B260",
+  "size": 30,
+  "orig_symbol": "RuntimeEngine::NullThread::vfunc_0",
+  "src_path": "src/RuntimeEngine/auto_tiny.cpp",
+  "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp",
+  "name": "RuntimeEngine::NullThread::vfunc_0",
+  "class": "RuntimeEngine::NullThread",
+  "signature": "extern \"C\" void* __fastcall fn_0067B260(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0067B1F0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

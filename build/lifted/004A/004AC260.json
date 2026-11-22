@@ -1,0 +1,14 @@
+{
+  "va": "0x004AC260",
+  "size": 11,
+  "orig_symbol": "NMData::BehaviourData::vfunc_3_off_158",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::BehaviourData::vfunc_3_off_158",
+  "class": "NMData::BehaviourData",
+  "signature": "extern \"C\" void __fastcall fn_004AC260(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::BehaviourData::vfunc_22.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

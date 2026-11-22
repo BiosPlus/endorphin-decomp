@@ -1,0 +1,14 @@
+{
+  "va": "0x0048DA40",
+  "size": 5,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_79",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMData::AnimationEventData::vfunc_79",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void fn_0048DA40(void)",
+  "summary": "Pure jump thunk forwarding to sub_004C28C0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

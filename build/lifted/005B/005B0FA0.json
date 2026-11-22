@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0FA0",
+  "size": 5,
+  "orig_symbol": "Geometry::RadiusLimitType::vfunc_6",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "Geometry::RadiusLimitType::vfunc_6",
+  "class": "Geometry::RadiusLimitType",
+  "signature": "extern \"C\" void fn_005B0FA0(void)",
+  "summary": "Pure jump thunk forwarding to sub_0052F2E0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

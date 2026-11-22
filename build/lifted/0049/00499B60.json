@@ -1,0 +1,14 @@
+{
+  "va": "0x00499B60",
+  "size": 8,
+  "orig_symbol": "NMData::Transition::vfunc_0_off_8",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::Transition::vfunc_0_off_8",
+  "class": "NMData::Transition",
+  "signature": "extern \"C\" void __fastcall fn_00499B60(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::Transition::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0045F600",
+  "size": 11,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_1_off_248",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_1_off_248",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "extern \"C\" void __fastcall fn_0045F600(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFDB8 and tail-calls sub_0045F150.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

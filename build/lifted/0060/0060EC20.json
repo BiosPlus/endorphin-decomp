@@ -1,0 +1,14 @@
+{
+  "va": "0x0060EC20",
+  "size": 8,
+  "orig_symbol": "NMData::SensorData::vfunc_1_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::SensorData::vfunc_1_off_C",
+  "class": "NMData::SensorData",
+  "signature": "extern \"C\" void __fastcall fn_0060EC20(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::SensorData::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

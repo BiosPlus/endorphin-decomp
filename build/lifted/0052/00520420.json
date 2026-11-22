@@ -1,0 +1,14 @@
+{
+  "va": "0x00520420",
+  "size": 30,
+  "orig_symbol": "StateMachine::State::vfunc_0",
+  "src_path": "src/StateMachine/auto_tiny.cpp",
+  "lifted_path": "lifted/StateMachine/auto_tiny.cpp",
+  "name": "StateMachine::State::vfunc_0",
+  "class": "StateMachine::State",
+  "signature": "extern \"C\" void* __fastcall fn_00520420(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0051FBB0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

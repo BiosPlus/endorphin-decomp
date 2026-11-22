@@ -1,0 +1,14 @@
+{
+  "va": "0x004BED80",
+  "size": 8,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_0_off_8",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_0_off_8",
+  "class": "NMData::EvolveEngineData",
+  "signature": "extern \"C\" void __fastcall fn_004BED80(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::EvolveEngineData::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

@@ -31,8 +31,10 @@ extern "C" int mem_009364A0;
 extern "C" int mem_00936504;
 extern "C" int mem_009366E0;
 extern "C" int mem_0093675C;
+extern "C" void __fastcall ext_00558920(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 
-// [0x00417330] ExportDialog::vfunc_0 (6 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 // @name ExportDialog::vfunc_0
 // @class ExportDialog
 // @summary Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).
@@ -40,6 +42,21 @@ void* fn_00417330(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_0092CE00);
 }
+extern "C" void __fastcall ext_00417CD0(void* self);
+extern "C" void __fastcall ext_00419840(void* self);
+extern "C" void __fastcall ext_00474FD0(void* self);
+extern "C" void __fastcall ext_00474C40(void* self);
+extern "C" void __fastcall ext_005149F0(void* self);
+extern "C" void __fastcall ext_0056B710(void* self);
+extern "C" void __fastcall ext_0056D840(void* self);
+extern "C" void __fastcall ext_00570230(void* self);
+extern "C" void __fastcall ext_005702F0(void* self);
+extern "C" void __fastcall ext_00571DD0(void* self);
+extern "C" void __fastcall ext_00573180(void* self);
+extern "C" void __fastcall ext_00582AE0(void* self);
+extern "C" void __fastcall ext_00584490(void* self);
+extern "C" void __fastcall ext_0055F750(void* self);
+extern "C" void __fastcall ext_005B1870(void* self);
 
 // [0x00419720] ExportUnavailableDialog::vfunc_0 (6 bytes)
 // @name ExportUnavailableDialog::vfunc_0
@@ -348,4 +365,207 @@ extern "C" int* __fastcall fn_00455060(void* self) {
 void* fn_004552E0(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_0093675C);
+}
+
+// [0x00403020] NMFileIO::vfunc_0 (30 bytes)
+// @name NMFileIO::vfunc_0
+// @class NMFileIO
+// @summary MSVC scalar deleting destructor: calls sub_00558920 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00403020(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00558920(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00418940] ExportDialog::vfunc_1 (30 bytes)
+// @name ExportDialog::vfunc_1
+// @class ExportDialog
+// @summary MSVC scalar deleting destructor: calls sub_00417CD0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00418940(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00417CD0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00419920] ExportUnavailableDialog::vfunc_1 (30 bytes)
+// @name ExportUnavailableDialog::vfunc_1
+// @class ExportUnavailableDialog
+// @summary MSVC scalar deleting destructor: calls sub_00419840 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00419920(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00419840(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00474ED0] RuntimeEngine::vfunc_0_off_4 (8 bytes)
+// @name RuntimeEngine::vfunc_0_off_4
+// @class RuntimeEngine
+// @summary This-adjustor thunk: adjusts `this` by -0x4 and tail-calls RuntimeEngine::vfunc_0.
+extern "C" void __fastcall fn_00474ED0(void* self) {
+    ext_00474FD0(static_cast<char*>(self) - 0x4);
+}
+
+// [0x00474FD0] RuntimeEngine::vfunc_0 (30 bytes)
+// @name RuntimeEngine::vfunc_0
+// @class RuntimeEngine
+// @summary MSVC scalar deleting destructor: calls sub_00474C40 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00474FD0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00474C40(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00506160] Chromosome::vfunc_0 (30 bytes)
+// @name Chromosome::vfunc_0
+// @class Chromosome
+// @summary MSVC scalar deleting destructor: calls sub_005149F0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00506160(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_005149F0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00559E40] Acclaim2CharacterIO::vfunc_0 (30 bytes)
+// @name Acclaim2CharacterIO::vfunc_0
+// @class Acclaim2CharacterIO
+// @summary MSVC scalar deleting destructor: calls sub_0056B710 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00559E40(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0056B710(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00559FA0] NMCIO::vfunc_0 (30 bytes)
+// @name NMCIO::vfunc_0
+// @class NMCIO
+// @summary MSVC scalar deleting destructor: calls sub_0056D840 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00559FA0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0056D840(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055A050] BVHIO::vfunc_0 (30 bytes)
+// @name BVHIO::vfunc_0
+// @class BVHIO
+// @summary MSVC scalar deleting destructor: calls sub_00570230 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055A050(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00570230(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055A0E0] CDLCharacterIO::vfunc_0 (30 bytes)
+// @name CDLCharacterIO::vfunc_0
+// @class CDLCharacterIO
+// @summary MSVC scalar deleting destructor: calls sub_005702F0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055A0E0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_005702F0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055A100] CSMMotionIO::vfunc_0 (30 bytes)
+// @name CSMMotionIO::vfunc_0
+// @class CSMMotionIO
+// @summary MSVC scalar deleting destructor: calls sub_00571DD0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055A100(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00571DD0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055A120] OBJIO::vfunc_0 (30 bytes)
+// @name OBJIO::vfunc_0
+// @class OBJIO
+// @summary MSVC scalar deleting destructor: calls sub_00573180 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055A120(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00573180(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055BC20] Acclaim2MotionIO::vfunc_0 (30 bytes)
+// @name Acclaim2MotionIO::vfunc_0
+// @class Acclaim2MotionIO
+// @summary MSVC scalar deleting destructor: calls sub_00582AE0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055BC20(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00582AE0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055BEB0] AcclaimIO::vfunc_0 (30 bytes)
+// @name AcclaimIO::vfunc_0
+// @class AcclaimIO
+// @summary MSVC scalar deleting destructor: calls sub_00584490 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055BEB0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00584490(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0055F830] FBXIO::vfunc_0 (30 bytes)
+// @name FBXIO::vfunc_0
+// @class FBXIO
+// @summary MSVC scalar deleting destructor: calls sub_0055F750 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0055F830(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0055F750(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x005B3590] Geometry::vfunc_0 (30 bytes)
+// @name Geometry::vfunc_0
+// @class Geometry
+// @summary MSVC scalar deleting destructor: calls sub_005B1870 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_005B3590(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_005B1870(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
 }

@@ -1,0 +1,14 @@
+{
+  "va": "0x00459F00",
+  "size": 30,
+  "orig_symbol": "MultiTrackView::TimeRuler::vfunc_0",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::TimeRuler::vfunc_0",
+  "class": "MultiTrackView::TimeRuler",
+  "signature": "extern \"C\" void* __fastcall fn_00459F00(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls 0x00459E80 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00671030",
+  "size": 8,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_0_off_4",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_0_off_4",
+  "class": "ExprParser::Vector3Type",
+  "signature": "extern \"C\" void __fastcall fn_00671030(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_006710E0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

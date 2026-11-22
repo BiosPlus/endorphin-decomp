@@ -1,0 +1,14 @@
+{
+  "va": "0x005B35B0",
+  "size": 30,
+  "orig_symbol": "Geometry::AnimationType::vfunc_0",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::AnimationType::vfunc_0",
+  "class": "Geometry::AnimationType",
+  "signature": "extern \"C\" void* __fastcall fn_005B35B0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_005B1140 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

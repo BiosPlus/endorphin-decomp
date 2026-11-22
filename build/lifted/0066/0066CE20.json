@@ -1,0 +1,14 @@
+{
+  "va": "0x0066CE20",
+  "size": 15,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_24",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_24",
+  "class": "ExprParser::Vector3Type",
+  "signature": "extern \"C\" void* __fastcall fn_0066CE20(void* self, int edx_unused, int a1)",
+  "summary": "Null-safe subobject pointer adjustment: returns `this +0x4` if non-null, else nullptr.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

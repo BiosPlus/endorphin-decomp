@@ -1,0 +1,14 @@
+{
+  "va": "0x005A9D20",
+  "size": 8,
+  "orig_symbol": "NMData::BackGroundData::vfunc_21_off_4",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::BackGroundData::vfunc_21_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "extern \"C\" void __fastcall fn_005A9D20(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls NMData::BackGroundData::vfunc_1.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

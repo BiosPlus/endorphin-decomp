@@ -1,0 +1,14 @@
+{
+  "va": "0x004CD3A0",
+  "size": 30,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_0",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_0",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void* __fastcall fn_004CD3A0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_004CCF10 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

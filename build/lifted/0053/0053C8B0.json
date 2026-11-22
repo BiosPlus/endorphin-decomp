@@ -1,0 +1,14 @@
+{
+  "va": "0x0053C8B0",
+  "size": 30,
+  "orig_symbol": "Primitives::Sphere::vfunc_0",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Sphere::vfunc_0",
+  "class": "Primitives::Sphere",
+  "signature": "extern \"C\" void* __fastcall fn_0053C8B0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0053B710 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

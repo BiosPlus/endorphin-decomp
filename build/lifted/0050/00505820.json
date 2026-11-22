@@ -1,0 +1,14 @@
+{
+  "va": "0x00505820",
+  "size": 8,
+  "orig_symbol": "Chromosome::Descriptor::vfunc_0_off_4",
+  "src_path": "src/Chromosome/auto_tiny.cpp",
+  "lifted_path": "lifted/Chromosome/auto_tiny.cpp",
+  "name": "Chromosome::Descriptor::vfunc_0_off_4",
+  "class": "Chromosome::Descriptor",
+  "signature": "extern \"C\" void __fastcall fn_00505820(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls Chromosome::Descriptor::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

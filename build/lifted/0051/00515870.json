@@ -1,0 +1,14 @@
+{
+  "va": "0x00515870",
+  "size": 30,
+  "orig_symbol": "NMData::EvolverRuntimeOptions::vfunc_0",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::EvolverRuntimeOptions::vfunc_0",
+  "class": "NMData::EvolverRuntimeOptions",
+  "signature": "extern \"C\" void* __fastcall fn_00515870(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00515820 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

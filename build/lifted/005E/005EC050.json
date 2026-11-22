@@ -1,0 +1,14 @@
+{
+  "va": "0x005EC050",
+  "size": 5,
+  "orig_symbol": "NMData::DriveFrame::vfunc_61",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMData::DriveFrame::vfunc_61",
+  "class": "NMData::DriveFrame",
+  "signature": "extern \"C\" void fn_005EC050(void)",
+  "summary": "Pure jump thunk forwarding to sub_00611200.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0EE0",
+  "size": 5,
+  "orig_symbol": "Geometry::SphylType::vfunc_6",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "Geometry::SphylType::vfunc_6",
+  "class": "Geometry::SphylType",
+  "signature": "extern \"C\" void fn_005B0EE0(void)",
+  "summary": "Pure jump thunk forwarding to sub_0052F080.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

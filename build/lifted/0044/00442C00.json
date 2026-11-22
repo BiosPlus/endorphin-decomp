@@ -1,0 +1,22 @@
+{
+  "va": "0x00442C00",
+  "size": 8,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_2",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_2",
+  "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+  "signature": "extern \"C\" void __fastcall fn_00442C00(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_0043CD80.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

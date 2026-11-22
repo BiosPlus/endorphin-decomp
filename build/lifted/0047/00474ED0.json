@@ -1,0 +1,14 @@
+{
+  "va": "0x00474ED0",
+  "size": 8,
+  "orig_symbol": "RuntimeEngine::vfunc_0_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RuntimeEngine::vfunc_0_off_4",
+  "class": "RuntimeEngine",
+  "signature": "extern \"C\" void __fastcall fn_00474ED0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls RuntimeEngine::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

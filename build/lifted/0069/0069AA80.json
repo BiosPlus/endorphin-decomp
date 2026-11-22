@@ -1,0 +1,14 @@
+{
+  "va": "0x0069AA80",
+  "size": 30,
+  "orig_symbol": "ExprParser::ExpressionContainer::vfunc_0",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExpressionContainer::vfunc_0",
+  "class": "ExprParser::ExpressionContainer",
+  "signature": "extern \"C\" void* __fastcall fn_0069AA80(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0069A830 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

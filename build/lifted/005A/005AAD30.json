@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAD30",
+  "size": 5,
+  "orig_symbol": "NMData::RigRoot::vfunc_21",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMData::RigRoot::vfunc_21",
+  "class": "NMData::RigRoot",
+  "signature": "extern \"C\" void fn_005AAD30(void)",
+  "summary": "Pure jump thunk forwarding to NMData::RigNode::vfunc_21.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

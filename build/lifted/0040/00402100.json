@@ -1,0 +1,14 @@
+{
+  "va": "0x00402100",
+  "size": 11,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_0_off_150",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::AnimationEventData::vfunc_0_off_150",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void __fastcall fn_00402100(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEB0 and tail-calls sub_0058AF80.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

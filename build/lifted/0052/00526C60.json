@@ -1,0 +1,14 @@
+{
+  "va": "0x00526C60",
+  "size": 8,
+  "orig_symbol": "NMData::NetworkConnectorData::vfunc_28",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::NetworkConnectorData::vfunc_28",
+  "class": "NMData::NetworkConnectorData",
+  "signature": "extern \"C\" void __fastcall fn_00526C60(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

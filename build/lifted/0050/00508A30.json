@@ -1,0 +1,14 @@
+{
+  "va": "0x00508A30",
+  "size": 30,
+  "orig_symbol": "NMData::TaskParam::vfunc_0",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::TaskParam::vfunc_0",
+  "class": "NMData::TaskParam",
+  "signature": "extern \"C\" void* __fastcall fn_00508A30(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00508790 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

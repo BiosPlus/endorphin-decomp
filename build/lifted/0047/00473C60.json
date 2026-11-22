@@ -1,0 +1,22 @@
+{
+  "va": "0x00473C60",
+  "size": 8,
+  "orig_symbol": "RuntimeEngine::PlaybackTicker::vfunc_0",
+  "src_path": "src/RuntimeEngine/auto_tiny.cpp",
+  "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp",
+  "name": "RuntimeEngine::PlaybackTicker::vfunc_0",
+  "class": "RuntimeEngine::PlaybackTicker",
+  "signature": "extern \"C\" void __fastcall fn_00473C60(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_00472EB0.",
+  "fields": [
+    {
+      "class": "RuntimeEngine::PlaybackTicker",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "delegate_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

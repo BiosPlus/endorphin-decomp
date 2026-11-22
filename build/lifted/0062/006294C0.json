@@ -1,0 +1,14 @@
+{
+  "va": "0x006294C0",
+  "size": 5,
+  "orig_symbol": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
+  "class": "Sensors::SensorAbsoluteGeneralEulers",
+  "signature": "extern \"C\" void fn_006294C0(void)",
+  "summary": "Pure jump thunk forwarding to sub_00629460.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

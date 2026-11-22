@@ -3,8 +3,10 @@
 extern "C" int mem_00B59400;
 extern "C" int mem_0095F7D8;
 extern "C" int mem_00924FDC;
+extern "C" void __fastcall ext_005B1140(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 
-// [0x005B1110] Geometry::AnimationType::vfunc_8 (6 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 // @name Geometry::AnimationType::vfunc_8
 // @class Geometry::AnimationType
 // @summary Returns the address of the global mem_00B59400 (ignores this).
@@ -13,6 +15,7 @@ int* fn_005B1110(void* self) {
     (void)self;
     return &mem_00B59400;
 }
+extern "C" void __fastcall ext_005B5260(void* self);
 
 // [0x005B1900] Geometry::SphereType::vfunc_9 (9 bytes)
 // @name Geometry::SphereType::vfunc_9
@@ -49,4 +52,30 @@ extern "C" void* __thiscall fn_005B1980(void* self, const void* rhs) {
     void* adjusted = static_cast<unsigned char*>(self) + 4;
     ForwardFn target = reinterpret_cast<ForwardFn>(static_cast<intptr_t>(mem_00924FDC));
     return target(adjusted, rhs);
+}
+
+// [0x005B35B0] Geometry::AnimationType::vfunc_0 (30 bytes)
+// @name Geometry::AnimationType::vfunc_0
+// @class Geometry::AnimationType
+// @summary MSVC scalar deleting destructor: calls sub_005B1140 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_005B35B0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_005B1140(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x005B5760] Geometry::MeshType::vfunc_0 (30 bytes)
+// @name Geometry::MeshType::vfunc_0
+// @class Geometry::MeshType
+// @summary MSVC scalar deleting destructor: calls sub_005B5260 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_005B5760(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_005B5260(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
 }

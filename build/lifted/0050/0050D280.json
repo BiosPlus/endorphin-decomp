@@ -1,0 +1,14 @@
+{
+  "va": "0x0050D280",
+  "size": 8,
+  "orig_symbol": "NMData::TaskManager::vfunc_0_off_4",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::TaskManager::vfunc_0_off_4",
+  "class": "NMData::TaskManager",
+  "signature": "extern \"C\" void __fastcall fn_0050D280(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls NMData::TaskManager::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

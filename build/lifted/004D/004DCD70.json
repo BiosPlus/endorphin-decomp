@@ -1,0 +1,14 @@
+{
+  "va": "0x004DCD70",
+  "size": 5,
+  "orig_symbol": "NMData::RigEventData::vfunc_89",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMData::RigEventData::vfunc_89",
+  "class": "NMData::RigEventData",
+  "signature": "extern \"C\" void fn_004DCD70(void)",
+  "summary": "Pure jump thunk forwarding to sub_004DC370.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

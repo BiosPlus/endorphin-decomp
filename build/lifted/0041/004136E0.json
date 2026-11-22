@@ -1,0 +1,14 @@
+{
+  "va": "0x004136E0",
+  "size": 30,
+  "orig_symbol": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
+  "class": "MultiTrackView::CompositeMarkerTrack",
+  "signature": "extern \"C\" void* __fastcall fn_004136E0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00413480 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

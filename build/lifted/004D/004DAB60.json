@@ -1,0 +1,14 @@
+{
+  "va": "0x004DAB60",
+  "size": 8,
+  "orig_symbol": "NMData::RigEventData::vfunc_1_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::RigEventData::vfunc_1_off_C",
+  "class": "NMData::RigEventData",
+  "signature": "extern \"C\" void __fastcall fn_004DAB60(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::RigEventData::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00551A70",
+  "size": 5,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_1",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_1",
+  "class": "NMCamera::Orthogonal",
+  "signature": "extern \"C\" void fn_00551A70(void)",
+  "summary": "Pure jump thunk forwarding to Camera::vfunc_1.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

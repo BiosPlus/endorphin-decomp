@@ -1,0 +1,14 @@
+{
+  "va": "0x005F1910",
+  "size": 30,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_0",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::MagnetJointData::vfunc_0",
+  "class": "NMData::MagnetJointData",
+  "signature": "extern \"C\" void* __fastcall fn_005F1910(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_005F0F60 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}

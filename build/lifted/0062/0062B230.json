@@ -1,0 +1,14 @@
+{
+  "va": "0x0062B230",
+  "size": 30,
+  "orig_symbol": "Sensors::SensorIntegral::vfunc_0",
+  "src_path": "src/Sensors/auto_tiny.cpp",
+  "lifted_path": "lifted/Sensors/auto_tiny.cpp",
+  "name": "Sensors::SensorIntegral::vfunc_0",
+  "class": "Sensors::SensorIntegral",
+  "signature": "extern \"C\" void* __fastcall fn_0062B230(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0062B1F0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:22:54Z"
+}
