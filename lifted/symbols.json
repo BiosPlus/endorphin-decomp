@@ -8099,6 +8099,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
     "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
+  "0x00611B80": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "extern \"C\" void* __stdcall fn_00611B80(void* out, uint32_t kind)",
+    "summary": "Stdcall (ret 8) selector: constructs a std::string in the caller-supplied buffer from the C string stored at mem_00A9F294 (kind 0), mem_00A9EF94 (kind 1), or a fixed literal address (other kinds), then returns the buffer.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00611C90": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

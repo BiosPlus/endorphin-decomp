@@ -1,0 +1,14 @@
+{
+  "va": "0x00611B80",
+  "size": 98,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "extern \"C\" void* __stdcall fn_00611B80(void* out, uint32_t kind)",
+  "summary": "Stdcall (ret 8) selector: constructs a std::string in the caller-supplied buffer from the C string stored at mem_00A9F294 (kind 0), mem_00A9EF94 (kind 1), or a fixed literal address (other kinds), then returns the buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:14:47Z"
+}
