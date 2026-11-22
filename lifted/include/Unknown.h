@@ -8,6 +8,7 @@
 // Recovered field layout for Unknown:
 namespace lifted_layout {
 struct Unknown_Fields {
+    // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   field_0x00  (evidence: 0x004B7A10, 0x0066B680, 0x0066B6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0053F894) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x0066B560) // CONFLICT: multiple definitions at +0x0
@@ -15,6 +16,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x0049B220, 0x004B7B50, 0x005B7AE0, 0x0066B1A0, 0x0066B1D0, 0x0066B620, 0x0066B680, 0x0066B6B0, 0x0067A930) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields src)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x005C3890)
 };
 } // namespace lifted_layout

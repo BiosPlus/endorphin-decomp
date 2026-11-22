@@ -1,0 +1,52 @@
+{
+  "va": "0x0066B860",
+  "size": 57,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_43",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_43",
+  "class": "ExprParser::Vector4Type",
+  "signature": "void fn_0066B860(void* dstHolder, void* srcHolder)",
+  "summary": "Component-wise add: *dst += src, where src is obtained by calling vtable slot 6 on the source's inner object; stdcall, cleans 8 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float* field_0x00 (arg1: dereferenced to get dst",
+      "name": "Vector4*)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields",
+      "name": "src)"
+    },
+    {
+      "class": "Vector4",
+      "offset": "+0x0",
+      "type": "float field_0x00 (dst component",
+      "name": "0)"
+    },
+    {
+      "class": "Vector4",
+      "offset": "+0x4",
+      "type": "float field_0x04 (dst component",
+      "name": "1)"
+    },
+    {
+      "class": "Vector4",
+      "offset": "+0x8",
+      "type": "float field_0x08 (dst component",
+      "name": "2)"
+    },
+    {
+      "class": "Vector4",
+      "offset": "+0xC",
+      "type": "float field_0x0C (dst component",
+      "name": "3)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:28Z"
+}

@@ -9232,6 +9232,13 @@
     "summary": "Subtracts the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise from the float[3] at *a1.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B860": {
+    "name": "ExprParser::Vector4Type::vfunc_43",
+    "class": "ExprParser::Vector4Type",
+    "signature": "void fn_0066B860(void* dstHolder, void* srcHolder)",
+    "summary": "Component-wise add: *dst += src, where src is obtained by calling vtable slot 6 on the source's inner object; stdcall, cleans 8 bytes.",
+    "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
+  },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
     "class": "ExprParser::ExtROType",
