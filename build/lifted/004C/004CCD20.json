@@ -1,0 +1,14 @@
+{
+  "va": "0x004CCD20",
+  "size": 41,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_0",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_0",
+  "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
+  "signature": "void* fn_004CCD20(void* unused, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:44:46Z"
+}
