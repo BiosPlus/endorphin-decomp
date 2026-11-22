@@ -1,0 +1,28 @@
+{
+  "va": "0x00582BA0",
+  "size": 20,
+  "orig_symbol": "Acclaim2MotionIO::vfunc_57",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Acclaim2MotionIO::vfunc_57",
+  "class": "Acclaim2MotionIO",
+  "signature": "int fn_00582BA0(void* self)",
+  "summary": "Returns 2 if the std::string member at +0x568 is empty, otherwise 3.",
+  "fields": [
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x568",
+      "type": "std::string",
+      "name": "field_0x568"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x578",
+      "type": "size_t",
+      "name": "field_0x578"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:17Z"
+}

@@ -584,3 +584,20 @@ bool __thiscall fn_00584690(void* self) {
     uint8_t al = static_cast<uint8_t>(slot(self));
     return (al & 1) == 1;
 }
+
+// [0x00582BA0] Acclaim2MotionIO::vfunc_57 (20 bytes)
+// @name Acclaim2MotionIO::vfunc_57
+// @class Acclaim2MotionIO
+// @summary Returns 2 if the std::string member at +0x568 is empty, otherwise 3.
+// @field Acclaim2MotionIO +0x568 std::string field_0x568
+// @field Acclaim2MotionIO +0x578 size_t field_0x578
+//
+// Original: ecx = this+0x568; call std::string::empty (MSVCP80, __thiscall);
+// result is (al != 0) ? 2 : 3, computed via neg/sbb/add.
+//
+// Portable form: MSVC std::string (basic_string<char>, MSVC 2005 layout)
+// stores its length at offset +0x10 inside the object, so empty() == (size == 0).
+int fn_00582BA0(void* self) {
+    const size_t size = lift_field<size_t>(self, 0x568 + 0x10);
+    return size == 0 ? 2 : 3;
+}
