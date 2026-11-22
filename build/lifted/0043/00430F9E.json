@@ -1,0 +1,13 @@
+{
+  "va": "0x00430F9E",
+  "size": 2,
+  "orig_symbol": "sub_00430F9E",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "sub_00430F9E",
+  "signature": "void fn_00430F9E()",
+  "summary": "Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte \"pop esi / ret\" tail.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:40:09Z"
+}
