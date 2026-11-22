@@ -3634,6 +3634,13 @@
     "summary": "Calls helper sub_0049DA40 and stores its result at object offset +0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049E2E0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "extern \"C\" void __stdcall fn_0049E2E0(void* self)",
+    "summary": "Calls sub_0049CFF0 to obtain a 32-bit result and stores it into this+0x04.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049ED30": {
     "name": "sub_0049ED30",
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",

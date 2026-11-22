@@ -1,0 +1,22 @@
+{
+  "va": "0x0049E2E0",
+  "size": 15,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "extern \"C\" void __stdcall fn_0049E2E0(void* self)",
+  "summary": "Calls sub_0049CFF0 to obtain a 32-bit result and stores it into this+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:46Z"
+}
