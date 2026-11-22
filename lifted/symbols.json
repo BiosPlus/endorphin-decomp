@@ -2436,6 +2436,13 @@
     "summary": "Forwards the pointer stored at the object's first field to ext_00493D90 and returns false.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0060A150": {
+    "name": "Method0Type\u003cDisabledCollisionPairList,addSelectedCollisionModels\u003e::vfunc_1",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "float fn_0060A150(void* self)",
+    "summary": "Forwards the object's vtable pointer to AddCharacterDialog::vfunc_3 (ext_00493D90) and returns 0.0f.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
     "class": "NMData::DisabledCollisionPairList",

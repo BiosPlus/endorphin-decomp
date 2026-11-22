@@ -1,0 +1,14 @@
+{
+  "va": "0x0060A150",
+  "size": 16,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e::vfunc_1",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "Method0Type\u003cDisabledCollisionPairList,addSelectedCollisionModels\u003e::vfunc_1",
+  "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+  "signature": "float fn_0060A150(void* self)",
+  "summary": "Forwards the object's vtable pointer to AddCharacterDialog::vfunc_3 (ext_00493D90) and returns 0.0f.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:35Z"
+}
