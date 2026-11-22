@@ -2189,6 +2189,13 @@
     "summary": "Calls ext_0043DCF0(-1), reads int at +0x4C of the returned object, and writes the 8-byte result {0, value + 9} into the return slot.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045E470": {
+    "name": "MultiTrackView::TriggeredEventView::ForwardToMemberWithArg",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void fn_0045E470(void* self, void* arg)",
+    "summary": "Forwards the argument to the member object at +0x2D0 via ext_00460540, then calls ext_006A5E72 on that member with 5.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045E4B0": {
     "name": "sub_0045E4B0",
     "signature": "extern \"C\" void* __cdecl fn_0045E4B0(void)",
