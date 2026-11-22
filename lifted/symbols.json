@@ -8959,6 +8959,13 @@
     "summary": "Sets *flag to 1 if it is already nonzero or if sub-\u003evfn3(other) is nonzero (sub = other-\u003efield_0x04); otherwise sets *flag to 0.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0066B240": {
+    "name": "ExprParser::StringType::vfunc_1",
+    "class": "ExprParser::StringType",
+    "signature": "float fn_0066B240(void* self)",
+    "summary": "Returns atof() of the held std::string as a float, or 0.0f if the string pointer is null.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B530": {
     "name": "ExprParser::Vector3Type::vfunc_0",
     "class": "ExprParser::Vector3Type",

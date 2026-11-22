@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B240",
+  "size": 42,
+  "orig_symbol": "ExprParser::StringType::vfunc_1",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_1",
+  "class": "ExprParser::StringType",
+  "signature": "float fn_0066B240(void* self)",
+  "summary": "Returns atof() of the held std::string as a float, or 0.0f if the string pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "std::string*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:36Z"
+}
