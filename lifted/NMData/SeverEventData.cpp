@@ -3,9 +3,12 @@
 #include <string>
 extern "C" void* __thiscall ext_006404E0(void* self, void* arg);
 extern "C" void* mem_00A9F274;
+#include <new>
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_004C7FA0(void* self, void* owner);
 
-// [0x004C7190] NMData::SeverEventData::vfunc_59 (34 bytes)
-// @name NMData::SeverEventData::vfunc_59
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_004C7FA0(void* self, void* owner);
 // @class NMData::SeverEventData
 // @summary Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).
 // @field NMData::SeverEventData +0x0 void** vptr
@@ -38,4 +41,17 @@ void fn_004C7870(void* self, uint32_t key) {
     void** vtbl = *reinterpret_cast<void***>(target);
     auto slot0 = reinterpret_cast<void (*)(void*)>(vtbl[0]);
     slot0(target);
+}
+
+// [0x004C8180] NMData::SeverEventData::vfunc_17_off_C (99 bytes)
+// @name NMData::SeverEventData::vfunc_17_off_C
+// @class NMData::SeverEventData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_004C8180(void* self) {
+    void* mem = ext_006A5C62(0x1A0);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_004C7FA0(mem, owner);
 }

@@ -3149,6 +3149,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::DesiredPoseEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048DD30": {
+    "name": "NMData::DesiredPoseEventData::vfunc_17_off_C",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "void* fn_0048DD30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x0048DE70": {
     "name": "NMData::DesiredPoseEventData::vfunc_0",
     "class": "NMData::DesiredPoseEventData",
@@ -3691,6 +3698,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004AC0D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004AC9F0": {
+    "name": "NMData::BehaviourData::vfunc_17_off_C",
+    "class": "NMData::BehaviourData",
+    "signature": "void* fn_004AC9F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004AD760": {
     "name": "NMData::BehaviourData::vfunc_1_off_158",
     "class": "NMData::BehaviourData",
@@ -4060,6 +4074,13 @@
     "summary": "Reads the dword at this+0x184; if non-zero, calls ext_004C64D0 on the subobject at this+0x184 with a single zero argument.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C6710": {
+    "name": "NMData::ForceEventData::vfunc_17_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void* fn_004C6710(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6BE0": {
     "name": "NMData::ForceEventData::vfunc_1_off_158",
     "class": "NMData::ForceEventData",
@@ -4121,6 +4142,13 @@
     "signature": "extern \"C\" void __fastcall fn_004C8090(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::SeverEventData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004C8180": {
+    "name": "NMData::SeverEventData::vfunc_17_off_C",
+    "class": "NMData::SeverEventData",
+    "signature": "void* fn_004C8180(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
   },
   "0x004C81F0": {
     "name": "NMData::SeverEventData::vfunc_0",
@@ -4232,6 +4260,13 @@
     "signature": "extern \"C\" void __fastcall fn_004CCF00(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::MetaBodyConstraintData::vfunc_22.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004CD020": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_17_off_C",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "void* fn_004CD020(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
   },
   "0x004CD3A0": {
     "name": "NMData::MetaBodyConstraintData::vfunc_0",
@@ -4392,6 +4427,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::TransitionEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004D3070": {
+    "name": "NMData::TransitionEventData::vfunc_17_off_C",
+    "class": "NMData::TransitionEventData",
+    "signature": "void* fn_004D3070(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D3350": {
     "name": "NMData::TransitionEventData::vfunc_0",
     "class": "NMData::TransitionEventData",
@@ -4502,6 +4544,13 @@
     "signature": "extern \"C\" void __fastcall fn_004DC700(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::RigEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004DCB20": {
+    "name": "NMData::RigEventData::vfunc_17_off_C",
+    "class": "NMData::RigEventData",
+    "signature": "void* fn_004DCB20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
   "0x004DCD70": {
     "name": "NMData::RigEventData::vfunc_89",
@@ -6829,6 +6878,13 @@
     "summary": "Pure jump thunk forwarding to NMData::RigNode::vfunc_21.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005ABB70": {
+    "name": "NMData::RigNode::vfunc_17_off_C",
+    "class": "NMData::RigNode",
+    "signature": "void* fn_005ABB70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/RigNode.cpp"
+  },
   "0x005AC550": {
     "name": "sub_005AC550",
     "signature": "extern \"C\" void fn_005AC550(void)",
@@ -7391,12 +7447,33 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005C8650 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005CC420": {
+    "name": "NMData::CollisionModelData::vfunc_17_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "void* fn_005CC420(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005CC5A0": {
     "name": "NMData::FluidObjectData::vfunc_0",
     "class": "NMData::FluidObjectData",
     "signature": "extern \"C\" void* __fastcall fn_005CC5A0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005C88B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005CC650": {
+    "name": "NMData::FluidObjectData::vfunc_17_off_C",
+    "class": "NMData::FluidObjectData",
+    "signature": "void* fn_005CC650(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
+  "0x005CCB60": {
+    "name": "NMData::CollisionModelDataBase::vfunc_17_off_C",
+    "class": "NMData::CollisionModelDataBase",
+    "signature": "void* fn_005CCB60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp"
   },
   "0x005CE8B0": {
     "name": "sub_005CE8B0",
@@ -7533,6 +7610,13 @@
     "signature": "extern \"C\" void* __fastcall fn_005DCD80(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005DCA20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005DCFB0": {
+    "name": "NMData::CameraData::vfunc_17_off_C",
+    "class": "NMData::CameraData",
+    "signature": "void* fn_005DCFB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
   },
   "0x005E0160": {
     "name": "CalibrationManager::vfunc_0",
@@ -7980,6 +8064,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0097215C and tail-calls base destructor sub_0060BA10.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x0060BEA0": {
+    "name": "NMData::EffectorData::vfunc_18",
+    "class": "NMData::EffectorData",
+    "signature": "void* fn_0060BEA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060C510": {
     "name": "NMData::EffectorBaseData::vfunc_0",
     "class": "NMData::EffectorBaseData",
@@ -8190,12 +8281,26 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::PrimaryTwistAndSwingConstraint::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0061DB80": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_17_off_C",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061DB80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061E910": {
     "name": "NMData::HingeConstraint::vfunc_0",
     "class": "NMData::HingeConstraint",
     "signature": "extern \"C\" void* __fastcall fn_0061E910(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0061D380 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0061E930": {
+    "name": "NMData::HingeConstraint::vfunc_17_off_C",
+    "class": "NMData::HingeConstraint",
+    "signature": "void* fn_0061E930(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
   "0x0061E9A0": {
     "name": "NMData::HingeConstraint::forwardToSubobject",
@@ -8210,6 +8315,13 @@
     "signature": "void* fn_0061EA10()",
     "summary": "Allocates a 0x164-byte HingeSecondaryConstraint and runs its constructor; returns null if allocation fails.",
     "lifted_path": "lifted/NMData/HingeSecondaryConstraint.cpp"
+  },
+  "0x0061EAB0": {
+    "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_17_off_C",
+    "class": "NMData::SecondaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061EAB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+    "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
   "0x0061ECB0": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_0",
@@ -8230,6 +8342,13 @@
     "class": "NMData::GraphicData",
     "signature": "void* fn_0061FF40(void* self, void* arg1, uint32_t arg2)",
     "summary": "If arg2 == 0x9C, forwards arg1 to sub_00661650 with the subobject at this+0x154; otherwise forwards (arg1, arg2) to AxisDefineSensorData::vfunc_14. Always returns arg1.",
+    "lifted_path": "lifted/NMData/GraphicData.cpp"
+  },
+  "0x00620240": {
+    "name": "NMData::GraphicData::vfunc_17_off_C",
+    "class": "NMData::GraphicData",
+    "signature": "void* fn_00620240(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/GraphicData.cpp"
   },
   "0x00622320": {

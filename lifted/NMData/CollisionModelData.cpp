@@ -4,8 +4,10 @@
 #include <string>
 // Global std::string object at 0x00B447F4 (copy source). Its contents are set at runtime.
 extern std::string mem_00B447F4;
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_005CC390(void* self, void* owner);
 
-// [0x005C3180] NMData::CollisionModelData::vfunc_62 (34 bytes)
+extern "C" void* ext_005CC390(void* self, void* owner);
 // @name NMData::CollisionModelData::GetSharedName
 // @class NMData::CollisionModelData
 // @summary Copy-constructs std::string from the global at 0x00B447F4 into the caller's return slot and returns that slot (self is unused).
@@ -50,4 +52,17 @@ void __thiscall fn_005C3840(void* self, float* out_vec4) {
     out_vec4[1] = src[1];
     out_vec4[2] = src[2];
     out_vec4[3] = 0.0f;
+}
+
+// [0x005CC420] NMData::CollisionModelData::vfunc_17_off_C (99 bytes)
+// @name NMData::CollisionModelData::vfunc_17_off_C
+// @class NMData::CollisionModelData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_005CC420(void* self) {
+    void* mem = ext_006A5C62(0x1A0);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_005CC390(mem, owner);
 }

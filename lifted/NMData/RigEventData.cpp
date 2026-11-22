@@ -19,9 +19,12 @@ extern "C" void __thiscall fn_004D3D00(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
+#include <new>
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_004DC710(void* self, void* owner);
 
-// [0x004D3C20] NMData::RigEventData::vfunc_14 (54 bytes)
-// @name NMData::RigEventData::vfunc_14
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_004DC710(void* self, void* owner);
 // @class NMData::RigEventData
 // @summary Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).
 void* fn_004D3C20(void* self, void* arg1, uint32_t arg2) {
@@ -31,4 +34,17 @@ void* fn_004D3C20(void* self, void* arg1, uint32_t arg2) {
         ext_004C2070(self, arg1, arg2);
     }
     return arg1;
+}
+
+// [0x004DCB20] NMData::RigEventData::vfunc_17_off_C (99 bytes)
+// @name NMData::RigEventData::vfunc_17_off_C
+// @class NMData::RigEventData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_004DCB20(void* self) {
+    void* mem = ext_006A5C62(0x464);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_004DC710(mem, owner);
 }

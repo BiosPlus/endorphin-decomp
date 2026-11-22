@@ -1,0 +1,14 @@
+{
+  "va": "0x004D3070",
+  "size": 99,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_17_off_C",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_17_off_C",
+  "class": "NMData::TransitionEventData",
+  "signature": "void* fn_004D3070(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}

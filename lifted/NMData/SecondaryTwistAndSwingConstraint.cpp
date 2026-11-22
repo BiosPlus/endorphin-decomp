@@ -3,10 +3,14 @@
 #include <cstring>
 extern "C" void ext_00661650(void* self);
 extern "C" void ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+#include <string>
+#include <new>
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_0061D750(void* self, void* owner);
 
-// [0x00611830] NMData::SecondaryTwistAndSwingConstraint::vfunc_14 (54 bytes)
-// @name NMData::SecondaryTwistAndSwingConstraint::vfunc_14
-// @class NMData::SecondaryTwistAndSwingConstraint
+#include <new>
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_0061D750(void* self, void* owner);
 // @summary Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).
 void* fn_00611830(void* self, void* arg1, uint32_t arg2) {
     if (arg2 == 0x159) {
@@ -15,4 +19,17 @@ void* fn_00611830(void* self, void* arg1, uint32_t arg2) {
         ext_0058F6B0(self, arg1, arg2);
     }
     return arg1;
+}
+
+// [0x0061EAB0] NMData::SecondaryTwistAndSwingConstraint::vfunc_17_off_C (99 bytes)
+// @name NMData::SecondaryTwistAndSwingConstraint::vfunc_17_off_C
+// @class NMData::SecondaryTwistAndSwingConstraint
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_0061EAB0(void* self) {
+    void* mem = ext_006A5C62(0x164);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_0061D750(mem, owner);
 }

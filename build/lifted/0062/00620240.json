@@ -1,0 +1,14 @@
+{
+  "va": "0x00620240",
+  "size": 99,
+  "orig_symbol": "NMData::GraphicData::vfunc_17_off_C",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_17_off_C",
+  "class": "NMData::GraphicData",
+  "signature": "void* fn_00620240(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}

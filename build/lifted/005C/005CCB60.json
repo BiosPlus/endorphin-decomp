@@ -1,0 +1,14 @@
+{
+  "va": "0x005CCB60",
+  "size": 99,
+  "orig_symbol": "NMData::CollisionModelDataBase::vfunc_17_off_C",
+  "src_path": "src/NMData/CollisionModelDataBase.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp",
+  "name": "NMData::CollisionModelDataBase::vfunc_17_off_C",
+  "class": "NMData::CollisionModelDataBase",
+  "signature": "void* fn_005CCB60(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}

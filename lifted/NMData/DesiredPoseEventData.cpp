@@ -18,9 +18,12 @@ extern "C" void __thiscall fn_004869A0(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
+#include <new>
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_0048DB80(void* self, void* owner);
 
-// [0x00486C40] NMData::DesiredPoseEventData::vfunc_14 (60 bytes)
-// @name NMData::DesiredPoseEventData::vfunc_14
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_0048DB80(void* self, void* owner);
 // @class NMData::DesiredPoseEventData
 // @summary Auto-lifted identical-shape clone of 0x0061FF40 (NMData::GraphicData::vfunc_14).
 // @field NMData::DesiredPoseEventData +0x224 uint8_t field_0x154 (address of subobject only; not read or written field_0x224
@@ -32,4 +35,17 @@ void* fn_00486C40(void* self, void* arg1, uint32_t arg2) {
         ext_004C2070(self, arg1, arg2);
     }
     return arg1;
+}
+
+// [0x0048DD30] NMData::DesiredPoseEventData::vfunc_17_off_C (99 bytes)
+// @name NMData::DesiredPoseEventData::vfunc_17_off_C
+// @class NMData::DesiredPoseEventData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_0048DD30(void* self) {
+    void* mem = ext_006A5C62(0x238);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_0048DB80(mem, owner);
 }

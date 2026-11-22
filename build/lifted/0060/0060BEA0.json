@@ -1,0 +1,14 @@
+{
+  "va": "0x0060BEA0",
+  "size": 86,
+  "orig_symbol": "NMData::EffectorData::vfunc_18",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::vfunc_18",
+  "class": "NMData::EffectorData",
+  "signature": "void* fn_0060BEA0()",
+  "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}

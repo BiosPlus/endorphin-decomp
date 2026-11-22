@@ -32,8 +32,10 @@ float fn_00611740(void* self, int32_t index) {
     }
     return 0.0f;
 }
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_0061D2A0(void* self, void* owner);
 
-// [0x0061E9A0] NMData::HingeConstraint::vfunc_70 (38 bytes)
+extern "C" void* ext_0061D2A0(void* self, void* owner);
 // @name NMData::HingeConstraint::forwardToSubobject
 // @class NMData::HingeConstraint
 // @summary Calls ext_0061E780 on the embedded subobject at self+0x164 with (a, c) and returns a unchanged; the second argument is unused.
@@ -64,4 +66,17 @@ std::string* fn_00611580(void* self, std::string* out, int32_t mode) {
         name = mem_00928B5D;
     }
     return new (out) std::string(name);
+}
+
+// [0x0061E930] NMData::HingeConstraint::vfunc_17_off_C (99 bytes)
+// @name NMData::HingeConstraint::vfunc_17_off_C
+// @class NMData::HingeConstraint
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_0061E930(void* self) {
+    void* mem = ext_006A5C62(0x1D4);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_0061D2A0(mem, owner);
 }

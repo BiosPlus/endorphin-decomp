@@ -1,0 +1,14 @@
+{
+  "va": "0x004C8180",
+  "size": 99,
+  "orig_symbol": "NMData::SeverEventData::vfunc_17_off_C",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_17_off_C",
+  "class": "NMData::SeverEventData",
+  "signature": "void* fn_004C8180(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}

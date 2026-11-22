@@ -1,0 +1,14 @@
+{
+  "va": "0x0061E930",
+  "size": 99,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_17_off_C",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_17_off_C",
+  "class": "NMData::HingeConstraint",
+  "signature": "void* fn_0061E930(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}

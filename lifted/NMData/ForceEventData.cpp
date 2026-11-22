@@ -16,9 +16,12 @@ void fn_004C66F0(void* self) {
         ext_004C64D0(sub, 0);
     }
 }
+#include <new>
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_004C6520(void* self, void* owner);
 
-// [0x004C4DD0] NMData::ForceEventData::vfunc_59 (34 bytes)
-// @name NMData::ForceEventData::vfunc_59
+extern "C" void* ext_006A5C62(size_t size);
+extern "C" void* ext_004C6520(void* self, void* owner);
 // @class NMData::ForceEventData
 // @summary Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).
 // @field NMData::ForceEventData +0x0 void** vptr
@@ -41,4 +44,17 @@ void* fn_004C4E40(void* self, void* arg) {
     Slot15 slot = reinterpret_cast<Slot15>(vtbl[15]);
     slot(self, arg, 0x266u, 0u);
     return arg;
+}
+
+// [0x004C6710] NMData::ForceEventData::vfunc_17_off_C (99 bytes)
+// @name NMData::ForceEventData::vfunc_17_off_C
+// @class NMData::ForceEventData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_004C6710(void* self) {
+    void* mem = ext_006A5C62(0x18C);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_004C6520(mem, owner);
 }

@@ -1,0 +1,14 @@
+{
+  "va": "0x004AC9F0",
+  "size": 99,
+  "orig_symbol": "NMData::BehaviourData::vfunc_17_off_C",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_17_off_C",
+  "class": "NMData::BehaviourData",
+  "signature": "void* fn_004AC9F0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}
