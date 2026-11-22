@@ -1,0 +1,22 @@
+{
+  "va": "0x006719C0",
+  "size": 21,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_29",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_29",
+  "class": "ExprParser::Vector3Type",
+  "signature": "void fn_006719C0(void* self, uint32_t* out)",
+  "summary": "Calls ext_006715C0 on the subobject at this+0x08 with two zero arguments and stores its result through the output pointer.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:42:00Z"
+}

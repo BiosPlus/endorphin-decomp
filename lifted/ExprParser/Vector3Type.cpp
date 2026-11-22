@@ -27,8 +27,10 @@ void* fn_0066B530(void* self, void* a1, void* a2) {
     return a2;
 }
 extern "C" uint32_t __thiscall ext_00699000(uint32_t self, uint32_t arg);
+// Helper (sub_006715C0, 208 bytes): thiscall with two stack arguments, callee pops 8.
+extern "C" uint32_t __thiscall ext_006715C0(void* self, uint32_t arg1, uint32_t arg2);
 
-// [0x0066B680] ExprParser::Vector3Type::vfunc_43 (48 bytes)
+extern "C" uint32_t __thiscall ext_006715C0(void* self, uint32_t arg1, uint32_t arg2);
 // @name ExprParser::Vector3Type::vfunc_43
 // @class ExprParser::Vector3Type
 // @summary Adds the vector from arg2->+0x04->vfunc_5(arg2) component-wise into the float[3] at *a1.
@@ -214,4 +216,15 @@ void fn_0066B6E0(void* a1, void* a2) {
 extern "C" uint32_t __stdcall fn_0066B5D0(uint32_t* arg1, uint32_t arg2) {
     uint32_t value = *arg1;
     return ext_00699000(arg2, value);
+}
+
+// [0x006719C0] ExprParser::Vector3Type::vfunc_29 (21 bytes)
+// @name ExprParser::Vector3Type::vfunc_29
+// @class ExprParser::Vector3Type
+// @summary Calls ext_006715C0 on the subobject at this+0x08 with two zero arguments and stores its result through the output pointer.
+// @field ExprParser::Vector3Type +0x08 void* field_0x08
+void fn_006719C0(void* self, uint32_t* out) {
+    void* sub = static_cast<char*>(self) + 0x08;
+    uint32_t result = ext_006715C0(sub, 0u, 0u);
+    *out = result;
 }

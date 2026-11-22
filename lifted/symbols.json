@@ -10967,6 +10967,13 @@
     "summary": "Call helper ext_00671840(self), then assign value to the std::string referenced by self-\u003e+0x00; returns that string by reference.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x006719C0": {
+    "name": "ExprParser::Vector3Type::vfunc_29",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_006719C0(void* self, uint32_t* out)",
+    "summary": "Calls ext_006715C0 on the subobject at this+0x08 with two zero arguments and stores its result through the output pointer.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x00671F10": {
     "name": "sub_00671F10",
     "signature": "extern \"C\" void fn_00671F10(void)",
