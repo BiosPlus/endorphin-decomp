@@ -45,3 +45,18 @@ void fn_0064F8F0(void* self) {
     void* slot = vtable[0x60 / sizeof(void*)];
     (void)slot;
 }
+
+// [0x0064F910] sub_0064F910 (5 bytes)
+// @name VirtualSlot29Thunk
+// @class VTable
+// @summary Virtual dispatch thunk: loads the object's vtable and tail-calls slot 29 (offset +0x74) with the same this pointer; the callee's result is passed through.
+// @field VTable +0x74 void* slot29
+void* fn_0064F910(void* self) {
+    // mov eax, [ecx]        ; eax = self->vtable
+    void** vtable = *reinterpret_cast<void***>(self);
+    // jmp [eax + 0x74]      ; tail-jump to vtable slot 29 (byte offset 0x74), this still in ecx
+    using SlotFn = void*(__fastcall*)(void* self);
+    SlotFn target = reinterpret_cast<SlotFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<char*>(vtable) + 0x74));
+    return target(self);
+}
