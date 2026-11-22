@@ -23873,3 +23873,14 @@ extern "C" __declspec(naked) void __cdecl fn_00860E8B(void) {
         _emit 0x00
     }
 }
+
+// [0x0086F15B] sub_0086F15B (5 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F15B(void) {
+    __asm {
+        _emit 0x05
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
