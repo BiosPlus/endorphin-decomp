@@ -8211,6 +8211,13 @@
     "summary": "Constructs a std::string in the caller's hidden return buffer from the C string pointed to by mem_00A9EE68; this is never read (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
+  "0x0060D500": {
+    "name": "NMData::EffectorGroupData::vfunc_20",
+    "class": "NMData::EffectorGroupData",
+    "signature": "std::string* fn_0060D500(void* self, std::string* out, int unused)",
+    "summary": "Builds the string \"\u003cprefix\u003e\" + this-\u003efield_0x04 + \"\u003csuffix\u003e\" into the caller's hidden return buffer (thiscall, two stack args, ret 8; the second stack arg is never read).",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060EC20": {
     "name": "NMData::SensorData::vfunc_1_off_C",
     "class": "NMData::SensorData",
