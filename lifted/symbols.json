@@ -475,6 +475,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 2 (offset +0x8) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00499B30": {
+    "name": "NMData::Transition::vfunc_17",
+    "class": "NMData::Transition",
+    "signature": "void* fn_00499B30(void* self)",
+    "summary": "Returns the address of the subobject at offset +0x08 of this, or null when this is null.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x00499B40": {
     "name": "NMData::State::vfunc_9_off_10",
     "class": "NMData::State",

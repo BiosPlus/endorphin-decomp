@@ -148,3 +148,14 @@ extern "C" void __fastcall fn_006227A0(void* self, int edx_unused, float value) 
     (void)edx_unused;
     *reinterpret_cast<float*>(static_cast<unsigned char*>(self) + 0x0C) = value;
 }
+
+// [0x00499B30] NMData::Transition::vfunc_17 (11 bytes)
+// @name NMData::Transition::vfunc_17
+// @class NMData::Transition
+// @summary Returns the address of the subobject at offset +0x08 of this, or null when this is null.
+void* fn_00499B30(void* self) {
+    if (self == 0) {
+        return 0;
+    }
+    return static_cast<char*>(self) + 0x8;
+}

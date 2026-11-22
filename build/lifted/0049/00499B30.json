@@ -1,0 +1,14 @@
+{
+  "va": "0x00499B30",
+  "size": 11,
+  "orig_symbol": "NMData::Transition::vfunc_17",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::Transition::vfunc_17",
+  "class": "NMData::Transition",
+  "signature": "void* fn_00499B30(void* self)",
+  "summary": "Returns the address of the subobject at offset +0x08 of this, or null when this is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:08:08Z"
+}
