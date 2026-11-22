@@ -11,6 +11,7 @@ extern "C" uint32_t ext_0041CF50(void* self, void* arg);
 void fn_0066BB90(void* self) {
     ext_00671FE0(self);
 }
+// Callee: sub_0041CF50 (thiscall-style: ecx = receiver, one stack argument, callee cleans).
 
 // [0x0066BCE0] ExprParser::VPtrProxyType::vfunc_47 (23 bytes)
 // @name ExprParser::VPtrProxyType::vfunc_47
