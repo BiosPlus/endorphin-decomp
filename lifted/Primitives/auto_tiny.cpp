@@ -275,3 +275,13 @@ float* fn_0053C980(void* self, float* out) {
     out[2] = 0.0f;
     return out;
 }
+
+// [0x0053A8C0] Primitives::Animation::vfunc_21 (21 bytes)
+// @name Primitives::Animation::vfunc_21
+// @class Primitives::Animation
+// @summary Returns true when every bit set in the argument is also set in the field at +0x1C.
+// @field Primitives::Animation +0x1C uint32_t field_0x1C
+uint8_t fn_0053A8C0(void* self, uint32_t mask) {
+    uint32_t flags = lift_field<uint32_t>(self, 0x1C);
+    return (flags & mask) == mask ? 1 : 0;
+}

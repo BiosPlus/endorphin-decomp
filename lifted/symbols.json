@@ -1693,6 +1693,13 @@
     "summary": "Allocates one OpenGL display list via glGenLists(1) and stores its id at this+0x34.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053A8C0": {
+    "name": "Primitives::Animation::vfunc_21",
+    "class": "Primitives::Animation",
+    "signature": "uint8_t fn_0053A8C0(void* self, uint32_t mask)",
+    "summary": "Returns true when every bit set in the argument is also set in the field at +0x1C.",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0053B790": {
     "name": "Primitives::Marker::vfunc_30",
     "class": "Primitives::Marker",
