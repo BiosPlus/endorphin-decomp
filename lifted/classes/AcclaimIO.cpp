@@ -52,3 +52,26 @@ void fn_0055BE60(void* self, void* arg) {
     void** vtblB = *reinterpret_cast<void***>(subB);
     reinterpret_cast<void (*)(void*, void*)>(vtblB[0x40 / 4])(subB, arg);
 }
+
+// [0x005846B0] AcclaimIO::vfunc_37 (60 bytes)
+// @name AcclaimIO::vfunc_37
+// @class AcclaimIO
+// @summary Calls virtual slot 57 on self; if it returns 1 forwards vfunc 37 to embedded subobjA (+0x46C), otherwise to subobjB (+0x964).
+// @field AcclaimIO +0x46C uint8_t subobjA
+// @field AcclaimIO +0x964 uint8_t subobjB
+void fn_005846B0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Virtual selector: vtable slot 57 (0xE4 / 4), returns int.
+    void** vtable = *reinterpret_cast<void***>(base);
+    using IntMethod = int (*)(void*);
+    const int sel = reinterpret_cast<IntMethod>(vtable[57])(self);
+
+    // Pick embedded sub-object by selector.
+    uint8_t* sub = base + (sel == 1 ? 0x46C : 0x964);
+
+    // Tail-forward to sub-object's virtual slot 37 (0x94 / 4) with sub as this.
+    void** subVtable = *reinterpret_cast<void***>(sub);
+    using VoidMethod = void (*)(void*);
+    reinterpret_cast<VoidMethod>(subVtable[37])(sub);
+}

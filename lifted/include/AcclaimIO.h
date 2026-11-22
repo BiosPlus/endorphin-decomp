@@ -12,7 +12,7 @@ namespace lifted_layout {
 struct AcclaimIO_Fields {
     // +0x0   void**                   vtable  (evidence: 0x0055BBD0, 0x0055BE30, 0x00584660, 0x00584690)
     // +0x428 uint8_t                  field_0x428  (evidence: 0x0055BE30, 0x00584660)
-    // +0x46C uint8_t                  subobjA  (evidence: 0x0055BE60)
-    // +0x964 uint8_t                  subobjB  (evidence: 0x0055BE60)
+    // +0x46C uint8_t                  subobjA  (evidence: 0x0055BE60, 0x005846B0)
+    // +0x964 uint8_t                  subobjB  (evidence: 0x0055BE60, 0x005846B0)
 };
 } // namespace lifted_layout
