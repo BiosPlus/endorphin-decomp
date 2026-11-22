@@ -10728,3 +10728,368 @@ L75054A:
         ret 4
     }
 }
+
+// [0x00754AF0] sub_00754AF0 (1072 bytes)
+extern "C" int mem_00993CA0; /* double 0.25 */
+extern "C" int mem_00996BE8; /* double 0.125 */
+extern "C" int mem_00996BE0; /* double 0.134 */
+extern "C" int mem_00996BD8; /* double 0.33 */
+extern "C" __declspec(naked) void __fastcall fn_00754AF0(void* self, int edx_unused, int n, double* out) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 9Ch
+        mov ecx, dword ptr [ebp+8]
+        push ebx
+        mov ebx, 1
+        push esi
+        cmp ecx, ebx
+        push edi
+        jne short L_754B2E
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], 3FF00000h
+        mov dword ptr [ecx+0Ch], eax
+        mov dword ptr [ecx+14h], eax
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754B2E:
+        mov edi, 2
+        cmp ecx, edi
+        jne short L_754B5B
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov edx, 3FF00000h
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], edx
+        mov dword ptr [ecx+0Ch], edx
+        mov dword ptr [ecx+14h], eax
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754B5B:
+        mov esi, 3
+        cmp ecx, esi
+        jne short L_754B87
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], eax
+        mov dword ptr [ecx+0Ch], 3FF00000h
+        mov dword ptr [ecx+14h], eax
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754B87:
+        mov edx, 4
+        cmp ecx, edx
+        jne short L_754BB4
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov edx, 3FF00000h
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], eax
+        mov dword ptr [ecx+0Ch], edx
+        mov dword ptr [ecx+14h], edx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754BB4:
+        cmp ecx, 5
+        jne short L_754BDC
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], eax
+        mov dword ptr [ecx+0Ch], eax
+        mov dword ptr [ecx+14h], 3FF00000h
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754BDC:
+        cmp ecx, 6
+        jne short L_754C05
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov edx, 3FF00000h
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], edx
+        mov dword ptr [ecx+0Ch], eax
+        mov dword ptr [ecx+14h], edx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754C05:
+        cmp ecx, 7
+        jne short L_754C2E
+        mov ecx, dword ptr [ebp+0Ch]
+        xor eax, eax
+        mov edx, 3FF00000h
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx+8], eax
+        mov dword ptr [ecx+10h], eax
+        mov dword ptr [ecx+4], edx
+        mov dword ptr [ecx+0Ch], edx
+        mov dword ptr [ecx+14h], edx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754C2E:
+        cmp ecx, 8
+        jne short L_754C5A
+        mov eax, dword ptr [ebp+0Ch]
+        mov edx, 4DD2F1AAh
+        mov ecx, 3FE01062h
+        mov dword ptr [eax], edx
+        mov dword ptr [eax+8], edx
+        mov dword ptr [eax+10h], edx
+        mov dword ptr [eax+4], ecx
+        mov dword ptr [eax+0Ch], ecx
+        mov dword ptr [eax+14h], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754C5A:
+        cmp ecx, 9
+        jne short L_754C86
+        mov eax, dword ptr [ebp+0Ch]
+        mov edx, 74BC6A7Fh
+        mov ecx, 3FE81893h
+        mov dword ptr [eax], edx
+        mov dword ptr [eax+8], edx
+        mov dword ptr [eax+10h], edx
+        mov dword ptr [eax+4], ecx
+        mov dword ptr [eax+0Ch], ecx
+        mov dword ptr [eax+14h], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754C86:
+        cmp ecx, 0Ah
+        jl L_754ECD
+        cmp ecx, 0FAh
+        jge L_754ED5
+        xor eax, eax
+        cmp ecx, 5Ah
+        mov dword ptr [esp+20h], edx
+        mov dword ptr [esp+24h], edx
+        mov dword ptr [esp+28h], edx
+        mov dword ptr [esp+2Ch], edx
+        mov dword ptr [esp+30h], edx
+        mov dword ptr [esp+34h], esi
+        mov dword ptr [esp+38h], edi
+        mov dword ptr [esp+3Ch], ebx
+        mov dword ptr [esp+40h], eax
+        mov dword ptr [esp+44h], eax
+        mov dword ptr [esp+48h], eax
+        mov dword ptr [esp+4Ch], eax
+        mov dword ptr [esp+50h], eax
+        mov dword ptr [esp+54h], eax
+        mov dword ptr [esp+58h], eax
+        mov dword ptr [esp+5Ch], eax
+        mov dword ptr [esp+60h], eax
+        mov dword ptr [esp+64h], ebx
+        mov dword ptr [esp+68h], edi
+        mov dword ptr [esp+6Ch], esi
+        mov dword ptr [esp+70h], edx
+        mov dword ptr [esp+74h], edx
+        mov dword ptr [esp+78h], edx
+        mov dword ptr [esp+7Ch], edx
+        mov dword ptr [esp+80h], eax
+        mov dword ptr [esp+84h], 3FF00000h
+        mov dword ptr [esp+88h], 0CCCCCCCDh
+        mov dword ptr [esp+8Ch], 3FE4CCCCh
+        mov dword ptr [esp+90h], eax
+        mov dword ptr [esp+94h], 3FE00000h
+        mov dword ptr [esp+98h], 33333333h
+        mov dword ptr [esp+9Ch], 3FD33333h
+        mov dword ptr [esp+0A0h], 33333333h
+        mov dword ptr [esp+0A4h], 3FC33333h
+        jge short L_754D96
+        lea edx, [ecx-0Ah]
+        mov eax, 66666667h
+        imul edx
+        sar edx, 2
+        mov eax, edx
+        shr eax, 1Fh
+        add edx, eax
+        mov ebx, dword ptr [esp+edx*4+20h]
+        mov eax, dword ptr [esp+edx*4+40h]
+        mov edi, dword ptr [esp+edx*4+60h]
+        mov dword ptr [esp+10h], ebx
+        mov dword ptr [esp+0Ch], eax
+        mov dword ptr [esp+18h], edi
+        jmp short L_754DFD
+L_754D96:
+        cmp ecx, 0AAh
+        jge short L_754DCE
+        lea edx, [ecx-5Ah]
+        mov eax, 66666667h
+        imul edx
+        sar edx, 2
+        mov eax, edx
+        shr eax, 1Fh
+        add edx, eax
+        mov eax, edx
+        mov edi, dword ptr [esp+eax*4+20h]
+        mov ebx, dword ptr [esp+eax*4+40h]
+        mov eax, dword ptr [esp+eax*4+60h]
+        mov dword ptr [esp+18h], edi
+        mov dword ptr [esp+10h], ebx
+        mov dword ptr [esp+0Ch], eax
+        jmp short L_754DFD
+L_754DCE:
+        lea edx, [ecx-0AAh]
+        mov eax, 66666667h
+        imul edx
+        sar edx, 2
+        mov eax, edx
+        shr eax, 1Fh
+        add edx, eax
+        mov eax, dword ptr [esp+edx*4+20h]
+        mov edi, dword ptr [esp+edx*4+40h]
+        mov ebx, dword ptr [esp+edx*4+60h]
+        mov dword ptr [esp+0Ch], eax
+        mov dword ptr [esp+18h], edi
+        mov dword ptr [esp+10h], ebx
+L_754DFD:
+        fild dword ptr [esp+10h]
+        mov esi, dword ptr [ebp+0Ch]
+        mov edx, ecx
+        and edx, 80000001h
+        fmul qword ptr [mem_00993CA0]
+        fld st(0)
+        fstp qword ptr [esi]
+        fild dword ptr [esp+18h]
+        fmul qword ptr [mem_00993CA0]
+        fst qword ptr [esp+18h]
+        fstp qword ptr [esi+8]
+        fild dword ptr [esp+0Ch]
+        fmul qword ptr [mem_00993CA0]
+        fst qword ptr [esp+10h]
+        fstp qword ptr [esi+10h]
+        jns short L_754E3F
+        dec edx
+        or edx, -2
+        inc edx
+L_754E3F:
+        je short L_754E96
+        mov edx, 4
+        sub edx, ebx
+        mov dword ptr [esp+0Ch], edx
+        mov edx, 4
+        fild dword ptr [esp+0Ch]
+        sub edx, edi
+        mov dword ptr [esp+0Ch], edx
+        mov edx, 4
+        fmul qword ptr [mem_00996BE8]
+        sub edx, eax
+        fadd st, st(1)
+        fstp qword ptr [esi]
+        fstp st(0)
+        fild dword ptr [esp+0Ch]
+        mov dword ptr [esp+0Ch], edx
+        fmul qword ptr [mem_00996BE8]
+        fadd qword ptr [esp+18h]
+        fstp qword ptr [esi+8]
+        fild dword ptr [esp+0Ch]
+        fmul qword ptr [mem_00996BE8]
+        fadd qword ptr [esp+10h]
+        fstp qword ptr [esi+10h]
+        jmp short L_754E98
+L_754E96:
+        fstp st(0)
+L_754E98:
+        mov eax, ecx
+        mov ecx, 0Ah
+        cdq
+        idiv ecx
+        mov eax, edx
+        cdq
+        sub eax, edx
+        sar eax, 1
+        fld qword ptr [esp+eax*8+80h]
+        fld st(0)
+        fmul qword ptr [esi]
+        fstp qword ptr [esi]
+        fld st(0)
+        fmul qword ptr [esi+8]
+        fstp qword ptr [esi+8]
+        fmul qword ptr [esi+10h]
+        fstp qword ptr [esi+10h]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+L_754ECD:
+        cmp ecx, 0FAh
+        jl short L_754F08
+L_754ED5:
+        cmp ecx, 100h
+        jge short L_754F08
+        mov eax, ecx
+        mov ecx, 0Ah
+        cdq
+        idiv ecx
+        mov eax, dword ptr [ebp+0Ch]
+        mov dword ptr [esp+0Ch], edx
+        fild dword ptr [esp+0Ch]
+        fmul qword ptr [mem_00996BE0]
+        fadd qword ptr [mem_00996BD8]
+        fld st(0)
+        fstp qword ptr [eax]
+        fst qword ptr [eax+8]
+        fstp qword ptr [eax+10h]
+L_754F08:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+    }
+}
