@@ -17637,3 +17637,1583 @@ extern "C" __declspec(naked) void __fastcall fn_00858060(void* self) {
         ret
     }
 }
+
+// [0x00855ED0] sub_00855ED0 (4137 bytes)
+// RIPEMD-128 compression, fully unrolled straight-line code (no branches).
+// p (stack arg) -> h[0..3] at +0..+0xc, X[0..15] at +0x18..+0x54.
+extern "C" __declspec(naked) void __cdecl fn_00855ED0(void* p) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x14]
+        push ebx
+        push ebp
+        push esi
+        mov ebx, dword ptr [eax + 0xc]
+        mov ebp, dword ptr [eax + 0x8]
+        mov esi, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [eax + 0x18]
+        mov edx, ebx
+        push edi
+        mov edi, dword ptr [eax]
+        xor edx, ebp
+        xor edx, esi
+        add edx, edi
+        mov edi, ebp
+        add edx, ecx
+        xor edi, esi
+        mov ecx, edx
+        shr ecx, 0x15
+        shl edx, 0xb
+        or ecx, edx
+        mov edx, dword ptr [eax + 0x1c]
+        xor edi, ecx
+        add edi, edx
+        mov edx, dword ptr [eax + 0x20]
+        add ebx, edi
+        mov edi, ebx
+        shr edi, 0x12
+        shl ebx, 0xe
+        or edi, ebx
+        mov ebx, edi
+        xor ebx, esi
+        xor ebx, ecx
+        add ebx, edx
+        mov edx, edi
+        add ebp, ebx
+        mov ebx, ebp
+        shr ebx, 0x11
+        shl ebp, 0xf
+        or ebx, ebp
+        mov ebp, dword ptr [eax + 0x24]
+        xor edx, ebx
+        mov dword ptr [esp + 0x24], edx
+        xor edx, ecx
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x28]
+        add esi, edx
+        mov edx, esi
+        shr edx, 0x14
+        shl esi, 0xc
+        or edx, esi
+        mov esi, dword ptr [esp + 0x24]
+        xor esi, edx
+        add esi, ebp
+        mov ebp, ebx
+        add ecx, esi
+        xor ebp, edx
+        mov esi, ecx
+        shr esi, 0x1b
+        shl ecx, 0x5
+        or esi, ecx
+        mov ecx, dword ptr [eax + 0x2c]
+        xor ebp, esi
+        add ebp, ecx
+        mov ecx, dword ptr [eax + 0x30]
+        add edi, ebp
+        mov ebp, edi
+        shr ebp, 0x18
+        shl edi, 0x8
+        or ebp, edi
+        mov edi, ebp
+        xor edi, edx
+        xor edi, esi
+        add edi, ecx
+        mov ecx, ebp
+        add ebx, edi
+        mov edi, ebx
+        shr edi, 0x19
+        shl ebx, 0x7
+        or edi, ebx
+        xor ecx, edi
+        mov ebx, dword ptr [eax + 0x34]
+        mov dword ptr [esp + 0x24], ecx
+        xor ecx, esi
+        add ecx, ebx
+        mov ebx, dword ptr [eax + 0x38]
+        add edx, ecx
+        mov ecx, edx
+        shr ecx, 0x17
+        shl edx, 0x9
+        or ecx, edx
+        mov edx, dword ptr [esp + 0x24]
+        xor edx, ecx
+        add edx, ebx
+        mov ebx, edi
+        add esi, edx
+        xor ebx, ecx
+        mov edx, esi
+        shr edx, 0x15
+        shl esi, 0xb
+        or edx, esi
+        mov esi, dword ptr [eax + 0x3c]
+        xor ebx, edx
+        add ebx, esi
+        mov esi, dword ptr [eax + 0x40]
+        add ebp, ebx
+        mov ebx, ebp
+        shr ebx, 0x13
+        shl ebp, 0xd
+        or ebx, ebp
+        mov ebp, ebx
+        xor ebp, ecx
+        xor ebp, edx
+        add ebp, esi
+        mov esi, ebx
+        add edi, ebp
+        mov ebp, edi
+        shr ebp, 0x12
+        shl edi, 0xe
+        or ebp, edi
+        mov edi, dword ptr [eax + 0x44]
+        xor esi, ebp
+        mov dword ptr [esp + 0x24], esi
+        xor esi, edx
+        add esi, edi
+        mov edi, dword ptr [eax + 0x48]
+        add ecx, esi
+        mov esi, ecx
+        shr esi, 0x11
+        shl ecx, 0xf
+        or esi, ecx
+        mov ecx, dword ptr [esp + 0x24]
+        xor ecx, esi
+        add ecx, edi
+        add edx, ecx
+        mov ecx, dword ptr [eax + 0x4c]
+        mov edi, edx
+        shr edi, 0x1a
+        shl edx, 0x6
+        or edi, edx
+        mov edx, ebp
+        xor edx, esi
+        xor edx, edi
+        add edx, ecx
+        mov ecx, dword ptr [eax + 0x50]
+        add ebx, edx
+        mov edx, ebx
+        shr edx, 0x19
+        shl ebx, 0x7
+        or edx, ebx
+        mov ebx, edx
+        mov dword ptr [esp + 0x18], edx
+        xor ebx, esi
+        xor ebx, edi
+        add ebx, ecx
+        mov ecx, dword ptr [eax + 0x54]
+        add ebp, ebx
+        mov ebx, ebp
+        shr ebx, 0x17
+        shl ebp, 0x9
+        or ebx, ebp
+        mov ebp, edx
+        xor ebp, ebx
+        xor ebp, edi
+        add ebp, ecx
+        add esi, ebp
+        mov ebp, dword ptr [eax + 0x34]
+        mov ecx, esi
+        shr ecx, 0x18
+        shl esi, 0x8
+        or ecx, esi
+        mov esi, ecx
+        not esi
+        and esi, edx
+        mov edx, ebx
+        and edx, ecx
+        or esi, edx
+        add esi, ebp
+        lea edi, [edi + esi + 0x5a827999]
+        mov edx, edi
+        shr edx, 0x19
+        shl edi, 0x7
+        or edx, edi
+        mov edi, ecx
+        mov esi, edx
+        and edi, edx
+        not esi
+        and esi, ebx
+        or esi, edi
+        mov edi, dword ptr [eax + 0x28]
+        add esi, edi
+        mov edi, dword ptr [esp + 0x18]
+        lea edi, [edi + esi + 0x5a827999]
+        mov esi, edi
+        shr esi, 0x1a
+        shl edi, 0x6
+        or esi, edi
+        mov edi, esi
+        mov ebp, esi
+        not edi
+        and edi, ecx
+        and ebp, edx
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x4c]
+        add edi, ebp
+        lea ebx, [ebx + edi + 0x5a827999]
+        mov edi, ebx
+        shr edi, 0x18
+        shl ebx, 0x8
+        or edi, ebx
+        mov ebx, esi
+        mov dword ptr [esp + 0x14], edi
+        mov ebp, dword ptr [esp + 0x14]
+        not edi
+        and edi, edx
+        and ebx, ebp
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x1c]
+        add edi, ebx
+        lea ecx, [ecx + edi + 0x5a827999]
+        mov edi, ebp
+        mov ebx, ecx
+        shr ebx, 0x13
+        shl ecx, 0xd
+        or ebx, ecx
+        mov ecx, ebx
+        and ebp, ebx
+        not ecx
+        and ecx, esi
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x40]
+        add ecx, ebp
+        mov ebp, ebx
+        lea edx, [edx + ecx + 0x5a827999]
+        mov ecx, edx
+        shr ecx, 0x15
+        shl edx, 0xb
+        or ecx, edx
+        mov edx, ecx
+        and ebp, ecx
+        not edx
+        and edx, edi
+        or edx, ebp
+        add edx, dword ptr [eax + 0x30]
+        lea esi, [esi + edx + 0x5a827999]
+        mov edx, esi
+        shr edx, 0x17
+        shl esi, 0x9
+        or edx, esi
+        mov esi, edx
+        mov ebp, edx
+        not esi
+        and esi, ebx
+        and ebp, ecx
+        or esi, ebp
+        mov ebp, dword ptr [eax + 0x54]
+        add esi, ebp
+        lea edi, [edi + esi + 0x5a827999]
+        mov esi, edi
+        shr esi, 0x19
+        shl edi, 0x7
+        or esi, edi
+        mov edi, edx
+        mov dword ptr [esp + 0x14], esi
+        mov ebp, dword ptr [esp + 0x14]
+        not esi
+        and esi, ecx
+        and edi, ebp
+        mov ebp, dword ptr [eax + 0x24]
+        or esi, edi
+        add esi, ebp
+        mov edi, dword ptr [esp + 0x14]
+        mov ebp, edi
+        lea ebx, [ebx + esi + 0x5a827999]
+        mov esi, ebx
+        shr esi, 0x11
+        shl ebx, 0xf
+        or esi, ebx
+        mov ebx, esi
+        and ebp, esi
+        not ebx
+        and ebx, edx
+        or ebx, ebp
+        mov ebp, dword ptr [eax + 0x48]
+        add ebx, ebp
+        mov ebp, esi
+        lea ecx, [ecx + ebx + 0x5a827999]
+        mov ebx, ecx
+        shr ebx, 0x19
+        shl ecx, 0x7
+        or ebx, ecx
+        mov ecx, ebx
+        and ebp, ebx
+        not ecx
+        and ecx, edi
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x18]
+        add ecx, ebp
+        lea edx, [edx + ecx + 0x5a827999]
+        mov ecx, edx
+        shr ecx, 0x14
+        shl edx, 0xc
+        or ecx, edx
+        mov edx, ecx
+        mov ebp, ecx
+        not edx
+        and edx, esi
+        and ebp, ebx
+        or edx, ebp
+        mov ebp, dword ptr [eax + 0x3c]
+        add edx, ebp
+        lea edi, [edi + edx + 0x5a827999]
+        mov edx, edi
+        shr edx, 0x11
+        shl edi, 0xf
+        or edx, edi
+        mov edi, ecx
+        mov dword ptr [esp + 0x14], edx
+        mov ebp, dword ptr [esp + 0x14]
+        not edx
+        and edx, ebx
+        and edi, ebp
+        or edx, edi
+        mov ebp, dword ptr [eax + 0x2c]
+        mov edi, dword ptr [esp + 0x14]
+        add edx, ebp
+        mov ebp, edi
+        lea esi, [esi + edx + 0x5a827999]
+        mov edx, esi
+        shr edx, 0x17
+        shl esi, 0x9
+        or edx, esi
+        mov esi, edx
+        and ebp, edx
+        not esi
+        and esi, ecx
+        or esi, ebp
+        mov ebp, dword ptr [eax + 0x20]
+        add esi, ebp
+        mov ebp, edx
+        lea ebx, [ebx + esi + 0x5a827999]
+        mov esi, ebx
+        shr esi, 0x15
+        shl ebx, 0xb
+        or esi, ebx
+        mov ebx, esi
+        and ebp, esi
+        not ebx
+        and ebx, edi
+        or ebx, ebp
+        mov ebp, dword ptr [eax + 0x50]
+        add ebx, ebp
+        lea ecx, [ecx + ebx + 0x5a827999]
+        mov ebx, ecx
+        shr ebx, 0x19
+        shl ecx, 0x7
+        or ebx, ecx
+        mov ecx, ebx
+        mov ebp, ebx
+        not ecx
+        and ecx, edx
+        and ebp, esi
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x44]
+        add ecx, ebp
+        mov ebp, ebx
+        lea edi, [edi + ecx + 0x5a827999]
+        mov ecx, edi
+        shr ecx, 0x13
+        shl edi, 0xd
+        or ecx, edi
+        mov dword ptr [esp + 0x14], ecx
+        and ebp, dword ptr [esp + 0x14]
+        not ecx
+        mov edi, ecx
+        and edi, esi
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x38]
+        add edi, ebp
+        mov ebp, dword ptr [eax + 0x40]
+        lea edx, [edx + edi + 0x5a827999]
+        mov edi, edx
+        shr edi, 0x14
+        shl edx, 0xc
+        or edi, edx
+        mov edx, dword ptr [eax + 0x24]
+        or ecx, edi
+        xor ecx, ebx
+        add ecx, edx
+        lea esi, [esi + ecx + 0x6ed9eba1]
+        mov ecx, edi
+        mov edx, esi
+        shr edx, 0x15
+        shl esi, 0xb
+        or edx, esi
+        mov esi, dword ptr [esp + 0x14]
+        not ecx
+        or ecx, edx
+        xor ecx, esi
+        add ecx, ebp
+        lea ebx, [ebx + ecx + 0x6ed9eba1]
+        mov ecx, ebx
+        shr ecx, 0x13
+        shl ebx, 0xd
+        mov ebp, dword ptr [eax + 0x50]
+        or ecx, ebx
+        mov ebx, edx
+        not ebx
+        or ebx, ecx
+        xor ebx, edi
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x28]
+        lea ebx, [esi + ebx + 0x6ed9eba1]
+        mov esi, ebx
+        shr esi, 0x1a
+        shl ebx, 0x6
+        or esi, ebx
+        mov ebx, ecx
+        not ebx
+        or ebx, esi
+        xor ebx, edx
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x3c]
+        lea ebx, [edi + ebx + 0x6ed9eba1]
+        mov edi, ebx
+        shr edi, 0x19
+        shl ebx, 0x7
+        or edi, ebx
+        mov ebx, esi
+        not ebx
+        or ebx, edi
+        xor ebx, ecx
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x54]
+        lea edx, [edx + ebx + 0x6ed9eba1]
+        mov ebx, edx
+        shr ebx, 0x12
+        shl edx, 0xe
+        or ebx, edx
+        mov edx, edi
+        not edx
+        or edx, ebx
+        xor edx, esi
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x38]
+        lea ecx, [ecx + edx + 0x6ed9eba1]
+        mov edx, ecx
+        shr edx, 0x17
+        shl ecx, 0x9
+        or edx, ecx
+        mov ecx, ebx
+        not ecx
+        or ecx, edx
+        xor ecx, edi
+        add ecx, ebp
+        mov ebp, dword ptr [eax + 0x1c]
+        lea esi, [esi + ecx + 0x6ed9eba1]
+        mov ecx, esi
+        shr ecx, 0x13
+        shl esi, 0xd
+        or ecx, esi
+        mov esi, edx
+        not esi
+        or esi, ecx
+        xor esi, ebx
+        add esi, ebp
+        mov ebp, dword ptr [eax + 0x20]
+        lea edi, [edi + esi + 0x6ed9eba1]
+        mov esi, edi
+        shr esi, 0x11
+        shl edi, 0xf
+        or esi, edi
+        mov edi, ecx
+        not edi
+        or edi, esi
+        xor edi, edx
+        add edi, ebp
+        lea ebx, [ebx + edi + 0x6ed9eba1]
+        mov edi, ebx
+        shr edi, 0x12
+        shl ebx, 0xe
+        or edi, ebx
+        mov ebx, esi
+        not ebx
+        or ebx, edi
+        mov ebp, dword ptr [eax + 0x34]
+        xor ebx, ecx
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x18]
+        lea edx, [edx + ebx + 0x6ed9eba1]
+        mov ebx, edx
+        shr ebx, 0x18
+        shl edx, 0x8
+        or ebx, edx
+        mov edx, edi
+        not edx
+        or edx, ebx
+        xor edx, esi
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x30]
+        lea ecx, [ecx + edx + 0x6ed9eba1]
+        mov edx, ecx
+        shr edx, 0x13
+        shl ecx, 0xd
+        or edx, ecx
+        mov ecx, ebx
+        not ecx
+        or ecx, edx
+        xor ecx, edi
+        add ecx, ebp
+        mov ebp, dword ptr [eax + 0x4c]
+        lea ecx, [esi + ecx + 0x6ed9eba1]
+        mov esi, ecx
+        shr esi, 0x1a
+        shl ecx, 0x6
+        or esi, ecx
+        mov ecx, edx
+        not ecx
+        or ecx, esi
+        xor ecx, ebx
+        add ecx, ebp
+        mov ebp, dword ptr [eax + 0x44]
+        lea ecx, [edi + ecx + 0x6ed9eba1]
+        mov edi, ecx
+        shr edi, 0x1b
+        shl ecx, 0x5
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        or ecx, edi
+        xor ecx, edx
+        add ecx, ebp
+        mov ebp, dword ptr [eax + 0x2c]
+        lea ecx, [ebx + ecx + 0x6ed9eba1]
+        mov ebx, ecx
+        shr ebx, 0x14
+        shl ecx, 0xc
+        or ebx, ecx
+        mov ecx, edi
+        not ecx
+        or ecx, ebx
+        xor ecx, esi
+        add ecx, ebp
+        mov ebp, ebx
+        not ebp
+        lea edx, [edx + ecx + 0x6ed9eba1]
+        mov ecx, edx
+        shr ecx, 0x19
+        shl edx, 0x7
+        or ecx, edx
+        mov edx, ebp
+        or edx, ecx
+        and ebp, ecx
+        xor edx, edi
+        add edx, dword ptr [eax + 0x48]
+        lea esi, [esi + edx + 0x6ed9eba1]
+        mov edx, esi
+        shr edx, 0x1b
+        shl esi, 0x5
+        or edx, esi
+        mov esi, ebx
+        and esi, edx
+        or ebp, esi
+        mov esi, dword ptr [eax + 0x1c]
+        add ebp, esi
+        lea edi, [edi + ebp - 0x70e44324]
+        mov esi, edi
+        mov ebp, ecx
+        shr esi, 0x15
+        shl edi, 0xb
+        or esi, edi
+        mov edi, ecx
+        not edi
+        and edi, edx
+        and ebp, esi
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x3c]
+        add edi, ebp
+        lea edi, [ebx + edi - 0x70e44324]
+        mov ebx, edi
+        shr ebx, 0x14
+        shl edi, 0xc
+        or ebx, edi
+        mov edi, edx
+        not edi
+        mov ebp, ebx
+        and edi, esi
+        and ebp, edx
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x44]
+        add edi, ebp
+        lea ecx, [ecx + edi - 0x70e44324]
+        mov edi, ecx
+        shr edi, 0x12
+        shl ecx, 0xe
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        mov ebp, edi
+        and ecx, ebx
+        and ebp, esi
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x40]
+        add ecx, ebp
+        mov ebp, ebx
+        lea edx, [edx + ecx - 0x70e44324]
+        mov ecx, edx
+        shr ecx, 0x11
+        shl edx, 0xf
+        or ecx, edx
+        mov edx, ebx
+        not edx
+        and edx, edi
+        and ebp, ecx
+        or edx, ebp
+        mov ebp, dword ptr [eax + 0x18]
+        add edx, ebp
+        lea esi, [esi + edx - 0x70e44324]
+        mov edx, esi
+        shr edx, 0x12
+        shl esi, 0xe
+        or edx, esi
+        mov esi, edi
+        mov dword ptr [esp + 0x10], edx
+        mov edx, edi
+        mov ebp, dword ptr [esp + 0x10]
+        not edx
+        and edx, ecx
+        and esi, ebp
+        or edx, esi
+        mov esi, dword ptr [eax + 0x38]
+        add edx, esi
+        mov esi, ecx
+        not esi
+        lea ebx, [ebx + edx - 0x70e44324]
+        mov edx, ebx
+        shr edx, 0x11
+        shl ebx, 0xf
+        or edx, ebx
+        mov ebx, ebp
+        mov ebp, edx
+        and esi, ebx
+        and ebp, ecx
+        or esi, ebp
+        mov ebp, dword ptr [eax + 0x48]
+        add esi, ebp
+        lea edi, [edi + esi - 0x70e44324]
+        mov ebp, dword ptr [esp + 0x10]
+        mov esi, edi
+        shr esi, 0x17
+        shl edi, 0x9
+        or esi, edi
+        not ebx
+        mov edi, esi
+        and ebx, edx
+        and edi, ebp
+        mov ebp, dword ptr [eax + 0x28]
+        or ebx, edi
+        add ebx, ebp
+        lea ecx, [ecx + ebx - 0x70e44324]
+        mov ebx, edx
+        mov edi, ecx
+        shr edi, 0x18
+        shl ecx, 0x8
+        or edi, ecx
+        mov ecx, edx
+        not ecx
+        and ecx, esi
+        and ebx, edi
+        or ecx, ebx
+        mov ebx, dword ptr [eax + 0x4c]
+        add ecx, ebx
+        mov ebx, dword ptr [esp + 0x10]
+        lea ecx, [ebx + ecx - 0x70e44324]
+        mov ebx, ecx
+        shr ebx, 0x17
+        shl ecx, 0x9
+        or ebx, ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], ebx
+        mov ebx, esi
+        mov ebp, dword ptr [esp + 0x10]
+        not ecx
+        and ecx, edi
+        and ebx, ebp
+        or ecx, ebx
+        mov ebx, dword ptr [eax + 0x24]
+        add ecx, ebx
+        mov ebx, ebp
+        lea edx, [edx + ecx - 0x70e44324]
+        mov ecx, edx
+        shr ecx, 0x12
+        shl edx, 0xe
+        or ecx, edx
+        mov edx, edi
+        not edx
+        mov ebp, ecx
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        mov ebp, dword ptr [eax + 0x34]
+        add edx, ebp
+        mov ebp, dword ptr [esp + 0x10]
+        not ebx
+        lea esi, [esi + edx - 0x70e44324]
+        and ebx, ecx
+        mov edx, esi
+        shr edx, 0x1b
+        shl esi, 0x5
+        or edx, esi
+        mov esi, edx
+        and esi, ebp
+        mov ebp, dword ptr [eax + 0x54]
+        or ebx, esi
+        add ebx, ebp
+        lea edi, [edi + ebx - 0x70e44324]
+        mov ebx, ecx
+        mov esi, edi
+        shr esi, 0x1a
+        shl edi, 0x6
+        or esi, edi
+        mov edi, ecx
+        not edi
+        and edi, edx
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x50]
+        add edi, ebx
+        mov ebx, dword ptr [esp + 0x10]
+        lea edi, [ebx + edi - 0x70e44324]
+        mov ebx, edi
+        shr ebx, 0x18
+        shl edi, 0x8
+        or ebx, edi
+        mov edi, edx
+        mov dword ptr [esp + 0x10], ebx
+        mov ebx, edx
+        mov ebp, dword ptr [esp + 0x10]
+        not edi
+        and edi, esi
+        and ebx, ebp
+        mov ebp, dword ptr [eax + 0x2c]
+        or edi, ebx
+        add edi, ebp
+        mov ebx, dword ptr [esp + 0x10]
+        lea ecx, [ecx + edi - 0x70e44324]
+        mov edi, ecx
+        shr edi, 0x1a
+        shl ecx, 0x6
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        and ecx, ebx
+        mov ebx, edi
+        and ebx, esi
+        mov dword ptr [esp + 0x18], edi
+        or ecx, ebx
+        mov ebx, dword ptr [eax + 0x30]
+        add ecx, ebx
+        lea edx, [edx + ecx - 0x70e44324]
+        mov ecx, edx
+        shr ecx, 0x1b
+        shl edx, 0x5
+        or ecx, edx
+        mov edx, dword ptr [esp + 0x10]
+        mov ebx, edx
+        mov dword ptr [esp + 0x14], ecx
+        not ebx
+        and ebx, edi
+        and ecx, edx
+        mov edx, dword ptr [eax + 0x20]
+        or ebx, ecx
+        add ebx, edx
+        mov edi, dword ptr [eax + 0x4]
+        lea edx, [esi + ebx - 0x70e44324]
+        mov ebx, dword ptr [eax + 0xc]
+        mov esi, dword ptr [eax + 0x8]
+        mov dword ptr [esp + 0x1c], edx
+        mov edx, ebx
+        mov ecx, ebx
+        not edx
+        and edx, esi
+        and ecx, edi
+        or edx, ecx
+        mov ecx, dword ptr [eax]
+        add edx, ebp
+        mov ebp, esi
+        lea edx, [edx + ecx + 0x50a28be6]
+        mov ecx, edx
+        shr ecx, 0x18
+        shl edx, 0x8
+        or ecx, edx
+        mov edx, esi
+        not edx
+        and edx, edi
+        and ebp, ecx
+        or edx, ebp
+        mov ebp, dword ptr [eax + 0x50]
+        add edx, ebp
+        lea ebx, [ebx + edx + 0x50a28be6]
+        mov edx, ebx
+        shr edx, 0x17
+        shl ebx, 0x9
+        or edx, ebx
+        mov ebx, edi
+        not ebx
+        mov ebp, edx
+        and ebx, ecx
+        and ebp, edi
+        or ebx, ebp
+        mov ebp, dword ptr [eax + 0x34]
+        add ebx, ebp
+        lea ebx, [esi + ebx + 0x50a28be6]
+        mov esi, ebx
+        shr esi, 0x17
+        shl ebx, 0x9
+        or esi, ebx
+        mov ebx, ecx
+        not ebx
+        mov ebp, esi
+        and ebx, edx
+        and ebp, ecx
+        or ebx, ebp
+        mov ebp, dword ptr [eax + 0x18]
+        add ebx, ebp
+        lea edi, [edi + ebx + 0x50a28be6]
+        mov ebx, edi
+        shr ebx, 0x15
+        shl edi, 0xb
+        or ebx, edi
+        mov edi, edx
+        mov dword ptr [esp + 0x24], ebx
+        mov ebx, edx
+        mov ebp, dword ptr [esp + 0x24]
+        not edi
+        and edi, esi
+        and ebx, ebp
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x3c]
+        add edi, ebx
+        mov ebx, ebp
+        mov ebp, esi
+        lea ecx, [ecx + edi + 0x50a28be6]
+        mov edi, ecx
+        shr edi, 0x13
+        shl ecx, 0xd
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        and ecx, ebx
+        and ebp, edi
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x20]
+        add ecx, ebp
+        mov ebp, dword ptr [esp + 0x24]
+        not ebx
+        lea edx, [edx + ecx + 0x50a28be6]
+        and ebx, edi
+        mov ecx, edx
+        shr ecx, 0x11
+        shl edx, 0xf
+        or ecx, edx
+        mov edx, ecx
+        and edx, ebp
+        mov ebp, dword ptr [eax + 0x44]
+        or ebx, edx
+        add ebx, ebp
+        lea esi, [esi + ebx + 0x50a28be6]
+        mov edx, esi
+        shr edx, 0x11
+        shl esi, 0xf
+        or edx, esi
+        mov esi, edi
+        not esi
+        mov ebx, edx
+        and esi, ecx
+        and ebx, edi
+        or esi, ebx
+        mov ebx, dword ptr [eax + 0x28]
+        add esi, ebx
+        mov ebx, dword ptr [esp + 0x24]
+        lea esi, [ebx + esi + 0x50a28be6]
+        mov ebx, esi
+        shr ebx, 0x1b
+        shl esi, 0x5
+        or ebx, esi
+        mov esi, ecx
+        not esi
+        mov dword ptr [esp + 0x24], ebx
+        and esi, edx
+        mov ebp, dword ptr [esp + 0x24]
+        mov ebx, ecx
+        and ebx, ebp
+        or esi, ebx
+        mov ebx, dword ptr [eax + 0x4c]
+        add esi, ebx
+        mov ebx, ebp
+        mov ebp, edx
+        lea edi, [edi + esi + 0x50a28be6]
+        mov esi, edi
+        shr esi, 0x19
+        shl edi, 0x7
+        or esi, edi
+        mov edi, edx
+        not edi
+        and edi, ebx
+        and ebp, esi
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x30]
+        add edi, ebp
+        not ebx
+        lea ecx, [ecx + edi + 0x50a28be6]
+        and ebx, esi
+        mov edi, ecx
+        shr edi, 0x19
+        shl ecx, 0x7
+        or edi, ecx
+        mov ecx, edi
+        and ecx, dword ptr [esp + 0x24]
+        or ebx, ecx
+        mov ecx, dword ptr [eax + 0x54]
+        add ebx, ecx
+        lea edx, [edx + ebx + 0x50a28be6]
+        mov ecx, edx
+        shr ecx, 0x18
+        shl edx, 0x8
+        or ecx, edx
+        mov edx, esi
+        not edx
+        mov ebx, ecx
+        and edx, edi
+        and ebx, esi
+        or edx, ebx
+        mov ebx, dword ptr [eax + 0x38]
+        add edx, ebx
+        mov ebx, dword ptr [esp + 0x24]
+        lea edx, [ebx + edx + 0x50a28be6]
+        mov ebx, edx
+        shr ebx, 0x15
+        shl edx, 0xb
+        or ebx, edx
+        mov edx, edi
+        mov dword ptr [esp + 0x24], ebx
+        mov ebx, edi
+        and ebx, dword ptr [esp + 0x24]
+        not edx
+        and edx, ecx
+        or edx, ebx
+        mov ebx, dword ptr [eax + 0x1c]
+        add edx, ebx
+        mov ebx, dword ptr [esp + 0x24]
+        lea esi, [esi + edx + 0x50a28be6]
+        mov edx, esi
+        shr edx, 0x12
+        shl esi, 0xe
+        or edx, esi
+        mov esi, ecx
+        not esi
+        and esi, ebx
+        mov ebx, ecx
+        and ebx, edx
+        or esi, ebx
+        mov ebx, dword ptr [eax + 0x40]
+        add esi, ebx
+        lea edi, [edi + esi + 0x50a28be6]
+        mov esi, edi
+        shr esi, 0x12
+        shl edi, 0xe
+        or esi, edi
+        mov edi, dword ptr [esp + 0x24]
+        not edi
+        mov ebx, esi
+        and edi, edx
+        and ebx, dword ptr [esp + 0x24]
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x24]
+        add edi, ebx
+        lea ecx, [ecx + edi + 0x50a28be6]
+        mov edi, ecx
+        shr edi, 0x14
+        shl ecx, 0xc
+        or edi, ecx
+        mov ecx, edx
+        not ecx
+        mov ebx, edi
+        and ecx, esi
+        and ebx, edx
+        or ecx, ebx
+        mov ebx, dword ptr [eax + 0x48]
+        add ecx, ebx
+        mov ebx, dword ptr [esp + 0x24]
+        lea ebx, [ebx + ecx + 0x50a28be6]
+        mov ecx, ebx
+        shr ecx, 0x1a
+        shl ebx, 0x6
+        or ecx, ebx
+        mov ebx, edi
+        not ebx
+        or ebx, ecx
+        xor ebx, esi
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x44]
+        lea edx, [edx + ebx + 0x5c4dd124]
+        mov ebx, edx
+        shr ebx, 0x17
+        shl edx, 0x9
+        or ebx, edx
+        mov edx, ecx
+        not edx
+        or edx, ebx
+        xor edx, edi
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x24]
+        lea esi, [esi + edx + 0x5c4dd124]
+        mov edx, esi
+        shr edx, 0x13
+        shl esi, 0xd
+        or edx, esi
+        mov esi, ebx
+        not esi
+        or esi, edx
+        xor esi, ecx
+        add esi, ebp
+        mov ebp, dword ptr [eax + 0x34]
+        lea edi, [edi + esi + 0x5c4dd124]
+        mov esi, edi
+        shr esi, 0x11
+        shl edi, 0xf
+        or esi, edi
+        mov edi, edx
+        not edi
+        or edi, esi
+        xor edi, ebx
+        add edi, ebp
+        mov ebp, dword ptr [eax + 0x18]
+        lea ecx, [ecx + edi + 0x5c4dd124]
+        mov edi, ecx
+        shr edi, 0x19
+        shl ecx, 0x7
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        or ecx, edi
+        xor ecx, edx
+        add ecx, ebp
+        lea ebx, [ebx + ecx + 0x5c4dd124]
+        mov ecx, ebx
+        shr ecx, 0x14
+        shl ebx, 0xc
+        or ecx, ebx
+        mov ebx, edi
+        not ebx
+        mov ebp, dword ptr [eax + 0x4c]
+        or ebx, ecx
+        xor ebx, esi
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x2c]
+        lea edx, [edx + ebx + 0x5c4dd124]
+        mov ebx, edx
+        shr ebx, 0x18
+        shl edx, 0x8
+        or ebx, edx
+        mov edx, ecx
+        not edx
+        or edx, ebx
+        xor edx, edi
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x40]
+        lea esi, [esi + edx + 0x5c4dd124]
+        mov edx, esi
+        shr edx, 0x17
+        shl esi, 0x9
+        or edx, esi
+        mov esi, ebx
+        not esi
+        or esi, edx
+        xor esi, ecx
+        add esi, ebp
+        mov ebp, dword ptr [eax + 0x50]
+        lea edi, [edi + esi + 0x5c4dd124]
+        mov esi, edi
+        shr esi, 0x15
+        shl edi, 0xb
+        or esi, edi
+        mov edi, edx
+        not edi
+        or edi, esi
+        xor edi, ebx
+        add edi, ebp
+        mov ebp, dword ptr [eax + 0x54]
+        lea ecx, [ecx + edi + 0x5c4dd124]
+        mov edi, ecx
+        shr edi, 0x19
+        shl ecx, 0x7
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        or ecx, edi
+        xor ecx, edx
+        add ecx, ebp
+        mov ebp, dword ptr [eax + 0x38]
+        lea ebx, [ebx + ecx + 0x5c4dd124]
+        mov ecx, ebx
+        shr ecx, 0x19
+        shl ebx, 0x7
+        or ecx, ebx
+        mov ebx, edi
+        not ebx
+        or ebx, ecx
+        xor ebx, esi
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x48]
+        lea edx, [edx + ebx + 0x5c4dd124]
+        mov ebx, edx
+        shr ebx, 0x14
+        shl edx, 0xc
+        or ebx, edx
+        mov edx, ecx
+        not edx
+        or edx, ebx
+        xor edx, edi
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x28]
+        lea esi, [esi + edx + 0x5c4dd124]
+        mov edx, esi
+        shr edx, 0x19
+        shl esi, 0x7
+        or edx, esi
+        mov esi, ebx
+        not esi
+        or esi, edx
+        xor esi, ecx
+        add esi, ebp
+        lea edi, [edi + esi + 0x5c4dd124]
+        mov ebp, dword ptr [eax + 0x3c]
+        mov esi, edi
+        shr esi, 0x1a
+        shl edi, 0x6
+        or esi, edi
+        mov edi, edx
+        not edi
+        or edi, esi
+        xor edi, ebx
+        add edi, ebp
+        mov ebp, dword ptr [eax + 0x1c]
+        lea ecx, [ecx + edi + 0x5c4dd124]
+        mov edi, ecx
+        shr edi, 0x11
+        shl ecx, 0xf
+        or edi, ecx
+        mov ecx, esi
+        not ecx
+        or ecx, edi
+        xor ecx, edx
+        add ecx, ebp
+        mov ebp, dword ptr [eax + 0x20]
+        lea ecx, [ebx + ecx + 0x5c4dd124]
+        mov ebx, ecx
+        shr ebx, 0x13
+        shl ecx, 0xd
+        or ebx, ecx
+        mov ecx, edi
+        not ecx
+        or ecx, ebx
+        xor ecx, esi
+        add ecx, ebp
+        mov ebp, ebx
+        lea edx, [edx + ecx + 0x5c4dd124]
+        mov ecx, edx
+        shr ecx, 0x15
+        shl edx, 0xb
+        or ecx, edx
+        mov edx, ecx
+        and ebp, ecx
+        not edx
+        and edx, edi
+        or edx, ebp
+        mov ebp, dword ptr [eax + 0x54]
+        add edx, ebp
+        mov ebp, ecx
+        lea esi, [esi + edx + 0x6d703ef3]
+        mov edx, esi
+        shr edx, 0x17
+        shl esi, 0x9
+        or edx, esi
+        mov esi, edx
+        and ebp, edx
+        not esi
+        and esi, ebx
+        or esi, ebp
+        mov ebp, dword ptr [eax + 0x2c]
+        add esi, ebp
+        lea edi, [edi + esi + 0x6d703ef3]
+        mov esi, edi
+        shr esi, 0x19
+        shl edi, 0x7
+        or esi, edi
+        mov edi, esi
+        mov ebp, esi
+        not edi
+        and edi, ecx
+        and ebp, edx
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x1c]
+        add edi, ebp
+        lea ebx, [ebx + edi + 0x6d703ef3]
+        mov edi, ebx
+        shr edi, 0x11
+        shl ebx, 0xf
+        or edi, ebx
+        mov ebx, esi
+        mov dword ptr [esp + 0x24], edi
+        not edi
+        and edi, edx
+        mov ebp, dword ptr [esp + 0x24]
+        and ebx, ebp
+        mov ebp, dword ptr [eax + 0x24]
+        or edi, ebx
+        mov ebx, dword ptr [esp + 0x24]
+        add edi, ebp
+        mov ebp, ebx
+        lea ecx, [ecx + edi + 0x6d703ef3]
+        mov edi, ecx
+        shr edi, 0x15
+        shl ecx, 0xb
+        or edi, ecx
+        mov ecx, edi
+        and ebp, edi
+        not ecx
+        and ecx, esi
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x34]
+        add ecx, ebp
+        mov ebp, edi
+        lea edx, [edx + ecx + 0x6d703ef3]
+        mov ecx, edx
+        shr ecx, 0x18
+        shl edx, 0x8
+        or ecx, edx
+        mov edx, ecx
+        and ebp, ecx
+        not edx
+        and edx, ebx
+        or edx, ebp
+        mov ebp, dword ptr [eax + 0x50]
+        add edx, ebp
+        lea esi, [esi + edx + 0x6d703ef3]
+        mov edx, esi
+        shr edx, 0x1a
+        shl esi, 0x6
+        or edx, esi
+        mov esi, edx
+        mov ebp, edx
+        not esi
+        and esi, edi
+        and ebp, ecx
+        or esi, ebp
+        mov ebp, dword ptr [eax + 0x30]
+        add esi, ebp
+        lea ebx, [ebx + esi + 0x6d703ef3]
+        mov esi, ebx
+        shr esi, 0x1a
+        shl ebx, 0x6
+        or esi, ebx
+        mov ebx, edx
+        mov dword ptr [esp + 0x24], esi
+        mov ebp, dword ptr [esp + 0x24]
+        not esi
+        and esi, ecx
+        and ebx, ebp
+        or esi, ebx
+        mov ebx, dword ptr [eax + 0x3c]
+        add esi, ebx
+        mov ebx, ebp
+        lea edi, [edi + esi + 0x6d703ef3]
+        mov esi, edi
+        shr esi, 0x12
+        shl edi, 0xe
+        or esi, edi
+        mov edi, esi
+        and ebx, esi
+        not edi
+        and edi, edx
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x44]
+        add edi, ebx
+        mov ebx, esi
+        lea ecx, [ecx + edi + 0x6d703ef3]
+        mov edi, ecx
+        shr edi, 0x14
+        shl ecx, 0xc
+        or edi, ecx
+        mov ecx, edi
+        not ecx
+        and ecx, ebp
+        and ebx, edi
+        or ecx, ebx
+        mov ebx, dword ptr [eax + 0x38]
+        add ecx, ebx
+        lea edx, [edx + ecx + 0x6d703ef3]
+        mov ebx, edx
+        shr ebx, 0x13
+        shl edx, 0xd
+        or ebx, edx
+        mov edx, ebx
+        mov ecx, ebx
+        not edx
+        and ecx, edi
+        and edx, esi
+        or edx, ecx
+        mov ecx, dword ptr [eax + 0x48]
+        add edx, ecx
+        lea edx, [edx + ebp + 0x6d703ef3]
+        mov ecx, edx
+        shr ecx, 0x1b
+        shl edx, 0x5
+        or ecx, edx
+        mov edx, ebx
+        mov dword ptr [esp + 0x24], ecx
+        mov ebp, dword ptr [esp + 0x24]
+        not ecx
+        and ecx, edi
+        and edx, ebp
+        or ecx, edx
+        mov edx, dword ptr [eax + 0x20]
+        add ecx, edx
+        lea esi, [esi + ecx + 0x6d703ef3]
+        mov ebp, esi
+        shr ebp, 0x12
+        shl esi, 0xe
+        or ebp, esi
+        mov esi, dword ptr [esp + 0x24]
+        mov ecx, ebp
+        mov edx, esi
+        not ecx
+        and ecx, ebx
+        and edx, ebp
+        or ecx, edx
+        mov edx, dword ptr [eax + 0x40]
+        add ecx, edx
+        lea edi, [edi + ecx + 0x6d703ef3]
+        mov ecx, edi
+        shr ecx, 0x13
+        shl edi, 0xd
+        or ecx, edi
+        mov edi, ebp
+        mov edx, ecx
+        and edi, ecx
+        not edx
+        and edx, esi
+        or edx, edi
+        mov edi, dword ptr [eax + 0x18]
+        add edx, edi
+        lea ebx, [ebx + edx + 0x6d703ef3]
+        mov edx, ebx
+        shr edx, 0x13
+        shl ebx, 0xd
+        or edx, ebx
+        mov edi, edx
+        mov ebx, edx
+        not edi
+        and edi, ebp
+        and ebx, ecx
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x28]
+        add edi, ebx
+        mov ebx, edx
+        lea edi, [esi + edi + 0x6d703ef3]
+        mov esi, edi
+        shr esi, 0x19
+        shl edi, 0x7
+        or esi, edi
+        mov edi, esi
+        not edi
+        and edi, ecx
+        and ebx, esi
+        or edi, ebx
+        mov ebx, dword ptr [eax + 0x4c]
+        add edi, ebx
+        mov ebx, edx
+        xor ebx, esi
+        lea ebp, [edi + ebp + 0x6d703ef3]
+        mov edi, ebp
+        shr edi, 0x1b
+        shl ebp, 0x5
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x38]
+        xor ebx, edi
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x30]
+        add ecx, ebx
+        mov ebx, ecx
+        shr ebx, 0x11
+        shl ecx, 0xf
+        or ebx, ecx
+        mov ecx, esi
+        xor ecx, edi
+        xor ecx, ebx
+        add ecx, ebp
+        add edx, ecx
+        mov ecx, dword ptr [eax + 0x28]
+        mov ebp, edx
+        shr ebp, 0x1b
+        shl edx, 0x5
+        or ebp, edx
+        mov edx, ebp
+        xor edx, edi
+        xor edx, ebx
+        add edx, ecx
+        add esi, edx
+        mov edx, ebp
+        mov ecx, esi
+        shr ecx, 0x18
+        shl esi, 0x8
+        or ecx, esi
+        mov esi, dword ptr [eax + 0x1c]
+        xor edx, ecx
+        mov dword ptr [esp + 0x24], ecx
+        mov ecx, edx
+        xor ecx, ebx
+        add ecx, esi
+        mov esi, dword ptr [eax + 0x24]
+        add edi, ecx
+        mov ecx, edi
+        shr ecx, 0x15
+        shl edi, 0xb
+        or ecx, edi
+        xor edx, ecx
+        add edx, esi
+        mov esi, dword ptr [esp + 0x24]
+        add ebx, edx
+        mov edi, esi
+        mov edx, ebx
+        xor edi, ecx
+        shr edx, 0x12
+        shl ebx, 0xe
+        or edx, ebx
+        mov ebx, dword ptr [eax + 0x44]
+        xor edi, edx
+        add edi, ebx
+        add ebp, edi
+        mov edi, ebp
+        shr edi, 0x12
+        shl ebp, 0xe
+        or edi, ebp
+        mov ebp, dword ptr [eax + 0x54]
+        mov ebx, edi
+        xor ebx, ecx
+        xor ebx, edx
+        add ebx, ebp
+        mov ebp, edi
+        add esi, ebx
+        mov ebx, esi
+        shr ebx, 0x1a
+        shl esi, 0x6
+        or ebx, esi
+        xor ebp, ebx
+        mov esi, ebp
+        xor esi, edx
+        add esi, dword ptr [eax + 0x18]
+        add ecx, esi
+        mov esi, ecx
+        shr esi, 0x12
+        shl ecx, 0xe
+        or esi, ecx
+        mov ecx, dword ptr [eax + 0x2c]
+        xor ebp, esi
+        add ebp, ecx
+        add edx, ebp
+        mov ebp, dword ptr [eax + 0x48]
+        mov ecx, edx
+        shr ecx, 0x1a
+        shl edx, 0x6
+        or ecx, edx
+        mov edx, ebx
+        xor edx, esi
+        xor edx, ecx
+        add edx, ebp
+        add edi, edx
+        mov ebp, edi
+        shr ebp, 0x17
+        shl edi, 0x9
+        or ebp, edi
+        mov edi, dword ptr [eax + 0x20]
+        mov edx, ebp
+        xor edx, esi
+        xor edx, ecx
+        add edx, edi
+        add ebx, edx
+        mov edi, ebx
+        shr edi, 0x14
+        shl ebx, 0xc
+        or edi, ebx
+        mov ebx, ebp
+        xor ebx, edi
+        mov edx, ebx
+        xor edx, ecx
+        add edx, dword ptr [eax + 0x4c]
+        add esi, edx
+        mov edx, esi
+        shr edx, 0x17
+        shl esi, 0x9
+        or edx, esi
+        mov esi, dword ptr [eax + 0x3c]
+        xor ebx, edx
+        add ebx, esi
+        add ecx, ebx
+        mov ebx, dword ptr [eax + 0x34]
+        mov esi, ecx
+        shr esi, 0x14
+        shl ecx, 0xc
+        or esi, ecx
+        mov ecx, edi
+        xor ecx, edx
+        xor ecx, esi
+        add ecx, ebx
+        add ebp, ecx
+        mov ecx, ebp
+        shr ecx, 0x1b
+        shl ebp, 0x5
+        or ecx, ebp
+        mov ebp, dword ptr [eax + 0x40]
+        mov ebx, ecx
+        xor ebx, edx
+        xor ebx, esi
+        add ebx, ebp
+        mov ebp, dword ptr [eax + 0x50]
+        add edi, ebx
+        mov ebx, edi
+        shr ebx, 0x11
+        shl edi, 0xf
+        or ebx, edi
+        mov edi, ecx
+        xor edi, ebx
+        xor edi, esi
+        add edi, ebp
+        add edx, edi
+        mov edi, dword ptr [eax + 0x4]
+        mov ebp, dword ptr [esp + 0x14]
+        add edi, ebp
+        add ecx, edi
+        mov edi, dword ptr [eax + 0x8]
+        add edi, esi
+        mov esi, dword ptr [esp + 0x18]
+        add edi, esi
+        mov esi, edx
+        shr esi, 0x18
+        shl edx, 0x8
+        mov dword ptr [eax + 0x4], edi
+        mov edi, dword ptr [eax + 0xc]
+        or esi, edx
+        mov edx, dword ptr [esp + 0x10]
+        add esi, edi
+        mov edi, dword ptr [eax]
+        add esi, edx
+        mov edx, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x8], esi
+        mov esi, edx
+        shr esi, 0x14
+        shl edx, 0xc
+        or esi, edx
+        mov dword ptr [eax], ecx
+        add esi, edi
+        pop edi
+        add esi, ebx
+        mov dword ptr [eax + 0xc], esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
