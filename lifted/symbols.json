@@ -6911,6 +6911,13 @@
     "summary": "Pure jump thunk forwarding to NMData::NullRelationshipData::vfunc_21.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005F35A0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorGroup vcall 84)",
+    "class": "ExprParser::ROWriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
+    "signature": "void* fn_005F35A0(void* self)",
+    "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x005F35C0": {
     "name": "VirtualSlot22Dispatch",
     "signature": "void fn_005F35C0(void* self)",
