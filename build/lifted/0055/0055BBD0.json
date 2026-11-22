@@ -4,11 +4,53 @@
   "orig_symbol": "Acclaim2MotionIO::vfunc_47",
   "src_path": "src/classes/global_tiny.cpp",
   "lifted_path": "lifted/classes/global_tiny.cpp",
-  "name": "Acclaim2MotionIO::vfunc_47",
-  "class": "Acclaim2MotionIO",
-  "signature": "int __thiscall fn_0055BBD0(void* self)",
-  "summary": "Calls the virtual method at vtable slot +0xE4 on this and returns its low bit as 0 or 1.",
+  "name": "ExportDialog::vfunc_0",
+  "class": "ExportDialog",
+  "signature": "void* fn_00417330(void* self)",
+  "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
   "fields": [
+    {
+      "class": "ExportUnavailableDialog",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "GridPropertyPage",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ListBox",
+      "offset": "+0x0",
+      "type": "unknown",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMColourSwatch",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x568",
+      "type": "std::string",
+      "name": "field_0x568"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x578",
+      "type": "size_t",
+      "name": "field_0x578"
+    },
     {
       "class": "Acclaim2MotionIO",
       "offset": "+0x0",
@@ -18,5 +60,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:26:01Z"
+  "lifted_at": "2026-11-22T07:26:07Z"
 }

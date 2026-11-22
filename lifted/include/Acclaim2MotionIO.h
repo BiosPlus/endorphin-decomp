@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct Acclaim2MotionIO_Fields {
     // +0x0   void*                    vtable  (evidence: 0x0055BBD0)
-    // +0x568 std::string              field_0x568  (evidence: 0x00582BA0)
-    // +0x578 size_t                   field_0x578  (evidence: 0x00582BA0)
+    // +0x568 std::string              field_0x568  (evidence: 0x0055BBD0, 0x00582BA0)
+    // +0x578 size_t                   field_0x578  (evidence: 0x0055BBD0, 0x00582BA0)
 };
 } // namespace lifted_layout

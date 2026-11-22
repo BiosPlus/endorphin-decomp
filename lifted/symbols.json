@@ -1874,10 +1874,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x0055BBD0": {
-    "name": "Acclaim2MotionIO::vfunc_47",
-    "class": "Acclaim2MotionIO",
-    "signature": "int __thiscall fn_0055BBD0(void* self)",
-    "summary": "Calls the virtual method at vtable slot +0xE4 on this and returns its low bit as 0 or 1.",
+    "name": "ExportDialog::vfunc_0",
+    "class": "ExportDialog",
+    "signature": "void* fn_00417330(void* self)",
+    "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x0055BC20": {

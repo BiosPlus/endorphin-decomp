@@ -10,6 +10,6 @@
 // Recovered field layout for ExportUnavailableDialog:
 namespace lifted_layout {
 struct ExportUnavailableDialog_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x00419720)
+    // +0x0   void*                    vtable  (evidence: 0x00419720, 0x0055BBD0)
 };
 } // namespace lifted_layout
