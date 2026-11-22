@@ -20889,3 +20889,645 @@ extern "C" __declspec(naked) void __fastcall fn_0086B850(void* self) {
         _emit 0x00
     }
 }
+
+// [0x0086F240] sub_0086F240 (1632 bytes)
+extern "C" void ext_0086F000();
+extern "C" void ext_0086F020();
+extern "C" void ext_0086F120();
+extern "C" void ext_0086F160();
+extern "C" void ext_0086F1A0();
+extern "C" void ext_0086F240();
+extern "C" void ext_00857440();
+extern "C" void ext_00857490();
+extern "C" int mem_00AC4A90;
+extern "C" int mem_00BC8118;
+extern "C" int mem_00BC8100;
+extern "C" int mem_00BC8102;
+extern "C" int mem_00BC8104;
+extern "C" int mem_00BC8106;
+extern "C" int mem_00BC8108;
+extern "C" int mem_00BC810A;
+extern "C" int mem_00BC810C;
+extern "C" int mem_00BC810E;
+extern "C" int mem_00BC8110;
+extern "C" int mem_00BC8112;
+extern "C" int mem_00BC811A;
+extern "C" int mem_00BC811C;
+extern "C" int mem_00BC811E;
+extern "C" int mem_00BC8120;
+extern "C" int mem_00BC8122;
+extern "C" int mem_00BC8124;
+extern "C" int mem_00BC8126;
+extern "C" int mem_00BC8128;
+extern "C" int mem_00BC812A;
+
+extern "C" __declspec(naked) void __cdecl fn_0086F240(void) {
+    __asm {
+        sub esp, 0xa0
+        lea eax, [esp + 0x50]
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0xb0]
+        push ebp
+        push eax
+        push esi
+        call ext_0086F020
+        lea ecx, [esp + 0x18]
+        mov eax, dword ptr [esp + 0xc0]
+        mov di, 0x140
+        add esp, 8
+        push ecx
+        push eax
+        call ext_0086F020
+        add esp, 8
+        xor edx, edx
+        xor ecx, ecx
+    p240_a1:
+        movsx eax, dx
+        cmp dword ptr [esp + 4*eax + 0x60], ecx
+        jne p240_a2
+        sub di, 0x10
+        inc dx
+        movsx eax, dx
+        cmp eax, 0x13
+        jbe p240_a1
+    p240_a2:
+        movsx eax, dx
+        xor bx, bx
+        mov ecx, 0x8000
+        mov eax, dword ptr [esp + 4*eax + 0x60]
+    p240_a3:
+        _emit 0x85
+        _emit 0xc8
+        jne p240_a4
+        _emit 0xc1
+        _emit 0xe9
+        _emit 0x01
+        dec di
+        inc bx
+        movsx edx, bx
+        cmp edx, 0x10
+        jb p240_a3
+    p240_a4:
+        mov cx, 0x140
+        xor ebx, ebx
+        xor edx, edx
+    p240_b1:
+        movsx eax, bx
+        cmp dword ptr [esp + 4*eax + 0x10], edx
+        jne p240_b2
+        sub cx, 0x10
+        inc bx
+        movsx eax, bx
+        cmp eax, 0x13
+        jbe p240_b1
+    p240_b2:
+        movsx eax, bx
+        xor bp, bp
+        mov edx, 0x8000
+        mov eax, dword ptr [esp + 4*eax + 0x10]
+    p240_b3:
+        _emit 0x85
+        _emit 0xd0
+        jne p240_b4
+        _emit 0xc1
+        _emit 0xea
+        _emit 0x01
+        dec cx
+        inc bp
+        movsx ebx, bp
+        cmp ebx, 0x10
+        jb p240_b3
+    p240_b4:
+        test cx, cx
+        jne p240_c
+        mov ebx, dword ptr [esp + 0xbc]
+        push ebx
+        push esi
+        call ext_0086F020
+        mov eax, dword ptr [esp + 0xc8]
+        add esp, 8
+        push eax
+        call ext_0086F000
+        add esp, 4
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xa0
+        ret
+    p240_c:
+        cmp cx, di
+        mov eax, 1
+        jg p240_c1
+        xor eax, eax
+    p240_c1:
+        cmp di, 1
+        sbb edx, edx
+        neg edx
+        or eax, edx
+        je p240_d
+        mov ebx, dword ptr [esp + 0xbc]
+        push ebx
+        call ext_0086F000
+        mov eax, dword ptr [esp + 0xc4]
+        add esp, 4
+        push eax
+        push esi
+        call ext_0086F020
+        add esp, 8
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xa0
+        ret
+    p240_d:
+        mov si, di
+        sub si, cx
+        movsx eax, si
+        mov cx, si
+        cmp eax, 0x10
+        jbe p240_e
+        xor edx, edx
+    p240_g:
+        xor bx, bx
+    p240_f:
+        movsx eax, bx
+        shl eax, 2
+        inc bx
+        mov ebp, dword ptr [esp + eax + 0x14]
+        mov dword ptr [esp + eax + 0x10], ebp
+        movsx eax, bx
+        cmp eax, 0x13
+        jb p240_f
+        sub cx, 0x10
+        mov dword ptr [esp + 0x5c], edx
+        movsx eax, cx
+        cmp eax, 0x10
+        ja p240_g
+    p240_e:
+        xor edx, edx
+        test cx, cx
+        jle p240_h
+    p240_i:
+        mov bx, 0x13
+    p240_j:
+        movsx eax, bx
+        lea ebp, [esp + 4*eax + 0x10]
+        mov eax, dword ptr [ebp]
+        add eax, eax
+        or eax, edx
+        mov edx, eax
+        mov dword ptr [ebp], eax
+        and edx, 0x10000
+        and eax, 0xffff
+        shr edx, 0x10
+        mov dword ptr [ebp], eax
+        dec bx
+        jns p240_j
+        dec cx
+        jne p240_i
+    p240_h:
+        mov ebx, dword ptr [esp + 0xbc]
+        push ebx
+        call ext_0086F000
+        add esp, 4
+        test si, si
+        jl p240_k
+    p240_l:
+        movsx eax, di
+        mov cx, 0x13
+        shr eax, 4
+        sub cx, ax
+        movsx eax, si
+        mov bp, 0x13
+        shr eax, 4
+        sub bp, ax
+        movsx eax, cx
+        shl eax, 2
+        mov edx, dword ptr [esp + eax + 0x60]
+        cmp dword ptr [esp + eax + 0x10], edx
+        jne p240_m
+    p240_n:
+        movsx eax, cx
+        cmp eax, 0x13
+        jae p240_m
+        inc cx
+        movsx eax, cx
+        shl eax, 2
+        mov edx, dword ptr [esp + eax + 0x60]
+        cmp dword ptr [esp + eax + 0x10], edx
+        je p240_n
+    p240_m:
+        movsx eax, cx
+        shl eax, 2
+        mov ecx, dword ptr [esp + eax + 0x60]
+        cmp dword ptr [esp + eax + 0x10], ecx
+        ja p240_p
+        lea eax, [esp + 0x60]
+        lea ecx, [esp + 0x10]
+        push eax
+        push ecx
+        lea eax, [esp + 0x68]
+        push eax
+        call ext_0086F160
+        mov ax, si
+        add esp, 0xc
+        movsx edx, bp
+        mov ebp, 1
+        and al, 0xf
+        mov cl, al
+        shl ebp, cl
+        or dword ptr [ebx + 4*edx], ebp
+    p240_p:
+        mov cx, 0x13
+    p240_s:
+        test cx, cx
+        mov edx, 0
+        je p240_q
+        movsx eax, cx
+        mov edx, dword ptr [esp + 4*eax + 0xc]
+        and edx, 1
+        shl edx, 0x10
+    p240_q:
+        movsx eax, cx
+        lea eax, [esp + 4*eax + 0x10]
+        mov ebp, dword ptr [eax]
+        or ebp, edx
+        _emit 0xc1
+        _emit 0xed
+        _emit 0x01
+        dec cx
+        mov dword ptr [eax], ebp
+        jns p240_s
+        dec si
+        dec di
+        test si, si
+        jge p240_l
+    p240_k:
+        mov eax, dword ptr [esp + 0xc0]
+        lea ecx, [esp + 0x60]
+        push eax
+        push ecx
+        call ext_0086F020
+        add esp, 8
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xa0
+        ret
+        _emit 0x05
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    p240_seg2:
+        sub esp, 0xf0
+        lea eax, [esp + 0x50]
+        push ebx
+        push esi
+        push edi
+        push eax
+        call ext_0086F000
+        mov dword ptr [esp + 0xac], 0xa
+        lea eax, [esp + 0x10]
+        add esp, 4
+        push eax
+        call ext_0086F000
+        mov edi, dword ptr [esp + 0x108]
+        add esp, 4
+        push edi
+        call ext_0086F000
+        mov esi, dword ptr [esp + 0x104]
+        add esp, 4
+        movsx eax, byte ptr [esi]
+        inc esi
+        test eax, eax
+        je p240_t1
+        mov ebx, 9
+    p240_t2:
+        and eax, 0xf
+        lea ecx, [esp + 0xac]
+        lea edx, [esp + 0x5c]
+        push ecx
+        mov dword ptr [esp + 0x5c], eax
+        push edx
+        push edi
+        call ext_0086F1A0
+        add esp, 0xc
+        cmp dword ptr [esp + 0x58], ebx
+        ja p240_t3
+        lea eax, [esp + 0xc]
+        push edi
+        lea ecx, [esp + 0xb0]
+        push eax
+        push ecx
+        call ext_0086F120
+        add esp, 0xc
+    p240_t3:
+        movsx eax, byte ptr [esi]
+        inc esi
+        test eax, eax
+        jne p240_t2
+    p240_t1:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xf0
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    p240_seg3:
+        mov ecx, dword ptr [esp + 4]
+        sub esp, 0x140
+        lea eax, [esp + 0x50]
+        push esi
+        push edi
+        push eax
+        push ecx
+        call ext_0086F020
+        lea ecx, [esp + 0x10]
+        add esp, 8
+        push ecx
+        call ext_0086F000
+        xor ax, ax
+        mov esi, dword ptr [esp + 0x154]
+        mov dword ptr [esp + 0x58], 0xa
+        add esp, 4
+    p240_u1:
+        inc ax
+        mov byte ptr [esi], 0x20
+        movsx ecx, ax
+        inc esi
+        cmp ecx, 0x35
+        jb p240_u1
+        mov byte ptr [esi - 1], 0
+        dec esi
+        dec esi
+    p240_u2:
+        lea eax, [esp + 0xf8]
+        lea ecx, [esp + 0xa8]
+        lea edx, [esp + 8]
+        push eax
+        lea eax, [esp + 0x5c]
+        push ecx
+        push edx
+        push eax
+        dec esi
+        call ext_0086F240
+        mov eax, dword ptr [esp + 0x154]
+        add esp, 0x10
+        or al, 0x30
+        xor edi, edi
+        mov byte ptr [esi + 1], al
+        mov ax, 0x13
+    p240_u3:
+        movsx ecx, ax
+        or edi, dword ptr [esp + 4*ecx + 0xa8]
+        dec ax
+        jns p240_u3
+        lea eax, [esp + 0x58]
+        lea ecx, [esp + 0xa8]
+        push eax
+        push ecx
+        call ext_0086F020
+        add esp, 8
+        test edi, edi
+        jne p240_u2
+        pop edi
+        pop esi
+        add esp, 0x140
+        ret
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    p240_seg5:
+        mov ecx, dword ptr [esp + 4]
+        push ebx
+        cmp word ptr [mem_00AC4A90], 0
+        push esi
+        push edi
+        je p240_v6
+        mov di, 0x11
+    p240_v1:
+        mov edx, dword ptr [ecx]
+        mov esi, edx
+        mov ebx, 0xbc8118
+        and esi, 0x7fffffff
+    p240_v2:
+        movzx eax, dx
+        mov edx, eax
+        shl eax, 8
+        add eax, edx
+        shr esi, 0x10
+        add ebx, 2
+        lea eax, [edx + 2*eax]
+        lea eax, [eax + 4*eax]
+        lea edx, [edx + 4*eax]
+        lea eax, [edx + 2*edx]
+        add esi, eax
+        mov word ptr [ebx - 2], si
+        mov dx, si
+        cmp di, 9
+        jne p240_v3
+        mov ebx, 0xbc8100
+    p240_v3:
+        mov ax, di
+        dec di
+        test ax, ax
+        jne p240_v2
+        mov word ptr [mem_00AC4A90], 0
+        mov eax, 0x7fff
+        and word ptr [mem_00BC8118], ax
+        and word ptr [mem_00BC8100], ax
+    p240_v6:
+        mov si, 8
+    p240_v7:
+        movsx eax, si
+        dec si
+        _emit 0x8d
+        _emit 0x14
+        _emit 0x45
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        mov bx, word ptr [edx + 0xbc8118]
+        mov ax, word ptr [edx + 0xbc8100]
+        mov word ptr [edx + 0xbc811a], bx
+        mov word ptr [edx + 0xbc8102], ax
+        jne p240_v7
+        movsx edx, word ptr [mem_00BC8124]
+        mov eax, edx
+        shl edx, 5
+        sub edx, eax
+        movsx esi, word ptr [mem_00BC8128]
+        lea ebx, [edx + 2*edx]
+        lea edi, [eax + 4*ebx]
+        mov eax, esi
+        shl esi, 5
+        add esi, eax
+        lea edx, [eax + 4*esi]
+        lea esi, [eax + 4*edx]
+        add esi, esi
+        lea edx, [esi + 4*edi]
+        movsx esi, word ptr [mem_00BC812A]
+        mov eax, esi
+        lea ebx, [esi + 4*esi]
+        lea esi, [ebx + 4*ebx]
+        lea ebx, [esi + 4*esi]
+        lea edi, [eax + 8*ebx]
+        lea esi, [edi + 2*edi]
+        lea eax, [eax + 4*esi]
+        movsx esi, word ptr [mem_00BC811C]
+        add edx, eax
+        mov eax, esi
+        shl esi, 3
+        lea ebx, [esi + 8*esi]
+        lea esi, [ebx + 8*ebx]
+        sub esi, eax
+        lea eax, [esi + 2*esi]
+        movsx esi, word ptr [mem_00BC811E]
+        add edx, eax
+        mov eax, esi
+        shl esi, 5
+        sub esi, eax
+        shl esi, 2
+        lea eax, [esi + 2*esi]
+        lea ebx, [eax + 4*eax]
+        movsx esi, word ptr [mem_00BC8122]
+        add edx, ebx
+        lea ebx, [esi + 8*esi]
+        movsx eax, word ptr [mem_00BC8120]
+        lea esi, [esi + 4*ebx]
+        lea ebx, [eax + 8*eax]
+        lea esi, [esi + 2*esi]
+        shl esi, 4
+        add edx, esi
+        mov esi, eax
+        lea eax, [eax + 2*ebx]
+        shl eax, 3
+        sub eax, esi
+        lea ebx, [eax + 2*eax]
+        movsx eax, word ptr [mem_00BC8126]
+        lea edx, [edx + 4*ebx]
+        lea ebx, [eax + 8*eax]
+        lea esi, [ebx + 8*ebx]
+        lea eax, [esi + 2*esi]
+        lea ebx, [eax + 4*eax]
+        movsx eax, word ptr [mem_00BC8118]
+        add edx, ebx
+        add edx, eax
+        movsx esi, word ptr [mem_00BC810E]
+        movsx eax, word ptr [mem_00BC8108]
+        lea ebx, [eax + 2*esi]
+        movsx edi, word ptr [mem_00BC8106]
+        movsx eax, word ptr [mem_00BC810A]
+        lea esi, [ebx + 2*ebx]
+        lea ebx, [edi + 2*eax]
+        movsx eax, word ptr [mem_00BC810C]
+        lea esi, [esi + 2*ebx]
+        lea ebx, [eax + 4*eax]
+        movsx eax, word ptr [mem_00BC8110]
+        add esi, ebx
+        sub esi, eax
+        lea esi, [esi + 8*eax]
+        movsx eax, word ptr [mem_00BC8104]
+        add esi, eax
+        mov eax, esi
+        lea ebx, [esi + 8*esi]
+        lea esi, [eax + 4*ebx]
+        lea edi, [esi + 2*esi]
+        lea ebx, [edi + 4*edi]
+        movsx edi, word ptr [mem_00BC8112]
+        lea esi, [eax + 2*ebx]
+        mov eax, edi
+        add edi, edi
+        lea ebx, [edi + 8*edi]
+        lea edi, [eax + 8*ebx]
+        shl edi, 3
+        sub edi, eax
+        movsx eax, word ptr [mem_00BC8100]
+        lea esi, [esi + 8*edi]
+        add esi, eax
+        mov eax, edx
+        shr eax, 0x10
+        mov word ptr [mem_00BC8118], ax
+        mov eax, esi
+        shr eax, 0x10
+        mov word ptr [mem_00BC8100], ax
+        mov word ptr [mem_00BC811A], dx
+        pop edi
+        movsx eax, dx
+        movsx edx, si
+        mov word ptr [mem_00BC8102], si
+        pop esi
+        shl eax, 0x10
+        pop ebx
+        add eax, edx
+        mov dword ptr [ecx], eax
+        ret
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    p240_seg6:
+        sub esp, 0x28
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push eax
+        call ext_00857490
+        lea eax, [esp + 4]
+        mov ecx, dword ptr [esp + 0x34]
+        mov edx, dword ptr [esp + 0x30]
+        add esp, 4
+        push eax
+        push ecx
+        push edx
+        call ext_00857440
+        add esp, 0x34
+        ret
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    }
+}
