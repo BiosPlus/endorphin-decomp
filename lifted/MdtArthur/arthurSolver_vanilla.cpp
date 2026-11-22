@@ -75,3 +75,72 @@ void fn_007F2AC0(float* out, int32_t q, float* recs, int32_t* idxs, int32_t* cou
     (void)bf;
     (void)recs;
 }
+
+// [0x007F3740]
+// @name MdtArthur::arthurSolver_vanilla::vfunc_1
+// @class MdtArthur::arthurSolver_vanilla
+// @summary Per-element accumulation over count/4 blocks: zeroes four floats at out, accumulates weighted contributions from the two ext_007F36C0 sub-calls, then inverts each of the four accumulated floats.
+// @field MdtArthur::arthurSolver_vanilla +0x0c int field_0x0c
+// @field MdtArthur::arthurSolver_vanilla +0x2c int field_0x2c
+
+// Callee: sub_007F36C0 (cdecl, 4 args: out, obj, table/offset, flag)
+void ext_007F36C0(float* out, void* obj, const void* aux, int flag);
+
+namespace {
+
+struct ArthurElem {
+    unsigned char raw[0x100];
+    int& dimA() { return *reinterpret_cast<int*>(raw + 0x0c); }
+    int& dimB() { return *reinterpret_cast<int*>(raw + 0x2c); }
+};
+
+} // namespace
+
+// 304-byte stdcall-style routine (ret 0xac). Stack-argument layout is only
+// partially recovered; see report for unresolved parameters.
+void vfunc_1(float* out,
+             int count_raw,
+             const int* idxA,
+             const int* idxB,
+             const float* src,
+             ArthurElem* elems,
+             float scaleA,
+             float bias)
+{
+    // n = count_raw / 4 (signed, truncating toward zero)
+    const int n = count_raw / 4;
+    if (n == 0) {
+        return;
+    }
+
+    float* cursor = out;
+    for (int i = 0; i < n; ++i) {
+        ArthurElem& e = elems[i];
+        const int ra = e.dimA();
+        const int rb = e.dimB();
+
+        const int ia = idxA[ra + i];
+        const int ib = idxB[rb + i];
+
+        for (int j = 0; j < 4; ++j) {
+            cursor[j] = 0.0f;
+        }
+
+        if (ra != -1) {
+            ext_007F36C0(cursor, &e, idxA + ia * 3, 0);
+        }
+        if (rb != -1) {
+            ext_007F36C0(cursor, &e, idxB + ib * 3, 1);
+        }
+
+        for (int j = 0; j < 4; ++j) {
+            cursor[j] += src[j] * scaleA + bias;
+        }
+
+        for (int j = 0; j < 4; ++j) {
+            cursor[j] = 1.0f / cursor[j];
+        }
+
+        cursor += 4;
+    }
+}

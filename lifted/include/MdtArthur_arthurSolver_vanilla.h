@@ -11,5 +11,7 @@
 namespace lifted_layout {
 struct MdtArthur_arthurSolver_vanilla_Fields {
     // +0x0   <unknown> (vtable/base; not accessed by this function)  (evidence: 0x007F2AC0)
+    // +0xC   int                      field_0x0c  (evidence: 0x007F3740)
+    // +0x2C  int                      field_0x2c  (evidence: 0x007F3740)
 };
 } // namespace lifted_layout

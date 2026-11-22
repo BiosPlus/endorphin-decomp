@@ -1,0 +1,28 @@
+{
+  "va": "0x007F3740",
+  "size": 304,
+  "orig_symbol": "MdtArthur::arthurSolver_vanilla::vfunc_1",
+  "src_path": "src/MdtArthur/arthurSolver_vanilla.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp",
+  "name": "MdtArthur::arthurSolver_vanilla::vfunc_1",
+  "class": "MdtArthur::arthurSolver_vanilla",
+  "signature": "int\u0026 dimA()",
+  "summary": "Per-element accumulation over count/4 blocks: zeroes four floats at out, accumulates weighted contributions from the two ext_007F36C0 sub-calls, then inverts each of the four accumulated floats.",
+  "fields": [
+    {
+      "class": "MdtArthur::arthurSolver_vanilla",
+      "offset": "+0xC",
+      "type": "int",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_vanilla",
+      "offset": "+0x2C",
+      "type": "int",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T14:27:50Z"
+}

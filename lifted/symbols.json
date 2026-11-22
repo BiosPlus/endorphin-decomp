@@ -21846,6 +21846,13 @@
     "summary": "Accumulates weighted 6-group bone contributions into an output vec4 table, then rescales and in-place updates each record; trailing pass over n rows is not yet decoded.",
     "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
   },
+  "0x007F3740": {
+    "name": "MdtArthur::arthurSolver_vanilla::vfunc_1",
+    "class": "MdtArthur::arthurSolver_vanilla",
+    "signature": "int\u0026 dimA()",
+    "summary": "Per-element accumulation over count/4 blocks: zeroes four floats at out, accumulates weighted contributions from the two ext_007F36C0 sub-calls, then inverts each of the four accumulated floats.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
+  },
   "0x0080EFC0": {
     "name": "sub_0080EFC0",
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
