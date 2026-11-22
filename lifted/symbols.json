@@ -3222,6 +3222,13 @@
     "summary": "Copies the 8-byte element at index from the array at +0x88 (end at +0x8C) into out and returns out; aborts on a null array or out-of-range index.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00497900": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_0",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+    "signature": "void* fn_00497900(void* self, void* src)",
+    "summary": "Initializes the std::string at self from the C-string pointer held in src's first dword, returns self.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00499AF0": {
     "name": "NMData::Transition::vfunc_6_off_10",
     "class": "NMData::Transition",
