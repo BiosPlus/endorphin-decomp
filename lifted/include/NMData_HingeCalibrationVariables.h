@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct NMData_HingeCalibrationVariables_Fields {
     // +0x4   float                    field_0x04  (evidence: 0x00622780)
     // +0x8   float                    field_0x08  (evidence: 0x00622790)
+    // +0xC   float                    field_0x0C  (evidence: 0x006227A0)
 };
 } // namespace lifted_layout

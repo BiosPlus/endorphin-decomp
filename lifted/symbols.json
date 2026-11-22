@@ -672,6 +672,13 @@
     "summary": "Stores the single float argument into the object at offset +0x08 (thiscall, ret 4).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006227A0": {
+    "name": "NMData::HingeCalibrationVariables::vfunc_5",
+    "class": "NMData::HingeCalibrationVariables",
+    "signature": "extern \"C\" void __fastcall fn_006227A0(void* self, int edx_unused, float value)",
+    "summary": "Sets the float at this+0x0C to the single float argument (stdcall-style ret 4 thiscall).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0062A580": {
     "name": "VirtualDispatchThunk_Slot17",
     "class": "Object (unidentified; receiver is passed in ecx)",

@@ -138,3 +138,13 @@ extern "C" void __fastcall fn_00622790(void* self, int edx_unused, float value) 
     float* field = reinterpret_cast<float*>(static_cast<char*>(self) + 0x08);
     *field = value;
 }
+
+// [0x006227A0] Stores a float argument into the object at +0x0C.
+// @name NMData::HingeCalibrationVariables::vfunc_5
+// @class NMData::HingeCalibrationVariables
+// @summary Sets the float at this+0x0C to the single float argument (stdcall-style ret 4 thiscall).
+// @field NMData::HingeCalibrationVariables +0x0C float field_0x0C
+extern "C" void __fastcall fn_006227A0(void* self, int edx_unused, float value) {
+    (void)edx_unused;
+    *reinterpret_cast<float*>(static_cast<unsigned char*>(self) + 0x0C) = value;
+}
