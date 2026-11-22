@@ -307,3 +307,13 @@ void fn_004B7A80(void* self, float value) {
     float* ptr = *reinterpret_cast<float**>(self);
     *ptr = value;
 }
+
+// [0x0049AF30] ExprParser::PrimitiveProxyType<int>::vfunc_3 (16 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_3
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns 1 if the int it points to is nonzero, else 0.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+extern "C" uint8_t __stdcall fn_0049AF30(const int32_t* const* self) {
+    const int32_t* value = *self;
+    return static_cast<uint8_t>(*value != 0);
+}
