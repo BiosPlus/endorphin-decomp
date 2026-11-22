@@ -1,0 +1,14 @@
+{
+  "va": "0x004076E0",
+  "size": 6,
+  "orig_symbol": "sub_004076E0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "sub_004076E0",
+  "class": "(none)",
+  "signature": "extern \"C\" int* __cdecl fn_004076E0()",
+  "summary": "Returns the address of the .rdata constant 0x006A5FCE at 0x0092A0E0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:45:54Z"
+}

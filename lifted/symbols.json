@@ -12,6 +12,13 @@
     "summary": "Returns the address of the .rdata constant 0x006A5ED2.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x004076E0": {
+    "name": "sub_004076E0",
+    "class": "(none)",
+    "signature": "extern \"C\" int* __cdecl fn_004076E0()",
+    "summary": "Returns the address of the .rdata constant 0x006A5FCE at 0x0092A0E0.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
