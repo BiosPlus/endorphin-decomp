@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C080",
+  "size": 61,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_7",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_7",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void fn_0049C080(void* self, float value)",
+  "summary": "Rounds a float to int (half away from zero) and stores it through value_ptr.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T08:11:54Z"
+}
