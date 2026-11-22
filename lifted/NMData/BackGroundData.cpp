@@ -29,3 +29,17 @@ std::string* fn_005A9880(void* self, std::string* out) {
     new (out) std::string(*src);
     return out;
 }
+
+// [0x0059DD70] NMData::BackGroundData::vfunc_4_off_10 (40 bytes)
+// @name NMData::BackGroundData::vfunc_4_off_10
+// @class NMData::BackGroundData
+// @summary Scales the float at +0x4dc by the float pointed to by the argument and forwards the product to virtual slot 0x64 of the sub-object at this-0x0C (stdcall, ret 4; ECX = this).
+// @field NMData::BackGroundData +0x4dc float field_0x4dc
+void fn_0059DD70(void* self, const float* scale) {
+    const float product = lift_field<float>(self, 0x4dc) * *scale;
+    uint8_t* base = static_cast<uint8_t*>(self) - 0x0C;
+    void** vtbl = *reinterpret_cast<void***>(base);
+    void* slotAddr = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x64);
+    auto slot = reinterpret_cast<void (*)(void*, float)>(slotAddr);
+    slot(base, product);
+}

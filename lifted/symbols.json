@@ -6316,6 +6316,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x620 and tail-calls sub_00496D00.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x0059DD70": {
+    "name": "NMData::BackGroundData::vfunc_4_off_10",
+    "class": "NMData::BackGroundData",
+    "signature": "void fn_0059DD70(void* self, const float* scale)",
+    "summary": "Scales the float at +0x4dc by the float pointed to by the argument and forwards the product to virtual slot 0x64 of the sub-object at this-0x0C (stdcall, ret 4; ECX = this).",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x0059DEB0": {
     "name": "sub_0059DEB0",
     "signature": "extern \"C\" void __fastcall fn_0059DEB0(void* self)",

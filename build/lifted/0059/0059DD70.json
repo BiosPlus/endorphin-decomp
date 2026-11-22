@@ -1,0 +1,22 @@
+{
+  "va": "0x0059DD70",
+  "size": 40,
+  "orig_symbol": "NMData::BackGroundData::vfunc_4_off_10",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_4_off_10",
+  "class": "NMData::BackGroundData",
+  "signature": "void fn_0059DD70(void* self, const float* scale)",
+  "summary": "Scales the float at +0x4dc by the float pointed to by the argument and forwards the product to virtual slot 0x64 of the sub-object at this-0x0C (stdcall, ret 4; ECX = this).",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x4DC",
+      "type": "float",
+      "name": "field_0x4dc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:01Z"
+}
