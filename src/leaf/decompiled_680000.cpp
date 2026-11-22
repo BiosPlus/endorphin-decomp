@@ -18025,3 +18025,672 @@ L_A2D:
         call    ext_006A6DD2
     }
 }
+
+// [0x00680020] sub_00680020 (1799 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_0048A120();
+extern "C" void ext_004E3D30();
+extern "C" void ext_0050ED40();
+extern "C" void ext_00671100();
+extern "C" void ext_006720C0();
+extern "C" void ext_00672250();
+extern "C" void ext_0067F910();
+extern "C" void ext_0067FAB0();
+extern "C" void ext_0067FBC0();
+extern "C" void ext_0067FD90();
+extern "C" void ext_00685900();
+extern "C" void ext_006A0AC0();
+extern "C" void ext_006A2F70();
+extern "C" void ext_006A30C0();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_0067F5B0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00680020(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 8b4e30h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0F0h
+        push ebx
+        push esi
+        mov ebx, ecx
+        push edi
+        mov edi, [ebx]
+        mov eax, edi
+        mov ecx, [eax+1Ch]
+        mov [ebp-28h], ecx
+        lea edx, [ebp-28h]
+        mov [ebp-10h], esp
+        mov ecx, 0B5A11Ch
+        xor esi, esi
+        push edx
+        mov [ebp-20h], ebx
+        mov [ebp-38h], edi
+        mov [ebp-4], esi
+        mov [ebp-50h], ecx
+        call ext_0041A920
+        mov eax, [edi+28h]
+        cmp eax, esi
+        mov byte ptr [ebp-4], 1
+        je L68007F
+        mov esi, [edi+2Ch]
+        sub esi, eax
+        sar esi, 3
+L68007F:
+        xor ecx, ecx
+        mov eax, 0Fh
+        mov [ebp-2Ch], ecx
+        mov [ebp-24h], ecx
+        mov [ebx+20h], ecx
+        mov ecx, [ebx+4]
+        push esi
+        mov [ebp-28h], esi
+        mov [ebx+14h], eax
+        mov [ebx+1Ch], eax
+        mov [ebx+18h], eax
+        call ext_0050ED40
+        mov ecx, [ebx+8]
+        push esi
+        call ext_0067FAB0
+        mov ecx, [edi+48h]
+        test ecx, ecx
+        lea esi, [edi+44h]
+        jne L6800BB
+        xor eax, eax
+        jmp L6800C3
+L6800BB:
+        mov eax, [esi+8]
+        sub eax, ecx
+        sar eax, 2
+L6800C3:
+        mov ecx, [ebx+0Ch]
+        push eax
+        call ext_0067FAB0
+        mov eax, [esi+4]
+        cmp eax, [esi+8]
+        mov [ebp-14h], eax
+        jbe L6800E0
+        call dword ptr [mem_00925134]
+        mov eax, [ebp-14h]
+L6800E0:
+        mov [ebp-18h], eax
+L6800E3:
+        mov eax, [esi+8]
+        cmp [esi+4], eax
+        mov [ebp-14h], eax
+        jbe L6800F4
+        call dword ptr [mem_00925134]
+L6800F4:
+        test esi, esi
+        je L6800FC
+        cmp esi, esi
+        je L680102
+L6800FC:
+        call dword ptr [mem_00925134]
+L680102:
+        mov eax, [ebp-14h]
+        cmp [ebp-18h], eax
+        je L68016E
+        test esi, esi
+        jne L680114
+        call dword ptr [mem_00925134]
+L680114:
+        mov ecx, [ebp-18h]
+        cmp ecx, [esi+8]
+        jb L680122
+        call dword ptr [mem_00925134]
+L680122:
+        mov eax, [ebp-18h]
+        mov ecx, [eax]
+        push 1
+        push 0
+        lea edx, [ebp-34h]
+        push edx
+        call ext_00685900
+        mov ecx, [ebx+0Ch]
+        push eax
+        mov byte ptr [ebp-4], 2
+        call ext_004E3D30
+        mov ecx, [ebp-30h]
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L680157
+        mov edx, [ecx]
+        mov edx, [edx+78h]
+        lea eax, [ebp-34h]
+        push eax
+        call edx
+L680157:
+        mov eax, [ebp-18h]
+        cmp eax, [esi+8]
+        jb L680165
+        call dword ptr [mem_00925134]
+L680165:
+        add dword ptr [ebp-18h], 4
+        jmp L6800E3
+L68016E:
+        push 0
+        lea ecx, [ebp-1Ch]
+        call ext_006720C0
+        mov esi, [ebx]
+        add esi, 54h
+        lea ecx, [ebp-1Ch]
+        cmp esi, ecx
+        mov byte ptr [ebp-4], 3
+        je L6801C3
+        mov ecx, [esi+4]
+        test ecx, ecx
+        je L680197
+        mov edx, [ecx]
+        mov eax, [edx+78h]
+        push esi
+        call eax
+L680197:
+        mov ecx, [ebp-18h]
+        mov [esi+4], ecx
+        mov ecx, [ebp-18h]
+        test ecx, ecx
+        je L6801B5
+        mov edx, [ecx]
+        mov edx, [edx+70h]
+        lea eax, [ebp-1Ch]
+        push eax
+        lea eax, [ebp-14h]
+        push eax
+        call edx
+        jmp L6801BF
+L6801B5:
+        mov dword ptr [ebp-14h], 0
+        lea eax, [ebp-14h]
+L6801BF:
+        mov eax, [eax]
+        mov [esi], eax
+L6801C3:
+        mov ecx, [ebp-18h]
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L6801D9
+        mov edx, [ecx]
+        mov edx, [edx+78h]
+        lea eax, [ebp-1Ch]
+        push eax
+        call edx
+L6801D9:
+        mov dword ptr [ebx+10h], 0
+L6801E0:
+        mov esi, [ebx+10h]
+        cmp esi, [ebp-28h]
+        jge L6806A6
+        mov ecx, [edi+28h]
+        test ecx, ecx
+        je L6801FF
+        mov eax, [edi+2Ch]
+        sub eax, ecx
+        sar eax, 3
+        cmp esi, eax
+        jb L680205
+L6801FF:
+        call dword ptr [mem_00925134]
+L680205:
+        mov eax, [edi+28h]
+        lea esi, [eax+esi*8]
+        mov eax, [esi]
+        mov [ebx+1Ch], eax
+        add eax, -12h
+        cmp eax, 46h
+        mov [ebp-14h], esi
+        ja L680452
+        movzx ecx, byte ptr [eax+068074Ch]
+        jmp dword ptr [ecx*4+0680728h]
+        mov edx, [ebp-14h]
+        mov esi, [edi+38h]
+        mov ecx, [edx+4]
+        add edi, 34h
+        test esi, esi
+        mov [ebp-14h], ecx
+        je L68024E
+        mov edx, [edi+8]
+        mov eax, edx
+        sub eax, esi
+        sar eax, 3
+        cmp eax, ecx
+        ja L680253
+L68024E:
+        jmp ext_0067F5B0
+L680253:
+        cmp esi, edx
+        jbe L680260
+        call dword ptr [mem_00925134]
+        mov ecx, [ebp-14h]
+L680260:
+        mov [ebp-18h], esi
+        lea esi, [esi+ecx*8]
+        cmp esi, [edi+8]
+        ja L680270
+        cmp esi, [edi+4]
+        jae L680276
+L680270:
+        call dword ptr [mem_00925134]
+L680276:
+        cmp esi, [edi+8]
+        jb L680281
+        call dword ptr [mem_00925134]
+L680281:
+        mov ecx, [ebx+8]
+        push esi
+        call ext_004E3D30
+        mov ebx, [ebp-20h]
+        add dword ptr [ebx+10h], 1
+        mov edi, [ebp-38h]
+        jmp L6801E0
+        mov esi, [ebx+0Ch]
+        mov ecx, [esi+4]
+        test ecx, ecx
+        mov eax, [ebp-14h]
+        mov edi, [eax+4]
+        je L6802B5
+        mov eax, [esi+8]
+        sub eax, ecx
+        sar eax, 3
+        cmp edi, eax
+        jb L6802BB
+L6802B5:
+        call dword ptr [mem_00925134]
+L6802BB:
+        mov ecx, [esi+4]
+        lea eax, [ecx+edi*8]
+        push eax
+        lea edx, [ebp-60h]
+        push edx
+        call ext_00672250
+        add esp, 8
+        mov ecx, [ebx+8]
+        push eax
+        mov byte ptr [ebp-4], 4
+        call ext_004E3D30
+        mov ecx, [ebp-5Ch]
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L680466
+        mov eax, [ecx]
+        mov eax, [eax+78h]
+        lea edx, [ebp-60h]
+        push edx
+        call eax
+        mov ebx, [ebp-20h]
+        add dword ptr [ebx+10h], 1
+        mov edi, [ebp-38h]
+        jmp L6801E0
+        mov ecx, [edi+38h]
+        test ecx, ecx
+        mov esi, [esi+4]
+        lea eax, [edi+34h]
+        je L68031D
+        mov eax, [eax+8]
+        sub eax, ecx
+        sar eax, 3
+        cmp esi, eax
+        jb L680323
+L68031D:
+        call dword ptr [mem_00925134]
+L680323:
+        mov eax, [ebp-38h]
+        mov ecx, [eax+38h]
+        mov edx, [ebp-20h]
+        mov ebx, [ecx+esi*8]
+        add eax, 34h
+        lea edi, [ecx+esi*8]
+        mov esi, [edx+0Ch]
+        mov ecx, [esi+4]
+        test ecx, ecx
+        je L68034B
+        mov eax, [esi+8]
+        sub eax, ecx
+        sar eax, 3
+        cmp ebx, eax
+        jb L680351
+L68034B:
+        call dword ptr [mem_00925134]
+L680351:
+        mov eax, [esi+4]
+        mov edi, [edi+4]
+        mov ecx, [eax+ebx*8]
+        lea eax, [eax+ebx*8]
+        mov [ebp-40h], ecx
+        mov [ebp-3Ch], edi
+        mov eax, [ebp-20h]
+        mov ecx, [eax+8]
+        lea edx, [ebp-40h]
+        push edx
+        mov byte ptr [ebp-4], 5
+        call ext_004E3D30
+        mov ecx, [ebp-3Ch]
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L680466
+        mov edx, [ecx]
+        mov edx, [edx+78h]
+        lea eax, [ebp-40h]
+        push eax
+        call edx
+        mov ebx, [ebp-20h]
+        add dword ptr [ebx+10h], 1
+        mov edi, [ebp-38h]
+        jmp L6801E0
+        mov esi, [ebx+10h]
+        test esi, esi
+        jle L680452
+        mov ecx, [edi+28h]
+        add esi, -1
+        test ecx, ecx
+        je L6803C0
+        mov eax, [edi+2Ch]
+        sub eax, ecx
+        sar eax, 3
+        cmp esi, eax
+        jb L6803C6
+L6803C0:
+        call dword ptr [mem_00925134]
+L6803C6:
+        mov eax, [edi+28h]
+        lea esi, [eax+esi*8]
+        mov esi, [esi]
+        cmp dword ptr [esi*4+0B5CA88h], 11h
+        jne L680452
+        mov ecx, [ebx+8]
+        mov eax, [ecx+4]
+        test eax, eax
+        je L680452
+        mov edx, [ecx+8]
+        sub edx, eax
+        sar edx, 3
+        je L680452
+        call ext_0067F910
+        mov ecx, [eax+4]
+        mov eax, [ecx]
+        mov edx, [eax+50h]
+        call edx
+        test al, al
+        jne L680452
+        push 39h
+        call ext_006A0AC0
+        mov ecx, [ebx+4]
+        mov [ebp-14h], eax
+        add esp, 4
+        lea eax, [ebp-14h]
+        push eax
+        call ext_0041A920
+        push 17h
+        call ext_00671100
+        add esp, 4
+        mov dword ptr [ebp-34h], 39h
+        mov [ebp-30h], eax
+        lea ecx, [ebp-34h]
+        push ecx
+        mov ecx, [ebx+8]
+        mov byte ptr [ebp-4], 6
+        call ext_004E3D30
+        mov ecx, [ebp-30h]
+        test ecx, ecx
+        mov byte ptr [ebp-4], 1
+        je L680452
+        mov edx, [ecx]
+        mov edx, [edx+78h]
+        lea eax, [ebp-34h]
+        push eax
+        call edx
+L680452:
+        mov eax, [ebx+1Ch]
+        mov ecx, [eax*4+0B5CA88h]
+        mov [ebx+18h], ecx
+        mov ecx, ebx
+        call ext_0067FD90
+L680466:
+        mov ebx, [ebp-20h]
+        add dword ptr [ebx+10h], 1
+        mov edi, [ebp-38h]
+        jmp L6801E0
+        mov esi, [ebx+4]
+        mov eax, [esi+4]
+        test eax, eax
+        je L680609
+        mov ecx, [esi+8]
+        sub ecx, eax
+        sar ecx, 2
+        je L680609
+        mov edi, [esi+8]
+        cmp eax, edi
+        jbe L68049E
+        call dword ptr [mem_00925134]
+L68049E:
+        lea eax, [edi-4]
+        cmp eax, [esi+8]
+        mov [ebp-18h], edi
+        ja L6804AE
+        cmp eax, [esi+4]
+        jae L6804B4
+L6804AE:
+        call dword ptr [mem_00925134]
+L6804B4:
+        add edi, -4
+        cmp edi, [esi+8]
+        jb L6804C2
+        call dword ptr [mem_00925134]
+L6804C2:
+        mov ecx, [edi]
+        mov edx, [ecx]
+        mov eax, [edx]
+        call eax
+        cmp eax, 0Eh
+        jne L680609
+L6804D3:
+        mov esi, [ebx+4]
+        mov eax, [esi+4]
+        test eax, eax
+        je L68052B
+        mov ecx, [esi+8]
+        sub ecx, eax
+        sar ecx, 2
+        je L68052B
+        mov edi, [esi+8]
+        cmp eax, edi
+        jbe L6804F4
+        call dword ptr [mem_00925134]
+L6804F4:
+        lea eax, [edi-4]
+        cmp eax, [esi+8]
+        mov [ebp-18h], edi
+        ja L680504
+        cmp eax, [esi+4]
+        jae L68050A
+L680504:
+        call dword ptr [mem_00925134]
+L68050A:
+        add edi, -4
+        cmp edi, [esi+8]
+        jb L680518
+        call dword ptr [mem_00925134]
+L680518:
+        mov eax, [ebx+8]
+        mov ecx, [edi]
+        mov edx, [ecx]
+        mov edx, [edx+8]
+        push eax
+        mov eax, [ebx+4]
+        push eax
+        call edx
+        jmp L6804D3
+L68052B:
+        mov esi, [ebx+8]
+        mov eax, [esi+4]
+        test eax, eax
+        je L68053F
+        mov ecx, [esi+8]
+        sub ecx, eax
+        sar ecx, 3
+        jne L680554
+L68053F:
+        push 0A183E8h
+        lea edx, [ebp-58h]
+        push edx
+        mov dword ptr [ebp-58h], 2
+        call ext_006A6DD2
+L680554:
+        mov edi, [esi+8]
+        cmp eax, edi
+        jbe L680561
+        call dword ptr [mem_00925134]
+L680561:
+        lea eax, [edi-8]
+        cmp eax, [esi+8]
+        mov [ebp-18h], edi
+        ja L680571
+        cmp eax, [esi+4]
+        jae L680577
+L680571:
+        call dword ptr [mem_00925134]
+L680577:
+        add edi, -8
+        cmp edi, [esi+8]
+        jb L680585
+        call dword ptr [mem_00925134]
+L680585:
+        mov ecx, [edi+4]
+        mov eax, [ecx]
+        mov edx, [eax+0Ch]
+        push edi
+        call edx
+        test al, al
+        sete al
+        test al, al
+        je L6805CA
+        mov eax, [ebp-14h]
+        mov eax, [eax+4]
+        add eax, -1
+        mov [ebx+10h], eax
+        mov eax, [ebp-2Ch]
+        add eax, 1
+        cmp eax, 2710h
+        mov [ebp-2Ch], eax
+        jle L6805CA
+        push 0A183E8h
+        lea ecx, [ebp-48h]
+        push ecx
+        mov dword ptr [ebp-48h], 0Bh
+        call ext_006A6DD2
+L6805CA:
+        mov ebx, [ebx+8]
+        mov ecx, [ebx+4]
+        test ecx, ecx
+        je L680466
+        mov eax, [ebx+8]
+        mov edx, eax
+        sub edx, ecx
+        sar edx, 3
+        je L680466
+        push ebx
+        lea ecx, [eax-8]
+        push eax
+        push ecx
+        call ext_0048A120
+        add dword ptr [ebx+8], -8
+        mov ebx, [ebp-20h]
+        mov edi, [ebp-38h]
+        add esp, 0Ch
+        add dword ptr [ebx+10h], 1
+        jmp L6801E0
+L680609:
+        push 0A183E8h
+        lea eax, [ebp-54h]
+        push eax
+        mov dword ptr [ebp-54h], 0Eh
+        call ext_006A6DD2
+        mov ecx, ebx
+        call ext_0067FBC0
+        mov eax, [ebp-2Ch]
+        mov esi, [esi+4]
+        add eax, 1
+        add esi, -1
+        cmp eax, 2710h
+        mov [ebx+10h], esi
+        mov [ebp-2Ch], eax
+        jle L680466
+        push 0A183E8h
+        lea ecx, [ebp-44h]
+        push ecx
+        mov dword ptr [ebp-44h], 0Bh
+        call ext_006A6DD2
+        mov ecx, ebx
+        call ext_0067FBC0
+        mov ebx, [ebp-20h]
+        add dword ptr [ebp-24h], 1
+        add dword ptr [ebx+10h], 1
+        mov edi, [ebp-38h]
+        jmp L6801E0
+        mov ecx, ebx
+        call ext_0067FBC0
+        cmp dword ptr [ebp-24h], 0
+        jle L680691
+        mov ebx, [ebp-20h]
+        sub dword ptr [ebp-24h], 1
+        add dword ptr [ebx+10h], 1
+        mov edi, [ebp-38h]
+        jmp L6801E0
+L680691:
+        push 0A183E8h
+        lea edx, [ebp-4Ch]
+        push edx
+        mov dword ptr [ebp-4Ch], 5
+        call ext_006A6DD2
+L6806A6:
+        mov ecx, ebx
+        call ext_0067FBC0
+        mov edx, [ebp-50h]
+        mov eax, [edx+4]
+        test eax, eax
+        je L6806C9
+        mov ecx, [edx+8]
+        mov esi, ecx
+        sub esi, eax
+        sar esi, 2
+        je L6806C9
+        add ecx, -4
+        mov [edx+8], ecx
+L6806C9:
+        mov ecx, [ebp-0Ch]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+        mov edx, [ebp-20h]
+        mov eax, [ebp-68h]
+        push edx
+        add eax, 0Ch
+        push eax
+        lea ecx, [ebp-0B4h]
+        call ext_006A30C0
+        push 0A1850Ch
+        lea ecx, [ebp-0B4h]
+        push ecx
+        call ext_006A6DD2
+        mov edx, [ebp-20h]
+        mov eax, [ebp-64h]
+        mov ecx, [eax]
+        push edx
+        push ecx
+        lea ecx, [ebp-0FCh]
+        call ext_006A2F70
+        push 0A1850Ch
+        lea edx, [ebp-0FCh]
+        push edx
+        call ext_006A6DD2
+    }
+}
