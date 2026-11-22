@@ -185,17 +185,12 @@ void DynamicEnumType_vfunc_9(void* thisptr, DynEnumVfunc9Arg* arg1, void* arg2) 
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 extern "C" void* __cdecl ext_006A6E9E(void* inptr, int vfDelta, void* srcType, void* targetType, int isReference);
+extern "C" void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern uint8_t mem_00A2E2F8[];
+extern uint8_t mem_00A3C268[];
 
-// [0x004D3E20] ExprParser::DynamicEnumType<NMData::RigEventData,...>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::RigEventData>
-// @summary dynamic_cast wrapper: casts the pointer argument via __RTDynamicCast between two RTTI type descriptors and returns the result (or null).
-void* fn_004D3E20(void* ptr) {
-    return ext_006A6E9E(ptr, 0, &mem_00A2E2F8, &mem_00A3C268, 0);
-}
-
-// [0x00515850]
-// @name DynamicEnumType_EvolverRuntimeOptions::vfunc_16
+extern uint8_t mem_00A2E2F8[];
+extern uint8_t mem_00A3C268[];
 // @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>
 // @summary Performs a dynamic_cast via __RTDynamicCast from RTTI descriptor 0x00A2E2F8 to 0x00A4279C.
 
@@ -225,4 +220,12 @@ void* __thiscall fn_005C4870(void* self, void* obj) {
         reinterpret_cast<void*>(0x00A8AFF4u),
         0
     );
+}
+
+// [0x004D3E20]
+// @name ExprParser::DynamicEnumType::vfunc_16
+// @class ExprParser::DynamicEnumType
+// @summary Dynamic-casts a pointer from type descriptor 0x00A2E2F8 to 0x00A3C268 via __RTDynamicCast.
+void* __thiscall fn_004D3E20(void* /*this*/, void* ptr) {
+    return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A3C268, 0);
 }
