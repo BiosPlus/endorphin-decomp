@@ -3299,6 +3299,13 @@
     "summary": "Converts the std::string referenced by the argument's first pointer to float via atof.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004975E0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_3",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+    "signature": "uint32_t __thiscall fn_004975E0(void* self, const std::string* const* arg)",
+    "summary": "Checks whether the string pointed to by *arg equals either of two constant strings (0x0092F10C or 0x0093A810).",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497680": {
     "name": "NMData::Transition::vfunc_12",
     "class": "NMData::Transition",
