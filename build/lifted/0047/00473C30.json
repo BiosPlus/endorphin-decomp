@@ -1,0 +1,22 @@
+{
+  "va": "0x00473C30",
+  "size": 11,
+  "orig_symbol": "RuntimeEngine::CaptureTicker::vfunc_0",
+  "src_path": "src/RuntimeEngine/CaptureTicker.cpp",
+  "lifted_path": "lifted/RuntimeEngine/CaptureTicker.cpp",
+  "name": "RuntimeEngine::CaptureTicker::vfunc_0",
+  "class": "RuntimeEngine::CaptureTicker",
+  "signature": "bool fn_00473C30(void* self)",
+  "summary": "Forwards the ticker's owner pointer to ext_00472D80 and returns true.",
+  "fields": [
+    {
+      "class": "RuntimeEngine::CaptureTicker",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:23:25Z"
+}

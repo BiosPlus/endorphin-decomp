@@ -2818,6 +2818,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0046FD40.",
     "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp"
   },
+  "0x00473C30": {
+    "name": "RuntimeEngine::CaptureTicker::vfunc_0",
+    "class": "RuntimeEngine::CaptureTicker",
+    "signature": "bool fn_00473C30(void* self)",
+    "summary": "Forwards the ticker's owner pointer to ext_00472D80 and returns true.",
+    "lifted_path": "lifted/RuntimeEngine/CaptureTicker.cpp"
+  },
   "0x00473C50": {
     "name": "RuntimeEngine::SimulationTicker::vfunc_0",
     "class": "RuntimeEngine::SimulationTicker",
@@ -7411,6 +7418,13 @@
     "class": "NMData::MetaBodyData",
     "signature": "void __thiscall fn_005B6E70(void* this_ptr, const float* scale)",
     "summary": "Scales the RenderObjectOwner vector at +0xC by *scale and updates the render object at +0x10 if +0x158 is non-null.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
+  "0x005B6F00": {
+    "name": "NMData::MetaBodyData::vfunc_38",
+    "class": "NMData::MetaBodyData",
+    "signature": "void __thiscall fn_005B6F00(void* self, const float* scale)",
+    "summary": "Scales a dimension of the render object's bounding/transform vector and updates the attached object.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
   "0x005B7AE0": {
