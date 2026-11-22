@@ -1735,3 +1735,18 @@ void NMData_MetaBodyConstraintData_vfunc_91(void* self) {
     }
     ext_00493D90();
 }
+
+// [0x004D3D30] NMData::RigEventData::vfunc_86 (16 bytes)
+// @name NMData::RigEventData::vfunc_86
+// @class NMData::RigEventData
+// @summary Thunk: forwards to slot 0 of the embedded SelectionVariable::Listener at +0x180, passing that subobject as this.
+// @field NMData::RigEventData +0x180 void* SelectionVariable::Listener::vptr
+void fn_004D3D30(void* self) {
+    // The embedded listener subobject lives at self + 0x180. Its vptr is at its
+    // start; slot 0 is the target. Call it with the subobject as `this`
+    // (the original was a tail jmp, so no stack arguments are touched).
+    auto* listener = static_cast<unsigned char*>(self) + 0x180;
+    void** vtbl = *reinterpret_cast<void***>(listener);
+    auto target = reinterpret_cast<void (*)(void*)>(vtbl[0]);
+    target(listener);
+}

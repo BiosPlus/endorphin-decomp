@@ -1280,6 +1280,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004D3290 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004D3D30": {
+    "name": "NMData::RigEventData::vfunc_86",
+    "class": "NMData::RigEventData",
+    "signature": "void fn_004D3D30(void* self)",
+    "summary": "Thunk: forwards to slot 0 of the embedded SelectionVariable::Listener at +0x180, passing that subobject as this.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004D8B10": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_26",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e",

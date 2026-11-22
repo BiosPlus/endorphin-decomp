@@ -1,0 +1,22 @@
+{
+  "va": "0x004D3D30",
+  "size": 16,
+  "orig_symbol": "NMData::RigEventData::vfunc_86",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::RigEventData::vfunc_86",
+  "class": "NMData::RigEventData",
+  "signature": "void fn_004D3D30(void* self)",
+  "summary": "Thunk: forwards to slot 0 of the embedded SelectionVariable::Listener at +0x180, passing that subobject as this.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "SelectionVariable::Listener::vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:55Z"
+}
