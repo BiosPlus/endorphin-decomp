@@ -1,0 +1,14 @@
+{
+  "va": "0x0059EB40",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_16",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData\u003e::vfunc_16",
+  "class": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+  "signature": "void* fn_0059EB40(void* self)",
+  "summary": "Runtime type check: dynamic-casts self to the type at mem_00A2FB54 (source type mem_00A2E2F8) and returns the result or NULL.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:46Z"
+}
