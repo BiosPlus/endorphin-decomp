@@ -84,6 +84,12 @@
     "summary": "Returns the address of the read-only string constant \"$aj\" at 0x0092BB20.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00410350": {
+    "name": "GetStringConstant_00410350",
+    "signature": "extern \"C\" const char* __cdecl fn_00410350()",
+    "summary": "Returns the address of the read-only string constant \"$aj\".",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
