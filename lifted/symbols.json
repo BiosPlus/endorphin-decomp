@@ -3186,6 +3186,13 @@
     "summary": "Stores the low byte of the argument through the proxy's value pointer (vtable slot 9).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B2F0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_41",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "inline R lift_vcall(void* obj, int slot, A... args)",
+    "summary": "Reads a bool from the source proxy (via its vtable slot 3) and stores it through this proxy's value pointer.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049BE50": {
     "name": "NMData::ValuePtrData::vfunc_0",
     "class": "NMData::ValuePtrData",

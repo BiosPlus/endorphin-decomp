@@ -415,3 +415,24 @@ uint32_t fn_0066BB70(void* self) {
     void* inner = *reinterpret_cast<void**>(self);                                  // self +0x00
     return *reinterpret_cast<uint32_t*>(static_cast<char*>(inner) + 0x04);          // inner +0x04
 }
+
+// [0x0049B2F0] ExprParser::PrimitiveProxyType<bool>::vfunc_41 (26 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_41
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Reads a bool from the source proxy (via its vtable slot 3) and stores it through this proxy's value pointer.
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 uint8_t* value_ptr
+
+namespace {
+// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
+template <typename R, typename... A>
+inline R lift_vcall(void* obj, int slot, A... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
+}
+} // namespace
+
+void fn_0049B2F0(void* self, void* src) {
+    void* inner = lift_field<void*>(src, 4);
+    bool value = lift_vcall<bool>(inner, 3, src);
+    lift_field<uint8_t*>(self, 0)[0] = value ? 1 : 0;
+}

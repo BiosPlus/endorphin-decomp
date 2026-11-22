@@ -1,0 +1,22 @@
+{
+  "va": "0x0049B2F0",
+  "size": 26,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_41",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_41",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "inline R lift_vcall(void* obj, int slot, A... args)",
+  "summary": "Reads a bool from the source proxy (via its vtable slot 3) and stores it through this proxy's value pointer.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:34:26Z"
+}
