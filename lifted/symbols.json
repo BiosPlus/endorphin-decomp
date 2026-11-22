@@ -674,6 +674,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00418350": {
+    "name": "ExportDialog::vfunc_86",
+    "class": "ExportDialog",
+    "signature": "std::string readControlText(void* ctrl)",
+    "summary": "Reads export-dialog control values into the settings block at +0x78, refreshes dependent state, and applies per-mode timing values.",
+    "lifted_path": "lifted/classes/ExportDialog.cpp"
+  },
   "0x00418940": {
     "name": "ExportDialog::vfunc_1",
     "class": "ExportDialog",

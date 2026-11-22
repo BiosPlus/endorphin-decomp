@@ -1,0 +1,106 @@
+{
+  "va": "0x00418350",
+  "size": 1235,
+  "orig_symbol": "ExportDialog::vfunc_86",
+  "src_path": "src/classes/ExportDialog.cpp",
+  "lifted_path": "lifted/classes/ExportDialog.cpp",
+  "name": "ExportDialog::vfunc_86",
+  "class": "ExportDialog",
+  "signature": "std::string readControlText(void* ctrl)",
+  "summary": "Reads export-dialog control values into the settings block at +0x78, refreshes dependent state, and applies per-mode timing values.",
+  "fields": [
+    {
+      "class": "ExportDialog",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "predObj"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "settings"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "numericCtrl"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x13C",
+      "type": "HWND",
+      "name": "hwndCombo1"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x190",
+      "type": "HWND",
+      "name": "hwndCombo3"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x1E4",
+      "type": "HWND",
+      "name": "hwndCtrlK"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x218",
+      "type": "void*",
+      "name": "floatCtrlA"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x28C",
+      "type": "HWND",
+      "name": "hwndCheck1"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x2E0",
+      "type": "HWND",
+      "name": "hwndCheck2"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x334",
+      "type": "HWND",
+      "name": "hwndCheck3"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x4C0",
+      "type": "void*",
+      "name": "textCtrlB"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x514",
+      "type": "void*",
+      "name": "textCtrlC"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x630",
+      "type": "HWND",
+      "name": "hwndCheck4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x72C",
+      "type": "HWND",
+      "name": "hwndMode"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:23:48Z"
+}
