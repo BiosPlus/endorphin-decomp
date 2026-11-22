@@ -1,0 +1,14 @@
+{
+  "va": "0x005B48C0",
+  "size": 89,
+  "orig_symbol": "Geometry::AnimationType::vfunc_13",
+  "src_path": "src/Geometry/AnimationType.cpp",
+  "lifted_path": "lifted/Geometry/AnimationType.cpp",
+  "name": "Geometry::AnimationType::getStaticList13",
+  "class": "Geometry::AnimationType",
+  "signature": "void* fn_005B48C0(void* self)",
+  "summary": "Lazily initializes a static container at 0x00B43588 (zeroing fields at +0x4/+0x8/+0xC and registering its atexit destructor) and returns its address",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@medium",
+  "lifted_at": "2026-11-22T08:22:24Z"
+}
