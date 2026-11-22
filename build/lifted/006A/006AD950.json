@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD950",
+  "size": 5,
+  "orig_symbol": "sub_006AD950",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "fn_006AD950",
+  "class": "UnknownObject",
+  "signature": "void fn_006AD950(void* self)",
+  "summary": "Increments the 32-bit counter at offset +0x38 of the object passed in ecx.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x38",
+      "type": "int32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:44:34Z"
+}

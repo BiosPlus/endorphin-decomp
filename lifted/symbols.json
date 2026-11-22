@@ -225,6 +225,13 @@
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x006AD950": {
+    "name": "fn_006AD950",
+    "class": "UnknownObject",
+    "signature": "void fn_006AD950(void* self)",
+    "summary": "Increments the 32-bit counter at offset +0x38 of the object passed in ecx.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x0078CBD0": {
     "name": "sub_0078CBD0",
     "class": "UnknownObject",
