@@ -18,6 +18,7 @@ struct VTable_Fields {
     // +0x54  void*                    slot21  (evidence: 0x0064F900)
     // +0x5C  void*                    slot23  (evidence: 0x0064F8E0)
     // +0x64  void*                    slot25  (evidence: 0x006036C0)
+    // +0x68  void*                    slot26  (evidence: 0x0064F930)
     // +0x6C  void*                    slot27  (evidence: 0x005C3640)
     // +0x70  void*                    slot28  (evidence: 0x006036B0)
     // +0x74  void*                    slot29  (evidence: 0x0064F910)
