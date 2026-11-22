@@ -4,11 +4,47 @@
   "orig_symbol": "NMData::FixedPathJointData::vfunc_4_off_C",
   "src_path": "src/NMData/FixedPathJointData.cpp",
   "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
-  "name": "NMData::FixedPathJointData::vfunc_4_off_C",
+  "name": "NMData::FixedPathJointData::vfunc_0_off_154",
   "class": "NMData::FixedPathJointData",
-  "signature": "void fn_005ECCF0(void* self, const float* value)",
-  "summary": "Forwards a float (read from the argument pointer) to ext_005EBC10 on the base subobject at this-0xC.",
+  "signature": "void* __thiscall fn_005EFF60(void* self, void* out)",
+  "summary": "Constructs a std::string from the literal at 0x0096B92C in the caller's sret buffer and returns that buffer.",
   "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0xE0",
+      "type": "void* field_0xe0 (object pointer; its vtable slot at +0xAC is",
+      "name": "called)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x140",
+      "type": "int32_t field_0x140 (non-zero disables the",
+      "name": "function)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x17C",
+      "type": "uint32_t field_0x17c (non-zero selects the tail call for codes",
+      "name": "0x40/0x137)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x180",
+      "type": "uint32_t field_0x180 (non-zero selects the tail call for codes",
+      "name": "0x40/0x137/0x158)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x74",
+      "type": "void** field_0x74 (begin of child pointer",
+      "name": "array)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x78",
+      "type": "void** field_0x78 (end of child pointer",
+      "name": "array)"
+    },
     {
       "class": "NMData::FixedPathJointData",
       "offset": "+0x0",
@@ -18,5 +54,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T14:52:06Z"
+  "lifted_at": "2026-11-22T14:52:11Z"
 }
