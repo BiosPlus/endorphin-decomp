@@ -194,6 +194,13 @@
     "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00421BF0": {
+    "name": "HotkeyEditDialog::vfunc_0",
+    "class": "HotkeyEditDialog",
+    "signature": "void* fn_00421BF0(void* self)",
+    "summary": "Virtual accessor that returns the address of the static rdata slot mem_0092E5B8 (ignores this).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00422C60": {
     "name": "sub_00422C60",
     "signature": "extern \"C\" int* fn_00422C60()",

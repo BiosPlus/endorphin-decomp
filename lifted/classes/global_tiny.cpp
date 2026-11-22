@@ -11,6 +11,7 @@ extern "C" int mem_0092C8E4;
 extern "C" int mem_0092CB80;
 extern "C" int mem_0092D538;
 extern "C" int mem_0092DFF4;
+extern "C" int mem_0092E5B8;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -126,4 +127,13 @@ extern "C" const void* __fastcall fn_0041B950(void* self) {
 extern "C" int* __fastcall fn_0041FC60(void* self) {
     (void)self;
     return &mem_0092DFF4;
+}
+
+// [0x00421BF0] HotkeyEditDialog::vfunc_0 (6 bytes)
+// @name HotkeyEditDialog::vfunc_0
+// @class HotkeyEditDialog
+// @summary Virtual accessor that returns the address of the static rdata slot mem_0092E5B8 (ignores this).
+void* fn_00421BF0(void* self) {
+    (void)self;
+    return &mem_0092E5B8;
 }

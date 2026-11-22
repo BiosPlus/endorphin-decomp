@@ -1,0 +1,14 @@
+{
+  "va": "0x00421BF0",
+  "size": 6,
+  "orig_symbol": "HotkeyEditDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HotkeyEditDialog::vfunc_0",
+  "class": "HotkeyEditDialog",
+  "signature": "void* fn_00421BF0(void* self)",
+  "summary": "Virtual accessor that returns the address of the static rdata slot mem_0092E5B8 (ignores this).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:49:25Z"
+}
