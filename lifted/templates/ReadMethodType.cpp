@@ -30,3 +30,13 @@ void* fn_006178B0(void* self) {
 void* fn_0061A530(void* self) {
     return self;
 }
+
+// [0x0061B960] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_16 (30 bytes)
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint>::vfunc_16 (NMData::HingeConstraint::isEnabled)
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Runtime type check: returns self for a ReadMethodType<NMData::HingeConstraint> object (isEnabled), else NULL; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A95ADC), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0061B960(void* self) {
+    return self;
+}
