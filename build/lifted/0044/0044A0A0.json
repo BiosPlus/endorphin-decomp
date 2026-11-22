@@ -1,0 +1,14 @@
+{
+  "va": "0x0044A0A0",
+  "size": 6,
+  "orig_symbol": "NMColourButton::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NMColourButton::GetConstantAddress",
+  "class": "NMColourButton",
+  "signature": "void* fn_0044A0A0(void* self)",
+  "summary": "Returns the address of the module-level constant at 0x00933C98 (which holds 0x00933C50).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:52:28Z"
+}

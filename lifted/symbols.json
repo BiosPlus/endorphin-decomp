@@ -350,6 +350,13 @@
     "summary": "Returns the address of the static global at 0x00933C7C; ignores this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044A0A0": {
+    "name": "NMColourButton::GetConstantAddress",
+    "class": "NMColourButton",
+    "signature": "void* fn_0044A0A0(void* self)",
+    "summary": "Returns the address of the module-level constant at 0x00933C98 (which holds 0x00933C50).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
