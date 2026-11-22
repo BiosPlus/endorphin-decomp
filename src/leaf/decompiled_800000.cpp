@@ -18681,3 +18681,535 @@ extern "C" __declspec(naked) void __cdecl fn_00807970(void* a1, void* a2, void* 
         nop
     }
 }
+
+// [0x0080CCE0] sub_0080CCE0 (1243 bytes)
+extern "C" void __cdecl ext_008596E0(void* a1);
+extern "C" void ext_0080C6D0();
+extern "C" void ext_00859780();
+extern "C" void ext_0085BBC0();
+extern "C" void ext_0085BC20();
+extern "C" void ext_0085BC30();
+extern "C" void ext_0085BD10();
+extern "C" void ext_0085BDA0();
+extern "C" void ext_0085BE20();
+
+extern "C" __declspec(naked) void __cdecl fn_0080CCE0(void* s, int a2, int a3) {
+    __asm {
+        sub esp, 24
+        mov ecx, dword ptr [esp + 28]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 44]
+        mov eax, dword ptr [ecx + 8]
+        mov edx, dword ptr [ecx + 4]
+        push esi
+        push edi
+        mov edx, dword ptr [edx + 16]
+        lea eax, [eax + 4*eax]
+        lea eax, [eax + 4*eax]
+        mov edi, dword ptr [edx + 4*eax + 48]
+        lea ebx, [edx + 4*eax]
+        mov edx, dword ptr [ecx + 16]
+        mov dword ptr [esp + 28], ebx
+        mov al, byte ptr [ebx + 40]
+        add edi, edx
+        test al, al
+        mov dword ptr [esp + 24], edi
+        jbe L80CD88
+        mov ecx, dword ptr [ebx + 56]
+        xor edx, edx
+        mov eax, ecx
+        mov dword ptr [esp + 16], ebp
+        div dword ptr [ebx + 44]
+        mov dword ptr [esp + 32], eax
+        mov eax, dword ptr [ebx + 4]
+        test ah, 64
+        jne L80CD37
+        mov dword ptr [esp + 16], ecx
+    L80CD37:
+        mov eax, dword ptr [esp + 16]
+        push eax
+        call ext_008596E0
+        add esp, 4
+        mov dword ptr [esp + 20], eax
+        test eax, eax
+        mov esi, eax
+        jne L80CD5B
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 12
+        pop ebx
+        add esp, 24
+        ret
+    L80CD5B:
+        xor ecx, ecx
+        lea edx, [esp + 20]
+        mov cl, byte ptr [ebx + 40]
+        push ecx
+        push edx
+        call ext_0080C6D0
+        add esp, 8
+        test eax, eax
+        jne L80D1B3
+        mov eax, dword ptr [esp + 20]
+        mov dword ptr [edi], eax
+        mov edi, esi
+        mov esi, dword ptr [esp + 32]
+        mov dword ptr [esp + 24], edi
+        jmp L80CD98
+    L80CD88:
+        mov ecx, dword ptr [ebx + 52]
+        xor edx, edx
+        mov eax, ecx
+        mov dword ptr [esp + 16], ecx
+        div dword ptr [ebx + 44]
+        mov esi, eax
+    L80CD98:
+        cmp dword ptr [ebx + 44], 1
+        ja L80CF24
+        mov ecx, dword ptr [ebx + 4]
+        test ch, 64
+        je L80CDB4
+        cmp dword ptr [esp + 16], esi
+        ja L80CF24
+    L80CDB4:
+        mov al, byte ptr [ebx]
+        cmp al, 6
+        jb L80CDC2
+        cmp al, 8
+        jbe L80D13C
+    L80CDC2:
+        lea eax, [esi - 1]
+        cmp eax, 7
+        ja L80D13C
+        jmp dword ptr [eax*4 + 8442300]
+    L80CDD5:
+        mov ecx, dword ptr [esp + 48]
+        push ecx
+        call ext_00859DD0
+        add esp, 4
+        mov byte ptr [edi], al
+        jmp L80D13C
+    L80CDE9:
+        test cl, 2
+        je L80CE1F
+        mov eax, dword ptr [esp + 48]
+        lea edx, [esp + 48]
+        push edx
+        push ebp
+        push eax
+        call ext_0085BE20
+        add esp, 12
+        test eax, eax
+        jne L80CE12
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 32
+        pop ebx
+        add esp, 24
+        ret
+    L80CE12:
+        mov cx, word ptr [esp + 48]
+        mov word ptr [edi], cx
+        jmp L80D13C
+    L80CE1F:
+        mov eax, dword ptr [esp + 48]
+        lea edx, [esp + 48]
+        push edx
+        push ebp
+        push eax
+        call ext_0085BDA0
+        add esp, 12
+        test eax, eax
+        jne L80CE43
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 32
+        pop ebx
+        add esp, 24
+        ret
+    L80CE43:
+        mov cx, word ptr [esp + 48]
+        mov word ptr [edi], cx
+        jmp L80D13C
+    L80CE50:
+        test cl, 2
+        je L80CE84
+        mov eax, dword ptr [esp + 48]
+        lea edx, [esp + 48]
+        push edx
+        push ebp
+        push eax
+        call ext_0085BE20
+        add esp, 12
+        test eax, eax
+        jne L80CE79
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 32
+        pop ebx
+        add esp, 24
+        ret
+    L80CE79:
+        mov ecx, dword ptr [esp + 48]
+        mov dword ptr [edi], ecx
+        jmp L80D13C
+    L80CE84:
+        mov eax, dword ptr [esp + 48]
+        lea edx, [esp + 48]
+        push edx
+        push ebp
+        push eax
+        call ext_0085BDA0
+        add esp, 12
+        test eax, eax
+        jne L80CEA8
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 32
+        pop ebx
+        add esp, 24
+        ret
+    L80CEA8:
+        mov ecx, dword ptr [esp + 48]
+        mov dword ptr [edi], ecx
+        jmp L80D13C
+    L80CEB3:
+        test cl, 2
+        je L80CEEE
+        mov eax, dword ptr [esp + 48]
+        lea edx, [esp + 32]
+        push edx
+        push ebp
+        push eax
+        call ext_0085BD10
+        add esp, 12
+        test eax, eax
+        jne L80CEDC
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 32
+        pop ebx
+        add esp, 24
+        ret
+    L80CEDC:
+        mov ecx, dword ptr [esp + 32]
+        mov edx, dword ptr [esp + 36]
+        mov dword ptr [edi], ecx
+        mov dword ptr [edi + 4], edx
+        jmp L80D13C
+    L80CEEE:
+        mov ecx, dword ptr [esp + 48]
+        lea eax, [esp + 32]
+        push eax
+        push ebp
+        push ecx
+        call ext_0085BC30
+        add esp, 12
+        test eax, eax
+        jne L80CF12
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 32
+        pop ebx
+        add esp, 24
+        ret
+    L80CF12:
+        mov edx, dword ptr [esp + 32]
+        mov eax, dword ptr [esp + 36]
+        mov dword ptr [edi], edx
+        mov dword ptr [edi + 4], eax
+        jmp L80D13C
+    L80CF24:
+        mov al, byte ptr [ebx]
+        cmp al, 6
+        jb L80CF32
+        cmp al, 8
+        jbe L80D13C
+    L80CF32:
+        lea eax, [esi - 1]
+        cmp eax, 7
+        ja L80D13C
+        jmp dword ptr [eax*4 + 8442332]
+    L80CF45:
+        mov ecx, dword ptr [esp + 48]
+        push ecx
+        call ext_00859E50
+        mov edx, dword ptr [esp + 52]
+        mov esi, eax
+        push edx
+        call ext_0085BC20
+        add esi, eax
+        push ebp
+        push esi
+        push edi
+        call ext_00859780
+        mov eax, dword ptr [esp + 36]
+        add edi, ebp
+        sub eax, ebp
+        push eax
+        push 0
+        push edi
+        call ext_00859740
+        add esp, 32
+        jmp L80D13C
+    L80CF7E:
+        mov ecx, dword ptr [esp + 48]
+        push ecx
+        call ext_00859E50
+        mov edx, dword ptr [esp + 52]
+        mov esi, eax
+        push edx
+        call ext_0085BC20
+        mov edx, ebp
+        add esp, 8
+        add esi, eax
+        shr edx, 1
+        je L80CFB8
+        mov ecx, edi
+        mov eax, esi
+        sub ecx, esi
+        mov esi, edx
+    L80CFA7:
+        xor edx, edx
+        mov dl, byte ptr [eax + 1]
+        mov dh, byte ptr [eax]
+        mov word ptr [ecx + eax], dx
+        add eax, 2
+        dec esi
+        jne L80CFA7
+    L80CFB8:
+        mov ecx, dword ptr [esp + 16]
+        mov eax, ebp
+        and al, -2
+        sub ecx, eax
+        and ebp, -2
+        push ecx
+        push 0
+        jmp L80D131
+    L80CFCD:
+        mov esi, dword ptr [esp + 48]
+        push esi
+        call ext_00859E50
+        push esi
+        mov ebx, eax
+        call ext_0085BC20
+        mov ecx, ebp
+        add esp, 8
+        add ebx, eax
+        shr ecx, 1
+        je L80D016
+        mov esi, edi
+        lea eax, [ebx + 2]
+    L80CFEF:
+        xor edx, edx
+        xor ebx, ebx
+        mov dh, byte ptr [eax - 2]
+        mov bl, byte ptr [eax]
+        mov dl, byte ptr [eax - 1]
+        add eax, 4
+        shl edx, 8
+        or edx, ebx
+        xor ebx, ebx
+        mov bl, byte ptr [eax - 3]
+        add esi, 4
+        shl edx, 8
+        or edx, ebx
+        dec ecx
+        mov dword ptr [esi - 4], edx
+        jne L80CFEF
+    L80D016:
+        mov ecx, dword ptr [esp + 16]
+        mov eax, ebp
+        and al, -4
+        and ebp, -4
+        sub ecx, eax
+        add ebp, edi
+        push ecx
+        push 0
+        push ebp
+        call ext_00859740
+        mov ebx, dword ptr [esp + 40]
+        add esp, 12
+        jmp L80D13C
+    L80D03A:
+        mov edx, dword ptr [esp + 48]
+        push edx
+        call ext_00859E50
+        mov esi, eax
+        mov eax, dword ptr [esp + 52]
+        push eax
+        call ext_0085BC20
+        add esi, eax
+        mov eax, ebp
+        add esp, 8
+        shr eax, 1
+        je L80D120
+        add esi, 2
+        mov dword ptr [esp + 48], eax
+    L80D066:
+        xor eax, eax
+        push 56
+        mov al, byte ptr [esi - 2]
+        cdq
+        push edx
+        push eax
+        call ext_0085BBC0
+        mov ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi - 1]
+        mov ebp, edx
+        cdq
+        push 48
+        push edx
+        push eax
+        call ext_0085BBC0
+        or ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi + 1]
+        or ebp, edx
+        cdq
+        push 32
+        push edx
+        push eax
+        call ext_0085BBC0
+        or ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi + 2]
+        or ebp, edx
+        cdq
+        push 24
+        push edx
+        push eax
+        call ext_0085BBC0
+        or ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi + 3]
+        or ebp, edx
+        cdq
+        push 16
+        push edx
+        push eax
+        call ext_0085BBC0
+        or ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi + 4]
+        or ebp, edx
+        cdq
+        push 8
+        push edx
+        push eax
+        call ext_0085BBC0
+        or ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi]
+        add esp, 72
+        or ebp, edx
+        cdq
+        push 40
+        push edx
+        push eax
+        call ext_0085BBC0
+        or ebx, eax
+        xor eax, eax
+        mov al, byte ptr [esi + 5]
+        or ebp, edx
+        cdq
+        or ebx, eax
+        mov eax, dword ptr [esp + 60]
+        or ebp, edx
+        mov dword ptr [edi], ebx
+        mov dword ptr [edi + 4], ebp
+        add esp, 12
+        add esi, 8
+        add edi, 8
+        dec eax
+        mov dword ptr [esp + 48], eax
+        jne L80D066
+        mov edi, dword ptr [esp + 24]
+        mov ebp, dword ptr [esp + 52]
+        mov ebx, dword ptr [esp + 28]
+    L80D120:
+        mov edx, dword ptr [esp + 16]
+        mov ecx, ebp
+        and ecx, -8
+        sub edx, ecx
+        and ebp, -8
+        push edx
+        push 0
+    L80D131:
+        add ebp, edi
+        push ebp
+        call ext_00859740
+        add esp, 12
+    L80D13C:
+        mov eax, dword ptr [ebx + 4]
+        test ah, 16
+        je L80D1B1
+        mov eax, dword ptr [ebx + 76]
+        mov edx, dword ptr [esp + 44]
+        mov ecx, dword ptr [edx + 4]
+        lea eax, [eax + 4*eax]
+        mov esi, dword ptr [edx + 16]
+        mov ecx, dword ptr [ecx + 16]
+        lea eax, [eax + 4*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 48]
+        mov ecx, dword ptr [ecx + 52]
+        add eax, esi
+        dec ecx
+        cmp ecx, 7
+        ja L80D1B1
+        jmp dword ptr [ecx*4 + 8442364]
+    L80D172:
+        mov dl, byte ptr [esp + 16]
+        pop edi
+        pop esi
+        mov byte ptr [eax], dl
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 24
+        ret
+    L80D182:
+        mov cx, word ptr [esp + 16]
+        pop edi
+        pop esi
+        mov word ptr [eax], cx
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 24
+        ret
+    L80D194:
+        mov edx, dword ptr [esp + 16]
+        pop edi
+        pop esi
+        mov dword ptr [eax], edx
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 24
+        ret
+    L80D1A4:
+        mov ecx, dword ptr [esp + 16]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 4], 0
+    L80D1B1:
+        xor eax, eax
+    L80D1B3:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 24
+        ret
+    }
+}

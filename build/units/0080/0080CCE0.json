@@ -63,5 +63,7 @@
     "0x0080D135",
     "0x0080D16E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:34:34Z"
 }
