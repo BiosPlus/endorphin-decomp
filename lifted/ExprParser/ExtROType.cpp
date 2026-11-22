@@ -109,3 +109,23 @@ uint32_t fn_0066AF60(void* self) {
     VFuncSlot5 fn = reinterpret_cast<VFuncSlot5>(vtbl[5]);                  // slot 5 (+0x14)
     return fn(inner);
 }
+
+// [0x0066B030]
+// @name ExprParser::ExtROType::vfunc_6
+// @class ExprParser::ExtROType
+// @summary Tail-forwards to vtable slot 6 of the object at (*this)->+0x04, passing (*this) as the this/arg.
+// @field ExprParser::ExtROType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+typedef void* (*ExtROForwardFn)(void* self);
+
+void* ExprParser_ExtROType_vfunc_6(void* self) {
+    // eax = [this + 0x00]  (inner pointer)
+    void* inner = *reinterpret_cast<void**>(self);
+    // ecx = [inner + 0x04], edx = [ecx] (vtable of that object)
+    void* obj = *reinterpret_cast<void**>(static_cast<char*>(inner) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    // jmp [vtbl + 0x18] (slot 6) with inner written over the stack argument
+    ExtROForwardFn target = reinterpret_cast<ExtROForwardFn>(vtbl[6]);
+    return target(inner);
+}

@@ -10,7 +10,7 @@
 // Recovered field layout for ExprParser::ExtROType:
 namespace lifted_layout {
 struct ExprParser_ExtROType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0066AF40, 0x0066AFA0, 0x0066AFC0, 0x0066AFE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x0066AF40, 0x0066AFA0, 0x0066AFC0, 0x0066AFE0, 0x0066B030) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    inner  (evidence: 0x0066AF60) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    field_0x04  (evidence: 0x0066AFA0, 0x0066AFC0)
 };
