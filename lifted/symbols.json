@@ -218,6 +218,13 @@
     "summary": "Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00682ED0": {
+    "name": "VirtualSlot9Thunk",
+    "class": "Object (unidentified; receiver is passed in ecx)",
+    "signature": "void* fn_00682ED0(void* self)",
+    "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
   "0x0078CBD0": {
     "name": "sub_0078CBD0",
     "class": "UnknownObject",
