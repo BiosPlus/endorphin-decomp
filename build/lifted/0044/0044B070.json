@@ -1,0 +1,14 @@
+{
+  "va": "0x0044B070",
+  "size": 6,
+  "orig_symbol": "RenderView::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RenderView::vfunc_0",
+  "class": "RenderView",
+  "signature": "void* fn_0044B070(void* self)",
+  "summary": "Returns the address of the read-only constant mem_00934B98 (its value is 0x00934B8C); ignores this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:52:47Z"
+}

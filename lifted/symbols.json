@@ -370,6 +370,13 @@
     "summary": "Returns the address of the read-only string literal \",bj\" (mem_00934294) in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044B070": {
+    "name": "RenderView::vfunc_0",
+    "class": "RenderView",
+    "signature": "void* fn_0044B070(void* self)",
+    "summary": "Returns the address of the read-only constant mem_00934B98 (its value is 0x00934B8C); ignores this.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

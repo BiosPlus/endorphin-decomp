@@ -25,6 +25,7 @@ extern "C" int mem_009337B4;
 extern "C" int mem_00933C7C;
 extern "C" int mem_00933C98;
 extern "C" int mem_00933CB4;
+extern "C" int mem_00934B98;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -268,4 +269,13 @@ void* fn_0044A0A0(void* self) {
 extern "C" int* __fastcall fn_0044A0C0(void* self) {
     (void)self;
     return &mem_00933CB4;
+}
+
+// [0x0044B070] RenderView::vfunc_0 (6 bytes)
+// @name RenderView::vfunc_0
+// @class RenderView
+// @summary Returns the address of the read-only constant mem_00934B98 (its value is 0x00934B8C); ignores this.
+void* fn_0044B070(void* self) {
+    (void)self;
+    return &mem_00934B98;
 }
