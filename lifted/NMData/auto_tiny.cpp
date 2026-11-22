@@ -161,6 +161,7 @@ extern "C" void __fastcall fn_006744A0(void* self) {
     target(adjusted);
 }
 extern "C" const char mem_0093BF14[];
+extern uint32_t mem_0095F750[];
 
 // [0x004CE8C0] NMData::IncarnationEventData::vfunc_88 (10 bytes)
 // @name NMData::IncarnationEventData::vfunc_88
@@ -1799,4 +1800,19 @@ extern "C" int __thiscall fn_0051BED0(void* self) {
     const int32_t end = lift_field<int32_t>(self, 0x34);
     const int32_t diff = end - begin;
     return diff >> 3;
+}
+
+// [0x005B68D0]
+// @name NMData::MetaBodyData::vfunc_0_off_C
+// @class NMData::MetaBodyData
+// @summary Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].
+// @field NMData::MetaBodyData +0x14C void* field_0x14C
+uint32_t fn_005B68D0(void* self) {
+    void* inner = lift_field<void*>(self, 0x14C);
+    if (inner == nullptr) {
+        return 0;
+    }
+    // Pointee object type is not recovered; its +0x2C field is read as a 32-bit index.
+    uint32_t index = lift_field<uint32_t>(inner, 0x2C);
+    return mem_0095F750[index];
 }

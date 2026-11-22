@@ -1,0 +1,22 @@
+{
+  "va": "0x005B68D0",
+  "size": 22,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_0_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::MetaBodyData::vfunc_0_off_C",
+  "class": "NMData::MetaBodyData",
+  "signature": "uint32_t fn_005B68D0(void* self)",
+  "summary": "Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x14C",
+      "type": "void*",
+      "name": "field_0x14C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:01Z"
+}
