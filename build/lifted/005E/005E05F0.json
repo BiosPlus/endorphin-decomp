@@ -1,0 +1,28 @@
+{
+  "va": "0x005E05F0",
+  "size": 62,
+  "orig_symbol": "NMData::HingeData::vfunc_55",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_55",
+  "class": "NMData::HingeData",
+  "signature": "std::uint8_t __fastcall NMData_HingeData_vfunc_55(void* ecx, std::uint32_t arg)",
+  "summary": "Returns true if the base TransformInterface virtual slot 7 reports success and the hinge is not flagged at +0x17a; otherwise true only when the stack argument is 0, 1, 2 or 6.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x4",
+      "type": "void* transform_interface_vptr (TransformInterface subobject; vtable slot 7 at +0x1c is",
+      "name": "called)"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x17A",
+      "type": "uint8_t",
+      "name": "hinge_flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:46Z"
+}
