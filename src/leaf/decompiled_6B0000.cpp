@@ -15737,3 +15737,401 @@ L6BCDE1:
         ret 4
     }
 }
+
+// [0x006BE270] sub_006BE270 (1376 bytes)
+extern "C" void ext_006B99C0();
+extern "C" void ext_006B9D10();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006B9E60();
+extern "C" void ext_006B9F80();
+extern "C" void ext_006BA0C0();
+extern "C" void ext_006BA1C0();
+extern "C" void ext_006BA370();
+extern "C" void ext_006BA800();
+extern "C" void ext_006BADB0();
+extern "C" void ext_006BC380();
+extern "C" void ext_006BC400();
+extern "C" void ext_006BC430();
+extern "C" void ext_006C3030();
+extern "C" void ext_006C30F0();
+extern "C" void ext_006C3120();
+extern "C" void ext_006C3150();
+extern "C" void ext_006CD320();
+extern "C" void ext_006D3B90();
+extern "C" void ext_006E7460();
+extern "C" void ext_006FB650();
+extern "C" void ext_00708000();
+extern "C" void ext_0070CE90();
+extern "C" void ext_0070EAF0();
+extern "C" void ext_00710310();
+extern "C" int mem_00925218; /* u32 0x00627CD8 */
+
+extern "C" __declspec(naked) void __fastcall fn_006BE270(void* self) {
+    __asm {
+        push -1
+        push 0x008B8281
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x3cc
+        push ebp
+        mov ebp, ecx
+        mov dword ptr [esp + 0x8], ebp
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006B99C0
+        test eax, eax
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0xc], 0x0
+        jle be270_7ac
+        push ebx
+        push esi
+        push edi
+        mov bl, 0x5
+be270_2b7:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, ebp
+        lea esi, [4*eax]
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov edi, dword ptr [eax]
+        mov ecx, edi
+        call ext_006C3030
+        test eax, eax
+        je be270_794
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        sub eax, 0x4
+        je be270_31e
+        dec eax
+        je be270_309
+        dec eax
+        jne be270_794
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C3150
+        jmp be270_331
+be270_309:
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C3120
+        jmp be270_331
+be270_31e:
+        mov ecx, ebp
+        call ext_006B99C0
+        mov eax, dword ptr [eax + 0x14]
+        add eax, esi
+        mov ecx, dword ptr [eax]
+        call ext_006C30F0
+be270_331:
+        mov ecx, eax
+        mov dword ptr [esp + 0x10], eax
+        test ecx, ecx
+        je be270_794
+        call ext_006CD320
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        je be270_794
+        push 0x00AA87B8
+        lea ecx, [esp + 0x180]
+        call ext_006B9D80
+        mov ecx, edi
+        mov dword ptr [esp + 0x3e4], 0x0
+        call ext_006BADB0
+        push eax
+        lea ecx, [esp + 0x30]
+        call ext_006B9D80
+        push 0x0
+        push 0x00AA870C
+        lea ecx, [esp + 0x34]
+        mov byte ptr [esp + 0x3ec], 0x1
+        call ext_006BA370
+        test eax, eax
+        jl be270_3e4
+        push 0x0
+        push 0x00AA870C
+        lea ecx, [esp + 0x34]
+        call ext_006BA370
+        add eax, 0x2
+        lea ecx, [esp + 0x2c]
+        push eax
+        lea eax, [esp + 0x1cc]
+        push eax
+        call ext_006BA800
+        push eax
+        lea ecx, [esp + 0x30]
+        mov byte ptr [esp + 0x3e8], 0x2
+        call ext_006B9E60
+        lea ecx, [esp + 0x1c8]
+        mov byte ptr [esp + 0x3e4], 0x1
+        call ext_006B9D70
+be270_3e4:
+        lea ecx, [esp + 0x2c]
+        push ecx
+        lea ecx, [esp + 0x180]
+        call ext_006BA1C0
+        push 0x00AA87B0
+        lea ecx, [esp + 0x180]
+        call ext_006E7460
+        mov ecx, dword ptr [ebp]
+        push eax
+        call ext_006D3B90
+        mov esi, eax
+        mov ecx, ebp
+        push esi
+        mov dword ptr [esp + 0x28], esi
+        call ext_006BC430
+        mov edx, dword ptr [esi]
+        push 0x0
+        mov ecx, esi
+        call dword ptr [edx + 0xc]
+        push eax
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax + 0xc]
+        mov ecx, eax
+        call ext_006FB650
+        mov eax, dword ptr [esp + 0x20]
+        xor esi, esi
+        test eax, eax
+        mov dword ptr [esp + 0x1c], esi
+        jle be270_76c
+be270_447:
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        call ext_0070CE90
+        mov ebp, eax
+        mov ecx, ebp
+        call ext_006BC380
+        test eax, eax
+        je be270_757
+        push 0x00AA87A4
+        lea ecx, [esp + 0x114]
+        call ext_006B9D80
+        mov ecx, ebp
+        mov byte ptr [esp + 0x3e4], 0x3
+        call ext_006BC380
+        mov ecx, eax
+        call ext_006BADB0
+        push eax
+        lea ecx, [esp + 0x7c]
+        call ext_006B9D80
+        lea ecx, [esp + 0xc4]
+        mov byte ptr [esp + 0x3e4], 0x4
+        call ext_006B9D10
+        xor esi, esi
+        lea ecx, [esp + 0x78]
+        push esi
+        push 0x00AA870C
+        mov byte ptr [esp + 0x3ec], bl
+        call ext_006BA370
+        test eax, eax
+        jl be270_512
+        push esi
+        push 0x00AA870C
+        lea ecx, [esp + 0x80]
+        call ext_006BA370
+        add eax, 0x2
+        lea ecx, [esp + 0x344]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x80]
+        call ext_006BA800
+        push eax
+        lea ecx, [esp + 0x7c]
+        mov byte ptr [esp + 0x3e8], 0x6
+        call ext_006B9E60
+        lea ecx, [esp + 0x344]
+        mov byte ptr [esp + 0x3e4], bl
+        call ext_006B9D70
+be270_512:
+        lea edx, [esp + 0x78]
+        lea ecx, [esp + 0x110]
+        push edx
+        call ext_006BA1C0
+be270_523:
+        test esi, esi
+        jne be270_595
+        push 0x00AA8794
+        lea ecx, [esp + 0x218]
+        call ext_006B9D80
+        lea ecx, [esp + 0x110]
+        lea edx, [esp + 0x2ac]
+        push ecx
+        push eax
+        push edx
+        mov byte ptr [esp + 0x3f0], 0x7
+        call ext_006B9F80
+        add esp, 0xc
+        push eax
+        lea ecx, [esp + 0xc8]
+        mov byte ptr [esp + 0x3e8], 0x8
+        call ext_006B9E60
+        lea ecx, [esp + 0x2ac]
+        mov byte ptr [esp + 0x3e4], 0x7
+        call ext_006B9D70
+        mov byte ptr [esp + 0x3e4], bl
+        lea ecx, [esp + 0x214]
+        jmp be270_647
+be270_595:
+        push esi
+        lea eax, [esp + 0x160]
+        push 0x00AA8790
+        push eax
+        call dword ptr [mem_00925218]
+        add esp, 0xc
+        lea ecx, [esp + 0x390]
+        push 0x00AA8794
+        call ext_006B9D80
+        lea ecx, [esp + 0x110]
+        lea edx, [esp + 0x2f8]
+        push ecx
+        push eax
+        push edx
+        mov byte ptr [esp + 0x3f0], 0x9
+        call ext_006B9F80
+        lea ecx, [esp + 0x168]
+        lea edx, [esp + 0x26c]
+        push ecx
+        push eax
+        push edx
+        mov byte ptr [esp + 0x3fc], 0xa
+        call ext_006BA0C0
+        add esp, 0x18
+        push eax
+        lea ecx, [esp + 0xc8]
+        mov byte ptr [esp + 0x3e8], 0xb
+        call ext_006B9E60
+        lea ecx, [esp + 0x260]
+        mov byte ptr [esp + 0x3e4], 0xa
+        call ext_006B9D70
+        lea ecx, [esp + 0x2f8]
+        mov byte ptr [esp + 0x3e4], 0x9
+        call ext_006B9D70
+        mov byte ptr [esp + 0x3e4], bl
+        lea ecx, [esp + 0x390]
+be270_647:
+        call ext_006B9D70
+        lea ecx, [esp + 0xc4]
+        inc esi
+        call ext_006E7460
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_006BC400
+        test eax, eax
+        jne be270_523
+        push 0x00AA8788
+        lea ecx, [esp + 0xc8]
+        call ext_006E7460
+        mov edi, dword ptr [esp + 0x18]
+        push eax
+        mov ecx, dword ptr [edi]
+        call ext_006D3B90
+        mov esi, eax
+        mov ecx, edi
+        push esi
+        call ext_006BC430
+        push ebp
+        mov ecx, esi
+        call ext_00710310
+        mov ecx, ebp
+        call ext_006BC380
+        test eax, eax
+        je be270_6c4
+        mov ecx, ebp
+        call ext_006BC380
+        mov edx, dword ptr [eax]
+        push 0x0
+        mov ecx, eax
+        call dword ptr [edx + 0xc]
+        push eax
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0xc]
+        mov ecx, eax
+        call ext_006FB650
+be270_6c4:
+        mov ecx, ebp
+        call ext_0070EAF0
+        test eax, eax
+        je be270_700
+        mov edx, dword ptr [esi]
+        push 0x00AA8774
+        mov ecx, esi
+        call dword ptr [edx + 0xc]
+        mov ecx, eax
+        call ext_00708000
+        mov edi, eax
+        test edi, edi
+        je be270_700
+        mov ecx, ebp
+        call ext_0070EAF0
+        mov edx, dword ptr [eax]
+        push 0x0
+        mov ecx, eax
+        call dword ptr [edx + 0xc]
+        push eax
+        mov ecx, edi
+        call ext_006FB650
+be270_700:
+        mov eax, dword ptr [esi]
+        push 0x0
+        mov ecx, esi
+        call dword ptr [eax + 0xc]
+        mov ecx, dword ptr [esp + 0x28]
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0xc]
+        mov ecx, eax
+        call ext_006FB650
+        lea ecx, [esp + 0xc4]
+        mov byte ptr [esp + 0x3e4], 0x4
+        call ext_006B9D70
+        lea ecx, [esp + 0x78]
+        mov byte ptr [esp + 0x3e4], 0x3
+        call ext_006B9D70
+        lea ecx, [esp + 0x110]
+        mov byte ptr [esp + 0x3e4], 0x1
+        call ext_006B9D70
+        mov esi, dword ptr [esp + 0x1c]
+be270_757:
+        mov eax, dword ptr [esp + 0x20]
+        inc esi
+        cmp esi, eax
+        mov dword ptr [esp + 0x1c], esi
+        jl be270_447
+        mov ebp, dword ptr [esp + 0x14]
+be270_76c:
+        lea ecx, [esp + 0x2c]
+        mov byte ptr [esp + 0x3e4], 0x0
+        call ext_006B9D70
+        lea ecx, [esp + 0x17c]
+        mov dword ptr [esp + 0x3e4], 0xffffffff
+        call ext_006B9D70
+be270_794:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x28]
+        inc eax
+        cmp eax, ecx
+        mov dword ptr [esp + 0x18], eax
+        jl be270_2b7
+        pop edi
+        pop esi
+        pop ebx
+be270_7ac:
+        mov ecx, dword ptr [esp + 0x3d0]
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3d8
+        ret
+    }
+}
