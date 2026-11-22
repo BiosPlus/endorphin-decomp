@@ -402,6 +402,7 @@
     "0x006E360A",
     "0x006E364D"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-22T04:22:48Z"
 }
