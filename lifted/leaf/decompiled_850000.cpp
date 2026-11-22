@@ -9,3 +9,11 @@ void fn_0085E04B(void) {
     // does not change any value, so there is no portable C++ statement with a
     // visible effect. Kept as an empty function to preserve the address slot.
 }
+
+// [0x0085D85B] sub_0085D85B (5 bytes)
+// @name sub_0085D85B
+// @summary No-op: "add eax, 0" (eax unchanged; only flags are touched)
+void fn_0085D85B(void) {
+    // add eax, 0 leaves eax unchanged. Its only effect is on the flags,
+    // which C++ cannot observe portably, so there is nothing to emit.
+}
