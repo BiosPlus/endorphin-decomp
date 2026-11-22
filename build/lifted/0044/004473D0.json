@@ -1,0 +1,13 @@
+{
+  "va": "0x004473D0",
+  "size": 6,
+  "orig_symbol": "sub_004473D0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "GetStringLiteral_004473D0",
+  "signature": "extern \"C\" const char* __cdecl fn_004473D0()",
+  "summary": "Returns the address of the read-only string \"`KE\" in .rdata.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:50:44Z"
+}
