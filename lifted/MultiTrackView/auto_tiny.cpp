@@ -46,8 +46,10 @@ void fn_004591A0(void* self) {
     owner[0x190] = 1;
 }
 #include <cstdint>
+// USER32!InvalidateRect, imported through IAT slot mem_00925688.
+extern "C" BOOL __stdcall ext_InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase);
 
-// [0x00411660] MultiTrackView::CompositeEventTrack::vfunc_0 (30 bytes)
+extern "C" BOOL __stdcall ext_InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase);
 // @name MultiTrackView::CompositeEventTrack::vfunc_0
 // @class MultiTrackView::CompositeEventTrack
 // @summary MSVC scalar deleting destructor: calls sub_00411590 and frees memory when (flags & 1) is set.
@@ -283,4 +285,16 @@ void fn_0043EA80(void* self) {
     auto* record = static_cast<std::uint32_t*>(self);
     record[0] = 0u;
     record[1] = 0u;
+}
+
+// [0x00443500] MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12 (22 bytes)
+// @name MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12
+// @class MultiTrackView::MultiTrackViewStates::DragSelectState
+// @summary Invalidates the owning view's window (full client area, erase background) and returns TRUE.
+// @field MultiTrackView::MultiTrackViewStates::DragSelectState +0x08 void* field_0x08
+BOOLEAN fn_00443500(void* self) {
+    void* owner = lift_field<void*>(self, 0x08);
+    HWND hwnd = lift_field<HWND>(owner, 0x20);
+    ext_InvalidateRect(hwnd, nullptr, TRUE);
+    return TRUE;
 }

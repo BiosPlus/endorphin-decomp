@@ -1,0 +1,22 @@
+{
+  "va": "0x00443500",
+  "size": 22,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+  "signature": "BOOLEAN fn_00443500(void* self)",
+  "summary": "Invalidates the owning view's window (full client area, erase background) and returns TRUE.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:03Z"
+}
