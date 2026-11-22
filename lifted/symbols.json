@@ -2380,6 +2380,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006096D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060A070": {
+    "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "int fn_0060A070(void* self)",
+    "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
     "class": "NMData::DisabledCollisionPairList",
