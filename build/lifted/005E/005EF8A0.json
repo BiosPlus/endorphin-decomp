@@ -1,0 +1,14 @@
+{
+  "va": "0x005EF8A0",
+  "size": 35,
+  "orig_symbol": "NMData::HingeData::vfunc_59",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_59",
+  "class": "NMData::HingeData",
+  "signature": "std::string* fn_005EF8A0(void* self, std::string* out)",
+  "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EF9C; this is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:41:07Z"
+}

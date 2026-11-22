@@ -6967,6 +6967,13 @@
     "summary": "Returns early if kind equals the stored field; otherwise maps kind 5 to 3 and tail-forwards to NMData::FixedPathJointData::vfunc_63 (ext_005EB920).",
     "lifted_path": "lifted/NMData/RPROJointData.cpp"
   },
+  "0x005EF8A0": {
+    "name": "NMData::HingeData::vfunc_59",
+    "class": "NMData::HingeData",
+    "signature": "std::string* fn_005EF8A0(void* self, std::string* out)",
+    "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EF9C; this is unused.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005EF8D0": {
     "name": "NMData::HingeData::vfunc_1_off_C",
     "class": "NMData::HingeData",
