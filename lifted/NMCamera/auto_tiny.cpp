@@ -26,3 +26,21 @@ extern "C" void* __fastcall fn_00551D80(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x00551C10] NMCamera::Orthogonal::vfunc_6 (21 bytes)
+// @name NMCamera::Orthogonal::vfunc_6
+// @class NMCamera::Orthogonal
+// @summary Calls vtable slot 5 (+0x14) on self with a pointer to a local float holding 0.0f, then returns (callee pops one stack argument).
+// @field NMCamera::Orthogonal +0x00 void* vtable_ptr
+
+// Original: push ecx; mov eax,[ecx]; fldz; mov eax,[eax+0x14]; fstp [esp];
+// lea edx,[esp]; push edx; call eax; pop ecx; ret 4.
+// The pushed slot doubles as a float local set to 0.0f; its address is the sole argument.
+void fn_00551C10(void* self, uint32_t unused_stack_arg) {
+    (void)unused_stack_arg;                                                           // ret 4 pops one dword
+    void** vtbl = *reinterpret_cast<void***>(self);                                   // self +0x00 -> vtable
+    float zero = 0.0f;                                                                // fldz; fstp [esp]
+    using VFuncSlot5 = void (*)(void* self, float* arg);
+    VFuncSlot5 fn = reinterpret_cast<VFuncSlot5>(vtbl[5]);                            // slot 5 (+0x14)
+    fn(self, &zero);
+}

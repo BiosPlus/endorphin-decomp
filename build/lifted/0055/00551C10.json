@@ -1,0 +1,22 @@
+{
+  "va": "0x00551C10",
+  "size": 21,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_6",
+  "src_path": "src/NMCamera/auto_tiny.cpp",
+  "lifted_path": "lifted/NMCamera/auto_tiny.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_6",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void fn_00551C10(void* self, uint32_t unused_stack_arg)",
+  "summary": "Calls vtable slot 5 (+0x14) on self with a pointer to a local float holding 0.0f, then returns (callee pops one stack argument).",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:45Z"
+}
