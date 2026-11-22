@@ -21853,6 +21853,13 @@
     "summary": "Per-element accumulation over count/4 blocks: zeroes four floats at out, accumulates weighted contributions from the two ext_007F36C0 sub-calls, then inverts each of the four accumulated floats.",
     "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
   },
+  "0x007F3BA0": {
+    "name": "MdtArthur::arthurSolver_sse::vfunc_0",
+    "class": "MdtArthur::arthurSolver_sse",
+    "signature": "static inline Vec4 operator+(const Vec4\u0026 a, const Vec4\u0026 b)",
+    "summary": "Zeroes count/4 vec4 accumulators, scatters weighted 6-vec4 records into them via a CSR-style index table, then blends each accumulator against a reciprocal-scaled bias term.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
+  },
   "0x007F4330": {
     "name": "MdtArthur::arthurSolver_sse::vfunc_1",
     "class": "MdtArthur::arthurSolver_sse",

@@ -1,0 +1,14 @@
+{
+  "va": "0x007F3BA0",
+  "size": 854,
+  "orig_symbol": "MdtArthur::arthurSolver_sse::vfunc_0",
+  "src_path": "src/MdtArthur/arthurSolver_sse.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp",
+  "name": "MdtArthur::arthurSolver_sse::vfunc_0",
+  "class": "MdtArthur::arthurSolver_sse",
+  "signature": "static inline Vec4 operator+(const Vec4\u0026 a, const Vec4\u0026 b)",
+  "summary": "Zeroes count/4 vec4 accumulators, scatters weighted 6-vec4 records into them via a CSR-style index table, then blends each accumulator against a reciprocal-scaled bias term.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T14:29:34Z"
+}
