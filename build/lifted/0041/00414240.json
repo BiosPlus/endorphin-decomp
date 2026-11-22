@@ -1,0 +1,13 @@
+{
+  "va": "0x00414240",
+  "size": 6,
+  "orig_symbol": "sub_00414240",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "sub_00414240",
+  "signature": "extern \"C\" const char* __cdecl fn_00414240()",
+  "summary": "Returns the address of the constant string \"`KE\" stored in .rdata (mem_0092C418).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:47:33Z"
+}

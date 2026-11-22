@@ -90,6 +90,12 @@
     "summary": "Returns the address of the read-only string constant \"$aj\".",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00414240": {
+    "name": "sub_00414240",
+    "signature": "extern \"C\" const char* __cdecl fn_00414240()",
+    "summary": "Returns the address of the constant string \"`KE\" stored in .rdata (mem_0092C418).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",

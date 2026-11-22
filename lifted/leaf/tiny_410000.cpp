@@ -8,3 +8,10 @@ extern "C" int mem_0092BD10;
 extern "C" const char* __cdecl fn_00410350() {
     return reinterpret_cast<const char*>(&mem_0092BD10);
 }
+
+// [0x00414240]
+// @name sub_00414240
+// @summary Returns the address of the constant string "`KE" stored in .rdata (mem_0092C418).
+extern "C" const char* __cdecl fn_00414240() {
+    return reinterpret_cast<const char*>(0x0092C418);
+}
