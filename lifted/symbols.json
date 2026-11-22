@@ -103,6 +103,12 @@
     "summary": "Virtual getter returning the address of the global slot mem_0092C580 (self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00415580": {
+    "name": "sub_00415580",
+    "signature": "extern \"C\" const char* __cdecl fn_00415580()",
+    "summary": "Returns the address of the read-only string constant \"$aj\" stored in .rdata (mem_0092C6E8).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
