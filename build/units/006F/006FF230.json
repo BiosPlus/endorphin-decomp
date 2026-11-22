@@ -102,5 +102,7 @@
     "0x006FF6F1",
     "0x006FF705"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T01:36:31Z"
 }
