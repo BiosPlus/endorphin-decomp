@@ -1,0 +1,28 @@
+{
+  "va": "0x00649620",
+  "size": 110,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e",
+  "signature": "void __thiscall fn_00649620(void* self, void* out, void* dst, void* src)",
+  "summary": "Reads a flag from the source value's type (vtable +0x0C), applies it to the target object at dst-\u003efield_0x00 via ext_00649080, then resolves the source value through the type's vtable +0x70 into out if src-\u003efield_0x04 is non-null; otherwise writes a null out.",
+  "fields": [
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T10:37:16Z"
+}

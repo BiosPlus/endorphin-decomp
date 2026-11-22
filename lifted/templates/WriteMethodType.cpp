@@ -98,6 +98,7 @@ void __stdcall fn_00594520(void* a1, void* a2) {
     ext_005940A0(target, value);
 }
 extern "C" void __thiscall ext_00648E30(void* self, bool value);
+extern "C" void __thiscall ext_00649080(void* self, bool value);
 
 // [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41
@@ -1017,4 +1018,39 @@ void __thiscall fn_00649D50(void* self, void* dst, void* src) {
     bool value = getBool(srcType, src) != 0;
 
     ext_00648E30(target, value);
+}
+
+// [0x00649620] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_48 (110 bytes)
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>
+// @summary Reads a flag from the source value's type (vtable +0x0C), applies it to the target object at dst->field_0x00 via ext_00649080, then resolves the source value through the type's vtable +0x70 into out if src->field_0x04 is non-null; otherwise writes a null out.
+// @field ExprParser::Value +0x00 void* field_0x00
+// @field ExprParser::Value +0x04 void* field_0x04
+void __thiscall fn_00649620(void* self, void* out, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetFlagFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getFlag = reinterpret_cast<GetFlagFn>(vtable[0x0C / sizeof(void*)]);
+    uint8_t flag = getFlag(srcType, src);
+
+    ext_00649080(target, flag != 0);
+
+    if (lift_field<void*>(src, 0x04) != nullptr) {
+        // Local copy of dst; its address is passed to the resolver below.
+        void* dstSlot = dst;
+
+        using ResolveFn = void* (__thiscall*)(void* typeObj, void** dstSlotPtr, void* valueObj);
+        auto resolve = reinterpret_cast<ResolveFn>(vtable[0x70 / sizeof(void*)]);
+        void* resolved = resolve(srcType, &dstSlot, src);
+
+        // Re-read src->field_0x04 after the call, as the original does.
+        lift_field<void*>(out, 0x00) = lift_field<void*>(resolved, 0x00);
+        lift_field<void*>(out, 0x04) = lift_field<void*>(src, 0x04);
+    } else {
+        lift_field<void*>(out, 0x00) = nullptr;
+        lift_field<void*>(out, 0x04) = nullptr;
+    }
 }

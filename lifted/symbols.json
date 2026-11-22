@@ -9816,6 +9816,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00649620": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e",
+    "signature": "void __thiscall fn_00649620(void* self, void* out, void* dst, void* src)",
+    "summary": "Reads a flag from the source value's type (vtable +0x0C), applies it to the target object at dst-\u003efield_0x00 via ext_00649080, then resolves the source value through the type's vtable +0x70 into out if src-\u003efield_0x04 is non-null; otherwise writes a null out.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00649B40": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e",
