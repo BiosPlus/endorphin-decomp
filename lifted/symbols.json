@@ -2125,6 +2125,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
     "lifted_path": "lifted/Geometry/CylinderType.cpp"
   },
+  "0x005B1850": {
+    "name": "Geometry::AnimationType::vfunc_10",
+    "class": "Geometry::AnimationType",
+    "signature": "void fn_005B1850(void* self, DWORD arg0, DWORD arg1)",
+    "summary": "Stores two stack-passed DWORDs into this+0x04 and this+0x08 (thiscall, ret 8).",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
   "0x005B1900": {
     "name": "Geometry::SphereType::vfunc_9",
     "class": "Geometry::SphereType",

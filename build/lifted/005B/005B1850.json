@@ -1,0 +1,28 @@
+{
+  "va": "0x005B1850",
+  "size": 17,
+  "orig_symbol": "Geometry::AnimationType::vfunc_10",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::AnimationType::vfunc_10",
+  "class": "Geometry::AnimationType",
+  "signature": "void fn_005B1850(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "Stores two stack-passed DWORDs into this+0x04 and this+0x08 (thiscall, ret 8).",
+  "fields": [
+    {
+      "class": "Geometry::AnimationType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Geometry::AnimationType",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:20Z"
+}

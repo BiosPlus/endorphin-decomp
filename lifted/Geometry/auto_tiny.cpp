@@ -87,3 +87,15 @@ extern "C" void* __fastcall fn_005B5760(void* self, int edx_unused, unsigned int
 float __stdcall fn_005B1120(int32_t index, const float* table) {
     return table[index];
 }
+
+// [0x005B1850] Geometry::AnimationType::vfunc_10 (17 bytes)
+// @name Geometry::AnimationType::vfunc_10
+// @class Geometry::AnimationType
+// @summary Stores two stack-passed DWORDs into this+0x04 and this+0x08 (thiscall, ret 8).
+// @field Geometry::AnimationType +0x04 DWORD field_0x04
+// @field Geometry::AnimationType +0x08 DWORD field_0x08
+void fn_005B1850(void* self, DWORD arg0, DWORD arg1) {
+    auto* base = static_cast<std::uint8_t*>(self);
+    std::memcpy(base + 0x04, &arg0, sizeof(DWORD));
+    std::memcpy(base + 0x08, &arg1, sizeof(DWORD));
+}
