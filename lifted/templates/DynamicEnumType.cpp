@@ -25,11 +25,6 @@ void fn_00495020(void* self) {
     ext_00494830(inner);
 }
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast).
-                              const void* targetType, int isReference);
-// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
-extern "C" const char mem_00A32954[];
-
-const void* targetType, int isReference);
 // RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 extern "C" const char mem_00A32954[];
 // @summary Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType<RigManager>::vfunc_26).
@@ -38,11 +33,6 @@ void fn_004AB2B0(void* self) {
     ext_004A9D80(inner);
 }
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast).
-                              const void* targetType, int isReference);
-// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
-extern "C" const char mem_00A328D4[];
-
-const void* targetType, int isReference);
 // RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 extern "C" const char mem_00A328D4[];
 // @summary Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType<RigManager>::vfunc_26).
@@ -51,11 +41,6 @@ void fn_004D8B10(void* self) {
     ext_004D4160(inner);
 }
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast).
-                              const void* targetType, int isReference);
-// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
-extern "C" const char mem_00A3C268[];
-
-const void* targetType, int isReference);
 // RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 extern "C" const char mem_00A3C268[];
 // @summary Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType<RigManager>::vfunc_26).
@@ -64,11 +49,6 @@ void fn_004D8BA0(void* self) {
     ext_004D4190(inner);
 }
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast).
-                              const void* targetType, int isReference);
-// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
-extern "C" const char mem_00A4279C[];
-
-const void* targetType, int isReference);
 // RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 extern "C" const char mem_00A4279C[];
 // @summary Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType<RigManager>::vfunc_26).
@@ -77,11 +57,6 @@ void fn_00515D10(void* self) {
     ext_00515830(inner);
 }
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast).
-                              const void* targetType, int isReference);
-// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
-extern "C" const char mem_00A8AFF4[];
-
-const void* targetType, int isReference);
 // RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 extern "C" const char mem_00A8AFF4[];
 // @summary Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType<RigManager>::vfunc_26).
@@ -100,22 +75,17 @@ void fn_005C85C0(void* self) {
     void* inner = lift_field<void*>(self, 0x00);
     ext_005C3F10(inner);
 }
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast).
+extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType, const void* targetType, int isReference);
+// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 
-// [0x00494810] ExprParser::DynamicEnumType<RigManager, ...>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<RigManager>::vfunc_16
+extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType, const void* targetType, int isReference);
+// RTTI type descriptors: source = shared base descriptor, target = this enum's concrete type.
 // @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
 // @summary Dynamic-cast self (RTTI src 0xA2E2F8 -> dst 0xA346B0, no vfptr offset) and return the resulting pointer.
 // No object fields are accessed directly.
 void* fn_00494810(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A346B0, 0);
-}
-
-// [0x004A9CC0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
-// @summary Dynamic-casts self to the BehaviourData enum type via __RTDynamicCast (pointer cast; returns null on failure).
-void* fn_004A9CC0(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A32954, 0);
 }
 
 // [0x004B7160] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_16 (30 bytes)
@@ -161,4 +131,12 @@ void fn_0067A770(void* self, void* arg) {
     void** vtbl = *reinterpret_cast<void***>(inner);
     reinterpret_cast<VSlot30>(vtbl[30])(inner, self);
     ext_006720A0(self, arg);
+}
+
+// [0x004A9CC0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_16 (30 bytes)
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Dynamic-casts self to the BehaviourData enum type via __RTDynamicCast (pointer cast; returns null on failure).
+void* fn_004A9CC0(void* self) {
+    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A32954, 0);
 }
