@@ -132,5 +132,7 @@
     "0x0085EF4E",
     "0x0085EF5E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:38:37Z"
 }
