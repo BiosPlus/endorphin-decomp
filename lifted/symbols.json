@@ -531,6 +531,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 8 (offset +0x20) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004B7A40": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_1",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "float __stdcall ExprParser_PrimitiveProxyType_float_vfunc_1(void* self)",
+    "summary": "Loads the float referenced by the proxy's stored pointer and returns it.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x004C65B0": {
     "name": "NMData::ForceEventData::vfunc_1_off_C",
     "class": "NMData::ForceEventData",

@@ -72,3 +72,14 @@ double __stdcall fn_0049C040(void* self) {
     const int* p = *value_ptr;
     return static_cast<double>(*p);
 }
+
+// [0x004B7A40]
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_1
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Loads the float referenced by the proxy's stored pointer and returns it.
+// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
+
+float __stdcall ExprParser_PrimitiveProxyType_float_vfunc_1(void* self) {
+    float* p = lift_field<float*>(self, 0x00);
+    return *p;
+}

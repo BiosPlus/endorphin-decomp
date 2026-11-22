@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7A40",
+  "size": 11,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_1",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_1",
+  "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+  "signature": "float __stdcall ExprParser_PrimitiveProxyType_float_vfunc_1(void* self)",
+  "summary": "Loads the float referenced by the proxy's stored pointer and returns it.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:11:53Z"
+}
