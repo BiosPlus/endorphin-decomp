@@ -97,8 +97,10 @@ void __stdcall fn_00594520(void* a1, void* a2) {
     float value = getFloat(reader, a2);
     ext_005940A0(target, value);
 }
+// Known callee 0x0064F900: VirtualSlot21Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 21 (offset +0x54) with the same this pointer; the callee's result is passed through.)
+extern "C" void ext_0064F900(void* self, float value);
 
-// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_0064F900(void* self, float value);
 // @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41
 // @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
 // @summary Evaluates an NM::Vector3 const& address from the source value via its type vtable slot +0x14 and calls SkeletalJoint::setDriveAngularVel (ext_0064DDE0) on the target joint.
@@ -114,10 +116,15 @@ void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr) {
     uint32_t value = getVec3(typeObj, valuePtr);
     ext_0064DDE0(target, value);
 }
+extern "C" void ext_00603680(void* self, uint32_t value);
+#include <bit>
+#include <cstdint>
+// Known callee 0x0064F900: VirtualSlot21Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 21 (offset +0x54) with the same this pointer; the callee's result is passed through.)
+// The float argument is passed as its raw 32-bit pattern (matches the existing declaration in the merged template).
 
-// [0x00594470] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_41 (37 bytes)
-// @name ExprParser::WriteMethodType<World, float, setGravity>::vfunc_41
-// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>
+#include <cstdint>
+// Known callee 0x0064F900: VirtualSlot21Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 21 (offset +0x54) with the same this pointer; the callee's result is passed through.)
+// The float argument is passed as its raw 32-bit pattern (matches the existing declaration in the merged template).
 // @summary Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setGravity setter ext_00594080.
 // @field ExprParser::WriteMethodType +0x00 void* target
 // @field ExprParser::ValuePtrType +0x04 void* reader
@@ -997,4 +1004,39 @@ uint32_t __stdcall fn_00605360(void* arg1, void* arg2) {
 
     // Forward: ecx = target, stack arg = value (float); eax passed through.
     return ext_006036B0(target, value);
+}
+
+// [0x005F3680] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_41 (37 bytes)
+// @name ExprParser::WriteMethodType<EffectorGroup, float, ...>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
+// @summary Reads a float from the argument's owner via its vtable slot 1, then forwards it to the target through thunk 0x0064F900.
+// @field ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}> +0x00 void* target
+// @field ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}> +0x04 void* field_0x04
+void fn_005F3680(void* self, void* arg) {
+    void* target = *reinterpret_cast<void**>(self);
+    void* owner = *reinterpret_cast<void**>(static_cast<char*>(arg) + 0x04);
+
+    using getter_t = float (*)(void* self, void* arg);
+    void** ownerVtbl = *reinterpret_cast<void***>(owner);
+    float value = reinterpret_cast<getter_t>(ownerVtbl[1])(owner, arg);
+
+    ext_0064F900(target, std::bit_cast<uint32_t>(value));
+}
+
+// [0x00604BA0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Extracts an NM::Vector4 const& address from src via its type object's vtable slot 6 (+0x18) and dispatches it to EffectorBase vtable slot 19 (+0x4C) via ext_00603680.
+// @field ValuePtr +0x00 void* field_0x00
+// @field ValuePtr +0x04 void* field_0x04
+void __thiscall fn_00604BA0(void* self, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** srcVtbl = lift_field<void**>(srcType, 0x00);
+
+    using ExtractVector4Fn = uint32_t (__thiscall*)(void* typeObj, void* valueObj);
+    uint32_t valuePtr = reinterpret_cast<ExtractVector4Fn>(srcVtbl[0x18 / 4])(srcType, src);
+
+    ext_00603680(target, valuePtr);
 }
