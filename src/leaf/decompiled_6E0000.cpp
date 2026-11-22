@@ -10889,3 +10889,444 @@ L_end:
         ret 0x10
     }
 }
+
+// [0x006E47B0] sub_006E47B0 (1312 bytes)
+extern "C" void ext_006A73CC();
+extern "C" void ext_006E4CD0();
+extern "C" int mem_00993C78;
+extern "C" double mem_00993CC8;
+extern "C" double mem_00993828;
+extern "C" double mem_009324A8;
+extern "C" double mem_00993CC0;
+extern "C" double mem_0092A270;
+extern "C" int mem_00993C68;
+extern "C" int mem_00993810;
+extern "C" int mem_00993CB8;
+extern "C" double mem_00993CD8;
+extern "C" double mem_00993CD0;
+extern "C" int mem_00925294;
+
+extern "C" __declspec(naked) void __fastcall fn_006E47B0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x8c
+        mov eax, dword ptr [ecx + 0x60]
+        push ebx
+        xor bl, bl
+        push esi
+        cmp eax, 0xc
+        push edi
+        je L_6E4B08
+        lea eax, [eax + eax*2]
+        mov edi, dword ptr [ebp + 0x10]
+        mov byte ptr [esp + 0xf], bl
+        lea esi, [eax*4 + 0x996d70]
+        mov eax, dword ptr [eax*4 + 0x996d70]
+        mov ecx, dword ptr [esi + 0x4]
+        shl eax, 3
+        mov edx, dword ptr [esi + 0x8]
+        fld qword ptr [eax + edi]
+        shl ecx, 3
+        fstp qword ptr [esp + 0x50]
+        fld qword ptr [ecx + edi]
+        shl edx, 3
+        fstp qword ptr [esp + 0x28]
+        fld qword ptr [edx + edi]
+        mov edi, dword ptr [ebp + 0xc]
+        fstp qword ptr [esp + 0x20]
+        fld qword ptr [eax + edi]
+        fstp qword ptr [esp + 0x18]
+        fld qword ptr [ecx + edi]
+        fstp qword ptr [esp + 0x48]
+        fld qword ptr [edx + edi]
+        fstp qword ptr [esp + 0x40]
+        fld qword ptr [eax + edi]
+        fadd qword ptr [mem_00993C78]
+        fstp qword ptr [esp + 0x30]
+        fld qword ptr [mem_00993C78]
+        fsub qword ptr [ecx + edi]
+        lea ecx, [esp + 0x60]
+        push ecx
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x44]
+        fld qword ptr [edx + edi]
+        fadd qword ptr [mem_00993C78]
+        fstp qword ptr [esp + 0x64]
+        fld qword ptr [esp + 0x5c]
+        fsub qword ptr [esp + 0x24]
+        fmul qword ptr [mem_00993CC8]
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925294]
+        fcom qword ptr [mem_00993828]
+        add esp, 0xc
+        fnstsw ax
+        test ah, 0x41
+        jne short L_6E4885
+        fld qword ptr [esp + 0x60]
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x60]
+L_6E4885:
+        fcomp qword ptr [mem_009324A8]
+        fnstsw ax
+        test ah, 0x1
+        je short L_6E48A0
+        fld qword ptr [esp + 0x60]
+        fsub qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x60]
+L_6E48A0:
+        fld qword ptr [esp + 0x60]
+        fmul qword ptr [mem_00993CC0]
+        mov edi, dword ptr [esp + 0x2c]
+        mov ebx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x4c]
+        mov eax, dword ptr [esp + 0x48]
+        fadd qword ptr [esp + 0x18]
+        push edi
+        push ebx
+        push edx
+        push eax
+        fstp qword ptr [esp + 0x28]
+        call ext_006E4CD0
+        mov ecx, dword ptr [esp + 0x34]
+        mov edx, dword ptr [esp + 0x30]
+        mov eax, dword ptr [esp + 0x54]
+        push ecx
+        mov ecx, dword ptr [esp + 0x54]
+        push edx
+        fstp qword ptr [esp + 0x60]
+        push eax
+        push ecx
+        call ext_006E4CD0
+        mov edx, dword ptr [esp + 0x74]
+        mov eax, dword ptr [esp + 0x70]
+        mov ecx, dword ptr [esp + 0x54]
+        push edx
+        mov edx, dword ptr [esp + 0x54]
+        push eax
+        fstp qword ptr [esp + 0x68]
+        push ecx
+        push edx
+        call ext_006E4CD0
+        mov eax, dword ptr [esp + 0x6c]
+        mov ecx, dword ptr [esp + 0x68]
+        fstp qword ptr [esp + 0x60]
+        push edi
+        push ebx
+        push eax
+        push ecx
+        call ext_006E4CD0
+        mov edx, dword ptr [esp + 0x64]
+        mov eax, dword ptr [esp + 0x60]
+        mov ecx, dword ptr [esp + 0x9c]
+        add esp, 0x40
+        fstp qword ptr [esp + 0x38]
+        push edx
+        mov edx, dword ptr [esp + 0x5c]
+        push eax
+        push ecx
+        push edx
+        call ext_006E4CD0
+        fld qword ptr [esp + 0x60]
+        fsub qword ptr [esp + 0x28]
+        fld qword ptr [esp + 0x38]
+        fsub qword ptr [esp + 0x58]
+        fld qword ptr [esp + 0x30]
+        fsub qword ptr [esp + 0x50]
+        fld qword ptr [esp + 0x60]
+        fsub qword ptr [esp + 0x40]
+        fld qword ptr [esp + 0x38]
+        fsub qword ptr [esp + 0x48]
+        add esp, 0x10
+        fstp qword ptr [esp + 0x28]
+        fld qword ptr [esp + 0x20]
+        _emit 0xd8
+        _emit 0xe5
+        fstp qword ptr [esp + 0x58]
+        _emit 0xd9
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0xca
+        _emit 0xd9
+        _emit 0xc3
+        _emit 0xd8
+        _emit 0xcc
+        _emit 0xde
+        _emit 0xc1
+        _emit 0xd9
+        _emit 0xc4
+        _emit 0xd8
+        _emit 0xcd
+        _emit 0xde
+        _emit 0xc1
+        fld qword ptr [esp + 0x58]
+        fmul qword ptr [esp + 0x58]
+        fld qword ptr [esp + 0x28]
+        fmul qword ptr [esp + 0x28]
+        _emit 0xde
+        _emit 0xc1
+        _emit 0xd9
+        _emit 0xc2
+        _emit 0xd8
+        _emit 0xcb
+        _emit 0xde
+        _emit 0xc1
+        fcompp
+        fstp st(0)
+        fstp st(0)
+        fnstsw ax
+        fstp st(0)
+        test ah, 0x41
+        fstp st(0)
+        jne L_6E4A00
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esi + 0x8]
+        shl ebx, 3
+        shl esi, 3
+        lea edi, [esp + ebx + 0x68]
+        fstp st(0)
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x48]
+        lea eax, [esp + edx*8 + 0x68]
+        mov edx, dword ptr [esp + 0x4c]
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x40]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x44]
+        lea eax, [esp + esi + 0x68]
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        mov eax, dword ptr [esp + 0x20]
+        jmp short L_6E4A3F
+L_6E4A00:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esp + 0x30]
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esp + 0x34]
+        mov esi, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0xf], 0x1
+        shl ebx, 3
+        shl esi, 3
+        lea edi, [esp + ebx + 0x68]
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x38]
+        lea eax, [esp + edx*8 + 0x68]
+        mov edx, dword ptr [esp + 0x3c]
+        mov dword ptr [eax], ecx
+        lea ecx, [esp + esi + 0x68]
+        mov dword ptr [eax + 0x4], edx
+        mov dword ptr [esp + 0x18], ecx
+        fstp qword ptr [ecx]
+L_6E4A3F:
+        fld qword ptr [eax]
+        fld qword ptr [mem_00993CC0]
+        call ext_006A73CC
+        fadd qword ptr [mem_00993CC0]
+        fld qword ptr [mem_00993CC0]
+        call ext_006A73CC
+        _emit 0xd9
+        _emit 0xc0
+        fsub qword ptr [mem_00993C68]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je short L_6E4A9B
+        mov ecx, dword ptr [ebp + 0x10]
+        mov eax, dword ptr [esp + 0x18]
+        fstp st(0)
+        fld qword ptr [esi + ecx]
+        fsub qword ptr [eax]
+        fld qword ptr [ebx + ecx]
+        fsub qword ptr [edi]
+        _emit 0xde
+        _emit 0xc1
+        fmul qword ptr [mem_00993828]
+        _emit 0xd9
+        _emit 0xc0
+        fadd qword ptr [edi]
+        fstp qword ptr [edi]
+        fadd qword ptr [eax]
+        fstp qword ptr [eax]
+        jmp short L_6E4AD9
+L_6E4A9B:
+        fsub qword ptr [mem_00993CB8]
+        mov ecx, dword ptr [ebp + 0x10]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je short L_6E4AD9
+        mov eax, dword ptr [esp + 0x18]
+        fld qword ptr [esi + ecx]
+        fsub qword ptr [eax]
+        fchs
+        fld qword ptr [ebx + ecx]
+        fsub qword ptr [edi]
+        _emit 0xde
+        _emit 0xc1
+        fmul qword ptr [mem_00993828]
+        _emit 0xd9
+        _emit 0xc0
+        fadd qword ptr [edi]
+        fstp qword ptr [edi]
+        fld qword ptr [eax]
+        _emit 0xd8
+        _emit 0xe1
+        fstp qword ptr [eax]
+        fstp st(0)
+L_6E4AD9:
+        mov bl, byte ptr [esp + 0xf]
+        test bl, bl
+        je short L_6E4B0B
+        mov eax, dword ptr [ebp + 0xc]
+        fld qword ptr [eax]
+        fadd qword ptr [mem_00993C78]
+        fld qword ptr [mem_00993C78]
+        fsub qword ptr [eax + 0x8]
+        fstp qword ptr [esp + 0x70]
+        fld qword ptr [eax + 0x10]
+        fadd qword ptr [mem_00993C78]
+        fstp qword ptr [esp + 0x78]
+        jmp short L_6E4B2C
+L_6E4B08:
+        mov ecx, dword ptr [ebp + 0x10]
+L_6E4B0B:
+        mov eax, dword ptr [ebp + 0xc]
+        mov edx, dword ptr [eax + 0x8]
+        mov esi, dword ptr [eax + 0xc]
+        fld qword ptr [eax]
+        mov dword ptr [esp + 0x70], edx
+        mov edx, dword ptr [eax + 0x10]
+        mov eax, dword ptr [eax + 0x14]
+        mov dword ptr [esp + 0x74], esi
+        mov dword ptr [esp + 0x78], edx
+        mov dword ptr [esp + 0x7c], eax
+L_6E4B2C:
+        fsubr qword ptr [ecx]
+        fld qword ptr [ecx + 0x8]
+        fsub qword ptr [esp + 0x70]
+        fstp qword ptr [esp + 0x88]
+        fld qword ptr [ecx + 0x10]
+        fsub qword ptr [esp + 0x78]
+        lea ecx, [esp + 0x10]
+        push ecx
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x9c]
+        fmul qword ptr [mem_00993CC8]
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925294]
+        fcom qword ptr [mem_00993CD8]
+        add esp, 0xc
+        fnstsw ax
+        test ah, 0x41
+        jne short L_6E4B7F
+        fld qword ptr [esp + 0x10]
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x10]
+L_6E4B7F:
+        fcomp qword ptr [mem_00993CD0]
+        fnstsw ax
+        test ah, 0x1
+        je short L_6E4B9A
+        fld qword ptr [esp + 0x10]
+        fsub qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x10]
+L_6E4B9A:
+        fld qword ptr [esp + 0x10]
+        fmul qword ptr [mem_00993CC0]
+        lea edx, [esp + 0x10]
+        push edx
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x8c]
+        fld qword ptr [esp + 0x94]
+        fmul qword ptr [mem_00993CC8]
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925294]
+        fcom qword ptr [mem_00993CD8]
+        add esp, 0xc
+        fnstsw ax
+        test ah, 0x41
+        jne short L_6E4BE7
+        fld qword ptr [esp + 0x10]
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x10]
+L_6E4BE7:
+        fcomp qword ptr [mem_00993CD0]
+        fnstsw ax
+        test ah, 0x1
+        je short L_6E4C02
+        fld qword ptr [esp + 0x10]
+        fsub qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x10]
+L_6E4C02:
+        fld qword ptr [esp + 0x10]
+        fmul qword ptr [mem_00993CC0]
+        lea eax, [esp + 0x10]
+        push eax
+        sub esp, 0x8
+        fstp qword ptr [esp + 0x94]
+        fld qword ptr [esp + 0x9c]
+        fmul qword ptr [mem_00993CC8]
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925294]
+        fcom qword ptr [mem_00993CD8]
+        add esp, 0xc
+        fnstsw ax
+        test ah, 0x41
+        jne short L_6E4C4F
+        fld qword ptr [esp + 0x10]
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0x10]
+L_6E4C4F:
+        fcomp qword ptr [mem_00993CD0]
+        fld qword ptr [esp + 0x10]
+        fnstsw ax
+        test ah, 0x1
+        je short L_6E4C66
+        fsub qword ptr [mem_0092A270]
+L_6E4C66:
+        fmul qword ptr [mem_00993CC0]
+        fld qword ptr [esp + 0x80]
+        test bl, bl
+        je short L_6E4CA6
+        fadd qword ptr [mem_00993C78]
+        mov eax, dword ptr [ebp + 0x8]
+        fstp qword ptr [eax]
+        fld qword ptr [esp + 0x88]
+        fadd qword ptr [mem_00993C78]
+        fstp qword ptr [eax + 0x8]
+        fadd qword ptr [mem_00993C78]
+        fstp qword ptr [eax + 0x10]
+        mov al, bl
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+L_6E4CA6:
+        mov eax, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [esp + 0x88]
+        mov edx, dword ptr [esp + 0x8c]
+        pop edi
+        fstp qword ptr [eax]
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], edx
+        fstp qword ptr [eax + 0x10]
+        mov al, bl
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    }
+}
