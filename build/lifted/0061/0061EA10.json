@@ -1,0 +1,14 @@
+{
+  "va": "0x0061EA10",
+  "size": 89,
+  "orig_symbol": "NMData::HingeSecondaryConstraint::vfunc_17_off_C",
+  "src_path": "src/NMData/HingeSecondaryConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeSecondaryConstraint.cpp",
+  "name": "HingeSecondaryConstraint::AllocAndConstruct",
+  "class": "NMData::HingeSecondaryConstraint",
+  "signature": "void* fn_0061EA10()",
+  "summary": "Allocates a 0x164-byte HingeSecondaryConstraint and runs its constructor; returns null if allocation fails.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:13:19Z"
+}

@@ -8148,6 +8148,13 @@
     "summary": "Calls ext_0061E780 on the embedded subobject at self+0x164 with (a, c) and returns a unchanged; the second argument is unused.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x0061EA10": {
+    "name": "HingeSecondaryConstraint::AllocAndConstruct",
+    "class": "NMData::HingeSecondaryConstraint",
+    "signature": "void* fn_0061EA10()",
+    "summary": "Allocates a 0x164-byte HingeSecondaryConstraint and runs its constructor; returns null if allocation fails.",
+    "lifted_path": "lifted/NMData/HingeSecondaryConstraint.cpp"
+  },
   "0x0061ECB0": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_0",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
