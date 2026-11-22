@@ -8527,6 +8527,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and tail-calls sub_00508680.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x0068BD10": {
+    "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
+    "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e",
+    "signature": "void* fn_0068BD10(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00AA3000 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/Function2Type.cpp"
+  },
   "0x0068BD30": {
     "name": "Randomizer::vfunc_0_off_4",
     "class": "Randomizer",
