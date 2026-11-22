@@ -23974,3 +23974,29 @@ extern "C" __declspec(naked) void __cdecl fn_0086CA64(void) {
         _emit 0x00
     }
 }
+
+// [0x008665CC] sub_008665CC (20 bytes)
+extern "C" __declspec(naked) void __fastcall fn_008665CC(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x01
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x02
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x03
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    }
+}

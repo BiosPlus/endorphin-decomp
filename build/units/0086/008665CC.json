@@ -8,6 +8,7 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "skipped",
-  "skip_reason": "resplit: no ret/jmp/no-return call before 0x008665E0"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T04:17:09Z"
 }
