@@ -1,0 +1,28 @@
+{
+  "va": "0x0049B220",
+  "size": 50,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_43",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_43",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "void fn_0049B220(void* self, void* arg)",
+  "summary": "If *value_ptr is already set, keeps it true; otherwise sets it to the result of virtual slot 3 of arg-\u003efield_0x04 (passing arg).",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "value_ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:30Z"
+}

@@ -126,3 +126,22 @@ void fn_004B7AA0(void* self, uint8_t flag) {
     float* value = lift_field<float*>(self, 0x00);
     *value = (flag != 0) ? 1.0f : 0.0f;
 }
+
+// [0x0049B220] ExprParser::PrimitiveProxyType<bool>::vfunc_43 (50 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_43
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary If *value_ptr is already set, keeps it true; otherwise sets it to the result of virtual slot 3 of arg->field_0x04 (passing arg).
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 uint8_t* value_ptr
+// @field Unknown +0x04 void* field_0x04
+void fn_0049B220(void* self, void* arg) {
+    uint8_t* value = lift_field<uint8_t*>(self, 0x00);
+    if (*value != 0) {
+        *value = 1;
+        return;
+    }
+    void* sub = lift_field<void*>(arg, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    // Virtual slot 3 (vtable offset 0x0C); returns bool in al.
+    uint8_t r = reinterpret_cast<uint8_t(__thiscall*)(void*, void*)>(vtbl[3])(sub, arg);
+    *value = (r != 0) ? 1 : 0;
+}
