@@ -9570,3 +9570,362 @@ extern "C" __declspec(naked) void __fastcall fn_00750EA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x007527C0] sub_007527C0 (979 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BA260();
+extern "C" void ext_006D2400();
+extern "C" void ext_006D36F0();
+extern "C" void ext_006D37E0();
+extern "C" void ext_006D7970();
+extern "C" void ext_006D7ED0();
+extern "C" void ext_006D80A0();
+extern "C" void ext_006D80B0();
+extern "C" void ext_006D8580();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_006E7460();
+extern "C" void ext_006FDB00();
+extern "C" void ext_0070C0E0();
+extern "C" void ext_007515F0();
+extern "C" void ext_00754AF0();
+extern "C" void ext_0077FB40();
+extern "C" void ext_00782E70();
+extern "C" int mem_00925184;
+extern "C" int mem_0092521C;
+extern "C" int mem_009252C4;
+
+// Switch tables live in .text right after the function in the original binary (VA 0x752B94 / 0x752BB0).
+// Kept as C data here so the function body is exactly 979 bytes.
+extern "C" const unsigned char idxtbl_75[63] = {
+    0x00, 0x06, 0x01, 0x01, 0x01, 0x01, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06,
+    0x02, 0x02, 0x02, 0x02, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06,
+    0x03, 0x03, 0x03, 0x03,
+    0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06,
+    0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06,
+    0x04, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x05
+};
+extern "C" const unsigned int jmptbl_75[7] = {
+    0x0075289C, 0x0075286C, 0x0075287C, 0x0075288C, 0x007528BF, 0x007528C6, 0x007528DE
+};
+
+extern "C" __declspec(naked) void __fastcall fn_007527C0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push 8bfdd0h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0E8h
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor esi, esi
+        mov ebp, ecx
+        push 4D8h
+        mov dword ptr [esp+14h], esi
+        call ext_006A5C62
+        push 4D8h
+        mov ebx, eax
+        call ext_006A5C62
+        mov dword ptr [esp+24h], eax
+        mov ecx, 16h
+        xor eax, eax
+        lea edi, [esp+3Ch]
+        mov dword ptr [esp+34h], esi
+        mov dword ptr [esp+38h], esi
+        rep stosd
+        mov eax, dword ptr [ebp+0ACh]
+        mov dword ptr [esp+1Ch], esi
+        push eax
+        mov dword ptr [esp+34h], esi
+        call dword ptr [mem_00925184]
+        add esp, 0Ch
+        lea ecx, [esp+10h]
+        mov dword ptr [esp+18h], eax
+        push ebx
+        push ecx
+        mov ecx, ebp
+        call ext_007515F0
+        test al, al
+        je L75290B
+L75284D:
+        mov eax, dword ptr [esp+10h]
+        lea esi, [eax-8]
+        cmp esi, 3Eh
+        ja L7528DE
+        xor edx, edx
+        mov dl, byte ptr [esi + idxtbl_75]
+        jmp dword ptr [edx*4 + jmptbl_75]
+L75286C:
+        lea eax, [eax+eax*2-1Eh]
+        lea ecx, [esp+eax*8+2Ch]
+        push ecx
+        push 0AAE640h
+        jmp L7528D0
+L75287C:
+        lea edx, [eax+eax*2-3Ch]
+        lea eax, [esp+edx*8+34h]
+        push eax
+        push 0AAE640h
+        jmp L7528D0
+L75288C:
+        lea ecx, [eax+eax*2-5Ah]
+        lea edx, [esp+ecx*8+3Ch]
+        push edx
+        push 0AAE640h
+        jmp L7528D0
+L75289C:
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, dword ptr [esp+1Ch]
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+        jmp L7528DA
+L7528BF:
+        lea ecx, [esp+14h]
+        push ecx
+        jmp L7528CB
+L7528C6:
+        lea edx, [esp+28h]
+        push edx
+L7528CB:
+        push 0AA86A4h
+L7528D0:
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 0Ch
+L7528DA:
+        mov eax, dword ptr [esp+10h]
+L7528DE:
+        test eax, eax
+        je L752936
+        mov eax, dword ptr [ebp+0ACh]
+        push eax
+        call dword ptr [mem_00925184]
+        add esp, 4
+        lea ecx, [esp+10h]
+        mov dword ptr [esp+18h], eax
+        push ebx
+        push ecx
+        mov ecx, ebp
+        call ext_007515F0
+        test al, al
+        jne L75284D
+L75290B:
+        push ebx
+        call ext_006A5C5C
+        mov edx, dword ptr [esp+20h]
+        push edx
+        call ext_006A5C5C
+        add esp, 8
+        xor eax, eax
+        mov ecx, dword ptr [esp+0F8h]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+L752936:
+        mov eax, dword ptr [esp+18h]
+        mov ecx, dword ptr [ebp+0ACh]
+        push 0
+        push eax
+        push ecx
+        call dword ptr [mem_009252C4]
+        mov ecx, dword ptr [ebp+4]
+        add esp, 0Ch
+        call ext_006D36F0
+        fld qword ptr [esp+5Ch]
+        fcomp qword ptr [esp+74h]
+        mov esi, eax
+        mov dword ptr [esp+20h], esi
+        fnstsw ax
+        test ah, 40h
+        je L752993
+        fld qword ptr [esp+64h]
+        fcomp qword ptr [esp+7Ch]
+        fnstsw ax
+        test ah, 40h
+        je L752993
+        fld qword ptr [esp+6Ch]
+        fcomp qword ptr [esp+84h]
+        mov dword ptr [esp+18h], 3
+        fnstsw ax
+        test ah, 40h
+        jne L75299B
+L752993:
+        mov dword ptr [esp+18h], 4
+L75299B:
+        xor edi, edi
+        lea ecx, [esp+8Ch]
+        mov dword ptr [esp+24h], edi
+        call ext_0077FB40
+        mov edx, dword ptr [esp+18h]
+        mov ecx, esi
+        push edx
+        mov dword ptr [esp+104h], edi
+        call ext_006D7970
+        mov eax, dword ptr [esp+14h]
+        cmp eax, edi
+        jne L7529E4
+        mov eax, dword ptr [esp+1Ch]
+        push edi
+        push eax
+        lea ecx, [ebp+128h]
+        call ext_00782E70
+        cdq
+        xor eax, edx
+        sub eax, edx
+        mov dword ptr [esp+14h], eax
+        cmp eax, edi
+L7529E4:
+        jle L752AC1
+        cmp dword ptr [ebp+eax*4+13Ch], edi
+        jne L752A9B
+        push 0AAD40Ch
+        lea ecx, [esp+0B0h]
+        call ext_006B9D80
+        mov eax, dword ptr [ebp+0FCh]
+        mov byte ptr [esp+100h], 1
+        push eax
+        lea ecx, [eax+1]
+        mov dword ptr [ebp+0FCh], ecx
+        lea ecx, [esp+0B0h]
+        call ext_006BA260
+        lea ecx, [esp+0ACh]
+        call ext_006E7460
+        mov ecx, dword ptr [ebp+4]
+        push eax
+        call ext_006D37E0
+        mov edx, dword ptr [esp+14h]
+        mov dword ptr [ebp+edx*4+13Ch], eax
+        mov ecx, dword ptr [esp+14h]
+        lea eax, [esp+8Ch]
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_00754AF0
+        mov edx, dword ptr [esp+14h]
+        sub esp, 20h
+        mov ecx, 8
+        lea esi, [esp+0ACh]
+        mov edi, esp
+        rep movsd
+        mov ecx, dword ptr [ebp+edx*4+13Ch]
+        call ext_0070C0E0
+        lea ecx, [esp+0ACh]
+        mov byte ptr [esp+100h], 0
+        call ext_006B9D70
+        mov esi, dword ptr [esp+20h]
+L752A9B:
+        push 3
+        mov ecx, esi
+        call ext_006D8580
+        mov eax, dword ptr [esp+14h]
+        push 0
+        mov ecx, dword ptr [ebp+eax*4+13Ch]
+        push ecx
+        mov ecx, esi
+        call ext_006FDB00
+        test eax, eax
+        jl L752AC1
+        mov dword ptr [esp+24h], eax
+L752AC1:
+        mov ecx, esi
+        call ext_006DEEC0
+        mov ebp, dword ptr [esp+18h]
+        mov edi, eax
+        lea eax, [ebp-1]
+        test eax, eax
+        jl L752B25
+        lea edx, [eax+eax*2]
+        lea ebp, [eax+1]
+        lea esi, [esp+edx*8+3Ch]
+L752ADF:
+        mov eax, dword ptr [esi-0Ch]
+        mov ecx, dword ptr [esi-10h]
+        push eax
+        push ecx
+        push 0
+        mov ecx, edi
+        call ext_006D2400
+        mov edx, dword ptr [esi+4]
+        mov eax, dword ptr [esi]
+        push edx
+        push eax
+        push 1
+        mov ecx, edi
+        call ext_006D2400
+        fld qword ptr [esi-8]
+        sub esp, 8
+        mov ecx, edi
+        fchs
+        fstp qword ptr [esp]
+        push 2
+        call ext_006D2400
+        add edi, 20h
+        sub esi, 18h
+        dec ebp
+        jne L752ADF
+        mov esi, dword ptr [esp+20h]
+        mov ebp, dword ptr [esp+18h]
+L752B25:
+        mov ecx, dword ptr [esp+24h]
+        push -1
+        push -1
+        push ecx
+        mov ecx, esi
+        call ext_006D7ED0
+        xor edi, edi
+        test ebp, ebp
+        jle L752B4A
+L752B3B:
+        push -1
+        push edi
+        mov ecx, esi
+        call ext_006D80B0
+        inc edi
+        cmp edi, ebp
+        jl L752B3B
+L752B4A:
+        mov ecx, esi
+        call ext_006D80A0
+        mov edx, dword ptr [esp+1Ch]
+        push edx
+        call ext_006A5C5C
+        push ebx
+        call ext_006A5C5C
+        add esp, 8
+        lea ecx, [esp+8Ch]
+        mov dword ptr [esp+100h], 0FFFFFFFFh
+        call ext_006D80A0
+        mov ecx, dword ptr [esp+0F8h]
+        mov eax, esi
+        pop edi
+        mov dword ptr fs:[0], ecx
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
