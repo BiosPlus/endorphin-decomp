@@ -3152,6 +3152,13 @@
     "summary": "Returns 0 when +0xB0 is null; otherwise calls vtable slot 4 of the object at +0xB0+0x10 with argument 0 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x004972E0": {
+    "name": "NMData::Transition::vfunc_35",
+    "class": "NMData::Transition",
+    "signature": "uint32_t fn_004972E0(void* self, void* arg1, void* arg2)",
+    "summary": "dynamic_casts arg2 to the target type; if non-null calls that object's vtable slot 11 with (arg1, this) and returns its result, else returns 0.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004973A0": {
     "name": "NMData::Transition::getAndClearField_B4",
     "class": "NMData::Transition",
@@ -8314,6 +8321,13 @@
     "signature": "extern \"C\" uint32_t __stdcall fn_0067A690(const uint32_t* self, const uint32_t* other)",
     "summary": "Stdcall (ret 8) type-match test: returns 1 if the first dword of self equals the first dword of the argument (i.e. both share the same vtable), else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
+  "0x0067A6B0": {
+    "name": "ExprParser::BoolType::vfunc_33",
+    "class": "ExprParser::BoolType",
+    "signature": "void __thiscall fn_0067A6B0(void* self, void* out, uint32_t a2, uint32_t a3)",
+    "summary": "Calls virtual slot 29 on this with out (result discarded), then stores ext_00698A90(a2, a3) into *out.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x0067A6E0": {
     "name": "ExprParser::BoolType::vfunc_34",

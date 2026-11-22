@@ -1,0 +1,14 @@
+{
+  "va": "0x004972E0",
+  "size": 53,
+  "orig_symbol": "NMData::Transition::vfunc_35",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_35",
+  "class": "NMData::Transition",
+  "signature": "uint32_t fn_004972E0(void* self, void* arg1, void* arg2)",
+  "summary": "dynamic_casts arg2 to the target type; if non-null calls that object's vtable slot 11 with (arg1, this) and returns its result, else returns 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:26Z"
+}

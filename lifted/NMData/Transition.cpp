@@ -22,11 +22,16 @@ uint32_t fn_00496FE0(void* self) {
     using VFn = uint32_t (*)(void* obj);
     return reinterpret_cast<VFn>(vtbl[1])(obj);
 }
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern "C" void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Type descriptors referenced by address (original: push 0xA303F4 / push 0xA30418).
+extern "C" int mem_00A303F4;
+extern "C" int mem_00A30418;
 
-// [0x00499AF0] NMData::Transition::vfunc_6_off_10 (35 bytes)
-// @name NMData::Transition::vfunc_6_off_10
-// @class NMData::Transition
-// @summary Constructs a std::string in the caller-provided return slot from the C string referenced by mem_00A9F354 and returns that slot.
+extern "C" void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Type descriptors referenced by address (original: push 0xA303F4 / push 0xA30418).
+extern "C" int mem_00A303F4;
+extern "C" int mem_00A30418;
 void* fn_00499AF0(void* out) {
     const char* text = reinterpret_cast<const char*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00A9F354)));
     new (out) std::string(text);
@@ -48,4 +53,18 @@ uint32_t fn_00497000(void* self) {
     void** vtbl = lift_field<void**>(obj, 0);
     using VFn = uint32_t (*)(void* obj, uint32_t arg);
     return reinterpret_cast<VFn>(vtbl[4])(obj, 0);
+}
+
+// [0x004972E0] NMData::Transition::vfunc_35 (53 bytes)
+// @name NMData::Transition::vfunc_35
+// @class NMData::Transition
+// @summary dynamic_casts arg2 to the target type; if non-null calls that object's vtable slot 11 with (arg1, this) and returns its result, else returns 0.
+uint32_t fn_004972E0(void* self, void* arg1, void* arg2) {
+    void* target = ext_006A6E9E(arg2, 0, &mem_00A303F4, &mem_00A30418, 0);
+    if (target == nullptr) {
+        return 0;
+    }
+    void** vtbl = lift_field<void**>(target, 0);
+    using VFn = uint32_t (*)(void* obj, void* a, void* b);
+    return reinterpret_cast<VFn>(vtbl[11])(target, arg1, self);
 }
