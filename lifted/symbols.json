@@ -5146,10 +5146,10 @@
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x0050F190": {
-    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e::vfunc_41",
+    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, randomizeNow\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e",
     "signature": "void fn_0050F190(void* proxy, void* unused)",
-    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+    "summary": "Loads the target object pointer from the proxy's first dword and forwards it to the shared method-invoke helper (randomizeNow path); pops 8 bytes of stack args.",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
   "0x0050F990": {
