@@ -122,6 +122,13 @@
     "summary": "Returns the address of the static string constant \",bj\" (mem_0092CAEC).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00416B80": {
+    "name": "EventViewPrefs::vfunc_0",
+    "class": "EventViewPrefs",
+    "signature": "void* fn_00416B80(void* self)",
+    "summary": "Virtual accessor that ignores its receiver and returns the address of the global at mem_0092CB80.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",

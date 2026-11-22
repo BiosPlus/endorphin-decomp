@@ -1,0 +1,14 @@
+{
+  "va": "0x00416B80",
+  "size": 6,
+  "orig_symbol": "EventViewPrefs::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "EventViewPrefs::vfunc_0",
+  "class": "EventViewPrefs",
+  "signature": "void* fn_00416B80(void* self)",
+  "summary": "Virtual accessor that ignores its receiver and returns the address of the global at mem_0092CB80.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:48:10Z"
+}

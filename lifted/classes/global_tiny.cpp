@@ -8,6 +8,7 @@ extern "C" int mem_0092AD84;
 extern "C" int mem_0092B9AC;
 extern "C" int mem_0092C580;
 extern "C" int mem_0092C8E4;
+extern "C" int mem_0092CB80;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -83,4 +84,13 @@ extern "C" void* __fastcall fn_004153C0(void* self) {
 const int* fn_00416700(void* self) {
     (void)self;
     return &mem_0092C8E4;
+}
+
+// [0x00416B80] EventViewPrefs::vfunc_0 (6 bytes)
+// @name EventViewPrefs::vfunc_0
+// @class EventViewPrefs
+// @summary Virtual accessor that ignores its receiver and returns the address of the global at mem_0092CB80.
+void* fn_00416B80(void* self) {
+    (void)self;
+    return &mem_0092CB80;
 }
