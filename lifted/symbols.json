@@ -9559,6 +9559,13 @@
     "summary": "Forwards (a, b) to virtual slot +0xAC of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006A1C10": {
+    "name": "ExprParser::Operators::Sqrt::vfunc_3",
+    "class": "ExprParser::Operators::Sqrt",
+    "signature": "uint32_t fn_006A1C10(void* self)",
+    "summary": "Stdcall (ret 4, ECX unused): evaluates the operand at self+0x04 via its vslot 1, takes the square root (computed in double, rounded back to float), and passes the result to the operand's vslot 7 along with self; returns that slot's eax.",
+    "lifted_path": "lifted/ExprParser/Operators/Sqrt.cpp"
+  },
   "0x006A1CD0": {
     "name": "ExprParser::Operators::Abs::vfunc_3",
     "class": "ExprParser::Operators::Abs",
