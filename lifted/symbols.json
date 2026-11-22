@@ -1574,6 +1574,13 @@
     "summary": "Stores two 32-bit stack arguments into this-\u003efield_0x28 and this-\u003efield_0x2c (thiscall, callee pops 8).",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052F3A0": {
+    "name": "Primitives::Null::vfunc_25",
+    "class": "Primitives::Null",
+    "signature": "void fn_0052F3A0(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+    "summary": "Resets Null state: stores stack arg 3 at +0x08, clears +0x20 (DWORD) and +0x04 (BYTE).",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0052F5F0": {
     "name": "Primitives::Animation::vfunc_19",
     "class": "Primitives::Animation",

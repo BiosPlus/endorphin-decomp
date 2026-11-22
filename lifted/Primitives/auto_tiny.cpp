@@ -222,3 +222,20 @@ void fn_0052EFA0(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0x28) = a0;
     lift_field<uint32_t>(self, 0x2C) = a1;
 }
+
+// [0x0052F3A0] Primitives::Null::vfunc_25 (18 bytes)
+// @name Primitives::Null::vfunc_25
+// @class Primitives::Null
+// @summary Resets Null state: stores stack arg 3 at +0x08, clears +0x20 (DWORD) and +0x04 (BYTE).
+// @field Primitives::Null +0x04 BYTE field_0x04
+// @field Primitives::Null +0x08 DWORD field_0x08
+// @field Primitives::Null +0x20 DWORD field_0x20
+// thiscall: `this` in ECX, three stack args popped by `ret 0xc`; only the third is read.
+void fn_0052F3A0(void* self, DWORD arg1, DWORD arg2, DWORD arg3) {
+    (void)arg1;
+    (void)arg2;
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x08) = arg3;
+    *reinterpret_cast<DWORD*>(base + 0x20) = 0;
+    *reinterpret_cast<BYTE*>(base + 0x04) = 0;
+}

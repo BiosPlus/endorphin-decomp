@@ -1,0 +1,34 @@
+{
+  "va": "0x0052F3A0",
+  "size": 18,
+  "orig_symbol": "Primitives::Null::vfunc_25",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Null::vfunc_25",
+  "class": "Primitives::Null",
+  "signature": "void fn_0052F3A0(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Resets Null state: stores stack arg 3 at +0x08, clears +0x20 (DWORD) and +0x04 (BYTE).",
+  "fields": [
+    {
+      "class": "Primitives::Null",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Primitives::Null",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Primitives::Null",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:35Z"
+}
