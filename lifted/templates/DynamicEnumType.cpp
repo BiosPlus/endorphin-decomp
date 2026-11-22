@@ -8,12 +8,18 @@ extern "C" void ext_004D4190(void* inner);
 extern "C" void ext_00515830(void* inner);
 extern "C" void ext_00515840(void* inner);
 extern "C" void ext_005C3F10(void* inner);
+// Type descriptors used as RTTI source / target for the dynamic cast.
+extern "C" const char mem_00A2E2F8[];
+extern "C" const char mem_00A346B0[];
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk to MSVCR80!__RTDynamicCast).
+extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType,
+                              const void* targetType, int isReference);
 
-// [0x00495020] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_26 (14 bytes)
-// @name ExprParser::DynamicEnumType<RigManager>::vfunc_26
-// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
-// @summary Loads the pointer stored at offset 0 of self and forwards it to the helper at 0x00494830.
-// @field ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const> +0x00 void* field_0x00
+extern "C" const char mem_00A2E2F8[];
+extern "C" const char mem_00A346B0[];
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk to MSVCR80!__RTDynamicCast).
+extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType,
+                              const void* targetType, int isReference);
 void fn_00495020(void* self) {
     void* inner = lift_field<void*>(self, 0x00);
     ext_00494830(inner);
@@ -71,4 +77,13 @@ void fn_00515DA0(void* self) {
 void fn_005C85C0(void* self) {
     void* inner = lift_field<void*>(self, 0x00);
     ext_005C3F10(inner);
+}
+
+// [0x00494810] ExprParser::DynamicEnumType<RigManager, ...>::vfunc_16 (30 bytes)
+// @name ExprParser::DynamicEnumType<RigManager>::vfunc_16
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Dynamic-cast self (RTTI src 0xA2E2F8 -> dst 0xA346B0, no vfptr offset) and return the resulting pointer.
+// No object fields are accessed directly.
+void* fn_00494810(void* self) {
+    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A346B0, 0);
 }

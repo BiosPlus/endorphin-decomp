@@ -3090,6 +3090,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0093EB28 and tail-calls base destructor sub_0065C660.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00494810": {
+    "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_16",
+    "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
+    "signature": "void* fn_00494810(void* self)",
+    "summary": "Dynamic-cast self (RTTI src 0xA2E2F8 -\u003e dst 0xA346B0, no vfptr offset) and return the resulting pointer.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00495020": {
     "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26",
     "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
