@@ -8,6 +8,7 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "skipped",
-  "skip_reason": "resplit: no ret/jmp/no-return call before 0x007B7070"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-22T04:18:20Z"
 }
