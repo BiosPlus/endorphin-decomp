@@ -1,0 +1,22 @@
+{
+  "va": "0x006A17D0",
+  "size": 106,
+  "orig_symbol": "ExprParser::Operators::Acos::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Acos.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Acos.cpp",
+  "name": "ExprParser::Operators::Acos::vfunc_3",
+  "class": "ExprParser::Operators::Acos",
+  "signature": "extern \"C\" float __stdcall fn_006A17D0(void* arg)",
+  "summary": "Evaluates the operand's vfunc_1, clamps it to [-1, 1], takes acos of the clamped value and passes it to the operand's vfunc_7 along with the argument.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::UnaryOperator",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (operand object pointer; class of the object at +0x04 is not",
+      "name": "confirmed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:16:08Z"
+}

@@ -10462,6 +10462,13 @@
     "summary": "Evaluates the operand child via its vfunc_1, then calls the child's vfunc_7 with the negated value.",
     "lifted_path": "lifted/ExprParser/Operators/UnaryMinus.cpp"
   },
+  "0x006A17D0": {
+    "name": "ExprParser::Operators::Acos::vfunc_3",
+    "class": "ExprParser::Operators::Acos",
+    "signature": "extern \"C\" float __stdcall fn_006A17D0(void* arg)",
+    "summary": "Evaluates the operand's vfunc_1, clamps it to [-1, 1], takes acos of the clamped value and passes it to the operand's vfunc_7 along with the argument.",
+    "lifted_path": "lifted/ExprParser/Operators/Acos.cpp"
+  },
   "0x006A1840": {
     "name": "ExprParser::Operators::Add::vfunc_3",
     "class": "ExprParser::Operators::Add",
