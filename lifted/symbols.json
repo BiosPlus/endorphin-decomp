@@ -735,6 +735,13 @@
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x44 (slot 17 on x86). The original tail-jumps to that address; this lift returns it so the caller can perform the call.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x0062B6E0": {
+    "name": "Sensors::AxisSensor::vfunc_16",
+    "class": "Sensors::AxisSensor",
+    "signature": "float fn_0062B6E0(void* self, int32_t index)",
+    "summary": "Returns the float at element `index` of the indexed float array at this+0x30 (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/Sensors/auto_tiny.cpp"
+  },
   "0x0064F8E0": {
     "name": "VirtualSlot23Thunk",
     "class": "VTable",

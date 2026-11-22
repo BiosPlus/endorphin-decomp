@@ -1,0 +1,22 @@
+{
+  "va": "0x0062B6E0",
+  "size": 11,
+  "orig_symbol": "Sensors::AxisSensor::vfunc_16",
+  "src_path": "src/Sensors/auto_tiny.cpp",
+  "lifted_path": "lifted/Sensors/auto_tiny.cpp",
+  "name": "Sensors::AxisSensor::vfunc_16",
+  "class": "Sensors::AxisSensor",
+  "signature": "float fn_0062B6E0(void* self, int32_t index)",
+  "summary": "Returns the float at element `index` of the indexed float array at this+0x30 (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Sensors::AxisSensor",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:12:13Z"
+}
