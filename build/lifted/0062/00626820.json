@@ -1,0 +1,14 @@
+{
+  "va": "0x00626820",
+  "size": 34,
+  "orig_symbol": "NMData::EffectorSkeletalData::vfunc_8",
+  "src_path": "src/NMData/EffectorSkeletalData.cpp",
+  "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp",
+  "name": "NMData::EffectorSkeletalData::vfunc_8",
+  "class": "NMData::EffectorSkeletalData",
+  "signature": "void* fn_00626820(void* self, void* dst)",
+  "summary": "Constructs a std::string from the literal at 0x0097778C in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:45Z"
+}
