@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct NMData_SkeletalCalibrationVariables_Fields {
     // +0x10  float                    field_0x10  (evidence: 0x00622320)
+    // +0x14  float                    field_0x14  (evidence: 0x00622330)
 };
 } // namespace lifted_layout
