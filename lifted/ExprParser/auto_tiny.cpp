@@ -617,3 +617,23 @@ void fn_0066B180(void* result, void* self) {
     // mov ecx, [esp+4] ; mov [ecx], al: store result through first argument
     *static_cast<uint8_t*>(result) = value;
 }
+
+// [0x0066BCC0] ExprParser::VPtrProxyType::vfunc_46 (30 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_46
+// @class ExprParser::VPtrProxyType
+// @summary Auto-lifted identical-shape clone of 0x0066BBE0 (ExprParser::VPtrProxyType::vfunc_9).
+// @field ExprParser::VPtrProxyType +0x0 void* field_0x00
+uint32_t fn_0066BCC0(void* self, void* ctx) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg0, void* arg1);
+
+    // p = this->field_0x00
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[9] (offset 0x24)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0xB8));
+
+    // Stack args: p first, then ctx. Result stays in eax.
+    return target(obj, p, ctx);
+}

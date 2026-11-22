@@ -1,0 +1,14 @@
+{
+  "va": "0x005B80F0",
+  "size": 58,
+  "orig_symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void* fn_005B80F0(void* self, void* const* arg2, void* arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:39:28Z"
+}

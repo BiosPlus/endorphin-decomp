@@ -39,6 +39,9 @@ extern "C" void ext_00672110(void* self, void* arg);    // sub_00672110 (52B)
 void* fn_006922D0(void* self) {
     return ext_006A6E9E(self, 0, &mem_00A2E2F8, &mem_00A398D0, 0);
 }
+extern "C" void* ext_005B70E0(void* self, void* arg);  // sub_005B6C80 (40B)
+extern "C" void* ext_005C39F0(void* self, void* arg);  // sub_005B6C80 (40B)
+extern "C" void* ext_005C3CB0(void* self, void* arg);  // sub_005B6C80 (40B)
 
 // [0x005B7AE0] ExprParser::FunctionType<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getVelocityAtPoint(class NM::Vector3 const &), 0}>::vfunc_48 (58 bytes)
 // @name ExprParser::FunctionType<NMData::MetaBodyData,getVelocityAtPoint>::vfunc_48
@@ -52,6 +55,51 @@ void* fn_005B7AE0(void* self, void* const* arg2, void* arg3) {
     auto vcall = reinterpret_cast<void* (*)(void*, void*)>(vtbl[5]);          // [edx+0x14]
     void* r1 = vcall(sub, arg3);
     void* r2 = ext_005B6C80(obj, r1);
+    ext_00672110(self, r2);
+    return self;
+}
+
+// [0x005B80F0] ExprParser::FunctionType<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const &), 0}>::vfunc_48 (58 bytes)
+// @name ExprParser::FunctionType<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const &), 0}>::vfunc_48
+// @class ExprParser::FunctionType<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType<NMData::MetaBodyData,getVelocityAtPoint>::vfunc_48).
+void* fn_005B80F0(void* self, void* const* arg2, void* arg3) {
+    void* obj = *arg2;                                                        // esi = [A2]
+    void* sub = *reinterpret_cast<void* const*>(static_cast<char*>(arg3) + 4); // ecx = [A3+4]
+    void** vtbl = *reinterpret_cast<void***>(sub);                            // edx = [ecx]
+    auto vcall = reinterpret_cast<void* (*)(void*, void*)>(vtbl[5]);          // [edx+0x14]
+    void* r1 = vcall(sub, arg3);
+    void* r2 = ext_005B70E0(obj, r1);
+    ext_00672110(self, r2);
+    return self;
+}
+
+// [0x005C5E10] ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const &), 0}>::vfunc_48 (58 bytes)
+// @name ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const &), 0}>::vfunc_48
+// @class ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType<NMData::MetaBodyData,getVelocityAtPoint>::vfunc_48).
+void* fn_005C5E10(void* self, void* const* arg2, void* arg3) {
+    void* obj = *arg2;                                                        // esi = [A2]
+    void* sub = *reinterpret_cast<void* const*>(static_cast<char*>(arg3) + 4); // ecx = [A3+4]
+    void** vtbl = *reinterpret_cast<void***>(sub);                            // edx = [ecx]
+    auto vcall = reinterpret_cast<void* (*)(void*, void*)>(vtbl[5]);          // [edx+0x14]
+    void* r1 = vcall(sub, arg3);
+    void* r2 = ext_005C39F0(obj, r1);
+    ext_00672110(self, r2);
+    return self;
+}
+
+// [0x005C5EA0] ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getNearestGeomPoint(class NM::Vector3 const &), 0}>::vfunc_48 (58 bytes)
+// @name ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getNearestGeomPoint(class NM::Vector3 const &), 0}>::vfunc_48
+// @class ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getNearestGeomPoint(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType<NMData::MetaBodyData,getVelocityAtPoint>::vfunc_48).
+void* fn_005C5EA0(void* self, void* const* arg2, void* arg3) {
+    void* obj = *arg2;                                                        // esi = [A2]
+    void* sub = *reinterpret_cast<void* const*>(static_cast<char*>(arg3) + 4); // ecx = [A3+4]
+    void** vtbl = *reinterpret_cast<void***>(sub);                            // edx = [ecx]
+    auto vcall = reinterpret_cast<void* (*)(void*, void*)>(vtbl[5]);          // [edx+0x14]
+    void* r1 = vcall(sub, arg3);
+    void* r2 = ext_005C3CB0(obj, r1);
     ext_00672110(self, r2);
     return self;
 }
