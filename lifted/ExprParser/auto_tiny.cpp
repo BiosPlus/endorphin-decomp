@@ -243,3 +243,12 @@ extern "C" void* __fastcall fn_0069B580(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0066AE50] ExprParser::IntType::vfunc_3 (14 bytes)
+// @name ExprParser::IntType::vfunc_3
+// @class ExprParser::IntType
+// @summary Returns 1 if the 32-bit integer stored at the first dword of the argument object is nonzero, else 0.
+// @field ExprParser::IntType +0x00 int32_t field_0x00
+int fn_0066AE50(const int32_t* obj) {
+    return (obj[0] != 0) ? 1 : 0;
+}
