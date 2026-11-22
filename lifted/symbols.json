@@ -6953,6 +6953,13 @@
     "summary": "Pure jump thunk forwarding to sub_00480920.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005EC2A0": {
+    "name": "NMData::RPROJointData::vfunc_63",
+    "class": "NMData::RPROJointData",
+    "signature": "void fn_005EC2A0(void* self, int32_t kind, int32_t arg2)",
+    "summary": "Returns early if kind equals the stored field; otherwise maps kind 5 to 3 and tail-forwards to NMData::FixedPathJointData::vfunc_63 (ext_005EB920).",
+    "lifted_path": "lifted/NMData/RPROJointData.cpp"
+  },
   "0x005EF8D0": {
     "name": "NMData::HingeData::vfunc_1_off_C",
     "class": "NMData::HingeData",
