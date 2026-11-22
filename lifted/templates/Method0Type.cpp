@@ -687,3 +687,14 @@ unsigned char fn_0068BFD0(void* arg) {
     ext_0068BC50(inner);
     return 0;
 }
+
+// [0x0068BFC0] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_2 (16 bytes)
+// @name ExprParser::Method0Type<Randomizer>::applySeed::vfunc_2
+// @class ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>
+// @summary Stdcall (ret 4) thunk: loads the pointer stored in the proxy's first dword, passes it to ext_0068BC50, and returns 0.
+// @field ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}> +0x00 void* field_0x00
+extern "C" int __stdcall fn_0068BFC0(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_0068BC50(target);
+    return 0;
+}
