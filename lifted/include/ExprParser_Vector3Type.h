@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::Vector3Type:
 namespace lifted_layout {
 struct ExprParser_Vector3Type_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0066D0C0)
+    // +0x0   void*                    vtable  (evidence: 0x0066B530, 0x0066D0C0)
 };
 } // namespace lifted_layout

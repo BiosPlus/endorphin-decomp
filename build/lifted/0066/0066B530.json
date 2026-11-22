@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B530",
+  "size": 41,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_0",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_0",
+  "class": "ExprParser::Vector3Type",
+  "signature": "void* fn_0066B530(void* self, void* a1, void* a2)",
+  "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:53Z"
+}

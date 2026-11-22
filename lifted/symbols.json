@@ -8238,6 +8238,13 @@
     "summary": "Sets *flag to 1 if it is already nonzero or if sub-\u003evfn3(other) is nonzero (sub = other-\u003efield_0x04); otherwise sets *flag to 0.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0066B530": {
+    "name": "ExprParser::Vector3Type::vfunc_0",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void* fn_0066B530(void* self, void* a1, void* a2)",
+    "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
     "class": "ExprParser::ExtROType",
