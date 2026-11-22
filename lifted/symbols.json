@@ -895,6 +895,13 @@
     "summary": "Stores an int value through the proxy's value pointer (stdcall, callee pops 8 bytes).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049FAB0": {
+    "name": "NMData::State::vfunc_17_off_8",
+    "class": "NMData::State",
+    "signature": "void* fn_0049FAB0(void* self)",
+    "summary": "Returns this+8 for a non-null-adjusted this, or null when this == 8 (this-8 == 0).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0049FB20": {
     "name": "NMData::State::vfunc_0_off_10",
     "class": "NMData::State",

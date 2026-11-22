@@ -1,0 +1,14 @@
+{
+  "va": "0x0049FAB0",
+  "size": 14,
+  "orig_symbol": "NMData::State::vfunc_17_off_8",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::State::vfunc_17_off_8",
+  "class": "NMData::State",
+  "signature": "void* fn_0049FAB0(void* self)",
+  "summary": "Returns this+8 for a non-null-adjusted this, or null when this == 8 (this-8 == 0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:19Z"
+}

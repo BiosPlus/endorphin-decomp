@@ -1685,3 +1685,15 @@ DWORD NMData_GraphicData_vfunc_0_off_C(const void* self) {
 void fn_00587D40(void* self) {
     (void)NMData_GraphicData_vfunc_0_off_C(self);
 }
+
+// [0x0049FAB0] NMData::State::vfunc_17_off_8 (14 bytes)
+// @name NMData::State::vfunc_17_off_8
+// @class NMData::State
+// @summary Returns this+8 for a non-null-adjusted this, or null when this == 8 (this-8 == 0).
+void* fn_0049FAB0(void* self) {
+    const uintptr_t p = reinterpret_cast<uintptr_t>(self);
+    if (p - 8 == 0) {
+        return nullptr;
+    }
+    return reinterpret_cast<void*>(p + 8);
+}
