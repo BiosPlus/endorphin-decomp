@@ -27706,3 +27706,28 @@ extern "C" __declspec(naked) void __fastcall fn_007B5158(void* self) {
         add al, byte ptr [edx]
     }
 }
+
+// [0x007B50EC] sub_007B50EC (36 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007B50EC(void* self) {
+    __asm {
+        add byte ptr [esp + eax], al
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add dword ptr [edx], eax
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x4
+        add al, 0x3
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    }
+}
