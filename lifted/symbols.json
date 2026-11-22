@@ -9778,6 +9778,13 @@
     "summary": "Forwarding tail-call: invokes virtual slot 47 (+0xBC) on field_0x04 of the held pointer, passing the held pointer as the argument.",
     "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
   },
+  "0x0066BE20": {
+    "name": "ExprParser::SubComponentType::vfunc_3",
+    "class": "ExprParser::SubComponentType",
+    "signature": "bool fn_0066BE20(void* self, void* arg)",
+    "summary": "Calls vtable slot 0 to fetch a sub-object, queries its vtable slot 3 for a bool, then releases the temporary via vtable slot 30 and returns the bool.",
+    "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
+  },
   "0x0066CBA0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3\u003e::vfunc_16",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BE20",
+  "size": 110,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_3",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_3",
+  "class": "ExprParser::SubComponentType",
+  "signature": "bool fn_0066BE20(void* self, void* arg)",
+  "summary": "Calls vtable slot 0 to fetch a sub-object, queries its vtable slot 3 for a bool, then releases the temporary via vtable slot 30 and returns the bool.",
+  "fields": [
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:51Z"
+}
