@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C120",
+  "size": 26,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_41",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_41",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void fn_0049C120(void* self, void* ctx)",
+  "summary": "Stores into *value_ptr the int32 returned by ctx's child virtual slot 2 (ctx-\u003efield_0x04-\u003evfunc_2(ctx)).",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:37:56Z"
+}

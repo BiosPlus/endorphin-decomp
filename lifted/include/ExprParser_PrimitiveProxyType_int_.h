@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::PrimitiveProxyType<int>:
 namespace lifted_layout {
 struct ExprParser_PrimitiveProxyType_int__Fields {
-    // +0x0   const int32_t*           value_ptr  (evidence: 0x0049AF20, 0x0049AF30, 0x0049C0C0, 0x0049C0D0, 0x0049C140)
+    // +0x0   const int32_t*           value_ptr  (evidence: 0x0049AF20, 0x0049AF30, 0x0049C0C0, 0x0049C0D0, 0x0049C120, 0x0049C140)
 };
 } // namespace lifted_layout

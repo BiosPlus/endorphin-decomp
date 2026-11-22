@@ -437,28 +437,6 @@ void fn_0049B2F0(void* self, void* src) {
     lift_field<uint8_t*>(self, 0)[0] = value ? 1 : 0;
 }
 
-// [0x0049C120] ExprParser::PrimitiveProxyType<int>::vfunc_41 (26 bytes)
-// @name ExprParser::PrimitiveProxyType<int>::vfunc_41
-// @class ExprParser::PrimitiveProxyType<int>
-// @summary Stores into *value_ptr the int32 returned by ctx's child virtual slot 2 (ctx->field_0x04->vfunc_2(ctx)).
-// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
-void fn_0049C120(void* self, void* ctx) {
-    using VFn = int32_t(__thiscall*)(void* self, void* arg);
-
-    // child = ctx->+0x04 (class of ctx not identified)
-    void* child = lift_field<void*>(ctx, 0x04);
-    // vtbl = child->vptr; target = vtbl[2] (offset 0x08)
-    void** vtbl = lift_field<void**>(child, 0x00);
-    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x08));
-
-    // Call first; value_ptr is read only after the call, as in the original.
-    int32_t value = target(child, ctx);
-
-    // *value_ptr = value (the field is declared const in RTTI, but the original writes through it)
-    int32_t* dst = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
-    *dst = value;
-}
-
 // [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
 // @name ExprParser::BoolType::vfunc_41
 // @class ExprParser::BoolType
@@ -616,4 +594,26 @@ uint32_t fn_0066BC00(void* self, void* ctx) {
 
     // Stack args: p first, then ctx. Result stays in eax.
     return target(obj, p, ctx);
+}
+
+// [0x0049C120] ExprParser::PrimitiveProxyType<int>::vfunc_41 (26 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_41
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Stores into *value_ptr the int32 returned by ctx's child virtual slot 2 (ctx->field_0x04->vfunc_2(ctx)).
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+void fn_0049C120(void* self, void* ctx) {
+    using VFn = int32_t(__thiscall*)(void* self, void* arg);
+
+    // child = ctx->+0x04 (class of ctx not identified)
+    void* child = lift_field<void*>(ctx, 0x04);
+    // vtbl = child->vptr; target = vtbl[2] (offset 0x08)
+    void** vtbl = lift_field<void**>(child, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x08));
+
+    // Call first; value_ptr is read only after the call, as in the original.
+    int32_t value = target(child, ctx);
+
+    // *value_ptr = value (the field is declared const in RTTI, but the original writes through it)
+    int32_t* dst = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
+    *dst = value;
 }
