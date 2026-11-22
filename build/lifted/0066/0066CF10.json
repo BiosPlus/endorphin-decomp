@@ -1,0 +1,14 @@
+{
+  "va": "0x0066CF10",
+  "size": 94,
+  "orig_symbol": "ExprParser::IntType::vfunc_18",
+  "src_path": "src/ExprParser/IntType.cpp",
+  "lifted_path": "lifted/ExprParser/IntType.cpp",
+  "name": "ExprParser::IntType::vfunc_18",
+  "class": "ExprParser::IntType",
+  "signature": "void* __thiscall fn_0066CF10(void* /*self*/, uint32_t /*unused_arg*/)",
+  "summary": "Lazily initializes and returns the static default value object at 0x00B59658.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-22T08:18:30Z"
+}
