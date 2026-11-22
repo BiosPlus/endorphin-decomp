@@ -1,0 +1,40 @@
+{
+  "va": "0x0049FAC0",
+  "size": 42,
+  "orig_symbol": "NMData::State::vfunc_2_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_2_off_8",
+  "class": "NMData::State",
+  "signature": "void fn_0049FAC0(void* self, void* out)",
+  "summary": "Copies the four dwords at this+0xE0..0xEC into the caller-supplied 16-byte output buffer.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:40:38Z"
+}

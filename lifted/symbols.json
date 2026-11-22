@@ -3423,6 +3423,13 @@
     "summary": "Returns this+8 for a non-null-adjusted this, or null when this == 8 (this-8 == 0).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049FAC0": {
+    "name": "NMData::State::vfunc_2_off_8",
+    "class": "NMData::State",
+    "signature": "void fn_0049FAC0(void* self, void* out)",
+    "summary": "Copies the four dwords at this+0xE0..0xEC into the caller-supplied 16-byte output buffer.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049FB20": {
     "name": "NMData::State::vfunc_0_off_10",
     "class": "NMData::State",
