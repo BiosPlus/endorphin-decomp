@@ -27358,3 +27358,49 @@ extern "C" __declspec(naked) void __cdecl fn_007B501C() {
         add al, byte ptr [edx]
     }
 }
+
+// [0x007B6F5C] sub_007B6F5C (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007B6F5C(void* self) {
+    __asm {
+        add byte ptr [ecx], al
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add byte ptr [ecx], al
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add byte ptr [ecx], al
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add byte ptr [ecx], al
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add byte ptr [ecx], al
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+        add dword ptr [ecx], eax
+    }
+}
