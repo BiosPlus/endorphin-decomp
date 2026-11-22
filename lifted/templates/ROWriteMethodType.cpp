@@ -88,9 +88,12 @@ void* fn_0062A0F0(void* self) {
 // Lifted from 0x00603420: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
 // Lifted from 0x005F35A0: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
 // Lifted from 0x00603420: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk to MSVCR80!__RTDynamicCast, cdecl, 5 args).
+// Signature: void* __RTDynamicCast(void* inptr, long VfDelta, void* SrcType, void* TargetType, int isReference)
+extern "C" int mem_00A947F0;
 
-// [0x0062A560] ExprParser::ROWriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorIntegral::insert)
+// Signature: void* __RTDynamicCast(void* inptr, long VfDelta, void* SrcType, void* TargetType, int isReference)
+extern "C" int mem_00A947F0;
 // @class ExprParser::ROWriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>
 // @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
 // No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
@@ -106,16 +109,6 @@ void* fn_0062A560(void* self) {
 // No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
 // MSVC type descriptors (0x00A2E2F8, 0x00A947D0), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
 void* fn_00630CE0(void* self) {
-    return self;
-}
-
-// [0x0063CA50] ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorWithMemory::setIntegralGradient)
-// @class ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
-// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
-// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
-// MSVC type descriptors (0x00A2E2F8, 0x00A947F0 path), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
-void* fn_0063CA50(void* self) {
     return self;
 }
 
@@ -184,4 +177,14 @@ void* fn_005F35A0(void* self) {
 // MSVC type descriptors (0x00A2E2F8, 0x00A93714), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
 void* fn_00603420(void* self) {
     return self;
+}
+
+// [0x0063CA50] ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorWithMemory::setIntegralGradient)
+// @class ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
+// @summary RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A947F0, source mem_00A2E2F8) and returns the result or NULL.
+// No object fields are accessed directly.
+void* fn_0063CA50(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A947F0), 0);
 }

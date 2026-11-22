@@ -7634,6 +7634,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0063CA50": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorWithMemory::setIntegralGradient)",
+    "class": "ExprParser::ROWriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+    "signature": "void* fn_0063CA50(void* self)",
+    "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A947F0, source mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0063CB70": {
     "name": "ExprParser::WriteMethodType\u003cEffectorWithMemory,float\u003e::setIntegralGradient_vfunc41",
     "class": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",

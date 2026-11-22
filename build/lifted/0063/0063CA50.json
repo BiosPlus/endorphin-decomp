@@ -1,0 +1,14 @@
+{
+  "va": "0x0063CA50",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_16",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorWithMemory::setIntegralGradient)",
+  "class": "ExprParser::ROWriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+  "signature": "void* fn_0063CA50(void* self)",
+  "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A947F0, source mem_00A2E2F8) and returns the result or NULL.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:40:12Z"
+}
