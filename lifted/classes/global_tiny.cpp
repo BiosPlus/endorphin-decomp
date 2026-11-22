@@ -22,6 +22,7 @@ extern "C" int mem_00933000;
 extern "C" int mem_009335E4;
 extern "C" int mem_00933A38;
 extern "C" int mem_009337B4;
+extern "C" int mem_00933C7C;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -237,4 +238,13 @@ void* fn_00449C80(void* self) {
 void* fn_00449830(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_009337B4);
+}
+
+// [0x00449FE0] RenderOptionsPropertyPage::vfunc_0 (6 bytes)
+// @name RenderOptionsPropertyPage::vfunc_0
+// @class RenderOptionsPropertyPage
+// @summary Returns the address of the static global at 0x00933C7C; ignores this.
+extern "C" int* __fastcall fn_00449FE0(void* self) {
+    (void)self;
+    return &mem_00933C7C;
 }

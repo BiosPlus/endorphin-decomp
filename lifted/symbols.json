@@ -337,6 +337,13 @@
     "summary": "Returns the address of the global data slot mem_00933A38 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00449FE0": {
+    "name": "RenderOptionsPropertyPage::vfunc_0",
+    "class": "RenderOptionsPropertyPage",
+    "signature": "extern \"C\" int* __fastcall fn_00449FE0(void* self)",
+    "summary": "Returns the address of the static global at 0x00933C7C; ignores this.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
