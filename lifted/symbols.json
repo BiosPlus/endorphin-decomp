@@ -8028,6 +8028,13 @@
     "summary": "Forwarding tail-call: invokes virtual slot 47 (+0xBC) on field_0x04 of the held pointer, passing the held pointer as the argument.",
     "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
   },
+  "0x0066CBA0": {
+    "name": "ExprParser::Method0Type\u003cNM::Vector3\u003e::vfunc_16",
+    "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+    "signature": "void* fn_0066CBA0(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A85538 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0066CE20": {
     "name": "ExprParser::Vector3Type::vfunc_24",
     "class": "ExprParser::Vector3Type",
