@@ -1,0 +1,28 @@
+{
+  "va": "0x0066B8E0",
+  "size": 167,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_45",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_45",
+  "class": "ExprParser::Vector4Type",
+  "signature": "void fn_0066B8E0(void* ecx_unused, void* arg1, void* ctx)",
+  "summary": "Dot-products the ctx float4 with the source operand's float4 and pushes it via vslot 7; otherwise evaluates the source scalar and stores the transformed vector into *arg1.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector4Type",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::Vector4Type",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:19:55Z"
+}

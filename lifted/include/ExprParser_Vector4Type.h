@@ -10,7 +10,8 @@
 // Recovered field layout for ExprParser::Vector4Type:
 namespace lifted_layout {
 struct ExprParser_Vector4Type_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0066B7F0) // CONFLICT: multiple definitions at +0x4
+    // +0x0   float*                   field_0x00  (evidence: 0x0066B8E0)
+    // +0x4   void*                    field_0x04  (evidence: 0x0066B7F0, 0x0066B8E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (source operand; its vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066B8A0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

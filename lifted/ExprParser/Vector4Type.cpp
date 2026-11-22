@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/ExprParser/Vector4Type.cpp
 #include "lift_compat.h"
 extern "C" void ext_00672150(void* self, const char* src, int flag);
+extern "C" void ext_0053B470();
 
 // [0x006710B0] ExprParser::Vector4Type::vfunc_0 (35 bytes)
 // @name ExprParser::Vector4Type::vfunc_0
@@ -87,4 +88,45 @@ int32_t __stdcall fn_0066B7F0(void* unused_arg, void* rhs_operand) {
         }
     }
     return 1;
+}
+
+// [0x0066B8E0] ExprParser::Vector4Type::vfunc_45 (167 bytes)
+// @name ExprParser::Vector4Type::vfunc_45
+// @class ExprParser::Vector4Type
+// @summary Dot-products the ctx float4 with the source operand's float4 and pushes it via vslot 7; otherwise evaluates the source scalar and stores the transformed vector into *arg1.
+// @field ExprParser::Vector4Type +0x00 float* field_0x00
+// @field ExprParser::Vector4Type +0x04 void* field_0x04
+void fn_0066B8E0(void* ecx_unused, void* arg1, void* ctx) {
+    (void)ecx_unused;
+
+    void* src = lift_field<void*>(ctx, 0x04);
+    void** srcVt = *reinterpret_cast<void***>(src);
+
+    using BoolFn  = bool (*)(void*, void*);
+    using FloatFn = float (*)(void*, void*);
+    using Vec4Fn  = float* (*)(void*, void*);
+    using SetFn   = void (*)(void*, void*, float);
+    using ExtFn   = float* (*)(void*, float*, float);
+
+    // Slot 0x3C: predicate on the source operand.
+    if (reinterpret_cast<BoolFn>(srcVt[0x3c / 4])(src, ctx)) {
+        // Slot 0x18: source operand's float4 (4 floats).
+        float* d = reinterpret_cast<Vec4Fn>(srcVt[0x18 / 4])(src, ctx);
+        float* s = lift_field<float*>(ctx, 0x00);
+        float dot = s[1] * d[1];
+        dot += s[0] * d[0];
+        dot += s[2] * d[2];
+        dot += s[3] * d[3];
+        // Slot 0x1C: consume the dot product.
+        reinterpret_cast<SetFn>(srcVt[0x1c / 4])(src, ctx, dot);
+    } else {
+        // Slot 0x04: scalar from the source operand.
+        float f = reinterpret_cast<FloatFn>(srcVt[0x04 / 4])(src, ctx);
+        float* dst = *reinterpret_cast<float**>(arg1);
+        float tmp[4];
+        float* r = reinterpret_cast<ExtFn>(&ext_0053B470)(dst, tmp, f);
+        for (int i = 0; i < 4; ++i) {
+            dst[i] = r[i];
+        }
+    }
 }
