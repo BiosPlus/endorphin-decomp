@@ -6709,6 +6709,13 @@
     "summary": "Initializes FBXIO state if needed and forwards arg1 to ext_0055E990",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x00562F80": {
+    "name": "FBXIO::vfunc_10",
+    "class": "FBXIO",
+    "signature": "void __thiscall fn_00562F80(void* self, const void* filename_str)",
+    "summary": "Imports an FBX file via the FBX scene/IO helpers, updates UI/status callbacks, and throws on import failure.",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
   "0x005645E0": {
     "name": "XSIIO::vfunc_0",
     "class": "XSIIO",

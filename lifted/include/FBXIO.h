@@ -13,12 +13,16 @@ struct FBXIO_Fields {
     // +0x40  uint8_t[4]               field_0x40  (evidence: 0x00560300)
     // +0x90  uint8_t                  field_0x90  (evidence: 0x00560300)
     // +0x94  uint8_t[4]               field_0x94  (evidence: 0x00560300)
+    // +0xA4  int32_t                  field_0xa4  (evidence: 0x00562F80)
     // +0x174 float                    field_0x174  (evidence: 0x005607E0)
     // +0x1F8 uint8_t                  field_0x1f8  (evidence: 0x00562A30)
     // +0x214 uint8_t                  field_0x214  (evidence: 0x00562A30)
     // +0x27C void*                    field_0x27c  (evidence: 0x00560300)
-    // +0x46C void*                    field_0x46c  (evidence: 0x00560300)
-    // +0x470 void*                    field_0x470  (evidence: 0x00560300)
+    // +0x414 void*                    field_0x414  (evidence: 0x00562F80)
+    // +0x420 void*                    field_0x420  (evidence: 0x00562F80)
+    // +0x424 void*                    field_0x424  (evidence: 0x00562F80)
+    // +0x46C void*                    field_0x46c  (evidence: 0x00560300, 0x00562F80)
+    // +0x470 void*                    field_0x470  (evidence: 0x00560300, 0x00562F80)
     // +0x4B8 void*                    field_0x4b8  (evidence: 0x00560300)
 };
 } // namespace lifted_layout

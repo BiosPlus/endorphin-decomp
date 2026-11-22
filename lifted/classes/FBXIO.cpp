@@ -1,11 +1,10 @@
 // Lifted C++ translation unit: lifted/classes/FBXIO.cpp
 #include "lift_compat.h"
+
 extern "C" int ext_00640390(int self_arg, int a1, int a2);
 extern "C" void ext_00553720(void* self, int a1);
 extern "C" int mem_00A9EED4;
-// Known callee 0x0047B170: sub_0047B170 (thiscall on list; appends one float by const ref)
 extern "C" void __thiscall ext_0047B170(void* self, const float* value);
-// Known callee 0x0041CD60: sub_0041CD60 (thiscall on list; returns element count)
 extern "C" int32_t __thiscall ext_0041CD60(void* self);
 extern "C" const float mem_00944238; // 120.0f
 extern "C" const float mem_0094423C; // 60.0f
@@ -16,78 +15,38 @@ extern "C" const float mem_00958948; // 25.0f
 extern "C" const float mem_00958944; // 24.0f
 extern "C" const float mem_00993838; // 0.0f
 
-extern "C" void __thiscall ext_0047B170(void* self, const float* value);
-// Known callee 0x0041CD60: sub_0041CD60 (thiscall on list; returns element count)
-extern "C" int32_t __thiscall ext_0041CD60(void* self);
-extern "C" const float mem_00944238; // 120.0f
-extern "C" const float mem_0094423C; // 60.0f
-extern "C" const float mem_009563EC; // 50.0f
-extern "C" const float mem_0092944C; // 30.0f
-extern "C" const float mem_0095894C; // 29.97f
-extern "C" const float mem_00958948; // 25.0f
-extern "C" const float mem_00958944; // 24.0f
-extern "C" const float mem_00993838; // 0.0f
-// @name FBXIO::vfunc_10
-// @class FBXIO
-// @summary Loads/imports an FBX file using the configured scene/IO helpers and throws on failure.
-// @field FBXIO +0xa4 int32_t field_0xa4
-// @field FBXIO +0x414 void* field_0x414
-// @field FBXIO +0x420 void* field_0x420
-// @field FBXIO +0x424 void* field_0x424
-// @field FBXIO +0x46c uint32_t field_0x46c
-// @field FBXIO +0x470 void* field_0x470
-extern "C" {
-void* __cdecl ext_00663B30(void* dst, const char* src);
-void __fastcall ext_00662120(void* self);
-void __thiscall ext_0055E490(void* self, void* arg1, void* arg2, const char* arg3);
-void __thiscall ext_0055F2C0(void* self, const void* arg1);
-void __thiscall ext_006D2130(void* self, uint32_t a, uint32_t b);
-void __thiscall ext_006BC970(void* self, void* arg1);
-int32_t __fastcall ext_006E7460(void* self);
-void __thiscall ext_006BC800(void* self, int32_t arg1);
-uint8_t __fastcall ext_00562A80(void* self);
-void __thiscall ext_0055E180(void* self, void* arg1);
-void __thiscall ext_00403560(void* self, void* arg1);
-void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
-void __fastcall ext_006D2160(void* self);
-extern uint32_t mem_00924FE4;
-extern uint32_t mem_00924FF4;
-extern uint32_t mem_00924FE0;
-extern uint32_t mem_00924FF0;
-extern uint32_t mem_00924FD0;
-extern uint32_t mem_00B37F40;
-}
+extern "C" void __thiscall ext_00406940(void* self, void* vec);
+extern "C" void __thiscall ext_0040ECB0(void* vec, void* str);
+extern "C" void __thiscall ext_0055F3D0(void* self, void* subobj, int32_t arg);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" int32_t __fastcall ext_006BC370(void* self);
+extern "C" void* __fastcall ext_006D3DF0(void* self);
+extern "C" int32_t __fastcall ext_006D5C30(void* self);
+extern "C" const char* __fastcall ext_006D5C40(void* self);
+extern "C" uint8_t __thiscall ext_006D5FD0(void* self, void* arg0, int32_t arg1);
+extern "C" void __thiscall ext_006D6AD0(void* self, const char* str);
+extern "C" void __thiscall ext_006D6B10(void* self, void* arg0, void* arg1, void* arg2);
 
-// @class FBXIO
-// @summary Loads/imports an FBX file using the configured scene/IO helpers and throws on failure.
-// @field FBXIO +0xa4 int32_t field_0xa4
-// @field FBXIO +0x414 void* field_0x414
-// @field FBXIO +0x420 void* field_0x420
-// @field FBXIO +0x424 void* field_0x424
-// @field FBXIO +0x46c uint32_t field_0x46c
-// @field FBXIO +0x470 void* field_0x470
-extern "C" {
-void* __cdecl ext_00663B30(void* dst, const char* src);
-void __fastcall ext_00662120(void* self);
-void __thiscall ext_0055E490(void* self, void* arg1, void* arg2, const char* arg3);
-void __thiscall ext_0055F2C0(void* self, const void* arg1);
-void __thiscall ext_006D2130(void* self, uint32_t a, uint32_t b);
-void __thiscall ext_006BC970(void* self, void* arg1);
-int32_t __fastcall ext_006E7460(void* self);
-void __thiscall ext_006BC800(void* self, int32_t arg1);
-uint8_t __fastcall ext_00562A80(void* self);
-void __thiscall ext_0055E180(void* self, void* arg1);
-void __thiscall ext_00403560(void* self, void* arg1);
-void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
-void __fastcall ext_006D2160(void* self);
-extern uint32_t mem_00924FE4;
-extern uint32_t mem_00924FF4;
-extern uint32_t mem_00924FE0;
-extern uint32_t mem_00924FF0;
-extern uint32_t mem_00924FD0;
-extern uint32_t mem_00B37F40;
-}
-}
+extern "C" void* __cdecl ext_00663B30(void* dst_str, const char* src);
+extern "C" void __thiscall ext_00662120(void* self);
+extern "C" void __thiscall ext_0055E490(void* self, void* out0, void* out1, const char* path);
+extern "C" void __thiscall ext_0055F2C0(void* self, const void* path_str);
+extern "C" void __thiscall ext_006D2130(void* self, int32_t arg0, int32_t arg1);
+extern "C" void __thiscall ext_006BC970(void* self, void* out_vec);
+extern "C" int32_t __fastcall ext_006E7460(void* self);
+extern "C" void __thiscall ext_006BC800(void* self, int32_t arg0);
+extern "C" uint8_t __thiscall ext_00562A80(void* self);
+extern "C" void __thiscall ext_0055E180(void* self, void* arg);
+extern "C" void __thiscall ext_00403560(void* self, const void* msg_str);
+extern "C" void __stdcall ext_006A6DD2(void* exception_obj, const void* throw_info);
+extern "C" void __thiscall ext_006D2160(void* self);
+
+extern "C" void* mem_00924FE4;
+extern "C" void* mem_00924FF4;
+extern "C" void* mem_00924FE0;
+extern "C" void* mem_00924FF0;
+extern "C" void* mem_00924FD0;
+extern "C" uint32_t mem_00B37F40;
 
 // [0x005607E0] FBXIO::vfunc_33 (305 bytes)
 // @name FBXIO::vfunc_33
@@ -145,66 +104,32 @@ int32_t __thiscall fn_005607E0(void* self, int32_t /*stack arg +4, unused*/, voi
 // @field FBXIO +0x40 uint8_t[4] field_0x40
 // @field FBXIO +0x90 uint8_t field_0x90
 // @field FBXIO +0x94 uint8_t[4] field_0x94
-// @field FBXIO +0x27c void* field_0x27c
-// @field FBXIO +0x46c void* field_0x46c
+// @field FBXIO +0x27C void* field_0x27c
+// @field FBXIO +0x46C void* field_0x46c
 // @field FBXIO +0x470 void* field_0x470
-// @field FBXIO +0x4b8 void* field_0x4b8
-
-#include "lift_compat.h"
-
-extern "C" {
-void __thiscall ext_00406940(void* self, void* vec);
-void __thiscall ext_0040ECB0(void* vec, void* str);
-void __thiscall ext_0055F3D0(void* self, void* subobj, int32_t arg);
-void __cdecl ext_006A5C5C(void* ptr);
-int32_t __fastcall ext_006BC370(void* self);
-void* __fastcall ext_006D3DF0(void* self);
-int32_t __fastcall ext_006D5C30(void* self);
-const char* __fastcall ext_006D5C40(void* self);
-uint8_t __thiscall ext_006D5FD0(void* self, void* arg0, int32_t arg1);
-void __thiscall ext_006D6AD0(void* self, const char* str);
-void __thiscall ext_006D6B10(void* self, void* arg0, void* arg1, void* arg2);
-void __thiscall ext_0055E490(void* self, void* out0, void* out1, const char* path);
-void __thiscall ext_0055E180(void* self, void* arg);
-void __thiscall ext_006D2130(void* self, int32_t arg0, int32_t arg1);
-void __thiscall ext_006BC970(void* self, void* out_vec);
-int32_t __fastcall ext_006E7460(void* self);
-void __thiscall ext_006D2160(void* self);
-
-extern void* mem_00924FF0; // std::string::c_str
-extern void* mem_00924FE4; // std::string::basic_string(const char*)
-extern void* mem_00924FF4; // std::string::~basic_string
-}
-
-namespace {
-
-struct RawStdString {
-    uint8_t data[0x1c];
-};
-
-struct RawStdStringVector {
-    uint32_t allocator_pad;
-    RawStdString* begin;
-    RawStdString* end;
-    RawStdString* cap;
-};
-
-struct RawArray {
-    int32_t count;
-    uint8_t pad[0x0c];
-    void** items;
-    void* inline_ptr;
-};
-
-using CStrFn = const char* (__thiscall*)(void*);
-using StrCtorFn = void (__thiscall*)(void*, const char*);
-using StrDtorFn = void (__thiscall*)(void*);
-using Vfunc0Fn = void (__thiscall*)(void*, const char*);
-using Vfunc84Fn = void (__thiscall*)(void*);
-
-} // namespace
-
+// @field FBXIO +0x4B8 void* field_0x4b8
 extern "C" uint32_t __thiscall fn_00560300(void* self, void* arg0) {
+    struct RawStdString {
+        uint8_t data[0x1c];
+    };
+    struct RawStdStringVector {
+        uint32_t allocator_pad;
+        RawStdString* begin;
+        RawStdString* end;
+        RawStdString* cap;
+    };
+    struct RawArray {
+        int32_t count;
+        uint8_t pad[0x0c];
+        void** items;
+        void* inline_ptr;
+    };
+    using CStrFn = const char* (__thiscall*)(void*);
+    using StrCtorFn = void (__thiscall*)(void*, const char*);
+    using StrDtorFn = void (__thiscall*)(void*);
+    using Vfunc0Fn = void (__thiscall*)(void*, const char*);
+    using Vfunc84Fn = void (__thiscall*)(void*);
+
     uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
     void* subobj_27c = self_bytes + 0x27c;
     void** vtable_27c = *reinterpret_cast<void***>(subobj_27c);
@@ -292,95 +217,119 @@ extern "C" uint32_t __thiscall fn_00560300(void* self, void* arg0) {
     return 0;
 }
 
-// [0x00562F80]
-void __thiscall fn_00562F80(void* self, const void* arg0) {
-    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+// [0x00562F80] FBXIO::vfunc_10 (574 bytes)
+// @name FBXIO::vfunc_10
+// @class FBXIO
+// @summary Imports an FBX file via the FBX scene/IO helpers, updates UI/status callbacks, and throws on import failure.
+// @field FBXIO +0xA4 int32_t field_0xa4
+// @field FBXIO +0x414 void* field_0x414
+// @field FBXIO +0x420 void* field_0x420
+// @field FBXIO +0x424 void* field_0x424
+// @field FBXIO +0x46C void* field_0x46c
+// @field FBXIO +0x470 void* field_0x470
+void __thiscall fn_00562F80(void* self, const void* filename_str) {
+    struct MsvcString {
+        uint8_t storage[0x1C];
+    };
+    struct LocalPtrList {
+        uint8_t raw[0x10];
+        void** items;
+        void*** items_ptr;
+    };
+    struct LocalException {
+        void* vtable;
+        uint8_t payload[0x24];
+    };
 
-    uint8_t str_28[28];
-    uint8_t str_44[28];
-    uint8_t str_60[28];
-    uint8_t str_a4[28];
-    uint8_t exc_7c[40];
-    uint8_t var_10[16];
-    void* var_20[1];
-    void* var_24 = nullptr;
+    using StrCtorCstrFn = void* (__thiscall*)(MsvcString*, const char*);
+    using StrCtorCopyFn = void* (__thiscall*)(MsvcString*, const MsvcString*);
+    using StrDtorFn     = void  (__thiscall*)(MsvcString*);
+    using StrCStrFn     = const char* (__thiscall*)(const MsvcString*);
+    using StrConcatFn   = MsvcString* (__cdecl*)(MsvcString*, const MsvcString*, const MsvcString*);
+    using VFuncVoidFn   = void (__thiscall*)(void*);
+    using VFuncStrPtrFn = void (__thiscall*)(void*, const MsvcString*);
 
-    typedef void(__thiscall* str_ctor_cstr_t)(void*, uint32_t);
-    typedef void(__thiscall* str_ctor_copy_t)(void*, uint32_t);
-    typedef void(__thiscall* str_dtor_t)(void*);
-    typedef const char*(__thiscall* str_c_str_t)(const void*);
-    typedef void*(__cdecl* str_concat_t)(void*, void*, uint32_t);
+    const auto str_ctor_cstr = reinterpret_cast<StrCtorCstrFn>(mem_00924FE4);
+    const auto str_dtor      = reinterpret_cast<StrDtorFn>(mem_00924FF4);
+    const auto str_ctor_copy = reinterpret_cast<StrCtorCopyFn>(mem_00924FE0);
+    const auto str_c_str     = reinterpret_cast<StrCStrFn>(mem_00924FF0);
+    const auto str_concat    = reinterpret_cast<StrConcatFn>(mem_00924FD0);
 
-    str_ctor_cstr_t str_ctor_cstr = reinterpret_cast<str_ctor_cstr_t>(mem_00924FE4);
-    str_ctor_copy_t str_ctor_copy = reinterpret_cast<str_ctor_copy_t>(mem_00924FE0);
-    str_dtor_t str_dtor = reinterpret_cast<str_dtor_t>(mem_00924FF4);
-    str_c_str_t str_c_str = reinterpret_cast<str_c_str_t>(mem_00924FF0);
-    str_concat_t str_concat = reinterpret_cast<str_concat_t>(mem_00924FD0);
+    const auto* filename = static_cast<const MsvcString*>(filename_str);
 
-    void* field_424 = *reinterpret_cast<void**>(self_bytes + 0x424);
-    if (field_424 != nullptr) {
-        str_ctor_cstr(str_28, 0x009589D4);
-        typedef void(__thiscall* vfunc_0c_t)(void*, void*);
-        uint32_t* vtbl = *reinterpret_cast<uint32_t**>(field_424);
-        reinterpret_cast<vfunc_0c_t>(vtbl[0x0C / 4])(field_424, str_28);
-        str_dtor(str_28);
+    if (void* status_cb = lift_field<void*>(self, 0x424); status_cb != nullptr) {
+        MsvcString status_msg{};
+        str_ctor_cstr(&status_msg, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009589D4u)));
+        void** vtable = *reinterpret_cast<void***>(status_cb);
+        reinterpret_cast<VFuncStrPtrFn>(vtable[3])(status_cb, &status_msg);
+        str_dtor(&status_msg);
     }
 
-    uint8_t* field_414 = *reinterpret_cast<uint8_t**>(self_bytes + 0x414);
     {
-        typedef void(__thiscall* vfunc_84_t)(void*);
-        uint32_t* vtbl = *reinterpret_cast<uint32_t**>(field_414 + 4);
-        reinterpret_cast<vfunc_84_t>(vtbl[0x84 / 4])(field_414 + 4);
+        void* obj_414_sub = reinterpret_cast<uint8_t*>(lift_field<void*>(self, 0x414)) + 4;
+        void** vtable = *reinterpret_cast<void***>(obj_414_sub);
+        reinterpret_cast<VFuncVoidFn>(vtable[0x84 / 4])(obj_414_sub);
     }
 
-    str_ctor_copy(str_60, 0x00B392CC);
-    const char* cstr = str_c_str(arg0);
-    void* tmp_str = ext_00663B30(str_28, cstr);
-    str_concat(str_44, tmp_str, 0x00B39614);
-    str_dtor(str_28);
+    MsvcString str_b392cc{};
+    str_ctor_copy(&str_b392cc, reinterpret_cast<const MsvcString*>(static_cast<uintptr_t>(0x00B392CCu)));
 
-    field_414 = *reinterpret_cast<uint8_t**>(self_bytes + 0x414);
+    MsvcString tmp_str{};
+    void* tmp_ret = ext_00663B30(&tmp_str, str_c_str(filename));
+
+    MsvcString combined_str{};
+    str_concat(
+        &combined_str,
+        static_cast<const MsvcString*>(tmp_ret),
+        reinterpret_cast<const MsvcString*>(static_cast<uintptr_t>(0x00B39614u))
+    );
+    str_dtor(&tmp_str);
+
     {
-        typedef void(__thiscall* vfunc_5c_t)(void*, void*);
-        uint32_t* vtbl = *reinterpret_cast<uint32_t**>(field_414 + 4);
-        reinterpret_cast<vfunc_5c_t>(vtbl[0x5C / 4])(field_414 + 4, str_60);
+        void* obj_414_sub = reinterpret_cast<uint8_t*>(lift_field<void*>(self, 0x414)) + 4;
+        void** vtable = *reinterpret_cast<void***>(obj_414_sub);
+        reinterpret_cast<VFuncStrPtrFn>(vtable[0x5C / 4])(obj_414_sub, &str_b392cc);
     }
 
-    field_414 = *reinterpret_cast<uint8_t**>(self_bytes + 0x414);
     {
-        typedef void(__thiscall* vfunc_60_t)(void*, void*);
-        uint32_t* vtbl = *reinterpret_cast<uint32_t**>(field_414 + 4);
-        reinterpret_cast<vfunc_60_t>(vtbl[0x60 / 4])(field_414 + 4, str_44);
+        void* obj_414_sub = reinterpret_cast<uint8_t*>(lift_field<void*>(self, 0x414)) + 4;
+        void** vtable = *reinterpret_cast<void***>(obj_414_sub);
+        reinterpret_cast<VFuncStrPtrFn>(vtable[0x60 / 4])(obj_414_sub, &combined_str);
     }
 
     mem_00B37F40 += 1;
 
-    ext_00662120(*reinterpret_cast<void**>(self_bytes + 0x420));
+    ext_00662120(lift_field<void*>(self, 0x420));
 
-    void* field_470 = self_bytes + 0x470;
-    void* field_46c = self_bytes + 0x46C;
-    ext_0055E490(self, field_46c, field_470, str_c_str(arg0));
-    ext_0055F2C0(self, arg0);
+    void** field_46c_ptr = &lift_field<void*>(self, 0x46C);
+    void** field_470_ptr = &lift_field<void*>(self, 0x470);
+    ext_0055E490(self, field_46c_ptr, field_470_ptr, str_c_str(filename));
+    ext_0055F2C0(self, filename);
 
-    ext_006D2130(var_10, 0x10, 4);
-    var_24 = var_20;
-    ext_006BC970(*reinterpret_cast<void**>(field_470), var_10);
+    LocalPtrList list{};
+    ext_006D2130(&list, 0x10, 0x4);
+    list.items_ptr = &list.items;
+    ext_006BC970(*field_470_ptr, &list);
 
-    int32_t idx = *reinterpret_cast<int32_t*>(self_bytes + 0xA4);
-    void** arr = reinterpret_cast<void**>(var_20[0]);
-    int32_t val = ext_006E7460(arr[idx]);
-    ext_006BC800(*reinterpret_cast<void**>(field_470), val);
+    int32_t index = lift_field<int32_t>(self, 0xA4);
+    int32_t selected_id = ext_006E7460(list.items[index]);
+    ext_006BC800(*field_470_ptr, selected_id);
 
-    uint8_t ok = ext_00562A80(self);
-    ext_0055E180(self, field_46c);
-    if (!ok) {
-        str_ctor_cstr(str_a4, 0x009589B8);
-        ext_00403560(exc_7c, str_a4);
-        *reinterpret_cast<uint32_t*>(exc_7c) = 0x0095879C;
-        ext_006A6DD2(exc_7c, 0x009FA84C);
+    if (ext_00562A80(self) == 0) {
+        ext_0055E180(self, field_46c_ptr);
+
+        MsvcString err_msg{};
+        str_ctor_cstr(&err_msg, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009589B8u)));
+
+        LocalException exc{};
+        ext_00403560(&exc, &err_msg);
+        exc.vtable = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0095879Cu));
+        ext_006A6DD2(&exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009FA84Cu)));
+        return;
     }
 
-    ext_006D2160(var_10);
-    str_dtor(str_44);
-    str_dtor(str_60);
+    ext_0055E180(self, field_46c_ptr);
+    ext_006D2160(&list);
+    str_dtor(&combined_str);
+    str_dtor(&str_b392cc);
 }
