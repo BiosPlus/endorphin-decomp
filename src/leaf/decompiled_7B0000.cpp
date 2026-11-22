@@ -27404,3 +27404,89 @@ extern "C" __declspec(naked) void __fastcall fn_007B6F5C(void* self) {
         add dword ptr [ecx], eax
     }
 }
+
+// [0x007B89BC] sub_007B89BC (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007B89BC(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x01
+        _emit 0x01
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x02
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x01
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x01
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+    }
+}
