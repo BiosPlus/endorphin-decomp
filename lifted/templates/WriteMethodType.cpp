@@ -160,8 +160,12 @@ void fn_0064F840(void* self, void* arg) {
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x18 / 4])(sub, arg);
     ext_00402040(target, value);
 }
+extern "C" void ext_0064DDE0(void* self, void* value);
+extern "C" void ext_00402040(void* self, void* value);
+// Known callee 0x0062A580: VirtualDispatchThunk_Slot17 (returns the code address stored at vtable offset 0x44 of self; the caller performs the call).
+extern "C" void* ext_0062A580(void* self);
 
-// [0x00650D80] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>::vfunc_41 (34 bytes)
+extern "C" void* ext_0062A580(void* self);
 // @name WriteMethodType<SkeletalJoint, int>::vcall84::vfunc_41
 // @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
 // @summary Reads the target object from self, computes the int value via arg's sub-object vtable slot 2, and forwards to ext_0064F900.
@@ -173,35 +177,11 @@ void fn_00650D80(void* self, void* arg) {
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x08 / 4])(sub, arg);
     ext_0064F900(target, value);
 }
+extern "C" void ext_0064F900(void* self, int32_t value);
+// Known callee 0x00603680: VirtualSlot19Thunk (loads the object's vtable and tail-calls slot 19 (offset +0x4C) with the same this pointer; the callee's result is passed through).
+extern "C" void* ext_00603680(void* self, void* value);
 
-// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
-// @summary Calls slot 6 (offset 0x0C) on arg->+0x04 to get r, then dispatches r through the target object's slot 17 (offset 0x44).
-// @field Unknown +0x00 void* field_0x00
-// @field Unknown +0x04 void* field_0x04
-void* __stdcall fn_00604930(void* valuePtr, void* arg) {
-    void* obj = lift_field<void*>(valuePtr, 0x00);   // target object (first field)
-    void* iface = lift_field<void*>(arg, 0x04);      // interface pointer at arg+0x04
-    void* r = reinterpret_cast<ThisCallFn>(vtable_entry(iface, 0x0C))(iface, arg);
-    void* target = ext_0062A580(obj);
-    return reinterpret_cast<ThisCallFn>(target)(obj, r);
-}
-
-// [0x00604BA0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
-// @summary Calls slot 4 (offset 0x18) on arg->+0x04 to get r, then dispatches r to the target object's slot 19 (offset 0x4C).
-// @field Unknown +0x00 void* field_0x00
-// @field Unknown +0x04 void* field_0x04
-void __stdcall fn_00604BA0(void* valuePtr, void* arg) {
-    void* obj = lift_field<void*>(valuePtr, 0x00);   // target object (first field)
-    void* iface = lift_field<void*>(arg, 0x04);      // interface pointer at arg+0x04
-    void* r = reinterpret_cast<ThisCallFn>(vtable_entry(iface, 0x18))(iface, arg);
-    ext_00603680(obj, r);
-}
-
-// [0x00604C40] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>::vfunc_41 (34 bytes)
+extern "C" void* ext_00603680(void* self, void* value);
 // @name WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41
 // @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>
 // @summary Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.
@@ -242,4 +222,111 @@ void fn_0068BC60(void* self, void* arg) {
     auto query = reinterpret_cast<int32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x08));
     int32_t seed = query(obj, arg);
     ext_006B0C30(target, seed);
+}
+
+// [0x006495F0] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<RelationshipRPROMagnet, bool>::applyCachedSettings::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>
+// @summary Reads a bool from arg's reader (vtable slot +0x0C) and forwards it to RelationshipRPROMagnet::applyCachedSettings on the target stored at self.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+void fn_006495F0(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* reader = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    auto read = reinterpret_cast<uint32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x0C));
+    uint32_t value = read(reader, arg);
+    ext_00649080(target, value);
+}
+
+// [0x00649D50] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<RelationshipRPROMagnet, bool>::setRotationMode::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>
+// @summary Reads a bool from arg's reader (vtable slot +0x0C) and forwards it to RelationshipRPROMagnet::setRotationMode on the target stored at self.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+void fn_00649D50(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* reader = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    auto read = reinterpret_cast<uint32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x0C));
+    uint32_t value = read(reader, arg);
+    ext_00648E30(target, value);
+}
+
+// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<SkeletalJoint, Vector3 const&>::setDriveAngularVel::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
+// @summary Reads a Vector3 const pointer from arg's reader (vtable slot +0x14) and forwards it to SkeletalJoint::setDriveAngularVel on the target stored at self.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+void fn_0064F790(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* reader = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    auto read = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x14));
+    void* value = read(reader, arg);
+    ext_0064DDE0(target, value);
+}
+
+// [0x0064F840] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<SkeletalJoint, Vector4 const&>::setDriveQuaternion::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
+// @summary Reads a Vector4 const pointer from arg's reader (vtable slot +0x18) and forwards it to SkeletalJoint::setDriveQuaternion on the target stored at self.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+void fn_0064F840(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* reader = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    auto read = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x18));
+    void* value = read(reader, arg);
+    ext_00402040(target, value);
+}
+
+// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<EffectorBase, bool>::vcall68::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
+// @summary Reads the target object from valuePtr, computes a 32-bit result via arg's sub-object vtable slot 3 (offset 0x0C), then dispatches that result to the target's vtable slot 17 (offset 0x44).
+// @field ExprParser::ValuePtrType +0x00 void* targetObj
+// @field Unknown +0x04 void* field_0x04
+uint32_t fn_00604930(void* valuePtr, void* arg) {
+    void* target = lift_field<void*>(valuePtr, 0x00);        // first field: target object
+    void* sub = lift_field<void*>(arg, 0x04);                // sub-object interface at arg+0x04
+    void* subVtbl = lift_field<void*>(sub, 0x00);            // sub's vtable pointer
+    using SlotFn = uint32_t (__thiscall*)(void* self, void* arg);
+    uint32_t r = reinterpret_cast<SlotFn>(lift_field<void*>(subVtbl, 0x0C))(sub, arg);
+    void* code = ext_0062A580(target);                       // target's slot 17 code address
+    using DispatchFn = uint32_t (__thiscall*)(void* self, uint32_t value);
+    return reinterpret_cast<DispatchFn>(code)(target, r);
+}
+
+// [0x00650D80] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<SkeletalJoint, int>::vcall84::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
+// @summary Reads an int from arg's reader (vtable slot +0x08) and forwards it to the target's vcall{84} thunk (vtable slot +0x54) via ext_0064F900.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+void fn_00650D80(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* reader = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    auto read = reinterpret_cast<int32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x08));
+    int32_t value = read(reader, arg);
+    ext_0064F900(target, value);
+}
+
+// [0x00604BA0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<EffectorBase, Vector4 const&>::vcall76::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Reads the target object from valuePtr, computes a Vector4 pointer via arg's sub-object vtable slot 6 (offset 0x18), then forwards it to ext_00603680, which dispatches to the target's slot 19 (offset 0x4C).
+// @field ExprParser::ValuePtrType +0x00 void* targetObj
+// @field Unknown +0x04 void* field_0x04
+void* fn_00604BA0(void* valuePtr, void* arg) {
+    void* target = lift_field<void*>(valuePtr, 0x00);        // first field: target object
+    void* sub = lift_field<void*>(arg, 0x04);                // sub-object interface at arg+0x04
+    void* subVtbl = lift_field<void*>(sub, 0x00);            // sub's vtable pointer
+    using SlotFn = void* (__thiscall*)(void* self, void* arg);
+    void* r = reinterpret_cast<SlotFn>(lift_field<void*>(subVtbl, 0x18))(sub, arg);
+    return ext_00603680(target, r);
 }

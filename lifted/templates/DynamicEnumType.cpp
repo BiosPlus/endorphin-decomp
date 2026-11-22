@@ -184,24 +184,7 @@ void DynamicEnumType_vfunc_9(void* thisptr, DynEnumVfunc9Arg* arg1, void* arg2) 
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
-
-// [0x004D3E20]
-// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::RigEventData>
-// @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (returns null on failure).
-void* fn_004D3E20(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
-}
-
-// [0x00515850]
-// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions,...>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, getCurrentIndividualIndex, setCurrentIndividualIndex, getNumIndividuals, getIndividualDescription>
-// @summary RTTI type-guard: dynamic-casts the argument to this type (type descriptor 0x00A4279C) and returns the result or NULL.
-void* fn_00515850(void* self, void* obj) {
-    (void)self;
-    return ext_006A6E9E(obj, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
-                        reinterpret_cast<const void*>(&mem_00A4279C), 0);
-}
+extern "C" void* __cdecl ext_006A6E9E(void* inptr, int vfDelta, void* srcType, void* targetType, int isReference);
 
 // [0x005C4870] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, getMaterialNameIndex, setMaterialNameIndex, getNumListedMaterialNames, getListedMaterialName>::vfunc_16 (30 bytes)
 // @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>::vfunc_16 (materialNameIndex)
@@ -211,4 +194,25 @@ void* fn_00515850(void* self, void* obj) {
 // which has no portable equivalent; the cast succeeds for a valid self, so it returns self.
 void* fn_005C4870(void* self) {
     return self;
+}
+
+// [0x004D3E20] ExprParser::DynamicEnumType<NMData::RigEventData,...>::vfunc_16 (30 bytes)
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary dynamic_cast wrapper: casts the pointer argument via __RTDynamicCast between two RTTI type descriptors and returns the result (or null).
+void* fn_004D3E20(void* ptr) {
+    return ext_006A6E9E(ptr, 0, &mem_00A2E2F8, &mem_00A3C268, 0);
+}
+
+// [0x00515850]
+// @name DynamicEnumType_EvolverRuntimeOptions::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>
+// @summary Performs a dynamic_cast via __RTDynamicCast from RTTI descriptor 0x00A2E2F8 to 0x00A4279C.
+
+#include "lift_compat.h"
+
+extern "C" void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+
+void* __stdcall fn_00515850(void* src) {
+    return ext_006A6E9E(src, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00A4279C), 0);
 }
