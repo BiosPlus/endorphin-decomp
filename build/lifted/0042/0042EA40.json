@@ -1,0 +1,22 @@
+{
+  "va": "0x0042EA40",
+  "size": 6,
+  "orig_symbol": "ListBox::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ListBox::vfunc_0",
+  "class": "ListBox",
+  "signature": "int* fn_0042EA40(void* self)",
+  "summary": "Returns the address of the global mem_0092F394 (ignores this).",
+  "fields": [
+    {
+      "class": "ListBox",
+      "offset": "+0x0",
+      "type": "unknown",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:49:56Z"
+}

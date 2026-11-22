@@ -14,6 +14,7 @@ extern "C" int mem_0092DFF4;
 extern "C" int mem_0092E5B8;
 extern "C" int mem_0092EAC8;
 extern "C" int mem_0092F694;
+extern "C" int mem_0092F394;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -156,4 +157,14 @@ extern "C" int* __fastcall fn_00422CD0(void* self) {
 void* fn_0042F3B0(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_0092F694);
+}
+
+// [0x0042EA40] ListBox::vfunc_0 (6 bytes)
+// @name ListBox::vfunc_0
+// @class ListBox
+// @summary Returns the address of the global mem_0092F394 (ignores this).
+// @field ListBox +0x00 unknown field_0x00
+int* fn_0042EA40(void* self) {
+    (void)self;
+    return &mem_0092F394;
 }
