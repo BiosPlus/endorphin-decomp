@@ -1,0 +1,22 @@
+{
+  "va": "0x005B1110",
+  "size": 6,
+  "orig_symbol": "Geometry::AnimationType::vfunc_8",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::AnimationType::vfunc_8",
+  "class": "Geometry::AnimationType",
+  "signature": "int* fn_005B1110(void* self)",
+  "summary": "Returns the address of the global mem_00B59400 (ignores this).",
+  "fields": [
+    {
+      "class": "AnimationType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:06:00Z"
+}

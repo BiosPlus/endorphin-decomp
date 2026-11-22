@@ -1,0 +1,9 @@
+{
+  "0x005B1110": {
+    "name": "Geometry::AnimationType::vfunc_8",
+    "class": "Geometry::AnimationType",
+    "signature": "int* fn_005B1110(void* self)",
+    "summary": "Returns the address of the global mem_00B59400 (ignores this).",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  }
+}
