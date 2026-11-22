@@ -9291,6 +9291,13 @@
     "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BDC8, source mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0064F790": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr)",
+    "summary": "Evaluates an NM::Vector3 const\u0026 address from the source value via its type vtable slot +0x14 and calls SkeletalJoint::setDriveAngularVel (ext_0064DDE0) on the target joint.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F830": {
     "name": "ExprParser::ROWriteMethodType::vfunc_13 (NM::Vector3::convertEtoTS)",
     "class": "ExprParser::ROWriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e",
