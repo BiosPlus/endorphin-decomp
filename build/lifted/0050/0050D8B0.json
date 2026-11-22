@@ -8,15 +8,7 @@
   "class": "NMData::TaskManager",
   "signature": "extern \"C\" void __thiscall fn_0050D8B0(void* self)",
   "summary": "Secondary-base thunk: adjusts this by -8 and forwards to sub_0050D7C0, then pops the 8-byte stack argument block.",
-  "fields": [
-    {
-      "class": "NMData::TaskManager",
-      "offset": "+0x8",
-      "type": "void*",
-      "name": "field_0x08"
-    }
-  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T08:23:59Z"
+  "lifted_at": "2026-11-22T08:24:10Z"
 }

@@ -6,7 +6,6 @@ extern "C" void ext_0050D7C0(void* self);
 // @name NMData::TaskManager::vfunc_1_off_8
 // @class NMData::TaskManager
 // @summary Secondary-base thunk: adjusts this by -8 and forwards to sub_0050D7C0, then pops the 8-byte stack argument block.
-// @field NMData::TaskManager +0x08 void* field_0x08
 extern "C" void __thiscall fn_0050D8B0(void* self) {
     // Original: add ecx,-0x8; call sub_0050D7C0; ret 8.
     // The 8 bytes of stack arguments are passed through to the callee and
