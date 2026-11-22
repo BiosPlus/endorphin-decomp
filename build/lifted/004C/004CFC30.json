@@ -1,0 +1,14 @@
+{
+  "va": "0x004CFC30",
+  "size": 99,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_17_off_C",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_17_off_C",
+  "class": "NMData::IncarnationEventData",
+  "signature": "void* fn_004CFC30(void* self)",
+  "summary": "Allocates a 0x190-byte object and initializes it with the owner at this-0xC; returns the result or null if allocation fails.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:14:46Z"
+}
