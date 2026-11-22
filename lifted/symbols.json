@@ -377,6 +377,12 @@
     "summary": "Returns the address of the read-only constant mem_00934B98 (its value is 0x00934B8C); ignores this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044CB80": {
+    "name": "sub_0044CB80",
+    "signature": "extern \"C\" const char* fn_0044CB80()",
+    "summary": "Returns the address of the read-only string literal \"6gj\" (.rdata at 0x00934DB4).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
