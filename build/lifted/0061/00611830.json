@@ -1,0 +1,14 @@
+{
+  "va": "0x00611830",
+  "size": 54,
+  "orig_symbol": "NMData::SecondaryTwistAndSwingConstraint::vfunc_14",
+  "src_path": "src/NMData/SecondaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_14",
+  "class": "NMData::SecondaryTwistAndSwingConstraint",
+  "signature": "void* fn_00611830(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:09:57Z"
+}

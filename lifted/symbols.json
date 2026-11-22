@@ -3889,6 +3889,13 @@
     "summary": "Secondary-base thunk: adjusts this by -0xC, calls ext_0047D7C0 on the global object at mem_00AE29D0, returns true.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004C0320": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_13",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e",
+    "signature": "void fn_004C0320(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3380 (ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_13).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004C0330": {
     "name": "CharacterSelection::vfunc_0_off_4",
     "class": "CharacterSelection",
@@ -4328,6 +4335,13 @@
     "signature": "extern \"C\" void* __fastcall fn_004D3350(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_004D3290 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004D3C20": {
+    "name": "NMData::RigEventData::vfunc_14",
+    "class": "NMData::RigEventData",
+    "signature": "void* fn_004D3C20(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
   "0x004D3CB0": {
     "name": "NMData::AnimationEventData::vfunc_61",
@@ -7331,6 +7345,13 @@
     "summary": "Calls virtual slot 55 (0xDC) on self for indices 0..5 and returns how many calls returned true.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
+  "0x005E2A50": {
+    "name": "NMData::SkeletalJointData::vfunc_14",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void* fn_005E2A50(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005E2A90": {
     "name": "NMData::HingeData::vfunc_14",
     "class": "NMData::HingeData",
@@ -7832,6 +7853,13 @@
     "signature": "float fn_00611740(void* self, int32_t index)",
     "summary": "When index \u003c 1, calls virtual slot 68 (offset 0x110) to obtain a float array and returns element[index]; otherwise returns 0.0.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
+  "0x00611830": {
+    "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_14",
+    "class": "NMData::SecondaryTwistAndSwingConstraint",
+    "signature": "void* fn_00611830(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
+    "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
   "0x00611C90": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",

@@ -1,0 +1,14 @@
+{
+  "va": "0x005E2A50",
+  "size": 52,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_14",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_14",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void* fn_005E2A50(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:09:57Z"
+}

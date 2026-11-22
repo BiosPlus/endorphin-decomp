@@ -3,9 +3,12 @@
 #include <new>
 #include <string>
 extern "C" const char* mem_00A9F280;
+#include <cstring>
+extern "C" void ext_00661650(void* self);
+extern "C" void ext_005E29F0(void* self, void* arg1, uint32_t arg2);
 
-// [0x005F02B0] NMData::SkeletalJointData::vfunc_59 (35 bytes)
-// @name NMData::SkeletalJointData::vfunc_59
+extern "C" void ext_00661650(void* self);
+extern "C" void ext_005E29F0(void* self, void* arg1, uint32_t arg2);
 // @class NMData::SkeletalJointData
 // @summary Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9F280; this is unused.
 std::string* fn_005F02B0(void* self, std::string* out) {
@@ -28,4 +31,17 @@ int32_t fn_005E0970(void* self) {
         }
     }
     return count;
+}
+
+// [0x005E2A50] NMData::SkeletalJointData::vfunc_14 (52 bytes)
+// @name NMData::SkeletalJointData::vfunc_14
+// @class NMData::SkeletalJointData
+// @summary Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).
+void* fn_005E2A50(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 == 0x47) {
+        ext_00661650(arg1);
+    } else {
+        ext_005E29F0(self, arg1, arg2);
+    }
+    return arg1;
 }
