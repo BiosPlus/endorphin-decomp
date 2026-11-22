@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B1D0",
+  "size": 48,
+  "orig_symbol": "ExprParser::BoolType::vfunc_43",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_43",
+  "class": "ExprParser::BoolType",
+  "signature": "void __stdcall fn_0066B1D0(uint8_t* flag, void* other)",
+  "summary": "Sets *flag to 1 if it is already nonzero or if sub-\u003evfn3(other) is nonzero (sub = other-\u003efield_0x04); otherwise sets *flag to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:31Z"
+}
