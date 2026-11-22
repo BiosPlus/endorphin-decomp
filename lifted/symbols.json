@@ -5600,6 +5600,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053C060 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053D2E0": {
+    "name": "Primitives::Sphere::vfunc_25",
+    "class": "Primitives::Sphere",
+    "signature": "void fn_0053D2E0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards three args to the Plane base vfunc_25, sets flag 0x40 in +0x1c, and copies two dwords from arg2 (+0x80/+0x84) into +0x3c/+0x40.",
+    "lifted_path": "lifted/Primitives/Sphere.cpp"
+  },
   "0x0053D970": {
     "name": "Primitives::Sensor2::vfunc_0",
     "class": "Primitives::Sensor2",

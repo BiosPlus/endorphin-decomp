@@ -1,0 +1,34 @@
+{
+  "va": "0x0053D2E0",
+  "size": 62,
+  "orig_symbol": "Primitives::Sphere::vfunc_25",
+  "src_path": "src/Primitives/Sphere.cpp",
+  "lifted_path": "lifted/Primitives/Sphere.cpp",
+  "name": "Primitives::Sphere::vfunc_25",
+  "class": "Primitives::Sphere",
+  "signature": "void fn_0053D2E0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards three args to the Plane base vfunc_25, sets flag 0x40 in +0x1c, and copies two dwords from arg2 (+0x80/+0x84) into +0x3c/+0x40.",
+  "fields": [
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:59Z"
+}
