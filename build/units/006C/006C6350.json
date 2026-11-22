@@ -160,5 +160,7 @@
     "0x006C71F7",
     "0x006C7207"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T02:59:37Z"
 }
