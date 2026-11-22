@@ -176,6 +176,7 @@
     "0x00737A3B",
     "0x00737A49"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T02:57:03Z"
 }
