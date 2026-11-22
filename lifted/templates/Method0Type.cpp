@@ -636,3 +636,18 @@ bool fn_004CCCD0(void* self) {
     ext_004CCAF0(target);
     return false;
 }
+
+// [0x0048B060] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_2 (16 bytes)
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, capturePoseForBlend>::vfunc_2
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>
+// @summary Stdcall (ret 4) thunk: loads the target pointer stored at the proxy's first dword, calls ext_0048A9F0 on it (ECX = target), and returns 0.
+// @field ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}> +0x00 void* target
+
+// Helper (thiscall, ECX = DesiredPoseEventData*) that performs the pose capture.
+extern "C" void __fastcall ext_0048A9F0(void* self);
+
+extern "C" int __stdcall fn_0048B060(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_0048A9F0(target);
+    return 0;
+}
