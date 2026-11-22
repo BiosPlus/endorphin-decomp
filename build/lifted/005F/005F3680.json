@@ -1,0 +1,22 @@
+{
+  "va": "0x005F3680",
+  "size": 37,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup,float,vcall84\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
+  "signature": "void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value)",
+  "summary": "Evaluates the value expression as float and writes it to the target object via its vtable slot 21 setter.",
+  "fields": [
+    {
+      "class": "Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "evaluator"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-22T10:38:24Z"
+}

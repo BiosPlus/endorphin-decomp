@@ -1290,29 +1290,6 @@ void __thiscall fn_00603440(void* self, void* arg1, void* arg2) {
     }
 }
 
-// [0x005F3680]
-// @name ExprParser::WriteMethodType<EffectorGroup,float,vcall84>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
-// @summary Evaluates the value expression as float and writes it to the target object via its vtable slot 21 setter.
-// @field Value +0x04 void* evaluator
-
-struct FloatEvaluator {
-    virtual void vf0() = 0;
-    virtual float evaluate(void* value) = 0;
-};
-
-extern "C" void ext_0064F900(void* self, uint32_t value);
-
-void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value) {
-    (void)self; (void)edx;
-    void* obj = *target;
-    FloatEvaluator* ev = *(FloatEvaluator**)(value + 0x4);
-    float f = ev->evaluate(value);
-    uint32_t bits;
-    memcpy(&bits, &f, 4);
-    ext_0064F900(obj, bits);
-}
-
 // [0x00604C70]
 // @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &>::vfunc_48
 // @class ExprParser::WriteMethodType
@@ -1344,4 +1321,27 @@ Pair* __stdcall fn_00604C70(Pair* out, void** target, ParserSelf* self)
     out->value = result;
     out->expr = self->expr;
     return out;
+}
+
+// [0x005F3680]
+// @name ExprParser::WriteMethodType<EffectorGroup,float,vcall84>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
+// @summary Evaluates the value expression as float and writes it to the target object via its vtable slot 21 setter.
+// @field Value +0x04 void* evaluator
+
+struct FloatEvaluator {
+    virtual void vf0() = 0;
+    virtual float evaluate(void* value) = 0;
+};
+
+extern "C" void ext_0064F900(void* self, uint32_t value);
+
+void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value) {
+    (void)self; (void)edx;
+    void* obj = *target;
+    FloatEvaluator* ev = *(FloatEvaluator**)(value + 0x4);
+    float f = ev->evaluate(value);
+    uint32_t bits;
+    memcpy(&bits, &f, 4);
+    ext_0064F900(obj, bits);
 }
