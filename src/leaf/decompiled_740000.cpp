@@ -13784,3 +13784,833 @@ L_747E95:
         ret
     }
 }
+
+// [0x0074D850] sub_0074D850 (2240 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006BAAF0();
+extern "C" void ext_006D37E0();
+extern "C" void ext_006D3900();
+extern "C" void ext_006D80A0();
+extern "C" void ext_006E7460();
+extern "C" void ext_006FFD60();
+extern "C" void ext_00702360();
+extern "C" void ext_0070C010();
+extern "C" void ext_0070C0E0();
+extern "C" void ext_0070C1B0();
+extern "C" void ext_0070C350();
+extern "C" void ext_0070C380();
+extern "C" void ext_0077FB70();
+extern "C" int mem_00AAE638;
+extern "C" int mem_00B5D2C0;
+extern "C" int mem_0092518C;
+extern "C" int mem_00925188;
+extern "C" int mem_0092521C;
+extern "C" int mem_009939D8;
+extern "C" __declspec(naked) void __fastcall fn_0074D850(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push 08BF5C4h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 14Ch
+        mov eax, dword ptr [mem_00AAE638]
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        push eax
+        mov ebx, dword ptr [esi + 15Ch]
+        mov dword ptr [esp + 5Ch], esi
+        mov dword ptr [esp + 60h], ebx
+        call ext_006A5C62
+        mov cl, byte ptr [mem_00B5D2C0]
+        mov dword ptr [esp + 14h], eax
+        mov byte ptr [esp + 3Ch], cl
+        mov ecx, 7
+        xor eax, eax
+        lea edi, [esp + 3Dh]
+        rep stosd
+        mov edx, dword ptr [mem_00AAE638]
+        stosw
+        push edx
+        stosb
+        call ext_006A5C62
+        mov ecx, dword ptr [esi + 4]
+        add esp, 8
+        mov dword ptr [esp + 30h], eax
+        mov eax, dword ptr [ebp + 8]
+        push eax
+        call ext_006D37E0
+        mov ecx, dword ptr [ebp + 0Ch]
+        mov edx, dword ptr [ebp + 10h]
+        xor edi, edi
+        mov dword ptr [ecx], eax
+        mov dword ptr [edx], 0
+        test ebx, ebx
+        mov dword ptr [esp + 2Ch], edi
+        jle L74DA0C
+        mov bl, 10h
+        jmp L74D8F0
+L74D8EC:
+        mov esi, dword ptr [esp + 58h]
+L74D8F0:
+        mov eax, dword ptr [esi + 16Ch]
+        mov esi, dword ptr [eax + 4*edi]
+        push esi
+        mov dword ptr [esp + 38h], esi
+        call dword ptr [mem_0092518C]
+        add esp, 4
+        lea ecx, [esp + 38h]
+        mov byte ptr [esp + 38h], 0
+        push ecx
+        push 0AAE72Ch
+        push esi
+        call dword ptr [mem_00925188]
+        mov edx, dword ptr [mem_00AAE638]
+        mov eax, dword ptr [esp + 1Ch]
+        push esi
+        push edx
+        push eax
+        call ext_006FFD60
+        mov al, byte ptr [esi + 0Ch]
+        add esp, 18h
+        __asm _emit 0x84
+        __asm _emit 0xC3
+        jne L74D9FB
+L74D93D:
+        mov esi, 0AAE7E0h
+        lea eax, [esp + 38h]
+L74D946:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74D96A
+        test cl, cl
+        je L74D966
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74D96A
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74D946
+L74D966:
+        xor eax, eax
+        jmp L74D96F
+L74D96A:
+        sbb eax, eax
+        sbb eax, -1
+L74D96F:
+        test eax, eax
+        jne L74D9BD
+        mov edi, dword ptr [esp + 30h]
+        mov eax, dword ptr [esp + 10h]
+        push edi
+        push 0AAE62Ch
+        push eax
+        call dword ptr [mem_0092521C]
+        mov esi, dword ptr [ebp + 8]
+        add esp, 0Ch
+        mov eax, edi
+L74D990:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74D9B4
+        test cl, cl
+        je L74D9B0
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74D9B4
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74D990
+L74D9B0:
+        xor eax, eax
+        jmp L74D9B9
+L74D9B4:
+        sbb eax, eax
+        sbb eax, -1
+L74D9B9:
+        test eax, eax
+        je L74DA3C
+L74D9BD:
+        mov esi, dword ptr [esp + 34h]
+        lea eax, [esp + 38h]
+        push eax
+        push 0AAE72Ch
+        push esi
+        mov byte ptr [esp + 44h], 0
+        call dword ptr [mem_00925188]
+        mov ecx, dword ptr [mem_00AAE638]
+        mov edx, dword ptr [esp + 1Ch]
+        push esi
+        push ecx
+        push edx
+        call ext_006FFD60
+        mov al, byte ptr [esi + 0Ch]
+        add esp, 18h
+        __asm _emit 0x84
+        __asm _emit 0xC3
+        je L74D93D
+        mov edi, dword ptr [esp + 2Ch]
+L74D9FB:
+        mov eax, dword ptr [esp + 5Ch]
+        inc edi
+        cmp edi, eax
+        mov dword ptr [esp + 2Ch], edi
+        jl L74D8EC
+L74DA0C:
+        mov eax, dword ptr [esp + 10h]
+        push eax
+        call ext_006A5C5C
+        mov ecx, dword ptr [esp + 34h]
+        push ecx
+        call ext_006A5C5C
+        add esp, 8
+        xor al, al
+        mov ecx, dword ptr [esp + 158h]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0Ch
+L74DA3C:
+        mov esi, dword ptr [esp + 34h]
+        lea eax, [esp + 38h]
+        push eax
+        push 0AAE72Ch
+        push esi
+        mov byte ptr [esp + 44h], 0
+        call dword ptr [mem_00925188]
+        mov ecx, dword ptr [mem_00AAE638]
+        mov edx, dword ptr [esp + 1Ch]
+        push esi
+        push ecx
+        push edx
+        call ext_006FFD60
+        add esp, 18h
+        xor eax, eax
+        mov dword ptr [esp + 1Ch], eax
+        mov dword ptr [esp + 14h], 0
+        mov dword ptr [esp + 20h], eax
+        mov dword ptr [esp + 18h], 0
+        mov dword ptr [esp + 24h], eax
+        mov dword ptr [esp + 2Ch], 2
+        mov dword ptr [esp + 28h], eax
+        mov esi, 0B5D2C0h
+        lea eax, [esp + 38h]
+L74DA9E:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne L74DAC6
+        test cl, cl
+        je L74DAC2
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne L74DAC6
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DA9E
+L74DAC2:
+        xor eax, eax
+        jmp L74DACB
+L74DAC6:
+        sbb eax, eax
+        sbb eax, -1
+L74DACB:
+        test eax, eax
+        je L74E0D9
+        mov ebx, dword ptr [esp + 10h]
+L74DAD7:
+        mov esi, 0AAE7E0h
+        lea eax, [esp + 38h]
+L74DAE0:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DB04
+        test cl, cl
+        je L74DB00
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DB04
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DAE0
+L74DB00:
+        xor eax, eax
+        jmp L74DB09
+L74DB04:
+        sbb eax, eax
+        sbb eax, -1
+L74DB09:
+        test eax, eax
+        je L74E0C4
+        mov esi, 0AAE7DCh
+        lea eax, [esp + 38h]
+L74DB1A:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DB3E
+        test cl, cl
+        je L74DB3A
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DB3E
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DB1A
+L74DB3A:
+        xor eax, eax
+        jmp L74DB43
+L74DB3E:
+        sbb eax, eax
+        sbb eax, -1
+L74DB43:
+        test eax, eax
+        jne L74DBE7
+        lea eax, [esp + 24h]
+        lea ecx, [esp + 1Ch]
+        push eax
+        lea edx, [esp + 18h]
+        push ecx
+        push edx
+        push 0AAE700h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 14h
+        cmp eax, 3
+        jne L74E05F
+        mov eax, dword ptr [esp + 28h]
+        mov ecx, dword ptr [esp + 24h]
+        mov edx, dword ptr [esp + 20h]
+        push 3FF00000h
+        push 0
+        push eax
+        mov eax, dword ptr [esp + 28h]
+        push ecx
+        mov ecx, dword ptr [esp + 28h]
+        push edx
+        mov edx, dword ptr [esp + 28h]
+        push eax
+        push ecx
+        push edx
+        lea ecx, [esp + 0C0h]
+        call ext_0077FB70
+        mov eax, dword ptr [ebp + 0Ch]
+        sub esp, 20h
+        mov ecx, 8
+        lea esi, [esp + 0C0h]
+        mov edi, esp
+        mov dword ptr [esp + 180h], 0
+        rep movsd
+        mov ecx, dword ptr [eax]
+        call ext_0070C010
+        lea ecx, [esp + 0A0h]
+        mov dword ptr [esp + 160h], 0FFFFFFFFh
+        call ext_006D80A0
+        jmp L74E05F
+L74DBE7:
+        mov esi, 0AAE7D8h
+        lea eax, [esp + 38h]
+L74DBF0:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DC14
+        test cl, cl
+        je L74DC10
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DC14
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DBF0
+L74DC10:
+        xor eax, eax
+        jmp L74DC19
+L74DC14:
+        sbb eax, eax
+        sbb eax, -1
+L74DC19:
+        test eax, eax
+        jne L74DCBA
+        lea eax, [esp + 24h]
+        lea ecx, [esp + 1Ch]
+        push eax
+        lea edx, [esp + 18h]
+        push ecx
+        push edx
+        push 0AAE700h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 14h
+        cmp eax, 3
+        jne L74E05F
+        mov eax, dword ptr [esp + 28h]
+        mov ecx, dword ptr [esp + 24h]
+        mov edx, dword ptr [esp + 20h]
+        push 3FF00000h
+        push 0
+        push eax
+        mov eax, dword ptr [esp + 28h]
+        push ecx
+        mov ecx, dword ptr [esp + 28h]
+        push edx
+        mov edx, dword ptr [esp + 28h]
+        push eax
+        push ecx
+        push edx
+        lea ecx, [esp + 80h]
+        call ext_0077FB70
+        mov eax, dword ptr [ebp + 0Ch]
+        sub esp, 20h
+        mov ecx, 8
+        lea esi, [esp + 80h]
+        mov edi, esp
+        mov dword ptr [esp + 180h], 1
+        rep movsd
+        mov ecx, dword ptr [eax]
+        call ext_0070C0E0
+        lea ecx, [esp + 60h]
+        mov dword ptr [esp + 160h], 0FFFFFFFFh
+        call ext_006D80A0
+        jmp L74E05F
+L74DCBA:
+        mov esi, 0AAE7D4h
+        lea eax, [esp + 38h]
+L74DCC3:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DCE7
+        test cl, cl
+        je L74DCE3
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DCE7
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DCC3
+L74DCE3:
+        xor eax, eax
+        jmp L74DCEC
+L74DCE7:
+        sbb eax, eax
+        sbb eax, -1
+L74DCEC:
+        test eax, eax
+        jne L74DD90
+        lea eax, [esp + 24h]
+        lea ecx, [esp + 1Ch]
+        push eax
+        lea edx, [esp + 18h]
+        push ecx
+        push edx
+        push 0AAE700h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 14h
+        cmp eax, 3
+        jne L74E05F
+        mov eax, dword ptr [esp + 28h]
+        mov ecx, dword ptr [esp + 24h]
+        mov edx, dword ptr [esp + 20h]
+        push 3FF00000h
+        push 0
+        push eax
+        mov eax, dword ptr [esp + 28h]
+        push ecx
+        mov ecx, dword ptr [esp + 28h]
+        push edx
+        mov edx, dword ptr [esp + 28h]
+        push eax
+        push ecx
+        push edx
+        lea ecx, [esp + 0A0h]
+        call ext_0077FB70
+        mov eax, dword ptr [ebp + 0Ch]
+        sub esp, 20h
+        mov ecx, 8
+        lea esi, [esp + 0A0h]
+        mov edi, esp
+        mov dword ptr [esp + 180h], 2
+        rep movsd
+        mov ecx, dword ptr [eax]
+        call ext_0070C1B0
+        lea ecx, [esp + 80h]
+        mov dword ptr [esp + 160h], 0FFFFFFFFh
+        call ext_006D80A0
+        jmp L74E05F
+L74DD90:
+        mov esi, 0AAE7CCh
+        lea eax, [esp + 38h]
+L74DD99:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DDBD
+        test cl, cl
+        je L74DDB9
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DDBD
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DD99
+L74DDB9:
+        xor eax, eax
+        jmp L74DDC2
+L74DDBD:
+        sbb eax, eax
+        sbb eax, -1
+L74DDC2:
+        test eax, eax
+        jne L74DDDF
+        lea eax, [esp + 2Ch]
+        push eax
+        push 0AA86A4h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 0Ch
+        jmp L74E05F
+L74DDDF:
+        mov esi, 0AAE7C8h
+        lea eax, [esp + 38h]
+L74DDE8:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DE0C
+        test cl, cl
+        je L74DE08
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DE0C
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DDE8
+L74DE08:
+        xor eax, eax
+        jmp L74DE11
+L74DE0C:
+        sbb eax, eax
+        sbb eax, -1
+L74DE11:
+        test eax, eax
+        jne L74DE51
+        lea eax, [esp + 14h]
+        push eax
+        push 0AAE640h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 0Ch
+        cmp eax, 1
+        jne L74E05F
+        fld qword ptr [esp + 14h]
+        fmul qword ptr [mem_009939D8]
+        mov ecx, dword ptr [ebp + 0Ch]
+        sub esp, 8
+        mov ecx, dword ptr [ecx]
+        fstp qword ptr [esp]
+        call ext_0070C380
+        jmp L74E05F
+L74DE51:
+        mov esi, 0AAE7C4h
+        lea eax, [esp + 38h]
+L74DE5A:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DE7E
+        test cl, cl
+        je L74DE7A
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DE7E
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DE5A
+L74DE7A:
+        xor eax, eax
+        jmp L74DE83
+L74DE7E:
+        sbb eax, eax
+        sbb eax, -1
+L74DE83:
+        test eax, eax
+        jne L74DEBD
+        lea eax, [esp + 14h]
+        push eax
+        push 0AAE640h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 0Ch
+        cmp eax, 1
+        jne L74E05F
+        mov ecx, dword ptr [esp + 18h]
+        mov eax, dword ptr [ebp + 0Ch]
+        mov edx, dword ptr [esp + 14h]
+        push ecx
+        mov ecx, dword ptr [eax]
+        push edx
+        call ext_0070C350
+        jmp L74E05F
+L74DEBD:
+        mov esi, 0AAE7C0h
+        lea eax, [esp + 38h]
+L74DEC6:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DEEA
+        test cl, cl
+        je L74DEE6
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DEEA
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DEC6
+L74DEE6:
+        xor eax, eax
+        jmp L74DEEF
+L74DEEA:
+        sbb eax, eax
+        sbb eax, -1
+L74DEEF:
+        test eax, eax
+        jne L74DF29
+        lea eax, [esp + 14h]
+        push eax
+        push 0AAE640h
+        push ebx
+        call dword ptr [mem_0092521C]
+        add esp, 0Ch
+        cmp eax, 1
+        jne L74E05F
+        mov ecx, dword ptr [esp + 18h]
+        mov eax, dword ptr [ebp + 0Ch]
+        mov edx, dword ptr [esp + 14h]
+        push ecx
+        mov ecx, dword ptr [eax]
+        push edx
+        call ext_0070C350
+        jmp L74E05F
+L74DF29:
+        mov esi, 0AAE7BCh
+        lea eax, [esp + 38h]
+L74DF32:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DF56
+        test cl, cl
+        je L74DF52
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DF56
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DF32
+L74DF52:
+        xor eax, eax
+        jmp L74DF5B
+L74DF56:
+        sbb eax, eax
+        sbb eax, -1
+L74DF5B:
+        test eax, eax
+        je L74E05F
+        mov esi, 0AAE7B4h
+        lea eax, [esp + 38h]
+L74DF6C:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74DF90
+        test cl, cl
+        je L74DF8C
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74DF90
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74DF6C
+L74DF8C:
+        xor eax, eax
+        jmp L74DF95
+L74DF90:
+        sbb eax, eax
+        sbb eax, -1
+L74DF95:
+        test eax, eax
+        jne L74E029
+        push ebx
+        lea ecx, [esp + 110h]
+        call ext_006B9D80
+        lea eax, [esp + 0C0h]
+        push 2
+        push eax
+        lea ecx, [esp + 114h]
+        mov dword ptr [esp + 168h], 3
+        call ext_006BAAF0
+        mov ecx, dword ptr [ebp + 8]
+        mov edx, dword ptr [esp + 58h]
+        push ecx
+        mov byte ptr [esp + 164h], 4
+        mov ecx, dword ptr [edx + 4]
+        call ext_006D3900
+        mov esi, dword ptr [ebp + 10h]
+        lea ecx, [esp + 0C0h]
+        mov dword ptr [esi], eax
+        call ext_006E7460
+        mov ecx, dword ptr [esi]
+        push eax
+        call ext_00702360
+        lea ecx, [esp + 0C0h]
+        mov byte ptr [esp + 160h], 3
+        call ext_006B9D70
+        lea ecx, [esp + 10Ch]
+        mov dword ptr [esp + 160h], 0FFFFFFFFh
+        call ext_006B9D70
+        jmp L74E05F
+L74E029:
+        mov esi, 0AAE7ACh
+        lea eax, [esp + 38h]
+L74E032:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74E056
+        test cl, cl
+        je L74E052
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74E056
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74E032
+L74E052:
+        xor eax, eax
+        jmp L74E05B
+L74E056:
+        sbb eax, eax
+        sbb eax, -1
+L74E05B:
+        mov dword ptr [esp + 5Ch], eax
+L74E05F:
+        mov esi, dword ptr [esp + 34h]
+        lea eax, [esp + 38h]
+        push eax
+        push 0AAE72Ch
+        push esi
+        mov byte ptr [esp + 44h], 0
+        call dword ptr [mem_00925188]
+        mov ecx, dword ptr [mem_00AAE638]
+        push esi
+        push ecx
+        push ebx
+        call ext_006FFD60
+        add esp, 18h
+        mov esi, 0B5D2C0h
+        lea eax, [esp + 38h]
+L74E093:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne L74E0B7
+        test cl, cl
+        je L74E0B3
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne L74E0B7
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne L74E093
+L74E0B3:
+        xor eax, eax
+        jmp L74E0BC
+L74E0B7:
+        sbb eax, eax
+        sbb eax, -1
+L74E0BC:
+        test eax, eax
+        jne L74DAD7
+L74E0C4:
+        cmp dword ptr [esp + 2Ch], 2
+        jge L74E0D9
+        mov eax, dword ptr [ebp + 0Ch]
+        push 0
+        push 0
+        mov ecx, dword ptr [eax]
+        call ext_0070C380
+L74E0D9:
+        mov ecx, dword ptr [esp + 10h]
+        push ecx
+        call ext_006A5C5C
+        mov edx, dword ptr [esp + 34h]
+        push edx
+        call ext_006A5C5C
+        mov ecx, dword ptr [esp + 160h]
+        add esp, 8
+        mov al, 1
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0Ch
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
