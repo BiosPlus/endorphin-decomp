@@ -1,0 +1,14 @@
+{
+  "va": "0x0066CF70",
+  "size": 94,
+  "orig_symbol": "ExprParser::BoolType::vfunc_18",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_18",
+  "class": "ExprParser::BoolType",
+  "signature": "void* __thiscall fn_0066CF70(void* self, uint32_t arg)",
+  "summary": "Lazily initializes a function-local static (guarded by bit 0 of mem_00B5966C) and returns its address; the stack argument is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:14:46Z"
+}

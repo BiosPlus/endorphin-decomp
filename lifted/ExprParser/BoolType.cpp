@@ -39,16 +39,11 @@ void __thiscall fn_0067A6B0(void* self, void* out, uint32_t a2, uint32_t a3) {
     reinterpret_cast<void (__thiscall*)(void*, void*)>(vtbl[29])(self, out);
     *reinterpret_cast<uint32_t*>(out) = ext_00698A90(a2, a3);
 }
-
-// [0x0066AE90] ExprParser::BoolType::vfunc_0 (36 bytes)
-// @name ExprParser::BoolType::vfunc_0
-// @class ExprParser::BoolType
-// @summary Reads the byte flag at *flagPtr, applies it to obj via ext_006720A0, and returns obj.
-void* __stdcall fn_0066AE90(void* obj, const uint8_t* flagPtr) {
-    uint8_t flag = *flagPtr;
-    ext_006720A0(obj, flag);
-    return obj;
-}
+// Guard word for the function-local static (bit 0 = initialized).
+extern "C" uint32_t mem_00B5966C;
+// Storage of the function-local static object (only its address is used).
+extern "C" uint8_t mem_00B59664[];
+extern "C" void __cdecl ext_006A6C87(const void* arg);
 
 // [0x0066B1A0] ExprParser::BoolType::vfunc_42 (46 bytes)
 // @name ExprParser::BoolType::vfunc_42
@@ -168,4 +163,21 @@ float fn_0067A820(void* a0, void* a1) {
     // Slot 7 (+0x1c) of b: float method taking a0 and the difference; its result is returned.
     using ApplyFn = float (*)(void* self, void* ctx, float value);
     return reinterpret_cast<ApplyFn>(vslot(b, 7))(b, a0, diff);
+}
+
+// [0x0066CF70] ExprParser::BoolType::vfunc_18 (94 bytes)
+// @name ExprParser::BoolType::vfunc_18
+// @class ExprParser::BoolType
+// @summary Lazily initializes a function-local static (guarded by bit 0 of mem_00B5966C) and returns its address; the stack argument is unused.
+void* __thiscall fn_0066CF70(void* self, uint32_t arg) {
+    (void)self;
+    (void)arg;
+
+    void* obj = static_cast<void*>(mem_00B59664);
+    if ((mem_00B5966C & 1u) == 0) {
+        mem_00B5966C |= 1u;
+        ext_006720A0(obj, 0);
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00921770)));
+    }
+    return obj;
 }
