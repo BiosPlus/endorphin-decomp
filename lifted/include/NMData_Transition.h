@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::Transition:
 namespace lifted_layout {
 struct NMData_Transition_Fields {
-    // +0xB0  void*                    field_0xB0  (evidence: 0x00496F50, 0x00496F70, 0x00496FE0)
+    // +0xB0  void*                    field_0xB0  (evidence: 0x00496F50, 0x00496F70, 0x00496FE0, 0x00497000)
     // +0xB4  uint8_t                  field_0xB4  (evidence: 0x004973A0, 0x004A9B50)
 };
 } // namespace lifted_layout

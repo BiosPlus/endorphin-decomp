@@ -2724,6 +2724,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x28 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046C430": {
+    "name": "ExprParser::BoolType::vfunc_51",
+    "class": "ExprParser::BoolType",
+    "signature": "void* __thiscall fn_0046C430(void* self)",
+    "summary": "Returns the RTTI type_info pointer for this object by forwarding to __RTtypeid.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0046C550": {
     "name": "ImageExporter::vfunc_0_off_4",
     "class": "ImageExporter",
@@ -3136,6 +3143,13 @@
     "class": "NMData::Transition",
     "signature": "uint32_t fn_00496FE0(void* self)",
     "summary": "Forwards to ext_004871D0 when +0xB0 is null; otherwise calls vtable slot 1 of the object at +0xB0+0x10 and returns its result.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
+  "0x00497000": {
+    "name": "NMData::Transition::vfunc_4_off_8",
+    "class": "NMData::Transition",
+    "signature": "uint32_t fn_00497000(void* self)",
+    "summary": "Returns 0 when +0xB0 is null; otherwise calls vtable slot 4 of the object at +0xB0+0x10 with argument 0 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
   "0x004973A0": {

@@ -1,0 +1,22 @@
+{
+  "va": "0x00497000",
+  "size": 38,
+  "orig_symbol": "NMData::Transition::vfunc_4_off_8",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_4_off_8",
+  "class": "NMData::Transition",
+  "signature": "uint32_t fn_00497000(void* self)",
+  "summary": "Returns 0 when +0xB0 is null; otherwise calls vtable slot 4 of the object at +0xB0+0x10 with argument 0 and returns its result.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:23Z"
+}
