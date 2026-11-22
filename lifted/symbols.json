@@ -6517,6 +6517,13 @@
     "summary": "Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005B8660": {
+    "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
+    "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",
+    "signature": "void* fn_005B8660(void* self)",
+    "summary": "RTTI-checked cast of self to the getNearestGeomPoint FunctionType descriptor; returns the cast pointer or NULL.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x005C1050": {
     "name": "NMData::MetaBodyData::vfunc_1_off_C",
     "class": "NMData::MetaBodyData",

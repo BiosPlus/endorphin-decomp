@@ -1,0 +1,14 @@
+{
+  "va": "0x005B8660",
+  "size": 30,
+  "orig_symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_16",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
+  "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",
+  "signature": "void* fn_005B8660(void* self)",
+  "summary": "RTTI-checked cast of self to the getNearestGeomPoint FunctionType descriptor; returns the cast pointer or NULL.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:37:30Z"
+}
