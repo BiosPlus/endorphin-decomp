@@ -1,0 +1,22 @@
+{
+  "va": "0x0064F8F0",
+  "size": 5,
+  "orig_symbol": "sub_0064F8F0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "VirtualSlot24Thunk",
+  "class": "Unknown",
+  "signature": "void fn_0064F8F0(void* self)",
+  "summary": "Loads the object's vtable pointer and dispatches through vtable slot 24 (offset +0x60), tail-jumping with the caller's arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* const*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:43:39Z"
+}

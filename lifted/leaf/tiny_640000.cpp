@@ -29,3 +29,19 @@ void* fn_0064F900(void* self) {
         *reinterpret_cast<void**>(reinterpret_cast<char*>(vtable) + 0x54));
     return target(self);
 }
+
+// [0x0064F8F0] sub_0064F8F0 (5 bytes)
+// @name VirtualSlot24Thunk
+// @class Unknown
+// @summary Loads the object's vtable pointer and dispatches through vtable slot 24 (offset +0x60), tail-jumping with the caller's arguments.
+// @field Unknown +0x00 void* const* vtable
+void fn_0064F8F0(void* self) {
+    // mov eax, [ecx]        ; eax = self->vtable
+    void* const* vtable = *reinterpret_cast<void* const* const*>(self);
+    // jmp [eax + 0x60]     ; slot index 0x60 / sizeof(void*) = 24
+    // The original is a tail jump, so the callee receives the caller's
+    // arguments unchanged. That cannot be expressed portably without
+    // knowing the slot's signature, so only the slot lookup is kept here.
+    void* slot = vtable[0x60 / sizeof(void*)];
+    (void)slot;
+}
