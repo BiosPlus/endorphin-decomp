@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct Primitives_Animation_Fields {
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0052F5F0)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x0053A5D0)
 };
 } // namespace lifted_layout

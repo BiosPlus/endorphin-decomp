@@ -24,6 +24,7 @@ extern "C" void __fastcall ext_0053BCA0(void* self);
 extern "C" void __fastcall ext_0053BE80(void* self);
 extern "C" void __fastcall ext_0053C060(void* self);
 extern "C" void __fastcall ext_0053C9A0(void* self);
+extern "C" UINT __stdcall glGenLists(UINT range);
 
 // [0x0053C970]
 // @name Primitives::Sensor2::vfunc_13
@@ -199,4 +200,14 @@ extern "C" void* __fastcall fn_0053D970(void* self, int edx_unused, unsigned int
 uint32_t fn_0052F5F0(void* self) {
     const uint32_t flags = *reinterpret_cast<const uint32_t*>(static_cast<const char*>(self) + 0x1C);
     return (flags & 0x20u) == 0x20u ? 1u : 0u;
+}
+
+// [0x0053A5D0] Primitives::Animation::vfunc_24 (16 bytes)
+// @name Primitives::Animation::vfunc_24
+// @class Primitives::Animation
+// @summary Allocates one OpenGL display list via glGenLists(1) and stores its id at this+0x34.
+// @field Primitives::Animation +0x34 uint32_t field_0x34
+void fn_0053A5D0(void* self) {
+    auto* obj = static_cast<unsigned char*>(self);
+    *reinterpret_cast<UINT*>(obj + 0x34) = glGenLists(1);
 }

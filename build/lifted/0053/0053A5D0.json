@@ -1,0 +1,22 @@
+{
+  "va": "0x0053A5D0",
+  "size": 16,
+  "orig_symbol": "Primitives::Animation::vfunc_24",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Animation::vfunc_24",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0053A5D0(void* self)",
+  "summary": "Allocates one OpenGL display list via glGenLists(1) and stores its id at this+0x34.",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:02Z"
+}
