@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3E20",
+  "size": 114,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_14",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_14",
+  "class": "NMData::CollisionModelData",
+  "signature": "void* fn_005C3E20(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Dispatches on arg2 (0x9C, 0x199, or other) to a helper and returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:16:14Z"
+}

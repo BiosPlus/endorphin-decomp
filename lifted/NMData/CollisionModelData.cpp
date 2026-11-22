@@ -66,3 +66,30 @@ void* fn_005CC420(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_005CC390(mem, owner);
 }
+
+// [0x005C3E20]
+// @name NMData::CollisionModelData::vfunc_14
+// @class NMData::CollisionModelData
+// @summary Dispatches on arg2 (0x9C, 0x199, or other) to a helper and returns arg1.
+// @field NMData::CollisionModelData +0x15C void* field_0x15c
+
+void* ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+void* ext_00661650(void* self, void* arg);
+
+void* fn_005C3E20(void* self, void* arg1, uint32_t arg2) {
+    uint8_t* s = reinterpret_cast<uint8_t*>(self);
+    void* field_0x15c = *reinterpret_cast<void**>(s + 0x15C);
+
+    if (arg2 == 0x9C) {
+        ext_00661650(arg1, field_0x15c);
+    } else if (arg2 == 0x199) {
+        if (field_0x15c != nullptr) {
+            ext_0058F6B0(self, arg1, 0x199);
+        } else {
+            ext_00661650(arg1, nullptr);
+        }
+    } else {
+        ext_0058F6B0(self, arg1, arg2);
+    }
+    return arg1;
+}

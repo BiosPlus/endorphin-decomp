@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct NMData_CollisionModelData_Fields {
     // +0x0   (unused) self is not     dereferenced  (evidence: 0x005C3180)
     // +0x150 void*                    field_0x150  (evidence: 0x005C3840, 0x005C3890)
+    // +0x15C void*                    field_0x15c  (evidence: 0x005C3E20)
 };
 } // namespace lifted_layout
