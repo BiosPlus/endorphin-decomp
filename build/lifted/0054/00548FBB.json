@@ -1,0 +1,13 @@
+{
+  "va": "0x00548FBB",
+  "size": 5,
+  "orig_symbol": "sub_00548FBB",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_00548FBB",
+  "signature": "void fn_00548FBB(void* self)",
+  "summary": "Epilogue fragment: pops saved esi and releases 0x30 bytes of stack locals; no portable C++ equivalent for the stack unwind, so the body is empty.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:41:44Z"
+}

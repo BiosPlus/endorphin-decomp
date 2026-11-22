@@ -85,6 +85,12 @@
     "summary": "Epilogue tail: discards two saved stack slots and returns, removing a 4-byte argument from the caller's stack (stdcall-style cleanup).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00548FBB": {
+    "name": "sub_00548FBB",
+    "signature": "void fn_00548FBB(void* self)",
+    "summary": "Epilogue fragment: pops saved esi and releases 0x30 bytes of stack locals; no portable C++ equivalent for the stack unwind, so the body is empty.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",
