@@ -1,0 +1,14 @@
+{
+  "va": "0x006710B0",
+  "size": 35,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_0",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_0",
+  "class": "ExprParser::Vector4Type",
+  "signature": "void* fn_006710B0(void* self, void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x00497900 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:41:34Z"
+}

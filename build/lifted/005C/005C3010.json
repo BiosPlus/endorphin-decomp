@@ -1,0 +1,14 @@
+{
+  "va": "0x005C3010",
+  "size": 32,
+  "orig_symbol": "NMData::CollisionModelDataBase::vfunc_15",
+  "src_path": "src/NMData/CollisionModelDataBase.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp",
+  "name": "NMData::CollisionModelDataBase::vfunc_15",
+  "class": "NMData::CollisionModelDataBase",
+  "signature": "void* __thiscall fn_005C3010(void* self, void* a, void* b)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:41:34Z"
+}

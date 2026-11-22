@@ -10,7 +10,11 @@
 // Recovered field layout for NMData::QuatChannel:
 namespace lifted_layout {
 struct NMData_QuatChannel_Fields {
-    // +0x30  uint32_t                 field_0x30  (evidence: 0x0051C7A0)
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x0051C7A0)
+    // +0x30  int32_t                  begin  (evidence: 0x0051C7C0) // CONFLICT: multiple definitions at +0x30
+    // +0x30  uint32_t                 field_0x30  (evidence: 0x0051C7A0) // CONFLICT: multiple definitions at +0x30
+    // +0x34  int32_t                  end  (evidence: 0x0051C7C0) // CONFLICT: multiple definitions at +0x34
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x0051C7A0) // CONFLICT: multiple definitions at +0x34
+    // +0x5C  void*                    field_0x5C  (evidence: 0x0051C7C0)
+    // +0x60  int32_t                  field_0x60  (evidence: 0x0051C7C0)
 };
 } // namespace lifted_layout

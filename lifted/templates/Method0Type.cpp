@@ -45,6 +45,7 @@ extern "C" void __fastcall ext_0048A9F0(void* self);
 extern "C" void __fastcall ext_004CCAF0(void* self);
 extern "C" void __fastcall ext_005C3170(void* self);
 extern "C" void __fastcall ext_0068BC50(void* self);
+extern "C" void ext_00671100(int selector, void* arg);
 
 // [0x0060A080]
 // @name ExprParser::Method0Type<NMData::DisabledCollisionPairList, addSelectedCollisionModels>::vfunc_3
@@ -212,4 +213,12 @@ void* fn_0060A090(void* unused, void* out) {
     ext_00493D90(*static_cast<void**>(out));
     ext_006290D8(out);
     return out;
+}
+
+// [0x005C3380] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13 (13 bytes)
+// @name ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13
+// @class ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).
+void fn_005C3380(void* arg) {
+    ext_00671100(16, arg);
 }

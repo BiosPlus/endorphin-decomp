@@ -1,0 +1,14 @@
+{
+  "va": "0x00594460",
+  "size": 13,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_13",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_13",
+  "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+  "signature": "void fn_00594460(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:41:34Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005E2A90",
+  "size": 32,
+  "orig_symbol": "NMData::HingeData::vfunc_14",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_14",
+  "class": "NMData::HingeData",
+  "signature": "void* __thiscall fn_005E2A90(void* self, void* a, void* b)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:41:34Z"
+}

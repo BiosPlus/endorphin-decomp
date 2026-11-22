@@ -1,0 +1,14 @@
+{
+  "va": "0x005B64A0",
+  "size": 32,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_2",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_2",
+  "class": "NMData::MetaBodyData",
+  "signature": "void* __thiscall fn_005B64A0(void* self, void* a, void* b)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:41:34Z"
+}
