@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 extern "C" int32_t ext_00594000();
 extern "C" void __thiscall ext_00599F10(int32_t self);
+extern "C" void __thiscall ext_0047D7C0(void* self, void* arg);
+extern "C" void* mem_00AE29D0;
 
-// [0x004BFBE0] NMData::AnimationEventData::vfunc_63 (25 bytes)
+extern "C" void* mem_00AE29D0;
 // @name NMData::AnimationEventData::vfunc_63
 // @class NMData::AnimationEventData
 // @summary If field +0x168 is non-zero, fetch the global int32 via ext_00594000 and pass it to ext_00599F10 as this.
@@ -42,4 +44,15 @@ extern "C" void* __thiscall fn_004DE1B0(void* self, void* a) {
     // Third stack slot in the original frame is an artifact of the push layout; modeled as 0.
     reinterpret_cast<VFn>(vt[15])(self, a, 0x334, 0);
     return a;
+}
+
+// [0x004BFC20] NMData::AnimationEventData::vfunc_13_off_C (20 bytes)
+// @name NMData::AnimationEventData::vfunc_13_off_C
+// @class NMData::AnimationEventData
+// @summary Secondary-base thunk: adjusts this by -0xC, calls ext_0047D7C0 on the global object at mem_00AE29D0, returns true.
+extern "C" bool __thiscall fn_004BFC20(void* self, const void* unused) {
+    (void)unused;
+    void* adjusted = static_cast<char*>(self) - 0xC;
+    ext_0047D7C0(mem_00AE29D0, adjusted);
+    return true;
 }

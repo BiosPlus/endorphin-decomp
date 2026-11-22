@@ -1,0 +1,14 @@
+{
+  "va": "0x004BFC20",
+  "size": 20,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_13_off_C",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_13_off_C",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" bool __thiscall fn_004BFC20(void* self, const void* unused)",
+  "summary": "Secondary-base thunk: adjusts this by -0xC, calls ext_0047D7C0 on the global object at mem_00AE29D0, returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:13Z"
+}

@@ -3567,6 +3567,13 @@
     "summary": "If field +0x168 is non-zero, fetch the global int32 via ext_00594000 and pass it to ext_00599F10 as this.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004BFC20": {
+    "name": "NMData::AnimationEventData::vfunc_13_off_C",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" bool __thiscall fn_004BFC20(void* self, const void* unused)",
+    "summary": "Secondary-base thunk: adjusts this by -0xC, calls ext_0047D7C0 on the global object at mem_00AE29D0, returns true.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004C0330": {
     "name": "CharacterSelection::vfunc_0_off_4",
     "class": "CharacterSelection",
