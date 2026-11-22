@@ -1,0 +1,14 @@
+{
+  "va": "0x006A19D0",
+  "size": 56,
+  "orig_symbol": "ExprParser::Operators::Cos::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Cos.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Cos.cpp",
+  "name": "ExprParser::Operators::Cos::vfunc_3",
+  "class": "ExprParser::Operators::Cos",
+  "signature": "void __thiscall fn_006A19D0(void* self, void* ctx)",
+  "summary": "Evaluates unary operand via vfunc_1, applies cos, and stores result via vfunc_7",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T07:45:47Z"
+}
