@@ -10154,6 +10154,13 @@
     "summary": "Evaluates both operands via vtable slot 1, computes lhs \u003c rhs, and forwards the boolean through the lhs vtable slot 9.",
     "lifted_path": "lifted/ExprParser/Operators/Less.cpp"
   },
+  "0x006A0940": {
+    "name": "ExprParser::Operators::LessEqual::vfunc_3",
+    "class": "ExprParser::Operators::LessEqual",
+    "signature": "inline void* vtable_slot(void* object, size_t slot)",
+    "summary": "Stdcall (ret 8) less-or-equal evaluator: reads a float from each operand (vslot 1 on arg1-\u003e+0x04 and arg2-\u003e+0x04), computes a \u003c= b with unordered operands yielding false, and passes the boolean result to arg1-\u003e+0x04's vslot 9 method.",
+    "lifted_path": "lifted/ExprParser/Operators/LessEqual.cpp"
+  },
   "0x006A09A0": {
     "name": "ExprParser::Operators::Multiply::vfunc_3",
     "class": "ExprParser::Operators::Multiply",

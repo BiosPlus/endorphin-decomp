@@ -1,0 +1,22 @@
+{
+  "va": "0x006A0940",
+  "size": 90,
+  "orig_symbol": "ExprParser::Operators::LessEqual::vfunc_3",
+  "src_path": "src/ExprParser/Operators/LessEqual.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/LessEqual.cpp",
+  "name": "ExprParser::Operators::LessEqual::vfunc_3",
+  "class": "ExprParser::Operators::LessEqual",
+  "signature": "inline void* vtable_slot(void* object, size_t slot)",
+  "summary": "Stdcall (ret 8) less-or-equal evaluator: reads a float from each operand (vslot 1 on arg1-\u003e+0x04 and arg2-\u003e+0x04), computes a \u003c= b with unordered operands yielding false, and passes the boolean result to arg1-\u003e+0x04's vslot 9 method.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::BinaryOperator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:14:18Z"
+}
