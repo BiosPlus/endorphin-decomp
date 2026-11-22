@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1700",
+  "size": 45,
+  "orig_symbol": "ExprParser::Operators::UnaryMinus::vfunc_3",
+  "src_path": "src/ExprParser/Operators/UnaryMinus.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/UnaryMinus.cpp",
+  "name": "ExprParser::Operators::UnaryMinus::vfunc_3",
+  "class": "ExprParser::Operators::UnaryMinus",
+  "signature": "inline R lift_vcall(void* obj, A... args)",
+  "summary": "Evaluates the operand child via its vfunc_1, then calls the child's vfunc_7 with the negated value.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::UnaryMinus",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:45Z"
+}

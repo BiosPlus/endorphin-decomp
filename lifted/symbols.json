@@ -9594,6 +9594,13 @@
     "summary": "Forwards (a, b) to virtual slot +0xB0 of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006A1700": {
+    "name": "ExprParser::Operators::UnaryMinus::vfunc_3",
+    "class": "ExprParser::Operators::UnaryMinus",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "Evaluates the operand child via its vfunc_1, then calls the child's vfunc_7 with the negated value.",
+    "lifted_path": "lifted/ExprParser/Operators/UnaryMinus.cpp"
+  },
   "0x006A1840": {
     "name": "ExprParser::Operators::Add::vfunc_3",
     "class": "ExprParser::Operators::Add",
