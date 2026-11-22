@@ -7360,10 +7360,10 @@
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x005E05F0": {
-    "name": "NMData::HingeData::vfunc_55",
+    "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",
-    "signature": "std::uint8_t __fastcall NMData_HingeData_vfunc_55(void* ecx, std::uint32_t arg)",
-    "summary": "Returns true if the base TransformInterface virtual slot 7 reports success and the hinge is not flagged at +0x17a; otherwise true only when the stack argument is 0, 1, 2 or 6.",
+    "signature": "std::string* fn_005EF8A0(void* self, std::string* out)",
+    "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EF9C; this is unused.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
   "0x005E0970": {
