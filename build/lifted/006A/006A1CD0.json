@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1CD0",
+  "size": 21,
+  "orig_symbol": "ExprParser::Operators::Abs::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Abs.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Abs.cpp",
+  "name": "ExprParser::Operators::Abs::vfunc_3",
+  "class": "ExprParser::Operators::Abs",
+  "signature": "uint32_t fn_006A1CD0(void* self)",
+  "summary": "Forwards to virtual slot 47 (+0xBC) of the object at self+0x04, passing self as the argument.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Abs",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (child object; owning class in the UnaryOperator/UnaryFunction base not",
+      "name": "confirmed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:04Z"
+}
