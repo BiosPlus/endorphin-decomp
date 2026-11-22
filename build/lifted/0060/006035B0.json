@@ -1,0 +1,14 @@
+{
+  "va": "0x006035B0",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e::vfunc_16",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_16 (Effector vcall 100)",
+  "class": "ExprParser::ROWriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e",
+  "signature": "void* fn_006035B0(void* self)",
+  "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:57Z"
+}

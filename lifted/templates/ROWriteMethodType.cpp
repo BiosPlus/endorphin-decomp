@@ -26,3 +26,13 @@ void* fn_0059EB40(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00A2FB54), 0);
 }
+
+// [0x006035B0] ExprParser::ROWriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (Effector vcall 100)
+// @class ExprParser::ROWriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A93750), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_006035B0(void* self) {
+    return self;
+}
