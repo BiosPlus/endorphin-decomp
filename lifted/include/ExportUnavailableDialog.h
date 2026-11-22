@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct ExportUnavailableDialog_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00419720, 0x0055BBD0)
+    // +0x11C uint8_t                  field_0x11c  (evidence: 0x00461630)
 };
 } // namespace lifted_layout

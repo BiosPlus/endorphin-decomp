@@ -2314,6 +2314,13 @@
     "summary": "Returns address of global mem_00938708.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00461630": {
+    "name": "ExportUnavailableDialog::vfunc_63",
+    "class": "ExportUnavailableDialog",
+    "signature": "void fn_00461630(void* self, uint32_t arg)",
+    "summary": "Calls ext_006A5F44(arg, 1, \u0026this-\u003efield_0x11c), passing the stack argument and the address of the embedded sub-object at +0x11C.",
+    "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp"
+  },
   "0x00461650": {
     "name": "sub_00461650",
     "signature": "extern \"C\" void* __cdecl fn_00461650(void)",
