@@ -10,9 +10,11 @@
 // Recovered field layout for NMData::MetaBodyData:
 namespace lifted_layout {
 struct NMData_MetaBodyData_Fields {
-    // +0xC   void*                    renderObjectOwner_vptr  (evidence: 0x005B6E70)
-    // +0x10  void*                    renderObject  (evidence: 0x005B6E70)
+    // +0xC   void*                    field_0x0C  (evidence: 0x005B6F00) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    renderObjectOwner_vptr  (evidence: 0x005B6E70) // CONFLICT: multiple definitions at +0xC
+    // +0x10  void*                    field_0x10  (evidence: 0x005B6F00) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    renderObject  (evidence: 0x005B6E70) // CONFLICT: multiple definitions at +0x10
     // +0x14C void*                    field_0x14C  (evidence: 0x005B6880, 0x005B68D0)
-    // +0x158 void*                    field_0x158  (evidence: 0x005B6E70)
+    // +0x158 void*                    field_0x158  (evidence: 0x005B6E70, 0x005B6F00)
 };
 } // namespace lifted_layout

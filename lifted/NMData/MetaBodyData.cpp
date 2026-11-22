@@ -85,7 +85,7 @@ void __thiscall fn_005B6E70(void* this_ptr, const float* scale) {
 
 #include "lift_compat.h"
 
-extern uint32_t __thiscall ext_005B11F0(void* self);
+extern "C" const float* __thiscall ext_005B11F0(void* self);
 
 void __thiscall fn_005B6F00(void* self, const float* scale) {
     uint8_t* obj = static_cast<uint8_t*>(self);
@@ -115,8 +115,8 @@ void __thiscall fn_005B6F00(void* self, const float* scale) {
     void* field_10 = *reinterpret_cast<void**>(obj + 0x10);
     if (field_10) {
         void** vtbl_10 = *reinterpret_cast<void***>(field_10);
-        uint32_t res = ext_005B11F0(sub_24);
-        using UpdateFn = void(__thiscall*)(void*, uint32_t);
+        const float* res = ext_005B11F0(sub_24);
+        using UpdateFn = void(__thiscall*)(void*, const float*);
         reinterpret_cast<UpdateFn>(vtbl_10[0x34 / 4])(field_10, res);
     }
 }

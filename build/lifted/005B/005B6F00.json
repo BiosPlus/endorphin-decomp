@@ -1,0 +1,34 @@
+{
+  "va": "0x005B6F00",
+  "size": 182,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_38",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_38",
+  "class": "NMData::MetaBodyData",
+  "signature": "void __thiscall fn_005B6F00(void* self, const float* scale)",
+  "summary": "Scales a dimension of the render object's bounding/transform vector and updates the attached object.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T08:23:22Z"
+}
