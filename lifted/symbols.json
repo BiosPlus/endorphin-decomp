@@ -8205,6 +8205,13 @@
     "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00605360": {
+    "name": "ExprParser::WriteMethodType\u003cEffector, float, vcall112\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
+    "signature": "uint32_t __stdcall fn_00605360(void* arg1, void* arg2)",
+    "summary": "Dereferences arg1 to get the target Effector, evaluates a float from arg2's sub-object via its vtable slot 1, and forwards it to the vcall112 thunk ext_006036B0 on the target; returns that thunk's result (stdcall, 8 bytes of args).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00605390": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e",

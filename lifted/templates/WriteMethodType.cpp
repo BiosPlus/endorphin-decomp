@@ -78,9 +78,12 @@ extern "C" void ext_0067C4D0(void* self, float value);
 extern "C" void ext_0067BA60(void* self, uint32_t value);
 extern "C" void ext_0067BB00(void* self, uint32_t value);
 extern "C" void ext_0067C060(void* self, uint32_t value);
+// Known callee 0x006036B0: VirtualSlot28Thunk (loads the object's vtable and tail-calls slot 28 (offset +0x70) with the same this pointer; the callee's result is passed through in eax).
+// Called as thiscall: ecx = this, one float stack argument; result returned in eax.
+extern "C" uint32_t ext_006036B0(void* self, float value);
 
-// [0x00594520] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_41 (37 bytes)
-// @name ExprParser::WriteMethodType<World, float, setFriction>::vfunc_41
+// Called as thiscall: ecx = this, one float stack argument; result returned in eax.
+extern "C" uint32_t ext_006036B0(void* self, float value);
 // @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>
 // @summary Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setFriction setter ext_005940A0.
 // @field ExprParser::WriteMethodType +0x00 void* target
@@ -971,4 +974,27 @@ void __thiscall fn_0066CBC0(void* self, void* targetPtr, void* valuePtr) {
     auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
     uint32_t value = getVec3(typeObj, valuePtr);
     ext_0067C060(target, value);
+}
+
+// [0x00605360] ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>::vfunc_41 (37 bytes)
+// @name ExprParser::WriteMethodType<Effector, float, vcall112>::vfunc_41
+// @class ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>
+// @summary Dereferences arg1 to get the target Effector, evaluates a float from arg2's sub-object via its vtable slot 1, and forwards it to the vcall112 thunk ext_006036B0 on the target; returns that thunk's result (stdcall, 8 bytes of args).
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+uint32_t __stdcall fn_00605360(void* arg1, void* arg2) {
+    // esi = *(void**)arg1  -> target object
+    void* target = lift_field<void*>(arg1, 0x00);
+
+    // ecx = ((void**)arg2)[1]  -> sub-object (reader)
+    void* reader = lift_field<void*>(arg2, 0x04);
+
+    // edx = *(void**)reader; call [edx + 4] with ecx = reader and arg2 as stack argument
+    void** vtable = lift_field<void**>(reader, 0x00);
+    using GetFloatFn = float(__thiscall*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(vtable[0x04 / sizeof(void*)]);
+    float value = getFloat(reader, arg2);
+
+    // Forward: ecx = target, stack arg = value (float); eax passed through.
+    return ext_006036B0(target, value);
 }

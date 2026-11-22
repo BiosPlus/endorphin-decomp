@@ -1,0 +1,28 @@
+{
+  "va": "0x00605360",
+  "size": 37,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffector, float, vcall112\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
+  "signature": "uint32_t __stdcall fn_00605360(void* arg1, void* arg2)",
+  "summary": "Dereferences arg1 to get the target Effector, evaluates a float from arg2's sub-object via its vtable slot 1, and forwards it to the vcall112 thunk ext_006036B0 on the target; returns that thunk's result (stdcall, 8 bytes of args).",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "reader"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:20:53Z"
+}
