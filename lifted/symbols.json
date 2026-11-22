@@ -10112,6 +10112,13 @@
     "summary": "Takes (token, ctx), calls virtual slot 42 (0xA8) on token-\u003echild to get a bool, then calls virtual slot 9 (0x24) on the same child with (token, bool) and returns its result.",
     "lifted_path": "lifted/ExprParser/Operators/Equals.cpp"
   },
+  "0x006A0800": {
+    "name": "ExprParser::Operators::Greater::vfunc_3",
+    "class": "ExprParser::Operators::Greater",
+    "signature": "inline void** vtable_of(void* obj)",
+    "summary": "Evaluates both operands via their vtable slot +0x04, compares them (left \u003e right), and forwards the boolean result through the left operand's vtable slot +0x24.",
+    "lifted_path": "lifted/ExprParser/Operators/Greater.cpp"
+  },
   "0x006A09A0": {
     "name": "ExprParser::Operators::Multiply::vfunc_3",
     "class": "ExprParser::Operators::Multiply",
