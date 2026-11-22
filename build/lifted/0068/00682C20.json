@@ -1,0 +1,28 @@
+{
+  "va": "0x00682C20",
+  "size": 70,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_19",
+  "src_path": "src/NMData/ValuePtrData.cpp",
+  "lifted_path": "lifted/NMData/ValuePtrData.cpp",
+  "name": "NMData::ValuePtrData::vfunc_19",
+  "class": "NMData::ValuePtrData",
+  "signature": "uint32_t fn_00682C20(void* self, uint32_t arg)",
+  "summary": "If field +0x4C is set, calls its vtable slot 24 with \u0026field+0x48, dynamic-casts the result; returns 0x67 if arg==0x67 else 0x66 on cast success, otherwise arg.",
+  "fields": [
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x48",
+      "type": "uint8_t field_0x48 (embedded sub-object; address only, passed to virtual",
+      "name": "call)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x4C",
+      "type": "void* field_0x4c (object pointer; vtable",
+      "name": "dispatched)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:02Z"
+}

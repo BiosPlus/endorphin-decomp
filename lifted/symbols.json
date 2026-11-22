@@ -9744,6 +9744,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00682C20": {
+    "name": "NMData::ValuePtrData::vfunc_19",
+    "class": "NMData::ValuePtrData",
+    "signature": "uint32_t fn_00682C20(void* self, uint32_t arg)",
+    "summary": "If field +0x4C is set, calls its vtable slot 24 with \u0026field+0x48, dynamic-casts the result; returns 0x67 if arg==0x67 else 0x66 on cast success, otherwise arg.",
+    "lifted_path": "lifted/NMData/ValuePtrData.cpp"
+  },
   "0x00682DC0": {
     "name": "NMData::ValuePtrData::vfunc_0_off_4",
     "class": "NMData::ValuePtrData",

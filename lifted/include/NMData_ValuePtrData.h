@@ -11,6 +11,8 @@
 namespace lifted_layout {
 struct NMData_ValuePtrData_Fields {
     // +0x24  void*                    field_0x24  (evidence: 0x00682DC0)
+    // +0x48  uint8_t field_0x48 (embedded sub-object; address only, passed to virtual call)  (evidence: 0x00682C20)
+    // +0x4C  void* field_0x4c (object pointer; vtable dispatched)  (evidence: 0x00682C20)
     // +0x88  uint32_t                 field_0x88  (evidence: 0x00682DC0)
 };
 } // namespace lifted_layout
