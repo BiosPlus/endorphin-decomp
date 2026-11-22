@@ -1,0 +1,14 @@
+{
+  "va": "0x005C32B0",
+  "size": 32,
+  "orig_symbol": "NMData::FluidObjectData::vfunc_15",
+  "src_path": "src/NMData/FluidObjectData.cpp",
+  "lifted_path": "lifted/NMData/FluidObjectData.cpp",
+  "name": "NMData::FluidObjectData::vfunc_15",
+  "class": "NMData::FluidObjectData",
+  "signature": "void* __thiscall fn_005C32B0(void* self, void* a, void* b)",
+  "summary": "Forwards (a, b) to the CollisionModelDataBase::vfunc_15 implementation on this object and returns a.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:38Z"
+}

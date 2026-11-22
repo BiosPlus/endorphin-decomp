@@ -6622,6 +6622,13 @@
     "summary": "Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005C32B0": {
+    "name": "NMData::FluidObjectData::vfunc_15",
+    "class": "NMData::FluidObjectData",
+    "signature": "void* __thiscall fn_005C32B0(void* self, void* a, void* b)",
+    "summary": "Forwards (a, b) to the CollisionModelDataBase::vfunc_15 implementation on this object and returns a.",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",
