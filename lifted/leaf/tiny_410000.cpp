@@ -23,3 +23,12 @@ extern "C" const char* __cdecl fn_00414240() {
 extern "C" const char* __cdecl fn_00415580() {
     return reinterpret_cast<const char*>(&mem_0092C6E8);
 }
+
+// [0x00416B60] Returns a pointer to the string constant ",bj".
+#include "lift_compat.h"
+
+// @name GetStringConstant_00416B60
+// @summary Returns the address of the static string constant ",bj" (mem_0092CAEC).
+extern "C" const char* __cdecl fn_00416B60() {
+    return ",bj";
+}

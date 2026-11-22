@@ -116,6 +116,12 @@
     "summary": "Returns the address of the global constant mem_0092C8E4 (a .rdata pointer value).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00416B60": {
+    "name": "GetStringConstant_00416B60",
+    "signature": "extern \"C\" const char* __cdecl fn_00416B60()",
+    "summary": "Returns the address of the static string constant \",bj\" (mem_0092CAEC).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
