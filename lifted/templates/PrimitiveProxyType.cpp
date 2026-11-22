@@ -204,6 +204,8 @@ uint32_t __thiscall fn_004975E0(void* self, const std::string* const* arg) {
     }
     return 0;
 }
+extern "C" uint32_t ext_0049B3A0();
+extern "C" uint32_t ext_0049CC60();
 
 // [0x00497930]
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_2
@@ -293,4 +295,22 @@ extern "C" void* ext_004BA270(void);
 void fn_004BA3A0(void* self) {
     void* result = ext_004BA270();
     static_cast<void**>(self)[1] = result;
+}
+
+// [0x0049CFE0] ExprParser::PrimitiveProxyType<bool>::vfunc_37 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_37
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType<std::string>::vfunc_38).
+void fn_0049CFE0(void* self) {
+    uint32_t result = ext_0049B3A0();
+    lift_field<uint32_t>(self, 0x04) = result;
+}
+
+// [0x0049DA30] ExprParser::PrimitiveProxyType<int>::vfunc_37 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_37
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType<std::string>::vfunc_38).
+void fn_0049DA30(void* self) {
+    uint32_t result = ext_0049CC60();
+    lift_field<uint32_t>(self, 0x04) = result;
 }

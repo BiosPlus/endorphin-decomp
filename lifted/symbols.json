@@ -3662,6 +3662,20 @@
     "summary": "Forwards the argument plus two loader fields to ext_004EBC80, using field +0x04 as the receiver.",
     "lifted_path": "lifted/NMData/NameTableLoader.cpp"
   },
+  "0x0049CFE0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_37",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "void fn_0049CFE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
+  "0x0049DA30": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_37",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "void fn_0049DA30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049DBE0": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_38",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
@@ -6764,6 +6778,20 @@
     "signature": "void __thiscall fn_0056EAC0(void* self, const std::string* filename)",
     "summary": "Exports hierarchy and motion data to a BVH file.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
+  "0x00570350": {
+    "name": "CDLCharacterIO::vfunc_3",
+    "class": "CDLCharacterIO",
+    "signature": "void* fn_00570350(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
+    "lifted_path": "lifted/classes/CDLCharacterIO.cpp"
+  },
+  "0x00571DF0": {
+    "name": "CSMMotionIO::vfunc_3",
+    "class": "CSMMotionIO",
+    "signature": "void* fn_00571DF0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
+    "lifted_path": "lifted/classes/CSMMotionIO.cpp"
   },
   "0x005731A0": {
     "name": "OBJIO::vfunc_3",

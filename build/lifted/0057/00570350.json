@@ -1,0 +1,14 @@
+{
+  "va": "0x00570350",
+  "size": 37,
+  "orig_symbol": "CDLCharacterIO::vfunc_3",
+  "src_path": "src/classes/CDLCharacterIO.cpp",
+  "lifted_path": "lifted/classes/CDLCharacterIO.cpp",
+  "name": "CDLCharacterIO::vfunc_3",
+  "class": "CDLCharacterIO",
+  "signature": "void* fn_00570350(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T14:26:17Z"
+}
