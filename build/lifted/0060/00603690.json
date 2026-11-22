@@ -1,0 +1,22 @@
+{
+  "va": "0x00603690",
+  "size": 5,
+  "orig_symbol": "sub_00603690",
+  "src_path": "src/leaf/tiny_600000.cpp",
+  "lifted_path": "lifted/leaf/tiny_600000.cpp",
+  "name": "VirtualSlot16Thunk",
+  "class": "VTable",
+  "signature": "void fn_00603690(void* self)",
+  "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 16 (offset +0x40) with the same this pointer; the callee's return value is passed through in eax.",
+  "fields": [
+    {
+      "class": "VTable",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "slot16"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:42:43Z"
+}

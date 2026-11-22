@@ -131,6 +131,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 19 (offset +0x4C) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x00603690": {
+    "name": "VirtualSlot16Thunk",
+    "class": "VTable",
+    "signature": "void fn_00603690(void* self)",
+    "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 16 (offset +0x40) with the same this pointer; the callee's return value is passed through in eax.",
+    "lifted_path": "lifted/leaf/tiny_600000.cpp"
+  },
   "0x006036A0": {
     "name": "VirtualSlot20Thunk",
     "signature": "void* fn_006036A0(void* self)",
