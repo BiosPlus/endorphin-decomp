@@ -5805,6 +5805,13 @@
     "summary": "Pure jump thunk forwarding to NMFileIO::vfunc_1.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584660": {
+    "name": "AcclaimIO::IsFlaggedAndEnabled",
+    "class": "AcclaimIO",
+    "signature": "bool fn_00584660(void* self)",
+    "summary": "Returns true when virtual slot 57 (vtable +0xE4) reports bit 0x02 and the byte at +0x428 is nonzero.",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584690": {
     "name": "AcclaimIO::vfunc_47",
     "class": "AcclaimIO",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00584660",
+  "size": 34,
+  "orig_symbol": "AcclaimIO::vfunc_43",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::IsFlaggedAndEnabled",
+  "class": "AcclaimIO",
+  "signature": "bool fn_00584660(void* self)",
+  "summary": "Returns true when virtual slot 57 (vtable +0xE4) reports bit 0x02 and the byte at +0x428 is nonzero.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x428",
+      "type": "uint8_t",
+      "name": "field_0x428"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:08Z"
+}
