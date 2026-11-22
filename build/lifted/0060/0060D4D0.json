@@ -1,0 +1,14 @@
+{
+  "va": "0x0060D4D0",
+  "size": 35,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_8",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_8",
+  "class": "NMData::EffectorGroupData",
+  "signature": "std::string* fn_0060D4D0(void* self, std::string* out)",
+  "summary": "Constructs a std::string in the caller's hidden return buffer from the C string pointed to by mem_00A9EE68; this is never read (thiscall, one stack arg, ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:41:57Z"
+}

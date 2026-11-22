@@ -7455,6 +7455,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060C4C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060D4D0": {
+    "name": "NMData::EffectorGroupData::vfunc_8",
+    "class": "NMData::EffectorGroupData",
+    "signature": "std::string* fn_0060D4D0(void* self, std::string* out)",
+    "summary": "Constructs a std::string in the caller's hidden return buffer from the C string pointed to by mem_00A9EE68; this is never read (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
   "0x0060EC20": {
     "name": "NMData::SensorData::vfunc_1_off_C",
     "class": "NMData::SensorData",
