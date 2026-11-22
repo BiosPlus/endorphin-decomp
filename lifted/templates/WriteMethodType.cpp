@@ -2,26 +2,10 @@
 #include "lift_compat.h"
 // Known callee 0x006036A0: VirtualSlot20Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 20 (offset +0x50) with the same this pointer; the callee's result is passed through.)
 extern "C" void ext_006036A0(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    using Fn = uint32_t (*)(void* self, void* arg);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
 // Known callee 0x00649080: sub_00649080 (38B), not yet named.
 extern "C" void ext_00649080(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
 
 extern "C" void ext_00649080(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
     void* target = *reinterpret_cast<void**>(self);
     void* sub = lift_field<void*>(arg, 0x04);
     uint32_t value = vcall_word(sub, 0x18 / 4, arg);
@@ -29,18 +13,8 @@ static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
 }
 // Known callee 0x00648E30: sub_00648E30 (13B), not yet named.
 extern "C" void ext_00648E30(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
 
 extern "C" void ext_00648E30(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
     void* target = *reinterpret_cast<void**>(self);
     void* sub = lift_field<void*>(arg, 0x04);
     uint32_t value = vcall_word(sub, 0x0C / 4, arg);
@@ -48,18 +22,8 @@ static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
 }
 // Known callee 0x0064DDE0: sub_0064DDE0 (20B), not yet named.
 extern "C" void ext_0064DDE0(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
 
 extern "C" void ext_0064DDE0(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
     void* target = *reinterpret_cast<void**>(self);
     void* sub = lift_field<void*>(arg, 0x04);
     uint32_t value = vcall_word(sub, 0x0C / 4, arg);
@@ -67,18 +31,8 @@ static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
 }
 // Known callee 0x00402040: AVIIO::vfunc_1 (3B). Called here as a plain (self, value) forwarder.
 extern "C" void ext_00402040(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
 
 extern "C" void ext_00402040(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
     void* target = *reinterpret_cast<void**>(self);
     void* sub = lift_field<void*>(arg, 0x04);
     uint32_t value = vcall_word(sub, 0x14 / 4, arg);
@@ -86,18 +40,8 @@ static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
 }
 // Known callee 0x0064F900: VirtualSlot21Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 21 (offset +0x54) with the same this pointer; the callee's result is passed through.)
 extern "C" void ext_0064F900(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
 
 extern "C" void ext_0064F900(void* self, uint32_t value);
-// Call vtable slot `slot` on `obj` with one argument; returns the raw 32-bit result word.
-static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<Fn>(vtbl[slot])(obj, arg);
-}
     void* target = *reinterpret_cast<void**>(self);
     void* sub = lift_field<void*>(arg, 0x04);
     uint32_t value = vcall_word(sub, 0x18 / 4, arg);
@@ -183,6 +127,7 @@ static inline void* vtable_entry(void* obj, ptrdiff_t byteOffset) {
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x0C / 4])(sub, arg);
     ext_00648E30(target, value);
 }
+// Known callee 0x006036A0: VirtualSlot20Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 20 (offset +0x50) with the same this pointer; the callee's result is passed through.)
 
 // [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
 // @name WriteMethodType<SkeletalJoint, Vector3 const&>::setDriveAngularVel::vfunc_41
@@ -284,4 +229,17 @@ void __stdcall fn_00604BA0(void* valuePtr, void* arg) {
     void* iface = lift_field<void*>(arg, 0x04);      // interface pointer at arg+0x04
     void* r = reinterpret_cast<ThisCallFn>(vtable_entry(iface, 0x18))(iface, arg);
     ext_00603680(obj, r);
+}
+
+// [0x00604C40] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>
+// @summary Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.
+// @field ExprParser::WriteMethodType +0x00 void* targetObj
+void fn_00604C40(void* self, void* arg) {
+    void* target = *reinterpret_cast<void**>(self);
+    void* sub = lift_field<void*>(arg, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x18 / 4])(sub, arg);
+    ext_006036A0(target, value);
 }
