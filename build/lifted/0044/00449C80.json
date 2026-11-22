@@ -1,0 +1,14 @@
+{
+  "va": "0x00449C80",
+  "size": 6,
+  "orig_symbol": "ReloadCharacterDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ReloadCharacterDialog::vfunc_0",
+  "class": "ReloadCharacterDialog",
+  "signature": "void* fn_00449C80(void* self)",
+  "summary": "Returns the address of the global data slot mem_00933A38 (leaf accessor; self is unused).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:51:51Z"
+}

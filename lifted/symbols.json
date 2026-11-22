@@ -323,6 +323,13 @@
     "summary": "Returns the address of the RangeDialog constant global mem_009335E4 (no object state is read).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00449C80": {
+    "name": "ReloadCharacterDialog::vfunc_0",
+    "class": "ReloadCharacterDialog",
+    "signature": "void* fn_00449C80(void* self)",
+    "summary": "Returns the address of the global data slot mem_00933A38 (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
