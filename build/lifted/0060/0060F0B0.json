@@ -1,0 +1,14 @@
+{
+  "va": "0x0060F0B0",
+  "size": 25,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_0_off_150",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_0_off_150",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void fn_0060F0B0(void* dst)",
+  "summary": "Fetches a 64-byte (16 x DWORD) block via ext_00480920 and copies it into the caller-supplied destination buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:34Z"
+}

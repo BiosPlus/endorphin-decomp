@@ -2702,6 +2702,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::MetaBodySensorData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060F0B0": {
+    "name": "NMData::AxisDefineSensorData::vfunc_0_off_150",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "void fn_0060F0B0(void* dst)",
+    "summary": "Fetches a 64-byte (16 x DWORD) block via ext_00480920 and copies it into the caller-supplied destination buffer.",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
   "0x0060F170": {
     "name": "NMData::MetaBodySensorData::vfunc_0",
     "class": "NMData::MetaBodySensorData",
