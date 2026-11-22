@@ -17607,3 +17607,3122 @@ extern "C" __declspec(naked) void __fastcall fn_0078FFA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0078DA00] sub_0078DA00 (9423 bytes)
+// [VA] 0x0078DA00 sub_0078DA00 (9423 bytes)
+extern "C" void ext_00792470();
+extern "C" __declspec(naked) void __fastcall fn_0078DA00(void* self) {
+    __asm {
+        sub	esp, 0x9c
+        push	ebx
+        push	ebp
+        push	esi
+        push	edi
+        mov	edi, ecx
+        mov	dword ptr [esp+0x54], 0x0
+        mov	dword ptr [esp+0xa0], edi
+        mov	eax, dword ptr [edi+0x30]
+        mov	ecx, dword ptr [edi+0x34]
+        mov	dword ptr [esp+0x48], eax
+        mov	eax, dword ptr [edi+0x48]
+        mov	dword ptr [esp+0x5c], ecx
+        mov	ecx, dword ptr [edi+0x20]
+        lea	esi, [4*eax]
+        mov	eax, dword ptr [edi+0x18]
+        mov	edx, dword ptr [edi+0x24]
+        imul	eax, ecx
+        mov	ecx, dword ptr [edi+0x1c]
+        mov	dword ptr [esp+0x84], eax
+        imul	ecx, edx
+        inc	eax
+        mov	dword ptr [esp+0x88], ecx
+        mov	dword ptr [esp+0x80], eax
+        mov	dword ptr [esp+0x6c], edx
+        shl	eax, 0x4
+        mov	dword ptr [esp+0x9c], eax
+        mov	eax, dword ptr [edi+0x50]
+        mov	dword ptr [esp+0x68], esi
+        mov	ebx, dword ptr [edi+0x54]
+        lea	ecx, [eax+0x20]
+        mov	ebp, dword ptr [edi+0x58]
+        mov	dword ptr [esp+0x20], ecx
+        add	ecx, 0x20
+        mov	dword ptr [esp+0x18], ecx
+        add	ecx, 0x20
+        mov	dword ptr [esp+0x3c], ecx
+        lea	ecx, [8*esi]
+        mov	dword ptr [esp+0x50], eax
+        mov	dword ptr [esp+0x58], ecx
+        lea	edx, [ecx+eax]
+        mov	dword ptr [esp+0x2c], edx
+        lea	esi, [edx+0x20]
+        add	edx, ecx
+        mov	dword ptr [esp+0x10], esi
+        add	esi, 0x20
+        mov	dword ptr [esp+0x14], esi
+        add	esi, 0x20
+        mov	dword ptr [esp+0x38], esi
+        mov	dword ptr [esp+0x28], edx
+        lea	esi, [edx+0x20]
+        add	edx, ecx
+        mov	dword ptr [esp+0x44], edx
+        add	edx, 0x20
+        mov	dword ptr [esp+0x30], edx
+        add	edx, 0x20
+        mov	dword ptr [esp+0x34], edx
+        add	edx, 0x20
+        mov	dword ptr [esp+0x4c], edx
+        mov	edx, dword ptr [edi+0x4c]
+        imul	edx, dword ptr [esp+0x68]
+        shl	edx, 0x3
+        mov	dword ptr [esp+0x1c], esi
+        add	esi, 0x20
+        mov	dword ptr [esp+0x98], edx
+        add	edx, eax
+        mov	eax, dword ptr [edi+0x8]
+        mov	dword ptr [esp+0x24], esi
+        add	esi, 0x20
+        cmp	eax, 0x1
+        mov	dword ptr [esp+0x40], esi
+        mov	dword ptr [esp+0x8c], edx
+        jne L_78db32
+        mov	edx, dword ptr [edi+0x10]
+        mov	eax, dword ptr [edi+0x48]
+        sub	eax, edx
+        xor	edx, edx
+        div	dword ptr [edi+0x20]
+        mov	edx, dword ptr [edi+0x10]
+        add	eax, edx
+        mov	edx, dword ptr [esp+0x84]
+        mov	dword ptr [esp+0x78], eax
+        mov	dword ptr [esp+0x7c], edx
+        jmp L_78db4f
+L_78db32:
+        mov	eax, dword ptr [edi+0x48]
+        mov	esi, dword ptr [edi+0x10]
+        sub	eax, esi
+        xor	edx, edx
+        div	dword ptr [edi+0x20]
+        inc	eax
+        mov	dword ptr [esp+0x78], eax
+        mov	eax, dword ptr [esp+0x80]
+        mov	dword ptr [esp+0x7c], eax
+L_78db4f:
+        cmp	dword ptr [edi+0xc], 0x1
+        jne L_78db7a
+        mov	edx, dword ptr [edi+0x14]
+        mov	eax, dword ptr [edi+0x4c]
+        mov	esi, dword ptr [esp+0x6c]
+        sub	eax, edx
+        xor	edx, edx
+        div	esi
+        mov	edx, dword ptr [edi+0x14]
+        add	eax, edx
+        mov	edx, dword ptr [esp+0x88]
+        mov	dword ptr [esp+0x80], eax
+        jmp L_78db9a
+L_78db7a:
+        mov	eax, dword ptr [edi+0x4c]
+        mov	esi, dword ptr [edi+0x14]
+        sub	eax, esi
+        mov	esi, dword ptr [esp+0x6c]
+        xor	edx, edx
+        div	esi
+        mov	edx, dword ptr [esp+0x88]
+        inc	eax
+        inc	edx
+        mov	dword ptr [esp+0x80], eax
+L_78db9a:
+        mov	dword ptr [esp+0x6c], edx
+        mov	edx, dword ptr [edi+0x20]
+        shl	edx, 0x2
+        mov	dword ptr [esp+0x94], edx
+        imul	edx, dword ptr [esp+0x78]
+        imul	esi, dword ptr [esp+0x68]
+        mov	dword ptr [esp+0xa4], edx
+        mov	edx, dword ptr [esp+0x8c]
+        mov	dword ptr [esp+0x68], eax
+        mov	eax, dword ptr [esp+0x98]
+        mov	dword ptr [esp+0xa8], esi
+        jmp L_78dbec
+L_78dbd7:
+        mov	eax, dword ptr [esp+0x98]
+        mov	edx, dword ptr [esp+0x8c]
+        mov	edi, dword ptr [esp+0xa0]
+L_78dbec:
+        mov	esi, dword ptr [esp+0x44]
+        cmp	esi, edx
+        jb L_78dc18
+        sub	esi, eax
+        mov	dword ptr [esp+0x44], esi
+        mov	esi, dword ptr [esp+0x30]
+        sub	esi, eax
+        mov	dword ptr [esp+0x30], esi
+        mov	esi, dword ptr [esp+0x34]
+        sub	esi, eax
+        mov	dword ptr [esp+0x34], esi
+        mov	esi, dword ptr [esp+0x4c]
+        sub	esi, eax
+        mov	dword ptr [esp+0x4c], esi
+L_78dc18:
+        mov	esi, dword ptr [esp+0x28]
+        cmp	esi, edx
+        jb L_78dc44
+        sub	esi, eax
+        mov	dword ptr [esp+0x28], esi
+        mov	esi, dword ptr [esp+0x1c]
+        sub	esi, eax
+        mov	dword ptr [esp+0x1c], esi
+        mov	esi, dword ptr [esp+0x24]
+        sub	esi, eax
+        mov	dword ptr [esp+0x24], esi
+        mov	esi, dword ptr [esp+0x40]
+        sub	esi, eax
+        mov	dword ptr [esp+0x40], esi
+L_78dc44:
+        mov	esi, dword ptr [esp+0x2c]
+        cmp	esi, edx
+        jb L_78dc70
+        mov	edx, dword ptr [esp+0x10]
+        sub	esi, eax
+        sub	edx, eax
+        mov	dword ptr [esp+0x2c], esi
+        mov	esi, dword ptr [esp+0x14]
+        mov	dword ptr [esp+0x10], edx
+        mov	edx, dword ptr [esp+0x38]
+        sub	esi, eax
+        sub	edx, eax
+        mov	dword ptr [esp+0x14], esi
+        mov	dword ptr [esp+0x38], edx
+L_78dc70:
+        mov	eax, dword ptr [esp+0x50]
+        mov	edx, dword ptr [edi+0x244]
+        mov	esi, dword ptr [edi+0x248]
+        mov	edi, dword ptr [edi+0x24c]
+        add	ecx, eax
+        mov	dword ptr [esp+0x60], ecx
+        mov	ecx, dword ptr [esp+0x78]
+        mov	dword ptr [esp+0x64], ecx
+L_78dc94:
+        mov	eax, dword ptr [esp+0x3c]
+        mov	ecx, dword ptr [esp+0x60]
+        cmp	eax, ecx
+        jb L_78dcd6
+        mov	eax, dword ptr [esp+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        or	al, 0x1
+        mov	dword ptr [esp+0x4c], ecx
+        mov	dword ptr [esp+0x54], eax
+L_78dcd6:
+        mov	ecx, dword ptr [esp+0x18]
+        mov	eax, dword ptr [esp+0x60]
+        cmp	ecx, eax
+        jb L_78dd14
+        mov	eax, dword ptr [esp+0x58]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        or	al, 0x2
+        mov	dword ptr [esp+0x34], ecx
+        mov	dword ptr [esp+0x54], eax
+L_78dd14:
+        mov	eax, dword ptr [esp+0x20]
+        mov	ecx, dword ptr [esp+0x60]
+        cmp	eax, ecx
+        jb L_78dd56
+        mov	eax, dword ptr [esp+0x58]
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        or	al, 0x4
+        mov	dword ptr [esp+0x30], ecx
+        mov	dword ptr [esp+0x54], eax
+L_78dd56:
+        mov	ecx, dword ptr [esp+0x2c]
+        mov	eax, dword ptr [esp+0x14]
+        mov	dword ptr [esp+0x70], 0x10
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [eax]
+        mov	ecx, dword ptr [esp+0x10]
+        mov	eax, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [eax]
+        fmul	qword ptr [edx+0x48]
+        mov	eax, dword ptr [esp+0x50]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        mov	ecx, dword ptr [esp+0x1c]
+        add	eax, 0x8
+        add	ebx, 0x8
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        fstp	qword ptr [ebp-0x8]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        faddp st(1), st
+        mov	ecx, dword ptr [esp+0x48]
+        add	eax, 0x8
+        add	ecx, 0x8
+        add	ebx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        fstp	qword ptr [ebp]
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ebx, 0x10
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        sub	ebp, 0x10
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        faddp st(1), st
+        fstp	qword ptr [ebx+0x10]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x5c]
+        faddp st(1), st
+        fstp	qword ptr [ebp+0x10]
+        fld	qword ptr [ebp+0x8]
+        fmul	qword ptr [ebx+0x10]
+        fld	qword ptr [ebx+0x8]
+        fmul	qword ptr [ebp+0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx]
+        fld	qword ptr [ebx]
+        fmul	qword ptr [ebp+0x10]
+        fld	qword ptr [ebp]
+        fmul	qword ptr [ebx+0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x8]
+        fld	qword ptr [ebp]
+        fmul	qword ptr [ebx+0x8]
+        fld	qword ptr [ebp+0x8]
+        fmul	qword ptr [ebx]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x10]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x10
+        add	ebx, 0x20
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x5c]
+        add	ecx, 0x20
+        add	ebp, 0x20
+        mov	dword ptr [esp+0x5c], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, 0x10
+        add	edx, 0x80
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        sub	ecx, 0x10
+        add	esi, 0x80
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        sub	ecx, 0x10
+        add	edi, 0x80
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, 0x10
+        sub	eax, 0x10
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x64]
+        cmp	ecx, 0x1
+        mov	ecx, dword ptr [esp+0x84]
+        ja L_78e26f
+        mov	ecx, dword ptr [esp+0x7c]
+L_78e26f:
+        dec	ecx
+        mov	dword ptr [esp+0x50], ecx
+        je L_78e91c
+        mov	dword ptr [esp+0x74], ecx
+        inc	ecx
+        shl	ecx, 0x4
+        mov	dword ptr [esp+0x70], ecx
+L_78e286:
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [edx+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x18]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edx+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x38]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x18]
+        mov	ecx, dword ptr [esp+0x10]
+        add	eax, 0x8
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax-0x8]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [edi+0x18]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edi+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        fstp	qword ptr [ebp]
+        add	ecx, 0x8
+        add	ebx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [edx+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x18]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edx+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x38]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x18]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [edi+0x18]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edi+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ebp]
+        add	ecx, 0x8
+        add	eax, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        add	ebx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [edx+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x18]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edx+0x38]
+        fmul	qword ptr [ecx]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        mov	ecx, dword ptr [esp+0x24]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x38]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x18]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [edi+0x18]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ebp, 0x10
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ebx, 0x10
+        add	ebx, 0x20
+        add	ebp, 0x20
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x38]
+        add	edx, 0x80
+        add	esi, 0x80
+        add	edi, 0x80
+        faddp st(1), st
+        fld	qword ptr [edi-0x48]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        sub	eax, 0x10
+        faddp st(1), st
+        fld	qword ptr [edi-0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x5c]
+        faddp st(1), st
+        fstp	qword ptr [ebp-0x10]
+        fld	qword ptr [ebp-0x18]
+        fmul	qword ptr [ebx-0x10]
+        fld	qword ptr [ebx-0x18]
+        fmul	qword ptr [ebp-0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx]
+        fld	qword ptr [ebx-0x20]
+        fmul	qword ptr [ebp-0x10]
+        fld	qword ptr [ebp-0x20]
+        fmul	qword ptr [ebx-0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x8]
+        fld	qword ptr [ebp-0x20]
+        fmul	qword ptr [ebx-0x18]
+        fld	qword ptr [ebp-0x18]
+        fmul	qword ptr [ebx-0x20]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x10]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x10
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x5c]
+        add	ecx, 0x20
+        mov	dword ptr [esp+0x5c], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x74]
+        dec	ecx
+        mov	dword ptr [esp+0x74], ecx
+        jne L_78e286
+L_78e91c:
+        mov	ecx, dword ptr [esp+0x70]
+        shl	ecx, 0x3
+        sub	edx, ecx
+        sub	esi, ecx
+        sub	edi, ecx
+        mov	ecx, dword ptr [esp+0x94]
+        shl	ecx, 0x3
+        add	eax, ecx
+        mov	dword ptr [esp+0x50], eax
+        mov	eax, dword ptr [esp+0x20]
+        add	eax, ecx
+        mov	dword ptr [esp+0x20], eax
+        mov	eax, dword ptr [esp+0x18]
+        add	eax, ecx
+        mov	dword ptr [esp+0x18], eax
+        mov	eax, dword ptr [esp+0x3c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x3c], eax
+        mov	eax, dword ptr [esp+0x2c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x2c], eax
+        mov	eax, dword ptr [esp+0x10]
+        add	eax, ecx
+        mov	dword ptr [esp+0x10], eax
+        mov	eax, dword ptr [esp+0x14]
+        add	eax, ecx
+        mov	dword ptr [esp+0x14], eax
+        mov	eax, dword ptr [esp+0x38]
+        add	eax, ecx
+        mov	dword ptr [esp+0x38], eax
+        mov	eax, dword ptr [esp+0x28]
+        add	eax, ecx
+        mov	dword ptr [esp+0x28], eax
+        mov	eax, dword ptr [esp+0x1c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x1c], eax
+        mov	eax, dword ptr [esp+0x24]
+        add	eax, ecx
+        mov	dword ptr [esp+0x24], eax
+        mov	eax, dword ptr [esp+0x40]
+        add	eax, ecx
+        mov	dword ptr [esp+0x40], eax
+        mov	eax, dword ptr [esp+0x44]
+        add	eax, ecx
+        mov	dword ptr [esp+0x44], eax
+        mov	eax, dword ptr [esp+0x30]
+        add	eax, ecx
+        mov	dword ptr [esp+0x30], eax
+        mov	eax, dword ptr [esp+0x34]
+        add	eax, ecx
+        mov	dword ptr [esp+0x34], eax
+        mov	eax, dword ptr [esp+0x4c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x4c], eax
+        mov	eax, dword ptr [esp+0x64]
+        dec	eax
+        mov	dword ptr [esp+0x64], eax
+        jne L_78dc94
+        mov	eax, dword ptr [esp+0xa4]
+        mov	ecx, dword ptr [esp+0x50]
+        shl	eax, 0x3
+        sub	ecx, eax
+        mov	dword ptr [esp+0x50], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        dec	eax
+        mov	dword ptr [esp+0x4c], ecx
+        je L_78eaf9
+        sub	eax, 0x2
+        je L_78eacb
+        mov	ecx, dword ptr [esp+0x58]
+        sub	eax, 0x4
+        jne L_78eb25
+        mov	eax, dword ptr [esp+0x20]
+        add	eax, ecx
+        mov	dword ptr [esp+0x20], eax
+        mov	eax, dword ptr [esp+0x10]
+        add	eax, ecx
+        mov	dword ptr [esp+0x10], eax
+        mov	eax, dword ptr [esp+0x1c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x1c], eax
+        mov	eax, dword ptr [esp+0x30]
+        add	eax, ecx
+        mov	dword ptr [esp+0x30], eax
+        jmp L_78eacf
+L_78eacb:
+        mov	ecx, dword ptr [esp+0x58]
+L_78eacf:
+        mov	eax, dword ptr [esp+0x18]
+        add	eax, ecx
+        mov	dword ptr [esp+0x18], eax
+        mov	eax, dword ptr [esp+0x14]
+        add	eax, ecx
+        mov	dword ptr [esp+0x14], eax
+        mov	eax, dword ptr [esp+0x24]
+        add	eax, ecx
+        mov	dword ptr [esp+0x24], eax
+        mov	eax, dword ptr [esp+0x34]
+        add	eax, ecx
+        mov	dword ptr [esp+0x34], eax
+        jmp L_78eafd
+L_78eaf9:
+        mov	ecx, dword ptr [esp+0x58]
+L_78eafd:
+        mov	eax, dword ptr [esp+0x3c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x3c], eax
+        mov	eax, dword ptr [esp+0x38]
+        add	eax, ecx
+        mov	dword ptr [esp+0x38], eax
+        mov	eax, dword ptr [esp+0x40]
+        add	eax, ecx
+        mov	dword ptr [esp+0x40], eax
+        mov	eax, dword ptr [esp+0x4c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x4c], eax
+L_78eb25:
+        mov	eax, dword ptr [esp+0x9c]
+        mov	dword ptr [esp+0x54], 0x0
+        shl	eax, 0x3
+        add	edx, eax
+        add	esi, eax
+        add	edi, eax
+        mov	eax, dword ptr [esp+0x68]
+        cmp	eax, 0x1
+        mov	eax, dword ptr [esp+0x88]
+        ja L_78eb51
+        mov	eax, dword ptr [esp+0x6c]
+L_78eb51:
+        dec	eax
+        je L_78fdcc
+        mov	dword ptr [esp+0x90], eax
+L_78eb5f:
+        mov	eax, dword ptr [esp+0x50]
+        add	ecx, eax
+        mov	dword ptr [esp+0x60], ecx
+        mov	ecx, dword ptr [esp+0x78]
+        mov	dword ptr [esp+0x64], ecx
+L_78eb71:
+        mov	eax, dword ptr [esp+0x3c]
+        mov	ecx, dword ptr [esp+0x60]
+        cmp	eax, ecx
+        jb L_78ebb3
+        mov	eax, dword ptr [esp+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        or	al, 0x1
+        mov	dword ptr [esp+0x4c], ecx
+        mov	dword ptr [esp+0x54], eax
+L_78ebb3:
+        mov	ecx, dword ptr [esp+0x18]
+        mov	eax, dword ptr [esp+0x60]
+        cmp	ecx, eax
+        jb L_78ebf1
+        mov	eax, dword ptr [esp+0x58]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        or	al, 0x2
+        mov	dword ptr [esp+0x34], ecx
+        mov	dword ptr [esp+0x54], eax
+L_78ebf1:
+        mov	eax, dword ptr [esp+0x20]
+        mov	ecx, dword ptr [esp+0x60]
+        cmp	eax, ecx
+        jb L_78ec33
+        mov	eax, dword ptr [esp+0x58]
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        or	al, 0x4
+        mov	dword ptr [esp+0x30], ecx
+        mov	dword ptr [esp+0x54], eax
+L_78ec33:
+        mov	ecx, dword ptr [esp+0x44]
+        mov	eax, dword ptr [esp+0x2c]
+        mov	dword ptr [esp+0x70], 0x10
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x60]
+        fld	qword ptr [eax]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        mov	eax, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [eax]
+        mov	eax, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [edx+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [eax]
+        fmul	qword ptr [edx+0x48]
+        mov	eax, dword ptr [esp+0x50]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x70]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [esi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x60]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        mov	ecx, dword ptr [esp+0x10]
+        add	eax, 0x8
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [esi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edi+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [edi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax-0x8]
+        faddp st(1), st
+        fld	qword ptr [edi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        faddp st(1), st
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        fstp	qword ptr [ebp]
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        add	ebx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edx+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edx+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x70]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [esi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x60]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [esi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edi+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [edi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        faddp st(1), st
+        mov	ecx, dword ptr [esp+0x48]
+        add	eax, 0x8
+        add	ecx, 0x8
+        add	ebx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        add	ecx, 0x8
+        fstp	qword ptr [ebp]
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edx+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edx+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x70]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [esi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x60]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [esi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edi+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [edi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ebp, 0x10
+        sub	ebx, 0x10
+        add	ebp, 0x20
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        add	ebx, 0x20
+        add	edx, 0x80
+        add	esi, 0x80
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x10]
+        add	edi, 0x80
+        sub	eax, 0x10
+        faddp st(1), st
+        fld	qword ptr [edi-0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi-0x30]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi-0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x5c]
+        faddp st(1), st
+        fstp	qword ptr [ebp-0x10]
+        fld	qword ptr [ebp-0x18]
+        fmul	qword ptr [ebx-0x10]
+        fld	qword ptr [ebx-0x18]
+        fmul	qword ptr [ebp-0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx]
+        fld	qword ptr [ebx-0x20]
+        fmul	qword ptr [ebp-0x10]
+        fld	qword ptr [ebp-0x20]
+        fmul	qword ptr [ebx-0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x8]
+        fld	qword ptr [ebp-0x20]
+        fmul	qword ptr [ebx-0x18]
+        fld	qword ptr [ebp-0x18]
+        fmul	qword ptr [ebx-0x20]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x10]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x10
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x5c]
+        add	ecx, 0x20
+        mov	dword ptr [esp+0x5c], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x64]
+        cmp	ecx, 0x1
+        mov	ecx, dword ptr [esp+0x84]
+        ja L_78f2da
+        mov	ecx, dword ptr [esp+0x7c]
+L_78f2da:
+        dec	ecx
+        mov	dword ptr [esp+0x50], ecx
+        je L_78fb96
+        mov	dword ptr [esp+0x74], ecx
+        inc	ecx
+        shl	ecx, 0x4
+        mov	dword ptr [esp+0x70], ecx
+L_78f2f1:
+        mov	ecx, dword ptr [esp+0x44]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edx+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edx+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x78]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [edx+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x18]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x70]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edx+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [esi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x60]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [esi+0x78]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x38]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x18]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [esi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edi+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [edi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x78]
+        mov	ecx, dword ptr [esp+0x40]
+        add	eax, 0x8
+        add	ebx, 0x8
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [edi+0x18]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edi+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x4c], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        fstp	qword ptr [ebp-0x8]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edx+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edx+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x78]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [edx+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x18]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x70]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edx+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [esi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x60]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [esi+0x78]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x38]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x18]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [esi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edi+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [edi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x78]
+        mov	ecx, dword ptr [esp+0x40]
+        add	eax, 0x8
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        add	ebx, 0x8
+        faddp st(1), st
+        fld	qword ptr [edi+0x18]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x50]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edi+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        add	ecx, 0x8
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        add	ecx, 0x8
+        add	ebp, 0x8
+        mov	dword ptr [esp+0x4c], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        fstp	qword ptr [ebp-0x8]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x60]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edx+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [edx+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edx+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edx+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [edx]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edx+0x40]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x78]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [edx+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x18]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x70]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edx+0x10]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edx+0x38]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [edx+0x50]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x48]
+        faddp st(1), st
+        fstp	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x20]
+        mov	ecx, dword ptr [esp+0x14]
+        fld	qword ptr [esi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [esi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [esi+0x8]
+        fmul	qword ptr [ecx]
+        faddp st(1), st
+        fld	qword ptr [esi]
+        fmul	qword ptr [eax]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x60]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x40]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [esi+0x78]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [esi+0x58]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x38]
+        mov	ecx, dword ptr [esp+0x3c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x18]
+        mov	ecx, dword ptr [esp+0x10]
+        faddp st(1), st
+        fld	qword ptr [esi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [esi+0x50]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [esi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [esi+0x10]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x44]
+        faddp st(1), st
+        fstp	qword ptr [ebx]
+        fld	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x2c]
+        fmul	qword ptr [edi+0x60]
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x20]
+        mov	ecx, dword ptr [esp+0x34]
+        faddp st(1), st
+        fld	qword ptr [edi+0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x14]
+        faddp st(1), st
+        fld	qword ptr [edi+0x30]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x30]
+        faddp st(1), st
+        fld	qword ptr [edi]
+        fmul	qword ptr [eax]
+        faddp st(1), st
+        fld	qword ptr [edi+0x68]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x1c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x48]
+        mov	ecx, dword ptr [esp+0x20]
+        faddp st(1), st
+        fld	qword ptr [edi+0x8]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x28]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x40]
+        mov	ecx, dword ptr [esp+0x4c]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x78]
+        mov	ecx, dword ptr [esp+0x40]
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi+0x58]
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ebp, 0x10
+        sub	ebx, 0x10
+        add	ebp, 0x20
+        faddp st(1), st
+        fld	qword ptr [edi+0x18]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x10]
+        add	ebx, 0x20
+        add	edx, 0x80
+        add	esi, 0x80
+        faddp st(1), st
+        fld	qword ptr [edi+0x28]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x24]
+        add	edi, 0x80
+        sub	eax, 0x10
+        faddp st(1), st
+        fld	qword ptr [ecx]
+        fmul	qword ptr [edi-0x30]
+        mov	ecx, dword ptr [esp+0x38]
+        faddp st(1), st
+        fld	qword ptr [edi-0x48]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x18]
+        faddp st(1), st
+        fld	qword ptr [edi-0x70]
+        fmul	qword ptr [ecx]
+        mov	ecx, dword ptr [esp+0x5c]
+        faddp st(1), st
+        fstp	qword ptr [ebp-0x10]
+        fld	qword ptr [ebp-0x18]
+        fmul	qword ptr [ebx-0x10]
+        fld	qword ptr [ebx-0x18]
+        fmul	qword ptr [ebp-0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx]
+        fld	qword ptr [ebx-0x20]
+        fmul	qword ptr [ebp-0x10]
+        fld	qword ptr [ebp-0x20]
+        fmul	qword ptr [ebx-0x10]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x8]
+        fld	qword ptr [ebp-0x20]
+        fmul	qword ptr [ebx-0x18]
+        fld	qword ptr [ebp-0x18]
+        fmul	qword ptr [ebx-0x20]
+        fsubp	st(1), st
+        fstp	qword ptr [ecx+0x10]
+        mov	ecx, dword ptr [esp+0x48]
+        add	ecx, 0x10
+        mov	dword ptr [esp+0x48], ecx
+        mov	ecx, dword ptr [esp+0x5c]
+        add	ecx, 0x20
+        mov	dword ptr [esp+0x5c], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        sub	ecx, 0x10
+        mov	dword ptr [esp+0x4c], ecx
+        mov	ecx, dword ptr [esp+0x74]
+        dec	ecx
+        mov	dword ptr [esp+0x74], ecx
+        jne L_78f2f1
+L_78fb96:
+        mov	ecx, dword ptr [esp+0x70]
+        shl	ecx, 0x3
+        sub	edx, ecx
+        sub	esi, ecx
+        sub	edi, ecx
+        mov	ecx, dword ptr [esp+0x94]
+        shl	ecx, 0x3
+        add	eax, ecx
+        mov	dword ptr [esp+0x50], eax
+        mov	eax, dword ptr [esp+0x20]
+        add	eax, ecx
+        mov	dword ptr [esp+0x20], eax
+        mov	eax, dword ptr [esp+0x18]
+        add	eax, ecx
+        mov	dword ptr [esp+0x18], eax
+        mov	eax, dword ptr [esp+0x3c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x3c], eax
+        mov	eax, dword ptr [esp+0x2c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x2c], eax
+        mov	eax, dword ptr [esp+0x10]
+        add	eax, ecx
+        mov	dword ptr [esp+0x10], eax
+        mov	eax, dword ptr [esp+0x14]
+        add	eax, ecx
+        mov	dword ptr [esp+0x14], eax
+        mov	eax, dword ptr [esp+0x38]
+        add	eax, ecx
+        mov	dword ptr [esp+0x38], eax
+        mov	eax, dword ptr [esp+0x28]
+        add	eax, ecx
+        mov	dword ptr [esp+0x28], eax
+        mov	eax, dword ptr [esp+0x1c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x1c], eax
+        mov	eax, dword ptr [esp+0x24]
+        add	eax, ecx
+        mov	dword ptr [esp+0x24], eax
+        mov	eax, dword ptr [esp+0x40]
+        add	eax, ecx
+        mov	dword ptr [esp+0x40], eax
+        mov	eax, dword ptr [esp+0x44]
+        add	eax, ecx
+        mov	dword ptr [esp+0x44], eax
+        mov	eax, dword ptr [esp+0x30]
+        add	eax, ecx
+        mov	dword ptr [esp+0x30], eax
+        mov	eax, dword ptr [esp+0x34]
+        add	eax, ecx
+        mov	dword ptr [esp+0x34], eax
+        mov	eax, dword ptr [esp+0x4c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x4c], eax
+        mov	eax, dword ptr [esp+0x64]
+        dec	eax
+        mov	dword ptr [esp+0x64], eax
+        jne L_78eb71
+        mov	eax, dword ptr [esp+0xa4]
+        mov	ecx, dword ptr [esp+0x50]
+        shl	eax, 0x3
+        sub	ecx, eax
+        mov	dword ptr [esp+0x50], ecx
+        mov	ecx, dword ptr [esp+0x20]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x20], ecx
+        mov	ecx, dword ptr [esp+0x18]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x18], ecx
+        mov	ecx, dword ptr [esp+0x3c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x3c], ecx
+        mov	ecx, dword ptr [esp+0x2c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x2c], ecx
+        mov	ecx, dword ptr [esp+0x10]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x10], ecx
+        mov	ecx, dword ptr [esp+0x14]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x14], ecx
+        mov	ecx, dword ptr [esp+0x38]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x38], ecx
+        mov	ecx, dword ptr [esp+0x28]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x28], ecx
+        mov	ecx, dword ptr [esp+0x1c]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x1c], ecx
+        mov	ecx, dword ptr [esp+0x24]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x24], ecx
+        mov	ecx, dword ptr [esp+0x40]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x40], ecx
+        mov	ecx, dword ptr [esp+0x44]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x44], ecx
+        mov	ecx, dword ptr [esp+0x30]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x30], ecx
+        mov	ecx, dword ptr [esp+0x34]
+        sub	ecx, eax
+        mov	dword ptr [esp+0x34], ecx
+        mov	ecx, dword ptr [esp+0x4c]
+        sub	ecx, eax
+        mov	eax, dword ptr [esp+0x54]
+        dec	eax
+        mov	dword ptr [esp+0x4c], ecx
+        je L_78fd73
+        sub	eax, 0x2
+        je L_78fd45
+        mov	ecx, dword ptr [esp+0x58]
+        sub	eax, 0x4
+        jne L_78fd9f
+        mov	eax, dword ptr [esp+0x20]
+        add	eax, ecx
+        mov	dword ptr [esp+0x20], eax
+        mov	eax, dword ptr [esp+0x10]
+        add	eax, ecx
+        mov	dword ptr [esp+0x10], eax
+        mov	eax, dword ptr [esp+0x1c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x1c], eax
+        mov	eax, dword ptr [esp+0x30]
+        add	eax, ecx
+        mov	dword ptr [esp+0x30], eax
+        jmp L_78fd49
+L_78fd45:
+        mov	ecx, dword ptr [esp+0x58]
+L_78fd49:
+        mov	eax, dword ptr [esp+0x18]
+        add	eax, ecx
+        mov	dword ptr [esp+0x18], eax
+        mov	eax, dword ptr [esp+0x14]
+        add	eax, ecx
+        mov	dword ptr [esp+0x14], eax
+        mov	eax, dword ptr [esp+0x24]
+        add	eax, ecx
+        mov	dword ptr [esp+0x24], eax
+        mov	eax, dword ptr [esp+0x34]
+        add	eax, ecx
+        mov	dword ptr [esp+0x34], eax
+        jmp L_78fd77
+L_78fd73:
+        mov	ecx, dword ptr [esp+0x58]
+L_78fd77:
+        mov	eax, dword ptr [esp+0x3c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x3c], eax
+        mov	eax, dword ptr [esp+0x38]
+        add	eax, ecx
+        mov	dword ptr [esp+0x38], eax
+        mov	eax, dword ptr [esp+0x40]
+        add	eax, ecx
+        mov	dword ptr [esp+0x40], eax
+        mov	eax, dword ptr [esp+0x4c]
+        add	eax, ecx
+        mov	dword ptr [esp+0x4c], eax
+L_78fd9f:
+        mov	eax, dword ptr [esp+0x9c]
+        mov	dword ptr [esp+0x54], 0x0
+        shl	eax, 0x3
+        add	edx, eax
+        add	esi, eax
+        add	edi, eax
+        mov	eax, dword ptr [esp+0x90]
+        dec	eax
+        mov	dword ptr [esp+0x90], eax
+        jne L_78eb5f
+L_78fdcc:
+        mov	edx, dword ptr [esp+0xa8]
+        mov	edi, dword ptr [esp+0x20]
+        mov	esi, dword ptr [esp+0x18]
+        lea	eax, [8*edx]
+        mov	edx, dword ptr [esp+0x50]
+        add	edx, eax
+        add	edi, eax
+        mov	dword ptr [esp+0x50], edx
+        mov	edx, dword ptr [esp+0x3c]
+        add	esi, eax
+        add	edx, eax
+        mov	dword ptr [esp+0x20], edi
+        mov	edi, dword ptr [esp+0x2c]
+        mov	dword ptr [esp+0x18], esi
+        mov	esi, dword ptr [esp+0x10]
+        mov	dword ptr [esp+0x3c], edx
+        mov	edx, dword ptr [esp+0x14]
+        add	edi, eax
+        add	esi, eax
+        add	edx, eax
+        mov	dword ptr [esp+0x2c], edi
+        mov	edi, dword ptr [esp+0x38]
+        mov	dword ptr [esp+0x10], esi
+        mov	esi, dword ptr [esp+0x28]
+        mov	dword ptr [esp+0x14], edx
+        mov	edx, dword ptr [esp+0x1c]
+        add	edi, eax
+        add	esi, eax
+        add	edx, eax
+        mov	dword ptr [esp+0x38], edi
+        mov	edi, dword ptr [esp+0x24]
+        mov	dword ptr [esp+0x28], esi
+        mov	esi, dword ptr [esp+0x40]
+        mov	dword ptr [esp+0x1c], edx
+        mov	edx, dword ptr [esp+0x44]
+        add	edi, eax
+        add	esi, eax
+        add	edx, eax
+        mov	dword ptr [esp+0x24], edi
+        mov	edi, dword ptr [esp+0x30]
+        mov	dword ptr [esp+0x40], esi
+        mov	esi, dword ptr [esp+0x34]
+        mov	dword ptr [esp+0x44], edx
+        mov	edx, dword ptr [esp+0x4c]
+        add	edi, eax
+        add	esi, eax
+        add	edx, eax
+        mov	eax, dword ptr [esp+0x68]
+        mov	dword ptr [esp+0x30], edi
+        dec	eax
+        mov	dword ptr [esp+0x34], esi
+        mov	dword ptr [esp+0x4c], edx
+        mov	dword ptr [esp+0x68], eax
+        jne L_78dbd7
+        mov	eax, dword ptr [esp+0x80]
+        mov	ecx, dword ptr [esp+0x6c]
+        dec	eax
+        mov	edx, dword ptr [esp+0x78]
+        imul	eax, dword ptr [esp+0x88]
+        add	eax, ecx
+        mov	ecx, dword ptr [esp+0xa0]
+        dec	edx
+        imul	edx, dword ptr [esp+0x84]
+        mov	dword ptr [ecx+0x2c], eax
+        mov	eax, dword ptr [esp+0x7c]
+        add	edx, eax
+        mov	dword ptr [ecx+0x28], edx
+        call ext_00792470
+        pop	edi
+        pop	esi
+        pop	ebp
+        pop	ebx
+        add	esp, 0x9c
+        ret
+    }
+}
