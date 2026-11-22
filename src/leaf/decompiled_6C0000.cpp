@@ -18331,3 +18331,449 @@ L_6CF2F7:
         ret 0x1c
     }
 }
+
+// [0x006C7230] sub_006C7230 (1664 bytes)
+extern "C" void ext_006D2A30();
+extern "C" void ext_00714880();
+extern "C" void ext_007148C0();
+extern "C" void ext_00714920();
+extern "C" void ext_00714950();
+extern "C" void ext_00714980();
+extern "C" void ext_007149B0();
+extern "C" void ext_007149D0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C7230(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push 08b8d40h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 40h
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, [esi + 0f0h]
+        add ecx, 1d18h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 1e8h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1d38h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 288h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1d58h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 328h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1d78h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 0c38h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1d98h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 0cd8h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1db8h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 3c8h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1dd8h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 468h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1df8h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 508h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1e18h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 1988h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1e38h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 1a28h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov ecx, [esi + 0f0h]
+        add ecx, 1e58h
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 1ac8h
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        mov eax, [esi + 0f0h]
+        mov ecx, [eax + 1e78h]
+        mov [eax + 0aa0h], ecx
+        mov eax, [esi + 0f0h]
+        mov dl, [eax + 1e7ch]
+        mov [eax + 0b28h], dl
+        mov ecx, [esi + 4c8h]
+        call ext_00714980
+        mov ecx, [esi + 0f0h]
+        mov [ecx + 5a8h], al
+        mov eax, [esi + 0f0h]
+        lea edx, [eax + 880h]
+        lea ecx, [eax + 7f8h]
+        push edx
+        add eax, 770h
+        push ecx
+        mov ecx, [esi + 4c8h]
+        push eax
+        call ext_00714880
+        mov eax, [esi + 0f0h]
+        lea edx, [eax + 0a18h]
+        lea ecx, [eax + 990h]
+        push edx
+        add eax, 908h
+        push ecx
+        mov ecx, [esi + 4c8h]
+        push eax
+        call ext_007148C0
+        mov ecx, [esi + 4c8h]
+        lea edx, [esp + 8]
+        push edx
+        call ext_00714920
+        mov ecx, eax
+        mov dword ptr [esp + 50h], 0
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 630h
+        or edi, -1
+        mov [esp + 50h], edi
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        lea ecx, [esp + 8]
+        call ext_006D80A0
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, [esi + 4c8h]
+        call ext_00714950
+        mov ecx, eax
+        mov dword ptr [esp + 50h], 1
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 6d0h
+        mov [esp + 50h], edi
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        lea ecx, [esp + 8]
+        call ext_006D80A0
+        mov ecx, [esi + 4c8h]
+        call ext_007149B0
+        mov ecx, [esi + 0f0h]
+        mov [ecx + 0d78h], al
+        mov eax, [esi + 0f0h]
+        lea edx, [eax + 11e8h]
+        lea ecx, [eax + 1160h]
+        push edx
+        push ecx
+        mov ecx, [esi + 4c8h]
+        add eax, 10d8h
+        push eax
+        add ecx, 48h
+        call ext_00714880
+        mov eax, [esi + 0f0h]
+        lea edx, [eax + 1380h]
+        lea ecx, [eax + 12f8h]
+        push edx
+        push ecx
+        mov ecx, [esi + 4c8h]
+        add eax, 1270h
+        push eax
+        add ecx, 48h
+        call ext_007148C0
+        mov ecx, [esi + 4c8h]
+        lea edx, [esp + 8]
+        push edx
+        add ecx, 48h
+        call ext_00714920
+        mov ecx, eax
+        mov dword ptr [esp + 50h], 2
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 0e00h
+        mov [esp + 50h], edi
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        lea ecx, [esp + 8]
+        call ext_006D80A0
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, [esi + 4c8h]
+        add ecx, 48h
+        call ext_00714950
+        mov ecx, eax
+        mov dword ptr [esp + 50h], 3
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 0ea0h
+        mov [esp + 50h], edi
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        lea ecx, [esp + 8]
+        call ext_006D80A0
+        mov ecx, [esi + 4c8h]
+        call ext_007149D0
+        mov ecx, [esi + 0f0h]
+        mov [ecx + 1490h], al
+        mov eax, [esi + 0f0h]
+        lea edx, [eax + 1768h]
+        lea ecx, [eax + 16e0h]
+        push edx
+        push ecx
+        mov ecx, [esi + 4c8h]
+        add eax, 1658h
+        push eax
+        add ecx, 90h
+        call ext_00714880
+        mov eax, [esi + 0f0h]
+        lea edx, [eax + 1900h]
+        lea ecx, [eax + 1878h]
+        push edx
+        push ecx
+        mov ecx, [esi + 4c8h]
+        add eax, 17f0h
+        push eax
+        add ecx, 90h
+        call ext_007148C0
+        mov ecx, [esi + 4c8h]
+        lea edx, [esp + 8]
+        push edx
+        add ecx, 90h
+        call ext_00714920
+        mov ecx, eax
+        mov dword ptr [esp + 50h], 4
+        call ext_006D2A30
+        mov ecx, [esi + 0f0h]
+        mov edx, [eax]
+        add ecx, 1518h
+        mov [esp + 50h], edi
+        mov [ecx], edx
+        mov edx, [eax + 4]
+        mov [ecx + 4], edx
+        mov edx, [eax + 8]
+        mov [ecx + 8], edx
+        mov edx, [eax + 0ch]
+        mov [ecx + 0ch], edx
+        mov edx, [eax + 10h]
+        mov [ecx + 10h], edx
+        mov eax, [eax + 14h]
+        mov [ecx + 14h], eax
+        lea ecx, [esp + 8]
+        call ext_006D80A0
+        lea ecx, [esp + 28h]
+        push ecx
+        mov ecx, [esi + 4c8h]
+        add ecx, 90h
+        call ext_00714950
+        mov ecx, eax
+        mov dword ptr [esp + 50h], 5
+        call ext_006D2A30
+        mov esi, [esi + 0f0h]
+        mov edx, [eax]
+        add esi, 15b8h
+        mov [esp + 50h], edi
+        mov [esi], edx
+        mov ecx, [eax + 4]
+        mov [esi + 4], ecx
+        mov edx, [eax + 8]
+        mov [esi + 8], edx
+        mov ecx, [eax + 0ch]
+        mov [esi + 0ch], ecx
+        mov edx, [eax + 10h]
+        mov [esi + 10h], edx
+        mov eax, [eax + 14h]
+        lea ecx, [esp + 28h]
+        mov [esi + 14h], eax
+        call ext_006D80A0
+        mov ecx, [esp + 48h]
+        pop edi
+        mov fs:[0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
