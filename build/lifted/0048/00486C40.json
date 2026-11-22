@@ -1,0 +1,22 @@
+{
+  "va": "0x00486C40",
+  "size": 60,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_14",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_14",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "void* fn_00486C40(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0061FF40 (NMData::GraphicData::vfunc_14).",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x224",
+      "type": "uint8_t field_0x154 (address of subobject only; not read or written",
+      "name": "field_0x224"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:12:31Z"
+}

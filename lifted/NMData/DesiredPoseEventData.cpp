@@ -3,8 +3,10 @@
 #include <string>
 extern "C" void* __thiscall ext_006404E0(void* self, void* arg);
 extern "C" void* mem_00A9EE2C;
+extern "C" void ext_004C2070(void* self, void* arg1, uint32_t arg2);
+extern "C" void ext_00661650(void* self, void* arg);
 
-// [0x004869A0] NMData::DesiredPoseEventData::vfunc_59 (34 bytes)
+extern "C" void ext_00661650(void* self, void* arg);
 // @name NMData::DesiredPoseEventData::vfunc_59
 // @class NMData::DesiredPoseEventData
 // @summary Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).
@@ -15,4 +17,19 @@ extern "C" void __thiscall fn_004869A0(void* self, void* a) {
     void* r = ext_006404E0(a, g);
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
+}
+
+// [0x00486C40] NMData::DesiredPoseEventData::vfunc_14 (60 bytes)
+// @name NMData::DesiredPoseEventData::vfunc_14
+// @class NMData::DesiredPoseEventData
+// @summary Auto-lifted identical-shape clone of 0x0061FF40 (NMData::GraphicData::vfunc_14).
+// @field NMData::DesiredPoseEventData +0x224 uint8_t field_0x154 (address of subobject only; not read or written field_0x224
+void* fn_00486C40(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 == 0x130) {
+        void* sub = static_cast<uint8_t*>(self) + 0x224;
+        ext_00661650(arg1, sub);
+    } else {
+        ext_004C2070(self, arg1, arg2);
+    }
+    return arg1;
 }

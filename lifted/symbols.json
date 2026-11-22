@@ -3024,6 +3024,13 @@
     "summary": "Setter storing float argument into field at offset +0x220.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486C40": {
+    "name": "NMData::DesiredPoseEventData::vfunc_14",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "void* fn_00486C40(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0061FF40 (NMData::GraphicData::vfunc_14).",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x00486F00": {
     "name": "ExprParser::ROMethod0Type::vfunc_0 (NM::Vector3::normalize2)",
     "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
@@ -3072,11 +3079,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0048B120": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}\u003e",
+    "signature": "void* fn_0048B120(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0048B160": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e",
     "signature": "void* fn_0048B160(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x0048B1C0": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e",
+    "signature": "void* fn_0048B1C0(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x0048C120": {
@@ -4170,11 +4191,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CCCE0": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
+    "signature": "void* fn_004CCCE0(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CCD20": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
     "signature": "void* fn_004CCD20(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x004CCD80": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
+    "signature": "void* fn_004CCD80(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x004CCEE0": {
@@ -4210,6 +4245,13 @@
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}\u003e",
     "signature": "void* fn_004CD730(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x004CD790": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}\u003e",
+    "signature": "void* fn_004CD790(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x004CD7D0": {
@@ -7105,6 +7147,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x005BB330": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}\u003e",
+    "signature": "void* fn_005BB330(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x005C1050": {
     "name": "NMData::MetaBodyData::vfunc_1_off_C",
     "class": "NMData::MetaBodyData",
@@ -7221,6 +7270,13 @@
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
     "signature": "extern \"C\" float __stdcall fn_005C61E0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x005C6210": {
+    "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
+    "signature": "void* fn_005C6210(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x005C84A0": {
@@ -9871,6 +9927,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0068BFE0": {
+    "name": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e",
+    "signature": "void* fn_0068BFE0(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x00692210": {
     "name": "sub_00692210",
     "signature": "extern \"C\" int __thiscall fn_00692210(void* self)",
@@ -9889,6 +9952,13 @@
     "class": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e",
     "signature": "void* fn_00693040(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x006930A0": {
+    "name": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e",
+    "signature": "void* fn_006930A0(void* unused, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x006936C0": {
