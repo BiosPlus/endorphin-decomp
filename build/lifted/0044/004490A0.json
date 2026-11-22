@@ -1,0 +1,14 @@
+{
+  "va": "0x004490A0",
+  "size": 6,
+  "orig_symbol": "RangeDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RangeDialog::vfunc_0",
+  "class": "RangeDialog",
+  "signature": "extern \"C\" int* __fastcall fn_004490A0(void* self)",
+  "summary": "Returns the address of the RangeDialog constant global mem_009335E4 (no object state is read).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:51:37Z"
+}

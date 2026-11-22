@@ -316,6 +316,13 @@
     "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004490A0": {
+    "name": "RangeDialog::vfunc_0",
+    "class": "RangeDialog",
+    "signature": "extern \"C\" int* __fastcall fn_004490A0(void* self)",
+    "summary": "Returns the address of the RangeDialog constant global mem_009335E4 (no object state is read).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

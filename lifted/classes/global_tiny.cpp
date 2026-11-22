@@ -19,6 +19,7 @@ extern "C" int mem_0092F82C;
 extern "C" int mem_00932C44;
 extern "C" int mem_00932E64;
 extern "C" int mem_00933000;
+extern "C" int mem_009335E4;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -207,4 +208,13 @@ void* fn_00447DC0(void* self) {
 void* fn_00447F10(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_00933000);
+}
+
+// [0x004490A0] RangeDialog::vfunc_0 (6 bytes)
+// @name RangeDialog::vfunc_0
+// @class RangeDialog
+// @summary Returns the address of the RangeDialog constant global mem_009335E4 (no object state is read).
+extern "C" int* __fastcall fn_004490A0(void* self) {
+    (void)self;
+    return &mem_009335E4;
 }
