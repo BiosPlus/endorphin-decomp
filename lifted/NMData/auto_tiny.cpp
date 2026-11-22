@@ -1750,3 +1750,17 @@ void fn_004D3D30(void* self) {
     auto target = reinterpret_cast<void (*)(void*)>(vtbl[0]);
     target(listener);
 }
+
+// [0x004A9B50] NMData::BehaviourData::vfunc_2_off_154 (17 bytes)
+// @name NMData::BehaviourData::vfunc_2_off_154
+// @class NMData::BehaviourData
+// @summary Forwards virtual slot 2 of the embedded subobject at +0x228 (tail-call thunk).
+// @field NMData::BehaviourData +0x228 void* field_0x228
+void fn_004A9B50(void* self) {
+    // Embedded subobject at +0x228; its first dword is its vtable pointer.
+    void* sub = static_cast<uint8_t*>(self) + 0x228;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    // Slot 2 (byte offset 8) is invoked with this = sub.
+    auto fn = reinterpret_cast<void (*)(void*)>(vtbl[2]);
+    fn(sub);
+}

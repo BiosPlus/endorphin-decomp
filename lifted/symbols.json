@@ -951,6 +951,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0049F8D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004A9B50": {
+    "name": "NMData::BehaviourData::vfunc_2_off_154",
+    "class": "NMData::BehaviourData",
+    "signature": "void fn_004A9B50(void* self)",
+    "summary": "Forwards virtual slot 2 of the embedded subobject at +0x228 (tail-call thunk).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004AA580": {
     "name": "VirtualSlot8Thunk",
     "class": "VTable",

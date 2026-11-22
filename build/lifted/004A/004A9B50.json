@@ -1,0 +1,22 @@
+{
+  "va": "0x004A9B50",
+  "size": 17,
+  "orig_symbol": "NMData::BehaviourData::vfunc_2_off_154",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::BehaviourData::vfunc_2_off_154",
+  "class": "NMData::BehaviourData",
+  "signature": "void fn_004A9B50(void* self)",
+  "summary": "Forwards virtual slot 2 of the embedded subobject at +0x228 (tail-call thunk).",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x228",
+      "type": "void*",
+      "name": "field_0x228"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:14Z"
+}
