@@ -83,3 +83,13 @@ float __stdcall ExprParser_PrimitiveProxyType_float_vfunc_1(void* self) {
     float* p = lift_field<float*>(self, 0x00);
     return *p;
 }
+
+// [0x006992D0] ExprParser::ExpressionContainerType::vfunc_24 (12 bytes)
+// @name ExprParser::ExpressionContainerType::vfunc_24
+// @class ExprParser::ExpressionContainerType
+// @summary Reads the object's vtable pointer and returns the function pointer in vtable slot 2 (+0x08).
+// @field ExprParser::ExpressionContainerType +0x00 void* vtable
+void* fn_006992D0(void* self) {
+    void** vtbl = *reinterpret_cast<void***>(self);
+    return vtbl[2];
+}

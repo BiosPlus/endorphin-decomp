@@ -1,0 +1,22 @@
+{
+  "va": "0x006992D0",
+  "size": 12,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_24",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_24",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void* fn_006992D0(void* self)",
+  "summary": "Reads the object's vtable pointer and returns the function pointer in vtable slot 2 (+0x08).",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:13:03Z"
+}
