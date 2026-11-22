@@ -21,6 +21,7 @@ extern "C" int mem_00932E64;
 extern "C" int mem_00933000;
 extern "C" int mem_009335E4;
 extern "C" int mem_00933A38;
+extern "C" int mem_009337B4;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -227,4 +228,13 @@ extern "C" int* __fastcall fn_004490A0(void* self) {
 void* fn_00449C80(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_00933A38);
+}
+
+// [0x00449830] RegistrationDialog::vfunc_0 (6 bytes)
+// @name RegistrationDialog::vfunc_0
+// @class RegistrationDialog
+// @summary Returns the address of the global data slot mem_009337B4 (leaf accessor; self is unused).
+void* fn_00449830(void* self) {
+    (void)self;
+    return reinterpret_cast<void*>(&mem_009337B4);
 }
