@@ -10,6 +10,6 @@
 // Recovered field layout for Sensors::AxisSensor:
 namespace lifted_layout {
 struct Sensors_AxisSensor_Fields {
-    // +0x30  float                    field_0x30  (evidence: 0x0062B6E0)
+    // +0x30  float                    field_0x30  (evidence: 0x0062B6D0, 0x0062B6E0)
 };
 } // namespace lifted_layout

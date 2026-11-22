@@ -1,0 +1,22 @@
+{
+  "va": "0x0062B6D0",
+  "size": 15,
+  "orig_symbol": "Sensors::AxisSensor::vfunc_14",
+  "src_path": "src/Sensors/auto_tiny.cpp",
+  "lifted_path": "lifted/Sensors/auto_tiny.cpp",
+  "name": "Sensors::AxisSensor::vfunc_14",
+  "class": "Sensors::AxisSensor",
+  "signature": "float* fn_0062B6D0(void* self)",
+  "summary": "Calls virtual slot 27 on this, then returns a pointer to the float at +0x30.",
+  "fields": [
+    {
+      "class": "Sensors::AxisSensor",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:46Z"
+}

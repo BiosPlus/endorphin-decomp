@@ -2597,6 +2597,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0062B1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Sensors/auto_tiny.cpp"
   },
+  "0x0062B6D0": {
+    "name": "Sensors::AxisSensor::vfunc_14",
+    "class": "Sensors::AxisSensor",
+    "signature": "float* fn_0062B6D0(void* self)",
+    "summary": "Calls virtual slot 27 on this, then returns a pointer to the float at +0x30.",
+    "lifted_path": "lifted/Sensors/auto_tiny.cpp"
+  },
   "0x0062B6E0": {
     "name": "Sensors::AxisSensor::vfunc_16",
     "class": "Sensors::AxisSensor",

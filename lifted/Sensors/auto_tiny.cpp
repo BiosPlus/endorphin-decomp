@@ -39,3 +39,16 @@ extern "C" void* __fastcall fn_0062C5E0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0062B6D0]
+// @name Sensors::AxisSensor::vfunc_14
+// @class Sensors::AxisSensor
+// @summary Calls virtual slot 27 on this, then returns a pointer to the float at +0x30.
+// @field Sensors::AxisSensor +0x30 float field_0x30
+float* fn_0062B6D0(void* self) {
+    using VirtualVoid = void (__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(self);
+    // Slot 27 == byte offset 0x6C in the 32-bit vtable (4-byte entries).
+    reinterpret_cast<VirtualVoid>(vtable[27])(self);
+    return &lift_field<float>(self, 0x30);
+}
