@@ -122,3 +122,20 @@ void fn_004CB470(void* self) {
     void* target = *static_cast<void**>(self);
     ext_004CA560(target);
 }
+
+// [0x00487EB0] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_16 (30 bytes)
+#include "lift_compat.h"
+
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// Signature: void* __RTDynamicCast(void* inptr, long VfDelta, void* SrcType, void* TargetType, int isReference)
+extern "C" void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern "C" int mem_00A2E93C;
+extern "C" int mem_00A2E2F8;
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData>::vfunc_16
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>
+// @summary Runtime type check: dynamic-casts self to the type at mem_00A2E93C (source type mem_00A2E2F8) and returns the result or NULL.
+void* fn_00487EB0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A2E93C), 0);
+}

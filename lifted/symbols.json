@@ -2961,6 +2961,13 @@
     "summary": "Setter storing float argument into field at offset +0x220.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00487EB0": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_16",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
+    "signature": "void* fn_00487EB0(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A2E93C (source type mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x00488260": {
     "name": "sub_00488260",
     "signature": "extern \"C\" void __fastcall fn_00488260(void* self)",
