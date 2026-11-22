@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::RealType:
 namespace lifted_layout {
 struct ExprParser_RealType_Fields {
-    // +0x0   float                    field_0x00  (evidence: 0x0066AD70, 0x0066B0A0)
+    // +0x0   float                    field_0x00  (evidence: 0x0066AD70, 0x0066AD80, 0x0066B0A0)
 };
 } // namespace lifted_layout

@@ -8721,6 +8721,13 @@
     "summary": "Returns the single-precision float stored at the pointed-to value slot (stdcall, one stack argument).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AD80": {
+    "name": "ExprParser::RealType::vfunc_2",
+    "class": "ExprParser::RealType",
+    "signature": "void fn_0066AD80(void* self)",
+    "summary": "Rounds the stored float half away from zero (x \u003c 0 ? x - 0.5 : x + 0.5) and passes it to 0x006A6DE0.",
+    "lifted_path": "lifted/ExprParser/RealType.cpp"
+  },
   "0x0066AE10": {
     "name": "ExprParser::IntType::vfunc_0",
     "class": "ExprParser::IntType",
