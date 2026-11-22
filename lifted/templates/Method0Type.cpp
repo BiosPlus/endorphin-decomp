@@ -3,8 +3,10 @@
 extern "C" void ext_00493D90();
 void ext_00493D90(void* self);
 extern "C" void __fastcall ext_0067B860(void* self);
+// Callee receives the object's vtable pointer in ECX (thiscall-style); see body.
+extern "C" void ext_00493D90(void* vtbl);
 
-// [0x0060A070] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_2 (16 bytes)
+extern "C" void ext_00493D90(void* vtbl);
 // @name ExprParser::Method0Type<NMData::DisabledCollisionPairList>::vfunc_2
 // @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
 // @summary Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).
@@ -36,5 +38,16 @@ bool ExprParser_Method0Type_DisabledCollisionPairList_vfunc_3(void* self) {
 extern "C" float __stdcall fn_0066DCE0(void* self) {
     void* target = *static_cast<void**>(self);
     ext_0067B860(target);
+    return 0.0f;
+}
+
+// [0x0060A150] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_1 (16 bytes)
+// @name Method0Type<DisabledCollisionPairList,addSelectedCollisionModels>::vfunc_1
+// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+// @summary Forwards the object's vtable pointer to AddCharacterDialog::vfunc_3 (ext_00493D90) and returns 0.0f.
+// @field ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}> +0x00 void* vtable
+float fn_0060A150(void* self) {
+    void* vtbl = lift_field<void*>(self, 0x00);
+    ext_00493D90(vtbl);
     return 0.0f;
 }
