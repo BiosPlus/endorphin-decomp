@@ -61,10 +61,14 @@ bool fn_0060A080(void* self) {
     ext_00493D90(inner);
     return false;
 }
+// Known callee 0x004CA560: sub_004CA560 (Virtual dispatch thunk: forwards to vtable slot at +0x160.)
+extern "C" void ext_004CA560(void* self);
+// Helper sub_006720C0 (thiscall: ECX = object, one stack int arg).
+extern "C" void ext_006720C0(void* self, int flag);
 
-// [0x0060A150] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_1 (16 bytes)
-// @name Method0Type<DisabledCollisionPairList,addSelectedCollisionModels>::vfunc_1
-// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+extern "C" void ext_004CA560(void* self);
+// Helper sub_006720C0 (thiscall: ECX = object, one stack int arg).
+extern "C" void ext_006720C0(void* self, int flag);
 // @summary Forwards the object's vtable pointer to AddCharacterDialog::vfunc_3 (ext_00493D90) and returns 0.0f.
 // @field ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}> +0x00 void* vtable
 float fn_0060A150(void* self) {
@@ -237,5 +241,18 @@ void* fn_0066DD10(void* unused, void* out) {
     void* target = lift_field<void*>(out, 0x00);
     ext_0067B860(target);
     ext_006290D8(out);
+    return out;
+}
+
+// [0x00489540] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_0 (41 bytes)
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData>::vfunc_0
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>
+// @summary Stdcall (ret 8) thunk: dispatches through the target object's vtable (slot +0x160) via ext_004CA560, then runs ext_006720C0 on the out-param with flag 0 and returns the out-param.
+// @field ExprParser::Method0Type +0x00 void* field_0x00
+void* fn_00489540(void* unused, void* out) {
+    (void)unused;
+    void* target = lift_field<void*>(out, 0x00);
+    ext_004CA560(target);
+    ext_006720C0(out, 0);
     return out;
 }

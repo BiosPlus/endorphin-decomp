@@ -3030,6 +3030,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x144.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00489540": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_0",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
+    "signature": "void* fn_00489540(void* unused, void* out)",
+    "summary": "Stdcall (ret 8) thunk: dispatches through the target object's vtable (slot +0x160) via ext_004CA560, then runs ext_006720C0 on the out-param with flag 0 and returns the out-param.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0048B050": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e::vfunc_1",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",
