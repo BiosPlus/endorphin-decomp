@@ -2,19 +2,7 @@
 #include "lift_compat.h"
 extern "C" void ext_0066C030(void* self, void* arg);
 extern "C" void ext_00672110(void* self, void* arg);
-// Portable stand-in for an indirect call through vtable slot 5 (offset 0x14).
-static inline void* vcall_slot5(void* obj, void* arg) {
-    void** vtbl = *static_cast<void***>(obj);
-    using Fn = void* (*)(void*, void*);
-    return reinterpret_cast<Fn>(vtbl[5])(obj, arg);
-}
 
-// Portable stand-in for an indirect call through vtable slot 5 (offset 0x14).
-static inline void* vcall_slot5(void* obj, void* arg) {
-    void** vtbl = *static_cast<void***>(obj);
-    using Fn = void* (*)(void*, void*);
-    return reinterpret_cast<Fn>(vtbl[5])(obj, arg);
-}
 void fn_0066D0C0(void* self, void** slot) {
     ext_0066C030(static_cast<char*>(self) + 0x08, *slot);
     *slot = nullptr;
