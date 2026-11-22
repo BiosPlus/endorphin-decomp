@@ -1,0 +1,13 @@
+{
+  "va": "0x00440680",
+  "size": 6,
+  "orig_symbol": "sub_00440680",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "GetStringLiteral_00440680",
+  "signature": "extern \"C\" const char* __cdecl fn_00440680()",
+  "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:50:28Z"
+}
