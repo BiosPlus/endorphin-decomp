@@ -3129,10 +3129,10 @@
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x0048B060": {
-    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, capturePoseForBlend\u003e::vfunc_2",
-    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",
-    "signature": "extern \"C\" int __stdcall fn_0048B060(void* self)",
-    "summary": "Stdcall (ret 4) thunk: loads the target pointer stored at the proxy's first dword, calls ext_0048A9F0 on it (ECX = target), and returns 0.",
+    "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "int fn_0060A070(void* self)",
+    "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x0048B0B0": {

@@ -8,7 +8,7 @@
 // Recovered field layout for ExprParser::Method0Type:
 namespace lifted_layout {
 struct ExprParser_Method0Type_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00489540, 0x0048B0B0, 0x004CCCD0, 0x005C61F0, 0x0060A040, 0x0060A070, 0x0066DD10) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00489540, 0x0048B060, 0x0048B0B0, 0x004CCCD0, 0x005C61F0, 0x0060A040, 0x0060A070, 0x0066DD10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x0048B060) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout
