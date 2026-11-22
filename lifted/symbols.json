@@ -64,6 +64,12 @@
     "summary": "Returns the address of the read-only .rdata u32 constant at mem_0092B4B4 (value 0x0040CDF0).",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040F5C0": {
+    "name": "sub_0040F5C0",
+    "signature": "extern \"C\" const void* fn_0040F5C0()",
+    "summary": "Returns the address of the read-only string constant at mem_0092B968 (\".rdata\" \"$aj\").",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040FCF0": {
     "name": "CColorCheck::vfunc_0",
     "class": "CColorCheck",

@@ -16,6 +16,7 @@ extern "C" int* __cdecl fn_00404C40() {
 extern "C" const unsigned int mem_0092A794;
 extern "C" const unsigned int mem_0092B4B4;
 extern "C" int mem_0092B0F4;
+extern "C" int mem_0092B968;
 
 // [0x00401840] sub_00401840 (6 bytes)
 // @name sub_00401840
@@ -61,4 +62,11 @@ extern "C" const unsigned int* __cdecl fn_0040D9B0() {
 // @summary Returns the address of the read-only global mem_0092B0F4 (.rdata slot holding 0x0040CDF0) in eax; no other side effects.
 int* fn_0040D4D0(void) {
     return &mem_0092B0F4;
+}
+
+// [0x0040F5C0] sub_0040F5C0 (6 bytes)
+// @name sub_0040F5C0
+// @summary Returns the address of the read-only string constant at mem_0092B968 (".rdata" "$aj").
+extern "C" const void* fn_0040F5C0() {
+    return &mem_0092B968;
 }

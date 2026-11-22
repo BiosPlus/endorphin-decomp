@@ -1,0 +1,13 @@
+{
+  "va": "0x0040F5C0",
+  "size": 6,
+  "orig_symbol": "sub_0040F5C0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "sub_0040F5C0",
+  "signature": "extern \"C\" const void* fn_0040F5C0()",
+  "summary": "Returns the address of the read-only string constant at mem_0092B968 (\".rdata\" \"$aj\").",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:47:06Z"
+}
