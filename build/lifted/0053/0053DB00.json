@@ -1,0 +1,34 @@
+{
+  "va": "0x0053DB00",
+  "size": 62,
+  "orig_symbol": "Primitives::Frustum::vfunc_25",
+  "src_path": "src/Primitives/Frustum.cpp",
+  "lifted_path": "lifted/Primitives/Frustum.cpp",
+  "name": "Primitives::Frustum::vfunc_25",
+  "class": "Primitives::Frustum",
+  "signature": "void fn_0053DB00(void* self, uint32_t arg1, void* arg2, uint32_t arg3)",
+  "summary": "Forwards three args to Plane::vfunc_25, sets flag bit 0x40 in +0x1c if clear, and copies arg2+0x88/+0x8c into +0x3c/+0x40.",
+  "fields": [
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:00Z"
+}
