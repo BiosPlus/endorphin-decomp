@@ -57,6 +57,7 @@ func main() {
 		cfg: cfg, root: root, procs: &procs{pgid: map[int]bool{}},
 		modelIdx: map[string]int{}, modelTier: map[string]int{},
 		slugCache: map[string]string{}, runInfo: map[string]*runInfo{},
+		agyNoModel: map[string]bool{}, noCheck: map[string]int{},
 		results: make(chan attemptResult, 64), autoSolveDone: make(chan int, 1),
 		jobs: map[string]int{}, fnTier: map[string]int{}, fnOwed: map[string][]string{},
 		inflightAddr: map[string]bool{}, inflightCpp: map[string]int{}, seen: map[string]bool{},

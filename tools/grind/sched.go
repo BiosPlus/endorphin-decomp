@@ -31,11 +31,13 @@ type grind struct {
 
 	routeRules []routeRule
 
-	mu        sync.Mutex // guards the fields below
-	failed    map[string]bool
-	slugCache map[string]string
-	runInfo   map[string]*runInfo
-	events    []string
+	mu         sync.Mutex // guards the fields below
+	failed     map[string]bool
+	slugCache  map[string]string
+	runInfo    map[string]*runInfo
+	agyNoModel map[string]bool // base models agy rejected as unknown: never route them to agy again this session
+	noCheck    map[string]int  // addr\ttag -> runs that ended without a single `work check` (not real attempts)
+	events     []string
 
 	results chan attemptResult
 
@@ -147,6 +149,26 @@ func (g *grind) recordFailure(addr, tag string) {
 		fmt.Fprintf(f, "%s\t%s\n", addr, tag)
 		f.Close()
 	}
+}
+
+func (g *grind) agyLacks(model string) bool {
+	g.mu.Lock()
+	defer g.mu.Unlock()
+	return g.agyNoModel[model]
+}
+
+// maxNoCheckRuns caps how often one model+effort may die before its first `work check` on one function before
+// the run counts as a real failure anyway (so a model that never gets around to checking cannot loop forever).
+const maxNoCheckRuns = 3
+
+// checkRuns counts the `work check` invocations recorded for addr (see recordCheckRun in tools/work/diag.go).
+func checkRuns(root, addr string) int {
+	va := strings.ToUpper(strings.TrimPrefix(addr, "0x"))
+	b, err := os.ReadFile(filepath.Join(root, ".local", "checks", va+".log"))
+	if err != nil {
+		return 0
+	}
+	return strings.Count(string(b), "\n")
 }
 
 func (g *grind) logResult(addr string, size int, outcome, model string, start time.Time) {
@@ -265,20 +287,59 @@ efforts:
 			g.mu.Lock()
 			g.runInfo[addr] = &runInfo{tag: tag, backend: backend, log: logPath, started: time.Now()}
 			g.mu.Unlock()
+			checksBefore := checkRuns(g.root, addr)
 			rc, rl := g.runAgent(model, effort, backend, addr, logPath, timeout)
 			os.Remove(logPath)
+			checked := checkRuns(g.root, addr) > checksBefore
 
 			pool := poolOf(backend, model)
-			if rc != rcRateLimited {
-				g.pools.healthy(pool)
-			}
 			if g.isMatched(addr) {
+				if rc != rcRateLimited {
+					g.pools.healthy(pool)
+				}
 				g.emit("[+] MATCHED %s via %s (%s) in %s", addr, tag, backend, fmtDur(int64(time.Since(fnStart).Seconds())))
 				res.res, res.win = "matched", tag
 				return res
 			}
 			g.emit("[-] Unmatched on %s (%s): %s", tag, backend, addr)
 			g.work("clean", addr) // next effort / model gets a fresh stub, not this run's half-finished attempt
+			if !checked && rc == rcInvalidModel && backend == "agy" {
+				// agy does not have this model at all: stop routing it there, and do not blame the model
+				g.mu.Lock()
+				g.agyNoModel[model] = true
+				g.mu.Unlock()
+				g.emit("[!] agy rejected model %s as unknown; no longer routing it via agy this session", model)
+				if nb := g.resolveBackend(spec); nb != "" && nb != backend {
+					g.emit("[*] %s: switching %s to alternate backend (%s)", addr, tag, nb)
+					continue
+				}
+				res.res = "unavailable"
+				return res
+			}
+			if !checked && rc != rcRateLimited {
+				// The agent never ran `work check`: it died before attempting (usage exhausted with an unrecognised
+				// message, CLI crash, auth error...). Not a model failure; cool the pool down so the queue is not
+				// burned through, and keep the model owed. After maxNoCheckRuns it counts as a real failure.
+				g.mu.Lock()
+				g.noCheck[addr+"\t"+tag]++
+				n := g.noCheck[addr+"\t"+tag]
+				g.mu.Unlock()
+				if n < maxNoCheckRuns {
+					g.emit("[!] %s: %s (%s) exited without running work check (%d/%d); not counted as a failure",
+						addr, tag, backend, n, maxNoCheckRuns)
+					g.pools.markLimited(pool, "soft", 0)
+					if nb := g.resolveBackend(spec); nb != "" && nb != backend {
+						g.emit("[*] %s: switching %s to alternate backend (%s)", addr, tag, nb)
+						continue
+					}
+					res.res = "unavailable"
+					return res
+				}
+				g.emit("[!] %s: %s exited without running work check %d times; recording as failed", addr, tag, n)
+			}
+			if rc != rcRateLimited {
+				g.pools.healthy(pool)
+			}
 			if rc == rcRateLimited {
 				g.pools.markLimited(pool, rl.kind, rl.reset)
 				if nb := g.resolveBackend(spec); nb != "" && nb != backend {

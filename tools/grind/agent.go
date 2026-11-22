@@ -128,11 +128,14 @@ func (g *grind) runAgyFirstValidSlug(key, effort, prompt, model, addr, logPath s
 			return rc
 		}
 	}
-	return rc
+	return rcInvalidModel // agy accepted none of the slugs: the model does not exist there, nothing was attempted
 }
 
 // rcRateLimited is returned by runAgent when the run hit a quota/rate limit (and did not match).
 const rcRateLimited = 42
+
+// rcInvalidModel is returned by runAgent when the backend rejected the model itself (and did not match).
+const rcInvalidModel = 43
 
 type rlInfo struct {
 	kind  string
@@ -207,11 +210,16 @@ Rules:
 				[]string{"claude-opus-5-5", "claude-opus-5-5-" + effort, "claude-opus-5.5", "claude-opus-5-5@default", "claude-opus-4-6@default"})
 		default: // gemini-* and anything else: the base model name is the agy slug
 			rc = g.runTracked(g.agyCmd(model, effort, prompt, model, addr, timeout), logPath, timeout)
+			if isInvalidModelLog(logPath) {
+				rc = rcInvalidModel
+			}
 		}
 	}
 
 	if g.isMatched(addr) {
 		g.work("commit-pending") // record the commit on the host (the agent may have run in a read-only .git sandbox)
+	} else if rc == rcInvalidModel {
+		return rcInvalidModel, rlInfo{}
 	} else if isRateLimitLog(logPath) {
 		k, r := classifyRateLimit(logPath)
 		return rcRateLimited, rlInfo{k, r}
@@ -227,7 +235,7 @@ func (g *grind) backendUsable(backend, model string) bool {
 	case "claude":
 		return strings.HasPrefix(model, "claude-") && g.hasClaude && !g.pools.coolingDown("claude")
 	case "agy":
-		return g.hasAgy && !g.pools.coolingDown(poolOf("agy", model))
+		return g.hasAgy && !g.agyLacks(model) && !g.pools.coolingDown(poolOf("agy", model))
 	}
 	return false
 }

@@ -1619,6 +1619,7 @@ func cmdCheck(args []string) {
 		os.Exit(1)
 	}
 	u := &units[uIdx]
+	recordCheckRun(u.VA, modelName)
 	var cls *ClassEntry
 	if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
 		cls = classByName[u.Symbol[:idx]]

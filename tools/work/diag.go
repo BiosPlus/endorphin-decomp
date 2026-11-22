@@ -16,6 +16,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 )
 
 const (
@@ -169,6 +170,28 @@ func recordDiagnosis(va, model string, pct float64, tgt, comp []AsmInst, relocs 
 		diagClean.Replace(model), pct, off, diagClean.Replace(t), diagClean.Replace(c),
 		diagClean.Replace(strings.Join(hints, diagHintSep)),
 		diffRows, totalRows, diagClean.Replace(region))
+}
+
+// checkRunsDir holds one append-only log per function with a line for every `work check` invocation (compile
+// errors included). The grinder counts these lines to tell a real attempt from an agent that died before trying
+// (quota exhausted, unknown model, CLI crash), so the latter is never recorded as a model failure.
+const checkRunsDir = ".local/checks"
+
+// recordCheckRun appends one line for this check invocation. Best effort: never affects check's result.
+func recordCheckRun(va, model string) {
+	if err := os.MkdirAll(checkRunsDir, 0755); err != nil {
+		return
+	}
+	name := strings.ToUpper(strings.TrimPrefix(va, "0x")) + ".log"
+	f, err := os.OpenFile(filepath.Join(checkRunsDir, name), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		return
+	}
+	defer f.Close()
+	if strings.TrimSpace(model) == "" {
+		model = "unknown"
+	}
+	fmt.Fprintf(f, "%s\t%s\n", time.Now().UTC().Format(time.RFC3339), diagClean.Replace(model))
 }
 
 // clearDiagnosis drops the notes once a function is solved.
