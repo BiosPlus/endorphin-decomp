@@ -6,6 +6,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00419720": {
+    "name": "ExportUnavailableDialog::vfunc_0",
+    "class": "ExportUnavailableDialog",
+    "signature": "extern \"C\" int* __fastcall fn_00419720(void* self)",
+    "summary": "Virtual getter returning the address of the global at mem_0092D178 (ignores this).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",

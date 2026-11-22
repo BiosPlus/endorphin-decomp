@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/classes/global_tiny.cpp
 #include "lift_compat.h"
 extern "C" int mem_0092CE00;
+extern "C" int mem_0092D178;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -9,4 +10,14 @@ extern "C" int mem_0092CE00;
 void* fn_00417330(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_0092CE00);
+}
+
+// [0x00419720] ExportUnavailableDialog::vfunc_0 (6 bytes)
+// @name ExportUnavailableDialog::vfunc_0
+// @class ExportUnavailableDialog
+// @summary Virtual getter returning the address of the global at mem_0092D178 (ignores this).
+// @field ExportUnavailableDialog +0x00 void* vtable
+extern "C" int* __fastcall fn_00419720(void* self) {
+    (void)self;
+    return &mem_0092D178;
 }
