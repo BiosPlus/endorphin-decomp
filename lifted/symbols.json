@@ -6668,6 +6668,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00594470": {
+    "name": "ExprParser::WriteMethodType\u003cWorld, float, setGravity\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setGravity(float), 0}\u003e",
+    "signature": "void __stdcall fn_00594470(void* a1, void* a2)",
+    "summary": "Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setGravity setter ext_00594080.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00594520": {
     "name": "ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",

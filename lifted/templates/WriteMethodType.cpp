@@ -18,6 +18,7 @@ void fn_00604C40(void* self, void* arg) {
     ext_006036A0(target, value);
 }
 extern "C" void ext_0064DDE0(void* self, uint32_t value);
+extern "C" void ext_00594080(void* self, float value);
 
 // [0x00594520] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_41 (37 bytes)
 // @name ExprParser::WriteMethodType<World, float, setFriction>::vfunc_41
@@ -50,4 +51,20 @@ void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr) {
     auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
     uint32_t value = getVec3(typeObj, valuePtr);
     ext_0064DDE0(target, value);
+}
+
+// [0x00594470] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_41 (37 bytes)
+// @name ExprParser::WriteMethodType<World, float, setGravity>::vfunc_41
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>
+// @summary Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setGravity setter ext_00594080.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* reader
+void __stdcall fn_00594470(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_00594080(target, value);
 }
