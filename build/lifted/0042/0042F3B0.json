@@ -1,0 +1,14 @@
+{
+  "va": "0x0042F3B0",
+  "size": 6,
+  "orig_symbol": "LoadPoseDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "LoadPoseDialog::vfunc_0",
+  "class": "LoadPoseDialog",
+  "signature": "void* fn_0042F3B0(void* self)",
+  "summary": "Virtual getter returning the address of the global data slot mem_0092F694 (leaf accessor; self is unused).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:49:54Z"
+}

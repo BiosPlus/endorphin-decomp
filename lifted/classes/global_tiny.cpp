@@ -13,6 +13,7 @@ extern "C" int mem_0092D538;
 extern "C" int mem_0092DFF4;
 extern "C" int mem_0092E5B8;
 extern "C" int mem_0092EAC8;
+extern "C" int mem_0092F694;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -146,4 +147,13 @@ void* fn_00421BF0(void* self) {
 extern "C" int* __fastcall fn_00422CD0(void* self) {
     (void)self;
     return &mem_0092EAC8;
+}
+
+// [0x0042F3B0] LoadPoseDialog::vfunc_0 (6 bytes)
+// @name LoadPoseDialog::vfunc_0
+// @class LoadPoseDialog
+// @summary Virtual getter returning the address of the global data slot mem_0092F694 (leaf accessor; self is unused).
+void* fn_0042F3B0(void* self) {
+    (void)self;
+    return reinterpret_cast<void*>(&mem_0092F694);
 }
