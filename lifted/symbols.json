@@ -397,6 +397,12 @@
     "summary": "Returns the address of the constant mem_00935594 (value 0x00935550).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044D0B0": {
+    "name": "sub_0044D0B0",
+    "signature": "extern \"C\" const char* __cdecl fn_0044D0B0(void)",
+    "summary": "Returns the address of the read-only string constant mem_009355EC (\"`KE\"); takes no arguments and touches no state.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

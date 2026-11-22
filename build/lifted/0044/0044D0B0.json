@@ -1,0 +1,13 @@
+{
+  "va": "0x0044D0B0",
+  "size": 6,
+  "orig_symbol": "sub_0044D0B0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_0044D0B0",
+  "signature": "extern \"C\" const char* __cdecl fn_0044D0B0(void)",
+  "summary": "Returns the address of the read-only string constant mem_009355EC (\"`KE\"); takes no arguments and touches no state.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:53:19Z"
+}
