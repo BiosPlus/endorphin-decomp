@@ -19,6 +19,12 @@
     "summary": "Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte \"pop esi / ret\" tail.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043CB70": {
+    "name": "sub_0043CB70",
+    "signature": "void fn_0043CB70(void* self)",
+    "summary": "Virtual dispatch thunk: reads the object's vtable pointer and calls slot 0 with the same object.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
