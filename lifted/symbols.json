@@ -10947,6 +10947,13 @@
     "summary": "Resolves arg via ext_006999B0, then tail-dispatches to vtable slot 1 of the result's +0x04 object, passing the result as the argument.",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00670CD0": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_2",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void* fn_00670CD0(void* a)",
+    "summary": "Resolves arg via ext_006999B0, then tail-calls vtable slot 2 of the result's +0x04 subobject with the result as argument.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x00671030": {
     "name": "ExprParser::Vector3Type::vfunc_0_off_4",
     "class": "ExprParser::Vector3Type",

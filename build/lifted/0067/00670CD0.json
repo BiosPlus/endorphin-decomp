@@ -1,0 +1,22 @@
+{
+  "va": "0x00670CD0",
+  "size": 24,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_2",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_2",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void* fn_00670CD0(void* a)",
+  "summary": "Resolves arg via ext_006999B0, then tail-calls vtable slot 2 of the result's +0x04 subobject with the result as argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:42:34Z"
+}
