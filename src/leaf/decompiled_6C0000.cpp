@@ -19376,3 +19376,870 @@ c190_7ed:
         ret 0x4
     }
 }
+
+// [0x006C5A50] sub_006C5A50 (2304 bytes)
+extern "C" int mem_0092A270; /* double 1 */
+
+// Stack args: [ebp+8]=eax (out), [ebp+0xc]=edx (in), [ebp+0x10]=ecx (matrix). Plain cdecl (ret).
+extern "C" __declspec(naked) void __cdecl fn_006C5A50(void* out, void* in, void* m) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0B8h
+        mov eax, dword ptr [ebp+8]
+        mov ecx, dword ptr [ebp+10h]
+        mov edx, dword ptr [ebp+0Ch]
+        push esi
+        cmp eax, ecx
+        push edi
+        jne near ptr L5EAC
+
+        fld qword ptr [edx]
+        fld qword ptr [edx+8]
+        fld qword ptr [edx+10h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [esp+20h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [edx+20h]
+        fld qword ptr [edx+28h]
+        fld qword ptr [edx+30h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [esp+28h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [edx+40h]
+        fst qword ptr [esp+30h]
+        fld qword ptr [edx+48h]
+        fst qword ptr [esp+10h]
+        fld qword ptr [edx+50h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [esp+18h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [esp+20h]
+        fmul qword ptr [edx+8]
+        fld qword ptr [esp+20h]
+        fmul qword ptr [edx+10h]
+        fld qword ptr [esp+28h]
+        fmul qword ptr [edx+30h]
+        fstp qword ptr [esp+80h]
+        fld qword ptr [edx+20h]
+        fmul qword ptr [esp+28h]
+        fstp qword ptr [esp+40h]
+        fld qword ptr [esp+18h]
+        fmul qword ptr [esp+30h]
+        fstp qword ptr [esp+48h]
+        fld qword ptr [esp+18h]
+        fmul qword ptr [esp+10h]
+        fstp qword ptr [esp+68h]
+        fld qword ptr [esp+20h]
+        fmul qword ptr [edx]
+        fld qword ptr [esp+28h]
+        fmul qword ptr [edx+28h]
+        fstp qword ptr [esp+60h]
+        fld qword ptr [esp+18h]
+        fmul qword ptr [edx+50h]
+        fstp qword ptr [esp+88h]
+        fld qword ptr [edx+60h]
+        fchs
+        fld qword ptr [edx+68h]
+        fchs
+        fld qword ptr [edx+70h]
+        fchs
+        fld qword ptr [esp+88h]
+        fmul st, st(1)
+        fld qword ptr [esp+68h]
+        fmul st, st(3)
+        lea edx, [esp+38h]
+        cmp eax, edx
+        faddp st(1), st
+        fld qword ptr [esp+48h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [esp+0A8h]
+        fld st(4)
+        fmul st, st(1)
+        fld st(4)
+        fmul st, st(4)
+        faddp st(1), st
+        fld st(2)
+        fmul st, st(7)
+        faddp st(1), st
+        fstp qword ptr [esp+98h]
+        fld qword ptr [esp+60h]
+        fmul st, st(2)
+        fld qword ptr [esp+80h]
+        fmul st, st(2)
+        faddp st(1), st
+        fld qword ptr [esp+40h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [esp+0A0h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        jne near ptr L5CFA
+
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        fld st(1)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax]
+        fld st(0)
+        fmul qword ptr [ecx+20h]
+        fld st(3)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fstp qword ptr [eax+20h]
+        fld st(0)
+        fmul qword ptr [ecx+40h]
+        fld st(3)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fstp qword ptr [eax+40h]
+        fmul qword ptr [ecx+60h]
+        fxch st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(2), st
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fadd qword ptr [esp+98h]
+        fstp qword ptr [eax+60h]
+        fld qword ptr [esp+60h]
+        fld qword ptr [esp+40h]
+        fld qword ptr [esp+80h]
+        fld st(1)
+        fmul qword ptr [ecx]
+        fld st(3)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        faddp st(1), st
+        fstp qword ptr [eax+8]
+        fld st(1)
+        fmul qword ptr [ecx+20h]
+        fld st(3)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fstp qword ptr [eax+28h]
+        fld st(1)
+        fmul qword ptr [ecx+40h]
+        fld st(3)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fstp qword ptr [eax+48h]
+        fxch st(1)
+        fmul qword ptr [ecx+60h]
+        fxch st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(2), st
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fadd qword ptr [esp+0A0h]
+        fstp qword ptr [eax+68h]
+        fld qword ptr [esp+88h]
+        fld qword ptr [esp+68h]
+        fld qword ptr [esp+48h]
+        fld st(0)
+        fmul qword ptr [ecx]
+        fld st(3)
+        fmul qword ptr [ecx+10h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax+10h]
+        fld st(0)
+        fmul qword ptr [ecx+20h]
+        fld st(3)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+30h]
+        fld st(0)
+        fmul qword ptr [ecx+40h]
+        fld st(3)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+50h]
+        fmul qword ptr [ecx+60h]
+        fxch st(2)
+        fmul qword ptr [ecx+70h]
+        faddp st(2), st
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fadd qword ptr [esp+0A8h]
+        fstp qword ptr [eax+70h]
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+
+L5CFA:
+        fld qword ptr [ecx]
+        fld qword ptr [ecx+8]
+        fld qword ptr [ecx+10h]
+        fld st(4)
+        fmul st, st(1)
+        fld st(3)
+        fmul st, st(5)
+        faddp st(1), st
+        fld st(2)
+        fmul st, st(7)
+        faddp st(1), st
+        fstp qword ptr [eax]
+        fld qword ptr [esp+80h]
+        fmul st, st(1)
+        fld qword ptr [esp+60h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [esp+40h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [eax+8]
+        fld qword ptr [esp+88h]
+        fmul st, st(1)
+        fld qword ptr [esp+68h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [esp+48h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [eax+10h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [ecx+20h]
+        fld qword ptr [ecx+28h]
+        fld qword ptr [ecx+30h]
+        fld st(4)
+        fmul st, st(1)
+        fld st(3)
+        fmul st, st(5)
+        faddp st(1), st
+        fld st(2)
+        fmul st, st(7)
+        faddp st(1), st
+        fstp qword ptr [eax+20h]
+        fld qword ptr [esp+80h]
+        fmul st, st(1)
+        fld qword ptr [esp+60h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [esp+40h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [eax+28h]
+        fld qword ptr [esp+88h]
+        fmul st, st(1)
+        fld qword ptr [esp+68h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [esp+48h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [eax+30h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [ecx+40h]
+        fld qword ptr [ecx+48h]
+        fld qword ptr [ecx+50h]
+        fld st(4)
+        fmul st, st(1)
+        fld st(3)
+        fmul st, st(5)
+        faddp st(1), st
+        fld st(2)
+        fmul st, st(7)
+        faddp st(1), st
+        fstp qword ptr [eax+40h]
+        fld qword ptr [esp+80h]
+        fmul st, st(1)
+        fld qword ptr [esp+60h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [esp+40h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [eax+48h]
+        fld qword ptr [esp+88h]
+        fmul st, st(1)
+        fld qword ptr [esp+68h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [esp+48h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [eax+50h]
+        mov edx, dword ptr [ecx+60h]
+        mov esi, dword ptr [ecx+64h]
+        mov dword ptr [esp+8], edx
+        mov edx, dword ptr [ecx+68h]
+        fstp st(0)
+        mov dword ptr [esp+0Ch], esi
+        mov esi, dword ptr [ecx+6Ch]
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [ecx+70h]
+        mov ecx, dword ptr [ecx+74h]
+        mov dword ptr [esp+18h], edx
+        fstp st(0)
+        fstp st(0)
+        mov dword ptr [esp+1Ch], ecx
+        mov dword ptr [esp+14h], esi
+        fxch st(1)
+        fmul qword ptr [esp+18h]
+        fld qword ptr [esp+8]
+        fmul st, st(2)
+        faddp st(1), st
+        fld qword ptr [esp+10h]
+        fmul st, st(3)
+        faddp st(1), st
+        fadd qword ptr [esp+98h]
+        fstp qword ptr [eax+60h]
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [esp+80h]
+        fmul qword ptr [esp+18h]
+        fld qword ptr [esp+60h]
+        fmul qword ptr [esp+10h]
+        faddp st(1), st
+        fld qword ptr [esp+40h]
+        fmul qword ptr [esp+8]
+        faddp st(1), st
+        fadd qword ptr [esp+0A0h]
+        fstp qword ptr [eax+68h]
+        fld qword ptr [esp+88h]
+        fmul qword ptr [esp+18h]
+        fld qword ptr [esp+68h]
+        fmul qword ptr [esp+10h]
+        faddp st(1), st
+        fld qword ptr [esp+48h]
+        fmul qword ptr [esp+8]
+        faddp st(1), st
+        fadd qword ptr [esp+0A8h]
+        fstp qword ptr [eax+70h]
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+
+L5EAC:
+        cmp eax, edx
+        jne near ptr L6120
+        fld qword ptr [edx]
+        fld qword ptr [edx+8]
+        fld qword ptr [edx+10h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        mov esi, dword ptr [edx+20h]
+        mov edi, dword ptr [edx+24h]
+        mov dword ptr [esp+8], esi
+        mov esi, dword ptr [edx+40h]
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        mov dword ptr [esp+0Ch], edi
+        mov edi, dword ptr [edx+44h]
+        mov dword ptr [esp+18h], esi
+        mov esi, dword ptr [edx+60h]
+        faddp st(1), st
+        mov dword ptr [esp+1Ch], edi
+        mov edi, dword ptr [edx+64h]
+        mov dword ptr [esp+20h], esi
+        mov esi, dword ptr [edx+68h]
+        fdivr qword ptr [mem_0092A270]
+        mov dword ptr [esp+24h], edi
+        mov edi, dword ptr [edx+6Ch]
+        mov dword ptr [esp+28h], esi
+        mov dword ptr [esp+2Ch], edi
+        fstp qword ptr [esp+10h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [esp+10h]
+        fmul qword ptr [edx]
+        fld qword ptr [esp+10h]
+        fmul qword ptr [edx+8]
+        fld qword ptr [esp+10h]
+        fmul qword ptr [edx+10h]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax]
+        fld st(2)
+        fmul qword ptr [ecx+20h]
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+20h]
+        fld st(2)
+        fmul qword ptr [ecx+40h]
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+40h]
+        fld st(2)
+        fmul qword ptr [ecx+60h]
+        fld st(1)
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fld qword ptr [esp+28h]
+        fmul st, st(3)
+        fld qword ptr [esp+20h]
+        fmul st, st(5)
+        faddp st(1), st
+        fxch st(2)
+        fmul qword ptr [edx+70h]
+        faddp st(2), st
+        fxch st(1)
+        _emit 0DEh
+        _emit 0E9h
+        fstp qword ptr [eax+60h]
+        mov esi, dword ptr [edx+48h]
+        mov edi, dword ptr [edx+4Ch]
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [edx+28h]
+        fst qword ptr [esp+0B8h]
+        fld qword ptr [edx+30h]
+        fst qword ptr [esp+30h]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+8]
+        fld st(1)
+        fmul st, st(2)
+        faddp st(1), st
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fst qword ptr [esp+10h]
+        fstp st(2)
+        fstp st(0)
+        fmul qword ptr [esp+8]
+        fld qword ptr [esp+10h]
+        fmul qword ptr [esp+0B8h]
+        fld qword ptr [esp+10h]
+        fmul qword ptr [esp+30h]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        mov dword ptr [esp+8], esi
+        mov dword ptr [esp+0Ch], edi
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax+8]
+        fld st(2)
+        fmul qword ptr [ecx+20h]
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+28h]
+        fld st(2)
+        fmul qword ptr [ecx+40h]
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+48h]
+        fld st(2)
+        fmul qword ptr [ecx+60h]
+        fld st(1)
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fld qword ptr [esp+28h]
+        fmul st, st(3)
+        fld qword ptr [esp+20h]
+        fmul st, st(5)
+        faddp st(1), st
+        fxch st(2)
+        fmul qword ptr [edx+70h]
+        faddp st(2), st
+        fxch st(1)
+        _emit 0DEh
+        _emit 0E9h
+        fstp qword ptr [eax+68h]
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [edx+50h]
+        fst qword ptr [esp+30h]
+        fld qword ptr [esp+18h]
+        fmul qword ptr [esp+18h]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+8]
+        faddp st(1), st
+        fld st(1)
+        fmul st, st(2)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fst qword ptr [esp+10h]
+        fstp st(1)
+        fmul qword ptr [esp+18h]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+10h]
+        fld qword ptr [esp+10h]
+        fmul qword ptr [esp+30h]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax+10h]
+        fld st(2)
+        fmul qword ptr [ecx+20h]
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+30h]
+        fld st(2)
+        fmul qword ptr [ecx+40h]
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+50h]
+        fld st(2)
+        fmul qword ptr [ecx+60h]
+        fld st(1)
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fld qword ptr [esp+28h]
+        fmul st, st(3)
+        fld qword ptr [esp+20h]
+        fmul st, st(5)
+        faddp st(1), st
+        fxch st(2)
+        fmul qword ptr [edx+70h]
+        faddp st(2), st
+        fxch st(1)
+        _emit 0DEh
+        _emit 0E9h
+        fstp qword ptr [eax+70h]
+        fstp st(0)
+        fstp st(0)
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+L6120:
+        fld qword ptr [edx+60h]
+        fld qword ptr [edx+68h]
+        fld qword ptr [edx]
+        fld qword ptr [edx+8]
+        mov esi, dword ptr [edx+70h]
+        mov edi, dword ptr [edx+74h]
+        fst qword ptr [esp+10h]
+        fld qword ptr [edx+10h]
+        mov dword ptr [esp+20h], esi
+        mov dword ptr [esp+24h], edi
+        fst qword ptr [esp+18h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [esp+8]
+        fstp st(0)
+        fstp st(0)
+        fmul qword ptr [esp+8]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+10h]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+18h]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax]
+        fld st(2)
+        fmul qword ptr [ecx+20h]
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+20h]
+        fld st(2)
+        fmul qword ptr [ecx+40h]
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+40h]
+        fld st(2)
+        fmul qword ptr [ecx+60h]
+        fld st(1)
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [esp+20h]
+        fxch st(2)
+        fmul st, st(4)
+        faddp st(2), st
+        fxch st(2)
+        fmul st, st(4)
+        faddp st(1), st
+        _emit 0DEh
+        _emit 0E9h
+        fstp qword ptr [eax+60h]
+        fld qword ptr [edx+20h]
+        fld qword ptr [edx+28h]
+        fst qword ptr [esp+10h]
+        fld qword ptr [edx+30h]
+        fst qword ptr [esp+18h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [esp+8]
+        fstp st(0)
+        fstp st(0)
+        fmul qword ptr [esp+8]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+10h]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+18h]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax+8]
+        fld st(2)
+        fmul qword ptr [ecx+20h]
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+28h]
+        fld st(2)
+        fmul qword ptr [ecx+40h]
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+48h]
+        fld st(2)
+        fmul qword ptr [ecx+60h]
+        fld st(1)
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [esp+20h]
+        fxch st(2)
+        fmul st, st(4)
+        faddp st(2), st
+        fxch st(2)
+        fmul st, st(4)
+        faddp st(1), st
+        _emit 0DEh
+        _emit 0E9h
+        fstp qword ptr [eax+68h]
+        fld qword ptr [edx+40h]
+        fld qword ptr [edx+48h]
+        fst qword ptr [esp+10h]
+        fld qword ptr [edx+50h]
+        fst qword ptr [esp+18h]
+        fld st(0)
+        fmul st, st(1)
+        fld st(2)
+        fmul st, st(3)
+        faddp st(1), st
+        fld st(3)
+        fmul st, st(4)
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [esp+8]
+        fstp st(0)
+        fstp st(0)
+        fmul qword ptr [esp+8]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+10h]
+        fld qword ptr [esp+8]
+        fmul qword ptr [esp+18h]
+        fld st(2)
+        fmul qword ptr [ecx]
+        fld st(1)
+        fmul qword ptr [ecx+10h]
+        pop edi
+        pop esi
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+8]
+        faddp st(1), st
+        fstp qword ptr [eax+10h]
+        fld st(2)
+        fmul qword ptr [ecx+20h]
+        fld st(1)
+        fmul qword ptr [ecx+30h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+28h]
+        faddp st(1), st
+        fstp qword ptr [eax+30h]
+        fld st(2)
+        fmul qword ptr [ecx+40h]
+        fld st(1)
+        fmul qword ptr [ecx+50h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+48h]
+        faddp st(1), st
+        fstp qword ptr [eax+50h]
+        fld st(2)
+        fmul qword ptr [ecx+60h]
+        fld st(1)
+        fmul qword ptr [ecx+70h]
+        faddp st(1), st
+        fld st(2)
+        fmul qword ptr [ecx+68h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [esp+18h]
+        fxch st(2)
+        fmul st, st(4)
+        faddp st(2), st
+        fxch st(2)
+        fmul st, st(4)
+        faddp st(1), st
+        _emit 0DEh
+        _emit 0E9h
+        fstp qword ptr [eax+70h]
+        fstp st(0)
+        fstp st(0)
+        mov esp, ebp
+        pop ebp
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
