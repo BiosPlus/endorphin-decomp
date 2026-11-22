@@ -576,13 +576,13 @@ void fn_0066B120(void* self, void* src) {
 // [0x0066BBA0] ExprParser::VPtrProxyType::vfunc_7 (28 bytes)
 // @name ExprParser::VPtrProxyType::vfunc_7
 // @class ExprParser::VPtrProxyType
-// @summary Forward a float value to vtable slot 7 of the object at P->+0x04, passing P as the first argument.
-// Assumption: the callee's return value is not propagated (the original tail-returns whatever eax/st0 holds).
+// @summary Forwards a float to vtable slot 7 (+0x1C) of the object at P->+0x04, passing P as the first argument; stdcall (ret 8), result not recovered.
 // @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04   (accessed on P = this->field_0x00; owning class not yet established)
 void fn_0066BBA0(void* self, float value) {
-    void* p = lift_field<void*>(self, 0x00);          // P = self->field_0x00
+    void* p = lift_field<void*>(self, 0x00);          // P = this->field_0x00
     void* q = lift_field<void*>(p, 0x04);             // Q = P->field_0x04
-    void** vtbl = *reinterpret_cast<void***>(q);
-    using Slot7 = void (*)(void* thisPtr, void* arg, float v);
-    reinterpret_cast<Slot7>(vtbl[7])(q, p, value);    // thiscall: this=Q, args=(P, value)
+    void** vtbl = lift_field<void**>(q, 0x00);        // Q's vtable
+    using Slot7 = void(__thiscall*)(void* thisPtr, void* arg, float v);
+    reinterpret_cast<Slot7>(vtbl[7])(q, p, value);    // thiscall: this = Q, args = (P, value)
 }

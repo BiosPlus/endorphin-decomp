@@ -1,0 +1,14 @@
+{
+  "va": "0x0046C430",
+  "size": 10,
+  "orig_symbol": "ExprParser::BoolType::vfunc_51",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_51",
+  "class": "ExprParser::BoolType",
+  "signature": "void* __thiscall fn_0046C430(void* self)",
+  "summary": "Returns the RTTI type_info pointer for this object by forwarding to __RTtypeid.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:22Z"
+}

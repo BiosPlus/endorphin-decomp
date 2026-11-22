@@ -1,14 +1,35 @@
 // Lifted C++ translation unit: lifted/ExprParser/Vector3Type.cpp
 #include "lift_compat.h"
 extern "C" void ext_0066C030(void* self, void* arg);
+extern "C" void ext_00672110(void* self, void* arg);
+// Portable stand-in for an indirect call through vtable slot 5 (offset 0x14).
+static inline void* vcall_slot5(void* obj, void* arg) {
+    void** vtbl = *static_cast<void***>(obj);
+    using Fn = void* (*)(void*, void*);
+    return reinterpret_cast<Fn>(vtbl[5])(obj, arg);
+}
 
-// [0x0066D0C0] ExprParser::Vector3Type::vfunc_30 (26 bytes)
-// @name ExprParser::Vector3Type::vfunc_30
-// @class ExprParser::Vector3Type
-// @summary Releases the pointer held in *slot via sub_0066C030 on this+0x08, then nulls *slot.
-// @field ExprParser::Vector3Type +0x08 uint8_t field_0x08
-// @field Unknown +0x00 void* field_0x00
+// Portable stand-in for an indirect call through vtable slot 5 (offset 0x14).
+static inline void* vcall_slot5(void* obj, void* arg) {
+    void** vtbl = *static_cast<void***>(obj);
+    using Fn = void* (*)(void*, void*);
+    return reinterpret_cast<Fn>(vtbl[5])(obj, arg);
+}
 void fn_0066D0C0(void* self, void** slot) {
     ext_0066C030(static_cast<char*>(self) + 0x08, *slot);
     *slot = nullptr;
+}
+
+// [0x0066B530] ExprParser::Vector3Type::vfunc_0 (41 bytes)
+// @name ExprParser::Vector3Type::vfunc_0
+// @class ExprParser::Vector3Type
+// @summary Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.
+// @field ExprParser::Vector3Type +0x00 void* vtable
+void* fn_0066B530(void* self, void* a1, void* a2) {
+    (void)a1;  // first stack argument is never read
+    // The original also pushes a saved-register word and a literal 0 for the
+    // slot-5 call; those are not modelled here (see report).
+    void* r = vcall_slot5(self, a2);
+    ext_00672110(a2, r);
+    return a2;
 }
