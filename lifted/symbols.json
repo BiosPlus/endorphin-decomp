@@ -263,6 +263,12 @@
     "summary": "Five-byte no-op: `add eax, 0` (opcode 05 with imm32 0), which leaves the register value unchanged; no observable effect beyond flags.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0086086B": {
+    "name": "sub_0086086B",
+    "signature": "void fn_0086086B(void)",
+    "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00870E86": {
     "name": "sub_00870E86",
     "signature": "void fn_00870E86(void* self)",

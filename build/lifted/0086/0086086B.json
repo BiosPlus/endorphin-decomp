@@ -1,0 +1,13 @@
+{
+  "va": "0x0086086B",
+  "size": 5,
+  "orig_symbol": "sub_0086086B",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "sub_0086086B",
+  "signature": "void fn_0086086B(void)",
+  "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:45:06Z"
+}
