@@ -8108,6 +8108,13 @@
     "summary": "If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E2340": {
+    "name": "NMData::SkeletalJointData::vfunc_41",
+    "class": "NMData::SkeletalJointData",
+    "signature": "extern \"C\" void __thiscall fn_005E2340(void* self)",
+    "summary": "Updates the joint's child object via ext_00587450, preserving and restoring its transform matrix when the parent state counter is below mem_009849A8.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005E29F0": {
     "name": "NMData::FixedPathJointData::vfunc_14",
     "class": "NMData::FixedPathJointData",
@@ -10966,6 +10973,13 @@
     "class": "ExprParser::BoolType",
     "signature": "uint32_t __stdcall fn_0067A6E0(uint32_t first, uint32_t second)",
     "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
+  "0x0067A700": {
+    "name": "ExprParser::BoolType::vfunc_35",
+    "class": "ExprParser::BoolType",
+    "signature": "uint32_t __stdcall fn_0067A700(const uint32_t* first, uint32_t self)",
+    "summary": "Loads the dword at offset 0 of the first argument and forwards it, together with the second argument as this, to helper 0x00698ED0; returns that helper's result.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x0067A770": {

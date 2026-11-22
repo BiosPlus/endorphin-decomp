@@ -44,8 +44,10 @@ extern "C" uint32_t mem_00B5966C;
 // Storage of the function-local static object (only its address is used).
 extern "C" uint8_t mem_00B59664[];
 extern "C" void __cdecl ext_006A6C87(const void* arg);
+// Callee 0x00698ED0 (thiscall: ecx = self, one stack argument, callee pops 4 bytes); result in eax.
+extern "C" uint32_t __thiscall ext_00698ED0(uint32_t self, uint32_t arg);
 
-// [0x0066B1A0] ExprParser::BoolType::vfunc_42 (46 bytes)
+extern "C" uint32_t __thiscall ext_00698ED0(uint32_t self, uint32_t arg);
 // @name ExprParser::BoolType::vfunc_42
 // @class ExprParser::BoolType
 // @summary Returns 1 if sub->vfn3(obj) equals sub->vfn3(obj) where sub = obj->field_0x04 (both calls identical); the second argument is unused.
@@ -223,4 +225,17 @@ void fn_0067A870(void* self, void* a, void* b) {
 
         vcall<void>(lift_field<void*>(a, 0x04), 7, a, scaled);
     }
+}
+
+// [0x0067A700] ExprParser::BoolType::vfunc_35 (19 bytes)
+// @name ExprParser::BoolType::vfunc_35
+// @class ExprParser::BoolType
+// @summary Loads the dword at offset 0 of the first argument and forwards it, together with the second argument as this, to helper 0x00698ED0; returns that helper's result.
+// @field Unknown +0x00 uint32_t field_0x00
+uint32_t __stdcall fn_0067A700(const uint32_t* first, uint32_t self) {
+    // mov eax,[esp+4]; mov ecx,[eax]  -> value = *first
+    const uint32_t value = *first;
+    // push ecx; mov ecx,[esp+0xc] (second stack arg as this); call ext_00698ED0
+    // ret 8 (stdcall, callee cleans two arguments); eax holds the helper's result.
+    return ext_00698ED0(self, value);
 }

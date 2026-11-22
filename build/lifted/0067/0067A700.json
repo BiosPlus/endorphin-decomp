@@ -1,0 +1,22 @@
+{
+  "va": "0x0067A700",
+  "size": 19,
+  "orig_symbol": "ExprParser::BoolType::vfunc_35",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_35",
+  "class": "ExprParser::BoolType",
+  "signature": "uint32_t __stdcall fn_0067A700(const uint32_t* first, uint32_t self)",
+  "summary": "Loads the dword at offset 0 of the first argument and forwards it, together with the second argument as this, to helper 0x00698ED0; returns that helper's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:35:04Z"
+}
