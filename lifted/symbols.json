@@ -5896,6 +5896,13 @@
     "summary": "Pure jump thunk forwarding to sub_005B5AF0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584F50": {
+    "name": "NMData::RPROMagnetData::vfunc_59",
+    "class": "NMData::RPROMagnetData",
+    "signature": "void fn_00584F50(void* self)",
+    "summary": "Constructs a std::string in the caller-supplied buffer from the literal pointer in mem_00A9F1E8.",
+    "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
+  },
   "0x00585000": {
     "name": "sub_00585000",
     "signature": "extern \"C\" void fn_00585000(void)",
