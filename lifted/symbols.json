@@ -9191,10 +9191,10 @@
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x0066DD10": {
-    "name": "ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_4",
-    "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
-    "signature": "void* fn_0066DD10(void* unused, void* out)",
-    "summary": "Stdcall (ret 8) thunk: loads the target pointer from the out-param, calls the Vector3 helper on it, default-constructs the out-param as a std::string, and returns the out-param.",
+    "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "int fn_0060A070(void* self)",
+    "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x0066EDA0": {
