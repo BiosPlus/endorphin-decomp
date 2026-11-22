@@ -17,6 +17,7 @@ extern "C" int mem_0092F694;
 extern "C" int mem_0092F394;
 extern "C" int mem_0092F82C;
 extern "C" int mem_00932C44;
+extern "C" int mem_00932E64;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -187,4 +188,13 @@ extern "C" int* __fastcall fn_0042F920(void* self) {
 void* fn_00447580(void* self) {
     (void)self;
     return &mem_00932C44;
+}
+
+// [0x00447DC0] ProcessorWarningDialog::vfunc_0 (6 bytes)
+// @name ProcessorWarningDialog::vfunc_0
+// @class ProcessorWarningDialog
+// @summary Returns the address of the global mem_00932E64 (no per-instance state is read).
+void* fn_00447DC0(void* self) {
+    (void)self;
+    return static_cast<void*>(&mem_00932E64);
 }

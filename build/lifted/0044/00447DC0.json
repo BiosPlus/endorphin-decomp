@@ -1,0 +1,14 @@
+{
+  "va": "0x00447DC0",
+  "size": 6,
+  "orig_symbol": "ProcessorWarningDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ProcessorWarningDialog::vfunc_0",
+  "class": "ProcessorWarningDialog",
+  "signature": "void* fn_00447DC0(void* self)",
+  "summary": "Returns the address of the global mem_00932E64 (no per-instance state is read).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:51:03Z"
+}
