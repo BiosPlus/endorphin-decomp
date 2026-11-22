@@ -1,0 +1,22 @@
+{
+  "va": "0x006A07D0",
+  "size": 48,
+  "orig_symbol": "ExprParser::Operators::Equals::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Equals.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Equals.cpp",
+  "name": "ExprParser::Operators::Equals::evalAndNotifyOperand",
+  "class": "ExprParser::Operators::Equals",
+  "signature": "void* fn_006A07D0(void* token, void* ctx)",
+  "summary": "Takes (token, ctx), calls virtual slot 42 (0xA8) on token-\u003echild to get a bool, then calls virtual slot 9 (0x24) on the same child with (token, bool) and returns its result.",
+  "fields": [
+    {
+      "class": "ExprParser::ExprToken",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:50Z"
+}

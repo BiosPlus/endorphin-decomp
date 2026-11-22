@@ -9587,6 +9587,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006A02B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x006A07D0": {
+    "name": "ExprParser::Operators::Equals::evalAndNotifyOperand",
+    "class": "ExprParser::Operators::Equals",
+    "signature": "void* fn_006A07D0(void* token, void* ctx)",
+    "summary": "Takes (token, ctx), calls virtual slot 42 (0xA8) on token-\u003echild to get a bool, then calls virtual slot 9 (0x24) on the same child with (token, bool) and returns its result.",
+    "lifted_path": "lifted/ExprParser/Operators/Equals.cpp"
+  },
   "0x006A09A0": {
     "name": "ExprParser::Operators::Multiply::vfunc_3",
     "class": "ExprParser::Operators::Multiply",
