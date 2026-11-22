@@ -9687,6 +9687,13 @@
     "summary": "Subtracts the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise from the float[3] at *a1.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B6E0": {
+    "name": "ExprParser::Vector3Type::vfunc_45",
+    "class": "ExprParser::Vector3Type",
+    "signature": "R vcall(void* obj, int idx, A... args)",
+    "summary": "Scales or dots a Vector3 operand depending on a predicate on the second operand's source.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B7F0": {
     "name": "ExprParser::Vector4Type::vfunc_42",
     "class": "ExprParser::Vector4Type",

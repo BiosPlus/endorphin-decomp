@@ -154,3 +154,53 @@ extern "C" void* __thiscall fn_0066D040(void* self, uint32_t unused) {
     }
     return &mem_00B5967C;
 }
+
+// [0x0066B6E0]
+// @name ExprParser::Vector3Type::vfunc_45
+// @class ExprParser::Vector3Type
+// @summary Scales or dots a Vector3 operand depending on a predicate on the second operand's source.
+// @field ExprParser::Vector3Type +0x00 float* data
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+namespace {
+
+// Call virtual slot `idx` on `obj` using the MSVC thiscall-with-stack-args convention
+// (this passed as the first parameter in the portable form).
+template <class R, class... A>
+R vcall(void* obj, int idx, A... args) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vt[idx])(obj, args...);
+}
+
+}  // namespace
+
+void fn_0066B6E0(void* a1, void* a2) {
+    // Predicate on the second operand's source object (vfunc +0x3C).
+    void* src = *reinterpret_cast<void**>(static_cast<char*>(a2) + 0x04);
+    bool pred = vcall<bool>(src, 15, a2);
+    if (pred) {
+        // Second operand's source (vfunc +0x14) yields a float[3] of the other vector.
+        void* src2 = *reinterpret_cast<void**>(static_cast<char*>(a2) + 0x04);
+        float* b = vcall<float*>(src2, 5, a2);
+
+        // Operand a1 becomes the target of the dot product.
+        float* a = *reinterpret_cast<float**>(a1);
+        void* tgt = *reinterpret_cast<void**>(static_cast<char*>(a1) + 0x04);
+
+        float t1 = a[1] * b[1];
+        float t0 = a[0] * b[0];
+        float dot = (t0 + t1) + a[2] * b[2];
+
+        vcall<void>(tgt, 7, a1, dot);
+        return;
+    }
+
+    // Otherwise: scale a1's floats by the scalar returned from source vfunc +0x04.
+    void* src3 = *reinterpret_cast<void**>(static_cast<char*>(a2) + 0x04);
+    float s = vcall<float>(src3, 1, a2);
+
+    float* out = *reinterpret_cast<float**>(a1);
+    out[0] = out[0] * s;
+    out[1] = out[1] * s;
+    out[2] = out[2] * s;
+}

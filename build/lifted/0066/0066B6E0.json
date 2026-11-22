@@ -1,0 +1,28 @@
+{
+  "va": "0x0066B6E0",
+  "size": 136,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_45",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_45",
+  "class": "ExprParser::Vector3Type",
+  "signature": "R vcall(void* obj, int idx, A... args)",
+  "summary": "Scales or dots a Vector3 operand depending on a predicate on the second operand's source.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "data"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:17:30Z"
+}
