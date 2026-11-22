@@ -10,6 +10,8 @@
 // Recovered field layout for NMData::FixedPathJointData:
 namespace lifted_layout {
 struct NMData_FixedPathJointData_Fields {
+    // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005EB890)
+    // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005EB890)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E0E70)
     // +0x140 int32_t field_0x140 (non-zero disables the function)  (evidence: 0x005E0E70)
     // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E29F0)

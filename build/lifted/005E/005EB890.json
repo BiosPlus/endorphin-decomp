@@ -1,0 +1,28 @@
+{
+  "va": "0x005EB890",
+  "size": 139,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_10_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_10_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void fn_005EB890(void* self, void* arg, bool flag)",
+  "summary": "For each entry in the child pointer list [field_0x74, field_0x78): unless flag is set and the child's vfunc +0xC4 returns true, call the child's +0xC subobject vfuncs +0x24(arg) and +0x28(arg, 1).",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x74",
+      "type": "void** field_0x74 (begin of child pointer",
+      "name": "array)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x78",
+      "type": "void** field_0x78 (end of child pointer",
+      "name": "array)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:17:08Z"
+}

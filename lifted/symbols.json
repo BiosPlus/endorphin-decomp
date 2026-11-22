@@ -7730,6 +7730,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005EB890": {
+    "name": "NMData::FixedPathJointData::vfunc_10_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005EB890(void* self, void* arg, bool flag)",
+    "summary": "For each entry in the child pointer list [field_0x74, field_0x78): unless flag is set and the child's vfunc +0xC4 returns true, call the child's +0xC subobject vfuncs +0x24(arg) and +0x28(arg, 1).",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EC050": {
     "name": "NMData::DriveFrame::vfunc_61",
     "class": "NMData::DriveFrame",

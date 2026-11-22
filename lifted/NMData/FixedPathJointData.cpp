@@ -90,3 +90,29 @@ void* fn_005E29F0(void* self, void* arg1, uint32_t arg2) {
     ext_0058F6B0(self, arg1, arg2);
     return arg1;
 }
+
+// [0x005EB890]
+#include "lift_compat.h"
+
+// @name NMData::FixedPathJointData::vfunc_10_off_C
+// @class NMData::FixedPathJointData
+// @summary For each entry in the child pointer list [field_0x74, field_0x78): unless flag is set and the child's vfunc +0xC4 returns true, call the child's +0xC subobject vfuncs +0x24(arg) and +0x28(arg, 1).
+// @field NMData::FixedPathJointData +0x74 void** field_0x74 (begin of child pointer array)
+// @field NMData::FixedPathJointData +0x78 void** field_0x78 (end of child pointer array)
+void fn_005EB890(void* self, void* arg, bool flag) {
+    for (void** it = lift_field<void**>(self, 0x74);
+         it != lift_field<void**>(self, 0x78); ++it) {
+        void* child = *it;
+        if (!flag) {
+            void** cvt = *static_cast<void***>(child);
+            auto pred = reinterpret_cast<bool (*)(void*)>(cvt[0xC4 / sizeof(void*)]);
+            if (pred(child)) {
+                continue;
+            }
+        }
+        void* sub = static_cast<uint8_t*>(child) + 0xC;
+        void** svt = *static_cast<void***>(sub);
+        reinterpret_cast<void (*)(void*, void*)>(svt[0x24 / sizeof(void*)])(sub, arg);
+        reinterpret_cast<void (*)(void*, void*, int)>(svt[0x28 / sizeof(void*)])(sub, arg, 1);
+    }
+}
