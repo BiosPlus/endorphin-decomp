@@ -201,6 +201,7 @@ extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcTyp
 void* __stdcall fn_00515850(void* src) {
     return ext_006A6E9E(src, 0, reinterpret_cast<const void*>(0x00A2E2F8), reinterpret_cast<const void*>(0x00A4279C), 0);
 }
+extern char mem_00A4279C[];
 
 // [0x005C4870]
 // @name DynamicEnumType_CollisionModelDataBase_MaterialNameIndex::vfunc_16
@@ -228,4 +229,12 @@ void* __thiscall fn_005C4870(void* self, void* obj) {
 // @summary Dynamic-casts a pointer from type descriptor 0x00A2E2F8 to 0x00A3C268 via __RTDynamicCast.
 void* __thiscall fn_004D3E20(void* /*this*/, void* ptr) {
     return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A3C268, 0);
+}
+
+// [0x00515850]
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Dynamic-casts ptr from base RTTI type 0x00A2E2F8 to concrete DynamicEnumType<NMData::EvolverRuntimeOptions> RTTI type 0x00A4279C via __RTDynamicCast.
+void* fn_00515850(void* ptr) {
+    return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A4279C, 0);
 }

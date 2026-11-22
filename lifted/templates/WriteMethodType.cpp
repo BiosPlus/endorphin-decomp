@@ -255,23 +255,6 @@ void fn_0064F840(void* self, void* arg) {
     ext_00402040(target, value);
 }
 
-// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<EffectorBase, bool>::vcall68::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
-// @summary Reads the target object from valuePtr, computes a 32-bit result via arg's sub-object vtable slot 3 (offset 0x0C), then dispatches that result to the target's vtable slot 17 (offset 0x44).
-// @field ExprParser::ValuePtrType +0x00 void* targetObj
-// @field Unknown +0x04 void* field_0x04
-uint32_t fn_00604930(void* valuePtr, void* arg) {
-    void* target = lift_field<void*>(valuePtr, 0x00);        // first field: target object
-    void* sub = lift_field<void*>(arg, 0x04);                // sub-object interface at arg+0x04
-    void* subVtbl = lift_field<void*>(sub, 0x00);            // sub's vtable pointer
-    using SlotFn = uint32_t (__thiscall*)(void* self, void* arg);
-    uint32_t r = reinterpret_cast<SlotFn>(lift_field<void*>(subVtbl, 0x0C))(sub, arg);
-    void* code = ext_0062A580(target);                       // target's slot 17 code address
-    using DispatchFn = uint32_t (__thiscall*)(void* self, uint32_t value);
-    return reinterpret_cast<DispatchFn>(code)(target, r);
-}
-
 // [0x00650D80] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>::vfunc_41 (34 bytes)
 // @name WriteMethodType<SkeletalJoint, int>::vcall84::vfunc_41
 // @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
@@ -336,4 +319,21 @@ extern "C" void __stdcall fn_006513E0(void** target, Holder* src)
     typedef void* (__thiscall *Fn)(VObj*, Holder*);
     void* v = reinterpret_cast<Fn>(obj->vtable[5])(obj, src);
     ext_0064F920(self, v);
+}
+
+// [0x00604930]
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::vcall68>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Reads a value via vfunc 3 (+0xC) of the object held in the source's +0x4 field, then invokes the target's virtual slot 17 (vtable +0x44) with that value.
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void __stdcall fn_00604930(void** dest, void* src) {
+    void* target = *dest;
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<char*>(src) + 0x4);
+    void** innerVtbl = *reinterpret_cast<void***>(inner);
+    using GetFn = void* (__thiscall*)(void*, void*);
+    void* value = reinterpret_cast<GetFn>(innerVtbl[3])(inner, src);
+
+    using SetFn = void (__thiscall*)(void*, void*);
+    reinterpret_cast<SetFn>(ext_0062A580(target))(target, value);
 }
