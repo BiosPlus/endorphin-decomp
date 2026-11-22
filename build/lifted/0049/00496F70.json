@@ -1,0 +1,22 @@
+{
+  "va": "0x00496F70",
+  "size": 28,
+  "orig_symbol": "NMData::Transition::vfunc_7_off_8",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::Transition::vfunc_7_off_8",
+  "class": "NMData::Transition",
+  "signature": "void fn_00496F70(void* self, uint32_t arg)",
+  "summary": "If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 7 of its +0x10 sub-object; otherwise does nothing.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:40Z"
+}

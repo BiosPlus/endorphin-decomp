@@ -1839,23 +1839,6 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x00496F70] NMData::Transition::vfunc_7_off_8 (28 bytes)
-// @name NMData::Transition::vfunc_7_off_8
-// @class NMData::Transition
-// @summary If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 7 of its +0x10 sub-object; otherwise does nothing.
-// @field NMData::Transition +0xB0 void* field_0xB0
-void fn_00496F70(void* self, uint32_t arg) {
-    void* inner = lift_field<void*>(self, 0xB0);
-    if (inner == nullptr) {
-        return;
-    }
-    void* sub = static_cast<uint8_t*>(inner) + 0x10;
-    void** vtable = *reinterpret_cast<void***>(sub);
-    // vtable byte offset 0x1C -> slot 7 (32-bit layout)
-    auto fn = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[7]);
-    fn(sub, arg);
-}
-
 // [0x0049ABA0] NMData::State::vfunc_17_off_10 (28 bytes)
 // @name NMData::State::vfunc_17_off_10
 // @class NMData::State
@@ -1952,5 +1935,22 @@ void fn_00496F50(void* self, uint32_t arg) {
     void** vtable = *reinterpret_cast<void***>(sub);
     // vtable byte offset 0x18 -> slot 6 (32-bit layout)
     auto fn = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[6]);
+    fn(sub, arg);
+}
+
+// [0x00496F70] NMData::Transition::vfunc_7_off_8 (28 bytes)
+// @name NMData::Transition::vfunc_7_off_8
+// @class NMData::Transition
+// @summary If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 7 of its +0x10 sub-object; otherwise does nothing.
+// @field NMData::Transition +0xB0 void* field_0xB0
+void fn_00496F70(void* self, uint32_t arg) {
+    void* inner = lift_field<void*>(self, 0xB0);
+    if (inner == nullptr) {
+        return;
+    }
+    void* sub = static_cast<uint8_t*>(inner) + 0x10;
+    void** vtable = *reinterpret_cast<void***>(sub);
+    // vtable byte offset 0x1C -> slot 7 (32-bit layout)
+    auto fn = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[7]);
     fn(sub, arg);
 }
