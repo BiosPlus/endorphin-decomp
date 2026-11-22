@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BC40",
+  "size": 19,
+  "orig_symbol": "ExprParser::VPtrProxyType::vfunc_39",
+  "src_path": "src/ExprParser/VPtrProxyType.cpp",
+  "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp",
+  "name": "ExprParser::VPtrProxyType::vfunc_39",
+  "class": "ExprParser::VPtrProxyType",
+  "signature": "uint32_t fn_0066BC40(void* self, void* arg)",
+  "summary": "Forwards its argument to ext_0041CF50 with the held pointer (field_0x00) as the receiver and returns the callee's result.",
+  "fields": [
+    {
+      "class": "ExprParser::VPtrProxyType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:35:56Z"
+}
