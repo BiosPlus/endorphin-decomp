@@ -1,0 +1,28 @@
+{
+  "va": "0x0067A7D0",
+  "size": 66,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_43",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_43",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void fn_0067A7D0(void* self, void* arg)",
+  "summary": "Sums vfunc_1 results of self-\u003e+0x04 (on self) and arg-\u003e+0x04 (on arg), then passes the sum to self-\u003e+0x04 vfunc_7 along with self.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:10Z"
+}

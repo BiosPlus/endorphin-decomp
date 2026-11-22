@@ -9610,6 +9610,13 @@
     "summary": "Dispatches vtable+0x78 on field_0x4 with arg0, then calls sub_006720A0 on arg0 with arg1.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x0067A7D0": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_43",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void fn_0067A7D0(void* self, void* arg)",
+    "summary": "Sums vfunc_1 results of self-\u003e+0x04 (on self) and arg-\u003e+0x04 (on arg), then passes the sum to self-\u003e+0x04 vfunc_7 along with self.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x0067A930": {
     "name": "ExprParser::BoolType::vfunc_47",
     "class": "ExprParser::BoolType",
