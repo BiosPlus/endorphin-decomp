@@ -1126,6 +1126,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::SeverEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CA3D0": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_91",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "void NMData_MetaBodyConstraintData_vfunc_91(void* self)",
+    "summary": "Returns early when the state field at +0x184 equals 3; otherwise tail-calls ext_00493D90.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004CCEE0": {
     "name": "NMData::MetaBodyConstraintData::vfunc_0_off_158",
     "class": "NMData::MetaBodyConstraintData",

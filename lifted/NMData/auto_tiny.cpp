@@ -1720,3 +1720,18 @@ extern "C" void fn_004CF310(void* self) {
     VFn target = reinterpret_cast<VFn>(vt[7]);
     target(self);
 }
+
+// [0x004CA3D0]
+// @name NMData::MetaBodyConstraintData::vfunc_91
+// @class NMData::MetaBodyConstraintData
+// @summary Returns early when the state field at +0x184 equals 3; otherwise tail-calls ext_00493D90.
+// @field NMData::MetaBodyConstraintData +0x184 int field_0x184
+
+void ext_00493D90();
+
+void NMData_MetaBodyConstraintData_vfunc_91(void* self) {
+    if (*reinterpret_cast<int*>(static_cast<char*>(self) + 0x184) == 3) {
+        return;
+    }
+    ext_00493D90();
+}

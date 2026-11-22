@@ -1,0 +1,22 @@
+{
+  "va": "0x004CA3D0",
+  "size": 15,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_91",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_91",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "void NMData_MetaBodyConstraintData_vfunc_91(void* self)",
+  "summary": "Returns early when the state field at +0x184 equals 3; otherwise tail-calls ext_00493D90.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x184",
+      "type": "int",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:35Z"
+}
