@@ -1,0 +1,22 @@
+{
+  "va": "0x006718A0",
+  "size": 28,
+  "orig_symbol": "ExprParser::StringType::vfunc_10",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_10",
+  "class": "ExprParser::StringType",
+  "signature": "std::string\u0026 fn_006718A0(void* self, const std::string\u0026 value)",
+  "summary": "Call helper ext_00671840(self), then assign value to the std::string referenced by self-\u003e+0x00; returns that string by reference.",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:11Z"
+}

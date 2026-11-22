@@ -8076,6 +8076,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00671040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x006718A0": {
+    "name": "ExprParser::StringType::vfunc_10",
+    "class": "ExprParser::StringType",
+    "signature": "std::string\u0026 fn_006718A0(void* self, const std::string\u0026 value)",
+    "summary": "Call helper ext_00671840(self), then assign value to the std::string referenced by self-\u003e+0x00; returns that string by reference.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x00671F10": {
     "name": "sub_00671F10",
     "signature": "extern \"C\" void fn_00671F10(void)",
