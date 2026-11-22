@@ -517,6 +517,13 @@
     "summary": "Stdcall leaf (ret 4): takes one pointer argument and returns the 32-bit value stored at its first dword.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C040": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_1",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "double __stdcall fn_0049C040(void* self)",
+    "summary": "Loads the int value behind the proxy's pointer and returns it converted to a floating-point value (x87 st0).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x004AA580": {
     "name": "VirtualSlot8Thunk",
     "class": "VTable",

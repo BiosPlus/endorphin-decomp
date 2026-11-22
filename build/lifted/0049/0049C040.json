@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C040",
+  "size": 11,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_1",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_1",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "double __stdcall fn_0049C040(void* self)",
+  "summary": "Loads the int value behind the proxy's pointer and returns it converted to a floating-point value (x87 st0).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "int*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:11:45Z"
+}

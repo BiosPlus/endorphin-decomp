@@ -57,3 +57,18 @@ int32_t __stdcall fn_0049AF20(const int32_t* const* self) {
     const int32_t* value = *self;
     return *value;
 }
+
+// [0x0049C040] ExprParser::PrimitiveProxyType<int>::vfunc_1 (11 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_1
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Loads the int value behind the proxy's pointer and returns it converted to a floating-point value (x87 st0).
+// @field ExprParser::ValuePtrType +0x00 int* field_0x00
+
+// Single stack argument (this), callee-cleans 4 bytes (ret 4).
+// The value is returned in st(0) via fild, so it is returned as double
+// to preserve the exact int32 value.
+double __stdcall fn_0049C040(void* self) {
+    int* const* value_ptr = reinterpret_cast<int* const*>(self);
+    const int* p = *value_ptr;
+    return static_cast<double>(*p);
+}
