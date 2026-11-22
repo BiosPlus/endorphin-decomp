@@ -7015,6 +7015,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00602EF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00604C40": {
+    "name": "WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+    "signature": "static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg)",
+    "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00608160": {
     "name": "EffectorWithModes::vfunc_0",
     "class": "EffectorWithModes",

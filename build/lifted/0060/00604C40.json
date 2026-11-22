@@ -1,0 +1,22 @@
+{
+  "va": "0x00604C40",
+  "size": 34,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+  "signature": "static inline uint32_t vcall_word(void* obj, std::size_t slot, void* arg)",
+  "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "targetObj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:38:40Z"
+}
