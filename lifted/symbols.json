@@ -5621,6 +5621,13 @@
     "summary": "Saves GL line/matrix state, applies this object's 4x4 matrix, invokes a virtual method on the sub-object at +0x108 with arg 1, then restores GL state.",
     "lifted_path": "lifted/Primitives/RPRO.cpp"
   },
+  "0x0053C1F0": {
+    "name": "Primitives::Arrow::vfunc_28",
+    "class": "Primitives::Arrow",
+    "signature": "void fn_0053C1F0(void* self)",
+    "summary": "Enables GL_RESCALE_NORMAL, rotates 90 degrees about -Y, invokes the embedded sub-object's vtable slot 0x58 with -1.0f, then restores the matrix and disables GL_RESCALE_NORMAL.",
+    "lifted_path": "lifted/Primitives/Arrow.cpp"
+  },
   "0x0053C8B0": {
     "name": "Primitives::Sphere::vfunc_0",
     "class": "Primitives::Sphere",

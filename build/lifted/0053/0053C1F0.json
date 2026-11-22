@@ -1,0 +1,22 @@
+{
+  "va": "0x0053C1F0",
+  "size": 95,
+  "orig_symbol": "Primitives::Arrow::vfunc_28",
+  "src_path": "src/Primitives/Arrow.cpp",
+  "lifted_path": "lifted/Primitives/Arrow.cpp",
+  "name": "Primitives::Arrow::vfunc_28",
+  "class": "Primitives::Arrow",
+  "signature": "void fn_0053C1F0(void* self)",
+  "summary": "Enables GL_RESCALE_NORMAL, rotates 90 degrees about -Y, invokes the embedded sub-object's vtable slot 0x58 with -1.0f, then restores the matrix and disables GL_RESCALE_NORMAL.",
+  "fields": [
+    {
+      "class": "Primitives::Arrow",
+      "offset": "+0x3C",
+      "type": "\u003csubobject with vtable\u003e",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:14:40Z"
+}
