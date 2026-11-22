@@ -7106,6 +7106,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005B1140 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B4860": {
+    "name": "Geometry::AnimationType::vfunc_12",
+    "class": "Geometry::AnimationType",
+    "signature": "void* fn_005B4860()",
+    "summary": "Lazily initializes shared static state guarded by bit 0 of mem_00B43584, then returns the address of the static object at mem_00B43574.",
+    "lifted_path": "lifted/Geometry/AnimationType.cpp"
+  },
   "0x005B5760": {
     "name": "Geometry::MeshType::vfunc_0",
     "class": "Geometry::MeshType",

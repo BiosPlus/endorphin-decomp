@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4860",
+  "size": 89,
+  "orig_symbol": "Geometry::AnimationType::vfunc_12",
+  "src_path": "src/Geometry/AnimationType.cpp",
+  "lifted_path": "lifted/Geometry/AnimationType.cpp",
+  "name": "Geometry::AnimationType::vfunc_12",
+  "class": "Geometry::AnimationType",
+  "signature": "void* fn_005B4860()",
+  "summary": "Lazily initializes shared static state guarded by bit 0 of mem_00B43584, then returns the address of the static object at mem_00B43574.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:57Z"
+}
