@@ -274,3 +274,16 @@ void __stdcall ExprParser_PrimitiveProxyType_bool_vfunc_9(void* self, uint32_t v
     const uint8_t* value_ptr = lift_field<const uint8_t*>(self, 0x0);
     *const_cast<uint8_t*>(value_ptr) = static_cast<uint8_t>(value);
 }
+
+// [0x0049C0C0] ExprParser::PrimitiveProxyType<int>::vfunc_8 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_8
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Stores an int value through the proxy's value pointer (stdcall, callee pops 8 bytes).
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+void __stdcall fn_0049C0C0(void* self, int32_t value) {
+    // Load value_ptr from this+0x0, then write `value` through it.
+    // The field is typed const in RTTI but the original code stores through it,
+    // so the store goes through a const_cast.
+    const int32_t* value_ptr = lift_field<const int32_t*>(self, 0);
+    *const_cast<int32_t*>(value_ptr) = value;
+}

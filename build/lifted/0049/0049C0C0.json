@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C0C0",
+  "size": 15,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_8",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_8",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void __stdcall fn_0049C0C0(void* self, int32_t value)",
+  "summary": "Stores an int value through the proxy's value pointer (stdcall, callee pops 8 bytes).",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:18Z"
+}

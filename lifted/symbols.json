@@ -888,6 +888,13 @@
     "summary": "Loads the int value behind the proxy's pointer and returns it converted to a floating-point value (x87 st0).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C0C0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_8",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "void __stdcall fn_0049C0C0(void* self, int32_t value)",
+    "summary": "Stores an int value through the proxy's value pointer (stdcall, callee pops 8 bytes).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049FB20": {
     "name": "NMData::State::vfunc_0_off_10",
     "class": "NMData::State",
