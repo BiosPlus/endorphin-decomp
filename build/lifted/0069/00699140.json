@@ -1,0 +1,14 @@
+{
+  "va": "0x00699140",
+  "size": 56,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_32",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_32",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void __thiscall fn_00699140(void* self, void* arg0, void* arg1)",
+  "summary": "Gets object via vfunc_24, dynamic_casts it, and invokes vfunc_3 if non-null",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T07:45:40Z"
+}
