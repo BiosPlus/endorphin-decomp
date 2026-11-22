@@ -1,0 +1,40 @@
+{
+  "va": "0x007F44C0",
+  "size": 1070,
+  "orig_symbol": "MdtArthur::arthurSolver_sse::vfunc_2",
+  "src_path": "src/MdtArthur/arthurSolver_sse.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp",
+  "name": "MdtArthur::arthurSolver_sse::vfunc_2",
+  "class": "MdtArthur::arthurSolver_sse",
+  "signature": "void __stdcall fn_007F44C0(void* self_ptr, void* arg1_ptr, const uint32_t* arg2_dwords)",
+  "summary": "Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse",
+  "fields": [
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "out"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-22T14:34:02Z"
+}

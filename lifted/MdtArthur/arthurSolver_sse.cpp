@@ -1,9 +1,12 @@
 // Lifted C++ translation unit: lifted/MdtArthur/arthurSolver_sse.cpp
 #include "lift_compat.h"
 extern "C" void ext_007F36C0(void* acc, const void* rec, const void* elem, int flag);
+extern "C" void ext_007F3F00(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10, uint32_t a11, uint32_t a12, uint32_t a13, uint32_t a14, uint32_t a15, uint32_t a16, uint32_t a17, uint32_t a18, uint32_t a19, float a20);
+extern "C" void ext_007F2F80(uint32_t a0, uint32_t a1, uint32_t a2, const uint32_t* a3_31dwords, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, float a8, int32_t a9);
+extern "C" void ext_007F4160(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10, uint32_t a11, uint32_t a12, uint32_t a13, uint32_t a14, uint32_t a15, uint32_t a16, uint32_t a17, uint32_t a18, uint32_t a19, float a20);
 
-// [0x007F4330] MdtArthur::arthurSolver_sse::vfunc_1 (400 bytes)
-// @name MdtArthur::arthurSolver_sse::vfunc_1
+extern "C" void ext_007F2F80(uint32_t a0, uint32_t a1, uint32_t a2, const uint32_t* a3_31dwords, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, float a8, int32_t a9);
+extern "C" void ext_007F4160(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10, uint32_t a11, uint32_t a12, uint32_t a13, uint32_t a14, uint32_t a15, uint32_t a16, uint32_t a17, uint32_t a18, uint32_t a19, float a20);
 // @class MdtArthur::arthurSolver_sse
 // @summary For each 4-float group j < count/4: accumulate up to two indexed contributions via ext_007F36C0, then store 1/(src*mul + add + acc) per lane.
 // @field MdtArthur::arthurSolver_sse +0x00 float[4]* out (16-byte vec4 per group; written)
@@ -185,5 +188,143 @@ void __stdcall fn_007F3BA0(
     for (int32_t i = 0; i < n; ++i) {
         const Vec4 t = (A[i] + bias) * C[i] * rw;
         out[i] = (B[i] - t) * rw - out[i];
+    }
+}
+
+// [0x007F44C0]
+// @name MdtArthur::arthurSolver_sse::vfunc_2
+// @class MdtArthur::arthurSolver_sse
+// @summary Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse
+// @field MdtArthur::arthurSolver_sse +0x00 float* out
+// @field MdtArthur::arthurSolver_sse +0x04 uint8_t* field_0x04
+// @field MdtArthur::arthurSolver_sse +0x08 uint32_t field_0x08
+// @field MdtArthur::arthurSolver_sse +0x0C int32_t field_0x0c
+void __stdcall fn_007F44C0(void* self_ptr, void* arg1_ptr, const uint32_t* arg2_dwords) {
+    float* out_buf = lift_field<float*>(self_ptr, 0x00);
+    uint32_t self_04 = lift_field<uint32_t>(self_ptr, 0x04);
+    uint32_t self_08 = lift_field<uint32_t>(self_ptr, 0x08);
+
+    float* arg1_00 = lift_field<float*>(arg1_ptr, 0x00);
+    uint32_t arg1_04 = lift_field<uint32_t>(arg1_ptr, 0x04);
+    uint32_t arg1_08 = lift_field<uint32_t>(arg1_ptr, 0x08);
+    void* arg1_0c = lift_field<void*>(arg1_ptr, 0x0C);
+    uint32_t arg1_10 = lift_field<uint32_t>(arg1_ptr, 0x10);
+    uint32_t arg1_14 = lift_field<uint32_t>(arg1_ptr, 0x14);
+    void* arg1_18 = lift_field<void*>(arg1_ptr, 0x18);
+    uint32_t arg1_1c = lift_field<uint32_t>(arg1_ptr, 0x1C);
+    uint32_t arg1_20 = lift_field<uint32_t>(arg1_ptr, 0x20);
+
+    uint32_t arg2[0x37];
+    for (int i = 0; i < 0x37; ++i) {
+        arg2[i] = arg2_dwords[i];
+    }
+
+    const int32_t count = static_cast<int32_t>(arg2[0xB4 / 4]);
+    const int32_t vec_count = count / 4;
+    if (vec_count != 0) {
+        const float* src = *reinterpret_cast<const float* const*>(&arg2[0xB0 / 4]);
+        for (int32_t i = 0; i < vec_count * 4; ++i) {
+            arg1_00[i] = -src[i];
+            out_buf[i] = 0.0f;
+        }
+    }
+
+    uint32_t state_b[5] = {};
+    int32_t state_a = -1;
+
+    const float scale = *reinterpret_cast<const float*>(&arg2[0xD0 / 4]);
+    auto to_u32 = [](const void* p) -> uint32_t {
+        return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+    };
+
+    ext_007F3F00(
+        to_u32(&state_a), to_u32(state_b),
+        to_u32(arg1_00), arg1_04, arg1_08,
+        to_u32(out_buf), self_04, self_08,
+        arg2[0x8C / 4], arg2[0x90 / 4], arg2[0x94 / 4],
+        arg2[0x98 / 4], arg2[0x9C / 4], arg2[0xA0 / 4],
+        to_u32(arg1_0c), arg1_10, arg1_14,
+        to_u32(arg1_18), arg1_1c, arg1_20,
+        scale);
+
+    int32_t iter = 0;
+    lift_field<int32_t>(self_ptr, 0x0C) = 0;
+
+    const int32_t max_iter = static_cast<int32_t>(arg2[0xD8 / 4]);
+    const float tol = *reinterpret_cast<const float*>(&arg2[0xD4 / 4]);
+    const int32_t group_base = static_cast<int32_t>(state_b[0]);
+
+    while (true) {
+        if (iter < max_iter) {
+            if (state_a == -1) {
+                break;
+            }
+        } else {
+            if (iter >= 2 * max_iter || state_a == -1) {
+                break;
+            }
+            const int32_t check_idx = group_base + 4 * state_a;
+            if (std::fabs(arg1_00[check_idx]) <= tol) {
+                break;
+            }
+        }
+
+        const int32_t idx = group_base + 4 * state_a;
+        const float* arr_bc = *reinterpret_cast<const float* const*>(&arg2[0xBC / 4]);
+        const float* arr_8c = *reinterpret_cast<const float* const*>(&arg2[0x8C / 4]);
+        const float* arr_98 = *reinterpret_cast<const float* const*>(&arg2[0x98 / 4]);
+
+        const float residual = arg1_00[idx];
+        float delta = arr_bc[idx] * (-residual);
+        const float cand = out_buf[idx] + delta;
+
+        if (0.0f < residual) {
+            if (!(arr_8c[idx] < cand)) {
+                delta = arr_8c[idx] - out_buf[idx];
+            }
+        } else {
+            if (!(arr_98[idx] > cand)) {
+                delta = arr_98[idx] - out_buf[idx];
+            }
+        }
+
+        const float new_val = out_buf[idx] + delta;
+        out_buf[idx] = new_val;
+
+        if (arr_8c[idx] < new_val) {
+            reinterpret_cast<uint32_t*>(arg1_0c)[idx] = 0xFFFFFFFFu;
+        } else {
+            reinterpret_cast<float*>(arg1_0c)[idx] = new_val;
+        }
+
+        if (arr_98[idx] > new_val) {
+            reinterpret_cast<uint32_t*>(arg1_18)[idx] = 0xFFFFFFFFu;
+        } else {
+            reinterpret_cast<float*>(arg1_18)[idx] = new_val;
+        }
+
+        ext_007F2F80(
+            to_u32(arg1_00), arg1_04, arg1_08,
+            &arg2[0x00],
+            arg2[0x7C / 4], arg2[0x80 / 4], arg2[0x84 / 4], arg2[0x88 / 4],
+            delta,
+            idx);
+
+        const float* arr_a4 = *reinterpret_cast<const float* const*>(&arg2[0xA4 / 4]);
+        const float f_c8 = *reinterpret_cast<const float*>(&arg2[0xC8 / 4]);
+        const float f_cc = *reinterpret_cast<const float*>(&arg2[0xCC / 4]);
+        arg1_00[idx] += (arr_a4[idx] * f_cc + f_c8) * delta;
+
+        ext_007F4160(
+            to_u32(&state_a), to_u32(state_b),
+            to_u32(arg1_00), arg1_04, arg1_08,
+            to_u32(out_buf), self_04, self_08,
+            arg2[0x8C / 4], arg2[0x90 / 4], arg2[0x94 / 4],
+            arg2[0x98 / 4], arg2[0x9C / 4], arg2[0xA0 / 4],
+            to_u32(arg1_0c), arg1_10, arg1_14,
+            to_u32(arg1_18), arg1_1c, arg1_20,
+            scale);
+
+        ++iter;
     }
 }

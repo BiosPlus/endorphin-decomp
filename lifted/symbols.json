@@ -21867,6 +21867,13 @@
     "summary": "For each 4-float group j \u003c count/4: accumulate up to two indexed contributions via ext_007F36C0, then store 1/(src*mul + add + acc) per lane.",
     "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
   },
+  "0x007F44C0": {
+    "name": "MdtArthur::arthurSolver_sse::vfunc_2",
+    "class": "MdtArthur::arthurSolver_sse",
+    "signature": "void __stdcall fn_007F44C0(void* self_ptr, void* arg1_ptr, const uint32_t* arg2_dwords)",
+    "summary": "Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
+  },
   "0x0080EFC0": {
     "name": "sub_0080EFC0",
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
