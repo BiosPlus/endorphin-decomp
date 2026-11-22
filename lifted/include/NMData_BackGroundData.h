@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::BackGroundData:
 namespace lifted_layout {
 struct NMData_BackGroundData_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x005A9880)
+    // +0x0   void**                   vtable  (evidence: 0x0059DD70, 0x005A9880)
     // +0x4DC float                    field_0x4dc  (evidence: 0x0059DD70)
 };
 } // namespace lifted_layout

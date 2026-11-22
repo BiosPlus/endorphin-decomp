@@ -4,11 +4,17 @@
   "orig_symbol": "NMData::BackGroundData::vfunc_4_off_10",
   "src_path": "src/NMData/BackGroundData.cpp",
   "lifted_path": "lifted/NMData/BackGroundData.cpp",
-  "name": "NMData::BackGroundData::vfunc_4_off_10",
+  "name": "NMData::BackGroundData::vfunc_6",
   "class": "NMData::BackGroundData",
-  "signature": "void fn_0059DD70(void* self, const float* scale)",
-  "summary": "Scales the float at +0x4dc by the float pointed to by the argument and forwards the product to virtual slot 0x64 of the sub-object at this-0x0C (stdcall, ret 4; ECX = this).",
+  "signature": "std::string* fn_005A98F0(void* self, std::string* out)",
+  "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.",
   "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
     {
       "class": "NMData::BackGroundData",
       "offset": "+0x4DC",
@@ -18,5 +24,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:43:01Z"
+  "lifted_at": "2026-11-22T07:43:23Z"
 }
