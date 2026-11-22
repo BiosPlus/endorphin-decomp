@@ -8259,6 +8259,13 @@
     "summary": "Adds the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise into the float[3] at *a1.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B6B0": {
+    "name": "ExprParser::Vector3Type::vfunc_44",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_0066B6B0(void* self, void** a1, void* a2)",
+    "summary": "Subtracts the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise from the float[3] at *a1.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
     "class": "ExprParser::ExtROType",

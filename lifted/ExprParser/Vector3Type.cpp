@@ -40,3 +40,20 @@ void fn_0066B680(void* self, void** a1, void* a2) {
         dst[i] += src[i];
     }
 }
+
+// [0x0066B6B0] ExprParser::Vector3Type::vfunc_44 (48 bytes)
+// @name ExprParser::Vector3Type::vfunc_44
+// @class ExprParser::Vector3Type
+// @summary Subtracts the vector from arg2->+0x04->vfunc_5(arg2) component-wise from the float[3] at *a1.
+// @field Unknown +0x00 float* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_0066B6B0(void* self, void** a1, void* a2) {
+    (void)self;
+    void* sub = *reinterpret_cast<void**>(static_cast<char*>(a2) + 0x04);
+    void** vtbl = *static_cast<void***>(sub);
+    float* src = static_cast<float*>(reinterpret_cast<void* (*)(void*, void*)>(vtbl[5])(sub, a2));
+    float* dst = static_cast<float*>(*a1);
+    for (int i = 0; i < 3; ++i) {
+        dst[i] -= src[i];
+    }
+}
