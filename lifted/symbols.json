@@ -5887,6 +5887,13 @@
     "summary": "Forwards its three arguments to Cuboid::vfunc_25, stores the result of virtual slot +0x2C on arg1's +0x0C object into +0x9C, and sets flag bit 0x02000000 in +0x1C.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053E2E0": {
+    "name": "Primitives::Mesh::vfunc_28",
+    "class": "Primitives::Mesh",
+    "signature": "extern \"C\" void (*mem_00925418)(GLenum);                     // glEnable extern \"C\" void (*mem_00925414)(void);                       // glPushMatrix extern \"C\" void (*mem_009254B0)(GLfloat, GLfloat, GLfloat); // glScalef extern \"C\" void (*mem_00925490)(GLenum);                     // glBegin extern \"C\" void (*mem_0092549C)(const GLfloat*);             // glNormal3fv extern \"C\" void (*mem_009254D4)(const GLfloat*);             // glTexCoord2fv extern \"C\" void (*mem_00925498)(const GLfloat*);             // glVertex3fv extern \"C\" void (*mem_00925488)(void);                       // glEnd extern \"C\" void (*mem_00925404)(void);                       // glPopMatrix extern \"C\" void (*mem_00925438)(GLenum);                     // glDisable namespace",
+    "summary": "Applies the renderer's scale, then draws each primitive as GL_POLYGON, emitting normal, texcoord and vertex per index step.",
+    "lifted_path": "lifted/Primitives/Mesh.cpp"
+  },
   "0x0053F5D0": {
     "name": "NullRenderer::vfunc_0",
     "class": "NullRenderer",

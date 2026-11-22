@@ -1,0 +1,22 @@
+{
+  "va": "0x0053E2E0",
+  "size": 651,
+  "orig_symbol": "Primitives::Mesh::vfunc_28",
+  "src_path": "src/Primitives/Mesh.cpp",
+  "lifted_path": "lifted/Primitives/Mesh.cpp",
+  "name": "Primitives::Mesh::vfunc_28",
+  "class": "Primitives::Mesh",
+  "signature": "extern \"C\" void (*mem_00925418)(GLenum);                     // glEnable extern \"C\" void (*mem_00925414)(void);                       // glPushMatrix extern \"C\" void (*mem_009254B0)(GLfloat, GLfloat, GLfloat); // glScalef extern \"C\" void (*mem_00925490)(GLenum);                     // glBegin extern \"C\" void (*mem_0092549C)(const GLfloat*);             // glNormal3fv extern \"C\" void (*mem_009254D4)(const GLfloat*);             // glTexCoord2fv extern \"C\" void (*mem_00925498)(const GLfloat*);             // glVertex3fv extern \"C\" void (*mem_00925488)(void);                       // glEnd extern \"C\" void (*mem_00925404)(void);                       // glPopMatrix extern \"C\" void (*mem_00925438)(GLenum);                     // glDisable namespace",
+  "summary": "Applies the renderer's scale, then draws each primitive as GL_POLYGON, emitting normal, texcoord and vertex per index step.",
+  "fields": [
+    {
+      "class": "Primitives::Mesh",
+      "offset": "+0x20",
+      "type": "OglRenderer*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:22:54Z"
+}
