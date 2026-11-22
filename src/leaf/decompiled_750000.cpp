@@ -20547,3 +20547,69 @@ Lx_C7B:
         ret 8
     }
 }
+
+// [0x007511F4] sub_007511F4 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007511F4(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x01
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x02
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x03
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x04
+        _emit 0x05
+        _emit 0x06
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x08
+        _emit 0x07
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+    }
+}
