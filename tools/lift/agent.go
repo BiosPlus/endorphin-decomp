@@ -154,6 +154,7 @@ Rules:
     // @class <ClassName> (when applicable)
     // @summary <concise one-line description of behavior>
     // @field <ClassName> +0xNN <type> <fieldName> (for every struct/object field offset accessed)
+- Naming: never guess — if unsure, keep the original symbol and use field_0xNN.
 - Verify with: ./.local/bin/liftwork check %[1]s --model %[3]s
 - Stop immediately once liftwork check succeeds, or after 6 tries. Do NOT run liftwork next or liftwork skip, and NEVER edit src/, include/, build/units/, or docs/.`, addr, editRule, tag), ""
 	}
@@ -167,6 +168,7 @@ Rules:
     // @class <ClassName> (when applicable)
     // @summary <concise one-line description of behavior>
     // @field <ClassName> +0xNN <type> <fieldName> (for every struct/object field offset accessed)
+- Naming: never guess — if unsure, keep the original symbol and use field_0xNN.
 - Verify with: ./.local/bin/liftwork check %[1]s --model %[3]s
 - Stop immediately once liftwork check succeeds, or after 6 tries. Do NOT run liftwork next, liftwork claim, or liftwork skip, and NEVER edit src/, include/, build/units/, or docs/.
 
@@ -199,6 +201,7 @@ Rules:
     // @class <ClassName> (when applicable)
     // @summary <concise one-line description of behavior>
     // @field <ClassName> +0xNN <type> <fieldName> (for every struct/object field offset accessed)
+- Naming: never guess — if unsure, keep the original symbol and use field_0xNN.
 - Verify with: ./.local/bin/liftwork check %[1]s --model %[3]s
 - Stop immediately once liftwork check succeeds, or after 6 tries. Do NOT run liftwork next, liftwork claim, or liftwork skip, and NEVER edit src/, include/, build/units/, or docs/.`, addr, editRule, tag, rel)
 	return short, f.Name()
