@@ -5439,6 +5439,13 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053BDD0": {
+    "name": "Primitives::Marker::vfunc_28",
+    "class": "Primitives::Marker",
+    "signature": "void fn_0053BDD0(void* self, uint32_t arg)",
+    "summary": "Pushes GL_LINE_BIT, sets line width 2.0, forwards arg to vfunc slot 22 of the subobject at +0x3c, then pops attributes.",
+    "lifted_path": "lifted/Primitives/Marker.cpp"
+  },
   "0x0053C8B0": {
     "name": "Primitives::Sphere::vfunc_0",
     "class": "Primitives::Sphere",
