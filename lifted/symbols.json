@@ -5698,6 +5698,13 @@
     "summary": "Ignores arg 2; otherwise dispatches virtual calls on sub-objects (+0x38/+0x3c/+0x40/+0x5c) depending on whether +0x5c is set.",
     "lifted_path": "lifted/Primitives/Sensor2.cpp"
   },
+  "0x0053DA40": {
+    "name": "Primitives::Sphyl::vfunc_25",
+    "class": "Primitives::Sphyl",
+    "signature": "void fn_0053DA40(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards three args to Plane::vfunc_25, sets self+0x1C bit 0x40, copies three dwords and the first char of the string at arg2+0x9C into self.",
+    "lifted_path": "lifted/Primitives/Sphyl.cpp"
+  },
   "0x0053DAA0": {
     "name": "Primitives::Cylinder::vfunc_25",
     "class": "Primitives::Cylinder",
