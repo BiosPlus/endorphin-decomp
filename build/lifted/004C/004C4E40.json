@@ -1,0 +1,22 @@
+{
+  "va": "0x004C4E40",
+  "size": 34,
+  "orig_symbol": "NMData::ForceEventData::vfunc_60",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::NotifyEvent0x266",
+  "class": "NMData::ForceEventData",
+  "signature": "void* fn_004C4E40(void* self, void* arg)",
+  "summary": "Invokes virtual slot 15 (vtable +0x3C) on self with (arg, 0x266, 0), then returns arg.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:05Z"
+}

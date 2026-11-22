@@ -3808,6 +3808,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C4E40": {
+    "name": "NMData::ForceEventData::NotifyEvent0x266",
+    "class": "NMData::ForceEventData",
+    "signature": "void* fn_004C4E40(void* self, void* arg)",
+    "summary": "Invokes virtual slot 15 (vtable +0x3C) on self with (arg, 0x266, 0), then returns arg.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",
