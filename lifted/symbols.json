@@ -2954,6 +2954,13 @@
     "summary": "Stores a byte value through a caller-supplied pointer (stack args: dst at +4, value at +8; callee pops 8).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066B9E0": {
+    "name": "ExprParser::ExtROType::vfunc_14",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t fn_0066B9E0(void* self)",
+    "summary": "Tail-forwards to vtable slot 14 (0x38) of the object at (*this)-\u003e+0x04, passing (*this) as the this/arg; returns the callee's eax.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066BA30": {
     "name": "ExprParser::ExtROType::vfunc_38",
     "class": "ExprParser::ExtROType",

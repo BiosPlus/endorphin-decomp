@@ -149,3 +149,21 @@ uint32_t fn_0066AF80(void* self) {
     // Tail call: callee's argument slot receives p; result stays in eax.
     return target(obj, p);
 }
+
+// [0x0066B9E0] ExprParser::ExtROType::vfunc_14 (20 bytes)
+// @name ExprParser::ExtROType::vfunc_14
+// @class ExprParser::ExtROType
+// @summary Tail-forwards to vtable slot 14 (0x38) of the object at (*this)->+0x04, passing (*this) as the this/arg; returns the callee's eax.
+// @field ExprParser::ExtROType +0x00 void* field_0x00
+
+// Original: mov eax,[esp+4]; mov eax,[eax]; mov ecx,[eax+4]; mov edx,[ecx];
+// mov [esp+4],eax; mov eax,[edx+0x38]; jmp eax.
+// The jmp is a tail call, so the callee's return value (eax) is passed straight back.
+uint32_t fn_0066B9E0(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);                                    // self +0x00
+    void* target_obj = *reinterpret_cast<void**>(static_cast<char*>(inner) + 0x04);   // inner +0x04
+    void** vtbl = *reinterpret_cast<void***>(target_obj);                             // vtable of target_obj
+    using VFuncSlot14 = uint32_t (*)(void* self);
+    VFuncSlot14 fn = reinterpret_cast<VFuncSlot14>(vtbl[14]);                         // slot 14 (+0x38)
+    return fn(inner);
+}
