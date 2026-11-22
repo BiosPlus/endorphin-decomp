@@ -3,8 +3,10 @@
 #include <new>
 #include <string>
 extern "C" const char* mem_00A9ED98;
+// Callee sub_005A7FA0 takes (arg, 0); its full signature is not yet recovered.
+extern "C" void ext_005A7FA0(void* arg, int flag);
 
-// [0x005A98F0] NMData::BackGroundData::vfunc_6 (35 bytes)
+extern "C" void ext_005A7FA0(void* arg, int flag);
 // @name NMData::BackGroundData::vfunc_6
 // @class NMData::BackGroundData
 // @summary Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.
@@ -42,4 +44,12 @@ void fn_0059DD70(void* self, const float* scale) {
     void* slotAddr = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x64);
     auto slot = reinterpret_cast<void (*)(void*, float)>(slotAddr);
     slot(base, product);
+}
+
+// [0x005A9960] NMData::BackGroundData::vfunc_1 (15 bytes)
+// @name NMData::BackGroundData::vfunc_1
+// @class NMData::BackGroundData
+// @summary Stdcall (ret 4) thunk: forwards its single argument to ext_005A7FA0 together with a zero flag.
+void fn_005A9960(void* arg) {
+    ext_005A7FA0(arg, 0);
 }

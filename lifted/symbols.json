@@ -6425,6 +6425,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls NMData::BackGroundData::vfunc_3.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005A9960": {
+    "name": "NMData::BackGroundData::vfunc_1",
+    "class": "NMData::BackGroundData",
+    "signature": "void fn_005A9960(void* arg)",
+    "summary": "Stdcall (ret 4) thunk: forwards its single argument to ext_005A7FA0 together with a zero flag.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A9C80": {
     "name": "NMData::BackGroundData::vfunc_34_off_4",
     "class": "NMData::BackGroundData",
