@@ -126,8 +126,10 @@ extern "C" int mem_00A9BDC8;
 void fn_0051A4D0(void* arg) {
     ext_00671100(8, arg);
 }
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 
-// [0x0059E9B0] ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_13 (13 bytes)
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 // @name ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)
 // @class ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
 // @summary Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).
@@ -193,4 +195,13 @@ void* fn_0064B0A0(void* self) {
 void* fn_0064F1F0(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00A9BDC8), 0);
+}
+
+// [0x0051A4D0] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_13 (13 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)
+// @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).
+// No object fields are accessed directly.
+void fn_0051A4D0(void* arg) {
+    ext_00671100(8, arg);
 }
