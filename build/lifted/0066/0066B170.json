@@ -1,0 +1,14 @@
+{
+  "va": "0x0066B170",
+  "size": 13,
+  "orig_symbol": "ExprParser::BoolType::vfunc_9",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::BoolType::vfunc_9",
+  "class": "ExprParser::BoolType",
+  "signature": "void fn_0066B170(uint8_t* dst, uint8_t value)",
+  "summary": "Stores a byte value through a caller-supplied pointer (stack args: dst at +4, value at +8; callee pops 8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:13:45Z"
+}

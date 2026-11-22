@@ -111,3 +111,12 @@ void fn_0066B0A0(void* self, float value) {
 void fn_0066B110(void* self, int32_t value) {
     lift_field<int32_t>(self, 0x00) = value;
 }
+
+// [0x0066B170] ExprParser::BoolType::vfunc_9 (13 bytes)
+// @name ExprParser::BoolType::vfunc_9
+// @class ExprParser::BoolType
+// @summary Stores a byte value through a caller-supplied pointer (stack args: dst at +4, value at +8; callee pops 8).
+// Note: no field offsets off the object are accessed; ecx is loaded from the first stack argument, not from `this`.
+void fn_0066B170(uint8_t* dst, uint8_t value) {
+    *dst = value;
+}

@@ -833,6 +833,13 @@
     "summary": "Stores the int32 argument into the object's first field (field_0x00).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066B170": {
+    "name": "ExprParser::BoolType::vfunc_9",
+    "class": "ExprParser::BoolType",
+    "signature": "void fn_0066B170(uint8_t* dst, uint8_t value)",
+    "summary": "Stores a byte value through a caller-supplied pointer (stack args: dst at +4, value at +8; callee pops 8).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BA30": {
     "name": "ExprParser::ExtROType::vfunc_38",
     "class": "ExprParser::ExtROType",
