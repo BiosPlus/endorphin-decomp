@@ -56,3 +56,13 @@ void* fn_006274D0(void* self) {
 void* fn_0062A0A0(void* self) {
     return self;
 }
+
+// [0x0062A0F0] ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorRelativeTime::resetTime)
+// @class ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A97CF8), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0062A0F0(void* self) {
+    return self;
+}
