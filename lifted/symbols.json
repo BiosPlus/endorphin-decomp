@@ -4317,6 +4317,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::MetaBodyConstraintData::vfunc_22.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CCFB0": {
+    "name": "NMData::MetaBodyConstraintData::assignFrom",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "extern \"C\" void __thiscall fn_004CCFB0(void* self, void* src)",
+    "summary": "Dynamically casts the source object and, if compatible, destroys this instance in-place and copy-constructs from it.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
+  },
   "0x004CD020": {
     "name": "NMData::MetaBodyConstraintData::vfunc_17_off_C",
     "class": "NMData::MetaBodyConstraintData",
@@ -8858,6 +8865,13 @@
     "signature": "float fn_00629A70(void* self)",
     "summary": "Calls the base-class update routine (ext_006298B0) on self, then returns the float at +0x64.",
     "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassX.cpp"
+  },
+  "0x00629A90": {
+    "name": "Sensors::SensorTreeCentreOfMassZ::vfunc_17",
+    "class": "Sensors::SensorTreeCentreOfMassZ",
+    "signature": "float fn_00629A90(void* self)",
+    "summary": "Calls the base-class update routine on this, then returns the float at +0x6C.",
+    "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassZ.cpp"
   },
   "0x00629E40": {
     "name": "MetaBodySensor::vfunc_0",

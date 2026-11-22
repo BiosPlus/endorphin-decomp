@@ -1,0 +1,22 @@
+{
+  "va": "0x00629A90",
+  "size": 13,
+  "orig_symbol": "Sensors::SensorTreeCentreOfMassZ::vfunc_17",
+  "src_path": "src/Sensors/SensorTreeCentreOfMassZ.cpp",
+  "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassZ.cpp",
+  "name": "Sensors::SensorTreeCentreOfMassZ::vfunc_17",
+  "class": "Sensors::SensorTreeCentreOfMassZ",
+  "signature": "float fn_00629A90(void* self)",
+  "summary": "Calls the base-class update routine on this, then returns the float at +0x6C.",
+  "fields": [
+    {
+      "class": "Sensors::SensorTreeCentreOfMassZ",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:04Z"
+}
