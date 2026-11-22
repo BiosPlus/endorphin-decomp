@@ -418,6 +418,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_0043CD80.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00442CD0": {
+    "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7",
+    "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+    "signature": "bool fn_00442CD0(void* self)",
+    "summary": "Warps the cursor to the (x, y) pair stored in this state and returns whether SetCursorPos succeeded.",
+    "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
+  },
   "0x00443370": {
     "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_0",
     "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",

@@ -61,9 +61,12 @@ extern "C" void* __fastcall fn_00411660(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+// USER32!SetCursorPos, reached through the import address slot at 0x009256DC.
+using SetCursorPosFn = int(__stdcall*)(int32_t x, int32_t y);
+extern "C" SetCursorPosFn mem_009256DC;
 
-// [0x004136E0] MultiTrackView::CompositeMarkerTrack::vfunc_0 (30 bytes)
-// @name MultiTrackView::CompositeMarkerTrack::vfunc_0
+using SetCursorPosFn = int(__stdcall*)(int32_t x, int32_t y);
+extern "C" SetCursorPosFn mem_009256DC;
 // @class MultiTrackView::CompositeMarkerTrack
 // @summary MSVC scalar deleting destructor: calls sub_00413480 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_004136E0(void* self, int edx_unused, unsigned int flags) {
@@ -297,4 +300,19 @@ BOOLEAN fn_00443500(void* self) {
     HWND hwnd = lift_field<HWND>(owner, 0x20);
     ext_InvalidateRect(hwnd, nullptr, TRUE);
     return TRUE;
+}
+
+// [0x00442CD0] MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7 (22 bytes)
+// @name MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7
+// @class MultiTrackView::MultiTrackViewStates::ResizeLeftState
+// @summary Warps the cursor to the (x, y) pair stored in this state and returns whether SetCursorPos succeeded.
+// @field MultiTrackView::MultiTrackViewStates::ResizeLeftState +0x0C int32_t field_0x0C
+// @field MultiTrackView::MultiTrackViewStates::ResizeLeftState +0x10 int32_t field_0x10
+bool fn_00442CD0(void* self) {
+    // The original epilogue is "ret 0xc", so the caller's three stack arguments are
+    // discarded; they are not read here.
+    auto* base = static_cast<uint8_t*>(self);
+    const int32_t x = *reinterpret_cast<const int32_t*>(base + 0x0C);
+    const int32_t y = *reinterpret_cast<const int32_t*>(base + 0x10);
+    return mem_009256DC(x, y) != 0;
 }

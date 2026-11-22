@@ -1,0 +1,28 @@
+{
+  "va": "0x00442CD0",
+  "size": 22,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7",
+  "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+  "signature": "bool fn_00442CD0(void* self)",
+  "summary": "Warps the cursor to the (x, y) pair stored in this state and returns whether SetCursorPos succeeded.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:04Z"
+}
