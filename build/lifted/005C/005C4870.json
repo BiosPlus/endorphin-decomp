@@ -1,0 +1,14 @@
+{
+  "va": "0x005C4870",
+  "size": 30,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_16",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e::vfunc_16",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e",
+  "signature": "void* __thiscall fn_005C4870(void* /*self*/, void* obj)",
+  "summary": "Dynamically casts the input object pointer to NMData::CollisionModelDataBase using __RTDynamicCast.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@medium",
+  "lifted_at": "2026-11-22T07:47:12Z"
+}
