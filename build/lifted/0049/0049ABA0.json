@@ -1,0 +1,22 @@
+{
+  "va": "0x0049ABA0",
+  "size": 28,
+  "orig_symbol": "NMData::State::vfunc_17_off_10",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::State::vfunc_17_off_10",
+  "class": "NMData::State",
+  "signature": "uint32_t fn_0049ABA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Returns 0x20 when arg0 == 0x1B3 and the float at +0xEC has zero bit pattern; otherwise returns arg0 unchanged. Trailing stack args are ignored.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:43Z"
+}

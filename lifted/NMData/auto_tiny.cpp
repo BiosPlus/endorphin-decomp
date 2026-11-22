@@ -1839,21 +1839,6 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x0049ABA0] NMData::State::vfunc_17_off_10 (28 bytes)
-// @name NMData::State::vfunc_17_off_10
-// @class NMData::State
-// @summary Returns 0x20 when arg0 == 0x1B3 and the float at +0xEC has zero bit pattern; otherwise returns arg0 unchanged. Trailing stack args are ignored.
-// @field NMData::State +0xEC float field_0xEC
-uint32_t fn_0049ABA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
-    (void)arg1;
-    (void)arg2;
-    uint32_t result = arg0;
-    if (arg0 == 0x1B3 && std::bit_cast<uint32_t>(lift_field<float>(self, 0xEC)) == 0) {
-        result = 0x20;
-    }
-    return result;
-}
-
 // [0x0060BB80] NMData::EffectorBaseData::vfunc_4 (29 bytes)
 // @name NMData::EffectorBaseData::vfunc_4
 // @class NMData::EffectorBaseData
@@ -1953,4 +1938,19 @@ void fn_00496F70(void* self, uint32_t arg) {
     // vtable byte offset 0x1C -> slot 7 (32-bit layout)
     auto fn = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[7]);
     fn(sub, arg);
+}
+
+// [0x0049ABA0] NMData::State::vfunc_17_off_10 (28 bytes)
+// @name NMData::State::vfunc_17_off_10
+// @class NMData::State
+// @summary Returns 0x20 when arg0 == 0x1B3 and the float at +0xEC has zero bit pattern; otherwise returns arg0 unchanged. Trailing stack args are ignored.
+// @field NMData::State +0xEC float field_0xEC
+uint32_t fn_0049ABA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    (void)arg1;
+    (void)arg2;
+    uint32_t result = arg0;
+    if (arg0 == 0x1B3 && std::bit_cast<uint32_t>(lift_field<float>(self, 0xEC)) == 0) {
+        result = 0x20;
+    }
+    return result;
 }
