@@ -32,11 +32,11 @@ void fn_004A25D0(void* arg) {
 }
 // Known callee 0x006A6DE0: sub_006A6DE0 (171B). Takes its argument on the x87 stack;
 // modelled here as a double parameter (assumption, see lift notes).
-extern "C" void __thiscall ext_006A6DE0(double value);
+extern "C" int32_t ext_006A6DE0(double value);
 extern "C" const double mem_00993828;
 
 // modelled here as a double parameter (assumption, see lift notes).
-extern "C" void __thiscall ext_006A6DE0(double value);
+extern "C" int32_t ext_006A6DE0(double value);
 extern "C" const double mem_00993828;
 // @summary Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).
 void fn_00511F80(void* arg) {
@@ -65,10 +65,10 @@ float fn_004975B0(void* self) {
 }
 // Project-wide convention for this helper (see lifted/ExprParser/RealType.cpp): takes the
 // rounded double, returns nothing in portable form. Its eax result is modeled below.
-extern "C" void ext_006A6DE0(double value);
+extern "C" int32_t ext_006A6DE0(double value);
 
 // rounded double, returns nothing in portable form. Its eax result is modeled below.
-extern "C" void ext_006A6DE0(double value);
+extern "C" int32_t ext_006A6DE0(double value);
 // @class ExprParser::PrimitiveProxyType<int>
 // @summary Follows the source proxy's value_ptr, passes the pointed-to int32 to sub_006720C0 on the first argument, and returns the first argument (stdcall, ret 8).
 // @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
@@ -91,13 +91,10 @@ void* fn_0049B1E0(void* target, const void* src) {
     ext_006720A0(target, static_cast<uint32_t>(*value_ptr));
     return target;
 }
-
-// [0x004B7B50] ExprParser::PrimitiveProxyType<float>::vfunc_43 (38 bytes)
-// @name ExprParser::PrimitiveProxyType<float>::vfunc_43
-// @class ExprParser::PrimitiveProxyType<float>
-// @summary Calls virtual slot 1 of arg->field_0x04 (passing arg) and adds the float result into *ptr.
-// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
-// @field Unknown +0x04 void* field_0x04
+// MSVCP80 std::string::c_str (thiscall; string object pointer in ecx, returns const char*).
+extern "C" const char* (*mem_00924FF0)(const void* str);
+// MSVCR80 atof (cdecl; takes const char*, returns double on the x87 stack).
+extern "C" double (*mem_009251F0)(const char* s);
 void fn_004B7B50(void* self, void* arg) {
     float* value = lift_field<float*>(self, 0x00);
     void* sub = lift_field<void*>(arg, 0x04);
@@ -106,8 +103,10 @@ void fn_004B7B50(void* self, void* arg) {
     float r = reinterpret_cast<float(__thiscall*)(void*, void*)>(vtbl[1])(sub, arg);
     *value = *value + r;
 }
+// operator==(const std::string&, const char*) imported from MSVCP80, pointer at 0x924FC0
+extern "C" bool (__cdecl *const ext_00924FC0)(const void *str, const char *cstr);
 
-// [0x0049B260] ExprParser::PrimitiveProxyType<bool>::vfunc_7 (40 bytes)
+extern "C" bool (__cdecl *const ext_00924FC0)(const void *str, const char *cstr);
 // @name ExprParser::PrimitiveProxyType<bool>::vfunc_7
 // @class ExprParser::PrimitiveProxyType<bool>
 // @summary Stores (x >= 1e-6) into *value_ptr, where x is the float argument (false for NaN).
@@ -116,10 +115,14 @@ void fn_0049B260(void* self, float x) {
     uint8_t* value = lift_field<uint8_t*>(self, 0x00);
     *value = (static_cast<double>(x) >= mem_0093F958) ? 1 : 0;
 }
+// MSVCP80 std::string::c_str (thiscall; string object pointer in ecx, returns const char*).
+// MSVCR80 atof (cdecl; takes const char*, returns double on the x87 stack).
+// 0.5 constant used to round half away from zero.
+// Callee takes the adjusted value on the x87 stack (double); declared void to match the merged template file.
 
-// [0x004B7A10] ExprParser::PrimitiveProxyType<float>::vfunc_0 (40 bytes)
-// @name ExprParser::PrimitiveProxyType<float>::vfunc_0
-// @class ExprParser::PrimitiveProxyType<float>
+// MSVCR80 atof (cdecl; takes const char*, returns double on the x87 stack).
+// 0.5 constant used to round half away from zero.
+// Callee takes the adjusted value on the x87 stack (double); declared void to match the merged template file.
 // @summary Reads the float at **src, calls ext_00672080 on self with that value and flag 0, and returns self.
 // @field Unknown +0x00 float* field_0x00
 void* fn_004B7A10(void* self, void* src) {
@@ -128,8 +131,6 @@ void* fn_004B7A10(void* self, void* src) {
     ext_00672080(self, value, nullptr, 0);
     return self;
 }
-
-// [0x004B7AA0] ExprParser::PrimitiveProxyType<float>::vfunc_9 (49 bytes)
 // @name ExprParser::PrimitiveProxyType<float>::vfunc_9
 // @class ExprParser::PrimitiveProxyType<float>
 // @summary Stores 1.0f into *ptr when flag is nonzero, otherwise 0.0f.
@@ -138,9 +139,6 @@ void fn_004B7AA0(void* self, uint8_t flag) {
     float* value = lift_field<float*>(self, 0x00);
     *value = (flag != 0) ? 1.0f : 0.0f;
 }
-
-// [0x0049B220] ExprParser::PrimitiveProxyType<bool>::vfunc_43 (50 bytes)
-// @name ExprParser::PrimitiveProxyType<bool>::vfunc_43
 // @class ExprParser::PrimitiveProxyType<bool>
 // @summary If *value_ptr is already set, keeps it true; otherwise sets it to the result of virtual slot 3 of arg->field_0x04 (passing arg).
 // @field ExprParser::PrimitiveProxyType<bool> +0x00 uint8_t* value_ptr
@@ -157,10 +155,14 @@ void fn_0049B220(void* self, void* arg) {
     uint8_t r = reinterpret_cast<uint8_t(__thiscall*)(void*, void*)>(vtbl[3])(sub, arg);
     *value = (r != 0) ? 1 : 0;
 }
+// Callee 0x006A6DE0: receives the rounded value as a double (originally left on the x87 stack).
+// Project-wide convention (see lifted/ExprParser/RealType.cpp): declared void in portable form;
+// its eax result is not modeled here.
+extern "C" int32_t ext_006A6DE0(double rounded);
 
-// [0x004B7180] ExprParser::PrimitiveProxyType<float>::vfunc_2 (57 bytes)
-// @name ExprParser::PrimitiveProxyType<float>::vfunc_2
-// @class ExprParser::PrimitiveProxyType<float>
+// Project-wide convention (see lifted/ExprParser/RealType.cpp): declared void in portable form;
+// its eax result is not modeled here.
+extern "C" int32_t ext_006A6DE0(double rounded);
 // @summary Reads x = *ptr, passes x - 0.5 (if x < 0 or NaN) or x + 0.5 (otherwise) to ext_006A6DE0.
 // @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
 void fn_004B7180(void* self) {
@@ -170,26 +172,6 @@ void fn_004B7180(void* self) {
                           : static_cast<double>(x) + mem_00993828;
     ext_006A6DE0(adjusted);
 }
-
-// [0x004975E0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_3 (61 bytes)
-// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_3
-// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
-// @summary Returns true if the std::string referenced by arg's first pointer equals either of two constant C-strings, else false.
-// @field ExprParser::ValuePtrType +0x00 std::string* value
-bool fn_004975E0(void* arg) {
-    const std::string* s = *static_cast<const std::string* const*>(arg);
-    if (mem_00924FC0(*s, mem_0092F10C)) {
-        return true;
-    }
-    if (mem_00924FC0(*s, mem_0093A810)) {
-        return true;
-    }
-    return false;
-}
-
-// [0x0049C080] ExprParser::PrimitiveProxyType<int>::vfunc_7 (61 bytes)
-// @name ExprParser::PrimitiveProxyType<int>::vfunc_7
-// @class ExprParser::PrimitiveProxyType<int>
 // @summary Rounds a float to int (half away from zero) and stores it through value_ptr.
 // @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
 void fn_0049C080(void* self, float value) {
@@ -201,4 +183,35 @@ void fn_0049C080(void* self, float value) {
     const int32_t result = static_cast<int32_t>(adjusted);
     int32_t* dst = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0));
     *dst = result;
+}
+extern "C" int32_t ext_006A6DE0(double rounded);
+
+// [0x004975E0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_3 (61 bytes)
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_3
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Checks whether the string pointed to by *arg equals either of two constant strings (0x0092F10C or 0x0093A810).
+uint32_t __thiscall fn_004975E0(void* self, const std::string* const* arg) {
+    (void)self;
+    const std::string* str_ptr = *arg;
+    if (mem_00924FC0(*str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0092F10C)))) {
+        return 1;
+    }
+    if (mem_00924FC0(*str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0093A810)))) {
+        return 1;
+    }
+    return 0;
+}
+
+// [0x00497930]
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_2
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.
+// @field ExprParser::ValuePtrType +0x00 const std::string* field_0x00
+int32_t __stdcall fn_00497930(void* arg) {
+    const std::string* s = *static_cast<const std::string* const*>(arg);
+    const float val = static_cast<float>(std::atof(s->c_str()));
+    const double rounded = (val >= 0.0f)
+        ? static_cast<double>(val) + mem_00993828
+        : static_cast<double>(val) - mem_00993828;
+    return ext_006A6DE0(rounded);
 }

@@ -3320,6 +3320,13 @@
     "summary": "Initializes the std::string at self from the C-string pointer held in src's first dword, returns self.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497930": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_2",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+    "signature": "int32_t __stdcall fn_00497930(void* arg)",
+    "summary": "Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00499AF0": {
     "name": "NMData::Transition::vfunc_6_off_10",
     "class": "NMData::Transition",
