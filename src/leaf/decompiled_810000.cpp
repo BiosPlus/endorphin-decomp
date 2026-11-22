@@ -2180,3 +2180,38 @@ extern "C" __declspec(naked) void __fastcall fn_00810C70(void* self) {
         ret
     }
 }
+
+// [0x008113C4] sub_008113C4 (28 bytes)
+// NOTE: bytes at this VA are a 18-byte 0/1 flag table followed by nop padding, not real code.
+extern "C" __declspec(naked) void __fastcall fn_008113C4(void* self) {
+    __asm {
+        __asm _emit 0x00
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x00
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x00
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x01
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
