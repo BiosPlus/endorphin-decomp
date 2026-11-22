@@ -2891,6 +2891,13 @@
     "summary": "Tail-dispatches to vtable slot 5 of the object at self-\u003einner+0x04, passing self-\u003einner as this.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066AF80": {
+    "name": "ExprParser::ExtROType::vfunc_15",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t fn_0066AF80(void* self)",
+    "summary": "Tail-forwards to vtable slot 15 of the object at (this-\u003eptr)-\u003e+0x04, passing this-\u003eptr as the argument.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066AFA0": {
     "name": "ExprParser::ExtROType::vfunc_21",
     "class": "ExprParser::ExtROType",

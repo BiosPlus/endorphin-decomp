@@ -129,3 +129,23 @@ void* ExprParser_ExtROType_vfunc_6(void* self) {
     ExtROForwardFn target = reinterpret_cast<ExtROForwardFn>(vtbl[6]);
     return target(inner);
 }
+
+// [0x0066AF80] ExprParser::ExtROType::vfunc_15 (20 bytes)
+// @name ExprParser::ExtROType::vfunc_15
+// @class ExprParser::ExtROType
+// @summary Tail-forwards to vtable slot 15 of the object at (this->ptr)->+0x04, passing this->ptr as the argument.
+// @field ExprParser::ExtROType +0x00 void* field_0x00
+uint32_t fn_0066AF80(void* self) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg);
+
+    // p = this->field_0x00 (pointer held by ExtROType)
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04 (object whose virtual slot 15 is invoked)
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[15] (offset 0x3C)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x3C));
+
+    // Tail call: callee's argument slot receives p; result stays in eax.
+    return target(obj, p);
+}
