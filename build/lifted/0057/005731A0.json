@@ -1,0 +1,14 @@
+{
+  "va": "0x005731A0",
+  "size": 37,
+  "orig_symbol": "OBJIO::vfunc_3",
+  "src_path": "src/classes/OBJIO.cpp",
+  "lifted_path": "lifted/classes/OBJIO.cpp",
+  "name": "OBJIO::vfunc_3",
+  "class": "OBJIO",
+  "signature": "void* fn_005731A0(void* self, void* arg)",
+  "summary": "Resolves a pointer from the argument object via sub_00640390 using the constant key at 0x92FE24, forwards it to NMFileIO::vfunc_3 on this, and returns the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T11:14:05Z"
+}

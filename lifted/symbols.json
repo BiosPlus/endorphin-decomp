@@ -6751,6 +6751,13 @@
     "summary": "Forwards a string argument's c_str() to a virtual method on the object at NMCIO+0x418, after first calling ext_006619D0 on the object at NMCIO+0x420 with its member's +0xCC sub-object.",
     "lifted_path": "lifted/classes/NMCIO.cpp"
   },
+  "0x005731A0": {
+    "name": "OBJIO::vfunc_3",
+    "class": "OBJIO",
+    "signature": "void* fn_005731A0(void* self, void* arg)",
+    "summary": "Resolves a pointer from the argument object via sub_00640390 using the constant key at 0x92FE24, forwards it to NMFileIO::vfunc_3 on this, and returns the argument.",
+    "lifted_path": "lifted/classes/OBJIO.cpp"
+  },
   "0x00574CF0": {
     "name": "sub_00574CF0",
     "signature": "extern \"C\" void __fastcall fn_00574CF0(void* self)",
