@@ -9246,6 +9246,13 @@
     "summary": "Component-wise add: *dst += src, where src is obtained by calling vtable slot 6 on the source's inner object; stdcall, cleans 8 bytes.",
     "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
   },
+  "0x0066B8A0": {
+    "name": "ExprParser::Vector4Type::vfunc_44",
+    "class": "ExprParser::Vector4Type",
+    "signature": "void fn_0066B8A0(void* dst, void* self)",
+    "summary": "Component-wise subtracts the float[4] value returned by the source operand's virtual getter (vtable slot 6) from the destination float[4] in place.",
+    "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
+  },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
     "class": "ExprParser::ExtROType",

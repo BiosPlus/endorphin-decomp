@@ -38,3 +38,24 @@ void fn_0066B860(void* dstHolder, void* srcHolder) {
     dst[2] += src[2];
     dst[3] += src[3];
 }
+
+// [0x0066B8A0]
+// @name ExprParser::Vector4Type::vfunc_44
+// @class ExprParser::Vector4Type
+// @summary Component-wise subtracts the float[4] value returned by the source operand's virtual getter (vtable slot 6) from the destination float[4] in place.
+// @field ExprParser::Vector4Type +0x04 void* field_0x04 (source operand; its vtable slot 6 returns float* to 4 floats)
+void fn_0066B8A0(void* dst, void* self) {
+    // self->field_0x04 is the inner operand; its vtable slot 6 (offset 0x18) is called with self as the argument.
+    void* inner = lift_field<void*>(self, 0x04);
+    using GetVec4Fn = float* (*)(void* obj, void* arg);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    GetVec4Fn getVec4 = reinterpret_cast<GetVec4Fn>(vtbl[6]);
+    float* rhs = getVec4(inner, self);
+
+    // dst points at a holder whose first dword is the float[4] destination.
+    float* lhs = lift_field<float*>(dst, 0x00);
+    lhs[0] = lhs[0] - rhs[0];
+    lhs[1] = lhs[1] - rhs[1];
+    lhs[2] = lhs[2] - rhs[2];
+    lhs[3] = lhs[3] - rhs[3];
+}

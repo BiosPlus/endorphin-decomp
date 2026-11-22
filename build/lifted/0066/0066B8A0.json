@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B8A0",
+  "size": 57,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_44",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_44",
+  "class": "ExprParser::Vector4Type",
+  "signature": "void fn_0066B8A0(void* dst, void* self)",
+  "summary": "Component-wise subtracts the float[4] value returned by the source operand's virtual getter (vtable slot 6) from the destination float[4] in place.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector4Type",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (source operand; its vtable slot 6 returns float* to 4",
+      "name": "floats)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:29Z"
+}
