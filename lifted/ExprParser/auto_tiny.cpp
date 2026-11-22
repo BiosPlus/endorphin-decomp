@@ -337,3 +337,22 @@ void fn_0067A970(void* self, uint32_t* dst, const uint32_t* src) {
     (void)self;
     *dst = *src;
 }
+
+// [0x0049B290] ExprParser::PrimitiveProxyType<bool>::vfunc_8 (19 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_8
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Stores (value != 0) as a bool through the proxy's value pointer at +0x00.
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 const uint8_t* value_ptr
+
+namespace {
+struct PrimitiveProxyTypeBool {
+    const uint8_t* value_ptr; // +0x00
+};
+} // namespace
+
+// Stdcall-style setter: arg1 = proxy object, arg2 = value (non-zero means true).
+void fn_0049B290(void* self, int32_t value) {
+    auto* proxy = static_cast<PrimitiveProxyTypeBool*>(self);
+    uint8_t* dst = const_cast<uint8_t*>(proxy->value_ptr);
+    *dst = (value != 0) ? 1 : 0;
+}

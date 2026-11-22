@@ -888,6 +888,13 @@
     "summary": "Returns true when the bool value pointed to by value_ptr is non-zero.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B290": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_8",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "void fn_0049B290(void* self, int32_t value)",
+    "summary": "Stores (value != 0) as a bool through the proxy's value pointer at +0x00.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049B2B0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::setValue",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
