@@ -1,0 +1,28 @@
+{
+  "va": "0x0051ABD0",
+  "size": 89,
+  "orig_symbol": "NMData::RealChannel::vfunc_13",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_13",
+  "class": "NMData::RealChannel",
+  "signature": "void fn_0051ABD0(void* self, float scale)",
+  "summary": "Multiplies the float at +4 of each 8-byte entry in the [begin, end) range by the scale argument.",
+  "fields": [
+    {
+      "class": "RealChannel",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "begin"
+    },
+    {
+      "class": "RealChannel",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:32Z"
+}

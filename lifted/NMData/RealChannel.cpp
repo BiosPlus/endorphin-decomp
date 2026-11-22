@@ -57,3 +57,22 @@ float fn_0051AB80(void* self) {
 
     return *reinterpret_cast<const float*>(static_cast<uintptr_t>(last));
 }
+
+// [0x0051ABD0] NMData::RealChannel::vfunc_13 (89 bytes)
+// @name NMData::RealChannel::vfunc_13
+// @class NMData::RealChannel
+// @summary Multiplies the float at +4 of each 8-byte entry in the [begin, end) range by the scale argument.
+// @field RealChannel +0x30 int32_t begin
+// @field RealChannel +0x34 int32_t end
+void fn_0051ABD0(void* self, float scale) {
+    // The MSVCRT _invalid_parameter_noinfo guard calls in the original are
+    // invariant checks (begin <= end, cur < end) and are omitted here.
+    uint32_t cur = lift_field<uint32_t>(self, 0x30);
+    const uint32_t end = lift_field<uint32_t>(self, 0x34);
+
+    while (cur != end) {
+        float* value = reinterpret_cast<float*>(static_cast<uintptr_t>(cur) + 4);
+        *value = *value * scale;
+        cur += 8;
+    }
+}
