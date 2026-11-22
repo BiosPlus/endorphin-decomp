@@ -1,0 +1,14 @@
+{
+  "va": "0x006A18D0",
+  "size": 56,
+  "orig_symbol": "ExprParser::Operators::Atan::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Atan.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Atan.cpp",
+  "name": "ExprParser::Operators::Atan::vfunc_3",
+  "class": "ExprParser::Operators::Atan",
+  "signature": "void __thiscall fn_006A18D0(void* self, void* ctx)",
+  "summary": "Evaluates unary operand via vfunc_1, applies atan, and stores result via vfunc_7",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T07:45:43Z"
+}
