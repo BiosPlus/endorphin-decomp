@@ -5877,6 +5877,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_006425C0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594440": {
+    "name": "ExprParser::Function2Type\u003cWorld\u003e::vfunc_16",
+    "class": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void* fn_00594440(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A87014 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/Function2Type.cpp"
+  },
   "0x005945D0": {
     "name": "sub_005945D0",
     "signature": "extern \"C\" void __fastcall fn_005945D0(void* self)",
@@ -8152,6 +8159,13 @@
     "class": "ExprParser::BoolType",
     "signature": "uint8_t __stdcall fn_0066B1A0(void* obj, void* other)",
     "summary": "Returns 1 if sub-\u003evfn3(obj) equals sub-\u003evfn3(obj) where sub = obj-\u003efield_0x04 (both calls identical); the second argument is unused.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
+  "0x0066B1D0": {
+    "name": "ExprParser::BoolType::vfunc_43",
+    "class": "ExprParser::BoolType",
+    "signature": "void __stdcall fn_0066B1D0(uint8_t* flag, void* other)",
+    "summary": "Sets *flag to 1 if it is already nonzero or if sub-\u003evfn3(other) is nonzero (sub = other-\u003efield_0x04); otherwise sets *flag to 0.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x0066B9E0": {
