@@ -9765,6 +9765,13 @@
     "summary": "If field +0x4C is set, calls its vtable slot 24 with \u0026field+0x48, dynamic-casts the result; returns 0x67 if arg==0x67 else 0x66 on cast success, otherwise arg.",
     "lifted_path": "lifted/NMData/ValuePtrData.cpp"
   },
+  "0x00682CE0": {
+    "name": "NMData::ValuePtrData::vfunc_17",
+    "class": "NMData::ValuePtrData",
+    "signature": "uint32_t fn_00682CE0(void* self, uint32_t a1, uint32_t a2, uint32_t* a3)",
+    "summary": "If a1 == 0x280: returns 0x46 when the object at +0x28 reports vfunc slot 12 == 5; otherwise, when +0x64 is set and a3 is non-null, stores ext_0067A050(a2, self+0x50) into *a3. Returns a1 in all non-0x46 paths.",
+    "lifted_path": "lifted/NMData/ValuePtrData.cpp"
+  },
   "0x00682DC0": {
     "name": "NMData::ValuePtrData::vfunc_0_off_4",
     "class": "NMData::ValuePtrData",

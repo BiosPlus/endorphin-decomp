@@ -1,0 +1,34 @@
+{
+  "va": "0x00682CE0",
+  "size": 85,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_17",
+  "src_path": "src/NMData/ValuePtrData.cpp",
+  "lifted_path": "lifted/NMData/ValuePtrData.cpp",
+  "name": "NMData::ValuePtrData::vfunc_17",
+  "class": "NMData::ValuePtrData",
+  "signature": "uint32_t fn_00682CE0(void* self, uint32_t a1, uint32_t a2, uint32_t* a3)",
+  "summary": "If a1 == 0x280: returns 0x46 when the object at +0x28 reports vfunc slot 12 == 5; otherwise, when +0x64 is set and a3 is non-null, stores ext_0067A050(a2, self+0x50) into *a3. Returns a1 in all non-0x46 paths.",
+  "fields": [
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x50",
+      "type": "uint8_t field_0x50 (embedded sub-object; address",
+      "name": "only)"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:30Z"
+}
