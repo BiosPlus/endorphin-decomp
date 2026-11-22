@@ -5,6 +5,7 @@ extern "C" int mem_0092D178;
 extern "C" int mem_00929B20;
 extern "C" int mem_0092A1CC;
 extern "C" int mem_0092AD84;
+extern "C" int mem_0092B9AC;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -51,4 +52,14 @@ extern "C" void* __fastcall fn_00407720(void* self) {
 extern "C" int* __fastcall fn_0040CDF0(void* self) {
     (void)self;
     return &mem_0092AD84;
+}
+
+// [0x0040FCF0] CColorCheck::vfunc_0 (6 bytes)
+// @name CColorCheck::vfunc_0
+// @class CColorCheck
+// @summary Virtual getter returning the address of the global at mem_0092B9AC (ignores self).
+// (no instance fields accessed)
+void* fn_0040FCF0(void* self) {
+    (void)self;
+    return &mem_0092B9AC;
 }
