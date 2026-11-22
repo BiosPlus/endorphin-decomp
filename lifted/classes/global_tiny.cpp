@@ -29,6 +29,7 @@ extern "C" int mem_00934B98;
 extern "C" int mem_00935578;
 extern "C" int mem_009364A0;
 extern "C" int mem_00936504;
+extern "C" int mem_009366E0;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -328,4 +329,13 @@ extern "C" const void* __fastcall fn_00454550(void* self) {
 extern "C" const void* __fastcall fn_00454B90(void* self) {
     (void)self;
     return reinterpret_cast<const void*>(&mem_00936504);
+}
+
+// [0x00455060] CSizingControlBarCF::vfunc_107 (6 bytes)
+// @name CSizingControlBarCF::vfunc_107
+// @class CSizingControlBarCF
+// @summary Returns the address of the global at mem_009366E0 (ignores this).
+extern "C" int* __fastcall fn_00455060(void* self) {
+    (void)self;
+    return &mem_009366E0;
 }

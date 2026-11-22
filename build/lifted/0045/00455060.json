@@ -1,0 +1,14 @@
+{
+  "va": "0x00455060",
+  "size": 6,
+  "orig_symbol": "CSizingControlBarCF::vfunc_107",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CSizingControlBarCF::vfunc_107",
+  "class": "CSizingControlBarCF",
+  "signature": "extern \"C\" int* __fastcall fn_00455060(void* self)",
+  "summary": "Returns the address of the global at mem_009366E0 (ignores this).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:54:08Z"
+}
