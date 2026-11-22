@@ -1,0 +1,40 @@
+{
+  "va": "0x0051BEF0",
+  "size": 32,
+  "orig_symbol": "NMData::RealChannel::vfunc_16",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_16",
+  "class": "NMData::RealChannel",
+  "signature": "void fn_0051BEF0(void* self)",
+  "summary": "Rebinds the self-pointer at +0x3C to +0x2C and copies begin into +0x40, aborting if begin \u003e end.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "end"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x40",
+      "type": "int32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:23Z"
+}

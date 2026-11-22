@@ -4818,6 +4818,13 @@
     "summary": "Returns the element count of the channel's [begin, end) pointer range at +0x30/+0x34 (8-byte elements), or 0 when begin is null.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051BEF0": {
+    "name": "NMData::RealChannel::vfunc_16",
+    "class": "NMData::RealChannel",
+    "signature": "void fn_0051BEF0(void* self)",
+    "summary": "Rebinds the self-pointer at +0x3C to +0x2C and copies begin into +0x40, aborting if begin \u003e end.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051C7A0": {
     "name": "NMData::QuatChannel::vfunc_9",
     "class": "NMData::QuatChannel",
