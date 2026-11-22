@@ -357,6 +357,13 @@
     "summary": "Returns the address of the module-level constant at 0x00933C98 (which holds 0x00933C50).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044A0C0": {
+    "name": "NMColourSwatch::vfunc_0",
+    "class": "NMColourSwatch",
+    "signature": "extern \"C\" int* __fastcall fn_0044A0C0(void* self)",
+    "summary": "Returns the address of the global data slot mem_00933CB4 (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

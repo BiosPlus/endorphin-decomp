@@ -1,0 +1,22 @@
+{
+  "va": "0x0044A0C0",
+  "size": 6,
+  "orig_symbol": "NMColourSwatch::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NMColourSwatch::vfunc_0",
+  "class": "NMColourSwatch",
+  "signature": "extern \"C\" int* __fastcall fn_0044A0C0(void* self)",
+  "summary": "Returns the address of the global data slot mem_00933CB4 (leaf accessor; self is unused).",
+  "fields": [
+    {
+      "class": "NMColourSwatch",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:52:29Z"
+}

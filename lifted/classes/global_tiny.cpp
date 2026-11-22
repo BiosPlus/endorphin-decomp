@@ -24,6 +24,7 @@ extern "C" int mem_00933A38;
 extern "C" int mem_009337B4;
 extern "C" int mem_00933C7C;
 extern "C" int mem_00933C98;
+extern "C" int mem_00933CB4;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -257,4 +258,14 @@ extern "C" int* __fastcall fn_00449FE0(void* self) {
 void* fn_0044A0A0(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_00933C98);
+}
+
+// [0x0044A0C0] NMColourSwatch::vfunc_0 (6 bytes)
+// @name NMColourSwatch::vfunc_0
+// @class NMColourSwatch
+// @summary Returns the address of the global data slot mem_00933CB4 (leaf accessor; self is unused).
+// @field NMColourSwatch +0x00 void* vtable
+extern "C" int* __fastcall fn_0044A0C0(void* self) {
+    (void)self;
+    return &mem_00933CB4;
 }
