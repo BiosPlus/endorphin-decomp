@@ -1,0 +1,34 @@
+{
+  "va": "0x005846F0",
+  "size": 59,
+  "orig_symbol": "AcclaimIO::vfunc_48",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::vfunc_48",
+  "class": "AcclaimIO",
+  "signature": "uint32_t fn_005846F0(void* self)",
+  "summary": "Calls vfunc_57 on self; if it returns true, forwards vfunc_48 to the embedded object at +0x46C, otherwise to the one at +0x964. Returns the callee's result.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x46C",
+      "type": "uint8_t",
+      "name": "subobjA"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x964",
+      "type": "uint8_t",
+      "name": "subobjB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:24Z"
+}

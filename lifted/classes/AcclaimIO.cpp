@@ -75,3 +75,30 @@ void fn_005846B0(void* self) {
     using VoidMethod = void (*)(void*);
     reinterpret_cast<VoidMethod>(subVtable[37])(sub);
 }
+
+// [0x005846F0]
+// @name AcclaimIO::vfunc_48
+// @class AcclaimIO
+// @summary Calls vfunc_57 on self; if it returns true, forwards vfunc_48 to the embedded object at +0x46C, otherwise to the one at +0x964. Returns the callee's result.
+// @field AcclaimIO +0x000 void** vtable
+// @field AcclaimIO +0x46C uint8_t subobjA
+// @field AcclaimIO +0x964 uint8_t subobjB
+uint32_t fn_005846F0(void* self) {
+    // Each embedded object's vptr is stored at its own offset 0.
+    void** selfVtable = lift_field<void**>(self, 0x000);
+
+    // vtable slot 57 (+0xE4): bool-like predicate on self, result in AL.
+    using PredicateFn = uint8_t (*)(void* thisPtr);
+    auto predicate = reinterpret_cast<PredicateFn>(selfVtable[0xE4 / sizeof(void*)]);
+    uint8_t flag = predicate(self);
+
+    // Pick embedded subobject: subobjA if flag bit 0 is set, else subobjB.
+    ptrdiff_t subOffset = (flag & 1) ? 0x46C : 0x964;
+    void* subobj = reinterpret_cast<uint8_t*>(self) + subOffset;
+
+    // Object's vptr, then vtable slot 48 (+0xC0): vfunc_48 on the subobject.
+    void** subVtable = *reinterpret_cast<void***>(subobj);
+    using SubFn = uint32_t (*)(void* thisPtr);
+    auto target = reinterpret_cast<SubFn>(subVtable[0xC0 / sizeof(void*)]);
+    return target(subobj);
+}

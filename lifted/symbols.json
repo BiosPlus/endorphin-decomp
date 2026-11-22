@@ -6183,6 +6183,13 @@
     "summary": "Calls virtual slot 57 on self; if it returns 1 forwards vfunc 37 to embedded subobjA (+0x46C), otherwise to subobjB (+0x964).",
     "lifted_path": "lifted/classes/AcclaimIO.cpp"
   },
+  "0x005846F0": {
+    "name": "AcclaimIO::vfunc_48",
+    "class": "AcclaimIO",
+    "signature": "uint32_t fn_005846F0(void* self)",
+    "summary": "Calls vfunc_57 on self; if it returns true, forwards vfunc_48 to the embedded object at +0x46C, otherwise to the one at +0x964. Returns the callee's result.",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584B00": {
     "name": "AnimatableTransform::vfunc_54",
     "class": "AnimatableTransform",
