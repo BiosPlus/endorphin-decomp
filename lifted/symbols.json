@@ -155,6 +155,13 @@
     "summary": "Virtual getter returning the address of the global at mem_0092D178 (ignores this).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041B200": {
+    "name": "GettingStartedDialog::vfunc_0",
+    "class": "GettingStartedDialog",
+    "signature": "int* fn_0041B200(void* self)",
+    "summary": "Returns the address of the global mem_0092D538; does not touch this.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",

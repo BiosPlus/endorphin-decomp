@@ -1,0 +1,14 @@
+{
+  "va": "0x0041B200",
+  "size": 6,
+  "orig_symbol": "GettingStartedDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GettingStartedDialog::vfunc_0",
+  "class": "GettingStartedDialog",
+  "signature": "int* fn_0041B200(void* self)",
+  "summary": "Returns the address of the global mem_0092D538; does not touch this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:48:31Z"
+}

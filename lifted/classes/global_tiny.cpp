@@ -9,6 +9,7 @@ extern "C" int mem_0092B9AC;
 extern "C" int mem_0092C580;
 extern "C" int mem_0092C8E4;
 extern "C" int mem_0092CB80;
+extern "C" int mem_0092D538;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -93,4 +94,13 @@ const int* fn_00416700(void* self) {
 void* fn_00416B80(void* self) {
     (void)self;
     return &mem_0092CB80;
+}
+
+// [0x0041B200] GettingStartedDialog::vfunc_0 (6 bytes)
+// @name GettingStartedDialog::vfunc_0
+// @class GettingStartedDialog
+// @summary Returns the address of the global mem_0092D538; does not touch this.
+int* fn_0041B200(void* self) {
+    (void)self;
+    return &mem_0092D538;
 }
