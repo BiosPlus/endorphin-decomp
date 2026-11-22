@@ -11180,6 +11180,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0068BFD0": {
+    "name": "ExprParser::Method0Type\u003cRandomizer, Randomizer::applySeed\u003e::vfunc_3",
+    "class": "ExprParser::Method0Type\u003cRandomizer, Randomizer::applySeed\u003e",
+    "signature": "unsigned char fn_0068BFD0(void* arg)",
+    "summary": "Reads a pointer from the first stack argument's first dword, passes it as `this` to ext_0068BC50, and returns false (al = 0).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0068BFE0": {
     "name": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e",

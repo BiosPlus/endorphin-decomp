@@ -148,6 +148,7 @@ extern "C" void __fastcall ext_00692D90(void* self);
 extern "C" void ext_004CCAF0(void* target);
 // Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
 // Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
+extern "C" void __thiscall ext_0068BC50(void* self);
 
 // [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
 #include "lift_compat.h"
@@ -673,5 +674,16 @@ extern "C" void __fastcall ext_0048A9F0(void* self);
 extern "C" int __stdcall fn_0048B060(void* self) {
     void* target = *static_cast<void**>(self);
     ext_0048A9F0(target);
+    return 0;
+}
+
+// [0x0068BFD0]
+// @name ExprParser::Method0Type<Randomizer, Randomizer::applySeed>::vfunc_3
+// @class ExprParser::Method0Type<Randomizer, Randomizer::applySeed>
+// @summary Reads a pointer from the first stack argument's first dword, passes it as `this` to ext_0068BC50, and returns false (al = 0).
+// @field ExprParser::Method0Type<Randomizer, Randomizer::applySeed> +0x00 void* field_0x00
+unsigned char fn_0068BFD0(void* arg) {
+    void* inner = *reinterpret_cast<void**>(arg);
+    ext_0068BC50(inner);
     return 0;
 }
