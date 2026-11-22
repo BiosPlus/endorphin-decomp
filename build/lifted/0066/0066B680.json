@@ -1,0 +1,28 @@
+{
+  "va": "0x0066B680",
+  "size": 48,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_43",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_43",
+  "class": "ExprParser::Vector3Type",
+  "signature": "void fn_0066B680(void* self, void** a1, void* a2)",
+  "summary": "Adds the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise into the float[3] at *a1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:56Z"
+}

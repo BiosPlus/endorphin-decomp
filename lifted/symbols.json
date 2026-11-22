@@ -8245,6 +8245,13 @@
     "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B680": {
+    "name": "ExprParser::Vector3Type::vfunc_43",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_0066B680(void* self, void** a1, void* a2)",
+    "summary": "Adds the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise into the float[3] at *a1.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
     "class": "ExprParser::ExtROType",
