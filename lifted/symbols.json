@@ -284,6 +284,12 @@
     "summary": "Returns the address of the global mem_00932C44 (a read-only u32 holding 0x00932C2C).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00447DA0": {
+    "name": "GetStringLiteral_00447DA0",
+    "signature": "const char* fn_00447DA0(void)",
+    "summary": "Returns the address of the read-only string literal \",bj\" (mem_00932E14).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447DC0": {
     "name": "ProcessorWarningDialog::vfunc_0",
     "class": "ProcessorWarningDialog",

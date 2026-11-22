@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" int mem_0093226C;
 extern "C" int mem_00932B50;
+extern "C" int mem_00932E14;
 
 // [0x00440680] sub_00440680 (6 bytes)
 // @name GetStringLiteral_00440680
@@ -15,4 +16,11 @@ extern "C" const char* __cdecl fn_00440680() {
 // @summary Returns the address of the read-only string "`KE" in .rdata.
 extern "C" const char* __cdecl fn_004473D0() {
     return reinterpret_cast<const char*>(&mem_00932B50);
+}
+
+// [0x00447DA0] sub_00447DA0 (6 bytes)
+// @name GetStringLiteral_00447DA0
+// @summary Returns the address of the read-only string literal ",bj" (mem_00932E14).
+const char* fn_00447DA0(void) {
+    return reinterpret_cast<const char*>(&mem_00932E14);
 }
