@@ -403,6 +403,12 @@
     "summary": "Returns the address of the read-only string constant mem_009355EC (\"`KE\"); takes no arguments and touches no state.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004543E0": {
+    "name": "sub_004543E0",
+    "signature": "extern \"C\" const int* fn_004543E0()",
+    "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

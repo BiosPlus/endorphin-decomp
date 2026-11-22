@@ -1,0 +1,13 @@
+{
+  "va": "0x004543E0",
+  "size": 6,
+  "orig_symbol": "sub_004543E0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "sub_004543E0",
+  "signature": "extern \"C\" const int* fn_004543E0()",
+  "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:53:28Z"
+}
