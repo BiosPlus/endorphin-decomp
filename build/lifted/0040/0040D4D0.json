@@ -1,0 +1,13 @@
+{
+  "va": "0x0040D4D0",
+  "size": 6,
+  "orig_symbol": "sub_0040D4D0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "sub_0040D4D0",
+  "signature": "int* fn_0040D4D0(void)",
+  "summary": "Returns the address of the read-only global mem_0092B0F4 (.rdata slot holding 0x0040CDF0) in eax; no other side effects.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:46:51Z"
+}
