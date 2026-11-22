@@ -38,6 +38,12 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046A480": {
+    "name": "VirtualSlot2Thunk",
+    "signature": "void fn_0046A480(void* self)",
+    "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 2 (offset +0x8) with the same this pointer.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00499B40": {
     "name": "NMData::State::vfunc_9_off_10",
     "class": "NMData::State",
