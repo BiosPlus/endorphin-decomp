@@ -10968,10 +10968,10 @@
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
   "0x006719C0": {
-    "name": "ExprParser::Vector3Type::vfunc_29",
+    "name": "ExprParser::Vector3Type::vfunc_43",
     "class": "ExprParser::Vector3Type",
-    "signature": "void fn_006719C0(void* self, uint32_t* out)",
-    "summary": "Calls ext_006715C0 on the subobject at this+0x08 with two zero arguments and stores its result through the output pointer.",
+    "signature": "void fn_0066D0C0(void* self, void** slot)",
+    "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
   "0x00671F10": {

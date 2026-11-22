@@ -30,7 +30,7 @@ extern "C" uint32_t __thiscall ext_00699000(uint32_t self, uint32_t arg);
 // Helper (sub_006715C0, 208 bytes): thiscall with two stack arguments, callee pops 8.
 extern "C" uint32_t __thiscall ext_006715C0(void* self, uint32_t arg1, uint32_t arg2);
 
-extern "C" uint32_t __thiscall ext_006715C0(void* self, uint32_t arg1, uint32_t arg2);
+// [0x0066B680] ExprParser::Vector3Type::vfunc_43 (48 bytes)
 // @name ExprParser::Vector3Type::vfunc_43
 // @class ExprParser::Vector3Type
 // @summary Adds the vector from arg2->+0x04->vfunc_5(arg2) component-wise into the float[3] at *a1.
