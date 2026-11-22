@@ -32,8 +32,10 @@ extern "C" void __fastcall ext_0045F150(void* self);
 extern "C" void __fastcall ext_00460450(void* self);
 extern "C" void __fastcall ext_0045F600(void* self);
 extern "C" void __fastcall ext_00460310(void* self);
+// USER32 import: BOOL InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase)
+extern "C" BOOL __stdcall InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase);
 
-// [0x004591A0] MultiTrackView::TimeRuler::vfunc_0_off_54 (11 bytes)
+extern "C" BOOL __stdcall InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase);
 // @name MultiTrackView::TimeRuler::vfunc_0_off_54
 // @class MultiTrackView::TimeRuler
 // @summary Secondary-base thunk: rebases this from the RuntimeEngineStopEventListener subobject (+0x54) to the pointer stored at TimeRuler +0x30 and sets that object's byte at +0x190 to 1.
@@ -258,4 +260,14 @@ extern "C" void* __fastcall fn_00460450(void* self, int edx_unused, unsigned int
         ext_006A5C5C(self);
     }
     return self;
+}
+
+// [0x0043CEE0] MultiTrackView::View::vfunc_81 (15 bytes)
+// @name MultiTrackView::View::vfunc_81
+// @class MultiTrackView::View
+// @summary Invalidates the view's window (InvalidateRect with a NULL rect and erase=TRUE, i.e. the whole client area is repainted).
+// @field MultiTrackView::View +0x20 HWND field_0x20
+void fn_0043CEE0(void* self) {
+    HWND hWnd = lift_field<HWND>(self, 0x20);
+    InvalidateRect(hWnd, nullptr, TRUE);
 }
