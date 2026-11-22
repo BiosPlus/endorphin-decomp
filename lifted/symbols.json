@@ -5285,6 +5285,13 @@
     "summary": "Returns true when every bit set in the argument is also set in the field at +0x1C.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053AE20": {
+    "name": "Primitives::Animation::vfunc_11",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0053AE20(void* self, uint32_t mask, uint8_t set)",
+    "summary": "Toggles the mask bits in the flags word at +0x1C when \"all mask bits set\" disagrees with the low byte of set.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053B790": {
     "name": "Primitives::Marker::vfunc_30",
     "class": "Primitives::Marker",
