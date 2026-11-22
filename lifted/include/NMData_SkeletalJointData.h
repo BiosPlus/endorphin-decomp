@@ -11,9 +11,12 @@
 namespace lifted_layout {
 struct NMData_SkeletalJointData_Fields {
     // +0x0   void**                   vtable  (evidence: 0x005E0970)
+    // +0x4   void**                   field_0x04  (evidence: 0x005E20F0)
     // +0x179 uint8_t                  field_0x179  (evidence: 0x005E2340)
+    // +0x17A uint8_t                  field_0x17A  (evidence: 0x005E20F0)
     // +0x180 void*                    field_0x180  (evidence: 0x005E2340)
     // +0x18C void*                    field_0x18c  (evidence: 0x005E2340)
     // +0x22C void*                    field_0x22c  (evidence: 0x005E2340)
+    // +0x308 uint32_t                 field_0x308  (evidence: 0x005E20F0)
 };
 } // namespace lifted_layout

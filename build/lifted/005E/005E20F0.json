@@ -1,0 +1,34 @@
+{
+  "va": "0x005E20F0",
+  "size": 235,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_55",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::isAxisUnlocked",
+  "class": "NMData::SkeletalJointData",
+  "signature": "bool __thiscall fn_005E20F0(void* self, uint32_t axis)",
+  "summary": "Checks whether a specified joint axis/DOF (0..6) is unlocked based on TransformInterface state and joint lock flags.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x17A",
+      "type": "uint8_t",
+      "name": "field_0x17A"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x308",
+      "type": "uint32_t",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-22T10:35:42Z"
+}
