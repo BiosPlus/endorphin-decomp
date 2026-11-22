@@ -181,3 +181,46 @@ void* __thiscall fn_0066CF70(void* self, uint32_t arg) {
     }
     return obj;
 }
+
+// [0x0067A870]
+// @name ExprParser::BoolType::vfunc_45
+// @class ExprParser::BoolType
+// @summary Takes two ValuePtr operands (a, b). If b's child (slot 15) reports true, it scales b's child vector (slot 5) by a's child scalar (slot 1) and passes the result to a's child (slot 11); otherwise it multiplies a's child scalar (slot 1) by b's child scalar (slot 1) and passes that to a's child (slot 7). The incoming this (ecx) is unused.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+#include "lift_compat.h"
+
+namespace {
+
+// Calls vtable slot `slot` (byte offset / 4 on the 32-bit target) of `obj`,
+// passing `obj` as the implicit this argument followed by `args`.
+template <typename R, typename... Args>
+R vcall(void* obj, int slot, Args... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<R (*)(void*, Args...)>(vtbl[slot]);
+    return fn(obj, args...);
+}
+
+}  // namespace
+
+void fn_0067A870(void* self, void* a, void* b) {
+    (void)self;
+
+    if (vcall<bool>(lift_field<void*>(b, 0x04), 15, b)) {
+        float f1 = vcall<float>(lift_field<void*>(a, 0x04), 1, a);
+        void* p = vcall<void*>(lift_field<void*>(b, 0x04), 5, b);
+
+        float vec[3];
+        vec[0] = lift_field<float>(p, 0x00) * f1;
+        vec[1] = lift_field<float>(p, 0x04) * f1;
+        vec[2] = lift_field<float>(p, 0x08) * f1;
+
+        vcall<void>(lift_field<void*>(a, 0x04), 11, a, static_cast<float*>(vec));
+    } else {
+        float f1 = vcall<float>(lift_field<void*>(a, 0x04), 1, a);
+        float g = vcall<float>(lift_field<void*>(b, 0x04), 1, b);
+        float scaled = g * f1;
+
+        vcall<void>(lift_field<void*>(a, 0x04), 7, a, scaled);
+    }
+}

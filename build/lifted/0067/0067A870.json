@@ -1,0 +1,22 @@
+{
+  "va": "0x0067A870",
+  "size": 181,
+  "orig_symbol": "ExprParser::BoolType::vfunc_45",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_45",
+  "class": "ExprParser::BoolType",
+  "signature": "R vcall(void* obj, int slot, Args... args)",
+  "summary": "Takes two ValuePtr operands (a, b). If b's child (slot 15) reports true, it scales b's child vector (slot 5) by a's child scalar (slot 1) and passes the result to a's child (slot 11); otherwise it multiplies a's child scalar (slot 1) by b's child scalar (slot 1) and passes that to a's child (slot 7). The incoming this (ecx) is unused.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:20:08Z"
+}

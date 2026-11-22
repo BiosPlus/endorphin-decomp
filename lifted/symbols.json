@@ -10212,6 +10212,13 @@
     "summary": "Computes the difference between a float getter on a0-\u003e+4 and a float getter on a1-\u003e+4, then forwards that difference to a0-\u003e+4's vfunc_7 and returns its result.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0067A870": {
+    "name": "ExprParser::BoolType::vfunc_45",
+    "class": "ExprParser::BoolType",
+    "signature": "R vcall(void* obj, int slot, Args... args)",
+    "summary": "Takes two ValuePtr operands (a, b). If b's child (slot 15) reports true, it scales b's child vector (slot 5) by a's child scalar (slot 1) and passes the result to a's child (slot 11); otherwise it multiplies a's child scalar (slot 1) by b's child scalar (slot 1) and passes that to a's child (slot 7). The incoming this (ecx) is unused.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0067A930": {
     "name": "ExprParser::BoolType::vfunc_47",
     "class": "ExprParser::BoolType",
