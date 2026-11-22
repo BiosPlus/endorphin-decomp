@@ -27,6 +27,13 @@
     "summary": "This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C65B0": {
+    "name": "NMData::ForceEventData::vfunc_1_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void fn_004C65B0(void* self)",
+    "summary": "This-adjustor thunk: rebases this by -0xC (to the primary base subobject) and tail-forwards to vfunc_0.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",

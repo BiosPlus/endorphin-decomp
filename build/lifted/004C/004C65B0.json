@@ -1,0 +1,14 @@
+{
+  "va": "0x004C65B0",
+  "size": 8,
+  "orig_symbol": "NMData::ForceEventData::vfunc_1_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::ForceEventData::vfunc_1_off_C",
+  "class": "NMData::ForceEventData",
+  "signature": "void fn_004C65B0(void* self)",
+  "summary": "This-adjustor thunk: rebases this by -0xC (to the primary base subobject) and tail-forwards to vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:06:17Z"
+}
