@@ -10,6 +10,7 @@
 // Recovered field layout for Geometry::FileType:
 namespace lifted_layout {
 struct Geometry_FileType_Fields {
-    // +0x4   void*                    embedded_base_subobject  (evidence: 0x005B1980)
+    // +0x4   void*                    embedded_base_subobject  (evidence: 0x005B1980) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string              field_0x04  (evidence: 0x005B35D0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

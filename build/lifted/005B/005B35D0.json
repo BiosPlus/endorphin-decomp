@@ -1,0 +1,22 @@
+{
+  "va": "0x005B35D0",
+  "size": 89,
+  "orig_symbol": "Geometry::FileType::vfunc_0",
+  "src_path": "src/Geometry/FileType.cpp",
+  "lifted_path": "lifted/Geometry/FileType.cpp",
+  "name": "Geometry::FileType::vfunc_0",
+  "class": "Geometry::FileType",
+  "signature": "void fn_005B35D0(void* self, int deleteFlag)",
+  "summary": "Scalar deleting destructor: destroys the member string at +0x04, runs the GeometryType base destructor, and frees the object when bit 0 of deleteFlag is set.",
+  "fields": [
+    {
+      "class": "Geometry::FileType",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:13:03Z"
+}
