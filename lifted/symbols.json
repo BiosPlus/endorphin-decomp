@@ -7389,6 +7389,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0062CCF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0062E3C0": {
+    "name": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes,checkDistance\u003e::vfunc_16",
+    "class": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes,checkDistance\u003e",
+    "signature": "void* fn_0062E3C0(void* self)",
+    "summary": "RTTI-checked cast of self to the CompoundSensorPlanes::checkDistance FunctionType descriptor; returns the cast pointer or NULL.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x00630C90": {
     "name": "EffectorSkeletal::vfunc_31",
     "class": "EffectorSkeletal",
