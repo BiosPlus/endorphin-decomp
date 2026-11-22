@@ -3145,6 +3145,13 @@
     "summary": "Returns the byte at this+0xB4 and resets it to zero.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00499AF0": {
+    "name": "NMData::Transition::vfunc_6_off_10",
+    "class": "NMData::Transition",
+    "signature": "void* fn_00499AF0(void* out)",
+    "summary": "Constructs a std::string in the caller-provided return slot from the C string referenced by mem_00A9F354 and returns that slot.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x00499B30": {
     "name": "NMData::Transition::vfunc_17",
     "class": "NMData::Transition",
