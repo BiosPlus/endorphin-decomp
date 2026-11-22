@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/Geometry/auto_tiny.cpp
 #include "lift_compat.h"
 extern "C" int mem_00B59400;
+extern "C" int mem_0095F7D8;
 
 // [0x005B1110] Geometry::AnimationType::vfunc_8 (6 bytes)
 // @name Geometry::AnimationType::vfunc_8
@@ -20,4 +21,14 @@ int* fn_005B1110(void* self) {
 extern "C" float __stdcall fn_005B1900(void* self, const float* value_ptr) {
     (void)self;
     return *value_ptr;
+}
+
+// [0x005B10F0] Geometry::AnimationType::vfunc_4 (9 bytes)
+// @name Geometry::AnimationType::vfunc_4
+// @class Geometry::AnimationType
+// @summary Returns the float constant stored at mem_0095F7D8 (0x7F7FFFFF, FLT_MAX); ignores this.
+// @field AnimationType +0x00 void* vtable
+float fn_005B10F0(void* self) {
+    (void)self;
+    return std::bit_cast<float>(mem_0095F7D8);
 }

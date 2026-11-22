@@ -1,0 +1,22 @@
+{
+  "va": "0x005B10F0",
+  "size": 9,
+  "orig_symbol": "Geometry::AnimationType::vfunc_4",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::AnimationType::vfunc_4",
+  "class": "Geometry::AnimationType",
+  "signature": "float fn_005B10F0(void* self)",
+  "summary": "Returns the float constant stored at mem_0095F7D8 (0x7F7FFFFF, FLT_MAX); ignores this.",
+  "fields": [
+    {
+      "class": "AnimationType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T06:05:58Z"
+}

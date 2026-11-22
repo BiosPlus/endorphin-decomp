@@ -10,6 +10,6 @@
 // Recovered field layout for AnimationType:
 namespace lifted_layout {
 struct AnimationType_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x005B1110)
+    // +0x0   void*                    vtable  (evidence: 0x005B10F0, 0x005B1110)
 };
 } // namespace lifted_layout

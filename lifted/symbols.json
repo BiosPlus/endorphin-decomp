@@ -522,6 +522,13 @@
     "summary": "Epilogue fragment: pops saved esi and releases 0x30 bytes of stack locals; no portable C++ equivalent for the stack unwind, so the body is empty.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005B10F0": {
+    "name": "Geometry::AnimationType::vfunc_4",
+    "class": "Geometry::AnimationType",
+    "signature": "float fn_005B10F0(void* self)",
+    "summary": "Returns the float constant stored at mem_0095F7D8 (0x7F7FFFFF, FLT_MAX); ignores this.",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",
