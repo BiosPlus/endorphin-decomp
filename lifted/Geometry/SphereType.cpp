@@ -14,3 +14,22 @@ float fn_005B1990(void* self) {
     const double r = static_cast<double>(radius);
     return static_cast<float>(k * r * r * r);
 }
+
+// [0x005B4150]
+// @name Geometry::SphereType::vfunc_18
+// @class Geometry::SphereType
+// @summary Dispatches to SphereType helper when tag == 0x2f7 or fallback otherwise, returning arg1
+
+#include "lift_compat.h"
+
+extern "C" void __cdecl ext_005B3FF0(uint32_t, uint32_t);
+extern "C" void __cdecl ext_00671F30(uint32_t);
+
+uint32_t __thiscall fn_005B4150(void* /*this*/, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    if (arg2 == 0x2f7) {
+        ext_005B3FF0(arg1, arg3);
+    } else {
+        ext_00671F30(arg1);
+    }
+    return arg1;
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4150",
+  "size": 61,
+  "orig_symbol": "Geometry::SphereType::vfunc_18",
+  "src_path": "src/Geometry/SphereType.cpp",
+  "lifted_path": "lifted/Geometry/SphereType.cpp",
+  "name": "Geometry::SphereType::vfunc_18",
+  "class": "Geometry::SphereType",
+  "signature": "uint32_t __thiscall fn_005B4150(void* /*this*/, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Dispatches to SphereType helper when tag == 0x2f7 or fallback otherwise, returning arg1",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:55:03Z"
+}
