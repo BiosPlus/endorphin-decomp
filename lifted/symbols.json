@@ -3976,6 +3976,13 @@
     "summary": "Calls virtual slot 1 of arg-\u003efield_0x04 (passing arg) and adds the float result into *ptr.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004BA260": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_37",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "extern \"C\" void __stdcall fn_004BA260(void* self)",
+    "summary": "Calls sub_004B99B0 to obtain a 32-bit result and stores it into this+0x04.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004BA580": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",

@@ -266,3 +266,16 @@ extern "C" void __stdcall fn_0049E2E0(void* self) {
     uint32_t eax = ext_0049CFF0();
     lift_field<uint32_t>(self, 0x04) = eax;
 }
+
+// [0x004BA260]
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_37
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Calls sub_004B99B0 to obtain a 32-bit result and stores it into this+0x04.
+// @field ExprParser::PrimitiveProxyType<float> +0x04 uint32_t field_0x04
+
+extern "C" uint32_t __cdecl ext_004B99B0(void);
+
+extern "C" void __stdcall fn_004BA260(void* self) {
+    uint32_t eax = ext_004B99B0();
+    lift_field<uint32_t>(self, 0x04) = eax;
+}
