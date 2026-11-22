@@ -60,5 +60,7 @@
     "0x007118F0",
     "0x007118FA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T01:23:22Z"
 }
