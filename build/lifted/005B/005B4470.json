@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4470",
+  "size": 61,
+  "orig_symbol": "Geometry::ArrowType::vfunc_18",
+  "src_path": "src/Geometry/ArrowType.cpp",
+  "lifted_path": "lifted/Geometry/ArrowType.cpp",
+  "name": "Geometry::ArrowType::vfunc_18",
+  "class": "Geometry::ArrowType",
+  "signature": "uint32_t __stdcall fn_005B4470(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Dispatches to ext_005B3FF0 when arg2 equals 0x29e, otherwise calls ext_00671F30, returning arg1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:55:25Z"
+}

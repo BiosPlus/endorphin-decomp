@@ -7561,6 +7561,13 @@
     "summary": "Computes a weighted sum of cuboid face areas projected onto a 3D vector",
     "lifted_path": "lifted/Geometry/CuboidType.cpp"
   },
+  "0x005B1740": {
+    "name": "Geometry::CylinderType::vfunc_5",
+    "class": "Geometry::CylinderType",
+    "signature": "float __thiscall fn_005B1740(void* self, void* geom, const float* dir)",
+    "summary": "Computes projected area of a cylinder along a direction vector",
+    "lifted_path": "lifted/Geometry/CylinderType.cpp"
+  },
   "0x005B17B0": {
     "name": "Geometry::SphylType::vfunc_5",
     "class": "Geometry::SphylType",
@@ -7630,6 +7637,13 @@
     "signature": "uint32_t __thiscall fn_005B4150(void* /*this*/, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
     "summary": "Dispatches to SphereType helper when tag == 0x2f7 or fallback otherwise, returning arg1",
     "lifted_path": "lifted/Geometry/SphereType.cpp"
+  },
+  "0x005B4470": {
+    "name": "Geometry::ArrowType::vfunc_18",
+    "class": "Geometry::ArrowType",
+    "signature": "uint32_t __stdcall fn_005B4470(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Dispatches to ext_005B3FF0 when arg2 equals 0x29e, otherwise calls ext_00671F30, returning arg1.",
+    "lifted_path": "lifted/Geometry/ArrowType.cpp"
   },
   "0x005B4860": {
     "name": "Geometry::AnimationType::vfunc_12",
