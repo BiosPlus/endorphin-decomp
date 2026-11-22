@@ -25,3 +25,23 @@ void fn_0053D810(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     std::memcpy(base + 0x1C, &flags, sizeof(flags));
     std::memcpy(base + 0x08, &arg3, sizeof(arg3));
 }
+
+// [0x0053C8D0]
+// @name Primitives::Sensor::vfunc_29
+// @class Primitives::Sensor
+// @summary Resets the base animation state, then releases and clears the owned object at +0x3C.
+// @field Primitives::Sensor +0x3C void* field_0x3c
+
+void ext_0053AD10(void* self);
+
+void fn_0053C8D0(void* self) {
+    ext_0053AD10(self);
+
+    void* owned = lift_field<void*>(self, 0x3C);
+    if (owned != nullptr) {
+        // Slot 0 of the owned object's vtable is the deleting destructor; arg 1 = free memory.
+        void** vtbl = *reinterpret_cast<void***>(owned);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(owned, 1);
+    }
+    lift_field<void*>(self, 0x3C) = nullptr;
+}

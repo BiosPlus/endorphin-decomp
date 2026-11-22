@@ -1,0 +1,22 @@
+{
+  "va": "0x0053C8D0",
+  "size": 32,
+  "orig_symbol": "Primitives::Sensor::vfunc_29",
+  "src_path": "src/Primitives/Sensor.cpp",
+  "lifted_path": "lifted/Primitives/Sensor.cpp",
+  "name": "Primitives::Sensor::vfunc_29",
+  "class": "Primitives::Sensor",
+  "signature": "void fn_0053C8D0(void* self)",
+  "summary": "Resets the base animation state, then releases and clears the owned object at +0x3C.",
+  "fields": [
+    {
+      "class": "Primitives::Sensor",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:14Z"
+}
