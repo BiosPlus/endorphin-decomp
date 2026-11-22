@@ -5844,6 +5844,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00582AE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055BE30": {
+    "name": "AcclaimIO::vfunc_19",
+    "class": "AcclaimIO",
+    "signature": "bool fn_0055BE30(void* self)",
+    "summary": "Calls the virtual at vtable byte offset 0xE4 (thiscall, no args) and returns true only if its result has bit 0x2 set and the byte at +0x428 is non-zero.",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x0055BEB0": {
     "name": "AcclaimIO::vfunc_0",
     "class": "AcclaimIO",

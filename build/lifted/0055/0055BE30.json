@@ -1,0 +1,28 @@
+{
+  "va": "0x0055BE30",
+  "size": 37,
+  "orig_symbol": "AcclaimIO::vfunc_19",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::vfunc_19",
+  "class": "AcclaimIO",
+  "signature": "bool fn_0055BE30(void* self)",
+  "summary": "Calls the virtual at vtable byte offset 0xE4 (thiscall, no args) and returns true only if its result has bit 0x2 set and the byte at +0x428 is non-zero.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x428",
+      "type": "uint8_t",
+      "name": "field_0x428"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:06Z"
+}

@@ -17,3 +17,22 @@ bool fn_00584660(void* self) {
     }
     return lift_field<uint8_t>(self, 0x428) != 0;
 }
+
+// [0x0055BE30] AcclaimIO::vfunc_19 (37 bytes)
+// @name AcclaimIO::vfunc_19
+// @class AcclaimIO
+// @summary Calls the virtual at vtable byte offset 0xE4 (thiscall, no args) and returns true only if its result has bit 0x2 set and the byte at +0x428 is non-zero.
+// @field AcclaimIO +0x00 void** vtable
+// @field AcclaimIO +0x428 uint8_t field_0x428
+bool fn_0055BE30(void* self) {
+    using FlagsFn = uint8_t (*)(void*);
+
+    void* vtable = lift_field<void*>(self, 0x00);
+    FlagsFn flags_fn = reinterpret_cast<FlagsFn>(lift_field<void*>(vtable, 0xE4));
+    const uint8_t flags = flags_fn(self);
+
+    if ((flags & 0x02) == 0) {
+        return false;
+    }
+    return lift_field<uint8_t>(self, 0x428) != 0;
+}
