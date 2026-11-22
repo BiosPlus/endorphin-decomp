@@ -4,11 +4,107 @@
   "orig_symbol": "NMData::BehaviourData::vfunc_2_off_154",
   "src_path": "src/NMData/auto_tiny.cpp",
   "lifted_path": "lifted/NMData/auto_tiny.cpp",
-  "name": "NMData::BehaviourData::vfunc_2_off_154",
-  "class": "NMData::BehaviourData",
-  "signature": "void fn_004A9B50(void* self)",
-  "summary": "Forwards virtual slot 2 of the embedded subobject at +0x228 (tail-call thunk).",
+  "name": "NMData::State::vfunc_9_off_10",
+  "class": "NMData::State",
+  "signature": "void fn_00499B40(void* self)",
+  "summary": "This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.",
   "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "adjusted_base"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB4",
+      "type": "uint8_t",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x150",
+      "type": "DWORD",
+      "name": "field_150"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x184",
+      "type": "int",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "SelectionVariable::Listener::vptr"
+    },
     {
       "class": "NMData::BehaviourData",
       "offset": "+0x228",
@@ -18,5 +114,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:24:14Z"
+  "lifted_at": "2026-11-22T07:24:20Z"
 }

@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::GraphicData:
 namespace lifted_layout {
 struct NMData_GraphicData_Fields {
-    // +0x150 DWORD                    field_150  (evidence: 0x00587D40)
+    // +0x150 DWORD                    field_150  (evidence: 0x004A9B50, 0x00587D40)
 };
 } // namespace lifted_layout

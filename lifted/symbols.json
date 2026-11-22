@@ -952,10 +952,10 @@
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x004A9B50": {
-    "name": "NMData::BehaviourData::vfunc_2_off_154",
-    "class": "NMData::BehaviourData",
-    "signature": "void fn_004A9B50(void* self)",
-    "summary": "Forwards virtual slot 2 of the embedded subobject at +0x228 (tail-call thunk).",
+    "name": "NMData::State::vfunc_9_off_10",
+    "class": "NMData::State",
+    "signature": "void fn_00499B40(void* self)",
+    "summary": "This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x004AA580": {

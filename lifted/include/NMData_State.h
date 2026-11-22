@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::State:
 namespace lifted_layout {
 struct NMData_State_Fields {
-    // +0x1C  void*                    adjusted_base  (evidence: 0x006744A0)
+    // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
 };
 } // namespace lifted_layout
