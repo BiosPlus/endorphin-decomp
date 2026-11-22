@@ -15,6 +15,7 @@ extern "C" int mem_0092E5B8;
 extern "C" int mem_0092EAC8;
 extern "C" int mem_0092F694;
 extern "C" int mem_0092F394;
+extern "C" int mem_0092F82C;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -167,4 +168,13 @@ void* fn_0042F3B0(void* self) {
 int* fn_0042EA40(void* self) {
     (void)self;
     return &mem_0092F394;
+}
+
+// [0x0042F920] MainFrame::vfunc_0 (6 bytes)
+// @name MainFrame::vfunc_0
+// @class MainFrame
+// @summary Virtual getter returning the address of the global slot mem_0092F82C (self is unused).
+extern "C" int* __fastcall fn_0042F920(void* self) {
+    (void)self;
+    return &mem_0092F82C;
 }

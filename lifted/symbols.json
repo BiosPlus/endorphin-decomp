@@ -234,6 +234,13 @@
     "summary": "Virtual getter returning the address of the global data slot mem_0092F694 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0042F920": {
+    "name": "MainFrame::vfunc_0",
+    "class": "MainFrame",
+    "signature": "extern \"C\" int* __fastcall fn_0042F920(void* self)",
+    "summary": "Virtual getter returning the address of the global slot mem_0092F82C (self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",
