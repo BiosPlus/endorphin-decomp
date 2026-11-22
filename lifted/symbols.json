@@ -3131,6 +3131,13 @@
     "summary": "If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 7 of its +0x10 sub-object; otherwise does nothing.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00496FE0": {
+    "name": "NMData::Transition::vfunc_1_off_8",
+    "class": "NMData::Transition",
+    "signature": "uint32_t fn_00496FE0(void* self)",
+    "summary": "Forwards to ext_004871D0 when +0xB0 is null; otherwise calls vtable slot 1 of the object at +0xB0+0x10 and returns its result.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004973A0": {
     "name": "NMData::Transition::getAndClearField_B4",
     "class": "NMData::Transition",
