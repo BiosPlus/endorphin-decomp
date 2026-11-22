@@ -10,6 +10,10 @@
 // Recovered field layout for Primitives::Sensor2:
 namespace lifted_layout {
 struct Primitives_Sensor2_Fields {
+    // +0x38  void*                    field_0x38  (evidence: 0x0053D9E0)
+    // +0x3C  void*                    field_0x3c  (evidence: 0x0053D9E0)
+    // +0x40  void*                    field_0x40  (evidence: 0x0053D9E0)
+    // +0x5C  void*                    field_0x5c  (evidence: 0x0053D9E0)
     // +0x60  float                    field_0x60  (evidence: 0x0052FA20, 0x0053C970, 0x0053C980)
 };
 } // namespace lifted_layout

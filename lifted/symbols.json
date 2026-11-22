@@ -5691,6 +5691,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053C9A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053D9E0": {
+    "name": "Primitives::Sensor2::vfunc_28",
+    "class": "Primitives::Sensor2",
+    "signature": "void __thiscall fn_0053D9E0(void* self, int arg)",
+    "summary": "Ignores arg 2; otherwise dispatches virtual calls on sub-objects (+0x38/+0x3c/+0x40/+0x5c) depending on whether +0x5c is set.",
+    "lifted_path": "lifted/Primitives/Sensor2.cpp"
+  },
   "0x0053DAA0": {
     "name": "Primitives::Cylinder::vfunc_25",
     "class": "Primitives::Cylinder",

@@ -1,0 +1,40 @@
+{
+  "va": "0x0053D9E0",
+  "size": 89,
+  "orig_symbol": "Primitives::Sensor2::vfunc_28",
+  "src_path": "src/Primitives/Sensor2.cpp",
+  "lifted_path": "lifted/Primitives/Sensor2.cpp",
+  "name": "Primitives::Sensor2::vfunc_28",
+  "class": "Primitives::Sensor2",
+  "signature": "void __thiscall fn_0053D9E0(void* self, int arg)",
+  "summary": "Ignores arg 2; otherwise dispatches virtual calls on sub-objects (+0x38/+0x3c/+0x40/+0x5c) depending on whether +0x5c is set.",
+  "fields": [
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:55Z"
+}
