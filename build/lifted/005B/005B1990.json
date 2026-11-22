@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1990",
+  "size": 42,
+  "orig_symbol": "Geometry::SphereType::vfunc_3",
+  "src_path": "src/Geometry/SphereType.cpp",
+  "lifted_path": "lifted/Geometry/SphereType.cpp",
+  "name": "Geometry::SphereType::vfunc_3",
+  "class": "Geometry::SphereType",
+  "signature": "float fn_005B1990(void* self)",
+  "summary": "Returns the volume of the sphere, (4/3)*pi*r^3, where r is the value returned by ext_005B11E0(self, 0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:54:40Z"
+}

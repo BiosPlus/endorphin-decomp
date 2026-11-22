@@ -7575,6 +7575,13 @@
     "summary": "This-adjustor thunk: advances this by 4 bytes to reach the embedded GeometryType base, then forwards the call (and its stack argument) to the function pointer stored at mem_00924FDC (MSVCP80 std::string::operator=).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1990": {
+    "name": "Geometry::SphereType::vfunc_3",
+    "class": "Geometry::SphereType",
+    "signature": "float fn_005B1990(void* self)",
+    "summary": "Returns the volume of the sphere, (4/3)*pi*r^3, where r is the value returned by ext_005B11E0(self, 0).",
+    "lifted_path": "lifted/Geometry/SphereType.cpp"
+  },
   "0x005B3590": {
     "name": "Geometry::vfunc_0",
     "class": "Geometry",
