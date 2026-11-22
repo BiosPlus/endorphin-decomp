@@ -10,6 +10,9 @@
 // Recovered field layout for Primitives::Hinge:
 namespace lifted_layout {
 struct Primitives_Hinge_Fields {
-    // +0x3C  float                    field_0x3c  (evidence: 0x0052FA20, 0x0052FB60)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053CB60)
+    // +0x3C  float                    field_0x3c  (evidence: 0x0052FA20, 0x0052FB60, 0x0053CB60)
+    // +0x5C  subobject                field_0x5c  (evidence: 0x0053CB60)
+    // +0xA0  subobject                field_0xa0  (evidence: 0x0053CB60)
 };
 } // namespace lifted_layout

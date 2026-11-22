@@ -6006,6 +6006,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053BCA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053CB60": {
+    "name": "Primitives::Hinge::vfunc_28",
+    "class": "Primitives::Hinge",
+    "signature": "void fn_0053CB60(void* self)",
+    "summary": "Draws the hinge's line-segment marker and, when flag 0x20000 is set, its quad outline, then draws two attached sub-objects via vtable slot 0x58 inside a GL attribute/matrix push-pop.",
+    "lifted_path": "lifted/Primitives/Hinge.cpp"
+  },
   "0x0053D0B0": {
     "name": "Primitives::SkeletalJoint::vfunc_0",
     "class": "Primitives::SkeletalJoint",

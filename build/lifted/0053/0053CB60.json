@@ -1,0 +1,40 @@
+{
+  "va": "0x0053CB60",
+  "size": 1281,
+  "orig_symbol": "Primitives::Hinge::vfunc_28",
+  "src_path": "src/Primitives/Hinge.cpp",
+  "lifted_path": "lifted/Primitives/Hinge.cpp",
+  "name": "Primitives::Hinge::vfunc_28",
+  "class": "Primitives::Hinge",
+  "signature": "void fn_0053CB60(void* self)",
+  "summary": "Draws the hinge's line-segment marker and, when flag 0x20000 is set, its quad outline, then draws two attached sub-objects via vtable slot 0x58 inside a GL attribute/matrix push-pop.",
+  "fields": [
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x5C",
+      "type": "subobject",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0xA0",
+      "type": "subobject",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:15Z"
+}
