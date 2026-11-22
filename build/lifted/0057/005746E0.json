@@ -1,0 +1,40 @@
+{
+  "va": "0x005746E0",
+  "size": 728,
+  "orig_symbol": "OBJIO::vfunc_12",
+  "src_path": "src/classes/OBJIO.cpp",
+  "lifted_path": "lifted/classes/OBJIO.cpp",
+  "name": "OBJIO::vfunc_12",
+  "class": "OBJIO",
+  "signature": "extern \"C\" void fn_005746E0(uint32_t this_ptr, uint32_t arg0)",
+  "summary": "Loads an OBJ file into a new scene object, applies scale/orientation, and registers it.",
+  "fields": [
+    {
+      "class": "OBJIO",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "OBJIO",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "OBJIO",
+      "offset": "+0x3D0",
+      "type": "uint32_t",
+      "name": "field_0x3d0"
+    },
+    {
+      "class": "OBJIO",
+      "offset": "+0x420",
+      "type": "uint32_t",
+      "name": "field_0x420"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T11:15:12Z"
+}

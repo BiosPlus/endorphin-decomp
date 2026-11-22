@@ -6758,6 +6758,13 @@
     "summary": "Resolves a pointer from the argument object via sub_00640390 using the constant key at 0x92FE24, forwards it to NMFileIO::vfunc_3 on this, and returns the argument.",
     "lifted_path": "lifted/classes/OBJIO.cpp"
   },
+  "0x005746E0": {
+    "name": "OBJIO::vfunc_12",
+    "class": "OBJIO",
+    "signature": "extern \"C\" void fn_005746E0(uint32_t this_ptr, uint32_t arg0)",
+    "summary": "Loads an OBJ file into a new scene object, applies scale/orientation, and registers it.",
+    "lifted_path": "lifted/classes/OBJIO.cpp"
+  },
   "0x00574CF0": {
     "name": "sub_00574CF0",
     "signature": "extern \"C\" void __fastcall fn_00574CF0(void* self)",
