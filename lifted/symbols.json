@@ -8838,6 +8838,13 @@
     "summary": "Returns the float at element `index` of the indexed float array at this+0x30 (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/Sensors/auto_tiny.cpp"
   },
+  "0x0062BDC0": {
+    "name": "Sensors::HorizontalAxisSensor::vfunc_27",
+    "class": "Sensors::HorizontalAxisSensor",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Sums (B - A) vector deltas over an element array (A via objA-\u003evfunc_5(elem), B via objB-\u003evfunc_5(\u0026elem-\u003efield_0x08)), and if the sum's magnitude is \u003e 0 stores sub_0067B7F0's returned float[3] into self+0x30.",
+    "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp"
+  },
   "0x0062C5E0": {
     "name": "Sensors::AxisSensor::vfunc_0",
     "class": "Sensors::AxisSensor",

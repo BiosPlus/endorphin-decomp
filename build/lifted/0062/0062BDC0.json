@@ -1,0 +1,34 @@
+{
+  "va": "0x0062BDC0",
+  "size": 354,
+  "orig_symbol": "Sensors::HorizontalAxisSensor::vfunc_27",
+  "src_path": "src/Sensors/HorizontalAxisSensor.cpp",
+  "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp",
+  "name": "Sensors::HorizontalAxisSensor::vfunc_27",
+  "class": "Sensors::HorizontalAxisSensor",
+  "signature": "static inline void* as_ptr(uint32_t v)",
+  "summary": "Sums (B - A) vector deltas over an element array (A via objA-\u003evfunc_5(elem), B via objB-\u003evfunc_5(\u0026elem-\u003efield_0x08)), and if the sum's magnitude is \u003e 0 stores sub_0067B7F0's returned float[3] into self+0x30.",
+  "fields": [
+    {
+      "class": "Sensors::HorizontalAxisSensor",
+      "offset": "+0x30",
+      "type": "float[3]",
+      "name": "output_vec"
+    },
+    {
+      "class": "Sensors::HorizontalAxisSensor",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "elements_begin"
+    },
+    {
+      "class": "Sensors::HorizontalAxisSensor",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "elements_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:21:11Z"
+}
