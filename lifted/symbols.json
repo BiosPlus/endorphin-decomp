@@ -2216,6 +2216,41 @@
     "summary": "Pure jump thunk forwarding to sub_0052F4E0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005B1030": {
+    "name": "Geometry::CuboidType::vfunc_2",
+    "class": "Geometry::CuboidType",
+    "signature": "uint32_t __stdcall fn_005B1030(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/Geometry/CuboidType.cpp"
+  },
+  "0x005B1050": {
+    "name": "Geometry::CylinderType::vfunc_2",
+    "class": "Geometry::CylinderType",
+    "signature": "uint32_t __stdcall fn_005B1050(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/Geometry/CylinderType.cpp"
+  },
+  "0x005B1070": {
+    "name": "Geometry::SphylType::vfunc_2",
+    "class": "Geometry::SphylType",
+    "signature": "uint32_t __stdcall fn_005B1070(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/Geometry/SphylType.cpp"
+  },
+  "0x005B1090": {
+    "name": "Geometry::PlaneType::vfunc_2",
+    "class": "Geometry::PlaneType",
+    "signature": "uint32_t __stdcall fn_005B1090(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/Geometry/PlaneType.cpp"
+  },
+  "0x005B10B0": {
+    "name": "Geometry::FrustumType::vfunc_2",
+    "class": "Geometry::FrustumType",
+    "signature": "uint32_t __stdcall fn_005B10B0(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/Geometry/FrustumType.cpp"
+  },
   "0x005B10F0": {
     "name": "Geometry::AnimationType::vfunc_4",
     "class": "Geometry::AnimationType",
@@ -2989,6 +3024,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
     "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
   },
+  "0x0066BCE0": {
+    "name": "ExprParser::VPtrProxyType::vfunc_47",
+    "class": "ExprParser::VPtrProxyType",
+    "signature": "uint32_t fn_0066BCE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066AF80 (ExprParser::ExtROType::vfunc_15).",
+    "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
+  },
   "0x0066CE20": {
     "name": "ExprParser::Vector3Type::vfunc_24",
     "class": "ExprParser::Vector3Type",
@@ -3037,6 +3079,13 @@
     "signature": "extern \"C\" uint32_t __stdcall fn_0067A690(const uint32_t* self, const uint32_t* other)",
     "summary": "Stdcall (ret 8) type-match test: returns 1 if the first dword of self equals the first dword of the argument (i.e. both share the same vtable), else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
+  "0x0067A6E0": {
+    "name": "ExprParser::BoolType::vfunc_34",
+    "class": "ExprParser::BoolType",
+    "signature": "uint32_t __stdcall fn_0067A6E0(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x0067A970": {
     "name": "ExprParser::BoolType::vfunc_28",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BCE0",
+  "size": 23,
+  "orig_symbol": "ExprParser::VPtrProxyType::vfunc_47",
+  "src_path": "src/ExprParser/VPtrProxyType.cpp",
+  "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp",
+  "name": "ExprParser::VPtrProxyType::vfunc_47",
+  "class": "ExprParser::VPtrProxyType",
+  "signature": "uint32_t fn_0066BCE0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0066AF80 (ExprParser::ExtROType::vfunc_15).",
+  "fields": [
+    {
+      "class": "ExprParser::VPtrProxyType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:25:50Z"
+}

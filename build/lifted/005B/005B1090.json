@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1090",
+  "size": 17,
+  "orig_symbol": "Geometry::PlaneType::vfunc_2",
+  "src_path": "src/Geometry/PlaneType.cpp",
+  "lifted_path": "lifted/Geometry/PlaneType.cpp",
+  "name": "Geometry::PlaneType::vfunc_2",
+  "class": "Geometry::PlaneType",
+  "signature": "uint32_t __stdcall fn_005B1090(uint32_t first, uint32_t second)",
+  "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:25:50Z"
+}
