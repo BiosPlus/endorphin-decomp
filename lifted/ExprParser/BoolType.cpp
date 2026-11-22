@@ -102,43 +102,6 @@ void __stdcall fn_0067A930(void* self) {
     reinterpret_cast<void (__thiscall*)(void*, void*, float)>(vtbl[7])(sub, self, -x);
 }
 
-// [0x0067A820] ExprParser::BoolType::vfunc_44 (80 bytes)
-// @name ExprParser::BoolType::vfunc_44
-// @class ExprParser::BoolType
-// @summary Computes the difference between a float getter on a0->+4 and a float getter on a1->+4, then forwards that difference to a0->+4's vfunc_7 and returns its result.
-// @field ExprParser::BoolType +0x04 void* field_0x04
-//
-// Note: a1 is also read at +0x04 (its own +0x04 object is vcalled through slot 1); the class of a1 is not known here.
-
-namespace {
-
-// Returns the virtual slot `index` of `obj` (raw vtable lookup, slot = 4-byte pointer).
-inline void* vslot(void* obj, std::size_t index) {
-    void** vtable = *static_cast<void***>(obj);
-    return vtable[index];
-}
-
-}  // namespace
-
-float fn_0067A820(void* a0, void* a1) {
-    // Object held at a0+0x04.
-    void* b = lift_field<void*>(a0, 4);
-    // Slot 1 of b: float getter called with a0 as its stack argument.
-    using GetterWithArg = float (*)(void* self, void* arg);
-    const float v1 = reinterpret_cast<GetterWithArg>(vslot(b, 1))(b, a0);
-
-    // Object held at a1+0x04; slot 1 float getter called with a1 as its argument.
-    void* c = lift_field<void*>(a1, 4);
-    const float v2 = reinterpret_cast<GetterWithArg>(vslot(c, 1))(c, a1);
-
-    // Difference computed in double precision (x87 fsubr on the loaded values).
-    const float diff = static_cast<float>(static_cast<double>(v1) - static_cast<double>(v2));
-
-    // Slot 7 (+0x1c) of b: float method taking a0 and the difference; its result is returned.
-    using ApplyFn = float (*)(void* self, void* ctx, float value);
-    return reinterpret_cast<ApplyFn>(vslot(b, 7))(b, a0, diff);
-}
-
 // [0x0067AA50] ExprParser::BoolType::vfunc_46 (79 bytes)
 // @name ExprParser::BoolType::vfunc_46
 // @class ExprParser::BoolType
@@ -168,4 +131,41 @@ uint32_t fn_0067AA50(void* /*unused*/, void* self) {
     inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x04);
     vtbl = *reinterpret_cast<void***>(inner);
     return reinterpret_cast<Slot7Fn>(vtbl[7])(inner, self, value);
+}
+
+// [0x0067A820] ExprParser::BoolType::vfunc_44 (80 bytes)
+// @name ExprParser::BoolType::vfunc_44
+// @class ExprParser::BoolType
+// @summary Computes the difference between a float getter on a0->+4 and a float getter on a1->+4, then forwards that difference to a0->+4's vfunc_7 and returns its result.
+// @field ExprParser::BoolType +0x04 void* field_0x04
+//
+// Note: a1 is also read at +0x04 (its own +0x04 object is vcalled through slot 1); the class of a1 is not known here.
+
+namespace {
+
+// Returns the virtual slot `index` of `obj` (raw vtable lookup, slot = pointer-sized entry).
+inline void* vslot(void* obj, std::size_t index) {
+    void** vtable = *static_cast<void***>(obj);
+    return vtable[index];
+}
+
+}  // namespace
+
+float fn_0067A820(void* a0, void* a1) {
+    // Object held at a0+0x04.
+    void* b = lift_field<void*>(a0, 4);
+    // Slot 1 of b: float getter called with a0 as its stack argument.
+    using GetterWithArg = float (*)(void* self, void* arg);
+    const float v1 = reinterpret_cast<GetterWithArg>(vslot(b, 1))(b, a0);
+
+    // Object held at a1+0x04; slot 1 float getter called with a1 as its argument.
+    void* c = lift_field<void*>(a1, 4);
+    const float v2 = reinterpret_cast<GetterWithArg>(vslot(c, 1))(c, a1);
+
+    // Difference computed in double precision (x87 fsubr on the loaded values).
+    const float diff = static_cast<float>(static_cast<double>(v1) - static_cast<double>(v2));
+
+    // Slot 7 (+0x1c) of b: float method taking a0 and the difference; its result is returned.
+    using ApplyFn = float (*)(void* self, void* ctx, float value);
+    return reinterpret_cast<ApplyFn>(vslot(b, 7))(b, a0, diff);
 }
