@@ -3382,6 +3382,13 @@
     "summary": "Stdcall leaf (ret 4): takes one pointer argument and returns the 32-bit value stored at its first dword.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C010": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_0",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "void* fn_0049C010(void* target, const void* src)",
+    "summary": "Follows the source proxy's value_ptr, passes the pointed-to int32 to sub_006720C0 on the first argument, and returns the first argument (stdcall, ret 8).",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049C040": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_1",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
