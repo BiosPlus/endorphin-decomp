@@ -173,3 +173,23 @@ void* fn_0066CBA0(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00A85538), 0);
 }
+
+// [0x004CB440] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_4 (40 bytes)
+#include "lift_compat.h"
+
+// Known callee 0x004CA560: sub_004CA560 (Virtual dispatch thunk: forwards to vtable slot at +0x160.)
+extern "C" void ext_004CA560(void* self);
+// MSVCP80 std::basic_string<char> default constructor, reached via IAT slot mem_00924FE8 (value 0x006290D8).
+extern "C" void ext_006290D8(void* self);
+extern "C" int mem_00924FE8;
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>
+// @summary Forwards to the object at *out via ext_004CA560, default-constructs the std::string at out, and returns out.
+// @field std::string +0x00 void* field_0x00
+void* fn_004CB440(void* unused, void* out) {
+    (void)unused;
+    ext_004CA560(*static_cast<void**>(out));
+    ext_006290D8(out);
+    return out;
+}

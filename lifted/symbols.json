@@ -3764,6 +3764,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x160.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CB440": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
+    "signature": "void* fn_004CB440(void* unused, void* out)",
+    "summary": "Forwards to the object at *out via ext_004CA560, default-constructs the std::string at out, and returns out.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CB470": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_41",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
