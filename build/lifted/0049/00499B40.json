@@ -1,0 +1,14 @@
+{
+  "va": "0x00499B40",
+  "size": 8,
+  "orig_symbol": "NMData::State::vfunc_9_off_10",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::State::vfunc_9_off_10",
+  "class": "NMData::State",
+  "signature": "void fn_00499B40(void* self)",
+  "summary": "This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:06:11Z"
+}
