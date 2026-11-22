@@ -1,0 +1,22 @@
+{
+  "va": "0x006A0A50",
+  "size": 100,
+  "orig_symbol": "ExprParser::Operators::VectorConstructor::vfunc_3",
+  "src_path": "src/ExprParser/Operators/VectorConstructor.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/VectorConstructor.cpp",
+  "name": "ExprParser::Operators::VectorConstructor::vfunc_3",
+  "class": "ExprParser::Operators::VectorConstructor",
+  "signature": "inline void* vtable_slot(void* obj, size_t slot)",
+  "summary": "Evaluates three operand tokens (arg3, arg2, arg1 in that order) through their sub-object vtable slot 1, packs them as floats {arg1, arg2, arg3}, and passes the array to arg1's sub-object vtable slot 11.",
+  "fields": [
+    {
+      "class": "ExprParser::ExprToken",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:44Z"
+}
