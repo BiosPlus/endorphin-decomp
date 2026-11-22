@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B180",
+  "size": 24,
+  "orig_symbol": "ExprParser::BoolType::vfunc_41",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::BoolType::vfunc_41",
+  "class": "ExprParser::BoolType",
+  "signature": "void fn_0066B180(void* result, void* self)",
+  "summary": "Forwards to vtable slot 3 of the object at holder-\u003e+0x04, passing the holder as its argument, and stores the byte (bool) result through the first argument.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:37:57Z"
+}

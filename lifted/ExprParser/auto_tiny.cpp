@@ -437,27 +437,6 @@ void fn_0049B2F0(void* self, void* src) {
     lift_field<uint8_t*>(self, 0)[0] = value ? 1 : 0;
 }
 
-// [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
-// @name ExprParser::BoolType::vfunc_41
-// @class ExprParser::BoolType
-// @summary Forwards to vtable slot 3 of the object at holder->+0x04, passing the holder as its argument, and stores the byte (bool) result through the first argument.
-// @field ExprParser::ValuePtrType +0x04 void* field_0x04
-void fn_0066B180(void* result, void* self) {
-    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
-    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
-    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
-    // mov edx, [ecx]: vtable of the inner object
-    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
-    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
-    // call [edx+0xc]: slot 3, this = inner, one argument = holder
-    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x0C);
-    using Slot = uint8_t (*)(void* thisPtr, void* arg);
-    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
-    uint8_t value = target(inner, self);
-    // mov ecx, [esp+4] ; mov [ecx], al: store result through first argument
-    *static_cast<uint8_t*>(result) = value;
-}
-
 // [0x0049C140] ExprParser::PrimitiveProxyType<int>::vfunc_43 (28 bytes)
 // @name ExprParser::PrimitiveProxyType<int>::vfunc_43
 // @class ExprParser::PrimitiveProxyType<int>
@@ -616,4 +595,25 @@ void fn_0049C120(void* self, void* ctx) {
     // *value_ptr = value (the field is declared const in RTTI, but the original writes through it)
     int32_t* dst = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
     *dst = value;
+}
+
+// [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
+// @name ExprParser::BoolType::vfunc_41
+// @class ExprParser::BoolType
+// @summary Forwards to vtable slot 3 of the object at holder->+0x04, passing the holder as its argument, and stores the byte (bool) result through the first argument.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066B180(void* result, void* self) {
+    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
+    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
+    // mov edx, [ecx]: vtable of the inner object
+    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
+    // call [edx+0xc]: slot 3, this = inner, one argument = holder
+    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x0C);
+    using Slot = uint8_t (*)(void* thisPtr, void* arg);
+    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
+    uint8_t value = target(inner, self);
+    // mov ecx, [esp+4] ; mov [ecx], al: store result through first argument
+    *static_cast<uint8_t*>(result) = value;
 }
