@@ -4804,6 +4804,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00519CE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051A4D0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)",
+    "class": "ExprParser::ROWriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+    "signature": "void fn_0051A4D0(void* arg)",
+    "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0051BED0": {
     "name": "NMData::RealChannel::vfunc_9",
     "class": "NMData::RealChannel",

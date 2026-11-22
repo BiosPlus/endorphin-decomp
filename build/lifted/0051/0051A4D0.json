@@ -1,0 +1,14 @@
+{
+  "va": "0x0051A4D0",
+  "size": 13,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e::vfunc_13",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)",
+  "class": "ExprParser::ROWriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+  "signature": "void fn_0051A4D0(void* arg)",
+  "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:14Z"
+}

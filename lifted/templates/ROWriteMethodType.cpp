@@ -120,12 +120,6 @@ extern "C" int mem_00A9BDC8;
 
 // Signature: void* __RTDynamicCast(void* inptr, long VfDelta, void* SrcType, void* TargetType, int isReference)
 extern "C" int mem_00A9BDC8;
-// @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
-// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).
-// No object fields are accessed directly.
-void fn_0051A4D0(void* arg) {
-    ext_00671100(8, arg);
-}
 // Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
 // single stack argument sits directly after the selector, so it is passed through as the second parameter.
 
@@ -137,8 +131,10 @@ void fn_0051A4D0(void* arg) {
 void fn_0059E9B0(void* arg) {
     ext_00671100(22, arg);
 }
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 
-// [0x0064F830] ExprParser::ROWriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const &)>::vfunc_13 (13 bytes)
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 // @name ExprParser::ROWriteMethodType::vfunc_13 (NM::Vector3::convertEtoTS)
 // @class ExprParser::ROWriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const &)>
 // @summary Forwards its argument to shared dispatcher sub_00671100 with selector 4 (dispatcher not yet lifted).
