@@ -31,6 +31,7 @@ void __thiscall fn_00699100(void* self, void* arg0, void* arg1) {
         reinterpret_cast<VFunc1>(casted_vt[1])(casted, arg1);
     }
 }
+extern "C" void* ext_006999B0(void* self);
 
 // [0x00699140]
 // @name ExprParser::ExpressionContainerType::vfunc_32
@@ -140,4 +141,17 @@ void* fn_00670D40(void* self) {
     using Slot5Fn = void* (*)(void* self_this, void* arg);
     auto slot5 = reinterpret_cast<Slot5Fn>(vtbl[5]);
     return slot5(sub, obj);
+}
+
+// [0x00670CF0]
+// @name ExprParser::ExpressionContainerType::vfunc_3
+// @class ExprParser::ExpressionContainerType
+// @summary Resolves a helper object from self, then tail-dispatches vtable slot 3 on its sub-object at +0x04 with the helper as argument.
+// @field ExprParser::ExpressionContainerType +0x04 void* field_0x04 (type of ext_006999B0 result unknown; +0x04 sub-object pointer used as this)
+void* fn_00670CF0(void* self) {
+    void* r = ext_006999B0(self);
+    void* obj = lift_field<void*>(r, 0x04);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto slot3 = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x0c));
+    return slot3(obj, r);
 }

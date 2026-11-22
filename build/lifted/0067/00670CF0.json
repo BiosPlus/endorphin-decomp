@@ -1,0 +1,22 @@
+{
+  "va": "0x00670CF0",
+  "size": 24,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_3",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_3",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void* fn_00670CF0(void* self)",
+  "summary": "Resolves a helper object from self, then tail-dispatches vtable slot 3 on its sub-object at +0x04 with the helper as argument.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (type of ext_006999B0 result unknown; +0x04 sub-object pointer used as",
+      "name": "this)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:42:56Z"
+}
