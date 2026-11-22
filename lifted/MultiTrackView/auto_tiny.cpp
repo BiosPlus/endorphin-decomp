@@ -13,3 +13,14 @@ void fn_00460300(void* self) {
     void* adjusted = static_cast<char*>(self) - 4;
     reinterpret_cast<ThisImpl>(ext_0045F5F0)(adjusted);
 }
+
+// [0x004591A0] MultiTrackView::TimeRuler::vfunc_0_off_54 (11 bytes)
+// @name MultiTrackView::TimeRuler::vfunc_0_off_54
+// @class MultiTrackView::TimeRuler
+// @summary Secondary-base thunk: rebases this from the RuntimeEngineStopEventListener subobject (+0x54) to the pointer stored at TimeRuler +0x30 and sets that object's byte at +0x190 to 1.
+// @field MultiTrackView::TimeRuler +0x30 void* field_0x30
+void fn_004591A0(void* self) {
+    // ecx = self (subobject at +0x54); the 0x24 adjustment lands on TimeRuler +0x30.
+    uint8_t* owner = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) - 0x24);
+    owner[0x190] = 1;
+}

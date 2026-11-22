@@ -456,6 +456,13 @@
     "summary": "Returns the address of the read-only constant mem_00936C08 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004591A0": {
+    "name": "MultiTrackView::TimeRuler::vfunc_0_off_54",
+    "class": "MultiTrackView::TimeRuler",
+    "signature": "void fn_004591A0(void* self)",
+    "summary": "Secondary-base thunk: rebases this from the RuntimeEngineStopEventListener subobject (+0x54) to the pointer stored at TimeRuler +0x30 and sets that object's byte at +0x190 to 1.",
+    "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

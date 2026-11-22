@@ -1,0 +1,22 @@
+{
+  "va": "0x004591A0",
+  "size": 11,
+  "orig_symbol": "MultiTrackView::TimeRuler::vfunc_0_off_54",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::TimeRuler::vfunc_0_off_54",
+  "class": "MultiTrackView::TimeRuler",
+  "signature": "void fn_004591A0(void* self)",
+  "summary": "Secondary-base thunk: rebases this from the RuntimeEngineStopEventListener subobject (+0x54) to the pointer stored at TimeRuler +0x30 and sets that object's byte at +0x190 to 1.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:11:20Z"
+}
