@@ -57,5 +57,7 @@
     "0x00868E20",
     "0x00868E34"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:29:42Z"
 }
