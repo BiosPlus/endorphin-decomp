@@ -18,6 +18,7 @@ void* fn_00497900(void* self, void* src) {
 }
 extern "C" void __thiscall ext_006720C0(void* self, int32_t value);
 extern "C" void __thiscall ext_006720A0(void* self, uint32_t value);
+extern "C" const double mem_0093F958;
 
 // [0x004A25D0] ExprParser::PrimitiveProxyType<bool>::vfunc_13 (13 bytes)
 // @name ExprParser::PrimitiveProxyType<bool>::vfunc_13
@@ -89,4 +90,14 @@ void fn_004B7B50(void* self, void* arg) {
     // Virtual slot 1 (vtable offset 0x04); returns float.
     float r = reinterpret_cast<float(__thiscall*)(void*, void*)>(vtbl[1])(sub, arg);
     *value = *value + r;
+}
+
+// [0x0049B260] ExprParser::PrimitiveProxyType<bool>::vfunc_7 (40 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_7
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Stores (x >= 1e-6) into *value_ptr, where x is the float argument (false for NaN).
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 uint8_t* value_ptr
+void fn_0049B260(void* self, float x) {
+    uint8_t* value = lift_field<uint8_t*>(self, 0x00);
+    *value = (static_cast<double>(x) >= mem_0093F958) ? 1 : 0;
 }

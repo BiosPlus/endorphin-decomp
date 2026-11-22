@@ -1,0 +1,22 @@
+{
+  "va": "0x0049B260",
+  "size": 40,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_7",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_7",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "void fn_0049B260(void* self, float x)",
+  "summary": "Stores (x \u003e= 1e-6) into *value_ptr, where x is the float argument (false for NaN).",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:21Z"
+}

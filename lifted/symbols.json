@@ -3347,6 +3347,13 @@
     "summary": "Returns true when the bool value pointed to by value_ptr is non-zero.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B260": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_7",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "void fn_0049B260(void* self, float x)",
+    "summary": "Stores (x \u003e= 1e-6) into *value_ptr, where x is the float argument (false for NaN).",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049B290": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_8",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
