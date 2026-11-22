@@ -8078,6 +8078,13 @@
     "summary": "Pure jump thunk forwarding to AnimatableTransform::vfunc_29.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00611580": {
+    "name": "NMData::HingeConstraint::vfunc_69",
+    "class": "NMData::HingeConstraint",
+    "signature": "std::string* fn_00611580(void* self, std::string* out, int32_t mode)",
+    "summary": "Constructs a std::string in the caller-supplied return slot from one of three names chosen by an int mode argument (0, 1, or other).",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x006116B0": {
     "name": "NMData::HingeConstraint::setFirstComponentVector",
     "class": "NMData::HingeConstraint",

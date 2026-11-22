@@ -15,8 +15,10 @@ void fn_006116B0(void* self, int32_t index, float value) {
         reinterpret_cast<void (*)(void*, const float*)>(vtbl[0xF4 / 4])(self, vec);
     }
 }
+#include <new>
+#include <string>
 
-// [0x00611740] NMData::HingeConstraint::vfunc_67 (47 bytes)
+#include <string>
 // @name NMData::HingeConstraint::getValueAtIndex
 // @class NMData::HingeConstraint
 // @summary When index < 1, calls virtual slot 68 (offset 0x110) to obtain a float array and returns element[index]; otherwise returns 0.0.
@@ -40,4 +42,26 @@ uint32_t fn_0061E9A0(void* self, uint32_t a, uint32_t /*unused*/, uint32_t c) {
     void* subobj = reinterpret_cast<uint8_t*>(self) + 0x164;
     ext_0061E780(subobj, a, c);
     return a;
+}
+
+// [0x00611580] NMData::HingeConstraint::vfunc_69 (98 bytes)
+// @name NMData::HingeConstraint::vfunc_69
+// @class NMData::HingeConstraint
+// @summary Constructs a std::string in the caller-supplied return slot from one of three names chosen by an int mode argument (0, 1, or other).
+// (no fields: the function never reads `this`)
+std::string* fn_00611580(void* self, std::string* out, int32_t mode) {
+    (void)self;
+    // mem_00A9F058 / mem_00A9F380 hold pointers to string literals; mem_00928B5D is the literal for the default case.
+    extern const char* const mem_00A9F058;
+    extern const char* const mem_00A9F380;
+    extern const char mem_00928B5D[];
+    const char* name;
+    if (mode == 0) {
+        name = mem_00A9F058;
+    } else if (mode == 1) {
+        name = mem_00A9F380;
+    } else {
+        name = mem_00928B5D;
+    }
+    return new (out) std::string(name);
 }

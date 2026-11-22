@@ -1,0 +1,14 @@
+{
+  "va": "0x00611580",
+  "size": 98,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_69",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_69",
+  "class": "NMData::HingeConstraint",
+  "signature": "std::string* fn_00611580(void* self, std::string* out, int32_t mode)",
+  "summary": "Constructs a std::string in the caller-supplied return slot from one of three names chosen by an int mode argument (0, 1, or other).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:04Z"
+}
