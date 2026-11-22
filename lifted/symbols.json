@@ -5276,6 +5276,13 @@
     "summary": "Checks that `at` lies before the table end (table+0x8) and returns the address at at+0x4.",
     "lifted_path": "lifted/Interpolator/Const.cpp"
   },
+  "0x00528640": {
+    "name": "Interpolator::Linear::vfunc_3",
+    "class": "Interpolator::Linear",
+    "signature": "float fn_00528640(void* self, void* keys, void* cur, float t)",
+    "summary": "Linear interpolation between the keyframe at `cur` and the next keyframe, clamping to the current key's value before it and to the last key's value at the end of the range.",
+    "lifted_path": "lifted/Interpolator/Linear.cpp"
+  },
   "0x00528AB0": {
     "name": "sub_00528AB0",
     "signature": "extern \"C\" void __fastcall fn_00528AB0(void* self)",
