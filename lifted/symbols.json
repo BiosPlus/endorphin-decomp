@@ -4060,6 +4060,13 @@
     "summary": "Setter storing float argument into field at offset +0x994.",
     "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
   },
+  "0x004DDED0": {
+    "name": "NMData::AnimationEventData::vfunc_59",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004DDED0(void* self, void* a)",
+    "summary": "Computes r = ext_006404E0(a, global at mem_00A9ED30), then calls this-\u003evtable[22](r).",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004DE170": {
     "name": "NMData::AnimationEventData::vfunc_66",
     "class": "NMData::AnimationEventData",

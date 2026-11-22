@@ -1,0 +1,22 @@
+{
+  "va": "0x004DDED0",
+  "size": 34,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_59",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_59",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void __thiscall fn_004DDED0(void* self, void* a)",
+  "summary": "Computes r = ext_006404E0(a, global at mem_00A9ED30), then calls this-\u003evtable[22](r).",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:19Z"
+}

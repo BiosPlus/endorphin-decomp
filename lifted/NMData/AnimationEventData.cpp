@@ -34,8 +34,10 @@ extern "C" void* __thiscall fn_004D3CB0(void* self, void* a) {
     reinterpret_cast<VFn>(vt[15])(self, a, 0x24A, 0);
     return a;
 }
+extern "C" void* __thiscall ext_006404E0(void* self, void* arg);
+extern "C" void* mem_00A9ED30;
 
-// [0x004DE1B0] NMData::AnimationEventData::vfunc_60 (34 bytes)
+extern "C" void* mem_00A9ED30;
 // @name NMData::AnimationEventData::vfunc_60
 // @class NMData::AnimationEventData
 // @summary Calls this->vtable[15](a, 0x334, 0) (result discarded) and returns a.
@@ -67,4 +69,17 @@ extern "C" bool __thiscall fn_004BFC20(void* self, const void* unused) {
 extern "C" void __thiscall fn_004C1A80(void* self, const std::string* src) {
     lift_field<std::string>(self, 0x14) = *src;
     ext_004C0340(self);
+}
+
+// [0x004DDED0] NMData::AnimationEventData::vfunc_59 (34 bytes)
+// @name NMData::AnimationEventData::vfunc_59
+// @class NMData::AnimationEventData
+// @summary Computes r = ext_006404E0(a, global at mem_00A9ED30), then calls this->vtable[22](r).
+// @field NMData::AnimationEventData +0x00 void** vptr
+extern "C" void __thiscall fn_004DDED0(void* self, void* a) {
+    using VFn = void(__thiscall*)(void* self, void* arg);
+    void* g = mem_00A9ED30;
+    void* r = ext_006404E0(a, g);
+    void** vt = *reinterpret_cast<void***>(self);
+    reinterpret_cast<VFn>(vt[22])(self, r);
 }
