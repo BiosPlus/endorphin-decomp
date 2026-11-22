@@ -238,19 +238,13 @@ extern "C" void* __cdecl ext_006A6E9E(void* ptr, int vfDelta, void* srcType, voi
 void* __stdcall fn_005C4870(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (__RTDynamicCast(obj, vfdelta, src_td, dst_td, is_ref))
+extern "C" void* ext_006A6E9E(void* obj, long vfdelta, const void* src_td, const void* dst_td, int is_ref);
 
-// [0x00515850]
+extern "C" void* ext_006A6E9E(void* obj, long vfdelta, const void* src_td, const void* dst_td, int is_ref);
 extern "C" void* __stdcall fn_00515850(void* obj)
 {
     return ext_006A6E9E(obj, 0, (void*)0x00A2E2F8u, (void*)0x00A4279Cu, 0);
-}
-
-// [0x005C4870]
-// @name ExprParser::DynamicEnumType_CollisionModelDataBase_MaterialName::vfunc_16
-// @class ExprParser::DynamicEnumType_CollisionModelDataBase_MaterialName
-// @summary Dynamically casts the given object pointer to NMData::CollisionModelDataBase (RTTI) and returns it.
-void* __stdcall fn_005C4870(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
 
 // [0x004D3E20]
@@ -265,4 +259,15 @@ extern "C" uint8_t mem_00A3C268[];
 extern "C" void* __thiscall fn_004D3E20(void* self, void* ptr) {
     (void)self;
     return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A3C268, 0);
+}
+
+// [0x005C4870] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, ...>::vfunc_16 (30 bytes)
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>
+// @summary Dynamic-casts the given object from the RTTI source type to NMData::CollisionModelDataBase and returns the result (or null).
+void* fn_005C4870(void* self, void* obj) {
+    (void)self;
+    const void* src_td = reinterpret_cast<const void*>(uintptr_t{0x00A2E2F8});
+    const void* dst_td = reinterpret_cast<const void*>(uintptr_t{0x00A8AFF4});
+    return ext_006A6E9E(obj, 0, src_td, dst_td, 0);
 }

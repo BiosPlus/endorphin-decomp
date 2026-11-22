@@ -221,23 +221,40 @@ extern "C" void ext_006B0C30(void* obj, int32_t value);
 extern "C" void ext_00603680(void* self, void* value);
 // Known callee 0x0062A580: VirtualDispatchThunk_Slot17 (vtable slot 17, +0x44, on the receiver; called as (self, value)).
 // Known callee 0x0062A580: VirtualDispatchThunk_Slot17 (vtable slot 17, +0x44, on the receiver; called as (self, value)).
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode>::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode>
+// @summary Reads a bool from the source value via its vfunc_3 and passes it to the bound setter thunk on the target object
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode> +0x04 void* field_0x04
+struct ValueSource;
+struct ValueArg {
+    void *field_0x00;
+    ValueSource *field_0x04;
+};
+struct ValueSourceVtbl {
+    void *slots[3];
+    int(__thiscall *get)(ValueSource *self, ValueArg *arg);
+};
+struct ValueSource {
+    ValueSourceVtbl *vtbl;
+};
+extern "C" void __thiscall ext_00648E30(void *self, int value);
 
-// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<SkeletalJoint, Vector3 const&>::setDriveAngularVel::vfunc_41
-// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
-// @summary Reads a Vector3 const pointer from arg's reader (vtable slot +0x14) and forwards it to SkeletalJoint::setDriveAngularVel on the target stored at self.
-// @field ExprParser::WriteMethodType +0x00 void* target
-// @field ExprParser::ValuePtrType +0x04 void* reader
-void fn_0064F790(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0x00);
-    void* reader = lift_field<void*>(arg, 0x04);
-    void* vtbl = lift_field<void*>(reader, 0x00);
-    auto read = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x14));
-    void* value = read(reader, arg);
-    ext_0064DDE0(target, value);
-}
-
-// [0x0064F840] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_41 (34 bytes)
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode>
+// @summary Reads a bool from the source value via its vfunc_3 and passes it to the bound setter thunk on the target object
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode> +0x04 void* field_0x04
+struct ValueSource;
+struct ValueArg {
+    void *field_0x00;
+    ValueSource *field_0x04;
+};
+struct ValueSourceVtbl {
+    void *slots[3];
+    int(__thiscall *get)(ValueSource *self, ValueArg *arg);
+};
+struct ValueSource {
+    ValueSourceVtbl *vtbl;
+};
+extern "C" void __thiscall ext_00648E30(void *self, int value);
 // @name WriteMethodType<SkeletalJoint, Vector4 const&>::setDriveQuaternion::vfunc_41
 // @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
 // @summary Reads a Vector4 const pointer from arg's reader (vtable slot +0x18) and forwards it to SkeletalJoint::setDriveQuaternion on the target stored at self.
@@ -251,37 +268,66 @@ void fn_0064F840(void* self, void* arg) {
     void* value = read(reader, arg);
     ext_00402040(target, value);
 }
+extern "C" void __fastcall ext_00649080(void* self, void* edx, void* arg);
+struct ExprValueSource;
+struct ExprValueSourceVtbl {
+    void* slots[3];
+    void* (__thiscall *evaluate)(ExprValueSource* self, void* ctx);
+};
+struct ExprValueSource {
+    ExprValueSourceVtbl* vtbl;
+};
+struct ExprContext {
+    void* field_0x00;
+    ExprValueSource* source;
+};
 
-// [0x00650D80] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<SkeletalJoint, int>::vcall84::vfunc_41
-// @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
-// @summary Reads an int from arg's reader (vtable slot +0x08) and forwards it to the target's vcall{84} thunk (vtable slot +0x54) via ext_0064F900.
-// @field ExprParser::WriteMethodType +0x00 void* target
-// @field ExprParser::ValuePtrType +0x04 void* reader
-void fn_00650D80(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0x00);
-    void* reader = lift_field<void*>(arg, 0x04);
-    void* vtbl = lift_field<void*>(reader, 0x00);
-    auto read = reinterpret_cast<int32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x08));
-    int32_t value = read(reader, arg);
+struct ExprValueSource;
+struct ExprValueSourceVtbl {
+    void* slots[3];
+    void* (__thiscall *evaluate)(ExprValueSource* self, void* ctx);
+};
+struct ExprValueSource {
+    ExprValueSourceVtbl* vtbl;
+};
+struct ExprContext {
+    void* field_0x00;
+    ExprValueSource* source;
+};
     ext_0064F900(target, value);
 }
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode>::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode>
+// @summary Reads a bool from the source value via its vfunc_3 and passes it to the bound setter thunk on the target object
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode> +0x04 void* field_0x04
+struct ValueSource;
+struct ValueArg {
+    void *field_0x00;
+    ValueSource *field_0x04;
+};
+struct ValueSourceVtbl {
+    void *slots[3];
+    int(__thiscall *get)(ValueSource *self, ValueArg *arg);
+};
+struct ValueSource {
+    ValueSourceVtbl *vtbl;
+};
 
-// [0x006513E0]
-// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, vcall_132>::vfunc_41
-// @class ExprParser::WriteMethodType
-// @summary Extracts a Vector3 pointer from arg2 via its +0x4 object's vtable+0x14 and writes it to *arg1 via fn_0064F920
-// @field ExprParser::ValuePtr +0x04 void* type_or_helper
-
-#include "lift_compat.h"
-
-extern "C" void ext_0064F920(void* self, void* arg);
-
-extern "C" void __stdcall fn_006513E0(void* arg1, void* arg2) {
-    void* target = *reinterpret_cast<void**>(arg1);
-    void* helper = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg2) + 0x4);
-    void** vtable = *reinterpret_cast<void***>(helper);
-    using VFunc14 = void* (__thiscall*)(void*, void*);
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode>
+// @summary Reads a bool from the source value via its vfunc_3 and passes it to the bound setter thunk on the target object
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,setRotationMode> +0x04 void* field_0x04
+struct ValueSource;
+struct ValueArg {
+    void *field_0x00;
+    ValueSource *field_0x04;
+};
+struct ValueSourceVtbl {
+    void *slots[3];
+    int(__thiscall *get)(ValueSource *self, ValueArg *arg);
+};
+struct ValueSource {
+    ValueSourceVtbl *vtbl;
+};
     auto vfunc = reinterpret_cast<VFunc14>(vtable[0x14 / 4]);
     void* vec = vfunc(helper, arg2);
     ext_0064F920(target, vec);
@@ -318,22 +364,6 @@ void fn_00604930(void* self, void* arg) {
     reinterpret_cast<WriteFn>(ext_0062A580(target))(target, value);
 }
 
-// [0x006495F0]
-// @name ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,applyCachedSettings>::vfunc_41
-// @class ExprParser::WriteMethodType
-// @summary Reads a value via vtable slot 3 of the argument's sub-object and forwards it to sub_00649080 on the target object.
-// @field ExprParser::WriteMethodType +0x00 void* target
-extern "C" void ext_00649080(void* self, uint32_t value);
-
-void fn_006495F0(void* self, void* arg) {
-    void* target = *reinterpret_cast<void**>(self);
-    void* sub = lift_field<void*>(arg, 0x04);
-    void** vtbl = *reinterpret_cast<void***>(sub);
-    typedef uint32_t (*Slot3Fn)(void*, void*);
-    uint32_t value = reinterpret_cast<Slot3Fn>(vtbl[3])(sub, arg);
-    ext_00649080(target, value);
-}
-
 // [0x00604BA0]
 // @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &EffectorBase::vcall76>::vfunc_41
 // @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
@@ -345,4 +375,24 @@ void fn_00604BA0(void* self, void* arg) {
     using GetFn = uint32_t (*)(void*, void*);
     uint32_t value = reinterpret_cast<GetFn>(vtbl[0x18 / 4])(sub, arg);
     ext_00603680(target, value);
+}
+
+// [0x006495F0]
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,applyCachedSettings>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates the context's value source and writes the result into the target object via sub_00649080.
+// @field ExprContext +0x04 ExprValueSource* source
+void __stdcall WriteMethodType_vfunc_41(void** target, ExprContext* ctx)
+{
+    void* self = *target;
+    void* value = ctx->source->vtbl->evaluate(ctx->source, ctx);
+    ext_00649080(self, nullptr, value);
+}
+
+// [0x00649D50]
+void __stdcall fn_00649D50(void **target, ValueArg *arg) {
+    void *obj = *target;
+    ValueSource *src = arg->field_0x04;
+    int v = src->vtbl->get(src, arg);
+    ext_00648E30(obj, v);
 }
