@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C0D0",
+  "size": 20,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_9",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_9",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void ExprParser_PrimitiveProxyType_int_vfunc_9(PrimitiveProxyTypeInt* self, uint8_t flag)",
+  "summary": "Writes (flag != 0) as an int32 through the proxy's value pointer.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:56Z"
+}

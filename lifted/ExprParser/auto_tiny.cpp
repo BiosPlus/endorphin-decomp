@@ -19,6 +19,7 @@ extern "C" void __fastcall ext_006991A0(void* self);
 extern "C" void __fastcall ext_0069AA80(void* self);
 extern "C" void __fastcall ext_0069A830(void* self);
 extern "C" void __fastcall ext_006A2C20(void* self);
+#include <cstdint>
 
 // [0x0066AD70] ExprParser::RealType::vfunc_1 (9 bytes)
 // @name ExprParser::RealType::vfunc_1
@@ -355,4 +356,20 @@ void fn_0049B290(void* self, int32_t value) {
     auto* proxy = static_cast<PrimitiveProxyTypeBool*>(self);
     uint8_t* dst = const_cast<uint8_t*>(proxy->value_ptr);
     *dst = (value != 0) ? 1 : 0;
+}
+
+// [0x0049C0D0]
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_9
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Writes (flag != 0) as an int32 through the proxy's value pointer.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+
+struct PrimitiveProxyTypeInt {
+    const int32_t* value_ptr;
+};
+
+// Original takes self and flag on the stack and pops 8 bytes on return (ret 8).
+void ExprParser_PrimitiveProxyType_int_vfunc_9(PrimitiveProxyTypeInt* self, uint8_t flag) {
+    int32_t* dst = const_cast<int32_t*>(self->value_ptr);
+    *dst = (flag != 0) ? 1 : 0;
 }

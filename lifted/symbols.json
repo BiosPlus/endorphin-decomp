@@ -944,6 +944,13 @@
     "summary": "Stores an int value through the proxy's value pointer (stdcall, callee pops 8 bytes).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C0D0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_9",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "void ExprParser_PrimitiveProxyType_int_vfunc_9(PrimitiveProxyTypeInt* self, uint8_t flag)",
+    "summary": "Writes (flag != 0) as an int32 through the proxy's value pointer.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049FAB0": {
     "name": "NMData::State::vfunc_17_off_8",
     "class": "NMData::State",
