@@ -1,0 +1,22 @@
+{
+  "va": "0x0062A580",
+  "size": 5,
+  "orig_symbol": "sub_0062A580",
+  "src_path": "src/leaf/tiny_620000.cpp",
+  "lifted_path": "lifted/leaf/tiny_620000.cpp",
+  "name": "VirtualDispatchThunk_Slot17",
+  "class": "Object (unidentified; receiver is passed in ecx)",
+  "signature": "void* fn_0062A580(void* self)",
+  "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x44 (slot 17 on x86). The original tail-jumps to that address; this lift returns it so the caller can perform the call.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:43:21Z"
+}
