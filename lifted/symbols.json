@@ -1,4 +1,11 @@
 {
+  "0x00417330": {
+    "name": "ExportDialog::vfunc_0",
+    "class": "ExportDialog",
+    "signature": "void* fn_00417330(void* self)",
+    "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",
