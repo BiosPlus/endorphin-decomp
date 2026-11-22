@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::IncarnationEventData:
 namespace lifted_layout {
 struct NMData_IncarnationEventData_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x004CE8C0)
+    // +0x0   void*                    vtable  (evidence: 0x004CE8C0, 0x004CF310)
 };
 } // namespace lifted_layout

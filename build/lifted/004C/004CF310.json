@@ -1,0 +1,22 @@
+{
+  "va": "0x004CF310",
+  "size": 14,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_1_off_154",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_1_off_154",
+  "class": "NMData::IncarnationEventData",
+  "signature": "extern \"C\" void fn_004CF310(void* self)",
+  "summary": "Virtual dispatcher: loads this-\u003evtable[7] (offset 0x1C) and calls it with this, then pops the one stack argument.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:21Z"
+}

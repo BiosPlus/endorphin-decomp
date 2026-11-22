@@ -1161,6 +1161,13 @@
     "summary": "Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CF310": {
+    "name": "NMData::IncarnationEventData::vfunc_1_off_154",
+    "class": "NMData::IncarnationEventData",
+    "signature": "extern \"C\" void fn_004CF310(void* self)",
+    "summary": "Virtual dispatcher: loads this-\u003evtable[7] (offset 0x1C) and calls it with this, then pops the one stack argument.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004CFA50": {
     "name": "NMData::IncarnationEventData::vfunc_3_off_158",
     "class": "NMData::IncarnationEventData",

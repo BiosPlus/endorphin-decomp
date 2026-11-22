@@ -1708,3 +1708,15 @@ uint8_t fn_00611C90(void* self, uint32_t index) {
     const uint32_t offset = index + 0x328u;
     return base[offset];
 }
+
+// [0x004CF310] NMData::IncarnationEventData::vfunc_1_off_154 (14 bytes)
+// @name NMData::IncarnationEventData::vfunc_1_off_154
+// @class NMData::IncarnationEventData
+// @summary Virtual dispatcher: loads this->vtable[7] (offset 0x1C) and calls it with this, then pops the one stack argument.
+// @field NMData::IncarnationEventData +0x00 void* vtable
+extern "C" void fn_004CF310(void* self) {
+    void* const* vt = *reinterpret_cast<void* const* const*>(self);
+    using VFn = void (*)(void*);
+    VFn target = reinterpret_cast<VFn>(vt[7]);
+    target(self);
+}
