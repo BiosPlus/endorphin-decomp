@@ -4,11 +4,11 @@
   "orig_symbol": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e::vfunc_16",
   "src_path": "src/templates/Function2Type.cpp",
   "lifted_path": "lifted/templates/Function2Type.cpp",
-  "name": "ExprParser::Function2Type\u003cSelectionVariable\u003e::vfunc_16",
+  "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
   "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
   "signature": "void* fn_004ECA70(void* self)",
   "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:36:32Z"
+  "lifted_at": "2026-11-22T07:37:07Z"
 }
