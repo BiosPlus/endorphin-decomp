@@ -1,0 +1,14 @@
+{
+  "va": "0x00454B90",
+  "size": 6,
+  "orig_symbol": "ButtonPanel::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ButtonPanel::vfunc_0",
+  "class": "ButtonPanel",
+  "signature": "extern \"C\" const void* __fastcall fn_00454B90(void* self)",
+  "summary": "Returns the address of the constant mem_00936504 (value 0x009364F0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:54:05Z"
+}

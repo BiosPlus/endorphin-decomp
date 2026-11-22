@@ -28,6 +28,7 @@ extern "C" int mem_00933CB4;
 extern "C" int mem_00934B98;
 extern "C" int mem_00935578;
 extern "C" int mem_009364A0;
+extern "C" int mem_00936504;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -318,4 +319,13 @@ int* fn_00454B60(void* self) {
 extern "C" const void* __fastcall fn_00454550(void* self) {
     (void)self;
     return reinterpret_cast<const void*>(0x009362B4u);
+}
+
+// [0x00454B90] ButtonPanel::vfunc_0 (6 bytes)
+// @name ButtonPanel::vfunc_0
+// @class ButtonPanel
+// @summary Returns the address of the constant mem_00936504 (value 0x009364F0).
+extern "C" const void* __fastcall fn_00454B90(void* self) {
+    (void)self;
+    return reinterpret_cast<const void*>(&mem_00936504);
 }

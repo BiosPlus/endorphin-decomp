@@ -429,6 +429,13 @@
     "summary": "Returns the address of the global constant at 0x009364A0 (string \"`PE\").",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00454B90": {
+    "name": "ButtonPanel::vfunc_0",
+    "class": "ButtonPanel",
+    "signature": "extern \"C\" const void* __fastcall fn_00454B90(void* self)",
+    "summary": "Returns the address of the constant mem_00936504 (value 0x009364F0).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
