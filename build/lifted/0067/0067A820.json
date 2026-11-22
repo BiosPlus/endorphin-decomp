@@ -1,0 +1,22 @@
+{
+  "va": "0x0067A820",
+  "size": 80,
+  "orig_symbol": "ExprParser::BoolType::vfunc_44",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_44",
+  "class": "ExprParser::BoolType",
+  "signature": "inline void* vslot(void* obj, std::size_t index)",
+  "summary": "Computes the difference between a float getter on a0-\u003e+4 and a float getter on a1-\u003e+4, then forwards that difference to a0-\u003e+4's vfunc_7 and returns its result.",
+  "fields": [
+    {
+      "class": "ExprParser::BoolType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:33Z"
+}

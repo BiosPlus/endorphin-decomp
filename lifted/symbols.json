@@ -9750,6 +9750,13 @@
     "summary": "Sums vfunc_1 results of self-\u003e+0x04 (on self) and arg-\u003e+0x04 (on arg), then passes the sum to self-\u003e+0x04 vfunc_7 along with self.",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x0067A820": {
+    "name": "ExprParser::BoolType::vfunc_44",
+    "class": "ExprParser::BoolType",
+    "signature": "inline void* vslot(void* obj, std::size_t index)",
+    "summary": "Computes the difference between a float getter on a0-\u003e+4 and a float getter on a1-\u003e+4, then forwards that difference to a0-\u003e+4's vfunc_7 and returns its result.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0067A930": {
     "name": "ExprParser::BoolType::vfunc_47",
     "class": "ExprParser::BoolType",
