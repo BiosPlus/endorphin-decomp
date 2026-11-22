@@ -129,5 +129,7 @@
     "0x00734512",
     "0x00734520"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:37:44Z"
 }
