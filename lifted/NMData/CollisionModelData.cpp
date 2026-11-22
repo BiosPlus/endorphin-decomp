@@ -18,6 +18,7 @@ void* fn_005C3180(void* self, void* ret_slot) {
     new (out) std::string(mem_00B447F4);
     return out;
 }
+extern "C" const float* __thiscall ext_005B11F0(void* self);
 
 // [0x005C2FB0]
 // @name NMData::CollisionModelData::vfunc_1_off_158
@@ -92,4 +93,37 @@ void* fn_005C3E20(void* self, void* arg1, uint32_t arg2) {
         ext_0058F6B0(self, arg1, arg2);
     }
     return arg1;
+}
+
+// [0x005C3AB0] NMData::CollisionModelData::vfunc_36 (141 bytes)
+// @name NMData::CollisionModelData::vfunc_36
+// @class NMData::CollisionModelData
+// @summary If field_0x15c is set, fetches a 3-float vector from the embedded sub-object at +0x0c, scales it uniformly by scale[0], passes it back to that sub-object's slot 5, then if field_0x10 is set calls its slot 13 with ext_005B11F0(field_0x15c).
+// @field NMData::CollisionModelData +0x0c void* field_0x0c
+// @field NMData::CollisionModelData +0x10 void* field_0x10
+// @field NMData::CollisionModelData +0x15c void* field_0x15c
+extern "C" void __thiscall fn_005C3AB0(void* self, const float* scale) {
+    if (lift_field<void*>(self, 0x15c) == nullptr) {
+        return;
+    }
+
+    void* sub = lift_field<void*>(self, 0x0c);
+    void** subVt = *reinterpret_cast<void***>(sub);
+
+    float t[3] = {0.0f, 0.0f, 0.0f};
+    reinterpret_cast<void (*)(void*, float*)>(subVt[6])(sub, t);
+
+    const float s = scale[0];
+    t[0] = s * t[0];
+    t[1] = s * t[1];
+    t[2] = s * t[2];
+
+    reinterpret_cast<void (*)(void*, float*)>(subVt[5])(sub, t);
+
+    void* target = lift_field<void*>(self, 0x10);
+    if (target != nullptr) {
+        void* render = const_cast<float*>(ext_005B11F0(lift_field<void*>(self, 0x15c)));
+        void** targetVt = *reinterpret_cast<void***>(target);
+        reinterpret_cast<void (*)(void*, void*)>(targetVt[13])(target, render);
+    }
 }
