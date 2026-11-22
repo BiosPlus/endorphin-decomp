@@ -7326,6 +7326,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0062A560": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorIntegral::insert)",
+    "class": "ExprParser::ROWriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
+    "signature": "void* fn_0062A560(void* self)",
+    "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0062A580": {
     "name": "VirtualDispatchThunk_Slot17",
     "class": "Object (unidentified; receiver is passed in ecx)",
