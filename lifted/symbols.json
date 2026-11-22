@@ -310,6 +310,12 @@
     "summary": "Returns the address of the read-only 32-bit constant at mem_009331C8 (.rdata).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00448F20": {
+    "name": "GetStringLiteral_00448F20",
+    "signature": "extern \"C\" const char* __cdecl fn_00448F20()",
+    "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
