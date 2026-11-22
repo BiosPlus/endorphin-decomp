@@ -4856,6 +4856,13 @@
     "summary": "Stores address of mem_0093F994 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
   },
+  "0x004EBE10": {
+    "name": "NMData::TopLevelState::vfunc_1",
+    "class": "NMData::TopLevelState",
+    "signature": "void fn_004EBE10(void* self, uint32_t value)",
+    "summary": "Forwards its single stack argument and the address of the subobject at +0x14C to ext_004EBC80.",
+    "lifted_path": "lifted/NMData/TopLevelState.cpp"
+  },
   "0x004EC560": {
     "name": "NMData::TopLevelState::vfunc_0_off_10",
     "class": "NMData::TopLevelState",

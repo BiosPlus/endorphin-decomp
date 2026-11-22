@@ -1,0 +1,22 @@
+{
+  "va": "0x004EBE10",
+  "size": 20,
+  "orig_symbol": "NMData::TopLevelState::vfunc_1",
+  "src_path": "src/NMData/TopLevelState.cpp",
+  "lifted_path": "lifted/NMData/TopLevelState.cpp",
+  "name": "NMData::TopLevelState::vfunc_1",
+  "class": "NMData::TopLevelState",
+  "signature": "void fn_004EBE10(void* self, uint32_t value)",
+  "summary": "Forwards its single stack argument and the address of the subobject at +0x14C to ext_004EBC80.",
+  "fields": [
+    {
+      "class": "NMData::TopLevelState",
+      "offset": "+0x14C",
+      "type": "uint8_t field_0x14C (address only, not read or written",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:41:30Z"
+}
