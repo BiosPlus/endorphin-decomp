@@ -679,6 +679,13 @@
     "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006744A0": {
+    "name": "NMData::State::vfunc_7",
+    "class": "NMData::State",
+    "signature": "extern \"C\" void __fastcall fn_006744A0(void* self)",
+    "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",

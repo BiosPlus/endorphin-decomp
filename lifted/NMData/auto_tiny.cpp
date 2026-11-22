@@ -4,6 +4,7 @@
 // `this` pointer in ecx (__fastcall); this thunk supplies the adjusted pointer.
 extern "C" void __fastcall ext_004F97F0(void* self);
 extern "C" void ext_004C6850(void* self);
+extern "C" int mem_00924FDC;
 
 // [0x00499B40] NMData::State::vfunc_9_off_10 (8 bytes)
 // @name NMData::State::vfunc_9_off_10
@@ -20,4 +21,16 @@ void fn_00499B40(void* self) {
 // @summary This-adjustor thunk: rebases this by -0xC (to the primary base subobject) and tail-forwards to vfunc_0.
 void fn_004C65B0(void* self) {
     ext_004C6850(static_cast<char*>(self) - 0xC);
+}
+
+// [0x006744A0] NMData::State::vfunc_7 (9 bytes)
+// @name NMData::State::vfunc_7
+// @class NMData::State
+// @summary This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.
+// @field NMData::State +0x1c void* adjusted_base
+extern "C" void __fastcall fn_006744A0(void* self) {
+    typedef void (__fastcall* ForwardFn)(void* self);
+    char* adjusted = static_cast<char*>(self) + 0x1c;
+    ForwardFn target = reinterpret_cast<ForwardFn>(static_cast<uintptr_t>(mem_00924FDC));
+    target(adjusted);
 }

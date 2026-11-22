@@ -1,0 +1,22 @@
+{
+  "va": "0x006744A0",
+  "size": 9,
+  "orig_symbol": "NMData::State::vfunc_7",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::State::vfunc_7",
+  "class": "NMData::State",
+  "signature": "extern \"C\" void __fastcall fn_006744A0(void* self)",
+  "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "adjusted_base"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:06:32Z"
+}
