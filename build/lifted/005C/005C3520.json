@@ -1,0 +1,14 @@
+{
+  "va": "0x005C3520",
+  "size": 34,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void __thiscall fn_005C3520(void* self, void* targetPtr, void* valuePtr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:20:40Z"
+}
