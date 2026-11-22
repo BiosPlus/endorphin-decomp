@@ -10105,6 +10105,13 @@
     "summary": "Evaluates the right operand (arg2 +0x04) then the left operand (self +0x04) via slot 1, keeps the smaller value (ties and NaN keep the left value), and forwards it to the left operand's slot 7 with self.",
     "lifted_path": "lifted/ExprParser/Operators/Min.cpp"
   },
+  "0x006A13E0": {
+    "name": "ExprParser::Operators::Max::vfunc_3",
+    "class": "ExprParser::Operators::Max",
+    "signature": "inline void* vtable_slot(void* obj, size_t slot)",
+    "summary": "Evaluates both operands through their sub-object vtable slot 1, takes the larger value, and passes it to the lhs sub-object's vtable slot 7.",
+    "lifted_path": "lifted/ExprParser/Operators/Max.cpp"
+  },
   "0x006A1440": {
     "name": "ExprParser::Operators::And::vfunc_3",
     "class": "ExprParser::Operators::And",

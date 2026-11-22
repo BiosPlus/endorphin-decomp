@@ -1,0 +1,22 @@
+{
+  "va": "0x006A13E0",
+  "size": 85,
+  "orig_symbol": "ExprParser::Operators::Max::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Max.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Max.cpp",
+  "name": "ExprParser::Operators::Max::vfunc_3",
+  "class": "ExprParser::Operators::Max",
+  "signature": "inline void* vtable_slot(void* obj, size_t slot)",
+  "summary": "Evaluates both operands through their sub-object vtable slot 1, takes the larger value, and passes it to the lhs sub-object's vtable slot 7.",
+  "fields": [
+    {
+      "class": "ExprParser::ExprToken",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:52Z"
+}
