@@ -1,0 +1,22 @@
+{
+  "va": "0x004CCFB0",
+  "size": 112,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_10",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::assignFrom",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void __thiscall fn_004CCFB0(void* self, void* src)",
+  "summary": "Dynamically casts the source object and, if compatible, destroys this instance in-place and copy-constructs from it.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-22T08:24:01Z"
+}
