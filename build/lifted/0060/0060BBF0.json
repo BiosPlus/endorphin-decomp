@@ -1,0 +1,14 @@
+{
+  "va": "0x0060BBF0",
+  "size": 35,
+  "orig_symbol": "NMData::EffectorData::vfunc_8",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::vfunc_8",
+  "class": "NMData::EffectorData",
+  "signature": "std::string* fn_0060BBF0(void* self, std::string* out)",
+  "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EE64; this is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:41:12Z"
+}

@@ -7302,6 +7302,13 @@
     "summary": "Returns 0 if the pointer at +0x40 is null; otherwise calls vtable slot 4 on that object with argument 0 and returns its result.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060BBF0": {
+    "name": "NMData::EffectorData::vfunc_8",
+    "class": "NMData::EffectorData",
+    "signature": "std::string* fn_0060BBF0(void* self, std::string* out)",
+    "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EE64; this is unused.",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060BCC0": {
     "name": "sub_0060BCC0",
     "signature": "extern \"C\" void __fastcall fn_0060BCC0(void* self)",
