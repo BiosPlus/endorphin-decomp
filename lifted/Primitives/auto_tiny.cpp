@@ -239,3 +239,14 @@ void fn_0052F3A0(void* self, DWORD arg1, DWORD arg2, DWORD arg3) {
     *reinterpret_cast<DWORD*>(base + 0x20) = 0;
     *reinterpret_cast<BYTE*>(base + 0x04) = 0;
 }
+
+// [0x0052FB60] Primitives::Hinge::vfunc_20 (20 bytes)
+// @name Primitives::Hinge::vfunc_20
+// @class Primitives::Hinge
+// @summary Writes a 3-float vector {this->+0x3c, 0, 0} to the caller-supplied output buffer.
+// @field Primitives::Hinge +0x3c float field_0x3c
+void fn_0052FB60(void* self, float* out) {
+    out[0] = lift_field<float>(self, 0x3C);
+    out[1] = 0.0f;
+    out[2] = 0.0f;
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0052FB60",
+  "size": 20,
+  "orig_symbol": "Primitives::Hinge::vfunc_20",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Hinge::vfunc_20",
+  "class": "Primitives::Hinge",
+  "signature": "void fn_0052FB60(void* self, float* out)",
+  "summary": "Writes a 3-float vector {this-\u003e+0x3c, 0, 0} to the caller-supplied output buffer.",
+  "fields": [
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:00Z"
+}
