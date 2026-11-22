@@ -103,48 +103,80 @@ extern "C" uint32_t ext_005A45A0(void* self, void* arg);
 extern "C" void __thiscall ext_0062A580(void* self, bool value);
 extern "C" void ext_00603680(void* self, uint32_t value);
 extern "C" void __thiscall ext_00648EA0(void* self, bool value);
+// Expression node: +0x04 holds the evaluated sub-expression object (polymorphic).
+struct ExprValue;
+struct ExprValueVtbl;
+typedef float (__thiscall *EvalFloatFn)(ExprValue* self, void* expr);
+typedef void** (__thiscall *GetResultFn)(ExprValue* self, void** outTmp, void* expr);
+struct ExprValue {
+    void** vtbl;
+};
+struct ExprResult {
+    void* value;
+    ExprValue* source;
+};
 
-// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41
-// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
-// @summary Evaluates an NM::Vector3 const& address from the source value via its type vtable slot +0x14 and calls SkeletalJoint::setDriveAngularVel (ext_0064DDE0) on the target joint.
-// @field TargetWrapper +0x00 void* field_0x00
-// @field ValueWrapper +0x04 void* field_0x04
-void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr) {
-    (void)self;
-    void* target = lift_field<void*>(targetPtr, 0x00);
-    void* typeObj = lift_field<void*>(valuePtr, 0x04);
-    void** vtable = lift_field<void**>(typeObj, 0x00);
+struct ExprValue;
+struct ExprValueVtbl;
+typedef float (__thiscall *EvalFloatFn)(ExprValue* self, void* expr);
+typedef void** (__thiscall *GetResultFn)(ExprValue* self, void** outTmp, void* expr);
+struct ExprValue {
+    void** vtbl;
+};
+struct ExprResult {
+    void* value;
+    ExprValue* source;
+};
     using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
     auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
     uint32_t value = getVec3(typeObj, valuePtr);
     ext_0064DDE0(target, value);
 }
+// Expression node: +0x04 holds the evaluated sub-expression object (polymorphic).
+struct ExprValue;
+struct ExprValueVtbl;
+struct ExprValue {
+    void** vtbl;
+};
+struct ExprResult {
+    void* value;
+    ExprValue* source;
+};
 
-// [0x00594470] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_41 (37 bytes)
-// @name ExprParser::WriteMethodType<World, float, setGravity>::vfunc_41
-// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>
-// @summary Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setGravity setter ext_00594080.
-// @field ExprParser::WriteMethodType +0x00 void* target
-// @field ExprParser::ValuePtrType +0x04 void* reader
-void __stdcall fn_00594470(void* a1, void* a2) {
-    void* target = lift_field<void*>(a1, 0x00);
-    void* reader = lift_field<void*>(a2, 0x04);
+struct ExprValue;
+struct ExprValueVtbl;
+struct ExprValue {
+    void** vtbl;
+};
+struct ExprResult {
+    void* value;
+    ExprValue* source;
+};
     void* vtbl = lift_field<void*>(reader, 0x00);
     using GetFloatFn = float (*)(void* self, void* arg);
     auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
     float value = getFloat(reader, a2);
     ext_00594080(target, value);
 }
+extern "C" void ext_00402040(void* self, DWORD arg);
+namespace lift_0063CB90 {
+struct ExprValue {
+    void** vtbl;
+};
+struct ExprResult {
+    void* value;
+    ExprValue* source;
+};
+} // namespace lift_0063CB90
 
-// [0x005F35D0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: EffectorGroup::vcall{92}>::vfunc_41 (37 bytes)
-// @name ExprParser::WriteMethodType<EffectorGroup, float, vcall92>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>
-// @summary Fetches a float from the second argument's sub-object via its vtable slot 1, then forwards it to the thunk ext_0064F8E0 on the object held by the first argument; returns that thunk's result (stdcall, 8 bytes of args).
-// @field Unknown +0x00 void* field_0x00            (arg1: loaded to obtain the forwarding "this")
-// @field Unknown +0x04 void* field_0x04            (arg2: sub-object pointer read at +0x4)
-// @field Unknown +0x00 void** vtable               (sub-object's vtable pointer)
-// @field Unknown +0x04 void* vtable_slot1          (vtable slot 1 = offset +0x4, called with the sub-object as this)
+struct ExprValue {
+    void** vtbl;
+};
+struct ExprResult {
+    void* value;
+    ExprValue* source;
+};
+} // namespace lift_0063CB90
 void* fn_005F35D0(void* arg1, void* arg2) {
     // esi = *(void**)arg1
     void* self = *reinterpret_cast<void**>(arg1);
@@ -1219,77 +1251,6 @@ void __thiscall fn_00649D80(void* self, void* out, void* dst, void* src) {
     }
 }
 
-// [0x00604BD0]
-// @name ExprParser::WriteMethodType::vfunc_48
-// @class ExprParser::WriteMethodType
-// @summary Invokes EffectorBase virtual slot 19 with a converted value and returns the resulting value pair.
-// @field ExprParser::ValuePtr +0x04 void* type_ptr
-
-#include "lift_compat.h"
-
-extern "C" void ext_00603680(void* self, uint32_t value);
-
-struct ValuePair {
-    uint32_t value;
-    void* type_ptr;
-};
-
-ValuePair* __stdcall fn_00604BD0(ValuePair* sret, void** target_ptr, ValuePair* arg) {
-    void* target = *target_ptr;
-    void* type_obj = arg->type_ptr;
-    void** vtable = *reinterpret_cast<void***>(type_obj);
-    using ConvertFn = uint32_t (__thiscall*)(void*, ValuePair*);
-    auto convert_fn = reinterpret_cast<ConvertFn>(vtable[0x18 / 4]);
-
-    uint32_t local_val = 0;
-    uint32_t converted = convert_fn(type_obj, arg);
-    ext_00603680(target, converted);
-
-    if (arg->type_ptr != nullptr) {
-        void* type_obj2 = arg->type_ptr;
-        void** vtable2 = *reinterpret_cast<void***>(type_obj2);
-        using GetterFn = uint32_t* (__thiscall*)(void*, uint32_t*, ValuePair*);
-        auto getter_fn = reinterpret_cast<GetterFn>(vtable2[0x70 / 4]);
-        uint32_t* res = getter_fn(type_obj2, &local_val, arg);
-        sret->value = *res;
-        sret->type_ptr = arg->type_ptr;
-    } else {
-        local_val = 0;
-        sret->value = local_val;
-        sret->type_ptr = arg->type_ptr;
-    }
-    return sret;
-}
-
-// [0x00603440]
-// @name ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>
-// @summary Evaluates a boolean value from arg2 and dispatches vtable+0x18 (true) or vtable+0x1c (false) on the target object from arg1.
-// @field EffectorBase +0x04 void* field_0x04
-#include "lift_compat.h"
-
-void __thiscall fn_00603440(void* self, void* arg1, void* arg2) {
-    (void)self;
-    void* target = *reinterpret_cast<void**>(arg1);
-
-    void* src_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg2) + 0x04);
-    void** src_vtable = *reinterpret_cast<void***>(src_obj);
-    using EvalBoolFn = uint8_t(__thiscall*)(void*, void*);
-    auto eval_bool = reinterpret_cast<EvalBoolFn>(src_vtable[0x0c / sizeof(void*)]);
-    uint8_t val = eval_bool(src_obj, arg2);
-
-    void* dst_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(target) + 0x04);
-    void** dst_vtable = *reinterpret_cast<void***>(dst_obj);
-    using DispatchFn = void(__thiscall*)(void*);
-    if (val != 0) {
-        auto fn_true = reinterpret_cast<DispatchFn>(dst_vtable[0x18 / sizeof(void*)]);
-        fn_true(dst_obj);
-    } else {
-        auto fn_false = reinterpret_cast<DispatchFn>(dst_vtable[0x1c / sizeof(void*)]);
-        fn_false(dst_obj);
-    }
-}
-
 // [0x00604C70]
 // @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &>::vfunc_48
 // @class ExprParser::WriteMethodType
@@ -1344,4 +1305,267 @@ void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value
     uint32_t bits;
     memcpy(&bits, &f, 4);
     ext_0064F900(obj, bits);
+}
+
+// [0x00603440]
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>
+// @summary Evaluates a boolean value from arg2 and dispatches vtable+0x18 (true) or vtable+0x1c (false) on the target object from arg1.
+// @field EffectorBase +0x04 void* field_0x04
+#include "lift_compat.h"
+
+void __thiscall fn_00603440(void* self, void* arg1, void* arg2) {
+    (void)self;
+    void* target = *reinterpret_cast<void**>(arg1);
+
+    void* src_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg2) + 0x04);
+    void** src_vtable = *reinterpret_cast<void***>(src_obj);
+    using EvalBoolFn = uint8_t(__thiscall*)(void*, void*);
+    auto eval_bool = reinterpret_cast<EvalBoolFn>(src_vtable[0x0c / sizeof(void*)]);
+    uint8_t val = eval_bool(src_obj, arg2);
+
+    void* dst_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(target) + 0x04);
+    void** dst_vtable = *reinterpret_cast<void***>(dst_obj);
+    using DispatchFn = void(__thiscall*)(void*);
+    if (val != 0) {
+        auto fn_true = reinterpret_cast<DispatchFn>(dst_vtable[0x18 / sizeof(void*)]);
+        fn_true(dst_obj);
+    } else {
+        auto fn_false = reinterpret_cast<DispatchFn>(dst_vtable[0x1c / sizeof(void*)]);
+        fn_false(dst_obj);
+    }
+}
+
+// [0x0064F7C0]
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, setDriveAngularVel>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, SkeletalJoint::setDriveAngularVel>
+// @summary Fetches the argument's holder, calls its vtable slot 5 and ext_0064DDE0, then returns {value, holder} via the sret buffer.
+// @field ValuePtrType +0x00 uint32_t field_0x00
+// @field ValuePtrType +0x04 void* field_0x04
+
+extern "C" void ext_0064DDE0(void* self, uint32_t arg);
+
+// Argument block: +0x00 = dereferenced value, +0x04 = holder object.
+// Return block (sret): +0x00 = value, +0x04 = holder object.
+struct ValuePtrResult {
+    uint32_t value;
+    void*    obj;
+};
+
+// Stack arg layout: ret (sret), a2slot (pointer-to-pointer, may be overwritten), a3 (holder block).
+void __fastcall fn_0064F7C0(void* self, void* edx, ValuePtrResult* ret, void** a2slot, uint8_t* a3) {
+    (void)self; (void)edx;
+
+    uint32_t* a2 = reinterpret_cast<uint32_t*>(*a2slot);
+    uint32_t value = *a2;
+
+    void*  holder = *reinterpret_cast<void**>(a3 + 0x4);
+    void** vt     = *reinterpret_cast<void***>(holder);
+
+    // vtable slot 5 (offset 0x14) on holder, one stack arg a3
+    using Slot5Fn = uint32_t (__fastcall*)(void* self, void* edx, uint8_t* arg);
+    uint32_t v1 = reinterpret_cast<Slot5Fn>(vt[5])(holder, nullptr, a3);
+
+    ext_0064DDE0(reinterpret_cast<void*>(static_cast<uintptr_t>(value)), v1);
+
+    if (holder != nullptr) {
+        // vtable slot 28 (offset 0x70) on holder: (outp, a3) -> pointer to value
+        using Slot28Fn = uint32_t* (__fastcall*)(void* self, void* edx, void** outp, uint8_t* arg);
+        uint32_t* p = reinterpret_cast<Slot28Fn>(vt[28])(holder, nullptr, a2slot, a3);
+        ret->value = *p;
+        ret->obj   = holder;
+    } else {
+        *a2slot    = nullptr;
+        ret->value = 0;
+        ret->obj   = nullptr;
+    }
+}
+
+// [0x00650DB0]
+// @name ExprParser::WriteMethodType<SkeletalJoint,int,vcall84>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
+// @summary Reads an int from the value expression's sub-object via vslot 2, forwards it to the target object's slot-21 thunk, then writes a (result, object) pair to the hidden return buffer.
+// @field ExprParser::ValuePtrType +0x04 void* object
+
+extern "C" void ext_0064F900(void* self, uint32_t value);
+
+static inline void* vslot(void* obj, size_t index) {
+    return reinterpret_cast<void**>(*reinterpret_cast<void***>(obj))[index];
+}
+
+// Stack args: out (hidden return buffer), target (void**), value (expression object).
+void* __thiscall fn_00650DB0(void* self, void* out, void** target, uint8_t* value) {
+    (void)self;
+
+    void* obj = *target;
+    void* inner = *reinterpret_cast<void**>(value + 0x4);
+
+    using IntGetter = uint32_t(__thiscall*)(void*);
+    uint32_t r = reinterpret_cast<IntGetter>(vslot(inner, 2))(inner);
+
+    ext_0064F900(obj, r);
+
+    uint32_t a = 0;
+    void* b = nullptr;
+    void* cur = *reinterpret_cast<void**>(value + 0x4);
+    if (cur != nullptr) {
+        uint32_t tmp = 0;
+        using PairGetter = void*(__thiscall*)(void*, uint8_t*, uint32_t*);
+        void* p = reinterpret_cast<PairGetter>(vslot(cur, 28))(cur, value, &tmp);
+        a = *static_cast<uint32_t*>(p);
+        b = *reinterpret_cast<void**>(value + 0x4);
+    }
+
+    lift_field<uint32_t>(out, 0) = a;
+    lift_field<void*>(out, 4) = b;
+    return out;
+}
+
+// [0x0063CB90] ExprParser::WriteMethodType<EffectorWithMemory, float, &EffectorWithMemory::setIntegralGradient>::vfunc_48
+// @name ExprParser::WriteMethodType<EffectorWithMemory,float,setIntegralGradient>::write
+// @class ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
+// @summary Evaluates a float expression, stores it into EffectorWithMemory+0x60 (integral gradient), and returns the expression result pair.
+// @field EffectorWithMemory +0x60 float integralGradient
+// @field ExprNode +0x04 ExprValue* field_0x04
+void* __thiscall fn_0063CB90(void* self, void* outPtr, void** targetRef, void* expr) {
+    using namespace lift_0063CB90;
+    (void)self;
+    ExprResult* out = static_cast<ExprResult*>(outPtr);
+    uint8_t* target = static_cast<uint8_t*>(*targetRef);
+    ExprValue* inner = lift_field<ExprValue*>(expr, 0x04);
+
+    EvalFloatFn evalFloat = reinterpret_cast<EvalFloatFn>(inner->vtbl[1]);
+    lift_field<float>(target, 0x60) = evalFloat(inner, expr);
+
+    inner = lift_field<ExprValue*>(expr, 0x04);
+    void* tmp = nullptr;
+    if (inner != nullptr) {
+        GetResultFn getResult = reinterpret_cast<GetResultFn>(inner->vtbl[0x70 / 4]);
+        void** r = getResult(inner, &tmp, expr);
+        out->value = *r;
+    } else {
+        out->value = nullptr;
+    }
+    out->source = lift_field<ExprValue*>(expr, 0x04);
+    return out;
+}
+
+// [0x0064F870] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_48 (110 bytes)
+// @name WriteMethodType<SkeletalJoint, Vector4>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
+// @summary Pulls a value from a3's target via vtable slot 6, forwards it to AVIIO::vfunc_1 on *a2, then writes a two-dword result to out.
+// @field ValuePtrType +0x04 void* field_0x04
+void fn_0064F870(void* self, DWORD* out, void** a2, void* a3) {
+    (void)self;
+
+    // edi = *a2 (AVIIO instance).
+    void* io = *a2;
+
+    // First target: P = a3->+0x04, call vtable slot 6 (+0x18) with a3.
+    void* p = lift_field<void*>(a3, 4);
+    void** vt = *reinterpret_cast<void***>(p);
+    auto fn6 = reinterpret_cast<DWORD (*)(void*, void*)>(vt[6]);
+    DWORD v = fn6(p, a3);
+
+    // AVIIO::vfunc_1(io, v).
+    ext_00402040(io, v);
+
+    DWORD tmp[2] = {0, 0};
+    void* p2 = lift_field<void*>(a3, 4);
+    if (p2 != nullptr) {
+        // Second target: vtable slot 0x1C (+0x70) writes its result into tmp and returns its address.
+        void** vt2 = *reinterpret_cast<void***>(p2);
+        auto fn28 = reinterpret_cast<void* (*)(void*, void*, void*)>(vt2[28]);
+        void* r = fn28(p2, tmp, a3);
+        out[0] = *static_cast<DWORD*>(r);
+        out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(lift_field<void*>(a3, 4)));
+    } else {
+        out[0] = tmp[0];
+        out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(p2));
+    }
+}
+
+// [0x00604BD0]
+// @name WriteMethodType::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, EffectorBase::vcall{76}>
+// @summary Evaluates RHS via its type's vfunc_6, invokes EffectorBase::vcall{76} (slot 19) on target, and returns the converted value pair.
+// @field ExprValue +0x04 uint32_t type
+
+#include "lift_compat.h"
+#include <cstdint>
+
+extern "C" void ext_00603680(void* self);
+
+void* fn_00604BD0(void* self, uint32_t* out, uint32_t* target_ptr, uint32_t* rhs) {
+    (void)self;
+    void* target = reinterpret_cast<void*>(static_cast<uintptr_t>(*target_ptr));
+    void* rhs_type = reinterpret_cast<void*>(static_cast<uintptr_t>(rhs[1]));
+    void** vtable = *reinterpret_cast<void***>(rhs_type);
+
+    using GetValueFn = void* (*)(void* type_obj, uint32_t* rhs);
+    void* val = reinterpret_cast<GetValueFn>(vtable[6])(rhs_type, rhs);
+
+    using ThunkFn = void (*)(void* target, void* val);
+    reinterpret_cast<ThunkFn>(ext_00603680)(target, val);
+
+    uint32_t out_val = 0;
+    rhs_type = reinterpret_cast<void*>(static_cast<uintptr_t>(rhs[1]));
+    if (rhs_type != nullptr) {
+        void** vtable2 = *reinterpret_cast<void***>(rhs_type);
+        using ConvertFn = uint32_t* (*)(void* type_obj, uint32_t* out_buf, uint32_t* rhs);
+        uint32_t tmp = 0;
+        uint32_t* res = reinterpret_cast<ConvertFn>(vtable2[28])(rhs_type, &tmp, rhs);
+        out_val = *res;
+    }
+
+    out[0] = out_val;
+    out[1] = rhs[1];
+    return out;
+}
+
+// [0x00650E50] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48 (110 bytes)
+// @name ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>
+// @summary Calls the context's child vslot 2 to get a value, forwards it with the target object to the slot-20 thunk, then writes a (value, child) pair to the out parameter, or zeros it when the child is null.
+// @field ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}> +0x04 void* child
+
+extern void* ext_006036A0(void* self, void* arg);
+
+struct LiftPair {
+    void* first;
+    void* second;
+};
+
+// Virtual call through the vtable slot at byte offset `slotOff`, passing one argument.
+static void* lift_vcall1(void* obj, ptrdiff_t slotOff, void* arg) {
+    void* fnRaw = lift_field<void*>(*reinterpret_cast<void**>(obj), slotOff);
+    using Fn = void* (*)(void* self, void* a);
+    return reinterpret_cast<Fn>(fnRaw)(obj, arg);
+}
+
+// Virtual call through the vtable slot at byte offset `slotOff`, passing two arguments.
+static void* lift_vcall2(void* obj, ptrdiff_t slotOff, void* a, void* b) {
+    void* fnRaw = lift_field<void*>(*reinterpret_cast<void**>(obj), slotOff);
+    using Fn = void* (*)(void* self, void* a, void* b);
+    return reinterpret_cast<Fn>(fnRaw)(obj, a, b);
+}
+
+void fn_00650E50(LiftPair* out, void* arg2, void* ctx) {
+    void* ref = arg2;                                        // arg2 slot, passed by address below
+    void* target = *reinterpret_cast<void**>(ref);           // edi = [arg2]
+
+    void* child = lift_field<void*>(ctx, 0x04);              // esi+4
+    void* value = lift_vcall1(child, 0x08, ctx);             // child vslot 2 (+8) with ctx
+    ext_006036A0(target, value);                             // slot-20 thunk on target; result unused
+
+    child = lift_field<void*>(ctx, 0x04);
+    if (child != nullptr) {
+        void* res = lift_vcall2(child, 0x70, ctx, &ref);     // child vslot 28 (+0x70)
+        out->first = *reinterpret_cast<void**>(res);
+        out->second = lift_field<void*>(ctx, 0x04);
+    } else {
+        ref = nullptr;
+        out->first = ref;
+        out->second = child;
+    }
 }
