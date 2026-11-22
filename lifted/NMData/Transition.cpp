@@ -56,8 +56,10 @@ uint32_t fn_00497000(void* self) {
     using VFn = uint32_t (*)(void* obj, uint32_t arg);
     return reinterpret_cast<VFn>(vtbl[4])(obj, 0);
 }
+// Callee: takes its receiver in ecx (thiscall) plus one stack argument, pops it (ret 4).
+extern "C" uint32_t __thiscall ext_00505F00(void* self, void* arg);
 
-// [0x004972E0] NMData::Transition::vfunc_35 (53 bytes)
+extern "C" uint32_t __thiscall ext_00505F00(void* self, void* arg);
 // @name NMData::Transition::vfunc_35
 // @class NMData::Transition
 // @summary dynamic_casts arg2 to the target type; if non-null calls that object's vtable slot 11 with (arg1, this) and returns its result, else returns 0.
@@ -98,4 +100,15 @@ void* fn_00497680(void* self, void* out, uint32_t index) {
 uint32_t fn_00497090(void* self) {
     void* obj = lift_field<void*>(self, 0xB8);
     return ext_0049ED40(obj, self);
+}
+
+// [0x00499CE0]
+// @name NMData::Transition::vfunc_30
+// @class NMData::Transition
+// @summary Forwards the first argument as the receiver to ext_00505F00, passing the address of the sub-object at this+0x84 as its stack argument, and returns the callee's result.
+// @field NMData::Transition +0x84 void* field_0x84
+uint32_t __thiscall fn_00499CE0(void* self, void* a1) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* subobj = obj + 0x84;
+    return ext_00505F00(a1, subobj);
 }
