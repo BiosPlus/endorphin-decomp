@@ -9944,6 +9944,13 @@
     "summary": "Stdcall (ret 4, ECX unused): evaluates the operand at self+0x04 via its vslot 1, takes the tangent (computed in double, rounded back to float), and passes the result to the operand's vslot 7 along with self; returns that slot's eax.",
     "lifted_path": "lifted/ExprParser/Operators/Tan.cpp"
   },
+  "0x006A1C90": {
+    "name": "ExprParser::Operators::Tanh::vfunc_3",
+    "class": "ExprParser::Operators::Tanh",
+    "signature": "void fn_006A1C90(void* self)",
+    "summary": "Evaluates the operand via its vfunc_1, applies tanh (float-rounded), and passes the result to the operand's vfunc_7.",
+    "lifted_path": "lifted/ExprParser/Operators/Tanh.cpp"
+  },
   "0x006A1CD0": {
     "name": "ExprParser::Operators::Abs::vfunc_3",
     "class": "ExprParser::Operators::Abs",
