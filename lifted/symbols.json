@@ -207,6 +207,13 @@
     "summary": "Returns the address of the global constant mem_0092EA38 (string \"$aj\").",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00422CD0": {
+    "name": "ImportDialog::vfunc_0",
+    "class": "ImportDialog",
+    "signature": "extern \"C\" int* __fastcall fn_00422CD0(void* self)",
+    "summary": "Returns the address of the global data slot mem_0092EAC8 (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00425D80": {
     "name": "sub_00425D80",
     "signature": "extern \"C\" int* fn_00425D80()",

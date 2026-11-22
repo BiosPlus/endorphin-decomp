@@ -12,6 +12,7 @@ extern "C" int mem_0092CB80;
 extern "C" int mem_0092D538;
 extern "C" int mem_0092DFF4;
 extern "C" int mem_0092E5B8;
+extern "C" int mem_0092EAC8;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -136,4 +137,13 @@ extern "C" int* __fastcall fn_0041FC60(void* self) {
 void* fn_00421BF0(void* self) {
     (void)self;
     return &mem_0092E5B8;
+}
+
+// [0x00422CD0] ImportDialog::vfunc_0 (6 bytes)
+// @name ImportDialog::vfunc_0
+// @class ImportDialog
+// @summary Returns the address of the global data slot mem_0092EAC8 (leaf accessor; self is unused).
+extern "C" int* __fastcall fn_00422CD0(void* self) {
+    (void)self;
+    return &mem_0092EAC8;
 }
