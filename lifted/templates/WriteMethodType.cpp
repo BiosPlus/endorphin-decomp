@@ -303,17 +303,19 @@ void fn_0068BC60(void* self, void* dst, void* src) {
     ext_006B0C30(obj, value);
 }
 
-// [0x00604BA0]
-// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &EffectorBase::vcall76>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
-// @summary Reads a Vector4 from the source value via its vtable slot 6, then writes it to the target object through the slot 19 setter thunk.
-void fn_00604BA0(void** target, void* source) {
-    void* obj = *target;
-    void* inner = *reinterpret_cast<void**>(reinterpret_cast<char*>(source) + 4);
-    void** vtbl = *reinterpret_cast<void***>(inner);
-    using GetFn = void* (__attribute__((thiscall)) *)(void*, void*);
-    void* value = reinterpret_cast<GetFn>(vtbl[6])(inner, source);
-    ext_00603680(obj, value);
+// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<EffectorBase, bool, vcall68>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
+// @summary Evaluates the argument's sub-expression (vtable slot 3) and writes the result to the target via vcall slot 17.
+// @field ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}> +0x00 void* target
+void fn_00604930(void* self, void* arg) {
+    void* target = *reinterpret_cast<void**>(self);
+    void* sub = lift_field<void*>(arg, 0x04);
+    void** vtable = *reinterpret_cast<void***>(sub);
+    using EvalFn = uint32_t(__thiscall*)(void*, void*);
+    uint32_t value = reinterpret_cast<EvalFn>(vtable[0x0C / 4])(sub, arg);
+    using WriteFn = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<WriteFn>(ext_0062A580(target))(target, value);
 }
 
 // [0x006495F0]
@@ -332,17 +334,15 @@ void fn_006495F0(void* self, void* arg) {
     ext_00649080(target, value);
 }
 
-// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<EffectorBase, bool, vcall68>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
-// @summary Evaluates the argument's sub-expression (vtable slot 3) and writes the result to the target via vcall slot 17.
-// @field ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}> +0x00 void* target
-void fn_00604930(void* self, void* arg) {
+// [0x00604BA0]
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &EffectorBase::vcall76>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Reads a Vector4 from the source value via its vtable slot 6, then writes it to the target object through the slot 19 setter thunk.
+void fn_00604BA0(void* self, void* arg) {
     void* target = *reinterpret_cast<void**>(self);
     void* sub = lift_field<void*>(arg, 0x04);
-    void** vtable = *reinterpret_cast<void***>(sub);
-    using EvalFn = uint32_t(__thiscall*)(void*, void*);
-    uint32_t value = reinterpret_cast<EvalFn>(vtable[0x0C / 4])(sub, arg);
-    using WriteFn = void(__thiscall*)(void*, uint32_t);
-    reinterpret_cast<WriteFn>(ext_0062A580(target))(target, value);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using GetFn = uint32_t (*)(void*, void*);
+    uint32_t value = reinterpret_cast<GetFn>(vtbl[0x18 / 4])(sub, arg);
+    ext_00603680(target, value);
 }

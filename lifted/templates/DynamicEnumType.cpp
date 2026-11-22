@@ -239,14 +239,6 @@ void* __stdcall fn_005C4870(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
 
-// [0x004D3E20]
-// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::RigEventData>
-// @summary Dynamic-casts the input pointer via __RTDynamicCast.
-void* fn_004D3E20(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
-}
-
 // [0x00515850]
 extern "C" void* __stdcall fn_00515850(void* obj)
 {
@@ -259,4 +251,18 @@ extern "C" void* __stdcall fn_00515850(void* obj)
 // @summary Dynamically casts the given object pointer to NMData::CollisionModelDataBase (RTTI) and returns it.
 void* __stdcall fn_005C4870(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
+}
+
+// [0x004D3E20]
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, ...>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Performs a dynamic_cast on the given pointer via __RTDynamicCast.
+
+extern "C" void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern "C" uint8_t mem_00A2E2F8[];
+extern "C" uint8_t mem_00A3C268[];
+
+extern "C" void* __thiscall fn_004D3E20(void* self, void* ptr) {
+    (void)self;
+    return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A3C268, 0);
 }
