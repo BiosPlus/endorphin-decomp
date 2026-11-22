@@ -390,6 +390,13 @@
     "summary": "Returns the address of the static constant mem_00935578 (a .rdata word holding 0x0093556C); ignores this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044CFB0": {
+    "name": "RigEditorAddRenameDialog::vfunc_0",
+    "class": "RigEditorAddRenameDialog",
+    "signature": "extern \"C\" const void* __fastcall fn_0044CFB0(void* self)",
+    "summary": "Returns the address of the constant mem_00935594 (value 0x00935550).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

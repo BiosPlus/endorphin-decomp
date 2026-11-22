@@ -289,3 +289,12 @@ void* fn_0044CD70(void* self) {
     (void)self;
     return &mem_00935578;
 }
+
+// [0x0044CFB0]
+// @name RigEditorAddRenameDialog::vfunc_0
+// @class RigEditorAddRenameDialog
+// @summary Returns the address of the constant mem_00935594 (value 0x00935550).
+extern "C" const void* __fastcall fn_0044CFB0(void* self) {
+    (void)self;
+    return reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00935550u));
+}
