@@ -79,6 +79,12 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053F894": {
+    "name": "sub_0053F894",
+    "signature": "void __stdcall fn_0053F894(uint32_t arg_unused)",
+    "summary": "Epilogue tail: discards two saved stack slots and returns, removing a 4-byte argument from the caller's stack (stdcall-style cleanup).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",

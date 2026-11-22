@@ -1,0 +1,21 @@
+{
+  "va": "0x0053F894",
+  "size": 5,
+  "orig_symbol": "sub_0053F894",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "sub_0053F894",
+  "signature": "void __stdcall fn_0053F894(uint32_t arg_unused)",
+  "summary": "Epilogue tail: discards two saved stack slots and returns, removing a 4-byte argument from the caller's stack (stdcall-style cleanup).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:41:31Z"
+}
