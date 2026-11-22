@@ -1,0 +1,28 @@
+{
+  "va": "0x0051ADC0",
+  "size": 82,
+  "orig_symbol": "NMData::QuatChannel::vfunc_7",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_7",
+  "class": "NMData::QuatChannel",
+  "signature": "float fn_0051ADC0(void* self)",
+  "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:17Z"
+}

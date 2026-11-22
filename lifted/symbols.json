@@ -5021,6 +5021,13 @@
     "summary": "Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051ADC0": {
+    "name": "NMData::QuatChannel::vfunc_7",
+    "class": "NMData::QuatChannel",
+    "signature": "float fn_0051ADC0(void* self)",
+    "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
   "0x0051BED0": {
     "name": "NMData::RealChannel::vfunc_9",
     "class": "NMData::RealChannel",
