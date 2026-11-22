@@ -1,0 +1,28 @@
+{
+  "va": "0x0056D920",
+  "size": 61,
+  "orig_symbol": "NMCIO::vfunc_13",
+  "src_path": "src/classes/NMCIO.cpp",
+  "lifted_path": "lifted/classes/NMCIO.cpp",
+  "name": "NMCIO::vfunc_13",
+  "class": "NMCIO",
+  "signature": "void fn_0056D920(void* self, const std::string* name)",
+  "summary": "Forwards a string argument's c_str() to a virtual method on the object at NMCIO+0x418, after first calling ext_006619D0 on the object at NMCIO+0x420 with its member's +0xCC sub-object.",
+  "fields": [
+    {
+      "class": "NMCIO",
+      "offset": "+0x418",
+      "type": "void*",
+      "name": "field_0x418"
+    },
+    {
+      "class": "NMCIO",
+      "offset": "+0x420",
+      "type": "void*",
+      "name": "field_0x420"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T11:13:10Z"
+}

@@ -11,5 +11,7 @@
 namespace lifted_layout {
 struct NMCIO_Fields {
     // +0x414 void*                    field_0x414  (evidence: 0x0056D860)
+    // +0x418 void*                    field_0x418  (evidence: 0x0056D920)
+    // +0x420 void*                    field_0x420  (evidence: 0x0056D920)
 };
 } // namespace lifted_layout
