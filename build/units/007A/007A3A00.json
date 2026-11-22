@@ -96,5 +96,7 @@
     "0x007A3E09",
     "0x007A3E17"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:22:49Z"
 }
