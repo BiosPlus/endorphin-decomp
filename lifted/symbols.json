@@ -6139,6 +6139,13 @@
     "summary": "Stores the double argument (passed on the stack) into the Perspective object at +0xF8.",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x005522B0": {
+    "name": "NMCamera::Perspective::vfunc_20",
+    "class": "NMCamera::Perspective",
+    "signature": "void fn_005522B0(void* self, const int32_t* arg1, const float* arg2, float* arg3)",
+    "summary": "Writes a 4-float vector to arg3 derived from the two ints at arg1, the float at arg2, a virtual query (vtable slot 5), and the doubles at this+0xB0/0xB8/0xC0.",
+    "lifted_path": "lifted/NMCamera/Perspective.cpp"
+  },
   "0x005523C0": {
     "name": "Camera::vfunc_0",
     "class": "Camera",
