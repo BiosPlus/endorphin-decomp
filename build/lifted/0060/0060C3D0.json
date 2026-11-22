@@ -1,0 +1,22 @@
+{
+  "va": "0x0060C3D0",
+  "size": 157,
+  "orig_symbol": "NMData::EffectorWithModesData::vfunc_20",
+  "src_path": "src/NMData/EffectorWithModesData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithModesData.cpp",
+  "name": "NMData::EffectorWithModesData::vfunc_20",
+  "class": "NMData::EffectorWithModesData",
+  "signature": "std::string fn_0060C3D0(void* self)",
+  "summary": "Builds a descriptive std::string: literal prefix + this member string at +0x04 + literal suffix, returned by value.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:18:24Z"
+}

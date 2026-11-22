@@ -8176,6 +8176,13 @@
     "summary": "Builds a std::string as (literal_972218 + this-\u003estr_at_+0x4) + literal_93BF0C and returns it by value via the caller-supplied return buffer.",
     "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp"
   },
+  "0x0060C3D0": {
+    "name": "NMData::EffectorWithModesData::vfunc_20",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "std::string fn_0060C3D0(void* self)",
+    "summary": "Builds a descriptive std::string: literal prefix + this member string at +0x04 + literal suffix, returned by value.",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060C510": {
     "name": "NMData::EffectorBaseData::vfunc_0",
     "class": "NMData::EffectorBaseData",
