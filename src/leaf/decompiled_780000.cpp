@@ -20726,3 +20726,3454 @@ L_78fdcc:
         ret
     }
 }
+
+// [0x007802A0] sub_007802A0 (10352 bytes)
+extern "C" void ext_00780090();
+extern "C" void ext_007800D0();
+extern "C" void ext_00780130();
+extern "C" int mem_00B608A8;
+extern "C" int mem_00B608A4;
+extern "C" __declspec(naked) void __fastcall fn_007802A0(void* self) {
+    __asm {
+        mov al, byte ptr [mem_00B608A8]
+        test al, al
+        jne L_782AFB
+        push esi
+        mov esi, dword ptr [mem_00B608A4]
+        push edi
+        push 0xaab3b4
+        push -1
+        mov ecx, esi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x403e0000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, esi
+        call ext_007800D0
+        push 0x40240000
+        push 0x0
+        push 0x0
+        mov ecx, esi
+        call ext_00780130
+        lea edi, [esi + 0x130]
+        push 0xaab3ac
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40000000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x260]
+        push 0xaab39c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x390]
+        push 0xaab388
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4c0]
+        push 0xaab358
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5f0]
+        push 0xaab324
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x720]
+        push 0xaab2ec
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x850]
+        push 0xaab2b4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x405e0000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40540000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x980]
+        push 0xaab2a8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xab0]
+        push 0xaab298
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xbe0]
+        push 0xaab288
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xd10]
+        push 0xaab278
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xe40]
+        push 0xaab268
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xf70]
+        push 0xaab254
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x10a0]
+        push 0xaab23c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x11d0]
+        push 0xaab228
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1300]
+        push 0xaab214
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1430]
+        push 0xaab204
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1560]
+        push 0xaab1f4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1690]
+        push 0xaab1e0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x17c0]
+        push 0xaab1c8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x18f0]
+        push 0xaab1b4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1a20]
+        push 0xaab19c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1b50]
+        push 0xaab180
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1c80]
+        push 0xaab164
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1db0]
+        push 0xaab14c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x1ee0]
+        push 0xaab134
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2010]
+        push 0xaab110
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2140]
+        push 0xaab0ec
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2270]
+        push 0xaab0cc
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x23a0]
+        push 0xaab0ac
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x24d0]
+        push 0xaaf280
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x2600]
+        push 0xaab070
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x2730]
+        push 0xaab058
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2860]
+        push 0xaab03c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2990]
+        push 0xaab01c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2ac0]
+        push 0xaab004
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2bf0]
+        push 0xaaafe4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x2d20]
+        push 0xaaf270
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x2e50]
+        push 0xaaf260
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x2f80]
+        push 0xaaf250
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x30b0]
+        push 0xaaf240
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x31e0]
+        push 0xaaf230
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3310]
+        push 0xaaf220
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x408f4000
+        push 0x0
+        push 0xc08f4000
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3440]
+        push 0xaaf210
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x3570]
+        push 0xaaaecc
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x401e0000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x36a0]
+        push 0xaaaebc
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40120000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x37d0]
+        push 0xaaaea8
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x402a0000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3900]
+        push 0xaaae94
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x401c0000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3a30]
+        push 0xaaae84
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40140000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3b60]
+        push 0xaaae74
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40140000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3c90]
+        push 0xaaf204
+        push 0x2c
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x40240000
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3dc0]
+        push 0xaaf1f4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x3ef0]
+        push 0xaaf1e8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40080000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4150]
+        push 0xaaae18
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x4280]
+        push 0xaaaddc
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x401e0000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x43b0]
+        push 0xaaadcc
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40120000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x44e0]
+        push 0xaaadb8
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x402a0000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4610]
+        push 0xaaada4
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x401c0000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4740]
+        push 0xaaad94
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40140000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4870]
+        push 0xaaad84
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40c38800
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40140000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x49a0]
+        push 0xaaad74
+        push 0x37
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x40240000
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4ad0]
+        push 0xaaf1d4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4c00]
+        push 0xaaadf0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40080000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4e60]
+        push 0xaaaf18
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40000000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x4f90]
+        push 0xaaa198
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x50c0]
+        push 0xaaa18c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x51f0]
+        push 0xaaa17c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5320]
+        push 0xaaa16c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5450]
+        push 0xaaa160
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5580]
+        push 0xaaa150
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x56b0]
+        push 0xaaa140
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x57e0]
+        push 0xaaa12c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5910]
+        push 0xaaa900
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x5a40]
+        push 0xaac28c
+        push 0x4b
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x3fd00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x2
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5b70]
+        push 0xaaf1c4
+        push 0x4b
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x5ca0]
+        push 0xaaa894
+        push 0x4d
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x3fd00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x2
+        push 0x3
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x5dd0]
+        push 0xaaa864
+        push 0x4d
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x3
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x5f00]
+        push 0xaaa82c
+        push 0x4d
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x3
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6030]
+        push 0xaaa7f0
+        push 0x4d
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x3
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6160]
+        push 0xaaa7c0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6880]
+        push 0xaaa65c
+        push 0x52
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x2
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x6750]
+        push 0xaaa69c
+        push 0x52
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40240000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x2
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6620]
+        push 0xaaa6e0
+        push 0x52
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40240000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x64f0]
+        push 0xaaa72c
+        push 0x52
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x2
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        push 0xaaa770
+        lea edi, [esi + 0x63c0]
+        push 0x52
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x402e0000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x3
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6290]
+        push 0xaaa7a8
+        push 0x52
+        mov ecx, edi
+        call ext_00780090
+        push 0x1
+        push 0x0
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x2
+        push 0x3
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x69b0]
+        push 0xaaad28
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6ae0]
+        push 0xaaad14
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x6c10]
+        push 0xaaad00
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6d40]
+        push 0xaaace8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x6e70]
+        push 0xaaacd4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x6fa0]
+        push 0xaaacc0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x70d0]
+        push 0xaaaca8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x7200]
+        push 0xaaac94
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x7330]
+        push 0xaaac80
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x7460]
+        push 0xaaac68
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x7590]
+        push 0xaaac54
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x76c0]
+        push 0xaaac40
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x77f0]
+        push 0xaaac28
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x7920]
+        push 0xaaac10
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x7a50]
+        push 0xaaac00
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x7b80]
+        push 0xaaabe8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x7cb0]
+        push 0xaaabd4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x404e0000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x7de0]
+        push 0xaaabb8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x7f10]
+        push 0xaaaba0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8040]
+        push 0xaaab84
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8170]
+        push 0xaaab6c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x82a0]
+        push 0xaaab54
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x83d0]
+        push 0xaaab40
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8500]
+        push 0xaaab1c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8630]
+        push 0xaaaaf8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8760]
+        push 0xaaaae4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8890]
+        push 0xaaaac0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x89c0]
+        push 0xaaaa98
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8af0]
+        push 0xaaaa84
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8c20]
+        push 0xaaaa60
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8d50]
+        push 0xaaaa38
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8e80]
+        push 0xaaaa20
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x8fb0]
+        push 0xaaa9f8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x90e0]
+        push 0xaaa9d0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x40490000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x9210]
+        push 0xaaf1ac
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9340]
+        push 0xaaf194
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x4d30]
+        push 0xaaf178
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xc8b0]
+        push 0xaaf154
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x4020]
+        push 0xaaf138
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0xcd70]
+        push 0xaaf114
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9470]
+        push 0xaaf10c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x95a0]
+        push 0xaaf100
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x96d0]
+        push 0xaaa988
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9800]
+        push 0xaaa974
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9930]
+        push 0xaaa960
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9a60]
+        push 0xaaa94c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9b90]
+        push 0xaaa938
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40590000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        lea edi, [esi + 0x9df0]
+        push 0xaaf0e8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x9f20]
+        push 0xaaf0d0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa050]
+        push 0xaaf0bc
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        push 0xaaf0a4
+        lea edi, [esi + 0xa180]
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa2b0]
+        push 0xaaf08c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa3e0]
+        push 0xaaf074
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa510]
+        push 0xaaf05c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa640]
+        push 0xaaf044
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40668000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x4
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x4062c000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa770]
+        push 0xaaa624
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa8a0]
+        push 0xaaa610
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xa9d0]
+        push 0xaaa5fc
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xab00]
+        push 0xaaa5ec
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xac30]
+        push 0xaaa5d8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xad60]
+        push 0xaaa5c0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xae90]
+        push 0xaaa5ac
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xafc0]
+        push 0xaaa598
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb0f0]
+        push 0xaaa584
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb220]
+        push 0xaaa570
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb350]
+        push 0xaaa55c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb480]
+        push 0xaaa544
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb5b0]
+        push 0xaaa530
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb6e0]
+        push 0xaaa51c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb810]
+        push 0xaaa508
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xb940]
+        push 0xaaa4f8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xba70]
+        push 0xaaa4e4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xbba0]
+        push 0xaaa4cc
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xbcd0]
+        push 0xaaa4b8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xbe00]
+        push 0xaaa4a4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xbf30]
+        push 0xaaa490
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc060]
+        push 0xaaa47c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        push 0xaaa468
+        lea edi, [esi + 0xc190]
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc2c0]
+        push 0xaaa450
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x408f4000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x3
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3fe00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc3f0]
+        push 0xaaa440
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc520]
+        push 0xaaa3e0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40100000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc650]
+        push 0xaaa3f0
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc780]
+        push 0xaaa3c8
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40080000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xc9e0]
+        push 0xaaa41c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40100000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xcb10]
+        push 0xaaa42c
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xcc40]
+        push 0xaaa404
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x40080000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x3ff00000
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0x9cc0]
+        push 0xaaa924
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40000000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xcea0]
+        push 0xaaa3b4
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x1
+        push 0x40080000
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x5
+        push 0x0
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        lea edi, [esi + 0xcfd0]
+        push 0xaaa914
+        push -1
+        mov ecx, edi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, edi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x0
+        mov ecx, edi
+        call ext_00780130
+        add esi, 0xd100
+        push 0xaaa908
+        push -1
+        mov ecx, esi
+        call ext_00780090
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, esi
+        call ext_007800D0
+        push 0x0
+        push 0x0
+        push 0x1
+        mov ecx, esi
+        call ext_00780130
+        pop edi
+        mov byte ptr [mem_00B608A8], 0x1
+        mov eax, 0xb608a0
+        pop esi
+        ret
+L_782AFB:
+        mov eax, 0xb608a0
+        ret
+    }
+}
