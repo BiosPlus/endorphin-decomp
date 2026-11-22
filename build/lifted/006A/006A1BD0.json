@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1BD0",
+  "size": 56,
+  "orig_symbol": "ExprParser::Operators::Sinh::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Sinh.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Sinh.cpp",
+  "name": "ExprParser::Operators::Sinh::vfunc_3",
+  "class": "ExprParser::Operators::Sinh",
+  "signature": "void fn_006A1BD0(void* self)",
+  "summary": "Evaluates the operand via its vfunc_1, applies sinh (float-rounded), and passes the result to the operand's vfunc_7.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Sinh",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "operand"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:42Z"
+}
