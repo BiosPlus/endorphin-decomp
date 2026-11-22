@@ -3117,6 +3117,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4C and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00496F50": {
+    "name": "NMData::Transition::vfunc_6_off_8",
+    "class": "NMData::Transition",
+    "signature": "void fn_00496F50(void* self, uint32_t arg)",
+    "summary": "If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 6 of its +0x10 sub-object; otherwise does nothing.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004973A0": {
     "name": "NMData::Transition::getAndClearField_B4",
     "class": "NMData::Transition",
