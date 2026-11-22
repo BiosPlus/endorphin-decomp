@@ -1,0 +1,28 @@
+{
+  "va": "0x00562A30",
+  "size": 70,
+  "orig_symbol": "FBXIO::vfunc_13",
+  "src_path": "src/classes/FBXIO.cpp",
+  "lifted_path": "lifted/classes/FBXIO.cpp",
+  "name": "FBXIO::vfunc_13",
+  "class": "FBXIO",
+  "signature": "void __thiscall fn_00562A30(uintptr_t self, uint32_t arg1)",
+  "summary": "Initializes FBXIO state if needed and forwards arg1 to ext_0055E990",
+  "fields": [
+    {
+      "class": "FBXIO",
+      "offset": "+0x1F8",
+      "type": "uint8_t",
+      "name": "field_0x1f8"
+    },
+    {
+      "class": "FBXIO",
+      "offset": "+0x214",
+      "type": "uint8_t",
+      "name": "field_0x214"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:57:19Z"
+}
