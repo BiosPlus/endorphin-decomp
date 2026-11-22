@@ -54,3 +54,13 @@ void fn_004CE8C0(void* self) {
         *reinterpret_cast<VirtualForwardFn*>(vtable + 0x158);
     target(self);
 }
+
+// [0x00622320] NMData::SkeletalCalibrationVariables::vfunc_19 (10 bytes)
+// @name NMData::SkeletalCalibrationVariables::vfunc_19
+// @class NMData::SkeletalCalibrationVariables
+// @summary Stores a single float argument into the object at offset +0x10 (thiscall-style setter, callee pops 4 bytes).
+// @field NMData::SkeletalCalibrationVariables +0x10 float field_0x10
+void fn_00622320(void* self, int /*edx_unused*/, float value) {
+    std::uint8_t* base = static_cast<std::uint8_t*>(self);
+    std::memcpy(base + 0x10, &value, sizeof(float));
+}

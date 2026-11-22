@@ -1,0 +1,22 @@
+{
+  "va": "0x00622320",
+  "size": 10,
+  "orig_symbol": "NMData::SkeletalCalibrationVariables::vfunc_19",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::SkeletalCalibrationVariables::vfunc_19",
+  "class": "NMData::SkeletalCalibrationVariables",
+  "signature": "void fn_00622320(void* self, int /*edx_unused*/, float value)",
+  "summary": "Stores a single float argument into the object at offset +0x10 (thiscall-style setter, callee pops 4 bytes).",
+  "fields": [
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:06:52Z"
+}

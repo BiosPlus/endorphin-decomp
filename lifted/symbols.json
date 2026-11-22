@@ -616,6 +616,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 25 (offset +0x64) with the same this pointer; the callee's result is passed through.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x00622320": {
+    "name": "NMData::SkeletalCalibrationVariables::vfunc_19",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "void fn_00622320(void* self, int /*edx_unused*/, float value)",
+    "summary": "Stores a single float argument into the object at offset +0x10 (thiscall-style setter, callee pops 4 bytes).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0062A580": {
     "name": "VirtualDispatchThunk_Slot17",
     "class": "Object (unidentified; receiver is passed in ecx)",
