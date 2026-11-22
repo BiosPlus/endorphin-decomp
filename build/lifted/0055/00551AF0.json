@@ -1,0 +1,70 @@
+{
+  "va": "0x00551AF0",
+  "size": 88,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_8",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_8",
+  "class": "NMCamera::Orthogonal",
+  "signature": "extern \"C\" int __fastcall fn_00551AF0(void* self, void* edx_unused)",
+  "summary": "Returns 1 if the flag at +0xA0 is set, otherwise 1 only when both sub-checks pass and two float pairs are equal.",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "field_0x90"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xA0",
+      "type": "int32_t",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:33Z"
+}

@@ -11,5 +11,14 @@
 namespace lifted_layout {
 struct NMCamera_Orthogonal_Fields {
     // +0x0   void*                    vtable_ptr  (evidence: 0x00551C10)
+    // +0x30  float                    field_0x30  (evidence: 0x00551AF0)
+    // +0x34  float                    field_0x34  (evidence: 0x00551AF0)
+    // +0x3C  void*                    field_0x3c  (evidence: 0x00551AF0)
+    // +0x58  void*                    field_0x58  (evidence: 0x00551AF0)
+    // +0x68  float                    field_0x68  (evidence: 0x00551AF0)
+    // +0x6C  float                    field_0x6c  (evidence: 0x00551AF0)
+    // +0x74  void*                    field_0x74  (evidence: 0x00551AF0)
+    // +0x90  void*                    field_0x90  (evidence: 0x00551AF0)
+    // +0xA0  int32_t                  field_0xa0  (evidence: 0x00551AF0)
 };
 } // namespace lifted_layout
