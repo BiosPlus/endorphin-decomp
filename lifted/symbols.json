@@ -21251,6 +21251,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007DD020 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x007F2AC0": {
+    "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",
+    "class": "MdtArthur::arthurSolver_vanilla",
+    "signature": "void fn_007F2AC0(float* out, int32_t q, float* recs, int32_t* idxs, int32_t* counts, int32_t m, float* weights, float* edata, float a, float bf)",
+    "summary": "Accumulates weighted 6-group bone contributions into an output vec4 table, then rescales and in-place updates each record; trailing pass over n rows is not yet decoded.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
+  },
   "0x0080EFC0": {
     "name": "sub_0080EFC0",
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
