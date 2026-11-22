@@ -1,0 +1,13 @@
+{
+  "va": "0x00409060",
+  "size": 6,
+  "orig_symbol": "sub_00409060",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "GetConstant_00409060",
+  "signature": "extern \"C\" const unsigned int* __cdecl fn_00409060()",
+  "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:46:15Z"
+}

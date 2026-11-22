@@ -33,6 +33,12 @@
     "summary": "Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00409060": {
+    "name": "GetConstant_00409060",
+    "signature": "extern \"C\" const unsigned int* __cdecl fn_00409060()",
+    "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
