@@ -7687,6 +7687,13 @@
     "summary": "Lazily initializes a static local object at 0x00B4359C, registers its atexit destructor, and returns its address.",
     "lifted_path": "lifted/Geometry/AnimationType.cpp"
   },
+  "0x005B4B10": {
+    "name": "Geometry::CuboidType::vfunc_16",
+    "class": "Geometry::CuboidType",
+    "signature": "void __thiscall fn_005B4B10(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Generates the 8 scaled cuboid corner vertices and appends them to a vector.",
+    "lifted_path": "lifted/Geometry/CuboidType.cpp"
+  },
   "0x005B5320": {
     "name": "Geometry::AnimationType::getStaticList",
     "class": "Geometry::AnimationType",
