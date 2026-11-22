@@ -389,3 +389,12 @@ void __stdcall fn_00699070(void** dst, void* const* src) {
     *count = *count + 1;                                // add dword ptr [ecx+4], 1
     *dst = obj;                                         // mov [eax], ecx
 }
+
+// [0x0067A690] ExprParser::ExpressionContainerType::vfunc_42 (20 bytes)
+// @name ExprParser::ExpressionContainerType::vfunc_42
+// @class ExprParser::ExpressionContainerType
+// @summary Stdcall (ret 8) type-match test: returns 1 if the first dword of self equals the first dword of the argument (i.e. both share the same vtable), else 0.
+// @field ExprParser::ExpressionContainerType +0x00 void* vtable
+extern "C" uint32_t __stdcall fn_0067A690(const uint32_t* self, const uint32_t* other) {
+    return (self[0] == other[0]) ? 1u : 0u;
+}

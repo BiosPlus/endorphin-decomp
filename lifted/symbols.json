@@ -3024,6 +3024,13 @@
     "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0067A690": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_42",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "extern \"C\" uint32_t __stdcall fn_0067A690(const uint32_t* self, const uint32_t* other)",
+    "summary": "Stdcall (ret 8) type-match test: returns 1 if the first dword of self equals the first dword of the argument (i.e. both share the same vtable), else 0.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0067A970": {
     "name": "ExprParser::BoolType::vfunc_28",
     "class": "ExprParser::BoolType",

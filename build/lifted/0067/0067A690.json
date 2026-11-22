@@ -1,0 +1,22 @@
+{
+  "va": "0x0067A690",
+  "size": 20,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_42",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_42",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "extern \"C\" uint32_t __stdcall fn_0067A690(const uint32_t* self, const uint32_t* other)",
+  "summary": "Stdcall (ret 8) type-match test: returns 1 if the first dword of self equals the first dword of the argument (i.e. both share the same vtable), else 0.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:42Z"
+}
