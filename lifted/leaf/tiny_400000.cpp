@@ -13,6 +13,7 @@ extern "C" const unsigned int mem_0092A510;
 extern "C" int* __cdecl fn_00404C40() {
     return &mem_00929A44;
 }
+extern "C" const unsigned int mem_0092A794;
 
 // [0x00401840] sub_00401840 (6 bytes)
 // @name sub_00401840
@@ -35,4 +36,12 @@ extern "C" int* __cdecl fn_004076E0() {
 // [0x00409060]
 extern "C" const unsigned int* __cdecl fn_00409060() {
     return reinterpret_cast<const unsigned int*>(&mem_0092A510);
+}
+
+// [0x00409630] sub_00409630 (6 bytes)
+// @name GetConstant_00409630
+// @summary Returns the address of the .rdata constant u32 0x00458430 stored at mem_0092A794.
+// (no field offsets accessed)
+extern "C" const unsigned int* __cdecl fn_00409630() {
+    return &mem_0092A794;
 }

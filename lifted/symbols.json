@@ -39,6 +39,12 @@
     "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00409630": {
+    "name": "GetConstant_00409630",
+    "signature": "extern \"C\" const unsigned int* __cdecl fn_00409630()",
+    "summary": "Returns the address of the .rdata constant u32 0x00458430 stored at mem_0092A794.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040CDF0": {
     "name": "NewCharacterDialog::vfunc_92",
     "class": "NewCharacterDialog",
