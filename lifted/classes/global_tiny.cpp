@@ -30,6 +30,7 @@ extern "C" int mem_00935578;
 extern "C" int mem_009364A0;
 extern "C" int mem_00936504;
 extern "C" int mem_009366E0;
+extern "C" int mem_0093675C;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -338,4 +339,13 @@ extern "C" const void* __fastcall fn_00454B90(void* self) {
 extern "C" int* __fastcall fn_00455060(void* self) {
     (void)self;
     return &mem_009366E0;
+}
+
+// [0x004552E0] SceneNotesEditor::vfunc_0 (6 bytes)
+// @name SceneNotesEditor::vfunc_0
+// @class SceneNotesEditor
+// @summary Returns the address of the global data slot mem_0093675C (leaf accessor; self is unused).
+void* fn_004552E0(void* self) {
+    (void)self;
+    return reinterpret_cast<void*>(&mem_0093675C);
 }

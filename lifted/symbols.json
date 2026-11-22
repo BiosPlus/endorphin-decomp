@@ -443,6 +443,13 @@
     "summary": "Returns the address of the global at mem_009366E0 (ignores this).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004552E0": {
+    "name": "SceneNotesEditor::vfunc_0",
+    "class": "SceneNotesEditor",
+    "signature": "void* fn_004552E0(void* self)",
+    "summary": "Returns the address of the global data slot mem_0093675C (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00455BD0": {
     "name": "sub_00455BD0",
     "signature": "extern \"C\" const int* fn_00455BD0()",

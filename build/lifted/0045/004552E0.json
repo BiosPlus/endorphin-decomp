@@ -1,0 +1,14 @@
+{
+  "va": "0x004552E0",
+  "size": 6,
+  "orig_symbol": "SceneNotesEditor::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "SceneNotesEditor::vfunc_0",
+  "class": "SceneNotesEditor",
+  "signature": "void* fn_004552E0(void* self)",
+  "summary": "Returns the address of the global data slot mem_0093675C (leaf accessor; self is unused).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:54:21Z"
+}
