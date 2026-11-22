@@ -10,6 +10,6 @@
 // Recovered field layout for MultiTrackView::TriggeredEventView:
 namespace lifted_layout {
 struct MultiTrackView_TriggeredEventView_Fields {
-    // +0x0   (unused) self is not     dereferenced  (evidence: 0x004602B0)
+    // +0x0   (unused) self is not     dereferenced  (evidence: 0x0045D8B0, 0x004602B0)
 };
 } // namespace lifted_layout

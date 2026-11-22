@@ -1,0 +1,22 @@
+{
+  "va": "0x0045D8B0",
+  "size": 31,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_82",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::GetTrailingRangeValue",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "void fn_0045D8B0(void* self, void* ret_slot)",
+  "summary": "Calls ext_0043DCF0(-1), reads int at +0x4C of the returned object, and writes the 8-byte result {0, value + 9} into the return slot.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x0",
+      "type": "(unused) self is not",
+      "name": "dereferenced"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:00Z"
+}

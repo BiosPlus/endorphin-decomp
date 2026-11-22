@@ -2182,6 +2182,13 @@
     "summary": "Pure jump thunk forwarding to sub_0045C2C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0045D8B0": {
+    "name": "MultiTrackView::TriggeredEventView::GetTrailingRangeValue",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void fn_0045D8B0(void* self, void* ret_slot)",
+    "summary": "Calls ext_0043DCF0(-1), reads int at +0x4C of the returned object, and writes the 8-byte result {0, value + 9} into the return slot.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045E4B0": {
     "name": "sub_0045E4B0",
     "signature": "extern \"C\" void* __cdecl fn_0045E4B0(void)",
