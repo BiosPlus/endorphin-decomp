@@ -1,0 +1,13 @@
+{
+  "va": "0x007DAD40",
+  "size": 4,
+  "orig_symbol": "sub_007DAD40",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "ReturnZeroWord",
+  "signature": "uint16_t ReturnZeroWord()",
+  "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:40:55Z"
+}

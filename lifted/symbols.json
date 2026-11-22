@@ -86,6 +86,12 @@
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007DAD40": {
+    "name": "ReturnZeroWord",
+    "signature": "uint16_t ReturnZeroWord()",
+    "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x00870E86": {
     "name": "sub_00870E86",
     "signature": "void fn_00870E86(void* self)",
