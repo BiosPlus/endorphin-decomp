@@ -191,6 +191,7 @@ void fn_00622320(void* self, int /*edx_unused*/, float value) {
     std::memcpy(base + 0x10, &value, sizeof(float));
 }
 // Lookup table at 0x0095F750 (array of 32-bit entries indexed by a small id).
+// Lookup table at 0x0095F750 (array of 32-bit entries indexed by a small id).
 
 // [0x00622330] NMData::SkeletalCalibrationVariables::vfunc_20 (10 bytes)
 // @name NMData::SkeletalCalibrationVariables::vfunc_20
@@ -1839,21 +1840,6 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x005C3890] NMData::CollisionModelData::vfunc_0_off_C (24 bytes)
-// @name NMData::CollisionModelData::vfunc_0_off_C
-// @class NMData::CollisionModelData
-// @summary Returns mem_0095F750[id] where id is the DWORD at +0x08 of the object at this->+0x150; returns 0 if that object is null.
-// @field NMData::CollisionModelData +0x150 void* field_0x150
-DWORD fn_005C3890(void* self) {
-    void* inner = lift_field<void*>(self, 0x150);
-    if (inner == nullptr) {
-        return 0;
-    }
-    // Inner object field at +0x08 (type unknown; used as the table index).
-    const DWORD index = lift_field<DWORD>(inner, 0x08);
-    return mem_0095F750[index];
-}
-
 // [0x00682DC0] NMData::ValuePtrData::vfunc_0_off_4 (27 bytes)
 // @name NMData::ValuePtrData::vfunc_0_off_4
 // @class NMData::ValuePtrData
@@ -1953,4 +1939,24 @@ int32_t fn_0051C7A0(void* self) {
     int32_t span = static_cast<int32_t>(end - begin);
     // Compiler-emitted magic multiply (0x66666667, sar 3) computes signed /20.
     return span / 20;
+}
+
+// [0x005C3890] NMData::CollisionModelData::vfunc_0_off_C (24 bytes)
+// @name NMData::CollisionModelData::vfunc_0_off_C
+// @class NMData::CollisionModelData
+// @summary Returns mem_0095F750[id], where id is the 32-bit value at +0x08 of the object referenced by this->+0x150; returns 0 when that object pointer is null.
+// @field NMData::CollisionModelData +0x150 void* field_0x150
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_005C3890(void* self) {
+    // mov eax, [ecx+0x150]: 32-bit address of the referenced object (0 if absent)
+    uint32_t obj = lift_field<uint32_t>(self, 0x150);
+    if (obj == 0) {
+        // xor eax, eax ; ret
+        return 0;
+    }
+    // mov eax, [eax+8]: id stored in the referenced object
+    void* objPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(obj));
+    uint32_t id = lift_field<uint32_t>(objPtr, 0x08);
+    // mov eax, [4*eax + 0x95f750]: table lookup; result left in eax
+    return mem_0095F750[id];
 }

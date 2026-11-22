@@ -6537,6 +6537,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0xF4.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C3890": {
+    "name": "NMData::CollisionModelData::vfunc_0_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "uint32_t fn_005C3890(void* self)",
+    "summary": "Returns mem_0095F750[id], where id is the 32-bit value at +0x08 of the object referenced by this-\u003e+0x150; returns 0 when that object pointer is null.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x005C61E0": {
     "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_1",
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
