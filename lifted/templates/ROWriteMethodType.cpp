@@ -87,6 +87,7 @@ void* fn_0062A0F0(void* self) {
 // Lifted from 0x005F35A0: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
 // Lifted from 0x00603420: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
 // Lifted from 0x005F35A0: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
+// Lifted from 0x00603420: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
 
 // [0x0062A560] ExprParser::ROWriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_16 (30 bytes)
 // @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorIntegral::insert)
@@ -165,16 +166,6 @@ void fn_0064F830(void* arg) {
     ext_00671100(4, arg);
 }
 
-// [0x00603420] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorBase vcall 76)
-// @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
-// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
-// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
-// MSVC type descriptors (0x00A2E2F8, 0x00A93714), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
-void* fn_00603420(void* self) {
-    return self;
-}
-
 // [0x005F35A0] ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_16 (30 bytes)
 // @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorGroup vcall 84)
 // @class ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
@@ -182,5 +173,15 @@ void* fn_00603420(void* self) {
 // No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
 // MSVC type descriptors (0x00A2E2F8, 0x00A912F8), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
 void* fn_005F35A0(void* self) {
+    return self;
+}
+
+// [0x00603420] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorBase vcall 76)
+// @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A93714), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_00603420(void* self) {
     return self;
 }

@@ -7019,6 +7019,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x84.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00603420": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorBase vcall 76)",
+    "class": "ExprParser::ROWriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+    "signature": "void* fn_00603420(void* self)",
+    "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x006035B0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (Effector vcall 100)",
     "class": "ExprParser::ROWriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e",
