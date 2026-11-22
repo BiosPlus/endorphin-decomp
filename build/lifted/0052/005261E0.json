@@ -1,0 +1,22 @@
+{
+  "va": "0x005261E0",
+  "size": 10,
+  "orig_symbol": "NMData::NetworkConnectorData::vfunc_27",
+  "src_path": "src/NMData/NetworkConnectorData.cpp",
+  "lifted_path": "lifted/NMData/NetworkConnectorData.cpp",
+  "name": "NMData::NetworkConnectorData::vfunc_27",
+  "class": "NMData::NetworkConnectorData",
+  "signature": "extern \"C\" void __thiscall fn_005261E0(void* self)",
+  "summary": "Forwards to ext_00525E80 on the sub-object at this+0x60, passing the original this as a stack argument.",
+  "fields": [
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:23:28Z"
+}

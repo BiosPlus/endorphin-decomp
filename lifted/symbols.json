@@ -5290,6 +5290,13 @@
     "summary": "Pure jump thunk forwarding to NMData::NetworkConnectorData::vfunc_27.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005261E0": {
+    "name": "NMData::NetworkConnectorData::vfunc_27",
+    "class": "NMData::NetworkConnectorData",
+    "signature": "extern \"C\" void __thiscall fn_005261E0(void* self)",
+    "summary": "Forwards to ext_00525E80 on the sub-object at this+0x60, passing the original this as a stack argument.",
+    "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
+  },
   "0x00526C60": {
     "name": "NMData::NetworkConnectorData::vfunc_28",
     "class": "NMData::NetworkConnectorData",
