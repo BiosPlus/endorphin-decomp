@@ -1,0 +1,14 @@
+{
+  "va": "0x005B17B0",
+  "size": 115,
+  "orig_symbol": "Geometry::SphylType::vfunc_5",
+  "src_path": "src/Geometry/SphylType.cpp",
+  "lifted_path": "lifted/Geometry/SphylType.cpp",
+  "name": "Geometry::SphylType::vfunc_5",
+  "class": "Geometry::SphylType",
+  "signature": "float __stdcall fn_005B17B0(void* geom, const float* dir)",
+  "summary": "Computes projected area of a sphyl along a direction vector.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:55:06Z"
+}
