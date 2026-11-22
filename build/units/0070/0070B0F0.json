@@ -187,5 +187,7 @@
     "0x0070BB3B",
     "0x0070BB44"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T02:04:00Z"
 }
