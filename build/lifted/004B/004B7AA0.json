@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7AA0",
+  "size": 49,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_9",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_9",
+  "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+  "signature": "void fn_004B7AA0(void* self, uint8_t flag)",
+  "summary": "Stores 1.0f into *ptr when flag is nonzero, otherwise 0.0f.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:27Z"
+}

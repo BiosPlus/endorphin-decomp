@@ -116,3 +116,13 @@ void* fn_004B7A10(void* self, void* src) {
     ext_00672080(self, value, nullptr, 0);
     return self;
 }
+
+// [0x004B7AA0] ExprParser::PrimitiveProxyType<float>::vfunc_9 (49 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_9
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Stores 1.0f into *ptr when flag is nonzero, otherwise 0.0f.
+// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
+void fn_004B7AA0(void* self, uint8_t flag) {
+    float* value = lift_field<float*>(self, 0x00);
+    *value = (flag != 0) ? 1.0f : 0.0f;
+}

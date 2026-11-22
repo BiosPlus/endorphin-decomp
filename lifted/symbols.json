@@ -3745,6 +3745,13 @@
     "summary": "Stores an integer argument, converted to float, through the object's float* pointer.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x004B7AA0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_9",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void fn_004B7AA0(void* self, uint8_t flag)",
+    "summary": "Stores 1.0f into *ptr when flag is nonzero, otherwise 0.0f.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004B7B50": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_43",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
