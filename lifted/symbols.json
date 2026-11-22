@@ -8683,9 +8683,9 @@
   },
   "0x0068BD10": {
     "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
-    "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e",
-    "signature": "void* fn_0068BD10(void* self)",
-    "summary": "Runtime type check: dynamic-casts self to the type at mem_00AA3000 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
+    "signature": "void* fn_004ECA70(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Function2Type.cpp"
   },
   "0x0068BD30": {
