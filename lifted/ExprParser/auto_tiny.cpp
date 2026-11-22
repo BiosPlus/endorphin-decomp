@@ -437,28 +437,6 @@ void fn_0049B2F0(void* self, void* src) {
     lift_field<uint8_t*>(self, 0)[0] = value ? 1 : 0;
 }
 
-// [0x0049C140] ExprParser::PrimitiveProxyType<int>::vfunc_43 (28 bytes)
-// @name ExprParser::PrimitiveProxyType<int>::vfunc_43
-// @class ExprParser::PrimitiveProxyType<int>
-// @summary Adds an int obtained from the source proxy (via its vtable slot 2) into the int this proxy's value pointer refers to.
-// @field ExprParser::PrimitiveProxyType<int> +0x00 int32_t* value_ptr
-
-namespace {
-// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
-template <typename R, typename... A>
-inline R lift_vcall(void* obj, int slot, A... args) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
-}
-} // namespace
-
-void fn_0049C140(void* self, void* src) {
-    int32_t* dst = lift_field<int32_t*>(self, 0);
-    void* inner = lift_field<void*>(src, 4);
-    int32_t delta = lift_vcall<int32_t>(inner, 2, src);
-    *dst += delta;
-}
-
 // [0x0049C120] ExprParser::PrimitiveProxyType<int>::vfunc_41 (26 bytes)
 // @name ExprParser::PrimitiveProxyType<int>::vfunc_41
 // @class ExprParser::PrimitiveProxyType<int>
@@ -617,4 +595,25 @@ void fn_0066B180(void* result, void* self) {
     uint8_t value = target(inner, self);
     // mov ecx, [esp+4] ; mov [ecx], al: store result through first argument
     *static_cast<uint8_t*>(result) = value;
+}
+
+// [0x0049C140] ExprParser::PrimitiveProxyType<int>::vfunc_43 (28 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_43
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Adds the int32 returned by ctx's child virtual slot 2 into *value_ptr (*value_ptr += ctx->field_0x04->vfunc_2(ctx)).
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+void fn_0049C140(void* self, void* ctx) {
+    using VFn = int32_t(__thiscall*)(void* self, void* arg);
+
+    // dst = value_ptr, read before the call as in the original.
+    int32_t* dst = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
+
+    // child = ctx->+0x04 (class of ctx not identified); target = child->vtbl[2]
+    void* child = lift_field<void*>(ctx, 0x04);
+    void** vtbl = lift_field<void**>(child, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x08));
+    int32_t delta = target(child, ctx);
+
+    // *dst += delta. Unsigned arithmetic gives x86 add wrap-around without signed-overflow UB.
+    *dst = static_cast<int32_t>(static_cast<uint32_t>(*dst) + static_cast<uint32_t>(delta));
 }

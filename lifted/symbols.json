@@ -3347,6 +3347,13 @@
     "summary": "Writes (flag != 0) as an int32 through the proxy's value pointer.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C140": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_43",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "void fn_0049C140(void* self, void* ctx)",
+    "summary": "Adds the int32 returned by ctx's child virtual slot 2 into *value_ptr (*value_ptr += ctx-\u003efield_0x04-\u003evfunc_2(ctx)).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049ED30": {
     "name": "sub_0049ED30",
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",
