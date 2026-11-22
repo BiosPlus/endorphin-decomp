@@ -8908,6 +8908,13 @@
     "summary": "Takes the first two vectors from the child-sensor array at +0x2c, caches them at +0x78..+0x8c, then derives four plane coefficients (doubles at +0x58..+0x70) from the normal of (a,b) and the vector from ext_005B6930(+0x38).",
     "lifted_path": "lifted/Sensors/CompoundSensorFrontalPlane.cpp"
   },
+  "0x0062F100": {
+    "name": "Sensors::CompoundSensorSagittalPlane::vfunc_27",
+    "class": "Sensors::CompoundSensorSagittalPlane",
+    "signature": "static float* call_vec3_slot_38(void* obj)",
+    "summary": "Caches two child-sensor vectors, derives plane terms from them and a transform vector, and stores four doubles.",
+    "lifted_path": "lifted/Sensors/CompoundSensorSagittalPlane.cpp"
+  },
   "0x00630C90": {
     "name": "EffectorSkeletal::vfunc_31",
     "class": "EffectorSkeletal",

@@ -1,0 +1,94 @@
+{
+  "va": "0x0062F100",
+  "size": 603,
+  "orig_symbol": "Sensors::CompoundSensorSagittalPlane::vfunc_27",
+  "src_path": "src/Sensors/CompoundSensorSagittalPlane.cpp",
+  "lifted_path": "lifted/Sensors/CompoundSensorSagittalPlane.cpp",
+  "name": "Sensors::CompoundSensorSagittalPlane::vfunc_27",
+  "class": "Sensors::CompoundSensorSagittalPlane",
+  "signature": "static float* call_vec3_slot_38(void* obj)",
+  "summary": "Caches two child-sensor vectors, derives plane terms from them and a transform vector, and stores four doubles.",
+  "fields": [
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "childBegin"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x30",
+      "type": "void**",
+      "name": "childEnd"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x60",
+      "type": "double",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x68",
+      "type": "double",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x70",
+      "type": "double",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "cachedA_x"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "cachedA_y"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "cachedA_z"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "cachedB_x"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x88",
+      "type": "float",
+      "name": "cachedB_y"
+    },
+    {
+      "class": "Sensors::CompoundSensorSagittalPlane",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "cachedB_z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:22:56Z"
+}
