@@ -20,8 +20,10 @@ extern "C" void __fastcall ext_0069AA80(void* self);
 extern "C" void __fastcall ext_0069A830(void* self);
 extern "C" void __fastcall ext_006A2C20(void* self);
 #include <cstdint>
+#include <new>
+#include <string>
 
-// [0x0066AD70] ExprParser::RealType::vfunc_1 (9 bytes)
+#include <string>
 // @name ExprParser::RealType::vfunc_1
 // @class ExprParser::RealType
 // @summary Returns the single-precision float stored at the pointed-to value slot (stdcall, one stack argument).
@@ -700,4 +702,15 @@ uint32_t fn_006A1840(void* self, void* a, void* b) {
     void* vtbl = lift_field<void*>(obj, 0x00);
     auto fn = reinterpret_cast<VirtualBinaryFn>(lift_field<void*>(vtbl, 0xAC));
     return fn(obj, a, b);
+}
+
+// [0x00609740] ExprParser::ROMethod0Type<NM::Vector3, &NM::Vector3::normalize2>::vfunc_4 (29 bytes)
+// @name ExprParser::ROMethod0Type<NM::Vector3, normalize2>::vfunc_4
+// @class ExprParser::ROMethod0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Default-constructs a std::string in place in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.
+void* fn_00609740(void* self, void* dst, void* arg2) {
+    (void)self;
+    (void)arg2;
+    new (dst) std::string();
+    return dst;
 }

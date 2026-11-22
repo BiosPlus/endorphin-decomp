@@ -7134,6 +7134,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006080D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00609740": {
+    "name": "ExprParser::ROMethod0Type\u003cNM::Vector3, normalize2\u003e::vfunc_4",
+    "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+    "signature": "void* fn_00609740(void* self, void* dst, void* arg2)",
+    "summary": "Default-constructs a std::string in place in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x00609950": {
     "name": "NMData::DisabledCollisionPair::vfunc_0",
     "class": "NMData::DisabledCollisionPair",
