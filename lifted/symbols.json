@@ -10665,6 +10665,13 @@
     "summary": "Evaluates unary operand via vfunc_1, applies atan, and stores result via vfunc_7",
     "lifted_path": "lifted/ExprParser/Operators/Atan.cpp"
   },
+  "0x006A1910": {
+    "name": "ExprParser::Operators::ConstrainPi::vfunc_3",
+    "class": "ExprParser::Operators::ConstrainPi",
+    "signature": "extern const double mem_00990040; // 3.1415937410125734 (upper wrap test) extern const double mem_009576E8; // 3.1415927410125732 (pi as float, wrap target) extern const double mem_00955090; // 6.2831854820251465 (2*pi) extern const double mem_00990038; // -3.1415927410125732 (lower wrap bound) void fn_006A1910(void* self)",
+    "summary": "Evaluates the operand (vtable slot 1), wraps the resulting angle into [-pi, pi] by adding or subtracting 2*pi, then passes it to the operand's vtable slot 7.",
+    "lifted_path": "lifted/ExprParser/Operators/ConstrainPi.cpp"
+  },
   "0x006A19D0": {
     "name": "ExprParser::Operators::Cos::vfunc_3",
     "class": "ExprParser::Operators::Cos",
