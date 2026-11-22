@@ -731,3 +731,17 @@ std::uintptr_t fn_0066BA70(void* self, void* arg) {
     void** vtbl = *reinterpret_cast<void***>(sub);
     return reinterpret_cast<ForwardFn>(vtbl[42])(sub, inner, arg);
 }
+
+// [0x0066BC20] ExprParser::VPtrProxyType::vfunc_41 (30 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_41_forward
+// @class ExprParser::VPtrProxyType
+// @summary Forwards (inner, arg) to vtable slot 41 of inner->+0x04 and returns its result.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+std::uintptr_t fn_0066BC20(void* self, void* arg) {
+    using ForwardFn = std::uintptr_t (*)(void* self, void* a, void* b);
+
+    void* inner = *reinterpret_cast<void**>(self);
+    void* sub = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(inner) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    return reinterpret_cast<ForwardFn>(vtbl[41])(sub, inner, arg);
+}
