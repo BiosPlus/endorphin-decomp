@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" unsigned char __fastcall ext_00546520(void* self, void* edx_unused, void* arg);
 extern "C" unsigned char __fastcall ext_00551960(void* self, void* edx_unused, void* arg);
+extern "C" void ext_005480D0(uint32_t arg);
 
 // [0x00551AF0] NMCamera::Orthogonal::vfunc_8 (88 bytes)
 // @name NMCamera::Orthogonal::vfunc_8
@@ -45,4 +46,12 @@ extern "C" int __fastcall fn_00551AF0(void* self, void* edx_unused) {
     }
 
     return 1;
+}
+
+// [0x00551A10] NMCamera::Orthogonal::vfunc_5 (8 bytes)
+// @name NMCamera::Orthogonal::vfunc_5
+// @class NMCamera::Orthogonal
+// @summary Forwards its single stack argument unchanged to ext_005480D0 and returns (callee pops 4 bytes).
+void fn_00551A10(uint32_t arg) {
+    ext_005480D0(arg);
 }

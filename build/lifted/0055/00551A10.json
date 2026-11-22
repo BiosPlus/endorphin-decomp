@@ -1,0 +1,14 @@
+{
+  "va": "0x00551A10",
+  "size": 8,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_5",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_5",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void fn_00551A10(uint32_t arg)",
+  "summary": "Forwards its single stack argument unchanged to ext_005480D0 and returns (callee pops 4 bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:22:54Z"
+}

@@ -6160,6 +6160,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0054FCB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00551A10": {
+    "name": "NMCamera::Orthogonal::vfunc_5",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void fn_00551A10(uint32_t arg)",
+    "summary": "Forwards its single stack argument unchanged to ext_005480D0 and returns (callee pops 4 bytes).",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00551A70": {
     "name": "NMCamera::Orthogonal::vfunc_1",
     "class": "NMCamera::Orthogonal",
