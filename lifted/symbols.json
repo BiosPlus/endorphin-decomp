@@ -118,6 +118,13 @@
     "summary": "Reads the object's vtable pointer and returns the function pointer stored at vtable byte offset 0x48 (the original is a tail-jump to that slot; here the target is returned, since a portable tail-call needs the target's signature).",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x00603670": {
+    "name": "VirtualSlot15Thunk",
+    "class": "VTable",
+    "signature": "void* fn_00603670(void* self)",
+    "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 15 (offset +0x3C) with the same this pointer; the callee's result is passed through.",
+    "lifted_path": "lifted/leaf/tiny_600000.cpp"
+  },
   "0x00603680": {
     "name": "VirtualSlot19Thunk",
     "signature": "void fn_00603680(void* self)",
