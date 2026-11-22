@@ -1,0 +1,14 @@
+{
+  "va": "0x005A7260",
+  "size": 32,
+  "orig_symbol": "NMData::CalibrationData::vfunc_2",
+  "src_path": "src/NMData/CalibrationData.cpp",
+  "lifted_path": "lifted/NMData/CalibrationData.cpp",
+  "name": "NMData::CalibrationData::vfunc_2",
+  "class": "NMData::CalibrationData",
+  "signature": "void* fn_005A7260(void* self, void* target, uint32_t /*arg2, unused*/)",
+  "summary": "Calls ext_006720E0 on the target object with (self+4, 0) and returns the target.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:28Z"
+}

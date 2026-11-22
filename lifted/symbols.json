@@ -6229,6 +6229,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls NMData::DesiredPoseData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005A7260": {
+    "name": "NMData::CalibrationData::vfunc_2",
+    "class": "NMData::CalibrationData",
+    "signature": "void* fn_005A7260(void* self, void* target, uint32_t /*arg2, unused*/)",
+    "summary": "Calls ext_006720E0 on the target object with (self+4, 0) and returns the target.",
+    "lifted_path": "lifted/NMData/CalibrationData.cpp"
+  },
   "0x005A7B10": {
     "name": "NMData::DesiredPoseData::vfunc_0",
     "class": "NMData::DesiredPoseData",
