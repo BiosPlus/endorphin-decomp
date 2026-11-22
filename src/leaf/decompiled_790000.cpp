@@ -21103,3 +21103,52 @@ L_007952f8:
         ret
     }
 }
+
+// [0x0079A0EC] sub_0079A0EC (43 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0079A0EC(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x19
+        _emit 0x01
+        _emit 0x02
+        _emit 0x03
+        _emit 0x04
+        _emit 0x19
+        _emit 0x19
+        _emit 0x05
+        _emit 0x06
+        _emit 0x19
+        _emit 0x19
+        _emit 0x07
+        _emit 0x19
+        _emit 0x19
+        _emit 0x08
+        _emit 0x09
+        _emit 0x0a
+        _emit 0x0b
+        _emit 0x19
+        _emit 0x0c
+        _emit 0x19
+        _emit 0x19
+        _emit 0x0d
+        _emit 0x0e
+        _emit 0x19
+        _emit 0x0f
+        _emit 0x10
+        _emit 0x11
+        _emit 0x12
+        _emit 0x13
+        _emit 0x14
+        _emit 0x15
+        _emit 0x16
+        _emit 0x19
+        _emit 0x19
+        _emit 0x19
+        _emit 0x19
+        _emit 0x19
+        _emit 0x19
+        _emit 0x19
+        _emit 0x19
+        _emit 0x17
+    }
+}
