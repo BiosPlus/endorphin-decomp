@@ -1,0 +1,14 @@
+{
+  "va": "0x00447F10",
+  "size": 6,
+  "orig_symbol": "ProgressDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ProgressDialog::vfunc_0",
+  "class": "ProgressDialog",
+  "signature": "void* fn_00447F10(void* self)",
+  "summary": "Returns the address of the global data slot mem_00933000 (leaf accessor; self is unused).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:51:18Z"
+}

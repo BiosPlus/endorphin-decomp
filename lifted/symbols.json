@@ -297,6 +297,13 @@
     "summary": "Returns the address of the global mem_00932E64 (no per-instance state is read).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00447F10": {
+    "name": "ProgressDialog::vfunc_0",
+    "class": "ProgressDialog",
+    "signature": "void* fn_00447F10(void* self)",
+    "summary": "Returns the address of the global data slot mem_00933000 (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

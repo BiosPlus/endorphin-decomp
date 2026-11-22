@@ -18,6 +18,7 @@ extern "C" int mem_0092F394;
 extern "C" int mem_0092F82C;
 extern "C" int mem_00932C44;
 extern "C" int mem_00932E64;
+extern "C" int mem_00933000;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -197,4 +198,13 @@ void* fn_00447580(void* self) {
 void* fn_00447DC0(void* self) {
     (void)self;
     return static_cast<void*>(&mem_00932E64);
+}
+
+// [0x00447F10] ProgressDialog::vfunc_0 (6 bytes)
+// @name ProgressDialog::vfunc_0
+// @class ProgressDialog
+// @summary Returns the address of the global data slot mem_00933000 (leaf accessor; self is unused).
+void* fn_00447F10(void* self) {
+    (void)self;
+    return reinterpret_cast<void*>(&mem_00933000);
 }
