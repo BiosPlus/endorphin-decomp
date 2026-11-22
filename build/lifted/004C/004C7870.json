@@ -1,0 +1,34 @@
+{
+  "va": "0x004C7870",
+  "size": 42,
+  "orig_symbol": "NMData::SeverEventData::vfunc_84",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_84",
+  "class": "NMData::SeverEventData",
+  "signature": "void fn_004C7870(void* self, uint32_t key)",
+  "summary": "Stdcall (ret 4, ECX = this): if the sever target at +0x19C is set, the enabled flag at +0x17C is true, and the argument matches the key at +0x15C, calls virtual slot 0 on the target.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x15C",
+      "type": "uint32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x19C",
+      "type": "void*",
+      "name": "field_0x19c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:14Z"
+}

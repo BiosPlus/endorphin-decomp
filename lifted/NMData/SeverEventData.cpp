@@ -16,3 +16,26 @@ extern "C" void __thiscall fn_004C7190(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
+
+// [0x004C7870] NMData::SeverEventData::vfunc_84 (42 bytes)
+// @name NMData::SeverEventData::vfunc_84
+// @class NMData::SeverEventData
+// @summary Stdcall (ret 4, ECX = this): if the sever target at +0x19C is set, the enabled flag at +0x17C is true, and the argument matches the key at +0x15C, calls virtual slot 0 on the target.
+// @field NMData::SeverEventData +0x15C uint32_t field_0x15c
+// @field NMData::SeverEventData +0x17C uint8_t field_0x17c
+// @field NMData::SeverEventData +0x19C void* field_0x19c
+void fn_004C7870(void* self, uint32_t key) {
+    void* target = lift_field<void*>(self, 0x19C);
+    if (target == nullptr) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x17C) == 0) {
+        return;
+    }
+    if (key != lift_field<uint32_t>(self, 0x15C)) {
+        return;
+    }
+    void** vtbl = *reinterpret_cast<void***>(target);
+    auto slot0 = reinterpret_cast<void (*)(void*)>(vtbl[0]);
+    slot0(target);
+}
