@@ -201,8 +201,15 @@ func FindMSVCClExe() string {
 
 // SanitizeFilename replaces C++ symbol characters with filesystem-safe tokens.
 func SanitizeFilename(s string) string {
-	r := strings.NewReplacer("::", "_", "<", "_", ">", "_", " ", "_", "*", "ptr", "&", "ref", ",", "_", "/", "_")
-	return r.Replace(s)
+	r := strings.NewReplacer(
+		"::", "_", "<", "_", ">", "_", " ", "_", "*", "ptr", "&", "ref",
+		",", "_", "/", "_", "\\", "_", ":", "_", "?", "_", "\"", "_", "|", "_",
+	)
+	out := r.Replace(s)
+	if strings.Trim(out, "_.") == "" {
+		return "Unknown"
+	}
+	return out
 }
 
 // DirectWineClArgs constructs an *exec.Cmd to invoke MSVC8 cl.exe directly:

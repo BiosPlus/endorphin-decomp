@@ -54,6 +54,7 @@ func main() {
 		slugCache: map[string]string{}, runInfo: map[string]*runInfo{},
 		agyNoModel: map[string]bool{}, noCheck: map[string]int{},
 		results: make(chan attemptResult, 64),
+		autoLiftDone: make(chan int, 1),
 		jobs: map[string]int{}, fnTier: map[string]int{}, fnOwed: map[string][]string{},
 		inflightAddr: map[string]bool{}, inflightCpp: map[string]int{}, seen: map[string]bool{},
 		funcCpp: map[string]string{}, funcSize: map[string]int{}, fnStart: map[string]time.Time{},
@@ -94,6 +95,12 @@ func main() {
 
 	fmt.Println("Cleaning stale lifted/wip files and scanning queue...")
 	l.liftwork("clean")
+	if cfg.RunAutoLift {
+		fmt.Printf("Running auto-lift pre-pass (scope=%s)...\n", cfg.Scope)
+		c := exec.Command(l.bin("liftwork"), "auto-lift", "--scope", cfg.Scope)
+		c.Stdout, c.Stderr = os.Stdout, os.Stderr
+		_ = c.Run()
+	}
 
 	l.run()
 
@@ -145,7 +152,12 @@ func (l *lifter) detectCLIs() {
 	if exec.Command("claude", "--version").Run() == nil {
 		l.hasClaude = true
 		help, _ := exec.Command("claude", "--help").CombinedOutput()
-		l.hasClaudeEffort = strings.Contains(string(help), "--effort")
+		helpStr := string(help)
+		l.hasClaudeEffort = strings.Contains(helpStr, "--effort")
+		l.hasClaudeSettingSources = strings.Contains(helpStr, "--setting-sources")
+		l.hasClaudeStrictMCP = strings.Contains(helpStr, "--strict-mcp-config")
+		l.hasClaudeTools = strings.Contains(helpStr, "--tools")
+		l.hasClaudeDisableSlash = strings.Contains(helpStr, "--disable-slash-commands")
 	}
 	l.hasAgy = exec.Command("agy", "--help").Run() == nil
 }

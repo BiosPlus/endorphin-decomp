@@ -200,14 +200,18 @@ func rebuildStructsAndSymbolsFromEntries(entries map[string]LiftEntry, classes m
 			if f.Class == "" || f.Name == "" || f.Type == "" {
 				continue
 			}
+			cls := f.Class
+			if cls == "?" || strings.Trim(decomp.SanitizeFilename(cls), "_.") == "" {
+				cls = "Unknown"
+			}
 			offStr, offVal, err := normalizeOffset(f.Offset)
 			if err != nil {
 				continue
 			}
-			cmap := byClass[f.Class]
+			cmap := byClass[cls]
 			if cmap == nil {
 				cmap = map[string]*aggregatedField{}
-				byClass[f.Class] = cmap
+				byClass[cls] = cmap
 			}
 			key := fmt.Sprintf("%d|%s|%s", offVal, f.Type, f.Name)
 			af := cmap[key]

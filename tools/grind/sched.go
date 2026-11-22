@@ -289,6 +289,7 @@ efforts:
 			g.mu.Unlock()
 			checksBefore := checkRuns(g.root, addr)
 			rc, rl := g.runAgent(model, effort, backend, addr, logPath, timeout)
+			startErr := startFailedMsg(logPath)
 			os.Remove(logPath)
 			checked := checkRuns(g.root, addr) > checksBefore
 
@@ -317,6 +318,9 @@ efforts:
 				return res
 			}
 			if !checked && rc != rcRateLimited {
+				if startErr != "" {
+					g.emit("[!] %s: %s (%s) %s", addr, tag, backend, startErr)
+				}
 				// The agent never ran `work check`: it died before attempting (usage exhausted with an unrecognised
 				// message, CLI crash, auth error...). Not a model failure; cool the pool down so the queue is not
 				// burned through, and keep the model owed. After maxNoCheckRuns it counts as a real failure.
@@ -362,6 +366,20 @@ efforts:
 	return res
 }
 
+// startFailedMsg returns any "grind: start failed: ..." line recorded by runTracked.
+func startFailedMsg(logPath string) string {
+	b, err := os.ReadFile(logPath)
+	if err != nil {
+		return ""
+	}
+	for _, l := range strings.Split(string(b), "\n") {
+		if strings.HasPrefix(l, "grind: start failed:") {
+			return strings.TrimSpace(l)
+		}
+	}
+	return ""
+}
+
 // diagBestPct returns the best match % recorded in .local/diag/<VA>.tsv (0 if none).
 func diagBestPct(root, addr string) float64 {
 	va := strings.ToUpper(strings.TrimPrefix(addr, "0x"))
@@ -390,6 +408,9 @@ func (g *grind) refreshCandidates() {
 	}
 	if g.cfg.RetryDeferred {
 		args = append(args, "--retry-deferred")
+	}
+	if g.cfg.RetrySkipped {
+		args = append(args, "--retry-skipped")
 	}
 	out, _ := exec.Command(g.bin("work"), args...).Output()
 	g.candidates = g.candidates[:0]
@@ -472,13 +493,45 @@ func (g *grind) escalationBacklog() int {
 	return n
 }
 
-// advance puts addr into the first tier >= t that still owes it an attempt, or defers it.
+func (g *grind) tierUsableNow(owed []string) bool {
+	for _, m := range owed {
+		if g.resolveBackend(m) != "" {
+			return true
+		}
+	}
+	return false
+}
+
+// nextUsableTier returns the first tier >= startTier that owes addr an attempt and has a usable backend now.
+func (g *grind) nextUsableTier(addr string, startTier int) (int, []string, bool) {
+	for t := startTier; t < len(g.cfg.Tiers); t++ {
+		if owed := g.owedModels(addr, t); len(owed) > 0 && g.tierUsableNow(owed) {
+			return t, owed, true
+		}
+	}
+	return 0, nil, false
+}
+
+// advance puts addr into the first tier >= t that still owes it an attempt and is usable now. If no tier >= t
+// is usable now (e.g. lower-tier claude harnesses are rate-limited), it skips to a usable higher tier (agy/gemini)
+// rather than stalling; if any owed tier exists (e.g. all pools cooling down, or an earlier tier was skipped),
+// addr waits instead of being deferred.
 func (g *grind) advance(addr string, t int) {
-	for ; t < len(g.cfg.Tiers); t++ {
-		if owed := g.owedModels(addr, t); len(owed) > 0 {
-			g.fnTier[addr], g.fnOwed[addr] = t, owed
-			g.pending[t] = append(g.pending[t], addr)
-			g.emit("[~] %s: tier %d owes attempts from: %s", addr, t, strings.Join(owed, " "))
+	if t2, owed, ok := g.nextUsableTier(addr, t); ok {
+		g.fnTier[addr], g.fnOwed[addr] = t2, owed
+		g.pending[t2] = append(g.pending[t2], addr)
+		if t2 > t {
+			g.emit("[~] %s: tier %d..%d cooling down/unavailable -> tier %d (%s)", addr, t, t2-1, t2, strings.Join(owed, " "))
+		} else {
+			g.emit("[~] %s: tier %d owes attempts from: %s", addr, t2, strings.Join(owed, " "))
+		}
+		return
+	}
+	for t2 := 0; t2 < len(g.cfg.Tiers); t2++ {
+		if owed := g.owedModels(addr, t2); len(owed) > 0 {
+			g.fnTier[addr], g.fnOwed[addr] = t2, owed
+			g.pending[t2] = append(g.pending[t2], addr)
+			g.emit("[~] %s: tier %d owes attempts from: %s (waiting for pool)", addr, t2, strings.Join(owed, " "))
 			return
 		}
 	}
@@ -488,10 +541,21 @@ func (g *grind) advance(addr string, t int) {
 }
 
 // dispatch launches waiting functions on owed models with a free slot and a usable pool, least loaded first.
+// If every owed model in tier t is currently cooling down/unavailable, addr moves up to the next usable tier.
 func (g *grind) dispatch() {
 	for t := range g.pending {
 		var keep []string
 		for _, addr := range g.pending[t] {
+			if !g.tierUsableNow(g.fnOwed[addr]) {
+				if t2, owed, ok := g.nextUsableTier(addr, t+1); ok {
+					g.fnTier[addr], g.fnOwed[addr] = t2, owed
+					g.pending[t2] = append(g.pending[t2], addr)
+					g.emit("[~] %s: tier %d unavailable/cooling down -> tier %d (%s)", addr, t, t2, strings.Join(owed, " "))
+					continue
+				}
+				keep = append(keep, addr)
+				continue
+			}
 			best, bestScore := -1, 0
 			for _, m := range g.fnOwed[addr] {
 				idx := g.modelIdx[m]

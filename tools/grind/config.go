@@ -21,6 +21,7 @@ type config struct {
 	RunAutoSolve      bool     // RUN_AUTO_SOLVE
 	AutoSolveEvery    int      // AUTO_SOLVE_EVERY: re-run auto_solve after this many finished functions (0 = only at start)
 	RetryDeferred     bool     // RETRY_DEFERRED
+	RetrySkipped      bool     // RETRY_SKIPPED
 	MaxSize           int      // MAX_SIZE
 	IgnoreAttempts    bool     // IGNORE_ATTEMPTS
 	StatusOnMatch     bool     // STATUS_ON_MATCH
@@ -111,6 +112,7 @@ func loadConfig(args []string) (*config, error) {
 	c.RunAutoSolve = envBool("RUN_AUTO_SOLVE", true)
 	c.AutoSolveEvery = envInt("AUTO_SOLVE_EVERY", 25)
 	c.RetryDeferred = envBool("RETRY_DEFERRED", false)
+	c.RetrySkipped = envBool("RETRY_SKIPPED", false)
 	c.MaxSize = envInt("MAX_SIZE", 65535)
 	c.IgnoreAttempts = envBool("IGNORE_ATTEMPTS", false)
 	c.StatusOnMatch = envBool("STATUS_ON_MATCH", false)
@@ -119,7 +121,7 @@ func loadConfig(args []string) (*config, error) {
 	if !c.WorkIsolated {
 		c.PerFileCap = 1
 	}
-	c.EscCap = envInt("ESC_CAP", 2)
+	c.EscCap = envInt("ESC_CAP", 4)
 	c.ModelCaps = parseKV(envStr("MODEL_CAPS", ""))
 	c.EscBacklogFactor = envInt("ESC_BACKLOG_FACTOR", 4)
 	c.ModelMinSize = parseKV(envStr("MODEL_MIN_SIZE", ""))

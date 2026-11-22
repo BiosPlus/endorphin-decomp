@@ -18,8 +18,8 @@ type lifter struct {
 	pools *pools
 	procs *procs
 
-	hasClaude, hasClaudeEffort, hasAgy bool
-	agySettings                        string
+	hasClaude, hasClaudeEffort, hasClaudeSettingSources, hasClaudeStrictMCP, hasClaudeTools, hasClaudeDisableSlash, hasAgy bool
+	agySettings                                                                                                            string
 
 	chain     []string
 	modelIdx  map[string]int
@@ -33,9 +33,12 @@ type lifter struct {
 	noCheck    map[string]int
 	events     []string
 
-	results chan attemptResult
+	results      chan attemptResult
+	autoLiftDone chan int
 
 	// main goroutine only
+	autoLiftRunning bool
+	nextAutoLiftAt  int
 	pending      [][]string
 	running      []int
 	jobs         map[string]int
@@ -229,8 +232,8 @@ func (l *lifter) attemptWorker(addr string, idx, size int, fnStart time.Time) at
 				res.res, res.win = "lifted", tag
 				return res
 			}
-			l.emit("[-] Unlifted on %s (%s): %s", tag, backend, addr)
 			l.liftwork("clean", addr)
+			l.emit("[-] Unlifted %s on %s (%s)", addr, tag, backend)
 			if !checked && rc == rcInvalidModel && backend == "agy" {
 				l.mu.Lock()
 				l.agyNoModel[model] = true
@@ -471,6 +474,7 @@ func (l *lifter) reap(r attemptResult) {
 	l.mu.Unlock()
 	l.dash.forget(r.addr)
 	spec := l.chain[r.idx]
+
 	switch r.res {
 	case "lifted":
 		win := r.win
@@ -516,12 +520,63 @@ func (l *lifter) finish(addr, outcome, model string) {
 		l.deferred++
 	}
 	l.logResult(addr, l.funcSize[addr], outcome, model, l.fnStart[addr])
-	l.liftwork("commit-pending")
+	if outcome == "lifted" {
+		l.liftwork("commit-pending", addr)
+	}
 	l.emit("[done] %s (%s via %s) finished=%d/%d lifted=%d deferred=%d", addr, outcome, model, l.finished,
 		l.cfg.MaxWaves*l.cfg.WaveSize, l.lifted, l.deferred)
 	if pe := l.cfg.PushEvery * l.cfg.WaveSize; pe > 0 && l.finished%pe == 0 {
 		l.push()
 	}
+	l.maybeStartAutoLift()
+}
+
+func (l *lifter) maybeStartAutoLift() {
+	if l.cfg.AutoLiftEvery <= 0 || l.autoLiftRunning {
+		return
+	}
+	if l.nextAutoLiftAt == 0 {
+		l.nextAutoLiftAt = l.cfg.AutoLiftEvery
+	}
+	if l.finished < l.nextAutoLiftAt {
+		return
+	}
+	l.autoLiftRunning = true
+	l.nextAutoLiftAt = l.finished + l.cfg.AutoLiftEvery
+	l.emit("[*] Launching periodic auto-lift pass (scope=%s)...", l.cfg.Scope)
+	go func() {
+		out, _ := exec.Command(l.bin("liftwork"), "auto-lift", "--no-patterns", "--scope", l.cfg.Scope).CombinedOutput()
+		n := 0
+		for _, line := range strings.Split(string(out), "\n") {
+			if strings.HasPrefix(line, "auto-lift: lifted ") {
+				_, _ = fmt.Sscanf(line, "auto-lift: lifted %d", &n)
+			}
+		}
+		l.autoLiftDone <- n
+	}()
+}
+
+func (l *lifter) autoLiftFinished(n int) {
+	l.autoLiftRunning = false
+	if n == 0 {
+		l.emit("[*] auto-lift: nothing new")
+		return
+	}
+	solved := 0
+	for t := range l.pending {
+		var keep []string
+		for _, addr := range l.pending[t] {
+			if l.isLifted(addr) {
+				solved++
+				l.finish(addr, "lifted", "auto_lift")
+			} else {
+				keep = append(keep, addr)
+			}
+		}
+		l.pending[t] = keep
+	}
+	l.emit("[+] auto-lift: %d functions lifted (%d queued functions cleared)", n, solved)
+	l.refreshAt = 0
 }
 
 func (l *lifter) push() {
@@ -567,6 +622,9 @@ func (l *lifter) run() {
 	wait:
 		for {
 			select {
+			case n := <-l.autoLiftDone:
+				l.autoLiftFinished(n)
+				break wait
 			case r := <-l.results:
 				l.reap(r)
 				for drained := false; !drained; {

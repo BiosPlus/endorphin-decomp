@@ -174,6 +174,30 @@ func inferClassFromSymbol(symbol string) string {
 	return ""
 }
 
+func compactClassHeader(raw string) string {
+	var out []string
+	for _, line := range strings.Split(strings.ReplaceAll(raw, "\r\n", "\n"), "\n") {
+		t := strings.TrimSpace(line)
+		if !strings.HasPrefix(t, "// +0x") && !strings.HasPrefix(t, "// -0x") {
+			continue
+		}
+		t = strings.TrimSpace(strings.TrimPrefix(t, "//"))
+		if idx := strings.Index(t, "  (evidence:"); idx != -1 {
+			conflict := ""
+			if cidx := strings.Index(t[idx:], "// CONFLICT"); cidx != -1 {
+				conflict = " " + strings.TrimSpace(t[idx+cidx:])
+			}
+			t = strings.TrimSpace(t[:idx]) + conflict
+		}
+		out = append(out, "  "+t)
+	}
+	s := strings.Join(out, "\n")
+	if len(s) > 2048 {
+		s = s[:2048] + "\n  // ... (truncated)"
+	}
+	return s
+}
+
 func readLiftedClassHeader(className string) string {
 	if className == "" {
 		return ""
@@ -183,9 +207,5 @@ func readLiftedClassHeader(className string) string {
 	if err != nil {
 		return ""
 	}
-	s := strings.TrimSpace(string(b))
-	if len(s) > 4096 {
-		s = s[:4096] + "\n// ... (truncated)"
-	}
-	return s
+	return compactClassHeader(string(b))
 }

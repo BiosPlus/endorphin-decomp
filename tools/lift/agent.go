@@ -97,7 +97,7 @@ func agentEnv(model, effort, addr string, isolated bool) []string {
 func (l *lifter) agyCmd(slug, effort, prompt, model, addr string, timeout time.Duration) *exec.Cmd {
 	t := fmt.Sprintf("%ds", int(timeout.Seconds()))
 	c := exec.Command("agy", "--model", slug, "--effort", effort, "--mode", "auto", "--sandbox",
-		"--settings", l.agySettings, "--print-timeout", t, "-p", prompt)
+		"--disable-slash-commands", "--settings", l.agySettings, "--print-timeout", t, "-p", prompt)
 	c.Env = agentEnv(model, effort, addr, l.cfg.LiftIsolated)
 	return c
 }
@@ -142,37 +142,21 @@ type rlInfo struct {
 	reset int64
 }
 
-func buildLiftPrompt(root, addr, editRule, tag, briefing string) (string, string) {
+func buildLiftPrompt(root, addr, briefing string) (string, string) {
+	core := fmt.Sprintf(`Lift %[1]s to portable C++20 in TARGET_CPP (no __asm/naked/_emit/TODO).
+Overwrite TARGET_CPP directly (no Read needed): #include "lift_compat.h", declare used ext_/mem_, keep // [%[1]s], and add:
+// @name <Class::method or descriptiveName>
+// @class <Class> (if member)
+// @summary <one-line description>
+// @field <Class> +0xNN <type> <name> (per accessed offset; don't guess, use field_0xNN if unsure)
+Verify: ./.local/bin/liftwork check %[1]s
+Stop once check passes or after 6 tries.`, addr)
+
 	if briefing == "" {
-		return fmt.Sprintf(`You are assigned a single function to lift from x86 assembly to clean, portable C++: %[1]s.
-Run './.local/bin/liftwork claim %[1]s' first to inspect the disassembly, src/ body, .rdata constants, known callees, and known struct fields.
-Rules:
-- %[2]s
-- Write clean, readable, portable C++20 (include "lift_compat.h"; std::bit_cast / std::span available). Zero __asm, __declspec(naked), _emit, or TODO stubs.
-- Keep the // [%[1]s] marker and include structured metadata comments above the function:
-    // @name <ClassName::methodName or descriptiveName>
-    // @class <ClassName> (when applicable)
-    // @summary <concise one-line description of behavior>
-    // @field <ClassName> +0xNN <type> <fieldName> (for every struct/object field offset accessed)
-- Naming: never guess — if unsure, keep the original symbol and use field_0xNN.
-- Verify with: ./.local/bin/liftwork check %[1]s --model %[3]s
-- Stop immediately once liftwork check succeeds, or after 6 tries. Do NOT run liftwork next or liftwork skip, and NEVER edit src/, include/, build/units/, or docs/.`, addr, editRule, tag), ""
+		return fmt.Sprintf("Run './.local/bin/liftwork claim %s' first.\n%s", addr, core), ""
 	}
 
-	prompt := fmt.Sprintf(`You are assigned a single function to lift from x86 assembly to clean, portable C++: %[1]s (already claimed below).
-Rules:
-- %[2]s
-- Write clean, readable, portable C++20 (include "lift_compat.h"; std::bit_cast / std::span available). Zero __asm, __declspec(naked), _emit, or TODO stubs.
-- Keep the // [%[1]s] marker and include structured metadata comments above the function:
-    // @name <ClassName::methodName or descriptiveName>
-    // @class <ClassName> (when applicable)
-    // @summary <concise one-line description of behavior>
-    // @field <ClassName> +0xNN <type> <fieldName> (for every struct/object field offset accessed)
-- Naming: never guess — if unsure, keep the original symbol and use field_0xNN.
-- Verify with: ./.local/bin/liftwork check %[1]s --model %[3]s
-- Stop immediately once liftwork check succeeds, or after 6 tries. Do NOT run liftwork next, liftwork claim, or liftwork skip, and NEVER edit src/, include/, build/units/, or docs/.
-
-%[4]s`, addr, editRule, tag, briefing)
+	prompt := core + "\n\n" + briefing
 	if len(prompt) <= maxArgPromptBytes {
 		return prompt, ""
 	}
@@ -191,35 +175,21 @@ Rules:
 		return prompt, ""
 	}
 	rel := filepath.ToSlash(filepath.Join(".local", "lift_briefings", filepath.Base(f.Name())))
-	short := fmt.Sprintf(`You are assigned a single function to lift from x86 assembly to clean, portable C++: %[1]s (already claimed).
-First read %[4]s — it contains the full lift briefing (TARGET_CPP, RTTI, KNOWN_STRUCT_FIELDS, CALLEES, RDATA_CONSTANTS, SRC_BODY, DISASSEMBLY).
-Rules:
-- %[2]s
-- Write clean, readable, portable C++20 (include "lift_compat.h"; std::bit_cast / std::span available). Zero __asm, __declspec(naked), _emit, or TODO stubs.
-- Keep the // [%[1]s] marker and include structured metadata comments above the function:
-    // @name <ClassName::methodName or descriptiveName>
-    // @class <ClassName> (when applicable)
-    // @summary <concise one-line description of behavior>
-    // @field <ClassName> +0xNN <type> <fieldName> (for every struct/object field offset accessed)
-- Naming: never guess — if unsure, keep the original symbol and use field_0xNN.
-- Verify with: ./.local/bin/liftwork check %[1]s --model %[3]s
-- Stop immediately once liftwork check succeeds, or after 6 tries. Do NOT run liftwork next, liftwork claim, or liftwork skip, and NEVER edit src/, include/, build/units/, or docs/.`, addr, editRule, tag, rel)
+	short := fmt.Sprintf("Read %s first for the lift briefing.\n%s", rel, core)
 	return short, f.Name()
 }
 
 func (l *lifter) runAgent(model, effort, backend, addr, logPath string, timeout time.Duration) (int, rlInfo) {
-	tag := model + "@" + effort
-	editRule := "Edit only TARGET_CPP."
-	editTools := []string{"Edit(lifted/**)"}
+	editTools := []string{"Edit(lifted/**)", "Write(lifted/**)"}
 	if l.cfg.LiftIsolated {
-		editRule = "Edit only TARGET_CPP (your own lifted/wip file). Never edit src/, include/, or other lifted/ files directly, and never run git write commands (liftwork check merges and commits for you)."
-		editTools = []string{"Edit(lifted/wip/**)"}
+		wipFile := "lifted/wip/fn_" + strings.ToUpper(strings.TrimPrefix(strings.TrimPrefix(addr, "0x"), "0X")) + ".cpp"
+		editTools = []string{"Edit(" + wipFile + ")", "Write(" + wipFile + ")"}
 	}
 	claim := exec.Command(l.bin("liftwork"), "claim", addr)
 	claim.Env = agentEnv(model, effort, addr, l.cfg.LiftIsolated)
-	briefingB, _ := claim.Output()
-	briefing := strings.TrimSpace(string(briefingB))
-	prompt, briefingPath := buildLiftPrompt(l.root, addr, editRule, tag, briefing)
+	b, _ := claim.Output()
+	briefing := strings.TrimSpace(string(b))
+	prompt, briefingPath := buildLiftPrompt(l.root, addr, briefing)
 	if briefingPath != "" {
 		defer os.Remove(briefingPath)
 	}
@@ -234,13 +204,24 @@ func (l *lifter) runAgent(model, effort, backend, addr, logPath string, timeout 
 		if l.hasClaudeEffort {
 			args = append(args, "--effort", effort)
 		}
+		if l.hasClaudeSettingSources {
+			args = append(args, "--setting-sources", "user")
+		}
+		if l.hasClaudeStrictMCP {
+			args = append(args, "--strict-mcp-config")
+		}
+		if l.hasClaudeDisableSlash {
+			args = append(args, "--disable-slash-commands")
+		}
+		if l.hasClaudeTools {
+			args = append(args, "--tools", "Read,Write,Edit,Bash")
+		}
 		args = append(args, "--permission-mode", "acceptEdits", "--output-format", "stream-json", "--verbose", "--allowedTools",
-			"Read", "Grep", "Glob")
+			"Read")
 		args = append(args, editTools...)
 		args = append(args,
-			"Bash(./.local/bin/liftwork*)", "Bash(go run ./tools/liftwork*)",
-			"Bash(g++*)", "Bash(clang++*)",
-			"Bash(git status*)", "Bash(git diff*)", "Bash(git log*)", "Bash(git show*)")
+			"Bash(./.local/bin/liftwork check*)", "Bash(go run ./tools/liftwork check*)",
+			"Bash(g++*)", "Bash(clang++*)")
 		args = append(args, "-p", prompt)
 		c := exec.Command("claude", args...)
 		c.Env = agentEnv(model, effort, addr, l.cfg.LiftIsolated)
@@ -265,7 +246,7 @@ func (l *lifter) runAgent(model, effort, backend, addr, logPath string, timeout 
 	}
 
 	if l.isLifted(addr) {
-		l.liftwork("commit-pending")
+		l.liftwork("commit-pending", addr)
 	} else if rc == rcInvalidModel {
 		return rcInvalidModel, rlInfo{}
 	} else if isRateLimitLog(logPath) {

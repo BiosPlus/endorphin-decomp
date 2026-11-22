@@ -166,6 +166,9 @@ func parseMetadata(src string) (ParsedMeta, error) {
 	seenField := map[string]bool{}
 	for _, fm := range metaFieldRe.FindAllStringSubmatch(src, -1) {
 		cls := strings.TrimSpace(fm[1])
+		if cls == "" || cls == "?" || strings.ContainsAny(cls, `?"|\/`) {
+			return m, fmt.Errorf("@field has invalid class name %q (use a real class name or 'Unknown')", cls)
+		}
 		offStr, _, err := normalizeOffset(fm[2])
 		if err != nil {
 			return m, err

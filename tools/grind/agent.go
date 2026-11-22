@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 	"sync"
 	"syscall"
@@ -142,6 +143,56 @@ type rlInfo struct {
 	reset int64
 }
 
+// maxArgPromptBytes stays safely under Linux's 128 KiB MAX_ARG_STRLEN per argv element.
+const maxArgPromptBytes = 96 * 1024
+
+// buildAgentPrompt constructs the -p prompt for an agent. When the embedded work-claim briefing
+// would push the prompt near Linux's argv limit, it writes the briefing to .local/briefings/ and
+// returns a short prompt pointing the agent to that file (plus the path to clean up).
+func buildAgentPrompt(root, addr, editRule, tag, briefing string) (string, string) {
+	if briefing == "" {
+		return fmt.Sprintf("Read CLAUDE.md. You are assigned a single function: %[1]s. Run './.local/bin/work claim %[1]s' and match %[1]s using './.local/bin/work check %[1]s --model %[2]s'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). If PRIOR_ATTEMPTS is present, it lists facts about earlier failed checks on this function (where the output diverged, what the compiler emitted); use it to avoid dead ends, but do not assume the earlier approach was close, and never go looking for the earlier source. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as %[1]s matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json.", addr, tag), ""
+	}
+	prompt := fmt.Sprintf(`You are assigned a single function: %[1]s (already claimed below).
+Rules:
+- C++03 only. %[2]s Keep // [VA] and fn_XXXXXXXX intact.
+- Use HEADER_PREVIEW and SUGGESTED_EXTERNS; if SIMILAR_MATCHED is present, treat solved neighbors as hints for the C++ idiom; if PRIOR_ATTEMPTS is present, use it to avoid dead ends (never search for earlier source).
+- Switch to __declspec(naked) __asm after 3-4 failed C++03 tries.
+- Verify with: ./.local/bin/work check %[1]s --model %[3]s
+- Max 10 tries; stop immediately as soon as %[1]s matches or after 10 tries.
+- Do NOT run work next, work claim, or work skip, and do NOT touch any other function, HTML files, or build/units.json.
+
+%[4]s`, addr, editRule, tag, briefing)
+	if len(prompt) <= maxArgPromptBytes {
+		return prompt, ""
+	}
+	dir := filepath.Join(root, ".local", "briefings")
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return prompt, ""
+	}
+	f, err := os.CreateTemp(dir, addr+"_*.txt")
+	if err != nil {
+		return prompt, ""
+	}
+	_, werr := f.WriteString(briefing)
+	cerr := f.Close()
+	if werr != nil || cerr != nil {
+		_ = os.Remove(f.Name())
+		return prompt, ""
+	}
+	rel := filepath.ToSlash(filepath.Join(".local", "briefings", filepath.Base(f.Name())))
+	short := fmt.Sprintf(`You are assigned a single function: %[1]s (already claimed).
+First read %[4]s — it contains the full work claim briefing (TARGET_CPP, CALLING_CONV, HEADER_PREVIEW, SUGGESTED_EXTERNS, TARGET_ASM, etc.).
+Rules:
+- C++03 only. %[2]s Keep // [VA] and fn_XXXXXXXX intact.
+- Use HEADER_PREVIEW and SUGGESTED_EXTERNS; if SIMILAR_MATCHED is present, treat solved neighbors as hints for the C++ idiom; if PRIOR_ATTEMPTS is present, use it to avoid dead ends (never search for earlier source).
+- Switch to __declspec(naked) __asm after 3-4 failed C++03 tries.
+- Verify with: ./.local/bin/work check %[1]s --model %[3]s
+- Max 10 tries; stop immediately as soon as %[1]s matches or after 10 tries.
+- Do NOT run work next, work claim, or work skip, and do NOT touch any other function, HTML files, or build/units.json.`, addr, editRule, tag, rel)
+	return short, f.Name()
+}
+
 // runAgent runs one dedicated agent on one function with the given base model, effort and backend.
 func (g *grind) runAgent(model, effort, backend, addr, logPath string, timeout time.Duration) (int, rlInfo) {
 	tag := model + "@" + effort
@@ -157,20 +208,9 @@ func (g *grind) runAgent(model, effort, backend, addr, logPath string, timeout t
 	claim.Env = agentEnv(model, effort, addr)
 	briefingB, _ := claim.Output()
 	briefing := strings.TrimSpace(string(briefingB))
-	var prompt string
-	if briefing != "" {
-		prompt = fmt.Sprintf(`You are assigned a single function: %[1]s (already claimed below).
-Rules:
-- C++03 only. %[2]s Keep // [VA] and fn_XXXXXXXX intact.
-- Use HEADER_PREVIEW and SUGGESTED_EXTERNS; if SIMILAR_MATCHED is present, treat solved neighbors as hints for the C++ idiom; if PRIOR_ATTEMPTS is present, use it to avoid dead ends (never search for earlier source).
-- Switch to __declspec(naked) __asm after 3-4 failed C++03 tries.
-- Verify with: ./.local/bin/work check %[1]s --model %[3]s
-- Max 10 tries; stop immediately as soon as %[1]s matches or after 10 tries.
-- Do NOT run work next, work claim, or work skip, and do NOT touch any other function, HTML files, or build/units.json.
-
-%[4]s`, addr, editRule, tag, briefing)
-	} else {
-		prompt = fmt.Sprintf("Read CLAUDE.md. You are assigned a single function: %[1]s. Run './.local/bin/work claim %[1]s' and match %[1]s using './.local/bin/work check %[1]s --model %[2]s'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). If PRIOR_ATTEMPTS is present, it lists facts about earlier failed checks on this function (where the output diverged, what the compiler emitted); use it to avoid dead ends, but do not assume the earlier approach was close, and never go looking for the earlier source. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as %[1]s matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json.", addr, tag)
+	prompt, briefingPath := buildAgentPrompt(g.root, addr, editRule, tag, briefing)
+	if briefingPath != "" {
+		defer os.Remove(briefingPath)
 	}
 
 	rc := 0

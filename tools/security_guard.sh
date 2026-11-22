@@ -67,12 +67,24 @@ if [[ -n "${WORK_ASSIGNED_ADDR:-}" ]]; then
   OWN_WIP="src/wip/fn_${_va^^}.cpp"
 fi
 LIFT_MODE=0
-OWN_LIFT_WIP=""
+OWN_LIFT_WIPS=()
 if [[ -n "${LIFT_ASSIGNED_ADDR:-}" ]]; then
   LIFT_MODE=1
-  _lva="${LIFT_ASSIGNED_ADDR#0x}"; _lva="${_lva#0X}"
-  OWN_LIFT_WIP="lifted/wip/fn_${_lva^^}.cpp"
+  IFS=',' read -ra _lvas <<< "$LIFT_ASSIGNED_ADDR"
+  for _raw in "${_lvas[@]}"; do
+    _lva="${_raw#0x}"; _lva="${_lva#0X}"
+    [[ -n "$_lva" ]] && OWN_LIFT_WIPS+=("lifted/wip/fn_${_lva^^}.cpp")
+  done
 fi
+OWN_LIFT_WIP="${OWN_LIFT_WIPS[0]:-}"
+
+is_own_lift_wip() {
+  local p="${1^^}" w
+  for w in "${OWN_LIFT_WIPS[@]}"; do
+    [[ "$p" == "${w^^}" ]] && return 0
+  done
+  return 1
+}
 
 # Returns 0 if repo-relative path $1 is off-limits to this agent in parallel/lift mode (sets PARALLEL_DENY_REASON).
 parallel_path_denied() {
@@ -84,8 +96,8 @@ parallel_path_denied() {
         PARALLEL_DENY_REASON="Lift mode: src/ and include/ are read-only ($p). Edit ${OWN_LIFT_WIP:-your lifted/wip/fn_<VA>.cpp}."
         return 0 ;;
       lifted/wip/*)
-        if [[ -n "$OWN_LIFT_WIP" && "${p^^}" != "${OWN_LIFT_WIP^^}" ]]; then
-          PARALLEL_DENY_REASON="Lift mode: you may only edit $OWN_LIFT_WIP ($p belongs to another agent)."
+        if [[ ${#OWN_LIFT_WIPS[@]} -gt 0 ]] && ! is_own_lift_wip "$p"; then
+          PARALLEL_DENY_REASON="Lift mode: you may only edit your assigned lifted/wip/ file(s) ($p belongs to another agent)."
           return 0
         fi
         return 1 ;;

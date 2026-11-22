@@ -43,12 +43,12 @@ func TestAgyLiftSettings(t *testing.T) {
 
 func TestBuildLiftPromptSpill(t *testing.T) {
 	root := t.TempDir()
-	small, path := buildLiftPrompt(root, "0x0056DA30", "Edit only TARGET_CPP.", "claude-haiku-5.5@low", "SRC_BODY: ret")
+	small, path := buildLiftPrompt(root, "0x0056DA30", "SRC_BODY: ret")
 	if path != "" || !strings.Contains(small, "SRC_BODY: ret") {
 		t.Fatalf("small prompt unexpected: path=%q", path)
 	}
 	huge := strings.Repeat("X", maxArgPromptBytes+1024)
-	big, bigPath := buildLiftPrompt(root, "0x0056DA30", "Edit only TARGET_CPP.", "claude-haiku-5.5@low", huge)
+	big, bigPath := buildLiftPrompt(root, "0x0056DA30", huge)
 	if bigPath == "" || len(big) > maxArgPromptBytes || !strings.Contains(big, ".local/lift_briefings/") {
 		t.Fatalf("spilled prompt invalid: len=%d path=%q", len(big), bigPath)
 	}

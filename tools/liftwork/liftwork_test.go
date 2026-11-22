@@ -278,3 +278,28 @@ func TestRenderBriefing(t *testing.T) {
 		}
 	}
 }
+
+func TestStripDisasmHeaderAndCompactClassHeader(t *testing.T) {
+	dis := "// Function: Foo::bar\n// Size: 8 bytes | SHA-256: abc\n\n  00401000: c3 ret\n"
+	if got := stripDisasmHeader(dis); got != "00401000: c3 ret" {
+		t.Fatalf("stripDisasmHeader = %q", got)
+	}
+
+	hdr := `#pragma once
+// Auto-generated
+#include "lift_compat.h"
+namespace lifted_layout {
+struct Foo_Fields {
+    // +0x4   float                    frameTime  (evidence: 0x0056DA30)
+    // +0x10  int                      frameCount  (evidence: 0x0056DA30) // CONFLICT: multiple definitions at +0x10
+};
+}
+`
+	got := compactClassHeader(hdr)
+	if strings.Contains(got, "#pragma") || strings.Contains(got, "evidence:") {
+		t.Fatalf("compactClassHeader kept boilerplate:\n%s", got)
+	}
+	if !strings.Contains(got, "+0x4") || !strings.Contains(got, "frameTime") || !strings.Contains(got, "// CONFLICT") {
+		t.Fatalf("compactClassHeader missing fields/conflict:\n%s", got)
+	}
+}

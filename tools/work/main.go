@@ -510,6 +510,7 @@ func cmdNext(args []string) {
 	tierFlag := fs.String("tier", "", "Function size tier filter (tiny [<32B], small [<=256B], medium [<=512B], all)")
 	peekFlag := fs.Bool("peek", false, "Peek at next function(s) without creating stub in src/")
 	retryDeferred := fs.Bool("retry-deferred", false, "Include previously deferred functions in candidate queue")
+	retrySkipped := fs.Bool("retry-skipped", false, "Include previously skipped functions in candidate queue")
 	distinctFiles := fs.Bool("distinct-files", false, "Select functions that map to distinct .cpp target files (for parallel wave execution)")
 	addrsOnly := fs.Bool("addrs-only", false, "Print only space-ok/line-separated VA|Size|TargetCpp tuples for scripting")
 	depsFirst := fs.Bool("deps-first", false, "Prefer functions whose callees are all already matched (ahead of size ordering)")
@@ -547,13 +548,16 @@ func cmdNext(args []string) {
 		if u.Size > maxBytes || u.Size < minBytes {
 			continue
 		}
-		if isCompletedOrOutOfScope(u, mfcClasses) || u.Status == "skipped" {
+		if isCompletedOrOutOfScope(u, mfcClasses) {
+			continue
+		}
+		if u.Status == "skipped" && !*retrySkipped {
 			continue
 		}
 		if u.Status == "deferred" && !*retryDeferred {
 			continue
 		}
-		if !validCode[u.VA] {
+		if !validCode[u.VA] && !(u.Status == "skipped" && *retrySkipped) {
 			continue
 		}
 		allCalleesReady := true

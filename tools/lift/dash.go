@@ -130,6 +130,9 @@ func (d *dashboard) render(l *lifter) {
 		}
 		st.WriteString(" ")
 	}
+	if l.autoLiftRunning {
+		st.WriteString("auto-lift running ")
+	}
 	agents := st.String()
 	if agents == "" {
 		agents = "idle"

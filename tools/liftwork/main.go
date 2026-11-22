@@ -56,6 +56,8 @@ func main() {
 		cmdCommitPending(args)
 	case "clean":
 		cmdClean(args)
+	case "auto-lift":
+		cmdAutoLift(args)
 	case "-h", "--help", "help":
 		usage()
 	default:
@@ -77,7 +79,8 @@ Commands:
   status         Print lift progress scoreboard
   is-lifted <VA> Exit 0 if VA is lifted, 1 otherwise
   commit-pending Commit any uncommitted lifted files and ledger entries
-  clean [VA]     Remove stale lifted/wip/ files`)
+  clean [VA]     Remove stale lifted/wip/ files
+  auto-lift      Deterministically lift boilerplate patterns & identical-shape clones`)
 }
 
 func loadUnits() ([]decomp.UnitEntry, map[string]decomp.UnitEntry, error) {
@@ -349,6 +352,20 @@ func buildLiftWipTemplate(va, origSym, clsName string, size uint32, liftedPath s
 	return sb.String()
 }
 
+func stripDisasmHeader(raw string) string {
+	lines := strings.Split(strings.ReplaceAll(raw, "\r\n", "\n"), "\n")
+	i := 0
+	for i < len(lines) {
+		t := strings.TrimSpace(lines[i])
+		if t == "" || strings.HasPrefix(t, "//") {
+			i++
+			continue
+		}
+		break
+	}
+	return strings.TrimSpace(strings.Join(lines[i:], "\n"))
+}
+
 func renderBriefing(
 	u decomp.UnitEntry,
 	clsName, srcPath, liftedPath, targetFile, srcBody string,
@@ -358,26 +375,16 @@ func renderBriefing(
 	byVA map[string]decomp.UnitEntry,
 ) string {
 	var sb strings.Builder
-	fmt.Fprintf(&sb, "=== LIFT BRIEFING: %s ===\n", u.VA)
-	fmt.Fprintf(&sb, "VA:          %s\n", u.VA)
-	fmt.Fprintf(&sb, "SIZE:        %d bytes\n", u.Size)
-	fmt.Fprintf(&sb, "SYMBOL:      %s\n", u.Symbol)
-	if clsName != "" {
-		fmt.Fprintf(&sb, "CLASS:       %s\n", clsName)
-	}
-	fmt.Fprintf(&sb, "SRC_PATH:    %s\n", srcPath)
-	fmt.Fprintf(&sb, "LIFTED_PATH: %s\n", liftedPath)
-	fmt.Fprintf(&sb, "TARGET_CPP:  %s\n", targetFile)
+	fmt.Fprintf(&sb, "VA: %s (%dB) | SYMBOL: %s\n", u.VA, u.Size, u.Symbol)
+	fmt.Fprintf(&sb, "TARGET_CPP: %s\n", targetFile)
 
 	// RTTI hierarchy from build/classes.json
 	if clsName != "" {
 		if ci, ok := classes[clsName]; ok {
 			sb.WriteString("\n--- RTTI_HIERARCHY ---\n")
 			fmt.Fprintf(&sb, "Class: %s (vtable=%s, vmethods=%d)\n", ci.DemangledName, ci.VTableVA, len(ci.VirtualMethods))
-			if len(ci.BaseClasses) > 0 {
-				for _, b := range ci.BaseClasses {
-					fmt.Fprintf(&sb, "  base +0x%X: %s\n", b.Offset, b.DemangledName)
-				}
+			for _, b := range ci.BaseClasses {
+				fmt.Fprintf(&sb, "  base +0x%X: %s\n", b.Offset, b.DemangledName)
 			}
 		}
 		if hdr := readLiftedClassHeader(clsName); hdr != "" {
@@ -391,14 +398,14 @@ func renderBriefing(
 		sb.WriteString("\n--- CALLEES ---\n")
 		for _, c := range callees {
 			if se, ok := syms[c]; ok {
-				fmt.Fprintf(&sb, "  ext_%s (%s): [LIFTED] %s | sig: %s | %s\n",
-					strings.TrimPrefix(c, "0x"), c, se.Name, se.Signature, se.Summary)
+				fmt.Fprintf(&sb, "  ext_%s: [LIFTED] %s | %s | %s\n",
+					strings.TrimPrefix(c, "0x"), se.Name, se.Signature, se.Summary)
 			} else if cu, ok := byVA[c]; ok {
-				fmt.Fprintf(&sb, "  ext_%s (%s): %s (%dB)\n",
-					strings.TrimPrefix(c, "0x"), c, cu.Symbol, cu.Size)
+				fmt.Fprintf(&sb, "  ext_%s: %s (%dB)\n",
+					strings.TrimPrefix(c, "0x"), cu.Symbol, cu.Size)
 			} else {
-				fmt.Fprintf(&sb, "  ext_%s (%s): <external/import>\n",
-					strings.TrimPrefix(c, "0x"), c)
+				fmt.Fprintf(&sb, "  ext_%s: <external>\n",
+					strings.TrimPrefix(c, "0x"))
 			}
 		}
 	}
@@ -413,23 +420,26 @@ func renderBriefing(
 			}
 			desc := decodeMemRef(mU32)
 			if desc == "" {
-				desc = "(global/uninitialized)"
+				desc = "(global)"
 			}
-			fmt.Fprintf(&sb, "  mem_%s (%s): %s\n", strings.TrimPrefix(m, "0x"), m, desc)
+			fmt.Fprintf(&sb, "  mem_%s: %s\n", strings.TrimPrefix(m, "0x"), desc)
 		}
 	}
 
-	// Existing src/ function body
-	if srcBody != "" {
+	// Cached disassembly if present; omit redundant __asm SRC_BODY when disassembly is available.
+	disasm := ""
+	cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
+	if b, err := os.ReadFile(cachePath); err == nil {
+		disasm = stripDisasmHeader(string(b))
+	}
+	isAsmSrc := strings.Contains(srcBody, "__asm") || strings.Contains(srcBody, "naked")
+	if srcBody != "" && (disasm == "" || !isAsmSrc) {
 		sb.WriteString("\n--- SRC_BODY ---\n")
 		sb.WriteString(srcBody + "\n")
 	}
-
-	// Cached disassembly if present
-	cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
-	if b, err := os.ReadFile(cachePath); err == nil {
+	if disasm != "" {
 		sb.WriteString("\n--- DISASSEMBLY ---\n")
-		sb.WriteString(strings.TrimSpace(string(b)) + "\n")
+		sb.WriteString(disasm + "\n")
 	}
 
 	return sb.String()
@@ -618,9 +628,13 @@ func commitLifted(e LiftEntry) {
 	paths := []string{e.LiftedPath, liftLedgerPath(e.VA), symbolsPath}
 	seenCls := map[string]bool{}
 	for _, f := range e.Fields {
-		if f.Class != "" && !seenCls[f.Class] {
-			seenCls[f.Class] = true
-			p := filepath.Join(liftedIncDir, decomp.SanitizeFilename(f.Class)+".h")
+		cls := f.Class
+		if cls == "?" || strings.Trim(decomp.SanitizeFilename(cls), "_.") == "" {
+			cls = "Unknown"
+		}
+		if cls != "" && !seenCls[cls] {
+			seenCls[cls] = true
+			p := filepath.Join(liftedIncDir, decomp.SanitizeFilename(cls)+".h")
 			if _, err := os.Stat(p); err == nil {
 				paths = append(paths, p)
 			}
@@ -628,6 +642,9 @@ func commitLifted(e LiftEntry) {
 	}
 	if err := exec.Command("git", append([]string{"add", "--"}, paths...)...).Run(); err != nil {
 		fmt.Fprintf(os.Stderr, "[warn] git add failed (sandboxed .git?): %v\n", err)
+		return
+	}
+	if exec.Command("git", "diff", "--cached", "--quiet").Run() == nil {
 		return
 	}
 	msg := fmt.Sprintf("Lift %s (%s) [model: %s]", e.VA, e.Name, e.LiftedBy)
@@ -836,29 +853,51 @@ func cmdIsLifted(args []string) {
 
 func cmdCommitPending(args []string) {
 	worklock.With(func() {
-		out, err := exec.Command("git", "status", "--porcelain", "--", "lifted/", "build/lifted/").Output()
+		if len(args) >= 1 {
+			va, _, err := normVA(args[0])
+			if err != nil {
+				return
+			}
+			e, err := readLiftEntry(va)
+			if err != nil || e.Status != "lifted" {
+				return
+			}
+			commitLifted(*e)
+			return
+		}
+		out, err := exec.Command("git", "status", "--porcelain", "--", liftLedgerDir).Output()
 		if err != nil || strings.TrimSpace(string(out)) == "" {
 			return
 		}
-		// Never stage lifted/wip/
-		var toAdd []string
+		var pending []LiftEntry
 		for _, line := range strings.Split(string(out), "\n") {
 			if len(line) < 4 {
 				continue
 			}
 			p := strings.TrimSpace(line[3:])
-			if strings.HasPrefix(p, "lifted/wip/") {
+			if !strings.HasSuffix(p, ".json") {
 				continue
 			}
-			toAdd = append(toAdd, p)
+			base := strings.TrimSuffix(filepath.Base(p), ".json")
+			va, _, err := normVA(base)
+			if err != nil {
+				continue
+			}
+			e, err := readLiftEntry(va)
+			if err != nil || e.Status != "lifted" {
+				continue
+			}
+			pending = append(pending, *e)
 		}
-		if len(toAdd) == 0 {
-			return
+		sort.Slice(pending, func(i, j int) bool {
+			if pending[i].LiftedAt != pending[j].LiftedAt {
+				return pending[i].LiftedAt < pending[j].LiftedAt
+			}
+			return pending[i].VA < pending[j].VA
+		})
+		for _, e := range pending {
+			commitLifted(e)
 		}
-		if err := exec.Command("git", append([]string{"add", "--"}, toAdd...)...).Run(); err != nil {
-			return
-		}
-		_ = exec.Command("git", "commit", "-m", fmt.Sprintf("Lift batch (%d files)", len(toAdd))).Run()
 	})
 }
 

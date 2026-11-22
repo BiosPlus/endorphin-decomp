@@ -12,7 +12,7 @@ import (
 
 // hiddenReason explains why `work next` will never hand out an open (not completed) unit, or "" if it will.
 // Keep this in sync with the filters in cmdNext.
-func hiddenReason(u UnitEntry, mfcClasses map[string]bool, validCode map[string]bool, retryDeferred bool) string {
+func hiddenReason(u UnitEntry, mfcClasses map[string]bool, validCode map[string]bool, retryDeferred, retrySkipped bool) string {
 	if decomp.IsCompleted(u.Status) {
 		return ""
 	}
@@ -26,11 +26,11 @@ func hiddenReason(u UnitEntry, mfcClasses map[string]bool, validCode map[string]
 			return "method of an MFC/std class"
 		}
 		return "inside the CRT/MFC address range"
-	case u.Status == "skipped":
+	case u.Status == "skipped" && !retrySkipped:
 		return "skipped: " + u.SkipReason
 	case u.Status == "deferred" && !retryDeferred:
 		return "deferred (every model failed; grind RETRY_DEFERRED=1 retries)"
-	case !validCode[u.VA]:
+	case !validCode[u.VA] && !(u.Status == "skipped" && retrySkipped):
 		return "cached disassembly is not one clean function (run tools/resplit)"
 	}
 	return ""
@@ -41,6 +41,7 @@ func cmdHidden(args []string) {
 	fs := flag.NewFlagSet("work hidden", flag.ExitOnError)
 	list := fs.Bool("list", false, "list every hidden unit, not just the counts")
 	retryDeferred := fs.Bool("retry-deferred", false, "treat deferred units as queueable (as grind RETRY_DEFERRED=1 does)")
+	retrySkipped := fs.Bool("retry-skipped", false, "treat skipped units as queueable (as grind RETRY_SKIPPED=1 does)")
 	_ = fs.Parse(args)
 
 	units, _, validCode, err := loadUnitsSummary()
@@ -57,7 +58,7 @@ func cmdHidden(args []string) {
 	}
 	groups := map[string]*group{}
 	for _, u := range units {
-		r := hiddenReason(u, mfcClasses, validCode, *retryDeferred)
+		r := hiddenReason(u, mfcClasses, validCode, *retryDeferred, *retrySkipped)
 		if r == "" {
 			continue
 		}

@@ -14,6 +14,8 @@ type config struct {
 	DepsFirst         bool     // LIFT_DEPS_FIRST (default true)
 	IncludeCpp        bool     // LIFT_INCLUDE_CPP (default false)
 	LiftIsolated      bool     // LIFT_ISOLATED (default true)
+	RunAutoLift       bool     // RUN_AUTO_LIFT (default true): run `liftwork auto-lift` pre-pass at startup
+	AutoLiftEvery     int      // AUTO_LIFT_EVERY (default 25): re-run `liftwork auto-lift` every N finished funcs (0 = start only)
 	AgentTimeout      int      // AGENT_TIMEOUT
 	Efforts           []string // AGENT_EFFORTS
 	CooldownBaseSecs  int      // COOLDOWN_BASE_SECS
@@ -98,6 +100,8 @@ func loadConfig(args []string) (*config, error) {
 	c.DepsFirst = envBool("LIFT_DEPS_FIRST", true)
 	c.IncludeCpp = envBool("LIFT_INCLUDE_CPP", false)
 	c.LiftIsolated = envBool("LIFT_ISOLATED", true)
+	c.RunAutoLift = envBool("RUN_AUTO_LIFT", true)
+	c.AutoLiftEvery = envInt("AUTO_LIFT_EVERY", 25)
 	c.AgentTimeout = envInt("AGENT_TIMEOUT", 360)
 	c.Efforts = strings.Fields(envStr("AGENT_EFFORTS", envStr("AGENT_EFFORT", "low medium")))
 	c.CooldownBaseSecs = envInt("COOLDOWN_BASE_SECS", 180)
