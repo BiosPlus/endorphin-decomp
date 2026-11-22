@@ -1,0 +1,34 @@
+{
+  "va": "0x005B6E70",
+  "size": 143,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_36",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_36",
+  "class": "NMData::MetaBodyData",
+  "signature": "void __thiscall fn_005B6E70(void* this_ptr, const float* scale)",
+  "summary": "Scales the RenderObjectOwner vector at +0xC by *scale and updates the render object at +0x10 if +0x158 is non-null.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "renderObjectOwner_vptr"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "renderObject"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-22T08:23:11Z"
+}

@@ -7406,6 +7406,13 @@
     "summary": "Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005B6E70": {
+    "name": "NMData::MetaBodyData::vfunc_36",
+    "class": "NMData::MetaBodyData",
+    "signature": "void __thiscall fn_005B6E70(void* this_ptr, const float* scale)",
+    "summary": "Scales the RenderObjectOwner vector at +0xC by *scale and updates the render object at +0x10 if +0x158 is non-null.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005B7AE0": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e",
