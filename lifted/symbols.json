@@ -6408,6 +6408,13 @@
     "summary": "Returns true when the float at +0x46c is ordered and \u003e= 2.0 and the std::string at +0xac equals \"all\".",
     "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
   },
+  "0x0056D860": {
+    "name": "NMCIO::vfunc_10",
+    "class": "NMCIO",
+    "signature": "static inline void* vtbl_slot(void* obj, size_t index)",
+    "summary": "Forwards arg to this-\u003efield_0x414 (vslot 7), then builds two string temporaries from globals, passes them to sub-object vslots 23 and 24, bumps a global counter, and destroys the temporaries.",
+    "lifted_path": "lifted/classes/NMCIO.cpp"
+  },
   "0x00574CF0": {
     "name": "sub_00574CF0",
     "signature": "extern \"C\" void __fastcall fn_00574CF0(void* self)",
