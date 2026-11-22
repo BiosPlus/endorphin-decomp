@@ -21853,6 +21853,13 @@
     "summary": "Per-element accumulation over count/4 blocks: zeroes four floats at out, accumulates weighted contributions from the two ext_007F36C0 sub-calls, then inverts each of the four accumulated floats.",
     "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
   },
+  "0x007F4330": {
+    "name": "MdtArthur::arthurSolver_sse::vfunc_1",
+    "class": "MdtArthur::arthurSolver_sse",
+    "signature": "void fn_007F4330(void* self, int32_t count, const void* params, const void* rec_base, const void* src, float add, float mul)",
+    "summary": "For each 4-float group j \u003c count/4: accumulate up to two indexed contributions via ext_007F36C0, then store 1/(src*mul + add + acc) per lane.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
+  },
   "0x0080EFC0": {
     "name": "sub_0080EFC0",
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",

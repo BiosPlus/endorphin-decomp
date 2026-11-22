@@ -1,0 +1,58 @@
+{
+  "va": "0x007F4330",
+  "size": 400,
+  "orig_symbol": "MdtArthur::arthurSolver_sse::vfunc_1",
+  "src_path": "src/MdtArthur/arthurSolver_sse.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp",
+  "name": "MdtArthur::arthurSolver_sse::vfunc_1",
+  "class": "MdtArthur::arthurSolver_sse",
+  "signature": "void fn_007F4330(void* self, int32_t count, const void* params, const void* rec_base, const void* src, float add, float mul)",
+  "summary": "For each 4-float group j \u003c count/4: accumulate up to two indexed contributions via ext_007F36C0, then store 1/(src*mul + add + acc) per lane.",
+  "fields": [
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x0",
+      "type": "float[4]* out (16-byte vec4 per group;",
+      "name": "written)"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x4",
+      "type": "uint8_t* field_0x04 (96-byte element base; param",
+      "name": "block)"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x34",
+      "type": "int32_t* field_0x34 (index table A, row stride W; param",
+      "name": "block)"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x40",
+      "type": "int32_t* field_0x40 (index table B; param",
+      "name": "block)"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x78",
+      "type": "int32_t field_0x78 (row stride W; param",
+      "name": "block)"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0xC",
+      "type": "int32_t field_0x0c (record: index A, -1 = none; per-group record, stride",
+      "name": "0x100)"
+    },
+    {
+      "class": "MdtArthur::arthurSolver_sse",
+      "offset": "+0x2C",
+      "type": "int32_t field_0x2c (record: index B, -1 = none; per-group record, stride",
+      "name": "0x100)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T14:28:32Z"
+}
