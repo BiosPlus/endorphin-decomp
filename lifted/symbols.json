@@ -9643,6 +9643,13 @@
     "summary": "Forwards (a, b) to virtual slot +0xB4 of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006A09C0": {
+    "name": "ExprParser::Operators::NotEquals::vfunc_3",
+    "class": "ExprParser::Operators::NotEquals",
+    "signature": "void fn_006A09C0(void* self, void* ctx)",
+    "summary": "Evaluates the left operand (vfunc 42) on (self, ctx), negates the result, and passes it to the left operand's vfunc 9.",
+    "lifted_path": "lifted/ExprParser/Operators/NotEquals.cpp"
+  },
   "0x006A16B0": {
     "name": "ExprParser::Operators::Not::vfunc_3",
     "class": "ExprParser::Operators::Not",
