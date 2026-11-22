@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3640",
+  "size": 5,
+  "orig_symbol": "sub_005C3640",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "VirtualSlot27Thunk",
+  "class": "VTable",
+  "signature": "void fn_005C3640(void* self)",
+  "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 27 (offset +0x6C) with the same this pointer.",
+  "fields": [
+    {
+      "class": "VTable",
+      "offset": "+0x6C",
+      "type": "void*",
+      "name": "slot27"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:41:49Z"
+}
