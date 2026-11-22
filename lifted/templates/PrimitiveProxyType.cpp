@@ -30,10 +30,14 @@ extern "C" void __thiscall ext_00672080(void* self, float value, void* savedSlot
 void fn_004A25D0(void* arg) {
     ext_00671100(2, arg);
 }
+// Known callee 0x006A6DE0: sub_006A6DE0 (171B). Takes its argument on the x87 stack;
+// modelled here as a double parameter (assumption, see lift notes).
+extern "C" void __thiscall ext_006A6DE0(double value);
+extern "C" const double mem_00993828;
 
-// [0x00511F80] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_13 (13 bytes)
-// @name ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_13
-// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// modelled here as a double parameter (assumption, see lift notes).
+extern "C" void __thiscall ext_006A6DE0(double value);
+extern "C" const double mem_00993828;
 // @summary Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).
 void fn_00511F80(void* arg) {
     ext_00671100(3, arg);
@@ -144,4 +148,17 @@ void fn_0049B220(void* self, void* arg) {
     // Virtual slot 3 (vtable offset 0x0C); returns bool in al.
     uint8_t r = reinterpret_cast<uint8_t(__thiscall*)(void*, void*)>(vtbl[3])(sub, arg);
     *value = (r != 0) ? 1 : 0;
+}
+
+// [0x004B7180] ExprParser::PrimitiveProxyType<float>::vfunc_2 (57 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_2
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Reads x = *ptr, passes x - 0.5 (if x < 0 or NaN) or x + 0.5 (otherwise) to ext_006A6DE0.
+// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
+void fn_004B7180(void* self) {
+    float x = *lift_field<float*>(self, 0x00);
+    double adjusted = (!(x >= 0.0f))
+                          ? static_cast<double>(x) - mem_00993828
+                          : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
 }

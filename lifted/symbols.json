@@ -3724,6 +3724,13 @@
     "summary": "Dynamic-casts self to the MaterialPair enum type via __RTDynamicCast (pointer cast; returns null on failure).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004B7180": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_2",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void fn_004B7180(void* self)",
+    "summary": "Reads x = *ptr, passes x - 0.5 (if x \u003c 0 or NaN) or x + 0.5 (otherwise) to ext_006A6DE0.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004B7A10": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",

@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::PrimitiveProxyType<float>:
 namespace lifted_layout {
 struct ExprParser_PrimitiveProxyType_float__Fields {
-    // +0x0   float*                   ptr  (evidence: 0x004B7A40, 0x004B7A80, 0x004B7A90, 0x004B7AA0, 0x004B7B50)
+    // +0x0   float*                   ptr  (evidence: 0x004B7180, 0x004B7A40, 0x004B7A80, 0x004B7A90, 0x004B7AA0, 0x004B7B50)
 };
 } // namespace lifted_layout
