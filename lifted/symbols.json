@@ -6654,6 +6654,13 @@
     "summary": "Constructs a std::string in the caller-supplied buffer from the literal pointer in mem_00A9F118.",
     "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
   },
+  "0x0055DE50": {
+    "name": "FBXIO::vfunc_3",
+    "class": "FBXIO",
+    "signature": "int fn_0055DE50(void* self, int arg1)",
+    "summary": "Calls sub_00640390 on its argument, forwards the result to NMFileIO::vfunc_3 on this, and returns the original argument.",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
   "0x0055E220": {
     "name": "sub_0055E220",
     "signature": "extern \"C\" void fn_0055E220(void)",
