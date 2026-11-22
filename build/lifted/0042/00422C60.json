@@ -1,0 +1,13 @@
+{
+  "va": "0x00422C60",
+  "size": 6,
+  "orig_symbol": "sub_00422C60",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "sub_00422C60",
+  "signature": "extern \"C\" int* fn_00422C60()",
+  "summary": "Returns the address of the global constant mem_0092EA38 (string \"$aj\").",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:49:22Z"
+}
