@@ -8273,6 +8273,13 @@
     "summary": "Returns the float[3] already held in *a1, or lazily initialises and returns the shared zero vector.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B620": {
+    "name": "ExprParser::Vector3Type::vfunc_42",
+    "class": "ExprParser::Vector3Type",
+    "signature": "int fn_0066B620(void* self, void* a1, void* a2)",
+    "summary": "Returns 1 if both arg vectors (each fetched via +0x04-\u003evfunc_5) are component-wise equal, else 0 (NaN compares unequal).",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B680": {
     "name": "ExprParser::Vector3Type::vfunc_43",
     "class": "ExprParser::Vector3Type",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B620",
+  "size": 93,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_42",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_42",
+  "class": "ExprParser::Vector3Type",
+  "signature": "int fn_0066B620(void* self, void* a1, void* a2)",
+  "summary": "Returns 1 if both arg vectors (each fetched via +0x04-\u003evfunc_5) are component-wise equal, else 0 (NaN compares unequal).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:37:05Z"
+}

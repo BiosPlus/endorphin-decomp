@@ -79,3 +79,24 @@ void* fn_0066B560(void* self, void** a1) {
     }
     return mem_00B5963C;
 }
+
+// [0x0066B620] ExprParser::Vector3Type::vfunc_42 (93 bytes)
+// @name ExprParser::Vector3Type::vfunc_42
+// @class ExprParser::Vector3Type
+// @summary Returns 1 if both arg vectors (each fetched via +0x04->vfunc_5) are component-wise equal, else 0 (NaN compares unequal).
+// @field Unknown +0x04 void* field_0x04
+int fn_0066B620(void* self, void* a1, void* a2) {
+    (void)self;
+    void* sub2 = *reinterpret_cast<void**>(static_cast<char*>(a2) + 0x04);
+    void** vtbl2 = *static_cast<void***>(sub2);
+    float* vb = static_cast<float*>(reinterpret_cast<void* (*)(void*, void*)>(vtbl2[5])(sub2, a2));
+    void* sub1 = *reinterpret_cast<void**>(static_cast<char*>(a1) + 0x04);
+    void** vtbl1 = *static_cast<void***>(sub1);
+    float* va = static_cast<float*>(reinterpret_cast<void* (*)(void*, void*)>(vtbl1[5])(sub1, a1));
+    for (int i = 0; i < 3; ++i) {
+        if (!(va[i] == vb[i])) {
+            return 0;
+        }
+    }
+    return 1;
+}
