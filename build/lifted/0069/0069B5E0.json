@@ -1,0 +1,22 @@
+{
+  "va": "0x0069B5E0",
+  "size": 96,
+  "orig_symbol": "ExprParser::SingleVariableContainer::vfunc_2",
+  "src_path": "src/ExprParser/SingleVariableContainer.cpp",
+  "lifted_path": "lifted/ExprParser/SingleVariableContainer.cpp",
+  "name": "ExprParser::SingleVariableContainer::vfunc_2",
+  "class": "ExprParser::SingleVariableContainer",
+  "signature": "inline void* as_ptr(uint32_t a)",
+  "summary": "Resolves the held symbol chain and writes a two-dword result {value, res-\u003efield_0x04} to the caller's out buffer (zeros if the resolved object's field is null); returns out.",
+  "fields": [
+    {
+      "class": "ExprParser::SingleVariableContainer",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:07Z"
+}
