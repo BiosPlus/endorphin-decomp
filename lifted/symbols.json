@@ -32,6 +32,12 @@
     "summary": "Secondary-base thunk: rebases this from the ContainerObserver\u003cTriggeredEventData\u003e subobject (+0x24C) to the +0x248 subobject and tail-calls the primary implementation.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0046A470": {
+    "name": "VirtualSlot1Thunk",
+    "signature": "void fn_0046A470(void* self)",
+    "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00499B40": {
     "name": "NMData::State::vfunc_9_off_10",
     "class": "NMData::State",

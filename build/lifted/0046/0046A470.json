@@ -1,0 +1,21 @@
+{
+  "va": "0x0046A470",
+  "size": 5,
+  "orig_symbol": "sub_0046A470",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "VirtualSlot1Thunk",
+  "signature": "void fn_0046A470(void* self)",
+  "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
+  "fields": [
+    {
+      "class": "VTable",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "slot1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:41:09Z"
+}
