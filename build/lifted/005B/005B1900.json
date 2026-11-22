@@ -1,0 +1,22 @@
+{
+  "va": "0x005B1900",
+  "size": 9,
+  "orig_symbol": "Geometry::SphereType::vfunc_9",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::SphereType::vfunc_9",
+  "class": "Geometry::SphereType",
+  "signature": "extern \"C\" float __stdcall fn_005B1900(void* self, const float* value_ptr)",
+  "summary": "Loads a single float from the pointer passed as the second stack argument and returns it on the x87 stack (ignores this).",
+  "fields": [
+    {
+      "class": "SphereType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T06:05:55Z"
+}

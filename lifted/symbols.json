@@ -529,6 +529,13 @@
     "summary": "Returns the address of the global mem_00B59400 (ignores this).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1900": {
+    "name": "Geometry::SphereType::vfunc_9",
+    "class": "Geometry::SphereType",
+    "signature": "extern \"C\" float __stdcall fn_005B1900(void* self, const float* value_ptr)",
+    "summary": "Loads a single float from the pointer passed as the second stack argument and returns it on the x87 stack (ignores this).",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",
