@@ -867,6 +867,13 @@
     "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns 1 if the int it points to is nonzero, else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B210": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_2",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "bool fn_0049B210(void* self)",
+    "summary": "Returns true when the bool value pointed to by value_ptr is non-zero.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049B2B0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::setValue",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

@@ -317,3 +317,13 @@ extern "C" uint8_t __stdcall fn_0049AF30(const int32_t* const* self) {
     const int32_t* value = *self;
     return static_cast<uint8_t>(*value != 0);
 }
+
+// [0x0049B210] ExprParser::PrimitiveProxyType<bool>::vfunc_2 (16 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_2
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Returns true when the bool value pointed to by value_ptr is non-zero.
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 const uint8_t* value_ptr
+bool fn_0049B210(void* self) {
+    const uint8_t* value_ptr = lift_field<const uint8_t*>(self, 0x00);
+    return *value_ptr != 0;
+}
