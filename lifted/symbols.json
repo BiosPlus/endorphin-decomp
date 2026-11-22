@@ -96,6 +96,13 @@
     "summary": "Returns the address of the constant string \"`KE\" stored in .rdata (mem_0092C418).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x004153C0": {
+    "name": "EditBox::vfunc_0",
+    "class": "EditBox",
+    "signature": "extern \"C\" void* __fastcall fn_004153C0(void* self)",
+    "summary": "Virtual getter returning the address of the global slot mem_0092C580 (self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",

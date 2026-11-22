@@ -6,6 +6,7 @@ extern "C" int mem_00929B20;
 extern "C" int mem_0092A1CC;
 extern "C" int mem_0092AD84;
 extern "C" int mem_0092B9AC;
+extern "C" int mem_0092C580;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -62,4 +63,13 @@ extern "C" int* __fastcall fn_0040CDF0(void* self) {
 void* fn_0040FCF0(void* self) {
     (void)self;
     return &mem_0092B9AC;
+}
+
+// [0x004153C0] EditBox::vfunc_0 (6 bytes)
+// @name EditBox::vfunc_0
+// @class EditBox
+// @summary Virtual getter returning the address of the global slot mem_0092C580 (self is unused).
+extern "C" void* __fastcall fn_004153C0(void* self) {
+    (void)self;
+    return reinterpret_cast<void*>(&mem_0092C580);
 }

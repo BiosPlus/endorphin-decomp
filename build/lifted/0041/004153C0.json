@@ -1,0 +1,14 @@
+{
+  "va": "0x004153C0",
+  "size": 6,
+  "orig_symbol": "EditBox::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "EditBox::vfunc_0",
+  "class": "EditBox",
+  "signature": "extern \"C\" void* __fastcall fn_004153C0(void* self)",
+  "summary": "Virtual getter returning the address of the global slot mem_0092C580 (self is unused).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:47:37Z"
+}
