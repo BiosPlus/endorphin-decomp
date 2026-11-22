@@ -812,6 +812,13 @@
     "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066BA30": {
+    "name": "ExprParser::ExtROType::vfunc_38",
+    "class": "ExprParser::ExtROType",
+    "signature": "void fn_0066BA30(void* self)",
+    "summary": "Forwards the object pointer to ExprParser::ExtROType helper at 0x00672000.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x006744A0": {
     "name": "NMData::State::vfunc_7",
     "class": "NMData::State",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0066BA30",
+  "size": 12,
+  "orig_symbol": "ExprParser::ExtROType::vfunc_38",
+  "src_path": "src/ExprParser/ExtROType.cpp",
+  "lifted_path": "lifted/ExprParser/ExtROType.cpp",
+  "name": "ExprParser::ExtROType::vfunc_38",
+  "class": "ExprParser::ExtROType",
+  "signature": "void fn_0066BA30(void* self)",
+  "summary": "Forwards the object pointer to ExprParser::ExtROType helper at 0x00672000.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:12:39Z"
+}
