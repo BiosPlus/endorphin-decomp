@@ -27266,3 +27266,15 @@ extern "C" __declspec(naked) void __fastcall fn_007B04A8(void* self) {
         _emit 0x90
     }
 }
+
+// [0x007B8A48] sub_007B8A48 (24 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007B8A48(void* self) {
+    __asm {
+        __asm _emit 0x00 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x02
+        __asm _emit 0x00 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x02
+        __asm _emit 0x00 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x02
+        __asm _emit 0x00 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x02
+        __asm _emit 0x00 __asm _emit 0x02 __asm _emit 0x01 __asm _emit 0x02
+        __asm _emit 0x01 __asm _emit 0x01 __asm _emit 0x01 __asm _emit 0x02
+    }
+}
