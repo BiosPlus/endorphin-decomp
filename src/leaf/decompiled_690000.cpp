@@ -17250,3 +17250,1228 @@ L69E557:
         call ext_006A6DD2
     }
 }
+
+// [0x0069F040] sub_0069F040 (4302 bytes)
+extern "C" int mem_0092A278;
+extern "C" int mem_0092531C;
+extern "C" int mem_00925320;
+extern "C" int mem_009251F0;
+extern "C" int mem_00B5A0B8;
+extern "C" void ext_00401CC0();
+extern "C" void ext_00490960();
+extern "C" void ext_0048EF80();
+extern "C" void ext_004E3D30();
+extern "C" void ext_00672080();
+extern "C" void ext_006720A0();
+extern "C" void ext_006720C0();
+extern "C" void ext_00686E60();
+extern "C" void ext_0069B140();
+extern "C" void ext_0069B220();
+extern "C" void ext_0069B530();
+extern "C" void ext_0069B5A0();
+extern "C" void ext_0069B9E0();
+extern "C" void ext_0069BBE0();
+extern "C" void ext_0069BE90();
+extern "C" void ext_0069C330();
+extern "C" void ext_0069C5F0();
+extern "C" void ext_0069C760();
+extern "C" void ext_0069D750();
+extern "C" void ext_0069DA50();
+extern "C" void ext_0069ECE0();
+extern "C" void ext_006A0AC0();
+extern "C" void ext_006A6DE0();
+
+extern "C" __declspec(naked) void __fastcall fn_0069F040(void* self) {
+    __asm {
+L69F040: push ebp
+L69F041: mov ebp, esp
+L69F043: and esp, -8
+L69F046: push -1
+L69F048: push 8b6b03h
+L69F04D: mov eax, dword ptr fs:[0]
+L69F053: push eax
+L69F054: mov dword ptr fs:[0], esp
+L69F05B: sub esp, 21ch
+L69F061: push ebx
+L69F062: push ebp
+L69F063: push esi
+L69F064: push edi
+L69F065: mov ebp, ecx
+L69F067: push 58h
+L69F069: call ext_006A0AC0
+L69F06E: mov esi, dword ptr [ebp+4]
+L69F071: mov dword ptr [ebp+98h], 0
+L69F07B: mov edi, dword ptr [esi+8]
+L69F07E: add esp, 4
+L69F081: cmp dword ptr [esi+4], edi
+L69F084: jbe L69F08C
+L69F086: call dword ptr [mem_00925134]
+L69F08C: mov ebx, dword ptr [esi+4]
+L69F08F: cmp ebx, dword ptr [esi+8]
+L69F092: jbe L69F09A
+L69F094: call dword ptr [mem_00925134]
+L69F09A: push edi
+L69F09B: push esi
+L69F09C: push ebx
+L69F09D: push esi
+L69F09E: lea eax, [esp+24h]
+L69F0A2: push eax
+L69F0A3: mov ecx, esi
+L69F0A5: call ext_0048EF80
+L69F0AA: mov esi, dword ptr [ebp+8]
+L69F0AD: mov edi, dword ptr [esi+8]
+L69F0B0: cmp dword ptr [esi+4], edi
+L69F0B3: jbe L69F0BB
+L69F0B5: call dword ptr [mem_00925134]
+L69F0BB: mov ebx, dword ptr [esi+4]
+L69F0BE: cmp ebx, dword ptr [esi+8]
+L69F0C1: jbe L69F0C9
+L69F0C3: call dword ptr [mem_00925134]
+L69F0C9: push edi
+L69F0CA: push esi
+L69F0CB: push ebx
+L69F0CC: push esi
+L69F0CD: lea ecx, [esp+24h]
+L69F0D1: push ecx
+L69F0D2: mov ecx, esi
+L69F0D4: call ext_00490960
+L69F0D9: mov esi, dword ptr [ebp]
+L69F0DC: mov edi, dword ptr [esi+8]
+L69F0DF: cmp dword ptr [esi+4], edi
+L69F0E2: jbe L69F0EA
+L69F0E4: call dword ptr [mem_00925134]
+L69F0EA: mov ebx, dword ptr [esi+4]
+L69F0ED: cmp ebx, dword ptr [esi+8]
+L69F0F0: jbe L69F0F8
+L69F0F2: call dword ptr [mem_00925134]
+L69F0F8: push edi
+L69F0F9: push esi
+L69F0FA: push ebx
+L69F0FB: push esi
+L69F0FC: lea edx, [esp+24h]
+L69F100: push edx
+L69F101: mov ecx, esi
+L69F103: call ext_0048EF80
+L69F108: mov eax, dword ptr [ebp+80h]
+L69F10E: test eax, eax
+L69F110: je L6A0053
+L69F116: cmp byte ptr [eax], 0
+L69F119: je L6A0053
+L69F11F: lea esi, [ebp+0a4h]
+L69F125: mov dword ptr [ebp+9ch], eax
+L69F12B: mov dword ptr [ebp+0a0h], eax
+L69F131: mov dword ptr [esi], eax
+L69F133: cmp byte ptr [eax], 0
+L69F136: mov byte ptr [esp+13h], 0
+L69F13B: mov dword ptr [esp+1ch], 0fh
+L69F143: mov edi, 1dh
+L69F148: je L69FE37
+L69F14E: mov edi, edi
+L69F150: mov eax, dword ptr [esi]
+L69F152: movsx ecx, byte ptr [eax]
+L69F155: mov ebx, dword ptr [mem_0092531C]
+L69F15B: push ecx
+L69F15C: call ebx
+L69F15E: add esp, 4
+L69F161: test eax, eax
+L69F163: je L69F177
+L69F165: add dword ptr [esi], 1
+L69F168: mov edx, dword ptr [esi]
+L69F16A: movsx eax, byte ptr [edx]
+L69F16D: push eax
+L69F16E: call ebx
+L69F170: add esp, 4
+L69F173: test eax, eax
+L69F175: jne L69F165
+L69F177: mov eax, dword ptr [esi]
+L69F179: cmp byte ptr [eax], 0
+L69F17C: je L69FE37
+L69F182: mov byte ptr [ebp+93h], 1
+L69F189: movsx ecx, byte ptr [eax]
+L69F18C: lea edx, [ecx-21h]
+L69F18F: cmp edx, 5ch
+L69F192: ja L69F54E
+L69F198: movzx edx, byte ptr [edx+6a016ch]
+L69F19F: jmp dword ptr [edx*4+6a0110h]
+L69F1A6: push 98fca0h
+L69F1AB: push esi
+L69F1AC: call ext_0069B0C0
+L69F1B1: add esp, 8
+L69F1B4: test al, al
+L69F1B6: je L69F1F1
+L69F1B8: mov eax, dword ptr [esi]
+L69F1BA: push eax
+L69F1BB: push edi
+L69F1BC: push 27h
+L69F1BE: mov ecx, ebp
+L69F1C0: call ext_0069B220
+L69F1C5: mov edi, eax
+L69F1C7: cmp edi, 1dh
+L69F1CA: je L69FE2C
+L69F1D0: mov ebx, dword ptr [edi*4+0b5ca88h]
+L69F1D7: lea eax, [edi-22h]
+L69F1DA: cmp eax, 36h
+L69F1DD: ja L69FDC7
+L69F1E3: movzx eax, byte ptr [eax+6a01dch]
+L69F1EA: jmp dword ptr [eax*4+6a01cch]
+L69F1F1: add dword ptr [esi], 1
+L69F1F4: mov edi, 22h
+L69F1F9: jmp L69F1D0
+L69F1FB: push 98fc9ch
+L69F200: push esi
+L69F201: call ext_0069B0C0
+L69F206: add esp, 8
+L69F209: test al, al
+L69F20B: je L69F215
+L69F20D: mov ecx, dword ptr [esi]
+L69F20F: push ecx
+L69F210: push edi
+L69F211: push 28h
+L69F213: jmp L69F1BE
+L69F215: add dword ptr [esi], 1
+L69F218: mov edi, 54h
+L69F21D: jmp L69F1D0
+L69F21F: push 98fc98h
+L69F224: push esi
+L69F225: call ext_0069B0C0
+L69F22A: add esp, 8
+L69F22D: test al, al
+L69F22F: je L69F239
+L69F231: mov edx, dword ptr [esi]
+L69F233: push edx
+L69F234: push edi
+L69F235: push 29h
+L69F237: jmp L69F1BE
+L69F239: add dword ptr [esi], 1
+L69F23C: mov edi, 48h
+L69F241: jmp L69F1D0
+L69F243: push 98fc94h
+L69F248: push esi
+L69F249: call ext_0069B0C0
+L69F24E: add esp, 8
+L69F251: test al, al
+L69F253: je L69F260
+L69F255: mov eax, dword ptr [esi]
+L69F257: push eax
+L69F258: push edi
+L69F259: push 2ah
+L69F25B: jmp L69F1BE
+L69F260: add dword ptr [esi], 1
+L69F263: mov edi, 32h
+L69F268: jmp L69F1D0
+L69F26D: mov ecx, ebp
+L69F26F: call ext_0069B9E0
+L69F274: mov eax, dword ptr [ebp+4]
+L69F277: mov ecx, dword ptr [eax+4]
+L69F27A: test ecx, ecx
+L69F27C: mov edi, 3fh
+L69F281: jne L69F287
+L69F283: xor eax, eax
+L69F285: jmp L69F28F
+L69F287: mov eax, dword ptr [eax+8]
+L69F28A: sub eax, ecx
+L69F28C: sar eax, 3
+L69F28F: lea ecx, [esp+50h]
+L69F293: push ecx
+L69F294: mov ecx, dword ptr [ebp]
+L69F297: mov dword ptr [esp+54h], edi
+L69F29B: mov dword ptr [esp+58h], eax
+L69F29F: call ext_00412690
+L69F2A4: add dword ptr [esi], 1
+L69F2A7: jmp L69F1D0
+L69F2AC: mov ecx, ebp
+L69F2AE: mov edi, 50h
+L69F2B3: call ext_0069BBE0
+L69F2B8: add dword ptr [esi], 1
+L69F2BB: jmp L69F1D0
+L69F2C0: add eax, 1
+L69F2C3: mov edi, 47h
+L69F2C8: mov dword ptr [esi], eax
+L69F2CA: jmp L69F1D0
+L69F2CF: add eax, 1
+L69F2D2: mov edi, 4ch
+L69F2D7: mov dword ptr [esi], eax
+L69F2D9: jmp L69F1D0
+L69F2DE: add eax, 1
+L69F2E1: mov edi, 2ch
+L69F2E6: mov dword ptr [esi], eax
+L69F2E8: jmp L69F1D0
+L69F2ED: add eax, 1
+L69F2F0: mov dword ptr [esi], eax
+L69F2F2: movsx edx, byte ptr [eax]
+L69F2F5: push edx
+L69F2F6: call ebx
+L69F2F8: add esp, 4
+L69F2FB: test eax, eax
+L69F2FD: jne L69F306
+L69F2FF: mov eax, dword ptr [esi]
+L69F301: cmp byte ptr [eax], 3bh
+L69F304: jne L69F30D
+L69F306: add dword ptr [esi], 1
+L69F309: mov eax, dword ptr [esi]
+L69F30B: jmp L69F2F2
+L69F30D: mov eax, dword ptr [esi]
+L69F30F: mov dword ptr [ebp+0a0h], eax
+L69F315: mov al, byte ptr [eax]
+L69F317: cmp al, 7bh
+L69F319: jne L69F380
+L69F31B: mov eax, dword ptr [ebp+4]
+L69F31E: mov ecx, dword ptr [eax+4]
+L69F321: test ecx, ecx
+L69F323: mov edi, 1bh
+L69F328: jne L69F32E
+L69F32A: xor eax, eax
+L69F32C: jmp L69F336
+L69F32E: mov eax, dword ptr [eax+8]
+L69F331: sub eax, ecx
+L69F333: sar eax, 3
+L69F336: lea ecx, [esp+48h]
+L69F33A: push ecx
+L69F33B: mov ecx, dword ptr [ebp]
+L69F33E: mov dword ptr [esp+4ch], edi
+L69F342: mov dword ptr [esp+50h], eax
+L69F346: call ext_00412690
+L69F34B: mov eax, dword ptr [esi]
+L69F34D: sub eax, dword ptr [ebp+9ch]
+L69F353: mov ecx, dword ptr [ebp+4]
+L69F356: lea edx, [esp+88h]
+L69F35D: push edx
+L69F35E: mov byte ptr [ebp+93h], 0
+L69F365: mov dword ptr [esp+8ch], edi
+L69F36C: mov dword ptr [esp+90h], eax
+L69F373: call ext_00412690
+L69F378: add dword ptr [esi], 1
+L69F37B: jmp L69F1D0
+L69F380: cmp al, 7dh
+L69F382: jne L69F398
+L69F384: mov ecx, ebp
+L69F386: mov edi, 1ch
+L69F38B: call ext_0069C5F0
+L69F390: add dword ptr [esi], 1
+L69F393: jmp L69F1D0
+L69F398: push 98fc8ch
+L69F39D: push esi
+L69F39E: call ext_0069B5A0
+L69F3A3: add esp, 8
+L69F3A6: test al, al
+L69F3A8: jne L69F913
+L69F3AE: mov ecx, ebp
+L69F3B0: call ext_0069C4A0
+L69F3B5: mov eax, dword ptr [esi]
+L69F3B7: sub eax, dword ptr [ebp+9ch]
+L69F3BD: mov ecx, dword ptr [ebp+4]
+L69F3C0: mov dword ptr [esp+94h], eax
+L69F3C7: lea eax, [esp+90h]
+L69F3CE: mov edi, 2dh
+L69F3D3: push eax
+L69F3D4: mov byte ptr [ebp+93h], 0
+L69F3DB: mov dword ptr [esp+94h], edi
+L69F3E2: call ext_00412690
+L69F3E7: jmp L69F1D0
+L69F3EC: push 98fc88h
+L69F3F1: push esi
+L69F3F2: call ext_0069B0C0
+L69F3F7: add esp, 8
+L69F3FA: test al, al
+L69F3FC: je L69F408
+L69F3FE: mov edi, 4ah
+L69F403: jmp L69F1D0
+L69F408: add dword ptr [esi], 1
+L69F40B: mov edi, 49h
+L69F410: jmp L69F1D0
+L69F415: push 98fc84h
+L69F41A: push esi
+L69F41B: call ext_0069B0C0
+L69F420: add esp, 8
+L69F423: test al, al
+L69F425: je L69F431
+L69F427: mov edi, 41h
+L69F42C: jmp L69F1D0
+L69F431: push 98fc80h
+L69F436: push esi
+L69F437: call ext_0069B0C0
+L69F43C: add esp, 8
+L69F43F: test al, al
+L69F441: je L69F44D
+L69F443: mov edi, 2fh
+L69F448: jmp L69F1D0
+L69F44D: add dword ptr [esi], 1
+L69F450: mov edi, 40h
+L69F455: jmp L69F1D0
+L69F45A: push 98fc7ch
+L69F45F: push esi
+L69F460: call ext_0069B0C0
+L69F465: add esp, 8
+L69F468: test al, al
+L69F46A: je L69F476
+L69F46C: mov edi, 3bh
+L69F471: jmp L69F1D0
+L69F476: add dword ptr [esi], 1
+L69F479: mov edi, 3ah
+L69F47E: jmp L69F1D0
+L69F483: push 98fc78h
+L69F488: push esi
+L69F489: call ext_0069B0C0
+L69F48E: add esp, 8
+L69F491: test al, al
+L69F493: je L69F49F
+L69F495: mov edi, 33h
+L69F49A: jmp L69F1D0
+L69F49F: mov ecx, dword ptr [esi]
+L69F4A1: push ecx
+L69F4A2: push edi
+L69F4A3: push 25h
+L69F4A5: mov ecx, ebp
+L69F4A7: call ext_0069B220
+L69F4AC: add dword ptr [esi], 1
+L69F4AF: jmp L69F1C5
+L69F4B4: push 98fc74h
+L69F4B9: push esi
+L69F4BA: call ext_0069B0C0
+L69F4BF: add esp, 8
+L69F4C2: test al, al
+L69F4C4: je L69FE6F
+L69F4CA: mov edi, 23h
+L69F4CF: jmp L69F1D0
+L69F4D4: push 98fc70h
+L69F4D9: push esi
+L69F4DA: call ext_0069B0C0
+L69F4DF: add esp, 8
+L69F4E2: test al, al
+L69F4E4: je L69FE90
+L69F4EA: mov edi, 4bh
+L69F4EF: jmp L69F1D0
+L69F4F4: add eax, 1
+L69F4F7: mov edi, 3dh
+L69F4FC: mov dword ptr [esi], eax
+L69F4FE: jmp L69F1D0
+L69F503: add eax, 1
+L69F506: mov edi, 3eh
+L69F50B: mov dword ptr [esi], eax
+L69F50D: jmp L69F1D0
+L69F512: push 1
+L69F514: push esi
+L69F515: mov ecx, ebp
+L69F517: call ext_0069C330
+L69F51C: jmp L69F1C5
+L69F521: add eax, 1
+L69F524: mov dword ptr [esi], eax
+L69F526: cmp byte ptr [eax], 0
+L69F529: mov byte ptr [esp+13h], 1
+L69F52E: je L69FE2C
+L69F534: cmp byte ptr [eax], 0ah
+L69F537: je L69FE2C
+L69F53D: add eax, 1
+L69F540: mov edx, eax
+L69F542: mov dword ptr [esi], eax
+L69F544: cmp byte ptr [edx], 0
+L69F547: jne L69F534
+L69F549: jmp L69FE2C
+L69F54E: mov ebx, dword ptr [mem_00925320]
+L69F554: push ecx
+L69F555: call ebx
+L69F557: add esp, 4
+L69F55A: test eax, eax
+L69F55C: jne L69FC8D
+L69F562: mov eax, dword ptr [esi]
+L69F564: movsx eax, byte ptr [eax]
+L69F567: add eax, -42h
+L69F56A: cmp eax, 35h
+L69F56D: ja L69FBE8
+L69F573: movzx ecx, byte ptr [eax+6a026ch]
+L69F57A: jmp dword ptr [ecx*4+6a0214h]
+L69F581: push 98beb4h
+L69F586: push esi
+L69F587: call ext_0069B5A0
+L69F58C: add esp, 8
+L69F58F: test al, al
+L69F591: je L69FBE8
+L69F597: push 2
+L69F599: call ext_00686E60
+L69F59E: add esp, 4
+L69F5A1: push eax
+L69F5A2: push esi
+L69F5A3: mov ecx, ebp
+L69F5A5: call ext_0069DA50
+L69F5AA: test al, al
+L69F5AC: je L69FEB1
+L69F5B2: mov edi, 3ch
+L69F5B7: jmp L69F1D0
+L69F5BC: push 98fc68h
+L69F5C1: push esi
+L69F5C2: call ext_0069B5A0
+L69F5C7: add esp, 8
+L69F5CA: test al, al
+L69F5CC: je L69F60F
+L69F5CE: push 0
+L69F5D0: lea ecx, [esp+64h]
+L69F5D4: call ext_006720A0
+L69F5D9: mov ecx, dword ptr [ebp+8]
+L69F5DC: lea edx, [esp+60h]
+L69F5E0: push edx
+L69F5E1: mov dword ptr [esp+238h], 1
+L69F5EC: call ext_004E3D30
+L69F5F1: lea ecx, [esp+60h]
+L69F5F5: mov dword ptr [esp+234h], -1
+L69F600: call ext_00401CC0
+L69F605: mov edi, 58h
+L69F60A: jmp L69F1D0
+L69F60F: push 98bea0h
+L69F614: push esi
+L69F615: call ext_0069B5A0
+L69F61A: add esp, 8
+L69F61D: test al, al
+L69F61F: je L69F639
+L69F621: mov ecx, ebp
+L69F623: call ext_0069ECE0
+L69F628: mov byte ptr [ebp+93h], 0
+L69F62F: mov edi, 0ah
+L69F634: jmp L69F1D0
+L69F639: push 98be20h
+L69F63E: push esi
+L69F63F: call ext_0069B5A0
+L69F644: add esp, 8
+L69F647: test al, al
+L69F649: je L69FBE8
+L69F64F: push 12h
+L69F651: call ext_00686E60
+L69F656: add esp, 4
+L69F659: push eax
+L69F65A: push esi
+L69F65B: mov ecx, ebp
+L69F65D: call ext_0069DA50
+L69F662: test al, al
+L69F664: je L69FED2
+L69F66A: mov edi, 3ch
+L69F66F: jmp L69F1D0
+L69F674: push 98bebch
+L69F679: push esi
+L69F67A: call ext_0069B5A0
+L69F67F: add esp, 8
+L69F682: test al, al
+L69F684: je L69FBE8
+L69F68A: push 1
+L69F68C: call ext_00686E60
+L69F691: add esp, 4
+L69F694: push eax
+L69F695: push esi
+L69F696: mov ecx, ebp
+L69F698: call ext_0069DA50
+L69F69D: test al, al
+L69F69F: je L69FEF3
+L69F6A5: mov edi, 3ch
+L69F6AA: jmp L69F1D0
+L69F6AF: push 9868f4h
+L69F6B4: push esi
+L69F6B5: call ext_0069B5A0
+L69F6BA: add esp, 8
+L69F6BD: test al, al
+L69F6BF: je L69FBE8
+L69F6C5: push 7
+L69F6C7: call ext_00686E60
+L69F6CC: add esp, 4
+L69F6CF: push eax
+L69F6D0: push esi
+L69F6D1: mov ecx, ebp
+L69F6D3: call ext_0069DA50
+L69F6D8: test al, al
+L69F6DA: je L69FF14
+L69F6E0: mov edi, 3ch
+L69F6E5: jmp L69F1D0
+L69F6EA: push 986878h
+L69F6EF: push esi
+L69F6F0: call ext_0069B5A0
+L69F6F5: add esp, 8
+L69F6F8: test al, al
+L69F6FA: je L69FBE8
+L69F700: push 5
+L69F702: call ext_00686E60
+L69F707: add esp, 4
+L69F70A: push eax
+L69F70B: push esi
+L69F70C: mov ecx, ebp
+L69F70E: call ext_0069DA50
+L69F713: test al, al
+L69F715: je L69FF35
+L69F71B: mov edi, 3ch
+L69F720: jmp L69F1D0
+L69F725: push 93a810h
+L69F72A: push esi
+L69F72B: call ext_0069B5A0
+L69F730: add esp, 8
+L69F733: test al, al
+L69F735: je L69FBE8
+L69F73B: push 1
+L69F73D: lea ecx, [esp+84h]
+L69F744: call ext_006720A0
+L69F749: mov ecx, dword ptr [ebp+8]
+L69F74C: lea eax, [esp+80h]
+L69F753: push eax
+L69F754: mov dword ptr [esp+238h], 2
+L69F75F: call ext_004E3D30
+L69F764: lea ecx, [esp+80h]
+L69F76B: mov dword ptr [esp+234h], -1
+L69F776: call ext_00401CC0
+L69F77B: mov edi, 58h
+L69F780: jmp L69F1D0
+L69F785: push 98bec0h
+L69F78A: push esi
+L69F78B: call ext_0069B5A0
+L69F790: add esp, 8
+L69F793: test al, al
+L69F795: je L69FBE8
+L69F79B: push 0
+L69F79D: call ext_00686E60
+L69F7A2: add esp, 4
+L69F7A5: push eax
+L69F7A6: push esi
+L69F7A7: mov ecx, ebp
+L69F7A9: call ext_0069DA50
+L69F7AE: test al, al
+L69F7B0: je L69FF56
+L69F7B6: mov edi, 3ch
+L69F7BB: jmp L69F1D0
+L69F7C0: push 98beach
+L69F7C5: push esi
+L69F7C6: call ext_0069B5A0
+L69F7CB: add esp, 8
+L69F7CE: test al, al
+L69F7D0: je L69FBE8
+L69F7D6: push 3
+L69F7D8: call ext_00686E60
+L69F7DD: add esp, 4
+L69F7E0: push eax
+L69F7E1: push esi
+L69F7E2: mov ecx, ebp
+L69F7E4: call ext_0069DA50
+L69F7E9: test al, al
+L69F7EB: je L69FF77
+L69F7F1: mov edi, 3ch
+L69F7F6: jmp L69F1D0
+L69F7FB: push 96e578h
+L69F800: push esi
+L69F801: call ext_0069B5A0
+L69F806: add esp, 8
+L69F809: test al, al
+L69F80B: je L69FBE8
+L69F811: push 4
+L69F813: call ext_00686E60
+L69F818: add esp, 4
+L69F81B: push eax
+L69F81C: push esi
+L69F81D: mov ecx, ebp
+L69F81F: call ext_0069DA50
+L69F824: neg al
+L69F826: sbb eax, eax
+L69F828: and eax, -1dh
+L69F82B: add eax, 59h
+L69F82E: mov edi, eax
+L69F830: jmp L69F1D0
+L69F835: push 98fc60h
+L69F83A: push esi
+L69F83B: call ext_0069B5A0
+L69F840: add esp, 8
+L69F843: test al, al
+L69F845: je L69F851
+L69F847: mov edi, 24h
+L69F84C: jmp L69F1D0
+L69F851: push 98fc58h
+L69F856: push esi
+L69F857: call ext_0069B5A0
+L69F85C: add esp, 8
+L69F85F: test al, al
+L69F861: je L69F86D
+L69F863: mov edi, 2bh
+L69F868: jmp L69F1D0
+L69F86D: push 98fc50h
+L69F872: push esi
+L69F873: call ext_0069B5A0
+L69F878: add esp, 8
+L69F87B: test al, al
+L69F87D: je L69F889
+L69F87F: mov edi, 21h
+L69F884: jmp L69F1D0
+L69F889: push 98fc4ch
+L69F88E: push esi
+L69F88F: call ext_0069B5A0
+L69F894: add esp, 8
+L69F897: test al, al
+L69F899: je L69FBE8
+L69F89F: mov edi, 20h
+L69F8A4: jmp L69F1D0
+L69F8A9: push 98fc44h
+L69F8AE: push esi
+L69F8AF: call ext_0069B5A0
+L69F8B4: add esp, 8
+L69F8B7: test al, al
+L69F8B9: je L69F8C5
+L69F8BB: mov edi, 31h
+L69F8C0: jmp L69F1D0
+L69F8C5: push 98fc40h
+L69F8CA: push esi
+L69F8CB: call ext_0069B5A0
+L69F8D0: add esp, 8
+L69F8D3: test al, al
+L69F8D5: je L69F8E1
+L69F8D7: mov edi, 30h
+L69F8DC: jmp L69F1D0
+L69F8E1: push 98fc34h
+L69F8E6: push esi
+L69F8E7: call ext_0069B5A0
+L69F8EC: add esp, 8
+L69F8EF: test al, al
+L69F8F1: je L69FBE8
+L69F8F7: mov edi, 2eh
+L69F8FC: jmp L69F1D0
+L69F901: push 98fc8ch
+L69F906: push esi
+L69F907: call ext_0069B5A0
+L69F90C: add esp, 8
+L69F90F: test al, al
+L69F911: je L69F924
+L69F913: mov ecx, ebp
+L69F915: call ext_0069BE90
+L69F91A: mov edi, 17h
+L69F91F: jmp L69F1D0
+L69F924: push 98fc2ch
+L69F929: push esi
+L69F92A: call ext_0069B5A0
+L69F92F: add esp, 8
+L69F932: test al, al
+L69F934: je L69F940
+L69F936: mov edi, 34h
+L69F93B: jmp L69F1D0
+L69F940: push 98fc28h
+L69F945: push esi
+L69F946: call ext_0069B5A0
+L69F94B: add esp, 8
+L69F94E: test al, al
+L69F950: je L69FBE8
+L69F956: mov edi, 35h
+L69F95B: jmp L69F1D0
+L69F960: push 93a808h
+L69F965: push esi
+L69F966: call ext_0069B5A0
+L69F96B: add esp, 8
+L69F96E: test al, al
+L69F970: je L69FBE8
+L69F976: push 0
+L69F978: lea ecx, [esp+74h]
+L69F97C: call ext_006720A0
+L69F981: lea ecx, [esp+70h]
+L69F985: push ecx
+L69F986: mov ecx, dword ptr [ebp+8]
+L69F989: mov dword ptr [esp+238h], 3
+L69F994: call ext_004E3D30
+L69F999: lea ecx, [esp+70h]
+L69F99D: mov dword ptr [esp+234h], -1
+L69F9A8: call ext_00401CC0
+L69F9AD: mov edi, 58h
+L69F9B2: jmp L69F1D0
+L69F9B7: push 98fc24h
+L69F9BC: push esi
+L69F9BD: call ext_0069B5A0
+L69F9C2: add esp, 8
+L69F9C5: test al, al
+L69F9C7: je L69FBE8
+L69F9CD: mov ecx, dword ptr [ebp+4]
+L69F9D0: call ext_0048FB60
+L69F9D5: mov ecx, dword ptr [ebp]
+L69F9D8: lea edx, [esp+40h]
+L69F9DC: push edx
+L69F9DD: mov dword ptr [esp+44h], 14h
+L69F9E5: mov dword ptr [esp+48h], eax
+L69F9E9: call ext_00412690
+L69F9EE: mov edi, 1dh
+L69F9F3: jmp L69FE2C
+L69F9F8: push 98fc20h
+L69F9FD: push esi
+L69F9FE: call ext_0069B5A0
+L69FA03: add esp, 8
+L69FA06: test al, al
+L69FA08: je L69FA14
+L69FA0A: mov edi, 42h
+L69FA0F: jmp L69F1D0
+L69FA14: push 98fc1ch
+L69FA19: push esi
+L69FA1A: call ext_0069B5A0
+L69FA1F: add esp, 8
+L69FA22: test al, al
+L69FA24: je L69FBE8
+L69FA2A: mov edi, 43h
+L69FA2F: jmp L69F1D0
+L69FA34: push 98fc18h
+L69FA39: push esi
+L69FA3A: call ext_0069B5A0
+L69FA3F: add esp, 8
+L69FA42: test al, al
+L69FA44: je L69FA50
+L69FA46: mov edi, 45h
+L69FA4B: jmp L69F1D0
+L69FA50: push 98fc14h
+L69FA55: push esi
+L69FA56: call ext_0069B5A0
+L69FA5B: add esp, 8
+L69FA5E: test al, al
+L69FA60: je L69FBE8
+L69FA66: mov edi, 44h
+L69FA6B: jmp L69F1D0
+L69FA70: push 94f7c4h
+L69FA75: push esi
+L69FA76: call ext_0069B5A0
+L69FA7B: add esp, 8
+L69FA7E: test al, al
+L69FA80: je L69FBE8
+L69FA86: mov edi, 4dh
+L69FA8B: jmp L69F1D0
+L69FA90: push 98ea74h
+L69FA95: push esi
+L69FA96: call ext_0069B5A0
+L69FA9B: add esp, 8
+L69FA9E: test al, al
+L69FAA0: je L69FAAC
+L69FAA2: mov edi, 4eh
+L69FAA7: jmp L69F1D0
+L69FAAC: push 98fc0ch
+L69FAB1: push esi
+L69FAB2: call ext_0069B5A0
+L69FAB7: add esp, 8
+L69FABA: test al, al
+L69FABC: je L69FBE8
+L69FAC2: mov edi, 4fh
+L69FAC7: jmp L69F1D0
+L69FACC: push 98fc04h
+L69FAD1: push esi
+L69FAD2: call ext_0069B5A0
+L69FAD7: add esp, 8
+L69FADA: test al, al
+L69FADC: je L69FAE8
+L69FADE: mov edi, 52h
+L69FAE3: jmp L69F1D0
+L69FAE8: push 98fc00h
+L69FAED: push esi
+L69FAEE: call ext_0069B5A0
+L69FAF3: add esp, 8
+L69FAF6: test al, al
+L69FAF8: je L69FB04
+L69FAFA: mov edi, 51h
+L69FAFF: jmp L69F1D0
+L69FB04: push 98fbf8h
+L69FB09: push esi
+L69FB0A: call ext_0069B5A0
+L69FB0F: add esp, 8
+L69FB12: test al, al
+L69FB14: je L69FBE8
+L69FB1A: mov edi, 53h
+L69FB1F: jmp L69F1D0
+L69FB24: push 98fbf0h
+L69FB29: push esi
+L69FB2A: call ext_0069B5A0
+L69FB2F: add esp, 8
+L69FB32: test al, al
+L69FB34: je L69FB40
+L69FB36: mov edi, 56h
+L69FB3B: jmp L69F1D0
+L69FB40: push 98fbech
+L69FB45: push esi
+L69FB46: call ext_0069B5A0
+L69FB4B: add esp, 8
+L69FB4E: test al, al
+L69FB50: je L69FB5C
+L69FB52: mov edi, 55h
+L69FB57: jmp L69F1D0
+L69FB5C: push 92f10ch
+L69FB61: push esi
+L69FB62: call ext_0069B5A0
+L69FB67: add esp, 8
+L69FB6A: test al, al
+L69FB6C: je L69FBE8
+L69FB6E: push 1
+L69FB70: lea ecx, [esp+5ch]
+L69FB74: call ext_006720A0
+L69FB79: mov ecx, dword ptr [ebp+8]
+L69FB7C: lea eax, [esp+58h]
+L69FB80: push eax
+L69FB81: mov dword ptr [esp+238h], 4
+L69FB8C: call ext_004E3D30
+L69FB91: lea ecx, [esp+58h]
+L69FB95: mov dword ptr [esp+234h], -1
+L69FBA0: call ext_00401CC0
+L69FBA5: mov edi, 58h
+L69FBAA: jmp L69F1D0
+L69FBAF: push 98fbe4h
+L69FBB4: push esi
+L69FBB5: call ext_0069B5A0
+L69FBBA: add esp, 8
+L69FBBD: test al, al
+L69FBBF: je L69FBE8
+L69FBC1: lea ecx, [esp+68h]
+L69FBC5: push ecx
+L69FBC6: mov ecx, dword ptr [ebp]
+L69FBC9: mov dword ptr [esp+6ch], 18h
+L69FBD1: mov dword ptr [esp+70h], 0
+L69FBD9: call ext_00412690
+L69FBDE: mov edi, 1dh
+L69FBE3: jmp L69FE2C
+L69FBE8: cmp byte ptr [ebp+92h], 0
+L69FBEF: je L69FC0C
+L69FBF1: mov edx, dword ptr [ebp+8ch]
+L69FBF7: mov eax, dword ptr [ebp+88h]
+L69FBFD: push edx
+L69FBFE: push eax
+L69FBFF: push esi
+L69FC00: mov ecx, ebp
+L69FC02: call ext_0069D750
+L69FC07: jmp L69F1C5
+L69FC0C: mov ecx, dword ptr [esi]
+L69FC0E: mov dl, byte ptr [ecx]
+L69FC10: mov byte ptr [esp+24h], dl
+L69FC14: mov eax, dword ptr [esp+24h]
+L69FC18: push eax
+L69FC19: call ext_0069B140
+L69FC1E: add esp, 4
+L69FC21: test al, al
+L69FC23: je L69FC41
+L69FC25: add dword ptr [esi], 1
+L69FC28: mov eax, dword ptr [esi]
+L69FC2A: mov cl, byte ptr [eax]
+L69FC2C: mov byte ptr [esp+24h], cl
+L69FC30: mov edx, dword ptr [esp+24h]
+L69FC34: push edx
+L69FC35: call ext_0069B140
+L69FC3A: add esp, 4
+L69FC3D: test al, al
+L69FC3F: jne L69FC25
+L69FC41: push 0
+L69FC43: lea ecx, [esp+3ch]
+L69FC47: call ext_006720C0
+L69FC4C: mov ecx, dword ptr [ebp+8]
+L69FC4F: lea eax, [esp+38h]
+L69FC53: push eax
+L69FC54: mov dword ptr [esp+238h], 5
+L69FC5F: call ext_004E3D30
+L69FC64: mov ecx, dword ptr [esp+3ch]
+L69FC68: test ecx, ecx
+L69FC6A: mov dword ptr [esp+234h], -1
+L69FC75: je L69FC83
+L69FC77: mov edx, dword ptr [ecx]
+L69FC79: mov edx, dword ptr [edx+78h]
+L69FC7C: lea eax, [esp+38h]
+L69FC80: push eax
+L69FC81: call edx
+L69FC83: mov edi, 3ch
+L69FC88: jmp L69F1D0
+L69FC8D: xor edi, edi
+L69FC8F: nop
+L69FC90: mov eax, dword ptr [esi]
+L69FC92: mov cl, byte ptr [eax]
+L69FC94: add eax, 1
+L69FC97: mov byte ptr [esp+edi+0c0h], cl
+L69FC9E: mov dword ptr [esi], eax
+L69FCA0: movsx edx, byte ptr [eax]
+L69FCA3: push edx
+L69FCA4: add edi, 1
+L69FCA7: call ebx
+L69FCA9: add esp, 4
+L69FCAC: test eax, eax
+L69FCAE: jne L69FCB7
+L69FCB0: mov eax, dword ptr [esi]
+L69FCB2: cmp byte ptr [eax], 2eh
+L69FCB5: jne L69FCBC
+L69FCB7: cmp edi, 28h
+L69FCBA: jl L69FC90
+L69FCBC: lea ecx, [esp+0c0h]
+L69FCC3: push ecx
+L69FCC4: mov byte ptr [esp+edi+0c4h], 0
+L69FCCC: call dword ptr [mem_009251F0]
+L69FCD2: fld st(0)
+L69FCD4: add esp, 4
+L69FCD7: call ext_006A6DE0
+L69FCDC: mov ecx, eax
+L69FCDE: mov dword ptr [esp+20h], ecx
+L69FCE2: fild dword ptr [esp+20h]
+L69FCE6: push ecx
+L69FCE7: _emit 0d8h
+L69FCE8: _emit 0e9h
+L69FCE9: fcomp qword ptr [mem_0092A278]
+L69FCEF: fnstsw ax
+L69FCF1: test ah, 44h
+L69FCF4: jp L69FD42
+L69FCF6: lea ecx, [esp+34h]
+L69FCFA: fstp st(0)
+L69FCFC: call ext_006720C0
+L69FD01: mov ecx, dword ptr [ebp+8]
+L69FD04: lea edx, [esp+30h]
+L69FD08: push edx
+L69FD09: mov dword ptr [esp+238h], 6
+L69FD14: call ext_004E3D30
+L69FD19: mov ecx, dword ptr [esp+34h]
+L69FD1D: test ecx, ecx
+L69FD1F: mov dword ptr [esp+234h], -1
+L69FD2A: je L69FD8D
+L69FD2C: mov eax, dword ptr [ecx]
+L69FD2E: mov eax, dword ptr [eax+78h]
+L69FD31: lea edx, [esp+30h]
+L69FD35: push edx
+L69FD36: call eax
+L69FD38: mov edi, 58h
+L69FD3D: jmp L69F1D0
+L69FD42: fstp dword ptr [esp+24h]
+L69FD46: lea ecx, [esp+2ch]
+L69FD4A: fld dword ptr [esp+24h]
+L69FD4E: fstp dword ptr [esp]
+L69FD51: call ext_00672080
+L69FD56: lea ecx, [esp+28h]
+L69FD5A: push ecx
+L69FD5B: mov ecx, dword ptr [ebp+8]
+L69FD5E: mov dword ptr [esp+238h], 7
+L69FD69: call ext_004E3D30
+L69FD6E: mov ecx, dword ptr [esp+2ch]
+L69FD72: test ecx, ecx
+L69FD74: mov dword ptr [esp+234h], -1
+L69FD7F: je L69FD8D
+L69FD81: mov edx, dword ptr [ecx]
+L69FD83: mov edx, dword ptr [edx+78h]
+L69FD86: lea eax, [esp+28h]
+L69FD8A: push eax
+L69FD8B: call edx
+L69FD8D: mov edi, 58h
+L69FD92: jmp L69F1D0
+L69FD97: mov eax, dword ptr [esp+1ch]
+L69FD9B: cmp eax, 11h
+L69FD9E: je L69FDC7
+L69FDA0: cmp eax, 0eh
+L69FDA3: je L69FDC7
+L69FDA5: mov edi, 57h
+L69FDAA: jmp L69FDC7
+L69FDAC: mov eax, dword ptr [esp+1ch]
+L69FDB0: cmp eax, 11h
+L69FDB3: je L69FDC7
+L69FDB5: cmp eax, 0eh
+L69FDB8: jne L69FE2C
+L69FDBA: jmp L69FDC7
+L69FDBC: cmp dword ptr [esp+1ch], 11h
+L69FDC1: je L69FF98
+L69FDC7: cmp byte ptr [ebp+93h], 0
+L69FDCE: je L69FE28
+L69FDD0: cmp ebx, 11h
+L69FDD3: jne L69FE0F
+L69FDD5: mov eax, dword ptr [ebp+8]
+L69FDD8: mov ecx, dword ptr [eax+4]
+L69FDDB: test ecx, ecx
+L69FDDD: jne L69FDF5
+L69FDDF: xor eax, eax
+L69FDE1: mov eax, 0ffffffffh
+L69FDE6: lea ecx, [esp+78h]
+L69FDEA: mov dword ptr [esp+78h], edi
+L69FDEE: mov dword ptr [esp+7ch], eax
+L69FDF2: push ecx
+L69FDF3: jmp L69FE20
+L69FDF5: mov eax, dword ptr [eax+8]
+L69FDF8: sub eax, ecx
+L69FDFA: sar eax, 3
+L69FDFD: add eax, -1
+L69FE00: lea ecx, [esp+78h]
+L69FE04: mov dword ptr [esp+78h], edi
+L69FE08: mov dword ptr [esp+7ch], eax
+L69FE0C: push ecx
+L69FE0D: jmp L69FE20
+L69FE0F: lea edx, [esp+14h]
+L69FE13: mov dword ptr [esp+14h], edi
+L69FE17: mov dword ptr [esp+18h], 0
+L69FE1F: push edx
+L69FE20: mov ecx, dword ptr [ebp+4]
+L69FE23: call ext_00412690
+L69FE28: mov dword ptr [esp+1ch], ebx
+L69FE2C: mov eax, dword ptr [esi]
+L69FE2E: cmp byte ptr [eax], 0
+L69FE31: jne L69F150
+L69FE37: mov ecx, ebp
+L69FE39: call ext_0069C4A0
+L69FE3E: mov ecx, dword ptr [ebp]
+L69FE41: call ext_0069B530
+L69FE46: test al, al
+L69FE48: jne L69FFB9
+L69FE4E: push ebp
+L69FE4F: push 5
+L69FE51: lea ecx, [esp+0a0h]
+L69FE58: call ext_006A2B20
+L69FE5D: push 0a1a86ch
+L69FE62: lea edx, [esp+9ch]
+L69FE69: push edx
+L69FE6A: call ext_006A6DD2
+L69FE6F: push ebp
+L69FE70: push 1
+L69FE72: lea ecx, [esp+208h]
+L69FE79: call ext_006A2B20
+L69FE7E: push 0a1a86ch
+L69FE83: lea ecx, [esp+204h]
+L69FE8A: push ecx
+L69FE8B: call ext_006A6DD2
+L69FE90: push ebp
+L69FE91: push 1
+L69FE93: lea ecx, [esp+190h]
+L69FE9A: call ext_006A2B20
+L69FE9F: push 0a1a86ch
+L69FEA4: lea edx, [esp+18ch]
+L69FEAB: push edx
+L69FEAC: call ext_006A6DD2
+L69FEB1: push ebp
+L69FEB2: push 0dh
+L69FEB4: lea ecx, [esp+140h]
+L69FEBB: call ext_006A2B20
+L69FEC0: push 0a1a86ch
+L69FEC5: lea eax, [esp+13ch]
+L69FECC: push eax
+L69FECD: call ext_006A6DD2
+L69FED2: push ebp
+L69FED3: push 0dh
+L69FED5: lea ecx, [esp+1e0h]
+L69FEDC: call ext_006A2B20
+L69FEE1: push 0a1a86ch
+L69FEE6: lea ecx, [esp+1dch]
+L69FEED: push ecx
+L69FEEE: call ext_006A6DD2
+L69FEF3: push ebp
+L69FEF4: push 0dh
+L69FEF6: lea ecx, [esp+0f0h]
+L69FEFD: call ext_006A2B20
+L69FF02: push 0a1a86ch
+L69FF07: lea edx, [esp+0ech]
+L69FF0E: push edx
+L69FF0F: call ext_006A6DD2
+L69FF14: push ebp
+L69FF15: push 0dh
+L69FF17: lea ecx, [esp+118h]
+L69FF1E: call ext_006A2B20
+L69FF23: push 0a1a86ch
+L69FF28: lea eax, [esp+114h]
+L69FF2F: push eax
+L69FF30: call ext_006A6DD2
+L69FF35: push ebp
+L69FF36: push 0dh
+L69FF38: lea ecx, [esp+168h]
+L69FF3F: call ext_006A2B20
+L69FF44: push 0a1a86ch
+L69FF49: lea ecx, [esp+164h]
+L69FF50: push ecx
+L69FF51: call ext_006A6DD2
+L69FF56: push ebp
+L69FF57: push 0dh
+L69FF59: lea ecx, [esp+1b8h]
+L69FF60: call ext_006A2B20
+L69FF65: push 0a1a86ch
+L69FF6A: lea edx, [esp+1b4h]
+L69FF71: push edx
+L69FF72: call ext_006A6DD2
+L69FF77: push ebp
+L69FF78: push 0dh
+L69FF7A: lea ecx, [esp+0a0h]
+L69FF81: call ext_006A2B20
+L69FF86: push 0a1a86ch
+L69FF8B: lea eax, [esp+9ch]
+L69FF92: push eax
+L69FF93: call ext_006A6DD2
+L69FF98: push ebp
+L69FF99: push 6
+L69FF9B: lea ecx, [esp+0a0h]
+L69FFA2: call ext_006A2B20
+L69FFA7: push 0a1a86ch
+L69FFAC: lea ecx, [esp+9ch]
+L69FFB3: push ecx
+L69FFB4: call ext_006A6DD2
+L69FFB9: cmp byte ptr [esp+13h], 0
+L69FFBE: je L6A0020
+L69FFC0: mov ecx, dword ptr [ebp+4]
+L69FFC3: call ext_0069B530
+L69FFC8: test al, al
+L69FFCA: je L6A0020
+L69FFCC: push 0
+L69FFCE: lea ecx, [esp+18h]
+L69FFD2: call ext_006720C0
+L69FFD7: mov ecx, dword ptr [ebp+8]
+L69FFDA: lea eax, [esp+14h]
+L69FFDE: push eax
+L69FFDF: mov dword ptr [esp+238h], 8
+L69FFEA: call ext_004E3D30
+L69FFEF: lea ecx, [esp+14h]
+L69FFF3: mov dword ptr [esp+234h], -1
+L69FFFE: call ext_00401CC0
+L6A0003: lea ecx, [esp+14h]
+L6A0007: push ecx
+L6A0008: mov ecx, dword ptr [ebp+4]
+L6A000B: mov dword ptr [esp+18h], 58h
+L6A0013: mov dword ptr [esp+1ch], 0
+L6A001B: call ext_00412690
+L6A0020: cmp dword ptr [mem_00B5A0B8], 0
+L6A0027: je L6A003B
+L6A0029: mov eax, dword ptr [ebp+84h]
+L6A002F: test eax, eax
+L6A0031: je L6A003B
+L6A0033: push eax
+L6A0034: mov ecx, ebp
+L6A0036: call ext_0069C760
+L6A003B: mov al, 1
+L6A003D: mov ecx, dword ptr [esp+22ch]
+L6A0044: mov dword ptr fs:[0], ecx
+L6A004B: pop edi
+L6A004C: pop esi
+L6A004D: pop ebp
+L6A004E: pop ebx
+L6A004F: mov esp, ebp
+L6A0051: pop ebp
+L6A0052: ret
+L6A0053: cmp byte ptr [ebp+91h], 0
+L6A005A: je L6A00ED
+L6A0060: mov eax, dword ptr [ebp+8]
+L6A0063: mov ecx, dword ptr [eax+4]
+L6A0066: test ecx, ecx
+L6A0068: jne L6A006E
+L6A006A: xor eax, eax
+L6A006C: jmp L6A0076
+L6A006E: mov eax, dword ptr [eax+8]
+L6A0071: sub eax, ecx
+L6A0073: sar eax, 3
+L6A0076: mov ecx, dword ptr [ebp+4]
+L6A0079: lea edx, [esp+14h]
+L6A007D: push edx
+L6A007E: mov dword ptr [esp+18h], 58h
+L6A0086: mov dword ptr [esp+1ch], eax
+L6A008A: call ext_00412690
+L6A008F: push 0
+L6A0091: lea ecx, [esp+2ch]
+L6A0095: call ext_006720C0
+L6A009A: mov ecx, dword ptr [ebp+8]
+L6A009D: lea eax, [esp+28h]
+L6A00A1: push eax
+L6A00A2: mov dword ptr [esp+238h], 0
+L6A00AD: call ext_004E3D30
+L6A00B2: mov ecx, dword ptr [esp+2ch]
+L6A00B6: test ecx, ecx
+L6A00B8: mov dword ptr [esp+234h], -1
+L6A00C3: je L6A003B
+L6A00C9: mov edx, dword ptr [ecx]
+L6A00CB: mov edx, dword ptr [edx+78h]
+L6A00CE: lea eax, [esp+28h]
+L6A00D2: push eax
+L6A00D3: call edx
+L6A00D5: mov ecx, dword ptr [esp+22ch]
+L6A00DC: pop edi
+L6A00DD: mov al, 1
+L6A00DF: mov dword ptr fs:[0], ecx
+L6A00E6: pop esi
+L6A00E7: pop ebp
+L6A00E8: pop ebx
+L6A00E9: mov esp, ebp
+L6A00EB: pop ebp
+L6A00EC: ret
+L6A00ED: push ebp
+L6A00EE: push 0ch
+L6A00F0: lea ecx, [esp+0a0h]
+L6A00F7: call ext_006A2B20
+L6A00FC: push 0a1a86ch
+L6A0101: lea eax, [esp+9ch]
+L6A0108: push eax
+L6A0109: call ext_006A6DD2
+    }
+}
