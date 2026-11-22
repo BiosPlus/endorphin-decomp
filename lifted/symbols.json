@@ -1140,6 +1140,13 @@
     "summary": "This-adjustor thunk: rebases this by -0xC (to the primary base subobject) and tail-forwards to vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C66F0": {
+    "name": "NMData::ForceEventData::vfunc_87",
+    "class": "NMData::ForceEventData",
+    "signature": "void fn_004C66F0(void* self)",
+    "summary": "Reads the dword at this+0x184; if non-zero, calls ext_004C64D0 on the subobject at this+0x184 with a single zero argument.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6BE0": {
     "name": "NMData::ForceEventData::vfunc_1_off_158",
     "class": "NMData::ForceEventData",

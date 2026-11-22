@@ -1,0 +1,22 @@
+{
+  "va": "0x004C66F0",
+  "size": 19,
+  "orig_symbol": "NMData::ForceEventData::vfunc_87",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_87",
+  "class": "NMData::ForceEventData",
+  "signature": "void fn_004C66F0(void* self)",
+  "summary": "Reads the dword at this+0x184; if non-zero, calls ext_004C64D0 on the subobject at this+0x184 with a single zero argument.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x184",
+      "type": "uint32_t",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:55Z"
+}
