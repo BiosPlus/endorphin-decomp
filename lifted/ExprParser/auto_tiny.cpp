@@ -436,3 +436,153 @@ void fn_0049B2F0(void* self, void* src) {
     bool value = lift_vcall<bool>(inner, 3, src);
     lift_field<uint8_t*>(self, 0)[0] = value ? 1 : 0;
 }
+
+// [0x0049C120] ExprParser::PrimitiveProxyType<int>::vfunc_41 (26 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_41
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Reads an int from the source proxy (via its vtable slot 2) and stores it through this proxy's value pointer.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 int32_t* value_ptr
+
+namespace {
+// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
+template <typename R, typename... A>
+inline R lift_vcall(void* obj, int slot, A... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
+}
+} // namespace
+
+void fn_0049C120(void* self, void* src) {
+    void* inner = lift_field<void*>(src, 4);
+    int32_t value = lift_vcall<int32_t>(inner, 2, src);
+    lift_field<int32_t*>(self, 0)[0] = value;
+}
+
+// [0x0066BBC0] ExprParser::VPtrProxyType::vfunc_8 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_8
+// @class ExprParser::VPtrProxyType
+// @summary Forwards to vtable slot 8 of the sub-object reached via the proxy's target, passing that target and the argument; returns the result.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+
+namespace {
+// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
+template <typename R, typename... A>
+inline R lift_vcall(void* obj, int slot, A... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
+}
+} // namespace
+
+void* fn_0066BBC0(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0);
+    void* sub = lift_field<void*>(target, 4);
+    return lift_vcall<void*>(sub, 8, target, arg);
+}
+
+// [0x0066BBE0] ExprParser::VPtrProxyType::vfunc_9 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_9
+// @class ExprParser::VPtrProxyType
+// @summary Forwards to vtable slot 9 of the sub-object reached via the proxy's target, passing that target and the argument; returns the result.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+
+namespace {
+// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
+template <typename R, typename... A>
+inline R lift_vcall(void* obj, int slot, A... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
+}
+} // namespace
+
+void* fn_0066BBE0(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0);
+    void* sub = lift_field<void*>(target, 4);
+    return lift_vcall<void*>(sub, 9, target, arg);
+}
+
+// [0x0066BC00] ExprParser::VPtrProxyType::vfunc_10 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_10
+// @class ExprParser::VPtrProxyType
+// @summary Forwards to vtable slot 10 of the sub-object reached via the proxy's target, passing that target and the argument; returns the result.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+
+namespace {
+// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
+template <typename R, typename... A>
+inline R lift_vcall(void* obj, int slot, A... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
+}
+} // namespace
+
+void* fn_0066BC00(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0);
+    void* sub = lift_field<void*>(target, 4);
+    return lift_vcall<void*>(sub, 10, target, arg);
+}
+
+// [0x0049C140] ExprParser::PrimitiveProxyType<int>::vfunc_43 (28 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_43
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Adds an int obtained from the source proxy (via its vtable slot 2) into the int this proxy's value pointer refers to.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 int32_t* value_ptr
+
+namespace {
+// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
+template <typename R, typename... A>
+inline R lift_vcall(void* obj, int slot, A... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
+}
+} // namespace
+
+void fn_0049C140(void* self, void* src) {
+    int32_t* dst = lift_field<int32_t*>(self, 0);
+    void* inner = lift_field<void*>(src, 4);
+    int32_t delta = lift_vcall<int32_t>(inner, 2, src);
+    *dst += delta;
+}
+
+// [0x0066B0D0] ExprParser::RealType::vfunc_41 (24 bytes)
+// @name ExprParser::RealType::vfunc_41
+// @class ExprParser::RealType
+// @summary Calls virtual slot 1 of the object at src->+4 with src as argument and stores the float result through self.
+// @field ExprParser::RealType +0x00 float field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+void fn_0066B0D0(void* self, void* src) {
+    void* inner = lift_field<void*>(src, 4);
+    void** vtbl = lift_field<void**>(inner, 0);
+    using VFunc = float (*)(void* self, void* arg);
+    float value = reinterpret_cast<VFunc>(vtbl[1])(inner, src);
+    lift_field<float>(self, 0) = value;
+}
+
+// [0x0066B120] ExprParser::IntType::vfunc_41 (24 bytes)
+// @name ExprParser::IntType::vfunc_41
+// @class ExprParser::IntType
+// @summary Calls virtual slot 2 of the object at src->+4 with src as argument and stores the int32 result through self.
+// @field ExprParser::IntType +0x00 int32_t field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+void fn_0066B120(void* self, void* src) {
+    void* inner = lift_field<void*>(src, 4);
+    void** vtbl = lift_field<void**>(inner, 0);
+    using VFunc = int32_t (*)(void* self, void* arg);
+    int32_t value = reinterpret_cast<VFunc>(vtbl[2])(inner, src);
+    lift_field<int32_t>(self, 0) = value;
+}
+
+// [0x0066BBA0] ExprParser::VPtrProxyType::vfunc_7 (28 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_7
+// @class ExprParser::VPtrProxyType
+// @summary Forward a float value to vtable slot 7 of the object at P->+0x04, passing P as the first argument.
+// Assumption: the callee's return value is not propagated (the original tail-returns whatever eax/st0 holds).
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+void fn_0066BBA0(void* self, float value) {
+    void* p = lift_field<void*>(self, 0x00);          // P = self->field_0x00
+    void* q = lift_field<void*>(p, 0x04);             // Q = P->field_0x04
+    void** vtbl = *reinterpret_cast<void***>(q);
+    using Slot7 = void (*)(void* thisPtr, void* arg, float v);
+    reinterpret_cast<Slot7>(vtbl[7])(q, p, value);    // thiscall: this=Q, args=(P, value)
+}

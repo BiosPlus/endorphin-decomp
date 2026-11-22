@@ -184,8 +184,11 @@ void fn_004CE8C0(void* self) {
         *reinterpret_cast<VirtualForwardFn*>(vtable + 0x158);
     target(self);
 }
+// Global lookup table in .data; indexed by the 32-bit id stored at +0x08 of the object pointed to by +0x150.
+// Lookup table at 0x0095F750 (array of 32-bit entries indexed by a small id).
+extern "C" const uint32_t mem_0095F750[];
 
-// [0x00622320] NMData::SkeletalCalibrationVariables::vfunc_19 (10 bytes)
+extern "C" const uint32_t mem_0095F750[];
 // @name NMData::SkeletalCalibrationVariables::vfunc_19
 // @class NMData::SkeletalCalibrationVariables
 // @summary Stores a single float argument into the object at offset +0x10 (thiscall-style setter, callee pops 4 bytes).
@@ -194,6 +197,7 @@ void fn_00622320(void* self, int /*edx_unused*/, float value) {
     std::uint8_t* base = static_cast<std::uint8_t*>(self);
     std::memcpy(base + 0x10, &value, sizeof(float));
 }
+// Lookup table at 0x0095F750 (array of 32-bit entries indexed by a small id).
 
 // [0x00622330] NMData::SkeletalCalibrationVariables::vfunc_20 (10 bytes)
 // @name NMData::SkeletalCalibrationVariables::vfunc_20
@@ -1842,17 +1846,118 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x005C3890] NMData::CollisionModelData::vfunc_0_off_C (24 bytes)
-// @name NMData::CollisionModelData::GetTableEntryForBufferedTM
-// @class NMData::CollisionModelData
-// @summary Returns mem_0095F750[id] where id is read from the object at this->field_0x150, or 0 if that pointer is null.
-// @field NMData::CollisionModelData +0x150 void* field_0x150
-DWORD fn_005C3890(void* self) {
-    auto* base = static_cast<uint8_t*>(self);
-    auto* linked = *reinterpret_cast<uint8_t**>(base + 0x150);
-    if (linked == nullptr) {
+// [0x00682DC0] NMData::ValuePtrData::vfunc_0_off_4 (27 bytes)
+// @name NMData::ValuePtrData::vfunc_0_off_4
+// @class NMData::ValuePtrData
+// @summary Returns cached dword at +0x88; if zero, forwards to the object at +0x24 via vtable slot 18, passing (this - 4) as the adjusted base.
+// @field NMData::ValuePtrData +0x24 void* field_0x24
+// @field NMData::ValuePtrData +0x88 uint32_t field_0x88
+uint32_t fn_00682DC0(void* self) {
+    uint32_t cached = lift_field<uint32_t>(self, 0x88);
+    if (cached != 0) {
+        return cached;
+    }
+    void* target = lift_field<void*>(self, 0x24);
+    void* adjusted = static_cast<uint8_t*>(self) - 4;
+    void** vtable = *reinterpret_cast<void***>(target);
+    // vtable byte offset 0x48 -> slot 18 (32-bit layout)
+    auto fn = reinterpret_cast<uint32_t (*)(void*, void*)>(vtable[18]);
+    return fn(target, adjusted);
+}
+
+// [0x00496F50] NMData::Transition::vfunc_6_off_8 (28 bytes)
+// @name NMData::Transition::vfunc_6_off_8
+// @class NMData::Transition
+// @summary If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 6 of its +0x10 sub-object; otherwise does nothing.
+// @field NMData::Transition +0xB0 void* field_0xB0
+void fn_00496F50(void* self, uint32_t arg) {
+    void* inner = lift_field<void*>(self, 0xB0);
+    if (inner == nullptr) {
+        return;
+    }
+    void* sub = static_cast<uint8_t*>(inner) + 0x10;
+    void** vtable = *reinterpret_cast<void***>(sub);
+    // vtable byte offset 0x18 -> slot 6 (32-bit layout)
+    auto fn = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[6]);
+    fn(sub, arg);
+}
+
+// [0x00496F70] NMData::Transition::vfunc_7_off_8 (28 bytes)
+// @name NMData::Transition::vfunc_7_off_8
+// @class NMData::Transition
+// @summary If sub-object pointer at +0xB0 is non-null, tail-forwards the call (and stack argument) to vtable slot 7 of its +0x10 sub-object; otherwise does nothing.
+// @field NMData::Transition +0xB0 void* field_0xB0
+void fn_00496F70(void* self, uint32_t arg) {
+    void* inner = lift_field<void*>(self, 0xB0);
+    if (inner == nullptr) {
+        return;
+    }
+    void* sub = static_cast<uint8_t*>(inner) + 0x10;
+    void** vtable = *reinterpret_cast<void***>(sub);
+    // vtable byte offset 0x1C -> slot 7 (32-bit layout)
+    auto fn = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[7]);
+    fn(sub, arg);
+}
+
+// [0x0049ABA0] NMData::State::vfunc_17_off_10 (28 bytes)
+// @name NMData::State::vfunc_17_off_10
+// @class NMData::State
+// @summary Returns 0x20 when arg0 == 0x1B3 and the float at +0xEC has zero bit pattern; otherwise returns arg0 unchanged. Trailing stack args are ignored.
+// @field NMData::State +0xEC float field_0xEC
+uint32_t fn_0049ABA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    (void)arg1;
+    (void)arg2;
+    uint32_t result = arg0;
+    if (arg0 == 0x1B3 && std::bit_cast<uint32_t>(lift_field<float>(self, 0xEC)) == 0) {
+        result = 0x20;
+    }
+    return result;
+}
+
+// [0x0060BB80] NMData::EffectorBaseData::vfunc_4 (29 bytes)
+// @name NMData::EffectorBaseData::vfunc_4
+// @class NMData::EffectorBaseData
+// @summary Returns 0 if the pointer at +0x40 is null; otherwise calls vtable slot 4 on that object with argument 0 and returns its result.
+// @field NMData::EffectorBaseData +0x40 void* field_0x40
+uint32_t fn_0060BB80(void* self) {
+    void* target = lift_field<void*>(self, 0x40);
+    if (target == nullptr) {
         return 0;
     }
-    DWORD id = *reinterpret_cast<DWORD*>(linked + 0x08);
-    return mem_0095F750[id];
+    void** vtable = *reinterpret_cast<void***>(target);
+    // vtable byte offset 0x10 -> slot 4 (32-bit layout)
+    auto fn = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(vtable[4]);
+    return fn(target, 0);
+}
+
+// [0x0051C7A0] NMData::QuatChannel::vfunc_9 (31 bytes)
+// @name NMData::QuatChannel::vfunc_9
+// @class NMData::QuatChannel
+// @summary Returns 0 if the dword at +0x30 is zero; otherwise returns (dword at +0x34 - dword at +0x30) / 20 (signed, truncating).
+// @field NMData::QuatChannel +0x30 uint32_t field_0x30
+// @field NMData::QuatChannel +0x34 uint32_t field_0x34
+int32_t fn_0051C7A0(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x30);
+    if (begin == 0) {
+        return 0;
+    }
+    uint32_t end = lift_field<uint32_t>(self, 0x34);
+    int32_t span = static_cast<int32_t>(end - begin);
+    // Compiler-emitted magic multiply (0x66666667, sar 3) computes signed /20.
+    return span / 20;
+}
+
+// [0x005C3890] NMData::CollisionModelData::vfunc_0_off_C (24 bytes)
+// @name NMData::CollisionModelData::vfunc_0_off_C
+// @class NMData::CollisionModelData
+// @summary Returns mem_0095F750[id] where id is the DWORD at +0x08 of the object at this->+0x150; returns 0 if that object is null.
+// @field NMData::CollisionModelData +0x150 void* field_0x150
+DWORD fn_005C3890(void* self) {
+    void* inner = lift_field<void*>(self, 0x150);
+    if (inner == nullptr) {
+        return 0;
+    }
+    // Inner object field at +0x08 (type unknown; used as the table index).
+    const DWORD index = lift_field<DWORD>(inner, 0x08);
+    return mem_0095F750[index];
 }
