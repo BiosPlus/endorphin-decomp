@@ -6238,6 +6238,13 @@
     "summary": "Loads a single float from the pointer passed as the second stack argument and returns it on the x87 stack (ignores this).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1910": {
+    "name": "Geometry::CuboidType::vfunc_9",
+    "class": "Geometry::CuboidType",
+    "signature": "float fn_005B1910(uint32_t index, const float* values)",
+    "summary": "Return values[index] scaled by 0.5 (the `this` pointer is unused).",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
   "0x005B1980": {
     "name": "Geometry::FileType::vfunc_7",
     "class": "Geometry::FileType",

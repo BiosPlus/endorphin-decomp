@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1910",
+  "size": 28,
+  "orig_symbol": "Geometry::CuboidType::vfunc_9",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::CuboidType::vfunc_9",
+  "class": "Geometry::CuboidType",
+  "signature": "float fn_005B1910(uint32_t index, const float* values)",
+  "summary": "Return values[index] scaled by 0.5 (the `this` pointer is unused).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:06Z"
+}

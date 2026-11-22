@@ -16,8 +16,10 @@ int* fn_005B1110(void* self) {
     return &mem_00B59400;
 }
 extern "C" void __fastcall ext_005B5260(void* self);
+// Constant 0x00993828: .rdata double 0.5
+extern "C" const double mem_00993828;
 
-// [0x005B1900] Geometry::SphereType::vfunc_9 (9 bytes)
+extern "C" const double mem_00993828;
 // @name Geometry::SphereType::vfunc_9
 // @class Geometry::SphereType
 // @summary Loads a single float from the pointer passed as the second stack argument and returns it on the x87 stack (ignores this).
@@ -98,4 +100,13 @@ void fn_005B1850(void* self, DWORD arg0, DWORD arg1) {
     auto* base = static_cast<std::uint8_t*>(self);
     std::memcpy(base + 0x04, &arg0, sizeof(DWORD));
     std::memcpy(base + 0x08, &arg1, sizeof(DWORD));
+}
+
+// [0x005B1910] Geometry::CuboidType::vfunc_9 (28 bytes)
+// @name Geometry::CuboidType::vfunc_9
+// @class Geometry::CuboidType
+// @summary Return values[index] scaled by 0.5 (the `this` pointer is unused).
+// No object fields are accessed.
+float fn_005B1910(uint32_t index, const float* values) {
+    return static_cast<float>(static_cast<double>(values[index]) * mem_00993828);
 }
