@@ -1546,6 +1546,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0052EFA0": {
+    "name": "Primitives::Animation::vfunc_14",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0052EFA0(void* self, uint32_t a0, uint32_t a1)",
+    "summary": "Stores two 32-bit stack arguments into this-\u003efield_0x28 and this-\u003efield_0x2c (thiscall, callee pops 8).",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0052F5F0": {
     "name": "Primitives::Animation::vfunc_19",
     "class": "Primitives::Animation",

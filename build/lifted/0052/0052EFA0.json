@@ -1,0 +1,28 @@
+{
+  "va": "0x0052EFA0",
+  "size": 17,
+  "orig_symbol": "Primitives::Animation::vfunc_14",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Animation::vfunc_14",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0052EFA0(void* self, uint32_t a0, uint32_t a1)",
+  "summary": "Stores two 32-bit stack arguments into this-\u003efield_0x28 and this-\u003efield_0x2c (thiscall, callee pops 8).",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:13Z"
+}

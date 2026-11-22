@@ -211,3 +211,14 @@ void fn_0053A5D0(void* self) {
     auto* obj = static_cast<unsigned char*>(self);
     *reinterpret_cast<UINT*>(obj + 0x34) = glGenLists(1);
 }
+
+// [0x0052EFA0] Primitives::Animation::vfunc_14 (17 bytes)
+// @name Primitives::Animation::vfunc_14
+// @class Primitives::Animation
+// @summary Stores two 32-bit stack arguments into this->field_0x28 and this->field_0x2c (thiscall, callee pops 8).
+// @field Primitives::Animation +0x28 uint32_t field_0x28
+// @field Primitives::Animation +0x2C uint32_t field_0x2c
+void fn_0052EFA0(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x28) = a0;
+    lift_field<uint32_t>(self, 0x2C) = a1;
+}
