@@ -1,0 +1,14 @@
+{
+  "va": "0x0066CE30",
+  "size": 98,
+  "orig_symbol": "ExprParser::RealType::vfunc_18",
+  "src_path": "src/ExprParser/RealType.cpp",
+  "lifted_path": "lifted/ExprParser/RealType.cpp",
+  "name": "ExprParser::RealType::vfunc_18",
+  "class": "ExprParser::RealType",
+  "signature": "void* fn_0066CE30(void* self, int32_t arg)",
+  "summary": "Lazily initializes a function-local static real-valued object (from 0.0f) and returns its address; the stack argument is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:08Z"
+}
