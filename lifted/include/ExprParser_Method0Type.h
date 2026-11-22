@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::Method0Type:
 namespace lifted_layout {
 struct ExprParser_Method0Type_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0060A070)
+    // +0x0   void*                    field_0x00  (evidence: 0x0060A070, 0x0066DD10)
 };
 } // namespace lifted_layout

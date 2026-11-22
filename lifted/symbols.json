@@ -9106,6 +9106,13 @@
     "summary": "Stdcall (ret 4) thunk: loads the target pointer stored at the proxy's first dword, calls the helper on it with it in ecx, and returns 0.0f.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0066DD10": {
+    "name": "ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+    "signature": "void* fn_0066DD10(void* unused, void* out)",
+    "summary": "Stdcall (ret 8) thunk: loads the target pointer from the out-param, calls the Vector3 helper on it, default-constructs the out-param as a std::string, and returns the out-param.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0066EDA0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_0_off_4",
     "class": "ExprParser::ExpressionContainerType",

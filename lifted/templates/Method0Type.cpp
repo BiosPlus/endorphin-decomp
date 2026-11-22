@@ -46,10 +46,14 @@ extern "C" void __fastcall ext_004CCAF0(void* self);
 extern "C" void __fastcall ext_005C3170(void* self);
 extern "C" void __fastcall ext_0068BC50(void* self);
 extern "C" void ext_00671100(int selector, void* arg);
+// Helper (thiscall, ECX = target object) that operates on the Vector3 pointed to by the out-param.
+extern "C" void ext_0067B860(void* self);
+// MSVCP80 std::string default constructor (IAT slot mem_00924FE8 -> 0x006290D8).
+extern "C" void ext_006290D8(void* self);
 
-// [0x0060A080]
-// @name ExprParser::Method0Type<NMData::DisabledCollisionPairList, addSelectedCollisionModels>::vfunc_3
-// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+extern "C" void ext_0067B860(void* self);
+// MSVCP80 std::string default constructor (IAT slot mem_00924FE8 -> 0x006290D8).
+extern "C" void ext_006290D8(void* self);
 // @summary Stdcall (ret 4) thunk: loads the pointer stored at the object's first field, passes it to ext_00493D90, and returns false.
 // @field ExprParser::Method0Type +0x00 void* field_0x00
 bool fn_0060A080(void* self) {
@@ -221,4 +225,17 @@ void* fn_0060A090(void* unused, void* out) {
 // @summary Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).
 void fn_005C3380(void* arg) {
     ext_00671100(16, arg);
+}
+
+// [0x0066DD10] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_4 (40 bytes)
+// @name ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_4
+// @class ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Stdcall (ret 8) thunk: loads the target pointer from the out-param, calls the Vector3 helper on it, default-constructs the out-param as a std::string, and returns the out-param.
+// @field ExprParser::Method0Type +0x00 void* field_0x00
+void* fn_0066DD10(void* unused, void* out) {
+    (void)unused;
+    void* target = lift_field<void*>(out, 0x00);
+    ext_0067B860(target);
+    ext_006290D8(out);
+    return out;
 }

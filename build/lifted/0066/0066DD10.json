@@ -1,0 +1,22 @@
+{
+  "va": "0x0066DD10",
+  "size": 40,
+  "orig_symbol": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_4",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_4",
+  "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+  "signature": "void* fn_0066DD10(void* unused, void* out)",
+  "summary": "Stdcall (ret 8) thunk: loads the target pointer from the out-param, calls the Vector3 helper on it, default-constructs the out-param as a std::string, and returns the out-param.",
+  "fields": [
+    {
+      "class": "ExprParser::Method0Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:07Z"
+}
