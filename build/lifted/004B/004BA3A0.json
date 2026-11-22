@@ -1,0 +1,22 @@
+{
+  "va": "0x004BA3A0",
+  "size": 15,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_38",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_38",
+  "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+  "signature": "void fn_004BA3A0(void* self)",
+  "summary": "Calls the helper at 0x004BA270 and stores its eax result at offset +0x4 of the object.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:02Z"
+}

@@ -3983,6 +3983,13 @@
     "summary": "Calls sub_004B99B0 to obtain a 32-bit result and stores it into this+0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004BA3A0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_38",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void fn_004BA3A0(void* self)",
+    "summary": "Calls the helper at 0x004BA270 and stores its eax result at offset +0x4 of the object.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004BA580": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",

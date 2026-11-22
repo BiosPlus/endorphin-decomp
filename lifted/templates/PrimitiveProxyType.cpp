@@ -279,3 +279,18 @@ extern "C" void __stdcall fn_004BA260(void* self) {
     uint32_t eax = ext_004B99B0();
     lift_field<uint32_t>(self, 0x04) = eax;
 }
+
+// [0x004BA3A0]
+#include "lift_compat.h"
+
+// Known callee 0x004BA270: sub_004BA270 (87B). Takes no stack arguments; result returned in eax.
+extern "C" void* ext_004BA270(void);
+
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_38
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Calls the helper at 0x004BA270 and stores its eax result at offset +0x4 of the object.
+// @field ExprParser::PrimitiveProxyType<float> +0x04 void* field_0x04
+void fn_004BA3A0(void* self) {
+    void* result = ext_004BA270();
+    static_cast<void**>(self)[1] = result;
+}

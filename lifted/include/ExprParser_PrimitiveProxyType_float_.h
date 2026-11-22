@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct ExprParser_PrimitiveProxyType_float__Fields {
     // +0x0   float*                   ptr  (evidence: 0x004B7180, 0x004B7A40, 0x004B7A80, 0x004B7A90, 0x004B7AA0, 0x004B7B50)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004BA260)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004BA260) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x004BA3A0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
