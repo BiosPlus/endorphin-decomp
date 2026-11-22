@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BA70",
+  "size": 30,
+  "orig_symbol": "ExprParser::ExtROType::vfunc_42",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExtROType::vfunc_42_forward",
+  "class": "ExprParser::ExtROType",
+  "signature": "std::uintptr_t fn_0066BA70(void* self, void* arg)",
+  "summary": "Forwards (inner, arg) to vtable slot 42 of inner-\u003e+0x04 and returns its result.",
+  "fields": [
+    {
+      "class": "ExprParser::ExtROType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:53Z"
+}

@@ -714,3 +714,20 @@ void* fn_00609740(void* self, void* dst, void* arg2) {
     new (dst) std::string();
     return dst;
 }
+
+// [0x0066BA70] ExprParser::ExtROType::vfunc_42 (30 bytes)
+// @name ExprParser::ExtROType::vfunc_42_forward
+// @class ExprParser::ExtROType
+// @summary Forwards (inner, arg) to vtable slot 42 of inner->+0x04 and returns its result.
+// @field ExprParser::ExtROType +0x00 void* inner
+std::uintptr_t fn_0066BA70(void* self, void* arg) {
+    using ForwardFn = std::uintptr_t (*)(void* self, void* a, void* b);
+
+    // Wrapped inner object at self+0x00.
+    void* inner = *reinterpret_cast<void**>(self);
+
+    // Sub-object at inner+0x04 provides the vtable that is dispatched on.
+    void* sub = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(inner) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    return reinterpret_cast<ForwardFn>(vtbl[42])(sub, inner, arg);
+}
