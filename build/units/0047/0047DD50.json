@@ -679,6 +679,7 @@
     "0x0047FC33",
     "0x0047FC3A"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-22T04:27:33Z"
 }
