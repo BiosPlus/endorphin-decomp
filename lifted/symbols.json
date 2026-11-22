@@ -5691,6 +5691,13 @@
     "summary": "Forwards three args to the Plane base vfunc_25, sets flag 0x40 in +0x1c, and copies two dwords from arg2 (+0x80/+0x84) into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Sphere.cpp"
   },
+  "0x0053D810": {
+    "name": "Primitives::Sensor::vfunc_25",
+    "class": "Primitives::Sensor",
+    "signature": "void fn_0053D810(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards three args to Plane::vfunc_25, normalises flag bits at +0x1C (clear 0x1 and 0x2, set 0x4 and 0x40000), then stores arg3 at +0x08.",
+    "lifted_path": "lifted/Primitives/Sensor.cpp"
+  },
   "0x0053D970": {
     "name": "Primitives::Sensor2::vfunc_0",
     "class": "Primitives::Sensor2",
