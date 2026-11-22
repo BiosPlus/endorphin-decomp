@@ -195,21 +195,6 @@ void fn_00604C40(void* self, void* arg) {
 }
 extern "C" void __fastcall ext_0064F920(void* self, void* edx, void* value);
 
-// [0x0068BC60] ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType::vfunc_41 (Randomizer::setSeed)
-// @class ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>
-// @summary Queries the argument's object through its vtable slot +0x08 for an int, then forwards it to ext_006B0C30 on the bound Randomizer target.
-// @field ExprParser::WriteMethodType +0x00 void* field_0x00
-// @field ExprParser::ValuePtrType +0x04 void* field_0x04
-void fn_0068BC60(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0x00);
-    void* obj = lift_field<void*>(arg, 0x04);
-    void* vtbl = lift_field<void*>(obj, 0x00);
-    auto query = reinterpret_cast<int32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x08));
-    int32_t seed = query(obj, arg);
-    ext_006B0C30(target, seed);
-}
-
 // [0x006495F0] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_41 (34 bytes)
 // @name WriteMethodType<RelationshipRPROMagnet, bool>::applyCachedSettings::vfunc_41
 // @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>
@@ -317,6 +302,24 @@ void* fn_00604BA0(void* valuePtr, void* arg) {
     return ext_00603680(target, r);
 }
 
+// [0x0068BC60]
+// @name ExprParser::WriteMethodType<Randomizer, int, Randomizer::setSeed>::vfunc_41
+// @class ExprParser::WriteMethodType<Randomizer, int, Randomizer::setSeed>
+// @summary Evaluates an integer argument from a value pointer and calls Randomizer::setSeed
+// @field ExprParser::ValuePtr +0x04 void* valueType
+
+extern "C" void __thiscall ext_006B0C30(void* self, int seed);
+
+void __stdcall fn_0068BC60(void** targetPtr, void* valuePtr) {
+    void* target = *targetPtr;
+    void* valueType = *reinterpret_cast<void**>(static_cast<char*>(valuePtr) + 0x4);
+    void** vtable = *reinterpret_cast<void***>(valueType);
+    using EvalFn = int(__thiscall*)(void*, void*);
+    EvalFn evalFn = reinterpret_cast<EvalFn>(vtable[2]);
+    int seed = evalFn(valueType, valuePtr);
+    ext_006B0C30(target, seed);
+}
+
 // [0x006513E0]
 // @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, vcall132>::vfunc_41
 // @class ExprParser::WriteMethodType
@@ -332,5 +335,5 @@ extern "C" void __stdcall fn_006513E0(void** target, Holder* src)
     VObj* obj = src->field_0x04;
     typedef void* (__thiscall *Fn)(VObj*, Holder*);
     void* v = reinterpret_cast<Fn>(obj->vtable[5])(obj, src);
-    ext_0064F920(self, nullptr, v);
+    ext_0064F920(self, v);
 }

@@ -186,16 +186,6 @@ void DynamicEnumType_vfunc_9(void* thisptr, DynEnumVfunc9Arg* arg1, void* arg2) 
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 extern "C" void* __cdecl ext_006A6E9E(void* inptr, int vfDelta, void* srcType, void* targetType, int isReference);
 
-// [0x005C4870] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, getMaterialNameIndex, setMaterialNameIndex, getNumListedMaterialNames, getListedMaterialName>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>::vfunc_16 (materialNameIndex)
-// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>
-// @summary Runtime type check: returns self for a DynamicEnumType<CollisionModelDataBase> object, else NULL; identity for valid objects.
-// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src 0x00A2E2F8, dst 0x00A8AFF4, 0),
-// which has no portable equivalent; the cast succeeds for a valid self, so it returns self.
-void* fn_005C4870(void* self) {
-    return self;
-}
-
 // [0x004D3E20] ExprParser::DynamicEnumType<NMData::RigEventData,...>::vfunc_16 (30 bytes)
 // @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
 // @class ExprParser::DynamicEnumType<NMData::RigEventData>
@@ -211,8 +201,28 @@ void* fn_004D3E20(void* ptr) {
 
 #include "lift_compat.h"
 
-extern "C" void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType, const void* targetType, int isReference);
 
 void* __stdcall fn_00515850(void* src) {
-    return ext_006A6E9E(src, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00A4279C), 0);
+    return ext_006A6E9E(src, 0, reinterpret_cast<const void*>(0x00A2E2F8), reinterpret_cast<const void*>(0x00A4279C), 0);
+}
+
+// [0x005C4870]
+// @name DynamicEnumType_CollisionModelDataBase_MaterialNameIndex::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, MaterialNameIndex>
+// @summary Performs a dynamic_cast on the given object pointer via __RTDynamicCast.
+
+#include "lift_compat.h"
+
+extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType, const void* targetType, int isReference);
+
+void* __thiscall fn_005C4870(void* self, void* obj) {
+    (void)self;
+    return ext_006A6E9E(
+        obj,
+        0,
+        reinterpret_cast<void*>(0x00A2E2F8u),
+        reinterpret_cast<void*>(0x00A8AFF4u),
+        0
+    );
 }
