@@ -220,6 +220,7 @@ void fn_00649D50(void* self, void* arg) {
 extern "C" void ext_006B0C30(void* obj, int32_t value);
 extern "C" void ext_00603680(void* self, void* value);
 // Known callee 0x0062A580: VirtualDispatchThunk_Slot17 (vtable slot 17, +0x44, on the receiver; called as (self, value)).
+// Known callee 0x0062A580: VirtualDispatchThunk_Slot17 (vtable slot 17, +0x44, on the receiver; called as (self, value)).
 
 // [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
 // @name WriteMethodType<SkeletalJoint, Vector3 const&>::setDriveAngularVel::vfunc_41
@@ -315,21 +316,6 @@ void fn_00604BA0(void** target, void* source) {
     ext_00603680(obj, value);
 }
 
-// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<EffectorBase, bool, vcall68>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
-// @summary Evaluates the argument's sub-expression (vtable slot 3) and writes the result to the target via vcall slot 17.
-// @field ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}> +0x00 void* target
-void fn_00604930(void* self, void* arg) {
-    void* target = *reinterpret_cast<void**>(self);
-    void* sub = lift_field<void*>(arg, 0x04);
-    void** vtable = *reinterpret_cast<void***>(sub);
-    using EvalFn = uint32_t(__thiscall*)(void*, void*);
-    uint32_t value = reinterpret_cast<EvalFn>(vtable[0x0C / 4])(sub, arg);
-    using WriteFn = void(__thiscall*)(void*, uint32_t);
-    reinterpret_cast<WriteFn>(ext_0062A580(target))(target, value);
-}
-
 // [0x006495F0]
 // @name ExprParser::WriteMethodType<RelationshipRPROMagnet,bool,applyCachedSettings>::vfunc_41
 // @class ExprParser::WriteMethodType
@@ -344,4 +330,19 @@ void fn_006495F0(void* self, void* arg) {
     typedef uint32_t (*Slot3Fn)(void*, void*);
     uint32_t value = reinterpret_cast<Slot3Fn>(vtbl[3])(sub, arg);
     ext_00649080(target, value);
+}
+
+// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
+// @name WriteMethodType<EffectorBase, bool, vcall68>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
+// @summary Evaluates the argument's sub-expression (vtable slot 3) and writes the result to the target via vcall slot 17.
+// @field ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}> +0x00 void* target
+void fn_00604930(void* self, void* arg) {
+    void* target = *reinterpret_cast<void**>(self);
+    void* sub = lift_field<void*>(arg, 0x04);
+    void** vtable = *reinterpret_cast<void***>(sub);
+    using EvalFn = uint32_t(__thiscall*)(void*, void*);
+    uint32_t value = reinterpret_cast<EvalFn>(vtable[0x0C / 4])(sub, arg);
+    using WriteFn = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<WriteFn>(ext_0062A580(target))(target, value);
 }
