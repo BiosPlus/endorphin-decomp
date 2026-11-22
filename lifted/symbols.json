@@ -6517,6 +6517,13 @@
     "summary": "Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005B7AE0": {
+    "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e",
+    "signature": "extern \"C\" void* ext_005B6C80(void* self, void* arg);  // sub_005B6C80 (40B) extern \"C\" void ext_00672110(void* self, void* arg);    // sub_00672110 (52B) void* fn_005B7AE0(void* self, void* const* arg2, void* arg3)",
+    "summary": "Calls arg3's vtable slot 5 to get a value, feeds it to the object behind arg2 via ext_005B6C80, pushes that result into self via ext_00672110, and returns self.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x005B8660": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",
