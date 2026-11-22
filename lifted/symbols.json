@@ -8743,6 +8743,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006922D0": {
+    "name": "ExprParser::FunctionType\u003cValuePtrArrayObject,push\u003e::vfunc_16",
+    "class": "ExprParser::FunctionType\u003cValuePtrArrayObject,push\u003e",
+    "signature": "void* fn_006922D0(void* self)",
+    "summary": "RTTI-checked cast of self to the ValuePtrArrayObject::push FunctionType descriptor; returns the cast pointer or NULL.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x006936C0": {
     "name": "sub_006936C0",
     "signature": "extern \"C\" void fn_006936C0(void)",
