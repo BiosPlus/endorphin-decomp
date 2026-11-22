@@ -1,0 +1,22 @@
+{
+  "va": "0x006A08E0",
+  "size": 90,
+  "orig_symbol": "ExprParser::Operators::Less::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Less.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Less.cpp",
+  "name": "ExprParser::Operators::Less::vfunc_3",
+  "class": "ExprParser::Operators::Less",
+  "signature": "static inline void* lift_vslot(void* obj, size_t index)",
+  "summary": "Evaluates both operands via vtable slot 1, computes lhs \u003c rhs, and forwards the boolean through the lhs vtable slot 9.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Less",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:13:56Z"
+}

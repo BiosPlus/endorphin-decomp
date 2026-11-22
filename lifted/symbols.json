@@ -10133,6 +10133,13 @@
     "summary": "Evaluates lhs \u003e= rhs by calling vfunc_1 on both operand objects, stores the boolean result into the call frame slot, then dispatches it through vfunc_9 of the left operand.",
     "lifted_path": "lifted/ExprParser/Operators/GreaterEqual.cpp"
   },
+  "0x006A08E0": {
+    "name": "ExprParser::Operators::Less::vfunc_3",
+    "class": "ExprParser::Operators::Less",
+    "signature": "static inline void* lift_vslot(void* obj, size_t index)",
+    "summary": "Evaluates both operands via vtable slot 1, computes lhs \u003c rhs, and forwards the boolean through the lhs vtable slot 9.",
+    "lifted_path": "lifted/ExprParser/Operators/Less.cpp"
+  },
   "0x006A09A0": {
     "name": "ExprParser::Operators::Multiply::vfunc_3",
     "class": "ExprParser::Operators::Multiply",
