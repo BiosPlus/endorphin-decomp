@@ -1,0 +1,22 @@
+{
+  "va": "0x0049DBE0",
+  "size": 15,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_38",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_38",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void fn_0049DBE0(uint8_t* self)",
+  "summary": "Calls helper sub_0049DA40 and stores its result at object offset +0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:38Z"
+}

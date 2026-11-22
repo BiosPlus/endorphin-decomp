@@ -226,3 +226,18 @@ void fn_00499190(void* self) {
     uint32_t result = ext_00498F90();
     lift_field<uint32_t>(self, 0x04) = result;
 }
+
+// [0x0049DBE0]
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_38
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Calls helper sub_0049DA40 and stores its result at object offset +0x04.
+// @field ExprParser::PrimitiveProxyType<int> +0x04 uint32_t field_0x04
+
+// External helper sub_0049DA40 (returns result in eax).
+extern uint32_t ext_0049DA40(void);
+
+// Single stack argument: pointer to the proxy object (stdcall, ret 4).
+void fn_0049DBE0(uint8_t* self) {
+    uint32_t result = ext_0049DA40();
+    *reinterpret_cast<uint32_t*>(self + 0x04) = result;
+}
