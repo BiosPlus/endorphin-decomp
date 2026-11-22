@@ -630,6 +630,13 @@
     "summary": "Stores the single float argument into the object's field at +0x14.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00622340": {
+    "name": "NMData::SkeletalCalibrationVariables::vfunc_21",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "extern \"C\" void __fastcall fn_00622340(void* self, int /*edx_unused*/, float value)",
+    "summary": "Stores the single float argument into the object's field at +0x18.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0062A580": {
     "name": "VirtualDispatchThunk_Slot17",
     "class": "Object (unidentified; receiver is passed in ecx)",

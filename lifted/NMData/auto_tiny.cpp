@@ -5,8 +5,10 @@
 extern "C" void __fastcall ext_004F97F0(void* self);
 extern "C" void ext_004C6850(void* self);
 extern "C" int mem_00924FDC;
+#include <cstring>
+#include <cstdint>
 
-// [0x00499B40] NMData::State::vfunc_9_off_10 (8 bytes)
+#include <cstdint>
 // @name NMData::State::vfunc_9_off_10
 // @class NMData::State
 // @summary This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.
@@ -73,4 +75,14 @@ void fn_00622320(void* self, int /*edx_unused*/, float value) {
 extern "C" void __fastcall fn_00622330(void* self, int edx_unused, float value) {
     (void)edx_unused;
     *reinterpret_cast<float*>(static_cast<unsigned char*>(self) + 0x14) = value;
+}
+
+// [0x00622340] NMData::SkeletalCalibrationVariables::vfunc_21 (10 bytes)
+// @name NMData::SkeletalCalibrationVariables::vfunc_21
+// @class NMData::SkeletalCalibrationVariables
+// @summary Stores the single float argument into the object's field at +0x18.
+// @field NMData::SkeletalCalibrationVariables +0x18 float field_0x18
+extern "C" void __fastcall fn_00622340(void* self, int /*edx_unused*/, float value) {
+    std::uint8_t* base = static_cast<std::uint8_t*>(self);
+    std::memcpy(base + 0x18, &value, sizeof(float));
 }
