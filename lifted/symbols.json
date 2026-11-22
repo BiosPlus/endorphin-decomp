@@ -10588,6 +10588,13 @@
     "summary": "Evaluates the operand child via its vfunc_1, then calls the child's vfunc_7 with the negated value.",
     "lifted_path": "lifted/ExprParser/Operators/UnaryMinus.cpp"
   },
+  "0x006A1730": {
+    "name": "ExprParser::Operators::Random::vfunc_3",
+    "class": "ExprParser::Operators::Random",
+    "signature": "float __thiscall fn_006A1730(void* self, void* lhs, void* rhs)",
+    "summary": "Evaluates lhs and rhs via their child vfn1, calls ext_00508680 with |rhs - lhs| to get a random value, scales it into [0, |rhs-lhs|), and passes lhs + that offset to the lhs child's vfn7.",
+    "lifted_path": "lifted/ExprParser/Operators/Random.cpp"
+  },
   "0x006A17D0": {
     "name": "ExprParser::Operators::Acos::vfunc_3",
     "class": "ExprParser::Operators::Acos",
