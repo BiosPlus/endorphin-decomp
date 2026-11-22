@@ -162,8 +162,10 @@ extern "C" void __fastcall fn_006744A0(void* self) {
 }
 extern "C" const char mem_0093BF14[];
 extern uint32_t mem_0095F750[];
+// Global lookup table in .data; indexed by the 32-bit id stored at +0x08 of the object pointed to by +0x150.
+extern "C" DWORD mem_0095F750[];
 
-// [0x004CE8C0] NMData::IncarnationEventData::vfunc_88 (10 bytes)
+extern "C" DWORD mem_0095F750[];
 // @name NMData::IncarnationEventData::vfunc_88
 // @class NMData::IncarnationEventData
 // @summary Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.
@@ -1838,4 +1840,19 @@ uint32_t fn_0059D7D0(void* self) {
 void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[0] = lift_field<float>(self, 0xE8);
     out[1] = lift_field<float>(self, 0xEC);
+}
+
+// [0x005C3890] NMData::CollisionModelData::vfunc_0_off_C (24 bytes)
+// @name NMData::CollisionModelData::GetTableEntryForBufferedTM
+// @class NMData::CollisionModelData
+// @summary Returns mem_0095F750[id] where id is read from the object at this->field_0x150, or 0 if that pointer is null.
+// @field NMData::CollisionModelData +0x150 void* field_0x150
+DWORD fn_005C3890(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto* linked = *reinterpret_cast<uint8_t**>(base + 0x150);
+    if (linked == nullptr) {
+        return 0;
+    }
+    DWORD id = *reinterpret_cast<DWORD*>(linked + 0x08);
+    return mem_0095F750[id];
 }
