@@ -17,8 +17,10 @@ int fn_0060A070(void* self) {
     ext_00493D90();
     return 0;
 }
+// Callee receives the object's vtable pointer in ECX (thiscall-style); see body.
+void ext_00493D90(void* vtbl);
 
-// [0x0060A080]
+void ext_00493D90(void* vtbl);
 // @name ExprParser::Method0Type<NMData::DisabledCollisionPairList, addSelectedCollisionModels>::vfunc_3
 // @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
 // @summary Forwards the pointer stored at the object's first field to ext_00493D90 and returns false.
