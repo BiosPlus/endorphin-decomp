@@ -5544,6 +5544,13 @@
     "summary": "Pushes GL_LINE_BIT, sets line width 2.0, forwards arg to vfunc slot 22 of the subobject at +0x3c, then pops attributes.",
     "lifted_path": "lifted/Primitives/Marker.cpp"
   },
+  "0x0053C1A0": {
+    "name": "Primitives::RPRO::vfunc_28",
+    "class": "Primitives::RPRO",
+    "signature": "void fn_0053C1A0(void* self)",
+    "summary": "Saves GL line/matrix state, applies this object's 4x4 matrix, invokes a virtual method on the sub-object at +0x108 with arg 1, then restores GL state.",
+    "lifted_path": "lifted/Primitives/RPRO.cpp"
+  },
   "0x0053C8B0": {
     "name": "Primitives::Sphere::vfunc_0",
     "class": "Primitives::Sphere",
