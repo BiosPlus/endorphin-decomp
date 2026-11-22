@@ -1,0 +1,14 @@
+{
+  "va": "0x0067A6B0",
+  "size": 33,
+  "orig_symbol": "ExprParser::BoolType::vfunc_33",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_33",
+  "class": "ExprParser::BoolType",
+  "signature": "void __thiscall fn_0067A6B0(void* self, void* out, uint32_t a2, uint32_t a3)",
+  "summary": "Calls virtual slot 29 on this with out (result discarded), then stores ext_00698A90(a2, a3) into *out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:24Z"
+}
