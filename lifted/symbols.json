@@ -8672,6 +8672,13 @@
     "summary": "Forwards (inner, arg) to vtable slot 43 of inner-\u003e+0x04 and returns its result.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066BC80": {
+    "name": "ExprParser::VPtrProxyType::vfunc_44_forward",
+    "class": "ExprParser::VPtrProxyType",
+    "signature": "std::uintptr_t fn_0066BC80(void* self, void* arg)",
+    "summary": "Forwards (inner, arg) to vtable slot 44 of inner-\u003e+0x04 and returns its result.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BCC0": {
     "name": "ExprParser::VPtrProxyType::vfunc_46",
     "class": "ExprParser::VPtrProxyType",
