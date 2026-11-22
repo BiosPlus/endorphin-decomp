@@ -1,0 +1,14 @@
+{
+  "va": "0x0040CDF0",
+  "size": 6,
+  "orig_symbol": "NewCharacterDialog::vfunc_92",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NewCharacterDialog::vfunc_92",
+  "class": "NewCharacterDialog",
+  "signature": "extern \"C\" int* __fastcall fn_0040CDF0(void* self)",
+  "summary": "Returns the address of the constant global mem_0092AD84 (value 0x006A5FCE); does not read or modify `this`.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:46:32Z"
+}

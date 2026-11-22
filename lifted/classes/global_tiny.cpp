@@ -4,6 +4,7 @@ extern "C" int mem_0092CE00;
 extern "C" int mem_0092D178;
 extern "C" int mem_00929B20;
 extern "C" int mem_0092A1CC;
+extern "C" int mem_0092AD84;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -41,4 +42,13 @@ void* fn_00404D30(void* self) {
 extern "C" void* __fastcall fn_00407720(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_0092A1CC);
+}
+
+// [0x0040CDF0] NewCharacterDialog::vfunc_92 (6 bytes)
+// @name NewCharacterDialog::vfunc_92
+// @class NewCharacterDialog
+// @summary Returns the address of the constant global mem_0092AD84 (value 0x006A5FCE); does not read or modify `this`.
+extern "C" int* __fastcall fn_0040CDF0(void* self) {
+    (void)self;
+    return &mem_0092AD84;
 }

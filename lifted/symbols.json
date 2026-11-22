@@ -39,6 +39,13 @@
     "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040CDF0": {
+    "name": "NewCharacterDialog::vfunc_92",
+    "class": "NewCharacterDialog",
+    "signature": "extern \"C\" int* __fastcall fn_0040CDF0(void* self)",
+    "summary": "Returns the address of the constant global mem_0092AD84 (value 0x006A5FCE); does not read or modify `this`.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
