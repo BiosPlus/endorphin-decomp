@@ -47,3 +47,13 @@ uint8_t __stdcall fn_0049AE80(const uint8_t* const* self) {
     const uint8_t* value = *self;
     return *value;
 }
+
+// [0x0049AF20] ExprParser::PrimitiveProxyType<int>::vfunc_2 (11 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_2
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the int stored there.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+int32_t __stdcall fn_0049AF20(const int32_t* const* self) {
+    const int32_t* value = *self;
+    return *value;
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0049AF20",
+  "size": 11,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_2",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_2",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "int32_t __stdcall fn_0049AF20(const int32_t* const* self)",
+  "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the int stored there.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:11:34Z"
+}

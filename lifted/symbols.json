@@ -503,6 +503,13 @@
     "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the bool byte stored there.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049AF20": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_2",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "int32_t __stdcall fn_0049AF20(const int32_t* const* self)",
+    "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the int stored there.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049C000": {
     "name": "ExprParser::BoolType::vfunc_14",
     "class": "ExprParser::BoolType",
