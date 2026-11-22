@@ -5663,6 +5663,13 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053BD10": {
+    "name": "Primitives::File::vfunc_29",
+    "class": "Primitives::File",
+    "signature": "extern \"C\" void ext_0053AD10(void* self);             // Primitives::Animation::vfunc_29 (thiscall, ecx=self) extern \"C\" void ext_0054FD10(void* ecx, void* arg);   // sub_0054FD10 (thiscall, ecx=self+0x3C, one stack arg) void fn_0053BD10(void* self)",
+    "summary": "Resets the animation state, re-initialises the sub-object at +0x3C, then zeroes ten dwords at +0x86C..+0x890.",
+    "lifted_path": "lifted/Primitives/File.cpp"
+  },
   "0x0053BDD0": {
     "name": "Primitives::Marker::vfunc_28",
     "class": "Primitives::Marker",

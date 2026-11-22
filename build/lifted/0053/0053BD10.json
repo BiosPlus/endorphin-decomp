@@ -1,0 +1,76 @@
+{
+  "va": "0x0053BD10",
+  "size": 58,
+  "orig_symbol": "Primitives::File::vfunc_29",
+  "src_path": "src/Primitives/File.cpp",
+  "lifted_path": "lifted/Primitives/File.cpp",
+  "name": "Primitives::File::vfunc_29",
+  "class": "Primitives::File",
+  "signature": "extern \"C\" void ext_0053AD10(void* self);             // Primitives::Animation::vfunc_29 (thiscall, ecx=self) extern \"C\" void ext_0054FD10(void* ecx, void* arg);   // sub_0054FD10 (thiscall, ecx=self+0x3C, one stack arg) void fn_0053BD10(void* self)",
+  "summary": "Resets the animation state, re-initialises the sub-object at +0x3C, then zeroes ten dwords at +0x86C..+0x890.",
+  "fields": [
+    {
+      "class": "Primitives::File",
+      "offset": "+0x86C",
+      "type": "uint32_t",
+      "name": "field_0x86C"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x870",
+      "type": "uint32_t",
+      "name": "field_0x870"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x874",
+      "type": "uint32_t",
+      "name": "field_0x874"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x878",
+      "type": "uint32_t",
+      "name": "field_0x878"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x87C",
+      "type": "uint32_t",
+      "name": "field_0x87C"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x880",
+      "type": "uint32_t",
+      "name": "field_0x880"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x884",
+      "type": "uint32_t",
+      "name": "field_0x884"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x888",
+      "type": "uint32_t",
+      "name": "field_0x888"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x88C",
+      "type": "uint32_t",
+      "name": "field_0x88C"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x890",
+      "type": "uint32_t",
+      "name": "field_0x890"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:16Z"
+}
