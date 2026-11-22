@@ -8087,6 +8087,13 @@
     "summary": "Pure jump thunk forwarding to sub_00611200.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005EC060": {
+    "name": "NMData::DriveFrame::vfunc_67",
+    "class": "NMData::DriveFrame",
+    "signature": "float fn_005EC060(int32_t idx)",
+    "summary": "Returns the float element at index `idx` of the array obtained from sub_006125B0.",
+    "lifted_path": "lifted/NMData/DriveFrame.cpp"
+  },
   "0x005EC090": {
     "name": "NMData::Constraint::vfunc_75",
     "class": "NMData::Constraint",

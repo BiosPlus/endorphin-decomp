@@ -1,0 +1,14 @@
+{
+  "va": "0x005EC060",
+  "size": 15,
+  "orig_symbol": "NMData::DriveFrame::vfunc_67",
+  "src_path": "src/NMData/DriveFrame.cpp",
+  "lifted_path": "lifted/NMData/DriveFrame.cpp",
+  "name": "NMData::DriveFrame::vfunc_67",
+  "class": "NMData::DriveFrame",
+  "signature": "float fn_005EC060(int32_t idx)",
+  "summary": "Returns the float element at index `idx` of the array obtained from sub_006125B0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:08Z"
+}
