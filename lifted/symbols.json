@@ -665,6 +665,13 @@
     "summary": "Returns the single-precision float stored at the pointed-to value slot (stdcall, one stack argument).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AF00": {
+    "name": "ExprParser::BoolType::vfunc_3",
+    "class": "ExprParser::BoolType",
+    "signature": "uint8_t __stdcall fn_0066AF00(const uint8_t* value)",
+    "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0066AF00",
+  "size": 9,
+  "orig_symbol": "ExprParser::BoolType::vfunc_3",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::BoolType::vfunc_3",
+  "class": "ExprParser::BoolType",
+  "signature": "uint8_t __stdcall fn_0066AF00(const uint8_t* value)",
+  "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:06:14Z"
+}

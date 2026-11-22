@@ -18,3 +18,12 @@ extern "C" uint32_t __stdcall fn_0049C000(const uint32_t* self) {
 float __stdcall fn_0066AD70(void* self) {
     return lift_field<float>(self, 0x00);
 }
+
+// [0x0066AF00] ExprParser::BoolType::vfunc_3 (9 bytes)
+// @name ExprParser::BoolType::vfunc_3
+// @class ExprParser::BoolType
+// @summary Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).
+// (No BoolType field offsets are accessed; the only load is through the argument pointer at +0x0, whose pointee type is not recovered.)
+uint8_t __stdcall fn_0066AF00(const uint8_t* value) {
+    return *value;
+}
