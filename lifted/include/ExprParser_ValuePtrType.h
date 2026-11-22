@@ -11,6 +11,6 @@ namespace lifted_layout {
 struct ExprParser_ValuePtrType_Fields {
     // +0x0   int*                     field_0x00  (evidence: 0x0049C040) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x004CB470) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x0066AFC0, 0x0066B030)
+    // +0x4   void*                    field_0x04  (evidence: 0x0066AFC0, 0x0066B030, 0x0066B0D0)
 };
 } // namespace lifted_layout
