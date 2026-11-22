@@ -1,0 +1,13 @@
+{
+  "va": "0x0067AF28",
+  "size": 4,
+  "orig_symbol": "sub_0067AF28",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "cleanup_epilogue_pop_edi_stdcall4",
+  "signature": "extern \"C\" void __stdcall fn_0067AF28(void* arg)",
+  "summary": "Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:40:38Z"
+}
