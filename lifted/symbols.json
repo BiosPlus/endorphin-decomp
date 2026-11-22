@@ -5007,6 +5007,13 @@
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0051AB80": {
+    "name": "NMData::RealChannel::vfunc_7",
+    "class": "NMData::RealChannel",
+    "signature": "float fn_0051AB80(void* self)",
+    "summary": "Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051BED0": {
     "name": "NMData::RealChannel::vfunc_9",
     "class": "NMData::RealChannel",

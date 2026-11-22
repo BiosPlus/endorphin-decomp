@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/NMData/RealChannel.cpp
 #include "lift_compat.h"
+// Invalid-parameter handler pointer (MSVCR80 _invalid_parameter_noinfo), loaded from the IAT slot.
+extern "C" void (*mem_00925134)();
 
-// [0x0051BEF0] NMData::RealChannel::vfunc_16 (32 bytes)
+extern "C" void (*mem_00925134)();
 // Original: if begin > end (unsigned) calls the CRT invalid-parameter handler (mem_00925134, which terminates by default);
 // then stores &self->+0x2C into +0x3C and begin into +0x40.
 // @name NMData::RealChannel::vfunc_16
@@ -20,4 +22,38 @@ void fn_0051BEF0(void* self) {
     }
     lift_field<void*>(self, 0x3C) = static_cast<uint8_t*>(self) + 0x2C;
     lift_field<int32_t>(self, 0x40) = begin;
+}
+
+// [0x0051AB80] NMData::RealChannel::vfunc_7 (67 bytes)
+// @name NMData::RealChannel::vfunc_7
+// @class NMData::RealChannel
+// @summary Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.
+// @field RealChannel +0x30 int32_t begin
+// @field RealChannel +0x34 int32_t end
+float fn_0051AB80(void* self) {
+    const uint32_t begin = static_cast<uint32_t>(lift_field<int32_t>(self, 0x30));
+    const uint32_t end   = static_cast<uint32_t>(lift_field<int32_t>(self, 0x34));
+
+    // Empty when begin is null, or when (end - begin) >> 3 == 0.
+    if (begin == 0) {
+        return 0.0f;
+    }
+    const int32_t count = static_cast<int32_t>(end - begin) >> 3;
+    if (count == 0) {
+        return 0.0f;
+    }
+
+    // Guard checks; the original calls the invalid-parameter handler and then continues.
+    if (begin > end) {
+        mem_00925134();
+    }
+    if (end <= begin) {
+        mem_00925134();
+    }
+    const uint32_t last = end - 8;
+    if (last >= end) {
+        mem_00925134();
+    }
+
+    return *reinterpret_cast<const float*>(static_cast<uintptr_t>(last));
 }

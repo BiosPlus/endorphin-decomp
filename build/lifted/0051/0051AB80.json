@@ -1,0 +1,28 @@
+{
+  "va": "0x0051AB80",
+  "size": 67,
+  "orig_symbol": "NMData::RealChannel::vfunc_7",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_7",
+  "class": "NMData::RealChannel",
+  "signature": "float fn_0051AB80(void* self)",
+  "summary": "Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.",
+  "fields": [
+    {
+      "class": "RealChannel",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "begin"
+    },
+    {
+      "class": "RealChannel",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:09Z"
+}

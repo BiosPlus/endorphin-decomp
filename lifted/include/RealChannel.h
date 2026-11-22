@@ -10,7 +10,7 @@
 // Recovered field layout for RealChannel:
 namespace lifted_layout {
 struct RealChannel_Fields {
-    // +0x30  int32_t                  begin  (evidence: 0x0051BED0)
-    // +0x34  int32_t                  end  (evidence: 0x0051BED0)
+    // +0x30  int32_t                  begin  (evidence: 0x0051AB80, 0x0051BED0)
+    // +0x34  int32_t                  end  (evidence: 0x0051AB80, 0x0051BED0)
 };
 } // namespace lifted_layout
