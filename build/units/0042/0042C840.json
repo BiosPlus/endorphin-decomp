@@ -410,5 +410,7 @@
     "0x0042E239",
     "0x0042E243"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T03:07:05Z"
 }
