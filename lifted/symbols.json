@@ -6688,6 +6688,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0055F750 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00560300": {
+    "name": "FBXIO::vfunc_14",
+    "class": "FBXIO",
+    "signature": "extern void* mem_00924FE4; // std::string::basic_string(const char*) extern void* mem_00924FF4; // std::string::~basic_string } namespace",
+    "summary": "Loads an FBX file, extracts scene/take names, and initializes FBX import state",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
   "0x005607E0": {
     "name": "FBXIO::vfunc_33",
     "class": "FBXIO",
