@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::CollisionModelData:
 namespace lifted_layout {
 struct NMData_CollisionModelData_Fields {
+    // +0x0   (unused) self is not     dereferenced  (evidence: 0x005C3180)
     // +0x150 void*                    field_0x150  (evidence: 0x005C3890)
 };
 } // namespace lifted_layout

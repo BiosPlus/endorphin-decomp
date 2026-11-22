@@ -6587,6 +6587,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005C1250 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005C3180": {
+    "name": "NMData::CollisionModelData::GetSharedName",
+    "class": "NMData::CollisionModelData",
+    "signature": "void* fn_005C3180(void* self, void* ret_slot)",
+    "summary": "Copy-constructs std::string from the global at 0x00B447F4 into the caller's return slot and returns that slot (self is unused).",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",

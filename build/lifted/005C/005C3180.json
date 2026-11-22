@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3180",
+  "size": 34,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_62",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::GetSharedName",
+  "class": "NMData::CollisionModelData",
+  "signature": "void* fn_005C3180(void* self, void* ret_slot)",
+  "summary": "Copy-constructs std::string from the global at 0x00B447F4 into the caller's return slot and returns that slot (self is unused).",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x0",
+      "type": "(unused) self is not",
+      "name": "dereferenced"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:11Z"
+}
