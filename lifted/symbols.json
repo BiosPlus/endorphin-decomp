@@ -8395,6 +8395,13 @@
     "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BDC8, source mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0064F830": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_13 (NM::Vector3::convertEtoTS)",
+    "class": "ExprParser::ROWriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_0064F830(void* arg)",
+    "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 4 (dispatcher not yet lifted).",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0064F8E0": {
     "name": "VirtualSlot23Thunk",
     "class": "VTable",

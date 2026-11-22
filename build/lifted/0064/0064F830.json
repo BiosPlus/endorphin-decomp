@@ -1,0 +1,14 @@
+{
+  "va": "0x0064F830",
+  "size": 13,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e::vfunc_13",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType::vfunc_13 (NM::Vector3::convertEtoTS)",
+  "class": "ExprParser::ROWriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e",
+  "signature": "void fn_0064F830(void* arg)",
+  "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 4 (dispatcher not yet lifted).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:36Z"
+}
