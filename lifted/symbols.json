@@ -9841,6 +9841,13 @@
     "summary": "Lazily initializes a function-local static (guarded by bit 0 of mem_00B5966C) and returns its address; the stack argument is unused.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0066D040": {
+    "name": "ExprParser::Vector3Type::vfunc_18",
+    "class": "ExprParser::Vector3Type",
+    "signature": "extern \"C\" void* __thiscall fn_0066D040(void* self, uint32_t unused)",
+    "summary": "Returns the address of a function-local static zero-valued vector, constructing it (and registering its destructor) on first call.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066D0C0": {
     "name": "ExprParser::Vector3Type::vfunc_0",
     "class": "ExprParser::Vector3Type",

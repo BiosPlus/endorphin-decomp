@@ -125,3 +125,32 @@ void fn_0066D120(void* self, void** a1, void* a2) {
     a[1] = a2c * b0 - a0 * b2;
     a[2] = a0 * b1 - a1c * b0;
 }
+
+// [0x0066D040]
+// @name ExprParser::Vector3Type::vfunc_18
+// @class ExprParser::Vector3Type
+// @summary Returns the address of a function-local static zero-valued vector, constructing it (and registering its destructor) on first call.
+
+#include "lift_compat.h"
+
+extern uint8_t mem_00B59684; // function-local static init guard (bit 0)
+extern uint8_t mem_00B5967C; // function-local static vector object
+extern uint8_t mem_009217B0; // destructor registration argument
+
+// Static object constructor (this, arg). Matches the signature already declared in the merged file.
+extern "C" void ext_00672110(void* self, void* arg);
+// Registers a destructor for a static object (__cdecl, one argument).
+extern "C" void __cdecl ext_006A6C87(void* dtorArg);
+
+extern "C" void* __thiscall fn_0066D040(void* self, uint32_t unused) {
+    (void)self;
+    (void)unused;
+
+    if ((mem_00B59684 & 1u) == 0) {
+        mem_00B59684 |= 1u;
+        float zero[3] = {0.0f, 0.0f, 0.0f};
+        ext_00672110(&mem_00B5967C, zero);
+        ext_006A6C87(&mem_009217B0);
+    }
+    return &mem_00B5967C;
+}

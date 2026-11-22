@@ -1,0 +1,14 @@
+{
+  "va": "0x0066D040",
+  "size": 113,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_18",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_18",
+  "class": "ExprParser::Vector3Type",
+  "signature": "extern \"C\" void* __thiscall fn_0066D040(void* self, uint32_t unused)",
+  "summary": "Returns the address of a function-local static zero-valued vector, constructing it (and registering its destructor) on first call.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:16:41Z"
+}
