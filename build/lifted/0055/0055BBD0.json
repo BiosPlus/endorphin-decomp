@@ -1,0 +1,22 @@
+{
+  "va": "0x0055BBD0",
+  "size": 22,
+  "orig_symbol": "Acclaim2MotionIO::vfunc_47",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Acclaim2MotionIO::vfunc_47",
+  "class": "Acclaim2MotionIO",
+  "signature": "int __thiscall fn_0055BBD0(void* self)",
+  "summary": "Calls the virtual method at vtable slot +0xE4 on this and returns its low bit as 0 or 1.",
+  "fields": [
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:01Z"
+}

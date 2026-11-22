@@ -601,3 +601,18 @@ int fn_00582BA0(void* self) {
     const size_t size = lift_field<size_t>(self, 0x568 + 0x10);
     return size == 0 ? 2 : 3;
 }
+
+// [0x0055BBD0]
+// @name Acclaim2MotionIO::vfunc_47
+// @class Acclaim2MotionIO
+// @summary Calls the virtual method at vtable slot +0xE4 on this and returns its low bit as 0 or 1.
+// @field Acclaim2MotionIO +0x00 void* vtable
+int __thiscall fn_0055BBD0(void* self) {
+    // vtable pointer is the first dword of the object
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(self);
+    // slot at byte offset 0xE4 within the vtable
+    using VFn = uint32_t (*)(void*);
+    VFn fn = *reinterpret_cast<VFn*>(vtbl + 0xE4);
+    uint32_t r = fn(self);
+    return (r & 1u) ? 1 : 0;
+}
