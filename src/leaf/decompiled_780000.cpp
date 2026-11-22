@@ -24231,3 +24231,28 @@ extern "C" __declspec(naked) void __cdecl fn_0078AAC0() {
         _emit 0x90
     }
 }
+
+// [0x0078CA10] sub_0078CA10 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078CA10(void* self) {
+    __asm {
+        add byte ptr [ecx], al
+        add eax, 0x2050502
+        add eax, 0x5050105
+        add eax, 0x4030505
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
