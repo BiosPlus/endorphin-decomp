@@ -136,45 +136,66 @@ struct ValueArg {
 void* fn_004A9CC0(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A32954, 0);
 }
+#include <cstddef>
+extern "C" void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern "C" int mem_00A2E2F8;
+extern "C" int mem_00A4279C;
 
-// [0x004B7160] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_16
+extern "C" int mem_00A2E2F8;
+extern "C" int mem_00A4279C;
 // @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
 // @summary Dynamic-casts self to the MaterialPair enum type via __RTDynamicCast (pointer cast; returns null on failure).
 void* fn_004B7160(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A328D4, 0);
 }
+struct DynEnumVfunc9Arg {
+    void* field_0x0;
+    void** field_0x4;
+};
 
-// [0x004D3E20] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+void* field_0x0;
+    void** field_0x4;
+};
 // @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (pointer cast; returns null on failure).
 void* fn_004D3E20(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
 }
-
-// [0x005C4870]
-// @name ExprParser::DynamicEnumType<CollisionModelDataBase>::vfunc_16
-// @class ExprParser::DynamicEnumType
-// @summary Dynamic-casts the argument pointer between RTTI types and returns the result (this unused).
-struct DynamicEnumTypeCollision {
-    void* __thiscall vfunc_16(void* obj);
-};
-
-void* __thiscall DynamicEnumTypeCollision::vfunc_16(void* obj) {
-    return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
-}
+extern char mem_00A3C268[];
+                              const void* targetType, int isReference);
 
 // [0x0067A770]
 // @name ExprParser::DynamicEnumType::vfunc_9
 // @class ExprParser::DynamicEnumType
 // @summary Calls virtual method at +0x78 on arg1's inner object, then forwards arg1 and arg2 to sub_006720A0.
-// @field ValueArg +0x04 void** field_0x4
-void __attribute__((thiscall)) DynamicEnumType_vfunc_9(void* thisptr, ValueArg* arg1, void* arg2) {
+// @field DynEnumVfunc9Arg +0x04 void** field_0x4
+void DynamicEnumType_vfunc_9(void* thisptr, DynEnumVfunc9Arg* arg1, void* arg2) {
     (void)thisptr;
     void** obj = arg1->field_0x4;
-    typedef void (__attribute__((thiscall)) *Fn)(void*, void*);
+    typedef void (*Fn)(void*, void*);
     Fn fn = (Fn)((void**)(*obj))[0x78 / 4];
     fn(obj, arg1);
     ext_006720A0(arg1, arg2);
+}
+
+// [0x005C4870]
+// @name ExprParser::DynamicEnumType<CollisionModelDataBase>::vfunc_16
+// @summary Dynamic-casts the argument pointer between RTTI types and returns the result (this unused).
+void* fn_005C4870(void* obj) {
+    return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
+}
+
+// [0x00515850] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions,...>::vfunc_16 (30 bytes)
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>
+// @summary Dynamic-casts the argument to the EvolverRuntimeOptions enum type via __RTDynamicCast (returns null on failure).
+void* fn_00515850(void* self) {
+    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A4279C, 0);
+}
+
+// [0x004D3E20]
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
+// @class ExprParser::DynamicEnumType
+// @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (returns null on failure).
+void* fn_004D3E20(void* self) {
+    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
 }

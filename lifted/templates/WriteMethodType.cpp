@@ -128,9 +128,12 @@ static inline void* vtable_entry(void* obj, ptrdiff_t byteOffset) {
     ext_00648E30(target, value);
 }
 // Known callee 0x006036A0: VirtualSlot20Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 20 (offset +0x50) with the same this pointer; the callee's result is passed through.)
+// Known callee 0x0064F920: sub_0064F920 (virtual dispatch thunk: forwards to vtable slot at +0x84).
+// Called as thiscall(target) with one stack argument (the value returned by the vcall below).
+extern "C" void ext_0064F920(void* self, void* arg);
 
-// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<SkeletalJoint, Vector3 const&>::setDriveAngularVel::vfunc_41
+// Called as thiscall(target) with one stack argument (the value returned by the vcall below).
+extern "C" void ext_0064F920(void* self, void* arg);
 // @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
 // @summary Reads the target object from self, computes the Vector3 pointer via arg's sub-object vtable slot 5, and forwards to ext_0064DDE0.
 // @field ExprParser::WriteMethodType +0x00 void* targetObj
@@ -141,9 +144,12 @@ void fn_0064F790(void* self, void* arg) {
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x14 / 4])(sub, arg);
     ext_0064DDE0(target, value);
 }
+// Known callee 0x006B0C30: sub_006B0C30 (10 bytes; Randomizer::setSeed-style body).
+// Called as thiscall(target) with one stack argument (the int value returned by the vcall below).
+extern "C" void ext_006B0C30(void* self, int32_t seed);
 
-// [0x0064F840] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_41 (34 bytes)
-// @name WriteMethodType<SkeletalJoint, Vector4 const&>::setDriveQuaternion::vfunc_41
+// Called as thiscall(target) with one stack argument (the int value returned by the vcall below).
+extern "C" void ext_006B0C30(void* self, int32_t seed);
 // @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
 // @summary Reads the target object from self, computes the Vector4 pointer via arg's sub-object vtable slot 6, and forwards to ext_00402040.
 // @field ExprParser::WriteMethodType +0x00 void* targetObj
@@ -153,24 +159,6 @@ void fn_0064F840(void* self, void* arg) {
     void** vtbl = *reinterpret_cast<void***>(sub);
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x18 / 4])(sub, arg);
     ext_00402040(target, value);
-}
-
-// [0x006513E0] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &>::vfunc_41
-// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
-// @summary Reads a value from arg's reader via its vtable slot +0x14, then forwards it to the target via ext_0064F920.
-// @field ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}> +0x00 void* target
-// @field ExprParser::ValuePtrType +0x04 void* reader
-void fn_006513E0(void* self, void* arg) {
-    using ReadFn = void* (*)(void* self, void* arg);
-
-    void* target = lift_field<void*>(self, 0);
-    void* reader = lift_field<void*>(arg, 4);
-    void* vtable = lift_field<void*>(reader, 0);
-    ReadFn read = reinterpret_cast<ReadFn>(lift_field<void*>(vtable, 0x14));
-
-    void* value = read(reader, arg);
-    ext_0064F920(target, value);
 }
 
 // [0x00650D80] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>::vfunc_41 (34 bytes)
@@ -184,24 +172,6 @@ void fn_00650D80(void* self, void* arg) {
     void** vtbl = *reinterpret_cast<void***>(sub);
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x08 / 4])(sub, arg);
     ext_0064F900(target, value);
-}
-
-// [0x0068BC60] ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType<Randomizer, int>::vfunc_41
-// @class ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>
-// @summary Reads an int from arg's reader via its vtable slot +0x08, then forwards it to Randomizer::setSeed via ext_006B0C30.
-// @field ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}> +0x00 void* target
-// @field ExprParser::ValuePtrType +0x04 void* reader
-void fn_0068BC60(void* self, void* arg) {
-    using ReadIntFn = int (*)(void* self, void* arg);
-
-    void* target = lift_field<void*>(self, 0);
-    void* reader = lift_field<void*>(arg, 4);
-    void* vtable = lift_field<void*>(reader, 0);
-    ReadIntFn read = reinterpret_cast<ReadIntFn>(lift_field<void*>(vtable, 0x08));
-
-    int seed = read(reader, arg);
-    ext_006B0C30(target, seed);
 }
 
 // [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
@@ -242,4 +212,34 @@ void fn_00604C40(void* self, void* arg) {
     void** vtbl = *reinterpret_cast<void***>(sub);
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x18 / 4])(sub, arg);
     ext_006036A0(target, value);
+}
+
+// [0x006513E0] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType::vfunc_41 (SkeletalJoint vcall 132)
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
+// @summary Queries the argument's object through its vtable slot +0x14, then forwards the result to ext_0064F920 on the bound SkeletalJoint target.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_006513E0(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* obj = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto query = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x14));
+    void* result = query(obj, arg);
+    ext_0064F920(target, result);
+}
+
+// [0x0068BC60] ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType::vfunc_41 (Randomizer::setSeed)
+// @class ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>
+// @summary Queries the argument's object through its vtable slot +0x08 for an int, then forwards it to ext_006B0C30 on the bound Randomizer target.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0068BC60(void* self, void* arg) {
+    void* target = lift_field<void*>(self, 0x00);
+    void* obj = lift_field<void*>(arg, 0x04);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto query = reinterpret_cast<int32_t (*)(void*, void*)>(lift_field<void*>(vtbl, 0x08));
+    int32_t seed = query(obj, arg);
+    ext_006B0C30(target, seed);
 }
