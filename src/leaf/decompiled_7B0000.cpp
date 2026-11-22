@@ -27145,3 +27145,21 @@ L_7B4EEC:
         ret
     }
 }
+
+// [0x007B7084] sub_007B7084 (12 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B7084(void) {
+    __asm {
+        __asm _emit 0x00
+        __asm _emit 0x03
+        __asm _emit 0x00
+        __asm _emit 0x03
+        __asm _emit 0x03
+        __asm _emit 0x03
+        __asm _emit 0x01
+        __asm _emit 0x03
+        __asm _emit 0x02
+        __asm _emit 0x03
+        __asm _emit 0x01
+        __asm _emit 0x03
+    }
+}
