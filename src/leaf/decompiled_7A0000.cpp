@@ -15703,3 +15703,405 @@ extern "C" __declspec(naked) void __cdecl fn_007A3A00(int a1, void* a2) {
         ret
     }
 }
+
+// [0x007A3530] sub_007A3530 (1178 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2CD0();
+extern "C" void ext_007B2F70();
+extern "C" void ext_007B3CF0();
+extern "C" int mem_00B61219;
+extern "C" int mem_0093F8F0;
+extern "C" int mem_00997CE0;
+extern "C" int mem_00997CE8;
+extern "C" int mem_00997CF0;
+extern "C" int mem_00997CEA;
+extern "C" int mem_00997CE2;
+extern "C" int mem_00997CE6;
+extern "C" int mem_00997CEE;
+extern "C" int mem_00997CEC;
+extern "C" int mem_00997CF2;
+extern "C" int mem_00997CF8;
+
+extern "C" __declspec(naked) void __cdecl fn_007A3530(void* a1, void* a2) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        xor edi, edi
+        cmp esi, edi
+        je short L_3546
+        cmp ebp, edi
+        jne short L_355D
+    L_3546:
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je near ptr L_39C5
+    L_355D:
+        mov ebx, dword ptr [esi + 0x14]
+        cmp ebx, edi
+        je near ptr L_39C5
+    L_3568:
+        lea eax, [esp + 0x14]
+        push eax
+        push ebx
+        call ext_007B2F70
+        mov eax, dword ptr [esp + 0x1c]
+        add esp, 8
+        mov ecx, dword ptr [eax]
+        cmp ecx, 0xa358
+        jg near ptr L_37B3
+        je near ptr L_3799
+        cmp ecx, 0xa351
+        jg near ptr L_3737
+        je near ptr L_362B
+        sub ecx, 0x30
+        je short L_3602
+        dec ecx
+        je short L_35E8
+        sub ecx, 0xa2cf
+        jne near ptr L_39AB
+        push eax
+        call ext_007B3CF0
+        mov ecx, dword ptr [esp + 0x18]
+        xor eax, eax
+        add esp, 4
+        mov edx, dword ptr [ecx + 0xc]
+        or ecx, -1
+        mov edi, dword ptr [edx]
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, ebp
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 3
+        rep movsb
+        jmp near ptr L_39AB
+    L_35E8:
+        push eax
+        call ext_007B3CF0
+        mov ecx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov edx, dword ptr [ecx + 0xc]
+        mov eax, dword ptr [edx]
+        mov dword ptr [ebp + 0x10], eax
+        jmp near ptr L_39AB
+    L_3602:
+        push eax
+        call ext_007B3CF0
+        mov ecx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov edx, dword ptr [ecx + 0xc]
+        movsx eax, word ptr [edx]
+        mov dword ptr [esp + 0x18], eax
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_0093F8F0]
+        fstp dword ptr [ebp + 0x10]
+        jmp near ptr L_39AB
+    L_362B:
+        push eax
+        call ext_007B3CF0
+        mov ecx, dword ptr [esp + 0x18]
+        mov esi, dword ptr [mem_00997CE0]
+        add esp, 4
+        mov eax, dword ptr [ecx + 0xc]
+        mov cx, word ptr [eax]
+        mov edx, ecx
+        and edx, esi
+        test dx, dx
+        mov edx, dword ptr [mem_00997CE8]
+        jne short L_3665
+        mov esi, ecx
+        and esi, edx
+        test si, si
+        jne short L_3665
+        mov dword ptr [ebp + 0x14], 1
+        jmp short L_367C
+    L_3665:
+        and ecx, edx
+        test cx, cx
+        je short L_3675
+        mov dword ptr [ebp + 0x14], 2
+        jmp short L_367C
+    L_3675:
+        mov dword ptr [ebp + 0x14], 3
+    L_367C:
+        mov dx, word ptr [eax]
+        mov ecx, dword ptr [mem_00997CF0]
+        and edx, ecx
+        cmp dx, cx
+        sete cl
+        mov byte ptr [ebp + 0x18], cl
+        mov dx, word ptr [mem_00997CEA]
+        test word ptr [eax], dx
+        je short L_36A5
+        mov dword ptr [ebp + 0x1c], 1
+        jmp short L_36A8
+    L_36A5:
+        mov dword ptr [ebp + 0x1c], edi
+    L_36A8:
+        mov dx, word ptr [eax]
+        mov cx, word ptr [mem_00997CE2]
+        and dx, cx
+        cmp dx, cx
+        sete cl
+        mov byte ptr [ebp + 0x24], cl
+        mov dx, word ptr [eax]
+        mov cx, word ptr [mem_00997CE6]
+        and dx, cx
+        cmp dx, cx
+        sete cl
+        mov byte ptr [ebp + 0x25], cl
+        mov ax, word ptr [eax]
+        test word ptr [mem_00997CEE], ax
+        je short L_3703
+        and eax, dword ptr [mem_00997CEC]
+        test ax, ax
+        je short L_36F7
+        mov dword ptr [ebp + 0x3c], 3
+        jmp near ptr L_39AB
+    L_36F7:
+        mov dword ptr [ebp + 0x3c], 2
+        jmp near ptr L_39AB
+    L_3703:
+        test word ptr [mem_00997CF2], ax
+        je short L_3718
+        mov dword ptr [ebp + 0x3c], 4
+        jmp near ptr L_39AB
+    L_3718:
+        and eax, dword ptr [mem_00997CEC]
+        test ax, ax
+        je short L_372F
+        mov dword ptr [ebp + 0x3c], 1
+        jmp near ptr L_39AB
+    L_372F:
+        mov dword ptr [ebp + 0x3c], edi
+        jmp near ptr L_39AB
+    L_3737:
+        sub ecx, 0xa353
+        je short L_377F
+        dec ecx
+        je short L_3765
+        sub ecx, 2
+        jne near ptr L_39AB
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ebp + 0x2c], ecx
+        jmp near ptr L_39AB
+    L_3765:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ebp + 0x28], ecx
+        jmp near ptr L_39AB
+    L_377F:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ebp + 0x20], ecx
+        jmp near ptr L_39AB
+    L_3799:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ebp + 0x30], ecx
+        jmp near ptr L_39AB
+    L_37B3:
+        add ecx, 0xffff5ca6
+        cmp ecx, 0xe
+        ja near ptr L_39AB
+        xor edx, edx
+        _emit 0x8a
+        _emit 0x91
+        _emit 0xec
+        _emit 0x39
+        _emit 0x7a
+        _emit 0x00
+        _emit 0xff
+        _emit 0x24
+        _emit 0x95
+        _emit 0xcc
+        _emit 0x39
+        _emit 0x7a
+        _emit 0x00
+    L_37D1:
+        push eax
+        call ext_007B3CF0
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 4
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [ebp + 0x34], edx
+        jmp near ptr L_39AB
+    L_37EB:
+        push eax
+        call ext_007B3CF0
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 4
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [ebp + 0x38], edx
+        jmp near ptr L_39AB
+    L_3805:
+        push eax
+        call ext_007B3CF0
+        mov eax, dword ptr [esp + 0x18]
+        xor ecx, ecx
+        xor edx, edx
+        add esp, 4
+        mov eax, dword ptr [eax + 0xc]
+        mov cl, byte ptr [eax]
+        mov dword ptr [esp + 0x18], ecx
+        xor ecx, ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x40]
+        mov dl, byte ptr [eax + 1]
+        mov dword ptr [esp + 0x18], edx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x44]
+        mov cl, byte ptr [eax + 2]
+        mov dword ptr [esp + 0x18], ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x48]
+        jmp near ptr L_39AB
+    L_385B:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        xor ecx, ecx
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        xor edx, edx
+        mov cl, byte ptr [eax]
+        mov dword ptr [esp + 0x18], ecx
+        xor ecx, ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x4c]
+        mov dl, byte ptr [eax + 1]
+        mov dword ptr [esp + 0x18], edx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x50]
+        mov cl, byte ptr [eax + 2]
+        mov dword ptr [esp + 0x18], ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x54]
+        jmp near ptr L_39AB
+    L_38B1:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        xor ecx, ecx
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        xor edx, edx
+        mov cl, byte ptr [eax]
+        mov dword ptr [esp + 0x18], ecx
+        xor ecx, ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x58]
+        mov dl, byte ptr [eax + 1]
+        mov dword ptr [esp + 0x18], edx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x5c]
+        mov cl, byte ptr [eax + 2]
+        mov dword ptr [esp + 0x18], ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x60]
+        jmp near ptr L_39AB
+    L_3907:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        xor ecx, ecx
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        xor edx, edx
+        mov cl, byte ptr [eax]
+        mov dword ptr [esp + 0x18], ecx
+        xor ecx, ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x64]
+        mov dl, byte ptr [eax + 1]
+        mov dword ptr [esp + 0x18], edx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x68]
+        mov cl, byte ptr [eax + 2]
+        mov dword ptr [esp + 0x18], ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x6c]
+        jmp near ptr L_39AB
+    L_395A:
+        push eax
+        call ext_007B3CF0
+        mov edx, dword ptr [esp + 0x18]
+        xor ecx, ecx
+        add esp, 4
+        mov eax, dword ptr [edx + 0xc]
+        xor edx, edx
+        mov cl, byte ptr [eax]
+        mov dword ptr [esp + 0x18], ecx
+        xor ecx, ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x70]
+        mov dl, byte ptr [eax + 1]
+        mov dword ptr [esp + 0x18], edx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x74]
+        mov cl, byte ptr [eax + 2]
+        mov dword ptr [esp + 0x18], ecx
+        fild dword ptr [esp + 0x18]
+        fmul dword ptr [mem_00997CF8]
+        fstp dword ptr [ebp + 0x78]
+    L_39AB:
+        lea edx, [esp + 0x14]
+        push edx
+        call ext_007B2CD0
+        mov ebx, dword ptr [ebx + 0x10]
+        xor edi, edi
+        add esp, 4
+        cmp ebx, edi
+        jne near ptr L_3568
+    L_39C5:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
