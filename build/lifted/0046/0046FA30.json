@@ -1,0 +1,14 @@
+{
+  "va": "0x0046FA30",
+  "size": 11,
+  "orig_symbol": "RuntimeEngine::vfunc_0_off_C",
+  "src_path": "src/classes/RuntimeEngine.cpp",
+  "lifted_path": "lifted/classes/RuntimeEngine.cpp",
+  "name": "RuntimeEngine::vfunc_0_off_C",
+  "class": "RuntimeEngine",
+  "signature": "void fn_0046FA30(void* self)",
+  "summary": "Adjusts this from the +0xC (BaseEventListener) subobject back to RuntimeEngine and forwards to 0x0046F930.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:23:26Z"
+}
