@@ -190,3 +190,13 @@ extern "C" void* __fastcall fn_0053D970(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0052F5F0] Primitives::Animation::vfunc_19 (15 bytes)
+// @name Primitives::Animation::vfunc_19
+// @class Primitives::Animation
+// @summary Returns 1 if the 0x20 flag bit in the dword at +0x1C is set, otherwise 0.
+// @field Primitives::Animation +0x1C uint32_t field_0x1C
+uint32_t fn_0052F5F0(void* self) {
+    const uint32_t flags = *reinterpret_cast<const uint32_t*>(static_cast<const char*>(self) + 0x1C);
+    return (flags & 0x20u) == 0x20u ? 1u : 0u;
+}

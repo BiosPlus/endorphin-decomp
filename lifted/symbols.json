@@ -1504,6 +1504,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0052F5F0": {
+    "name": "Primitives::Animation::vfunc_19",
+    "class": "Primitives::Animation",
+    "signature": "uint32_t fn_0052F5F0(void* self)",
+    "summary": "Returns 1 if the 0x20 flag bit in the dword at +0x1C is set, otherwise 0.",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0052F670": {
     "name": "Primitives::Animation::vfunc_0",
     "class": "Primitives::Animation",
