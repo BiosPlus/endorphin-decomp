@@ -1,0 +1,22 @@
+{
+  "va": "0x0067A770",
+  "size": 32,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_9",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "DynamicEnumType::vfunc_9",
+  "class": "ExprParser::DynamicEnumType",
+  "signature": "uint32_t __stdcall fn_0067A770(uint32_t arg0, uint32_t arg1)",
+  "summary": "Dispatches vtable+0x78 on field_0x4 with arg0, then calls sub_006720A0 on arg0 with arg1.",
+  "fields": [
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T07:47:57Z"
+}
