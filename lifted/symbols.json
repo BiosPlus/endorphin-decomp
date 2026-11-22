@@ -9573,6 +9573,13 @@
     "summary": "Evaluates the operand via its vfunc_1, applies exp (float-rounded), and passes the result to the operand's vfunc_7.",
     "lifted_path": "lifted/ExprParser/Operators/Exp.cpp"
   },
+  "0x006A1A90": {
+    "name": "ExprParser::Operators::Ln::vfunc_3",
+    "class": "ExprParser::Operators::Ln",
+    "signature": "void fn_006A1A90(void* self)",
+    "summary": "Evaluates the operand via its vfunc_1, applies natural log (float-rounded), and passes the result to the operand's vfunc_7.",
+    "lifted_path": "lifted/ExprParser/Operators/Ln.cpp"
+  },
   "0x006A1C10": {
     "name": "ExprParser::Operators::Sqrt::vfunc_3",
     "class": "ExprParser::Operators::Sqrt",
