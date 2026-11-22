@@ -10,6 +10,7 @@
 // Recovered field layout for StateMachine::State:
 namespace lifted_layout {
 struct StateMachine_State_Fields {
-    // +0x154 void*                    field_0x154  (evidence: 0x0051F9C0)
+    // +0x154 uint32_t                 field_0x154  (evidence: 0x0051DE30) // CONFLICT: multiple definitions at +0x154
+    // +0x154 void*                    field_0x154  (evidence: 0x0051F9C0) // CONFLICT: multiple definitions at +0x154
 };
 } // namespace lifted_layout

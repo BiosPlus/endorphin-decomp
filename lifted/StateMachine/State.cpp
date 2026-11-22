@@ -15,3 +15,30 @@ intptr_t fn_0051F9C0(void* self) {
     auto target = reinterpret_cast<intptr_t (*)(void*)>(vtbl[1]);
     return target(sub);
 }
+
+// [0x0051DE30] StateMachine::State::vfunc_1 (17 bytes)
+// @name StateMachine::State::vfunc_1
+// @class StateMachine::State
+// @summary Thiscall tail-forwarder: takes the object at this->field_0x154, reads the pointer at its +0x10, and tail-jumps to the code address stored at that pointer's +0x4 with this = (object + 0x10).
+// @field StateMachine::State +0x154 uint32_t field_0x154
+
+// Guest addresses are 32-bit; they are converted to host pointers only at the point of use.
+using GuestCodePtr = uint32_t (__thiscall*)(void* self);
+
+static inline void* guest_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+uint32_t __thiscall fn_0051DE30(void* self) {
+    // mov ecx, [ecx+0x154]           -> inner = this->field_0x154
+    const uint32_t inner = lift_field<uint32_t>(self, 0x154);
+    // mov eax, [ecx+0x10]            -> holder = [inner+0x10]  (member at inner+0x10 is not a State field)
+    const uint32_t holder = lift_field<uint32_t>(guest_ptr(inner), 0x10);
+    // add ecx, 0x10                  -> this for the forwarded call = inner+0x10
+    const uint32_t forward_this = inner + 0x10;
+    // mov eax, [eax+0x4]             -> code = [holder+0x4]
+    const uint32_t code = lift_field<uint32_t>(guest_ptr(holder), 0x4);
+    // jmp eax                        -> tail call; modelled as a call returning the callee's eax
+    const GuestCodePtr target = reinterpret_cast<GuestCodePtr>(static_cast<uintptr_t>(code));
+    return target(guest_ptr(forward_this));
+}

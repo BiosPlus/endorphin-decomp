@@ -1539,6 +1539,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00519CE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051DE30": {
+    "name": "StateMachine::State::vfunc_1",
+    "class": "StateMachine::State",
+    "signature": "static inline void* guest_ptr(uint32_t addr)",
+    "summary": "Thiscall tail-forwarder: takes the object at this-\u003efield_0x154, reads the pointer at its +0x10, and tail-jumps to the code address stored at that pointer's +0x4 with this = (object + 0x10).",
+    "lifted_path": "lifted/StateMachine/State.cpp"
+  },
   "0x0051F9C0": {
     "name": "StateMachine::State::vfunc_9",
     "class": "StateMachine::State",
