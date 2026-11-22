@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4920",
+  "size": 89,
+  "orig_symbol": "Geometry::AnimationType::vfunc_14",
+  "src_path": "src/Geometry/AnimationType.cpp",
+  "lifted_path": "lifted/Geometry/AnimationType.cpp",
+  "name": "Geometry::AnimationType::vfunc_14",
+  "class": "Geometry::AnimationType",
+  "signature": "void* fn_005B4920(void* self)",
+  "summary": "Lazily initializes a static local object at 0x00B4359C, registers its atexit destructor, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-22T08:19:27Z"
+}

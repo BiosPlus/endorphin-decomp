@@ -7274,6 +7274,13 @@
     "summary": "Lazily initializes shared static state guarded by bit 0 of mem_00B43584, then returns the address of the static object at mem_00B43574.",
     "lifted_path": "lifted/Geometry/AnimationType.cpp"
   },
+  "0x005B4920": {
+    "name": "Geometry::AnimationType::vfunc_14",
+    "class": "Geometry::AnimationType",
+    "signature": "void* fn_005B4920(void* self)",
+    "summary": "Lazily initializes a static local object at 0x00B4359C, registers its atexit destructor, and returns its address.",
+    "lifted_path": "lifted/Geometry/AnimationType.cpp"
+  },
   "0x005B5760": {
     "name": "Geometry::MeshType::vfunc_0",
     "class": "Geometry::MeshType",
