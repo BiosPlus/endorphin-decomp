@@ -24911,3 +24911,14 @@ a006D1F94: add esp, 0ach
 a006D1F9A: ret 0ch
     }
 }
+
+// [0x006D208C] sub_006D208C (15 bytes)
+// Non-code data blob (byte table); reproduced byte-for-byte.
+extern "C" __declspec(naked) void __cdecl fn_006D208C(void) {
+    __asm {
+        __asm _emit 0x00 __asm _emit 0x04 __asm _emit 0x04 __asm _emit 0x04
+        __asm _emit 0x04 __asm _emit 0x04 __asm _emit 0x04 __asm _emit 0x04
+        __asm _emit 0x01 __asm _emit 0x04 __asm _emit 0x02 __asm _emit 0x04
+        __asm _emit 0x04 __asm _emit 0x04 __asm _emit 0x04
+    }
+}
