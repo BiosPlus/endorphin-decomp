@@ -24177,3 +24177,57 @@ L_782AFB:
         ret
     }
 }
+
+// [0x0078AAC0] sub_0078AAC0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0078AAC0() {
+    __asm {
+        _emit 0x00
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x00
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x01
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x03
+        _emit 0x02
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+    }
+}
