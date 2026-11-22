@@ -43,19 +43,29 @@ extern "C" int mem_00A93714;
 void* fn_006035B0(void* self) {
     return self;
 }
+// Lifted from 0x0063CA50: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
+// Lifted from 0x0064B0A0: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
+// Lifted from 0x0064F1F0: RTTI type-guard vfunc (MSVC __RTDynamicCast wrapper).
+// Lifted from 0x0051A4D0: ROWriteMethodType vfunc_13 stub forwarding to shared dispatcher sub_00671100.
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
+extern "C" void ext_00671100(int selector, void* arg);
 
-// [0x006274D0] ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorAbsoluteOrientation::setReference)
-// @class ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
+extern "C" void ext_00671100(int selector, void* arg);
 // @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
 // No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
 // MSVC type descriptors (0x00A2E2F8, 0x00A93424), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
 void* fn_006274D0(void* self) {
     return self;
 }
+// Lifted from 0x0059E9B0: ROWriteMethodType vfunc_13 stub forwarding to shared dispatcher sub_00671100.
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 
-// [0x0062A0A0] ExprParser::ROWriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorMetaBodyRelativeTime::resetTime)
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 // @class ExprParser::ROWriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>
 // @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
 // No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
@@ -63,9 +73,12 @@ void* fn_006274D0(void* self) {
 void* fn_0062A0A0(void* self) {
     return self;
 }
+// Lifted from 0x0064F830: ROWriteMethodType vfunc_13 stub forwarding to shared dispatcher sub_00671100.
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 
-// [0x0062A0F0] ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_16 (30 bytes)
-// @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorRelativeTime::resetTime)
+// Shared dispatcher sub_00671100 (911 bytes, not yet lifted). Called as push <selector>; call; the wrapper's
+// single stack argument sits directly after the selector, so it is passed through as the second parameter.
 // @class ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>
 // @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
 // No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
@@ -108,4 +121,61 @@ void* fn_005F35A0(void* self) {
 // @summary RTTI-checked cast of self to the EffectorBase vcall-76 write-method descriptor; returns the cast pointer or NULL.
 void* fn_00603420(void* self) {
     return ext_006A6E9E(self, 0, &mem_00A2E2F8, &mem_00A93714, 0);
+}
+
+// [0x0063CA50] ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (EffectorWithMemory::setIntegralGradient)
+// @class ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A947F0 path), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0063CA50(void* self) {
+    return self;
+}
+
+// [0x0064B0A0] ExprParser::ROWriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (RelationshipRPROMagnet::applyCachedSettings)
+// @class ExprParser::ROWriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A9BD54), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0064B0A0(void* self) {
+    return self;
+}
+
+// [0x0064F1F0] ExprParser::ROWriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)
+// @class ExprParser::ROWriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A9BDC8), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0064F1F0(void* self) {
+    return self;
+}
+
+// [0x0051A4D0] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_13 (13 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)
+// @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).
+// No object fields are accessed directly.
+void fn_0051A4D0(void* arg) {
+    ext_00671100(8, arg);
+}
+
+// [0x0059E9B0] ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_13 (13 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)
+// @class ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
+// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).
+// No object fields are accessed directly.
+void fn_0059E9B0(void* arg) {
+    ext_00671100(22, arg);
+}
+
+// [0x0064F830] ExprParser::ROWriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const &)>::vfunc_13 (13 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_13 (NM::Vector3::convertEtoTS)
+// @class ExprParser::ROWriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const &)>
+// @summary Forwards its argument to shared dispatcher sub_00671100 with selector 4 (dispatcher not yet lifted).
+// No object fields are accessed directly.
+void fn_0064F830(void* arg) {
+    ext_00671100(4, arg);
 }
