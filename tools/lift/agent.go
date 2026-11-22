@@ -7,7 +7,6 @@ import (
 	"path/filepath"
 	"strings"
 	"sync"
-	"syscall"
 	"time"
 )
 
@@ -27,12 +26,12 @@ func (p *procs) killAll() {
 	}
 	p.mu.Unlock()
 	for _, pg := range pgs {
-		_ = syscall.Kill(-pg, syscall.SIGTERM)
+		signalProcGroup(pg, false)
 	}
 	if len(pgs) > 0 {
 		time.Sleep(2 * time.Second)
 		for _, pg := range pgs {
-			_ = syscall.Kill(-pg, syscall.SIGKILL)
+			signalProcGroup(pg, true)
 		}
 	}
 }
@@ -44,7 +43,7 @@ func (l *lifter) runTracked(cmd *exec.Cmd, logPath string, timeout time.Duration
 	}
 	defer lf.Close()
 	cmd.Stdout, cmd.Stderr = lf, lf
-	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+	setProcGroup(cmd)
 	if err := cmd.Start(); err != nil {
 		fmt.Fprintf(lf, "lift: start failed: %v\n", err)
 		return 127
@@ -61,11 +60,11 @@ func (l *lifter) runTracked(cmd *exec.Cmd, logPath string, timeout time.Duration
 	case werr = <-done:
 	case <-time.After(timeout):
 		timedOut = true
-		_ = syscall.Kill(-pg, syscall.SIGTERM)
+		signalProcGroup(pg, false)
 		select {
 		case werr = <-done:
 		case <-time.After(20 * time.Second):
-			_ = syscall.Kill(-pg, syscall.SIGKILL)
+			signalProcGroup(pg, true)
 			werr = <-done
 		}
 	}

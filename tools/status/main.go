@@ -2072,6 +2072,7 @@ func renderReadme(
 	inScopeBytes, inScopeMatchedBytes uint64,
 	tiers []*TierStats,
 	leaderboard []ModelStats,
+	p2 Phase2Stats,
 ) string {
 	var sb strings.Builder
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
@@ -2084,8 +2085,60 @@ func renderReadme(
 	autoSolveFuncs := inScopeMatchedFuncs - aiMatchedFuncs
 
 	sb.WriteString("# Endorphin 2.7.1 Decompilation Project\n\n")
-	sb.WriteString("A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endorphin.exe`), compiled with **MSVC 2005 RTM (14.00.50727.42)** for x86.\n\n")
-	sb.WriteString("## Verified Byte-Match Scoreboard\n\n")
+	sb.WriteString("A byte-matching C++ decompilation and portable C++ lifting project for **Endorphin 2.7.1 Learning Edition** (`endorphin.exe`, MSVC 2005 RTM `14.00.50727.42`, x86).\n\n")
+	sb.WriteString("- **Phase 1 (MSVC8 Byte-Match):** **100.00% Complete** (`src/`)\n")
+	if p2.ScopeAll.TotalFuncs > 0 {
+		coreLiftPct := pct(uint64(p2.ScopeCore.LiftedAsmFuncs), uint64(p2.ScopeCore.AsmFuncs))
+		portablePct := pct(uint64(p2.ScopeAll.PortableCppFuncs), uint64(p2.ScopeAll.TotalFuncs))
+		sb.WriteString(fmt.Sprintf("- **Phase 2 (Portable C++ Lift & Struct Recovery):** `%d / %d` core ASM functions lifted (**%.2f%%**), `%d / %d` total portable C++ (**%.2f%%**), `%d` struct fields recovered across `%d` classes (`lifted/`)\n",
+			p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs, coreLiftPct,
+			p2.ScopeAll.PortableCppFuncs, p2.ScopeAll.TotalFuncs, portablePct,
+			p2.TotalFieldAnnotations, p2.ClassesWithFields))
+	}
+	sb.WriteString("\n")
+
+	sb.WriteString("## Contributing (Phase 2: AI-Assisted C++ Lifting & Struct Recovery)\n\n")
+	sb.WriteString("Phase 1 matched 100% of in-scope functions byte-for-byte, but ~96% of `src/` is x86 `__declspec(naked) __asm`. **Phase 2** lifts those functions into clean, portable C++17 in `lifted/` while recovering function names (`lifted/symbols.json`) and struct layouts (`lifted/include/*.h`) — without touching the verified byte-match in `src/`.\n\n")
+	sb.WriteString("### What You Need\n\n")
+	sb.WriteString("- **Linux or macOS** (no Windows, Wine, or MSVC 2005 needed for Phase 2)\n")
+	sb.WriteString("- **Go 1.22+** and **g++ or clang++** (used for instant native `-std=c++17 -fsyntax-only` verification)\n")
+	sb.WriteString("- An AI coding CLI: **`claude`** (Claude Code) and/or **`agy`** (Antigravity) for autonomous grinding — or any AI assistant for manual single-function lifts\n")
+	sb.WriteString("- *(Optional, recommended for best naming quality)* Your own legal copy of `endorphin.exe` at `.local/bin/endorphin.exe` so `liftwork claim` can decode `.rdata` string literals and float constants into briefings\n\n")
+	sb.WriteString("### Quick Start (3 Steps)\n\n")
+	sb.WriteString("1. **Clone & build the lift CLI:**\n")
+	sb.WriteString("   ```bash\n")
+	sb.WriteString("   git clone https://github.com/BiosPlus/endorphin-decomp.git\n")
+	sb.WriteString("   cd endorphin-decomp\n")
+	sb.WriteString("   mkdir -p .local/bin && go build -o .local/bin/liftwork ./tools/liftwork\n")
+	sb.WriteString("   ./.local/bin/liftwork status\n")
+	sb.WriteString("   ```\n")
+	sb.WriteString("2. **Run the autonomous AI lift orchestrator (recommended for most complete results):**\n")
+	sb.WriteString("   ```bash\n")
+	sb.WriteString("   # Lift core engine subsystems leaf-first (physics, exporters, I/O, camera)\n")
+	sb.WriteString("   # Args: [MAX_WAVES=50] [WAVE_SIZE=5] [PUSH_EVERY=5]\n")
+	sb.WriteString("   LIFT_SCOPE=core LIFT_DEPS_FIRST=1 tools/lift.sh 50 5 5\n")
+	sb.WriteString("   ```\n")
+	sb.WriteString("   Useful variations:\n")
+	sb.WriteString("   ```bash\n")
+	sb.WriteString("   # Focus on animation exporters & file I/O\n")
+	sb.WriteString("   LIFT_SCOPE=BVHIO,AcclaimIO,FBXIO,NMFileIO LIFT_DEPS_FIRST=1 tools/lift.sh 20 5 5\n")
+	sb.WriteString("   # Lift the entire binary (all remaining __asm functions)\n")
+	sb.WriteString("   LIFT_SCOPE=all LIFT_DEPS_FIRST=1 tools/lift.sh 50 5 5\n")
+	sb.WriteString("   # Disable auto-push if working on a fork before opening a PR\n")
+	sb.WriteString("   LIFT_SCOPE=core LIFT_DEPS_FIRST=1 tools/lift.sh 25 5 0\n")
+	sb.WriteString("   ```\n")
+	sb.WriteString("3. **Or lift one function at a time with any AI assistant:**\n")
+	sb.WriteString("   ```bash\n")
+	sb.WriteString("   ./.local/bin/liftwork next --scope core --deps-first --limit 5\n")
+	sb.WriteString("   ./.local/bin/liftwork claim 0xXXXXXXXX --isolated\n")
+	sb.WriteString("   # Ask your AI to rewrite lifted/wip/fn_XXXXXXXX.cpp in clean C++17 (no __asm/naked/_emit)\n")
+	sb.WriteString("   # with @name, @class, @summary, and @field annotations, then verify & merge:\n")
+	sb.WriteString("   ./.local/bin/liftwork check 0xXXXXXXXX --model <model@effort>\n")
+	sb.WriteString("   ```\n\n")
+	sb.WriteString("> **Why `LIFT_DEPS_FIRST=1` matters:** Lifting leaf functions first populates `lifted/symbols.json` and `lifted/include/<Class>.h` before callers are claimed, giving every subsequent function real callee names and struct field offsets automatically.\n\n")
+	sb.WriteString("**Contribution rules:** Never edit `src/`, `build/units/`, `build/classes.json`, or `README.md` by hand, and never commit `.local/`, `docs/`, or binary files (`.exe`, `.dll`, `.obj`). Always let `liftwork check` validate and merge your lifted functions, then open a PR against `main`.\n\n")
+
+	sb.WriteString("## Phase 1: Verified Byte-Match Scoreboard\n\n")
 	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**) — `%d` by AI models, `%d` by deterministic `auto_solve`\n", inScopeMatchedFuncs, inScopeFuncs, funcPct, aiMatchedFuncs, autoSolveFuncs))
 	sb.WriteString(fmt.Sprintf("- **In-Scope Code Bytes Matched:** `%d / %d bytes` (**%.2f%%** of %.2f MB)\n", inScopeMatchedBytes, inScopeBytes, bytePct, float64(inScopeBytes)/(1024.0*1024.0)))
 	sb.WriteString(fmt.Sprintf("- **RTTI Classes Extracted:** `%d` total (`%d` in-scope application/engine classes, `%d` MFC/ATL/std classes)\n", totalClasses, inScopeClasses, mfcClasses))
@@ -2114,10 +2167,11 @@ func renderReadme(
 	}
 
 	sb.WriteString("\n## Tooling & Workflow\n\n")
+	sb.WriteString("- `tools/lift.sh [MAX_WAVES] [WAVE_SIZE] [PUSH_EVERY]`: Autonomous parallel Phase 2 C++ lifting & struct/naming recovery orchestrator.\n")
+	sb.WriteString("- `./.local/bin/liftwork status`: Prints live Phase 2 lift, naming, and struct-field recovery metrics.\n")
+	sb.WriteString("- `./.local/bin/liftwork merge-structs`: Rebuilds `lifted/symbols.json` and `lifted/include/*.h` from `build/lifted/`.\n")
 	sb.WriteString("- `go run ./tools/build_and_match -all`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.\n")
-	sb.WriteString("- `go run ./tools/work next`: Picks the next smallest unmatched in-scope leaf function (`size <= 256`) and prints its compact disassembly briefing.\n")
-	sb.WriteString("- `go run ./tools/work check <addr> --model <name>`: Compiles and verifies a function against `.local/bin/endorphin.exe` and records the solving model.\n")
-	sb.WriteString("- `go run ./tools/status -readme`: Updates the progress section in `README.md` with the latest verified byte-match metrics.\n")
+	sb.WriteString("- `go run ./tools/status -readme`: Regenerates `README.md` with the latest verified Phase 1 & Phase 2 metrics.\n")
 	return sb.String()
 }
 
@@ -2457,6 +2511,7 @@ func main() {
 			inScopeBytes, inScopeMatchedBytes,
 			tiers,
 			leaderboard,
+			p2,
 		)
 		if err := os.WriteFile("README.md", []byte(readme), 0644); err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing README.md: %v\n", err)
