@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::IntType:
 namespace lifted_layout {
 struct ExprParser_IntType_Fields {
-    // +0x0   int32_t                  field_0x00  (evidence: 0x0066AE40)
+    // +0x0   int32_t                  field_0x00  (evidence: 0x0066AE40, 0x0066B110)
 };
 } // namespace lifted_layout

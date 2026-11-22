@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B110",
+  "size": 13,
+  "orig_symbol": "ExprParser::IntType::vfunc_8",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::IntType::vfunc_8",
+  "class": "ExprParser::IntType",
+  "signature": "void fn_0066B110(void* self, int32_t value)",
+  "summary": "Stores the int32 argument into the object's first field (field_0x00).",
+  "fields": [
+    {
+      "class": "ExprParser::IntType",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:13:25Z"
+}

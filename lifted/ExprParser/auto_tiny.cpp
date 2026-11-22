@@ -102,3 +102,12 @@ void* fn_006992D0(void* self) {
 void fn_0066B0A0(void* self, float value) {
     *static_cast<float*>(self) = value;
 }
+
+// [0x0066B110] ExprParser::IntType::vfunc_8 (13 bytes)
+// @name ExprParser::IntType::vfunc_8
+// @class ExprParser::IntType
+// @summary Stores the int32 argument into the object's first field (field_0x00).
+// @field ExprParser::IntType +0x00 int32_t field_0x00
+void fn_0066B110(void* self, int32_t value) {
+    lift_field<int32_t>(self, 0x00) = value;
+}

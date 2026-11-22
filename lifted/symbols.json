@@ -826,6 +826,13 @@
     "summary": "Stores a float value into the object's float slot at +0x00 (RealType setter).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066B110": {
+    "name": "ExprParser::IntType::vfunc_8",
+    "class": "ExprParser::IntType",
+    "signature": "void fn_0066B110(void* self, int32_t value)",
+    "summary": "Stores the int32 argument into the object's first field (field_0x00).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BA30": {
     "name": "ExprParser::ExtROType::vfunc_38",
     "class": "ExprParser::ExtROType",
