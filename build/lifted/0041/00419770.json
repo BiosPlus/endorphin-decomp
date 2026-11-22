@@ -1,0 +1,14 @@
+{
+  "va": "0x00419770",
+  "size": 40,
+  "orig_symbol": "ExportUnavailableDialog::vfunc_7_off_74",
+  "src_path": "src/classes/ExportUnavailableDialog.cpp",
+  "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp",
+  "name": "ExportUnavailableDialog::vfunc_7_off_74",
+  "class": "ExportUnavailableDialog",
+  "signature": "extern \"C\" uint8_t mem_00A2ECD0[];  // static block at 0x00A2ECD0 (dwords at +0xC and +0x10) void* fn_00419770(void* self)",
+  "summary": "One-time init guard: on first call sets guard bit 0 and zeroes the dwords at block+0xC and block+0x10; returns the block.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:40Z"
+}
