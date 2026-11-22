@@ -7405,6 +7405,13 @@
     "summary": "Dispatches on arg2 (0x9C, 0x199, or other) to a helper and returns arg1.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C44A0": {
+    "name": "NMData::FluidObjectData::vfunc_33",
+    "class": "NMData::FluidObjectData",
+    "signature": "extern \"C\" void (*mem_00924FE4)(void* self, const char* s);            // basic_string(const char*) extern \"C\" void* (*mem_00924FDC)(void* self, const void* rhs);         // basic_string::operator=(const basic_string\u0026) extern \"C\" void (*mem_00924FF4)(void* self);                           // ~basic_string() struct alignas(8) StringStorage",
+    "summary": "Assigns a string literal to the member std::string at +0x17c, clears the flag at +0x198, then forwards to the base NMData::CollisionModelDataBase::vfunc_33.",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C4870": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e::vfunc_16",
     "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e",

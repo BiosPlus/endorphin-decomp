@@ -1,0 +1,28 @@
+{
+  "va": "0x005C44A0",
+  "size": 118,
+  "orig_symbol": "NMData::FluidObjectData::vfunc_33",
+  "src_path": "src/NMData/FluidObjectData.cpp",
+  "lifted_path": "lifted/NMData/FluidObjectData.cpp",
+  "name": "NMData::FluidObjectData::vfunc_33",
+  "class": "NMData::FluidObjectData",
+  "signature": "extern \"C\" void (*mem_00924FE4)(void* self, const char* s);            // basic_string(const char*) extern \"C\" void* (*mem_00924FDC)(void* self, const void* rhs);         // basic_string::operator=(const basic_string\u0026) extern \"C\" void (*mem_00924FF4)(void* self);                           // ~basic_string() struct alignas(8) StringStorage",
+  "summary": "Assigns a string literal to the member std::string at +0x17c, clears the flag at +0x198, then forwards to the base NMData::CollisionModelDataBase::vfunc_33.",
+  "fields": [
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x198",
+      "type": "u32",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:16:30Z"
+}
