@@ -8108,6 +8108,13 @@
     "summary": "If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E20F0": {
+    "name": "NMData::SkeletalJointData::isAxisUnlocked",
+    "class": "NMData::SkeletalJointData",
+    "signature": "bool __thiscall fn_005E20F0(void* self, uint32_t axis)",
+    "summary": "Checks whether a specified joint axis/DOF (0..6) is unlocked based on TransformInterface state and joint lock flags.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005E2340": {
     "name": "NMData::SkeletalJointData::vfunc_41",
     "class": "NMData::SkeletalJointData",
@@ -10497,6 +10504,13 @@
     "class": "ExprParser::Vector3Type",
     "signature": "void* fn_0066B560(void* self, void** a1)",
     "summary": "Returns the float[3] already held in *a1, or lazily initialises and returns the shared zero vector.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
+  "0x0066B5D0": {
+    "name": "ExprParser::Vector3Type::vfunc_35",
+    "class": "ExprParser::Vector3Type",
+    "signature": "extern \"C\" uint32_t __stdcall fn_0066B5D0(uint32_t* arg1, uint32_t arg2)",
+    "summary": "Reads the first dword of the pointer in arg1 and forwards it, with arg2 as this, to ext_00699000; returns that result.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
   "0x0066B620": {

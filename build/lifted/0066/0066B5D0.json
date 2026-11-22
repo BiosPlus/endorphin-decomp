@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B5D0",
+  "size": 19,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_35",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_35",
+  "class": "ExprParser::Vector3Type",
+  "signature": "extern \"C\" uint32_t __stdcall fn_0066B5D0(uint32_t* arg1, uint32_t arg2)",
+  "summary": "Reads the first dword of the pointer in arg1 and forwards it, with arg2 as this, to ext_00699000; returns that result.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x0",
+      "type": "void* vtable (unverified; no direct field access in this",
+      "name": "function)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:35:48Z"
+}

@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct ExprParser_Vector3Type_Fields {
     // +0x0   float*                   data  (evidence: 0x0066B6E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* vtable (unverified; no direct field access in this function)  (evidence: 0x0066B5D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0066B530, 0x0066D0C0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

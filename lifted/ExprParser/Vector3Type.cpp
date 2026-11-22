@@ -26,6 +26,7 @@ void* fn_0066B530(void* self, void* a1, void* a2) {
     ext_00672110(a2, r);
     return a2;
 }
+extern "C" uint32_t __thiscall ext_00699000(uint32_t self, uint32_t arg);
 
 // [0x0066B680] ExprParser::Vector3Type::vfunc_43 (48 bytes)
 // @name ExprParser::Vector3Type::vfunc_43
@@ -203,4 +204,14 @@ void fn_0066B6E0(void* a1, void* a2) {
     out[0] = out[0] * s;
     out[1] = out[1] * s;
     out[2] = out[2] * s;
+}
+
+// [0x0066B5D0] ExprParser::Vector3Type::vfunc_35 (19 bytes)
+// @name ExprParser::Vector3Type::vfunc_35
+// @class ExprParser::Vector3Type
+// @summary Reads the first dword of the pointer in arg1 and forwards it, with arg2 as this, to ext_00699000; returns that result.
+// @field ExprParser::Vector3Type +0x00 void* vtable (unverified; no direct field access in this function)
+extern "C" uint32_t __stdcall fn_0066B5D0(uint32_t* arg1, uint32_t arg2) {
+    uint32_t value = *arg1;
+    return ext_00699000(arg2, value);
 }
