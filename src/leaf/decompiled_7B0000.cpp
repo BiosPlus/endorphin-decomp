@@ -27185,3 +27185,28 @@ extern "C" __declspec(naked) void __fastcall fn_007B5224(void* self) {
         _emit 0x03
     }
 }
+
+// [0x007B6094] sub_007B6094 (19 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007B6094(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x04
+        _emit 0x01
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x02
+        _emit 0x03
+        _emit 0x03
+    }
+}
