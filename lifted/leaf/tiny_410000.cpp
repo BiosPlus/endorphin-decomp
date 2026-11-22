@@ -4,6 +4,7 @@ extern "C" int mem_0092BD10;
 extern "C" int mem_0092C6E8;
 extern "C" DWORD mem_0092D020;
 extern "C" int mem_0092D778;
+extern "C" int mem_0092DA8C;
 
 // [0x00410350] sub_00410350 (6 bytes)
 // @name GetStringConstant_00410350
@@ -56,4 +57,11 @@ extern "C" const DWORD* fn_00419700(void) {
 // @summary Returns the address of the read-only string constant ".cj" stored in .rdata (mem_0092D778).
 extern "C" const char* __cdecl fn_0041B580() {
     return reinterpret_cast<const char*>(&mem_0092D778);
+}
+
+// [0x0041BFA0] sub_0041BFA0 (6 bytes)
+// @name GetStringConstant_0041BFA0
+// @summary Returns the address of the read-only string constant ",bj" stored in .rdata (mem_0092DA8C).
+extern "C" const char* __cdecl fn_0041BFA0() {
+    return reinterpret_cast<const char*>(&mem_0092DA8C);
 }
