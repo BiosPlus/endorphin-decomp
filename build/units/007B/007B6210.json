@@ -101,5 +101,7 @@
     "0x007B6E9F",
     "0x007B6EDE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-22T02:37:19Z"
 }
