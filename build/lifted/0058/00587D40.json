@@ -1,0 +1,22 @@
+{
+  "va": "0x00587D40",
+  "size": 14,
+  "orig_symbol": "NMData::GraphicData::vfunc_0_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::GraphicData::vfunc_0_off_C",
+  "class": "NMData::GraphicData",
+  "signature": "DWORD NMData_GraphicData_vfunc_0_off_C(const void* self)",
+  "summary": "Returns mem_0095F750[this-\u003efield_150], a per-instance table lookup keyed by the 32-bit index at +0x150.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x150",
+      "type": "DWORD",
+      "name": "field_150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:13Z"
+}

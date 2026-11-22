@@ -146,8 +146,10 @@ extern "C" void __fastcall ext_0061ECB0(void* self);
 extern "C" void __fastcall ext_0061D380(void* self);
 extern "C" void __fastcall ext_0061D990(void* self);
 extern "C" void __fastcall ext_006268F0(void* self);
+// Table of 32-bit entries in the image data section (contents not recovered here).
+extern DWORD mem_0095F750[];
 
-// [0x006744A0] NMData::State::vfunc_7 (9 bytes)
+extern DWORD mem_0095F750[];
 // @name NMData::State::vfunc_7
 // @class NMData::State
 // @summary This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.
@@ -1668,4 +1670,18 @@ extern "C" void* __fastcall fn_00626E60(void* self, int edx_unused, unsigned int
         ext_006A5C5C(self);
     }
     return self;
+}
+
+// [0x00587D40] NMData::GraphicData::vfunc_0_off_C (14 bytes)
+// @name NMData::GraphicData::vfunc_0_off_C
+// @class NMData::GraphicData
+// @summary Returns mem_0095F750[this->field_150], a per-instance table lookup keyed by the 32-bit index at +0x150.
+// @field NMData::GraphicData +0x150 DWORD field_150
+DWORD NMData_GraphicData_vfunc_0_off_C(const void* self) {
+    const DWORD index = lift_field<DWORD>(self, 0x150);
+    return mem_0095F750[index];
+}
+
+void fn_00587D40(void* self) {
+    (void)NMData_GraphicData_vfunc_0_off_C(self);
 }

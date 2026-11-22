@@ -1698,6 +1698,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005F09E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00587D40": {
+    "name": "NMData::GraphicData::vfunc_0_off_C",
+    "class": "NMData::GraphicData",
+    "signature": "DWORD NMData_GraphicData_vfunc_0_off_C(const void* self)",
+    "summary": "Returns mem_0095F750[this-\u003efield_150], a per-instance table lookup keyed by the 32-bit index at +0x150.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x00587D50": {
     "name": "NMData::GraphicData::vfunc_0",
     "class": "NMData::GraphicData",
