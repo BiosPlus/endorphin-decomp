@@ -1,0 +1,13 @@
+{
+  "va": "0x00421AB0",
+  "size": 6,
+  "orig_symbol": "sub_00421AB0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "sub_00421AB0",
+  "signature": "extern \"C\" int* fn_00421AB0()",
+  "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:49:09Z"
+}
