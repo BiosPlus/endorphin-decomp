@@ -193,21 +193,7 @@ void fn_00604C40(void* self, void* arg) {
     uint32_t value = reinterpret_cast<uint32_t (*)(void*, void*)>(vtbl[0x18 / 4])(sub, arg);
     ext_006036A0(target, value);
 }
-
-// [0x006513E0] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_41 (34 bytes)
-// @name ExprParser::WriteMethodType::vfunc_41 (SkeletalJoint vcall 132)
-// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
-// @summary Queries the argument's object through its vtable slot +0x14, then forwards the result to ext_0064F920 on the bound SkeletalJoint target.
-// @field ExprParser::WriteMethodType +0x00 void* field_0x00
-// @field ExprParser::ValuePtrType +0x04 void* field_0x04
-void fn_006513E0(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0x00);
-    void* obj = lift_field<void*>(arg, 0x04);
-    void* vtbl = lift_field<void*>(obj, 0x00);
-    auto query = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x14));
-    void* result = query(obj, arg);
-    ext_0064F920(target, result);
-}
+extern "C" void __fastcall ext_0064F920(void* self, void* edx, void* value);
 
 // [0x0068BC60] ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (34 bytes)
 // @name ExprParser::WriteMethodType::vfunc_41 (Randomizer::setSeed)
@@ -329,4 +315,22 @@ void* fn_00604BA0(void* valuePtr, void* arg) {
     using SlotFn = void* (__thiscall*)(void* self, void* arg);
     void* r = reinterpret_cast<SlotFn>(lift_field<void*>(subVtbl, 0x18))(sub, arg);
     return ext_00603680(target, r);
+}
+
+// [0x006513E0]
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, vcall132>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Fetches a value via vtable slot +0x14 of the object at arg2+0x4, then forwards it to the write thunk with the target from *arg1.
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+
+struct VObj { void** vtable; };
+struct Holder { int field_0x00; VObj* field_0x04; };
+
+extern "C" void __stdcall fn_006513E0(void** target, Holder* src)
+{
+    void* self = *target;
+    VObj* obj = src->field_0x04;
+    typedef void* (__thiscall *Fn)(VObj*, Holder*);
+    void* v = reinterpret_cast<Fn>(obj->vtable[5])(obj, src);
+    ext_0064F920(self, nullptr, v);
 }
