@@ -17,6 +17,7 @@ extern "C" const unsigned int mem_0092A794;
 extern "C" const unsigned int mem_0092B4B4;
 extern "C" int mem_0092B0F4;
 extern "C" int mem_0092B968;
+extern "C" int mem_0092BB20;
 
 // [0x00401840] sub_00401840 (6 bytes)
 // @name sub_00401840
@@ -69,4 +70,13 @@ int* fn_0040D4D0(void) {
 // @summary Returns the address of the read-only string constant at mem_0092B968 (".rdata" "$aj").
 extern "C" const void* fn_0040F5C0() {
     return &mem_0092B968;
+}
+
+// [0x0040FED0] sub_0040FED0 (6 bytes)
+// @name sub_0040FED0
+// @class (none)
+// @summary Returns the address of the read-only string constant "$aj" at 0x0092BB20.
+// (no field offsets accessed)
+extern "C" const char* fn_0040FED0() {
+    return reinterpret_cast<const char*>(&mem_0092BB20);
 }
