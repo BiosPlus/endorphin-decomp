@@ -1,0 +1,28 @@
+{
+  "va": "0x0056B8C0",
+  "size": 53,
+  "orig_symbol": "Acclaim2CharacterIO::vfunc_48",
+  "src_path": "src/classes/Acclaim2CharacterIO.cpp",
+  "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp",
+  "name": "Acclaim2CharacterIO::vfunc_48",
+  "class": "Acclaim2CharacterIO",
+  "signature": "bool fn_0056B8C0(void* self)",
+  "summary": "Returns true when the float at +0x46c is ordered and \u003e= 2.0 and the std::string at +0xac equals \"all\".",
+  "fields": [
+    {
+      "class": "Acclaim2CharacterIO",
+      "offset": "+0x46C",
+      "type": "float",
+      "name": "field_0x46c"
+    },
+    {
+      "class": "Acclaim2CharacterIO",
+      "offset": "+0xAC",
+      "type": "std::string",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:44:35Z"
+}
