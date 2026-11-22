@@ -327,3 +327,13 @@ bool fn_0049B210(void* self) {
     const uint8_t* value_ptr = lift_field<const uint8_t*>(self, 0x00);
     return *value_ptr != 0;
 }
+
+// [0x0067A970] ExprParser::BoolType::vfunc_28 (15 bytes)
+// @name ExprParser::BoolType::vfunc_28
+// @class ExprParser::BoolType
+// @summary Copies the first dword of the source object (src) into the destination slot (dst); self is unused.
+// Note: no BoolType fields are accessed; the only offset read is +0x0 of the *src* pointee, which is not a BoolType field.
+void fn_0067A970(void* self, uint32_t* dst, const uint32_t* src) {
+    (void)self;
+    *dst = *src;
+}

@@ -2772,6 +2772,13 @@
     "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0067A970": {
+    "name": "ExprParser::BoolType::vfunc_28",
+    "class": "ExprParser::BoolType",
+    "signature": "void fn_0067A970(void* self, uint32_t* dst, const uint32_t* src)",
+    "summary": "Copies the first dword of the source object (src) into the destination slot (dst); self is unused.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
