@@ -1,0 +1,28 @@
+{
+  "va": "0x0049CCC0",
+  "size": 20,
+  "orig_symbol": "NMData::NameTableLoader::vfunc_1",
+  "src_path": "src/NMData/NameTableLoader.cpp",
+  "lifted_path": "lifted/NMData/NameTableLoader.cpp",
+  "name": "NMData::NameTableLoader::vfunc_1",
+  "class": "NMData::NameTableLoader",
+  "signature": "void fn_0049CCC0(void* self, void* arg)",
+  "summary": "Forwards the argument plus two loader fields to ext_004EBC80, using field +0x04 as the receiver.",
+  "fields": [
+    {
+      "class": "NMData::NameTableLoader",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::NameTableLoader",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:35:03Z"
+}
