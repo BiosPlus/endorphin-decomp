@@ -27,3 +27,13 @@ float __stdcall fn_0066AD70(void* self) {
 uint8_t __stdcall fn_0066AF00(const uint8_t* value) {
     return *value;
 }
+
+// [0x0066AE40] ExprParser::IntType::vfunc_1 (9 bytes)
+// @name ExprParser::IntType::vfunc_1
+// @class ExprParser::IntType
+// @summary Reads the 32-bit signed integer that the pointer argument refers to and returns it as a floating-point value.
+// @field ExprParser::IntType +0x00 int32_t field_0x00
+extern "C" double __stdcall fn_0066AE40(void* self) {
+    const int32_t value = *static_cast<const int32_t*>(self);
+    return static_cast<double>(value);
+}

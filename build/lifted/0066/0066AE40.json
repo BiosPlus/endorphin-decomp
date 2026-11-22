@@ -1,0 +1,22 @@
+{
+  "va": "0x0066AE40",
+  "size": 9,
+  "orig_symbol": "ExprParser::IntType::vfunc_1",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::IntType::vfunc_1",
+  "class": "ExprParser::IntType",
+  "signature": "extern \"C\" double __stdcall fn_0066AE40(void* self)",
+  "summary": "Reads the 32-bit signed integer that the pointer argument refers to and returns it as a floating-point value.",
+  "fields": [
+    {
+      "class": "ExprParser::IntType",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:06:15Z"
+}
