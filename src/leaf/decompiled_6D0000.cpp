@@ -24922,3 +24922,30 @@ extern "C" __declspec(naked) void __cdecl fn_006D208C(void) {
         __asm _emit 0x04 __asm _emit 0x04 __asm _emit 0x04
     }
 }
+
+// [0x006D2064] sub_006D2064 (20 bytes)
+// Not executable code: a 20-byte constant table embedded in .text, emitted verbatim.
+extern "C" __declspec(naked) void __fastcall fn_006D2064(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x01
+        _emit 0x04
+        _emit 0x02
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x03
+        _emit 0x8b
+        _emit 0xff
+    }
+}
