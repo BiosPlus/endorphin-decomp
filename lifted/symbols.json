@@ -1000,6 +1000,13 @@
     "summary": "Loads the float referenced by the proxy's stored pointer and returns it.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x004B7A90": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_8",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void fn_004B7A90(void* self, int32_t value)",
+    "summary": "Stores an integer argument, converted to float, through the object's float* pointer.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x004BC8E0": {
     "name": "NMData::EngineData::vfunc_0",
     "class": "NMData::EngineData",

@@ -287,3 +287,13 @@ void __stdcall fn_0049C0C0(void* self, int32_t value) {
     const int32_t* value_ptr = lift_field<const int32_t*>(self, 0);
     *const_cast<int32_t*>(value_ptr) = value;
 }
+
+// [0x004B7A90] ExprParser::PrimitiveProxyType<float>::vfunc_8 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_8
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Stores an integer argument, converted to float, through the object's float* pointer.
+// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
+void fn_004B7A90(void* self, int32_t value) {
+    float* ptr = *static_cast<float**>(self);
+    *ptr = static_cast<float>(value);
+}
