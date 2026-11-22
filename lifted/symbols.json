@@ -7554,6 +7554,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
     "lifted_path": "lifted/Geometry/CylinderType.cpp"
   },
+  "0x005B1420": {
+    "name": "Geometry::CylinderType::vfunc_4",
+    "class": "Geometry::CylinderType",
+    "signature": "extern \"C\" float __stdcall fn_005B1420(float* out_pt, void* cyl, const float* in_pt)",
+    "summary": "Clamps a 3D point to a cylinder and returns the distance from the original point.",
+    "lifted_path": "lifted/Geometry/CylinderType.cpp"
+  },
   "0x005B1680": {
     "name": "Geometry::CuboidType::vfunc_5",
     "class": "Geometry::CuboidType",

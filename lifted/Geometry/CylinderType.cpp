@@ -2,19 +2,18 @@
 #include "lift_compat.h"
 extern "C" void ext_00647C50(void* self);
 extern "C" uint32_t __thiscall ext_00648490(uint32_t self, uint32_t arg);
-
-// [0x005B1170] Geometry::CylinderType::vfunc_1 (12 bytes)
-// @name Geometry::CylinderType::vfunc_1
+#include <algorithm>
+#include <cmath>
+// @name Geometry::CylinderType::vfunc_4
 // @class Geometry::CylinderType
-// @summary Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).
-void fn_005B1170(void* self) {
-    ext_00647C50(self);
-}
+// @summary Clamps a 3D point to a cylinder and returns the distance from the original point.
+extern "C" float __thiscall ext_005B11E0(void* this_, int index);
+extern "C" void __thiscall ext_0047FFA0(const float* this_, float* out_diff, const float* other);
 
-// [0x005B1050] Geometry::CylinderType::vfunc_2 (17 bytes)
-// @name Geometry::CylinderType::vfunc_2
 // @class Geometry::CylinderType
-// @summary Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).
+// @summary Clamps a 3D point to a cylinder and returns the distance from the original point.
+extern "C" float __thiscall ext_005B11E0(void* this_, int index);
+extern "C" void __thiscall ext_0047FFA0(const float* this_, float* out_diff, const float* other);
 uint32_t __stdcall fn_005B1050(uint32_t first, uint32_t second) {
     // mov ecx, [esp+4]  -> this for the callee = first stack argument
     // mov eax, [esp+8]  -> second stack argument
@@ -72,4 +71,26 @@ uint32_t __thiscall fn_005B4210(void* /*self*/, uint32_t arg0, uint32_t arg1, ui
         ext_00671F30(arg0);
     }
     return arg0;
+}
+
+// [0x005B1420]
+extern "C" float __stdcall fn_005B1420(float* out_pt, void* cyl, const float* in_pt)
+{
+    out_pt[0] = in_pt[0];
+    out_pt[1] = in_pt[1];
+
+    float half_height = static_cast<float>(ext_005B11E0(cyl, 1) * 0.5);
+    out_pt[2] = std::clamp(in_pt[2], -half_height, half_height);
+    out_pt[3] = 1.0f;
+
+    float r = std::sqrt(in_pt[0] * in_pt[0] + in_pt[1] * in_pt[1]);
+    float radius = ext_005B11E0(cyl, 0);
+    if (radius < r) {
+        out_pt[0] = (in_pt[0] / r) * ext_005B11E0(cyl, 0);
+        out_pt[1] = (in_pt[1] / r) * ext_005B11E0(cyl, 0);
+    }
+
+    float diff[4];
+    ext_0047FFA0(in_pt, diff, out_pt);
+    return std::sqrt(diff[0] * diff[0] + diff[1] * diff[1] + diff[2] * diff[2]);
 }

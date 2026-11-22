@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1420",
+  "size": 273,
+  "orig_symbol": "Geometry::CylinderType::vfunc_4",
+  "src_path": "src/Geometry/CylinderType.cpp",
+  "lifted_path": "lifted/Geometry/CylinderType.cpp",
+  "name": "Geometry::CylinderType::vfunc_4",
+  "class": "Geometry::CylinderType",
+  "signature": "extern \"C\" float __stdcall fn_005B1420(float* out_pt, void* cyl, const float* in_pt)",
+  "summary": "Clamps a 3D point to a cylinder and returns the distance from the original point.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:55:53Z"
+}
