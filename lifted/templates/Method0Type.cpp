@@ -590,3 +590,23 @@ void fn_004CD7C0(uint32_t arg0, uint32_t arg1) {
     uint32_t ecx = mem_u32(arg0);
     ext_004CCDE0(ecx);
 }
+
+// [0x0068C010] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_41 (14 bytes)
+// @name ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_41
+// @class ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type<NMData::DesiredPoseEventData, fire>::vfunc_41).
+void fn_0068C010(void* proxy, void* unused) {
+    (void)unused;
+    void* target = *static_cast<void**>(proxy);
+    ext_0068BC50(target);
+}
+
+// [0x006930D0] ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_41 (14 bytes)
+// @name ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_41
+// @class ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type<NMData::DesiredPoseEventData, fire>::vfunc_41).
+void fn_006930D0(void* proxy, void* unused) {
+    (void)unused;
+    void* target = *static_cast<void**>(proxy);
+    ext_00692D90(target);
+}

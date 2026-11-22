@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::EffectorBaseData:
 namespace lifted_layout {
 struct NMData_EffectorBaseData_Fields {
+    // +0x4   std::string              field_0x04  (evidence: 0x0060BC20)
     // +0x40  void*                    field_0x40  (evidence: 0x0060BB80)
 };
 } // namespace lifted_layout

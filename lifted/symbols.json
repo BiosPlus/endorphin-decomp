@@ -5103,6 +5103,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BE680 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0050F190": {
+    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e::vfunc_41",
+    "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e",
+    "signature": "void fn_0050F190(void* proxy, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
+  },
   "0x0050F990": {
     "name": "sub_0050F990",
     "signature": "extern \"C\" void __fastcall fn_0050F990(void* self)",
@@ -5175,6 +5182,20 @@
     "signature": "void fn_00515DA0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x00516B10": {
+    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e::vfunc_41",
+    "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e",
+    "signature": "void fn_00516B10(void* proxy, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
+  },
+  "0x00516B20": {
+    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::evaluateCurrentIndividual(void)\u003e::vfunc_41",
+    "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::evaluateCurrentIndividual(void)\u003e",
+    "signature": "void fn_00516B20(void* proxy, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
   "0x00517A60": {
     "name": "Individual::vfunc_0_off_C",
@@ -5359,6 +5380,13 @@
     "signature": "extern \"C\" void __fastcall fn_00526C60(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005270D0": {
+    "name": "NMData::NetworkConnectorData::vfunc_26",
+    "class": "NMData::NetworkConnectorData",
+    "signature": "extern \"C\" void __thiscall fn_005270D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005261E0 (NMData::NetworkConnectorData::vfunc_27).",
+    "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
   },
   "0x00528540": {
     "name": "Interpolator::Const::vfunc_3",
@@ -8422,6 +8450,13 @@
     "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EE64; this is unused.",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060BC20": {
+    "name": "NMData::EffectorBaseData::vfunc_20",
+    "class": "NMData::EffectorBaseData",
+    "signature": "void* fn_0060BC20(void* self, void* dst, int unused_arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00626850 (NMData::EffectorSkeletalData::vfunc_20).",
+    "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
+  },
   "0x0060BCC0": {
     "name": "sub_0060BCC0",
     "signature": "extern \"C\" void __fastcall fn_0060BCC0(void* self)",
@@ -11033,6 +11068,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0068C010": {
+    "name": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e::vfunc_41",
+    "class": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e",
+    "signature": "void fn_0068C010(void* proxy, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x00692210": {
     "name": "sub_00692210",
     "signature": "extern \"C\" int __thiscall fn_00692210(void* self)",
@@ -11058,6 +11100,13 @@
     "class": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e",
     "signature": "void* fn_006930A0(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x006930D0": {
+    "name": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_41",
+    "class": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e",
+    "signature": "void fn_006930D0(void* proxy, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x006936C0": {

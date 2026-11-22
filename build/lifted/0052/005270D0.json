@@ -1,0 +1,22 @@
+{
+  "va": "0x005270D0",
+  "size": 10,
+  "orig_symbol": "NMData::NetworkConnectorData::vfunc_26",
+  "src_path": "src/NMData/NetworkConnectorData.cpp",
+  "lifted_path": "lifted/NMData/NetworkConnectorData.cpp",
+  "name": "NMData::NetworkConnectorData::vfunc_26",
+  "class": "NMData::NetworkConnectorData",
+  "signature": "extern \"C\" void __thiscall fn_005270D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005261E0 (NMData::NetworkConnectorData::vfunc_27).",
+  "fields": [
+    {
+      "class": "NMData::NetworkConnectorData",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:24:19Z"
+}

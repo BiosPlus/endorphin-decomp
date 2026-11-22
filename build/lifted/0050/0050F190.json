@@ -1,0 +1,14 @@
+{
+  "va": "0x0050F190",
+  "size": 14,
+  "orig_symbol": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e::vfunc_41",
+  "src_path": "src/templates/WriteOnlyMethod0Type.cpp",
+  "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp",
+  "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e::vfunc_41",
+  "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e",
+  "signature": "void fn_0050F190(void* proxy, void* unused)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T08:24:19Z"
+}
