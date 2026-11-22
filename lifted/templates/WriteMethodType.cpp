@@ -19,6 +19,7 @@ void fn_00604C40(void* self, void* arg) {
 }
 extern "C" void ext_0064DDE0(void* self, uint32_t value);
 extern "C" void ext_00594080(void* self, float value);
+extern "C" void* ext_0064F8E0(void* self, float value);
 
 // [0x00594520] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_41 (37 bytes)
 // @name ExprParser::WriteMethodType<World, float, setFriction>::vfunc_41
@@ -67,4 +68,29 @@ void __stdcall fn_00594470(void* a1, void* a2) {
     auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
     float value = getFloat(reader, a2);
     ext_00594080(target, value);
+}
+
+// [0x005F35D0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: EffectorGroup::vcall{92}>::vfunc_41 (37 bytes)
+// @name ExprParser::WriteMethodType<EffectorGroup, float, vcall92>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>
+// @summary Fetches a float from the second argument's sub-object via its vtable slot 1, then forwards it to the thunk ext_0064F8E0 on the object held by the first argument; returns that thunk's result (stdcall, 8 bytes of args).
+// @field Unknown +0x00 void* field_0x00            (arg1: loaded to obtain the forwarding "this")
+// @field Unknown +0x04 void* field_0x04            (arg2: sub-object pointer read at +0x4)
+// @field Unknown +0x00 void** vtable               (sub-object's vtable pointer)
+// @field Unknown +0x04 void* vtable_slot1          (vtable slot 1 = offset +0x4, called with the sub-object as this)
+void* fn_005F35D0(void* arg1, void* arg2) {
+    // esi = *(void**)arg1
+    void* self = *reinterpret_cast<void**>(arg1);
+
+    // ecx = ((void**)arg2)[1]
+    void* sub = reinterpret_cast<void**>(arg2)[1];
+
+    // edx = *(void**)sub; call [edx + 4] with ecx = sub and arg2 pushed as the stack argument
+    void** vtable = *reinterpret_cast<void***>(sub);
+    using SlotFn = float (*)(void* thisPtr, void* stackArg);
+    SlotFn slot = reinterpret_cast<SlotFn>(vtable[1]);
+    float value = slot(sub, arg2);
+
+    // Forward: ecx = self, stack arg = value (float); result passed through.
+    return ext_0064F8E0(self, value);
 }

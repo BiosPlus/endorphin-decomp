@@ -7960,6 +7960,13 @@
     "summary": "Loads the vtable pointer from self and tail-dispatches to the virtual slot at byte offset 0x58 (index 22), passing self through.",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x005F35D0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, vcall92\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e",
+    "signature": "void* fn_005F35D0(void* arg1, void* arg2)",
+    "summary": "Fetches a float from the second argument's sub-object via its vtable slot 1, then forwards it to the thunk ext_0064F8E0 on the object held by the first argument; returns that thunk's result (stdcall, 8 bytes of args).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F5110": {
     "name": "sub_005F5110",
     "signature": "extern \"C\" void __fastcall fn_005F5110(void* self, int edx_unused, float value)",
