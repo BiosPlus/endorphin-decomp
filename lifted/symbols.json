@@ -415,6 +415,13 @@
     "summary": "Returns the address of the constant global mem_00935E98 (0x00935E98) in eax.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00454B60": {
+    "name": "ConsoleWnd::vfunc_107",
+    "class": "ConsoleWnd",
+    "signature": "int* fn_00454B60(void* self)",
+    "summary": "Returns the address of the global constant at 0x009364A0 (string \"`PE\").",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

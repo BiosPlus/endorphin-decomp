@@ -1,0 +1,14 @@
+{
+  "va": "0x00454B60",
+  "size": 6,
+  "orig_symbol": "ConsoleWnd::vfunc_107",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ConsoleWnd::vfunc_107",
+  "class": "ConsoleWnd",
+  "signature": "int* fn_00454B60(void* self)",
+  "summary": "Returns the address of the global constant at 0x009364A0 (string \"`PE\").",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:53:46Z"
+}

@@ -27,6 +27,7 @@ extern "C" int mem_00933C98;
 extern "C" int mem_00933CB4;
 extern "C" int mem_00934B98;
 extern "C" int mem_00935578;
+extern "C" int mem_009364A0;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -297,4 +298,13 @@ void* fn_0044CD70(void* self) {
 extern "C" const void* __fastcall fn_0044CFB0(void* self) {
     (void)self;
     return reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00935550u));
+}
+
+// [0x00454B60] ConsoleWnd::vfunc_107 (6 bytes)
+// @name ConsoleWnd::vfunc_107
+// @class ConsoleWnd
+// @summary Returns the address of the global constant at 0x009364A0 (string "`PE").
+int* fn_00454B60(void* self) {
+    (void)self;
+    return &mem_009364A0;
 }
