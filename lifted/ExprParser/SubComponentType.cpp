@@ -80,3 +80,40 @@ uint32_t fn_0066BDB0(void* self, uint32_t arg) {
 
     return result;
 }
+
+// [0x0066BD40] ExprParser::SubComponentType::vfunc_1 (111 bytes)
+// @name ExprParser::SubComponentType::vfunc_1
+// @class ExprParser::SubComponentType
+// @summary Calls vtable slot 0 to fetch a sub-object, calls that sub-object's vtable slot 1 to get a float, releases the temporary via vtable slot 30, and returns the float.
+// @field ExprParser::SubComponentType +0x00 void* vptr
+
+float fn_0066BD40(void* self, void* arg) {
+    // Object vtable: first word of self.
+    void** vtbl = *reinterpret_cast<void***>(self);
+
+    // Output temporary (8 bytes): the callee fills slot [1] with a holder pointer.
+    void* out[2] = {nullptr, nullptr};
+
+    // vtbl[0](self, &out, arg) -> returns pointer r.
+    using GetFn = void* (*)(void* self, void** out, void* arg);
+    GetFn get = reinterpret_cast<GetFn>(vtbl[0]);
+    void* r = get(self, out, arg);
+
+    // inner = r->[+0x04]; value = inner->vtbl[1](r)
+    void* inner = *reinterpret_cast<void**>(static_cast<char*>(r) + 0x04);
+    void** innerVtbl = *reinterpret_cast<void***>(inner);
+    using ValueFn = float (*)(void* self, void* r);
+    ValueFn valueFn = reinterpret_cast<ValueFn>(innerVtbl[1]);
+    float value = valueFn(inner, r);
+
+    // Release the holder stored in out[1] via its vtbl[30] (0x78).
+    void* holder = out[1];
+    if (holder != nullptr) {
+        void** holderVtbl = *reinterpret_cast<void***>(holder);
+        using ReleaseFn = void (*)(void* self, void** p);
+        ReleaseFn release = reinterpret_cast<ReleaseFn>(holderVtbl[30]);
+        release(holder, out);
+    }
+
+    return value;
+}

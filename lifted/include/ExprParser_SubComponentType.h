@@ -10,6 +10,7 @@
 // Recovered field layout for ExprParser::SubComponentType:
 namespace lifted_layout {
 struct ExprParser_SubComponentType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0066BE20)
+    // +0x0   void*                    field_0x00  (evidence: 0x0066BE20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vptr  (evidence: 0x0066BD40) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

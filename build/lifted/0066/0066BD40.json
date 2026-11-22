@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BD40",
+  "size": 111,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_1",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_1",
+  "class": "ExprParser::SubComponentType",
+  "signature": "float fn_0066BD40(void* self, void* arg)",
+  "summary": "Calls vtable slot 0 to fetch a sub-object, calls that sub-object's vtable slot 1 to get a float, releases the temporary via vtable slot 30, and returns the float.",
+  "fields": [
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:16:22Z"
+}
