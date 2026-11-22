@@ -1315,6 +1315,13 @@
     "summary": "IAT jump thunk forwarding to USER32!ReleaseCapture.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00442C70": {
+    "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_2",
+    "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+    "signature": "void MultiTrackView_MoveState_vfunc_2(uint8_t* self)",
+    "summary": "Calls sub_0043C900 on the object's +0x08 member, releases mouse capture, and clears the byte at +0x30.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp"
+  },
   "0x00442CC0": {
     "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::PanState",
