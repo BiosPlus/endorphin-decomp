@@ -1,0 +1,13 @@
+{
+  "va": "0x00404C40",
+  "size": 6,
+  "orig_symbol": "sub_00404C40",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "GetConstant_006A5ED2",
+  "signature": "extern \"C\" int* __cdecl fn_00404C40()",
+  "summary": "Returns the address of the .rdata constant 0x006A5ED2.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:45:38Z"
+}

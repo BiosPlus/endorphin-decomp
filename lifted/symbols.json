@@ -1,4 +1,10 @@
 {
+  "0x00404C40": {
+    "name": "GetConstant_006A5ED2",
+    "signature": "extern \"C\" int* __cdecl fn_00404C40()",
+    "summary": "Returns the address of the .rdata constant 0x006A5ED2.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
