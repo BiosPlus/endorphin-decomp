@@ -7828,10 +7828,10 @@
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
   "0x005B65E0": {
-    "name": "ExprParser::BoolType::vfunc_5",
+    "name": "ExprParser::BoolType::vfunc_34",
     "class": "ExprParser::BoolType",
-    "signature": "extern \"C\" void fn_005B65E0(void)",
-    "summary": "Builds a local exception object via sub_0046C3C0, then throws it through _CxxThrowException.",
+    "signature": "uint32_t __stdcall fn_0067A6E0(uint32_t first, uint32_t second)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x005B6600": {

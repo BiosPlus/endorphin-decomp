@@ -4,11 +4,37 @@
   "orig_symbol": "ExprParser::BoolType::vfunc_5",
   "src_path": "src/ExprParser/BoolType.cpp",
   "lifted_path": "lifted/ExprParser/BoolType.cpp",
-  "name": "ExprParser::BoolType::vfunc_5",
+  "name": "ExprParser::BoolType::vfunc_34",
   "class": "ExprParser::BoolType",
-  "signature": "extern \"C\" void fn_005B65E0(void)",
-  "summary": "Builds a local exception object via sub_0046C3C0, then throws it through _CxxThrowException.",
+  "signature": "uint32_t __stdcall fn_0067A6E0(uint32_t first, uint32_t second)",
+  "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::BoolType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T14:51:25Z"
+  "lifted_at": "2026-11-22T14:51:30Z"
 }
