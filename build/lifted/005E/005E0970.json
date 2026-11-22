@@ -1,0 +1,22 @@
+{
+  "va": "0x005E0970",
+  "size": 50,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_60",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::countTrueVfunc55",
+  "class": "NMData::SkeletalJointData",
+  "signature": "int32_t fn_005E0970(void* self)",
+  "summary": "Calls virtual slot 55 (0xDC) on self for indices 0..5 and returns how many calls returned true.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:56Z"
+}

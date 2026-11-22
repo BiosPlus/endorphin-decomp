@@ -7198,6 +7198,13 @@
     "summary": "Forwards vfunc_11 to the subobject at +0x184+0xC when +0x184 is set; otherwise returns 3.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005E0970": {
+    "name": "NMData::SkeletalJointData::countTrueVfunc55",
+    "class": "NMData::SkeletalJointData",
+    "signature": "int32_t fn_005E0970(void* self)",
+    "summary": "Calls virtual slot 55 (0xDC) on self for indices 0..5 and returns how many calls returned true.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005E2A90": {
     "name": "NMData::HingeData::vfunc_14",
     "class": "NMData::HingeData",
