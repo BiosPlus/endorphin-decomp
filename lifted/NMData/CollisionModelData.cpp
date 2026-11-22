@@ -151,3 +151,58 @@ void __thiscall fn_005C4020(void* self) {
     lift_field<uint8_t>(self, 0x19F) = 0;
     ext_005C3660(self);
 }
+
+// [0x005C3B40]
+// @name NMData::CollisionModelData::vfunc_38
+// @class NMData::CollisionModelData
+// @summary Builds a zeroed vec3, scales one axis by *scale depending on the kind code of the object at +0x15C, pushes it to the sub-object at +0x0C, then forwards a renderer-derived value to the object at +0x10.
+// @field NMData::CollisionModelData +0x0C void* field_0x0c
+// @field NMData::CollisionModelData +0x10 void* field_0x10
+// @field NMData::CollisionModelData +0x15C void* field_0x15c
+
+#include "lift_compat.h"
+
+extern "C" {
+const float* __thiscall ext_005B11F0(void* self);
+}
+
+namespace {
+struct Vec3 {
+    float x;
+    float y;
+    float z;
+};
+}
+
+void fn_005C3B40(void* self, const float* scale) {
+    void* kind_obj = lift_field<void*>(self, 0x15C);
+    if (kind_obj == nullptr) {
+        return;
+    }
+
+    // Sub-object at +0x0C: vtable slot 6 fills the vector, slot 5 consumes it.
+    void* sub = lift_field<void*>(self, 0x0C);
+    void* const* sub_vt = *reinterpret_cast<void* const* const*>(sub);
+
+    Vec3 v{0.0f, 0.0f, 0.0f};
+    auto get_vec = reinterpret_cast<void (*)(void*, Vec3*)>(sub_vt[6]);
+    get_vec(sub, &v);
+
+    const uint32_t kind = lift_field<uint32_t>(kind_obj, 8);
+    if (kind == 5u || kind == 4u) {
+        v.y = v.y * *scale;
+    } else if (kind == 2u) {
+        v.z = v.z * *scale;
+    }
+
+    auto set_vec = reinterpret_cast<void (*)(void*, Vec3*)>(sub_vt[5]);
+    set_vec(sub, &v);
+
+    void* obj2 = lift_field<void*>(self, 0x10);
+    if (obj2 != nullptr) {
+        void* const* obj2_vt = *reinterpret_cast<void* const* const*>(obj2);
+        const float* r = ext_005B11F0(kind_obj);
+        auto fn13 = reinterpret_cast<void (*)(void*, const float*)>(obj2_vt[13]);
+        fn13(obj2, r);
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "va": "0x005C3B40",
+  "size": 181,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_38",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_38",
+  "class": "NMData::CollisionModelData",
+  "signature": "void fn_005C3B40(void* self, const float* scale)",
+  "summary": "Builds a zeroed vec3, scales one axis by *scale depending on the kind code of the object at +0x15C, pushes it to the sub-object at +0x0C, then forwards a renderer-derived value to the object at +0x10.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:19:39Z"
+}

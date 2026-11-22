@@ -7440,6 +7440,13 @@
     "summary": "If field_0x15c is set, fetches a 3-float vector from the embedded sub-object at +0x0c, scales it uniformly by scale[0], passes it back to that sub-object's slot 5, then if field_0x10 is set calls its slot 13 with ext_005B11F0(field_0x15c).",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C3B40": {
+    "name": "NMData::CollisionModelData::vfunc_38",
+    "class": "NMData::CollisionModelData",
+    "signature": "void fn_005C3B40(void* self, const float* scale)",
+    "summary": "Builds a zeroed vec3, scales one axis by *scale depending on the kind code of the object at +0x15C, pushes it to the sub-object at +0x0C, then forwards a renderer-derived value to the object at +0x10.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C3E20": {
     "name": "NMData::CollisionModelData::vfunc_14",
     "class": "NMData::CollisionModelData",
