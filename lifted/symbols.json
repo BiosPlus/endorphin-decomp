@@ -3633,6 +3633,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004B6760 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004B7160": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_16",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e",
+    "signature": "void* fn_004B7160(void* self)",
+    "summary": "Dynamic-casts self to the MaterialPair enum type via __RTDynamicCast (pointer cast; returns null on failure).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004B7A40": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_1",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
