@@ -15,3 +15,19 @@ extern "C" void* __fastcall fn_00520420(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0051DE10] StateMachine::State::vfunc_11 (28 bytes)
+// @name StateMachine::State::vfunc_11
+// @class StateMachine::State
+// @summary If field +0x154 is set, forward to vtable slot 11 of the sub-object at +0x10 and return its result; else return 0.
+// @field StateMachine::State +0x154 void* field_0x154
+uint32_t fn_0051DE10(void* self) {
+    void* sub = lift_field<void*>(self, 0x154);
+    if (sub == nullptr) {
+        return 0;
+    }
+    void* obj = static_cast<uint8_t*>(sub) + 0x10;
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using Slot11 = uint32_t (*)(void*);
+    return reinterpret_cast<Slot11>(vtbl[11])(obj);
+}

@@ -4495,6 +4495,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x5C and tail-calls sub_00680800.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x0051DE10": {
+    "name": "StateMachine::State::vfunc_11",
+    "class": "StateMachine::State",
+    "signature": "uint32_t fn_0051DE10(void* self)",
+    "summary": "If field +0x154 is set, forward to vtable slot 11 of the sub-object at +0x10 and return its result; else return 0.",
+    "lifted_path": "lifted/StateMachine/auto_tiny.cpp"
+  },
   "0x0051DE30": {
     "name": "StateMachine::State::vfunc_1",
     "class": "StateMachine::State",

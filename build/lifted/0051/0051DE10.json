@@ -1,0 +1,22 @@
+{
+  "va": "0x0051DE10",
+  "size": 28,
+  "orig_symbol": "StateMachine::State::vfunc_11",
+  "src_path": "src/StateMachine/auto_tiny.cpp",
+  "lifted_path": "lifted/StateMachine/auto_tiny.cpp",
+  "name": "StateMachine::State::vfunc_11",
+  "class": "StateMachine::State",
+  "signature": "uint32_t fn_0051DE10(void* self)",
+  "summary": "If field +0x154 is set, forward to vtable slot 11 of the sub-object at +0x10 and return its result; else return 0.",
+  "fields": [
+    {
+      "class": "StateMachine::State",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:03Z"
+}
