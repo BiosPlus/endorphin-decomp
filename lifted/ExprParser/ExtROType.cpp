@@ -2,10 +2,14 @@
 #include "lift_compat.h"
 // Forwards its single argument (this) to ext_00672000; no fields accessed here.
 extern "C" void ext_00672000(void* self);
+// Virtual-call forwarder: reads the wrapped object pointer at +0x04, replaces the
+// this-argument with the pointer at +0x00, and tail-calls vtable slot 21 (0x54) of
+// the wrapped object. Modeled portably as an indirect call returning the callee's
+// eax result.
 
-// [0x0066BA30] ExprParser::ExtROType::vfunc_38 (12 bytes)
-// @name ExprParser::ExtROType::vfunc_38
-// @class ExprParser::ExtROType
+// this-argument with the pointer at +0x00, and tail-calls vtable slot 21 (0x54) of
+// the wrapped object. Modeled portably as an indirect call returning the callee's
+// eax result.
 // @summary Forwards the object pointer to ExprParser::ExtROType helper at 0x00672000.
 void fn_0066BA30(void* self) {
     ext_00672000(self);
@@ -51,4 +55,19 @@ void ExprParser_ExtROType_vfunc_1(void* self) {
     // eax = vtbl[1]; jmp eax with this = P1
     VFunc1 target = reinterpret_cast<VFunc1>(vtbl[1]);
     target(p1);
+}
+
+// [0x0066AFA0] ExprParser::ExtROType::vfunc_21 (20 bytes)
+// @name ExprParser::ExtROType::vfunc_21
+// @class ExprParser::ExtROType
+// @summary Forwards vfunc_21 to the inner object at +0x04, passing the pointer at +0x00 as this.
+// @field ExprParser::ExtROType +0x00 void* field_0x00
+// @field ExprParser::ExtROType +0x04 void* field_0x04
+uint32_t fn_0066AFA0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* inner = lift_field<void*>(base, 0x04);
+    void* newThis = lift_field<void*>(base, 0x00);
+    void** vtable = *static_cast<void***>(inner);
+    using VFunc = uint32_t (*)(void*);
+    return reinterpret_cast<VFunc>(vtable[21])(newThis);
 }

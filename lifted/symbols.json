@@ -2877,6 +2877,13 @@
     "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AFA0": {
+    "name": "ExprParser::ExtROType::vfunc_21",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t fn_0066AFA0(void* self)",
+    "summary": "Forwards vfunc_21 to the inner object at +0x04, passing the pointer at +0x00 as this.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066AFC0": {
     "name": "ExprParser::ExtROType::vfunc_1",
     "class": "ExprParser::ExtROType",
