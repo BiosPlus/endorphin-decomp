@@ -538,6 +538,13 @@
     "summary": "Loads the float referenced by the proxy's stored pointer and returns it.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x004C65A0": {
+    "name": "NMData::ForceEventData::vfunc_0_off_158",
+    "class": "NMData::ForceEventData",
+    "signature": "void fn_004C65A0(void* self)",
+    "summary": "Non-virtual-thunk adjustor: rebases this from the LoadableFromXML subobject (+0x158) to the ForceEventData object and tail-calls ForceEventData::vfunc_0.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004C65B0": {
     "name": "NMData::ForceEventData::vfunc_1_off_C",
     "class": "NMData::ForceEventData",

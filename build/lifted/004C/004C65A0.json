@@ -1,0 +1,14 @@
+{
+  "va": "0x004C65A0",
+  "size": 11,
+  "orig_symbol": "NMData::ForceEventData::vfunc_0_off_158",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::ForceEventData::vfunc_0_off_158",
+  "class": "NMData::ForceEventData",
+  "signature": "void fn_004C65A0(void* self)",
+  "summary": "Non-virtual-thunk adjustor: rebases this from the LoadableFromXML subobject (+0x158) to the ForceEventData object and tail-calls ForceEventData::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:12:12Z"
+}

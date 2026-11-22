@@ -159,3 +159,12 @@ void* fn_00499B30(void* self) {
     }
     return static_cast<char*>(self) + 0x8;
 }
+
+// [0x004C65A0] NMData::ForceEventData::vfunc_0_off_158 (11 bytes)
+// @name NMData::ForceEventData::vfunc_0_off_158
+// @class NMData::ForceEventData
+// @summary Non-virtual-thunk adjustor: rebases this from the LoadableFromXML subobject (+0x158) to the ForceEventData object and tail-calls ForceEventData::vfunc_0.
+void fn_004C65A0(void* self) {
+    // sub ecx, 0x158 ; jmp ForceEventData::vfunc_0
+    ext_004C6850(static_cast<char*>(self) - 0x158);
+}
