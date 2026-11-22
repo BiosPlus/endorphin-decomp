@@ -20970,3 +20970,29 @@ l73C0F5:
         ret 4
     }
 }
+
+// [0x00736FE0] sub_00736FE0 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00736FE0() {
+    __asm {
+        _emit 0x00
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        _emit 0x05
+        add eax, 0x05050505
+        add eax, 0x02010505
+        add eax, 0x90040503
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
