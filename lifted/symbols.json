@@ -1,4 +1,11 @@
 {
+  "0x00401840": {
+    "name": "sub_00401840",
+    "class": "(none)",
+    "signature": "const char* fn_00401840()",
+    "summary": "Returns the address of the read-only string constant at 0x00928A98.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00404C40": {
     "name": "GetConstant_006A5ED2",
     "signature": "extern \"C\" int* __cdecl fn_00404C40()",
