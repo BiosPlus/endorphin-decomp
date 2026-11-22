@@ -141,5 +141,7 @@
     "0x0074141E",
     "0x00741430"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T03:00:11Z"
 }
