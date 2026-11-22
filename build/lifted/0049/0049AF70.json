@@ -1,0 +1,40 @@
+{
+  "va": "0x0049AF70",
+  "size": 84,
+  "orig_symbol": "NMData::State::vfunc_10_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_10_off_8",
+  "class": "NMData::State",
+  "signature": "bool fn_0049AF70(void* self, const float* pt)",
+  "summary": "Returns true if the 2D point pt[0..1] lies inside the box (e0,e4)-(e8,ec) stored in this.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE4",
+      "type": "float",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:40:41Z"
+}

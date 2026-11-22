@@ -3319,6 +3319,13 @@
     "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns 1 if the int it points to is nonzero, else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049AF70": {
+    "name": "NMData::State::vfunc_10_off_8",
+    "class": "NMData::State",
+    "signature": "bool fn_0049AF70(void* self, const float* pt)",
+    "summary": "Returns true if the 2D point pt[0..1] lies inside the box (e0,e4)-(e8,ec) stored in this.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049B210": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_2",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
