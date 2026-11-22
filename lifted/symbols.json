@@ -9951,6 +9951,13 @@
     "summary": "Evaluates the left operand (vfunc 42) on (self, ctx), negates the result, and passes it to the left operand's vfunc 9.",
     "lifted_path": "lifted/ExprParser/Operators/NotEquals.cpp"
   },
+  "0x006A0A00": {
+    "name": "ExprParser::Operators::Or::vfunc_3",
+    "class": "ExprParser::Operators::Or",
+    "signature": "uint32_t fn_006A0A00(void* self, void* arg2)",
+    "summary": "Evaluates the left operand's slot 3 against self; if false, evaluates slot 3 of arg2's +0x04 object against arg2, then forwards the resulting bool to the left operand's slot 9.",
+    "lifted_path": "lifted/ExprParser/Operators/Or.cpp"
+  },
   "0x006A1440": {
     "name": "ExprParser::Operators::And::vfunc_3",
     "class": "ExprParser::Operators::And",
