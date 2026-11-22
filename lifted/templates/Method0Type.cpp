@@ -144,6 +144,7 @@ extern "C" void __fastcall ext_004CCB00(void* self);
 extern "C" void __fastcall ext_004CCDE0(void* self);
 extern "C" void __fastcall ext_005B72E0(void* self);
 extern "C" void __fastcall ext_00692D90(void* self);
+// Helper sub_0048ABB0 (22B): thiscall-style, ECX = target object.
 
 // [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
 #include "lift_compat.h"
@@ -536,4 +537,15 @@ void* fn_006930A0(void* unused, void* out) {
     ext_00692D90(target);
     ext_006290D8(out);
     return out;
+}
+
+// [0x0048B150] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>::vfunc_41 (14 bytes)
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, fire>::vfunc_41
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>
+// @summary Reads the target object pointer from the proxy's first dword and forwards it to ext_0048ABB0 (fire helper); callee pops 8 bytes of args.
+// @field ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}> +0x00 void* field_0x00
+void fn_0048B150(void* proxy, void* unused) {
+    (void)unused;
+    void* target = *static_cast<void**>(proxy);
+    ext_0048ABB0(target);
 }

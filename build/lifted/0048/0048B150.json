@@ -1,0 +1,14 @@
+{
+  "va": "0x0048B150",
+  "size": 14,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41",
+  "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}\u003e",
+  "signature": "void fn_0048B150(void* proxy, void* unused)",
+  "summary": "Reads the target object pointer from the proxy's first dword and forwards it to ext_0048ABB0 (fire helper); callee pops 8 bytes of args.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:11Z"
+}
