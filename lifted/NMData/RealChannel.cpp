@@ -23,13 +23,6 @@ void fn_0051BEF0(void* self) {
     lift_field<void*>(self, 0x3C) = static_cast<uint8_t*>(self) + 0x2C;
     lift_field<int32_t>(self, 0x40) = begin;
 }
-
-// [0x0051AB80] NMData::RealChannel::vfunc_7 (67 bytes)
-// @name NMData::RealChannel::vfunc_7
-// @class NMData::RealChannel
-// @summary Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.
-// @field RealChannel +0x30 int32_t begin
-// @field RealChannel +0x34 int32_t end
 float fn_0051AB80(void* self) {
     const uint32_t begin = static_cast<uint32_t>(lift_field<int32_t>(self, 0x30));
     const uint32_t end   = static_cast<uint32_t>(lift_field<int32_t>(self, 0x34));
@@ -74,5 +67,38 @@ void fn_0051ABD0(void* self, float scale) {
         float* value = reinterpret_cast<float*>(static_cast<uintptr_t>(cur) + 4);
         *value = *value * scale;
         cur += 8;
+    }
+}
+
+// [0x0051BA70] NMData::RealChannel::vfunc_6 (160 bytes)
+// @name NMData::RealChannel::vfunc_6
+// @class NMData::RealChannel
+// @summary Removes every 8-byte (float key, float value) entry whose key lies in [lo, hi] (inclusive), compacting the array in order; aborts if begin > end.
+// @field NMData::RealChannel +0x30 uint8_t* begin
+// @field NMData::RealChannel +0x34 uint8_t* end
+void fn_0051BA70(void* self, float lo, float hi) {
+    uint8_t*  cur  = lift_field<uint8_t*>(self, 0x30);
+    uint8_t*& last = lift_field<uint8_t*>(self, 0x34);
+
+    if (cur > last) {
+        // CRT _invalid_parameter_noinfo path: treated as fatal.
+        std::abort();
+    }
+
+    while (cur != last) {
+        if (cur >= last) {
+            std::abort();
+        }
+
+        const float key = lift_field<float>(cur, 0);
+
+        // Ordered comparisons are false for NaN, so NaN keys are kept.
+        if (lo <= key && key <= hi) {
+            // Erase the entry at cur by shifting the tail down one slot.
+            std::memmove(cur, cur + 8, static_cast<size_t>(last - (cur + 8)));
+            last -= 8;
+        } else {
+            cur += 8;
+        }
     }
 }

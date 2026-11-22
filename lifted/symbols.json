@@ -5147,6 +5147,13 @@
     "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051BA70": {
+    "name": "NMData::RealChannel::vfunc_6",
+    "class": "NMData::RealChannel",
+    "signature": "void fn_0051BA70(void* self, float lo, float hi)",
+    "summary": "Removes every 8-byte (float key, float value) entry whose key lies in [lo, hi] (inclusive), compacting the array in order; aborts if begin \u003e end.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051BED0": {
     "name": "NMData::RealChannel::vfunc_9",
     "class": "NMData::RealChannel",
