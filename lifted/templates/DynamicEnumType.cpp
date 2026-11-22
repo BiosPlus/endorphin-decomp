@@ -107,17 +107,12 @@ void* fn_004D3E20(void* self) {
 void* fn_00515850(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A4279C, 0);
 }
+extern "C" void* __cdecl ext_006A6E9E(void* obj, int vfDelta, void* srcType, void* targetType, int isReference);
+extern char mem_00A2E2F8[];
+extern char mem_00A8AFF4[];
 
-// [0x005C4870] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
-// @summary Dynamic-casts self to the CollisionModelDataBase material-enum type via __RTDynamicCast (pointer cast; returns null on failure).
-void* fn_005C4870(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
-}
-
-// [0x0067A770] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_9 (32 bytes)
-// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_9
+extern char mem_00A2E2F8[];
+extern char mem_00A8AFF4[];
 // @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
 // @summary Calls the inner object's vtable slot 30 (offset 0x78) with self, then forwards arg to sub_006720A0 on self.
 // @field ExprParser::DynamicEnumType +0x04 void* field_0x04
@@ -128,11 +123,16 @@ void fn_0067A770(void* self, void* arg) {
     reinterpret_cast<VSlot30>(vtbl[30])(inner, self);
     ext_006720A0(self, arg);
 }
+extern "C" void __attribute__((thiscall)) ext_006720A0(void* self, void* arg);
+struct ValueArg {
+    void* field_0x0;
+    void** field_0x4;
+};
 
-// [0x004A9CC0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
-// @summary Dynamic-casts self to the BehaviourData enum type via __RTDynamicCast (pointer cast; returns null on failure).
+struct ValueArg {
+    void* field_0x0;
+    void** field_0x4;
+};
 void* fn_004A9CC0(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A32954, 0);
 }
@@ -151,4 +151,30 @@ void* fn_004B7160(void* self) {
 // @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (pointer cast; returns null on failure).
 void* fn_004D3E20(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
+}
+
+// [0x005C4870]
+// @name ExprParser::DynamicEnumType<CollisionModelDataBase>::vfunc_16
+// @class ExprParser::DynamicEnumType
+// @summary Dynamic-casts the argument pointer between RTTI types and returns the result (this unused).
+struct DynamicEnumTypeCollision {
+    void* __thiscall vfunc_16(void* obj);
+};
+
+void* __thiscall DynamicEnumTypeCollision::vfunc_16(void* obj) {
+    return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
+}
+
+// [0x0067A770]
+// @name ExprParser::DynamicEnumType::vfunc_9
+// @class ExprParser::DynamicEnumType
+// @summary Calls virtual method at +0x78 on arg1's inner object, then forwards arg1 and arg2 to sub_006720A0.
+// @field ValueArg +0x04 void** field_0x4
+void __attribute__((thiscall)) DynamicEnumType_vfunc_9(void* thisptr, ValueArg* arg1, void* arg2) {
+    (void)thisptr;
+    void** obj = arg1->field_0x4;
+    typedef void (__attribute__((thiscall)) *Fn)(void*, void*);
+    Fn fn = (Fn)((void**)(*obj))[0x78 / 4];
+    fn(obj, arg1);
+    ext_006720A0(arg1, arg2);
 }
