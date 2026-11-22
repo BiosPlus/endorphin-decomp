@@ -9785,6 +9785,13 @@
     "summary": "Forwarding tail-call: invokes virtual slot 47 (+0xBC) on field_0x04 of the held pointer, passing the held pointer as the argument.",
     "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
   },
+  "0x0066BDB0": {
+    "name": "ExprParser::SubComponentType::vfunc_2",
+    "class": "ExprParser::SubComponentType",
+    "signature": "uint32_t fn_0066BDB0(void* self, uint32_t arg)",
+    "summary": "Calls the object's vfunc_0 to obtain a sub-component pointer, forwards that pointer to the sub-component's vfunc_2 for the result, then finalizes the temporary out-slot via vtable slot 30 and returns the result.",
+    "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
+  },
   "0x0066BE20": {
     "name": "ExprParser::SubComponentType::vfunc_3",
     "class": "ExprParser::SubComponentType",

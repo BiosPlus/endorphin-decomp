@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BDB0",
+  "size": 110,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_2",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_2",
+  "class": "ExprParser::SubComponentType",
+  "signature": "uint32_t fn_0066BDB0(void* self, uint32_t arg)",
+  "summary": "Calls the object's vfunc_0 to obtain a sub-component pointer, forwards that pointer to the sub-component's vfunc_2 for the result, then finalizes the temporary out-slot via vtable slot 30 and returns the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (sub-component object returned by vfunc_0; its class is not",
+      "name": "identified)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:16:15Z"
+}
