@@ -127,3 +127,14 @@ extern "C" void __fastcall fn_00622780(void* self, int edx_unused, float value) 
     float* field = reinterpret_cast<float*>(static_cast<char*>(self) + 0x04);
     *field = value;
 }
+
+// [0x00622790] NMData::HingeCalibrationVariables::vfunc_4 (10 bytes)
+// @name NMData::HingeCalibrationVariables::vfunc_4
+// @class NMData::HingeCalibrationVariables
+// @summary Stores the single float argument into the object at offset +0x08 (thiscall, ret 4).
+// @field NMData::HingeCalibrationVariables +0x08 float field_0x08
+extern "C" void __fastcall fn_00622790(void* self, int edx_unused, float value) {
+    (void)edx_unused;
+    float* field = reinterpret_cast<float*>(static_cast<char*>(self) + 0x08);
+    *field = value;
+}

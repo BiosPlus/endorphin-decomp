@@ -1,0 +1,22 @@
+{
+  "va": "0x00622790",
+  "size": 10,
+  "orig_symbol": "NMData::HingeCalibrationVariables::vfunc_4",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::HingeCalibrationVariables::vfunc_4",
+  "class": "NMData::HingeCalibrationVariables",
+  "signature": "extern \"C\" void __fastcall fn_00622790(void* self, int edx_unused, float value)",
+  "summary": "Stores the single float argument into the object at offset +0x08 (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:07:48Z"
+}
