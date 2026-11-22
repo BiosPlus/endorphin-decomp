@@ -1,0 +1,14 @@
+{
+  "va": "0x005C2FB0",
+  "size": 55,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_1_off_158",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_1_off_158",
+  "class": "NMData::CollisionModelData",
+  "signature": "void __thiscall fn_005C2FB0(void* self, const float* vec3)",
+  "summary": "Forwards a 3D point (with w=1.0f) to RenderObjectOwner::vfunc_5 after adjusting this pointer",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T07:45:28Z"
+}
