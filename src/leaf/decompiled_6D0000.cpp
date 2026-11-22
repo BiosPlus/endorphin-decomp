@@ -24949,3 +24949,34 @@ extern "C" __declspec(naked) void __fastcall fn_006D2064(void* self) {
         _emit 0xff
     }
 }
+
+// [0x006D1FB4] sub_006D1FB4 (25 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D1FB4(void* self) {
+    __asm {
+        _emit 0x00
+        _emit 0x01
+        _emit 0x00
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x01
+        _emit 0x01
+        _emit 0x04
+        _emit 0x04
+        _emit 0x02
+        _emit 0x04
+        _emit 0x04
+        _emit 0x01
+        _emit 0x04
+        _emit 0x04
+        _emit 0x01
+        _emit 0x04
+        _emit 0x01
+        _emit 0x03
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+        _emit 0x04
+    }
+}
