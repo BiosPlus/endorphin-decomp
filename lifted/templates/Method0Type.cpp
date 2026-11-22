@@ -107,3 +107,18 @@ extern "C" float __stdcall fn_0068BFB0(void* self) {
     ext_0068BC50(target);
     return 0.0f;
 }
+
+// [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
+#include "lift_compat.h"
+
+// Known callee 0x004CA560: sub_004CA560 (Virtual dispatch thunk: forwards to vtable slot at +0x160.)
+extern "C" void ext_004CA560(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData>::vfunc_41
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>
+// @summary Loads the held object pointer at self+0 and forwards the call to its vtable slot +0x160 via ext_004CA560.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004CB470(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_004CA560(target);
+}
