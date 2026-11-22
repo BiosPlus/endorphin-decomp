@@ -1,0 +1,13 @@
+{
+  "va": "0x00870E86",
+  "size": 3,
+  "orig_symbol": "sub_00870E86",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "sub_00870E86",
+  "signature": "void fn_00870E86(void* self)",
+  "summary": "Epilogue fragment: pops saved edi, esi and ebx from the stack; no portable C++ equivalent for the register restore, so the body is empty.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:40:10Z"
+}

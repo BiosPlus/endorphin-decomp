@@ -60,5 +60,11 @@
     "signature": "int* fn_005B1110(void* self)",
     "summary": "Returns the address of the global mem_00B59400 (ignores this).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
+  "0x00870E86": {
+    "name": "sub_00870E86",
+    "signature": "void fn_00870E86(void* self)",
+    "summary": "Epilogue fragment: pops saved edi, esi and ebx from the stack; no portable C++ equivalent for the register restore, so the body is empty.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   }
 }
