@@ -1,0 +1,14 @@
+{
+  "va": "0x0066AD40",
+  "size": 38,
+  "orig_symbol": "ExprParser::RealType::vfunc_0",
+  "src_path": "src/ExprParser/RealType.cpp",
+  "lifted_path": "lifted/ExprParser/RealType.cpp",
+  "name": "ExprParser::RealType::vfunc_0",
+  "class": "ExprParser::RealType",
+  "signature": "void* fn_0066AD40(void* self, const float* value)",
+  "summary": "Forwards the float read from *value (with a zero flag) to 0x00672080 and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:26Z"
+}

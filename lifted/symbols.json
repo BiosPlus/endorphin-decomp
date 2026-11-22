@@ -8700,6 +8700,13 @@
     "summary": "Stores address of mem_0092DF34 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x0066AD40": {
+    "name": "ExprParser::RealType::vfunc_0",
+    "class": "ExprParser::RealType",
+    "signature": "void* fn_0066AD40(void* self, const float* value)",
+    "summary": "Forwards the float read from *value (with a zero flag) to 0x00672080 and returns self.",
+    "lifted_path": "lifted/ExprParser/RealType.cpp"
+  },
   "0x0066AD70": {
     "name": "ExprParser::RealType::vfunc_1",
     "class": "ExprParser::RealType",
