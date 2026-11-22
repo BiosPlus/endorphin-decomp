@@ -15649,3 +15649,350 @@ extern "C" __declspec(naked) void __fastcall fn_0071D630(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0071AA20] sub_0071AA20 (1360 bytes)
+extern "C" void ext_006D23B0();
+extern "C" void ext_006D80A0();
+extern "C" void ext_0071AF70();
+extern "C" void ext_0071B010();
+extern "C" void ext_0071B040();
+extern "C" void ext_0071B070();
+extern "C" void ext_0071B0B0();
+extern "C" void ext_0071B920();
+extern "C" void ext_0077FC70();
+
+extern "C" __declspec(naked) void __fastcall fn_0071AA20(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push 08bd3d8h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 4ch
+        push ebx
+        push ebp
+        push esi
+        xor ebx, ebx
+        push 3ff00000h
+        push ebx
+        push 0c0490000h
+        push ebx
+        push ebx
+        mov esi, ecx
+        push ebx
+        push ebx
+        push ebx
+        lea ecx, [esp + 58h]
+        mov dword ptr [esp + 48h], 0
+        mov dword ptr [esp + 4ch], 0
+        mov dword ptr [esp + 40h], 0
+        mov dword ptr [esp + 44h], 0
+        mov dword ptr [esp + 38h], 0
+        mov dword ptr [esp + 3ch], 0
+        mov dword ptr [esp + 50h], 0
+        mov dword ptr [esp + 54h], 3ff00000h
+        call ext_006D23B0
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 64h], ebx
+        call ext_0071AF70
+        or ebp, -1
+        lea ecx, [esp + 38h]
+        mov dword ptr [esp + 60h], ebp
+        call ext_006D80A0
+        push 3ff00000h
+        push ebx
+        push ebx
+        push ebx
+        push 3ff00000h
+        push ebx
+        push ebx
+        push ebx
+        lea ecx, [esp + 58h]
+        call ext_006D23B0
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 64h], 1
+        call ext_0071B010
+        lea ecx, [esp + 38h]
+        mov dword ptr [esp + 60h], ebp
+        call ext_006D80A0
+        push 3ff00000h
+        push ebx
+        push ebx
+        push ebx
+        push ebx
+        push ebx
+        push ebx
+        push ebx
+        lea ecx, [esp + 58h]
+        call ext_006D23B0
+        mov ebp, 2
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 64h], ebp
+        call ext_0071B040
+        lea ecx, [esp + 38h]
+        mov dword ptr [esp + 60h], 0ffffffffh
+        call ext_006D80A0
+        mov eax, dword ptr [esi + 0ch]
+        push ebx
+        push ebx
+        mov ecx, esi
+        mov dword ptr [eax + 1850h], ebx
+        call ext_0071B070
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aa8d10h
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 40440000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aa8d1ch
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 3ff00000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aa8d2ch
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 3ff00000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aa8d3ch
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push ebx
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aa8d4ch
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push ebx
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aa8d70h
+        mov dword ptr [esp + 1ch], ebx
+        mov dword ptr [esp + 20h], ebx
+        mov dword ptr [esp + 24h], ebx
+        mov dword ptr [esp + 28h], ebx
+        mov dword ptr [esp + 2ch], ebx
+        mov dword ptr [esp + 30h], ebx
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push ebx
+        push ebx
+        lea ecx, [esp + 20h]
+        push ebx
+        push ecx
+        mov ecx, eax
+        call dword ptr [edx + 8ch]
+        push ebx
+        push ebx
+        mov ecx, esi
+        call ext_0071B0B0
+        mov edx, dword ptr [esi + 0ch]
+        push 0aac828h
+        mov byte ptr [edx + 160h], 1
+        mov ecx, dword ptr [esi + 0ch]
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 3ff00000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov eax, dword ptr [esi + 0ch]
+        mov byte ptr [eax + 1e8h], bl
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [ecx + 270h], 1
+        mov edx, dword ptr [esi + 0ch]
+        mov dword ptr [edx + 490h], ebx
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 380h], ebx
+        mov ecx, dword ptr [esi + 0ch]
+        mov dword ptr [ecx + 518h], ebx
+        mov dword ptr [ecx + 51ch], 40740000h
+        mov edx, dword ptr [esi + 0ch]
+        mov dword ptr [edx + 5a0h], ebx
+        mov dword ptr [edx + 5a4h], 40690000h
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 628h], ebx
+        mov dword ptr [eax + 62ch], 3ff00000h
+        mov ecx, dword ptr [esi + 0ch]
+        push 4
+        mov byte ptr [ecx + 1168h], bl
+        mov ecx, esi
+        call ext_0071B920
+        mov edx, dword ptr [esi + 0ch]
+        push 0b5d2c0h
+        mov dword ptr [edx + 408h], ebp
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 0a80h], ebx
+        mov dword ptr [eax + 0a84h], 40240000h
+        mov ecx, dword ptr [esi + 0ch]
+        mov dword ptr [ecx + 0b08h], ebx
+        mov dword ptr [ecx + 0b0ch], 40af4000h
+        mov edx, dword ptr [esi + 0ch]
+        lea ecx, [esi + 50h]
+        mov dword ptr [edx + 2f8h], ebx
+        mov dword ptr [edx + 2fch], 40418000h
+        call ext_006B9EC0
+        push 0b5d2c0h
+        lea ecx, [esi + 9ch]
+        call ext_006B9EC0
+        mov eax, dword ptr [esi + 0ch]
+        push ebx
+        push ebx
+        push ebx
+        mov dword ptr [eax + 0f48h], ebp
+        mov ecx, dword ptr [esi + 0ch]
+        mov dword ptr [esp + 18h], 55555546h
+        mov dword ptr [esp + 1ch], 3ff55555h
+        mov dword ptr [ecx + 1498h], ebx
+        mov edx, dword ptr [esi + 0ch]
+        mov byte ptr [edx + 15a8h], 1
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 1520h], ebx
+        mov dword ptr [eax + 1524h], 3fe00000h
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [ecx + 1278h], bl
+        mov edx, dword ptr [esi + 0ch]
+        mov byte ptr [edx + 1388h], 1
+        mov eax, dword ptr [esi + 0ch]
+        mov byte ptr [eax + 1410h], 1
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [ecx + 1300h], bl
+        mov edx, dword ptr [esi + 0ch]
+        mov dword ptr [edx + 0fd0h], ebx
+        mov dword ptr [edx + 0fd4h], 40590000h
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 1058h], ebx
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [ecx + 0e38h], 1
+        mov edx, dword ptr [esi + 0ch]
+        mov byte ptr [edx + 0ec0h], bl
+        mov eax, dword ptr [esi + 0ch]
+        mov byte ptr [eax + 10e0h], 1
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [ecx + 860h], 1
+        mov edx, dword ptr [esi + 0ch]
+        mov byte ptr [edx + 970h], 1
+        mov eax, dword ptr [esi + 0ch]
+        mov byte ptr [eax + 7d8h], 1
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [esi + 0e8h], 1
+        mov byte ptr [ecx + 9f8h], bl
+        mov edx, dword ptr [esi + 0ch]
+        mov byte ptr [edx + 8e8h], bl
+        mov eax, dword ptr [esi + 0ch]
+        mov byte ptr [eax + 1630h], bl
+        mov ecx, dword ptr [esi + 0ch]
+        lea eax, [esp + 18h]
+        mov dword ptr [ecx + 16b8h], 1
+        mov ecx, dword ptr [esi + 0ch]
+        add ecx, 16c0h
+        push eax
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 8ch]
+        push 3ff00000h
+        mov byte ptr [esi + 0e9h], bl
+        mov byte ptr [esi + 0eah], bl
+        push ebx
+        push ebx
+        push ebx
+        push 3ff00000h
+        push ebx
+        push ebx
+        push ebx
+        lea ecx, [esi + 0f0h]
+        call ext_0077FC70
+        mov ecx, dword ptr [esi + 0ch]
+        push ebx
+        push ebx
+        push ebx
+        mov byte ptr [ecx + 6b0h], bl
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [esp + 24h], 33333333h
+        mov dword ptr [esp + 28h], 3fd33333h
+        lea ecx, [eax + 6b8h]
+        mov dword ptr [esp + 2ch], 33333333h
+        mov dword ptr [esp + 30h], 3fd33333h
+        mov dword ptr [esp + 34h], 33333333h
+        mov dword ptr [esp + 38h], 3fd33333h
+        mov edx, dword ptr [ecx]
+        lea eax, [esp + 24h]
+        push eax
+        call dword ptr [edx + 8ch]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aac568h
+        mov byte ptr [ecx + 18d8h], bl
+        mov edx, dword ptr [esi + 0ch]
+        mov byte ptr [edx + 1b80h], bl
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 1c08h], 0e939eaddh
+        mov dword ptr [eax + 1c0ch], 3fe8e37dh
+        mov ecx, dword ptr [esi + 0ch]
+        mov dword ptr [esi + 110h], ebx
+        mov dword ptr [ecx + 1d18h], 7
+        mov edx, dword ptr [esi + 0ch]
+        mov dword ptr [esi + 114h], 1
+        mov byte ptr [edx + 1c90h], bl
+        mov eax, dword ptr [esi + 0ch]
+        mov byte ptr [eax + 1960h], bl
+        mov ecx, dword ptr [esi + 0ch]
+        mov dword ptr [ecx + 19e8h], ebx
+        mov edx, dword ptr [esi + 0ch]
+        mov dword ptr [edx + 1af8h], ebx
+        mov dword ptr [edx + 1afch], 40690000h
+        mov eax, dword ptr [esi + 0ch]
+        mov dword ptr [eax + 1a70h], ebx
+        mov dword ptr [eax + 1a74h], 400c0000h
+        mov ecx, dword ptr [esi + 0ch]
+        mov byte ptr [ecx + 17c8h], bl
+        mov ecx, dword ptr [esi + 0ch]
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 40590000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aac558h
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 40490000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esi + 0ch]
+        push 0aac548h
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        push 40490000h
+        push ebx
+        mov ecx, eax
+        call dword ptr [edx + 80h]
+        mov ecx, dword ptr [esp + 58h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
