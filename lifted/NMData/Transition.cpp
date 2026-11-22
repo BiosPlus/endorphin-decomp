@@ -68,3 +68,22 @@ uint32_t fn_004972E0(void* self, void* arg1, void* arg2) {
     using VFn = uint32_t (*)(void* obj, void* a, void* b);
     return reinterpret_cast<VFn>(vtbl[11])(target, arg1, self);
 }
+
+// [0x00497680] NMData::Transition::vfunc_12 (66 bytes)
+// @name NMData::Transition::vfunc_12
+// @class NMData::Transition
+// @summary Copies the 8-byte element at index from the array at +0x88 (end at +0x8C) into out and returns out; aborts on a null array or out-of-range index.
+// @field NMData::Transition +0x88 void* field_0x88
+// @field NMData::Transition +0x8C void* field_0x8C
+void* fn_00497680(void* self, void* out, uint32_t index) {
+    const void* begin = lift_field<void*>(self, 0x88);
+    const void* end = lift_field<void*>(self, 0x8C);
+    // Element size is 8 bytes; count is the arithmetic (signed) byte difference divided by 8.
+    const int32_t count = static_cast<int32_t>(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin))) >> 3;
+    if (begin == nullptr || index >= static_cast<uint32_t>(count)) {
+        // Original calls _invalid_parameter_noinfo, which does not return.
+        std::abort();
+    }
+    std::memcpy(out, static_cast<const uint8_t*>(begin) + 8u * static_cast<size_t>(index), 8);
+    return out;
+}

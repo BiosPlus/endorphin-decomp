@@ -3166,6 +3166,13 @@
     "summary": "Returns the byte at this+0xB4 and resets it to zero.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00497680": {
+    "name": "NMData::Transition::vfunc_12",
+    "class": "NMData::Transition",
+    "signature": "void* fn_00497680(void* self, void* out, uint32_t index)",
+    "summary": "Copies the 8-byte element at index from the array at +0x88 (end at +0x8C) into out and returns out; aborts on a null array or out-of-range index.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x00499AF0": {
     "name": "NMData::Transition::vfunc_6_off_10",
     "class": "NMData::Transition",
@@ -8027,6 +8034,13 @@
     "signature": "int fn_0066AE50(const int32_t* obj)",
     "summary": "Returns 1 if the 32-bit integer stored at the first dword of the argument object is nonzero, else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
+  "0x0066AE90": {
+    "name": "ExprParser::BoolType::vfunc_0",
+    "class": "ExprParser::BoolType",
+    "signature": "void* __stdcall fn_0066AE90(void* obj, const uint8_t* flagPtr)",
+    "summary": "Reads the byte flag at *flagPtr, applies it to obj via ext_006720A0, and returns obj.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x0066AEF0": {
     "name": "ExprParser::BoolType::vfunc_2",
