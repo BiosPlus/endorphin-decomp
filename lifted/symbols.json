@@ -10448,6 +10448,13 @@
     "summary": "Evaluates three operand tokens (arg3, arg2, arg1 in that order) through their sub-object vtable slot 1, packs them as floats {arg1, arg2, arg3}, and passes the array to arg1's sub-object vtable slot 11.",
     "lifted_path": "lifted/ExprParser/Operators/VectorConstructor.cpp"
   },
+  "0x006A1240": {
+    "name": "ExprParser::Operators::Modulus::vfunc_3",
+    "class": "ExprParser::Operators::Modulus",
+    "signature": "float __stdcall fn_006A1240(void* num, void* den)",
+    "summary": "Evaluates den (second arg) via its child's vfn1; if that is zero, returns child_of_num.vfn7(num, 0); otherwise computes fmod(child_of_num.vfn1(num), den_value) and passes the remainder to the same vfn7 call.",
+    "lifted_path": "lifted/ExprParser/Operators/Modulus.cpp"
+  },
   "0x006A1380": {
     "name": "ExprParser::Operators::Min::vfunc_3",
     "class": "ExprParser::Operators::Min",
