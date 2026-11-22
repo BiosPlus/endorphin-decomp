@@ -8,6 +8,6 @@
 // Recovered field layout for std::string:
 namespace lifted_layout {
 struct std_string_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x004CB440, 0x0060A090, 0x0066DD10)
+    // +0x0   void*                    field_0x00  (evidence: 0x00489540, 0x004CB440, 0x0060A090, 0x0066DD10)
 };
 } // namespace lifted_layout

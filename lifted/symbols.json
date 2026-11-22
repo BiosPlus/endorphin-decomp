@@ -3045,10 +3045,10 @@
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
   "0x00489540": {
-    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_0",
-    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
-    "signature": "void* fn_00489540(void* unused, void* out)",
-    "summary": "Stdcall (ret 8) thunk: dispatches through the target object's vtable (slot +0x160) via ext_004CA560, then runs ext_006720C0 on the out-param with flag 0 and returns the out-param.",
+    "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "int fn_0060A070(void* self)",
+    "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x0048B050": {
