@@ -1,0 +1,14 @@
+{
+  "va": "0x0066B0B0",
+  "size": 17,
+  "orig_symbol": "ExprParser::RealType::vfunc_8",
+  "src_path": "src/ExprParser/RealType.cpp",
+  "lifted_path": "lifted/ExprParser/RealType.cpp",
+  "name": "ExprParser::RealType::vfunc_8",
+  "class": "ExprParser::RealType",
+  "signature": "uint32_t __stdcall fn_0066B0B0(uint32_t first, uint32_t second)",
+  "summary": "Two-argument stdcall forwarder: passes the first stack argument as the callee's this and the second as its single stack argument, returning the callee's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:35Z"
+}

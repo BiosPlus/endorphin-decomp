@@ -2786,6 +2786,13 @@
     "summary": "Stores a float value into the object's float slot at +0x00 (RealType setter).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066B0B0": {
+    "name": "ExprParser::RealType::vfunc_8",
+    "class": "ExprParser::RealType",
+    "signature": "uint32_t __stdcall fn_0066B0B0(uint32_t first, uint32_t second)",
+    "summary": "Two-argument stdcall forwarder: passes the first stack argument as the callee's this and the second as its single stack argument, returning the callee's result.",
+    "lifted_path": "lifted/ExprParser/RealType.cpp"
+  },
   "0x0066B110": {
     "name": "ExprParser::IntType::vfunc_8",
     "class": "ExprParser::IntType",
