@@ -5921,6 +5921,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055BBF0": {
+    "name": "Acclaim2MotionIO::vfunc_48",
+    "class": "Acclaim2MotionIO",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "If self-\u003evfunc_57() returns true, tail-forwards to the sub-object at +0x584 via its vfunc_48; otherwise returns false.",
+    "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp"
+  },
   "0x0055BC20": {
     "name": "Acclaim2MotionIO::vfunc_0",
     "class": "Acclaim2MotionIO",

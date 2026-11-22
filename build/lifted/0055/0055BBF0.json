@@ -1,0 +1,28 @@
+{
+  "va": "0x0055BBF0",
+  "size": 42,
+  "orig_symbol": "Acclaim2MotionIO::vfunc_48",
+  "src_path": "src/classes/Acclaim2MotionIO.cpp",
+  "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp",
+  "name": "Acclaim2MotionIO::vfunc_48",
+  "class": "Acclaim2MotionIO",
+  "signature": "inline R lift_vcall(void* obj, A... args)",
+  "summary": "If self-\u003evfunc_57() returns true, tail-forwards to the sub-object at +0x584 via its vfunc_48; otherwise returns false.",
+  "fields": [
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Acclaim2MotionIO",
+      "offset": "+0x584",
+      "type": "void*",
+      "name": "field_0x584"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:33Z"
+}
