@@ -251,6 +251,12 @@
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x0085E04B": {
+    "name": "sub_0085E04B",
+    "signature": "void fn_0085E04B(void)",
+    "summary": "Five-byte no-op: `add eax, 0` (opcode 05 with imm32 0), which leaves the register value unchanged; no observable effect beyond flags.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00870E86": {
     "name": "sub_00870E86",
     "signature": "void fn_00870E86(void* self)",
