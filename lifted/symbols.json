@@ -2590,6 +2590,13 @@
     "summary": "Returns 1 if the 32-bit integer stored at the first dword of the argument object is nonzero, else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AEF0": {
+    "name": "ExprParser::BoolType::vfunc_2",
+    "class": "ExprParser::BoolType",
+    "signature": "int fn_0066AEF0(void* self)",
+    "summary": "Returns 1 if the first byte of the object is non-zero, else 0 (stdcall, 1 arg, ret 4).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066AF00": {
     "name": "ExprParser::BoolType::vfunc_3",
     "class": "ExprParser::BoolType",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0066AEF0",
+  "size": 14,
+  "orig_symbol": "ExprParser::BoolType::vfunc_2",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::BoolType::vfunc_2",
+  "class": "ExprParser::BoolType",
+  "signature": "int fn_0066AEF0(void* self)",
+  "summary": "Returns 1 if the first byte of the object is non-zero, else 0 (stdcall, 1 arg, ret 4).",
+  "fields": [
+    {
+      "class": "ExprParser::BoolType",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "first_byte"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:16Z"
+}

@@ -252,3 +252,13 @@ extern "C" void* __fastcall fn_0069B580(void* self, int edx_unused, unsigned int
 int fn_0066AE50(const int32_t* obj) {
     return (obj[0] != 0) ? 1 : 0;
 }
+
+// [0x0066AEF0] ExprParser::BoolType::vfunc_2 (14 bytes)
+// @name ExprParser::BoolType::vfunc_2
+// @class ExprParser::BoolType
+// @summary Returns 1 if the first byte of the object is non-zero, else 0 (stdcall, 1 arg, ret 4).
+// @field ExprParser::BoolType +0x00 uint8_t first_byte
+int fn_0066AEF0(void* self) {
+    const uint8_t first_byte = *static_cast<const uint8_t*>(self);
+    return first_byte != 0 ? 1 : 0;
+}
