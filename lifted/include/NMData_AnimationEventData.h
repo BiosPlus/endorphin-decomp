@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::AnimationEventData:
 namespace lifted_layout {
 struct NMData_AnimationEventData_Fields {
+    // +0x0   void**                   vptr  (evidence: 0x004D3CB0)
     // +0x168 int32_t                  field_0x168  (evidence: 0x004BFBE0)
 };
 } // namespace lifted_layout

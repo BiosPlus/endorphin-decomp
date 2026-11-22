@@ -17,3 +17,16 @@ extern "C" void __thiscall fn_004BFBE0(void* self) {
         ext_00599F10(r);
     }
 }
+
+// [0x004D3CB0] NMData::AnimationEventData::vfunc_61 (34 bytes)
+// @name NMData::AnimationEventData::vfunc_61
+// @class NMData::AnimationEventData
+// @summary Calls this->vtable[15](a, 0x24A, 0) (result discarded) and returns a.
+// @field NMData::AnimationEventData +0x00 void** vptr
+extern "C" void* __thiscall fn_004D3CB0(void* self, void* a) {
+    using VFn = void(__thiscall*)(void* self, void* a, uint32_t id, uint32_t zero);
+    void** vt = *reinterpret_cast<void***>(self);
+    // Third stack slot in the original frame is an artifact of the push layout; modeled as 0.
+    reinterpret_cast<VFn>(vt[15])(self, a, 0x24A, 0);
+    return a;
+}

@@ -3916,6 +3916,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004D3290 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004D3CB0": {
+    "name": "NMData::AnimationEventData::vfunc_61",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void* __thiscall fn_004D3CB0(void* self, void* a)",
+    "summary": "Calls this-\u003evtable[15](a, 0x24A, 0) (result discarded) and returns a.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004D3D30": {
     "name": "NMData::RigEventData::vfunc_86",
     "class": "NMData::RigEventData",

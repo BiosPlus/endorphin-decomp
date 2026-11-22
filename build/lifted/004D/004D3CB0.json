@@ -1,0 +1,22 @@
+{
+  "va": "0x004D3CB0",
+  "size": 34,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_61",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_61",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void* __thiscall fn_004D3CB0(void* self, void* a)",
+  "summary": "Calls this-\u003evtable[15](a, 0x24A, 0) (result discarded) and returns a.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:08Z"
+}
