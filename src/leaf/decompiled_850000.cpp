@@ -15034,3 +15034,458 @@ extern "C" __declspec(naked) int __cdecl fn_00857BE0(void) {
         ret
     }
 }
+
+// [0x0085C980] sub_0085C980 (1152 bytes)
+extern "C" void ext_0085C430();
+extern "C" int mem_009241D4;
+extern "C" int mem_009241DC;
+extern "C" int mem_00924204;
+extern "C" int mem_009241D8;
+extern "C" __declspec(naked) int __fastcall fn_0085C980(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x3c
+        mov eax, dword ptr [esp + 0x44]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor ebp, ebp
+        push eax
+        mov dword ptr [esp + 0x18], ebp
+        call ext_0085C430
+        cmp eax, ebp
+        mov dword ptr [esp + 0x1c], eax
+        jne L_85C9AE
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x7
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85C9AE:
+        push 0x4184
+        push 0x40
+        call dword ptr [mem_00924214]
+        mov esi, eax
+        cmp esi, ebp
+        mov dword ptr [esp + 0x10], esi
+        jne L_85C9D4
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85C9D4:
+        push 0xab9110
+        mov dword ptr [esi], ebp
+        call dword ptr [mem_009241D4]
+        mov edi, eax
+        cmp edi, ebp
+        mov dword ptr [esp + 0x24], edi
+        jne L_85CA08
+        push ebp
+        call dword ptr [mem_009241DC]
+        push esi
+        call dword ptr [mem_00924210]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x2
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85CA08:
+        mov ebx, dword ptr [mem_009241D8]
+        push 0xab9120
+        push edi
+        call ebx
+        test eax, eax
+        mov dword ptr [esp + 0x28], eax
+        je L_85CA4E
+        push 0xab9138
+        push edi
+        call ebx
+        test eax, eax
+        mov dword ptr [esp + 0x2c], eax
+        je L_85CA4E
+        push 0xab9154
+        push edi
+        call ebx
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        je L_85CA4E
+        push 0xab9178
+        push edi
+        call ebx
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        jne L_85CA6B
+    L_85CA4E:
+        push edi
+        call dword ptr [mem_009241DC]
+        push esi
+        call dword ptr [mem_00924210]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x3
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85CA6B:
+        mov ecx, dword ptr [esp + 0x1c]
+        push 0x12
+        push 0
+        push 0
+        push ecx
+        call dword ptr [esp + 0x38]
+        mov ebx, eax
+        cmp ebx, -1
+        jne L_85CA9E
+        push edi
+        call dword ptr [mem_009241DC]
+        push esi
+        call dword ptr [mem_00924210]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x4
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85CA9E:
+        mov dword ptr [esp + 0x30], 0x1c
+        jmp L_85CAB0
+    L_85CAA8:
+        mov edi, dword ptr [esp + 0x24]
+        mov esi, dword ptr [esp + 0x10]
+    L_85CAB0:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x1c]
+        lea edx, [esp + 0x30]
+        push edx
+        push eax
+        push ecx
+        push 0
+        push ebx
+        call dword ptr [esp + 0x40]
+        test eax, eax
+        je L_85CB86
+        test ebp, ebp
+        je L_85CAD7
+        push ebp
+        call dword ptr [mem_00924210]
+    L_85CAD7:
+        lea edx, [esp + 0x14]
+        push 0
+        push edx
+        push 0
+        lea eax, [esp + 0x3c]
+        push 0
+        push eax
+        push ebx
+        call dword ptr [esp + 0x38]
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push 0x40
+        mov esi, eax
+        call dword ptr [mem_00924214]
+        mov ebp, eax
+        test ebp, ebp
+        je L_85CBCC
+        lea ecx, [esp + 0x14]
+        push 0
+        push ecx
+        push esi
+        lea edx, [esp + 0x3c]
+        push ebp
+        push edx
+        push ebx
+        mov dword ptr [ebp], 0x5
+        call dword ptr [esp + 0x38]
+        test eax, eax
+        je L_85CBA1
+        lea esi, [ebp + 0x4]
+        or ecx, -1
+        mov edi, esi
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        cmp ecx, 0x104
+        ja L_85CAA8
+        mov edx, dword ptr [esp + 0x10]
+        mov edi, esi
+        mov eax, dword ptr [edx]
+        mov ecx, eax
+        shl ecx, 6
+        add ecx, eax
+        lea eax, [eax + ecx*2]
+        mov cl, byte ptr [esp + 0x54]
+        mov byte ptr [edx + eax*2 + 0x4], cl
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        mov eax, dword ptr [edx]
+        mov edi, eax
+        shl edi, 6
+        add edi, eax
+        not ecx
+        lea eax, [eax + edi*2]
+        lea edi, [edx + eax*2 + 0x5]
+        mov eax, ecx
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        inc dword ptr [edx]
+        jmp L_85CAA8
+    L_85CB86:
+        call dword ptr [mem_00924204]
+        cmp eax, 0x103
+        je L_85CBF2
+        push ebp
+        call dword ptr [mem_00924210]
+        xor ebp, ebp
+        jmp L_85CAB0
+    L_85CBA1:
+        push ebx
+        call dword ptr [esp + 0x1c]
+        mov esi, dword ptr [mem_00924210]
+        push ebp
+        call esi
+        push edi
+        call dword ptr [mem_009241DC]
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        call esi
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x4
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85CBCC:
+        push ebx
+        call dword ptr [esp + 0x1c]
+        push edi
+        call dword ptr [mem_009241DC]
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        call dword ptr [mem_00924210]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x4
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85CBF2:
+        push ebx
+        call dword ptr [esp + 0x1c]
+        xor ebx, ebx
+        cmp ebp, ebx
+        jne L_85CC33
+        push esi
+        call dword ptr [mem_00924210]
+        push edi
+        call dword ptr [mem_009241DC]
+        mov ecx, 0x40
+        mov edx, dword ptr [esp + 0x50]
+        lea eax, [edx + 0x5]
+    L_85CC17:
+        mov byte ptr [eax], 0
+        add eax, 0x106
+        dec ecx
+        jne L_85CC17
+        pop edi
+        pop esi
+        mov dword ptr [edx], ebx
+        pop ebp
+        mov eax, 0x5
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    L_85CC33:
+        push ebp
+        call dword ptr [mem_00924210]
+        push edi
+        call dword ptr [mem_009241DC]
+        mov ecx, dword ptr [esp + 0x50]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x1c], ebx
+        mov al, byte ptr [ecx]
+        mov byte ptr [esp + 0x2c], al
+        mov eax, dword ptr [esp + 0x2c]
+        and eax, 0xff
+        mov dword ptr [esp + 0x2c], eax
+        jmp L_85CC66
+    L_85CC62:
+        mov eax, dword ptr [esp + 0x2c]
+    L_85CC66:
+        cmp dword ptr [esp + 0x18], eax
+        jge L_85CD50
+        mov dl, byte ptr [ebx + ecx + 0x5]
+        lea eax, [ebx + ecx + 0x5]
+        test dl, dl
+        mov dword ptr [esp + 0x24], eax
+        je L_85CD3A
+        mov ebp, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esi]
+        inc ebp
+        mov dword ptr [esp + 0x18], ebp
+        xor ebp, ebp
+        test edx, edx
+        jbe L_85CD20
+        lea edi, [esi + 0x5]
+    L_85CC9C:
+        cmp byte ptr [edi], 0
+        je L_85CCF5
+        mov esi, eax
+        mov eax, edi
+    L_85CCA5:
+        mov bl, byte ptr [eax]
+        mov cl, bl
+        cmp bl, byte ptr [esi]
+        jne L_85CCC9
+        test cl, cl
+        je L_85CCC5
+        mov bl, byte ptr [eax + 0x1]
+        mov cl, bl
+        cmp bl, byte ptr [esi + 0x1]
+        jne L_85CCC9
+        add eax, 0x2
+        add esi, 0x2
+        test cl, cl
+        jne L_85CCA5
+    L_85CCC5:
+        xor eax, eax
+        jmp L_85CCCE
+    L_85CCC9:
+        sbb eax, eax
+        sbb eax, -1
+    L_85CCCE:
+        test eax, eax
+        jne L_85CCE5
+        mov eax, dword ptr [esp + 0x50]
+        mov ebx, dword ptr [esp + 0x1c]
+        mov cl, byte ptr [edi - 0x1]
+        cmp cl, byte ptr [ebx + eax + 0x4]
+        je L_85CD02
+        jmp L_85CCE9
+    L_85CCE5:
+        mov ebx, dword ptr [esp + 0x1c]
+    L_85CCE9:
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x50]
+        mov eax, dword ptr [esp + 0x24]
+    L_85CCF5:
+        inc ebp
+        add edi, 0x106
+        cmp ebp, edx
+        jb L_85CC9C
+        jmp L_85CD20
+    L_85CD02:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, ebp
+        shl ecx, 6
+        add ecx, ebp
+        mov esi, eax
+        lea edx, [ebp + ecx*2]
+        mov ecx, dword ptr [esp + 0x50]
+        mov byte ptr [eax + edx*2 + 0x5], 0
+        mov eax, dword ptr [esp + 0x24]
+    L_85CD20:
+        cmp ebp, dword ptr [esi]
+        jne L_85CD3A
+        mov edi, dword ptr [esp + 0x54]
+        xor edx, edx
+        mov dl, byte ptr [ebx + ecx + 0x4]
+        cmp edx, edi
+        jne L_85CD3A
+        mov byte ptr [eax], 0
+        mov eax, dword ptr [ecx]
+        dec eax
+        mov dword ptr [ecx], eax
+    L_85CD3A:
+        add ebx, 0x106
+        cmp ebx, 0x4180
+        mov dword ptr [esp + 0x1c], ebx
+        jl L_85CC62
+    L_85CD50:
+        mov eax, dword ptr [esi]
+        xor edx, edx
+        cmp eax, edx
+        mov dword ptr [esp + 0x24], edx
+        jbe L_85CDE3
+        lea ebx, [esi + 0x5]
+    L_85CD63:
+        cmp byte ptr [ebx], 0
+        je L_85CDCE
+        cmp edx, 0x40
+        jge L_85CDCE
+        mov eax, edx
+        shl eax, 6
+        add eax, edx
+        lea eax, [edx + eax*2]
+        lea eax, [ecx + eax*2 + 0x5]
+    L_85CD7B:
+        cmp byte ptr [eax], 0
+        je L_85CD8D
+        inc edx
+        add eax, 0x106
+        cmp edx, 0x40
+        jl L_85CD7B
+        jmp L_85CDCE
+    L_85CD8D:
+        mov eax, edx
+        mov edi, ebx
+        shl eax, 6
+        add eax, edx
+        mov esi, ebx
+        lea eax, [edx + eax*2]
+        lea ebp, [ecx + eax*2]
+        mov cl, byte ptr [esp + 0x54]
+        xor eax, eax
+        mov byte ptr [ebp + 0x4], cl
+        or ecx, -1
+        repne scasb
+        not ecx
+        mov eax, ecx
+        lea edi, [ebp + 0x5]
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x50]
+        and ecx, 0x3
+        rep movsb
+        mov ecx, dword ptr [eax]
+        mov esi, dword ptr [esp + 0x10]
+        inc ecx
+        mov dword ptr [eax], ecx
+        mov ecx, eax
+    L_85CDCE:
+        mov eax, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esi]
+        inc eax
+        add ebx, 0x106
+        cmp eax, edi
+        mov dword ptr [esp + 0x24], eax
+        jb L_85CD63
+    L_85CDE3:
+        push esi
+        call dword ptr [mem_00924210]
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x3c
+        ret 0x8
+    }
+}
