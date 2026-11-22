@@ -8316,6 +8316,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00682DC0": {
+    "name": "NMData::ValuePtrData::vfunc_0_off_4",
+    "class": "NMData::ValuePtrData",
+    "signature": "uint32_t fn_00682DC0(void* self)",
+    "summary": "Returns cached dword at +0x88; if zero, forwards to the object at +0x24 via vtable slot 18, passing (this - 4) as the adjusted base.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x00682E00": {
     "name": "sub_00682E00",
     "signature": "extern \"C\" void __fastcall fn_00682E00(void* self)",

@@ -161,11 +161,7 @@ extern "C" void __fastcall fn_006744A0(void* self) {
     target(adjusted);
 }
 extern "C" const char mem_0093BF14[];
-extern uint32_t mem_0095F750[];
 // Global lookup table in .data; indexed by the 32-bit id stored at +0x08 of the object pointed to by +0x150.
-extern "C" DWORD mem_0095F750[];
-
-extern "C" DWORD mem_0095F750[];
 // @name NMData::IncarnationEventData::vfunc_88
 // @class NMData::IncarnationEventData
 // @summary Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.
@@ -186,9 +182,6 @@ void fn_004CE8C0(void* self) {
 }
 // Global lookup table in .data; indexed by the 32-bit id stored at +0x08 of the object pointed to by +0x150.
 // Lookup table at 0x0095F750 (array of 32-bit entries indexed by a small id).
-extern "C" const uint32_t mem_0095F750[];
-
-extern "C" const uint32_t mem_0095F750[];
 // @name NMData::SkeletalCalibrationVariables::vfunc_19
 // @class NMData::SkeletalCalibrationVariables
 // @summary Stores a single float argument into the object at offset +0x10 (thiscall-style setter, callee pops 4 bytes).
@@ -1846,25 +1839,6 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x00682DC0] NMData::ValuePtrData::vfunc_0_off_4 (27 bytes)
-// @name NMData::ValuePtrData::vfunc_0_off_4
-// @class NMData::ValuePtrData
-// @summary Returns cached dword at +0x88; if zero, forwards to the object at +0x24 via vtable slot 18, passing (this - 4) as the adjusted base.
-// @field NMData::ValuePtrData +0x24 void* field_0x24
-// @field NMData::ValuePtrData +0x88 uint32_t field_0x88
-uint32_t fn_00682DC0(void* self) {
-    uint32_t cached = lift_field<uint32_t>(self, 0x88);
-    if (cached != 0) {
-        return cached;
-    }
-    void* target = lift_field<void*>(self, 0x24);
-    void* adjusted = static_cast<uint8_t*>(self) - 4;
-    void** vtable = *reinterpret_cast<void***>(target);
-    // vtable byte offset 0x48 -> slot 18 (32-bit layout)
-    auto fn = reinterpret_cast<uint32_t (*)(void*, void*)>(vtable[18]);
-    return fn(target, adjusted);
-}
-
 // [0x00496F50] NMData::Transition::vfunc_6_off_8 (28 bytes)
 // @name NMData::Transition::vfunc_6_off_8
 // @class NMData::Transition
@@ -1960,4 +1934,23 @@ DWORD fn_005C3890(void* self) {
     // Inner object field at +0x08 (type unknown; used as the table index).
     const DWORD index = lift_field<DWORD>(inner, 0x08);
     return mem_0095F750[index];
+}
+
+// [0x00682DC0] NMData::ValuePtrData::vfunc_0_off_4 (27 bytes)
+// @name NMData::ValuePtrData::vfunc_0_off_4
+// @class NMData::ValuePtrData
+// @summary Returns cached dword at +0x88; if zero, forwards to the object at +0x24 via vtable slot 18, passing (this - 4) as the adjusted base.
+// @field NMData::ValuePtrData +0x24 void* field_0x24
+// @field NMData::ValuePtrData +0x88 uint32_t field_0x88
+uint32_t fn_00682DC0(void* self) {
+    uint32_t cached = lift_field<uint32_t>(self, 0x88);
+    if (cached != 0) {
+        return cached;
+    }
+    void* target = lift_field<void*>(self, 0x24);
+    void* adjusted = static_cast<uint8_t*>(self) - 4;
+    void** vtable = *reinterpret_cast<void***>(target);
+    // vtable byte offset 0x48 -> slot 18 (32-bit layout)
+    auto fn = reinterpret_cast<uint32_t (*)(void*, void*)>(vtable[18]);
+    return fn(target, adjusted);
 }

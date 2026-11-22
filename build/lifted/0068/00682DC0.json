@@ -1,0 +1,28 @@
+{
+  "va": "0x00682DC0",
+  "size": 27,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_0_off_4",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::ValuePtrData::vfunc_0_off_4",
+  "class": "NMData::ValuePtrData",
+  "signature": "uint32_t fn_00682DC0(void* self)",
+  "summary": "Returns cached dword at +0x88; if zero, forwards to the object at +0x24 via vtable slot 18, passing (this - 4) as the adjusted base.",
+  "fields": [
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:35Z"
+}
