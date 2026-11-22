@@ -58,6 +58,13 @@
     "summary": "Stdcall leaf (ret 4): takes one pointer argument and returns the 32-bit value stored at its first dword.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x004AA580": {
+    "name": "VirtualSlot8Thunk",
+    "class": "VTable",
+    "signature": "void fn_004AA580(void* self)",
+    "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 8 (offset +0x20) with the same this pointer.",
+    "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
+  },
   "0x004C65B0": {
     "name": "NMData::ForceEventData::vfunc_1_off_C",
     "class": "NMData::ForceEventData",

@@ -10,5 +10,6 @@ namespace lifted_layout {
 struct VTable_Fields {
     // +0x4   void*                    slot1  (evidence: 0x0046A470)
     // +0x8   void*                    slot2  (evidence: 0x0046A480)
+    // +0x20  void*                    slot8  (evidence: 0x004AA580)
 };
 } // namespace lifted_layout
