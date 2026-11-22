@@ -14,6 +14,7 @@ extern "C" int* __cdecl fn_00404C40() {
     return &mem_00929A44;
 }
 extern "C" const unsigned int mem_0092A794;
+extern "C" const unsigned int mem_0092B4B4;
 
 // [0x00401840] sub_00401840 (6 bytes)
 // @name sub_00401840
@@ -44,4 +45,12 @@ extern "C" const unsigned int* __cdecl fn_00409060() {
 // (no field offsets accessed)
 extern "C" const unsigned int* __cdecl fn_00409630() {
     return &mem_0092A794;
+}
+
+// [0x0040D9B0] sub_0040D9B0 (6 bytes)
+// @name GetConstant_0040D9B0
+// @summary Returns the address of the read-only .rdata u32 constant at mem_0092B4B4 (value 0x0040CDF0).
+// (no field offsets accessed)
+extern "C" const unsigned int* __cdecl fn_0040D9B0() {
+    return &mem_0092B4B4;
 }

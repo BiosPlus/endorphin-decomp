@@ -52,6 +52,12 @@
     "summary": "Returns the address of the constant global mem_0092AD84 (value 0x006A5FCE); does not read or modify `this`.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040D9B0": {
+    "name": "GetConstant_0040D9B0",
+    "signature": "extern \"C\" const unsigned int* __cdecl fn_0040D9B0()",
+    "summary": "Returns the address of the read-only .rdata u32 constant at mem_0092B4B4 (value 0x0040CDF0).",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
