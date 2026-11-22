@@ -3210,3 +3210,12 @@ extern "C" __declspec(naked) void __fastcall fn_00870040(void* self) {
         ret
     }
 }
+
+// [0x00870E86] sub_00870E86 (3 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00870E86() {
+    __asm {
+        pop edi
+        pop esi
+        pop ebx
+    }
+}
