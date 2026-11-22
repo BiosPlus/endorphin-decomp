@@ -16039,3 +16039,390 @@ extern "C" void* jt_0080D820[8] = {
     (void*)((char*)fn_0080D820 + 0x245),
     (void*)((char*)fn_0080D820 + 0x240)
 };
+
+// [0x0080F070] sub_0080F070 (976 bytes)
+extern "C" void ext_0080F440();
+extern "C" void ext_00852700();
+extern "C" void ext_0085C350();
+extern "C" int mem_00AB6AB4;
+
+extern "C" __declspec(naked) void __cdecl fn_0080F070(void* self) {
+    __asm {
+        sub esp, 0e0h
+        mov edx, dword ptr [esp + 0f0h]
+        mov dword ptr [esp + 4], 099f080h
+        test dh, 80h
+        jne f070_092
+        mov dword ptr [esp + 4], 099f058h
+f070_092:
+        mov eax, dword ptr [esp + 0fch]
+        cmp eax, -1
+        jne f070_0aa
+        mov eax, 0ah
+        mov dword ptr [esp + 0fch], eax
+f070_0aa:
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0f4h]
+        push edi
+        mov edi, dword ptr [esp + 0fch]
+        mov ecx, esi
+        mov ebx, 1
+        or ecx, edi
+        jne f070_0e8
+        mov ebp, dword ptr [esp + 108h]
+        xor ecx, ecx
+        cmp ebp, ecx
+        mov dword ptr [esp + 20h], ebx
+        jne f070_0ee
+        test dl, 10h
+        je f070_0e2
+        cmp eax, 8
+        je f070_0ee
+f070_0e2:
+        mov dword ptr [esp + 1ch], ebx
+        jmp f070_0f2
+f070_0e8:
+        xor ecx, ecx
+        mov dword ptr [esp + 20h], ecx
+f070_0ee:
+        mov dword ptr [esp + 1ch], ecx
+f070_0f2:
+        test dh, 40h
+        je f070_107
+        and edx, -5
+        mov dword ptr [esp + 18h], ecx
+        mov dword ptr [esp + 100h], edx
+        jmp f070_123
+f070_107:
+        cmp edi, ecx
+        jg f070_23a
+        jl f070_119
+        cmp esi, ecx
+        jae f070_23a
+f070_119:
+        neg esi
+        adc edi, ecx
+        mov dword ptr [esp + 18h], ebx
+        neg edi
+f070_123:
+        test dh, 1
+        jne f070_12a
+        and edi, ecx
+f070_12a:
+        cdq
+        mov dword ptr [esp + 10h], ebx
+        mov byte ptr [esp + 0ech], 0
+        lea ebp, [esp + 0ebh]
+        mov ebx, eax
+        mov dword ptr [esp + 28h], edx
+f070_144:
+        mov edx, dword ptr [esp + 28h]
+        push edx
+        push ebx
+        push edi
+        push esi
+        call ext_0085C350
+        mov ecx, dword ptr [esp + 24h]
+        dec ebp
+        mov dl, byte ptr [eax + ecx]
+        mov eax, dword ptr [esp + 38h]
+        push eax
+        push ebx
+        push edi
+        mov byte ptr [ebp + 1], dl
+        push esi
+        call ext_00852700
+        mov esi, eax
+        mov edi, edx
+        mov ecx, esi
+        add esp, 20h
+        or ecx, edi
+        je f070_1da
+        test dword ptr [esp + 100h], 1000000h
+        je f070_1c6
+        mov edx, dword ptr [esp + 10h]
+        inc edx
+        push edx
+        call ext_0080F440
+        add esp, 4
+        test eax, eax
+        je f070_1c6
+        mov ecx, dword ptr [mem_00AB6AB4]
+        mov eax, ebp
+        sub eax, ecx
+        lea edx, [esp + 2ch]
+        sub eax, edx
+        test eax, eax
+        jle f070_1c6
+        test ecx, ecx
+        lea eax, [ecx - 1]
+        jle f070_1c6
+        sub ecx, eax
+        lea ecx, [ecx + 0ab6abfh]
+f070_1b8:
+        mov dl, byte ptr [ecx + eax]
+        mov byte ptr [ebp], dl
+        dec ebp
+        mov edx, eax
+        dec eax
+        test edx, edx
+        jg f070_1b8
+f070_1c6:
+        mov eax, dword ptr [esp + 10h]
+        inc eax
+        cmp eax, 0c1h
+        mov dword ptr [esp + 10h], eax
+        jl f070_144
+f070_1da:
+        mov eax, dword ptr [esp + 1ch]
+        test eax, eax
+        jne f070_1ff
+        mov edx, dword ptr [esp + 104h]
+        mov eax, ebp
+        lea ecx, [esp + 0ech]
+        sub eax, ecx
+        lea eax, [edx + eax + 1]
+        mov dword ptr [esp + 104h], eax
+f070_1ff:
+        mov ecx, dword ptr [esp + 108h]
+        cmp ecx, -1
+        je f070_243
+        mov edx, ebp
+        lea eax, [esp + 0ech]
+        sub edx, eax
+        lea ecx, [ecx + edx + 1]
+        test ecx, ecx
+        mov dword ptr [esp + 108h], ecx
+        jge f070_22e
+        xor ecx, ecx
+        mov dword ptr [esp + 108h], ecx
+f070_22e:
+        mov ebx, dword ptr [esp + 100h]
+        or bh, 20h
+        jmp f070_24a
+f070_23a:
+        mov dword ptr [esp + 18h], ecx
+        jmp f070_123
+f070_243:
+        mov ebx, dword ptr [esp + 100h]
+f070_24a:
+        mov edx, ebx
+        and edx, 8
+        mov dword ptr [esp + 24h], edx
+        jne f070_25e
+        cmp ecx, -1
+        je f070_25e
+        mov esi, ecx
+        jmp f070_260
+f070_25e:
+        xor esi, esi
+f070_260:
+        mov eax, dword ptr [esp + 18h]
+        mov dword ptr [esp + 10h], esi
+        test eax, eax
+        jne f070_271
+        test bl, 6
+        je f070_278
+f070_271:
+        dec dword ptr [esp + 104h]
+f070_278:
+        mov eax, ebx
+        and eax, 10h
+        mov dword ptr [esp + 14h], eax
+        je f070_2c7
+        mov eax, dword ptr [esp + 20h]
+        test eax, eax
+        jne f070_2c7
+        mov eax, dword ptr [esp + 10ch]
+        sub eax, 2
+        je f070_2b6
+        sub eax, 6
+        je f070_2a3
+        sub eax, 8
+        je f070_2b6
+        jmp f070_2c7
+f070_2a3:
+        test bh, 20h
+        je f070_2ac
+        test esi, esi
+        jne f070_2c7
+f070_2ac:
+        mov eax, dword ptr [esp + 104h]
+        dec eax
+        jmp f070_2c0
+f070_2b6:
+        mov eax, dword ptr [esp + 104h]
+        sub eax, 2
+f070_2c0:
+        mov dword ptr [esp + 104h], eax
+f070_2c7:
+        mov esi, dword ptr [esp + 0f4h]
+        test edx, edx
+        jne f070_31d
+        test bh, 20h
+        je f070_2dc
+        cmp ecx, -1
+        je f070_31d
+f070_2dc:
+        mov eax, dword ptr [esp + 104h]
+        mov ecx, eax
+        dec eax
+        mov dword ptr [esp + 104h], eax
+        mov eax, dword ptr [esp + 10h]
+        cmp ecx, eax
+        jle f070_31d
+        mov edi, dword ptr [esp + 104h]
+        mov ecx, eax
+        sub edi, ecx
+        inc edi
+f070_301:
+        push 20h
+        push esi
+        call dword ptr [esi]
+        mov ecx, dword ptr [esp + 10ch]
+        add esp, 8
+        dec edi
+        dec ecx
+        test edi, edi
+        mov dword ptr [esp + 104h], ecx
+        ja f070_301
+f070_31d:
+        mov eax, dword ptr [esp + 18h]
+        test eax, eax
+        je f070_329
+        push 2dh
+        jmp f070_339
+f070_329:
+        test bl, 4
+        je f070_332
+        push 2bh
+        jmp f070_339
+f070_332:
+        test bl, 2
+        je f070_33f
+        push 20h
+f070_339:
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+f070_33f:
+        mov eax, dword ptr [esp + 14h]
+        test eax, eax
+        je f070_3b4
+        mov eax, dword ptr [esp + 20h]
+        test eax, eax
+        jne f070_3b4
+        mov eax, dword ptr [esp + 10ch]
+        sub eax, 2
+        je f070_397
+        sub eax, 6
+        je f070_380
+        sub eax, 8
+        jne f070_3b4
+        push 30h
+        push esi
+        call dword ptr [esi]
+        mov edx, ebx
+        not edx
+        and edx, 8000h
+        or edx, 16000h
+        shr edx, 0ah
+        push edx
+        jmp f070_3ae
+f070_380:
+        test bh, 20h
+        je f070_38d
+        mov eax, dword ptr [esp + 10h]
+        test eax, eax
+        jne f070_3b4
+f070_38d:
+        push 30h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        jmp f070_3b4
+f070_397:
+        push 30h
+        push esi
+        call dword ptr [esi]
+        mov eax, ebx
+        not eax
+        and eax, 8000h
+        or eax, 10800h
+        shr eax, 0ah
+        push eax
+f070_3ae:
+        push esi
+        call dword ptr [esi]
+        add esp, 10h
+f070_3b4:
+        test bh, 20h
+        je f070_3ef
+        mov edi, dword ptr [esp + 108h]
+        cmp edi, -1
+        jne f070_3cc
+        mov edi, dword ptr [esp + 104h]
+f070_3cc:
+        mov ecx, edi
+        dec edi
+        test ecx, ecx
+        jle f070_3ef
+        mov eax, dword ptr [esp + 104h]
+        inc edi
+        sub eax, edi
+        mov dword ptr [esp + 104h], eax
+f070_3e4:
+        push 30h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        dec edi
+        jne f070_3e4
+f070_3ef:
+        mov eax, dword ptr [esp + 1ch]
+        test eax, eax
+        jne f070_411
+        mov al, byte ptr [ebp + 1]
+        inc ebp
+        test al, al
+        je f070_411
+f070_3ff:
+        movsx edx, al
+        push edx
+        push esi
+        call dword ptr [esi]
+        mov al, byte ptr [ebp + 1]
+        add esp, 8
+        inc ebp
+        test al, al
+        jne f070_3ff
+f070_411:
+        mov eax, dword ptr [esp + 24h]
+        test eax, eax
+        je f070_433
+        mov edi, dword ptr [esp + 104h]
+        mov eax, edi
+        dec edi
+        test eax, eax
+        jle f070_433
+        inc edi
+f070_428:
+        push 20h
+        push esi
+        call dword ptr [esi]
+        add esp, 8
+        dec edi
+        jne f070_428
+f070_433:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0e0h
+        ret
+        nop
+        nop
+    }
+}
