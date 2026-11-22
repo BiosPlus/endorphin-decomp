@@ -479,27 +479,6 @@ uint32_t fn_0066BC00(void* self, void* ctx) {
     return target(obj, p, ctx);
 }
 
-// [0x0066B120] ExprParser::IntType::vfunc_41 (24 bytes)
-// @name ExprParser::IntType::vfunc_41
-// @class ExprParser::IntType
-// @summary Forwards to vtable slot 2 of the object at holder->+0x04, passing the holder as its argument, and stores the 32-bit integer result through the first argument.
-// @field ExprParser::ValuePtrType +0x04 void* field_0x04
-void fn_0066B120(void* result, void* self) {
-    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
-    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
-    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
-    // mov edx, [ecx]: vtable of the inner object
-    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
-    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
-    // call [edx+8]: slot 2, this = inner, one argument = holder
-    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x08);
-    using Slot = int32_t (*)(void* thisPtr, void* arg);
-    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
-    int32_t value = target(inner, self);
-    // mov ecx, [esp+4] ; mov [ecx], eax: store result through first argument
-    *static_cast<int32_t*>(result) = value;
-}
-
 // [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
 // @name ExprParser::BoolType::vfunc_41
 // @class ExprParser::BoolType
@@ -616,4 +595,25 @@ uint32_t fn_0066BBE0(void* self, void* ctx) {
 
     // Stack args: p first, then ctx. Result stays in eax.
     return target(obj, p, ctx);
+}
+
+// [0x0066B120] ExprParser::IntType::vfunc_41 (24 bytes)
+// @name ExprParser::IntType::vfunc_41
+// @class ExprParser::IntType
+// @summary Forwards to vtable slot 2 of the object at holder->+0x04, passing the holder as its argument, and stores the 32-bit integer result through the first argument.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066B120(void* result, void* self) {
+    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
+    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
+    // mov edx, [ecx]: vtable of the inner object
+    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
+    // call [edx+8]: slot 2, this = inner, one argument = holder
+    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x08);
+    using Slot = int32_t (*)(void* thisPtr, void* arg);
+    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
+    int32_t value = target(inner, self);
+    // mov ecx, [esp+4] ; mov [ecx], eax: store result through first argument
+    *static_cast<int32_t*>(result) = value;
 }

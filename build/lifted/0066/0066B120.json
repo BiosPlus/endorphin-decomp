@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B120",
+  "size": 24,
+  "orig_symbol": "ExprParser::IntType::vfunc_41",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::IntType::vfunc_41",
+  "class": "ExprParser::IntType",
+  "signature": "void fn_0066B120(void* result, void* self)",
+  "summary": "Forwards to vtable slot 2 of the object at holder-\u003e+0x04, passing the holder as its argument, and stores the 32-bit integer result through the first argument.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:37:53Z"
+}
