@@ -1,0 +1,28 @@
+{
+  "va": "0x006A0860",
+  "size": 90,
+  "orig_symbol": "ExprParser::Operators::GreaterEqual::vfunc_3",
+  "src_path": "src/ExprParser/Operators/GreaterEqual.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/GreaterEqual.cpp",
+  "name": "ExprParser::Operators::GreaterEqual::vfunc_3",
+  "class": "ExprParser::Operators::GreaterEqual",
+  "signature": "void fn_006A0860(void* self, void* other)",
+  "summary": "Evaluates lhs \u003e= rhs by calling vfunc_1 on both operand objects, stores the boolean result into the call frame slot, then dispatches it through vfunc_9 of the left operand.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::GreaterEqual",
+      "offset": "+0x4",
+      "type": "void* left (operand object; dispatched through vtable for both the compare and the final",
+      "name": "store)"
+    },
+    {
+      "class": "ExprParser::ExprToken",
+      "offset": "+0x4",
+      "type": "void* right (operand object read from the second",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:13:47Z"
+}

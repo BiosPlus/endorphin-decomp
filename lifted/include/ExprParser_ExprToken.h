@@ -8,6 +8,7 @@
 // Recovered field layout for ExprParser::ExprToken:
 namespace lifted_layout {
 struct ExprParser_ExprToken_Fields {
+    // +0x4   void* right (operand object read from the second argument)  (evidence: 0x006A0860) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x006A07D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x006A1440) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x006A13E0) // CONFLICT: multiple definitions at +0x4
