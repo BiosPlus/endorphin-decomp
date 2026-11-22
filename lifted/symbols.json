@@ -2772,6 +2772,13 @@
     "summary": "Null-safe subobject pointer adjustment: returns `this +0x4` if non-null, else nullptr.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066DCE0": {
+    "name": "ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1",
+    "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+    "signature": "extern \"C\" float __stdcall fn_0066DCE0(void* self)",
+    "summary": "Stdcall (ret 4) thunk: loads the target pointer stored at the proxy's first dword, calls the helper on it with it in ecx, and returns 0.0f.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0066EDA0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_0_off_4",
     "class": "ExprParser::ExpressionContainerType",
