@@ -142,6 +142,12 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00419700": {
+    "name": "sub_00419700",
+    "signature": "extern \"C\" const DWORD* fn_00419700(void)",
+    "summary": "Returns the address of the read-only global mem_0092D020 (initialised to 0x006A5FCE); leaf getter with no side effects.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00419720": {
     "name": "ExportUnavailableDialog::vfunc_0",
     "class": "ExportUnavailableDialog",

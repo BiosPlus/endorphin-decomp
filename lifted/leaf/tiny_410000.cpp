@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" int mem_0092BD10;
 extern "C" int mem_0092C6E8;
+extern "C" DWORD mem_0092D020;
 
 // [0x00410350] sub_00410350 (6 bytes)
 // @name GetStringConstant_00410350
@@ -40,4 +41,11 @@ extern "C" const char* __cdecl fn_00416B60() {
 // @summary Returns the address of the constant string ",bj" (mem_0092CD54).
 extern "C" const char* fn_00417300() {
     return reinterpret_cast<const char*>(0x0092CD54);
+}
+
+// [0x00419700] sub_00419700 (6 bytes)
+// @name sub_00419700
+// @summary Returns the address of the read-only global mem_0092D020 (initialised to 0x006A5FCE); leaf getter with no side effects.
+extern "C" const DWORD* fn_00419700(void) {
+    return &mem_0092D020;
 }

@@ -1,0 +1,13 @@
+{
+  "va": "0x00419700",
+  "size": 6,
+  "orig_symbol": "sub_00419700",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "sub_00419700",
+  "signature": "extern \"C\" const DWORD* fn_00419700(void)",
+  "summary": "Returns the address of the read-only global mem_0092D020 (initialised to 0x006A5FCE); leaf getter with no side effects.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:48:26Z"
+}
