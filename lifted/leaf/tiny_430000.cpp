@@ -2,14 +2,19 @@
 #include "lift_compat.h"
 extern "C" const unsigned int mem_0092FF5C;
 extern "C" int mem_0093209C;
+extern "C" void __fastcall ext_00426130(void* self);
+extern "C" void __fastcall ext_00425DC0(void* self);
+extern "C" void __fastcall ext_00433320(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 
-// [0x00430F9E] sub_00430F9E (2 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 // @name sub_00430F9E
 // @summary Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte "pop esi / ret" tail.
 // The machine code is `pop esi; ret`: it reads the top stack word into esi, removes it from the stack, and returns.
 // Portable C++ has no equivalent of the esi register or the stack pop, so the observable effect is expressed as a no-op.
 void fn_00430F9E() {
 }
+extern "C" void __fastcall ext_0041C730(void* self);
 
 // [0x0043CB70] sub_0043CB70 (4 bytes)
 // @name sub_0043CB70
@@ -37,4 +42,39 @@ extern "C" const unsigned int* __cdecl fn_0043AAF0() {
 // @summary Returns the address of the read-only string constant at 0x0093209C (.rdata "`KE").
 extern "C" const char* fn_0043D360() {
     return reinterpret_cast<const char*>(&mem_0093209C);
+}
+
+// [0x00434FD0] sub_00434FD0 (11 bytes)
+// @name sub_00434FD0
+// @summary Member forwarding thunk: loads subobject pointer at +0x14C and tail-calls sub_00426130.
+extern "C" void __fastcall fn_00434FD0(void* self) {
+    void* delegate_obj = lift_field<void*>(self, 0x14C);
+    ext_00426130(delegate_obj);
+}
+
+// [0x00434FE0] sub_00434FE0 (11 bytes)
+// @name sub_00434FE0
+// @summary Member forwarding thunk: loads subobject pointer at +0x14C and tail-calls sub_00425DC0.
+extern "C" void __fastcall fn_00434FE0(void* self) {
+    void* delegate_obj = lift_field<void*>(self, 0x14C);
+    ext_00425DC0(delegate_obj);
+}
+
+// [0x00435360] sub_00435360 (30 bytes)
+// @name sub_00435360
+// @summary MSVC scalar deleting destructor: calls sub_00433320 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00435360(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00433320(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0043CAA0] sub_0043CAA0 (8 bytes)
+// @name sub_0043CAA0
+// @summary This-adjustor thunk: adjusts `this` by +0x64 and tail-calls sub_0041C730.
+extern "C" void __fastcall fn_0043CAA0(void* self) {
+    ext_0041C730(static_cast<char*>(self) + 0x64);
 }

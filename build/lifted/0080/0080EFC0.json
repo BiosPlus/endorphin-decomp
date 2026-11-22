@@ -1,0 +1,13 @@
+{
+  "va": "0x0080EFC0",
+  "size": 16,
+  "orig_symbol": "sub_0080EFC0",
+  "src_path": "src/leaf/tiny_800000.cpp",
+  "lifted_path": "lifted/leaf/tiny_800000.cpp",
+  "name": "sub_0080EFC0",
+  "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
+  "summary": "Returns address of global mem_00AB6B0C.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0063FA90",
+  "size": 30,
+  "orig_symbol": "AdvXMLParser::Document::vfunc_0",
+  "src_path": "src/AdvXMLParser/auto_tiny.cpp",
+  "lifted_path": "lifted/AdvXMLParser/auto_tiny.cpp",
+  "name": "AdvXMLParser::Document::vfunc_0",
+  "class": "AdvXMLParser::Document",
+  "signature": "extern \"C\" void* __fastcall fn_0063FA90(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0063F750 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

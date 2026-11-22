@@ -1,0 +1,14 @@
+{
+  "va": "0x006B9630",
+  "size": 5,
+  "orig_symbol": "CFontStyleListBox::vfunc_12",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "CFontStyleListBox::vfunc_12",
+  "class": "CFontStyleListBox",
+  "signature": "extern \"C\" void fn_006B9630(void)",
+  "summary": "Pure jump thunk forwarding to NMCAutoCompleteEdit::vfunc_80.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

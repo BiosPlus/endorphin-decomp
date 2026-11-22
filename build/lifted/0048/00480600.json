@@ -1,0 +1,22 @@
+{
+  "va": "0x00480600",
+  "size": 11,
+  "orig_symbol": "ToolEngine::vfunc_39",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ToolEngine::vfunc_39",
+  "class": "ToolEngine",
+  "signature": "extern \"C\" void __fastcall fn_00480600(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x3B4 and tail-calls sub_004A6BC0.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x3B4",
+      "type": "void*",
+      "name": "delegate_0x3B4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

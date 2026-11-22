@@ -1,0 +1,22 @@
+{
+  "va": "0x004F98F0",
+  "size": 8,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_30",
+  "src_path": "src/VMCSModes/auto_tiny.cpp",
+  "lifted_path": "lifted/VMCSModes/auto_tiny.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_30",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "extern \"C\" void __fastcall fn_004F98F0(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00468A80.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

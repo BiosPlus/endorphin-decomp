@@ -1,0 +1,14 @@
+{
+  "va": "0x0046A310",
+  "size": 8,
+  "orig_symbol": "VMCSEngine::vfunc_0_off_8",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "VMCSEngine::vfunc_0_off_8",
+  "class": "VMCSEngine",
+  "signature": "extern \"C\" void __fastcall fn_0046A310(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls sub_00468660.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

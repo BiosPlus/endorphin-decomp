@@ -1,0 +1,14 @@
+{
+  "va": "0x00449810",
+  "size": 30,
+  "orig_symbol": "RangeDialog::vfunc_1",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RangeDialog::vfunc_1",
+  "class": "RangeDialog",
+  "signature": "extern \"C\" void* __fastcall fn_00449810(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_004493C0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

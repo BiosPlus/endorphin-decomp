@@ -1,0 +1,14 @@
+{
+  "va": "0x006AEC60",
+  "size": 6,
+  "orig_symbol": "GWCCategoryItem::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GWCCategoryItem::vfunc_0",
+  "class": "GWCCategoryItem",
+  "signature": "extern \"C\" void* __cdecl fn_006AEC60(void)",
+  "summary": "Returns address of global mem_00991104.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

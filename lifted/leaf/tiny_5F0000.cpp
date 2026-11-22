@@ -23,3 +23,11 @@ void* fn_005FCB30(void* self) {
     char* vtable = *reinterpret_cast<char**>(self);
     return *reinterpret_cast<void**>(vtable + 0x48);
 }
+
+// [0x005F5110] sub_005F5110 (13 bytes)
+// @name sub_005F5110
+// @summary Setter storing float argument into field at offset +0x17C.
+extern "C" void __fastcall fn_005F5110(void* self, int edx_unused, float value) {
+    (void)edx_unused;
+    lift_field<float>(self, 0x17C) = value;
+}

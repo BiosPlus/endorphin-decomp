@@ -1,0 +1,14 @@
+{
+  "va": "0x004F0B00",
+  "size": 8,
+  "orig_symbol": "Properties::TargetSelectionProxy::vfunc_0_off_4",
+  "src_path": "src/Properties/auto_tiny.cpp",
+  "lifted_path": "lifted/Properties/auto_tiny.cpp",
+  "name": "Properties::TargetSelectionProxy::vfunc_0_off_4",
+  "class": "Properties::TargetSelectionProxy",
+  "signature": "extern \"C\" void __fastcall fn_004F0B00(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_004F1210.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

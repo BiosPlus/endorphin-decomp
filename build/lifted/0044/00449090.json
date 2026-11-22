@@ -1,0 +1,14 @@
+{
+  "va": "0x00449090",
+  "size": 5,
+  "orig_symbol": "Properties::PropInPlaceSpinbuttonEdit::vfunc_12",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_12",
+  "class": "Properties::PropInPlaceSpinbuttonEdit",
+  "signature": "extern \"C\" void fn_00449090(void)",
+  "summary": "Pure jump thunk forwarding to GetStringLiteral_00448F20.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

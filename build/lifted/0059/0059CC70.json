@@ -1,0 +1,14 @@
+{
+  "va": "0x0059CC70",
+  "size": 11,
+  "orig_symbol": "World::vfunc_1_off_E8",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "World::vfunc_1_off_E8",
+  "class": "World",
+  "signature": "extern \"C\" void __fastcall fn_0059CC70(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0xE8 and tail-calls World::vfunc_21.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

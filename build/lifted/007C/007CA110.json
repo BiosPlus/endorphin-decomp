@@ -1,0 +1,13 @@
+{
+  "va": "0x007CA110",
+  "size": 5,
+  "orig_symbol": "sub_007CA110",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "sub_007CA110",
+  "signature": "extern \"C\" void fn_007CA110(void)",
+  "summary": "Pure jump thunk forwarding to sub_007C9F60.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

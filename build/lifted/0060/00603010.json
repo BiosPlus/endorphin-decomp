@@ -1,0 +1,22 @@
+{
+  "va": "0x00603010",
+  "size": 10,
+  "orig_symbol": "Effector::vfunc_29",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Effector::vfunc_29",
+  "class": "Effector",
+  "signature": "extern \"C\" void __fastcall fn_00603010(void* self)",
+  "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x84.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

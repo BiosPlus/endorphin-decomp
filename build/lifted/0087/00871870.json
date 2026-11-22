@@ -1,0 +1,14 @@
+{
+  "va": "0x00871870",
+  "size": 30,
+  "orig_symbol": "AdvXMLParser::Parser::vfunc_0",
+  "src_path": "src/AdvXMLParser/auto_tiny.cpp",
+  "lifted_path": "lifted/AdvXMLParser/auto_tiny.cpp",
+  "name": "AdvXMLParser::Parser::vfunc_0",
+  "class": "AdvXMLParser::Parser",
+  "signature": "extern \"C\" void* __fastcall fn_00871870(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00870E30 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

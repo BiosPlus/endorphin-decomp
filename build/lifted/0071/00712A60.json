@@ -1,0 +1,13 @@
+{
+  "va": "0x00712A60",
+  "size": 16,
+  "orig_symbol": "sub_00712A60",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_00712A60",
+  "signature": "extern \"C\" int32_t __cdecl fn_00712A60(void)",
+  "summary": "Returns constant 0xE.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

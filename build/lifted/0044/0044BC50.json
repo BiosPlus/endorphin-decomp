@@ -1,0 +1,13 @@
+{
+  "va": "0x0044BC50",
+  "size": 8,
+  "orig_symbol": "sub_0044BC50",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_0044BC50",
+  "signature": "extern \"C\" void __fastcall fn_0044BC50(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x68 and tail-calls sub_00530690.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

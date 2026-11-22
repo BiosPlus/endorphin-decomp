@@ -1,0 +1,14 @@
+{
+  "va": "0x00646230",
+  "size": 8,
+  "orig_symbol": "NullRelationship::vfunc_0_off_8",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NullRelationship::vfunc_0_off_8",
+  "class": "NullRelationship",
+  "signature": "extern \"C\" void __fastcall fn_00646230(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls sub_00646FA0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0058F2C0",
+  "size": 8,
+  "orig_symbol": "AnimatableTransform::vfunc_1_off_C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_1_off_C",
+  "class": "AnimatableTransform",
+  "signature": "extern \"C\" void __fastcall fn_0058F2C0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls AnimatableTransform::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

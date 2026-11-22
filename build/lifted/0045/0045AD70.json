@@ -1,0 +1,14 @@
+{
+  "va": "0x0045AD70",
+  "size": 6,
+  "orig_symbol": "ToolsPropertyPage::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ToolsPropertyPage::vfunc_0",
+  "class": "ToolsPropertyPage",
+  "signature": "extern \"C\" void* __cdecl fn_0045AD70(void)",
+  "summary": "Returns address of global mem_00937A1C.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

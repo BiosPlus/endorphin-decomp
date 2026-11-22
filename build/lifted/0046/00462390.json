@@ -1,0 +1,14 @@
+{
+  "va": "0x00462390",
+  "size": 30,
+  "orig_symbol": "Properties::ValidatingValue::vfunc_0",
+  "src_path": "src/Properties/auto_tiny.cpp",
+  "lifted_path": "lifted/Properties/auto_tiny.cpp",
+  "name": "Properties::ValidatingValue::vfunc_0",
+  "class": "Properties::ValidatingValue",
+  "signature": "extern \"C\" void* __fastcall fn_00462390(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00462380 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

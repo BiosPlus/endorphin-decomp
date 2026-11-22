@@ -1,0 +1,14 @@
+{
+  "va": "0x00458430",
+  "size": 6,
+  "orig_symbol": "ButtonPanel::vfunc_106",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ButtonPanel::vfunc_106",
+  "class": "ButtonPanel",
+  "signature": "extern \"C\" void* __cdecl fn_00458430(void)",
+  "summary": "Returns address of global mem_009372D4.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

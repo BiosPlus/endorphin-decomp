@@ -1,0 +1,14 @@
+{
+  "va": "0x0055A1E0",
+  "size": 30,
+  "orig_symbol": "VSTIO::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "VSTIO::vfunc_0",
+  "class": "VSTIO",
+  "signature": "extern \"C\" void* __fastcall fn_0055A1E0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_005797D0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

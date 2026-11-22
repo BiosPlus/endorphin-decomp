@@ -1,0 +1,14 @@
+{
+  "va": "0x00458460",
+  "size": 6,
+  "orig_symbol": "SpinButtonView::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "SpinButtonView::vfunc_0",
+  "class": "SpinButtonView",
+  "signature": "extern \"C\" void* __cdecl fn_00458460(void)",
+  "summary": "Returns address of global mem_00937368.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

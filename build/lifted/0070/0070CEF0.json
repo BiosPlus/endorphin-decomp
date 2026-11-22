@@ -1,0 +1,13 @@
+{
+  "va": "0x0070CEF0",
+  "size": 16,
+  "orig_symbol": "sub_0070CEF0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_0070CEF0",
+  "signature": "extern \"C\" void __fastcall fn_0070CEF0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x40 and tail-calls sub_006D2250.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

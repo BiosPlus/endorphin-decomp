@@ -1,0 +1,14 @@
+{
+  "va": "0x005FF0E0",
+  "size": 6,
+  "orig_symbol": "CompoundSensor::vfunc_14",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundSensor::vfunc_14",
+  "class": "CompoundSensor",
+  "signature": "extern \"C\" void* __cdecl fn_005FF0E0(void)",
+  "summary": "Returns address of global mem_00B470A0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

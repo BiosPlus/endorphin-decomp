@@ -1,0 +1,14 @@
+{
+  "va": "0x005AA2B0",
+  "size": 8,
+  "orig_symbol": "CharacterReloader::vfunc_3",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CharacterReloader::vfunc_3",
+  "class": "CharacterReloader",
+  "signature": "extern \"C\" void* __stdcall fn_005AA2B0(int a1)",
+  "summary": "Returns address of global mem_00B53B30.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0068BD30",
+  "size": 8,
+  "orig_symbol": "Randomizer::vfunc_0_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Randomizer::vfunc_0_off_4",
+  "class": "Randomizer",
+  "signature": "extern \"C\" void __fastcall fn_0068BD30(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls Randomizer::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

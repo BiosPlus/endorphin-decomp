@@ -1,0 +1,13 @@
+{
+  "va": "0x0063E048",
+  "size": 6,
+  "orig_symbol": "thunk_GLU32_gluPerspective",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_GLU32_gluPerspective",
+  "signature": "extern \"C\" void fn_0063E048(void)",
+  "summary": "IAT jump thunk forwarding to GLU32!gluPerspective.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

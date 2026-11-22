@@ -1,0 +1,13 @@
+{
+  "va": "0x00712950",
+  "size": 7,
+  "orig_symbol": "sub_00712950",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_00712950",
+  "signature": "extern \"C\" void __fastcall fn_00712950(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0078CBD0 (sub_0078CBD0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

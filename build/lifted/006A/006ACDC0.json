@@ -1,0 +1,14 @@
+{
+  "va": "0x006ACDC0",
+  "size": 5,
+  "orig_symbol": "GWCPropertiesCtrl::vfunc_12",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "GWCPropertiesCtrl::vfunc_12",
+  "class": "GWCPropertiesCtrl",
+  "signature": "extern \"C\" void fn_006ACDC0(void)",
+  "summary": "Pure jump thunk forwarding to sub_006ACDB0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

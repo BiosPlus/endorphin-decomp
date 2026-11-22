@@ -1,0 +1,13 @@
+{
+  "va": "0x0085DE10",
+  "size": 16,
+  "orig_symbol": "sub_0085DE10",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "sub_0085DE10",
+  "signature": "extern \"C\" void fn_0085DE10(void)",
+  "summary": "Pure jump thunk forwarding to sub_00868180.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x00642740",
+  "size": 8,
+  "orig_symbol": "MainPhysicsAdapter::vfunc_1_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "MainPhysicsAdapter::vfunc_1_off_4",
+  "class": "MainPhysicsAdapter",
+  "signature": "extern \"C\" void __fastcall fn_00642740(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00648850.",
+  "fields": [
+    {
+      "class": "MainPhysicsAdapter",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

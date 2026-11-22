@@ -1,0 +1,14 @@
+{
+  "va": "0x00517A60",
+  "size": 8,
+  "orig_symbol": "Individual::vfunc_0_off_C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Individual::vfunc_0_off_C",
+  "class": "Individual",
+  "signature": "extern \"C\" void __fastcall fn_00517A60(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls Individual::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

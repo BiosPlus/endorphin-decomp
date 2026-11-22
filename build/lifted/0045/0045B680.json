@@ -1,0 +1,14 @@
+{
+  "va": "0x0045B680",
+  "size": 5,
+  "orig_symbol": "ToolsPropertyPage::vfunc_12",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "ToolsPropertyPage::vfunc_12",
+  "class": "ToolsPropertyPage",
+  "signature": "extern \"C\" void fn_0045B680(void)",
+  "summary": "Pure jump thunk forwarding to sub_0045B670.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

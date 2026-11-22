@@ -1,0 +1,22 @@
+{
+  "va": "0x00454500",
+  "size": 8,
+  "orig_symbol": "RigEditorFrame::vfunc_0_off_14C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RigEditorFrame::vfunc_0_off_14C",
+  "class": "RigEditorFrame",
+  "signature": "extern \"C\" void __fastcall fn_00454500(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_00453FC0.",
+  "fields": [
+    {
+      "class": "RigEditorFrame",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "delegate_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

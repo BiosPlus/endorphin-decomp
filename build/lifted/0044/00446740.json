@@ -1,0 +1,14 @@
+{
+  "va": "0x00446740",
+  "size": 11,
+  "orig_symbol": "NodeView::vfunc_0_off_14C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NodeView::vfunc_0_off_14C",
+  "class": "NodeView",
+  "signature": "extern \"C\" void __fastcall fn_00446740(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEB4 and tail-calls sub_00446710.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

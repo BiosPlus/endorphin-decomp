@@ -1,0 +1,13 @@
+{
+  "va": "0x00442C60",
+  "size": 6,
+  "orig_symbol": "thunk_USER32_ReleaseCapture",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_USER32_ReleaseCapture",
+  "signature": "extern \"C\" void fn_00442C60(void)",
+  "summary": "IAT jump thunk forwarding to USER32!ReleaseCapture.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

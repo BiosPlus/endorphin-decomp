@@ -1,0 +1,13 @@
+{
+  "va": "0x00532C90",
+  "size": 11,
+  "orig_symbol": "sub_00532C90",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "sub_00532C90",
+  "signature": "extern \"C\" void __fastcall fn_00532C90(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x9C and tail-calls sub_00541000.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

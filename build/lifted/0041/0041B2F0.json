@@ -1,0 +1,22 @@
+{
+  "va": "0x0041B2F0",
+  "size": 7,
+  "orig_symbol": "CameraTool::vfunc_23",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CameraTool::vfunc_23",
+  "class": "CameraTool",
+  "signature": "extern \"C\" void __fastcall fn_0041B2F0(void* self)",
+  "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x68.",
+  "fields": [
+    {
+      "class": "CameraTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

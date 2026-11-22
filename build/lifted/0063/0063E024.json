@@ -1,0 +1,13 @@
+{
+  "va": "0x0063E024",
+  "size": 6,
+  "orig_symbol": "thunk_GLU32_gluDisk",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_GLU32_gluDisk",
+  "signature": "extern \"C\" void fn_0063E024(void)",
+  "summary": "IAT jump thunk forwarding to GLU32!gluDisk.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

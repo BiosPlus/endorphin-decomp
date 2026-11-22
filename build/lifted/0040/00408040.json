@@ -1,0 +1,13 @@
+{
+  "va": "0x00408040",
+  "size": 5,
+  "orig_symbol": "sub_00408040",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "sub_00408040",
+  "signature": "extern \"C\" void fn_00408040(void)",
+  "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1903.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

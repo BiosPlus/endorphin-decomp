@@ -1,0 +1,13 @@
+{
+  "va": "0x006A349C",
+  "size": 6,
+  "orig_symbol": "thunk_AVIFIL32_AVIStreamOpenFromFileA",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_AVIFIL32_AVIStreamOpenFromFileA",
+  "signature": "extern \"C\" void fn_006A349C(void)",
+  "summary": "IAT jump thunk forwarding to AVIFIL32!AVIStreamOpenFromFileA.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

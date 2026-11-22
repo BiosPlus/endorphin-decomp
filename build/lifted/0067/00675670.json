@@ -1,0 +1,13 @@
+{
+  "va": "0x00675670",
+  "size": 6,
+  "orig_symbol": "sub_00675670",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "sub_00675670",
+  "signature": "extern \"C\" int32_t __cdecl fn_00675670(void)",
+  "summary": "Returns global int32 value from mem_00B59DB8.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

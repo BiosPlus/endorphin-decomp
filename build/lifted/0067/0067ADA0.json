@@ -1,0 +1,13 @@
+{
+  "va": "0x0067ADA0",
+  "size": 6,
+  "orig_symbol": "thunk_KERNEL32_GetCurrentThreadId",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_KERNEL32_GetCurrentThreadId",
+  "signature": "extern \"C\" void fn_0067ADA0(void)",
+  "summary": "IAT jump thunk forwarding to KERNEL32!GetCurrentThreadId.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

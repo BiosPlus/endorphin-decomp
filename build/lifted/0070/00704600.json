@@ -1,0 +1,13 @@
+{
+  "va": "0x00704600",
+  "size": 6,
+  "orig_symbol": "sub_00704600",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_00704600",
+  "signature": "extern \"C\" void* __cdecl fn_00704600(void)",
+  "summary": "Returns address of global mem_00B5E9A8.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

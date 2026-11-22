@@ -1,0 +1,13 @@
+{
+  "va": "0x00712A70",
+  "size": 16,
+  "orig_symbol": "sub_00712A70",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_00712A70",
+  "signature": "extern \"C\" int32_t __cdecl fn_00712A70(void)",
+  "summary": "Returns constant 0x11.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

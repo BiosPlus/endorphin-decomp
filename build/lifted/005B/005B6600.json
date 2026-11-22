@@ -1,0 +1,13 @@
+{
+  "va": "0x005B6600",
+  "size": 8,
+  "orig_symbol": "sub_005B6600",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "sub_005B6600",
+  "signature": "extern \"C\" void __fastcall fn_005B6600(void* self)",
+  "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x100.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

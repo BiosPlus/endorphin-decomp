@@ -1,0 +1,14 @@
+{
+  "va": "0x0044B5A0",
+  "size": 5,
+  "orig_symbol": "RenderView::vfunc_26",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "RenderView::vfunc_26",
+  "class": "RenderView",
+  "signature": "extern \"C\" void fn_0044B5A0(void)",
+  "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1964.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

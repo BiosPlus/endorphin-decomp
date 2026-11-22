@@ -1,0 +1,13 @@
+{
+  "va": "0x008727B4",
+  "size": 6,
+  "orig_symbol": "thunk_MFC80_ord_6040",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MFC80_ord_6040",
+  "signature": "extern \"C\" void fn_008727B4(void)",
+  "summary": "IAT jump thunk forwarding to MFC80!ord_6040.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

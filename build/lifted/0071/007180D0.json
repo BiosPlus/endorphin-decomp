@@ -1,0 +1,13 @@
+{
+  "va": "0x007180D0",
+  "size": 16,
+  "orig_symbol": "sub_007180D0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_007180D0",
+  "signature": "extern \"C\" uint8_t __fastcall fn_007180D0(void* self)",
+  "summary": "Getter returning uint8_t field at offset +0x1DC.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

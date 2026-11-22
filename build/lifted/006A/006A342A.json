@@ -1,0 +1,13 @@
+{
+  "va": "0x006A342A",
+  "size": 6,
+  "orig_symbol": "thunk_AVIFIL32_AVIFileExit",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_AVIFIL32_AVIFileExit",
+  "signature": "extern \"C\" void fn_006A342A(void)",
+  "summary": "IAT jump thunk forwarding to AVIFIL32!AVIFileExit.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006ACDE0",
+  "size": 6,
+  "orig_symbol": "GWCPropertyItem::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GWCPropertyItem::vfunc_0",
+  "class": "GWCPropertyItem",
+  "signature": "extern \"C\" void* __cdecl fn_006ACDE0(void)",
+  "summary": "Returns address of global mem_0099101C.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

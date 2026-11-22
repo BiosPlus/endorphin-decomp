@@ -1,0 +1,14 @@
+{
+  "va": "0x004B67C0",
+  "size": 30,
+  "orig_symbol": "ModeManager\u003cVMCSMode\u003e::vfunc_0",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "ModeManager\u003cVMCSMode\u003e::vfunc_0",
+  "class": "ModeManager\u003cVMCSMode\u003e",
+  "signature": "extern \"C\" void* __fastcall fn_004B67C0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_004B6760 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

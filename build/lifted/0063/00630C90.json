@@ -1,0 +1,14 @@
+{
+  "va": "0x00630C90",
+  "size": 17,
+  "orig_symbol": "EffectorSkeletal::vfunc_31",
+  "src_path": "src/classes/EffectorSkeletal.cpp",
+  "lifted_path": "lifted/classes/EffectorSkeletal.cpp",
+  "name": "EffectorSkeletal::vfunc_31",
+  "class": "EffectorSkeletal",
+  "signature": "uint32_t __stdcall fn_00630C90(uint32_t first, uint32_t second)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B10B0 (Geometry::FrustumType::vfunc_2).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

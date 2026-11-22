@@ -26,3 +26,38 @@ void fn_0085FC0B(void) {
     // does not change any value, so there is no portable C++ statement with a
     // visible effect. Kept as an empty function to preserve the address slot.
 }
+
+// [0x0085D504] sub_0085D504 (12 bytes)
+// @name sub_0085D504
+// @summary No-op stub (add eax, 0).
+void fn_0085D504(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x0085D554] sub_0085D554 (12 bytes)
+// @name sub_0085D554
+// @summary No-op stub (add eax, 0).
+void fn_0085D554(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x0085E024] sub_0085E024 (12 bytes)
+// @name sub_0085E024
+// @summary No-op stub (add eax, 0).
+void fn_0085E024(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x0085FA64] sub_0085FA64 (12 bytes)
+// @name sub_0085FA64
+// @summary No-op stub (add eax, 0).
+void fn_0085FA64(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x0085FCD4] sub_0085FCD4 (12 bytes)
+// @name sub_0085FCD4
+// @summary No-op stub (add eax, 0).
+void fn_0085FCD4(void) {
+    // No-op stub (add eax, 0x0).
+}

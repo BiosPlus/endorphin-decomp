@@ -1,0 +1,13 @@
+{
+  "va": "0x007C8D70",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80_malloc",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80_malloc",
+  "signature": "extern \"C\" void fn_007C8D70(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!malloc.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0063E970",
+  "size": 7,
+  "orig_symbol": "sub_0063E970",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "sub_0063E970",
+  "signature": "extern \"C\" void __fastcall fn_0063E970(void* self)",
+  "summary": "Stores address of mem_0097CC34 into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

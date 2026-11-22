@@ -1,0 +1,13 @@
+{
+  "va": "0x0054E890",
+  "size": 7,
+  "orig_symbol": "sub_0054E890",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_0054E890",
+  "signature": "extern \"C\" void __fastcall fn_0054E890(void* self)",
+  "summary": "Stores address of mem_00956F94 into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

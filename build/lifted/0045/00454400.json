@@ -1,0 +1,14 @@
+{
+  "va": "0x00454400",
+  "size": 8,
+  "orig_symbol": "RigEditorFrame::vfunc_1_off_148",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RigEditorFrame::vfunc_1_off_148",
+  "class": "RigEditorFrame",
+  "signature": "extern \"C\" void __fastcall fn_00454400(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls RigEditorFrame::vfunc_1_off_144.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

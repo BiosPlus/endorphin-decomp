@@ -1,0 +1,13 @@
+{
+  "va": "0x006A6EAA",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80__CIcos",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80__CIcos",
+  "signature": "extern \"C\" void fn_006A6EAA(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!_CIcos.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

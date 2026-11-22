@@ -1,0 +1,14 @@
+{
+  "va": "0x0044BE40",
+  "size": 30,
+  "orig_symbol": "RenderView::vfunc_1",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RenderView::vfunc_1",
+  "class": "RenderView",
+  "signature": "extern \"C\" void* __fastcall fn_0044BE40(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0044B080 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

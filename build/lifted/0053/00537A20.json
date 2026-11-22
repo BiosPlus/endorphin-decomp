@@ -1,0 +1,14 @@
+{
+  "va": "0x00537A20",
+  "size": 8,
+  "orig_symbol": "CompoundRenderable::vfunc_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_4",
+  "class": "CompoundRenderable",
+  "signature": "extern \"C\" void __fastcall fn_00537A20(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x18 and tail-calls sub_0054C640.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

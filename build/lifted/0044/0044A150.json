@@ -1,0 +1,14 @@
+{
+  "va": "0x0044A150",
+  "size": 30,
+  "orig_symbol": "RenderOptionsPropertyPage::vfunc_1",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RenderOptionsPropertyPage::vfunc_1",
+  "class": "RenderOptionsPropertyPage",
+  "signature": "extern \"C\" void* __fastcall fn_0044A150(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0044A000 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

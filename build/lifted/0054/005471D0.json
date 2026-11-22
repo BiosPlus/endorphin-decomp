@@ -1,0 +1,22 @@
+{
+  "va": "0x005471D0",
+  "size": 10,
+  "orig_symbol": "RotateTool::vfunc_26",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RotateTool::vfunc_26",
+  "class": "RotateTool",
+  "signature": "extern \"C\" void __fastcall fn_005471D0(void* self)",
+  "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x80.",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

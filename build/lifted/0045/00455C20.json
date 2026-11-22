@@ -1,0 +1,14 @@
+{
+  "va": "0x00455C20",
+  "size": 6,
+  "orig_symbol": "CSizingControlBar::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CSizingControlBar::vfunc_0",
+  "class": "CSizingControlBar",
+  "signature": "extern \"C\" void* __cdecl fn_00455C20(void)",
+  "summary": "Returns address of global mem_00936D1C.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

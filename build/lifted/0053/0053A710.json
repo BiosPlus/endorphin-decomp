@@ -1,0 +1,28 @@
+{
+  "va": "0x0053A710",
+  "size": 17,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_5",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_5",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "void fn_0053A710(void* self, uint32_t a0, uint32_t a1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

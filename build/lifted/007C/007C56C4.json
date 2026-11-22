@@ -1,0 +1,13 @@
+{
+  "va": "0x007C56C4",
+  "size": 6,
+  "orig_symbol": "thunk_XSIFtk-3.6.2.1_?GetFCurveCount@CSLTemplate@@QAEHXZ",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_XSIFtk-3.6.2.1_?GetFCurveCount@CSLTemplate@@QAEHXZ",
+  "signature": "extern \"C\" void fn_007C56C4(void)",
+  "summary": "IAT jump thunk forwarding to XSIFtk-3.6.2.1!?GetFCurveCount@CSLTemplate@@QAEHXZ.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

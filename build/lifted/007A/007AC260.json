@@ -1,0 +1,13 @@
+{
+  "va": "0x007AC260",
+  "size": 6,
+  "orig_symbol": "sub_007AC260",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "sub_007AC260",
+  "signature": "extern \"C\" int32_t __cdecl fn_007AC260(void)",
+  "summary": "Returns global int32 value from mem_00B61260.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

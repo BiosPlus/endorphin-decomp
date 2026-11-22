@@ -1,0 +1,14 @@
+{
+  "va": "0x00533DF0",
+  "size": 5,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_6",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_6",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "extern \"C\" void fn_00533DF0(void)",
+  "summary": "Pure jump thunk forwarding to sub_0054C640.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

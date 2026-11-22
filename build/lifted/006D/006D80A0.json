@@ -1,0 +1,13 @@
+{
+  "va": "0x006D80A0",
+  "size": 16,
+  "orig_symbol": "sub_006D80A0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "sub_006D80A0",
+  "signature": "extern \"C\" void __cdecl fn_006D80A0(void)",
+  "summary": "Empty function (returns immediately).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

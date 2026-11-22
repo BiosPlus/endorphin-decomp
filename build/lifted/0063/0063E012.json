@@ -1,0 +1,13 @@
+{
+  "va": "0x0063E012",
+  "size": 6,
+  "orig_symbol": "thunk_GLU32_gluQuadricDrawStyle",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_GLU32_gluQuadricDrawStyle",
+  "signature": "extern \"C\" void fn_0063E012(void)",
+  "summary": "IAT jump thunk forwarding to GLU32!gluQuadricDrawStyle.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

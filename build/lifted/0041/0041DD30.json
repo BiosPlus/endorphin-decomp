@@ -1,0 +1,22 @@
+{
+  "va": "0x0041DD30",
+  "size": 11,
+  "orig_symbol": "Properties::PropertiesControl::vfunc_88",
+  "src_path": "src/Properties/auto_tiny.cpp",
+  "lifted_path": "lifted/Properties/auto_tiny.cpp",
+  "name": "Properties::PropertiesControl::vfunc_88",
+  "class": "Properties::PropertiesControl",
+  "signature": "extern \"C\" void __fastcall fn_0041DD30(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041DB60.",
+  "fields": [
+    {
+      "class": "Properties::PropertiesControl",
+      "offset": "+0x1A0",
+      "type": "void*",
+      "name": "delegate_0x1A0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

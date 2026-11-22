@@ -1,0 +1,13 @@
+{
+  "va": "0x00458200",
+  "size": 11,
+  "orig_symbol": "sub_00458200",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "sub_00458200",
+  "signature": "extern \"C\" void __fastcall fn_00458200(void* self)",
+  "summary": "Destructor tail-call: restores vtable mem_0093712C and tail-calls base destructor sub_00454BA0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

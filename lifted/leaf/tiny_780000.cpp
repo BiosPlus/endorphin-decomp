@@ -1,7 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_780000.cpp
 #include "lift_compat.h"
+extern "C" void ext_00782D30(void);
+extern "C" void __fastcall ext_00783270(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 
-// [0x0078CBD0] sub_0078CBD0 (4 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
 // @name sub_0078CBD0
 // @class UnknownObject
 // @summary Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.
@@ -9,4 +12,201 @@
 extern "C" void __fastcall fn_0078CBD0(void* self) {
     int32_t* counter = reinterpret_cast<int32_t*>(static_cast<unsigned char*>(self) + 0x1C);
     ++(*counter);
+}
+extern "C" void ext_00784720(void);
+extern "C" void __fastcall ext_00785430(void* self);
+extern "C" void __fastcall ext_00785890(void* self);
+extern "C" int mem_00996F00;
+extern "C" void __fastcall ext_007862F0(void* self);
+extern "C" int mem_00996F30;
+extern "C" void __fastcall ext_00787860(void* self);
+extern "C" int mem_00996F6C;
+extern "C" void __fastcall ext_007892B0(void* self);
+extern "C" void __fastcall ext_00723A30(void* self);
+extern "C" void __fastcall ext_0078BB30(void* self);
+extern "C" int mem_00997028;
+extern "C" void __fastcall ext_0078D850(void* self);
+
+// [0x00782D20] sub_00782D20 (16 bytes)
+// @name sub_00782D20
+// @summary Pure jump thunk forwarding to sub_00782D30.
+extern "C" void fn_00782D20(void) {
+    ext_00782D30();
+}
+
+// [0x00783250] sub_00783250 (30 bytes)
+// @name sub_00783250
+// @summary MSVC scalar deleting destructor: calls sub_00783270 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00783250(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00783270(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00784640] sub_00784640 (16 bytes)
+// @name sub_00784640
+// @summary Pure jump thunk forwarding to sub_00784720.
+extern "C" void fn_00784640(void) {
+    ext_00784720();
+}
+
+// [0x00785410] sub_00785410 (30 bytes)
+// @name sub_00785410
+// @summary MSVC scalar deleting destructor: calls sub_00785430 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00785410(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00785430(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00785440] sub_00785440 (16 bytes)
+// @name sub_00785440
+// @summary Returns pointer to subobject/field at offset +0x10.
+extern "C" void* __fastcall fn_00785440(void* self) {
+    return static_cast<char*>(self) + 0x10;
+}
+
+// [0x00785470] sub_00785470 (16 bytes)
+// @name sub_00785470
+// @summary Returns pointer to subobject/field at offset +0x18.
+extern "C" void* __fastcall fn_00785470(void* self) {
+    return static_cast<char*>(self) + 0x18;
+}
+
+// [0x00785870] sub_00785870 (30 bytes)
+// @name sub_00785870
+// @summary MSVC scalar deleting destructor: calls sub_00785890 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00785870(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00785890(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00785890] sub_00785890 (16 bytes)
+// @name sub_00785890
+// @summary Destructor tail-call: restores vtable mem_00996F00 and tail-calls base destructor sub_00785430.
+extern "C" void __fastcall fn_00785890(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_00996F00;
+    ext_00785430(self);
+}
+
+// [0x007862D0] sub_007862D0 (30 bytes)
+// @name sub_007862D0
+// @summary MSVC scalar deleting destructor: calls sub_007862F0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_007862D0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_007862F0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x007862F0] sub_007862F0 (16 bytes)
+// @name sub_007862F0
+// @summary Destructor tail-call: restores vtable mem_00996F30 and tail-calls base destructor sub_00785430.
+extern "C" void __fastcall fn_007862F0(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_00996F30;
+    ext_00785430(self);
+}
+
+// [0x00787000] sub_00787000 (16 bytes)
+// @name sub_00787000
+// @summary Setter storing uint8_t argument into field at offset +0x80.
+extern "C" void __fastcall fn_00787000(void* self, int edx_unused, uint8_t value) {
+    (void)edx_unused;
+    lift_field<uint8_t>(self, 0x80) = value;
+}
+
+// [0x00787840] sub_00787840 (30 bytes)
+// @name sub_00787840
+// @summary MSVC scalar deleting destructor: calls sub_00787860 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00787840(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00787860(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00787860] sub_00787860 (16 bytes)
+// @name sub_00787860
+// @summary Destructor tail-call: restores vtable mem_00996F6C and tail-calls base destructor sub_00785430.
+extern "C" void __fastcall fn_00787860(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_00996F6C;
+    ext_00785430(self);
+}
+
+// [0x00789290] sub_00789290 (30 bytes)
+// @name sub_00789290
+// @summary MSVC scalar deleting destructor: calls sub_007892B0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00789290(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_007892B0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00789880] sub_00789880 (30 bytes)
+// @name sub_00789880
+// @summary MSVC scalar deleting destructor: calls sub_00723A30 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_00789880(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00723A30(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x00789BA0] sub_00789BA0 (16 bytes)
+// @name sub_00789BA0
+// @summary Setter storing int32_t argument into field at offset +0x0.
+extern "C" void __fastcall fn_00789BA0(void* self, int edx_unused, int32_t value) {
+    (void)edx_unused;
+    lift_field<int32_t>(self, 0x0) = value;
+}
+
+// [0x0078BB10] sub_0078BB10 (30 bytes)
+// @name sub_0078BB10
+// @summary MSVC scalar deleting destructor: calls sub_0078BB30 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0078BB10(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0078BB30(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0078BB30] sub_0078BB30 (16 bytes)
+// @name sub_0078BB30
+// @summary Destructor tail-call: restores vtable mem_00997028 and tail-calls base destructor sub_007892B0.
+extern "C" void __fastcall fn_0078BB30(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_00997028;
+    ext_007892B0(self);
+}
+
+// [0x0078D830] sub_0078D830 (30 bytes)
+// @name sub_0078D830
+// @summary MSVC scalar deleting destructor: calls sub_0078D850 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0078D830(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0078D850(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
 }

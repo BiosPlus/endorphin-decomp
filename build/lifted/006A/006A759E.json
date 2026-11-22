@@ -1,0 +1,13 @@
+{
+  "va": "0x006A759E",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80__amsg_exit",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80__amsg_exit",
+  "signature": "extern \"C\" void fn_006A759E(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!_amsg_exit.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006B2AB0",
+  "size": 6,
+  "orig_symbol": "GWCHotLinkItem::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GWCHotLinkItem::vfunc_0",
+  "class": "GWCHotLinkItem",
+  "signature": "extern \"C\" void* __cdecl fn_006B2AB0(void)",
+  "summary": "Returns address of global mem_00991858.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

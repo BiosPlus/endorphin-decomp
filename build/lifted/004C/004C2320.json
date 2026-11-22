@@ -1,0 +1,14 @@
+{
+  "va": "0x004C2320",
+  "size": 8,
+  "orig_symbol": "ValuePtrArrayObject::vfunc_0_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ValuePtrArrayObject::vfunc_0_off_4",
+  "class": "ValuePtrArrayObject",
+  "signature": "extern \"C\" void __fastcall fn_004C2320(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls ValuePtrArrayObject::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

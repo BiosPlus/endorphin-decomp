@@ -1,0 +1,14 @@
+{
+  "va": "0x0040B770",
+  "size": 5,
+  "orig_symbol": "AddCharacterDialog::vfunc_91",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "AddCharacterDialog::vfunc_91",
+  "class": "AddCharacterDialog",
+  "signature": "extern \"C\" void fn_0040B770(void)",
+  "summary": "Pure jump thunk forwarding to CharacterDialog::vfunc_91.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

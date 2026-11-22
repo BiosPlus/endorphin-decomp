@@ -1,0 +1,13 @@
+{
+  "va": "0x004AD950",
+  "size": 5,
+  "orig_symbol": "sub_004AD950",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "sub_004AD950",
+  "signature": "extern \"C\" void fn_004AD950(void)",
+  "summary": "Pure jump thunk forwarding to SearchableMap\u003cNM::Vector4, GetNameFromAttribute\u003cNM::Vector4\u003e\u003e::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

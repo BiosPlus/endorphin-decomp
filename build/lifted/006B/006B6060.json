@@ -1,0 +1,14 @@
+{
+  "va": "0x006B6060",
+  "size": 5,
+  "orig_symbol": "GWCPropInPlaceButton::vfunc_12",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "GWCPropInPlaceButton::vfunc_12",
+  "class": "GWCPropInPlaceButton",
+  "signature": "extern \"C\" void fn_006B6060(void)",
+  "summary": "Pure jump thunk forwarding to sub_006B6050.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

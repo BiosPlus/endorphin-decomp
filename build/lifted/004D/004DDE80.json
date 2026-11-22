@@ -1,0 +1,13 @@
+{
+  "va": "0x004DDE80",
+  "size": 13,
+  "orig_symbol": "sub_004DDE80",
+  "src_path": "src/leaf/tiny_4D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4D0000.cpp",
+  "name": "sub_004DDE80",
+  "signature": "extern \"C\" void __fastcall fn_004DDE80(void* self, int edx_unused, float value)",
+  "summary": "Setter storing float argument into field at offset +0x998.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

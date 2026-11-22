@@ -1,0 +1,14 @@
+{
+  "va": "0x004ED7C0",
+  "size": 8,
+  "orig_symbol": "MetaBodyJointSelection::vfunc_0_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "MetaBodyJointSelection::vfunc_0_off_4",
+  "class": "MetaBodyJointSelection",
+  "signature": "extern \"C\" void __fastcall fn_004ED7C0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls MetaBodyJointSelection::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

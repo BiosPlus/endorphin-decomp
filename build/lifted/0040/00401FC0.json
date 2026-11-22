@@ -1,0 +1,14 @@
+{
+  "va": "0x00401FC0",
+  "size": 9,
+  "orig_symbol": "AVIIO::vfunc_0_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AVIIO::vfunc_0_off_4",
+  "class": "AVIIO",
+  "signature": "extern \"C\" void __fastcall fn_00401FC0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x3C and forwards through mem_00924FDC.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

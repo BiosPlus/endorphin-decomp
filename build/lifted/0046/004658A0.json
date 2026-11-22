@@ -1,0 +1,14 @@
+{
+  "va": "0x004658A0",
+  "size": 6,
+  "orig_symbol": "VMCActionDoc::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "VMCActionDoc::vfunc_0",
+  "class": "VMCActionDoc",
+  "signature": "extern \"C\" void* __cdecl fn_004658A0(void)",
+  "summary": "Returns address of global mem_00939B64.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

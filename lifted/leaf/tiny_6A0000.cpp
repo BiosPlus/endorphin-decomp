@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_6A0000.cpp
 #include "lift_compat.h"
+extern "C" int mem_0098FB84;
+extern "C" void __fastcall ext_00401BB0(void* self);
 
-// [0x006AD950] sub_006AD950 (5 bytes)
+extern "C" void __fastcall ext_00401BB0(void* self);
 // @name fn_006AD950
 // @class UnknownObject
 // @summary Increments the 32-bit counter at offset +0x38 of the object passed in ecx.
@@ -9,4 +11,40 @@
 void fn_006AD950(void* self) {
     int32_t* counter = reinterpret_cast<int32_t*>(static_cast<unsigned char*>(self) + 0x38);
     ++(*counter);
+}
+extern "C" int mem_00990D38;
+extern "C" uintptr_t mem_009244D4;
+extern "C" uintptr_t mem_009242F8;
+
+// [0x006A2C20] sub_006A2C20 (11 bytes)
+// @name sub_006A2C20
+// @summary Destructor tail-call: restores vtable mem_0098FB84 and tail-calls base destructor sub_00401BB0.
+extern "C" void __fastcall fn_006A2C20(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_0098FB84;
+    ext_00401BB0(self);
+}
+
+// [0x006ACDB0] sub_006ACDB0 (6 bytes)
+// @name sub_006ACDB0
+// @summary Returns address of global mem_00990D38.
+extern "C" void* __cdecl fn_006ACDB0(void) {
+    return &mem_00990D38;
+}
+
+// [0x006AD000] sub_006AD000 (9 bytes)
+// @name sub_006AD000
+// @summary This-adjustor thunk: adjusts `this` by +0x8 and forwards through mem_009244D4.
+extern "C" void __fastcall fn_006AD000(void* self) {
+    typedef void (__fastcall* ForwardFn)(void*);
+    ForwardFn target = reinterpret_cast<ForwardFn>(mem_009244D4);
+    target(static_cast<char*>(self) + 0x8);
+}
+
+// [0x006AD040] sub_006AD040 (9 bytes)
+// @name sub_006AD040
+// @summary This-adjustor thunk: adjusts `this` by +0xC and forwards through mem_009242F8.
+extern "C" void __fastcall fn_006AD040(void* self) {
+    typedef void (__fastcall* ForwardFn)(void*);
+    ForwardFn target = reinterpret_cast<ForwardFn>(mem_009242F8);
+    target(static_cast<char*>(self) + 0xC);
 }

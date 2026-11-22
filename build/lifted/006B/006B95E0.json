@@ -1,0 +1,14 @@
+{
+  "va": "0x006B95E0",
+  "size": 6,
+  "orig_symbol": "NMCAutoCompleteEdit::vfunc_80",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NMCAutoCompleteEdit::vfunc_80",
+  "class": "NMCAutoCompleteEdit",
+  "signature": "extern \"C\" void* __cdecl fn_006B95E0(void)",
+  "summary": "Returns address of global mem_009931A4.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

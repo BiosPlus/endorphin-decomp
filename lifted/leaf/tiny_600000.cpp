@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_600000.cpp
 #include "lift_compat.h"
 // Lifted WIP: lifted/wip/fn_006036B0.cpp -> lifted/leaf/tiny_600000.cpp
+extern "C" int mem_0096F81C;
+extern "C" void __fastcall ext_0065F440(void* self);
 
-// [0x00603680] sub_00603680 (5 bytes)
+extern "C" void __fastcall ext_0065F440(void* self);
 // @name VirtualSlot19Thunk
 // @summary Virtual dispatch thunk: loads the object's vtable and tail-calls slot 19 (offset +0x4C) with the same this pointer.
 // @field VTable +0x4C void* slot19
@@ -14,8 +16,10 @@ void fn_00603680(void* self) {
     SlotFn target = reinterpret_cast<SlotFn>(vtable[0x4C / sizeof(void*)]);
     target(self);
 }
+extern "C" int mem_0097215C;
+extern "C" void __fastcall ext_0060BA10(void* self);
 
-// [0x00603670] sub_00603670 (5 bytes)
+extern "C" void __fastcall ext_0060BA10(void* self);
 // @name VirtualSlot15Thunk
 // @class VTable
 // @summary Virtual dispatch thunk: loads the object's vtable and tail-calls slot 15 (offset +0x3C) with the same this pointer; the callee's result is passed through.
@@ -81,4 +85,20 @@ void* fn_006036C0(void* self) {
     using SlotFn = void*(__fastcall*)(void* self);
     SlotFn target = reinterpret_cast<SlotFn>(vtable[25]);
     return target(self);
+}
+
+// [0x00602EF0] sub_00602EF0 (11 bytes)
+// @name sub_00602EF0
+// @summary Destructor tail-call: restores vtable mem_0096F81C and tail-calls base destructor sub_0065F440.
+extern "C" void __fastcall fn_00602EF0(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_0096F81C;
+    ext_0065F440(self);
+}
+
+// [0x0060BCC0] sub_0060BCC0 (11 bytes)
+// @name sub_0060BCC0
+// @summary Destructor tail-call: restores vtable mem_0097215C and tail-calls base destructor sub_0060BA10.
+extern "C" void __fastcall fn_0060BCC0(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_0097215C;
+    ext_0060BA10(self);
 }

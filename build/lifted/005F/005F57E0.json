@@ -1,0 +1,14 @@
+{
+  "va": "0x005F57E0",
+  "size": 11,
+  "orig_symbol": "HelperGraphic::vfunc_1_off_158",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HelperGraphic::vfunc_1_off_158",
+  "class": "HelperGraphic",
+  "signature": "extern \"C\" void __fastcall fn_005F57E0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEA8 and tail-calls sub_005F5410.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

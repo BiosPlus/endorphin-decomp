@@ -1,0 +1,14 @@
+{
+  "va": "0x00532CA0",
+  "size": 9,
+  "orig_symbol": "OglRenderer::vfunc_41",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_41",
+  "class": "OglRenderer",
+  "signature": "extern \"C\" void __fastcall fn_00532CA0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x64 and forwards through mem_00924FDC.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

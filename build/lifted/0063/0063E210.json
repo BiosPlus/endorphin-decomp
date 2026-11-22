@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E210",
+  "size": 5,
+  "orig_symbol": "AdvXMLParser::Text::vfunc_4",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "AdvXMLParser::Text::vfunc_4",
+  "class": "AdvXMLParser::Text",
+  "signature": "extern \"C\" void fn_0063E210(void)",
+  "summary": "Pure jump thunk forwarding to sub_0063E1A0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

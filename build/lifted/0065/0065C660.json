@@ -1,0 +1,13 @@
+{
+  "va": "0x0065C660",
+  "size": 7,
+  "orig_symbol": "sub_0065C660",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "sub_0065C660",
+  "signature": "extern \"C\" void __fastcall fn_0065C660(void* self)",
+  "summary": "Stores address of mem_00928E8C into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x006EF960",
+  "size": 23,
+  "orig_symbol": "sub_006EF960",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006EF960",
+  "signature": "void fn_006EF960(void* self, uint32_t a0, uint32_t a1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0046F920",
+  "size": 11,
+  "orig_symbol": "sub_0046F920",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "sub_0046F920",
+  "signature": "void fn_0046F920(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004A9B50 (NMData::State::vfunc_9_off_10).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

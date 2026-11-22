@@ -1,0 +1,13 @@
+{
+  "va": "0x0071C920",
+  "size": 16,
+  "orig_symbol": "sub_0071C920",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_0071C920",
+  "signature": "extern \"C\" int32_t __fastcall fn_0071C920(void* self)",
+  "summary": "Getter returning int32_t field at offset +0x110.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

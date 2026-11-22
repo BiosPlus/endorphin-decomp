@@ -1,0 +1,14 @@
+{
+  "va": "0x00501EC0",
+  "size": 8,
+  "orig_symbol": "EvolveEngine::vfunc_0_off_10",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "EvolveEngine::vfunc_0_off_10",
+  "class": "EvolveEngine",
+  "signature": "extern \"C\" void __fastcall fn_00501EC0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x10 and tail-calls EvolveEngine::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

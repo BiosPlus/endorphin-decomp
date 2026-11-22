@@ -1,0 +1,14 @@
+{
+  "va": "0x00467F30",
+  "size": 6,
+  "orig_symbol": "VMCActionSaveDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "VMCActionSaveDialog::vfunc_0",
+  "class": "VMCActionSaveDialog",
+  "signature": "extern \"C\" void* __cdecl fn_00467F30(void)",
+  "summary": "Returns address of global mem_00939D94.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

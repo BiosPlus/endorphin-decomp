@@ -1,0 +1,13 @@
+{
+  "va": "0x0052F270",
+  "size": 5,
+  "orig_symbol": "sub_0052F270",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "sub_0052F270",
+  "signature": "extern \"C\" void fn_0052F270(void)",
+  "summary": "Pure jump thunk forwarding to sub_0053A810.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x006F7A80",
+  "size": 8,
+  "orig_symbol": "sub_006F7A80",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "sub_006F7A80",
+  "signature": "extern \"C\" void __fastcall fn_006F7A80(void* self)",
+  "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x47C.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

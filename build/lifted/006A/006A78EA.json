@@ -1,0 +1,13 @@
+{
+  "va": "0x006A78EA",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCP80_?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHPADH@Z",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCP80_?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHPADH@Z",
+  "signature": "extern \"C\" void fn_006A78EA(void)",
+  "summary": "IAT jump thunk forwarding to MSVCP80!?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHPADH@Z.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00491A80",
+  "size": 8,
+  "orig_symbol": "GraphEngine::vfunc_0_off_10",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GraphEngine::vfunc_0_off_10",
+  "class": "GraphEngine",
+  "signature": "extern \"C\" void __fastcall fn_00491A80(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x10 and tail-calls sub_00491FC0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

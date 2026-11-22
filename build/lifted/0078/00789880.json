@@ -1,0 +1,13 @@
+{
+  "va": "0x00789880",
+  "size": 30,
+  "orig_symbol": "sub_00789880",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_00789880",
+  "signature": "extern \"C\" void* __fastcall fn_00789880(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00723A30 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

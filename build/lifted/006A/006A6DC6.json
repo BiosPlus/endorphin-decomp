@@ -1,0 +1,13 @@
+{
+  "va": "0x006A6DC6",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80_?what@exception@std@@UBEPBDXZ",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80_?what@exception@std@@UBEPBDXZ",
+  "signature": "extern \"C\" void fn_006A6DC6(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!?what@exception@std@@UBEPBDXZ.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

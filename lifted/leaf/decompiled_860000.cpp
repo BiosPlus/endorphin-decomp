@@ -25,3 +25,38 @@ void fn_00860E8B(void) {
     // add eax, 0x0 (05 00 00 00 00) leaves eax unchanged. Its only effect is
     // on the flags, which portable C++ cannot observe, so there is nothing to emit.
 }
+
+// [0x008607F4] sub_008607F4 (12 bytes)
+// @name sub_008607F4
+// @summary No-op stub (add eax, 0).
+void fn_008607F4(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x008609F4] sub_008609F4 (12 bytes)
+// @name sub_008609F4
+// @summary No-op stub (add eax, 0).
+void fn_008609F4(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x008683E4] sub_008683E4 (12 bytes)
+// @name sub_008683E4
+// @summary No-op stub (add eax, 0).
+void fn_008683E4(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x0086C014] sub_0086C014 (12 bytes)
+// @name sub_0086C014
+// @summary No-op stub (add eax, 0).
+void fn_0086C014(void) {
+    // No-op stub (add eax, 0x0).
+}
+
+// [0x0086CA64] sub_0086CA64 (12 bytes)
+// @name sub_0086CA64
+// @summary No-op stub (add eax, 0).
+void fn_0086CA64(void) {
+    // No-op stub (add eax, 0x0).
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00539720",
+  "size": 30,
+  "orig_symbol": "UtilityGraphics::Arrow::vfunc_0",
+  "src_path": "src/UtilityGraphics/auto_tiny.cpp",
+  "lifted_path": "lifted/UtilityGraphics/auto_tiny.cpp",
+  "name": "UtilityGraphics::Arrow::vfunc_0",
+  "class": "UtilityGraphics::Arrow",
+  "signature": "extern \"C\" void* __fastcall fn_00539720(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00538F00 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

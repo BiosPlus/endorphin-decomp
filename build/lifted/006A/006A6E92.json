@@ -1,0 +1,13 @@
+{
+  "va": "0x006A6E92",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80_floor",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80_floor",
+  "signature": "extern \"C\" void fn_006A6E92(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!floor.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

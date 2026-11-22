@@ -1,0 +1,13 @@
+{
+  "va": "0x00723A30",
+  "size": 16,
+  "orig_symbol": "sub_00723A30",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "sub_00723A30",
+  "signature": "extern \"C\" void fn_00723A30(void)",
+  "summary": "Pure jump thunk forwarding to sub_007892B0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

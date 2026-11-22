@@ -1,0 +1,13 @@
+{
+  "va": "0x00412C10",
+  "size": 9,
+  "orig_symbol": "sub_00412C10",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "sub_00412C10",
+  "signature": "extern \"C\" void __fastcall fn_00412C10(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x1C and forwards through mem_009244D4.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

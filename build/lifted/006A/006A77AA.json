@@ -1,0 +1,13 @@
+{
+  "va": "0x006A77AA",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80__except_handler4_common",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80__except_handler4_common",
+  "signature": "extern \"C\" void fn_006A77AA(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!_except_handler4_common.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00689F70",
+  "size": 30,
+  "orig_symbol": "MetaXMLElement::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "MetaXMLElement::vfunc_0",
+  "class": "MetaXMLElement",
+  "signature": "extern \"C\" void* __fastcall fn_00689F70(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_006895E0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0070FC20",
+  "size": 6,
+  "orig_symbol": "sub_0070FC20",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_0070FC20",
+  "signature": "extern \"C\" void* __cdecl fn_0070FC20(void)",
+  "summary": "Returns address of global mem_00AA87B0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0040EF90",
+  "size": 11,
+  "orig_symbol": "sub_0040EF90",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "sub_0040EF90",
+  "signature": "extern \"C\" void __fastcall fn_0040EF90(void* self)",
+  "summary": "Destructor tail-call: restores vtable mem_0092B7F4 and tail-calls base destructor thunk_MFC80_ord_587.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

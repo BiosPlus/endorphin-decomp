@@ -1,0 +1,13 @@
+{
+  "va": "0x0050F990",
+  "size": 7,
+  "orig_symbol": "sub_0050F990",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "sub_0050F990",
+  "signature": "extern \"C\" void __fastcall fn_0050F990(void* self)",
+  "summary": "Stores address of mem_00950A74 into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

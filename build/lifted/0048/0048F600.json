@@ -1,0 +1,14 @@
+{
+  "va": "0x0048F600",
+  "size": 30,
+  "orig_symbol": "Commands::CreateTriggeredEventCommand::vfunc_0",
+  "src_path": "src/Commands/auto_tiny.cpp",
+  "lifted_path": "lifted/Commands/auto_tiny.cpp",
+  "name": "Commands::CreateTriggeredEventCommand::vfunc_0",
+  "class": "Commands::CreateTriggeredEventCommand",
+  "signature": "extern \"C\" void* __fastcall fn_0048F600(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0048F590 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

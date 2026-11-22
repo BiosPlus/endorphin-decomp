@@ -1,0 +1,14 @@
+{
+  "va": "0x004E99A0",
+  "size": 5,
+  "orig_symbol": "SelectionBuffer::vfunc_24",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "SelectionBuffer::vfunc_24",
+  "class": "SelectionBuffer",
+  "signature": "extern \"C\" void fn_004E99A0(void)",
+  "summary": "Pure jump thunk forwarding to sub_004E96C0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

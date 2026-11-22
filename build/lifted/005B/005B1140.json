@@ -1,0 +1,13 @@
+{
+  "va": "0x005B1140",
+  "size": 7,
+  "orig_symbol": "sub_005B1140",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "sub_005B1140",
+  "signature": "extern \"C\" void __fastcall fn_005B1140(void* self)",
+  "summary": "Stores address of mem_0095F7EC into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

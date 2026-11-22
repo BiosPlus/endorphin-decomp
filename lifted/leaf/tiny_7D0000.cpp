@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_7D0000.cpp
 #include "lift_compat.h"
+extern "C" int mem_0099E074;
 
 // [0x007DAD40] sub_007DAD40 (4 bytes)
 // @name ReturnZeroWord
@@ -19,4 +20,11 @@ extern "C" uint16_t fn_007DAD40() {
 // @field none
 extern "C" uint32_t fn_007D8700(uint32_t arg0) {
     return arg0;
+}
+
+// [0x007D7A20] sub_007D7A20 (6 bytes)
+// @name sub_007D7A20
+// @summary Returns address of global mem_0099E074.
+extern "C" void* __cdecl fn_007D7A20(void) {
+    return &mem_0099E074;
 }

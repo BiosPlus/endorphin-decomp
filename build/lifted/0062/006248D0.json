@@ -1,0 +1,22 @@
+{
+  "va": "0x006248D0",
+  "size": 8,
+  "orig_symbol": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e::vfunc_1",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e::vfunc_1",
+  "class": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e",
+  "signature": "extern \"C\" void __fastcall fn_006248D0(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_00624640.",
+  "fields": [
+    {
+      "class": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "delegate_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

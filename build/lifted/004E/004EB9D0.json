@@ -1,0 +1,13 @@
+{
+  "va": "0x004EB9D0",
+  "size": 7,
+  "orig_symbol": "sub_004EB9D0",
+  "src_path": "src/leaf/tiny_4E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4E0000.cpp",
+  "name": "sub_004EB9D0",
+  "signature": "extern \"C\" void __fastcall fn_004EB9D0(void* self)",
+  "summary": "Stores address of mem_0093F994 into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

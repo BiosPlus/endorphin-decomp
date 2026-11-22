@@ -1,0 +1,13 @@
+{
+  "va": "0x0063E03C",
+  "size": 6,
+  "orig_symbol": "thunk_GLU32_gluOrtho2D",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_GLU32_gluOrtho2D",
+  "signature": "extern \"C\" void fn_0063E03C(void)",
+  "summary": "IAT jump thunk forwarding to GLU32!gluOrtho2D.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

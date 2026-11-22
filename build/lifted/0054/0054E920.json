@@ -1,0 +1,13 @@
+{
+  "va": "0x0054E920",
+  "size": 6,
+  "orig_symbol": "thunk_OPENGL32_glLoadIdentity",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_OPENGL32_glLoadIdentity",
+  "signature": "extern \"C\" void fn_0054E920(void)",
+  "summary": "IAT jump thunk forwarding to OPENGL32!glLoadIdentity.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

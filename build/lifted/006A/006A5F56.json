@@ -1,0 +1,13 @@
+{
+  "va": "0x006A5F56",
+  "size": 6,
+  "orig_symbol": "thunk_MFC80_ord_630",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MFC80_ord_630",
+  "signature": "extern \"C\" void fn_006A5F56(void)",
+  "summary": "IAT jump thunk forwarding to MFC80!ord_630.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

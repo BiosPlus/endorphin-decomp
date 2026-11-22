@@ -1,0 +1,13 @@
+{
+  "va": "0x004AD960",
+  "size": 8,
+  "orig_symbol": "sub_004AD960",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "sub_004AD960",
+  "signature": "extern \"C\" void __fastcall fn_004AD960(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x10 and tail-calls SearchableMap\u003cNM::Vector4, GetNameFromAttribute\u003cNM::Vector4\u003e\u003e::vfunc_0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

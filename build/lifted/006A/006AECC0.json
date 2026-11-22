@@ -1,0 +1,14 @@
+{
+  "va": "0x006AECC0",
+  "size": 9,
+  "orig_symbol": "GWCCategoryItem::vfunc_12",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GWCCategoryItem::vfunc_12",
+  "class": "GWCCategoryItem",
+  "signature": "extern \"C\" void __fastcall fn_006AECC0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FD4.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

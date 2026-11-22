@@ -1,5 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_680000.cpp
 #include "lift_compat.h"
+extern "C" uintptr_t mem_00924FDC;
+extern "C" void __fastcall ext_00682FD0(void* self);
+extern "C" uintptr_t mem_00924FF4;
+extern "C" void __fastcall ext_00508680(void* self);
 
 // [0x00682ED0] sub_00682ED0 (5 bytes)
 // @name VirtualSlot9Thunk
@@ -20,4 +24,54 @@ void* fn_00682ED0(void* self) {
     SlotFn target = reinterpret_cast<SlotFn>(
         *reinterpret_cast<void**>(reinterpret_cast<char*>(vtable) + 0x24));
     return target(self);
+}
+
+// [0x00682990] sub_00682990 (9 bytes)
+// @name sub_00682990
+// @summary This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FDC.
+extern "C" void __fastcall fn_00682990(void* self) {
+    typedef void (__fastcall* ForwardFn)(void*);
+    ForwardFn target = reinterpret_cast<ForwardFn>(mem_00924FDC);
+    target(static_cast<char*>(self) + 0x6C);
+}
+
+// [0x00682E00] sub_00682E00 (9 bytes)
+// @name sub_00682E00
+// @summary This-adjustor thunk: adjusts `this` by +0x50 and forwards through mem_00924FDC.
+extern "C" void __fastcall fn_00682E00(void* self) {
+    typedef void (__fastcall* ForwardFn)(void*);
+    ForwardFn target = reinterpret_cast<ForwardFn>(mem_00924FDC);
+    target(static_cast<char*>(self) + 0x50);
+}
+
+// [0x006830F0] sub_006830F0 (8 bytes)
+// @name sub_006830F0
+// @summary This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_00682FD0.
+extern "C" void __fastcall fn_006830F0(void* self) {
+    ext_00682FD0(static_cast<char*>(self) + 0x4);
+}
+
+// [0x00687210] sub_00687210 (9 bytes)
+// @name sub_00687210
+// @summary This-adjustor thunk: adjusts `this` by +0x8 and forwards through mem_00924FF4.
+extern "C" void __fastcall fn_00687210(void* self) {
+    typedef void (__fastcall* ForwardFn)(void*);
+    ForwardFn target = reinterpret_cast<ForwardFn>(mem_00924FF4);
+    target(static_cast<char*>(self) + 0x8);
+}
+
+// [0x00687220] sub_00687220 (9 bytes)
+// @name sub_00687220
+// @summary This-adjustor thunk: adjusts `this` by +0x10 and forwards through mem_00924FF4.
+extern "C" void __fastcall fn_00687220(void* self) {
+    typedef void (__fastcall* ForwardFn)(void*);
+    ForwardFn target = reinterpret_cast<ForwardFn>(mem_00924FF4);
+    target(static_cast<char*>(self) + 0x10);
+}
+
+// [0x0068BBF0] sub_0068BBF0 (8 bytes)
+// @name sub_0068BBF0
+// @summary This-adjustor thunk: adjusts `this` by +0x10 and tail-calls sub_00508680.
+extern "C" void __fastcall fn_0068BBF0(void* self) {
+    ext_00508680(static_cast<char*>(self) + 0x10);
 }

@@ -1,0 +1,13 @@
+{
+  "va": "0x00672EB0",
+  "size": 5,
+  "orig_symbol": "sub_00672EB0",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "sub_00672EB0",
+  "signature": "extern \"C\" void fn_00672EB0(void)",
+  "summary": "Pure jump thunk forwarding to sub_00672D10.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

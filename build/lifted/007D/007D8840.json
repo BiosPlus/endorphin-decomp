@@ -1,0 +1,13 @@
+{
+  "va": "0x007D8840",
+  "size": 5,
+  "orig_symbol": "sub_007D8840",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "sub_007D8840",
+  "signature": "extern \"C\" void fn_007D8840(void)",
+  "summary": "Pure jump thunk forwarding to sub_007D8680.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

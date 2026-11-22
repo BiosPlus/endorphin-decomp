@@ -1,0 +1,13 @@
+{
+  "va": "0x0067B2E0",
+  "size": 7,
+  "orig_symbol": "sub_0067B2E0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "sub_0067B2E0",
+  "signature": "extern \"C\" void __fastcall fn_0067B2E0(void* self)",
+  "summary": "Stores address of mem_0098C5E4 into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

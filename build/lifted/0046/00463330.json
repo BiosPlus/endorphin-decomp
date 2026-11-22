@@ -1,0 +1,14 @@
+{
+  "va": "0x00463330",
+  "size": 6,
+  "orig_symbol": "VideoGeneratorDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "VideoGeneratorDialog::vfunc_0",
+  "class": "VideoGeneratorDialog",
+  "signature": "extern \"C\" void* __cdecl fn_00463330(void)",
+  "summary": "Returns address of global mem_009390E4.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

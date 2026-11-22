@@ -1,0 +1,22 @@
+{
+  "va": "0x00535600",
+  "size": 8,
+  "orig_symbol": "OglRenderer::vfunc_76",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_76",
+  "class": "OglRenderer",
+  "signature": "extern \"C\" void __fastcall fn_00535600(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x38 and tail-calls sub_00530640.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

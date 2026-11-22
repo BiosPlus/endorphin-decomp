@@ -1,0 +1,230 @@
+// Lifted C++ translation unit: lifted/leaf/tiny_790000.cpp
+#include "lift_compat.h"
+extern "C" void __fastcall ext_00792900(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" int32_t mem_00B60F58;
+extern "C" int32_t mem_00B60FB8;
+extern "C" int mem_00B60FB0;
+extern "C" void __fastcall ext_0079BA90(void* self);
+extern "C" int mem_00997530;
+extern "C" void __fastcall ext_00705450(void* self);
+
+extern "C" void __fastcall ext_00705450(void* self);
+// @name sub_007928E0
+// @summary MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00792900(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+extern "C" void __fastcall ext_0079C1F0(void* self);
+extern "C" void __fastcall ext_0079D8B0(void* self);
+extern "C" void __fastcall ext_006E7460(void* self);
+extern "C" void __fastcall ext_0079D730(void* self);
+extern "C" void __fastcall ext_0079DB20(void* self);
+extern "C" int mem_009976F8;
+extern "C" void __fastcall ext_00785430(void* self);
+
+extern "C" void __fastcall ext_00785430(void* self);
+// @name sub_0079BA40
+// @summary Returns global int32 value from mem_00B60F58.
+extern "C" int32_t __cdecl fn_0079BA40(void) {
+    return mem_00B60F58;
+}
+extern "C" void __fastcall ext_0079E670(void* self);
+extern "C" void __fastcall ext_006D2160(void* self);
+extern "C" void __fastcall ext_0079E610(void* self);
+extern "C" int32_t mem_00B61148;
+extern "C" int32_t mem_00B61168;
+extern "C" int32_t mem_00B61160;
+extern "C" int mem_00B61158;
+extern "C" void __fastcall ext_0079F380(void* self);
+extern "C" int mem_009977F0;
+extern "C" void __fastcall ext_007AA880(void* self);
+
+extern "C" void __fastcall ext_007AA880(void* self);
+// @name sub_0079BA50
+// @summary Returns global int32 value from mem_00B60FB8.
+extern "C" int32_t __cdecl fn_0079BA50(void) {
+    return mem_00B60FB8;
+}
+
+// [0x0079BA60] sub_0079BA60 (6 bytes)
+// @name sub_0079BA60
+// @summary Returns address of global mem_00B60FB0.
+extern "C" void* __cdecl fn_0079BA60(void) {
+    return &mem_00B60FB0;
+}
+
+// [0x0079BA70] sub_0079BA70 (30 bytes)
+// @name sub_0079BA70
+// @summary MSVC scalar deleting destructor: calls sub_0079BA90 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0079BA70(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0079BA90(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0079BA90] sub_0079BA90 (16 bytes)
+// @name sub_0079BA90
+// @summary Destructor tail-call: restores vtable mem_00997530 and tail-calls base destructor sub_00705450.
+extern "C" void __fastcall fn_0079BA90(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_00997530;
+    ext_00705450(self);
+}
+
+// [0x0079C210] sub_0079C210 (16 bytes)
+// @name sub_0079C210
+// @summary Setter storing uint8_t argument into field at offset +0xF88.
+extern "C" void __fastcall fn_0079C210(void* self, int edx_unused, uint8_t value) {
+    (void)edx_unused;
+    lift_field<uint8_t>(self, 0xF88) = value;
+}
+
+// [0x0079D6F0] sub_0079D6F0 (11 bytes)
+// @name sub_0079D6F0
+// @summary This-adjustor thunk: adjusts `this` by -0xF50 and tail-calls sub_0079C1F0.
+extern "C" void __fastcall fn_0079D6F0(void* self) {
+    ext_0079C1F0(static_cast<char*>(self) - 0xF50);
+}
+
+// [0x0079D890] sub_0079D890 (30 bytes)
+// @name sub_0079D890
+// @summary MSVC scalar deleting destructor: calls sub_0079D8B0 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0079D890(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0079D8B0(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0079D980] sub_0079D980 (8 bytes)
+// @name sub_0079D980
+// @summary This-adjustor thunk: adjusts `this` by +0x50 and tail-calls sub_006E7460.
+extern "C" void __fastcall fn_0079D980(void* self) {
+    ext_006E7460(static_cast<char*>(self) + 0x50);
+}
+
+// [0x0079D990] sub_0079D990 (11 bytes)
+// @name sub_0079D990
+// @summary This-adjustor thunk: adjusts `this` by +0x9C and tail-calls sub_006E7460.
+extern "C" void __fastcall fn_0079D990(void* self) {
+    ext_006E7460(static_cast<char*>(self) + 0x9C);
+}
+
+// [0x0079DAB0] sub_0079DAB0 (8 bytes)
+// @name sub_0079DAB0
+// @summary This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0079D730.
+extern "C" void __fastcall fn_0079DAB0(void* self) {
+    ext_0079D730(static_cast<char*>(self) - 0x4);
+}
+
+// [0x0079DB00] sub_0079DB00 (30 bytes)
+// @name sub_0079DB00
+// @summary MSVC scalar deleting destructor: calls sub_0079DB20 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0079DB00(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0079DB20(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0079DB20] sub_0079DB20 (16 bytes)
+// @name sub_0079DB20
+// @summary Destructor tail-call: restores vtable mem_009976F8 and tail-calls base destructor sub_00785430.
+extern "C" void __fastcall fn_0079DB20(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_009976F8;
+    ext_00785430(self);
+}
+
+// [0x0079E650] sub_0079E650 (30 bytes)
+// @name sub_0079E650
+// @summary MSVC scalar deleting destructor: calls sub_0079E670 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0079E650(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0079E670(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0079E7F0] sub_0079E7F0 (11 bytes)
+// @name sub_0079E7F0
+// @summary This-adjustor thunk: adjusts `this` by +0x118 and tail-calls sub_006D2160.
+extern "C" void __fastcall fn_0079E7F0(void* self) {
+    ext_006D2160(static_cast<char*>(self) + 0x118);
+}
+
+// [0x0079E940] sub_0079E940 (8 bytes)
+// @name sub_0079E940
+// @summary This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0079E610.
+extern "C" void __fastcall fn_0079E940(void* self) {
+    ext_0079E610(static_cast<char*>(self) - 0x4);
+}
+
+// [0x0079EBD0] sub_0079EBD0 (16 bytes)
+// @name sub_0079EBD0
+// @summary Returns global int32 value from mem_00B61148.
+extern "C" int32_t __cdecl fn_0079EBD0(void) {
+    return mem_00B61148;
+}
+
+// [0x0079F330] sub_0079F330 (6 bytes)
+// @name sub_0079F330
+// @summary Returns global int32 value from mem_00B61168.
+extern "C" int32_t __cdecl fn_0079F330(void) {
+    return mem_00B61168;
+}
+
+// [0x0079F340] sub_0079F340 (6 bytes)
+// @name sub_0079F340
+// @summary Returns global int32 value from mem_00B61160.
+extern "C" int32_t __cdecl fn_0079F340(void) {
+    return mem_00B61160;
+}
+
+// [0x0079F350] sub_0079F350 (6 bytes)
+// @name sub_0079F350
+// @summary Returns address of global mem_00B61158.
+extern "C" void* __cdecl fn_0079F350(void) {
+    return &mem_00B61158;
+}
+
+// [0x0079F360] sub_0079F360 (30 bytes)
+// @name sub_0079F360
+// @summary MSVC scalar deleting destructor: calls sub_0079F380 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_0079F360(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0079F380(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x0079F380] sub_0079F380 (16 bytes)
+// @name sub_0079F380
+// @summary Destructor tail-call: restores vtable mem_009977F0 and tail-calls base destructor sub_007AA880.
+extern "C" void __fastcall fn_0079F380(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_009977F0;
+    ext_007AA880(self);
+}
+
+// [0x0079DD10] sub_0079DD10 (23 bytes)
+// @name sub_0079DD10
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_0079DD10(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x80) = a0;
+    lift_field<uint32_t>(self, 0x84) = a1;
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0045C2C0",
+  "size": 6,
+  "orig_symbol": "sub_0045C2C0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "sub_0045C2C0",
+  "signature": "extern \"C\" void* __cdecl fn_0045C2C0(void)",
+  "summary": "Returns address of global mem_00937E88.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

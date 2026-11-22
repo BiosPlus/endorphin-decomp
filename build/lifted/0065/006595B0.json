@@ -1,0 +1,14 @@
+{
+  "va": "0x006595B0",
+  "size": 8,
+  "orig_symbol": "RelationshipRPROJoint::vfunc_49",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RelationshipRPROJoint::vfunc_49",
+  "class": "RelationshipRPROJoint",
+  "signature": "extern \"C\" void __fastcall fn_006595B0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x68 and tail-calls sub_0065C230.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

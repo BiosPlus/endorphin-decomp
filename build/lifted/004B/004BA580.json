@@ -1,0 +1,14 @@
+{
+  "va": "0x004BA580",
+  "size": 30,
+  "orig_symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
+  "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
+  "signature": "extern \"C\" void* __fastcall fn_004BA580(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_004BA170 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

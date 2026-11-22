@@ -1,0 +1,22 @@
+{
+  "va": "0x00533AE0",
+  "size": 13,
+  "orig_symbol": "OglRenderer::vfunc_31",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_31",
+  "class": "OglRenderer",
+  "signature": "extern \"C\" void __fastcall fn_00533AE0(void* self, int edx_unused, float value)",
+  "summary": "Setter storing float argument into field at offset +0x400.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x400",
+      "type": "float",
+      "name": "field_0x400"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

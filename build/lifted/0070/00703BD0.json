@@ -1,0 +1,13 @@
+{
+  "va": "0x00703BD0",
+  "size": 16,
+  "orig_symbol": "sub_00703BD0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_00703BD0",
+  "signature": "extern \"C\" void* __fastcall fn_00703BD0(void* self)",
+  "summary": "Returns pointer to subobject/field at offset +0x248.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

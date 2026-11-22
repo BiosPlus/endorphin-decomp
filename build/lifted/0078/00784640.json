@@ -1,0 +1,13 @@
+{
+  "va": "0x00784640",
+  "size": 16,
+  "orig_symbol": "sub_00784640",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_00784640",
+  "signature": "extern \"C\" void fn_00784640(void)",
+  "summary": "Pure jump thunk forwarding to sub_00784720.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

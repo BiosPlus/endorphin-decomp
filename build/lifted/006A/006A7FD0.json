@@ -1,0 +1,14 @@
+{
+  "va": "0x006A7FD0",
+  "size": 30,
+  "orig_symbol": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e::vfunc_1",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e::vfunc_1",
+  "class": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e",
+  "signature": "extern \"C\" void* __fastcall fn_006A7FD0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls thunk_MFC80_ord_663 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E5A0",
+  "size": 5,
+  "orig_symbol": "AdvXMLParser::Comment::vfunc_4",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "AdvXMLParser::Comment::vfunc_4",
+  "class": "AdvXMLParser::Comment",
+  "signature": "extern \"C\" void fn_0063E5A0(void)",
+  "summary": "Pure jump thunk forwarding to sub_0063E500.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

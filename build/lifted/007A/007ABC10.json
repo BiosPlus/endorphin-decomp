@@ -1,0 +1,13 @@
+{
+  "va": "0x007ABC10",
+  "size": 16,
+  "orig_symbol": "sub_007ABC10",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "sub_007ABC10",
+  "signature": "extern \"C\" void __fastcall fn_007ABC10(void* self)",
+  "summary": "Stores address of mem_009983BC into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

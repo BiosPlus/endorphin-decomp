@@ -1,0 +1,14 @@
+{
+  "va": "0x00646540",
+  "size": 8,
+  "orig_symbol": "SkeletalJoint::vfunc_0_off_8",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "SkeletalJoint::vfunc_0_off_8",
+  "class": "SkeletalJoint",
+  "signature": "extern \"C\" void __fastcall fn_00646540(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls sub_00646550.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

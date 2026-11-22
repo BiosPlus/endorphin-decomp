@@ -1,0 +1,14 @@
+{
+  "va": "0x0054B010",
+  "size": 30,
+  "orig_symbol": "ToolGraphics::ResizeHandleGraphic::vfunc_0",
+  "src_path": "src/ToolGraphics/auto_tiny.cpp",
+  "lifted_path": "lifted/ToolGraphics/auto_tiny.cpp",
+  "name": "ToolGraphics::ResizeHandleGraphic::vfunc_0",
+  "class": "ToolGraphics::ResizeHandleGraphic",
+  "signature": "extern \"C\" void* __fastcall fn_0054B010(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_005499E0 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

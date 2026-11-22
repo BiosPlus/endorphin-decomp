@@ -1,0 +1,13 @@
+{
+  "va": "0x007149C0",
+  "size": 16,
+  "orig_symbol": "sub_007149C0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_007149C0",
+  "signature": "extern \"C\" void __fastcall fn_007149C0(void* self, int edx_unused, uint8_t value)",
+  "summary": "Setter storing uint8_t argument into field at offset +0xDE.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

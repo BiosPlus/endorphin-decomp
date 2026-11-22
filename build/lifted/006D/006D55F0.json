@@ -1,0 +1,13 @@
+{
+  "va": "0x006D55F0",
+  "size": 16,
+  "orig_symbol": "sub_006D55F0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "sub_006D55F0",
+  "signature": "extern \"C\" int32_t __fastcall fn_006D55F0(void* self)",
+  "summary": "Getter returning int32_t field at offset +0x1C.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

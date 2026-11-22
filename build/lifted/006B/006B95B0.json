@@ -1,0 +1,13 @@
+{
+  "va": "0x006B95B0",
+  "size": 6,
+  "orig_symbol": "sub_006B95B0",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B95B0",
+  "signature": "extern \"C\" void* __cdecl fn_006B95B0(void)",
+  "summary": "Returns address of global mem_00992FC8.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

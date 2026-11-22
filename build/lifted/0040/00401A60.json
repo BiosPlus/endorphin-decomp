@@ -1,0 +1,22 @@
+{
+  "va": "0x00401A60",
+  "size": 7,
+  "orig_symbol": "HasBufferedTM::vfunc_3",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasBufferedTM::vfunc_3",
+  "class": "HasBufferedTM",
+  "signature": "extern \"C\" void __fastcall fn_00401A60(void* self)",
+  "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x8.",
+  "fields": [
+    {
+      "class": "HasBufferedTM",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x00719AB0",
+  "size": 6,
+  "orig_symbol": "sub_00719AB0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_00719AB0",
+  "signature": "extern \"C\" void* __cdecl fn_00719AB0(void)",
+  "summary": "Returns address of global mem_00B5FC90.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

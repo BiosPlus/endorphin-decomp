@@ -1,0 +1,194 @@
+// Lifted C++ translation unit: lifted/leaf/tiny_6E0000.cpp
+#include "lift_compat.h"
+extern "C" void __fastcall ext_006E7460(void* self);
+extern "C" void __fastcall ext_006E9A40(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+// @name sub_006E6340
+// @summary This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.
+extern "C" void __fastcall fn_006E6340(void* self) {
+    ext_006E7460(static_cast<char*>(self) + 0x4C);
+}
+extern "C" int32_t mem_00B5DF20;
+extern "C" int32_t mem_00B5DF18;
+extern "C" int mem_00B5DF10;
+extern "C" void __fastcall ext_006EA190(void* self);
+extern "C" int32_t mem_00B5E0A8;
+extern "C" int32_t mem_00B5E0B8;
+extern "C" int mem_00B5E0B0;
+
+// [0x006E7460] sub_006E7460 (16 bytes)
+// @name sub_006E7460
+// @summary Getter returning int32_t field at offset +0x0.
+extern "C" int32_t __fastcall fn_006E7460(void* self) {
+    return static_cast<int32_t>(lift_field<int32_t>(self, 0x0));
+}
+
+// [0x006E9420] sub_006E9420 (16 bytes)
+// @name sub_006E9420
+// @summary Getter returning int32_t field at offset +0x64.
+extern "C" int32_t __fastcall fn_006E9420(void* self) {
+    return static_cast<int32_t>(lift_field<int32_t>(self, 0x64));
+}
+
+// [0x006E9A20] sub_006E9A20 (30 bytes)
+// @name sub_006E9A20
+// @summary MSVC scalar deleting destructor: calls sub_006E9A40 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_006E9A20(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_006E9A40(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x006E9AD0] sub_006E9AD0 (16 bytes)
+// @name sub_006E9AD0
+// @summary Returns constant 0x8.
+extern "C" int32_t __cdecl fn_006E9AD0(void) {
+    return 0x8;
+}
+
+// [0x006EA090] sub_006EA090 (6 bytes)
+// @name sub_006EA090
+// @summary Returns global int32 value from mem_00B5DF20.
+extern "C" int32_t __cdecl fn_006EA090(void) {
+    return mem_00B5DF20;
+}
+
+// [0x006EA0A0] sub_006EA0A0 (6 bytes)
+// @name sub_006EA0A0
+// @summary Returns global int32 value from mem_00B5DF18.
+extern "C" int32_t __cdecl fn_006EA0A0(void) {
+    return mem_00B5DF18;
+}
+
+// [0x006EA0B0] sub_006EA0B0 (6 bytes)
+// @name sub_006EA0B0
+// @summary Returns address of global mem_00B5DF10.
+extern "C" void* __cdecl fn_006EA0B0(void) {
+    return &mem_00B5DF10;
+}
+
+// [0x006EA170] sub_006EA170 (30 bytes)
+// @name sub_006EA170
+// @summary MSVC scalar deleting destructor: calls sub_006EA190 and frees memory when (flags & 1) is set.
+extern "C" void* __fastcall fn_006EA170(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_006EA190(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+
+// [0x006EF800] sub_006EF800 (16 bytes)
+// @name sub_006EF800
+// @summary Setter storing int32_t argument into field at offset +0xC.
+extern "C" void __fastcall fn_006EF800(void* self, int edx_unused, int32_t value) {
+    (void)edx_unused;
+    lift_field<int32_t>(self, 0xC) = value;
+}
+
+// [0x006EF8A0] sub_006EF8A0 (6 bytes)
+// @name sub_006EF8A0
+// @summary Returns global int32 value from mem_00B5E0A8.
+extern "C" int32_t __cdecl fn_006EF8A0(void) {
+    return mem_00B5E0A8;
+}
+
+// [0x006EF8B0] sub_006EF8B0 (6 bytes)
+// @name sub_006EF8B0
+// @summary Returns global int32 value from mem_00B5E0B8.
+extern "C" int32_t __cdecl fn_006EF8B0(void) {
+    return mem_00B5E0B8;
+}
+
+// [0x006EF8C0] sub_006EF8C0 (6 bytes)
+// @name sub_006EF8C0
+// @summary Returns address of global mem_00B5E0B0.
+extern "C" void* __cdecl fn_006EF8C0(void) {
+    return &mem_00B5E0B0;
+}
+
+// [0x006EF930] sub_006EF930 (23 bytes)
+// @name sub_006EF930
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EF930(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x490) = a0;
+    lift_field<uint32_t>(self, 0x494) = a1;
+}
+
+// [0x006EF960] sub_006EF960 (23 bytes)
+// @name sub_006EF960
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EF960(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x5A0) = a0;
+    lift_field<uint32_t>(self, 0x5A4) = a1;
+}
+
+// [0x006EF990] sub_006EF990 (23 bytes)
+// @name sub_006EF990
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EF990(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x6B0) = a0;
+    lift_field<uint32_t>(self, 0x6B4) = a1;
+}
+
+// [0x006EF9D0] sub_006EF9D0 (23 bytes)
+// @name sub_006EF9D0
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EF9D0(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x7C0) = a0;
+    lift_field<uint32_t>(self, 0x7C4) = a1;
+}
+
+// [0x006EFCE0] sub_006EFCE0 (23 bytes)
+// @name sub_006EFCE0
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EFCE0(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x1B10) = a0;
+    lift_field<uint32_t>(self, 0x1B14) = a1;
+}
+
+// [0x006EFD20] sub_006EFD20 (23 bytes)
+// @name sub_006EFD20
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EFD20(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x1C20) = a0;
+    lift_field<uint32_t>(self, 0x1C24) = a1;
+}
+
+// [0x006EFD90] sub_006EFD90 (23 bytes)
+// @name sub_006EFD90
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EFD90(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x1D30) = a0;
+    lift_field<uint32_t>(self, 0x1D34) = a1;
+}
+
+// [0x006EFE30] sub_006EFE30 (23 bytes)
+// @name sub_006EFE30
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EFE30(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x1E40) = a0;
+    lift_field<uint32_t>(self, 0x1E44) = a1;
+}
+
+// [0x006EFED0] sub_006EFED0 (23 bytes)
+// @name sub_006EFED0
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EFED0(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x1F50) = a0;
+    lift_field<uint32_t>(self, 0x1F54) = a1;
+}
+
+// [0x006EFF70] sub_006EFF70 (23 bytes)
+// @name sub_006EFF70
+// @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
+void fn_006EFF70(void* self, uint32_t a0, uint32_t a1) {
+    lift_field<uint32_t>(self, 0x2060) = a0;
+    lift_field<uint32_t>(self, 0x2064) = a1;
+}

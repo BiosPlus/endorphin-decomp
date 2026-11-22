@@ -1,0 +1,14 @@
+{
+  "va": "0x00401CE0",
+  "size": 30,
+  "orig_symbol": "DirtyOrClean\u003cLoadableFromXMLBase\u003e::vfunc_0",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "DirtyOrClean\u003cLoadableFromXMLBase\u003e::vfunc_0",
+  "class": "DirtyOrClean\u003cLoadableFromXMLBase\u003e",
+  "signature": "extern \"C\" void* __fastcall fn_00401CE0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0065C660 and frees memory when (flags \u0026 1) is set.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

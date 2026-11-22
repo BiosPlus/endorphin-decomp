@@ -1,0 +1,13 @@
+{
+  "va": "0x00872822",
+  "size": 6,
+  "orig_symbol": "thunk_MSVCR80___CxxFrameHandler",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "thunk_MSVCR80___CxxFrameHandler",
+  "signature": "extern \"C\" void fn_00872822(void)",
+  "summary": "IAT jump thunk forwarding to MSVCR80!__CxxFrameHandler.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

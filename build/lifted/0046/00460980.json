@@ -1,0 +1,14 @@
+{
+  "va": "0x00460980",
+  "size": 6,
+  "orig_symbol": "UndoHistoryDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "UndoHistoryDialog::vfunc_0",
+  "class": "UndoHistoryDialog",
+  "signature": "extern \"C\" void* __cdecl fn_00460980(void)",
+  "summary": "Returns address of global mem_00938428.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}

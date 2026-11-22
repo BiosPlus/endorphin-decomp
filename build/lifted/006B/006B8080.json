@@ -1,0 +1,14 @@
+{
+  "va": "0x006B8080",
+  "size": 5,
+  "orig_symbol": "NMCMultilineEditDlg::vfunc_86",
+  "src_path": "src/thunks/jmp_thunks.cpp",
+  "lifted_path": "lifted/thunks/jmp_thunks.cpp",
+  "name": "NMCMultilineEditDlg::vfunc_86",
+  "class": "NMCMultilineEditDlg",
+  "signature": "extern \"C\" void fn_006B8080(void)",
+  "summary": "Pure jump thunk forwarding to sub_006B7D90.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-22T07:27:07Z"
+}
