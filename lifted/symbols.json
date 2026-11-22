@@ -489,6 +489,13 @@
     "summary": "This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049AE80": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_3",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "uint8_t __stdcall fn_0049AE80(const uint8_t* const* self)",
+    "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the bool byte stored there.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0049C000": {
     "name": "ExprParser::BoolType::vfunc_14",
     "class": "ExprParser::BoolType",

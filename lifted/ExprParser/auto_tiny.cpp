@@ -37,3 +37,13 @@ extern "C" double __stdcall fn_0066AE40(void* self) {
     const int32_t value = *static_cast<const int32_t*>(self);
     return static_cast<double>(value);
 }
+
+// [0x0049AE80] ExprParser::PrimitiveProxyType<bool>::vfunc_3 (11 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_3
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the bool byte stored there.
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 const uint8_t* value_ptr
+uint8_t __stdcall fn_0049AE80(const uint8_t* const* self) {
+    const uint8_t* value = *self;
+    return *value;
+}
