@@ -53,3 +53,27 @@ void fn_0059DD70(void* self, const float* scale) {
 void fn_005A9960(void* arg) {
     ext_005A7FA0(arg, 0);
 }
+
+// [0x0059FF60]
+// @name NMData::BackGroundData::vfunc_10_off_10
+// @class NMData::BackGroundData
+// @summary Iterates the pointer vector at +0x74..+0x78 and, for each element, calls its AnimationInterface (+0xC) vtable slots 9 (arg) and 10 (arg, 1).
+// @field NMData::BackGroundData +0x74 void** field_0x74
+// @field NMData::BackGroundData +0x78 void** field_0x78
+void fn_0059FF60(void* self, uint32_t arg) {
+    void** begin = lift_field<void**>(self, 0x74);
+    void** end = lift_field<void**>(self, 0x78);
+
+    for (void** it = begin; it != end; ++it) {
+        uint8_t* obj = reinterpret_cast<uint8_t*>(*it);
+        void* iface = obj + 0x0C;
+        void** vtbl = *reinterpret_cast<void***>(iface);
+
+        auto slot9 = reinterpret_cast<void (*)(void*, uint32_t)>(vtbl[0x24 / sizeof(void*)]);
+        slot9(iface, arg);
+
+        vtbl = *reinterpret_cast<void***>(iface);
+        auto slot10 = reinterpret_cast<void (*)(void*, uint32_t, uint32_t)>(vtbl[0x28 / sizeof(void*)]);
+        slot10(iface, arg, 1u);
+    }
+}
