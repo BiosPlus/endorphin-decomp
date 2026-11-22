@@ -6615,6 +6615,13 @@
     "summary": "Copy-constructs std::string from the global at 0x00B447F4 into the caller's return slot and returns that slot (self is unused).",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C3270": {
+    "name": "NMData::FluidObjectData::vfunc_62",
+    "class": "NMData::FluidObjectData",
+    "signature": "void* __thiscall fn_005C3270(void* self, void* out)",
+    "summary": "Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",

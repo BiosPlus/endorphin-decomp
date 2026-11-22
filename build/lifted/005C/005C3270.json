@@ -1,0 +1,14 @@
+{
+  "va": "0x005C3270",
+  "size": 34,
+  "orig_symbol": "NMData::FluidObjectData::vfunc_62",
+  "src_path": "src/NMData/FluidObjectData.cpp",
+  "lifted_path": "lifted/NMData/FluidObjectData.cpp",
+  "name": "NMData::FluidObjectData::vfunc_62",
+  "class": "NMData::FluidObjectData",
+  "signature": "void* __thiscall fn_005C3270(void* self, void* out)",
+  "summary": "Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:35Z"
+}
