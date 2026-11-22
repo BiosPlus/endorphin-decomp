@@ -5054,6 +5054,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BEB50 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0050D8B0": {
+    "name": "NMData::TaskManager::vfunc_1_off_8",
+    "class": "NMData::TaskManager",
+    "signature": "extern \"C\" void __thiscall fn_0050D8B0(void* self)",
+    "summary": "Secondary-base thunk: adjusts this by -8 and forwards to sub_0050D7C0, then pops the 8-byte stack argument block.",
+    "lifted_path": "lifted/NMData/TaskManager.cpp"
+  },
   "0x0050E4C0": {
     "name": "NMData::PopulationData::vfunc_0",
     "class": "NMData::PopulationData",
