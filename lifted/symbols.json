@@ -10098,6 +10098,13 @@
     "summary": "Evaluates the left operand's slot 3 against self; if false, evaluates slot 3 of arg2's +0x04 object against arg2, then forwards the resulting bool to the left operand's slot 9.",
     "lifted_path": "lifted/ExprParser/Operators/Or.cpp"
   },
+  "0x006A1380": {
+    "name": "ExprParser::Operators::Min::vfunc_3",
+    "class": "ExprParser::Operators::Min",
+    "signature": "uint32_t fn_006A1380(void* self, void* arg2)",
+    "summary": "Evaluates the right operand (arg2 +0x04) then the left operand (self +0x04) via slot 1, keeps the smaller value (ties and NaN keep the left value), and forwards it to the left operand's slot 7 with self.",
+    "lifted_path": "lifted/ExprParser/Operators/Min.cpp"
+  },
   "0x006A1440": {
     "name": "ExprParser::Operators::And::vfunc_3",
     "class": "ExprParser::Operators::And",
