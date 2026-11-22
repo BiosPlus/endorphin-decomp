@@ -186,8 +186,10 @@ void fn_0049C080(void* self, float value) {
 }
 extern "C" int32_t ext_006A6DE0(double rounded);
 extern "C" uint32_t ext_00498F90();
+// Callee 0x004989F0: sub_004989F0 (87B). Takes no stack arguments; its 32-bit result is returned in eax.
+extern "C" uint32_t ext_004989F0();
 
-// [0x004975E0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_3 (61 bytes)
+extern "C" uint32_t ext_004989F0();
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_3
 // @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
 // @summary Checks whether the string pointed to by *arg equals either of two constant strings (0x0092F10C or 0x0093A810).
@@ -240,4 +242,14 @@ extern uint32_t ext_0049DA40(void);
 void fn_0049DBE0(uint8_t* self) {
     uint32_t result = ext_0049DA40();
     *reinterpret_cast<uint32_t*>(self + 0x04) = result;
+}
+
+// [0x00498F80] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_37 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_37
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Calls ext_004989F0 and stores its 32-bit result into self+0x04; takes one stack argument (self) and returns with ret 4.
+// @field ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>> +0x04 uint32_t field_0x04
+void fn_00498F80(void* self) {
+    uint32_t result = ext_004989F0();
+    lift_field<uint32_t>(self, 0x04) = result;
 }
