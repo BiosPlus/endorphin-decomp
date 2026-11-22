@@ -25,9 +25,12 @@ extern "C" void __fastcall ext_0053BE80(void* self);
 extern "C" void __fastcall ext_0053C060(void* self);
 extern "C" void __fastcall ext_0053C9A0(void* self);
 extern "C" UINT __stdcall glGenLists(UINT range);
+extern "C" int mem_00AEE8A8;
+// Virtual-call target: (this, arg1, arg2, arg3), callee cleans its own stack args.
+using Animation_VirtualSlot12Fn = void (*)(void* self, uint32_t a, uint32_t b, uint32_t c);
 
-// [0x0053C970]
-// @name Primitives::Sensor2::vfunc_13
+// Virtual-call target: (this, arg1, arg2, arg3), callee cleans its own stack args.
+using Animation_VirtualSlot12Fn = void (*)(void* self, uint32_t a, uint32_t b, uint32_t c);
 // @class Primitives::Sensor2
 // @summary Loads a float through the pointer argument and stores it at this+0x60 (thiscall, one stack arg, ret 4).
 // @field Primitives::Sensor2 +0x60 float field_0x60
@@ -284,4 +287,17 @@ float* fn_0053C980(void* self, float* out) {
 uint8_t fn_0053A8C0(void* self, uint32_t mask) {
     uint32_t flags = lift_field<uint32_t>(self, 0x1C);
     return (flags & mask) == mask ? 1 : 0;
+}
+
+// [0x0052EF80] Primitives::Animation::vfunc_10 (24 bytes)
+// @name Primitives::Animation::vfunc_10
+// @class Primitives::Animation
+// @summary Forwards to the object's vtable slot at +0x30 with (0x20, arg, mem_00AEE8A8) and returns, popping one stack argument.
+// @field Primitives::Animation +0x00 void* vtable
+void fn_0052EF80(void* self, uint32_t arg) {
+    // The vtable pointer is the first dword of the object.
+    char* vtable = *reinterpret_cast<char**>(self);
+    // Slot at byte offset 0x30 inside the vtable (index 12).
+    auto fn = *reinterpret_cast<Animation_VirtualSlot12Fn*>(vtable + 0x30);
+    fn(self, 0x20u, arg, static_cast<uint32_t>(mem_00AEE8A8));
 }

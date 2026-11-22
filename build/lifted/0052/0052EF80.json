@@ -1,0 +1,22 @@
+{
+  "va": "0x0052EF80",
+  "size": 24,
+  "orig_symbol": "Primitives::Animation::vfunc_10",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Animation::vfunc_10",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0052EF80(void* self, uint32_t arg)",
+  "summary": "Forwards to the object's vtable slot at +0x30 with (0x20, arg, mem_00AEE8A8) and returns, popping one stack argument.",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:22Z"
+}

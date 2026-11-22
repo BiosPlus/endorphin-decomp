@@ -1651,6 +1651,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0052EF80": {
+    "name": "Primitives::Animation::vfunc_10",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0052EF80(void* self, uint32_t arg)",
+    "summary": "Forwards to the object's vtable slot at +0x30 with (0x20, arg, mem_00AEE8A8) and returns, popping one stack argument.",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0052EFA0": {
     "name": "Primitives::Animation::vfunc_14",
     "class": "Primitives::Animation",
