@@ -610,3 +610,17 @@ void fn_006930D0(void* proxy, void* unused) {
     void* target = *static_cast<void**>(proxy);
     ext_00692D90(target);
 }
+
+// [0x004CCCC0]
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, fireEnable>::vfunc_2
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>
+// @summary Reads the wrapped object pointer from the first argument and forwards its vtable-side pointer to ext_004CCAF0; always returns 0.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+extern void ext_004CCAF0(void* self);
+
+int32_t fn_004CCCC0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    ext_004CCAF0(obj);
+    return 0;
+}
