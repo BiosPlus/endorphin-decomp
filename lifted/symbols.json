@@ -3731,6 +3731,13 @@
     "summary": "Stores an integer argument, converted to float, through the object's float* pointer.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x004B7B50": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_43",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void fn_004B7B50(void* self, void* arg)",
+    "summary": "Calls virtual slot 1 of arg-\u003efield_0x04 (passing arg) and adds the float result into *ptr.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004BA580": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",

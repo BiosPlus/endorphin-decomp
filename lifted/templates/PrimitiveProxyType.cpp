@@ -75,3 +75,18 @@ void* fn_0049B1E0(void* target, const void* src) {
     ext_006720A0(target, static_cast<uint32_t>(*value_ptr));
     return target;
 }
+
+// [0x004B7B50] ExprParser::PrimitiveProxyType<float>::vfunc_43 (38 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_43
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Calls virtual slot 1 of arg->field_0x04 (passing arg) and adds the float result into *ptr.
+// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
+// @field Unknown +0x04 void* field_0x04
+void fn_004B7B50(void* self, void* arg) {
+    float* value = lift_field<float*>(self, 0x00);
+    void* sub = lift_field<void*>(arg, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    // Virtual slot 1 (vtable offset 0x04); returns float.
+    float r = reinterpret_cast<float(__thiscall*)(void*, void*)>(vtbl[1])(sub, arg);
+    *value = *value + r;
+}
