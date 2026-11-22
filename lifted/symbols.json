@@ -79,6 +79,13 @@
     "summary": "Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0078CBD0": {
+    "name": "sub_0078CBD0",
+    "class": "UnknownObject",
+    "signature": "extern \"C\" void __fastcall fn_0078CBD0(void* self)",
+    "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x00870E86": {
     "name": "sub_00870E86",
     "signature": "void fn_00870E86(void* self)",
