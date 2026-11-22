@@ -4240,6 +4240,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004EC580 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004ECA70": {
+    "name": "ExprParser::Function2Type\u003cSelectionVariable\u003e::vfunc_16",
+    "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
+    "signature": "void* fn_004ECA70(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/Function2Type.cpp"
+  },
   "0x004ED7C0": {
     "name": "MetaBodyJointSelection::vfunc_0_off_4",
     "class": "MetaBodyJointSelection",
