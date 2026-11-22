@@ -5586,6 +5586,13 @@
     "summary": "Returns true when every bit set in the argument is also set in the field at +0x1C.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053AD10": {
+    "name": "Primitives::Animation::vfunc_29",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0053AD10(void* self)",
+    "summary": "Resets animation state: clears counters, sets flag bits 0x2 and 0x1000 in +0x1C, sets +0x30 to INT_MAX, releases the object at +0x38 via its vtable slot 0 (deleting dtor, arg 1), then marks the DirtyOrCleanBase byte at +0x04 as dirty.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053AE20": {
     "name": "Primitives::Animation::vfunc_11",
     "class": "Primitives::Animation",

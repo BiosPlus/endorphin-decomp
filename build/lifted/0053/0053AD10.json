@@ -1,0 +1,70 @@
+{
+  "va": "0x0053AD10",
+  "size": 91,
+  "orig_symbol": "Primitives::Animation::vfunc_29",
+  "src_path": "src/Primitives/Animation.cpp",
+  "lifted_path": "lifted/Primitives/Animation.cpp",
+  "name": "Primitives::Animation::vfunc_29",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0053AD10(void* self)",
+  "summary": "Resets animation state: clears counters, sets flag bits 0x2 and 0x1000 in +0x1C, sets +0x30 to INT_MAX, releases the object at +0x38 via its vtable slot 0 (deleting dtor, arg 1), then marks the DirtyOrCleanBase byte at +0x04 as dirty.",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:14:10Z"
+}

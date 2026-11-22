@@ -41,3 +41,48 @@ void fn_0053E240(void* self, void* arg1, uint32_t arg2, uint32_t arg3) {
         lift_field<uint32_t>(self, 0x1C) = flags | 0x02000000u;
     }
 }
+
+// [0x0053AD10] Primitives::Animation::vfunc_29 (91 bytes)
+// @name Primitives::Animation::vfunc_29
+// @class Primitives::Animation
+// @summary Resets animation state: clears counters, sets flag bits 0x2 and 0x1000 in +0x1C, sets +0x30 to INT_MAX, releases the object at +0x38 via its vtable slot 0 (deleting dtor, arg 1), then marks the DirtyOrCleanBase byte at +0x04 as dirty.
+// @field Primitives::Animation +0x04 uint8_t field_0x04
+// @field Primitives::Animation +0x08 uint32_t field_0x08
+// @field Primitives::Animation +0x1C uint32_t field_0x1C
+// @field Primitives::Animation +0x20 uint32_t field_0x20
+// @field Primitives::Animation +0x24 uint32_t field_0x24
+// @field Primitives::Animation +0x28 uint32_t field_0x28
+// @field Primitives::Animation +0x2C uint32_t field_0x2c
+// @field Primitives::Animation +0x30 uint32_t field_0x30
+// @field Primitives::Animation +0x38 void* field_0x38
+void fn_0053AD10(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    auto u32 = [&](size_t off) -> uint32_t& {
+        return *reinterpret_cast<uint32_t*>(base + off);
+    };
+
+    u32(0x20) = 0;
+    u32(0x1C) = 1;
+
+    // flags |= 0x2 (equivalent to the xor-if-clear sequence)
+    u32(0x1C) |= 0x2u;
+    // flags |= 0x1000
+    u32(0x1C) |= 0x1000u;
+
+    u32(0x24) = 0;
+    u32(0x28) = 0;
+    u32(0x2C) = 0;
+    u32(0x08) = 0;
+    u32(0x30) = 0x7FFFFFFFu;
+
+    void* obj = *reinterpret_cast<void**>(base + 0x38);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using DtorFn = void (*)(void*, int);
+        reinterpret_cast<DtorFn>(vtbl[0])(obj, 1);
+    }
+    *reinterpret_cast<void**>(base + 0x38) = nullptr;
+
+    *(base + 0x04) = 1;
+}
