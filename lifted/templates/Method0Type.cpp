@@ -564,3 +564,14 @@ void fn_0048B0B0(void* a1, uint32_t a2) {
     void* ecx = *reinterpret_cast<void**>(a1);
     ext_0048A9F0(ecx);
 }
+
+// [0x0048B1F0] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>::vfunc_41 (14 bytes)
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_41
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Stdcall (ret 8) proxy: loads the target pointer stored at the proxy's first dword and forwards it to ext_0048ABF0 in ECX; the second stack argument is ignored.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+extern "C" void __stdcall fn_0048B1F0(void* self, void* unused) {
+    (void)unused;
+    void* target = *static_cast<void**>(self);
+    ext_0048ABF0(target);
+}
