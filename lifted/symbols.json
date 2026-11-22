@@ -6882,6 +6882,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060B2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060BB80": {
+    "name": "NMData::EffectorBaseData::vfunc_4",
+    "class": "NMData::EffectorBaseData",
+    "signature": "uint32_t fn_0060BB80(void* self)",
+    "summary": "Returns 0 if the pointer at +0x40 is null; otherwise calls vtable slot 4 on that object with argument 0 and returns its result.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0060BCC0": {
     "name": "sub_0060BCC0",
     "signature": "extern \"C\" void __fastcall fn_0060BCC0(void* self)",

@@ -1839,22 +1839,6 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x0060BB80] NMData::EffectorBaseData::vfunc_4 (29 bytes)
-// @name NMData::EffectorBaseData::vfunc_4
-// @class NMData::EffectorBaseData
-// @summary Returns 0 if the pointer at +0x40 is null; otherwise calls vtable slot 4 on that object with argument 0 and returns its result.
-// @field NMData::EffectorBaseData +0x40 void* field_0x40
-uint32_t fn_0060BB80(void* self) {
-    void* target = lift_field<void*>(self, 0x40);
-    if (target == nullptr) {
-        return 0;
-    }
-    void** vtable = *reinterpret_cast<void***>(target);
-    // vtable byte offset 0x10 -> slot 4 (32-bit layout)
-    auto fn = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(vtable[4]);
-    return fn(target, 0);
-}
-
 // [0x0051C7A0] NMData::QuatChannel::vfunc_9 (31 bytes)
 // @name NMData::QuatChannel::vfunc_9
 // @class NMData::QuatChannel
@@ -1953,4 +1937,20 @@ uint32_t fn_0049ABA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
         result = 0x20;
     }
     return result;
+}
+
+// [0x0060BB80] NMData::EffectorBaseData::vfunc_4 (29 bytes)
+// @name NMData::EffectorBaseData::vfunc_4
+// @class NMData::EffectorBaseData
+// @summary Returns 0 if the pointer at +0x40 is null; otherwise calls vtable slot 4 on that object with argument 0 and returns its result.
+// @field NMData::EffectorBaseData +0x40 void* field_0x40
+uint32_t fn_0060BB80(void* self) {
+    void* target = lift_field<void*>(self, 0x40);
+    if (target == nullptr) {
+        return 0;
+    }
+    void** vtable = *reinterpret_cast<void***>(target);
+    // vtable byte offset 0x10 -> slot 4 (32-bit layout)
+    auto fn = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(vtable[4]);
+    return fn(target, 0);
 }
