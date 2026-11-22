@@ -1,0 +1,13 @@
+{
+  "va": "0x00447F90",
+  "size": 6,
+  "orig_symbol": "sub_00447F90",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "GetConstantAddress_00447F90",
+  "signature": "extern \"C\" const unsigned int* __cdecl fn_00447F90()",
+  "summary": "Returns the address of the read-only 32-bit constant at mem_009331C8 (.rdata).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:51:21Z"
+}

@@ -304,6 +304,12 @@
     "summary": "Returns the address of the global data slot mem_00933000 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00447F90": {
+    "name": "GetConstantAddress_00447F90",
+    "signature": "extern \"C\" const unsigned int* __cdecl fn_00447F90()",
+    "summary": "Returns the address of the read-only 32-bit constant at mem_009331C8 (.rdata).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
