@@ -1,0 +1,28 @@
+{
+  "va": "0x0066BF10",
+  "size": 134,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_0",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_0",
+  "class": "ExprParser::SubComponentType",
+  "signature": "uint32_t fn_0066BF10(void* self, uint32_t first, uint32_t arg)",
+  "summary": "Queries the sub-component at +0x04 into a local out-pair, forwards the first argument plus that out-pair to the member at +0x08, releases out[1] if it was set, and returns the first argument.",
+  "fields": [
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T08:19:14Z"
+}

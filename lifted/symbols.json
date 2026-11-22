@@ -9897,6 +9897,13 @@
     "summary": "Calls vtable slot 0 to fetch a sub-object, queries its vtable slot 3 for a bool, then releases the temporary via vtable slot 30 and returns the bool.",
     "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
   },
+  "0x0066BF10": {
+    "name": "ExprParser::SubComponentType::vfunc_0",
+    "class": "ExprParser::SubComponentType",
+    "signature": "uint32_t fn_0066BF10(void* self, uint32_t first, uint32_t arg)",
+    "summary": "Queries the sub-component at +0x04 into a local out-pair, forwards the first argument plus that out-pair to the member at +0x08, releases out[1] if it was set, and returns the first argument.",
+    "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
+  },
   "0x0066BFA0": {
     "name": "ExprParser::SubComponentType::vfunc_41",
     "class": "ExprParser::SubComponentType",

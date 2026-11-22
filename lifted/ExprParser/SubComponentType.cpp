@@ -118,45 +118,6 @@ float fn_0066BD40(void* self, void* arg) {
     return value;
 }
 
-// [0x0066BF10] ExprParser::SubComponentType::vfunc_0 (134 bytes)
-// @name ExprParser::SubComponentType::vfunc_0
-// @class ExprParser::SubComponentType
-// @summary Calls the sub-component's vfunc_0 and the member's vfunc_0 to fill a two-word out struct, then releases out[1] via its vtable slot 30 when non-null; returns the first stack argument.
-// @field ExprParser::SubComponentType +0x04 void* field_0x04 (sub-component object; vtable slot 0 called)
-// @field ExprParser::SubComponentType +0x08 void* field_0x08 (member object; vtable slot 0 called)
-uint32_t fn_0066BF10(void* self, uint32_t firstArg, uint32_t arg) {
-    // The SEH frame (handler 0x008B33A1, state slot) is compiler-generated
-    // exception bookkeeping with no portable equivalent; it is omitted here.
-    // The original also writes a local flag (esp+4) that is never read; omitted.
-
-    // Two-word out struct shared by both vtable calls (E+8 / E+0xc in the original).
-    // Slot 0 of the sub-component: (out, arg); slot 0 of the member: (firstArg, out).
-    void* out[2] = {nullptr, nullptr};
-
-    // Sub-component call: sub->vt[0](&out, arg).
-    void* sub = lift_field<void*>(self, 4);
-    void** subVt = *static_cast<void***>(sub);
-    auto subGet = reinterpret_cast<void* (__thiscall*)(void* self, void** out, uint32_t arg)>(subVt[0]);
-    subGet(sub, out, arg);
-
-    // Member call: member->vt[0](firstArg, &out).
-    void* member = lift_field<void*>(self, 8);
-    void** memberVt = *static_cast<void***>(member);
-    auto memberGet = reinterpret_cast<void (__thiscall*)(void* self, uint32_t first, void** out)>(memberVt[0]);
-    memberGet(member, firstArg, out);
-
-    // Release out[1] if it was produced: out[1]->vt[30](&out) (offset 0x78).
-    void* released = out[1];
-    if (released != nullptr) {
-        void** relVt = *static_cast<void***>(released);
-        auto release = reinterpret_cast<void (__thiscall*)(void* self, void** out)>(relVt[30]);
-        release(released, out);
-    }
-
-    // The original returns the first stack argument (esi reloaded from esp+0x20).
-    return firstArg;
-}
-
 // [0x0066BFA0] ExprParser::SubComponentType::vfunc_41 (143 bytes)
 // @name ExprParser::SubComponentType::vfunc_41
 // @class ExprParser::SubComponentType
@@ -200,4 +161,48 @@ void fn_0066BFA0(void* self, uint32_t arg1, uint32_t arg2) {
     if (out[1] != nullptr) {
         reinterpret_cast<ReleaseFn>(vtable_slot(out[1], 30))(out[1], out);
     }
+}
+
+// [0x0066BF10] ExprParser::SubComponentType::vfunc_0 (134 bytes)
+// @name ExprParser::SubComponentType::vfunc_0
+// @class ExprParser::SubComponentType
+// @summary Queries the sub-component at +0x04 into a local out-pair, forwards the first argument plus that out-pair to the member at +0x08, releases out[1] if it was set, and returns the first argument.
+// @field ExprParser::SubComponentType +0x04 void* field_0x04
+// @field ExprParser::SubComponentType +0x08 void* field_0x08
+
+// vt[0] on the sub-component: (out, arg); return value unused.
+using SubGetFn = void* (__thiscall*)(void* self, void** out, uint32_t arg);
+// vt[0] on the member: (first, out).
+using MemberGetFn = void (__thiscall*)(void* self, uint32_t first, void** out);
+// vt[30] (offset 0x78) on out[1]: (out).
+using ReleaseFn = void (__thiscall*)(void* self, void** out);
+
+// No ext_/mem_ globals are referenced by this function.
+// The original wraps the release in an SEH frame whose handler lives outside
+// this function (0x008B33A1); that exception-path cleanup is not reproduced here.
+uint32_t fn_0066BF10(void* self, uint32_t first, uint32_t arg) {
+    // Two-slot out-pair shared by the sub-component and member calls.
+    void* out[2] = {nullptr, nullptr};
+
+    // sub = self->+0x04; sub->vt[0](out, arg).
+    void* sub = lift_field<void*>(self, 0x04);
+    void** subVt = *static_cast<void***>(sub);
+    auto subGet = reinterpret_cast<SubGetFn>(subVt[0]);
+    subGet(sub, out, arg);
+
+    // member = self->+0x08; member->vt[0](first, out).
+    void* member = lift_field<void*>(self, 0x08);
+    void** memberVt = *static_cast<void***>(member);
+    auto memberGet = reinterpret_cast<MemberGetFn>(memberVt[0]);
+    memberGet(member, first, out);
+
+    // If out[1] was produced, release it through its vt[30].
+    void* tmp = out[1];
+    if (tmp != nullptr) {
+        void** tmpVt = *static_cast<void***>(tmp);
+        auto release = reinterpret_cast<ReleaseFn>(tmpVt[30]);
+        release(tmp, out);
+    }
+
+    return first;
 }
