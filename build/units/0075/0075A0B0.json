@@ -248,5 +248,7 @@
     "0x0075A872",
     "0x0075A880"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:56:55Z"
 }
