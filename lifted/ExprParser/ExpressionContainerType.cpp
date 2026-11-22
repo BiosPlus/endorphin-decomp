@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/ExprParser/ExpressionContainerType.cpp
 #include "lift_compat.h"
+extern "C" void* ext_006999B0(void* arg);
 
 // [0x00699100]
 // @name ExprParser::ExpressionContainerType::vfunc_31
@@ -84,4 +85,19 @@ void fn_0067A7D0(void* self, void* arg) {
     // The original returns whatever that callee leaves in st0; that value is not modelled here.
     void* selfSubAgain = lift_field<void*>(self, 0x04);
     reinterpret_cast<FloatSetter>(vslot(selfSubAgain, 7))(selfSubAgain, self, sum);
+}
+
+// [0x00670CB0] ExprParser::ExpressionContainerType::vfunc_1 (24 bytes)
+// @name ExprParser::ExpressionContainerType::vfunc_1
+// @class ExprParser::ExpressionContainerType
+// @summary Resolves arg via ext_006999B0, then tail-dispatches to vtable slot 1 of the result's +0x04 object, passing the result as the argument.
+// @field Unknown +0x04 void* field_0x04
+void* fn_00670CB0(void* a1) {
+    // Helper returns the resolved object; its +0x04 member is the dispatch target.
+    void* x = ext_006999B0(a1);
+    void* obj = lift_field<void*>(x, 0x04);
+    // Original is a tail jump (jmp eax) through vtable slot 1 (offset 0x04).
+    void** vtbl = *static_cast<void***>(obj);
+    auto fn = reinterpret_cast<void* (*)(void*, void*)>(vtbl[1]);
+    return fn(obj, x);
 }
