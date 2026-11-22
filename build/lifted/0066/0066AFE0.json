@@ -1,0 +1,22 @@
+{
+  "va": "0x0066AFE0",
+  "size": 20,
+  "orig_symbol": "ExprParser::ExtROType::vfunc_2",
+  "src_path": "src/ExprParser/ExtROType.cpp",
+  "lifted_path": "lifted/ExprParser/ExtROType.cpp",
+  "name": "ExprParser::ExtROType::vfunc_2",
+  "class": "ExprParser::ExtROType",
+  "signature": "void* ExprParser_ExtROType_vfunc_2(void* self)",
+  "summary": "Tail-forwards to vtable slot 2 of the object at (*this)-\u003e+0x04, passing (*this) as the this/arg.",
+  "fields": [
+    {
+      "class": "ExprParser::ExtROType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:21Z"
+}
