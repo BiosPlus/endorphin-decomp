@@ -1,0 +1,64 @@
+{
+  "va": "0x0053DAA0",
+  "size": 85,
+  "orig_symbol": "Primitives::Cylinder::vfunc_25",
+  "src_path": "src/Primitives/Cylinder.cpp",
+  "lifted_path": "lifted/Primitives/Cylinder.cpp",
+  "name": "Primitives::Cylinder::vfunc_25",
+  "class": "Primitives::Cylinder",
+  "signature": "void fn_0053DAA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Forwards three args to Plane::vfunc_25, sets flag 0x40 at +0x1c, copies two fields from arg2 and the first char of its string at +0x9c into self.",
+  "fields": [
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "field_0x45"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "uint32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint32_t",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "std::string",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:25Z"
+}
