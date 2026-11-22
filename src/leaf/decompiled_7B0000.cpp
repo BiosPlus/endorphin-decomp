@@ -21844,3 +21844,385 @@ L_7BA1AD:
         ret
     }
 }
+
+// [0x007B82E0] sub_007B82E0 (1382 bytes)
+extern "C" void ext_0079EEC0();
+extern "C" void ext_0079EED0();
+extern "C" unsigned short ext_007B77D0();
+extern "C" unsigned short ext_007B7830();
+extern "C" void ext_007B7A90();
+extern "C" int mem_00999838;
+extern "C" int mem_0099982C;
+extern "C" int mem_00999830;
+extern "C" int mem_00999834;
+extern "C" int mem_00999840;
+
+extern "C" __declspec(naked) void __cdecl fn_007B82E0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        sub esp, 34h
+        mov eax, dword ptr [ecx]
+        push esi
+        xor esi, esi
+        cmp eax, 0a020h
+        jg L_7B8645
+        je L_7B8831
+        cmp eax, 3060h
+        jg L_7B846E
+        je L_7B845B
+        cmp eax, 1500h
+        jg L_7B83AF
+        je L_7B87D3
+        cmp eax, 1100h
+        jg short L_7B8363
+        je L_7B857B
+        add eax, -2
+        cmp eax, 0feh
+        ja L_7B8823
+        xor edx, edx
+        mov dl, byte ptr [eax + 07b8860h]
+        jmp dword ptr [4*edx + 07b8848h]
+L_7B8349:
+        mov eax, dword ptr [mem_00999838]
+        lea esi, [eax + 2*eax]
+        jmp L_7B8831
+L_7B8356:
+        mov eax, dword ptr [mem_0099982C]
+        lea esi, [eax + 2*eax]
+        jmp L_7B8831
+L_7B8363:
+        cmp eax, 1410h
+        jg short L_7B8394
+        je short L_7B8389
+        cmp eax, 1200h
+        je L_7B8831
+        cmp eax, 1300h
+        je short L_7B8389
+        cmp eax, 1400h
+        jne L_7B8823
+L_7B8389:
+        mov esi, dword ptr [mem_00999838]
+        jmp L_7B8831
+L_7B8394:
+        sub eax, 1420h
+        je short L_7B83A4
+        sub eax, 10h
+        jne L_7B8823
+L_7B83A4:
+        mov esi, dword ptr [mem_00999830]
+        jmp L_7B8831
+L_7B83AF:
+        cmp eax, 3000h
+        jg L_7B843E
+        je L_7B8831
+        cmp eax, 2302h
+        jg short L_7B841F
+        je short L_7B840A
+        cmp eax, 2100h
+        je L_7B8831
+        cmp eax, 2200h
+        je short L_7B83F8
+        cmp eax, 2300h
+        jne L_7B8823
+        mov ecx, dword ptr [mem_00999838]
+        lea esi, [4*ecx]
+        jmp L_7B8831
+L_7B83F8:
+        mov edx, dword ptr [mem_00999838]
+        lea esi, [4*edx]
+        jmp L_7B8831
+L_7B840A:
+        mov esi, dword ptr [mem_00999838]
+        mov eax, dword ptr [mem_00999834]
+        lea ecx, [eax + 2*esi]
+        add esi, ecx
+        jmp L_7B8831
+L_7B841F:
+        sub eax, 2d2dh
+        je L_7B8831
+        sub eax, 10h
+        je L_7B8831
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp L_7B8831
+L_7B843E:
+        add eax, 0ffffcff0h
+        cmp eax, 40h
+        ja L_7B8823
+        xor edx, edx
+        mov dl, byte ptr [eax + 07b8968h]
+        jmp dword ptr [4*edx + 07b8960h]
+L_7B845B:
+        mov eax, dword ptr [mem_00999838]
+        mov ecx, dword ptr [mem_00999840]
+        lea esi, [ecx + eax]
+        jmp L_7B8831
+L_7B846E:
+        cmp eax, 4160h
+        jg L_7B8545
+        je L_7B8535
+        cmp eax, 4000h
+        jg short L_7B84FD
+        je short L_7B84B7
+        cmp eax, 3d3eh
+        jg short L_7B84DE
+        je L_7B882B
+        sub eax, 3070h
+        je short L_7B84CB
+        sub eax, 10h
+        je short L_7B84B7
+        sub eax, 0cbdh
+        je L_7B8831
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp L_7B8831
+L_7B84B7:
+        lea edx, [esp + 4]
+        push 0bh
+        push edx
+        call ext_007B7A90
+        add esp, 8
+        jmp L_7B8831
+L_7B84CB:
+        mov eax, dword ptr [mem_00999838]
+        mov ecx, dword ptr [mem_00999840]
+        lea esi, [ecx + 4*eax]
+        jmp L_7B8831
+L_7B84DE:
+        sub eax, 3daah
+        je L_7B8831
+        sub eax, 55h
+        je L_7B8831
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp L_7B8831
+L_7B84FD:
+        add eax, 0ffffbf00h
+        cmp eax, 50h
+        ja L_7B8823
+        xor edx, edx
+        mov dl, byte ptr [eax + 07b89bch]
+        jmp dword ptr [4*edx + 07b89ach]
+L_7B851A:
+        call ext_007B77D0
+        and eax, 0ffffh
+        imul eax, dword ptr [mem_00999830]
+        shl eax, 2
+        mov esi, eax
+        jmp L_7B8831
+L_7B8535:
+        mov eax, dword ptr [mem_00999838]
+        lea esi, [eax + 2*eax]
+        shl esi, 2
+        jmp L_7B8831
+L_7B8545:
+        cmp eax, 4700h
+        jg L_7B85DB
+        je short L_7B85C6
+        cmp eax, 4600h
+        jg short L_7B858F
+        je L_7B87D3
+        sub eax, 4170h
+        je L_7B8823
+        sub eax, 11h
+        je short L_7B857B
+        mov esi, dword ptr [ecx + 4]
+        dec eax
+        sub esi, 6
+        jmp L_7B8831
+L_7B857B:
+        lea eax, [esp + 4]
+        push 0dh
+        push eax
+        call ext_007B7A90
+        add esp, 8
+        jmp L_7B8831
+L_7B858F:
+        sub eax, 4610h
+        je short L_7B85B3
+        sub eax, 31h
+        jne L_7B8823
+        mov ecx, dword ptr [mem_00999838]
+        mov edx, dword ptr [mem_00999830]
+        lea esi, [edx + 2*ecx]
+        jmp L_7B8831
+L_7B85B3:
+        mov eax, dword ptr [mem_00999838]
+        mov ecx, dword ptr [mem_00999840]
+        lea esi, [ecx + 2*eax]
+        jmp L_7B8831
+L_7B85C6:
+        mov edx, dword ptr [mem_00999840]
+        mov eax, dword ptr [mem_00999838]
+        lea esi, [edx + eax]
+        shl esi, 1
+        jmp L_7B8831
+L_7B85DB:
+        cmp eax, 8001h
+        jg short L_7B8616
+        cmp eax, 8000h
+        jge L_7B8831
+        cmp eax, 4d4dh
+        je L_7B8831
+        cmp eax, 7001h
+        jne L_7B8823
+        mov eax, dword ptr [mem_00999830]
+        lea esi, [8*eax]
+        sub esi, eax
+        jmp L_7B8831
+L_7B8616:
+        sub eax, 0a000h
+        je short L_7B8631
+        sub eax, 10h
+        je L_7B8831
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp L_7B8831
+L_7B8631:
+        lea ecx, [esp + 4]
+        push 11h
+        push ecx
+        call ext_007B7A90
+        add esp, 8
+        jmp L_7B8831
+L_7B8645:
+        cmp eax, 0a342h
+        jg L_7B8741
+        je L_7B8831
+        cmp eax, 0a326h
+        jg L_7B8724
+        cmp eax, 0a324h
+        jge L_7B8823
+        cmp eax, 0a204h
+        jg short L_7B86C9
+        je L_7B8831
+        cmp eax, 0a053h
+        jg short L_7B86A8
+        cmp eax, 0a052h
+        jge L_7B8831
+        add eax, 0ffff5fd0h
+        cmp eax, 20h
+        ja L_7B8823
+        xor edx, edx
+        mov dl, byte ptr [eax + 07b8a18h]
+        jmp dword ptr [4*edx + 07b8a10h]
+L_7B86A8:
+        cmp eax, 0a084h
+        je L_7B8831
+        cmp eax, 0a200h
+        je L_7B8831
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp L_7B8831
+L_7B86C9:
+        cmp eax, 0a300h
+        jg short L_7B86FE
+        je L_7B857B
+        sub eax, 0a210h
+        je L_7B8831
+        sub eax, 10h
+        je L_7B8831
+        sub eax, 10h
+        je L_7B8831
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp L_7B8831
+L_7B86FE:
+        cmp eax, 0a310h
+        jne L_7B8823
+        mov ecx, dword ptr [mem_0099982C]
+        mov edx, dword ptr [mem_00999834]
+        mov eax, dword ptr [mem_00999830]
+        add ecx, edx
+        lea esi, [eax + 2*ecx]
+        jmp L_7B8831
+L_7B8724:
+        add eax, 0ffff5cd8h
+        cmp eax, 18h
+        ja L_7B8823
+        xor edx, edx
+        mov dl, byte ptr [eax + 07b8a48h]
+        jmp dword ptr [4*edx + 07b8a3ch]
+L_7B8741:
+        cmp eax, 0b007h
+        jg short L_7B8768
+        cmp eax, 0afffh
+        jge L_7B8831
+        add eax, 0ffff5cbch
+        cmp eax, 8
+        ja L_7B8823
+        jmp dword ptr [4*eax + 07b8a64h]
+L_7B8768:
+        cmp eax, 0b020h
+        jg L_7B87F7
+        je L_7B8823
+        add eax, 0ffff4ff8h
+        cmp eax, 0dh
+        ja L_7B8823
+        jmp dword ptr [4*eax + 07b8a88h]
+L_7B878E:
+        call ext_007B77D0
+        lea eax, [esp + 4]
+        push 201h
+        push eax
+        call ext_007B7A90
+        add esp, 8
+        call ext_007B7830
+        jmp L_7B8831
+L_7B87AF:
+        mov ecx, dword ptr [mem_00999834]
+        lea esi, [ecx + ecx]
+        jmp short L_7B8831
+L_7B87BA:
+        lea edx, [esp + 4]
+        push 0bh
+        push edx
+        call ext_007B7A90
+        mov eax, dword ptr [mem_00999830]
+        add esp, 8
+        lea esi, [eax + 2*eax]
+        jmp short L_7B8831
+L_7B87D3:
+        mov esi, dword ptr [mem_00999840]
+        jmp short L_7B8831
+L_7B87DB:
+        lea eax, [esp + 4]
+        push 0bh
+        push eax
+        call ext_007B7A90
+        add esp, 8
+        jmp short L_7B8831
+L_7B87EC:
+        mov ecx, dword ptr [mem_00999840]
+        lea esi, [ecx + ecx]
+        jmp short L_7B8831
+L_7B87F7:
+        cmp eax, 0b030h
+        jg short L_7B8815
+        je L_7B83A4
+        add eax, 0ffff4fdfh
+        cmp eax, 7
+        ja short L_7B8823
+        jmp dword ptr [4*eax + 07b8ac0h]
+L_7B8815:
+        cmp eax, 0c23dh
+        je short L_7B8831
+        cmp eax, 0d000h
+        je short L_7B882B
+L_7B8823:
+        mov esi, dword ptr [ecx + 4]
+        sub esi, 6
+        jmp short L_7B8831
+L_7B882B:
+        mov esi, dword ptr [mem_00999834]
+L_7B8831:
+        call ext_0079EEC0
+        add eax, esi
+        push eax
+        call ext_0079EED0
+        add esp, 4
+        pop esi
+        add esp, 34h
+        ret
+    }
+}
