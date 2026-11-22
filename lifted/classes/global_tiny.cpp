@@ -26,6 +26,7 @@ extern "C" int mem_00933C7C;
 extern "C" int mem_00933C98;
 extern "C" int mem_00933CB4;
 extern "C" int mem_00934B98;
+extern "C" int mem_00935578;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -278,4 +279,13 @@ extern "C" int* __fastcall fn_0044A0C0(void* self) {
 void* fn_0044B070(void* self) {
     (void)self;
     return &mem_00934B98;
+}
+
+// [0x0044CD70] RigEditor::vfunc_0 (6 bytes)
+// @name RigEditor::vfunc_0
+// @class RigEditor
+// @summary Returns the address of the static constant mem_00935578 (a .rdata word holding 0x0093556C); ignores this.
+void* fn_0044CD70(void* self) {
+    (void)self;
+    return &mem_00935578;
 }
