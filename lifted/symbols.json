@@ -109,6 +109,13 @@
     "summary": "Returns the address of the read-only string constant \"$aj\" stored in .rdata (mem_0092C6E8).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00416700": {
+    "name": "EventViewIndicator::vfunc_0",
+    "class": "EventViewIndicator",
+    "signature": "const int* fn_00416700(void* self)",
+    "summary": "Returns the address of the global constant mem_0092C8E4 (a .rdata pointer value).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",

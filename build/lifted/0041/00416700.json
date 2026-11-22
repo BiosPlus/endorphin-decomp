@@ -1,0 +1,14 @@
+{
+  "va": "0x00416700",
+  "size": 6,
+  "orig_symbol": "EventViewIndicator::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "EventViewIndicator::vfunc_0",
+  "class": "EventViewIndicator",
+  "signature": "const int* fn_00416700(void* self)",
+  "summary": "Returns the address of the global constant mem_0092C8E4 (a .rdata pointer value).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:47:54Z"
+}

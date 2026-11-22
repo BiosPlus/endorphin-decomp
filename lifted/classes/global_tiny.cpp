@@ -7,6 +7,7 @@ extern "C" int mem_0092A1CC;
 extern "C" int mem_0092AD84;
 extern "C" int mem_0092B9AC;
 extern "C" int mem_0092C580;
+extern "C" int mem_0092C8E4;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -72,4 +73,14 @@ void* fn_0040FCF0(void* self) {
 extern "C" void* __fastcall fn_004153C0(void* self) {
     (void)self;
     return reinterpret_cast<void*>(&mem_0092C580);
+}
+
+// [0x00416700] EventViewIndicator::vfunc_0 (6 bytes)
+// @name EventViewIndicator::vfunc_0
+// @class EventViewIndicator
+// @summary Returns the address of the global constant mem_0092C8E4 (a .rdata pointer value).
+// (no instance fields accessed)
+const int* fn_00416700(void* self) {
+    (void)self;
+    return &mem_0092C8E4;
 }
