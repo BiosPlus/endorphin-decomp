@@ -1,0 +1,22 @@
+{
+  "va": "0x0049B2B0",
+  "size": 15,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_9",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::setValue",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "void __stdcall ExprParser_PrimitiveProxyType_bool_vfunc_9(void* self, uint32_t value)",
+  "summary": "Stores the low byte of the argument through the proxy's value pointer (vtable slot 9).",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x0",
+      "type": "const uint8_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:17Z"
+}

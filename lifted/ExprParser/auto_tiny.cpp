@@ -262,3 +262,15 @@ int fn_0066AEF0(void* self) {
     const uint8_t first_byte = *static_cast<const uint8_t*>(self);
     return first_byte != 0 ? 1 : 0;
 }
+
+// [0x0049B2B0]
+// @name ExprParser::PrimitiveProxyType<bool>::setValue
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Stores the low byte of the argument through the proxy's value pointer (vtable slot 9).
+// @field ExprParser::PrimitiveProxyType<bool> +0x0 const uint8_t* value_ptr
+
+// Stack args: [esp+4] = this (proxy), [esp+8] = value; callee pops 8 bytes (ret 8).
+void __stdcall ExprParser_PrimitiveProxyType_bool_vfunc_9(void* self, uint32_t value) {
+    const uint8_t* value_ptr = lift_field<const uint8_t*>(self, 0x0);
+    *const_cast<uint8_t*>(value_ptr) = static_cast<uint8_t>(value);
+}
