@@ -1,0 +1,22 @@
+{
+  "va": "0x0061E9A0",
+  "size": 38,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_70",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::forwardToSubobject",
+  "class": "NMData::HingeConstraint",
+  "signature": "uint32_t fn_0061E9A0(void* self, uint32_t a, uint32_t /*unused*/, uint32_t c)",
+  "summary": "Calls ext_0061E780 on the embedded subobject at self+0x164 with (a, c) and returns a unchanged; the second argument is unused.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:48Z"
+}

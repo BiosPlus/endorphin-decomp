@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/NMData/HingeConstraint.cpp
 #include "lift_compat.h"
+// Known callee 0x0061E780: member function (thiscall, 2 stack args) invoked on the subobject at self+0x164.
+extern "C" void ext_0061E780(void* subobj, uint32_t a, uint32_t c);
 
-// [0x006116B0] NMData::HingeConstraint::vfunc_60 (47 bytes)
+extern "C" void ext_0061E780(void* subobj, uint32_t a, uint32_t c);
 // @name NMData::HingeConstraint::setFirstComponentVector
 // @class NMData::HingeConstraint
 // @summary When index < 1, forwards the vector (value, 0, 0) to virtual slot 61 (offset 0xF4) on self.
@@ -27,4 +29,15 @@ float fn_00611740(void* self, int32_t index) {
         return arr[index];
     }
     return 0.0f;
+}
+
+// [0x0061E9A0] NMData::HingeConstraint::vfunc_70 (38 bytes)
+// @name NMData::HingeConstraint::forwardToSubobject
+// @class NMData::HingeConstraint
+// @summary Calls ext_0061E780 on the embedded subobject at self+0x164 with (a, c) and returns a unchanged; the second argument is unused.
+// @field NMData::HingeConstraint +0x164 uint8_t subobject
+uint32_t fn_0061E9A0(void* self, uint32_t a, uint32_t /*unused*/, uint32_t c) {
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x164;
+    ext_0061E780(subobj, a, c);
+    return a;
 }

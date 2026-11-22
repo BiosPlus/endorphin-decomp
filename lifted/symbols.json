@@ -7756,6 +7756,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0061D380 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0061E9A0": {
+    "name": "NMData::HingeConstraint::forwardToSubobject",
+    "class": "NMData::HingeConstraint",
+    "signature": "uint32_t fn_0061E9A0(void* self, uint32_t a, uint32_t /*unused*/, uint32_t c)",
+    "summary": "Calls ext_0061E780 on the embedded subobject at self+0x164 with (a, c) and returns a unchanged; the second argument is unused.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x0061ECB0": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_0",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
