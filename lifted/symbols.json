@@ -489,6 +489,13 @@
     "summary": "Loads the pointer stored at offset 0 of self and forwards it to the helper at 0x00494830.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004973A0": {
+    "name": "NMData::Transition::getAndClearField_B4",
+    "class": "NMData::Transition",
+    "signature": "uint8_t fn_004973A0(void* self)",
+    "summary": "Returns the byte at this+0xB4 and resets it to zero.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x00499B30": {
     "name": "NMData::Transition::vfunc_17",
     "class": "NMData::Transition",

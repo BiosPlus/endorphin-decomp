@@ -168,3 +168,15 @@ void fn_004C65A0(void* self) {
     // sub ecx, 0x158 ; jmp ForceEventData::vfunc_0
     ext_004C6850(static_cast<char*>(self) - 0x158);
 }
+
+// [0x004973A0] NMData::Transition::vfunc_0_off_C (14 bytes)
+// @name NMData::Transition::getAndClearField_B4
+// @class NMData::Transition
+// @summary Returns the byte at this+0xB4 and resets it to zero.
+// @field NMData::Transition +0xB4 uint8_t field_0xB4
+uint8_t fn_004973A0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint8_t value = base[0xB4];
+    base[0xB4] = 0;
+    return value;
+}
