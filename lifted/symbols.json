@@ -8015,6 +8015,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0061D990 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0061FEF0": {
+    "name": "NMData::GraphicData::vfunc_6_off_C",
+    "class": "NMData::GraphicData",
+    "signature": "void __thiscall fn_0061FEF0(void* self, float* out)",
+    "summary": "Fetches a 3-float vector via OglRenderer::vfunc_118 on the subobject at +0x148 and copies it to the output buffer, writing 0.0f to the fourth float.",
+    "lifted_path": "lifted/NMData/GraphicData.cpp"
+  },
   "0x0061FF40": {
     "name": "NMData::GraphicData::vfunc_14",
     "class": "NMData::GraphicData",

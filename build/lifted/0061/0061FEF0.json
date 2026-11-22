@@ -1,0 +1,22 @@
+{
+  "va": "0x0061FEF0",
+  "size": 67,
+  "orig_symbol": "NMData::GraphicData::vfunc_6_off_C",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_6_off_C",
+  "class": "NMData::GraphicData",
+  "signature": "void __thiscall fn_0061FEF0(void* self, float* out)",
+  "summary": "Fetches a 3-float vector via OglRenderer::vfunc_118 on the subobject at +0x148 and copies it to the output buffer, writing 0.0f to the fourth float.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x148",
+      "type": "void*",
+      "name": "field_0x148"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:22Z"
+}

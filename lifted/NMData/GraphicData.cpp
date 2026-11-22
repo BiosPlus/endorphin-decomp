@@ -4,6 +4,7 @@
 extern "C" void ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
 // Known callee 0x00661650 (35B): sub_00661650, thiscall-style with one stack argument.
 extern "C" void ext_00661650(void* self, void* arg);
+extern "C" void* __cdecl ext_005B11F0(void* self);
 
 // [0x0061FF40] NMData::GraphicData::vfunc_14 (60 bytes)
 // @name NMData::GraphicData::vfunc_14
@@ -18,4 +19,19 @@ void* fn_0061FF40(void* self, void* arg1, uint32_t arg2) {
         ext_0058F6B0(self, arg1, arg2);
     }
     return arg1;
+}
+
+// [0x0061FEF0]
+// @name NMData::GraphicData::vfunc_6_off_C
+// @class NMData::GraphicData
+// @summary Fetches a 3-float vector via OglRenderer::vfunc_118 on the subobject at +0x148 and copies it to the output buffer, writing 0.0f to the fourth float.
+// @field NMData::GraphicData +0x148 void* field_0x148
+void __thiscall fn_0061FEF0(void* self, float* out) {
+    void* renderer = lift_field<void*>(self, 0x148);
+    const float* src = static_cast<const float*>(ext_005B11F0(renderer));
+
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+    out[3] = 0.0f;
 }
