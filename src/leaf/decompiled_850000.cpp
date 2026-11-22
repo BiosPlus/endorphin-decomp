@@ -22399,3 +22399,21 @@ extern "C" __declspec(naked) void __cdecl fn_0085D554(void) {
         _emit 0x00
     }
 }
+
+// [0x0085FA64] sub_0085FA64 (12 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085FA64(void) {
+    __asm {
+        _emit 0x05
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
