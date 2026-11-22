@@ -1,0 +1,22 @@
+{
+  "va": "0x00473C40",
+  "size": 11,
+  "orig_symbol": "RuntimeEngine::SimulationAndRendererTicker::vfunc_0",
+  "src_path": "src/RuntimeEngine/SimulationAndRendererTicker.cpp",
+  "lifted_path": "lifted/RuntimeEngine/SimulationAndRendererTicker.cpp",
+  "name": "RuntimeEngine::SimulationAndRendererTicker::vfunc_0",
+  "class": "RuntimeEngine::SimulationAndRendererTicker",
+  "signature": "bool __thiscall fn_00473C40(void* self)",
+  "summary": "Forwards the ticker's +0x04 sub-object to RuntimeEngine tick helper ext_00472C90 and returns true.",
+  "fields": [
+    {
+      "class": "RuntimeEngine::SimulationAndRendererTicker",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:23:44Z"
+}

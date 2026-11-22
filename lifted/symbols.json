@@ -2832,6 +2832,13 @@
     "summary": "Forwards the ticker's owner pointer to ext_00472D80 and returns true.",
     "lifted_path": "lifted/RuntimeEngine/CaptureTicker.cpp"
   },
+  "0x00473C40": {
+    "name": "RuntimeEngine::SimulationAndRendererTicker::vfunc_0",
+    "class": "RuntimeEngine::SimulationAndRendererTicker",
+    "signature": "bool __thiscall fn_00473C40(void* self)",
+    "summary": "Forwards the ticker's +0x04 sub-object to RuntimeEngine tick helper ext_00472C90 and returns true.",
+    "lifted_path": "lifted/RuntimeEngine/SimulationAndRendererTicker.cpp"
+  },
   "0x00473C50": {
     "name": "RuntimeEngine::SimulationTicker::vfunc_0",
     "class": "RuntimeEngine::SimulationTicker",
