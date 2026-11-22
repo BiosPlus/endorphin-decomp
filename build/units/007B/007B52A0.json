@@ -197,5 +197,7 @@
     "0x007B6049",
     "0x007B6068"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-22T02:45:16Z"
 }
