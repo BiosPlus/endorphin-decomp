@@ -1,0 +1,22 @@
+{
+  "va": "0x004CCCD0",
+  "size": 16,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_3",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cMetaBodyConstraintData, fireEnable\u003e::vfunc_3",
+  "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
+  "signature": "bool fn_004CCCD0(void* self)",
+  "summary": "Forwards the wrapped value pointer at +0x00 to ext_004CCAF0 and returns false.",
+  "fields": [
+    {
+      "class": "ExprParser::Method0Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:09Z"
+}

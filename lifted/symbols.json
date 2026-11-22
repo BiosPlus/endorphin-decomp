@@ -4352,6 +4352,13 @@
     "summary": "Reads the wrapped object pointer from the first argument and forwards its vtable-side pointer to ext_004CCAF0; always returns 0.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CCCD0": {
+    "name": "ExprParser::Method0Type\u003cMetaBodyConstraintData, fireEnable\u003e::vfunc_3",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
+    "signature": "bool fn_004CCCD0(void* self)",
+    "summary": "Forwards the wrapped value pointer at +0x00 to ext_004CCAF0 and returns false.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CCCE0": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",

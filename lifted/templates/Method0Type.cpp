@@ -145,6 +145,7 @@ extern "C" void __fastcall ext_004CCDE0(void* self);
 extern "C" void __fastcall ext_005B72E0(void* self);
 extern "C" void __fastcall ext_00692D90(void* self);
 // Helper sub_0048ABB0 (22B): thiscall-style, ECX = target object.
+extern "C" void ext_004CCAF0(void* target);
 
 // [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
 #include "lift_compat.h"
@@ -623,4 +624,15 @@ int32_t fn_004CCCC0(void* arg) {
     void* obj = *reinterpret_cast<void**>(arg);
     ext_004CCAF0(obj);
     return 0;
+}
+
+// [0x004CCCD0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_3 (16 bytes)
+// @name ExprParser::Method0Type<MetaBodyConstraintData, fireEnable>::vfunc_3
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>
+// @summary Forwards the wrapped value pointer at +0x00 to ext_004CCAF0 and returns false.
+// @field ExprParser::Method0Type +0x00 void* field_0x00
+bool fn_004CCCD0(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_004CCAF0(target);
+    return false;
 }
