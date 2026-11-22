@@ -123,5 +123,7 @@
     "0x00740433",
     "0x0074044A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T03:00:19Z"
 }
