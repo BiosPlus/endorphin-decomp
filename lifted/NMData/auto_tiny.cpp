@@ -96,3 +96,13 @@ extern "C" void __fastcall fn_00622350(void* self, int /*edx_unused*/, float val
     std::uint8_t* base = static_cast<std::uint8_t*>(self);
     std::memcpy(base + 0x1c, &value, sizeof(float));
 }
+
+// [0x00622360] NMData::SkeletalCalibrationVariables::vfunc_23 (10 bytes)
+// @name NMData::SkeletalCalibrationVariables::vfunc_23
+// @class NMData::SkeletalCalibrationVariables
+// @summary Stores the single float argument into the object's field at +0x20.
+// @field NMData::SkeletalCalibrationVariables +0x20 float field_0x20
+extern "C" void __fastcall fn_00622360(void* self, int /*edx_unused*/, float value) {
+    std::uint8_t* base = static_cast<std::uint8_t*>(self);
+    std::memcpy(base + 0x20, &value, sizeof(float));
+}
