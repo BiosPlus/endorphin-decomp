@@ -5003,6 +5003,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00528540": {
+    "name": "Interpolator::Const::vfunc_3",
+    "class": "Interpolator::Const",
+    "signature": "[[noreturn]] static void invalid_parameter()",
+    "summary": "Checks that `at` lies before the table end (table+0x8) and returns the float at at+0x4.",
+    "lifted_path": "lifted/Interpolator/Const.cpp"
+  },
   "0x00528AB0": {
     "name": "sub_00528AB0",
     "signature": "extern \"C\" void __fastcall fn_00528AB0(void* self)",
