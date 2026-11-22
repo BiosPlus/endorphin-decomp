@@ -2020,6 +2020,13 @@
     "summary": "Returns the address of the global mem_00B59400 (ignores this).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1120": {
+    "name": "Geometry::AnimationType::vfunc_9",
+    "class": "Geometry::AnimationType",
+    "signature": "float __stdcall fn_005B1120(int32_t index, const float* table)",
+    "summary": "Returns table[index] as a float, where index and table pointer are stack arguments (stdcall, ret 8); ECX/this is unused.",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
   "0x005B1160": {
     "name": "Geometry::CuboidType::vfunc_1",
     "class": "Geometry::CuboidType",

@@ -79,3 +79,11 @@ extern "C" void* __fastcall fn_005B5760(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x005B1120] Geometry::AnimationType::vfunc_9 (14 bytes)
+// @name Geometry::AnimationType::vfunc_9
+// @class Geometry::AnimationType
+// @summary Returns table[index] as a float, where index and table pointer are stack arguments (stdcall, ret 8); ECX/this is unused.
+float __stdcall fn_005B1120(int32_t index, const float* table) {
+    return table[index];
+}

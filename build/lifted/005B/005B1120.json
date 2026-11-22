@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1120",
+  "size": 14,
+  "orig_symbol": "Geometry::AnimationType::vfunc_9",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::AnimationType::vfunc_9",
+  "class": "Geometry::AnimationType",
+  "signature": "float __stdcall fn_005B1120(int32_t index, const float* table)",
+  "summary": "Returns table[index] as a float, where index and table pointer are stack arguments (stdcall, ret 8); ECX/this is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:23:20Z"
+}
