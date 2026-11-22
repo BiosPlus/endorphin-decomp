@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4210",
+  "size": 88,
+  "orig_symbol": "Geometry::CylinderType::vfunc_18",
+  "src_path": "src/Geometry/CylinderType.cpp",
+  "lifted_path": "lifted/Geometry/CylinderType.cpp",
+  "name": "Geometry::CylinderType::vfunc_18",
+  "class": "Geometry::CylinderType",
+  "signature": "uint32_t __thiscall fn_005B4210(void* /*self*/, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Dispatches CylinderType factory/type action by selector id and returns arg0",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:55:31Z"
+}
