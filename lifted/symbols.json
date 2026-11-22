@@ -277,6 +277,13 @@
     "summary": "Returns the address of the read-only string \"`KE\" in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00447580": {
+    "name": "PrimitivesPropertyPage::vfunc_0",
+    "class": "PrimitivesPropertyPage",
+    "signature": "void* fn_00447580(void* self)",
+    "summary": "Returns the address of the global mem_00932C44 (a read-only u32 holding 0x00932C2C).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

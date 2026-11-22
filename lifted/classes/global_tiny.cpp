@@ -16,6 +16,7 @@ extern "C" int mem_0092EAC8;
 extern "C" int mem_0092F694;
 extern "C" int mem_0092F394;
 extern "C" int mem_0092F82C;
+extern "C" int mem_00932C44;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -177,4 +178,13 @@ int* fn_0042EA40(void* self) {
 extern "C" int* __fastcall fn_0042F920(void* self) {
     (void)self;
     return &mem_0092F82C;
+}
+
+// [0x00447580] PrimitivesPropertyPage::vfunc_0 (6 bytes)
+// @name PrimitivesPropertyPage::vfunc_0
+// @class PrimitivesPropertyPage
+// @summary Returns the address of the global mem_00932C44 (a read-only u32 holding 0x00932C2C).
+void* fn_00447580(void* self) {
+    (void)self;
+    return &mem_00932C44;
 }
