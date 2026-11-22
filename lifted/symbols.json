@@ -8162,6 +8162,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/NMData/EffectorData.cpp"
   },
+  "0x0060C2C0": {
+    "name": "NMData::EffectorWithMemoryData::vfunc_20",
+    "class": "NMData::EffectorWithMemoryData",
+    "signature": "extern \"C\" void* __thiscall fn_0060C2C0(void* self, void* ret_buf, int unused_arg)",
+    "summary": "Builds a std::string as (literal_972218 + this-\u003estr_at_+0x4) + literal_93BF0C and returns it by value via the caller-supplied return buffer.",
+    "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp"
+  },
   "0x0060C510": {
     "name": "NMData::EffectorBaseData::vfunc_0",
     "class": "NMData::EffectorBaseData",

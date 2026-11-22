@@ -1,0 +1,22 @@
+{
+  "va": "0x0060C2C0",
+  "size": 157,
+  "orig_symbol": "NMData::EffectorWithMemoryData::vfunc_20",
+  "src_path": "src/NMData/EffectorWithMemoryData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp",
+  "name": "NMData::EffectorWithMemoryData::vfunc_20",
+  "class": "NMData::EffectorWithMemoryData",
+  "signature": "extern \"C\" void* __thiscall fn_0060C2C0(void* self, void* ret_buf, int unused_arg)",
+  "summary": "Builds a std::string as (literal_972218 + this-\u003estr_at_+0x4) + literal_93BF0C and returns it by value via the caller-supplied return buffer.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x4",
+      "type": "std::string field_0x04 (passed by reference to concat; contents not inspected",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:18:05Z"
+}
