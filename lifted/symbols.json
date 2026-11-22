@@ -7441,6 +7441,13 @@
     "summary": "Sets the float at this+0x0C to the single float argument (stdcall-style ret 4 thiscall).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006227B0": {
+    "name": "NMData::HingeCalibrationVariables::vfunc_28",
+    "class": "NMData::HingeCalibrationVariables",
+    "signature": "void* fn_006227B0(void* self, void* dst, void* arg2)",
+    "summary": "Constructs a std::string from the literal at 0x009770F4 in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
+    "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
   "0x006244C0": {
     "name": "sub_006244C0",
     "signature": "extern \"C\" void __fastcall fn_006244C0(void* self)",

@@ -1,0 +1,14 @@
+{
+  "va": "0x006227B0",
+  "size": 34,
+  "orig_symbol": "NMData::HingeCalibrationVariables::vfunc_28",
+  "src_path": "src/NMData/HingeCalibrationVariables.cpp",
+  "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp",
+  "name": "NMData::HingeCalibrationVariables::vfunc_28",
+  "class": "NMData::HingeCalibrationVariables",
+  "signature": "void* fn_006227B0(void* self, void* dst, void* arg2)",
+  "summary": "Constructs a std::string from the literal at 0x009770F4 in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:42Z"
+}
