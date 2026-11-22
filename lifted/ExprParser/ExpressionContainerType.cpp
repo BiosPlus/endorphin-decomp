@@ -120,3 +120,24 @@ void* fn_00670CD0(void* a) {
     using VFn = void* (__thiscall*)(void* self, void* arg);
     return reinterpret_cast<VFn>(vtbl[2])(sub, r);
 }
+
+// [0x00670D40] ExprParser::ExpressionContainerType::vfunc_5 (24 bytes)
+// @name ExprParser::ExpressionContainerType::vfunc_5
+// @class ExprParser::ExpressionContainerType
+// @summary Resolves self via ext_006999B0, then tail-dispatches to vtable slot 5 of the sub-object at +0x04.
+// @field ExprParser::ExpressionContainerType +0x00 void* vtable (not accessed directly by this function)
+// @field <unknown: returned by ext_006999B0> +0x04 void* field_0x04 (sub-object pointer)
+// @field <unknown: returned by ext_006999B0> +0x00 void* field_0x00 (sub-object vtable; slot 5 at +0x14 is called)
+void* fn_00670D40(void* self) {
+    // push self; call ext_006999B0 -> eax
+    void* obj = ext_006999B0(self);
+
+    // ecx = obj->+0x04 (sub-object); edx = sub-object's vtable
+    void* sub = lift_field<void*>(obj, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+
+    // [esp+4] = obj; jmp vtbl[5] with ecx == sub (thiscall-style tail call)
+    using Slot5Fn = void* (*)(void* self_this, void* arg);
+    auto slot5 = reinterpret_cast<Slot5Fn>(vtbl[5]);
+    return slot5(sub, obj);
+}

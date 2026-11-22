@@ -1,0 +1,22 @@
+{
+  "va": "0x00670D40",
+  "size": 24,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_5",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_5",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void* fn_00670D40(void* self)",
+  "summary": "Resolves self via ext_006999B0, then tail-dispatches to vtable slot 5 of the sub-object at +0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x0",
+      "type": "void* vtable (not accessed directly by this",
+      "name": "function)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:42:55Z"
+}
