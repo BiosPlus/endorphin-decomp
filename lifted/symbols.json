@@ -741,6 +741,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0047DBC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048B050": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e::vfunc_1",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",
+    "signature": "extern \"C\" float __stdcall fn_0048B050(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0048C150": {
     "name": "NMData::PoseData::vfunc_0",
     "class": "NMData::PoseData",
@@ -1167,6 +1174,13 @@
     "signature": "void NMData_MetaBodyConstraintData_vfunc_91(void* self)",
     "summary": "Returns early when the state field at +0x184 equals 3; otherwise tail-calls ext_00493D90.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004CCCB0": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_1",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
+    "signature": "extern \"C\" float __stdcall fn_004CCCB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x004CCEE0": {
     "name": "NMData::MetaBodyConstraintData::vfunc_0_off_158",
@@ -2209,6 +2223,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 27 (offset +0x6C) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C61E0": {
+    "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_1",
+    "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
+    "signature": "extern \"C\" float __stdcall fn_005C61E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x005C84A0": {
     "name": "NMData::CollisionModelDataBase::vfunc_1_off_C",
     "class": "NMData::CollisionModelDataBase",
@@ -2895,6 +2916,13 @@
     "signature": "void* fn_00682ED0(void* self)",
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x0068BFB0": {
+    "name": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e::vfunc_1",
+    "class": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e",
+    "signature": "extern \"C\" float __stdcall fn_0068BFB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x006992D0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_24",

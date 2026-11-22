@@ -41,6 +41,10 @@ extern "C" float __stdcall fn_0066DCE0(void* self) {
     ext_0067B860(target);
     return 0.0f;
 }
+extern "C" void __fastcall ext_0048A9F0(void* self);
+extern "C" void __fastcall ext_004CCAF0(void* self);
+extern "C" void __fastcall ext_005C3170(void* self);
+extern "C" void __fastcall ext_0068BC50(void* self);
 
 // [0x0060A080]
 // @name ExprParser::Method0Type<NMData::DisabledCollisionPairList, addSelectedCollisionModels>::vfunc_3
@@ -61,5 +65,45 @@ bool fn_0060A080(void* self) {
 float fn_0060A150(void* self) {
     void* vtbl = lift_field<void*>(self, 0x00);
     ext_00493D90(vtbl);
+    return 0.0f;
+}
+
+// [0x0048B050] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_1 (16 bytes)
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_1
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_1).
+extern "C" float __stdcall fn_0048B050(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_0048A9F0(target);
+    return 0.0f;
+}
+
+// [0x004CCCB0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_1 (16 bytes)
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_1
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_1).
+extern "C" float __stdcall fn_004CCCB0(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_004CCAF0(target);
+    return 0.0f;
+}
+
+// [0x005C61E0] ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_1 (16 bytes)
+// @name ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_1
+// @class ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_1).
+extern "C" float __stdcall fn_005C61E0(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_005C3170(target);
+    return 0.0f;
+}
+
+// [0x0068BFB0] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_1 (16 bytes)
+// @name ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_1
+// @class ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type<NM::Vector3, NM::Vector3::normalize2>::vfunc_1).
+extern "C" float __stdcall fn_0068BFB0(void* self) {
+    void* target = *static_cast<void**>(self);
+    ext_0068BC50(target);
     return 0.0f;
 }
