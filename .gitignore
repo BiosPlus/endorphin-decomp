@@ -20,6 +20,7 @@ src/wip/
 lifted/wip/
 
 # Local scratch, debugging, and worktree artifacts
+*_PLAN.md
 .worktrees/
 __pycache__/
 *.pyc
