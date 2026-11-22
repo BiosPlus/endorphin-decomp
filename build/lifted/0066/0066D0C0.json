@@ -4,25 +4,19 @@
   "orig_symbol": "ExprParser::Vector3Type::vfunc_30",
   "src_path": "src/ExprParser/Vector3Type.cpp",
   "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
-  "name": "ExprParser::Vector3Type::vfunc_30",
+  "name": "ExprParser::Vector3Type::vfunc_0",
   "class": "ExprParser::Vector3Type",
   "signature": "void fn_0066D0C0(void* self, void** slot)",
-  "summary": "Releases the pointer held in *slot via sub_0066C030 on this+0x08, then nulls *slot.",
+  "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
   "fields": [
     {
       "class": "ExprParser::Vector3Type",
-      "offset": "+0x8",
-      "type": "uint8_t",
-      "name": "field_0x08"
-    },
-    {
-      "class": "Unknown",
       "offset": "+0x0",
       "type": "void*",
-      "name": "field_0x00"
+      "name": "vtable"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:36:04Z"
+  "lifted_at": "2026-11-22T07:36:50Z"
 }

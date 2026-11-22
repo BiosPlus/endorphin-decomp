@@ -8232,10 +8232,10 @@
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
   "0x0066D0C0": {
-    "name": "ExprParser::Vector3Type::vfunc_30",
+    "name": "ExprParser::Vector3Type::vfunc_0",
     "class": "ExprParser::Vector3Type",
     "signature": "void fn_0066D0C0(void* self, void** slot)",
-    "summary": "Releases the pointer held in *slot via sub_0066C030 on this+0x08, then nulls *slot.",
+    "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
   "0x0066DCE0": {

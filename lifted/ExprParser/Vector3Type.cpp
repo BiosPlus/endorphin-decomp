@@ -17,7 +17,8 @@ void* fn_0066B530(void* self, void* a1, void* a2) {
     (void)a1;  // first stack argument is never read
     // The original also pushes a saved-register word and a literal 0 for the
     // slot-5 call; those are not modelled here (see report).
-    void* r = vcall_slot5(self, a2);
+    void** vtbl = *static_cast<void***>(self);
+    void* r = reinterpret_cast<void* (*)(void*, void*)>(vtbl[5])(self, a2);
     ext_00672110(a2, r);
     return a2;
 }
