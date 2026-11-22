@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"html"
 	"math"
 	"os"
 	"os/exec"
@@ -436,7 +437,10 @@ func renderVelocityGraphPanel(
 			recentSessionSpanSec = 60
 		}
 	}
-	recentSessionRateHr := (float64(recentSessionFuncs) * 3600.0) / float64(recentSessionSpanSec)
+	var recentSessionRateHr float64
+	if recentSessionSpanSec > 0 {
+		recentSessionRateHr = (float64(recentSessionFuncs) * 3600.0) / float64(recentSessionSpanSec)
+	}
 
 	var remainBytes uint64
 	if inScopeBytes > inScopeMatchedBytes {
@@ -1008,6 +1012,7 @@ func renderHTMLDashboard(
 	tiers []*TierStats,
 	leaderboard []ModelStats,
 	matchEvents []MatchEvent,
+	p2 Phase2Stats,
 ) string {
 	var sb strings.Builder
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
@@ -1025,12 +1030,26 @@ func renderHTMLDashboard(
 	}
 	cardETAVal, cardETASub := formatETA(computeProjection(matchEvents, remainBytes), remainBytes, 0)
 
+	coreLiftFuncPct := pct(uint64(p2.ScopeCore.LiftedAsmFuncs), uint64(p2.ScopeCore.AsmFuncs))
+	coreLiftBytePct := pct(p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes)
+	allLiftFuncPct := pct(uint64(p2.ScopeAll.LiftedAsmFuncs), uint64(p2.ScopeAll.AsmFuncs))
+	allLiftBytePct := pct(p2.ScopeAll.LiftedAsmBytes, p2.ScopeAll.AsmBytes)
+	portableFuncPct := pct(uint64(p2.ScopeAll.PortableCppFuncs), uint64(p2.ScopeAll.TotalFuncs))
+	portableBytePct := pct(p2.ScopeAll.PortableCppBytes, p2.ScopeAll.TotalBytes)
+	corePortableFuncPct := pct(uint64(p2.ScopeCore.PortableCppFuncs), uint64(p2.ScopeCore.TotalFuncs))
+	namedPct := pct(uint64(p2.TotalNamedFuncs), uint64(p2.InScopeUnitsTotal))
+
+	phase1StatusBadge := fmt.Sprintf("Phase 1: MSVC8 Byte-Match &mdash; %.2f%%", bytePct)
+	if inScopeFuncs > 0 && inScopeMatchedFuncs == inScopeFuncs && inScopeMatchedBytes == inScopeBytes {
+		phase1StatusBadge = "Phase 1: MSVC8 Byte-Match &mdash; 100.00% Complete"
+	}
+
 	sb.WriteString(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Endorphin 2.7.1 Decompilation Dashboard</title>
+  <title>Endorphin 2.7.1 Decompilation &amp; Lifting Dashboard</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -1042,6 +1061,10 @@ func renderHTMLDashboard(
       --accent: #2ea043;
       --accent-bright: #3fb950;
       --blue: #58a6ff;
+      --blue-deep: #1f6feb;
+      --purple: #a371f7;
+      --cyan: #39c5cf;
+      --gold: #d29922;
     }
     * { box-sizing: border-box; }
     body {
@@ -1064,8 +1087,88 @@ func renderHTMLDashboard(
     }
     .subtitle {
       color: var(--muted);
-      margin-block-end: 24px;
+      margin-block-end: 16px;
       font-size: 14px;
+    }
+    .phase-banner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      margin-block-end: 18px;
+    }
+    .phase-pill {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .phase-pill.p1 { border-inline-start: 4px solid var(--accent-bright); }
+    .phase-pill.p2 { border-inline-start: 4px solid var(--blue); }
+    .phase-pill-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .phase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+    .phase-badge.done {
+      background: rgba(63, 185, 80, 0.16);
+      color: var(--accent-bright);
+      border: 1px solid rgba(63, 185, 80, 0.45);
+    }
+    .phase-badge.active {
+      background: rgba(88, 166, 255, 0.14);
+      color: var(--blue);
+      border: 1px solid rgba(88, 166, 255, 0.42);
+    }
+    .phase-pill-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+      margin-block-end: 22px;
+      padding-block-end: 10px;
+    }
+    .tab-btn {
+      background: var(--panel);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      background: var(--panel-hover);
+    }
+    .tab-btn.active {
+      color: #ffffff;
+      background: #1f6feb;
+      border-color: #388bfd;
+    }
+    .tab-panel[hidden] {
+      display: none;
     }
     .cards {
       inline-size: 100%;
@@ -1132,6 +1235,12 @@ func renderHTMLDashboard(
       block-size: 100%;
       background: linear-gradient(90deg, var(--accent), var(--accent-bright));
     }
+    .progress-fill.blue {
+      background: linear-gradient(90deg, var(--blue-deep), var(--blue));
+    }
+    .progress-fill.cyan {
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
     .table-wrapper {
       inline-size: 100%;
       max-inline-size: 100%;
@@ -1179,6 +1288,19 @@ func renderHTMLDashboard(
     tbody tr:last-child th,
     tbody tr:last-child td {
       border-bottom: none;
+    }
+    tr.cat-row th {
+      background: #12171f;
+      color: var(--blue);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-block: 7px;
+    }
+    tr.total-row th, tr.total-row td {
+      background: #121820;
+      font-weight: 700;
+      border-top: 1px solid var(--border);
     }
     .num {
       text-align: right;
@@ -1294,7 +1416,7 @@ func renderHTMLDashboard(
       border-radius: 6px;
       padding: 8px 4px 4px 4px;
     }
-    #velocity-svg {
+    #velocity-svg, #p2-velocity-svg {
       inline-size: 100%;
       block-size: 280px;
       display: block;
@@ -1332,44 +1454,413 @@ func renderHTMLDashboard(
       margin-inline-end: 5px;
       vertical-align: middle;
     }
+    .zero-state {
+      background: #0d1117;
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      padding: 20px 22px;
+      color: var(--muted);
+    }
+    .zero-state-title {
+      color: var(--text);
+      font-weight: 600;
+      margin-block-end: 4px;
+    }
+    .link-btn {
+      display: inline-block;
+      margin-block-start: 10px;
+      background: #21262d;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .link-btn:hover { background: #30363d; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Endorphin 2.7.1 Decompilation Progress</h1>
+    <h1>Endorphin 2.7.1 Decompilation &amp; Lifting Dashboard</h1>
     <div class="subtitle">Target: <code>endorphin.exe</code> (MSVC 2005 RTM 14.00.50727.42) &bull; SHA-256: <code>7a1274d9...efbd505</code></div>
 `)
 
-	sb.WriteString(fmt.Sprintf(`    <div class="cards">
-      <div class="card">
-        <div class="card-label">In-Scope Functions Matched</div>
-        <div class="card-value">%.2f%%</div>
+	// 2-Phase Overview Header
+	sb.WriteString(fmt.Sprintf(`    <div class="phase-banner">
+      <div class="phase-pill p1">
+        <div class="phase-pill-head">
+          <span class="phase-badge done">%s</span>
+          <span class="num" style="font-size:13px;color:var(--accent-bright);">%d / %d funcs &bull; %.2f MB</span>
+        </div>
         <div class="progress-bar"><div class="progress-fill" style="width: %.2f%%"></div></div>
-        <div class="card-sub">%d / %d (%d AI &bull; %d auto_solve)</div>
+        <div class="phase-pill-meta">%d AI matches + %d <code>auto_solve</code> stubs verified bit-for-bit against MSVC 2005</div>
       </div>
-      <div class="card">
-        <div class="card-label">In-Scope Code Bytes</div>
-        <div class="card-value">%.2f%%</div>
-        <div class="progress-bar"><div class="progress-fill" style="width: %.2f%%"></div></div>
-        <div class="card-sub">%d / %d bytes (%.2f MB)</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Projected Completion (ETA)</div>
-        <div class="card-value">%s</div>
-        <div class="card-sub">%s</div>
-      </div>
-      <div class="card">
-        <div class="card-label">RTTI Classes Extracted</div>
-        <div class="card-value">%d</div>
-        <div class="card-sub">%d in-scope &bull; %d MFC/ATL/std</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Out-of-Scope Boilerplate</div>
-        <div class="card-value">%d</div>
-        <div class="card-sub">%d thunks &bull; %d CRT/MFC/SEH</div>
+      <div class="phase-pill p2">
+        <div class="phase-pill-head">
+          <span class="phase-badge active">Phase 2: Portable C++ Lifting &amp; Struct Recovery</span>
+          <span class="num" style="font-size:13px;color:var(--blue);">Core ASM: %.2f%% &bull; Portable: %.2f%%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill blue" style="width: %.2f%%"></div></div>
+        <div class="phase-pill-meta">%d / %d core <code>__asm</code> lifted &bull; %d named funcs &bull; %d struct fields (%d classes)</div>
       </div>
     </div>
+
+    <nav class="tabs" role="tablist" aria-label="Dashboard Views">
+      <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="phase2">Phase 2: C++ Lift &amp; Structs</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="phase1">Phase 1: Byte-Match Archive</button>
+    </nav>
 `,
+		phase1StatusBadge,
+		inScopeMatchedFuncs, inScopeFuncs, float64(inScopeMatchedBytes)/(1024.0*1024.0),
+		bytePct,
+		aiMatchedFuncs, autoSolveFuncs,
+		coreLiftFuncPct, portableFuncPct,
+		coreLiftFuncPct,
+		p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs, p2.TotalNamedFuncs, p2.TotalFieldAnnotations, p2.ClassesWithFields,
+	))
+
+	// ---- TAB 1: OVERVIEW ----
+	sb.WriteString(fmt.Sprintf(`    <section id="tab-overview" class="tab-panel" role="tabpanel">
+      <div class="cards">
+        <div class="card">
+          <div class="card-label">Phase 1: Byte-Match Parity</div>
+          <div class="card-value" style="color:var(--accent-bright);">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d funcs &bull; %d B (%.2f MB)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Phase 2: Core Scope ASM Lifted</div>
+          <div class="card-value" style="color:var(--blue);">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill blue" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d <code>__asm</code> funcs &bull; %d / %d B (%.2f%%)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Total Portable C++ Coverage</div>
+          <div class="card-value" style="color:var(--cyan);">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill cyan" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d funcs (%d pure-C++ + %d lifted)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Named Functions</div>
+          <div class="card-value">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill blue" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d (%d RTTI + %d inferred)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Recovered Struct Fields</div>
+          <div class="card-value">%d</div>
+          <div class="card-sub">%d unique fields across %d classes &bull; %d symbols</div>
+        </div>
+      </div>
+
+      <div class="panels-split">
+        <div class="panel">
+          <h2 style="margin-top:0;font-size:18px;">Core Subsystem Lift Progress</h2>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Exporters/IO and Physics/Sim subsystems targeted by Phase 2 (<code>--scope core</code>)</div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Subsystem</th>
+                  <th scope="col" class="num">Total</th>
+                  <th scope="col" class="num">Pure C++</th>
+                  <th scope="col" class="num">Lifted / ASM</th>
+                  <th scope="col" class="num">Rem. ASM</th>
+                  <th scope="col" class="num">Lift %%</th>
+                  <th scope="col" class="num">Portable %%</th>
+                  <th scope="col" class="num">Named</th>
+                  <th scope="col" class="num">Fields</th>
+                </tr>
+              </thead>
+              <tbody>
+%s              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="panel">
+            <h2 style="margin-top:0;font-size:18px;">Phase 2 Lift Leaderboard</h2>
+            <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Portable C++ lifts grouped by <code>lifted_by</code></div>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Model</th>
+                    <th scope="col" class="num">Lifted</th>
+                    <th scope="col" class="num">Bytes</th>
+                    <th scope="col" class="num">Share</th>
+                    <th scope="col" class="num">Avg</th>
+                    <th scope="col" class="num">Med</th>
+                    <th scope="col" class="num">Max</th>
+                    <th scope="col" class="num">Fields</th>
+                  </tr>
+                </thead>
+                <tbody>
+%s                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel">
+            <h2 style="margin-top:0;font-size:18px;">Phase 1 Archive Highlight</h2>
+            <div style="color:var(--muted);font-size:13px;">
+              All <strong>%d in-scope functions</strong> (%.2f MB across %d RTTI classes) are 100%% byte-matched under MSVC 2005 RTM (%d AI solves across %d models + %d <code>auto_solve</code>).
+            </div>
+            <button type="button" class="link-btn" data-jump-tab="phase1">Open Phase 1: Byte-Match Archive &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+`,
+		bytePct, bytePct, inScopeMatchedFuncs, inScopeFuncs, inScopeMatchedBytes, float64(inScopeBytes)/(1024.0*1024.0),
+		coreLiftFuncPct, coreLiftFuncPct, p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs, p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes, coreLiftBytePct,
+		portableFuncPct, portableFuncPct, p2.ScopeAll.PortableCppFuncs, p2.ScopeAll.TotalFuncs, p2.ScopeAll.AlreadyPureCppFuncs, p2.ScopeAll.LiftedAsmFuncs,
+		namedPct, namedPct, p2.TotalNamedFuncs, p2.InScopeUnitsTotal, p2.InitialRTTINamedFuncs, p2.NewlyInferredNamedFuncs,
+		p2.TotalFieldAnnotations, p2.UniqueFields, p2.ClassesWithFields, p2.SymbolsCataloged,
+		renderSubsystemTableRows(p2, true),
+		renderPhase2LeaderboardRows(p2),
+		inScopeMatchedFuncs, float64(inScopeBytes)/(1024.0*1024.0), inScopeClasses, aiMatchedFuncs, len(leaderboard), autoSolveFuncs,
+	))
+
+	// ---- TAB 2: PHASE 2 DETAILS ----
+	sb.WriteString(fmt.Sprintf(`    <section id="tab-phase2" class="tab-panel" role="tabpanel" hidden>
+      <div class="cards">
+        <div class="card">
+          <div class="card-label">Core Scope ASM Lift</div>
+          <div class="card-value" style="color:var(--blue);">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill blue" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d funcs &bull; %d / %d B (%.2f%%)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Full Binary ASM Lift</div>
+          <div class="card-value">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill blue" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d funcs &bull; %d / %d B (%.2f%%)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Portable C++ (All / Core)</div>
+          <div class="card-value" style="color:var(--cyan);">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill cyan" style="width: %.2f%%"></div></div>
+          <div class="card-sub">All: %d/%d (%.2f%% B) &bull; Core: %.2f%%</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Function Naming Recovery</div>
+          <div class="card-value">%.2f%%</div>
+          <div class="card-sub">%d / %d named (%d RTTI + %d inferred)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Recovered Struct Fields</div>
+          <div class="card-value">%d</div>
+          <div class="card-sub">%d unique across %d classes &bull; %d headers</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Cataloged &amp; Skipped</div>
+          <div class="card-value">%d</div>
+          <div class="card-sub"><code>lifted/symbols.json</code> entries &bull; %d skipped</div>
+        </div>
+      </div>
+
+%s
+      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px;">Per-Subsystem Lifting &amp; Portable C++ Breakdown</h2>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Classification of all %d matched functions scanned in <code>src/</code> across Exporters/IO, Physics/Sim, and Non-Core modules</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Subsystem</th>
+                <th scope="col" class="num">Total Funcs</th>
+                <th scope="col" class="num">Pure C++</th>
+                <th scope="col" class="num">Lifted / ASM</th>
+                <th scope="col" class="num">Remaining ASM</th>
+                <th scope="col" class="num">ASM Lift %%</th>
+                <th scope="col" class="num">Portable C++ %%</th>
+                <th scope="col" class="num">Named</th>
+                <th scope="col" class="num">Fields</th>
+              </tr>
+            </thead>
+            <tbody>
+%s            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panels-split">
+        <div class="panel">
+          <h2 style="margin-top:0;font-size:18px;">Phase 2 Lift Model Leaderboard</h2>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Grouped by <code>lifted_by</code> from <code>build/lifted/&lt;shard&gt;/&lt;VA&gt;.json</code></div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Model</th>
+                  <th scope="col" class="num">Lifted Funcs</th>
+                  <th scope="col" class="num">Lifted Bytes</th>
+                  <th scope="col" class="num">Share</th>
+                  <th scope="col" class="num">Avg Size</th>
+                  <th scope="col" class="num">Median</th>
+                  <th scope="col" class="num">Largest</th>
+                  <th scope="col" class="num">Fields</th>
+                </tr>
+              </thead>
+              <tbody>
+%s              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 style="margin-top:0;font-size:18px;">Recovered Class Struct Layouts</h2>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Classes with <code>@field</code> annotations merged into <code>lifted/include/*.h</code></div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Class</th>
+                  <th scope="col" class="num">Unique Fields</th>
+                  <th scope="col" class="num">Annotations</th>
+                  <th scope="col">Header</th>
+                </tr>
+              </thead>
+              <tbody>
+`,
+		coreLiftFuncPct, coreLiftFuncPct, p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs, p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes, coreLiftBytePct,
+		allLiftFuncPct, allLiftFuncPct, p2.ScopeAll.LiftedAsmFuncs, p2.ScopeAll.AsmFuncs, p2.ScopeAll.LiftedAsmBytes, p2.ScopeAll.AsmBytes, allLiftBytePct,
+		portableFuncPct, portableFuncPct, p2.ScopeAll.PortableCppFuncs, p2.ScopeAll.TotalFuncs, portableBytePct, corePortableFuncPct,
+		namedPct, p2.TotalNamedFuncs, p2.InScopeUnitsTotal, p2.InitialRTTINamedFuncs, p2.NewlyInferredNamedFuncs,
+		p2.TotalFieldAnnotations, p2.UniqueFields, p2.ClassesWithFields, p2.GeneratedHeaders,
+		p2.SymbolsCataloged, p2.ScopeAll.SkippedFuncs,
+		renderPhase2ChartPanel(p2),
+		p2.ScopeAll.TotalFuncs,
+		renderSubsystemTableRows(p2, false),
+		renderPhase2LeaderboardRows(p2),
+	))
+
+	if len(p2.ClassFields) == 0 {
+		sb.WriteString(`                <tr><th scope="row" style="color:var(--muted);font-style:italic;font-weight:400;">No struct fields recovered yet</th><td class="num">0</td><td class="num">0</td><td style="color:var(--muted);">-</td></tr>
+`)
+	} else {
+		limit := len(p2.ClassFields)
+		if limit > 30 {
+			limit = 30
+		}
+		for _, cf := range p2.ClassFields[:limit] {
+			sb.WriteString(fmt.Sprintf(`                <tr>
+                  <th scope="row"><code>%s</code></th>
+                  <td class="num">%d</td>
+                  <td class="num">%d</td>
+                  <td><code>%s</code></td>
+                </tr>
+`, html.EscapeString(cf.Class), cf.UniqueFields, cf.FieldCount, html.EscapeString(cf.HeaderFile)))
+		}
+	}
+
+	sb.WriteString(`              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px;">Recent Lifted Functions &amp; Recovered Symbols</h2>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Latest functions lifted into portable C++ and recorded in <code>build/lifted/</code> &amp; <code>lifted/symbols.json</code></div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">VA</th>
+                <th scope="col">Recovered Name</th>
+                <th scope="col">Class</th>
+                <th scope="col" class="num">Size</th>
+                <th scope="col" class="num">Fields</th>
+                <th scope="col">Model</th>
+                <th scope="col">Summary</th>
+              </tr>
+            </thead>
+            <tbody>
+`)
+	if len(p2.RecentLifts) == 0 {
+		sb.WriteString(`              <tr><th scope="row" style="color:var(--muted);font-style:italic;font-weight:400;">None yet</th><td colspan="6" style="color:var(--muted);">No lifted functions recorded yet.</td></tr>
+`)
+	} else {
+		limit := len(p2.RecentLifts)
+		if limit > 30 {
+			limit = 30
+		}
+		for _, r := range p2.RecentLifts[:limit] {
+			cls := r.Class
+			if cls == "" {
+				cls = "-"
+			}
+			sb.WriteString(fmt.Sprintf(`              <tr>
+                <th scope="row"><code>%s</code></th>
+                <td><code>%s</code></td>
+                <td><code>%s</code></td>
+                <td class="num">%d B</td>
+                <td class="num">%d</td>
+                <td><code class="model-badge">%s</code></td>
+                <td style="max-inline-size:520px;color:var(--muted);">%s</td>
+              </tr>
+`,
+				html.EscapeString(r.VA),
+				html.EscapeString(r.Name),
+				html.EscapeString(cls),
+				r.Size,
+				r.Fields,
+				html.EscapeString(r.Model),
+				html.EscapeString(r.Summary),
+			))
+		}
+	}
+	sb.WriteString(`            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+`)
+
+	// ---- TAB 3: PHASE 1 ARCHIVE (ALL ORIGINAL PHASE 1 STATS INTACT) ----
+	sb.WriteString(fmt.Sprintf(`    <section id="tab-phase1" class="tab-panel" role="tabpanel" hidden>
+      <div class="panel" style="border-inline-start:4px solid var(--accent-bright);">
+        <div class="phase-pill-head">
+          <h2 style="margin:0;font-size:18px;">%s</h2>
+          <span class="phase-badge done">100%% Byte-Matched</span>
+        </div>
+        <div style="color:var(--muted);font-size:13px;margin-top:4px;">Complete archive of Phase 1 MSVC 2005 RTM byte-for-byte parity verification across all %d in-scope functions, velocity curve, size deciles, and AI squad leaderboard.</div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-label">In-Scope Functions Matched</div>
+          <div class="card-value">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d (%d AI &bull; %d auto_solve)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">In-Scope Code Bytes</div>
+          <div class="card-value">%.2f%%</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: %.2f%%"></div></div>
+          <div class="card-sub">%d / %d bytes (%.2f MB)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Projected Completion (ETA)</div>
+          <div class="card-value">%s</div>
+          <div class="card-sub">%s</div>
+        </div>
+        <div class="card">
+          <div class="card-label">RTTI Classes Extracted</div>
+          <div class="card-value">%d</div>
+          <div class="card-sub">%d in-scope &bull; %d MFC/ATL/std</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Out-of-Scope Boilerplate</div>
+          <div class="card-value">%d</div>
+          <div class="card-sub">%d thunks &bull; %d CRT/MFC/SEH</div>
+        </div>
+      </div>
+`,
+		phase1StatusBadge,
+		inScopeFuncs,
 		funcPct, funcPct, inScopeMatchedFuncs, inScopeFuncs, aiMatchedFuncs, autoSolveFuncs,
 		bytePct, bytePct, inScopeMatchedBytes, inScopeBytes, float64(inScopeBytes)/(1024.0*1024.0),
 		cardETAVal, cardETASub,
@@ -1384,37 +1875,37 @@ func renderHTMLDashboard(
 		aiMatchedFuncs,
 	))
 
-	sb.WriteString(`    <div class="panel">
-      <h2 style="margin-top:0;font-size:18px;">Squad Leaderboard (AI Model Matches)</h2>
-      <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Excludes ` + fmt.Sprintf("%d", autoSolveFuncs) + ` deterministic <code>script:auto_solve</code> baseline stubs</div>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Model</th>
-              <th scope="col" class="num">Matched Functions</th>
-              <th scope="col" class="num">Matched Bytes</th>
-              <th scope="col" class="num">Share of AI Matches</th>
-              <th scope="col" class="num">Avg Size</th>
-              <th scope="col" class="num">Median</th>
-              <th scope="col" class="num">Largest</th>
-              <th scope="col">Matches by Size Decile (small &rarr; large)</th>
-            </tr>
-          </thead>
-          <tbody>
+	sb.WriteString(`      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px;">Squad Leaderboard (AI Model Matches)</h2>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Excludes ` + fmt.Sprintf("%d", autoSolveFuncs) + ` deterministic <code>script:auto_solve</code> baseline stubs</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col" class="num">Matched Functions</th>
+                <th scope="col" class="num">Matched Bytes</th>
+                <th scope="col" class="num">Share of AI Matches</th>
+                <th scope="col" class="num">Avg Size</th>
+                <th scope="col" class="num">Median</th>
+                <th scope="col" class="num">Largest</th>
+                <th scope="col">Matches by Size Decile (small &rarr; large)</th>
+              </tr>
+            </thead>
+            <tbody>
 `)
 
 	if len(leaderboard) == 0 {
-		sb.WriteString(`            <tr>
-              <th scope="row" style="color:var(--muted);font-style:italic;font-weight:400;">No AI matches yet</th>
-              <td class="num">0</td>
-              <td class="num">0</td>
-              <td class="num">0.00%</td>
-              <td class="num">-</td>
-              <td class="num">-</td>
-              <td class="num">-</td>
-              <td></td>
-            </tr>
+		sb.WriteString(`              <tr>
+                <th scope="row" style="color:var(--muted);font-style:italic;font-weight:400;">No AI matches yet</th>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td class="num">0.00%</td>
+                <td class="num">-</td>
+                <td class="num">-</td>
+                <td class="num">-</td>
+                <td></td>
+              </tr>
 `)
 	} else {
 		for _, m := range leaderboard {
@@ -1439,87 +1930,124 @@ func renderHTMLDashboard(
 			}
 			strip.WriteString(`</div>`)
 
-			sb.WriteString(fmt.Sprintf(`            <tr>
-              <th scope="row"><code class="model-badge">%s</code></th>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%.0f B</td>
-              <td class="num">%d B</td>
-              <td class="num">%d B</td>
-              <td>%s</td>
-            </tr>
-`, m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct, avg, med, largest, strip.String()))
+			sb.WriteString(fmt.Sprintf(`              <tr>
+                <th scope="row"><code class="model-badge">%s</code></th>
+                <td class="num">%d</td>
+                <td class="num">%d</td>
+                <td class="num">%.2f%%</td>
+                <td class="num">%.0f B</td>
+                <td class="num">%d B</td>
+                <td class="num">%d B</td>
+                <td>%s</td>
+              </tr>
+`, html.EscapeString(m.Model), m.MatchedFuncs, m.MatchedBytes, sharePct, avg, med, largest, strip.String()))
 		}
 	}
 
-	sb.WriteString(`          </tbody>
-        </table>
+	sb.WriteString(`            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-    <div class="panels-split">
-      <div class="panel">
-        <h2 style="margin-top:0;font-size:18px;">In-Scope Progress by Size Decile</h2>
-        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">In-scope functions ranked by size and split into ten equal-count percentile tiers (P0-10 = smallest 10%)</div>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Size Tier</th>
-                <th scope="col" class="num">Matched / Total Funcs</th>
-                <th scope="col" class="num">Func %</th>
-                <th scope="col" class="num">Matched / Total Bytes</th>
-                <th scope="col" class="num">Byte %</th>
-                <th scope="col" class="num">Remaining</th>
-              </tr>
-            </thead>
-            <tbody>
+      <div class="panels-split">
+        <div class="panel">
+          <h2 style="margin-top:0;font-size:18px;">In-Scope Progress by Size Decile</h2>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">In-scope functions ranked by size and split into ten equal-count percentile tiers (P0-10 = smallest 10%)</div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Size Tier</th>
+                  <th scope="col" class="num">Matched / Total Funcs</th>
+                  <th scope="col" class="num">Func %</th>
+                  <th scope="col" class="num">Matched / Total Bytes</th>
+                  <th scope="col" class="num">Byte %</th>
+                  <th scope="col" class="num">Remaining</th>
+                </tr>
+              </thead>
+              <tbody>
 `)
 
 	for _, t := range tiers {
 		fPct := pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs))
 		bPct := pct(t.MatchedBytes, t.TotalBytes)
-		sb.WriteString(fmt.Sprintf(`              <tr>
-                <th scope="row">%s</th>
-                <td class="num">%d / %d</td>
-                <td class="num">%.2f%%</td>
-                <td class="num">%d / %d</td>
-                <td class="num">%.2f%%</td>
-                <td class="num">%d fn</td>
-              </tr>
+		sb.WriteString(fmt.Sprintf(`                <tr>
+                  <th scope="row">%s</th>
+                  <td class="num">%d / %d</td>
+                  <td class="num">%.2f%%</td>
+                  <td class="num">%d / %d</td>
+                  <td class="num">%.2f%%</td>
+                  <td class="num">%d fn</td>
+                </tr>
 `, t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
 	}
 
-	sb.WriteString(fmt.Sprintf(`            </tbody>
-          </table>
+	sb.WriteString(fmt.Sprintf(`              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 style="margin-top:0;font-size:18px;">Binary Scope Breakdown</h2>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Partition of <code>endorphin.exe</code> code bytes and RTTI class hierarchy</div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Segment / Category</th>
+                  <th scope="col" class="num">Functions / Classes</th>
+                  <th scope="col" class="num">Size / Share</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Total Functions in <code>.text</code></th><td class="num">%d funcs</td><td class="num">%d bytes (%.2f MB)</td></tr>
+                <tr><th scope="row">In-Scope Application &amp; Engine</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+                <tr class="sub-row"><th scope="row">Matched In-Scope (AI + Baseline)</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+                <tr><th scope="row">Out-of-Scope Total</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+                <tr class="sub-row"><th scope="row">Jump &amp; Import Thunks</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+                <tr class="sub-row"><th scope="row">CRT / MFC / SEH Boilerplate</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+                <tr><th scope="row">RTTI Classes</th><td class="num">%d classes</td><td class="num">%d in-scope &bull; %d MFC/ATL/std</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-      <div class="panel">
-        <h2 style="margin-top:0;font-size:18px;">Binary Scope Breakdown</h2>
-        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Partition of <code>endorphin.exe</code> code bytes and RTTI class hierarchy</div>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Segment / Category</th>
-                <th scope="col" class="num">Functions / Classes</th>
-                <th scope="col" class="num">Size / Share</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Total Functions in <code>.text</code></th><td class="num">%d funcs</td><td class="num">%d bytes (%.2f MB)</td></tr>
-              <tr><th scope="row">In-Scope Application &amp; Engine</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-              <tr class="sub-row"><th scope="row">Matched In-Scope (AI + Baseline)</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-              <tr><th scope="row">Out-of-Scope Total</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-              <tr class="sub-row"><th scope="row">Jump &amp; Import Thunks</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-              <tr class="sub-row"><th scope="row">CRT / MFC / SEH Boilerplate</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-              <tr><th scope="row">RTTI Classes</th><td class="num">%d classes</td><td class="num">%d in-scope &bull; %d MFC/ATL/std</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
+  <script>
+  (function() {
+    const tabBtns = document.querySelectorAll('.tab-btn[data-tab]');
+    const panels = {
+      overview: document.getElementById('tab-overview'),
+      phase2: document.getElementById('tab-phase2'),
+      phase1: document.getElementById('tab-phase1')
+    };
+    function activate(name, pushHash) {
+      if (!panels[name]) name = 'overview';
+      tabBtns.forEach(btn => {
+        const isOn = btn.getAttribute('data-tab') === name;
+        btn.classList.toggle('active', isOn);
+        btn.setAttribute('aria-selected', isOn ? 'true' : 'false');
+      });
+      Object.entries(panels).forEach(([k, el]) => {
+        if (el) el.hidden = (k !== name);
+      });
+      if (pushHash && history.replaceState) {
+        history.replaceState(null, '', '#' + name);
+      }
+      window.dispatchEvent(new Event('resize'));
+    }
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => activate(btn.getAttribute('data-tab'), true));
+    });
+    document.querySelectorAll('[data-jump-tab]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activate(btn.getAttribute('data-jump-tab'), true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+    const hash = (location.hash || '').replace('#', '');
+    if (panels[hash]) activate(hash, false);
+  })();
+  </script>
 </body>
 </html>
 `,
@@ -1602,6 +2130,7 @@ func renderCISummary(
 	inScopeBytes, inScopeMatchedBytes uint64,
 	tiers []*TierStats,
 	leaderboard []ModelStats,
+	p2 Phase2Stats,
 ) string {
 	var sb strings.Builder
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
@@ -1613,7 +2142,7 @@ func renderCISummary(
 	}
 	autoSolveFuncs := inScopeMatchedFuncs - aiMatchedFuncs
 
-	sb.WriteString("## Endorphin 2.7.1 Decompilation Scoreboard\n\n")
+	sb.WriteString("## Endorphin 2.7.1 Decompilation Scoreboard (Phase 1: MSVC8 Byte-Match)\n\n")
 	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**) — `%d` by AI models, `%d` by deterministic `auto_solve`\n", inScopeMatchedFuncs, inScopeFuncs, funcPct, aiMatchedFuncs, autoSolveFuncs))
 	sb.WriteString(fmt.Sprintf("- **In-Scope Code Bytes Matched:** `%d / %d bytes` (**%.2f%%** of %.2f MB)\n", inScopeMatchedBytes, inScopeBytes, bytePct, float64(inScopeBytes)/(1024.0*1024.0)))
 	sb.WriteString(fmt.Sprintf("- **RTTI Classes Extracted:** `%d` total (`%d` in-scope, `%d` MFC/ATL/std)\n", totalClasses, inScopeClasses, mfcClasses))
@@ -1639,6 +2168,8 @@ func renderCISummary(
 			sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
 		}
 	}
+
+	sb.WriteString(renderPhase2CISummary(p2))
 	return sb.String()
 }
 
@@ -1808,6 +2339,8 @@ func main() {
 		return leaderboard[i].Model < leaderboard[j].Model
 	})
 
+	p2 := collectPhase2Stats(units, mfcClasses, defaultPhase2Options())
+
 	if *ciFlag {
 		fmt.Print(renderCISummary(
 			len(classes), inScopeClassCount, mfcClassCount,
@@ -1818,6 +2351,7 @@ func main() {
 			inScopeBytes, inScopeMatchedBytes,
 			tiers,
 			leaderboard,
+			p2,
 		))
 	} else {
 		fmt.Println("================================================================================")
@@ -1870,6 +2404,22 @@ func main() {
 				)
 			}
 		}
+		fmt.Println("--------------------------------------------------------------------------------")
+		fmt.Println("PHASE 2: PORTABLE C++ LIFTING & STRUCT RECOVERY")
+		fmt.Printf("Core Scope ASM Lifted : %5d / %5d (%6.2f%%) | %8d / %8d bytes (%6.2f%%)\n",
+			p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs, pct(uint64(p2.ScopeCore.LiftedAsmFuncs), uint64(p2.ScopeCore.AsmFuncs)),
+			p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes, pct(p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes))
+		fmt.Printf("Full Binary ASM Lifted: %5d / %5d (%6.2f%%) | %8d / %8d bytes (%6.2f%%)\n",
+			p2.ScopeAll.LiftedAsmFuncs, p2.ScopeAll.AsmFuncs, pct(uint64(p2.ScopeAll.LiftedAsmFuncs), uint64(p2.ScopeAll.AsmFuncs)),
+			p2.ScopeAll.LiftedAsmBytes, p2.ScopeAll.AsmBytes, pct(p2.ScopeAll.LiftedAsmBytes, p2.ScopeAll.AsmBytes))
+		fmt.Printf("Portable C++ (All)    : %5d / %5d (%6.2f%%) | %d pure-C++ + %d lifted\n",
+			p2.ScopeAll.PortableCppFuncs, p2.ScopeAll.TotalFuncs, pct(uint64(p2.ScopeAll.PortableCppFuncs), uint64(p2.ScopeAll.TotalFuncs)),
+			p2.ScopeAll.AlreadyPureCppFuncs, p2.ScopeAll.LiftedAsmFuncs)
+		fmt.Printf("Named Functions       : %5d / %5d (%6.2f%%) | %d RTTI + %d newly inferred\n",
+			p2.TotalNamedFuncs, p2.InScopeUnitsTotal, pct(uint64(p2.TotalNamedFuncs), uint64(p2.InScopeUnitsTotal)),
+			p2.InitialRTTINamedFuncs, p2.NewlyInferredNamedFuncs)
+		fmt.Printf("Recovered Fields      : %5d annotations (%d unique across %d classes, %d symbols)\n",
+			p2.TotalFieldAnnotations, p2.UniqueFields, p2.ClassesWithFields, p2.SymbolsCataloged)
 		fmt.Println("================================================================================")
 	}
 
@@ -1878,7 +2428,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Error creating dir for %s: %v\n", *htmlOut, err)
 			os.Exit(1)
 		}
-		html := renderHTMLDashboard(
+		htmlDoc := renderHTMLDashboard(
 			len(classes), inScopeClassCount, mfcClassCount,
 			totalFuncs, totalBytes,
 			outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs,
@@ -1888,8 +2438,9 @@ func main() {
 			tiers,
 			leaderboard,
 			matchEvents,
+			p2,
 		)
-		if err := os.WriteFile(*htmlOut, []byte(html), 0644); err != nil {
+		if err := os.WriteFile(*htmlOut, []byte(htmlDoc), 0644); err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing %s: %v\n", *htmlOut, err)
 			os.Exit(1)
 		}

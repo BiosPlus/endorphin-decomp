@@ -52,6 +52,11 @@ jobs:
           # and every `go run` recompiles from scratch.
           cache-dependency-path: go.mod
 
+      - name: Run Go tooling unit tests
+        shell: pwsh
+        run: |
+          go test ./tools/status/... ./tools/liftwork/... ./tools/lift/...
+
       - name: Cache MSVC 2005 toolchain and local binaries
         id: cache-msvc8
         uses: actions/cache@v6
