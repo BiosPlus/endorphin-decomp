@@ -1,0 +1,22 @@
+{
+  "va": "0x0061FF40",
+  "size": 60,
+  "orig_symbol": "NMData::GraphicData::vfunc_14",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_14",
+  "class": "NMData::GraphicData",
+  "signature": "void* fn_0061FF40(void* self, void* arg1, uint32_t arg2)",
+  "summary": "If arg2 == 0x9C, forwards arg1 to sub_00661650 with the subobject at this+0x154; otherwise forwards (arg1, arg2) to AxisDefineSensorData::vfunc_14. Always returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x154",
+      "type": "uint8_t field_0x154 (address of subobject only; not read or written",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:29Z"
+}

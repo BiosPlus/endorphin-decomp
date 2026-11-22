@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct NMData_GraphicData_Fields {
     // +0x150 DWORD                    field_150  (evidence: 0x004A9B50, 0x00587D40)
+    // +0x154 uint8_t field_0x154 (address of subobject only; not read or written here)  (evidence: 0x0061FF40)
 };
 } // namespace lifted_layout

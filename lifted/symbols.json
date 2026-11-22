@@ -7973,6 +7973,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0061D990 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0061FF40": {
+    "name": "NMData::GraphicData::vfunc_14",
+    "class": "NMData::GraphicData",
+    "signature": "void* fn_0061FF40(void* self, void* arg1, uint32_t arg2)",
+    "summary": "If arg2 == 0x9C, forwards arg1 to sub_00661650 with the subobject at this+0x154; otherwise forwards (arg1, arg2) to AxisDefineSensorData::vfunc_14. Always returns arg1.",
+    "lifted_path": "lifted/NMData/GraphicData.cpp"
+  },
   "0x00622320": {
     "name": "NMData::SkeletalCalibrationVariables::vfunc_19",
     "class": "NMData::SkeletalCalibrationVariables",
