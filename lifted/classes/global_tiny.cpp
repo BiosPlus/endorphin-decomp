@@ -104,3 +104,16 @@ int* fn_0041B200(void* self) {
     (void)self;
     return &mem_0092D538;
 }
+
+// [0x0041B950]
+// @name GridPropertyPage::vfunc_0
+// @class GridPropertyPage
+// @summary Returns the address of the static .rdata constant mem_0092D8A8 (pointer to 0x0092D894).
+// @field GridPropertyPage +0x0 u32 field_0x00
+
+extern "C" const void* const mem_0092D8A8_ptr_placeholder = 0;
+
+extern "C" const void* __fastcall fn_0041B950(void* self) {
+    (void)self;
+    return reinterpret_cast<const void*>(0x0092D8A8);
+}

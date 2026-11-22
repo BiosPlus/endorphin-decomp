@@ -168,6 +168,13 @@
     "summary": "Returns the address of the read-only string constant \".cj\" stored in .rdata (mem_0092D778).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041B950": {
+    "name": "GridPropertyPage::vfunc_0",
+    "class": "GridPropertyPage",
+    "signature": "extern \"C\" const void* __fastcall fn_0041B950(void* self)",
+    "summary": "Returns the address of the static .rdata constant mem_0092D8A8 (pointer to 0x0092D894).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",
