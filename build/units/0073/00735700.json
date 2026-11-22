@@ -172,5 +172,7 @@
     "0x00735C97",
     "0x00735CA5"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:41:30Z"
 }
