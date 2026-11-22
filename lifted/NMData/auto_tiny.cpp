@@ -1839,23 +1839,6 @@ void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
     out[1] = lift_field<float>(self, 0xEC);
 }
 
-// [0x0051C7A0] NMData::QuatChannel::vfunc_9 (31 bytes)
-// @name NMData::QuatChannel::vfunc_9
-// @class NMData::QuatChannel
-// @summary Returns 0 if the dword at +0x30 is zero; otherwise returns (dword at +0x34 - dword at +0x30) / 20 (signed, truncating).
-// @field NMData::QuatChannel +0x30 uint32_t field_0x30
-// @field NMData::QuatChannel +0x34 uint32_t field_0x34
-int32_t fn_0051C7A0(void* self) {
-    uint32_t begin = lift_field<uint32_t>(self, 0x30);
-    if (begin == 0) {
-        return 0;
-    }
-    uint32_t end = lift_field<uint32_t>(self, 0x34);
-    int32_t span = static_cast<int32_t>(end - begin);
-    // Compiler-emitted magic multiply (0x66666667, sar 3) computes signed /20.
-    return span / 20;
-}
-
 // [0x005C3890] NMData::CollisionModelData::vfunc_0_off_C (24 bytes)
 // @name NMData::CollisionModelData::vfunc_0_off_C
 // @class NMData::CollisionModelData
@@ -1953,4 +1936,21 @@ uint32_t fn_0060BB80(void* self) {
     // vtable byte offset 0x10 -> slot 4 (32-bit layout)
     auto fn = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(vtable[4]);
     return fn(target, 0);
+}
+
+// [0x0051C7A0] NMData::QuatChannel::vfunc_9 (31 bytes)
+// @name NMData::QuatChannel::vfunc_9
+// @class NMData::QuatChannel
+// @summary Returns 0 if the dword at +0x30 is zero; otherwise returns (dword at +0x34 - dword at +0x30) / 20 (signed, truncating).
+// @field NMData::QuatChannel +0x30 uint32_t field_0x30
+// @field NMData::QuatChannel +0x34 uint32_t field_0x34
+int32_t fn_0051C7A0(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x30);
+    if (begin == 0) {
+        return 0;
+    }
+    uint32_t end = lift_field<uint32_t>(self, 0x34);
+    int32_t span = static_cast<int32_t>(end - begin);
+    // Compiler-emitted magic multiply (0x66666667, sar 3) computes signed /20.
+    return span / 20;
 }

@@ -4587,6 +4587,13 @@
     "summary": "Returns the element count of the channel's [begin, end) pointer range at +0x30/+0x34 (8-byte elements), or 0 when begin is null.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051C7A0": {
+    "name": "NMData::QuatChannel::vfunc_9",
+    "class": "NMData::QuatChannel",
+    "signature": "int32_t fn_0051C7A0(void* self)",
+    "summary": "Returns 0 if the dword at +0x30 is zero; otherwise returns (dword at +0x34 - dword at +0x30) / 20 (signed, truncating).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0051DDD0": {
     "name": "sub_0051DDD0",
     "signature": "extern \"C\" void __fastcall fn_0051DDD0(void* self)",

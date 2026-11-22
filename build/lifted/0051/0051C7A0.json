@@ -1,0 +1,28 @@
+{
+  "va": "0x0051C7A0",
+  "size": 31,
+  "orig_symbol": "NMData::QuatChannel::vfunc_9",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::QuatChannel::vfunc_9",
+  "class": "NMData::QuatChannel",
+  "signature": "int32_t fn_0051C7A0(void* self)",
+  "summary": "Returns 0 if the dword at +0x30 is zero; otherwise returns (dword at +0x34 - dword at +0x30) / 20 (signed, truncating).",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:48Z"
+}
