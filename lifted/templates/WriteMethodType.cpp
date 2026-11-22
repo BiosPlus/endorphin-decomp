@@ -99,6 +99,10 @@ void __stdcall fn_00594520(void* a1, void* a2) {
 }
 extern "C" void __thiscall ext_00648E30(void* self, bool value);
 extern "C" void __thiscall ext_00649080(void* self, bool value);
+extern "C" uint32_t ext_005A45A0(void* self, void* arg);
+extern "C" void __thiscall ext_0062A580(void* self, bool value);
+extern "C" void ext_00603680(void* self, uint32_t value);
+extern "C" void __thiscall ext_00648EA0(void* self, bool value);
 
 // [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41
@@ -1037,6 +1041,166 @@ void __thiscall fn_00649620(void* self, void* out, void* dst, void* src) {
     uint8_t flag = getFlag(srcType, src);
 
     ext_00649080(target, flag != 0);
+
+    if (lift_field<void*>(src, 0x04) != nullptr) {
+        // Local copy of dst; its address is passed to the resolver below.
+        void* dstSlot = dst;
+
+        using ResolveFn = void* (__thiscall*)(void* typeObj, void** dstSlotPtr, void* valueObj);
+        auto resolve = reinterpret_cast<ResolveFn>(vtable[0x70 / sizeof(void*)]);
+        void* resolved = resolve(srcType, &dstSlot, src);
+
+        // Re-read src->field_0x04 after the call, as the original does.
+        lift_field<void*>(out, 0x00) = lift_field<void*>(resolved, 0x00);
+        lift_field<void*>(out, 0x04) = lift_field<void*>(src, 0x04);
+    } else {
+        lift_field<void*>(out, 0x00) = nullptr;
+        lift_field<void*>(out, 0x04) = nullptr;
+    }
+}
+
+// [0x005A46C0] ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_41 (19 bytes)
+// @name ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0066BC40 (ExprParser::VPtrProxyType::vfunc_39).
+// @field ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}> +0x0 void* field_0x00
+uint32_t fn_005A46C0(void* self, void* arg) {
+    // ecx = [self + 0x00] (held pointer becomes the receiver)
+    void* held = lift_field<void*>(self, 0x00);
+    // push arg; call ext_0041CF50 (callee pops its own argument); ret 8
+    return ext_005A45A0(held, arg);
+}
+
+// [0x00604960] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_48 (110 bytes)
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_48).
+void __thiscall fn_00604960(void* self, void* out, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetFlagFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getFlag = reinterpret_cast<GetFlagFn>(vtable[0x0C / sizeof(void*)]);
+    uint8_t flag = getFlag(srcType, src);
+
+    ext_0062A580(target, flag != 0);
+
+    if (lift_field<void*>(src, 0x04) != nullptr) {
+        // Local copy of dst; its address is passed to the resolver below.
+        void* dstSlot = dst;
+
+        using ResolveFn = void* (__thiscall*)(void* typeObj, void** dstSlotPtr, void* valueObj);
+        auto resolve = reinterpret_cast<ResolveFn>(vtable[0x70 / sizeof(void*)]);
+        void* resolved = resolve(srcType, &dstSlot, src);
+
+        // Re-read src->field_0x04 after the call, as the original does.
+        lift_field<void*>(out, 0x00) = lift_field<void*>(resolved, 0x00);
+        lift_field<void*>(out, 0x04) = lift_field<void*>(src, 0x04);
+    } else {
+        lift_field<void*>(out, 0x00) = nullptr;
+        lift_field<void*>(out, 0x04) = nullptr;
+    }
+}
+
+// [0x00604BA0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const &), 0}>::vfunc_41).
+void __thiscall fn_00604BA0(void* self, void* targetPtr, void* valuePtr) {
+    (void)self;
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    void* typeObj = lift_field<void*>(valuePtr, 0x04);
+    void** vtable = lift_field<void**>(typeObj, 0x00);
+    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
+    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x18 / sizeof(void*)]);
+    uint32_t value = getVec3(typeObj, valuePtr);
+    ext_00603680(target, value);
+}
+
+// [0x006495F0] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649D50 (ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>::vfunc_41).
+void __thiscall fn_006495F0(void* self, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetBoolFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getBool = reinterpret_cast<GetBoolFn>(vtable[0x0C / 4]);
+    bool value = getBool(srcType, src) != 0;
+
+    ext_00649080(target, value);
+}
+
+// [0x00649690] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>::vfunc_41 (34 bytes)
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649D50 (ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>::vfunc_41).
+void __thiscall fn_00649690(void* self, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetBoolFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getBool = reinterpret_cast<GetBoolFn>(vtable[0x0C / 4]);
+    bool value = getBool(srcType, src) != 0;
+
+    ext_00648EA0(target, value);
+}
+
+// [0x006496C0] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>::vfunc_48 (110 bytes)
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_48).
+void __thiscall fn_006496C0(void* self, void* out, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetFlagFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getFlag = reinterpret_cast<GetFlagFn>(vtable[0x0C / sizeof(void*)]);
+    uint8_t flag = getFlag(srcType, src);
+
+    ext_00648EA0(target, flag != 0);
+
+    if (lift_field<void*>(src, 0x04) != nullptr) {
+        // Local copy of dst; its address is passed to the resolver below.
+        void* dstSlot = dst;
+
+        using ResolveFn = void* (__thiscall*)(void* typeObj, void** dstSlotPtr, void* valueObj);
+        auto resolve = reinterpret_cast<ResolveFn>(vtable[0x70 / sizeof(void*)]);
+        void* resolved = resolve(srcType, &dstSlot, src);
+
+        // Re-read src->field_0x04 after the call, as the original does.
+        lift_field<void*>(out, 0x00) = lift_field<void*>(resolved, 0x00);
+        lift_field<void*>(out, 0x04) = lift_field<void*>(src, 0x04);
+    } else {
+        lift_field<void*>(out, 0x00) = nullptr;
+        lift_field<void*>(out, 0x04) = nullptr;
+    }
+}
+
+// [0x00649D80] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>::vfunc_48 (110 bytes)
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_48).
+void __thiscall fn_00649D80(void* self, void* out, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetFlagFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getFlag = reinterpret_cast<GetFlagFn>(vtable[0x0C / sizeof(void*)]);
+    uint8_t flag = getFlag(srcType, src);
+
+    ext_00648E30(target, flag != 0);
 
     if (lift_field<void*>(src, 0x04) != nullptr) {
         // Local copy of dst; its address is passed to the resolver below.

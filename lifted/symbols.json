@@ -7097,6 +7097,13 @@
     "summary": "Iterates the pointer vector at +0x74..+0x78 and, for each element, calls its AnimationInterface (+0xC) vtable slots 9 (arg) and 10 (arg, 1).",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A46C0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+    "signature": "uint32_t fn_005A46C0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0066BC40 (ExprParser::VPtrProxyType::vfunc_39).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005A7110": {
     "name": "NMData::DesiredPoseData::vfunc_0_off_4",
     "class": "NMData::DesiredPoseData",
@@ -8499,6 +8506,20 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00602EF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00604960": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
+    "signature": "void __thiscall fn_00604960(void* self, void* out, void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00604BA0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+    "signature": "void __thiscall fn_00604BA0(void* self, void* targetPtr, void* valuePtr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00604C40": {
     "name": "WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
@@ -9816,11 +9837,32 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x006495F0": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e",
+    "signature": "void __thiscall fn_006495F0(void* self, void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649D50 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00649620": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e",
     "signature": "void __thiscall fn_00649620(void* self, void* out, void* dst, void* src)",
     "summary": "Reads a flag from the source value's type (vtable +0x0C), applies it to the target object at dst-\u003efield_0x00 via ext_00649080, then resolves the source value through the type's vtable +0x70 into out if src-\u003efield_0x04 is non-null; otherwise writes a null out.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00649690": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}\u003e",
+    "signature": "void __thiscall fn_00649690(void* self, void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649D50 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x006496C0": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}\u003e",
+    "signature": "void __thiscall fn_006496C0(void* self, void* out, void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00649B40": {
@@ -9849,6 +9891,13 @@
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e",
     "signature": "void __thiscall fn_00649D50(void* self, void* dst, void* src)",
     "summary": "Extracts a bool from the source expression value via its type's vtable slot +0x0C and calls RelationshipRPROMagnet::setRotationMode (ext_00648E30) on the target object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00649D80": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e",
+    "signature": "void __thiscall fn_00649D80(void* self, void* out, void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064B0A0": {
