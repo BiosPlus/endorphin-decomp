@@ -443,6 +443,12 @@
     "summary": "Returns the address of the global at mem_009366E0 (ignores this).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00455BD0": {
+    "name": "sub_00455BD0",
+    "signature": "extern \"C\" const int* fn_00455BD0()",
+    "summary": "Returns the address of the read-only constant mem_00936C08 (initialised to 0x006A5FCE).",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00460300": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
     "class": "MultiTrackView::TriggeredEventView",
