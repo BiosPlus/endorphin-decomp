@@ -1,0 +1,14 @@
+{
+  "va": "0x005C61F0",
+  "size": 16,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_2",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cCollisionModelDataBase, resetForcesAndImpulses\u003e::vfunc_2",
+  "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
+  "signature": "bool fn_005C61F0(void* self)",
+  "summary": "Loads the first dword of the object pointed to by the stack argument, passes it to ext_005C3170 (resetForcesAndImpulses helper), and returns false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:21Z"
+}

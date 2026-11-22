@@ -147,6 +147,7 @@ extern "C" void __fastcall ext_00692D90(void* self);
 // Helper sub_0048ABB0 (22B): thiscall-style, ECX = target object.
 extern "C" void ext_004CCAF0(void* target);
 // Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
+// Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
 
 // [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
 #include "lift_compat.h"
@@ -661,5 +662,16 @@ extern "C" int __stdcall fn_0048B060(void* self) {
 bool fn_004CCD70(void* self) {
     void* inner = lift_field<void*>(self, 0x00);
     ext_004CCB00(inner);
+    return false;
+}
+
+// [0x005C61F0] ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_2 (16 bytes)
+// @name ExprParser::Method0Type<CollisionModelDataBase, resetForcesAndImpulses>::vfunc_2
+// @class ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>
+// @summary Loads the first dword of the object pointed to by the stack argument, passes it to ext_005C3170 (resetForcesAndImpulses helper), and returns false.
+// @field ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}> +0x00 void* vtable
+bool fn_005C61F0(void* self) {
+    void* inner = lift_field<void*>(self, 0x00);
+    ext_005C3170(inner);
     return false;
 }

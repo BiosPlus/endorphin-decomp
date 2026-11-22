@@ -7825,6 +7825,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x005C61F0": {
+    "name": "ExprParser::Method0Type\u003cCollisionModelDataBase, resetForcesAndImpulses\u003e::vfunc_2",
+    "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
+    "signature": "bool fn_005C61F0(void* self)",
+    "summary": "Loads the first dword of the object pointed to by the stack argument, passes it to ext_005C3170 (resetForcesAndImpulses helper), and returns false.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x005C6210": {
     "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
