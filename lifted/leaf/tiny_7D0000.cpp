@@ -12,3 +12,11 @@ uint16_t ReturnZeroWord() {
 extern "C" uint16_t fn_007DAD40() {
     return ReturnZeroWord();
 }
+
+// [0x007D8700] sub_007D8700 (5 bytes)
+// @name sub_007D8700
+// @summary Returns its first stack argument unchanged (mov eax, [esp+4]; ret).
+// @field none
+extern "C" uint32_t fn_007D8700(uint32_t arg0) {
+    return arg0;
+}

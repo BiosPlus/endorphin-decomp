@@ -232,6 +232,12 @@
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007D8700": {
+    "name": "sub_007D8700",
+    "signature": "extern \"C\" uint32_t fn_007D8700(uint32_t arg0)",
+    "summary": "Returns its first stack argument unchanged (mov eax, [esp+4]; ret).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DAD40": {
     "name": "ReturnZeroWord",
     "signature": "uint16_t ReturnZeroWord()",
