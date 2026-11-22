@@ -7,7 +7,7 @@
   "name": "ExprParser::VPtrProxyType::vfunc_47",
   "class": "ExprParser::VPtrProxyType",
   "signature": "uint32_t fn_0066BCE0(void* self)",
-  "summary": "Auto-lifted identical-shape clone of 0x0066AF80 (ExprParser::ExtROType::vfunc_15).",
+  "summary": "Forwarding tail-call: invokes virtual slot 47 (+0xBC) on field_0x04 of the held pointer, passing the held pointer as the argument.",
   "fields": [
     {
       "class": "ExprParser::VPtrProxyType",
@@ -17,6 +17,6 @@
     }
   ],
   "status": "lifted",
-  "lifted_by": "script:auto_lift_clone",
-  "lifted_at": "2026-11-22T07:25:50Z"
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:18Z"
 }
