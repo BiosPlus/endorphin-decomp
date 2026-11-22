@@ -1755,3 +1755,428 @@ extern "C" __declspec(naked) void __fastcall fn_008107D0(void* self) {
         ret
     }
 }
+
+// [0x00810C70] sub_00810C70 (1040 bytes)
+extern "C" void ext_00811080();
+extern "C" void ext_00811110();
+extern "C" int mem_00AB6B08;
+extern "C" __declspec(naked) void __fastcall fn_00810C70(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push ebx
+        push ebp
+        push esi
+        mov ebp, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [eax]
+        and esi, -0x21
+        mov dword ptr [eax], esi
+        mov dl, byte ptr [edi + ebp]
+        cmp dl, 0x5e
+        mov ecx, esi
+        jne c99
+        or ecx, 0x20
+        inc edi
+        mov dword ptr [eax], ecx
+    c99:
+        mov al, byte ptr [edi + ebp]
+        mov ebx, dword ptr [esp + 0x20]
+        cmp al, 0x5d
+        jne cb2
+        mov ecx, dword ptr [ebx + 0x174]
+        inc ecx
+        inc edi
+        mov dword ptr [ebx + 0x174], ecx
+    cb2:
+        cmp byte ptr [edi + ebp], 0x2d
+        jne cc6
+        mov ecx, dword ptr [ebx + 0xb4]
+        inc ecx
+        inc edi
+        mov dword ptr [ebx + 0xb4], ecx
+    cc6:
+        mov al, byte ptr [edi + ebp]
+        lea esi, [edi + ebp]
+        cmp al, 0x5d
+        je exit_ok
+    cd4:
+        test al, al
+        je exit_ok
+        cmp al, 0x2d
+        je l1006
+        cmp al, 0x5b
+        je cf9
+        movsx ecx, al
+        lea eax, [ebx + 4*ecx]
+        mov ecx, dword ptr [ebx + 4*ecx]
+        inc ecx
+        mov dword ptr [eax], ecx
+        jmp l103f
+    cf9:
+        mov al, byte ptr [edi + ebp + 1]
+        cmp al, 0x2e
+        je fe8
+        cmp al, 0x3a
+        je d82
+        cmp al, 0x3d
+        je d18
+    d0d:
+        inc dword ptr [ebx + 0x16c]
+        jmp l103f
+    d18:
+        mov eax, dword ptr [mem_00AB6B08]
+        test eax, eax
+        je d30
+        call ext_00811110
+        mov dword ptr [mem_00AB6B08], 0
+    d30:
+        lea edx, [edi + 2]
+    d33:
+        mov al, byte ptr [edx + ebp]
+        test al, al
+        je err
+        cmp al, 0x3d
+        je d6e
+        movsx eax, al
+        shl eax, 8
+        lea ecx, [eax + 0xb73ea0]
+        mov al, byte ptr [eax + 0xb73ea0]
+        test al, al
+        je d6b
+    d58:
+        movsx eax, al
+        mov esi, dword ptr [ebx + 4*eax]
+        lea eax, [ebx + 4*eax]
+        inc esi
+        inc ecx
+        mov dword ptr [eax], esi
+        mov al, byte ptr [ecx]
+        test al, al
+        jne d58
+    d6b:
+        inc edx
+        jmp d33
+    d6e:
+        mov al, byte ptr [edx + ebp + 1]
+        inc edx
+        cmp al, 0x5d
+        jne err
+        mov edi, edx
+        jmp l103f
+    d82:
+        push esi
+        push 9
+        push 0xab6b24
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je dbb
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    d9d:
+        test word ptr [eax], 0x107
+        je da6
+        inc dword ptr [ecx]
+    da6:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl d9d
+        add edi, 9
+        jmp l103f
+    dbb:
+        push esi
+        push 9
+        push 0xab6b30
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je df4
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    dd6:
+        test word ptr [eax], 0x103
+        je ddf
+        inc dword ptr [ecx]
+    ddf:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl dd6
+        add edi, 9
+        jmp l103f
+    df4:
+        push esi
+        push 9
+        push 0xab6b3c
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je e2b
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    e0f:
+        test byte ptr [eax], 0x20
+        je e16
+        inc dword ptr [ecx]
+    e16:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl e0f
+        add edi, 9
+        jmp l103f
+    e2b:
+        push esi
+        push 9
+        push 0xab6b48
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je e62
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    e46:
+        test byte ptr [eax], 0x4
+        je e4d
+        inc dword ptr [ecx]
+    e4d:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl e46
+        add edi, 9
+        jmp l103f
+    e62:
+        push esi
+        push 9
+        push 0xab6b54
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je e9b
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    e7d:
+        test word ptr [eax], 0x117
+        je e86
+        inc dword ptr [ecx]
+    e86:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl e7d
+        add edi, 9
+        jmp l103f
+    e9b:
+        push esi
+        push 9
+        push 0xab6b60
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je ed2
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    eb6:
+        test byte ptr [eax], 0x2
+        je ebd
+        inc dword ptr [ecx]
+    ebd:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl eb6
+        add edi, 9
+        jmp l103f
+    ed2:
+        push esi
+        push 9
+        push 0xab6b6c
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je f0b
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    eed:
+        test word ptr [eax], 0x157
+        je ef6
+        inc dword ptr [ecx]
+    ef6:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl eed
+        add edi, 9
+        jmp l103f
+    f0b:
+        push esi
+        push 9
+        push 0xab6b78
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je f42
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    f26:
+        test byte ptr [eax], 0x10
+        je f2d
+        inc dword ptr [ecx]
+    f2d:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl f26
+        add edi, 9
+        jmp l103f
+    f42:
+        push esi
+        push 9
+        push 0xab6b84
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je f79
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    f5d:
+        test byte ptr [eax], 0x8
+        je f64
+        inc dword ptr [ecx]
+    f64:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl f5d
+        add edi, 9
+        jmp l103f
+    f79:
+        push esi
+        push 9
+        push 0xab6b90
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je fb0
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    f94:
+        test byte ptr [eax], 0x1
+        je f9b
+        inc dword ptr [ecx]
+    f9b:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl f94
+        add edi, 9
+        jmp l103f
+    fb0:
+        push esi
+        push 0ah
+        push 0xab6b9c
+        call ext_00811080
+        add esp, 0ch
+        test eax, eax
+        je d0d
+        mov ecx, ebx
+        mov eax, 0xab8e00
+    fcf:
+        test byte ptr [eax], 0x80
+        je fd6
+        inc dword ptr [ecx]
+    fd6:
+        add eax, 2
+        add ecx, 4
+        cmp eax, 0xab9000
+        jl fcf
+        add edi, 0ah
+        jmp l103f
+    fe8:
+        lea ecx, [edi + 2]
+    feb:
+        mov al, byte ptr [ecx + ebp]
+        test al, al
+        je err
+        cmp al, 0x2e
+        je ff9
+        inc ecx
+        jmp feb
+    ff9:
+        mov al, byte ptr [ecx + ebp + 1]
+        inc ecx
+        cmp al, 0x5d
+        jne err
+        mov edi, ecx
+        jmp l103f
+    l1006:
+        mov cl, byte ptr [edi + ebp - 1]
+        mov al, byte ptr [edi + ebp + 1]
+        inc edi
+        cmp al, 0x5d
+        jne l101b
+        inc dword ptr [ebx + 0xb4]
+        jmp l103f
+    l101b:
+        test al, al
+        je l105d
+        cmp cl, al
+        jg l106c
+        movsx edx, cl
+        movsx eax, al
+        cmp edx, eax
+        jg l103f
+        sub eax, edx
+        lea ecx, [ebx + 4*edx]
+        inc eax
+    l1033:
+        mov edx, dword ptr [ecx]
+        add ecx, 4
+        inc edx
+        dec eax
+        mov dword ptr [ecx - 4], edx
+        jne l1033
+    l103f:
+        inc edi
+        mov al, byte ptr [edi + ebp]
+        lea esi, [edi + ebp]
+        cmp al, 0x5d
+        jne cd4
+    exit_ok:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    err:
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -1
+        pop ebx
+        ret
+    l105d:
+        shl edi, 8
+        mov eax, 0xfffffffe
+        sub eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    l106c:
+        shl edi, 8
+        mov eax, 0xfffffff9
+        sub eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
