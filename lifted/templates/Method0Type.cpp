@@ -193,3 +193,23 @@ void* fn_004CB440(void* unused, void* out) {
     ext_006290D8(out);
     return out;
 }
+
+// [0x0060A090] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_4 (40 bytes)
+#include "lift_compat.h"
+
+// Known callee 0x00493D90: AddCharacterDialog::vfunc_3 (1 byte; body is effectively a bare return).
+void ext_00493D90(void* self);
+// MSVCP80 std::basic_string<char> default constructor, reached via IAT slot mem_00924FE8 (value 0x006290D8).
+extern "C" void ext_006290D8(void* self);
+extern "C" int mem_00924FE8;
+
+// @name ExprParser::Method0Type<NMData::DisabledCollisionPairList>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+// @summary Forwards to the object at *out via ext_00493D90, default-constructs the std::string at out, and returns out.
+// @field std::string +0x00 void* field_0x00
+void* fn_0060A090(void* unused, void* out) {
+    (void)unused;
+    ext_00493D90(*static_cast<void**>(out));
+    ext_006290D8(out);
+    return out;
+}
