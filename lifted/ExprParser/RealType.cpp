@@ -30,8 +30,10 @@ void* fn_0066AD40(void* self, const float* value) {
     ext_00672080(self, *value, 0);
     return self;
 }
+// Callee 0x0046C390: receives the object and a float value (cdecl, caller cleans up).
+extern "C" void ext_0046C390(void* self, float value);
 
-// [0x0066AD80] ExprParser::RealType::vfunc_2 (55 bytes)
+extern "C" void ext_0046C390(void* self, float value);
 // @name ExprParser::RealType::vfunc_2
 // @class ExprParser::RealType
 // @summary Rounds the stored float half away from zero (x < 0 ? x - 0.5 : x + 0.5) and passes it to 0x006A6DE0.
@@ -41,4 +43,13 @@ void fn_0066AD80(void* self) {
     const double r = (x < 0.0f) ? static_cast<double>(x) - 0.5
                                 : static_cast<double>(x) + 0.5;
     ext_006A6DE0(r);
+}
+
+// [0x0066ADE0] ExprParser::RealType::vfunc_4 (40 bytes)
+// @name ExprParser::RealType::vfunc_4
+// @class ExprParser::RealType
+// @summary Forwards the float read from *value to 0x0046C390 and returns self.
+void* fn_0066ADE0(void* self, const float* value) {
+    ext_0046C390(self, *value);
+    return self;
 }
