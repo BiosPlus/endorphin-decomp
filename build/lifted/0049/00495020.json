@@ -10,5 +10,5 @@
   "summary": "Loads the pointer stored at offset 0 of self and forwards it to the helper at 0x00494830.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:14:03Z"
+  "lifted_at": "2026-11-22T07:14:09Z"
 }
