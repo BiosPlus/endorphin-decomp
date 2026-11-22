@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7A10",
+  "size": 40,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
+  "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+  "signature": "void* fn_004B7A10(void* self, void* src)",
+  "summary": "Reads the float at **src, calls ext_00672080 on self with that value and flag 0, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:42:24Z"
+}

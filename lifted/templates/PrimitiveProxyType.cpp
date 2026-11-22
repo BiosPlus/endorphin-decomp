@@ -19,9 +19,12 @@ void* fn_00497900(void* self, void* src) {
 extern "C" void __thiscall ext_006720C0(void* self, int32_t value);
 extern "C" void __thiscall ext_006720A0(void* self, uint32_t value);
 extern "C" const double mem_0093F958;
+// Known callee 0x00672080: sub_00672080 (18B). Member call on self with a float, a stack slot
+// holding the caller's saved esi (not meaningful to the callee; passed as nullptr here), and flag 0.
+extern "C" void __thiscall ext_00672080(void* self, float value, void* savedSlot, int flag);
 
-// [0x004A25D0] ExprParser::PrimitiveProxyType<bool>::vfunc_13 (13 bytes)
-// @name ExprParser::PrimitiveProxyType<bool>::vfunc_13
+// holding the caller's saved esi (not meaningful to the callee; passed as nullptr here), and flag 0.
+extern "C" void __thiscall ext_00672080(void* self, float value, void* savedSlot, int flag);
 // @class ExprParser::PrimitiveProxyType<bool>
 // @summary Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).
 void fn_004A25D0(void* arg) {
@@ -100,4 +103,16 @@ void fn_004B7B50(void* self, void* arg) {
 void fn_0049B260(void* self, float x) {
     uint8_t* value = lift_field<uint8_t*>(self, 0x00);
     *value = (static_cast<double>(x) >= mem_0093F958) ? 1 : 0;
+}
+
+// [0x004B7A10] ExprParser::PrimitiveProxyType<float>::vfunc_0 (40 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_0
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Reads the float at **src, calls ext_00672080 on self with that value and flag 0, and returns self.
+// @field Unknown +0x00 float* field_0x00
+void* fn_004B7A10(void* self, void* src) {
+    float* source = *reinterpret_cast<float**>(src);
+    float value = *source;
+    ext_00672080(self, value, nullptr, 0);
+    return self;
 }
