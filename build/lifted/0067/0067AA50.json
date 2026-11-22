@@ -1,0 +1,22 @@
+{
+  "va": "0x0067AA50",
+  "size": 79,
+  "orig_symbol": "ExprParser::BoolType::vfunc_46",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_46",
+  "class": "ExprParser::BoolType",
+  "signature": "uint32_t fn_0067AA50(void* /*unused*/, void* self)",
+  "summary": "Calls slot 1 of the object at +0x04 twice, combines the two float results with pow, then passes the result to slot 7 of that object.",
+  "fields": [
+    {
+      "class": "ExprParser::BoolType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:12:37Z"
+}

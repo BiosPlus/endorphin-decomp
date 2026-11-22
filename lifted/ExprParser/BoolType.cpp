@@ -138,3 +138,34 @@ float fn_0067A820(void* a0, void* a1) {
     using ApplyFn = float (*)(void* self, void* ctx, float value);
     return reinterpret_cast<ApplyFn>(vslot(b, 7))(b, a0, diff);
 }
+
+// [0x0067AA50] ExprParser::BoolType::vfunc_46 (79 bytes)
+// @name ExprParser::BoolType::vfunc_46
+// @class ExprParser::BoolType
+// @summary Calls slot 1 of the object at +0x04 twice, combines the two float results with pow, then passes the result to slot 7 of that object.
+// @field ExprParser::BoolType +0x04 void* field_0x04
+
+// Slot 1 (offset 0x04): receiver is the inner object, arg is self; float result (ST(0)).
+typedef float (*Slot1Fn)(void* inner, void* self);
+// Slot 7 (offset 0x1C): receiver is the inner object, args are self and the float value.
+typedef uint32_t (*Slot7Fn)(void* inner, void* self, float value);
+
+uint32_t fn_0067AA50(void* /*unused*/, void* self) {
+    // First slot-1 call: first = inner->slot1(self)
+    void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    float first = reinterpret_cast<Slot1Fn>(vtbl[1])(inner, self);
+
+    // Second slot-1 call on the same field: second = inner->slot1(self)
+    inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x04);
+    vtbl = *reinterpret_cast<void***>(inner);
+    float second = reinterpret_cast<Slot1Fn>(vtbl[1])(inner, self);
+
+    // CIpow(ST(1)=second, ST(0)=first) -> single-precision result
+    float value = std::pow(second, first);
+
+    // Slot 7 of the inner object with (self, value); its eax is returned.
+    inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x04);
+    vtbl = *reinterpret_cast<void***>(inner);
+    return reinterpret_cast<Slot7Fn>(vtbl[7])(inner, self, value);
+}

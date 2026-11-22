@@ -12,6 +12,6 @@ namespace lifted_layout {
 struct ExprParser_BoolType_Fields {
     // +0x0   uint8_t                  first_byte  (evidence: 0x0066AEF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 first_dword  (evidence: 0x0049C000) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x0067A820)
+    // +0x4   void*                    field_0x04  (evidence: 0x0067A820, 0x0067AA50)
 };
 } // namespace lifted_layout
