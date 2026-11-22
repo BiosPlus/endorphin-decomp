@@ -34,8 +34,10 @@ extern "C" const double mem_00955C68; // 0.133
 extern "C" const double mem_00955C70; // 0.116
 extern "C" const double mem_00955C78; // 0.033
 extern "C" const double mem_0092C528; // 0.001
+extern "C" void ext_0053A930();
+extern "C" int mem_009553B0;
 
-// [0x0053CB60] Primitives::Hinge::vfunc_28 (1281 bytes)
+extern "C" int mem_009553B0;
 // @name Primitives::Hinge::vfunc_28
 // @class Primitives::Hinge
 // @summary Draws the hinge's line-segment marker and, when flag 0x20000 is set, its quad outline, then draws two attached sub-objects via vtable slot 0x58 inside a GL attribute/matrix push-pop.
@@ -142,4 +144,15 @@ void fn_0053CB60(void* self) {
 
     mem_00925404();
     mem_0092552C();
+}
+
+// [0x0053BED0] Primitives::Hinge::vfunc_30 (26 bytes)
+// @name Primitives::Hinge::vfunc_30
+// @class Primitives::Hinge
+// @summary Forwards its argument, with the address of a constant .rdata tag, to the shared helper sub_0053A930.
+void fn_0053BED0(void* self, uint32_t value) {
+    (void)self; // not accessed by this function
+    using HelperFn = void (*)(const void* tag, uint32_t value);
+    reinterpret_cast<HelperFn>(reinterpret_cast<void*>(&ext_0053A930))(
+        static_cast<const void*>(&mem_009553B0), value);
 }

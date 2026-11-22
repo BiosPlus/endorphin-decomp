@@ -5971,6 +5971,13 @@
     "summary": "Pushes GL_LINE_BIT, sets line width 2.0, forwards arg to vfunc slot 22 of the subobject at +0x3c, then pops attributes.",
     "lifted_path": "lifted/Primitives/Marker.cpp"
   },
+  "0x0053BED0": {
+    "name": "Primitives::Hinge::vfunc_30",
+    "class": "Primitives::Hinge",
+    "signature": "void fn_0053BED0(void* self, uint32_t value)",
+    "summary": "Forwards its argument, with the address of a constant .rdata tag, to the shared helper sub_0053A930.",
+    "lifted_path": "lifted/Primitives/Hinge.cpp"
+  },
   "0x0053C150": {
     "name": "Primitives::RPRO::vfunc_29",
     "class": "Primitives::RPRO",

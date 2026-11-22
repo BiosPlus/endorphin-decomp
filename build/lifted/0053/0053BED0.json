@@ -1,0 +1,14 @@
+{
+  "va": "0x0053BED0",
+  "size": 26,
+  "orig_symbol": "Primitives::Hinge::vfunc_30",
+  "src_path": "src/Primitives/Hinge.cpp",
+  "lifted_path": "lifted/Primitives/Hinge.cpp",
+  "name": "Primitives::Hinge::vfunc_30",
+  "class": "Primitives::Hinge",
+  "signature": "void fn_0053BED0(void* self, uint32_t value)",
+  "summary": "Forwards its argument, with the address of a constant .rdata tag, to the shared helper sub_0053A930.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T14:51:07Z"
+}
