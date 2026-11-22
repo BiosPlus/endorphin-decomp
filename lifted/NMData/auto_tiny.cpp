@@ -116,3 +116,14 @@ extern "C" void __fastcall fn_00622370(void* self, int /*edx_unused*/, float val
     std::uint8_t* base = static_cast<std::uint8_t*>(self);
     std::memcpy(base + 0x24, &value, sizeof(float));
 }
+
+// [0x00622780] NMData::HingeCalibrationVariables::vfunc_3 (10 bytes)
+// @name NMData::HingeCalibrationVariables::vfunc_3
+// @class NMData::HingeCalibrationVariables
+// @summary Stores the single float argument into the object's field at +0x04.
+// @field NMData::HingeCalibrationVariables +0x04 float field_0x04
+extern "C" void __fastcall fn_00622780(void* self, int edx_unused, float value) {
+    (void)edx_unused;
+    float* field = reinterpret_cast<float*>(static_cast<char*>(self) + 0x04);
+    *field = value;
+}
