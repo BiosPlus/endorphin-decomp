@@ -22,6 +22,7 @@ extern "C" uint32_t mem_00B435B4;
 extern "C" uint32_t mem_00B435B8;
 extern "C" uint32_t mem_00B435BC;
 extern "C" uint32_t mem_00B435C0;
+extern "C" void ext_00671F30(DWORD a0, DWORD a1, DWORD a2);
 
 // [0x005B4860] Geometry::AnimationType::vfunc_12 (89 bytes)
 void* fn_005B4860() {
@@ -78,4 +79,18 @@ void* fn_005B48C0(void* self) {
         ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091DD40u)));
     }
     return &mem_00B43588;
+}
+
+// [0x005B10D0] Geometry::AnimationType::vfunc_18 (30 bytes)
+// @name Geometry::AnimationType::forwardFirstArg
+// @class Geometry::AnimationType
+// @summary Forwards its first stack argument to ext_00671F30 (with a zero third argument) and returns that first argument
+// (no @field lines: the function does not access any member offsets of self)
+DWORD fn_005B10D0(DWORD a0, DWORD a1, DWORD a2) {
+    (void)a1;
+    (void)a2;
+    // The original pushes the caller's ESI as the middle argument of the callee;
+    // portable C++ cannot read the entry ESI, so 0 is passed in that slot.
+    ext_00671F30(a0, 0, 0);
+    return a0;
 }

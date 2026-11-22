@@ -7500,6 +7500,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
     "lifted_path": "lifted/Geometry/FrustumType.cpp"
   },
+  "0x005B10D0": {
+    "name": "Geometry::AnimationType::forwardFirstArg",
+    "class": "Geometry::AnimationType",
+    "signature": "DWORD fn_005B10D0(DWORD a0, DWORD a1, DWORD a2)",
+    "summary": "Forwards its first stack argument to ext_00671F30 (with a zero third argument) and returns that first argument",
+    "lifted_path": "lifted/Geometry/AnimationType.cpp"
+  },
   "0x005B10F0": {
     "name": "Geometry::AnimationType::vfunc_4",
     "class": "Geometry::AnimationType",

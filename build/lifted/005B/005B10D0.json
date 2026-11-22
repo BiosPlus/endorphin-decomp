@@ -1,0 +1,14 @@
+{
+  "va": "0x005B10D0",
+  "size": 30,
+  "orig_symbol": "Geometry::AnimationType::vfunc_18",
+  "src_path": "src/Geometry/AnimationType.cpp",
+  "lifted_path": "lifted/Geometry/AnimationType.cpp",
+  "name": "Geometry::AnimationType::forwardFirstArg",
+  "class": "Geometry::AnimationType",
+  "signature": "DWORD fn_005B10D0(DWORD a0, DWORD a1, DWORD a2)",
+  "summary": "Forwards its first stack argument to ext_00671F30 (with a zero third argument) and returns that first argument",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:54:44Z"
+}
