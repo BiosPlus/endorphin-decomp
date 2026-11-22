@@ -1,0 +1,34 @@
+{
+  "va": "0x0053CA10",
+  "size": 44,
+  "orig_symbol": "Primitives::Sensor2::vfunc_29",
+  "src_path": "src/Primitives/Sensor2.cpp",
+  "lifted_path": "lifted/Primitives/Sensor2.cpp",
+  "name": "Primitives::Sensor2::vfunc_29",
+  "class": "Primitives::Sensor2",
+  "signature": "void fn_0053CA10(void* self)",
+  "summary": "Resets the animation base, releases the object at +0x5C via its deleting dtor, sets +0x60 to 1.0f and clears +0x5C and +0x3C.",
+  "fields": [
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:11Z"
+}

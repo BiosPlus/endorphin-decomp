@@ -5705,6 +5705,13 @@
     "summary": "Writes a 3-float vector {field_0x60, 0, 0} to the caller-supplied out buffer and returns it.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053CA10": {
+    "name": "Primitives::Sensor2::vfunc_29",
+    "class": "Primitives::Sensor2",
+    "signature": "void fn_0053CA10(void* self)",
+    "summary": "Resets the animation base, releases the object at +0x5C via its deleting dtor, sets +0x60 to 1.0f and clears +0x5C and +0x3C.",
+    "lifted_path": "lifted/Primitives/Sensor2.cpp"
+  },
   "0x0053CA40": {
     "name": "Primitives::Sphyl::vfunc_0",
     "class": "Primitives::Sphyl",
