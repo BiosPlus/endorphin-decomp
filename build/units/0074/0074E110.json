@@ -133,5 +133,7 @@
     "0x0074E82A",
     "0x0074E841"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:47:07Z"
 }
