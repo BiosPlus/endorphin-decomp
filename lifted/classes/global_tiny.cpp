@@ -3,6 +3,7 @@
 extern "C" int mem_0092CE00;
 extern "C" int mem_0092D178;
 extern "C" int mem_00929B20;
+extern "C" int mem_0092A1CC;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -31,4 +32,13 @@ extern "C" int* __fastcall fn_00419720(void* self) {
 void* fn_00404D30(void* self) {
     (void)self;
     return &mem_00929B20;
+}
+
+// [0x00407720] BottomPanel::vfunc_0 (6 bytes)
+// @name BottomPanel::vfunc_0
+// @class BottomPanel
+// @summary Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).
+extern "C" void* __fastcall fn_00407720(void* self) {
+    (void)self;
+    return reinterpret_cast<void*>(&mem_0092A1CC);
 }

@@ -26,6 +26,13 @@
     "summary": "Returns the address of the .rdata constant 0x006A5FCE at 0x0092A0E0.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00407720": {
+    "name": "BottomPanel::vfunc_0",
+    "class": "BottomPanel",
+    "signature": "extern \"C\" void* __fastcall fn_00407720(void* self)",
+    "summary": "Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
