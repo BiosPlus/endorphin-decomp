@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::ExtROType:
 namespace lifted_layout {
 struct ExprParser_ExtROType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0066AFE0)
+    // +0x0   void*                    field_0x00  (evidence: 0x0066AFC0, 0x0066AFE0)
 };
 } // namespace lifted_layout

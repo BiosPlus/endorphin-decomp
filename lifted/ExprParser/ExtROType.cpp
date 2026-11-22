@@ -29,3 +29,26 @@ void* ExprParser_ExtROType_vfunc_2(void* self) {
     ExtROForwardFn target = reinterpret_cast<ExtROForwardFn>(vtbl[2]);
     return target(inner);
 }
+
+// [0x0066AFC0]
+// @name ExprParser::ExtROType::vfunc_1
+// @class ExprParser::ExtROType
+// @summary Forwards vfunc_1 to the inner object: loads this->[0] -> P1, P1->[4] -> P2, then calls P2's vtable slot 1 with P1 as this.
+// @field ExprParser::ExtROType +0x00 void* field_0x00
+
+extern void* mem_read_ptr(void* addr, int offset);
+extern void* mem_vtable_slot(void* obj, int index);
+
+typedef void (*VFunc1)(void* self);
+
+void ExprParser_ExtROType_vfunc_1(void* self) {
+    // eax = *(self)                       -> P1
+    void* p1 = *reinterpret_cast<void**>(self);
+    // ecx = *(P1 + 4)                     -> P2
+    void* p2 = *reinterpret_cast<void**>(static_cast<char*>(p1) + 0x4);
+    // edx = *(P2)                         -> vtable of P2
+    void** vtbl = *reinterpret_cast<void***>(p2);
+    // eax = vtbl[1]; jmp eax with this = P1
+    VFunc1 target = reinterpret_cast<VFunc1>(vtbl[1]);
+    target(p1);
+}
