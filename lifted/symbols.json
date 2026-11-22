@@ -337,6 +337,12 @@
     "summary": "Returns the address of the global data slot mem_00933A38 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00449FB0": {
+    "name": "GetConstantAddress_00449FB0",
+    "signature": "extern \"C\" void* __cdecl fn_00449FB0()",
+    "summary": "Returns the address of the read-only .rdata u32 constant 0x006A5FCE at 0x00933C08.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00449FE0": {
     "name": "RenderOptionsPropertyPage::vfunc_0",
     "class": "RenderOptionsPropertyPage",

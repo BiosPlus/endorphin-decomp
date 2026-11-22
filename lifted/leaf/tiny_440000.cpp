@@ -5,6 +5,7 @@ extern "C" int mem_00932B50;
 extern "C" int mem_00932E14;
 extern "C" int mem_009331C8;
 extern "C" int mem_009334E0;
+extern "C" int mem_00933C08;
 
 // [0x00440680] sub_00440680 (6 bytes)
 // @name GetStringLiteral_00440680
@@ -39,4 +40,11 @@ extern "C" const unsigned int* __cdecl fn_00447F90() {
 // @summary Returns the address of the read-only string "$aj" in .rdata.
 extern "C" const char* __cdecl fn_00448F20() {
     return reinterpret_cast<const char*>(&mem_009334E0);
+}
+
+// [0x00449FB0] sub_00449FB0 (6 bytes)
+// @name GetConstantAddress_00449FB0
+// @summary Returns the address of the read-only .rdata u32 constant 0x006A5FCE at 0x00933C08.
+extern "C" void* __cdecl fn_00449FB0() {
+    return reinterpret_cast<void*>(&mem_00933C08);
 }

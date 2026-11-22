@@ -1,0 +1,13 @@
+{
+  "va": "0x00449FB0",
+  "size": 6,
+  "orig_symbol": "sub_00449FB0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "GetConstantAddress_00449FB0",
+  "signature": "extern \"C\" void* __cdecl fn_00449FB0()",
+  "summary": "Returns the address of the read-only .rdata u32 constant 0x006A5FCE at 0x00933C08.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:52:10Z"
+}
