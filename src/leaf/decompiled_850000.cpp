@@ -22345,3 +22345,21 @@ extern "C" __declspec(naked) void __cdecl fn_0085E04B(void) {
         __asm _emit 0x00
     }
 }
+
+// [0x0085E024] sub_0085E024 (12 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085E024(void) {
+    __asm {
+        _emit 0x05
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
