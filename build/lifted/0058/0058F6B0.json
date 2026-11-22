@@ -1,0 +1,14 @@
+{
+  "va": "0x0058F6B0",
+  "size": 54,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_14",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_14",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void* fn_0058F6B0(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Returns arg1; if arg2 == 0x199 calls sub_00661650 on arg1, otherwise calls AnimatableTransform::vfunc_13 on self with (arg1, arg2).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:44:41Z"
+}
