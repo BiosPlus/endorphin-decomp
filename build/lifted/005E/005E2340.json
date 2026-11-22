@@ -1,0 +1,40 @@
+{
+  "va": "0x005E2340",
+  "size": 161,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_41",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_41",
+  "class": "NMData::SkeletalJointData",
+  "signature": "extern \"C\" void __thiscall fn_005E2340(void* self)",
+  "summary": "Updates the joint's child object via ext_00587450, preserving and restoring its transform matrix when the parent state counter is below mem_009849A8.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x179",
+      "type": "uint8_t",
+      "name": "field_0x179"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x22C",
+      "type": "void*",
+      "name": "field_0x22c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-22T10:35:03Z"
+}
