@@ -63,6 +63,7 @@ uint8_t __stdcall fn_0066B1A0(void* obj, void* other) {
     uint8_t rhs = reinterpret_cast<VFn3>(vtbl[3])(sub, obj);
     return lhs == rhs ? 1 : 0;
 }
+#include <cstdint>
 
 // [0x0066B1D0] ExprParser::BoolType::vfunc_43 (48 bytes)
 // @name ExprParser::BoolType::vfunc_43
