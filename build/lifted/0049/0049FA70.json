@@ -1,0 +1,14 @@
+{
+  "va": "0x0049FA70",
+  "size": 35,
+  "orig_symbol": "NMData::State::vfunc_6",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_6",
+  "class": "NMData::State",
+  "signature": "void fn_0049FA70(void* self)",
+  "summary": "Constructs a std::string in the caller-supplied buffer from the literal pointer in mem_00AA237C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:40:35Z"
+}
