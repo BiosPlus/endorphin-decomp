@@ -1,0 +1,22 @@
+{
+  "va": "0x00442BA0",
+  "size": 15,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_4",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_4",
+  "class": "MultiTrackView::MultiTrackViewStates::PanState",
+  "signature": "bool fn_00442BA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Forwards this-\u003efield_0x04 to ext_0041C880 with flag 0 and returns true.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::PanState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:24:42Z"
+}

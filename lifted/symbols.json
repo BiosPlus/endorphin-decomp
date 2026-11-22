@@ -1295,6 +1295,13 @@
     "summary": "Destructor tail-call: restores vtable mem_009324DC and tail-calls base destructor sub_0041C790.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00442BA0": {
+    "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_4",
+    "class": "MultiTrackView::MultiTrackViewStates::PanState",
+    "signature": "bool fn_00442BA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Forwards this-\u003efield_0x04 to ext_0041C880 with flag 0 and returns true.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
+  },
   "0x00442C00": {
     "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
