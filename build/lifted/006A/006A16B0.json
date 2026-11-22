@@ -1,0 +1,22 @@
+{
+  "va": "0x006A16B0",
+  "size": 45,
+  "orig_symbol": "ExprParser::Operators::Not::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Not.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Not.cpp",
+  "name": "ExprParser::Operators::Not::vfunc_3",
+  "class": "ExprParser::Operators::Not",
+  "signature": "inline R lift_vcall(void* obj, A... args)",
+  "summary": "Evaluates the operand child via its vfunc_3, then calls the child's vfunc_9 with the logical negation of that result.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Not",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:42Z"
+}
