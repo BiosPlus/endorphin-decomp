@@ -1,0 +1,22 @@
+{
+  "va": "0x0053C970",
+  "size": 12,
+  "orig_symbol": "Primitives::Sensor2::vfunc_13",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Sensor2::vfunc_13",
+  "class": "Primitives::Sensor2",
+  "signature": "void fn_0053C970(void* self, const float* src)",
+  "summary": "Loads a float through the pointer argument and stores it at this+0x60 (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:12:38Z"
+}

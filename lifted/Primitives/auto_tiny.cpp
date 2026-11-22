@@ -11,3 +11,13 @@ DWORD fn_0053B790(const void* self) {
     DWORD value = *reinterpret_cast<const DWORD*>(base + 0x24);
     return value + 8;
 }
+
+// [0x0053C970]
+// @name Primitives::Sensor2::vfunc_13
+// @class Primitives::Sensor2
+// @summary Loads a float through the pointer argument and stores it at this+0x60 (thiscall, one stack arg, ret 4).
+// @field Primitives::Sensor2 +0x60 float field_0x60
+void fn_0053C970(void* self, const float* src) {
+    // mov eax, [esp+4] ; fld dword ptr [eax] ; fstp dword ptr [ecx+0x60] ; ret 4
+    lift_field<float>(self, 0x60) = *src;
+}

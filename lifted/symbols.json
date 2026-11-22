@@ -566,6 +566,13 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053C970": {
+    "name": "Primitives::Sensor2::vfunc_13",
+    "class": "Primitives::Sensor2",
+    "signature": "void fn_0053C970(void* self, const float* src)",
+    "summary": "Loads a float through the pointer argument and stores it at this+0x60 (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0053F894": {
     "name": "sub_0053F894",
     "signature": "void __stdcall fn_0053F894(uint32_t arg_unused)",
