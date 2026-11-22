@@ -33,3 +33,40 @@ uint32_t __thiscall fn_005B4150(void* /*this*/, uint32_t arg1, uint32_t arg2, ui
     }
     return arg1;
 }
+
+// [0x005B1370]
+// @name Geometry::SphereType::vfunc_4
+// @class Geometry::SphereType
+// @summary Computes distance from a point to a sphere surface/center via transformed local coordinates
+#include "lift_compat.h"
+#include <cmath>
+#include <cstdint>
+
+extern void __thiscall ext_00540D60(void* self);
+extern float __thiscall ext_005B11E0(void* self, uint32_t arg0);
+extern float* __thiscall ext_0053B470(void* self, float* out_vec, float scale);
+extern void __thiscall ext_0047FFA0(const void* self, float* out_vec, const float* in_vec);
+
+float __stdcall fn_005B1370(float* out_vec, void* sphere, const float* point) {
+    out_vec[0] = point[0];
+    out_vec[1] = point[1];
+    out_vec[2] = point[2];
+    out_vec[3] = point[3];
+    ext_00540D60(out_vec);
+
+    float radius = ext_005B11E0(sphere, 0);
+    float local_buf[4];
+    float* scaled = ext_0053B470(out_vec, local_buf, radius);
+
+    out_vec[0] = scaled[0];
+    out_vec[1] = scaled[1];
+    out_vec[2] = scaled[2];
+    out_vec[3] = 1.0f;
+
+    ext_0047FFA0(point, local_buf, out_vec);
+
+    float len_sq = local_buf[0] * local_buf[0]
+                 + local_buf[1] * local_buf[1]
+                 + local_buf[2] * local_buf[2];
+    return std::sqrt(len_sq);
+}

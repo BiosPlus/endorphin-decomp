@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1370",
+  "size": 166,
+  "orig_symbol": "Geometry::SphereType::vfunc_4",
+  "src_path": "src/Geometry/SphereType.cpp",
+  "lifted_path": "lifted/Geometry/SphereType.cpp",
+  "name": "Geometry::SphereType::vfunc_4",
+  "class": "Geometry::SphereType",
+  "signature": "float __stdcall fn_005B1370(float* out_vec, void* sphere, const float* point)",
+  "summary": "Computes distance from a point to a sphere surface/center via transformed local coordinates",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:56:01Z"
+}

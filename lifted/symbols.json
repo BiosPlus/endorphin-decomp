@@ -7554,6 +7554,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
     "lifted_path": "lifted/Geometry/CylinderType.cpp"
   },
+  "0x005B1370": {
+    "name": "Geometry::SphereType::vfunc_4",
+    "class": "Geometry::SphereType",
+    "signature": "float __stdcall fn_005B1370(float* out_vec, void* sphere, const float* point)",
+    "summary": "Computes distance from a point to a sphere surface/center via transformed local coordinates",
+    "lifted_path": "lifted/Geometry/SphereType.cpp"
+  },
   "0x005B1420": {
     "name": "Geometry::CylinderType::vfunc_4",
     "class": "Geometry::CylinderType",
