@@ -1,0 +1,13 @@
+{
+  "va": "0x00417300",
+  "size": 6,
+  "orig_symbol": "sub_00417300",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "GetStringConstant_00417300",
+  "signature": "extern \"C\" const char* fn_00417300()",
+  "summary": "Returns the address of the constant string \",bj\" (mem_0092CD54).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:48:11Z"
+}

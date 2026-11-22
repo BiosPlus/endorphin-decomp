@@ -32,3 +32,12 @@ extern "C" const char* __cdecl fn_00415580() {
 extern "C" const char* __cdecl fn_00416B60() {
     return ",bj";
 }
+
+// [0x00417300] Returns a pointer to the constant string ",bj" in .rdata.
+#include "lift_compat.h"
+
+// @name GetStringConstant_00417300
+// @summary Returns the address of the constant string ",bj" (mem_0092CD54).
+extern "C" const char* fn_00417300() {
+    return reinterpret_cast<const char*>(0x0092CD54);
+}

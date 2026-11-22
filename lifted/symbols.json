@@ -129,6 +129,12 @@
     "summary": "Virtual accessor that ignores its receiver and returns the address of the global at mem_0092CB80.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00417300": {
+    "name": "GetStringConstant_00417300",
+    "signature": "extern \"C\" const char* fn_00417300()",
+    "summary": "Returns the address of the constant string \",bj\" (mem_0092CD54).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00417330": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
