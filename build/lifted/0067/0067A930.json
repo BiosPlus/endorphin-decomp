@@ -1,0 +1,22 @@
+{
+  "va": "0x0067A930",
+  "size": 64,
+  "orig_symbol": "ExprParser::BoolType::vfunc_47",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_47",
+  "class": "ExprParser::BoolType",
+  "signature": "void __stdcall fn_0067A930(void* self)",
+  "summary": "Reads float x = sub-\u003evfn1(obj) with sub = obj-\u003efield_0x04; if x \u003c 0 calls sub-\u003evfn7(obj, -x), otherwise returns without calling.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:35Z"
+}
