@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1680",
+  "size": 121,
+  "orig_symbol": "Geometry::CuboidType::vfunc_5",
+  "src_path": "src/Geometry/CuboidType.cpp",
+  "lifted_path": "lifted/Geometry/CuboidType.cpp",
+  "name": "Geometry::CuboidType::vfunc_5",
+  "class": "Geometry::CuboidType",
+  "signature": "extern \"C\" float __stdcall fn_005B1680(void* cuboid, const float* vec)",
+  "summary": "Computes a weighted sum of cuboid face areas projected onto a 3D vector",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T10:55:06Z"
+}
