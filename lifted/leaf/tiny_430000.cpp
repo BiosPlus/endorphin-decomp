@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_430000.cpp
 #include "lift_compat.h"
+extern "C" const unsigned int mem_0092FF5C;
 
 // [0x00430F9E] sub_00430F9E (2 bytes)
 // @name sub_00430F9E
@@ -21,4 +22,11 @@ void fn_0043CB70(void* self) {
     typedef void (*Slot0Fn)(void*);
     Slot0Fn slot0 = reinterpret_cast<Slot0Fn>(vtable[0]);
     slot0(self);
+}
+
+// [0x0043AAF0] sub_0043AAF0 (6 bytes)
+// @name GetConstant_0043AAF0
+// @summary Returns the address of the .rdata constant u32 0x006A65E6 stored at mem_0092FF5C.
+extern "C" const unsigned int* __cdecl fn_0043AAF0() {
+    return &mem_0092FF5C;
 }

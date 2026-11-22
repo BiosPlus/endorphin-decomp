@@ -1,0 +1,13 @@
+{
+  "va": "0x0043AAF0",
+  "size": 6,
+  "orig_symbol": "sub_0043AAF0",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "GetConstant_0043AAF0",
+  "signature": "extern \"C\" const unsigned int* __cdecl fn_0043AAF0()",
+  "summary": "Returns the address of the .rdata constant u32 0x006A65E6 stored at mem_0092FF5C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:50:12Z"
+}

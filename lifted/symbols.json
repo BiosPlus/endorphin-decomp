@@ -240,6 +240,12 @@
     "summary": "Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte \"pop esi / ret\" tail.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043AAF0": {
+    "name": "GetConstant_0043AAF0",
+    "signature": "extern \"C\" const unsigned int* __cdecl fn_0043AAF0()",
+    "summary": "Returns the address of the .rdata constant u32 0x006A65E6 stored at mem_0092FF5C.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x0043CB70": {
     "name": "sub_0043CB70",
     "signature": "void fn_0043CB70(void* self)",
