@@ -1,0 +1,28 @@
+{
+  "va": "0x0051BED0",
+  "size": 19,
+  "orig_symbol": "NMData::RealChannel::vfunc_9",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::RealChannel::vfunc_9",
+  "class": "NMData::RealChannel",
+  "signature": "extern \"C\" int __thiscall fn_0051BED0(void* self)",
+  "summary": "Returns the element count of the channel's [begin, end) pointer range at +0x30/+0x34 (8-byte elements), or 0 when begin is null.",
+  "fields": [
+    {
+      "class": "RealChannel",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "begin"
+    },
+    {
+      "class": "RealChannel",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:52Z"
+}

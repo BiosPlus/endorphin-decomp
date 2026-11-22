@@ -1567,6 +1567,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00519CE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051BED0": {
+    "name": "NMData::RealChannel::vfunc_9",
+    "class": "NMData::RealChannel",
+    "signature": "extern \"C\" int __thiscall fn_0051BED0(void* self)",
+    "summary": "Returns the element count of the channel's [begin, end) pointer range at +0x30/+0x34 (8-byte elements), or 0 when begin is null.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0051DE30": {
     "name": "StateMachine::State::vfunc_1",
     "class": "StateMachine::State",

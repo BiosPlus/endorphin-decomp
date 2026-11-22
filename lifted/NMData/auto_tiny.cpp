@@ -1784,3 +1784,19 @@ extern "C" int __thiscall fn_004769D0(void* self, const void* unused) {
     XmlLoadFn target = reinterpret_cast<XmlLoadFn>(reinterpret_cast<intptr_t>(vtbl[2]));
     return target(self, mem_0093BF14, 0, 0);
 }
+
+// [0x0051BED0]
+// @name NMData::RealChannel::vfunc_9
+// @class NMData::RealChannel
+// @summary Returns the element count of the channel's [begin, end) pointer range at +0x30/+0x34 (8-byte elements), or 0 when begin is null.
+// @field RealChannel +0x30 int32_t begin
+// @field RealChannel +0x34 int32_t end
+extern "C" int __thiscall fn_0051BED0(void* self) {
+    const int32_t begin = lift_field<int32_t>(self, 0x30);
+    if (begin == 0) {
+        return 0;
+    }
+    const int32_t end = lift_field<int32_t>(self, 0x34);
+    const int32_t diff = end - begin;
+    return diff >> 3;
+}
