@@ -1,0 +1,14 @@
+{
+  "va": "0x0067ABB0",
+  "size": 26,
+  "orig_symbol": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e::vfunc_1",
+  "src_path": "src/templates/Function2Type.cpp",
+  "lifted_path": "lifted/templates/Function2Type.cpp",
+  "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_1",
+  "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e",
+  "signature": "void fn_0067ABB0(void* self)",
+  "summary": "Unsupported-call stub: builds a local error object via sub_0067AB10, then throws. Never returns normally.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:37Z"
+}

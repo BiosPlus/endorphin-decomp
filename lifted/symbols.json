@@ -8385,6 +8385,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0067A930": {
+    "name": "ExprParser::BoolType::vfunc_47",
+    "class": "ExprParser::BoolType",
+    "signature": "void __stdcall fn_0067A930(void* self)",
+    "summary": "Reads float x = sub-\u003evfn1(obj) with sub = obj-\u003efield_0x04; if x \u003c 0 calls sub-\u003evfn7(obj, -x), otherwise returns without calling.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0067A970": {
     "name": "ExprParser::BoolType::vfunc_28",
     "class": "ExprParser::BoolType",
@@ -8397,6 +8404,13 @@
     "signature": "extern \"C\" void fn_0067AB80(void)",
     "summary": "Pure jump thunk forwarding to sub_00401BB0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0067ABB0": {
+    "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_1",
+    "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e",
+    "signature": "void fn_0067ABB0(void* self)",
+    "summary": "Unsupported-call stub: builds a local error object via sub_0067AB10, then throws. Never returns normally.",
+    "lifted_path": "lifted/templates/Function2Type.cpp"
   },
   "0x0067ADA0": {
     "name": "thunk_KERNEL32_GetCurrentThreadId",

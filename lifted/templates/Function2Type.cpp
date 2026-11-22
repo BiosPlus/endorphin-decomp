@@ -17,12 +17,29 @@ void* fn_004ECA70(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00A398B0), 0);
 }
+#include <stdexcept>
+// Known callee 0x0067AB10: sub_0067AB10 (105 bytes). Thiscall: receives the exception-object buffer in ecx.
+extern "C" void ext_0067AB10(void* self);
 
-// [0x00594440] ExprParser::Function2Type<World, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::Function2Type<World>::vfunc_16
+// Known callee 0x0067AB10: sub_0067AB10 (105 bytes). Thiscall: receives the exception-object buffer in ecx.
+extern "C" void ext_0067AB10(void* self);
 // @class ExprParser::Function2Type<World, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
 // @summary Runtime type check: dynamic-casts self to the type at mem_00A87014 (source type mem_00A2E2F8) and returns the result or NULL.
 void* fn_00594440(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00A87014), 0);
+}
+
+// [0x0067ABB0] ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>::vfunc_1 (26 bytes)
+// @name ExprParser::Function2Type<Randomizer>::vfunc_1
+// @class ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>
+// @summary Unsupported-call stub: builds a local error object via sub_0067AB10, then throws. Never returns normally.
+void fn_0067ABB0(void* self) {
+    (void)self;
+    // The original throws the object built by sub_0067AB10 via MSVC _CxxThrowException
+    // (ThrowInfo at mem_00A17E7C is NULL). The concrete exception type is not recovered, so the
+    // portable equivalent throws std::runtime_error after running the constructor for its side effects.
+    alignas(8) unsigned char exc[0x28];
+    ext_0067AB10(exc);
+    throw std::runtime_error("ExprParser::Function2Type<Randomizer>::vfunc_1: unsupported call");
 }
