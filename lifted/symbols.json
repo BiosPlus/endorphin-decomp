@@ -8658,6 +8658,13 @@
     "summary": "Returns the single-precision float stored at the pointed-to value slot (stdcall, one stack argument).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AE10": {
+    "name": "ExprParser::IntType::vfunc_0",
+    "class": "ExprParser::IntType",
+    "signature": "void* fn_0066AE10(void* target, const void* src)",
+    "summary": "Loads the int32 stored at the second stack argument, passes it to sub_006720C0 on the first argument, and returns the first argument (stdcall, ret 8).",
+    "lifted_path": "lifted/ExprParser/IntType.cpp"
+  },
   "0x0066AE40": {
     "name": "ExprParser::IntType::vfunc_1",
     "class": "ExprParser::IntType",
