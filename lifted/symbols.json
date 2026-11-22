@@ -8171,6 +8171,13 @@
     "summary": "Setter storing float argument into field at offset +0x8C.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x0064B0A0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (RelationshipRPROMagnet::applyCachedSettings)",
+    "class": "ExprParser::ROWriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e",
+    "signature": "void* fn_0064B0A0(void* self)",
+    "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BD54, source mem_00A2E2F8) and returns the result or NULL.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0064F8E0": {
     "name": "VirtualSlot23Thunk",
     "class": "VTable",
