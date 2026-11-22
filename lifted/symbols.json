@@ -12,6 +12,13 @@
     "summary": "Returns the address of the .rdata constant 0x006A5ED2.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00404D30": {
+    "name": "BatchModeDialog::vfunc_0",
+    "class": "BatchModeDialog",
+    "signature": "void* fn_00404D30(void* self)",
+    "summary": "Returns the address of the static class-descriptor global at 0x00929B20; ignores self.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004076E0": {
     "name": "sub_004076E0",
     "class": "(none)",

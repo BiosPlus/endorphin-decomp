@@ -1,0 +1,14 @@
+{
+  "va": "0x00404D30",
+  "size": 6,
+  "orig_symbol": "BatchModeDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "BatchModeDialog::vfunc_0",
+  "class": "BatchModeDialog",
+  "signature": "void* fn_00404D30(void* self)",
+  "summary": "Returns the address of the static class-descriptor global at 0x00929B20; ignores self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:45:58Z"
+}

@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" int mem_0092CE00;
 extern "C" int mem_0092D178;
+extern "C" int mem_00929B20;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -20,4 +21,14 @@ void* fn_00417330(void* self) {
 extern "C" int* __fastcall fn_00419720(void* self) {
     (void)self;
     return &mem_0092D178;
+}
+
+// [0x00404D30] BatchModeDialog::vfunc_0 (6 bytes)
+// @name BatchModeDialog::vfunc_0
+// @class BatchModeDialog
+// @summary Returns the address of the static class-descriptor global at 0x00929B20; ignores self.
+// (no instance fields accessed)
+void* fn_00404D30(void* self) {
+    (void)self;
+    return &mem_00929B20;
 }
