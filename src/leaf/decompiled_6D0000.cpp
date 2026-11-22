@@ -24980,3 +24980,27 @@ extern "C" __declspec(naked) void __fastcall fn_006D1FB4(void* self) {
         _emit 0x04
     }
 }
+
+// [0x006D1FDC] sub_006D1FDC (36 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D1FDC(void* self) {
+    __asm {
+        add byte ptr [ecx], al
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add byte ptr [ecx], al
+        mov edi, edi
+    }
+}
