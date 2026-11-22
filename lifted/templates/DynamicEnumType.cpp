@@ -226,18 +226,14 @@ void* __stdcall fn_005C4870(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
 // Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// @name ExprParser::DynamicEnumType_EvolverRuntimeOptions_CurrentIndividual::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &NMData::EvolverRuntimeOptions::getCurrentIndividualIndex, &NMData::EvolverRuntimeOptions::setCurrentIndividualIndex, &NMData::EvolverRuntimeOptions::getNumIndividuals, &NMData::EvolverRuntimeOptions::getIndividualDescription>
+// @summary Dynamically casts the given object pointer to NMData::EvolverRuntimeOptions (RTTI) and returns it.
+extern "C" void* __cdecl ext_006A6E9E(void* ptr, int vfDelta, void* srcType, void* targetType, int isReference);
 
-// [0x00515850]
-// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
-// @summary Dynamic-casts ptr from base RTTI type 0x00A2E2F8 to concrete DynamicEnumType<NMData::EvolverRuntimeOptions> RTTI type 0x00A4279C via __RTDynamicCast.
-void* fn_00515850(void* ptr) {
-    return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A4279C, 0);
-}
-
-// [0x005C4870] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase,getMaterialNameIndex,setMaterialNameIndex,getNumListedMaterialNames,getListedMaterialName>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &NMData::EvolverRuntimeOptions::getCurrentIndividualIndex, &NMData::EvolverRuntimeOptions::setCurrentIndividualIndex, &NMData::EvolverRuntimeOptions::getNumIndividuals, &NMData::EvolverRuntimeOptions::getIndividualDescription>
+// @summary Dynamically casts the given object pointer to NMData::EvolverRuntimeOptions (RTTI) and returns it.
+extern "C" void* __cdecl ext_006A6E9E(void* ptr, int vfDelta, void* srcType, void* targetType, int isReference);
 // @summary Dynamic-casts the given ValuePtrType pointer to the CollisionModelDataBase DynamicEnumType via __RTDynamicCast (returns null on failure).
 void* __stdcall fn_005C4870(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
@@ -249,4 +245,18 @@ void* __stdcall fn_005C4870(void* self) {
 // @summary Dynamic-casts the input pointer via __RTDynamicCast.
 void* fn_004D3E20(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
+}
+
+// [0x00515850]
+extern "C" void* __stdcall fn_00515850(void* obj)
+{
+    return ext_006A6E9E(obj, 0, (void*)0x00A2E2F8u, (void*)0x00A4279Cu, 0);
+}
+
+// [0x005C4870]
+// @name ExprParser::DynamicEnumType_CollisionModelDataBase_MaterialName::vfunc_16
+// @class ExprParser::DynamicEnumType_CollisionModelDataBase_MaterialName
+// @summary Dynamically casts the given object pointer to NMData::CollisionModelDataBase (RTTI) and returns it.
+void* __stdcall fn_005C4870(void* self) {
+    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
