@@ -1,0 +1,28 @@
+{
+  "va": "0x0049FB50",
+  "size": 24,
+  "orig_symbol": "NMData::State::vfunc_12_off_8",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::State::vfunc_12_off_8",
+  "class": "NMData::State",
+  "signature": "void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/)",
+  "summary": "Copies the two floats at +0xE8/+0xEC into the caller-supplied out pair (stdcall-style, ret 8).",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xE8",
+      "type": "float",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0xEC",
+      "type": "float",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:11Z"
+}

@@ -11,5 +11,7 @@
 namespace lifted_layout {
 struct NMData_State_Fields {
     // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
+    // +0xE8  float                    field_0xE8  (evidence: 0x0049FB50)
+    // +0xEC  float                    field_0xEC  (evidence: 0x0049FB50)
 };
 } // namespace lifted_layout

@@ -1828,3 +1828,14 @@ uint32_t fn_0059D7D0(void* self) {
     // yields (CF ? -1 : 0) & -0x80 + 0x80 | 0x40  ->  CF ? 0x40 : 0xC0
     return flag != 0 ? 0x40u : 0xC0u;
 }
+
+// [0x0049FB50] NMData::State::vfunc_12_off_8 (24 bytes)
+// @name NMData::State::vfunc_12_off_8
+// @class NMData::State
+// @summary Copies the two floats at +0xE8/+0xEC into the caller-supplied out pair (stdcall-style, ret 8).
+// @field NMData::State +0xE8 float field_0xE8
+// @field NMData::State +0xEC float field_0xEC
+void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/) {
+    out[0] = lift_field<float>(self, 0xE8);
+    out[1] = lift_field<float>(self, 0xEC);
+}

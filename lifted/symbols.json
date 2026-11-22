@@ -993,6 +993,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x14 and tail-calls sub_0049ABC0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049FB50": {
+    "name": "NMData::State::vfunc_12_off_8",
+    "class": "NMData::State",
+    "signature": "void fn_0049FB50(void* self, float* out, void* /*unused stack arg*/)",
+    "summary": "Copies the two floats at +0xE8/+0xEC into the caller-supplied out pair (stdcall-style, ret 8).",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x004A0130": {
     "name": "NMData::State::vfunc_0",
     "class": "NMData::State",
