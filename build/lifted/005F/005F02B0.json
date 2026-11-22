@@ -1,0 +1,14 @@
+{
+  "va": "0x005F02B0",
+  "size": 35,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_59",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_59",
+  "class": "NMData::SkeletalJointData",
+  "signature": "std::string* fn_005F02B0(void* self, std::string* out)",
+  "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9F280; this is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:41:09Z"
+}

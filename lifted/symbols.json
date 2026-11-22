@@ -6995,6 +6995,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::FixedPathJointData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005F02B0": {
+    "name": "NMData::SkeletalJointData::vfunc_59",
+    "class": "NMData::SkeletalJointData",
+    "signature": "std::string* fn_005F02B0(void* self, std::string* out)",
+    "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9F280; this is unused.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005F02E0": {
     "name": "NMData::SkeletalJointData::vfunc_1_off_C",
     "class": "NMData::SkeletalJointData",
