@@ -6498,6 +6498,13 @@
     "summary": "Calls vfunc_57 on self; if it returns true, forwards vfunc_48 to the embedded object at +0x46C, otherwise to the one at +0x964. Returns the callee's result.",
     "lifted_path": "lifted/classes/AcclaimIO.cpp"
   },
+  "0x00584730": {
+    "name": "AcclaimIO::vfunc_13",
+    "class": "AcclaimIO",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00584730(void* self, uint32_t arg)",
+    "summary": "Copies string/scalar fields to shadow offsets, configures subobjA (+0x46C), and forwards the call to subobjA-\u003evtable[13].",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584B00": {
     "name": "AnimatableTransform::vfunc_54",
     "class": "AnimatableTransform",

@@ -11,8 +11,22 @@
 namespace lifted_layout {
 struct AcclaimIO_Fields {
     // +0x0   void**                   vtable  (evidence: 0x0055BBD0, 0x0055BE30, 0x00584660, 0x00584690, 0x005846F0)
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x00584730)
+    // +0x24  uint8_t                  field_0x24  (evidence: 0x00584730)
+    // +0x16C uint8_t                  field_0x16C  (evidence: 0x00584730)
+    // +0x3D4 uint8_t                  field_0x3D4  (evidence: 0x00584730)
+    // +0x3F0 uint32_t                 field_0x3F0  (evidence: 0x00584730)
+    // +0x3F4 uint8_t                  field_0x3F4  (evidence: 0x00584730)
+    // +0x410 uint32_t                 field_0x410  (evidence: 0x00584730)
+    // +0x418 uint32_t                 field_0x418  (evidence: 0x00584730)
+    // +0x420 uint32_t                 field_0x420  (evidence: 0x00584730)
     // +0x428 uint8_t                  field_0x428  (evidence: 0x0055BE30, 0x00584660)
-    // +0x46C uint8_t                  subobjA  (evidence: 0x0055BE60, 0x005846B0, 0x005846F0)
+    // +0x46C uint8_t                  subobjA  (evidence: 0x0055BE60, 0x005846B0, 0x005846F0, 0x00584730)
+    // +0x840 uint8_t                  field_0x840  (evidence: 0x00584730)
+    // +0x85C uint32_t                 field_0x85C  (evidence: 0x00584730)
+    // +0x860 uint8_t                  field_0x860  (evidence: 0x00584730)
+    // +0x87C uint32_t                 field_0x87C  (evidence: 0x00584730)
+    // +0x88C uint32_t                 field_0x88C  (evidence: 0x00584730)
     // +0x964 uint8_t                  subobjB  (evidence: 0x0055BE60, 0x005846B0, 0x005846F0)
 };
 } // namespace lifted_layout

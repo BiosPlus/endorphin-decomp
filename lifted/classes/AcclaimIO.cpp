@@ -102,3 +102,58 @@ uint32_t fn_005846F0(void* self) {
     auto target = reinterpret_cast<SubFn>(subVtable[0xC0 / sizeof(void*)]);
     return target(subobj);
 }
+
+// [0x00584730]
+// @name AcclaimIO::vfunc_13
+// @class AcclaimIO
+// @summary Copies string/scalar fields to shadow offsets, configures subobjA (+0x46C), and forwards the call to subobjA->vtable[13].
+// @field AcclaimIO +0x08 uint8_t field_0x08
+// @field AcclaimIO +0x24 uint8_t field_0x24
+// @field AcclaimIO +0x16C uint8_t field_0x16C
+// @field AcclaimIO +0x3D4 uint8_t field_0x3D4
+// @field AcclaimIO +0x3F0 uint32_t field_0x3F0
+// @field AcclaimIO +0x3F4 uint8_t field_0x3F4
+// @field AcclaimIO +0x410 uint32_t field_0x410
+// @field AcclaimIO +0x418 uint32_t field_0x418
+// @field AcclaimIO +0x420 uint32_t field_0x420
+// @field AcclaimIO +0x46C uint8_t subobjA
+// @field AcclaimIO +0x840 uint8_t field_0x840
+// @field AcclaimIO +0x85C uint32_t field_0x85C
+// @field AcclaimIO +0x860 uint8_t field_0x860
+// @field AcclaimIO +0x87C uint32_t field_0x87C
+// @field AcclaimIO +0x88C uint32_t field_0x88C
+
+#include "lift_compat.h"
+
+extern "C" int mem_00924FDC; // MSVCP80 std::basic_string<char>::operator=(const basic_string&)
+extern "C" void __thiscall ext_00521350(void* self, void* arg);
+extern "C" void __thiscall ext_00553750(void* self, void* arg);
+extern "C" void __thiscall ext_00558A20(void* self, void* arg);
+extern "C" void __thiscall ext_00559180(void* self, uint32_t arg);
+
+extern "C" uint32_t __thiscall fn_00584730(void* self, uint32_t arg) {
+    using StringAssignFn = void* (__thiscall*)(void* dst, const void* src);
+    using SubobjVfunc13Fn = uint32_t (__thiscall*)(void* subobj, uint32_t arg);
+
+    auto string_assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+
+    uint8_t* const src_block = &lift_field<uint8_t>(self, 0x3D4);
+    uint8_t* const dst_block = &lift_field<uint8_t>(self, 0x840);
+
+    string_assign(dst_block, src_block);
+    lift_field<uint32_t>(dst_block, 0x1C) = lift_field<uint32_t>(src_block, 0x1C);
+    string_assign(dst_block + 0x20, src_block + 0x20);
+    lift_field<uint32_t>(dst_block, 0x3C) = lift_field<uint32_t>(src_block, 0x3C);
+
+    void* const subobjA = &lift_field<uint8_t>(self, 0x46C);
+    ext_00521350(subobjA, &lift_field<uint8_t>(self, 0x08));
+    ext_00553750(subobjA, &lift_field<uint8_t>(self, 0x24));
+    ext_00558A20(subobjA, &lift_field<uint8_t>(self, 0x16C));
+    ext_00559180(subobjA, lift_field<uint32_t>(self, 0x418));
+
+    lift_field<uint32_t>(self, 0x88C) = lift_field<uint32_t>(self, 0x420);
+
+    void* const subobjA_vtable = lift_field<void*>(subobjA, 0x00);
+    auto vfunc13 = reinterpret_cast<SubobjVfunc13Fn>(lift_field<void*>(subobjA_vtable, 0x34));
+    return vfunc13(subobjA, arg);
+}

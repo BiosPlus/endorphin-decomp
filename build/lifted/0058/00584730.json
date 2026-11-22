@@ -1,0 +1,106 @@
+{
+  "va": "0x00584730",
+  "size": 139,
+  "orig_symbol": "AcclaimIO::vfunc_13",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::vfunc_13",
+  "class": "AcclaimIO",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00584730(void* self, uint32_t arg)",
+  "summary": "Copies string/scalar fields to shadow offsets, configures subobjA (+0x46C), and forwards the call to subobjA-\u003evtable[13].",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x16C",
+      "type": "uint8_t",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x3D4",
+      "type": "uint8_t",
+      "name": "field_0x3D4"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x3F0",
+      "type": "uint32_t",
+      "name": "field_0x3F0"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x3F4",
+      "type": "uint8_t",
+      "name": "field_0x3F4"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x410",
+      "type": "uint32_t",
+      "name": "field_0x410"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x418",
+      "type": "uint32_t",
+      "name": "field_0x418"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x420",
+      "type": "uint32_t",
+      "name": "field_0x420"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x46C",
+      "type": "uint8_t",
+      "name": "subobjA"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x840",
+      "type": "uint8_t",
+      "name": "field_0x840"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x85C",
+      "type": "uint32_t",
+      "name": "field_0x85C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x860",
+      "type": "uint8_t",
+      "name": "field_0x860"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x87C",
+      "type": "uint32_t",
+      "name": "field_0x87C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x88C",
+      "type": "uint32_t",
+      "name": "field_0x88C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-22T08:22:41Z"
+}
