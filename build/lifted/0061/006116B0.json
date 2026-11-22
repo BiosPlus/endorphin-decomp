@@ -1,0 +1,22 @@
+{
+  "va": "0x006116B0",
+  "size": 47,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_60",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::setFirstComponentVector",
+  "class": "NMData::HingeConstraint",
+  "signature": "void fn_006116B0(void* self, int32_t index, float value)",
+  "summary": "When index \u003c 1, forwards the vector (value, 0, 0) to virtual slot 61 (offset 0xF4) on self.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:42Z"
+}

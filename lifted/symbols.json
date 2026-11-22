@@ -7665,6 +7665,13 @@
     "summary": "Pure jump thunk forwarding to AnimatableTransform::vfunc_29.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006116B0": {
+    "name": "NMData::HingeConstraint::setFirstComponentVector",
+    "class": "NMData::HingeConstraint",
+    "signature": "void fn_006116B0(void* self, int32_t index, float value)",
+    "summary": "When index \u003c 1, forwards the vector (value, 0, 0) to virtual slot 61 (offset 0xF4) on self.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x00611C90": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_76",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
