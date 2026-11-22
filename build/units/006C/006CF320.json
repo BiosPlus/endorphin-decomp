@@ -185,5 +185,7 @@
     "0x006CFD0E",
     "0x006CFD15"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T02:02:08Z"
 }

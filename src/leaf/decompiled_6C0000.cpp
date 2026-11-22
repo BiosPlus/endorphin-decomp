@@ -20243,3 +20243,980 @@ L6120:
         nop
     }
 }
+
+// [0x006CF320] sub_006CF320 (2576 bytes)
+extern "C" void ext_006CA4F0();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006CA020();
+extern "C" void ext_006C9F00();
+extern "C" void ext_006C9F70();
+extern "C" void ext_006CAEF0();
+extern "C" void ext_00872828();
+extern "C" void ext_006CDB40();
+extern "C" void ext_006CDDB0();
+extern "C" void ext_006DBDF0();
+extern "C" void ext_006DBE10();
+extern "C" void ext_006CEBB0();
+extern "C" void ext_006CA520();
+extern "C" void ext_006CABD0();
+extern "C" void ext_006C9E80();
+extern "C" void ext_00789BA0();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_006C9DC0();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006CB8E0();
+extern "C" void ext_006CC310();
+extern "C" void ext_006CBF00();
+extern "C" void ext_006CB190();
+extern "C" void ext_006CE020();
+extern "C" void ext_006CE0C0();
+extern "C" void ext_006CE080();
+extern "C" void ext_006D03E0();
+extern "C" int mem_0092520C;
+extern "C" int mem_009251DC;
+extern "C" int mem_0099385C;
+
+extern "C" __declspec(naked) void __fastcall fn_006CF320(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 34h
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006CA4F0
+        mov edx, dword ptr [ebp+14h]
+        mov eax, dword ptr [ebp+0ch]
+        mov ecx, dword ptr [ebp+10h]
+        mov ebx, dword ptr [ebp+8]
+        mov dword ptr [ebp-1ch], edx
+        mov edx, dword ptr [ebp+18h]
+        cmp eax, 1
+        mov edi, eax
+        mov dword ptr [ebp-10h], ecx
+        mov dword ptr [ebp-18h], edx
+        jne L6CF37E
+        cmp ecx, 80000000h
+        jne L6CF37E
+        mov ecx, ebx
+        call ext_006CA6A0
+        test eax, eax
+        je L6CF37E
+        lea eax, [ebp-24h]
+        mov ecx, ebx
+        push eax
+        push 0
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        mov edi, dword ptr [eax]
+        mov dword ptr [ebp-10h], ecx
+L6CF37E:
+        cmp dword ptr [ebp+14h], -1
+        jne L6CF3BE
+        cmp dword ptr [ebp+18h], 7fffffffh
+        jne L6CF3BE
+        mov ecx, ebx
+        call ext_006CA6A0
+        test eax, eax
+        je L6CF3BE
+        lea edx, [ebp-24h]
+        mov ecx, ebx
+        push edx
+        call ext_006CA6A0
+        dec eax
+        mov ecx, ebx
+        push eax
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9F00
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+4]
+        mov dword ptr [ebp-1ch], ecx
+        mov dword ptr [ebp-18h], edx
+L6CF3BE:
+        mov eax, dword ptr [ebp-10h]
+        push 0
+        push eax
+        push edi
+        mov ecx, ebx
+        mov dword ptr [ebp+8], 0
+        call ext_006CAEF0
+        sub esp, 8
+        fstp qword ptr [esp]
+        call dword ptr [mem_0092520C]
+        add esp, 8
+        call ext_00872828
+        mov ecx, dword ptr [ebp-18h]
+        mov edx, dword ptr [ebp-1ch]
+        push 0
+        push ecx
+        push edx
+        mov ecx, ebx
+        mov dword ptr [ebp-4], eax
+        call ext_006CAEF0
+        sub esp, 8
+        fstp qword ptr [esp]
+        call dword ptr [mem_009251DC]
+        add esp, 8
+        call ext_00872828
+        mov edi, eax
+        mov ecx, ebx
+        mov dword ptr [ebp-0ch], edi
+        call ext_006CA6A0
+        cmp edi, eax
+        jl L6CF42C
+        mov ecx, ebx
+        call ext_006CA6A0
+        mov edi, eax
+        dec edi
+        mov dword ptr [ebp-0ch], edi
+L6CF42C:
+        mov al, byte ptr [ebp+2ch]
+        test al, al
+        jne L6CF472
+        mov ecx, dword ptr [ebp-4]
+        lea eax, [ebp-24h]
+        push eax
+        push ecx
+        mov ecx, ebx
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9F00
+        mov edx, dword ptr [eax]
+        lea ecx, [ebp-24h]
+        mov dword ptr [ebp+0ch], edx
+        mov eax, dword ptr [eax+4]
+        push ecx
+        push edi
+        mov ecx, ebx
+        mov dword ptr [ebp+10h], eax
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9F00
+        mov edx, dword ptr [eax]
+        mov dword ptr [ebp+14h], edx
+        mov eax, dword ptr [eax+4]
+        mov dword ptr [ebp+18h], eax
+L6CF472:
+        mov ecx, dword ptr [ebp+10h]
+        mov edx, dword ptr [ebp+0ch]
+        xor edi, edi
+        push edi
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006CAEF0
+        sub esp, 8
+        fstp qword ptr [esp]
+        call dword ptr [mem_0092520C]
+        add esp, 8
+        call ext_00872828
+        cmp eax, -1
+        mov dword ptr [ebp+8], eax
+        jne L6CF4A3
+        mov dword ptr [ebp+8], edi
+L6CF4A3:
+        mov eax, dword ptr [ebp+10h]
+        mov ecx, dword ptr [ebp+0ch]
+        push edi
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006CDB40
+        mov edx, dword ptr [ebp+18h]
+        mov eax, dword ptr [ebp+14h]
+        fstp dword ptr [ebp-8]
+        push edi
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_006CDDB0
+        fstp dword ptr [ebp-18h]
+        lea ecx, [ebp-14h]
+        lea edx, [ebp-2ch]
+        mov eax, 1
+        push ecx
+        push edx
+        lea ecx, [ebp+14h]
+        mov dword ptr [ebp-14h], eax
+        mov dword ptr [ebp-10h], edi
+        mov dword ptr [ebp-24h], eax
+        mov dword ptr [ebp-20h], edi
+        call ext_006DBDF0
+        mov ecx, dword ptr [eax+4]
+        push ecx
+        lea ecx, [ebp-34h]
+        mov edx, dword ptr [eax]
+        lea eax, [ebp-24h]
+        push edx
+        push eax
+        push ecx
+        lea ecx, [ebp+0ch]
+        call ext_006DBE10
+        mov edx, dword ptr [eax+4]
+        mov ecx, esi
+        push edx
+        mov eax, dword ptr [eax]
+        push eax
+        call ext_006CEBB0
+        cmp dword ptr [ebp-4], -1
+        je L6CFB0C
+        mov dword ptr [esi+48h], -1
+        push 0
+        mov ecx, ebx
+        mov dword ptr [esi+4ch], 7fffffffh
+        mov dword ptr [ebp+30h], 0
+        call ext_006CA020
+        mov ecx, dword ptr [ebp+10h]
+        mov edx, dword ptr [ebp+0ch]
+        push 0
+        push ecx
+        push edx
+        mov ecx, ebx
+        call ext_006CAEF0
+        fstp qword ptr [ebp-24h]
+        fld qword ptr [ebp-24h]
+        wait
+        fnstcw word ptr [ebp-24h]
+        xor word ptr [ebp-24h], 800h
+        fldcw word ptr [ebp-24h]
+        frndint
+        xor word ptr [ebp-24h], 800h
+        fldcw word ptr [ebp-24h]
+        fstp qword ptr [ebp-14h]
+        fld qword ptr [ebp-14h]
+        call ext_00872828
+        push eax
+        mov ecx, ebx
+        mov dword ptr [ebp+2ch], eax
+        call ext_006CA020
+        fld dword ptr [ebp+1ch]
+        fabs
+        fcomp dword ptr [mem_0099385C]
+        mov edi, eax
+        fnstsw ax
+        test ah, 41h
+        jne L6CF8B5
+        mov al, byte ptr [ebp+24h]
+        test al, al
+        jne L6CF62E
+L6CF59F:
+        lea eax, [ebp-34h]
+        mov ecx, edi
+        push eax
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ebp+18h]
+        cmp ecx, edx
+        jg L6CF7EB
+        jl L6CF5C7
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebp+14h]
+        cmp edx, eax
+        ja L6CF7EB
+L6CF5C7:
+        mov ecx, ebx
+        call ext_006CA6A0
+        mov ecx, dword ptr [ebp+2ch]
+        cmp ecx, eax
+        jge L6CF7EB
+        mov eax, ecx
+        mov ecx, ebx
+        push eax
+        call ext_006CA020
+        lea ecx, [ebp+30h]
+        mov edi, eax
+        push ecx
+        lea edx, [ebp-2ch]
+        push edi
+        push edx
+        mov ecx, edi
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        push ecx
+        mov ecx, esi
+        mov edx, dword ptr [eax]
+        push edx
+        call ext_006CABD0
+        mov ecx, edi
+        mov dword ptr [ebp+24h], eax
+        call ext_006C9E80
+        fadd dword ptr [ebp+1ch]
+        mov eax, dword ptr [ebp+24h]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        push eax
+        call ext_006CA020
+        mov ecx, eax
+        call ext_00789BA0
+        inc dword ptr [ebp+2ch]
+        jmp L6CF59F
+L6CF62E:
+        lea ecx, [ebp+30h]
+        lea edx, [ebp-34h]
+        push ecx
+        push edx
+        mov ecx, edi
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        push ecx
+        mov ecx, esi
+        mov edx, dword ptr [eax]
+        push edx
+        call ext_006CAEF0
+        sub esp, 8
+        fstp qword ptr [esp]
+        call dword ptr [mem_0092520C]
+        add esp, 8
+        call ext_00872828
+        mov dword ptr [ebp-4], eax
+L6CF662:
+        lea eax, [ebp-34h]
+        mov ecx, edi
+        push eax
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ebp+18h]
+        cmp ecx, edx
+        jg L6CF78B
+        jl L6CF68A
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebp+14h]
+        cmp edx, eax
+        ja L6CF78B
+L6CF68A:
+        mov ecx, ebx
+        call ext_006CA6A0
+        mov ecx, dword ptr [ebp+2ch]
+        cmp ecx, eax
+        jge L6CF78B
+        mov eax, ecx
+        mov ecx, ebx
+        push eax
+        call ext_006CA020
+        lea ecx, [ebp+30h]
+        mov edi, eax
+        push ecx
+        lea edx, [ebp-2ch]
+        push edi
+        push edx
+        mov ecx, edi
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        push ecx
+        mov ecx, esi
+        mov edx, dword ptr [eax]
+        push edx
+        call ext_006CABD0
+        mov ecx, edi
+        mov dword ptr [ebp+24h], eax
+        call ext_006C9E80
+        fsubr dword ptr [ebp+1ch]
+        mov eax, dword ptr [ebp+24h]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        push eax
+        call ext_006CA020
+        mov ecx, eax
+        call ext_00789BA0
+        mov ecx, dword ptr [ebp+24h]
+        push ecx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        cmp eax, 0400h
+        je L6CF71B
+        mov edx, dword ptr [ebp+24h]
+        mov ecx, esi
+        push edx
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        cmp eax, 0c00h
+        jne L6CF783
+L6CF71B:
+        mov eax, dword ptr [ebp+24h]
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DC0
+        mov ecx, dword ptr [ebp+24h]
+        push 1
+        fstp dword ptr [ebp-0ch]
+        push ecx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DC0
+        fstp dword ptr [ebp-10h]
+        fld dword ptr [ebp-0ch]
+        mov edx, dword ptr [ebp+24h]
+        push ecx
+        fchs
+        fstp dword ptr [esp]
+        push 0
+        push edx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DF0
+        fld dword ptr [ebp-10h]
+        mov eax, dword ptr [ebp+24h]
+        push ecx
+        fchs
+        fstp dword ptr [esp]
+        push 1
+        push eax
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DF0
+L6CF783:
+        inc dword ptr [ebp+2ch]
+        jmp L6CF662
+L6CF78B:
+        mov eax, dword ptr [ebp-4]
+        test eax, eax
+        jle L6CF7EB
+        mov ecx, eax
+        lea edi, [ecx-1]
+        mov ecx, esi
+        push edi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        cmp eax, 0400h
+        je L6CF7C3
+        push edi
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        cmp eax, 0c00h
+        jne L6CF7EB
+L6CF7C3:
+        push 1
+        push edi
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DC0
+        push ecx
+        mov ecx, esi
+        fchs
+        fstp dword ptr [esp]
+        push 1
+        push edi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DF0
+L6CF7EB:
+        cmp dword ptr [ebp+0ch], 1
+        jne L6CF7FE
+        cmp dword ptr [ebp+10h], 80000000h
+        je L6CF95B
+L6CF7FE:
+        mov ecx, esi
+        call ext_006CA6A0
+        test eax, eax
+        je L6CF95B
+        mov ecx, dword ptr [ebp+8]
+        lea eax, [ebp-34h]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9F00
+        mov edx, dword ptr [eax+4]
+        mov ecx, dword ptr [ebp+18h]
+        cmp edx, ecx
+        jg L6CF95B
+        jl L6CF840
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [ebp+14h]
+        cmp eax, ecx
+        ja L6CF95B
+L6CF840:
+        mov edx, dword ptr [ebp+8]
+        lea ecx, [ebp-34h]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ebp+10h]
+        cmp ecx, edx
+        jg L6CF91E
+        jl L6CF873
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebp+0ch]
+        cmp edx, eax
+        jae L6CF91E
+L6CF873:
+        mov eax, dword ptr [ebp+8]
+        mov ecx, esi
+        inc eax
+        push eax
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 4
+        jne L6CF8A7
+        mov ecx, dword ptr [ebp+8]
+        inc ecx
+        push ecx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 1
+        je L6CF95B
+L6CF8A7:
+        mov eax, dword ptr [ebp+8]
+        mov edx, dword ptr [ebp-8]
+        inc eax
+        push edx
+        push eax
+        jmp L6CF954
+L6CF8B5:
+        lea edx, [ebp-34h]
+        mov ecx, edi
+        push edx
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ebp+18h]
+        cmp ecx, edx
+        jg L6CF7EB
+        jl L6CF8DD
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebp+14h]
+        cmp edx, eax
+        ja L6CF7EB
+L6CF8DD:
+        mov ecx, ebx
+        call ext_006CA6A0
+        mov ecx, dword ptr [ebp+2ch]
+        cmp ecx, eax
+        jge L6CF7EB
+        mov eax, ecx
+        mov ecx, ebx
+        push eax
+        call ext_006CA020
+        lea ecx, [ebp+30h]
+        mov edi, eax
+        push ecx
+        lea edx, [ebp-2ch]
+        push edi
+        push edx
+        mov ecx, edi
+        call ext_006C9F00
+        mov ecx, dword ptr [eax+4]
+        push ecx
+        mov ecx, esi
+        mov edx, dword ptr [eax]
+        push edx
+        call ext_006CABD0
+        inc dword ptr [ebp+2ch]
+        jmp L6CF8B5
+L6CF91E:
+        mov ecx, dword ptr [ebp+8]
+        push ecx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 4
+        jne L6CF94C
+        mov edx, dword ptr [ebp+8]
+        mov ecx, esi
+        push edx
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 1
+        je L6CF95B
+L6CF94C:
+        mov eax, dword ptr [ebp-8]
+        mov ecx, dword ptr [ebp+8]
+        push eax
+        push ecx
+L6CF954:
+        mov ecx, esi
+        call ext_006CB8E0
+L6CF95B:
+        cmp dword ptr [ebp+14h], -1
+        jne L6CF96A
+        cmp dword ptr [ebp+18h], 7fffffffh
+        je L6CF9B2
+L6CF96A:
+        mov ecx, esi
+        call ext_006CA6A0
+        test eax, eax
+        je L6CF9B2
+        mov edx, dword ptr [ebp+30h]
+        mov ecx, esi
+        push edx
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 4
+        jne L6CF9A3
+        mov eax, dword ptr [ebp+30h]
+        mov ecx, esi
+        push eax
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9CD0
+        test ah, 1
+        je L6CF9B2
+L6CF9A3:
+        mov ecx, dword ptr [ebp-18h]
+        mov edx, dword ptr [ebp+30h]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006CC310
+L6CF9B2:
+        fld dword ptr [ebp+20h]
+        fabs
+        fcomp dword ptr [mem_0099385C]
+        fnstsw ax
+        test ah, 41h
+        jne L6CFD07
+        mov eax, dword ptr [ebp+30h]
+        lea ebx, [eax+1]
+        mov al, byte ptr [ebp+28h]
+        test al, al
+        jne L6CFA14
+        mov ecx, esi
+        call ext_006CA6A0
+        cmp ebx, eax
+        jge L6CFD07
+L6CF9E4:
+        push ebx
+        mov ecx, esi
+        call ext_006CA020
+        mov edi, eax
+        mov ecx, edi
+        call ext_006C9E80
+        fadd dword ptr [ebp+20h]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_00789BA0
+        mov ecx, esi
+        inc ebx
+        call ext_006CA6A0
+        cmp ebx, eax
+        jl L6CF9E4
+        jmp L6CFD07
+L6CFA14:
+        mov edi, ebx
+        mov ecx, esi
+        mov dword ptr [ebp+28h], edi
+        call ext_006CA6A0
+        cmp ebx, eax
+        jge L6CFAB2
+L6CFA28:
+        push ebx
+        mov ecx, esi
+        call ext_006CA020
+        mov edi, eax
+        mov ecx, edi
+        call ext_006C9E80
+        fsubr dword ptr [ebp+20h]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_00789BA0
+        mov ecx, edi
+        call ext_006C9CD0
+        cmp eax, 0400h
+        je L6CFA63
+        mov ecx, edi
+        call ext_006C9CD0
+        cmp eax, 0c00h
+        jne L6CFA9F
+L6CFA63:
+        push 0
+        mov ecx, edi
+        call ext_006C9DC0
+        fstp dword ptr [ebp+2ch]
+        push 1
+        mov ecx, edi
+        call ext_006C9DC0
+        fstp dword ptr [ebp+24h]
+        fld dword ptr [ebp+2ch]
+        push ecx
+        mov ecx, edi
+        fchs
+        fstp dword ptr [esp]
+        push 0
+        call ext_006C9DF0
+        fld dword ptr [ebp+24h]
+        push ecx
+        mov ecx, edi
+        fchs
+        fstp dword ptr [esp]
+        push 1
+        call ext_006C9DF0
+L6CFA9F:
+        mov ecx, esi
+        inc ebx
+        call ext_006CA6A0
+        cmp ebx, eax
+        jl L6CFA28
+        mov edi, dword ptr [ebp+28h]
+L6CFAB2:
+        test edi, edi
+        jle L6CFD07
+        mov ecx, esi
+        call ext_006CA6A0
+        cmp edi, eax
+        jg L6CFD07
+        dec edi
+        mov ecx, esi
+        push edi
+        call ext_006CA020
+        mov edi, eax
+        mov ecx, edi
+        call ext_006C9CD0
+        cmp eax, 0400h
+        je L6CFAF4
+        mov ecx, edi
+        call ext_006C9CD0
+        cmp eax, 0c00h
+        jne L6CFD07
+L6CFAF4:
+        push 1
+        mov ecx, edi
+        call ext_006C9DC0
+        push ecx
+        mov ecx, edi
+        fchs
+        fstp dword ptr [esp]
+        push 1
+        jmp L6CFD02
+L6CFB0C:
+        mov al, byte ptr [ebp+30h]
+        mov dword ptr [ebp+2ch], edi
+        test al, al
+        je L6CFD07
+        mov eax, dword ptr [ebp+0ch]
+        mov edi, 1
+        cmp eax, edi
+        jne L6CFB2F
+        cmp dword ptr [ebp+10h], 80000000h
+        je L6CFB86
+L6CFB2F:
+        lea ecx, [ebp+2ch]
+        lea edx, [ebp-24h]
+        push ecx
+        lea eax, [ebp-34h]
+        push edx
+        push eax
+        lea ecx, [ebp+0ch]
+        mov dword ptr [ebp-24h], edi
+        mov dword ptr [ebp-20h], 0
+        call ext_006DBE10
+        mov ecx, dword ptr [eax+4]
+        push ecx
+        mov ecx, esi
+        mov edx, dword ptr [eax]
+        push edx
+        call ext_006CE020
+        mov ecx, 7fffffffh
+        push 0
+        or eax, -1
+        push 0
+        push ecx
+        push eax
+        push edi
+        push 0
+        push 0400h
+        lea eax, [ebp+2ch]
+        push 8
+        push eax
+        mov ecx, esi
+        fstp st(0)
+        call ext_006CE0C0
+        mov ecx, dword ptr [ebp+2ch]
+        mov dword ptr [ebp+8], ecx
+L6CFB86:
+        cmp dword ptr [ebp+14h], -1
+        jne L6CFB95
+        cmp dword ptr [ebp+18h], 7fffffffh
+        je L6CFBE6
+L6CFB95:
+        lea edx, [ebp+2ch]
+        lea eax, [ebp-24h]
+        push edx
+        lea ecx, [ebp-34h]
+        push eax
+        push ecx
+        lea ecx, [ebp+14h]
+        mov dword ptr [ebp-24h], edi
+        mov dword ptr [ebp-20h], 0
+        call ext_006DBDF0
+        mov edx, dword ptr [eax+4]
+        mov ecx, esi
+        push edx
+        mov eax, dword ptr [eax]
+        push eax
+        call ext_006CE020
+        mov ecx, 7fffffffh
+        push 0
+        or eax, -1
+        push 0
+        push ecx
+        push eax
+        push edi
+        push 0
+        push 0400h
+        lea ecx, [ebp+2ch]
+        push 8
+        push ecx
+        mov ecx, esi
+        fstp st(0)
+        call ext_006CE0C0
+L6CFBE6:
+        mov ecx, ebx
+        call ext_006C9F70
+        fstp qword ptr [ebp-1ch]
+        mov edi, dword ptr [ebp-18h]
+        mov edx, dword ptr [ebp-1ch]
+        mov eax, dword ptr [ebp+10h]
+        mov ecx, dword ptr [ebp+0ch]
+        push edi
+        push edx
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006CE080
+        mov ecx, 7fffffffh
+        push 0
+        or eax, -1
+        push 0
+        push ecx
+        push eax
+        push 1
+        push 0
+        push 0400h
+        lea edx, [ebp+8]
+        push 8
+        push edx
+        mov ecx, esi
+        call ext_006CE0C0
+        mov eax, dword ptr [ebp+8]
+        mov ecx, dword ptr [ebp-1ch]
+        mov edx, dword ptr [ebp+18h]
+        mov dword ptr [ebp+2ch], eax
+        mov eax, dword ptr [ebp+14h]
+        push edi
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_006CE080
+        mov ecx, 7fffffffh
+        push 0
+        or eax, -1
+        push 0
+        push ecx
+        push eax
+        push 1
+        push 0
+        push 0400h
+        lea ecx, [ebp+2ch]
+        push 8
+        push ecx
+        mov ecx, esi
+        call ext_006CE0C0
+        cmp dword ptr [ebp+0ch], 1
+        jne L6CFC78
+        cmp dword ptr [ebp+10h], 80000000h
+        je L6CFCB8
+L6CFC78:
+        push -1
+        mov ecx, ebx
+        call ext_006CB190
+        mov edx, dword ptr [ebp+8]
+        fstp dword ptr [ebp+24h]
+        mov edi, dword ptr [ebp+24h]
+        lea eax, [edx-1]
+        test eax, eax
+        jl L6CFCA3
+        push edi
+        push 1
+        push eax
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DF0
+L6CFCA3:
+        mov eax, dword ptr [ebp+8]
+        push edi
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DF0
+L6CFCB8:
+        cmp dword ptr [ebp+14h], -1
+        jne L6CFCC7
+        cmp dword ptr [ebp+18h], 7fffffffh
+        je L6CFD07
+L6CFCC7:
+        mov ecx, dword ptr [ebp-0ch]
+        push ecx
+        mov ecx, ebx
+        call ext_006CBF00
+        fstp dword ptr [ebp+24h]
+        mov edi, dword ptr [ebp+24h]
+        mov edx, dword ptr [ebp+2ch]
+        push edi
+        push 0
+        push edx
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9DF0
+        mov eax, dword ptr [ebp+2ch]
+        dec eax
+        test eax, eax
+        jl L6CFD07
+        push edi
+        push 1
+        push eax
+        mov ecx, esi
+        call ext_006CA020
+        mov ecx, eax
+L6CFD02:
+        call ext_006C9DF0
+L6CFD07:
+        push -1
+        push 10h
+        mov ecx, esi
+        call ext_006D03E0
+        mov ecx, esi
+        call ext_006CA520
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 2ch
+    }
+}
