@@ -27634,3 +27634,75 @@ extern "C" __declspec(naked) void __fastcall fn_007B5074(void* self) {
         _emit 0x00
     }
 }
+
+// [0x007B5158] sub_007B5158 (132 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007B5158(void* self) {
+    __asm {
+        add byte ptr [edx], al
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add dword ptr [edx], eax
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add dword ptr [edx], eax
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add dword ptr [edx], eax
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add dword ptr [ecx], eax
+        add dword ptr [edx], eax
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add dword ptr [edx], eax
+        add dword ptr [ecx], eax
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+        add al, byte ptr [edx]
+    }
+}
