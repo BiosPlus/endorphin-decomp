@@ -1,10 +1,15 @@
 // Lifted C++ translation unit: lifted/NMCamera/Perspective.cpp
 #include "lift_compat.h"
+// Callee 0x006A6DE0: takes the x87 top-of-stack value as a double and returns a
+// 32-bit integer in eax (round/convert helper; callers pre-add the half offset).
+extern "C" int32_t ext_006A6DE0(double rounded);
+// Constant 0.5 (double) in .rdata.
+extern "C" const double mem_00993828;
 
-// [0x005522B0]
-// @name NMCamera::Perspective::vfunc_20
-// @class NMCamera::Perspective
-// @summary Writes a 4-float vector to arg3 derived from the two ints at arg1, the float at arg2, a virtual query (vtable slot 5), and the doubles at this+0xB0/0xB8/0xC0.
+// 32-bit integer in eax (round/convert helper; callers pre-add the half offset).
+extern "C" int32_t ext_006A6DE0(double rounded);
+// Constant 0.5 (double) in .rdata.
+extern "C" const double mem_00993828;
 // @field NMCamera::Perspective +0xB0 double field_0xB0
 // @field NMCamera::Perspective +0xB8 double field_0xB8
 // @field NMCamera::Perspective +0xC0 double field_0xC0
@@ -47,4 +52,34 @@ void fn_005522B0(void* self, const int32_t* arg1, const float* arg2, float* arg3
     arg3[1] = v1;
     arg3[2] = v2;
     arg3[3] = 1.0f;
+}
+
+// [0x00552340] NMCamera::Perspective::vfunc_19 (128 bytes)
+// @name NMCamera::Perspective::vfunc_19
+// @class NMCamera::Perspective
+// @summary Maps a float triple (in[0], in[1], in[2]) to two rounded ints (out[0], out[1]) using +0xB0/+0xB8 scale terms and virtual slot 5 applied to in[2].
+// @field NMCamera::Perspective +0xB0 double field_0xB0
+// @field NMCamera::Perspective +0xB8 double field_0xB8
+void fn_00552340(void* self, const float* in, int32_t* out) {
+    // Virtual slot 5 (offset 0x14) on this. Takes a float* and returns a double.
+    // Portable stand-in for the thiscall vtable dispatch.
+    using VSlot5 = double (*)(void* self, const float* arg);
+    void** vtable = *static_cast<void***>(self);
+    const VSlot5 slot5 = reinterpret_cast<VSlot5>(vtable[5]);
+
+    const float z = in[2];
+    const double scaled = slot5(self, &z) / lift_field<double>(self, 0xB8);
+    const float t1 = static_cast<float>(scaled);
+
+    // out[0] = (int)(in[0] / t1 + (float)field_B0 * 0.5 + 0.5)
+    const double c0 = static_cast<double>(static_cast<float>(lift_field<double>(self, 0xB0)));
+    const double q0 = static_cast<double>(in[0]) / static_cast<double>(t1);
+    const double x0 = q0 + c0 * mem_00993828 + mem_00993828;
+    out[0] = ext_006A6DE0(x0);
+
+    // out[1] = (int)(0.5 + (float)field_B8 * 0.5 - in[1] / t1)
+    const double d1 = static_cast<double>(static_cast<float>(lift_field<double>(self, 0xB8)));
+    const double q1 = static_cast<double>(in[1]) / static_cast<double>(t1);
+    const double x1 = mem_00993828 + (d1 * mem_00993828 - q1);
+    out[1] = ext_006A6DE0(x1);
 }

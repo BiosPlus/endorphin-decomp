@@ -1,0 +1,28 @@
+{
+  "va": "0x00552340",
+  "size": 128,
+  "orig_symbol": "NMCamera::Perspective::vfunc_19",
+  "src_path": "src/NMCamera/Perspective.cpp",
+  "lifted_path": "lifted/NMCamera/Perspective.cpp",
+  "name": "NMCamera::Perspective::vfunc_19",
+  "class": "NMCamera::Perspective",
+  "signature": "void fn_00552340(void* self, const float* in, int32_t* out)",
+  "summary": "Maps a float triple (in[0], in[1], in[2]) to two rounded ints (out[0], out[1]) using +0xB0/+0xB8 scale terms and virtual slot 5 applied to in[2].",
+  "fields": [
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xB0",
+      "type": "double",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xB8",
+      "type": "double",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:17:23Z"
+}

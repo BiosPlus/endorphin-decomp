@@ -6146,6 +6146,13 @@
     "summary": "Writes a 4-float vector to arg3 derived from the two ints at arg1, the float at arg2, a virtual query (vtable slot 5), and the doubles at this+0xB0/0xB8/0xC0.",
     "lifted_path": "lifted/NMCamera/Perspective.cpp"
   },
+  "0x00552340": {
+    "name": "NMCamera::Perspective::vfunc_19",
+    "class": "NMCamera::Perspective",
+    "signature": "void fn_00552340(void* self, const float* in, int32_t* out)",
+    "summary": "Maps a float triple (in[0], in[1], in[2]) to two rounded ints (out[0], out[1]) using +0xB0/+0xB8 scale terms and virtual slot 5 applied to in[2].",
+    "lifted_path": "lifted/NMCamera/Perspective.cpp"
+  },
   "0x005523C0": {
     "name": "Camera::vfunc_0",
     "class": "Camera",
