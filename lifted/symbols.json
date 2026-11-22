@@ -8122,6 +8122,13 @@
     "summary": "For each entry in the child pointer list [field_0x74, field_0x78): unless flag is set and the child's vfunc +0xC4 returns true, call the child's +0xC subobject vfuncs +0x24(arg) and +0x28(arg, 1).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005EBEA0": {
+    "name": "NMData::RootRelationshipData::vfunc_22",
+    "class": "NMData::RootRelationshipData",
+    "signature": "void* fn_005EBEA0(void* self)",
+    "summary": "Forwards to the base NMData::RelationshipData::vfunc_22 for this object and returns this.",
+    "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
+  },
   "0x005EC050": {
     "name": "NMData::DriveFrame::vfunc_61",
     "class": "NMData::DriveFrame",

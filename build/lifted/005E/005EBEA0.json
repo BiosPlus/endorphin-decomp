@@ -1,0 +1,14 @@
+{
+  "va": "0x005EBEA0",
+  "size": 17,
+  "orig_symbol": "NMData::RootRelationshipData::vfunc_22",
+  "src_path": "src/NMData/RootRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/RootRelationshipData.cpp",
+  "name": "NMData::RootRelationshipData::vfunc_22",
+  "class": "NMData::RootRelationshipData",
+  "signature": "void* fn_005EBEA0(void* self)",
+  "summary": "Forwards to the base NMData::RelationshipData::vfunc_22 for this object and returns this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:29Z"
+}
