@@ -19,6 +19,7 @@ void* fn_005C3180(void* self, void* ret_slot) {
     return out;
 }
 extern "C" const float* __thiscall ext_005B11F0(void* self);
+extern "C" void ext_005C3660(void* self);
 
 // [0x005C2FB0]
 // @name NMData::CollisionModelData::vfunc_1_off_158
@@ -126,4 +127,27 @@ extern "C" void __thiscall fn_005C3AB0(void* self, const float* scale) {
         void** targetVt = *reinterpret_cast<void***>(target);
         reinterpret_cast<void (*)(void*, void*)>(targetVt[13])(target, render);
     }
+}
+
+// [0x005C4020]
+// @name NMData::CollisionModelData::vfunc_33
+// @class NMData::CollisionModelData
+// @summary Assigns a string literal to the string member at +0x17C, clears the dword at +0x198, sets flags at +0x19C..+0x19E (true) and +0x19F (false), then calls the base-class vfunc_33.
+// @field NMData::CollisionModelData +0x17C std::string field_0x17c
+// @field NMData::CollisionModelData +0x198 uint32_t field_0x198
+// @field NMData::CollisionModelData +0x19C uint8_t field_0x19c
+// @field NMData::CollisionModelData +0x19D uint8_t field_0x19d
+// @field NMData::CollisionModelData +0x19E uint8_t field_0x19e
+// @field NMData::CollisionModelData +0x19F uint8_t field_0x19f
+void __thiscall fn_005C4020(void* self) {
+    {
+        std::string tmp(reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00928B5D)));
+        lift_field<std::string>(self, 0x17C) = tmp;
+    }
+    lift_field<uint32_t>(self, 0x198) = 0;
+    lift_field<uint8_t>(self, 0x19C) = 1;
+    lift_field<uint8_t>(self, 0x19D) = 1;
+    lift_field<uint8_t>(self, 0x19E) = 1;
+    lift_field<uint8_t>(self, 0x19F) = 0;
+    ext_005C3660(self);
 }

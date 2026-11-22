@@ -7426,6 +7426,13 @@
     "summary": "Dispatches on arg2 (0x9C, 0x199, or other) to a helper and returns arg1.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C4020": {
+    "name": "NMData::CollisionModelData::vfunc_33",
+    "class": "NMData::CollisionModelData",
+    "signature": "void __thiscall fn_005C4020(void* self)",
+    "summary": "Assigns a string literal to the string member at +0x17C, clears the dword at +0x198, sets flags at +0x19C..+0x19E (true) and +0x19F (false), then calls the base-class vfunc_33.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C44A0": {
     "name": "NMData::FluidObjectData::vfunc_33",
     "class": "NMData::FluidObjectData",
