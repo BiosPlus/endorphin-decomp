@@ -3613,6 +3613,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004ED6B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004C1A80": {
+    "name": "NMData::AnimationEventData::vfunc_23",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004C1A80(void* self, const std::string* src)",
+    "summary": "Assigns the std::string argument into the member at +0x14, then calls ext_004C0340(this).",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004C2300": {
     "name": "ValuePtrArrayObject::vfunc_0",
     "class": "ValuePtrArrayObject",

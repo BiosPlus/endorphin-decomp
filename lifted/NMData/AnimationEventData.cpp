@@ -19,8 +19,10 @@ extern "C" void __thiscall fn_004BFBE0(void* self) {
         ext_00599F10(r);
     }
 }
+#include <string>
+extern "C" void __thiscall ext_004C0340(void* self);
 
-// [0x004D3CB0] NMData::AnimationEventData::vfunc_61 (34 bytes)
+extern "C" void __thiscall ext_004C0340(void* self);
 // @name NMData::AnimationEventData::vfunc_61
 // @class NMData::AnimationEventData
 // @summary Calls this->vtable[15](a, 0x24A, 0) (result discarded) and returns a.
@@ -55,4 +57,14 @@ extern "C" bool __thiscall fn_004BFC20(void* self, const void* unused) {
     void* adjusted = static_cast<char*>(self) - 0xC;
     ext_0047D7C0(mem_00AE29D0, adjusted);
     return true;
+}
+
+// [0x004C1A80] NMData::AnimationEventData::vfunc_23 (28 bytes)
+// @name NMData::AnimationEventData::vfunc_23
+// @class NMData::AnimationEventData
+// @summary Assigns the std::string argument into the member at +0x14, then calls ext_004C0340(this).
+// @field NMData::AnimationEventData +0x14 std::string field_0x14
+extern "C" void __thiscall fn_004C1A80(void* self, const std::string* src) {
+    lift_field<std::string>(self, 0x14) = *src;
+    ext_004C0340(self);
 }
