@@ -1,0 +1,14 @@
+{
+  "va": "0x007F3870",
+  "size": 802,
+  "orig_symbol": "MdtArthur::arthurSolver_vanilla::vfunc_2",
+  "src_path": "src/MdtArthur/arthurSolver_vanilla.cpp",
+  "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp",
+  "name": "MdtArthur::arthurSolver_vanilla::vfunc_2",
+  "class": "MdtArthur::arthurSolver_vanilla",
+  "signature": "void __stdcall fn_007F3870( ArthurOutState* out_x, ArthurVecDesc* out_w, ArthurMatrixDesc matrix, ArthurAuxDesc aux, ArthurVecDesc lo, ArthurVecDesc hi, ArthurVecDesc diag_c, const float* rhs_b, int32_t num_rows, uint32_t rhs_b_field_0x08, const float* inv_diag, uint32_t inv_diag_field_0x04, uint32_t inv_diag_field_0x08, float c2, float c1, float eps, float tol, int32_t max_iter)",
+  "summary": "Vanilla Arthur iterative LCP solver: initializes x=0 and w=-b, then iteratively selects and updates pivot rows via ext_007F3440 and ext_007F2F80 until convergence or 2*max_iter.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@medium",
+  "lifted_at": "2026-11-22T14:45:35Z"
+}

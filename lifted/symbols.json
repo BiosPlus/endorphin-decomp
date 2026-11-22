@@ -21853,6 +21853,13 @@
     "summary": "Per-element accumulation over count/4 blocks: zeroes four floats at out, accumulates weighted contributions from the two ext_007F36C0 sub-calls, then inverts each of the four accumulated floats.",
     "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
   },
+  "0x007F3870": {
+    "name": "MdtArthur::arthurSolver_vanilla::vfunc_2",
+    "class": "MdtArthur::arthurSolver_vanilla",
+    "signature": "void __stdcall fn_007F3870( ArthurOutState* out_x, ArthurVecDesc* out_w, ArthurMatrixDesc matrix, ArthurAuxDesc aux, ArthurVecDesc lo, ArthurVecDesc hi, ArthurVecDesc diag_c, const float* rhs_b, int32_t num_rows, uint32_t rhs_b_field_0x08, const float* inv_diag, uint32_t inv_diag_field_0x04, uint32_t inv_diag_field_0x08, float c2, float c1, float eps, float tol, int32_t max_iter)",
+    "summary": "Vanilla Arthur iterative LCP solver: initializes x=0 and w=-b, then iteratively selects and updates pivot rows via ext_007F3440 and ext_007F2F80 until convergence or 2*max_iter.",
+    "lifted_path": "lifted/MdtArthur/arthurSolver_vanilla.cpp"
+  },
   "0x007F3BA0": {
     "name": "MdtArthur::arthurSolver_sse::vfunc_0",
     "class": "MdtArthur::arthurSolver_sse",
