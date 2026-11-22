@@ -4,11 +4,17 @@
   "orig_symbol": "NMData::SeverEventData::vfunc_84",
   "src_path": "src/NMData/SeverEventData.cpp",
   "lifted_path": "lifted/NMData/SeverEventData.cpp",
-  "name": "NMData::SeverEventData::vfunc_84",
+  "name": "NMData::SeverEventData::vfunc_59",
   "class": "NMData::SeverEventData",
-  "signature": "void fn_004C7870(void* self, uint32_t key)",
-  "summary": "Stdcall (ret 4, ECX = this): if the sever target at +0x19C is set, the enabled flag at +0x17C is true, and the argument matches the key at +0x15C, calls virtual slot 0 on the target.",
+  "signature": "extern \"C\" void __thiscall fn_004C7190(void* self, void* a)",
+  "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
   "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
     {
       "class": "NMData::SeverEventData",
       "offset": "+0x15C",
@@ -30,5 +36,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:43:14Z"
+  "lifted_at": "2026-11-22T07:43:26Z"
 }
