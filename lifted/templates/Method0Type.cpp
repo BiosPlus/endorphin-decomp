@@ -575,3 +575,18 @@ extern "C" void __stdcall fn_0048B1F0(void* self, void* unused) {
     void* target = *static_cast<void**>(self);
     ext_0048ABF0(target);
 }
+
+// [0x004CD7C0]
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, clearMetaBodiesFromFSM>::vfunc_41
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, clearMetaBodiesFromFSM>
+// @summary Loads the first stack argument's pointee into ECX and tail-calls sub_004CCDE0 (clearMetaBodiesFromFSM helper); callee pops 8 bytes.
+// @field ExprParser::Method0Type<NMData::MetaBodyConstraintData, clearMetaBodiesFromFSM> +0x00 void* field_0x00
+
+extern void ext_004CCDE0(uint32_t ecx);
+extern uint32_t mem_u32(uint32_t addr);
+
+void fn_004CD7C0(uint32_t arg0, uint32_t arg1) {
+    (void)arg1;
+    uint32_t ecx = mem_u32(arg0);
+    ext_004CCDE0(ecx);
+}

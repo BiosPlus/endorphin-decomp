@@ -4373,6 +4373,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CD7C0": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, clearMetaBodiesFromFSM\u003e::vfunc_41",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, clearMetaBodiesFromFSM\u003e",
+    "signature": "void fn_004CD7C0(uint32_t arg0, uint32_t arg1)",
+    "summary": "Loads the first stack argument's pointee into ECX and tail-calls sub_004CCDE0 (clearMetaBodiesFromFSM helper); callee pops 8 bytes.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CD7D0": {
     "name": "NMData::MetaBodyConstraintData::vfunc_1_off_158",
     "class": "NMData::MetaBodyConstraintData",
