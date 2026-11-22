@@ -27,6 +27,13 @@
     "summary": "This-adjustor thunk: rebases `this` from the secondary base subobject (-0x8) and tail-calls AnimatableTransform::vfunc_9.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049C000": {
+    "name": "ExprParser::BoolType::vfunc_14",
+    "class": "ExprParser::BoolType",
+    "signature": "extern \"C\" uint32_t __stdcall fn_0049C000(const uint32_t* self)",
+    "summary": "Stdcall leaf (ret 4): takes one pointer argument and returns the 32-bit value stored at its first dword.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x004C65B0": {
     "name": "NMData::ForceEventData::vfunc_1_off_C",
     "class": "NMData::ForceEventData",

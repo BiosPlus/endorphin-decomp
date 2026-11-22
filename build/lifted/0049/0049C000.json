@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C000",
+  "size": 9,
+  "orig_symbol": "ExprParser::BoolType::vfunc_14",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::BoolType::vfunc_14",
+  "class": "ExprParser::BoolType",
+  "signature": "extern \"C\" uint32_t __stdcall fn_0049C000(const uint32_t* self)",
+  "summary": "Stdcall leaf (ret 4): takes one pointer argument and returns the 32-bit value stored at its first dword.",
+  "fields": [
+    {
+      "class": "ExprParser::BoolType",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "first_dword"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:06:19Z"
+}
