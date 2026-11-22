@@ -374,5 +374,7 @@
     "0x0076A869",
     "0x0076A89E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T04:09:43Z"
 }
