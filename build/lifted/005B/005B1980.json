@@ -1,0 +1,22 @@
+{
+  "va": "0x005B1980",
+  "size": 9,
+  "orig_symbol": "Geometry::FileType::vfunc_7",
+  "src_path": "src/Geometry/auto_tiny.cpp",
+  "lifted_path": "lifted/Geometry/auto_tiny.cpp",
+  "name": "Geometry::FileType::vfunc_7",
+  "class": "Geometry::FileType",
+  "signature": "extern \"C\" void* __thiscall fn_005B1980(void* self, const void* rhs)",
+  "summary": "This-adjustor thunk: advances this by 4 bytes to reach the embedded GeometryType base, then forwards the call (and its stack argument) to the function pointer stored at mem_00924FDC (MSVCP80 std::string::operator=).",
+  "fields": [
+    {
+      "class": "Geometry::FileType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "embedded_base_subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:05:53Z"
+}

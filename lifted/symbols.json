@@ -543,6 +543,13 @@
     "summary": "Loads a single float from the pointer passed as the second stack argument and returns it on the x87 stack (ignores this).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1980": {
+    "name": "Geometry::FileType::vfunc_7",
+    "class": "Geometry::FileType",
+    "signature": "extern \"C\" void* __thiscall fn_005B1980(void* self, const void* rhs)",
+    "summary": "This-adjustor thunk: advances this by 4 bytes to reach the embedded GeometryType base, then forwards the call (and its stack argument) to the function pointer stored at mem_00924FDC (MSVCP80 std::string::operator=).",
+    "lifted_path": "lifted/Geometry/auto_tiny.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",
