@@ -14919,3 +14919,381 @@ L_END_6BDB10:
         ret
     }
 }
+
+// [0x006BDEA0] sub_006BDEA0 (976 bytes)
+extern "C" void ext_006C0510();
+extern "C" void ext_006C3030();
+extern "C" void ext_006C30F0();
+extern "C" void ext_006C3120();
+extern "C" void ext_006C3150();
+extern "C" void ext_006D37B0();
+extern "C" void ext_006E9610();
+extern "C" void ext_006E9730();
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_00708000();
+extern "C" void ext_0070CED0();
+extern "C" void ext_0070EA70();
+extern "C" void ext_0070EAB0();
+extern "C" void ext_0070F570();
+extern "C" void ext_00710300();
+extern "C" void ext_00710520();
+extern "C" int mem_00B5F060;
+extern "C" int mem_00B5E400;
+extern "C" __declspec(naked) void __fastcall fn_006BDEA0(void* self) {
+    __asm {
+        sub esp, 24h
+        push ebx
+        push esi
+        mov ebx, ecx
+        push 1
+        mov dword ptr [esp+1Ch], ebx
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006E9610
+        xor esi, esi
+        mov dword ptr [esp+28h], eax
+        test eax, eax
+        mov dword ptr [esp+1Ch], esi
+        jle near ptr L_006BE25F
+        push ebp
+        push edi
+L_006BDECD:
+        push 1
+        push esi
+        mov ecx, ebx
+        call ext_006B99C0
+        mov ecx, eax
+        call ext_006E9730
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp+14h], edi
+        mov eax, dword ptr [edi]
+        call dword ptr [eax+0Ch]
+        mov eax, dword ptr [eax+18h]
+        xor ebp, ebp
+        test eax, eax
+        mov dword ptr [esp+2Ch], eax
+        mov dword ptr [esp+1Ch], ebp
+        jle near ptr L_006BE24C
+L_006BDF00:
+        mov edx, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [edx+0Ch]
+        mov ecx, dword ptr [eax+14h]
+        add eax, 10h
+        add ecx, ebp
+        mov edx, dword ptr [eax]
+        lea ecx, [ecx+ecx*2]
+        mov eax, dword ptr [edx+ecx*4+4]
+        lea ecx, [edx+ecx*4]
+        test eax, eax
+        je near ptr L_006BE233
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne near ptr L_006BE233
+        mov esi, dword ptr [eax+4]
+        test esi, esi
+        je near ptr L_006BE233
+        mov ecx, dword ptr [mem_00B5F060]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax+14h]
+        test al, al
+        je near ptr L_006BE233
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx+12Ch]
+        mov esi, eax
+        test esi, esi
+        je near ptr L_006BE233
+        mov ecx, esi
+        call ext_006C3030
+        test eax, eax
+        je near ptr L_006BE233
+        mov ecx, esi
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        cmp eax, 4
+        mov ecx, esi
+        jne short L_006BDF8E
+        call ext_006C30F0
+        jmp short L_006BDFC2
+L_006BDF8E:
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        cmp eax, 5
+        mov ecx, esi
+        jne short L_006BDFA7
+        call ext_006C3120
+        jmp short L_006BDFC2
+L_006BDFA7:
+        call ext_006C3030
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx]
+        cmp eax, 6
+        jne near ptr L_006BE233
+        mov ecx, esi
+        call ext_006C3150
+L_006BDFC2:
+        test eax, eax
+        mov dword ptr [esp+10h], eax
+        je near ptr L_006BE233
+        call ext_00710520
+        mov ebx, eax
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        mov dword ptr [esp+28h], ebx
+        call dword ptr [eax+0Ch]
+        cmp ebx, -1
+        mov esi, eax
+        je short L_006BE005
+        cmp ebx, dword ptr [mem_00B5E400]
+        je short L_006BE005
+        push ebx
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov eax, dword ptr [eax+14h]
+        jmp short L_006BE008
+L_006BE005:
+        mov eax, dword ptr [esi+14h]
+L_006BE008:
+        test eax, eax
+        jle near ptr L_006BE233
+        xor ebp, ebp
+        mov dword ptr [esp+18h], eax
+L_006BE016:
+        mov edx, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [edx+0Ch]
+        cmp ebx, -1
+        mov esi, eax
+        je short L_006BE05B
+        cmp ebx, dword ptr [mem_00B5E400]
+        je short L_006BE05B
+        push ebx
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov eax, dword ptr [eax+10h]
+        add eax, ebp
+        mov ecx, dword ptr [eax+4]
+        test ecx, ecx
+        je near ptr L_006BE21D
+        mov edx, dword ptr [ecx]
+        mov esi, dword ptr [eax]
+        cmp edx, esi
+        jne near ptr L_006BE21D
+        jmp short L_006BE077
+L_006BE05B:
+        mov eax, dword ptr [esi+10h]
+        add eax, ebp
+        mov ecx, dword ptr [eax+4]
+        test ecx, ecx
+        je near ptr L_006BE21D
+        mov edx, dword ptr [ecx]
+        mov esi, dword ptr [eax]
+        cmp edx, esi
+        jne near ptr L_006BE21D
+L_006BE077:
+        mov esi, dword ptr [ecx+4]
+        test esi, esi
+        je near ptr L_006BE21D
+        mov ecx, dword ptr [mem_00B5F060]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax+14h]
+        test al, al
+        je near ptr L_006BE21D
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx+12Ch]
+        mov edi, eax
+        mov ecx, edi
+        call ext_00710300
+        cmp eax, 2
+        jne near ptr L_006BE219
+        mov eax, dword ptr [esp+20h]
+        mov ecx, dword ptr [eax]
+        call ext_006D37B0
+        mov ebx, eax
+        push edi
+        mov ecx, ebx
+        call ext_0070F570
+        call ext_006C0510
+        cmp eax, -1
+        je short L_006BE0F1
+        cmp eax, dword ptr [mem_00B5E400]
+        je short L_006BE0F1
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov eax, dword ptr [eax+14h]
+        jmp short L_006BE0F4
+L_006BE0F1:
+        mov eax, dword ptr [esi+14h]
+L_006BE0F4:
+        test eax, eax
+        je short L_006BE15D
+        call ext_006C0510
+        cmp eax, -1
+        je short L_006BE132
+        cmp eax, dword ptr [mem_00B5E400]
+        je short L_006BE132
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax+10h]
+        mov eax, dword ptr [ecx+4]
+        test eax, eax
+        je short L_006BE149
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne short L_006BE149
+        mov eax, dword ptr [eax+4]
+        jmp short L_006BE14B
+L_006BE132:
+        mov esi, dword ptr [esi+10h]
+        mov eax, dword ptr [esi+4]
+        test eax, eax
+        je short L_006BE149
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esi]
+        cmp ecx, edx
+        jne short L_006BE149
+        mov eax, dword ptr [eax+4]
+        jmp short L_006BE14B
+L_006BE149:
+        xor eax, eax
+L_006BE14B:
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx+12Ch]
+        push eax
+        mov ecx, ebx
+        call ext_0070EA70
+L_006BE15D:
+        mov eax, dword ptr [edi]
+        push 0AA8774h
+        mov ecx, edi
+        call dword ptr [eax+0Ch]
+        mov ecx, eax
+        call ext_00708000
+        mov esi, eax
+        test esi, esi
+        je near ptr L_006BE20B
+        call ext_006C0510
+        cmp eax, -1
+        je short L_006BE1A2
+        cmp eax, dword ptr [mem_00B5E400]
+        je short L_006BE1A2
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov eax, dword ptr [eax+14h]
+        jmp short L_006BE1A5
+L_006BE1A2:
+        mov eax, dword ptr [esi+14h]
+L_006BE1A5:
+        test eax, eax
+        je short L_006BE20B
+        call ext_006C0510
+        cmp eax, -1
+        je short L_006BE1E0
+        cmp eax, dword ptr [mem_00B5E400]
+        je short L_006BE1E0
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax+10h]
+        mov eax, dword ptr [ecx+4]
+        test eax, eax
+        je short L_006BE20B
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne short L_006BE20B
+        jmp short L_006BE1F2
+L_006BE1E0:
+        mov esi, dword ptr [esi+10h]
+        mov eax, dword ptr [esi+4]
+        test eax, eax
+        je short L_006BE20B
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esi]
+        cmp ecx, edx
+        jne short L_006BE20B
+L_006BE1F2:
+        mov eax, dword ptr [eax+4]
+        test eax, eax
+        je short L_006BE20B
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx+12Ch]
+        push eax
+        mov ecx, ebx
+        call ext_0070EAB0
+L_006BE20B:
+        mov ecx, dword ptr [esp+10h]
+        push ebx
+        call ext_0070CED0
+        mov ebx, dword ptr [esp+28h]
+L_006BE219:
+        mov edi, dword ptr [esp+14h]
+L_006BE21D:
+        mov eax, dword ptr [esp+18h]
+        add ebp, 0Ch
+        dec eax
+        mov dword ptr [esp+18h], eax
+        jne near ptr L_006BE016
+        mov ebp, dword ptr [esp+1Ch]
+L_006BE233:
+        mov eax, dword ptr [esp+2Ch]
+        inc ebp
+        cmp ebp, eax
+        mov dword ptr [esp+1Ch], ebp
+        jl near ptr L_006BDF00
+L_006BE244:
+        mov esi, dword ptr [esp+24h]
+        mov ebx, dword ptr [esp+20h]
+L_006BE24C:
+        mov eax, dword ptr [esp+30h]
+        inc esi
+        cmp esi, eax
+        mov dword ptr [esp+24h], esi
+        jl near ptr L_006BDECD
+        pop edi
+        pop ebp
+L_006BE25F:
+        pop esi
+        pop ebx
+        add esp, 24h
+        ret
+    }
+}

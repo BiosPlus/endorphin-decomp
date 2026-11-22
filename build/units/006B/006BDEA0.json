@@ -72,5 +72,7 @@
     "0x006BE207",
     "0x006BE211"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T01:21:51Z"
 }
