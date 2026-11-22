@@ -4,11 +4,31 @@
   "orig_symbol": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_2",
   "src_path": "src/templates/Method0Type.cpp",
   "lifted_path": "lifted/templates/Method0Type.cpp",
-  "name": "ExprParser::Method0Type\u003cCollisionModelDataBase, resetForcesAndImpulses\u003e::vfunc_2",
-  "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
-  "signature": "bool fn_005C61F0(void* self)",
-  "summary": "Loads the first dword of the object pointed to by the stack argument, passes it to ext_005C3170 (resetForcesAndImpulses helper), and returns false.",
+  "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
+  "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+  "signature": "int fn_0060A070(void* self)",
+  "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
+  "fields": [
+    {
+      "class": "ExprParser::Method0Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T08:25:21Z"
+  "lifted_at": "2026-11-22T08:25:28Z"
 }
