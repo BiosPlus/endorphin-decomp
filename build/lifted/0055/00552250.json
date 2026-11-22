@@ -1,0 +1,28 @@
+{
+  "va": "0x00552250",
+  "size": 24,
+  "orig_symbol": "NMCamera::Perspective::vfunc_9",
+  "src_path": "src/NMCamera/auto_tiny.cpp",
+  "lifted_path": "lifted/NMCamera/auto_tiny.cpp",
+  "name": "NMCamera::Perspective::vfunc_9",
+  "class": "NMCamera::Perspective",
+  "signature": "double fn_00552250(void* self)",
+  "summary": "Returns the double at +0xF8, or tail-calls ext_005D05B0 if the dword at +0xA0 is non-zero.",
+  "fields": [
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xA0",
+      "type": "uint32_t",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xF8",
+      "type": "double",
+      "name": "field_0xF8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:41:55Z"
+}

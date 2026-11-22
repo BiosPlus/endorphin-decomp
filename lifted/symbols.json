@@ -6433,6 +6433,13 @@
     "summary": "Stores the double argument (passed on the stack) into the Perspective object at +0xF8.",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x00552250": {
+    "name": "NMCamera::Perspective::vfunc_9",
+    "class": "NMCamera::Perspective",
+    "signature": "double fn_00552250(void* self)",
+    "summary": "Returns the double at +0xF8, or tail-calls ext_005D05B0 if the dword at +0xA0 is non-zero.",
+    "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
+  },
   "0x005522B0": {
     "name": "NMCamera::Perspective::vfunc_20",
     "class": "NMCamera::Perspective",

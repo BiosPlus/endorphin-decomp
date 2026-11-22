@@ -13,9 +13,12 @@ void fn_005521D0(void* self, double value) {
     double* slot = reinterpret_cast<double*>(static_cast<char*>(self) + 0xF8);
     *slot = value;
 }
+// Tail-calls ext_005D05B0 (sub_005D05B0) with the value loaded from +0xA0 when non-zero;
+// otherwise returns the double stored at +0xF8.
+extern "C" double ext_005D05B0(void* self, uint32_t ctx);
 
-// [0x00551D80] NMCamera::Orthogonal::vfunc_0 (30 bytes)
-// @name NMCamera::Orthogonal::vfunc_0
+// otherwise returns the double stored at +0xF8.
+extern "C" double ext_005D05B0(void* self, uint32_t ctx);
 // @class NMCamera::Orthogonal
 // @summary MSVC scalar deleting destructor: calls sub_00551A20 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_00551D80(void* self, int edx_unused, unsigned int flags) {
@@ -43,4 +46,18 @@ void fn_00551C10(void* self, uint32_t unused_stack_arg) {
     using VFuncSlot5 = void (*)(void* self, float* arg);
     VFuncSlot5 fn = reinterpret_cast<VFuncSlot5>(vtbl[5]);                            // slot 5 (+0x14)
     fn(self, &zero);
+}
+
+// [0x00552250] NMCamera::Perspective::vfunc_9 (24 bytes)
+// @name NMCamera::Perspective::vfunc_9
+// @class NMCamera::Perspective
+// @summary Returns the double at +0xF8, or tail-calls ext_005D05B0 if the dword at +0xA0 is non-zero.
+// @field NMCamera::Perspective +0xA0 uint32_t field_0xA0
+// @field NMCamera::Perspective +0xF8 double field_0xF8
+double fn_00552250(void* self) {
+    const uint32_t ctx = lift_field<uint32_t>(self, 0xA0);
+    if (ctx != 0) {
+        return ext_005D05B0(self, ctx);
+    }
+    return lift_field<double>(self, 0xF8);
 }
