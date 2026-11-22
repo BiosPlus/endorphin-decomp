@@ -568,5 +568,7 @@
     "0x00719A31",
     "0x00719A38"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T03:05:18Z"
 }
