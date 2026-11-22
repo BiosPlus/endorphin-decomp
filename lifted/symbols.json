@@ -7277,6 +7277,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006268F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006274D0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorAbsoluteOrientation::setReference)",
+    "class": "ExprParser::ROWriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e",
+    "signature": "void* fn_006274D0(void* self)",
+    "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x006294C0": {
     "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
     "class": "Sensors::SensorAbsoluteGeneralEulers",

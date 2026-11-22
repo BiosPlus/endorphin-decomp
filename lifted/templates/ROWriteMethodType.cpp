@@ -36,3 +36,13 @@ void* fn_0059EB40(void* self) {
 void* fn_006035B0(void* self) {
     return self;
 }
+
+// [0x006274D0] ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>::vfunc_16 (30 bytes)
+// @name ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorAbsoluteOrientation::setReference)
+// @class ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>
+// @summary Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A93424), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_006274D0(void* self) {
+    return self;
+}
