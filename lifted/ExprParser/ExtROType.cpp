@@ -71,3 +71,21 @@ uint32_t fn_0066AFA0(void* self) {
     using VFunc = uint32_t (*)(void*);
     return reinterpret_cast<VFunc>(vtable[21])(newThis);
 }
+
+// [0x0066AF40] ExprParser::ExtROType::vfunc_3 (20 bytes)
+// @name ExprParser::ExtROType::vfunc_3
+// @class ExprParser::ExtROType
+// @summary Follows this->field_0x00 and its first pointer, then tail-calls virtual slot 3 of the object at +4 with the intermediate pointer as its argument.
+// @field ExprParser::ExtROType +0x00 void* field_0x00
+
+// Virtual slot 3 of the target object: thiscall, one stack argument, returns in eax.
+using ExtROSlot3Fn = uintptr_t(__thiscall*)(void* self, void* arg);
+
+uintptr_t fn_0066AF40(void* self) {
+    unsigned char* outer  = *reinterpret_cast<unsigned char**>(self);
+    unsigned char* inner  = *reinterpret_cast<unsigned char**>(outer);
+    unsigned char* target = *reinterpret_cast<unsigned char**>(inner + 4);
+    void** vtbl = *reinterpret_cast<void***>(target);
+    auto fn = reinterpret_cast<ExtROSlot3Fn>(vtbl[3]);
+    return fn(target, inner);
+}

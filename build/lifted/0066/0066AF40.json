@@ -1,0 +1,22 @@
+{
+  "va": "0x0066AF40",
+  "size": 20,
+  "orig_symbol": "ExprParser::ExtROType::vfunc_3",
+  "src_path": "src/ExprParser/ExtROType.cpp",
+  "lifted_path": "lifted/ExprParser/ExtROType.cpp",
+  "name": "ExprParser::ExtROType::vfunc_3",
+  "class": "ExprParser::ExtROType",
+  "signature": "uintptr_t fn_0066AF40(void* self)",
+  "summary": "Follows this-\u003efield_0x00 and its first pointer, then tail-calls virtual slot 3 of the object at +4 with the intermediate pointer as its argument.",
+  "fields": [
+    {
+      "class": "ExprParser::ExtROType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:25Z"
+}
