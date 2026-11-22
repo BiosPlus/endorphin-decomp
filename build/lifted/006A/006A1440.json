@@ -1,0 +1,28 @@
+{
+  "va": "0x006A1440",
+  "size": 69,
+  "orig_symbol": "ExprParser::Operators::And::vfunc_3",
+  "src_path": "src/ExprParser/Operators/And.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/And.cpp",
+  "name": "ExprParser::Operators::And::vfunc_3",
+  "class": "ExprParser::Operators::And",
+  "signature": "void __stdcall fn_006A1440(void* a1, void* a2)",
+  "summary": "Short-circuit AND: tests the left operand (vtable +0x0C) against this, tests the right operand against arg only if the left passed, then forwards the boolean result to this's operand vtable +0x24.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::And",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_04"
+    },
+    {
+      "class": "ExprParser::ExprToken",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:50Z"
+}

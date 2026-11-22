@@ -9951,6 +9951,13 @@
     "summary": "Evaluates the left operand (vfunc 42) on (self, ctx), negates the result, and passes it to the left operand's vfunc 9.",
     "lifted_path": "lifted/ExprParser/Operators/NotEquals.cpp"
   },
+  "0x006A1440": {
+    "name": "ExprParser::Operators::And::vfunc_3",
+    "class": "ExprParser::Operators::And",
+    "signature": "void __stdcall fn_006A1440(void* a1, void* a2)",
+    "summary": "Short-circuit AND: tests the left operand (vtable +0x0C) against this, tests the right operand against arg only if the left passed, then forwards the boolean result to this's operand vtable +0x24.",
+    "lifted_path": "lifted/ExprParser/Operators/And.cpp"
+  },
   "0x006A16B0": {
     "name": "ExprParser::Operators::Not::vfunc_3",
     "class": "ExprParser::Operators::Not",
