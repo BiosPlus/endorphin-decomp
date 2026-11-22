@@ -22,5 +22,6 @@ struct VTable_Fields {
     // +0x6C  void*                    slot27  (evidence: 0x005C3640)
     // +0x70  void*                    slot28  (evidence: 0x006036B0)
     // +0x74  void*                    slot29  (evidence: 0x0064F910)
+    // +0x78  void*                    slot30  (evidence: 0x0064F940)
 };
 } // namespace lifted_layout
