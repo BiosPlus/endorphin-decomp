@@ -14762,3 +14762,696 @@ L_79D328:
         ret 8
     }
 }
+
+// [0x0079A290] sub_0079A290 (2073 bytes)
+extern "C" void ext_007AF5E0();
+extern "C" __declspec(naked) int __cdecl fn_0079A290(void* obj, int id, void** out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp eax, 0x12d
+        ja near ptr L79A508
+        je near ptr L79A4BE
+        lea ecx, [eax - 0xfe]
+        cmp ecx, 0x2b
+        ja near ptr L79AA50
+        xor edx, edx
+        mov dl, byte ptr [ecx + 0x79ab1c]
+        jmp dword ptr [edx*4 + 0x79aaac]
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x3c]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x24]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x28]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x40]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x44]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x46]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x48]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x4a]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xa0]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xb0]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xb4]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xb8]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x4c]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x4e]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x50]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x54]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x56]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x68]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x6c]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x72]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x74]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x78]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xc4]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x70]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], dx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x7c]
+        add eax, 0x4
+        mov ecx, dword ptr [eax - 0x4]
+        mov word ptr [ecx], dx
+        mov eax, dword ptr [eax]
+        mov cx, word ptr [esi + 0x7e]
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+L79A4BE:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0xf8]
+        add eax, 0x4
+        mov edx, dword ptr [eax - 0x4]
+        mov dword ptr [edx], ecx
+        xor edx, edx
+        mov dx, word ptr [esi + 0x90]
+        xor ecx, ecx
+        mov cx, word ptr [esi + 0x4e]
+        sub ecx, edx
+        cmp ecx, 0x1
+        jle near ptr L79AAA2
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [esi + 0xfc]
+        add eax, 0x4
+        mov dword ptr [edx], ecx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esi + 0x100]
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+L79A508:
+        cmp eax, 0x155
+        ja near ptr L79A768
+        je near ptr L79A750
+        lea ecx, [eax - 0x131]
+        cmp ecx, 0x23
+        ja near ptr L79AA50
+        xor edx, edx
+        mov dl, byte ptr [ecx + 0x79aba0]
+        jmp dword ptr [edx*4 + 0x79ab48]
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xa4]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xa8]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xac]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xbc]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x58]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov eax, dword ptr [esi + 0x5c]
+        pop esi
+        mov dword ptr [ecx + 0x4], eax
+        mov eax, 0x1
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x8c]
+        add eax, 0x4
+        mov ecx, dword ptr [eax - 0x4]
+        mov word ptr [ecx], dx
+        mov eax, dword ptr [eax]
+        mov cx, word ptr [esi + 0x8e]
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x80]
+        add eax, 0x4
+        mov edx, dword ptr [eax - 0x4]
+        add eax, 0x4
+        mov dword ptr [edx], ecx
+        mov edx, dword ptr [eax - 0x4]
+        mov ecx, dword ptr [esi + 0x84]
+        mov dword ptr [edx], ecx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esi + 0x88]
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0xd0]
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0xd4]
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x90]
+        add eax, 0x4
+        mov ecx, dword ptr [eax - 0x4]
+        mov word ptr [ecx], dx
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [esi + 0x94]
+        pop esi
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x30]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x34]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov cx, word ptr [esi + 0x42]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov cx, word ptr [esi + 0xd8]
+        add eax, 0x4
+        mov edx, dword ptr [eax - 0x4]
+        mov word ptr [edx], cx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esi + 0xdc]
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0xec]
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0xf0]
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov ax, word ptr [esi + 0x104]
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0x108]
+        add eax, 0x4
+        mov ecx, dword ptr [eax - 0x4]
+        mov word ptr [ecx], dx
+        mov eax, dword ptr [eax]
+        mov cx, word ptr [esi + 0x10a]
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x110]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov cx, word ptr [esi + 0x106]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x114]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A750:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x60]
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov edx, dword ptr [esi + 0x64]
+        pop esi
+        mov dword ptr [eax + 0x4], edx
+        mov eax, 0x1
+        ret
+L79A768:
+        cmp eax, 0x8216
+        ja near ptr L79A93D
+        je near ptr L79A928
+        cmp eax, 0x80e4
+        ja near ptr L79A8B5
+        je near ptr L79A856
+        cmp eax, 0x213
+        ja short L79A7F7
+        je short L79A7E0
+        mov ecx, eax
+        sub ecx, 0x211
+        je short L79A7CB
+        dec ecx
+        jne near ptr L79AA50
+        mov eax, dword ptr [esp + 0x10]
+        mov dx, word ptr [esi + 0xe4]
+        add eax, 0x4
+        mov ecx, dword ptr [eax - 0x4]
+        mov word ptr [ecx], dx
+        mov eax, dword ptr [eax]
+        mov cx, word ptr [esi + 0xe6]
+        pop esi
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+L79A7CB:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0xe0]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A7E0:
+        mov edx, dword ptr [esp + 0x10]
+        mov cx, word ptr [esi + 0xe8]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov word ptr [eax], cx
+        mov eax, 0x1
+        ret
+L79A7F7:
+        cmp eax, 0x214
+        je short L79A841
+        cmp eax, 0x80e3
+        jne near ptr L79AA50
+        cmp word ptr [esi + 0x90], 0x1
+        jne short L79A82F
+        mov edx, dword ptr [esi + 0x94]
+        cmp word ptr [edx], 0x1
+        jne short L79A82F
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, 0x1
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov word ptr [edx], ax
+        ret
+L79A82F:
+        mov ecx, dword ptr [esp + 0x10]
+        xor eax, eax
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov word ptr [edx], ax
+        mov eax, 0x1
+        ret
+L79A841:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0xf4]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        ret
+L79A856:
+        xor eax, eax
+        mov ax, word ptr [esi + 0x42]
+        dec eax
+        cmp eax, 0x3
+        ja near ptr L79AAA2
+        jmp dword ptr [eax*4 + 0x79abc4]
+        mov eax, dword ptr [esp + 0x10]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], 0x2
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov word ptr [eax], 0x1
+        mov eax, 0x1
+        ret
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, 0x1
+        pop esi
+        mov edx, dword ptr [ecx]
+        mov word ptr [edx], 0x3
+        ret
+        mov eax, dword ptr [esp + 0x10]
+        pop esi
+        mov ecx, dword ptr [eax]
+        mov eax, 0x1
+        mov word ptr [ecx], 0x0
+        ret
+L79A8B5:
+        cmp eax, 0x8214
+        ja short L79A908
+        je short L79A8F3
+        mov ecx, eax
+        sub ecx, 0x80e5
+        je short L79A8E1
+        dec ecx
+        jne near ptr L79AA50
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x38]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A8E1:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x2c]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A8F3:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x130]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A908:
+        cmp eax, 0x8215
+        jne near ptr L79AA50
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x134]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A928:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x138]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A93D:
+        cmp eax, 0x8298
+        ja near ptr L79A9C9
+        je short L79A9B4
+        lea ecx, [eax - 0x8217]
+        cmp ecx, 0x3
+        ja near ptr L79AA50
+        jmp dword ptr [ecx*4 + 0x79abd4]
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x13c]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x140]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x144]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x148]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A9B4:
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0xc0]
+        pop esi
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79A9C9:
+        cmp eax, 0x8773
+        ja short L79AA49
+        je short L79AA26
+        cmp eax, 0x83bb
+        je short L79AA03
+        cmp eax, 0x8649
+        jne short L79AA50
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x120]
+        add eax, 0x4
+        mov edx, dword ptr [eax - 0x4]
+        mov dword ptr [edx], ecx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esi + 0x124]
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+L79AA03:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x128]
+        add eax, 0x4
+        mov ecx, dword ptr [eax - 0x4]
+        mov dword ptr [ecx], edx
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [esi + 0x12c]
+        pop esi
+        mov dword ptr [eax], ecx
+        mov eax, 0x1
+        ret
+L79AA26:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x118]
+        add eax, 0x4
+        mov edx, dword ptr [eax - 0x4]
+        mov dword ptr [edx], ecx
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esi + 0x11c]
+        pop esi
+        mov dword ptr [edx], eax
+        mov eax, 0x1
+        ret
+L79AA49:
+        cmp eax, 0x923f
+        je short L79AA8B
+L79AA50:
+        push edi
+        cmp eax, 0xffff
+        mov edi, 0xaafaa0
+        ja short L79AA62
+        mov edi, 0xb5d2c0
+L79AA62:
+        push eax
+        push esi
+        call ext_007AF5E0
+        mov ecx, dword ptr [eax + 0x10]
+        mov edx, dword ptr [esi]
+        push ecx
+        push edi
+        push edx
+        push 0xaafac0
+        push 0xaafbf8
+        call ext_0079B140
+        add esp, 0x1c
+        mov eax, 0x1
+        pop edi
+        pop esi
+        ret
+L79AA8B:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x98]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov eax, dword ptr [esi + 0x9c]
+        mov dword ptr [ecx + 0x4], eax
+L79AAA2:
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
