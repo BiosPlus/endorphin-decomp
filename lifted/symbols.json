@@ -6070,9 +6070,9 @@
   },
   "0x0059EB40": {
     "name": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData\u003e::vfunc_16",
-    "class": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
-    "signature": "void* fn_0059EB40(void* self)",
-    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A2FB54 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "class": "ExprParser::ROWriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",
+    "signature": "void* fn_004FDB20(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A402C4 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
   "0x005A7110": {
