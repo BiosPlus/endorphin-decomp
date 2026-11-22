@@ -18,8 +18,10 @@ void* __thiscall fn_005EFF60(void* self, void* out) {
     new (out) std::string(mem_0096B92C);
     return out;
 }
+extern "C" void __thiscall ext_005EBC10(void* self, const float* value);
+extern "C" int mem_00924FE4;
 
-// [0x005E0E70]
+extern "C" int mem_00924FE4;
 // @name NMData::FixedPathJointData::vfunc_0_off_154
 // @class NMData::FixedPathJointData
 // @summary If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).
@@ -115,4 +117,15 @@ void fn_005EB890(void* self, void* arg, bool flag) {
         reinterpret_cast<void (*)(void*, void*)>(svt[0x24 / sizeof(void*)])(sub, arg);
         reinterpret_cast<void (*)(void*, void*, int)>(svt[0x28 / sizeof(void*)])(sub, arg, 1);
     }
+}
+
+// [0x005ECCF0] NMData::FixedPathJointData::vfunc_4_off_C (26 bytes)
+// @name NMData::FixedPathJointData::vfunc_4_off_C
+// @class NMData::FixedPathJointData
+// @summary Forwards a float (read from the argument pointer) to ext_005EBC10 on the base subobject at this-0xC.
+// @field NMData::FixedPathJointData +0x00 none (no direct field access; only the this-0xC base adjustment)
+void fn_005ECCF0(void* self, const float* value) {
+    float v = *value;
+    void* base = static_cast<unsigned char*>(self) - 0xC;
+    ext_005EBC10(base, &v);
 }

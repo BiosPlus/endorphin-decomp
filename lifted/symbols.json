@@ -8416,6 +8416,13 @@
     "summary": "Returns early if kind equals the stored field; otherwise maps kind 5 to 3 and tail-forwards to NMData::FixedPathJointData::vfunc_63 (ext_005EB920).",
     "lifted_path": "lifted/NMData/RPROJointData.cpp"
   },
+  "0x005ECCF0": {
+    "name": "NMData::FixedPathJointData::vfunc_4_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005ECCF0(void* self, const float* value)",
+    "summary": "Forwards a float (read from the argument pointer) to ext_005EBC10 on the base subobject at this-0xC.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EF8A0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",

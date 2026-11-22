@@ -1,0 +1,22 @@
+{
+  "va": "0x005ECCF0",
+  "size": 26,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_4_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_4_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void fn_005ECCF0(void* self, const float* value)",
+  "summary": "Forwards a float (read from the argument pointer) to ext_005EBC10 on the base subobject at this-0xC.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x0",
+      "type": "none (no direct field access; only the this-0xC base",
+      "name": "adjustment)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T14:52:06Z"
+}
