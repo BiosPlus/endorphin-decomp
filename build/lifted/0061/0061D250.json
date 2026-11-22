@@ -1,0 +1,14 @@
+{
+  "va": "0x0061D250",
+  "size": 72,
+  "orig_symbol": "NMData::Constraint::vfunc_68",
+  "src_path": "src/NMData/Constraint.cpp",
+  "lifted_path": "lifted/NMData/Constraint.cpp",
+  "name": "NMData::Constraint::vfunc_68",
+  "class": "NMData::Constraint",
+  "signature": "void fn_0061D250(float* out)",
+  "summary": "Writes a constant 3-float vector (0,0,0 on first use) to the caller-supplied return buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:43Z"
+}

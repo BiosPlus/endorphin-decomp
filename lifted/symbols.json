@@ -7980,6 +7980,13 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint\u003e object (isLinearEnabled), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061D250": {
+    "name": "NMData::Constraint::vfunc_68",
+    "class": "NMData::Constraint",
+    "signature": "void fn_0061D250(float* out)",
+    "summary": "Writes a constant 3-float vector (0,0,0 on first use) to the caller-supplied return buffer.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x0061D370": {
     "name": "NMData::HingeConstraint::vfunc_1_off_C",
     "class": "NMData::HingeConstraint",
