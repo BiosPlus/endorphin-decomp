@@ -1,0 +1,22 @@
+{
+  "va": "0x005B6880",
+  "size": 74,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_6_off_C",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_6_off_C",
+  "class": "NMData::MetaBodyData",
+  "signature": "void fn_005B6880(void* self, float* out)",
+  "summary": "If field_0x14C is non-null, copy the xyz of the vec3 returned by ext_005B11F0(field+0x24) into the out vec4 and zero its w component.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x14C",
+      "type": "void*",
+      "name": "field_0x14C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:47Z"
+}

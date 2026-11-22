@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::MetaBodyData:
 namespace lifted_layout {
 struct NMData_MetaBodyData_Fields {
-    // +0x14C void*                    field_0x14C  (evidence: 0x005B68D0)
+    // +0x14C void*                    field_0x14C  (evidence: 0x005B6880, 0x005B68D0)
 };
 } // namespace lifted_layout

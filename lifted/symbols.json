@@ -7035,6 +7035,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x100.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B6880": {
+    "name": "NMData::MetaBodyData::vfunc_6_off_C",
+    "class": "NMData::MetaBodyData",
+    "signature": "void fn_005B6880(void* self, float* out)",
+    "summary": "If field_0x14C is non-null, copy the xyz of the vec3 returned by ext_005B11F0(field+0x24) into the out vec4 and zero its w component.",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005B68D0": {
     "name": "NMData::MetaBodyData::vfunc_0_off_C",
     "class": "NMData::MetaBodyData",
