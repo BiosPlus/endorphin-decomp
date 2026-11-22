@@ -1216,6 +1216,13 @@
     "summary": "Pure jump thunk forwarding to GetStringLiteral_00440680.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00440940": {
+    "name": "MultiTrackView::DiamondMarker::vfunc_3",
+    "class": "MultiTrackView::DiamondMarker",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "Maps r = this-\u003evfunc_4(arg) through a fixed table: r\u003c0 -\u003e 0, r in {0,1} -\u003e 3, r==2 -\u003e 1, r\u003e=3 -\u003e 0.",
+    "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp"
+  },
   "0x004409F0": {
     "name": "sub_004409F0",
     "signature": "extern \"C\" void __fastcall fn_004409F0(void* self)",

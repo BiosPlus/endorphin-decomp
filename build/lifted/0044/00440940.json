@@ -1,0 +1,22 @@
+{
+  "va": "0x00440940",
+  "size": 47,
+  "orig_symbol": "MultiTrackView::DiamondMarker::vfunc_3",
+  "src_path": "src/MultiTrackView/DiamondMarker.cpp",
+  "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp",
+  "name": "MultiTrackView::DiamondMarker::vfunc_3",
+  "class": "MultiTrackView::DiamondMarker",
+  "signature": "inline R lift_vcall(void* obj, A... args)",
+  "summary": "Maps r = this-\u003evfunc_4(arg) through a fixed table: r\u003c0 -\u003e 0, r in {0,1} -\u003e 3, r==2 -\u003e 1, r\u003e=3 -\u003e 0.",
+  "fields": [
+    {
+      "class": "MultiTrackView::DiamondMarker",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:48Z"
+}
