@@ -15463,3 +15463,649 @@ extern "C" __declspec(naked) void __fastcall fn_00773E10(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00773660] sub_00773660 (1968 bytes)
+extern "C" void ext_006D80A0();
+extern "C" int mem_0092A270;
+extern "C" int mem_0092A278;
+extern "C" int mem_00996D18;
+extern "C" int mem_00996D10;
+extern "C" int mem_00996D08;
+extern "C" int mem_00991558;
+extern "C" int mem_00996D00;
+extern "C" int mem_00996CF8;
+extern "C" int mem_00996CF0;
+extern "C" int mem_00996CE8;
+extern "C" int mem_00996CE0;
+extern "C" int mem_00996CD8;
+extern "C" int mem_00996CD0;
+extern "C" int mem_00996BE8;
+extern "C" int mem_00996CC8;
+extern "C" int mem_00996CC0;
+extern "C" int mem_00996CB8;
+
+// [0x00773660] sub_00773660 (1968 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00773660(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b9338
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x18
+        push esi
+        fld qword ptr [esp + 0x2c]
+        fcomp qword ptr [mem_0092A270]
+        fld qword ptr [esp + 0x34]
+        fnstsw ax
+        test ah, 0x40
+        je L773722
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L7736DA
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L7736DA
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x1
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L7736DA:
+        fcom qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L773722
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L773722
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x2
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773722:
+        fld qword ptr [esp + 0x2c]
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L77381B
+        fld st(1)
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L773783
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L773783
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x3
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773783:
+        fld st(1)
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L7737CF
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L7737CF
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x4
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L7737CF:
+        fld st(1)
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L77381B
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L77381B
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x5
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L77381B:
+        fcom qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L7738C4
+        fld st(1)
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L773878
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L773878
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x6
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773878:
+        fld st(1)
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L7738C4
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x40
+        je L7738C4
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x7
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L7738C4:
+        fcom qword ptr [mem_00996D18]
+        fnstsw ax
+        test ah, 0x40
+        je L77391D
+        fld st(1)
+        fcomp qword ptr [mem_00996D18]
+        fnstsw ax
+        test ah, 0x40
+        je L77391D
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_00996D18]
+        fnstsw ax
+        test ah, 0x40
+        je L77391D
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x8
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L77391D:
+        fcom qword ptr [mem_00996D10]
+        fnstsw ax
+        test ah, 0x40
+        je L773976
+        fld st(1)
+        fcomp qword ptr [mem_00996D10]
+        fnstsw ax
+        test ah, 0x40
+        je L773976
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_00996D10]
+        fnstsw ax
+        test ah, 0x40
+        je L773976
+        fstp st(0)
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0x9
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773976:
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L7739AA
+        fld st(1)
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L7739AA
+        fld qword ptr [esp + 0x3c]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        je L7739AA
+        fstp st(0)
+        jmp L773A8D
+    L7739AA:
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x1
+        jne L7739E5
+        fcom qword ptr [esp + 0x3c]
+        fnstsw ax
+        test ah, 0x1
+        jne L7739E5
+        fld st(1)
+        fcomp qword ptr [esp + 0x3c]
+        xor ecx, ecx
+        fnstsw ax
+        test ah, 0x1
+        jne L7739D9
+        mov edx, 0x1
+        mov esi, 0x2
+        jmp L773A43
+    L7739D9:
+        mov edx, 0x2
+        mov esi, 0x1
+        jmp L773A43
+    L7739E5:
+        fld st(1)
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x1
+        jne L773A22
+        fld st(1)
+        fcomp qword ptr [esp + 0x3c]
+        fnstsw ax
+        test ah, 0x1
+        jne L773A22
+        fcom qword ptr [esp + 0x3c]
+        xor edx, edx
+        fnstsw ax
+        test ah, 0x1
+        jne L773A16
+        mov ecx, 0x1
+        mov esi, 0x2
+        jmp L773A43
+    L773A16:
+        mov ecx, 0x2
+        mov esi, 0x1
+        jmp L773A43
+    L773A22:
+        fcom st(1)
+        xor esi, esi
+        fnstsw ax
+        test ah, 0x1
+        jne L773A39
+        mov ecx, 0x1
+        mov edx, 0x2
+        jmp L773A43
+    L773A39:
+        mov ecx, 0x2
+        mov edx, 0x1
+    L773A43:
+        fstp qword ptr [esp + ecx*8 + 0x4]
+        fstp qword ptr [esp + edx*8 + 0x4]
+        fld qword ptr [esp + 0x3c]
+        fstp qword ptr [esp + esi*8 + 0x4]
+        fld qword ptr [esp + 0x14]
+        fdiv qword ptr [esp + 0x4]
+        fcom qword ptr [mem_00996D08]
+        fnstsw ax
+        test ah, 0x41
+        jne L773BAD
+        fstp st(0)
+        fld qword ptr [esp + 0xc]
+        fadd qword ptr [esp + 0x4]
+        fadd qword ptr [esp + 0x14]
+        fmul qword ptr [mem_00991558]
+        fcom qword ptr [mem_00996D00]
+        fnstsw ax
+        test ah, 0x1
+        je L773AB7
+    L773A8D:
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0xfa
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773AB7:
+        fcom qword ptr [mem_00996CF8]
+        fnstsw ax
+        test ah, 0x1
+        je L773AEE
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0xfb
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773AEE:
+        fcom qword ptr [mem_00996CF0]
+        fnstsw ax
+        test ah, 0x1
+        je L773B25
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0xfc
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773B25:
+        fcom qword ptr [mem_00996D08]
+        fnstsw ax
+        test ah, 0x1
+        je L773B5C
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x24], -1
+        fstp st(0)
+        call ext_006D80A0
+        mov eax, 0xfd
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773B5C:
+        fcomp qword ptr [mem_00996CE8]
+        mov dword ptr [esp + 0x24], -1
+        lea ecx, [esp + 0x2c]
+        fnstsw ax
+        test ah, 0x1
+        je L773B91
+        call ext_006D80A0
+        mov eax, 0xfe
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773B91:
+        call ext_006D80A0
+        mov eax, 0xff
+        pop esi
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    L773BAD:
+        fld qword ptr [esp + 0x4]
+        fld qword ptr [esp + 0xc]
+        fdiv st, st(1)
+        push edi
+        xor edi, edi
+        fld qword ptr [mem_0092A270]
+        fsub st, st(3)
+        fld st(0)
+        fmul qword ptr [mem_00996CE0]
+        fadd st, st(4)
+        fld st(2)
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L773C01
+        fstp st(0)
+        cmp esi, 0x2
+        fstp st(0)
+        jne L773BEA
+        mov edi, 0x32
+        jmp L773D8A
+    L773BEA:
+        sub ecx, 0x2
+        neg ecx
+        sbb ecx, ecx
+        and ecx, 0x50
+        add ecx, 0x82
+        mov edi, ecx
+        jmp L773D8A
+    L773C01:
+        fld st(0)
+        fmul qword ptr [mem_00996CD8]
+        fadd st, st(4)
+        fld st(2)
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L773C88
+        fstp st(0)
+        test ecx, ecx
+        fstp st(0)
+        jne L773C3C
+        cmp edx, 0x1
+        jne L773C2D
+        mov edi, 0x28
+        jmp L773D8A
+    L773C2D:
+        cmp esi, 0x1
+        jne L773C3C
+        mov edi, 0xdc
+        jmp L773D8A
+    L773C3C:
+        test edx, edx
+        jne L773C5E
+        cmp ecx, 0x1
+        jne L773C4F
+        mov edi, 0x3c
+        jmp L773D8A
+    L773C4F:
+        cmp esi, 0x1
+        jne L773C5E
+        mov edi, 0x78
+        jmp L773D8A
+    L773C5E:
+        test esi, esi
+        jne L773D8A
+        cmp ecx, 0x1
+        jne L773C75
+        mov edi, 0xc8
+        jmp L773D8A
+    L773C75:
+        cmp edx, 0x1
+        jne L773D8A
+        mov edi, 0x8c
+        jmp L773D8A
+    L773C88:
+        fld st(0)
+        fmul qword ptr [mem_00996CD0]
+        fadd st, st(4)
+        fld st(2)
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L773D0C
+        fstp st(0)
+        test ecx, ecx
+        fstp st(0)
+        jne L773CC3
+        cmp edx, 0x1
+        jne L773CB4
+        mov edi, 0x1e
+        jmp L773D8A
+    L773CB4:
+        cmp esi, 0x1
+        jne L773CC3
+        mov edi, 0xe6
+        jmp L773D8A
+    L773CC3:
+        test edx, edx
+        jne L773CE5
+        cmp ecx, 0x1
+        jne L773CD6
+        mov edi, 0x46
+        jmp L773D8A
+    L773CD6:
+        cmp esi, 0x1
+        jne L773CE5
+        mov edi, 0x6e
+        jmp L773D8A
+    L773CE5:
+        test esi, esi
+        jne L773D8A
+        cmp ecx, 0x1
+        jne L773CFC
+        mov edi, 0xbe
+        jmp L773D8A
+    L773CFC:
+        cmp edx, 0x1
+        jne L773D8A
+        mov edi, 0x96
+        jmp L773D8A
+    L773D0C:
+        fmul qword ptr [mem_00996BE8]
+        fadd st, st(3)
+        fxch st(1)
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L773D73
+        test ecx, ecx
+        jne L773D3B
+        cmp edx, 0x1
+        jne L773D2F
+        mov edi, 0x14
+        jmp L773D8A
+    L773D2F:
+        cmp esi, 0x1
+        jne L773D3B
+        mov edi, 0xf0
+        jmp L773D8A
+    L773D3B:
+        test edx, edx
+        jne L773D57
+        cmp ecx, 0x1
+        jne L773D4B
+        mov edi, 0x50
+        jmp L773D8A
+    L773D4B:
+        cmp esi, 0x1
+        jne L773D57
+        mov edi, 0x64
+        jmp L773D8A
+    L773D57:
+        test esi, esi
+        jne L773D8A
+        cmp ecx, 0x1
+        jne L773D67
+        mov edi, 0xb4
+        jmp L773D8A
+    L773D67:
+        cmp edx, 0x1
+        jne L773D8A
+        mov edi, 0xa0
+        jmp L773D8A
+    L773D73:
+        test ecx, ecx
+        jne L773D7E
+        mov edi, 0xa
+        jmp L773D8A
+    L773D7E:
+        neg edx
+        sbb edx, edx
+        and edx, 0x50
+        add edx, 0x5a
+        mov edi, edx
+    L773D8A:
+        fcom qword ptr [mem_00996CC8]
+        fnstsw ax
+        test ah, 0x41
+        je L773DD6
+        fcom qword ptr [mem_00996CC0]
+        fnstsw ax
+        test ah, 0x41
+        jne L773DAB
+        fstp st(0)
+        add edi, 0x2
+        jmp L773DD8
+    L773DAB:
+        fcom qword ptr [mem_00996D00]
+        fnstsw ax
+        test ah, 0x41
+        jne L773DBF
+        fstp st(0)
+        add edi, 0x4
+        jmp L773DD8
+    L773DBF:
+        fcomp qword ptr [mem_00996CB8]
+        fnstsw ax
+        test ah, 0x41
+        jne L773DD1
+        add edi, 0x6
+        jmp L773DD8
+    L773DD1:
+        add edi, 0x8
+        jmp L773DD8
+    L773DD6:
+        fstp st(0)
+    L773DD8:
+        fcomp qword ptr [mem_00996CB8]
+        fnstsw ax
+        test ah, 0x41
+        jne L773DE6
+        inc edi
+    L773DE6:
+        lea ecx, [esp + 0x30]
+        mov dword ptr [esp + 0x28], -1
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x20
+    }
+}
