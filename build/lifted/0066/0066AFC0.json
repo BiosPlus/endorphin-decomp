@@ -4,19 +4,25 @@
   "orig_symbol": "ExprParser::ExtROType::vfunc_1",
   "src_path": "src/ExprParser/ExtROType.cpp",
   "lifted_path": "lifted/ExprParser/ExtROType.cpp",
-  "name": "ExprParser::ExtROType::vfunc_1",
+  "name": "ExprParser::ExtROType::vfunc_2",
   "class": "ExprParser::ExtROType",
-  "signature": "void ExprParser_ExtROType_vfunc_1(void* self)",
-  "summary": "Forwards vfunc_1 to the inner object: loads this-\u003e[0] -\u003e P1, P1-\u003e[4] -\u003e P2, then calls P2's vtable slot 1 with P1 as this.",
+  "signature": "void fn_0066BA30(void* self)",
+  "summary": "Forwards the object pointer to ExprParser::ExtROType helper at 0x00672000.",
   "fields": [
     {
       "class": "ExprParser::ExtROType",
       "offset": "+0x0",
       "type": "void*",
       "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ExtROType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:25:22Z"
+  "lifted_at": "2026-11-22T07:25:27Z"
 }
