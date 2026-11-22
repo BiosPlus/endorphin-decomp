@@ -1,0 +1,46 @@
+{
+  "va": "0x0056EAC0",
+  "size": 899,
+  "orig_symbol": "BVHIO::vfunc_13",
+  "src_path": "src/classes/BVHIO.cpp",
+  "lifted_path": "lifted/classes/BVHIO.cpp",
+  "name": "BVHIO::exportBVH",
+  "class": "BVHIO",
+  "signature": "void __thiscall fn_0056EAC0(void* self, const std::string* filename)",
+  "summary": "Exports hierarchy and motion data to a BVH file.",
+  "fields": [
+    {
+      "class": "BVHIO",
+      "offset": "+0x16C",
+      "type": "int32_t",
+      "name": "startFrame"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x170",
+      "type": "int32_t",
+      "name": "endFrame"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x414",
+      "type": "uint32_t",
+      "name": "skeletonData"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x420",
+      "type": "uint32_t",
+      "name": "timeline"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x424",
+      "type": "uint32_t",
+      "name": "progressCallback"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-22T11:17:27Z"
+}

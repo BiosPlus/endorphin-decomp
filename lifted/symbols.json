@@ -6758,6 +6758,13 @@
     "summary": "Formats or resolves a path/string using sub_00640390 and delegates to NMFileIO::vfunc_3, returning arg0.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056EAC0": {
+    "name": "BVHIO::exportBVH",
+    "class": "BVHIO",
+    "signature": "void __thiscall fn_0056EAC0(void* self, const std::string* filename)",
+    "summary": "Exports hierarchy and motion data to a BVH file.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
   "0x005731A0": {
     "name": "OBJIO::vfunc_3",
     "class": "OBJIO",
