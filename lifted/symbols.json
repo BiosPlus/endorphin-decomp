@@ -2214,6 +2214,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFDB8 and tail-calls sub_0045F150.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x004602B0": {
+    "name": "MultiTrackView::TriggeredEventView::GetTypeName",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "void* fn_004602B0(void* self, void* ret_slot)",
+    "summary": "Constructs std::string \"TriggeredEventView\" in the caller's return slot and returns that slot (self is unused).",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x004602E0": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_254",
     "class": "MultiTrackView::TriggeredEventView",
