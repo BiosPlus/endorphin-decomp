@@ -671,3 +671,18 @@ uint32_t fn_006A09A0(void* self, void* a, void* b) {
     auto fn = reinterpret_cast<VirtualBinaryFn>(lift_field<void*>(vtbl, 0xB4));
     return fn(obj, a, b);
 }
+
+// [0x006A16E0] ExprParser::Operators::Subtract::vfunc_3 (28 bytes)
+// @name ExprParser::Operators::Subtract::vfunc_3
+// @class ExprParser::Operators::Subtract
+// @summary Forwards (a, b) to virtual slot +0xB0 of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.
+// @field <unknown: arg a> +0x04 void* field_0x04
+using VirtualBinaryFn = uint32_t (*)(void* self, void* a, void* b);
+
+uint32_t fn_006A16E0(void* self, void* a, void* b) {
+    (void)self;
+    void* obj = lift_field<void*>(a, 0x04);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto fn = reinterpret_cast<VirtualBinaryFn>(lift_field<void*>(vtbl, 0xB0));
+    return fn(obj, a, b);
+}

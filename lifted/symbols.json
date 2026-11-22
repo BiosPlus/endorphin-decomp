@@ -9034,6 +9034,13 @@
     "summary": "Forwards (a, b) to virtual slot +0xB4 of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006A16E0": {
+    "name": "ExprParser::Operators::Subtract::vfunc_3",
+    "class": "ExprParser::Operators::Subtract",
+    "signature": "uint32_t fn_006A16E0(void* self, void* a, void* b)",
+    "summary": "Forwards (a, b) to virtual slot +0xB0 of the object held at a+0x4 and returns that call's result. The incoming this (ecx) is unused.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x006A1CD0": {
     "name": "ExprParser::Operators::Abs::vfunc_3",
     "class": "ExprParser::Operators::Abs",
