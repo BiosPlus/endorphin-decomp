@@ -1,0 +1,22 @@
+{
+  "va": "0x004CA380",
+  "size": 34,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_59",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_59",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void __thiscall fn_004CA380(void* self, void* a)",
+  "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:36:51Z"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x004C4DD0",
+  "size": 34,
+  "orig_symbol": "NMData::ForceEventData::vfunc_59",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_59",
+  "class": "NMData::ForceEventData",
+  "signature": "extern \"C\" void __thiscall fn_004C4DD0(void* self, void* a)",
+  "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:36:51Z"
+}

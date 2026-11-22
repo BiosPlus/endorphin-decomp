@@ -1,0 +1,22 @@
+{
+  "va": "0x004C7190",
+  "size": 34,
+  "orig_symbol": "NMData::SeverEventData::vfunc_59",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_59",
+  "class": "NMData::SeverEventData",
+  "signature": "extern \"C\" void __thiscall fn_004C7190(void* self, void* a)",
+  "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-22T07:36:51Z"
+}

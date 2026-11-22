@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::BehaviourData:
 namespace lifted_layout {
 struct NMData_BehaviourData_Fields {
+    // +0x0   void**                   vptr  (evidence: 0x004A9B70)
     // +0x228 void*                    field_0x228  (evidence: 0x004A9B50)
 };
 } // namespace lifted_layout
