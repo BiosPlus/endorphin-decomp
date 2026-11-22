@@ -297,3 +297,13 @@ void fn_004B7A90(void* self, int32_t value) {
     float* ptr = *static_cast<float**>(self);
     *ptr = static_cast<float>(value);
 }
+
+// [0x004B7A80] ExprParser::PrimitiveProxyType<float>::vfunc_7 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_7
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Stores the float argument through the proxy's float* pointer (*ptr = value).
+// @field ExprParser::PrimitiveProxyType<float> +0x00 float* ptr
+void fn_004B7A80(void* self, float value) {
+    float* ptr = *reinterpret_cast<float**>(self);
+    *ptr = value;
+}
