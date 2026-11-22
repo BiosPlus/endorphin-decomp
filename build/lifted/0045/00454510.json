@@ -1,0 +1,13 @@
+{
+  "va": "0x00454510",
+  "size": 6,
+  "orig_symbol": "sub_00454510",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "GetConstantAddress_00935E98",
+  "signature": "extern \"C\" void* fn_00454510()",
+  "summary": "Returns the address of the constant global mem_00935E98 (0x00935E98) in eax.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:53:33Z"
+}
