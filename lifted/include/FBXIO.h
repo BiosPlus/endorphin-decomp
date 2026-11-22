@@ -10,6 +10,7 @@
 // Recovered field layout for FBXIO:
 namespace lifted_layout {
 struct FBXIO_Fields {
+    // +0x174 float                    field_0x174  (evidence: 0x005607E0)
     // +0x1F8 uint8_t                  field_0x1f8  (evidence: 0x00562A30)
     // +0x214 uint8_t                  field_0x214  (evidence: 0x00562A30)
 };
