@@ -185,6 +185,7 @@ void fn_0049C080(void* self, float value) {
     *dst = result;
 }
 extern "C" int32_t ext_006A6DE0(double rounded);
+extern "C" uint32_t ext_00498F90();
 
 // [0x004975E0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_3 (61 bytes)
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_3
@@ -214,4 +215,14 @@ int32_t __stdcall fn_00497930(void* arg) {
         ? static_cast<double>(val) + mem_00993828
         : static_cast<double>(val) - mem_00993828;
     return ext_006A6DE0(rounded);
+}
+
+// [0x00499190] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_38 (15 bytes)
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_38
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Calls ext_00498F90 and stores its 32-bit result into self+0x04; takes one stack argument (self) and returns with ret 4.
+// @field ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>> +0x04 uint32_t field_0x04
+void fn_00499190(void* self) {
+    uint32_t result = ext_00498F90();
+    lift_field<uint32_t>(self, 0x04) = result;
 }
