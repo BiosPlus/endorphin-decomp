@@ -1,0 +1,22 @@
+{
+  "va": "0x004CFCA0",
+  "size": 58,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_87",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_87",
+  "class": "NMData::IncarnationEventData",
+  "signature": "void fn_004CFCA0(void* self)",
+  "summary": "If the pointer at +0x184 is set, release it (via 0x4CE8D0 and the MFC80 free thunk) and clear the slot.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:10:21Z"
+}

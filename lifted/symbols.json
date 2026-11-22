@@ -4281,6 +4281,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::IncarnationEventData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CFCA0": {
+    "name": "NMData::IncarnationEventData::vfunc_87",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void fn_004CFCA0(void* self)",
+    "summary": "If the pointer at +0x184 is set, release it (via 0x4CE8D0 and the MFC80 free thunk) and clear the slot.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CFE00": {
     "name": "NMData::IncarnationEventData::vfunc_0",
     "class": "NMData::IncarnationEventData",

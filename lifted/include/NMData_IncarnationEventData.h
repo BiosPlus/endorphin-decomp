@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct NMData_IncarnationEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004CE710) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x004A9B50, 0x004CE8C0, 0x004CF310) // CONFLICT: multiple definitions at +0x0
+    // +0x184 void*                    field_0x184  (evidence: 0x004CFCA0)
 };
 } // namespace lifted_layout
