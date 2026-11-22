@@ -7,12 +7,12 @@ A byte-matching C++ decompilation and portable C++ lifting project for **Endorph
 
 ## Contributing (Phase 2: AI-Assisted C++ Lifting & Struct Recovery)
 
-Phase 1 matched 100% of in-scope functions byte-for-byte, but ~96% of `src/` is x86 `__declspec(naked) __asm`. **Phase 2** lifts those functions into clean, portable C++17 in `lifted/` while recovering function names (`lifted/symbols.json`) and struct layouts (`lifted/include/*.h`) — without touching the verified byte-match in `src/`.
+Phase 1 matched 100% of in-scope functions byte-for-byte, but ~96% of `src/` is x86 `__declspec(naked) __asm`. **Phase 2** lifts those functions into clean, portable C++20 in `lifted/` while recovering function names (`lifted/symbols.json`) and struct layouts (`lifted/include/*.h`) — without touching the verified byte-match in `src/`.
 
 ### What You Need
 
 - **Linux or macOS** (no Windows, Wine, or MSVC 2005 needed for Phase 2)
-- **Go 1.22+** and **g++ or clang++** (used for instant native `-std=c++17 -fsyntax-only` verification)
+- **Go 1.22+** and **g++ or clang++** (used for instant native `-std=c++20 -fsyntax-only` verification)
 - An AI coding CLI: **`claude`** (Claude Code) and/or **`agy`** (Antigravity) for autonomous grinding — or any AI assistant for manual single-function lifts
 - *(Optional, recommended for best naming quality)* Your own legal copy of `endorphin.exe` at `.local/bin/endorphin.exe` so `liftwork claim` can decode `.rdata` string literals and float constants into briefings
 
@@ -44,7 +44,7 @@ Phase 1 matched 100% of in-scope functions byte-for-byte, but ~96% of `src/` is 
    ```bash
    ./.local/bin/liftwork next --scope core --deps-first --limit 5
    ./.local/bin/liftwork claim 0xXXXXXXXX --isolated
-   # Ask your AI to rewrite lifted/wip/fn_XXXXXXXX.cpp in clean C++17 (no __asm/naked/_emit)
+   # Ask your AI to rewrite lifted/wip/fn_XXXXXXXX.cpp in clean C++20 (no __asm/naked/_emit)
    # with @name, @class, @summary, and @field annotations, then verify & merge:
    ./.local/bin/liftwork check 0xXXXXXXXX --model <model@effort>
    ```

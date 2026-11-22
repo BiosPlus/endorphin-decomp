@@ -148,7 +148,7 @@ func buildLiftPrompt(root, addr, editRule, tag, briefing string) (string, string
 Run './.local/bin/liftwork claim %[1]s' first to inspect the disassembly, src/ body, .rdata constants, known callees, and known struct fields.
 Rules:
 - %[2]s
-- Write clean, readable, portable C++17 (include "lift_compat.h"). Zero __asm, __declspec(naked), _emit, or TODO stubs.
+- Write clean, readable, portable C++20 (include "lift_compat.h"; std::bit_cast / std::span available). Zero __asm, __declspec(naked), _emit, or TODO stubs.
 - Keep the // [%[1]s] marker and include structured metadata comments above the function:
     // @name <ClassName::methodName or descriptiveName>
     // @class <ClassName> (when applicable)
@@ -161,7 +161,7 @@ Rules:
 	prompt := fmt.Sprintf(`You are assigned a single function to lift from x86 assembly to clean, portable C++: %[1]s (already claimed below).
 Rules:
 - %[2]s
-- Write clean, readable, portable C++17 (include "lift_compat.h"). Zero __asm, __declspec(naked), _emit, or TODO stubs.
+- Write clean, readable, portable C++20 (include "lift_compat.h"; std::bit_cast / std::span available). Zero __asm, __declspec(naked), _emit, or TODO stubs.
 - Keep the // [%[1]s] marker and include structured metadata comments above the function:
     // @name <ClassName::methodName or descriptiveName>
     // @class <ClassName> (when applicable)
@@ -193,7 +193,7 @@ Rules:
 First read %[4]s — it contains the full lift briefing (TARGET_CPP, RTTI, KNOWN_STRUCT_FIELDS, CALLEES, RDATA_CONSTANTS, SRC_BODY, DISASSEMBLY).
 Rules:
 - %[2]s
-- Write clean, readable, portable C++17 (include "lift_compat.h"). Zero __asm, __declspec(naked), _emit, or TODO stubs.
+- Write clean, readable, portable C++20 (include "lift_compat.h"; std::bit_cast / std::span available). Zero __asm, __declspec(naked), _emit, or TODO stubs.
 - Keep the // [%[1]s] marker and include structured metadata comments above the function:
     // @name <ClassName::methodName or descriptiveName>
     // @class <ClassName> (when applicable)

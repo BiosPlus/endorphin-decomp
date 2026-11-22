@@ -1,10 +1,11 @@
 #pragma once
 
-// Portable C++17 compatibility header for lifted Endorphin 2.7.1 code.
+// Portable C++20 compatibility header for lifted Endorphin 2.7.1 code.
 // Allows lifted functions to be syntax- and type-checked natively on Linux
-// with g++/clang++ (-std=c++17 -fsyntax-only -Ilifted/include -Iinclude).
+// with g++/clang++ (-std=c++20 -fsyntax-only -Ilifted/include -Iinclude).
 
 #include <algorithm>
+#include <bit>
 #include <cfloat>
 #include <climits>
 #include <cmath>
@@ -13,6 +14,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <span>
 
 #ifndef _MSC_VER
 #ifndef __cdecl

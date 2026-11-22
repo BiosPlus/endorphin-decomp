@@ -254,14 +254,14 @@ func findNativeCompiler() (string, error) {
 	return "", fmt.Errorf("neither g++ nor clang++ found in PATH")
 }
 
-// syntaxCheckCpp compiles cppPath with -std=c++17 -fsyntax-only -Wall -Wno-unused.
+// syntaxCheckCpp compiles cppPath with -std=c++20 -fsyntax-only -Wall -Wno-unused.
 func syntaxCheckCpp(cppPath string) (string, error) {
 	cc, err := findNativeCompiler()
 	if err != nil {
 		return "", err
 	}
 	args := []string{
-		"-std=c++17",
+		"-std=c++20",
 		"-fsyntax-only",
 		"-Wall",
 		"-Wno-unused",
