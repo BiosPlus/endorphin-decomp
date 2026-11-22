@@ -5941,10 +5941,10 @@
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
   "0x00594440": {
-    "name": "ExprParser::Function2Type\u003cWorld\u003e::vfunc_16",
-    "class": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
-    "signature": "void* fn_00594440(void* self)",
-    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A87014 (source type mem_00A2E2F8) and returns the result or NULL.",
+    "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
+    "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
+    "signature": "void* fn_004ECA70(void* self)",
+    "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Function2Type.cpp"
   },
   "0x005945D0": {
