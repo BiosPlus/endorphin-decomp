@@ -1,0 +1,40 @@
+{
+  "va": "0x0053A610",
+  "size": 55,
+  "orig_symbol": "Primitives::Plane::vfunc_25",
+  "src_path": "src/Primitives/Plane.cpp",
+  "lifted_path": "lifted/Primitives/Plane.cpp",
+  "name": "Primitives::Plane::vfunc_25",
+  "class": "Primitives::Plane",
+  "signature": "void fn_0053A610(void* self, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t arg3)",
+  "summary": "If global mem_00AEE8A8 is set, stores ext_00661A80(global, self+0x14 or null) into +0x30; then sets +0x08 = arg3, +0x20 = 0, and +0x04 = 1.",
+  "fields": [
+    {
+      "class": "Primitives::Plane",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Primitives::Plane",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Primitives::Plane",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Plane",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:44:44Z"
+}

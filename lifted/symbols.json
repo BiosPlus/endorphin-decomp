@@ -5418,6 +5418,13 @@
     "summary": "Allocates one OpenGL display list via glGenLists(1) and stores its id at this+0x34.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053A610": {
+    "name": "Primitives::Plane::vfunc_25",
+    "class": "Primitives::Plane",
+    "signature": "void fn_0053A610(void* self, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t arg3)",
+    "summary": "If global mem_00AEE8A8 is set, stores ext_00661A80(global, self+0x14 or null) into +0x30; then sets +0x08 = arg3, +0x20 = 0, and +0x04 = 1.",
+    "lifted_path": "lifted/Primitives/Plane.cpp"
+  },
   "0x0053A710": {
     "name": "HasCustomBufferedTMPtr::vfunc_5",
     "class": "HasCustomBufferedTMPtr",
