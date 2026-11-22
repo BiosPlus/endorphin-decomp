@@ -8357,6 +8357,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
     "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
   },
+  "0x0066BBA0": {
+    "name": "ExprParser::VPtrProxyType::vfunc_7",
+    "class": "ExprParser::VPtrProxyType",
+    "signature": "void fn_0066BBA0(VPtrProxyHolder** self, float value)",
+    "summary": "Forwards a float argument to vfunc_7 of the object held by the proxied pointer's inner target.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BCE0": {
     "name": "ExprParser::VPtrProxyType::vfunc_47",
     "class": "ExprParser::VPtrProxyType",

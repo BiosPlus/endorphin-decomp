@@ -561,21 +561,6 @@ void fn_0066B120(void* result, void* self) {
     *static_cast<int32_t*>(result) = value;
 }
 
-// [0x0066BBA0] ExprParser::VPtrProxyType::vfunc_7 (28 bytes)
-// @name ExprParser::VPtrProxyType::vfunc_7
-// @class ExprParser::VPtrProxyType
-// @summary Forwards a float argument to vfunc_7 of the object held by the proxied pointer's inner target.
-// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
-struct VPtrProxyInner { void** vtbl; };
-struct VPtrProxyHolder { void* field_0x00; VPtrProxyInner* target; };
-
-void fn_0066BBA0(VPtrProxyHolder** self, float value) {
-    VPtrProxyHolder* h = *self;
-    VPtrProxyInner* t = h->target;
-    using Fn = void (*)(VPtrProxyInner*, VPtrProxyHolder*, float);
-    reinterpret_cast<Fn>(t->vtbl[7])(t, h, value);
-}
-
 // [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
 // @name ExprParser::BoolType::vfunc_41
 // @class ExprParser::BoolType
@@ -616,4 +601,19 @@ void fn_0049C140(void* self, void* ctx) {
 
     // *dst += delta. Unsigned arithmetic gives x86 add wrap-around without signed-overflow UB.
     *dst = static_cast<int32_t>(static_cast<uint32_t>(*dst) + static_cast<uint32_t>(delta));
+}
+
+// [0x0066BBA0] ExprParser::VPtrProxyType::vfunc_7 (28 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_7
+// @class ExprParser::VPtrProxyType
+// @summary Forwards a float argument to vfunc_7 of the object held by the proxied pointer's inner target.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+struct VPtrProxyInner { void** vtbl; };
+struct VPtrProxyHolder { void* field_0x00; VPtrProxyInner* target; };
+
+void fn_0066BBA0(VPtrProxyHolder** self, float value) {
+    VPtrProxyHolder* h = *self;
+    VPtrProxyInner* t = h->target;
+    using Fn = void (*)(VPtrProxyInner*, VPtrProxyHolder*, float);
+    reinterpret_cast<Fn>(t->vtbl[7])(t, h, value);
 }

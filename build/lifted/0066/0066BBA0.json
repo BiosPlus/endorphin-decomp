@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BBA0",
+  "size": 28,
+  "orig_symbol": "ExprParser::VPtrProxyType::vfunc_7",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::VPtrProxyType::vfunc_7",
+  "class": "ExprParser::VPtrProxyType",
+  "signature": "void fn_0066BBA0(VPtrProxyHolder** self, float value)",
+  "summary": "Forwards a float argument to vfunc_7 of the object held by the proxied pointer's inner target.",
+  "fields": [
+    {
+      "class": "ExprParser::VPtrProxyType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-22T07:37:30Z"
+}
