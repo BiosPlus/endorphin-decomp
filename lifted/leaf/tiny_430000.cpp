@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_430000.cpp
 #include "lift_compat.h"
 extern "C" const unsigned int mem_0092FF5C;
+extern "C" int mem_0093209C;
 
 // [0x00430F9E] sub_00430F9E (2 bytes)
 // @name sub_00430F9E
@@ -29,4 +30,11 @@ void fn_0043CB70(void* self) {
 // @summary Returns the address of the .rdata constant u32 0x006A65E6 stored at mem_0092FF5C.
 extern "C" const unsigned int* __cdecl fn_0043AAF0() {
     return &mem_0092FF5C;
+}
+
+// [0x0043D360] sub_0043D360 (6 bytes)
+// @name GetConstantString_0043D360
+// @summary Returns the address of the read-only string constant at 0x0093209C (.rdata "`KE").
+extern "C" const char* fn_0043D360() {
+    return reinterpret_cast<const char*>(&mem_0093209C);
 }

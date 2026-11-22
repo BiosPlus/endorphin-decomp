@@ -1,0 +1,13 @@
+{
+  "va": "0x0043D360",
+  "size": 6,
+  "orig_symbol": "sub_0043D360",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "GetConstantString_0043D360",
+  "signature": "extern \"C\" const char* fn_0043D360()",
+  "summary": "Returns the address of the read-only string constant at 0x0093209C (.rdata \"`KE\").",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:50:29Z"
+}

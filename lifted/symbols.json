@@ -259,6 +259,12 @@
     "summary": "Virtual dispatch thunk: reads the object's vtable pointer and calls slot 0 with the same object.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043D360": {
+    "name": "GetConstantString_0043D360",
+    "signature": "extern \"C\" const char* fn_0043D360()",
+    "summary": "Returns the address of the read-only string constant at 0x0093209C (.rdata \"`KE\").",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x00440680": {
     "name": "GetStringLiteral_00440680",
     "signature": "extern \"C\" const char* __cdecl fn_00440680()",
