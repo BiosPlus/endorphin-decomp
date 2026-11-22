@@ -7210,6 +7210,13 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::HingeConstraint\u003e object (isEnabled), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061BE80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint\u003e::vfunc_16 (NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0\u003e",
+    "signature": "void* fn_0061BE80(void* self)",
+    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint\u003e object (getUserInitialSwing1), else NULL; identity for valid objects.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0061D370": {
     "name": "NMData::HingeConstraint::vfunc_1_off_C",
     "class": "NMData::HingeConstraint",

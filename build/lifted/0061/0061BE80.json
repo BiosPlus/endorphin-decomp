@@ -1,0 +1,14 @@
+{
+  "va": "0x0061BE80",
+  "size": 30,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0\u003e::vfunc_16",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint\u003e::vfunc_16 (NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0\u003e",
+  "signature": "void* fn_0061BE80(void* self)",
+  "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint\u003e object (getUserInitialSwing1), else NULL; identity for valid objects.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:38:02Z"
+}

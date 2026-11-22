@@ -40,3 +40,13 @@ void* fn_0061A530(void* self) {
 void* fn_0061B960(void* self) {
     return self;
 }
+
+// [0x0061BE80] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_16 (30 bytes)
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint>::vfunc_16 (NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1)
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Runtime type check: returns self for a ReadMethodType<NMData::SecondaryTwistAndSwingConstraint> object (getUserInitialSwing1), else NULL; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A95BEC), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0061BE80(void* self) {
+    return self;
+}
