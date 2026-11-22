@@ -1,0 +1,22 @@
+{
+  "va": "0x00442CC0",
+  "size": 16,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_2",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_2",
+  "class": "MultiTrackView::MultiTrackViewStates::PanState",
+  "signature": "BOOL __thiscall fn_00442CC0(void* self)",
+  "summary": "Forwards the +0x08 member to ext_0043C900(0), then tail-calls ReleaseCapture and returns its result.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::PanState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:25:10Z"
+}

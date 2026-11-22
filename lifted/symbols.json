@@ -1315,6 +1315,13 @@
     "summary": "IAT jump thunk forwarding to USER32!ReleaseCapture.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00442CC0": {
+    "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_2",
+    "class": "MultiTrackView::MultiTrackViewStates::PanState",
+    "signature": "BOOL __thiscall fn_00442CC0(void* self)",
+    "summary": "Forwards the +0x08 member to ext_0043C900(0), then tail-calls ReleaseCapture and returns its result.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
+  },
   "0x00442CD0": {
     "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7",
     "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
