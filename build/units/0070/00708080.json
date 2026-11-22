@@ -207,5 +207,7 @@
     "0x00708A86",
     "0x00708A8D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-22T02:58:51Z"
 }
