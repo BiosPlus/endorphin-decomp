@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B7F0",
+  "size": 108,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_42",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_42",
+  "class": "ExprParser::Vector4Type",
+  "signature": "int32_t __stdcall fn_0066B7F0(void* unused_arg, void* rhs_operand)",
+  "summary": "Compares two Vector4 operands (each resolved via vtable slot 6 to float[4]) component-wise for exact equality; returns 1 if all four match, else 0.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector4Type",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:47Z"
+}

@@ -59,3 +59,32 @@ void fn_0066B8A0(void* dst, void* self) {
     lhs[2] = lhs[2] - rhs[2];
     lhs[3] = lhs[3] - rhs[3];
 }
+
+// [0x0066B7F0] ExprParser::Vector4Type::vfunc_42 (108 bytes)
+// @name ExprParser::Vector4Type::vfunc_42
+// @class ExprParser::Vector4Type
+// @summary Compares two Vector4 operands (each resolved via vtable slot 6 to float[4]) component-wise for exact equality; returns 1 if all four match, else 0.
+// @field ExprParser::Vector4Type +0x04 void* field_0x04
+int32_t __stdcall fn_0066B7F0(void* unused_arg, void* rhs_operand) {
+    (void)unused_arg;
+
+    // Slot 6 (byte offset 0x18) of an operand's vtable yields a float* to 4 floats.
+    using Slot6Fn = float* (__thiscall*)(void* self, void* operand);
+
+    auto resolve = [](void* operand) -> float* {
+        void* source = *reinterpret_cast<void**>(static_cast<uint8_t*>(operand) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(source);
+        auto fn = reinterpret_cast<Slot6Fn>(vtbl[6]);
+        return fn(source, operand);
+    };
+
+    float* lhs = resolve(rhs_operand);
+    float* rhs = resolve(rhs_operand);
+
+    for (int i = 0; i < 4; ++i) {
+        if (lhs[i] != rhs[i]) {
+            return 0;
+        }
+    }
+    return 1;
+}

@@ -9652,6 +9652,13 @@
     "summary": "Subtracts the vector from arg2-\u003e+0x04-\u003evfunc_5(arg2) component-wise from the float[3] at *a1.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B7F0": {
+    "name": "ExprParser::Vector4Type::vfunc_42",
+    "class": "ExprParser::Vector4Type",
+    "signature": "int32_t __stdcall fn_0066B7F0(void* unused_arg, void* rhs_operand)",
+    "summary": "Compares two Vector4 operands (each resolved via vtable slot 6 to float[4]) component-wise for exact equality; returns 1 if all four match, else 0.",
+    "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
+  },
   "0x0066B860": {
     "name": "ExprParser::Vector4Type::vfunc_43",
     "class": "ExprParser::Vector4Type",
