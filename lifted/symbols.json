@@ -2884,6 +2884,13 @@
     "summary": "Follows this-\u003efield_0x00 and its first pointer, then tail-calls virtual slot 3 of the object at +4 with the intermediate pointer as its argument.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066AF60": {
+    "name": "ExprParser::ExtROType::vfunc_5",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t fn_0066AF60(void* self)",
+    "summary": "Tail-dispatches to vtable slot 5 of the object at self-\u003einner+0x04, passing self-\u003einner as this.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066AFA0": {
     "name": "ExprParser::ExtROType::vfunc_21",
     "class": "ExprParser::ExtROType",

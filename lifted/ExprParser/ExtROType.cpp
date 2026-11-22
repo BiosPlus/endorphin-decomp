@@ -89,3 +89,23 @@ uintptr_t fn_0066AF40(void* self) {
     auto fn = reinterpret_cast<ExtROSlot3Fn>(vtbl[3]);
     return fn(target, inner);
 }
+
+// [0x0066AF60] ExprParser::ExtROType::vfunc_5 (20 bytes)
+// @name ExprParser::ExtROType::vfunc_5
+// @class ExprParser::ExtROType
+// @summary Tail-dispatches to vtable slot 5 of the object at self->inner+0x04, passing self->inner as this.
+// @field ExprParser::ExtROType +0x00 void* inner
+// @field ? +0x04 void* field_0x04   (accessed on the inner object; owning class not yet established)
+
+using VFuncSlot5 = uint32_t (*)(void* self);
+
+// Original is `mov eax,[esp+4]; mov eax,[eax]; mov ecx,[eax+4]; mov edx,[ecx];
+// mov [esp+4],eax; mov eax,[edx+0x14]; jmp eax`. The jmp is a tail call, so the
+// callee's return value (eax) is passed straight back to the caller.
+uint32_t fn_0066AF60(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);                          // self +0x00
+    void* target_obj = *reinterpret_cast<void**>(static_cast<char*>(inner) + 0x04); // inner +0x04
+    void** vtbl = *reinterpret_cast<void***>(target_obj);                   // vtable of target_obj
+    VFuncSlot5 fn = reinterpret_cast<VFuncSlot5>(vtbl[5]);                  // slot 5 (+0x14)
+    return fn(inner);
+}
