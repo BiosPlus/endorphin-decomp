@@ -1218,3 +1218,130 @@ void __thiscall fn_00649D80(void* self, void* out, void* dst, void* src) {
         lift_field<void*>(out, 0x04) = nullptr;
     }
 }
+
+// [0x00604BD0]
+// @name ExprParser::WriteMethodType::vfunc_48
+// @class ExprParser::WriteMethodType
+// @summary Invokes EffectorBase virtual slot 19 with a converted value and returns the resulting value pair.
+// @field ExprParser::ValuePtr +0x04 void* type_ptr
+
+#include "lift_compat.h"
+
+extern "C" void ext_00603680(void* self, uint32_t value);
+
+struct ValuePair {
+    uint32_t value;
+    void* type_ptr;
+};
+
+ValuePair* __stdcall fn_00604BD0(ValuePair* sret, void** target_ptr, ValuePair* arg) {
+    void* target = *target_ptr;
+    void* type_obj = arg->type_ptr;
+    void** vtable = *reinterpret_cast<void***>(type_obj);
+    using ConvertFn = uint32_t (__thiscall*)(void*, ValuePair*);
+    auto convert_fn = reinterpret_cast<ConvertFn>(vtable[0x18 / 4]);
+
+    uint32_t local_val = 0;
+    uint32_t converted = convert_fn(type_obj, arg);
+    ext_00603680(target, converted);
+
+    if (arg->type_ptr != nullptr) {
+        void* type_obj2 = arg->type_ptr;
+        void** vtable2 = *reinterpret_cast<void***>(type_obj2);
+        using GetterFn = uint32_t* (__thiscall*)(void*, uint32_t*, ValuePair*);
+        auto getter_fn = reinterpret_cast<GetterFn>(vtable2[0x70 / 4]);
+        uint32_t* res = getter_fn(type_obj2, &local_val, arg);
+        sret->value = *res;
+        sret->type_ptr = arg->type_ptr;
+    } else {
+        local_val = 0;
+        sret->value = local_val;
+        sret->type_ptr = arg->type_ptr;
+    }
+    return sret;
+}
+
+// [0x00603440]
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>
+// @summary Evaluates a boolean value from arg2 and dispatches vtable+0x18 (true) or vtable+0x1c (false) on the target object from arg1.
+// @field EffectorBase +0x04 void* field_0x04
+#include "lift_compat.h"
+
+void __thiscall fn_00603440(void* self, void* arg1, void* arg2) {
+    (void)self;
+    void* target = *reinterpret_cast<void**>(arg1);
+
+    void* src_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg2) + 0x04);
+    void** src_vtable = *reinterpret_cast<void***>(src_obj);
+    using EvalBoolFn = uint8_t(__thiscall*)(void*, void*);
+    auto eval_bool = reinterpret_cast<EvalBoolFn>(src_vtable[0x0c / sizeof(void*)]);
+    uint8_t val = eval_bool(src_obj, arg2);
+
+    void* dst_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(target) + 0x04);
+    void** dst_vtable = *reinterpret_cast<void***>(dst_obj);
+    using DispatchFn = void(__thiscall*)(void*);
+    if (val != 0) {
+        auto fn_true = reinterpret_cast<DispatchFn>(dst_vtable[0x18 / sizeof(void*)]);
+        fn_true(dst_obj);
+    } else {
+        auto fn_false = reinterpret_cast<DispatchFn>(dst_vtable[0x1c / sizeof(void*)]);
+        fn_false(dst_obj);
+    }
+}
+
+// [0x005F3680]
+// @name ExprParser::WriteMethodType<EffectorGroup,float,vcall84>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
+// @summary Evaluates the value expression as float and writes it to the target object via its vtable slot 21 setter.
+// @field Value +0x04 void* evaluator
+
+struct FloatEvaluator {
+    virtual void vf0() = 0;
+    virtual float evaluate(void* value) = 0;
+};
+
+extern "C" void ext_0064F900(void* self, uint32_t value);
+
+void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value) {
+    (void)self; (void)edx;
+    void* obj = *target;
+    FloatEvaluator* ev = *(FloatEvaluator**)(value + 0x4);
+    float f = ev->evaluate(value);
+    uint32_t bits;
+    memcpy(&bits, &f, 4);
+    ext_0064F900(obj, bits);
+}
+
+// [0x00604C70]
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &>::vfunc_48
+// @class ExprParser::WriteMethodType
+// @summary Evaluates the argument expression, invokes EffectorBase virtual slot 20 on the target with it, and returns the (value, expr) pair.
+// @field ExprParser::WriteMethodType +0x4 void* expr
+
+
+extern "C" void ext_006036A0(void* self, uint32_t value);
+
+struct ExprVT{ void* pad[6]; void* (__thiscall *eval)(void*, void*); void* pad2[9]; void** (__thiscall *get)(void*, void*, void*); };
+struct ExprNode { ExprVT* vt; };
+struct ParserSelf { void* f0; ExprNode* expr; };
+struct Pair { void* value; void* expr; };
+
+Pair* __stdcall fn_00604C70(Pair* out, void** target, ParserSelf* self)
+{
+    void* tmp = nullptr;
+    void* obj = *target;
+    void* v = self->expr->vt->eval(self->expr, self);
+    ext_006036A0(obj, (uint32_t)(uintptr_t)v);
+    void* result;
+    if (self->expr) {
+        void** p = self->expr->vt->get(self->expr, &tmp, self);
+        result = *p;
+    } else {
+        tmp = nullptr;
+        result = tmp;
+    }
+    out->value = result;
+    out->expr = self->expr;
+    return out;
+}

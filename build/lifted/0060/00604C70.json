@@ -1,0 +1,22 @@
+{
+  "va": "0x00604C70",
+  "size": 110,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType",
+  "signature": "Pair* __stdcall fn_00604C70(Pair* out, void** target, ParserSelf* self)",
+  "summary": "Evaluates the argument expression, invokes EffectorBase virtual slot 20 on the target with it, and returns the (value, expr) pair.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "expr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-22T10:38:15Z"
+}

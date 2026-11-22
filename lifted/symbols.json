@@ -8527,6 +8527,13 @@
     "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00604C70": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType",
+    "signature": "Pair* __stdcall fn_00604C70(Pair* out, void** target, ParserSelf* self)",
+    "summary": "Evaluates the argument expression, invokes EffectorBase virtual slot 20 on the target with it, and returns the (value, expr) pair.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00605360": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float, vcall112\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
