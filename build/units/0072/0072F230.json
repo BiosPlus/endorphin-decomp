@@ -127,5 +127,7 @@
     "0x0072F73A",
     "0x0072F748"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:37:11Z"
 }
