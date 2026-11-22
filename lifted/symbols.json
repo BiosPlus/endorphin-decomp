@@ -6709,6 +6709,13 @@
     "summary": "Initializes FBXIO state if needed and forwards arg1 to ext_0055E990",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x00562C50": {
+    "name": "FBXIO::importAnimation",
+    "class": "FBXIO",
+    "signature": "extern \"C\" void __thiscall fn_00562C50(void* self, const void* filePathStr)",
+    "summary": "Loads an FBX scene, resolves take time range and frame rate, samples all registered tracks across frames, and cleans up the FBX session.",
+    "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
   "0x00562F80": {
     "name": "FBXIO::vfunc_10",
     "class": "FBXIO",

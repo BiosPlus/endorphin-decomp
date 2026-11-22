@@ -333,3 +333,166 @@ void __thiscall fn_00562F80(void* self, const void* filename_str) {
     str_dtor(&combined_str);
     str_dtor(&str_b392cc);
 }
+
+// [0x00562C50]
+// @name FBXIO::importAnimation
+// @class FBXIO
+// @summary Loads an FBX scene, resolves take time range and frame rate, samples all registered tracks across frames, and cleans up the FBX session.
+// @field FBXIO +0x40 uint8_t[4] field_0x40
+// @field FBXIO +0xA4 int32_t takeIndex
+// @field FBXIO +0xAC uint8_t field_0xac
+// @field FBXIO +0x420 void* field_0x420
+// @field FBXIO +0x424 void* field_0x424
+// @field FBXIO +0x46C void* field_0x46c
+// @field FBXIO +0x470 void* field_0x470
+// @field FBXIO +0x474 void* field_0x474
+// @field FBXIO +0x4C0 void* field_0x4c0
+// @field FBXIO +0x4C4 void** field_0x4c4
+// @field FBXIO +0x4C8 void** field_0x4c8
+
+#include "lift_compat.h"
+
+extern "C" void* __cdecl ext_00435D00(void* ostream, const char* str);
+extern "C" void* __thiscall ext_0055DF80(void* self, void* arg);
+extern "C" void __thiscall ext_0055E180(void* self, void* arg1);
+extern "C" void __thiscall ext_0055E490(void* self, void* arg1, void* arg2, const char* arg3);
+extern "C" void __thiscall ext_0055F2C0(void* self, const void* arg1);
+extern "C" void __thiscall ext_00562580(void* self, void* item, void* animTarget, int32_t flag);
+extern "C" void __thiscall ext_00661A10(void* obj, float fps);
+extern "C" void __thiscall ext_00661F70(void* obj, int32_t flag);
+extern "C" void __thiscall ext_006620E0(void* obj);
+extern "C" void __fastcall ext_00662120(void* self);
+extern "C" int32_t __fastcall ext_006BB760(void* self);
+extern "C" int32_t __fastcall ext_006BC370(void* self);
+extern "C" int32_t __fastcall ext_006BC7F0(void* self);
+extern "C" void __thiscall ext_006BC800(void* self, int32_t arg1);
+extern "C" void __thiscall ext_006BC970(void* self, void* arg1);
+extern "C" void __thiscall ext_006D2130(void* self, int32_t arg0, int32_t arg1);
+extern "C" void __fastcall ext_006D2160(void* self);
+extern "C" double __cdecl ext_006D98F0(int32_t timeMode);
+extern "C" void __thiscall ext_006DAE00(void* timeObj, double seconds);
+extern "C" int32_t __fastcall ext_006E7460(void* self);
+
+extern "C" uintptr_t mem_00924E90;
+extern "C" uintptr_t mem_00924E98;
+extern "C" uintptr_t mem_00924FA0;
+extern "C" uintptr_t mem_00924FD4;
+extern "C" void* mem_00924FF0;
+
+extern "C" void __thiscall fn_00562C50(void* self, const void* filePathStr) {
+    struct FbxTakeNameArray {
+        uint8_t header[0x10];
+        void** data;
+        void*** dataPtr;
+    };
+    constexpr int64_t kFbxTicksPerMillisecond = 46186158LL; // 0x02C0BEAE
+
+    using StdStringCStrFn = const char*(__thiscall*)(const void*);
+    using StdStringAssignCStrFn = void*(__thiscall*)(void*, const char*);
+    using OstreamManipFn = void*(__thiscall*)(void*, uintptr_t);
+
+    auto strCStr = reinterpret_cast<StdStringCStrFn>(mem_00924FF0);
+    auto strAssign = reinterpret_cast<StdStringAssignCStrFn>(mem_00924FD4);
+    auto ostreamManip = reinterpret_cast<OstreamManipFn>(mem_00924E98);
+
+    int32_t frameIdx = 0;
+    int32_t startTimeMs = 0;
+
+    void** scenePtr = &lift_field<void*>(self, 0x470);
+    void** managerPtr = &lift_field<void*>(self, 0x46C);
+
+    const char* pathCStr = strCStr(filePathStr);
+    ext_0055E490(self, managerPtr, scenePtr, pathCStr);
+    ext_0055F2C0(self, filePathStr);
+
+    void* globalTimeSettings = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_006BC7F0(*scenePtr))));
+    int32_t timeMode = ext_006BB760(globalTimeSettings);
+    float fps = static_cast<float>(ext_006D98F0(timeMode));
+    float framePeriodMs = static_cast<float>(1000.0 / static_cast<double>(fps));
+
+    void* rootNode = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_006BC370(*scenePtr))));
+    void* animTarget = ext_0055DF80(self, &lift_field<uint8_t>(self, 0xAC));
+
+    FbxTakeNameArray takeNameArray{};
+    ext_006D2130(&takeNameArray, 0x10u, 0x4u);
+    takeNameArray.dataPtr = &takeNameArray.data;
+
+    ext_006BC970(*scenePtr, &takeNameArray);
+
+    int32_t takeIndex = lift_field<int32_t>(self, 0xA4);
+    void* takeNameObj = takeNameArray.data[takeIndex];
+    int32_t takeName = ext_006E7460(takeNameObj);
+    ext_006BC800(*scenePtr, takeName);
+
+    int64_t startTime = 0x7FFFFFFFFFFFFFFFLL;
+    int64_t endTime = static_cast<int64_t>(0x8000000000000001ULL);
+
+    using GetAnimIntervalFn = uint8_t(__thiscall*)(void*, int64_t*, int64_t*);
+    auto rootVtable = *reinterpret_cast<void***>(rootNode);
+    uint8_t hasRange = reinterpret_cast<GetAnimIntervalFn>(rootVtable[0x30 / sizeof(void*)])(
+        rootNode, &startTime, &endTime);
+
+    int32_t numFrames = 1;
+    if (!hasRange) {
+        void* os = ext_00435D00(
+            reinterpret_cast<void*>(mem_00924FA0),
+            "Error: Time Range has not been loaded properly. Defaulting to a single frame");
+        ostreamManip(os, mem_00924E90);
+        numFrames = 1;
+    } else {
+        int32_t startMs = static_cast<int32_t>(startTime / kFbxTicksPerMillisecond);
+        int32_t endMs = static_cast<int32_t>(endTime / kFbxTicksPerMillisecond);
+        int32_t durationMs = endMs - startMs;
+        startTimeMs = startMs;
+
+        float approxFrames = static_cast<float>(
+            static_cast<double>(durationMs) / static_cast<double>(framePeriodMs) + 0.5);
+        float flooredFrames = static_cast<float>(std::floor(static_cast<double>(approxFrames)));
+        numFrames = static_cast<int32_t>(flooredFrames) + 1;
+    }
+
+    ext_00662120(lift_field<void*>(self, 0x420));
+    ext_00661F70(lift_field<void*>(self, 0x420), 1);
+
+    if (void* progress = lift_field<void*>(self, 0x424)) {
+        using SetRangeFn = void(__thiscall*)(void*, int32_t, int32_t);
+        auto progVtable = *reinterpret_cast<void***>(progress);
+        reinterpret_cast<SetRangeFn>(progVtable[0x8 / sizeof(void*)])(progress, 0, numFrames * 2);
+    }
+
+    int32_t lastFrame = numFrames - 1;
+    float timeOffset = static_cast<float>(static_cast<double>(framePeriodMs) * 0.0010000000474974513);
+    float curTimeMs = static_cast<float>(static_cast<double>(startTimeMs) + static_cast<double>(timeOffset));
+
+    if (lastFrame >= 0) {
+        do {
+            if (void* progress = lift_field<void*>(self, 0x424)) {
+                using SetPosFn = void(__thiscall*)(void*, int32_t);
+                auto progVtable = *reinterpret_cast<void***>(progress);
+                reinterpret_cast<SetPosFn>(progVtable[0x4 / sizeof(void*)])(progress, frameIdx);
+            }
+
+            ext_006DAE00(lift_field<void*>(self, 0x474), static_cast<double>(curTimeMs) * 0.001);
+
+            for (void** it = lift_field<void**>(self, 0x4C4);
+                 it != lift_field<void**>(self, 0x4C8);
+                 ++it) {
+                ext_00562580(self, *it, animTarget, 1);
+            }
+
+            if (frameIdx < lastFrame) {
+                ext_006620E0(lift_field<void*>(self, 0x420));
+            }
+
+            ++frameIdx;
+            curTimeMs = static_cast<float>(static_cast<double>(curTimeMs) + static_cast<double>(framePeriodMs));
+        } while (frameIdx <= lastFrame);
+    }
+
+    strAssign(&lift_field<uint8_t>(self, 0x40), "");
+    ext_0055E180(self, &lift_field<void*>(self, 0x46C));
+    ext_00661A10(lift_field<void*>(self, 0x420), fps);
+    ext_006D2160(&takeNameArray);
+}
