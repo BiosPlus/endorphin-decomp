@@ -1,0 +1,14 @@
+{
+  "va": "0x0043EA80",
+  "size": 20,
+  "orig_symbol": "MultiTrackView::View::vfunc_82",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::View::vfunc_82",
+  "class": "MultiTrackView::View",
+  "signature": "void fn_0043EA80(void* self)",
+  "summary": "Zeroes two consecutive 32-bit words at the start of the pointed-to 8-byte record (stdcall, one argument).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:52Z"
+}

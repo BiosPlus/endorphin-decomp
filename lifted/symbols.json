@@ -349,6 +349,13 @@
     "summary": "Pure jump thunk forwarding to GetConstantString_0043D360.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0043EA80": {
+    "name": "MultiTrackView::View::vfunc_82",
+    "class": "MultiTrackView::View",
+    "signature": "void fn_0043EA80(void* self)",
+    "summary": "Zeroes two consecutive 32-bit words at the start of the pointed-to 8-byte record (stdcall, one argument).",
+    "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
+  },
   "0x0043F2A0": {
     "name": "MultiTrackView::View::vfunc_1",
     "class": "MultiTrackView::View",

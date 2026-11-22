@@ -45,6 +45,7 @@ void fn_004591A0(void* self) {
     uint8_t* owner = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) - 0x24);
     owner[0x190] = 1;
 }
+#include <cstdint>
 
 // [0x00411660] MultiTrackView::CompositeEventTrack::vfunc_0 (30 bytes)
 // @name MultiTrackView::CompositeEventTrack::vfunc_0
@@ -270,4 +271,16 @@ extern "C" void* __fastcall fn_00460450(void* self, int edx_unused, unsigned int
 void fn_0043CEE0(void* self) {
     HWND hWnd = lift_field<HWND>(self, 0x20);
     InvalidateRect(hWnd, nullptr, TRUE);
+}
+
+// [0x0043EA80] MultiTrackView::View::vfunc_82 (20 bytes)
+// @name MultiTrackView::View::vfunc_82
+// @class MultiTrackView::View
+// @summary Zeroes two consecutive 32-bit words at the start of the pointed-to 8-byte record (stdcall, one argument).
+void fn_0043EA80(void* self) {
+    // Argument is loaded from [esp+4] and popped with `ret 4`: stdcall, one pointer argument.
+    // Zero the two dwords at offsets +0x00 and +0x04 of the record.
+    auto* record = static_cast<std::uint32_t*>(self);
+    record[0] = 0u;
+    record[1] = 0u;
 }
