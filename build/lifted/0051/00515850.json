@@ -1,0 +1,14 @@
+{
+  "va": "0x00515850",
+  "size": 30,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e::vfunc_16",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e::vfunc_16",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",
+  "signature": "void* fn_00515850(void* /*self*/, void* ptr)",
+  "summary": "Dynamic-casts the given pointer from RTTI type 0x00A2E2F8 to 0x00A4279C via __RTDynamicCast (returns nullptr on failure).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@medium",
+  "lifted_at": "2026-11-22T07:47:14Z"
+}
