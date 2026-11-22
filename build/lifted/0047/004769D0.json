@@ -1,0 +1,22 @@
+{
+  "va": "0x004769D0",
+  "size": 19,
+  "orig_symbol": "NMData::SceneData::vfunc_7",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::SceneData::vfunc_7",
+  "class": "NMData::SceneData",
+  "signature": "extern \"C\" int __thiscall fn_004769D0(void* self, const void* unused)",
+  "summary": "Forwards the literal \"\u003cScene/\u003e\" to vtable slot 2 (inherited XML loader) with two zero arguments and returns its result; the incoming stack argument is ignored.",
+  "fields": [
+    {
+      "class": "SceneData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:51Z"
+}

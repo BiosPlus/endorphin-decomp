@@ -727,6 +727,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00474C40 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004769D0": {
+    "name": "NMData::SceneData::vfunc_7",
+    "class": "NMData::SceneData",
+    "signature": "extern \"C\" int __thiscall fn_004769D0(void* self, const void* unused)",
+    "summary": "Forwards the literal \"\u003cScene/\u003e\" to vtable slot 2 (inherited XML loader) with two zero arguments and returns its result; the incoming stack argument is ignored.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x00477450": {
     "name": "NMData::MaterialPair::vfunc_0",
     "class": "NMData::MaterialPair",

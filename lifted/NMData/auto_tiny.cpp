@@ -160,6 +160,7 @@ extern "C" void __fastcall fn_006744A0(void* self) {
     ForwardFn target = reinterpret_cast<ForwardFn>(static_cast<uintptr_t>(mem_00924FDC));
     target(adjusted);
 }
+extern "C" const char mem_0093BF14[];
 
 // [0x004CE8C0] NMData::IncarnationEventData::vfunc_88 (10 bytes)
 // @name NMData::IncarnationEventData::vfunc_88
@@ -1763,4 +1764,23 @@ void fn_004A9B50(void* self) {
     // Slot 2 (byte offset 8) is invoked with this = sub.
     auto fn = reinterpret_cast<void (*)(void*)>(vtbl[2]);
     fn(sub);
+}
+
+// [0x004769D0] NMData::SceneData::vfunc_7 (19 bytes)
+// @name NMData::SceneData::vfunc_7
+// @class NMData::SceneData
+// @summary Forwards the literal "<Scene/>" to vtable slot 2 (inherited XML loader) with two zero arguments and returns its result; the incoming stack argument is ignored.
+// @field SceneData +0x00 void* vtable
+//
+// Note: the original cleans its own single stack argument (ret 4) and passes
+// the callee's return value through in eax. The thiscall signature below
+// reproduces that shape; the callee's stack cleanup is handled by its own
+// convention, matching the original.
+typedef int (__thiscall* XmlLoadFn)(void* self, const char* xml, int arg1, int arg2);
+
+extern "C" int __thiscall fn_004769D0(void* self, const void* unused) {
+    (void)unused;
+    void** vtbl = *reinterpret_cast<void***>(self);
+    XmlLoadFn target = reinterpret_cast<XmlLoadFn>(reinterpret_cast<intptr_t>(vtbl[2]));
+    return target(self, mem_0093BF14, 0, 0);
 }
