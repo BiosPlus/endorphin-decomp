@@ -7305,6 +7305,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005FF040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0062A0A0": {
+    "name": "ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorMetaBodyRelativeTime::resetTime)",
+    "class": "ExprParser::ROWriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e",
+    "signature": "void* fn_0062A0A0(void* self)",
+    "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
+    "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
   "0x0062A580": {
     "name": "VirtualDispatchThunk_Slot17",
     "class": "Object (unidentified; receiver is passed in ecx)",
