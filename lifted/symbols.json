@@ -5621,6 +5621,13 @@
     "summary": "Forwards three args to Plane::vfunc_25, sets flag bit 0x40 in +0x1c if clear, and copies arg2+0x88/+0x8c into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Frustum.cpp"
   },
+  "0x0053E240": {
+    "name": "Primitives::Animation::vfunc_25",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0053E240(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards its three arguments to Cuboid::vfunc_25, stores the result of virtual slot +0x2C on arg1's +0x0C object into +0x9C, and sets flag bit 0x02000000 in +0x1C.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053F5D0": {
     "name": "NullRenderer::vfunc_0",
     "class": "NullRenderer",
