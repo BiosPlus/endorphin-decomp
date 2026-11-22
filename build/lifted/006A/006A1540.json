@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1540",
+  "size": 103,
+  "orig_symbol": "ExprParser::Operators::Divide::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Divide.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Divide.cpp",
+  "name": "ExprParser::Operators::Divide::vfunc_3",
+  "class": "ExprParser::Operators::Divide",
+  "signature": "float __stdcall fn_006A1540(void* num, void* den)",
+  "summary": "Evaluates den (second arg) via its child's vfn1; if that is zero or NaN, returns child_of_num.vfn7(num, den_value); otherwise divides num's child vfn1 result by den_value before the same vfn7 call.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:15:57Z"
+}
