@@ -2961,6 +2961,13 @@
     "summary": "Setter storing float argument into field at offset +0x220.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486F00": {
+    "name": "ExprParser::ROMethod0Type::vfunc_0 (NM::Vector3::normalize2)",
+    "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+    "signature": "void* fn_00486F00(void* self, uint32_t unused)",
+    "summary": "Invoke the normalize2 helper on self with flag 0 and return self. The second argument is unused.",
+    "lifted_path": "lifted/templates/ROMethod0Type.cpp"
+  },
   "0x00487EB0": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_16",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",

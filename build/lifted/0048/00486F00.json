@@ -1,0 +1,14 @@
+{
+  "va": "0x00486F00",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
+  "src_path": "src/templates/ROMethod0Type.cpp",
+  "lifted_path": "lifted/templates/ROMethod0Type.cpp",
+  "name": "ExprParser::ROMethod0Type::vfunc_0 (NM::Vector3::normalize2)",
+  "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+  "signature": "void* fn_00486F00(void* self, uint32_t unused)",
+  "summary": "Invoke the normalize2 helper on self with flag 0 and return self. The second argument is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:35:14Z"
+}
