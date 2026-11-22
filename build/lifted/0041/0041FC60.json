@@ -1,0 +1,14 @@
+{
+  "va": "0x0041FC60",
+  "size": 6,
+  "orig_symbol": "HotkeyDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HotkeyDialog::vfunc_0",
+  "class": "HotkeyDialog",
+  "signature": "extern \"C\" int* __fastcall fn_0041FC60(void* self)",
+  "summary": "Returns the address of the global at 0x0092DFF4 (constant pointer accessor, ignores this)",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:49:04Z"
+}

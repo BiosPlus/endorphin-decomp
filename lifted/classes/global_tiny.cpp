@@ -10,6 +10,7 @@ extern "C" int mem_0092C580;
 extern "C" int mem_0092C8E4;
 extern "C" int mem_0092CB80;
 extern "C" int mem_0092D538;
+extern "C" int mem_0092DFF4;
 
 // [0x00417330] ExportDialog::vfunc_0 (6 bytes)
 // @name ExportDialog::vfunc_0
@@ -116,4 +117,13 @@ extern "C" const void* const mem_0092D8A8_ptr_placeholder = 0;
 extern "C" const void* __fastcall fn_0041B950(void* self) {
     (void)self;
     return reinterpret_cast<const void*>(0x0092D8A8);
+}
+
+// [0x0041FC60] HotkeyDialog::vfunc_0 (6 bytes)
+// @name HotkeyDialog::vfunc_0
+// @class HotkeyDialog
+// @summary Returns the address of the global at 0x0092DFF4 (constant pointer accessor, ignores this)
+extern "C" int* __fastcall fn_0041FC60(void* self) {
+    (void)self;
+    return &mem_0092DFF4;
 }

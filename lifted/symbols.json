@@ -181,6 +181,13 @@
     "summary": "Returns the address of the read-only string constant \",bj\" stored in .rdata (mem_0092DA8C).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041FC60": {
+    "name": "HotkeyDialog::vfunc_0",
+    "class": "HotkeyDialog",
+    "signature": "extern \"C\" int* __fastcall fn_0041FC60(void* self)",
+    "summary": "Returns the address of the global at 0x0092DFF4 (constant pointer accessor, ignores this)",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",
