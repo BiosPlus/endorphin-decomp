@@ -162,9 +162,13 @@ void* fn_004D3E20(void* self) {
 }
 extern char mem_00A3C268[];
                               const void* targetType, int isReference);
+extern "C" void ext_006A6E9E();
+extern "C" void* ext_006A6E9E(void* src, int voffset, const void* srcType, const void* targetType, int isReference);
+extern "C" unsigned int mem_00A3C268;
+extern "C" unsigned int mem_00A2E2F8;
 
-// [0x0067A770]
-// @name ExprParser::DynamicEnumType::vfunc_9
+extern "C" unsigned int mem_00A3C268;
+extern "C" unsigned int mem_00A2E2F8;
 // @class ExprParser::DynamicEnumType
 // @summary Calls virtual method at +0x78 on arg1's inner object, then forwards arg1 and arg2 to sub_006720A0.
 // @field DynEnumVfunc9Arg +0x04 void** field_0x4
@@ -176,25 +180,33 @@ void DynamicEnumType_vfunc_9(void* thisptr, DynEnumVfunc9Arg* arg1, void* arg2) 
     fn(obj, arg1);
     ext_006720A0(arg1, arg2);
 }
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args)
 
-// [0x005C4870]
-// @name ExprParser::DynamicEnumType<CollisionModelDataBase>::vfunc_16
-// @summary Dynamic-casts the argument pointer between RTTI types and returns the result (this unused).
-void* fn_005C4870(void* obj) {
-    return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
+// [0x00515850]
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions,...>::vfunc_16
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, getCurrentIndividualIndex, setCurrentIndividualIndex, getNumIndividuals, getIndividualDescription>
+// @summary RTTI type-guard: dynamic-casts the argument to this type (type descriptor 0x00A4279C) and returns the result or NULL.
+void* fn_00515850(void* self, void* obj) {
+    (void)self;
+    return ext_006A6E9E(obj, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A4279C), 0);
 }
 
-// [0x00515850] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions,...>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>
-// @summary Dynamic-casts the argument to the EvolverRuntimeOptions enum type via __RTDynamicCast (returns null on failure).
-void* fn_00515850(void* self) {
-    return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A4279C, 0);
+// [0x005C4870] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, getMaterialNameIndex, setMaterialNameIndex, getNumListedMaterialNames, getListedMaterialName>::vfunc_16 (30 bytes)
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>::vfunc_16 (materialNameIndex)
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>
+// @summary Runtime type check: returns self for a DynamicEnumType<CollisionModelDataBase> object, else NULL; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src 0x00A2E2F8, dst 0x00A8AFF4, 0),
+// which has no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_005C4870(void* self) {
+    return self;
 }
 
 // [0x004D3E20]
 // @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_16
-// @class ExprParser::DynamicEnumType
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
 // @summary Dynamic-casts self to the RigEventData tweak-enum type via __RTDynamicCast (returns null on failure).
 void* fn_004D3E20(void* self) {
     return ext_006A6E9E(self, 0, mem_00A2E2F8, mem_00A3C268, 0);
