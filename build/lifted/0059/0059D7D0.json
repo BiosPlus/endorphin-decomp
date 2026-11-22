@@ -1,0 +1,22 @@
+{
+  "va": "0x0059D7D0",
+  "size": 22,
+  "orig_symbol": "NMData::CharacterData::vfunc_20_off_4",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::CharacterData::vfunc_20_off_4",
+  "class": "NMData::CharacterData",
+  "signature": "uint32_t fn_0059D7D0(void* self)",
+  "summary": "Returns 0x40 if the byte at +0x4DE is nonzero, otherwise 0xC0.",
+  "fields": [
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x4DE",
+      "type": "uint8_t",
+      "name": "field_0x4de"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:26:02Z"
+}

@@ -1816,3 +1816,15 @@ uint32_t fn_005B68D0(void* self) {
     uint32_t index = lift_field<uint32_t>(inner, 0x2C);
     return mem_0095F750[index];
 }
+
+// [0x0059D7D0] NMData::CharacterData::vfunc_20_off_4 (22 bytes)
+// @name NMData::CharacterData::vfunc_20_off_4
+// @class NMData::CharacterData
+// @summary Returns 0x40 if the byte at +0x4DE is nonzero, otherwise 0xC0.
+// @field NMData::CharacterData +0x4DE uint8_t field_0x4de
+uint32_t fn_0059D7D0(void* self) {
+    const uint8_t flag = *reinterpret_cast<const uint8_t*>(static_cast<const char*>(self) + 0x4DE);
+    // neg al + sbb eax,eax + and/add/or sequence: CF = (flag != 0)
+    // yields (CF ? -1 : 0) & -0x80 + 0x80 | 0x40  ->  CF ? 0x40 : 0xC0
+    return flag != 0 ? 0x40u : 0xC0u;
+}

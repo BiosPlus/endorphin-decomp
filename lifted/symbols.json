@@ -1971,6 +1971,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::Marker::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0059D7D0": {
+    "name": "NMData::CharacterData::vfunc_20_off_4",
+    "class": "NMData::CharacterData",
+    "signature": "uint32_t fn_0059D7D0(void* self)",
+    "summary": "Returns 0x40 if the byte at +0x4DE is nonzero, otherwise 0xC0.",
+    "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
   "0x0059E1E0": {
     "name": "ExprParser::SingleVariableContainer::vfunc_0",
     "class": "ExprParser::SingleVariableContainer",
