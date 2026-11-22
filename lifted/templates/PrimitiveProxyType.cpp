@@ -3,8 +3,10 @@
 // Known callee 0x006720E0: sub_006720E0 (43B) - string construct/assign from (const char*, flag).
 extern "C" void ext_006720E0(void* self, const char* src, int flag);
 extern "C" void ext_00671100(int selector, void* arg);
+#include <cstdlib>
+#include <string>
 
-// [0x00497900] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_0 (35 bytes)
+#include <string>
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_0
 // @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
 // @summary Initializes the std::string at self from the C-string pointer held in src's first dword, returns self.
@@ -37,4 +39,15 @@ void fn_00511F80(void* arg) {
 // @summary Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).
 void fn_00594460(void* arg) {
     ext_00671100(0, arg);
+}
+
+// [0x004975B0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_1 (33 bytes)
+// Original (ret 4): s = *arg; atof(s->c_str()), stored as float and returned in st0.
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_1
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Converts the std::string referenced by the argument's first pointer to float via atof.
+// @field ExprParser::ValuePtrType +0x00 std::string* value
+float fn_004975B0(void* self) {
+    std::string* s = *static_cast<std::string**>(self);
+    return static_cast<float>(std::atof(s->c_str()));
 }
