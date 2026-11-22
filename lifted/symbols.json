@@ -7638,6 +7638,13 @@
     "summary": "Dispatches to SphereType helper when tag == 0x2f7 or fallback otherwise, returning arg1",
     "lifted_path": "lifted/Geometry/SphereType.cpp"
   },
+  "0x005B4210": {
+    "name": "Geometry::CylinderType::vfunc_18",
+    "class": "Geometry::CylinderType",
+    "signature": "uint32_t __thiscall fn_005B4210(void* /*self*/, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Dispatches CylinderType factory/type action by selector id and returns arg0",
+    "lifted_path": "lifted/Geometry/CylinderType.cpp"
+  },
   "0x005B4470": {
     "name": "Geometry::ArrowType::vfunc_18",
     "class": "Geometry::ArrowType",
