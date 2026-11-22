@@ -1,0 +1,21 @@
+{
+  "va": "0x006036B0",
+  "size": 5,
+  "orig_symbol": "sub_006036B0",
+  "src_path": "src/leaf/tiny_600000.cpp",
+  "lifted_path": "lifted/leaf/tiny_600000.cpp",
+  "name": "VirtualSlot28Thunk",
+  "signature": "void* fn_006036B0(void* self)",
+  "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 28 (offset +0x70) with the same this pointer; the callee's result is passed through in eax.",
+  "fields": [
+    {
+      "class": "VTable",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "slot28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:42:58Z"
+}

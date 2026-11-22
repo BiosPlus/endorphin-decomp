@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_600000.cpp
 #include "lift_compat.h"
+// Lifted WIP: lifted/wip/fn_006036B0.cpp -> lifted/leaf/tiny_600000.cpp
 
 // [0x00603680] sub_00603680 (5 bytes)
 // @name VirtualSlot19Thunk
@@ -53,4 +54,17 @@ void fn_00603690(void* self) {
     using SlotFn = void(__fastcall*)(void* self);
     SlotFn target = reinterpret_cast<SlotFn>(vtable[0x40 / sizeof(void*)]);
     target(self);
+}
+
+// [0x006036B0] sub_006036B0 (5 bytes)
+// @name VirtualSlot28Thunk
+// @summary Virtual dispatch thunk: loads the object's vtable and tail-calls slot 28 (offset +0x70) with the same this pointer; the callee's result is passed through in eax.
+// @field VTable +0x70 void* slot28
+void* fn_006036B0(void* self) {
+    // mov eax, [ecx]        ; eax = self->vtable
+    void** vtable = *reinterpret_cast<void***>(self);
+    // jmp [eax + 0x70]      ; tail-jump to vtable slot 28 (0x70 / 4 on x86), this still in ecx
+    using SlotFn = void*(__fastcall*)(void* self);
+    SlotFn target = reinterpret_cast<SlotFn>(vtable[0x70 / sizeof(void*)]);
+    return target(self);
 }
