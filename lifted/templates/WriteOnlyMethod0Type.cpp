@@ -34,17 +34,6 @@ void fn_0050E0A0(void* self) {
     ext_0050DBE0(thisPtr);
 }
 
-// [0x00516B10] ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)>::vfunc_41 (14 bytes)
-// @name ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, printCurrentIndividual>::vfunc_41
-// @class ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)>
-// @summary Loads the target object pointer from the proxy's leading dword and forwards it to the shared method-invoke helper (printCurrentIndividual path); pops 8 bytes of stack args.
-// @field ExprParser::ValuePtrType +0x00 void* target
-void fn_00516B10(void* proxy, void* unused) {
-    (void)unused;
-    void* target = *static_cast<void**>(proxy);
-    ext_00516890(target);
-}
-
 // [0x0050F190]
 // @name ExprParser::WriteOnlyMethod0Type<NMData::PopulationData, randomizeNow>::vfunc_41
 // @class ExprParser::WriteOnlyMethod0Type<NMData::PopulationData, &public: void __thiscall NMData::PopulationData::randomizeNow(void)>
@@ -54,4 +43,15 @@ void fn_0050F190(void* proxy, void* unused) {
     (void)unused;
     void* target = *static_cast<void**>(proxy);
     ext_0050F180(target);
+}
+
+// [0x00516B10] ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)>::vfunc_41 (14 bytes)
+// @name ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, printCurrentIndividual>::vfunc_41
+// @class ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)>
+// @summary Loads the target object pointer from the proxy's leading dword and forwards it to the shared method-invoke helper (printCurrentIndividual path); pops 8 bytes of stack args.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_00516B10(void* proxy, void* unused) {
+    (void)unused;
+    void* target = *static_cast<void**>(proxy);
+    ext_00516890(target);
 }

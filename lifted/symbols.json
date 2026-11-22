@@ -5226,10 +5226,10 @@
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x00516B10": {
-    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e::vfunc_41",
+    "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, printCurrentIndividual\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e",
     "signature": "void fn_00516B10(void* proxy, void* unused)",
-    "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
+    "summary": "Loads the target object pointer from the proxy's leading dword and forwards it to the shared method-invoke helper (printCurrentIndividual path); pops 8 bytes of stack args.",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
   "0x00516B20": {
