@@ -1,0 +1,28 @@
+{
+  "va": "0x006A1DF0",
+  "size": 34,
+  "orig_symbol": "ExprParser::Operators::Comma::vfunc_2",
+  "src_path": "src/ExprParser/Operators/Comma.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Comma.cpp",
+  "name": "ExprParser::Operators::Comma::vfunc_2",
+  "class": "ExprParser::Operators::Comma",
+  "signature": "void fn_006A1DF0(void* self, void* arg)",
+  "summary": "Pops the last 4-byte element from a [begin, end) vector if begin is non-null and the vector is non-empty.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Comma",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "ExprParser::Operators::Comma",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:42Z"
+}

@@ -9090,6 +9090,13 @@
     "summary": "Forwards to virtual slot 47 (+0xBC) of the object at self+0x04, passing self as the argument.",
     "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
   },
+  "0x006A1DF0": {
+    "name": "ExprParser::Operators::Comma::vfunc_2",
+    "class": "ExprParser::Operators::Comma",
+    "signature": "void fn_006A1DF0(void* self, void* arg)",
+    "summary": "Pops the last 4-byte element from a [begin, end) vector if begin is non-null and the vector is non-empty.",
+    "lifted_path": "lifted/ExprParser/Operators/Comma.cpp"
+  },
   "0x006A2C20": {
     "name": "sub_006A2C20",
     "signature": "extern \"C\" void __fastcall fn_006A2C20(void* self)",
