@@ -7564,6 +7564,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0063CB70": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorWithMemory,float\u003e::setIntegralGradient_vfunc41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+    "signature": "void fn_0063CB70(void* self, void* arg)",
+    "summary": "Calls slot 1 of arg-\u003e+0x04 to get a float and stores it at self-\u003e+0x00 target +0x60 (integral gradient).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0063DFF4": {
     "name": "thunk_GLU32_gluErrorString",
     "signature": "extern \"C\" void fn_0063DFF4(void)",

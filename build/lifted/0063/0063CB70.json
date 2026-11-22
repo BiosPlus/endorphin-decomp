@@ -1,0 +1,14 @@
+{
+  "va": "0x0063CB70",
+  "size": 29,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_41",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorWithMemory,float\u003e::setIntegralGradient_vfunc41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+  "signature": "void fn_0063CB70(void* self, void* arg)",
+  "summary": "Calls slot 1 of arg-\u003e+0x04 to get a float and stores it at self-\u003e+0x00 target +0x60 (integral gradient).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:39:29Z"
+}

@@ -637,3 +637,22 @@ uint32_t fn_0066BCC0(void* self, void* ctx) {
     // Stack args: p first, then ctx. Result stays in eax.
     return target(obj, p, ctx);
 }
+
+// [0x0063CB70] ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_41 (29 bytes)
+// @name ExprParser::WriteMethodType<EffectorWithMemory,float>::setIntegralGradient_vfunc41
+// @class ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
+// @summary Calls slot 1 of arg->+0x04 to get a float and stores it at self->+0x00 target +0x60 (integral gradient).
+// @field ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)> +0x00 void* field_0x00
+void fn_0063CB70(void* self, void* arg) {
+    using GetFloatFn = float (*)(void* self, void* arg);
+
+    // Target object (EffectorWithMemory*) stored at self+0x00.
+    auto* target = *reinterpret_cast<std::uint8_t**>(self);
+
+    // Source sub-object at arg+0x04; its vtable slot 1 returns a float.
+    auto* source = *reinterpret_cast<std::uint8_t**>(static_cast<std::uint8_t*>(arg) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(source);
+    float value = reinterpret_cast<GetFloatFn>(vtbl[1])(source, arg);
+
+    *reinterpret_cast<float*>(target + 0x60) = value;
+}
