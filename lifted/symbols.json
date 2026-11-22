@@ -5807,6 +5807,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0055D6E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055DE20": {
+    "name": "NMData::NullRelationshipData::vfunc_59",
+    "class": "NMData::NullRelationshipData",
+    "signature": "void fn_0055DE20(void* self)",
+    "summary": "Constructs a std::string in the caller-supplied buffer from the literal pointer in mem_00A9F118.",
+    "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
+  },
   "0x0055E220": {
     "name": "sub_0055E220",
     "signature": "extern \"C\" void fn_0055E220(void)",
