@@ -1,0 +1,22 @@
+{
+  "va": "0x0053B790",
+  "size": 9,
+  "orig_symbol": "Primitives::Marker::vfunc_30",
+  "src_path": "src/Primitives/auto_tiny.cpp",
+  "lifted_path": "lifted/Primitives/auto_tiny.cpp",
+  "name": "Primitives::Marker::vfunc_30",
+  "class": "Primitives::Marker",
+  "signature": "DWORD fn_0053B790(const void* self)",
+  "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
+  "fields": [
+    {
+      "class": "Primitives::Marker",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "bufferedValue"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T05:06:18Z"
+}

@@ -34,6 +34,13 @@
     "summary": "This-adjustor thunk: rebases this by -0xC (to the primary base subobject) and tail-forwards to vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0053B790": {
+    "name": "Primitives::Marker::vfunc_30",
+    "class": "Primitives::Marker",
+    "signature": "DWORD fn_0053B790(const void* self)",
+    "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x005B1110": {
     "name": "Geometry::AnimationType::vfunc_8",
     "class": "Geometry::AnimationType",
