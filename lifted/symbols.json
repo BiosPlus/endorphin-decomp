@@ -5677,6 +5677,13 @@
     "summary": "Pushes GL_LINE_BIT, sets line width 2.0, forwards arg to vfunc slot 22 of the subobject at +0x3c, then pops attributes.",
     "lifted_path": "lifted/Primitives/Marker.cpp"
   },
+  "0x0053C150": {
+    "name": "Primitives::RPRO::vfunc_29",
+    "class": "Primitives::RPRO",
+    "signature": "void fn_0053C150(void* self)",
+    "summary": "Resets the base animation state, then reinitialises the RPRO float/int state block (1.0 at +0x3C and +0x44, zero elsewhere).",
+    "lifted_path": "lifted/Primitives/RPRO.cpp"
+  },
   "0x0053C1A0": {
     "name": "Primitives::RPRO::vfunc_28",
     "class": "Primitives::RPRO",

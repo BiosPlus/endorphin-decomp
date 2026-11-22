@@ -10,7 +10,25 @@
 // Recovered field layout for Primitives::RPRO:
 namespace lifted_layout {
 struct Primitives_RPRO_Fields {
-    // +0x44  float[16] matrix (passed to glMultMatrixf)  (evidence: 0x0053C1A0)
+    // +0x3C  float                    field_0x3c  (evidence: 0x0053C150)
+    // +0x40  int32_t                  field_0x40  (evidence: 0x0053C150)
+    // +0x44  float                    field_0x44  (evidence: 0x0053C150) // CONFLICT: multiple definitions at +0x44
+    // +0x44  float[16] matrix (passed to glMultMatrixf)  (evidence: 0x0053C1A0) // CONFLICT: multiple definitions at +0x44
+    // +0x48  float                    field_0x48  (evidence: 0x0053C150)
+    // +0x4C  float                    field_0x4c  (evidence: 0x0053C150)
+    // +0x50  float                    field_0x50  (evidence: 0x0053C150)
+    // +0x54  float                    field_0x54  (evidence: 0x0053C150)
+    // +0x58  float                    field_0x58  (evidence: 0x0053C150)
+    // +0x5C  float                    field_0x5c  (evidence: 0x0053C150)
+    // +0x60  float                    field_0x60  (evidence: 0x0053C150)
+    // +0x64  float                    field_0x64  (evidence: 0x0053C150)
+    // +0x68  float                    field_0x68  (evidence: 0x0053C150)
+    // +0x6C  float                    field_0x6c  (evidence: 0x0053C150)
+    // +0x70  float                    field_0x70  (evidence: 0x0053C150)
+    // +0x74  float                    field_0x74  (evidence: 0x0053C150)
+    // +0x78  float                    field_0x78  (evidence: 0x0053C150)
+    // +0x7C  float                    field_0x7c  (evidence: 0x0053C150)
+    // +0x80  float                    field_0x80  (evidence: 0x0053C150)
     // +0x108 void* sub_object (this-pointer for vtable slot 0x58 call)  (evidence: 0x0053C1A0)
 };
 } // namespace lifted_layout
