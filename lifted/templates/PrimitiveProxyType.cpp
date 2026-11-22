@@ -17,6 +17,7 @@ void* fn_00497900(void* self, void* src) {
     return self;
 }
 extern "C" void __thiscall ext_006720C0(void* self, int32_t value);
+extern "C" void __thiscall ext_006720A0(void* self, uint32_t value);
 
 // [0x004A25D0] ExprParser::PrimitiveProxyType<bool>::vfunc_13 (13 bytes)
 // @name ExprParser::PrimitiveProxyType<bool>::vfunc_13
@@ -61,5 +62,16 @@ float fn_004975B0(void* self) {
 void* fn_0049C010(void* target, const void* src) {
     const int32_t* value_ptr = lift_field<const int32_t*>(src, 0x00);
     ext_006720C0(target, *value_ptr);
+    return target;
+}
+
+// [0x0049B1E0] ExprParser::PrimitiveProxyType<bool>::vfunc_0 (38 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_0
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Follows the source proxy's value_ptr, zero-extends the byte it points to, passes it to sub_006720A0 on the first argument, and returns the first argument (stdcall, ret 8).
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 const uint8_t* value_ptr
+void* fn_0049B1E0(void* target, const void* src) {
+    const uint8_t* value_ptr = lift_field<const uint8_t*>(src, 0x00);
+    ext_006720A0(target, static_cast<uint32_t>(*value_ptr));
     return target;
 }

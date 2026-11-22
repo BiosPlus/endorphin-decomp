@@ -10,7 +10,7 @@
 // Recovered field layout for ExprParser::PrimitiveProxyType<bool>:
 namespace lifted_layout {
 struct ExprParser_PrimitiveProxyType_bool__Fields {
-    // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE80, 0x0049B210, 0x0049B290, 0x0049B2B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE80, 0x0049B1E0, 0x0049B210, 0x0049B290, 0x0049B2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t*                 value_ptr  (evidence: 0x0049B2F0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

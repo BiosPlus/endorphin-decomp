@@ -3333,6 +3333,13 @@
     "summary": "Returns true if the 2D point pt[0..1] lies inside the box (e0,e4)-(e8,ec) stored in this.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049B1E0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_0",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "void* fn_0049B1E0(void* target, const void* src)",
+    "summary": "Follows the source proxy's value_ptr, zero-extends the byte it points to, passes it to sub_006720A0 on the first argument, and returns the first argument (stdcall, ret 8).",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049B210": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_2",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
