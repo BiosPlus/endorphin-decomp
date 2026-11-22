@@ -1,0 +1,22 @@
+{
+  "va": "0x00497090",
+  "size": 13,
+  "orig_symbol": "NMData::Transition::vfunc_37",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_37",
+  "class": "NMData::Transition",
+  "signature": "uint32_t fn_00497090(void* self)",
+  "summary": "Calls sub_0049ED40 on the object at +0xB8 (as this) with self as its stack argument, and returns its result.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB8",
+      "type": "void*",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:36:31Z"
+}

@@ -14,5 +14,6 @@ struct NMData_Transition_Fields {
     // +0x8C  void*                    field_0x8C  (evidence: 0x00497680)
     // +0xB0  void*                    field_0xB0  (evidence: 0x00496F50, 0x00496F70, 0x00496FE0, 0x00497000)
     // +0xB4  uint8_t                  field_0xB4  (evidence: 0x004973A0, 0x004A9B50)
+    // +0xB8  void*                    field_0xB8  (evidence: 0x00497090)
 };
 } // namespace lifted_layout

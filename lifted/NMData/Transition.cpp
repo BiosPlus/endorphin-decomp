@@ -37,8 +37,10 @@ void* fn_00499AF0(void* out) {
     new (out) std::string(text);
     return out;
 }
+// Callee sub_0049ED40: thiscall (ecx = object), one stack argument, callee-cleans (ret 4).
+extern "C" uint32_t ext_0049ED40(void* ecx, void* arg);
 
-// [0x00497000] NMData::Transition::vfunc_4_off_8 (38 bytes)
+extern "C" uint32_t ext_0049ED40(void* ecx, void* arg);
 // @name NMData::Transition::vfunc_4_off_8
 // @class NMData::Transition
 // @summary Returns 0 when +0xB0 is null; otherwise calls vtable slot 4 of the object at +0xB0+0x10 with argument 0 and returns its result.
@@ -86,4 +88,14 @@ void* fn_00497680(void* self, void* out, uint32_t index) {
     }
     std::memcpy(out, static_cast<const uint8_t*>(begin) + 8u * static_cast<size_t>(index), 8);
     return out;
+}
+
+// [0x00497090] NMData::Transition::vfunc_37 (13 bytes)
+// @name NMData::Transition::vfunc_37
+// @class NMData::Transition
+// @summary Calls sub_0049ED40 on the object at +0xB8 (as this) with self as its stack argument, and returns its result.
+// @field NMData::Transition +0xB8 void* field_0xB8
+uint32_t fn_00497090(void* self) {
+    void* obj = lift_field<void*>(self, 0xB8);
+    return ext_0049ED40(obj, self);
 }

@@ -3152,6 +3152,13 @@
     "summary": "Returns 0 when +0xB0 is null; otherwise calls vtable slot 4 of the object at +0xB0+0x10 with argument 0 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00497090": {
+    "name": "NMData::Transition::vfunc_37",
+    "class": "NMData::Transition",
+    "signature": "uint32_t fn_00497090(void* self)",
+    "summary": "Calls sub_0049ED40 on the object at +0xB8 (as this) with self as its stack argument, and returns its result.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004972E0": {
     "name": "NMData::Transition::vfunc_35",
     "class": "NMData::Transition",
@@ -8132,6 +8139,13 @@
     "signature": "void fn_0066B170(uint8_t* dst, uint8_t value)",
     "summary": "Stores a byte value through a caller-supplied pointer (stack args: dst at +4, value at +8; callee pops 8).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
+  "0x0066B1A0": {
+    "name": "ExprParser::BoolType::vfunc_42",
+    "class": "ExprParser::BoolType",
+    "signature": "uint8_t __stdcall fn_0066B1A0(void* obj, void* other)",
+    "summary": "Returns 1 if sub-\u003evfn3(obj) equals sub-\u003evfn3(obj) where sub = obj-\u003efield_0x04 (both calls identical); the second argument is unused.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
