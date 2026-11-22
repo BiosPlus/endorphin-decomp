@@ -20399,3 +20399,493 @@ extern "C" __declspec(naked) void __cdecl fn_0086DA90(void* ctx, void* data) {
         ret
     }
 }
+
+// [0x0086B850] sub_0086B850 (1472 bytes)
+extern "C" void ext_0086B700();
+extern "C" void ext_0086EFD0();
+
+extern "C" __declspec(naked) void __fastcall fn_0086B850(void* self) {
+    __asm {
+        mov cx, 1
+        sub esp, 0b0h
+        mov edx, 0ffffffffh
+        push ebx
+        push esi
+        push edi
+        push ebp
+    L86b863:
+        movsx eax, cx
+        inc cx
+        mov dword ptr [esp + eax*4 + 48h], edx
+        movsx ebx, cx
+        cmp ebx, 9
+        jbe L86b863
+        xor ecx, ecx
+        xor edx, edx
+        mov dword ptr [esp + 48h], 1fffffffh
+    L86b880:
+        movsx eax, cx
+        inc cx
+        mov dword ptr [esp + eax*4 + 20h], edx
+        movsx ebx, cx
+        cmp ebx, 9
+        jbe L86b880
+        xor dx, dx
+        mov si, 4
+    L86b898:
+        mov di, 20h
+        mov eax, dword ptr [esp + 0c4h]
+        movsx ecx, si
+        test si, si
+        mov ebx, dword ptr [eax + ecx*4]
+        jg L86b8b2
+        mov di, 1eh
+    L86b8b2:
+        test di, di
+        jle L86b8ee
+    L86b8b7:
+        test bl, 1
+        je L86b8e5
+        movsx eax, dx
+        movsx ecx, word ptr [eax*2 + 0bc7d80h]
+        mov ebp, dword ptr [eax*4 + 0bc7888h]
+        or dword ptr [esp + ecx*4 + 20h], ebp
+        movsx ecx, word ptr [eax*2 + 0bc7ebch]
+        mov eax, dword ptr [eax*4 + 0bc7b00h]
+        or dword ptr [esp + ecx*4 + 20h], eax
+    L86b8e5:
+        _emit 0xc1
+        _emit 0xeb
+        _emit 0x01
+        inc dx
+        dec di
+        jne L86b8b7
+    L86b8ee:
+        dec si
+        jns L86b898
+        xor edx, edx
+        xor ecx, ecx
+    L86b8f6:
+        movsx eax, dx
+        inc dx
+        mov dword ptr [esp + eax*4 + 98h], ecx
+        movsx ebx, dx
+        cmp ebx, 9
+        jbe L86b8f6
+        xor dx, dx
+        xor ecx, ecx
+    L86b90f:
+        movsx eax, dx
+        inc dx
+        mov dword ptr [esp + eax*4 + 70h], ecx
+        movsx ebx, dx
+        cmp ebx, 9
+        jbe L86b90f
+        mov dword ptr [esp + 94h], 1
+        mov word ptr [esp + 14h], 9
+        xor eax, eax
+        mov word ptr [esp + 12h], ax
+        mov word ptr [esp + 16h], ax
+    L86b93e:
+        xor di, di
+        mov eax, dword ptr [esp + 44h]
+        and eax, 0ffh
+        xor ecx, ecx
+        movzx dx, byte ptr [eax + 0bc8000h]
+        add word ptr [esp + 12h], dx
+        mov al, 20h
+        sub al, dl
+        mov byte ptr [esp + 1ch], al
+    L86b961:
+        movsx eax, di
+        movsx esi, cx
+        inc di
+        lea ebx, [esp + eax*4 + 20h]
+        mov cl, byte ptr [esp + 1ch]
+        mov eax, dword ptr [ebx]
+        shl esi, cl
+        mov ebp, eax
+        mov cl, dl
+        shr ebp, cl
+        mov cx, ax
+        or esi, ebp
+        movsx eax, di
+        mov dword ptr [ebx], esi
+        cmp eax, 9
+        jbe L86b961
+        cmp dx, 8
+        jne L86b997
+        test byte ptr [esp + 44h], 1
+        je L86b93e
+    L86b997:
+        xor cx, cx
+        xor edx, edx
+    L86b99c:
+        movsx eax, cx
+        cmp dword ptr [esp + eax*4 + 20h], edx
+        jne L86b9af
+        inc cx
+        movsx eax, cx
+        cmp eax, 9
+        jb L86b99c
+    L86b9af:
+        movsx eax, cx
+        cmp eax, 9
+        jb L86b9c2
+        cmp dword ptr [esp + 44h], 1
+        je L86bd4a
+    L86b9c2:
+        movsx eax, word ptr [esp + 16h]
+        cmp dword ptr [esp + eax*4 + 20h], 0
+        jne L86b9eb
+        xor ecx, ecx
+    L86b9d0:
+        movsx eax, word ptr [esp + 16h]
+        cmp dword ptr [esp + eax*4 + 48h], ecx
+        jne L86b9eb
+        inc word ptr [esp + 16h]
+        movsx eax, word ptr [esp + 16h]
+        cmp dword ptr [esp + eax*4 + 20h], ecx
+        je L86b9d0
+    L86b9eb:
+        movsx eax, word ptr [esp + 16h]
+        shl eax, 2
+        mov ecx, dword ptr [esp + eax + 48h]
+        cmp dword ptr [esp + eax + 20h], ecx
+        jb L86bbbf
+    L86ba01:
+        mov ax, word ptr [esp + 16h]
+        movsx ecx, ax
+        mov word ptr [esp + 18h], ax
+        mov dword ptr [esp + 1ch], ecx
+        cmp ecx, 9
+        ja L86ba36
+    L86ba17:
+        movsx eax, word ptr [esp + 18h]
+        inc word ptr [esp + 18h]
+        shl eax, 2
+        movsx edx, word ptr [esp + 18h]
+        mov ecx, dword ptr [esp + eax + 48h]
+        xor dword ptr [esp + eax + 20h], ecx
+        cmp edx, 9
+        jbe L86ba17
+    L86ba36:
+        mov ax, word ptr [esp + 14h]
+        movsx ecx, ax
+        mov word ptr [esp + 18h], ax
+        cmp ecx, 9
+        ja L86ba6a
+    L86ba48:
+        movsx eax, word ptr [esp + 18h]
+        inc word ptr [esp + 18h]
+        shl eax, 2
+        movsx edx, word ptr [esp + 18h]
+        mov ecx, dword ptr [esp + eax + 98h]
+        xor dword ptr [esp + eax + 70h], ecx
+        cmp edx, 9
+        jbe L86ba48
+    L86ba6a:
+        mov si, 9
+        mov eax, dword ptr [esp + 44h]
+        mov word ptr [esp + 18h], 0
+        and eax, 0ffh
+        movzx dx, byte ptr [eax + 0bc8000h]
+        add word ptr [esp + 12h], dx
+        cmp word ptr [esp + 14h], si
+        jg L86bac3
+        mov bl, 20h
+        sub bl, dl
+    L86ba96:
+        movsx eax, si
+        lea edi, [esp + eax*4 + 98h]
+        dec si
+        mov cl, dl
+        mov eax, dword ptr [edi]
+        mov ebp, eax
+        shl ebp, cl
+        movsx ecx, word ptr [esp + 18h]
+        or ebp, ecx
+        mov cl, bl
+        shr eax, cl
+        mov word ptr [esp + 18h], ax
+        mov dword ptr [edi], ebp
+        cmp word ptr [esp + 14h], si
+        jle L86ba96
+    L86bac3:
+        cmp word ptr [esp + 18h], 0
+        je L86badf
+        movsx eax, word ptr [esp + 18h]
+        movsx ecx, si
+        mov word ptr [esp + 14h], si
+        mov dword ptr [esp + ecx*4 + 98h], eax
+    L86badf:
+        xor cx, cx
+        cmp dword ptr [esp + 1ch], 9
+        mov si, word ptr [esp + 16h]
+        ja L86bb1d
+        mov bl, 20h
+        sub bl, dl
+    L86baf2:
+        movsx eax, si
+        inc si
+        lea edi, [esp + eax*4 + 20h]
+        movsx eax, cx
+        mov ebp, dword ptr [edi]
+        mov cl, bl
+        shl eax, cl
+        mov cl, dl
+        mov dword ptr [esp + 18h], ebp
+        shr ebp, cl
+        mov cx, word ptr [esp + 18h]
+        or eax, ebp
+        mov dword ptr [edi], eax
+        movsx eax, si
+        cmp eax, 9
+        jbe L86baf2
+    L86bb1d:
+        cmp dx, 8
+        jne L86bb2e
+        test byte ptr [esp + 44h], 1
+        je L86ba6a
+    L86bb2e:
+        mov ax, word ptr [esp + 16h]
+        cmp dword ptr [esp + 1ch], 9
+        mov word ptr [esp + 18h], ax
+        jae L86bb5b
+        xor ecx, ecx
+    L86bb41:
+        movsx eax, word ptr [esp + 18h]
+        cmp dword ptr [esp + eax*4 + 20h], ecx
+        jne L86bb5b
+        inc word ptr [esp + 18h]
+        movsx eax, word ptr [esp + 18h]
+        cmp eax, 9
+        jb L86bb41
+    L86bb5b:
+        movsx eax, word ptr [esp + 18h]
+        cmp eax, 9
+        jb L86b9c2
+        cmp dword ptr [esp + 44h], 1
+        jne L86b9c2
+        cmp word ptr [esp + 18h], 0
+        jg L86bd4a
+    L86bb80:
+        movsx eax, word ptr [esp + 16h]
+        cmp dword ptr [esp + eax*4 + 48h], 0
+        jne L86bba9
+        xor ecx, ecx
+    L86bb8e:
+        movsx eax, word ptr [esp + 16h]
+        cmp dword ptr [esp + eax*4 + 20h], ecx
+        jne L86bba9
+        inc word ptr [esp + 16h]
+        movsx eax, word ptr [esp + 16h]
+        cmp dword ptr [esp + eax*4 + 48h], ecx
+        je L86bb8e
+    L86bba9:
+        movsx eax, word ptr [esp + 16h]
+        shl eax, 2
+        mov ecx, dword ptr [esp + eax + 48h]
+        cmp dword ptr [esp + eax + 20h], ecx
+        ja L86ba01
+    L86bbbf:
+        mov ax, word ptr [esp + 16h]
+        movsx ecx, ax
+        mov word ptr [esp + 18h], ax
+        mov dword ptr [esp + 1ch], ecx
+        cmp ecx, 9
+        ja L86bbf4
+    L86bbd5:
+        movsx eax, word ptr [esp + 18h]
+        inc word ptr [esp + 18h]
+        shl eax, 2
+        movsx edx, word ptr [esp + 18h]
+        mov ecx, dword ptr [esp + eax + 20h]
+        xor dword ptr [esp + eax + 48h], ecx
+        cmp edx, 9
+        jbe L86bbd5
+    L86bbf4:
+        mov ax, word ptr [esp + 14h]
+        movsx ecx, ax
+        mov word ptr [esp + 18h], ax
+        cmp ecx, 9
+        ja L86bc28
+    L86bc06:
+        movsx eax, word ptr [esp + 18h]
+        inc word ptr [esp + 18h]
+        shl eax, 2
+        movsx edx, word ptr [esp + 18h]
+        mov ecx, dword ptr [esp + eax + 70h]
+        xor dword ptr [esp + eax + 98h], ecx
+        cmp edx, 9
+        jbe L86bc06
+    L86bc28:
+        mov si, 9
+        mov eax, dword ptr [esp + 6ch]
+        mov word ptr [esp + 18h], 0
+        and eax, 0ffh
+        movzx dx, byte ptr [eax + 0bc8000h]
+        add word ptr [esp + 12h], dx
+        cmp word ptr [esp + 14h], si
+        jg L86bc7e
+        mov bl, 20h
+        sub bl, dl
+    L86bc54:
+        movsx eax, si
+        lea edi, [esp + eax*4 + 70h]
+        dec si
+        mov cl, dl
+        mov eax, dword ptr [edi]
+        mov ebp, eax
+        shl ebp, cl
+        movsx ecx, word ptr [esp + 18h]
+        or ebp, ecx
+        mov cl, bl
+        shr eax, cl
+        mov word ptr [esp + 18h], ax
+        mov dword ptr [edi], ebp
+        cmp word ptr [esp + 14h], si
+        jle L86bc54
+    L86bc7e:
+        cmp word ptr [esp + 18h], 0
+        je L86bc97
+        movsx eax, word ptr [esp + 18h]
+        movsx ecx, si
+        mov word ptr [esp + 14h], si
+        mov dword ptr [esp + ecx*4 + 70h], eax
+    L86bc97:
+        xor cx, cx
+        cmp dword ptr [esp + 1ch], 9
+        mov si, word ptr [esp + 16h]
+        ja L86bcd5
+        mov bl, 20h
+        sub bl, dl
+    L86bcaa:
+        movsx eax, si
+        inc si
+        lea edi, [esp + eax*4 + 48h]
+        movsx eax, cx
+        mov ebp, dword ptr [edi]
+        mov cl, bl
+        shl eax, cl
+        mov cl, dl
+        mov dword ptr [esp + 18h], ebp
+        shr ebp, cl
+        mov cx, word ptr [esp + 18h]
+        or eax, ebp
+        mov dword ptr [edi], eax
+        movsx eax, si
+        cmp eax, 9
+        jbe L86bcaa
+    L86bcd5:
+        cmp dx, 8
+        jne L86bce6
+        test byte ptr [esp + 6ch], 1
+        je L86bc28
+    L86bce6:
+        mov ax, word ptr [esp + 16h]
+        cmp dword ptr [esp + 1ch], 9
+        mov word ptr [esp + 18h], ax
+        jae L86bd13
+        xor ecx, ecx
+    L86bcf9:
+        movsx eax, word ptr [esp + 18h]
+        cmp dword ptr [esp + eax*4 + 48h], ecx
+        jne L86bd13
+        inc word ptr [esp + 18h]
+        movsx eax, word ptr [esp + 18h]
+        cmp eax, 9
+        jb L86bcf9
+    L86bd13:
+        movsx eax, word ptr [esp + 18h]
+        cmp eax, 9
+        jb L86bb80
+        cmp dword ptr [esp + 6ch], 1
+        jne L86bb80
+        xor dx, dx
+    L86bd2f:
+        movsx eax, dx
+        shl eax, 2
+        inc dx
+        mov ecx, dword ptr [esp + eax + 98h]
+        mov dword ptr [esp + eax + 70h], ecx
+        movsx eax, dx
+        cmp eax, 9
+        jbe L86bd2f
+    L86bd4a:
+        lea eax, [esp + 70h]
+        mov esi, 13dh
+        push eax
+        mov ax, word ptr [esp + 16h]
+        cwd
+        idiv si
+        movsx eax, dx
+        sub esi, eax
+        lea eax, [esp + 74h]
+        push esi
+        push eax
+        call ext_0086B700
+        add esp, 0ch
+        test byte ptr [esp + 94h], 1
+        je L86bd8d
+        mov edx, dword ptr [esp + 0c8h]
+        push edx
+        call ext_0086EFD0
+        add esp, 4
+        jmp L86bdab
+    L86bd8d:
+        xor cx, cx
+    L86bd90:
+        movsx eax, cx
+        inc cx
+        mov edx, dword ptr [esp + 0c8h]
+        mov dword ptr [edx + eax*4], 0
+        movsx eax, cx
+        cmp eax, 5
+        jb L86bd90
+    L86bdab:
+        xor di, di
+        mov bx, 4
+    L86bdb2:
+        xor esi, esi
+        mov eax, 1
+        test bx, bx
+        mov ecx, 0ffffffffh
+        jg L86bdc8
+        mov ecx, 3fffffffh
+    L86bdc8:
+        movsx edx, di
+        movsx ebp, word ptr [edx*2 + 0bc7d80h]
+        mov ebp, dword ptr [esp + ebp*4 + 70h]
+        test dword ptr [edx*4 + 0bc7888h], ebp
+        je L86bde2
+        xor esi, eax
+    L86bde2:
+        inc di
+        add eax, eax
+        _emit 0x85
+        _emit 0xc8
+        jne L86bdc8
+        mov edx, dword ptr [esp + 0c8h]
+        movsx eax, bx
+        xor dword ptr [edx + eax*4], esi
+        dec bx
+        jns L86bdb2
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0b0h
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
