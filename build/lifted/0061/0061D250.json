@@ -10,5 +10,5 @@
   "summary": "Writes a constant 3-float vector (0,0,0 on first use) to the caller-supplied return buffer.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T08:11:49Z"
+  "lifted_at": "2026-11-22T08:11:58Z"
 }

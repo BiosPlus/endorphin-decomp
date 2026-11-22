@@ -10,7 +10,6 @@ extern "C" float    mem_00AE5594;  // default component 2
 // @name NMData::Constraint::vfunc_68
 // @class NMData::Constraint
 // @summary Writes a constant 3-float vector (0,0,0 on first use) to the caller-supplied return buffer.
-// @field none: the function does not access `this` (ECX is unused); no class offsets are read.
 void fn_0061D250(float* out) {
     if ((mem_00AE5598 & 1u) == 0) {
         mem_00AE5598 |= 1u;
