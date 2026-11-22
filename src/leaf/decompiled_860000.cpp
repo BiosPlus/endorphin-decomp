@@ -23846,3 +23846,19 @@ extern "C" __declspec(naked) void __cdecl fn_0086086B(void) {
         _emit 0x00
     }
 }
+
+// [0x00862976] sub_00862976 (10 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00862976(void* self) {
+    __asm {
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    }
+}
