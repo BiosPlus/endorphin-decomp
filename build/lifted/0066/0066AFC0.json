@@ -20,9 +20,27 @@
       "offset": "+0x4",
       "type": "void*",
       "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ExtROType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "?",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (accessed on the inner object; owning class not yet",
+      "name": "established)"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:25:27Z"
+  "lifted_at": "2026-11-22T07:25:39Z"
 }
