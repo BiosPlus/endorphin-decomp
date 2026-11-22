@@ -1,0 +1,28 @@
+{
+  "va": "0x004FDA70",
+  "size": 21,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_7",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_7",
+  "class": "NMData::EvolveEngineData",
+  "signature": "void fn_004FDA70(void* self)",
+  "summary": "Forwards to the initializers for the sub-objects at this+0x0C and this+0x2C.",
+  "fields": [
+    {
+      "class": "EvolveEngineData",
+      "offset": "+0xC",
+      "type": "\u003cunknown\u003e",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "EvolveEngineData",
+      "offset": "+0x2C",
+      "type": "\u003cunknown\u003e",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T10:41:30Z"
+}

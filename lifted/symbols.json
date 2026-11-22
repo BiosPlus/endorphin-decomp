@@ -5004,6 +5004,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x178.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004FDA70": {
+    "name": "NMData::EvolveEngineData::vfunc_7",
+    "class": "NMData::EvolveEngineData",
+    "signature": "void fn_004FDA70(void* self)",
+    "summary": "Forwards to the initializers for the sub-objects at this+0x0C and this+0x2C.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
+  },
   "0x004FDA90": {
     "name": "sub_004FDA90",
     "signature": "extern \"C\" void __fastcall fn_004FDA90(void* self)",
