@@ -1539,6 +1539,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00519CE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051F9C0": {
+    "name": "StateMachine::State::vfunc_9",
+    "class": "StateMachine::State",
+    "signature": "intptr_t fn_0051F9C0(void* self)",
+    "summary": "Thunk: forwards to slot 1 of the secondary vtable of the sub-object at this+0x154 (this-adjusted by +8), returning its result.",
+    "lifted_path": "lifted/StateMachine/State.cpp"
+  },
   "0x00520420": {
     "name": "StateMachine::State::vfunc_0",
     "class": "StateMachine::State",

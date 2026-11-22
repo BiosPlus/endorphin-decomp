@@ -1,0 +1,22 @@
+{
+  "va": "0x0051F9C0",
+  "size": 17,
+  "orig_symbol": "StateMachine::State::vfunc_9",
+  "src_path": "src/StateMachine/State.cpp",
+  "lifted_path": "lifted/StateMachine/State.cpp",
+  "name": "StateMachine::State::vfunc_9",
+  "class": "StateMachine::State",
+  "signature": "intptr_t fn_0051F9C0(void* self)",
+  "summary": "Thunk: forwards to slot 1 of the secondary vtable of the sub-object at this+0x154 (this-adjusted by +8), returning its result.",
+  "fields": [
+    {
+      "class": "StateMachine::State",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:24:23Z"
+}
