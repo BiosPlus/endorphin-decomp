@@ -437,90 +437,6 @@ void fn_0049B2F0(void* self, void* src) {
     lift_field<uint8_t*>(self, 0)[0] = value ? 1 : 0;
 }
 
-// [0x0049C120] ExprParser::PrimitiveProxyType<int>::vfunc_41 (26 bytes)
-// @name ExprParser::PrimitiveProxyType<int>::vfunc_41
-// @class ExprParser::PrimitiveProxyType<int>
-// @summary Reads an int from the source proxy (via its vtable slot 2) and stores it through this proxy's value pointer.
-// @field ExprParser::PrimitiveProxyType<int> +0x00 int32_t* value_ptr
-
-namespace {
-// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
-template <typename R, typename... A>
-inline R lift_vcall(void* obj, int slot, A... args) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
-}
-} // namespace
-
-void fn_0049C120(void* self, void* src) {
-    void* inner = lift_field<void*>(src, 4);
-    int32_t value = lift_vcall<int32_t>(inner, 2, src);
-    lift_field<int32_t*>(self, 0)[0] = value;
-}
-
-// [0x0066BBC0] ExprParser::VPtrProxyType::vfunc_8 (27 bytes)
-// @name ExprParser::VPtrProxyType::vfunc_8
-// @class ExprParser::VPtrProxyType
-// @summary Forwards to vtable slot 8 of the sub-object reached via the proxy's target, passing that target and the argument; returns the result.
-// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
-
-namespace {
-// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
-template <typename R, typename... A>
-inline R lift_vcall(void* obj, int slot, A... args) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
-}
-} // namespace
-
-void* fn_0066BBC0(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0);
-    void* sub = lift_field<void*>(target, 4);
-    return lift_vcall<void*>(sub, 8, target, arg);
-}
-
-// [0x0066BBE0] ExprParser::VPtrProxyType::vfunc_9 (27 bytes)
-// @name ExprParser::VPtrProxyType::vfunc_9
-// @class ExprParser::VPtrProxyType
-// @summary Forwards to vtable slot 9 of the sub-object reached via the proxy's target, passing that target and the argument; returns the result.
-// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
-
-namespace {
-// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
-template <typename R, typename... A>
-inline R lift_vcall(void* obj, int slot, A... args) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
-}
-} // namespace
-
-void* fn_0066BBE0(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0);
-    void* sub = lift_field<void*>(target, 4);
-    return lift_vcall<void*>(sub, 9, target, arg);
-}
-
-// [0x0066BC00] ExprParser::VPtrProxyType::vfunc_10 (27 bytes)
-// @name ExprParser::VPtrProxyType::vfunc_10
-// @class ExprParser::VPtrProxyType
-// @summary Forwards to vtable slot 10 of the sub-object reached via the proxy's target, passing that target and the argument; returns the result.
-// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
-
-namespace {
-// Invoke virtual slot `slot` of `obj` (vtable entry index = byte offset / 4).
-template <typename R, typename... A>
-inline R lift_vcall(void* obj, int slot, A... args) {
-    void** vtbl = *reinterpret_cast<void***>(obj);
-    return reinterpret_cast<R (*)(void*, A...)>(vtbl[slot])(obj, args...);
-}
-} // namespace
-
-void* fn_0066BC00(void* self, void* arg) {
-    void* target = lift_field<void*>(self, 0);
-    void* sub = lift_field<void*>(target, 4);
-    return lift_vcall<void*>(sub, 10, target, arg);
-}
-
 // [0x0049C140] ExprParser::PrimitiveProxyType<int>::vfunc_43 (28 bytes)
 // @name ExprParser::PrimitiveProxyType<int>::vfunc_43
 // @class ExprParser::PrimitiveProxyType<int>
@@ -543,46 +459,162 @@ void fn_0049C140(void* self, void* src) {
     *dst += delta;
 }
 
+// [0x0049C120] ExprParser::PrimitiveProxyType<int>::vfunc_41 (26 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_41
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Stores into *value_ptr the int32 returned by ctx's child virtual slot 2 (ctx->field_0x04->vfunc_2(ctx)).
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+void fn_0049C120(void* self, void* ctx) {
+    using VFn = int32_t(__thiscall*)(void* self, void* arg);
+
+    // child = ctx->+0x04 (class of ctx not identified)
+    void* child = lift_field<void*>(ctx, 0x04);
+    // vtbl = child->vptr; target = vtbl[2] (offset 0x08)
+    void** vtbl = lift_field<void**>(child, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x08));
+
+    // Call first; value_ptr is read only after the call, as in the original.
+    int32_t value = target(child, ctx);
+
+    // *value_ptr = value (the field is declared const in RTTI, but the original writes through it)
+    int32_t* dst = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
+    *dst = value;
+}
+
+// [0x0066BBC0] ExprParser::VPtrProxyType::vfunc_8 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_8
+// @class ExprParser::VPtrProxyType
+// @summary Forwarding tail-call: invokes virtual slot 8 (+0x20) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+uint32_t fn_0066BBC0(void* self, void* ctx) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg0, void* arg1);
+
+    // p = this->field_0x00
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[8] (offset 0x20)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x20));
+
+    // Stack args: p first, then ctx. Result stays in eax.
+    return target(obj, p, ctx);
+}
+
+// [0x0066BBE0] ExprParser::VPtrProxyType::vfunc_9 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_9
+// @class ExprParser::VPtrProxyType
+// @summary Forwarding tail-call: invokes virtual slot 9 (+0x24) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+uint32_t fn_0066BBE0(void* self, void* ctx) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg0, void* arg1);
+
+    // p = this->field_0x00
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[9] (offset 0x24)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x24));
+
+    // Stack args: p first, then ctx. Result stays in eax.
+    return target(obj, p, ctx);
+}
+
 // [0x0066B0D0] ExprParser::RealType::vfunc_41 (24 bytes)
 // @name ExprParser::RealType::vfunc_41
 // @class ExprParser::RealType
-// @summary Calls virtual slot 1 of the object at src->+4 with src as argument and stores the float result through self.
-// @field ExprParser::RealType +0x00 float field_0x00
+// @summary Forwards to vtable slot 1 of the object at holder->+0x04, passing the holder as its argument, and stores the float result through the first argument.
 // @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066B0D0(void* result, void* self) {
+    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
+    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
+    // mov edx, [ecx]: vtable of the inner object
+    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
+    // call [edx+4]: slot 1, this = inner, one argument = holder
+    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x04);
+    using Slot = float (*)(void* thisPtr, void* arg);
+    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
+    float value = target(inner, self);
+    // mov ecx, [esp+4] ; fstp dword ptr [ecx]: store result through first argument
+    *static_cast<float*>(result) = value;
+}
 
-void fn_0066B0D0(void* self, void* src) {
-    void* inner = lift_field<void*>(src, 4);
-    void** vtbl = lift_field<void**>(inner, 0);
-    using VFunc = float (*)(void* self, void* arg);
-    float value = reinterpret_cast<VFunc>(vtbl[1])(inner, src);
-    lift_field<float>(self, 0) = value;
+// [0x0066BC00] ExprParser::VPtrProxyType::vfunc_10 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_10
+// @class ExprParser::VPtrProxyType
+// @summary Forwarding tail-call: invokes virtual slot 10 (+0x28) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+uint32_t fn_0066BC00(void* self, void* ctx) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg0, void* arg1);
+
+    // p = this->field_0x00
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[10] (offset 0x28)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x28));
+
+    // Stack args: p first, then ctx. Result stays in eax.
+    return target(obj, p, ctx);
 }
 
 // [0x0066B120] ExprParser::IntType::vfunc_41 (24 bytes)
 // @name ExprParser::IntType::vfunc_41
 // @class ExprParser::IntType
-// @summary Calls virtual slot 2 of the object at src->+4 with src as argument and stores the int32 result through self.
-// @field ExprParser::IntType +0x00 int32_t field_0x00
+// @summary Forwards to vtable slot 2 of the object at holder->+0x04, passing the holder as its argument, and stores the 32-bit integer result through the first argument.
 // @field ExprParser::ValuePtrType +0x04 void* field_0x04
-
-void fn_0066B120(void* self, void* src) {
-    void* inner = lift_field<void*>(src, 4);
-    void** vtbl = lift_field<void**>(inner, 0);
-    using VFunc = int32_t (*)(void* self, void* arg);
-    int32_t value = reinterpret_cast<VFunc>(vtbl[2])(inner, src);
-    lift_field<int32_t>(self, 0) = value;
+void fn_0066B120(void* result, void* self) {
+    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
+    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
+    // mov edx, [ecx]: vtable of the inner object
+    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
+    // call [edx+8]: slot 2, this = inner, one argument = holder
+    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x08);
+    using Slot = int32_t (*)(void* thisPtr, void* arg);
+    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
+    int32_t value = target(inner, self);
+    // mov ecx, [esp+4] ; mov [ecx], eax: store result through first argument
+    *static_cast<int32_t*>(result) = value;
 }
 
 // [0x0066BBA0] ExprParser::VPtrProxyType::vfunc_7 (28 bytes)
 // @name ExprParser::VPtrProxyType::vfunc_7
 // @class ExprParser::VPtrProxyType
-// @summary Forwards a float to vtable slot 7 (+0x1C) of the object at P->+0x04, passing P as the first argument; stdcall (ret 8), result not recovered.
+// @summary Forwards a float argument to vfunc_7 of the object held by the proxied pointer's inner target.
 // @field ExprParser::VPtrProxyType +0x00 void* field_0x00
-// @field Unknown +0x04 void* field_0x04   (accessed on P = this->field_0x00; owning class not yet established)
-void fn_0066BBA0(void* self, float value) {
-    void* p = lift_field<void*>(self, 0x00);          // P = this->field_0x00
-    void* q = lift_field<void*>(p, 0x04);             // Q = P->field_0x04
-    void** vtbl = lift_field<void**>(q, 0x00);        // Q's vtable
-    using Slot7 = void(__thiscall*)(void* thisPtr, void* arg, float v);
-    reinterpret_cast<Slot7>(vtbl[7])(q, p, value);    // thiscall: this = Q, args = (P, value)
+struct VPtrProxyInner { void** vtbl; };
+struct VPtrProxyHolder { void* field_0x00; VPtrProxyInner* target; };
+
+void fn_0066BBA0(VPtrProxyHolder** self, float value) {
+    VPtrProxyHolder* h = *self;
+    VPtrProxyInner* t = h->target;
+    using Fn = void (*)(VPtrProxyInner*, VPtrProxyHolder*, float);
+    reinterpret_cast<Fn>(t->vtbl[7])(t, h, value);
+}
+
+// [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
+// @name ExprParser::BoolType::vfunc_41
+// @class ExprParser::BoolType
+// @summary Forwards to vtable slot 3 of the object at holder->+0x04, passing the holder as its argument, and stores the byte (bool) result through the first argument.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066B180(void* result, void* self) {
+    // mov ecx, [eax+4]: inner object pointer held by the value-pointer holder
+    uint32_t innerAddr = lift_field<uint32_t>(self, 0x04);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
+    // mov edx, [ecx]: vtable of the inner object
+    uint32_t vtblAddr = lift_field<uint32_t>(inner, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtblAddr));
+    // call [edx+0xc]: slot 3, this = inner, one argument = holder
+    uint32_t slotAddr = lift_field<uint32_t>(vtbl, 0x0C);
+    using Slot = uint8_t (*)(void* thisPtr, void* arg);
+    Slot target = reinterpret_cast<Slot>(static_cast<uintptr_t>(slotAddr));
+    uint8_t value = target(inner, self);
+    // mov ecx, [esp+4] ; mov [ecx], al: store result through first argument
+    *static_cast<uint8_t*>(result) = value;
 }
