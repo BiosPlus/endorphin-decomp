@@ -50,3 +50,13 @@ void* fn_0061B960(void* self) {
 void* fn_0061BE80(void* self) {
     return self;
 }
+
+// [0x0061C910] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_16 (30 bytes)
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint>::vfunc_16 (NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled)
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Runtime type check: returns self for a ReadMethodType<NMData::PrimaryTwistAndSwingConstraint> object (isLinearEnabled), else NULL; identity for valid objects.
+// No object fields are accessed directly. The original calls MSVCR80 __RTDynamicCast(self, 0, src, dst, 0) with
+// MSVC type descriptors (0x00A2E2F8, 0x00A91240), which have no portable equivalent; the cast succeeds for a valid self, so it returns self.
+void* fn_0061C910(void* self) {
+    return self;
+}
