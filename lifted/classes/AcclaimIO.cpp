@@ -36,3 +36,19 @@ bool fn_0055BE30(void* self) {
     }
     return lift_field<uint8_t>(self, 0x428) != 0;
 }
+
+// [0x0055BE60] AcclaimIO::vfunc_16 (49 bytes)
+// @name AcclaimIO::forwardToSubobjects
+// @class AcclaimIO
+// @summary Forwards arg to virtual slot 16 (0x40) of two embedded vtable-bearing subobjects at +0x46C and +0x964.
+// @field AcclaimIO +0x46C uint8_t subobjA
+// @field AcclaimIO +0x964 uint8_t subobjB
+void fn_0055BE60(void* self, void* arg) {
+    void* subA = reinterpret_cast<uint8_t*>(self) + 0x46C;
+    void** vtblA = *reinterpret_cast<void***>(subA);
+    reinterpret_cast<void (*)(void*, void*)>(vtblA[0x40 / 4])(subA, arg);
+
+    void* subB = reinterpret_cast<uint8_t*>(self) + 0x964;
+    void** vtblB = *reinterpret_cast<void***>(subB);
+    reinterpret_cast<void (*)(void*, void*)>(vtblB[0x40 / 4])(subB, arg);
+}

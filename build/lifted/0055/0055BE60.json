@@ -1,0 +1,28 @@
+{
+  "va": "0x0055BE60",
+  "size": 49,
+  "orig_symbol": "AcclaimIO::vfunc_16",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::forwardToSubobjects",
+  "class": "AcclaimIO",
+  "signature": "void fn_0055BE60(void* self, void* arg)",
+  "summary": "Forwards arg to virtual slot 16 (0x40) of two embedded vtable-bearing subobjects at +0x46C and +0x964.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x46C",
+      "type": "uint8_t",
+      "name": "subobjA"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x964",
+      "type": "uint8_t",
+      "name": "subobjB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:43:53Z"
+}
