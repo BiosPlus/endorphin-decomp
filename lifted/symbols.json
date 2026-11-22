@@ -5642,6 +5642,13 @@
     "summary": "Forwards three args to Plane::vfunc_25, sets flag bit 0x40 in +0x1c if clear, and copies arg2+0x88/+0x8c into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Frustum.cpp"
   },
+  "0x0053E170": {
+    "name": "CameraFrustum::vfunc_25",
+    "class": "Primitives::CameraFrustum",
+    "signature": "void fn_0053E170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards three arguments to Plane::vfunc_25, then normalizes flag bits at +0x1c",
+    "lifted_path": "lifted/Primitives/CameraFrustum.cpp"
+  },
   "0x0053E240": {
     "name": "Primitives::Animation::vfunc_25",
     "class": "Primitives::Animation",

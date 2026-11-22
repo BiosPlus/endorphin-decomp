@@ -1,0 +1,22 @@
+{
+  "va": "0x0053E170",
+  "size": 78,
+  "orig_symbol": "Primitives::CameraFrustum::vfunc_25",
+  "src_path": "src/Primitives/CameraFrustum.cpp",
+  "lifted_path": "lifted/Primitives/CameraFrustum.cpp",
+  "name": "CameraFrustum::vfunc_25",
+  "class": "Primitives::CameraFrustum",
+  "signature": "void fn_0053E170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards three arguments to Plane::vfunc_25, then normalizes flag bits at +0x1c",
+  "fields": [
+    {
+      "class": "Primitives::CameraFrustum",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T08:11:59Z"
+}
