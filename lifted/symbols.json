@@ -5017,6 +5017,13 @@
     "summary": "Checks that `at` lies before the table end (table+0x8) and returns the float at at+0x4.",
     "lifted_path": "lifted/Interpolator/Const.cpp"
   },
+  "0x00528570": {
+    "name": "Interpolator::Const::vfunc_1",
+    "class": "Interpolator::Const",
+    "signature": "const float* fn_00528570(void* self, const void* table, const void* at, uint32_t extra)",
+    "summary": "Checks that `at` lies before the table end (table+0x8) and returns the address at at+0x4.",
+    "lifted_path": "lifted/Interpolator/Const.cpp"
+  },
   "0x00528AB0": {
     "name": "sub_00528AB0",
     "signature": "extern \"C\" void __fastcall fn_00528AB0(void* self)",
