@@ -10,9 +10,9 @@
 // Recovered field layout for Primitives::Animation:
 namespace lifted_layout {
 struct Primitives_Animation_Fields {
-    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0052F5F0)
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x0052EFA0)
-    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0052EFA0)
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x0053A5D0)
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0052F5F0, 0x0052FA20)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x0052EFA0, 0x0052FA20)
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0052EFA0, 0x0052FA20)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x0052FA20, 0x0053A5D0)
 };
 } // namespace lifted_layout

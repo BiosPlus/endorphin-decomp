@@ -10,7 +10,7 @@
 // Recovered field layout for Primitives::Marker:
 namespace lifted_layout {
 struct Primitives_Marker_Fields {
-    // +0x24  DWORD                    bufferedValue  (evidence: 0x0053B790)
+    // +0x24  DWORD                    bufferedValue  (evidence: 0x0052FA20, 0x0053B790)
     // +0x50  float                    field_0x50  (evidence: 0x0052FA20)
 };
 } // namespace lifted_layout

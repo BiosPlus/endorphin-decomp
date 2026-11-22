@@ -4,11 +4,71 @@
   "orig_symbol": "Primitives::Marker::vfunc_20",
   "src_path": "src/Primitives/auto_tiny.cpp",
   "lifted_path": "lifted/Primitives/auto_tiny.cpp",
-  "name": "Primitives::Marker::vfunc_20",
+  "name": "Primitives::Marker::vfunc_30",
   "class": "Primitives::Marker",
-  "signature": "void fn_0052FA20(const void* self, float* out)",
-  "summary": "Writes a 3-float vector to the out pointer: x = this+0x50, y = z = 0 (thiscall, one stack arg, ret 4).",
+  "signature": "DWORD fn_0053B790(const void* self)",
+  "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
   "fields": [
+    {
+      "class": "Primitives::Marker",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "bufferedValue"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Primitives::Null",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Primitives::Null",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Primitives::Null",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
     {
       "class": "Primitives::Marker",
       "offset": "+0x50",
@@ -18,5 +78,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-22T07:25:03Z"
+  "lifted_at": "2026-11-22T07:25:08Z"
 }

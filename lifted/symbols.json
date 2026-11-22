@@ -1659,10 +1659,10 @@
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
   "0x0052FA20": {
-    "name": "Primitives::Marker::vfunc_20",
+    "name": "Primitives::Marker::vfunc_30",
     "class": "Primitives::Marker",
-    "signature": "void fn_0052FA20(const void* self, float* out)",
-    "summary": "Writes a 3-float vector to the out pointer: x = this+0x50, y = z = 0 (thiscall, one stack arg, ret 4).",
+    "signature": "DWORD fn_0053B790(const void* self)",
+    "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
   "0x0052FB60": {

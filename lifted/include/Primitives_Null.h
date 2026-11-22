@@ -10,8 +10,8 @@
 // Recovered field layout for Primitives::Null:
 namespace lifted_layout {
 struct Primitives_Null_Fields {
-    // +0x4   BYTE                     field_0x04  (evidence: 0x0052F3A0)
-    // +0x8   DWORD                    field_0x08  (evidence: 0x0052F3A0)
-    // +0x20  DWORD                    field_0x20  (evidence: 0x0052F3A0)
+    // +0x4   BYTE                     field_0x04  (evidence: 0x0052F3A0, 0x0052FA20)
+    // +0x8   DWORD                    field_0x08  (evidence: 0x0052F3A0, 0x0052FA20)
+    // +0x20  DWORD                    field_0x20  (evidence: 0x0052F3A0, 0x0052FA20)
 };
 } // namespace lifted_layout
