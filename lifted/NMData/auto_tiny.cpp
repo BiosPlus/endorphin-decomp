@@ -1960,3 +1960,20 @@ uint32_t fn_005C3890(void* self) {
     // mov eax, [4*eax + 0x95f750]: table lookup; result left in eax
     return mem_0095F750[id];
 }
+
+// [0x005E02D0] NMData::FixedPathJointData::vfunc_11_off_C (31 bytes)
+// Original: if (+0x184) != 0, tail-jumps to vtable slot 11 of object at (+0x184 + 0xC) with that object as this; else returns 3.
+// @name NMData::FixedPathJointData::vfunc_11_off_C
+// @class NMData::FixedPathJointData
+// @summary Forwards vfunc_11 to the subobject at +0x184+0xC when +0x184 is set; otherwise returns 3.
+// @field NMData::FixedPathJointData +0x184 void* field_0x184
+uint32_t fn_005E02D0(void* self) {
+    void* sub = lift_field<void*>(self, 0x184);
+    if (sub == nullptr) {
+        return 3;
+    }
+    void* obj = static_cast<uint8_t*>(sub) + 0xC;
+    void** vtbl = lift_field<void**>(obj, 0);
+    using VFn = uint32_t (*)(void* obj);
+    return reinterpret_cast<VFn>(vtbl[11])(obj);
+}

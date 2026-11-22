@@ -1,0 +1,22 @@
+{
+  "va": "0x005E02D0",
+  "size": 31,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_11_off_C",
+  "src_path": "src/NMData/auto_tiny.cpp",
+  "lifted_path": "lifted/NMData/auto_tiny.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_11_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "uint32_t fn_005E02D0(void* self)",
+  "summary": "Forwards vfunc_11 to the subobject at +0x184+0xC when +0x184 is set; otherwise returns 3.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:41:20Z"
+}
