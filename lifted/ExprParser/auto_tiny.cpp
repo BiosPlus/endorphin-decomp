@@ -459,26 +459,6 @@ void fn_0049C120(void* self, void* ctx) {
     *dst = value;
 }
 
-// [0x0066BC00] ExprParser::VPtrProxyType::vfunc_10 (27 bytes)
-// @name ExprParser::VPtrProxyType::vfunc_10
-// @class ExprParser::VPtrProxyType
-// @summary Forwarding tail-call: invokes virtual slot 10 (+0x28) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.
-// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
-uint32_t fn_0066BC00(void* self, void* ctx) {
-    using VFn = uint32_t(__thiscall*)(void* self, void* arg0, void* arg1);
-
-    // p = this->field_0x00
-    void* p = lift_field<void*>(self, 0x00);
-    // obj = p->+0x04
-    void* obj = lift_field<void*>(p, 0x04);
-    // vtbl = obj->vptr; target = vtbl[10] (offset 0x28)
-    void** vtbl = lift_field<void**>(obj, 0x00);
-    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x28));
-
-    // Stack args: p first, then ctx. Result stays in eax.
-    return target(obj, p, ctx);
-}
-
 // [0x0066B180] ExprParser::BoolType::vfunc_41 (24 bytes)
 // @name ExprParser::BoolType::vfunc_41
 // @class ExprParser::BoolType
@@ -616,4 +596,24 @@ void fn_0066B120(void* result, void* self) {
     int32_t value = target(inner, self);
     // mov ecx, [esp+4] ; mov [ecx], eax: store result through first argument
     *static_cast<int32_t*>(result) = value;
+}
+
+// [0x0066BC00] ExprParser::VPtrProxyType::vfunc_10 (27 bytes)
+// @name ExprParser::VPtrProxyType::vfunc_10
+// @class ExprParser::VPtrProxyType
+// @summary Forwarding tail-call: invokes virtual slot 10 (+0x28) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.
+// @field ExprParser::VPtrProxyType +0x00 void* field_0x00
+uint32_t fn_0066BC00(void* self, void* ctx) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg0, void* arg1);
+
+    // p = this->field_0x00
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[10] (offset 0x28)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x28));
+
+    // Stack args: p first, then ctx. Result stays in eax.
+    return target(obj, p, ctx);
 }

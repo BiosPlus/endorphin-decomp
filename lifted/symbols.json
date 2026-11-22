@@ -8420,6 +8420,13 @@
     "summary": "Forwarding tail-call: invokes virtual slot 9 (+0x24) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066BC00": {
+    "name": "ExprParser::VPtrProxyType::vfunc_10",
+    "class": "ExprParser::VPtrProxyType",
+    "signature": "uint32_t fn_0066BC00(void* self, void* ctx)",
+    "summary": "Forwarding tail-call: invokes virtual slot 10 (+0x28) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x0066BCE0": {
     "name": "ExprParser::VPtrProxyType::vfunc_47",
     "class": "ExprParser::VPtrProxyType",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BC00",
+  "size": 27,
+  "orig_symbol": "ExprParser::VPtrProxyType::vfunc_10",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::VPtrProxyType::vfunc_10",
+  "class": "ExprParser::VPtrProxyType",
+  "signature": "uint32_t fn_0066BC00(void* self, void* ctx)",
+  "summary": "Forwarding tail-call: invokes virtual slot 10 (+0x28) on the held pointer's +0x04 object, passing (held pointer, ctx) as stack args; result stays in eax.",
+  "fields": [
+    {
+      "class": "ExprParser::VPtrProxyType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-22T07:37:53Z"
+}
