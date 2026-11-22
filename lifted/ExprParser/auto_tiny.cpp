@@ -373,3 +373,19 @@ void ExprParser_PrimitiveProxyType_int_vfunc_9(PrimitiveProxyTypeInt* self, uint
     int32_t* dst = const_cast<int32_t*>(self->value_ptr);
     *dst = (flag != 0) ? 1 : 0;
 }
+
+// [0x00699070] ExprParser::ExpressionContainerType::vfunc_28 (19 bytes)
+// @name ExprParser::ExpressionContainerType::vfunc_28
+// @class ExprParser::ExpressionContainerType
+// @summary Stdcall intrusive-reference assign: loads the object pointer from *src, increments its 32-bit count at +0x04, then stores it into *dst (ret 8).
+// @field ExprParser::ExpressionContainerType +0x04 int32_t field_0x04
+// Disassembly: mov eax,[esp+8]; mov ecx,[eax]; mov eax,[esp+4]; add dword [ecx+4],1; mov [eax],ecx; ret 8.
+// Arguments: dst = first stack argument (esp+4), src = second stack argument (esp+8).
+// The object's class is not established by this function; field_0x04 is the only accessed offset.
+void __stdcall fn_00699070(void** dst, void* const* src) {
+    void* obj = *src;                                   // mov ecx, [eax]
+    int32_t* count = reinterpret_cast<int32_t*>(
+        reinterpret_cast<uint8_t*>(obj) + 0x04);        // [ecx + 4]
+    *count = *count + 1;                                // add dword ptr [ecx+4], 1
+    *dst = obj;                                         // mov [eax], ecx
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x00699070",
+  "size": 19,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_28",
+  "src_path": "src/ExprParser/auto_tiny.cpp",
+  "lifted_path": "lifted/ExprParser/auto_tiny.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_28",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void __stdcall fn_00699070(void** dst, void* const* src)",
+  "summary": "Stdcall intrusive-reference assign: loads the object pointer from *src, increments its 32-bit count at +0x04, then stores it into *dst (ret 8).",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:25:07Z"
+}

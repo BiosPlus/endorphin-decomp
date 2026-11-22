@@ -2987,6 +2987,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DCE0 (ExprParser::Method0Type\u003cNM::Vector3, NM::Vector3::normalize2\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x00699070": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_28",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void __stdcall fn_00699070(void** dst, void* const* src)",
+    "summary": "Stdcall intrusive-reference assign: loads the object pointer from *src, increments its 32-bit count at +0x04, then stores it into *dst (ret 8).",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x006992D0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_24",
     "class": "ExprParser::ExpressionContainerType",
