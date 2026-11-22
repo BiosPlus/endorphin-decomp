@@ -77,8 +77,10 @@ extern "C" void* __fastcall fn_004136E0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+// Known callee 0x006A60D0: thunk_MFC80_ord_5833 (IAT jump thunk forwarding to MFC80!ord_5833.)
+extern "C" void ext_006A60D0();
 
-// [0x0043BEE0] MultiTrackView::MarkerTrack::vfunc_0 (30 bytes)
+extern "C" void ext_006A60D0();
 // @name MultiTrackView::MarkerTrack::vfunc_0
 // @class MultiTrackView::MarkerTrack
 // @summary MSVC scalar deleting destructor: calls sub_0043BBD0 and frees memory when (flags & 1) is set.
@@ -315,4 +317,24 @@ bool fn_00442CD0(void* self) {
     const int32_t x = *reinterpret_cast<const int32_t*>(base + 0x0C);
     const int32_t y = *reinterpret_cast<const int32_t*>(base + 0x10);
     return mem_009256DC(x, y) != 0;
+}
+
+// [0x004554C0] MultiTrackView::Frame::vfunc_106 (22 bytes)
+// @name MultiTrackView::Frame::vfunc_106
+// @class MultiTrackView::Frame
+// @summary Forwards to ext_006A60D0 when the object at Frame+0x144 is non-null and its +0x20 field is nonzero; otherwise returns.
+// @field MultiTrackView::Frame +0x144 uint32_t field_0x144
+void fn_004554C0(void* self) {
+    // The original tail-jumps (jmp) to ext_006A60D0; the portable form is a plain call followed by return.
+    // Pointers are modeled as 32-bit handles (the target is a 32-bit binary).
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t target = *reinterpret_cast<uint32_t*>(base + 0x144);
+    if (target == 0) {
+        return;
+    }
+    // Inner object field at +0x20 (type unknown; field_0x20 by convention).
+    auto* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(target));
+    if (*reinterpret_cast<uint32_t*>(obj + 0x20) != 0) {
+        ext_006A60D0();
+    }
 }

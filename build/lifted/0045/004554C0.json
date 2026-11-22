@@ -1,0 +1,22 @@
+{
+  "va": "0x004554C0",
+  "size": 22,
+  "orig_symbol": "MultiTrackView::Frame::vfunc_106",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::Frame::vfunc_106",
+  "class": "MultiTrackView::Frame",
+  "signature": "void fn_004554C0(void* self)",
+  "summary": "Forwards to ext_006A60D0 when the object at Frame+0x144 is non-null and its +0x20 field is nonzero; otherwise returns.",
+  "fields": [
+    {
+      "class": "MultiTrackView::Frame",
+      "offset": "+0x144",
+      "type": "uint32_t",
+      "name": "field_0x144"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:34:29Z"
+}
