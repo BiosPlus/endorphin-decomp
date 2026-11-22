@@ -111,6 +111,13 @@
     "summary": "Loads the vtable pointer from self and tail-dispatches to the virtual slot at byte offset 0x58 (index 22), passing self through.",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x005FCB30": {
+    "name": "VirtualSlot18Lookup",
+    "class": "UnknownObject (optional)",
+    "signature": "void* fn_005FCB30(void* self)",
+    "summary": "Reads the object's vtable pointer and returns the function pointer stored at vtable byte offset 0x48 (the original is a tail-jump to that slot; here the target is returned, since a portable tail-call needs the target's signature).",
+    "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",

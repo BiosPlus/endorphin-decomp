@@ -11,3 +11,15 @@ void fn_005F35C0(void* self) {
     void (*slot)(void*) = *reinterpret_cast<void (* const*)(void*)>(vtable + 0x58);
     slot(self);
 }
+
+// [0x005FCB30] sub_005FCB30 (5 bytes)
+// @name VirtualSlot18Lookup
+// @class UnknownObject (optional)
+// @summary Reads the object's vtable pointer and returns the function pointer stored at vtable byte offset 0x48 (the original is a tail-jump to that slot; here the target is returned, since a portable tail-call needs the target's signature).
+// @field UnknownObject +0x00 void* field_0x00
+void* fn_005FCB30(void* self) {
+    // mov eax, [ecx]          -> vtable = *(void**)self
+    // jmp [eax + 0x48]        -> return *(void**)((char*)vtable + 0x48)
+    char* vtable = *reinterpret_cast<char**>(self);
+    return *reinterpret_cast<void**>(vtable + 0x48);
+}

@@ -8,7 +8,8 @@
 // Recovered field layout for UnknownObject:
 namespace lifted_layout {
 struct UnknownObject_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x0043CB70)
+    // +0x0   void*                    field_0x00  (evidence: 0x005FCB30) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x0043CB70) // CONFLICT: multiple definitions at +0x0
     // +0x1C  int32_t                  field_0x1c  (evidence: 0x0078CBD0)
 };
 } // namespace lifted_layout
