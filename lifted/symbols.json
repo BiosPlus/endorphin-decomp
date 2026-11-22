@@ -5137,6 +5137,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053A810 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052F6F0": {
+    "name": "Primitives::Marker::vfunc_13",
+    "class": "Primitives::Marker",
+    "signature": "void fn_0052F6F0(void* self, const float* value)",
+    "summary": "Forwards the float read from *value plus two zero words to sub_00538550 on the subobject at +0x3c.",
+    "lifted_path": "lifted/Primitives/Marker.cpp"
+  },
   "0x0052F9A0": {
     "name": "Primitives::Hinge::vfunc_0",
     "class": "Primitives::Hinge",

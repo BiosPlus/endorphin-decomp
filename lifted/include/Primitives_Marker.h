@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct Primitives_Marker_Fields {
     // +0x24  DWORD                    bufferedValue  (evidence: 0x0052FA20, 0x0053B790)
-    // +0x3C  void*                    field_0x3c  (evidence: 0x0053BDD0)
+    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F6F0, 0x0053BDD0)
     // +0x50  float                    field_0x50  (evidence: 0x0052FA20)
 };
 } // namespace lifted_layout

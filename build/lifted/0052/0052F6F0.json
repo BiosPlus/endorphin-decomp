@@ -1,0 +1,22 @@
+{
+  "va": "0x0052F6F0",
+  "size": 25,
+  "orig_symbol": "Primitives::Marker::vfunc_13",
+  "src_path": "src/Primitives/Marker.cpp",
+  "lifted_path": "lifted/Primitives/Marker.cpp",
+  "name": "Primitives::Marker::vfunc_13",
+  "class": "Primitives::Marker",
+  "signature": "void fn_0052F6F0(void* self, const float* value)",
+  "summary": "Forwards the float read from *value plus two zero words to sub_00538550 on the subobject at +0x3c.",
+  "fields": [
+    {
+      "class": "Primitives::Marker",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T07:44:33Z"
+}
