@@ -94,5 +94,7 @@
     "0x0080A460",
     "0x0080A465"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-22T01:42:41Z"
 }
