@@ -8057,6 +8057,13 @@
     "summary": "Pushes GL_LINE_BIT, sets line width 2.0, forwards arg to vfunc slot 22 of the subobject at +0x3c, then pops attributes.",
     "lifted_path": "lifted/Primitives/Marker.cpp"
   },
+  "0x0053BE10": {
+    "name": "Primitives::Hinge::vfunc_13",
+    "class": "Primitives::Hinge",
+    "signature": "void fn_0053BE10(void* self)",
+    "summary": "Sets the dirty flag and forwards scaled copies of field_0x3c to two sub-objects.",
+    "lifted_path": "lifted/Primitives/Hinge.cpp"
+  },
   "0x0053BED0": {
     "name": "Primitives::Hinge::vfunc_30",
     "class": "Primitives::Hinge",

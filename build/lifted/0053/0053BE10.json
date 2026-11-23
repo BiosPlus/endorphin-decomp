@@ -1,0 +1,40 @@
+{
+  "va": "0x0053BE10",
+  "size": 105,
+  "orig_symbol": "Primitives::Hinge::vfunc_13",
+  "src_path": "src/Primitives/Hinge.cpp",
+  "lifted_path": "lifted/Primitives/Hinge.cpp",
+  "name": "Primitives::Hinge::vfunc_13",
+  "class": "Primitives::Hinge",
+  "signature": "void fn_0053BE10(void* self)",
+  "summary": "Sets the dirty flag and forwards scaled copies of field_0x3c to two sub-objects.",
+  "fields": [
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x5C",
+      "type": "subobject",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0xA0",
+      "type": "subobject",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:43:08Z"
+}

@@ -156,3 +156,32 @@ void fn_0053BED0(void* self, uint32_t value) {
     reinterpret_cast<HelperFn>(reinterpret_cast<void*>(&ext_0053A930))(
         static_cast<const void*>(&mem_009553B0), value);
 }
+
+// [0x0053BE10] Primitives::Hinge::vfunc_13 (105 bytes)
+namespace lift_0053BE10 {
+extern void ext_00538550(void* self, float a, int32_t b, int32_t c);
+extern void ext_0053A050(void* self, float a, float b, int32_t c, int32_t d);
+
+// @name Primitives::Hinge::vfunc_13
+// @class Primitives::Hinge
+// @summary Sets the dirty flag and forwards scaled copies of field_0x3c to two sub-objects.
+// @field Primitives::Hinge +0x04 uint8_t field_0x04
+// @field Primitives::Hinge +0x3C float field_0x3c
+// @field Primitives::Hinge +0x5C subobject field_0x5c
+// @field Primitives::Hinge +0xA0 subobject field_0xa0
+void fn_0053BE10(void* self) {
+    const float f = lift_field<float>(self, 0x3C);
+
+    lift_field<uint8_t>(self, 0x04) = 1;
+
+    // The original multiplies by the double constant 0.1 (mem_0092C508) and rounds to float.
+    const float a = static_cast<float>(static_cast<double>(f) * 0.1);
+    ext_00538550(static_cast<uint8_t*>(self) + 0xA0, a, 0, 0);
+
+    // Second call: scale by 0.05 (mem_00932470) and 2.0 (mem_009559A0, float 2.0),
+    // then pass the integer literals 5 and 10.
+    const float b = static_cast<float>(static_cast<double>(f) * 0.05);
+    const float c = f * 2.0f;
+    ext_0053A050(static_cast<uint8_t*>(self) + 0x5C, c, b, 5, 10);
+}
+} // namespace lift_0053BE10
