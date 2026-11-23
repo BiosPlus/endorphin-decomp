@@ -5201,6 +5201,13 @@
     "summary": "Reads the float at EngineData+0x1c (pos buffer frame rate) from the held EngineData, forwarding it to ext_00672080; throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B8390": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
+    "signature": "extern float __thiscall fn_004B8390(void* /*this*/, const uint32_t* ptr_holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B83E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
@@ -7902,6 +7909,13 @@
     "signature": "extern \"C\" void* __thiscall fn_0050C770(void* self, uint32_t flags)",
     "summary": "Runs the base-subobject teardown on this+4, resets the vptr via ext_0065F440, and frees the object when the deleting flag (bit 0 of the stack argument) is set; returns this.",
     "lifted_path": "lifted/NMData/Task.cpp"
+  },
+  "0x0050D0D0": {
+    "name": "NMData::TaskTemplate::vfunc_0",
+    "class": "NMData::TaskTemplate",
+    "signature": "extern void* __thiscall fn_0050D0D0(void* self, uint32_t flags)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050C770 (NMData::Task::~Task (scalar deleting destructor)).",
+    "lifted_path": "lifted/NMData/TaskTemplate.cpp"
   },
   "0x0050D280": {
     "name": "NMData::TaskManager::vfunc_0_off_4",
@@ -13155,6 +13169,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
     "signature": "extern \"C\" void* __stdcall fn_005D27C0(void* const* holder, void* arg2)",
     "summary": "Reads the bool result of VideoPlaneData::mustDrawTimeCode from the held VideoPlaneData (byte at +0x30) and forwards it to ext_006720A0; throws if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D2810": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
+    "signature": "extern float __thiscall fn_005D2810(void* /*this*/, const uint32_t* ptr_holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D2860": {
@@ -20195,6 +20216,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e",
     "signature": "bool fn_00678A20(void** arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B1430 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_3 (NMData::GraphEntryData::isActive)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00678A50": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e",
+    "signature": "extern float __thiscall fn_00678A50(void* /*this*/, const uint32_t* ptr_holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00679A50": {

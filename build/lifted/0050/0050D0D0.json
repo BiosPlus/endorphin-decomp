@@ -1,0 +1,40 @@
+{
+  "va": "0x0050D0D0",
+  "size": 96,
+  "orig_symbol": "NMData::TaskTemplate::vfunc_0",
+  "src_path": "src/NMData/TaskTemplate.cpp",
+  "lifted_path": "lifted/NMData/TaskTemplate.cpp",
+  "name": "NMData::TaskTemplate::vfunc_0",
+  "class": "NMData::TaskTemplate",
+  "signature": "extern void* __thiscall fn_0050D0D0(void* self, uint32_t flags)",
+  "summary": "Auto-lifted identical-shape clone of 0x0050C770 (NMData::Task::~Task (scalar deleting destructor)).",
+  "fields": [
+    {
+      "class": "NMData::TaskTemplate",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::TaskTemplate",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::Task",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::Task",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:01:49Z"
+}

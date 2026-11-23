@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::TaskTemplate:
 namespace lifted_layout {
 struct NMData_TaskTemplate_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0050AA00)
+    // +0x0   void*                    field_0x00  (evidence: 0x0050D0D0)
+    // +0x4   void*                    field_0x04  (evidence: 0x0050AA00, 0x0050D0D0)
 };
 } // namespace lifted_layout
