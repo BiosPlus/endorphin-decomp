@@ -5198,3 +5198,33 @@ extern void __fastcall fn_004F6620(void* self, int edx_unused, void** target_ptr
     ext_004F4E00(target, 0, value);
 }
 } // namespace lift_004F6620
+
+// [0x004F69A0]
+namespace lift_004F69A0 {
+extern void __fastcall ext_004F4E10(void* self, int edx_unused, float value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, getY, float, setY>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Virtual setter that reads a float from the source value object and calls MatrixWithProperties::setY, or throws an exception if target is null.
+// @field MatrixWithProperties* +0x00 void* target
+// @field ValueObject +0x04 void* valueType
+extern void __thiscall fn_004F69A0(void* self, void* target_ptr, void* value_obj) {
+    (void)self;
+    void* target = *reinterpret_cast<void**>(target_ptr);
+    if (target != nullptr) {
+        void* type_obj = *reinterpret_cast<void**>(static_cast<char*>(value_obj) + 0x4);
+        void** vtable = *reinterpret_cast<void***>(type_obj);
+        using ReadFloatFn = float(__thiscall*)(void*, void*);
+        ReadFloatFn read_fn = reinterpret_cast<ReadFloatFn>(vtable[1]);
+        float val = read_fn(type_obj, value_obj);
+        ext_004F4E10(target, 0, val);
+        return;
+    }
+
+    char exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004F69A0
