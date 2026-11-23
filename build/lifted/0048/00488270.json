@@ -1,0 +1,28 @@
+{
+  "va": "0x00488270",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float\u003e",
+  "signature": "extern \"C\" void __stdcall fn_00488270(void* dst_ptr_holder, void* src_value)",
+  "summary": "Evaluates a float expression value and writes it to DesiredPoseEventData::setEntryBlendPeriod, or throws an exception if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "type"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:49:08Z"
+}

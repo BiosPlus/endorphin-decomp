@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct ExprParser_Value_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00649150, 0x006492B0, 0x00649620, 0x00649D50, 0x0064EC00)
-    // +0x4   void*                    field_0x04  (evidence: 0x00649150, 0x006492B0, 0x00649620, 0x00649D50, 0x0064EC00)
+    // +0x4   void*                    field_0x04  (evidence: 0x00649150, 0x006492B0, 0x00649620, 0x00649D50, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    type  (evidence: 0x00488270) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

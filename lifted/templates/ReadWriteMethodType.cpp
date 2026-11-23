@@ -4953,3 +4953,34 @@ extern void __stdcall fn_004B7C10(uint32_t target_ptr_addr, uint32_t value_addr)
     mem_write8(target + 0x84u, 1);
 }
 } // namespace lift_004B7C10
+
+// [0x00488270]
+namespace lift_00488270 {
+// @name ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, float>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, float>
+// @summary Evaluates a float expression value and writes it to DesiredPoseEventData::setEntryBlendPeriod, or throws an exception if the target pointer is null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::Value +0x04 void* type
+
+
+extern void __fastcall ext_00486C10(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* exc, int edx_unused);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+
+extern void __stdcall fn_00488270(void* dst_ptr_holder, void* src_value) {
+    void* target = *reinterpret_cast<void**>(dst_ptr_holder);
+    if (target != nullptr) {
+        void* src_type = *reinterpret_cast<void**>(static_cast<uint8_t*>(src_value) + 0x4);
+        void** vtable = *reinterpret_cast<void***>(src_type);
+        using GetFloatFn = float(__thiscall*)(void* self, void* val);
+        auto get_float = reinterpret_cast<GetFloatFn>(vtable[1]);
+        float val = get_float(src_type, src_value);
+        ext_00486C10(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1C));
+}
+} // namespace lift_00488270

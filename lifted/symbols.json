@@ -3056,6 +3056,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00471380": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "extern \"C\" void* __thiscall fn_00471380(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Reads RuntimeEngine::getNumTicksToRun() into the output value, or throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004713D0": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0\u003e",
