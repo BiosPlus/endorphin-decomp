@@ -295,3 +295,21 @@ uint32_t __thiscall sub_004474F0(uint32_t ecx, uint32_t arg1) {
     return 0;
 }
 } // namespace lift_004474F0
+
+// [0x00447500]
+namespace lift_00447500 {
+// @name invokeCallbackOrNull
+// @summary Tail-calls the callback stored at this+0x8 with arg0 if non-null, otherwise returns 0.
+// @field Class +0x08 uint32_t field_0x08
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __thiscall sub_00447500(uint32_t self, uint32_t arg0) {
+    uint32_t fn = mem_read32(self + 0x8u);
+    if (fn != 0u) {
+        using fn_t = uint32_t (__thiscall *)(uint32_t, uint32_t);
+        return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn))(self, arg0);
+    }
+    return 0u;
+}
+} // namespace lift_00447500

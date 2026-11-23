@@ -1642,6 +1642,12 @@
     "summary": "Invokes a member callback at +0x04 if non-null, passing one argument",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00447500": {
+    "name": "invokeCallbackOrNull",
+    "signature": "uint32_t __thiscall sub_00447500(uint32_t self, uint32_t arg0)",
+    "summary": "Tail-calls the callback stored at this+0x8 with arg0 if non-null, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447580": {
     "name": "PrimitivesPropertyPage::vfunc_0",
     "class": "PrimitivesPropertyPage",
