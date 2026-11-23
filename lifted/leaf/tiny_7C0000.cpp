@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_7C0000.cpp
 #include "lift_compat.h"
+#include <bit>
 
 // [0x007C9CB0]
 namespace lift_007C9CB0 {
@@ -106,3 +107,16 @@ uint32_t sub_007CA8D0(uint32_t arg0) {
     return arg0 + 0x10u;
 }
 } // namespace lift_007CA8D0
+
+// [0x007CAFC0]
+namespace lift_007CAFC0 {
+// @name getField0x14Float
+// @summary Loads and returns a 32-bit float from offset 0x14 of the struct pointer argument.
+// @field Struct +0x14 float field_0x14
+
+extern uint32_t mem_read32(uint32_t addr);
+
+float sub_007CAFC0(uint32_t obj) {
+    return std::bit_cast<float>(mem_read32(obj + 0x14));
+}
+} // namespace lift_007CAFC0
