@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::EngineData:
 namespace lifted_layout {
 struct NMData_EngineData_Fields {
-    // +0x24  float                    field_0x24  (evidence: 0x004B8E40)
+    // +0x24  float                    field_0x24  (evidence: 0x004B1430, 0x004B8E40)
 };
 } // namespace lifted_layout

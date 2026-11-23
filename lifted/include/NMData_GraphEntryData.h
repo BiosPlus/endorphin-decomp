@@ -9,6 +9,6 @@
 namespace lifted_layout {
 struct NMData_GraphEntryData_Fields {
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B1430)
-    // +0x20  int32_t                  field_0x20  (evidence: 0x004B12A0)
+    // +0x20  int32_t                  field_0x20  (evidence: 0x004B12A0, 0x004B1430)
 };
 } // namespace lifted_layout
