@@ -1,0 +1,22 @@
+{
+  "va": "0x0064EEB0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitTwistAngle(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitTwistAngle(float), 0}\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitTwistAngle(float), 0}\u003e",
+  "signature": "void __stdcall fn_0064EEB0(void* a1, void* a2, void* a3)",
+  "summary": "Reads a float from the attached reader, forwards it to SkeletalJoint::setHardLimitTwistAngle on the target, and returns {target, reader-value} pair (8 bytes) via hidden out pointer.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:10:02Z"
+}

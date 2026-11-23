@@ -3960,3 +3960,46 @@ void* lift_0064EE00(void* out, void* arg2, void* arg3) {
     return out;
 }
 } // namespace lift_0064EE00
+
+// [0x0064EEB0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitTwistAngle(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064EEB0 {
+extern void ext_0064DC40(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitTwistAngle(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitTwistAngle(float), 0}>
+// @summary Reads a float from the attached reader, forwards it to SkeletalJoint::setHardLimitTwistAngle on the target, and returns {target, reader-value} pair (8 bytes) via hidden out pointer.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_0064EEB0(void* a1, void* a2, void* a3) {
+    // a1: out pointer for 8-byte result (hidden return slot)
+    // a2: pointer to the target object pointer (dereferenced once)
+    // a3: this of the ValuePtrType; +0x04 holds the reader object
+    void* reader = lift_field<void*>(a3, 0x04);
+    void* target = lift_field<void*>(a2, 0x00);
+
+    // Evaluate the float value through the reader's vtable slot 1.
+    using GetFloatFn = float (*)(void* self, void* ctx, void* target);
+    void* readerVtbl = lift_field<void*>(reader, 0x00);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(readerVtbl, 0x04));
+    float value = getFloat(reader, a3, target);
+
+    ext_0064DC40(target, value);
+
+    if (lift_field<void*>(a3, 0x04) != nullptr) {
+        // Reader present: query its vtable slot 0x70 for a pointer to a pair,
+        // and combine the pair's first word with the reader object.
+        using GetPairFn = void* (*)(void* self, void* ctx, void** tmp);
+        void* pairTmp = nullptr;
+        void* readerVtbl2 = lift_field<void*>(reader, 0x00);
+        auto getPair = reinterpret_cast<GetPairFn>(lift_field<void*>(readerVtbl2, 0x70));
+        void* pairPtr = getPair(reader, a3, &pairTmp);
+        void* first = lift_field<void*>(pairPtr, 0x00);
+        void* second = lift_field<void*>(a3, 0x04);
+        lift_field<void*>(a1, 0x00) = first;
+        lift_field<void*>(a1, 0x04) = second;
+    } else {
+        // No reader: result is {target, null}.
+        lift_field<void*>(a1, 0x00) = target;
+        lift_field<void*>(a1, 0x04) = nullptr;
+    }
+}
+} // namespace lift_0064EEB0
