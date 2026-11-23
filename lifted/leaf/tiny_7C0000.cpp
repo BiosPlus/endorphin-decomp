@@ -370,3 +370,24 @@ float sub_007C7690(uintptr_t a1) {
     return *reinterpret_cast<const float*>(a1 + 0x214);
 }
 } // namespace lift_007C7690
+
+// [0x007C9CC0]
+namespace lift_007C9CC0 {
+// @name storeFloatAndReturnPtr
+// @summary Stores a 32-bit float value to the destination pointer and returns the pointer
+float* sub_007C9CC0(float* dst, float val) {
+    *dst = val;
+    return dst;
+}
+} // namespace lift_007C9CC0
+
+// [0x007CC9D0]
+namespace lift_007CC9D0 {
+// @name addOffset0x100
+// @summary Adds 0x100 to the 32-bit value pointed to by the first argument.
+// @field Target +0x00 uint32_t field_0x00
+void sub_007CC9D0(uint32_t* ptr)
+{
+    *ptr += 0x100u;
+}
+} // namespace lift_007CC9D0

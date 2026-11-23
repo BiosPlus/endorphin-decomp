@@ -35208,6 +35208,12 @@
     "summary": "Dereference a float pointer and return its value.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9CC0": {
+    "name": "storeFloatAndReturnPtr",
+    "signature": "float* sub_007C9CC0(float* dst, float val)",
+    "summary": "Stores a 32-bit float value to the destination pointer and returns the pointer",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9DD0": {
     "name": "addOffset0x30",
     "signature": "uint32_t sub_007C9DD0(uint32_t arg0)",
@@ -35260,6 +35266,12 @@
     "name": "getShiftedField0",
     "signature": "uint32_t sub_007CC9C0(const uint32_t* ptr)",
     "summary": "Dereferences a 32-bit unsigned integer pointer and shifts the value right by 8 bits.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007CC9D0": {
+    "name": "addOffset0x100",
+    "signature": "void sub_007CC9D0(uint32_t* ptr)",
+    "summary": "Adds 0x100 to the 32-bit value pointed to by the first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007CC9F0": {

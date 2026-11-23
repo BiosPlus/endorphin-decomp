@@ -1,0 +1,13 @@
+{
+  "va": "0x007C9CC0",
+  "size": 11,
+  "orig_symbol": "sub_007C9CC0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "storeFloatAndReturnPtr",
+  "signature": "float* sub_007C9CC0(float* dst, float val)",
+  "summary": "Stores a 32-bit float value to the destination pointer and returns the pointer",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:44:14Z"
+}
