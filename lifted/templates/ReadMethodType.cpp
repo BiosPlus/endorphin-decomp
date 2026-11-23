@@ -17956,3 +17956,34 @@ int fn_004707F0(void* self) {
     return (static_cast<double>(v) >= mem_0093B418) ? 1 : 0;
 }
 } // namespace lift_004707F0
+
+// [0x00471C60] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00471C60 {
+extern float ext_0046F860(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0093B418;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00471C60(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0046F860(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0093B418) ? 1 : 0;
+}
+} // namespace lift_00471C60
