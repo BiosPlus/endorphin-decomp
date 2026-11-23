@@ -32306,6 +32306,12 @@
     "summary": "Returns constant 0.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA940": {
+    "name": "hasField0x08",
+    "signature": "uint8_t __thiscall sub_006FA940(uint32_t self, uint32_t unused)",
+    "summary": "Returns whether the 32-bit field at offset +0x08 is non-zero.",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006FC5A0": {
     "name": "sub_006FC5A0",
     "signature": "extern \"C\" int32_t __cdecl fn_006FC5A0(void)",
@@ -34148,6 +34154,13 @@
     "summary": "Returns constant 0xB1.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x00780250": {
+    "name": "UnknownClass::destroyField04",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_00780250(void* self)",
+    "summary": "Passes field_0x04 to thunk_MFC80_ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00780260": {
     "name": "sub_00780260",
     "signature": "void fn_00780260(void)",
@@ -34640,6 +34653,13 @@
     "name": "sub_007AEBC0",
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AEEE0": {
+    "name": "sub_007AEEE0",
+    "class": "UnknownClass",
+    "signature": "bool __thiscall sub_007AEEE0(uint32_t ecx)",
+    "summary": "Returns true if field_0x58 is non-zero",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
   "0x007B1E80": {
