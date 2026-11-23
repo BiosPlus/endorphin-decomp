@@ -10,6 +10,6 @@
 // Recovered field layout for EngineData:
 namespace lifted_layout {
 struct EngineData_Fields {
-    // +0x24  float                    field_0x24  (evidence: 0x004B8DF0)
+    // +0x24  float                    field_0x24  (evidence: 0x004B8DF0, 0x006071E0)
 };
 } // namespace lifted_layout

@@ -10,6 +10,6 @@
 // Recovered field layout for Interpreter:
 namespace lifted_layout {
 struct Interpreter_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x004B8920, 0x005B2D00, 0x005D6550)
+    // +0x4   std::string              field_0x04  (evidence: 0x004B8920, 0x005B2D00, 0x005D6550, 0x006071E0)
 };
 } // namespace lifted_layout

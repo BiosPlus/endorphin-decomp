@@ -10,7 +10,7 @@
 // Recovered field layout for SensorIsCollidingWith:
 namespace lifted_layout {
 struct SensorIsCollidingWith_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x004B8920, 0x005B2D00, 0x006250B0)
-    // +0x30  bool                     field_0x30  (evidence: 0x004B8920, 0x005B2D00, 0x006250B0)
+    // +0x0   void*                    field_0x00  (evidence: 0x004B8920, 0x005B2D00, 0x006071E0, 0x006250B0)
+    // +0x30  bool                     field_0x30  (evidence: 0x004B8920, 0x005B2D00, 0x006071E0, 0x006250B0)
 };
 } // namespace lifted_layout

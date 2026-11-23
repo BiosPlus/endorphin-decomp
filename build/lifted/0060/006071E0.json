@@ -4,11 +4,455 @@
   "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e::vfunc_0",
   "src_path": "src/templates/ReadMethodType.cpp",
   "lifted_path": "lifted/templates/ReadMethodType.cpp",
-  "name": "ExprParser::ReadMethodType\u003cEffector, float, Effector::getGradientCap, 0\u003e::vfunc_0",
-  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
-  "signature": "void* fn_006071E0(void* self, void* const* effectorRef)",
-  "summary": "Reads Effector::getGradientCap from the referenced Effector and forwards it to ext_00672080 on self; throws if the Effector pointer is null.",
+  "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
+  "signature": "void* fn_00617340(void* self)",
+  "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
   "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "int",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x1",
+      "type": "unsigned char",
+      "name": "field_0x01"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (target object pointer, dereferenced",
+      "name": "first)"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x5",
+      "type": "bool",
+      "name": "isCollisionEnabled"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x6",
+      "type": "bool",
+      "name": "isGravityEnabled"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x9",
+      "type": "bool",
+      "name": "isProjectRootEnabled"
+    },
+    {
+      "class": "NMData::Task",
+      "offset": "+0x14",
+      "type": "int",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Geometry",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x28",
+      "type": "int",
+      "name": "field_0x28"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::VideoPlaneData*",
+      "name": "target"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x30",
+      "type": "bool",
+      "name": "field_0x30"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "object"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Sensors::CompoundSensorPlanes",
+      "offset": "+0x78",
+      "type": "NM::Vector3",
+      "name": "field_0x78"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "valuePtr"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner_ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownArg",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "calibrationVars"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x9",
+      "type": "uint8_t",
+      "name": "field_0x09"
+    },
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x4",
+      "type": "bool",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Task",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x24",
+      "type": "int",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "double*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ImageExporter",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "ptr"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "ptr"
+    },
+    {
+      "class": "SensorIsCollidingWith",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "bool",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "BYTE",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x20",
+      "type": "int",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ExprParser::ReadMethodType\u003cInterpreter\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Value",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::Task",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExpressionEntry",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "expression"
+    },
+    {
+      "class": "Sensors::CompoundSensorPlanes",
+      "offset": "+0x78",
+      "type": "NM::Vector3",
+      "name": "vertAxis"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x9",
+      "type": "uint8_t",
+      "name": "field_0x09"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "m_isGroundCollisionEnabled"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "m_unitMass"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Geometry",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Geometry",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "unitLength"
+    },
+    {
+      "class": "EngineData",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "VideoPlaneData",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "VideoPlaneData",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x40",
+      "type": "float field_0x40 (getYOffset return value; name not",
+      "name": "recovered)"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* target (VideoPlaneData* read via the out/ValuePtr at",
+      "name": "arg2)"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
     {
       "class": "Effector",
       "offset": "+0x50",
@@ -18,5 +462,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T13:55:06Z"
+  "lifted_at": "2026-11-23T13:55:12Z"
 }
