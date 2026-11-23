@@ -52,3 +52,13 @@ bool __thiscall fn_00492540(void* self) {
     return *reinterpret_cast<const uint32_t*>(self) == 0;
 }
 } // namespace lift_00492540
+
+// [0x00494060]
+namespace lift_00494060 {
+// @name sub_00494060
+// @summary XORs a 32-bit value at [ecx] with the first stack argument.
+void __thiscall sub_00494060(void* self, uint32_t mask)
+{
+    *reinterpret_cast<uint32_t*>(self) ^= mask;
+}
+} // namespace lift_00494060

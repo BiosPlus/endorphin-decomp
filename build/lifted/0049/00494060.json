@@ -1,0 +1,13 @@
+{
+  "va": "0x00494060",
+  "size": 9,
+  "orig_symbol": "sub_00494060",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "sub_00494060",
+  "signature": "void __thiscall sub_00494060(void* self, uint32_t mask)",
+  "summary": "XORs a 32-bit value at [ecx] with the first stack argument.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:39:38Z"
+}

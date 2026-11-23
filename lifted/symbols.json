@@ -4185,6 +4185,12 @@
     "summary": "Returns true if the 32-bit value at offset 0 of the object is zero.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00494060": {
+    "name": "sub_00494060",
+    "signature": "void __thiscall sub_00494060(void* self, uint32_t mask)",
+    "summary": "XORs a 32-bit value at [ecx] with the first stack argument.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x004947D0": {
     "name": "sub_004947D0",
     "signature": "extern \"C\" void __fastcall fn_004947D0(void* self)",
