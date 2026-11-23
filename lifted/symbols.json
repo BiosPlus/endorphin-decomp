@@ -6149,6 +6149,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D0C80": {
+    "name": "NMData::TransitionEventData::vfunc_14",
+    "class": "NMData::TransitionEventData",
+    "signature": "void* __thiscall fn_004D0C80(void* self, void* out, uint32_t id)",
+    "summary": "Returns property value for ID 0x40 from field_0x198 if field_0x168-\u003evfunc_10() is false, otherwise delegates to base vfunc_14.",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D1310": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, getMomentumScaleFactor\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, getMomentumScaleFactor\u003e",
@@ -16851,6 +16858,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTimeDelay(float)\u003e",
     "signature": "extern void __stdcall fn_00633090(void** targetPtr, void* valueArg)",
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x006330E0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026EffectorSkeletal::getDesiredPosition, NM::Vector3 const \u0026, \u0026EffectorSkeletal::setDesiredPosition\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __stdcall fn_006330E0(uint32_t* arg1, uint32_t* arg2)",
+    "summary": "Sets EffectorSkeletal::desiredPosition from a parsed Vector3 value, or throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x006331A0": {

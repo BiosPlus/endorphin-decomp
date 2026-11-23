@@ -80,3 +80,32 @@ void* fn_0061E930(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_0061D2A0(mem, owner);
 }
+
+// [0x006115F0]
+namespace lift_006115F0 {
+// @name NMData::HingeConstraint::vfunc_14
+// @class NMData::HingeConstraint
+// @summary Returns arg1; if arg2 == 0xc8, dispatches to sub_00661650 on arg1 with +0x164 when +0x160 is nonzero or sub_0046F7D0(arg1) otherwise; else delegates to NMData::AxisDefineSensorData::vfunc_14.
+// @field NMData::HingeConstraint +0x160 uint8_t field_0x160
+// @field NMData::HingeConstraint +0x164 uint8_t subobject
+
+
+void __cdecl ext_0046F7D0(void* arg1);
+void* __thiscall ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+void __thiscall ext_00661650(void* self, void* arg1);
+
+void* __thiscall fn_006115F0(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 != 0xc8) {
+        ext_0058F6B0(self, arg1, arg2);
+        return arg1;
+    }
+
+    auto* base = static_cast<uint8_t*>(self);
+    if (base[0x160] != 0) {
+        ext_00661650(arg1, base + 0x164);
+    } else {
+        ext_0046F7D0(arg1);
+    }
+    return arg1;
+}
+} // namespace lift_006115F0

@@ -1,0 +1,28 @@
+{
+  "va": "0x006115F0",
+  "size": 85,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_14",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_14",
+  "class": "NMData::HingeConstraint",
+  "signature": "void* __thiscall fn_006115F0(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Returns arg1; if arg2 == 0xc8, dispatches to sub_00661650 on arg1 with +0x164 when +0x160 is nonzero or sub_0046F7D0(arg1) otherwise; else delegates to NMData::AxisDefineSensorData::vfunc_14.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:00:28Z"
+}

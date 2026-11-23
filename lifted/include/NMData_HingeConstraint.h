@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct NMData_HingeConstraint_Fields {
     // +0x0   void**                   vtable  (evidence: 0x006116B0, 0x00611740)
-    // +0x164 uint8_t                  subobject  (evidence: 0x0061E9A0)
+    // +0x160 uint8_t                  field_0x160  (evidence: 0x006115F0)
+    // +0x164 uint8_t                  subobject  (evidence: 0x006115F0, 0x0061E9A0)
 };
 } // namespace lifted_layout
