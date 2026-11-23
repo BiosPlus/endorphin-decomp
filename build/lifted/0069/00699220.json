@@ -1,0 +1,14 @@
+{
+  "va": "0x00699220",
+  "size": 49,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_29",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_29",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void fn_00699220(void* self, void** out)",
+  "summary": "Allocates a 12-byte object, runs its initializer, and stores it into the out-slot with a ref count of +1 (null slot if allocation fails).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:18:55Z"
+}

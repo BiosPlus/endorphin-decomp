@@ -168,3 +168,31 @@ void* fn_00670D60(void* self) {
     auto slot6 = reinterpret_cast<void* (*)(void*, void*)>(lift_field<void*>(vtbl, 0x18));
     return slot6(obj, r);
 }
+
+// [0x00699220] ExprParser::ExpressionContainerType::vfunc_29 (49 bytes)
+namespace lift_00699220 {
+// Known callee 0x00699180: sub_00699180 (17B). Takes `this` in ecx, returns it in eax.
+extern void* ext_00699180(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (push 0xC; add esp,4); returns allocated pointer in eax.
+extern void* ext_006A5C62(size_t size);
+
+// @name ExprParser::ExpressionContainerType::vfunc_29
+// @class ExprParser::ExpressionContainerType
+// @summary Allocates a 12-byte object, runs its initializer, and stores it into the out-slot with a ref count of +1 (null slot if allocation fails).
+void fn_00699220(void* self, void** out) {
+    (void)self; // ecx is not read by the original function.
+
+    void* obj = ext_006A5C62(12);
+    if (obj != nullptr) {
+        ext_00699180(obj);
+        // Original increments the refcount stored at obj+0x04 on the new object.
+        lift_field<int32_t>(obj, 0x04) += 1;
+        *out = obj;
+    } else {
+        // Original falls through to `add [eax+4], 1` with eax == 0 here, which
+        // faults on the real target. That fault is not reproduced; the slot is cleared.
+        *out = nullptr;
+    }
+}
+} // namespace lift_00699220

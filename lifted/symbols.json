@@ -14908,6 +14908,13 @@
     "summary": "Gets object via vfunc_24, dynamic_casts it, and invokes vfunc_3 if non-null",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00699220": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_29",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void fn_00699220(void* self, void** out)",
+    "summary": "Allocates a 12-byte object, runs its initializer, and stores it into the out-slot with a ref count of +1 (null slot if allocation fails).",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x006992D0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_24",
     "class": "ExprParser::ExpressionContainerType",
