@@ -135,3 +135,39 @@ void* __stdcall fn_005B4190(void* self, uint32_t key, uint32_t value) {
     return self;
 }
 } // namespace lift_005B4190
+
+// [0x005B12B0]
+namespace lift_005B12B0 {
+extern float __thiscall ext_005B11E0(void* self, int32_t index);
+extern void __thiscall ext_0047FFA0(const void* self, float* out_vec, const float* in_vec);
+extern const double mem_00993828; // .rdata double 0.5
+
+// @name Geometry::CuboidType::vfunc_4
+// @class Geometry::CuboidType
+// @summary Clamps the input point to the cuboid half-extents (0.5 * ext_005B11E0(self, axis)), transforms the clamped point (w=1) via ext_0047FFA0 using the input as this, and returns the Euclidean length of the transformed vector.
+extern float __stdcall fn_005B12B0(float* out, void* self, const float* in) {
+    for (int32_t axis = 0; axis < 3; ++axis) {
+        const float extent = ext_005B11E0(self, axis);
+        const float half = static_cast<float>(static_cast<double>(extent) * mem_00993828);
+        const float neg_half = -half;
+        const float p = in[axis];
+
+        float clamped;
+        if (half < p) {
+            clamped = half;
+        } else if (neg_half > p) {
+            clamped = neg_half;
+        } else {
+            clamped = p;
+        }
+        out[axis] = clamped;
+    }
+    out[3] = 1.0f;
+
+    float local[3];
+    ext_0047FFA0(in, local, out);
+
+    const float sum_sq = local[0] * local[0] + local[1] * local[1] + local[2] * local[2];
+    return std::sqrt(sum_sq);
+}
+} // namespace lift_005B12B0
