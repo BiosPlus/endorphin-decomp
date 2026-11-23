@@ -1,0 +1,22 @@
+{
+  "va": "0x004B48E0",
+  "size": 69,
+  "orig_symbol": "NMData::GraphEngineData::vfunc_13",
+  "src_path": "src/NMData/GraphEngineData.cpp",
+  "lifted_path": "lifted/NMData/GraphEngineData.cpp",
+  "name": "NMData::GraphEngineData::vfunc_13",
+  "class": "NMData::GraphEngineData",
+  "signature": "void* fn_004B48E0(void* self, void* unused_arg0, void* arg1)",
+  "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
+  "fields": [
+    {
+      "class": "NMData::GraphEngineData",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:07:41Z"
+}

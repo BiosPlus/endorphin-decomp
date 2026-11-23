@@ -4676,6 +4676,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B48E0": {
+    "name": "NMData::GraphEngineData::vfunc_13",
+    "class": "NMData::GraphEngineData",
+    "signature": "void* fn_004B48E0(void* self, void* unused_arg0, void* arg1)",
+    "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
+    "lifted_path": "lifted/NMData/GraphEngineData.cpp"
+  },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
