@@ -3531,6 +3531,13 @@
     "summary": "Dynamic-cast self (RTTI src 0xA2E2F8 -\u003e dst 0xA346B0, no vfptr offset) and return the resulting pointer.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00494A20": {
+    "name": "ExprParser::ReadMethodType\u003cRigManager, int, \u0026RigManager::getRigTypeIndex, 1\u003e::vfunc_1",
+    "class": "ExprParser::DynamicEnumType\u003cRigManager\u003e",
+    "signature": "double __thiscall fn_00494A20(uint32_t self, uint32_t ptrAddr)",
+    "summary": "Reads the rig type index from a RigManager pointer as a double, or throws an exception if the pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00494A60": {
     "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_2",
     "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
@@ -4085,6 +4092,13 @@
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0\u003e",
     "signature": "bool fn_004A3530(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004A38F0": {
+    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getFontSize\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getFontSize\u003e",
+    "signature": "extern \"C\" double __thiscall fn_004A38F0(void* self, void* arg0)",
+    "summary": "Reads the font size as a double from an FSMEditView pointer, or throws an exception if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004A3930": {

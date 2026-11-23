@@ -10493,3 +10493,29 @@ extern double __thiscall fn_0046F1A0(void* self, void* arg0) {
     return 0.0;
 }
 } // namespace lift_0046F1A0
+
+// [0x004A38F0]
+namespace lift_004A38F0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getFontSize>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getFontSize>
+// @summary Reads the font size as a double from an FSMEditView pointer, or throws an exception if null.
+
+
+extern int32_t __thiscall ext_006658C0(void* self);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern double __thiscall fn_004A38F0(void* self, void* arg0) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg0);
+    if (obj != nullptr) {
+        int32_t val = ext_006658C0(obj);
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+    return 0.0;
+}
+} // namespace lift_004A38F0
