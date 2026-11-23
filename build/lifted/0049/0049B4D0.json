@@ -1,0 +1,14 @@
+{
+  "va": "0x0049B4D0",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getFileName(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026, \u0026NMData::State::getFileName\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void* __thiscall fn_0049B4D0(void* self, void* outValue, void** statePtr)",
+  "summary": "Evaluates getFileName() on a non-null NMData::State pointer or throws an exception if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:49:38Z"
+}
