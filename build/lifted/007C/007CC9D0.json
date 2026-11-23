@@ -1,0 +1,21 @@
+{
+  "va": "0x007CC9D0",
+  "size": 11,
+  "orig_symbol": "sub_007CC9D0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "addOffset0x100",
+  "signature": "void sub_007CC9D0(uint32_t* ptr)",
+  "summary": "Adds 0x100 to the 32-bit value pointed to by the first argument.",
+  "fields": [
+    {
+      "class": "Target",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:44:16Z"
+}
