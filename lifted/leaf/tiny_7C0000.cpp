@@ -146,3 +146,15 @@ uint32_t sub_007CC600(uint32_t arg0) {
     return mem_r32(arg0 + 0x28u);
 }
 } // namespace lift_007CC600
+
+// [0x007CC9F0]
+namespace lift_007CC9F0 {
+extern uint32_t mem_read32(uintptr_t addr);
+
+// @name getField0x0C
+// @summary Reads and returns the 32-bit field at offset 0x0C of the object passed as arg0.
+// @field Object +0x0C uint32_t field_0x0C
+uint32_t sub_007CC9F0(uintptr_t arg0) {
+    return mem_read32(arg0 + 0x0C);
+}
+} // namespace lift_007CC9F0

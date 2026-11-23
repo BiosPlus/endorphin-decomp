@@ -20254,6 +20254,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00642530 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00644F20": {
+    "name": "forwardVCall24",
+    "signature": "void __fastcall sub_00644F20(uint32_t ecx)",
+    "summary": "Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00645F80": {
     "name": "RelationshipHinge::vfunc_0_off_8",
     "class": "RelationshipHinge",
@@ -33844,6 +33850,12 @@
     "name": "get_field_0x28",
     "signature": "uint32_t sub_007CC600(uint32_t arg0)",
     "summary": "Reads and returns the 32-bit value at offset 0x28 of the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007CC9F0": {
+    "name": "getField0x0C",
+    "signature": "uint32_t sub_007CC9F0(uintptr_t arg0)",
+    "summary": "Reads and returns the 32-bit field at offset 0x0C of the object passed as arg0.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007D48A0": {

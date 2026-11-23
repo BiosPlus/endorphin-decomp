@@ -9,12 +9,13 @@
 namespace lifted_layout {
 struct Object_Fields {
     // +0x0   double                   field_0x00  (evidence: 0x0067EC60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540, 0x00644F20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x0053F550, 0x0063E960) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x0062A580, 0x00682ED0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x005F35C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x007558B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x007D48A0)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x007CC9F0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6FC0)
     // +0x18  uint32_t                 field_0x18  (evidence: 0x007DB720)
     // +0x1C  float                    field_0x1C  (evidence: 0x007C6F30) // CONFLICT: multiple definitions at +0x1C
