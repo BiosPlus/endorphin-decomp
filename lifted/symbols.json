@@ -9062,6 +9062,12 @@
     "summary": "Loads a double from a sub-object pointed to by this+0x08 at offset +0x10 and returns it on the x87 stack.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050EA00": {
+    "name": "getNestedDouble",
+    "signature": "double __thiscall sub_0050EA00(void* self)",
+    "summary": "Loads a double at offset 0x18 from a pointer stored at offset 0x08 of this.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050F190": {
     "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, randomizeNow\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e",

@@ -1,0 +1,21 @@
+{
+  "va": "0x0050EA00",
+  "size": 7,
+  "orig_symbol": "sub_0050EA00",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "getNestedDouble",
+  "signature": "double __thiscall sub_0050EA00(void* self)",
+  "summary": "Loads a double at offset 0x18 from a pointer stored at offset 0x08 of this.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:38:44Z"
+}

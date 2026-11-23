@@ -38,3 +38,17 @@ double sub_0050E9F0(void* self) {
     return *reinterpret_cast<double*>(eax + 0x10);
 }
 } // namespace lift_0050E9F0
+
+// [0x0050EA00]
+namespace lift_0050EA00 {
+// @name getNestedDouble
+// @summary Loads a double at offset 0x18 from a pointer stored at offset 0x08 of this.
+// @field unknown +0x08 void* field_0x08
+
+
+double __thiscall sub_0050EA00(void* self) {
+    const uint8_t* inner = *reinterpret_cast<const uint8_t* const*>(
+        static_cast<const uint8_t*>(self) + 0x8);
+    return *reinterpret_cast<const double*>(inner + 0x18);
+}
+} // namespace lift_0050EA00
