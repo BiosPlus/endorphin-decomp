@@ -8,7 +8,7 @@
 // Recovered field layout for NMData::GraphEntryData:
 namespace lifted_layout {
 struct NMData_GraphEntryData_Fields {
-    // +0x1   unsigned char            field_0x01  (evidence: 0x004B1430, 0x004B83E0, 0x00678A20)
-    // +0x20  int32_t                  field_0x20  (evidence: 0x004B12A0, 0x005223C0, 0x005DAA40, 0x00635160)
+    // +0x1   unsigned char            field_0x01  (evidence: 0x004B1430, 0x004B1FF0, 0x004B83E0, 0x00678A20)
+    // +0x20  int32_t                  field_0x20  (evidence: 0x004B12A0, 0x004B1FF0, 0x005223C0, 0x005DAA40, 0x00635160)
 };
 } // namespace lifted_layout

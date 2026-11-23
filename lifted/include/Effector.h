@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct Effector_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00603010)
-    // +0x2C  float                    field_0x2c  (evidence: 0x005D6980)
+    // +0x2C  float                    field_0x2c  (evidence: 0x004B1FF0, 0x005D6980)
 };
 } // namespace lifted_layout

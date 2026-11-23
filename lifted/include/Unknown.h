@@ -11,7 +11,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (arg1: loaded to obtain the forwarding "this")  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   field_0x00  (evidence: 0x004B7A10, 0x0066B680, 0x0066B6B0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x004AAAC0, 0x0053F894, 0x0067A700) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x004AAAC0, 0x004B1FF0, 0x0053F894, 0x0067A700) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x0066B560, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x004104E0) // CONFLICT: multiple definitions at +0x0
