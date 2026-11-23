@@ -43,3 +43,35 @@ uint32_t fn_0046F9E0(void* self, uint32_t a, uint32_t b) {
     return b;
 }
 } // namespace lift_0046F9E0
+
+// [0x004757A0]
+namespace lift_004757A0 {
+// Known callees (signatures recovered from call sites):
+//   0x005A6300: thiscall, ecx = obj+4 subobject, one stack arg (pointer to a void* slot).
+//   0x0046F930: thiscall, ecx = adjusted this (RuntimeEngine).
+extern void ext_005A6300(void* self, void** slot);
+extern void ext_0046F930(void* self);
+
+// @name RuntimeEngine::vfunc_0_off_8
+// @class RuntimeEngine
+// @summary Thunk from the +0x8 (SelectionListener) subobject: queries a1 via vtable slot 0x54; if it returns non-null, forwards obj+4 and a slot holding (this-8 ? this+4 : null) to 0x005A6300, then calls 0x0046F930 on this-8.
+void fn_004757A0(void* self, void* a1) {
+    // Original: esi = this (secondary subobject). The thunk adjusts this by -8 to reach RuntimeEngine.
+    unsigned char* esi = static_cast<unsigned char*>(self);
+
+    // Query a1 through its vtable slot at byte offset 0x54 (index 21).
+    void** vtbl = *reinterpret_cast<void***>(a1);
+    using QueryFn = void* (*)(void* self);
+    void* obj = reinterpret_cast<QueryFn>(vtbl[0x54 / sizeof(void*)])(a1);
+    if (obj == nullptr) {
+        return;
+    }
+
+    // Adjusted RuntimeEngine pointer. When non-null, the slot receives the +0x0C (BaseEventListener) subobject.
+    unsigned char* engine = esi - 8;
+    void* slot = (engine != nullptr) ? static_cast<void*>(esi + 4) : nullptr;
+
+    ext_005A6300(static_cast<unsigned char*>(obj) + 4, &slot);
+    ext_0046F930(engine);
+}
+} // namespace lift_004757A0

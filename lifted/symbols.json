@@ -3147,6 +3147,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00474C40 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004757A0": {
+    "name": "RuntimeEngine::vfunc_0_off_8",
+    "class": "RuntimeEngine",
+    "signature": "void fn_004757A0(void* self, void* a1)",
+    "summary": "Thunk from the +0x8 (SelectionListener) subobject: queries a1 via vtable slot 0x54; if it returns non-null, forwards obj+4 and a slot holding (this-8 ? this+4 : null) to 0x005A6300, then calls 0x0046F930 on this-8.",
+    "lifted_path": "lifted/classes/RuntimeEngine.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",

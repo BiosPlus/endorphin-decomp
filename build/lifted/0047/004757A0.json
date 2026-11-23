@@ -1,0 +1,14 @@
+{
+  "va": "0x004757A0",
+  "size": 67,
+  "orig_symbol": "RuntimeEngine::vfunc_0_off_8",
+  "src_path": "src/classes/RuntimeEngine.cpp",
+  "lifted_path": "lifted/classes/RuntimeEngine.cpp",
+  "name": "RuntimeEngine::vfunc_0_off_8",
+  "class": "RuntimeEngine",
+  "signature": "void fn_004757A0(void* self, void* a1)",
+  "summary": "Thunk from the +0x8 (SelectionListener) subobject: queries a1 via vtable slot 0x54; if it returns non-null, forwards obj+4 and a slot holding (this-8 ? this+4 : null) to 0x005A6300, then calls 0x0046F930 on this-8.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:27:53Z"
+}
