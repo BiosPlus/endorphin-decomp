@@ -71,3 +71,40 @@ void* fn_004CFC30(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_004CFB10(mem, owner);
 }
+
+// [0x004CFE90]
+namespace lift_004CFE90 {
+// @name NMData::IncarnationEventData::vfunc_86
+// @class NMData::IncarnationEventData
+// @summary Resets state flag, allocates and initializes a 12-byte object, frees any previous object at +0x184, and registers the new one.
+// @field NMData::IncarnationEventData +0x184 void* field_0x184
+// @field NMData::IncarnationEventData +0x188 uint8_t field_0x188
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_004CE8D0(void* self);
+extern void __thiscall ext_004CFCE0(void* self, void* owner);
+
+extern void __thiscall fn_004CFE90(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    *reinterpret_cast<uint8_t*>(base + 0x188) = 0;
+
+    void* new_obj = ext_006A5C62(0xC);
+    if (new_obj != nullptr) {
+        uint8_t* obj_bytes = reinterpret_cast<uint8_t*>(new_obj);
+        *reinterpret_cast<uint32_t*>(obj_bytes + 0x0) = 0;
+        *reinterpret_cast<float*>(obj_bytes + 0x8) = 1.0f;
+        *reinterpret_cast<uint32_t*>(obj_bytes + 0x4) = 6;
+    }
+
+    void* old_obj = *reinterpret_cast<void**>(base + 0x184);
+    if (new_obj != old_obj && old_obj != nullptr) {
+        ext_004CE8D0(old_obj);
+        ext_006A5C5C(old_obj);
+    }
+
+    *reinterpret_cast<void**>(base + 0x184) = new_obj;
+    ext_004CFCE0(new_obj, self);
+}
+} // namespace lift_004CFE90

@@ -1,0 +1,28 @@
+{
+  "va": "0x004CFE90",
+  "size": 98,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_86",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_86",
+  "class": "NMData::IncarnationEventData",
+  "signature": "extern \"C\" void __thiscall fn_004CFE90(void* self)",
+  "summary": "Resets state flag, allocates and initializes a 12-byte object, frees any previous object at +0x184, and registers the new one.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x188",
+      "type": "uint8_t",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:09Z"
+}
