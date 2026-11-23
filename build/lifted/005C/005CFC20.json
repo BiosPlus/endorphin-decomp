@@ -1,0 +1,28 @@
+{
+  "va": "0x005CFC20",
+  "size": 85,
+  "orig_symbol": "NMData::CameraData::vfunc_14",
+  "src_path": "src/NMData/CameraData.cpp",
+  "lifted_path": "lifted/NMData/CameraData.cpp",
+  "name": "NMData::CameraData::vfunc_14",
+  "class": "NMData::CameraData",
+  "signature": "void* __thiscall fn_005CFC20(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Handles property/message 0x1b9 on CameraData by calling sub_00661650 or sub_0046F7D0, otherwise delegates to NMData::AxisDefineSensorData::vfunc_14.",
+  "fields": [
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1A8",
+      "type": "uint8_t",
+      "name": "field_0x1a8"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F0",
+      "type": "uint8_t",
+      "name": "field_0x1f0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:00:25Z"
+}

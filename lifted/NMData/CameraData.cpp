@@ -35,3 +35,31 @@ void* __thiscall fn_005D06E0(void* self, uint32_t arg) {
     auto* base = reinterpret_cast<uint8_t*>(self);
     return base + 0x264 + static_cast<uintptr_t>(kind) * 8;
 }
+
+// [0x005CFC20]
+namespace lift_005CFC20 {
+// @name NMData::CameraData::vfunc_14
+// @class NMData::CameraData
+// @summary Handles property/message 0x1b9 on CameraData by calling sub_00661650 or sub_0046F7D0, otherwise delegates to NMData::AxisDefineSensorData::vfunc_14.
+// @field NMData::CameraData +0x1a8 uint8_t field_0x1a8
+// @field NMData::CameraData +0x1f0 uint8_t field_0x1f0
+
+extern void* __thiscall ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+extern void __thiscall ext_00661650(void* self, void* arg1);
+extern void __cdecl ext_0046F7D0(void* arg1);
+
+void* __thiscall fn_005CFC20(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 != 0x1b9) {
+        ext_0058F6B0(self, arg1, arg2);
+        return arg1;
+    }
+
+    auto* base = static_cast<uint8_t*>(self);
+    if (base[0x1f0] != 0) {
+        ext_00661650(arg1, base + 0x1a8);
+    } else {
+        ext_0046F7D0(arg1);
+    }
+    return arg1;
+}
+} // namespace lift_005CFC20

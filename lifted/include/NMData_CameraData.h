@@ -10,6 +10,8 @@
 // Recovered field layout for NMData::CameraData:
 namespace lifted_layout {
 struct NMData_CameraData_Fields {
+    // +0x1A8 uint8_t                  field_0x1a8  (evidence: 0x005CFC20)
+    // +0x1F0 uint8_t                  field_0x1f0  (evidence: 0x005CFC20)
     // +0x264 uint8_t                  field_0x264  (evidence: 0x005D06E0)
 };
 } // namespace lifted_layout
