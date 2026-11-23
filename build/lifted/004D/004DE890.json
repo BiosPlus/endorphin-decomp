@@ -1,0 +1,28 @@
+{
+  "va": "0x004DE890",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setStrength(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "extern \"C\" void __stdcall fn_004DE890(void** targetPtr, void* valueArg)",
+  "summary": "Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "typeObj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:50:25Z"
+}

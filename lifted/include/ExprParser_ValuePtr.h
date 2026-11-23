@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct ExprParser_ValuePtr_Fields {
     // +0x0   uint32_t                 ptr  (evidence: 0x004A2F40, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    ptr  (evidence: 0x00488270) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    ptr  (evidence: 0x00488270, 0x004DE890) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    evaluator  (evidence: 0x004CEEF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x0068BF40) // CONFLICT: multiple definitions at +0x4
 };

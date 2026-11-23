@@ -5103,3 +5103,64 @@ void __stdcall fn_004D1C60(void** targetPtr, void* valueWrapper) {
     ext_006A6DD2(exc, (void*)0x009DEC1C);
 }
 } // namespace lift_004D1C60
+
+// [0x004DE890]
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004DDE80(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004DE890(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004DDE80(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+
+// [0x004DE8E0]
+namespace lift_004DE8E0 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData,float,getEntryBlendPeriod,setEntryBlendPeriod>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Evaluates a float expression and sets AnimationEventData::entryBlendPeriod, or throws if target is null.
+// @field ExprArg +0x04 void* valueObj
+
+
+extern void __fastcall ext_004DDE90(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void __stdcall fn_004DE8E0(void** targetPtr, void* exprArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* valueObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(exprArg) + 0x04);
+        void** vtable = *reinterpret_cast<void***>(valueObj);
+        using EvalFloatFn = float (__thiscall*)(void* self, void* arg);
+        EvalFloatFn evalFloat = reinterpret_cast<EvalFloatFn>(vtable[1]);
+        float value = evalFloat(valueObj, exprArg);
+        ext_004DDE90(target, 0, value);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE8E0
