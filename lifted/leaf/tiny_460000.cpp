@@ -302,3 +302,16 @@ uint32_t __thiscall sub_00468660(uint32_t this_ptr) {
     return mem_read32(inner + 0x0c);
 }
 } // namespace lift_00468660
+
+// [0x00462A60]
+namespace lift_00462A60 {
+extern uint32_t mem_r32(uint32_t addr);
+extern uint8_t mem_r8(uint32_t addr);
+
+// @name getInnerByte1C
+// @summary Reads a byte at offset 0x1C from the pointer stored at this+0x00.
+uint8_t __thiscall sub_00462A60(uint32_t this_ptr) {
+    uint32_t inner = mem_r32(this_ptr);
+    return mem_r8(inner + 0x1c);
+}
+} // namespace lift_00462A60

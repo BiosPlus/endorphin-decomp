@@ -1,0 +1,13 @@
+{
+  "va": "0x00462A60",
+  "size": 6,
+  "orig_symbol": "sub_00462A60",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "getInnerByte1C",
+  "signature": "uint8_t __thiscall sub_00462A60(uint32_t this_ptr)",
+  "summary": "Reads a byte at offset 0x1C from the pointer stored at this+0x00.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:38:55Z"
+}

@@ -2722,6 +2722,12 @@
     "summary": "Pure jump thunk forwarding to sub_00462820.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00462A60": {
+    "name": "getInnerByte1C",
+    "signature": "uint8_t __thiscall sub_00462A60(uint32_t this_ptr)",
+    "summary": "Reads a byte at offset 0x1C from the pointer stored at this+0x00.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00462F40": {
     "name": "VersionControlObserver::vfunc_0",
     "class": "VersionControlObserver",
@@ -28261,6 +28267,12 @@
     "name": "sub_006AD090",
     "signature": "uint8_t __thiscall sub_006AD090(uint32_t self)",
     "summary": "Reads a byte at offset +0x5 from the pointer stored at this+0x4",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
+  "0x006AD180": {
+    "name": "getDerefField0x4",
+    "signature": "uint32_t __thiscall sub_006AD180(void* self)",
+    "summary": "Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
   "0x006AD870": {
