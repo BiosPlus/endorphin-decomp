@@ -11069,3 +11069,28 @@ extern double __thiscall fn_004D5CB0(void* /*this*/, uint32_t* ptr) {
     return 0.0;
 }
 } // namespace lift_004D5CB0
+
+// [0x00604D40] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_1 (56 bytes)
+namespace lift_00604D40 {
+// Slot 14 (+0x38) of the target object's vtable: a thiscall getter that takes
+// an out-buffer and returns a pointer to the float value.
+using GetFloatRefFn = float* (*)(void* self, float* out);
+
+// @name ExprParser::ReadMethodType<Effector, float, getPoseRawDesiredDisplacement>::vfunc_1
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads the float value of Effector::getPoseRawDesiredDisplacement via the target object's vtable; throws if the target pointer is null.
+// @field ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1> +0x00 void* field_0x00
+float fn_00604D40(void* self) {
+    auto* const holder = static_cast<unsigned char*>(self);
+    void* const target = *reinterpret_cast<void**>(holder);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser: null value pointer in ReadMethodType");
+    }
+
+    float buffer = 0.0f;
+    void* const vtable = *reinterpret_cast<void**>(target);
+    auto getter = reinterpret_cast<GetFloatRefFn*>(vtable)[14];
+    float* const result = getter(target, &buffer);
+    return *result;
+}
+} // namespace lift_00604D40
