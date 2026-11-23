@@ -1,0 +1,22 @@
+{
+  "va": "0x006108F0",
+  "size": 37,
+  "orig_symbol": "NMData::CompoundSensorData::vfunc_8",
+  "src_path": "src/NMData/CompoundSensorData.cpp",
+  "lifted_path": "lifted/NMData/CompoundSensorData.cpp",
+  "name": "NMData::CompoundSensorData::vfunc_8",
+  "class": "NMData::CompoundSensorData",
+  "signature": "void* fn_006108F0(void* self, void* a1)",
+  "summary": "Forwards a1 and the address of the embedded subobject at this+0x154 to ext_00610730, then returns a1.",
+  "fields": [
+    {
+      "class": "NMData::CompoundSensorData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:39:00Z"
+}

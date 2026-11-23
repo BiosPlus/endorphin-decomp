@@ -9100,6 +9100,13 @@
     "summary": "Forwards the incoming pointer with the address of this+0x154 and a zero flag to ext_006105E0, then returns the incoming pointer.",
     "lifted_path": "lifted/NMData/MetaBodySensorData.cpp"
   },
+  "0x006108F0": {
+    "name": "NMData::CompoundSensorData::vfunc_8",
+    "class": "NMData::CompoundSensorData",
+    "signature": "void* fn_006108F0(void* self, void* a1)",
+    "summary": "Forwards a1 and the address of the embedded subobject at this+0x154 to ext_00610730, then returns a1.",
+    "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
+  },
   "0x006114A0": {
     "name": "NMData::Constraint::vfunc_29",
     "class": "NMData::Constraint",
