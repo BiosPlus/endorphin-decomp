@@ -1,0 +1,22 @@
+{
+  "va": "0x0043CAB0",
+  "size": 66,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_69",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_69",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "uint32_t fn_0043CAB0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "If a1 == 0x2A3 and the sub-object at +0x64 passes ext_0041C710, return 1; otherwise forward all four args to the MFC80 base handler.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:02:37Z"
+}

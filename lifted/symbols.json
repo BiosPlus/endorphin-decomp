@@ -1165,6 +1165,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x64 and tail-calls sub_0041C730.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043CAB0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_69",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "uint32_t fn_0043CAB0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "If a1 == 0x2A3 and the sub-object at +0x64 passes ext_0041C710, return 1; otherwise forward all four args to the MFC80 base handler.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0043CB70": {
     "name": "sub_0043CB70",
     "signature": "void fn_0043CB70(void* self)",

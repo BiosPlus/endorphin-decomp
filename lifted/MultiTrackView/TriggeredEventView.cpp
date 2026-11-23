@@ -46,3 +46,28 @@ void fn_0045E470(void* self, void* arg) {
     member = lift_field<void*>(self, 0x2D0);
     ext_006A5E72(member, 5u);
 }
+
+// [0x0043CAB0] MultiTrackView::TriggeredEventView::vfunc_69 (66 bytes)
+namespace lift_0043CAB0 {
+extern void ext_0041C710();
+// Known callee 0x006A5DB2: thunk_MFC80_ord_5073 (IAT jump thunk forwarding to MFC80!ord_5073.)
+extern void ext_006A5DB2();
+
+// @name MultiTrackView::TriggeredEventView::vfunc_69
+// @class MultiTrackView::TriggeredEventView
+// @summary If a1 == 0x2A3 and the sub-object at +0x64 passes ext_0041C710, return 1; otherwise forward all four args to the MFC80 base handler.
+// @field MultiTrackView::TriggeredEventView +0x64 uint8_t field_0x64
+uint32_t fn_0043CAB0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    using SubCheckFn = uint8_t (*)(void*);
+    using ForwardFn = uint32_t (*)(void*, uint32_t, uint32_t, uint32_t, uint32_t);
+
+    if (a1 == 0x2A3) {
+        void* sub = reinterpret_cast<uint8_t*>(self) + 0x64;
+        if (reinterpret_cast<SubCheckFn>(ext_0041C710)(sub) != 0) {
+            return 1;
+        }
+    }
+
+    return reinterpret_cast<ForwardFn>(ext_006A5DB2)(self, a1, a2, a3, a4);
+}
+} // namespace lift_0043CAB0
