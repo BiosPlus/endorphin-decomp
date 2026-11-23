@@ -1,0 +1,28 @@
+{
+  "va": "0x0053F410",
+  "size": 320,
+  "orig_symbol": "Primitives::Animation::vfunc_28",
+  "src_path": "src/Primitives/Animation.cpp",
+  "lifted_path": "lifted/Primitives/Animation.cpp",
+  "name": "Primitives::Animation::vfunc_28",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0053F410(void* self, void* arg0)",
+  "summary": "Renders the cuboid base and, if enabled and having \u003e1 keyframes, draws GL_LINES connecting keyframe positions.",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:45:21Z"
+}

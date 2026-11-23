@@ -7987,6 +7987,13 @@
     "summary": "Sets or clears the bit mask in a1 on either the indexed slot of obj (when obj predicate is false and field_0x30 is valid) or on this-\u003efield_0x1C, depending on flag.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053B320": {
+    "name": "Primitives::Animation::vfunc_22",
+    "class": "Primitives::Animation",
+    "signature": "void __thiscall fn_0053B320(void* self, uint32_t arg0)",
+    "summary": "Renders the animation primitive with OpenGL name/attribute/display-list management.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053B4F0": {
     "name": "Primitives::Cuboid::vfunc_28",
     "class": "Primitives::Cuboid",
@@ -8281,6 +8288,13 @@
     "summary": "Forwards three args to Plane::vfunc_25, sets flag bit 0x40 in +0x1c if clear, and copies arg2+0x88/+0x8c into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Frustum.cpp"
   },
+  "0x0053DC50": {
+    "name": "Primitives::Hinge::vfunc_25",
+    "class": "Primitives::Hinge",
+    "signature": "void fn_0053DC50(void* self, uint32_t arg1, void* arg2, uint32_t arg3)",
+    "summary": "Initializes Hinge primitive flags, scaled dimensions, and registers resource at +0xbc.",
+    "lifted_path": "lifted/Primitives/Hinge.cpp"
+  },
   "0x0053DD90": {
     "name": "Primitives::NullJoint::vfunc_25",
     "class": "Primitives::NullJoint",
@@ -8294,6 +8308,13 @@
     "signature": "static inline uint32_t\u0026 u32_at(void* base, size_t off)",
     "summary": "Calls the Hinge base implementation, copies two dwords from the argument at +0x88/+0x8c into this+0xcc/+0xd0, then sets/clears flag bits in this+0x1c.",
     "lifted_path": "lifted/Primitives/SkeletalJoint.cpp"
+  },
+  "0x0053DFD0": {
+    "name": "Primitives::RPRO::vfunc_25",
+    "class": "Primitives::RPRO",
+    "signature": "void fn_0053DFD0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Updates RPRO primitive radius/size from arg1 or arg2, configures sub-objects, and updates flags.",
+    "lifted_path": "lifted/Primitives/RPRO.cpp"
   },
   "0x0053E0C0": {
     "name": "Primitives::Arrow::vfunc_25",
@@ -8336,6 +8357,13 @@
     "signature": "float clampSwingAngle(float v)",
     "summary": "Draws the swing-limit cone: builds a ring of segment points on a sphere of radius scale, then draws the cone surface and a slightly offset cap with OpenGL immediate mode.",
     "lifted_path": "lifted/Primitives/SwingLimit.cpp"
+  },
+  "0x0053F410": {
+    "name": "Primitives::Animation::vfunc_28",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0053F410(void* self, void* arg0)",
+    "summary": "Renders the cuboid base and, if enabled and having \u003e1 keyframes, draws GL_LINES connecting keyframe positions.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
   },
   "0x0053F5D0": {
     "name": "NullRenderer::vfunc_0",

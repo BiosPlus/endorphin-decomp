@@ -10,20 +10,22 @@
 // Recovered field layout for Primitives::Animation:
 namespace lifted_layout {
 struct Primitives_Animation_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0052EF80)
-    // +0x4   uint8_t                  field_0x04  (evidence: 0x0053AD10, 0x0053ADD0)
+    // +0x0   void*                    vtable  (evidence: 0x0052EF80, 0x0053B320)
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x0053AD10, 0x0053ADD0, 0x0053B320)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0053AD10) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0053ADD0) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint8_t                  field_0x0C  (evidence: 0x0053B320)
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0052F5F0, 0x0052FA20, 0x0053A8C0, 0x0053AD10, 0x0053AE20, 0x0053AE40, 0x0053E240) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  uint32_t                 flags  (evidence: 0x0053A8E0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 flags  (evidence: 0x0053A8E0, 0x0053B320, 0x0053F410) // CONFLICT: multiple definitions at +0x1C
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0053AD10) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    field_0x20  (evidence: 0x0053ADD0) // CONFLICT: multiple definitions at +0x20
     // +0x24  uint32_t                 field_0x24  (evidence: 0x0053AD10)
     // +0x28  uint32_t                 field_0x28  (evidence: 0x0052EFA0, 0x0052FA20, 0x0053AD10)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0052EFA0, 0x0052FA20, 0x0053AD10)
-    // +0x30  uint32_t                 field_0x30  (evidence: 0x0053AD10)
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x0052FA20, 0x0053A5D0)
-    // +0x38  void*                    field_0x38  (evidence: 0x0053AD10)
-    // +0x9C  uint32_t                 field_0x9C  (evidence: 0x0053E240)
+    // +0x30  uint32_t                 field_0x30  (evidence: 0x0053AD10, 0x0053B320)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x0052FA20, 0x0053A5D0, 0x0053B320)
+    // +0x38  void*                    field_0x38  (evidence: 0x0053AD10, 0x0053B320)
+    // +0x9C  uint32_t                 field_0x9C  (evidence: 0x0053E240) // CONFLICT: multiple definitions at +0x9C
+    // +0x9C  void*                    field_0x9C  (evidence: 0x0053F410) // CONFLICT: multiple definitions at +0x9C
 };
 } // namespace lifted_layout

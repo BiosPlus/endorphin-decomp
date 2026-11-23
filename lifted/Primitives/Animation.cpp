@@ -261,3 +261,201 @@ void fn_0053B2B0(void* self, uint32_t mask, uint8_t flag, void* obj) {
     }
 }
 } // namespace lift_0053B2B0
+
+// [0x0053F410]
+namespace lift_0053F410 {
+// @name Primitives::Animation::vfunc_28
+// @class Primitives::Animation
+// @summary Renders the cuboid base and, if enabled and having >1 keyframes, draws GL_LINES connecting keyframe positions.
+// @field Primitives::Animation +0x1C uint32_t flags
+// @field Primitives::Animation +0x9C void* field_0x9C
+
+void ext_00466910(void* self);
+void ext_00466F00(void* self, void* arg0);
+void ext_0053B4F0(void* self, void* arg0);
+int32_t ext_00661A00(void* self);
+uint8_t ext_00661E80(void* self);
+void ext_006622C0(void* self);
+
+extern void (*mem_00925134)(void);
+extern void (*mem_0092546C)(uint32_t mask);
+extern void (*mem_00925488)(void);
+extern void (*mem_00925490)(uint32_t mode);
+extern void (*mem_00925498)(const float* v);
+extern void (*mem_00925520)(float width);
+extern void (*mem_0092552C)(void);
+
+void fn_0053F410(void* self, void* arg0) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    ext_0053B4F0(self, arg0);
+
+    if ((*reinterpret_cast<uint32_t*>(obj + 0x1C) & 0x2000000u) == 0) {
+        return;
+    }
+
+    void* animData = *reinterpret_cast<void**>(obj + 0x9C);
+    if (animData == nullptr) {
+        return;
+    }
+
+    if (ext_00661A00(animData) <= 1) {
+        return;
+    }
+
+    uint8_t guard[0x6C];
+    ext_00466F00(guard, animData);
+    ext_006622C0(animData);
+
+    mem_0092546C(0x4);   // glPushAttrib(GL_LINE_BIT)
+    mem_00925520(1.0f);  // glLineWidth(1.0f)
+    mem_00925490(0x1);   // glBegin(GL_LINES)
+
+    do {
+        uint8_t* esi = *reinterpret_cast<uint8_t**>(obj + 0x9C);
+        uint8_t* container = *reinterpret_cast<uint8_t**>(esi + 0x8);
+        if (container == nullptr) {
+            mem_00925134();
+        }
+        container = *reinterpret_cast<uint8_t**>(esi + 0x8);
+        uint8_t* iter = *reinterpret_cast<uint8_t**>(esi + 0xC);
+        if (iter == *reinterpret_cast<uint8_t**>(container + 0x4)) {
+            mem_00925134();
+        }
+
+        uint8_t* vecPtr = *reinterpret_cast<uint8_t**>(esi + 0xC) + 0x8;
+        uint8_t* first = *reinterpret_cast<uint8_t**>(vecPtr + 0x8);
+        if (first == nullptr ||
+            ((reinterpret_cast<intptr_t>(*reinterpret_cast<uint8_t**>(vecPtr + 0xC)) -
+              reinterpret_cast<intptr_t>(first)) >>
+             6) == 0) {
+            mem_00925134();
+        }
+
+        uint8_t* elem = *reinterpret_cast<uint8_t**>(vecPtr + 0x8);
+        float v[3] = {
+            *reinterpret_cast<float*>(elem + 0x30),
+            *reinterpret_cast<float*>(elem + 0x34),
+            *reinterpret_cast<float*>(elem + 0x38),
+        };
+        mem_00925498(v);  // glVertex3fv
+    } while (ext_00661E80(*reinterpret_cast<void**>(obj + 0x9C)) != 0);
+
+    mem_00925488();  // glEnd()
+    mem_0092552C();  // glPopAttrib()
+
+    ext_00466910(guard);
+}
+} // namespace lift_0053F410
+
+// [0x0053B320]
+namespace lift_0053B320 {
+extern void __thiscall ext_0053B130(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+extern uint32_t __thiscall ext_00661C90(void* self, uint32_t id);
+
+extern uint8_t mem_00AEE8A8[];
+extern uint8_t mem_00AEED24[];
+extern uint8_t mem_009253CC[];
+extern uint8_t mem_0092546C[];
+extern uint8_t mem_0092551C[];
+extern uint8_t mem_00925438[];
+extern uint8_t mem_009253F8[];
+extern uint8_t mem_009253F4[];
+extern uint8_t mem_009253F0[];
+extern uint8_t mem_0092552C[];
+extern uint8_t mem_00925524[];
+
+// @name Primitives::Animation::vfunc_22
+// @class Primitives::Animation
+// @summary Renders the animation primitive with OpenGL name/attribute/display-list management.
+// @field Primitives::Animation +0x00 void* vtable
+// @field Primitives::Animation +0x04 uint8_t field_0x04
+// @field Primitives::Animation +0x0C uint8_t field_0x0C
+// @field Primitives::Animation +0x1C uint32_t flags
+// @field Primitives::Animation +0x30 uint32_t field_0x30
+// @field Primitives::Animation +0x34 uint32_t field_0x34
+// @field Primitives::Animation +0x38 void* field_0x38
+
+void __thiscall fn_0053B320(void* self, uint32_t arg0) {
+    uint8_t* esi = reinterpret_cast<uint8_t*>(self);
+    uint32_t id = *reinterpret_cast<uint32_t*>(esi + 0x30);
+    uint32_t ebx = *reinterpret_cast<uint32_t*>(esi + 0x1C);
+    if (id != 0x7FFFFFFFu) {
+        void* mgr = *reinterpret_cast<void**>(mem_00AEE8A8);
+        ebx = ext_00661C90(mgr, id);
+    }
+
+    bool match = ((arg0 & *reinterpret_cast<uint32_t*>(esi + 0x1C)) == arg0);
+    bool proceed = false;
+    if ((ebx & 0x200u) != 0) {
+        if (arg0 == 0x100000u || (match && arg0 != 1u)) {
+            proceed = true;
+        }
+    } else if (match) {
+        proceed = true;
+    }
+
+    auto call_child_vfunc28 = [&]() {
+        void* child = *reinterpret_cast<void**>(esi + 0x38);
+        void** vtbl = *reinterpret_cast<void***>(child);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtbl[0x28 / 4]);
+        fn(child, *reinterpret_cast<uint32_t*>(mem_00AEED24));
+    };
+
+    if (!proceed || (ebx & 0x1000u) == 0) {
+        call_child_vfunc28();
+        return;
+    }
+
+    auto glPushName = *reinterpret_cast<void(__stdcall**)(uint32_t)>(mem_009253CC);
+    glPushName(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(esi)));
+
+    ext_0053B130(esi, arg0, 0x009553B0u, ebx);
+
+    if (*reinterpret_cast<uint8_t*>(esi + 0x0C) == 0) {
+        call_child_vfunc28();
+    } else {
+        uint32_t flags = *reinterpret_cast<uint32_t*>(esi + 0x1C);
+        if ((flags & 0x100u) != 0) {
+            auto glPushAttrib = *reinterpret_cast<void(__stdcall**)(uint32_t)>(mem_0092546C);
+            auto glPolygonMode = *reinterpret_cast<void(__stdcall**)(uint32_t, uint32_t)>(mem_0092551C);
+            auto glDisable = *reinterpret_cast<void(__stdcall**)(uint32_t)>(mem_00925438);
+            glPushAttrib(0x8u);
+            glPolygonMode(0x408u, 0x1B01u);
+            glDisable(0xB44u);
+        }
+
+        call_child_vfunc28();
+
+        uint32_t listId = *reinterpret_cast<uint32_t*>(esi + 0x34);
+        auto call_self_vfunc70 = [&]() {
+            void** vtbl = *reinterpret_cast<void***>(esi);
+            auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtbl[0x70 / 4]);
+            fn(esi, arg0);
+        };
+
+        if (listId != 0) {
+            if (*reinterpret_cast<uint8_t*>(esi + 0x04) != 0) {
+                auto glNewList = *reinterpret_cast<void(__stdcall**)(uint32_t, uint32_t)>(mem_009253F8);
+                auto glEndList = *reinterpret_cast<void(__stdcall**)(void)>(mem_009253F4);
+                glNewList(listId, 0x1301u);
+                call_self_vfunc70();
+                glEndList();
+                *reinterpret_cast<uint8_t*>(esi + 0x04) = 0;
+            } else {
+                auto glCallList = *reinterpret_cast<void(__stdcall**)(uint32_t)>(mem_009253F0);
+                glCallList(listId);
+            }
+        } else {
+            call_self_vfunc70();
+        }
+
+        if ((*reinterpret_cast<uint32_t*>(esi + 0x1C) & 0x100u) != 0) {
+            auto glPopAttrib = *reinterpret_cast<void(__stdcall**)(void)>(mem_0092552C);
+            glPopAttrib();
+        }
+    }
+
+    auto glPopName = *reinterpret_cast<void(__stdcall**)(void)>(mem_00925524);
+    glPopName();
+}
+} // namespace lift_0053B320
