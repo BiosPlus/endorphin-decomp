@@ -1,0 +1,14 @@
+{
+  "va": "0x0066AF10",
+  "size": 38,
+  "orig_symbol": "ExprParser::BoolType::vfunc_4",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_4",
+  "class": "ExprParser::BoolType",
+  "signature": "void* fn_0066AF10(void* self, const uint8_t* flag_src)",
+  "summary": "Reads a byte flag from the second argument, forwards it with the receiver to ext_0046C460, and returns the receiver.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:39:59Z"
+}

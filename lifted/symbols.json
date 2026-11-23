@@ -10828,6 +10828,13 @@
     "summary": "Reads the byte at the pointer passed as the single stack argument and returns it as the result (low byte of eax).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AF10": {
+    "name": "ExprParser::BoolType::vfunc_4",
+    "class": "ExprParser::BoolType",
+    "signature": "void* fn_0066AF10(void* self, const uint8_t* flag_src)",
+    "summary": "Reads a byte flag from the second argument, forwards it with the receiver to ext_0046C460, and returns the receiver.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0066AF40": {
     "name": "ExprParser::ExtROType::vfunc_3",
     "class": "ExprParser::ExtROType",

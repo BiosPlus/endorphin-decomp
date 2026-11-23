@@ -64,6 +64,7 @@ uint8_t __stdcall fn_0066B1A0(void* obj, void* other) {
     return lhs == rhs ? 1 : 0;
 }
 #include <cstdint>
+extern "C" void ext_0046C460(void* self, uint8_t flag);
 
 // [0x0066B1D0] ExprParser::BoolType::vfunc_43 (48 bytes)
 // @name ExprParser::BoolType::vfunc_43
@@ -271,5 +272,16 @@ void* fn_0067AA30(void* self, void* arg2) {
     // The original pushes the first argument, a preserved-register copy (not modelled here as 0),
     // and a zero flag, then calls sub_0041CEB0. Stack cleanup in the original is not reproduced.
     ext_0041CEB0(self, 0, 0);
+    return self;
+}
+
+// [0x0066AF10] ExprParser::BoolType::vfunc_4 (38 bytes)
+// @name ExprParser::BoolType::vfunc_4
+// @class ExprParser::BoolType
+// @summary Reads a byte flag from the second argument, forwards it with the receiver to ext_0046C460, and returns the receiver.
+// @field none (receiver is only passed through; the flag byte is read from the second argument, not from a BoolType field)
+void* fn_0066AF10(void* self, const uint8_t* flag_src) {
+    const uint8_t flag = *flag_src;
+    ext_0046C460(self, flag);
     return self;
 }
