@@ -11020,3 +11020,27 @@ double __stdcall fn_00692810(uint32_t* arg0) {
 }
 } // namespace lift_004D50B0
 } // namespace lift_00692810
+
+// [0x0068DE60] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_0068DE60 {
+extern int ext_0052F600(void* self);
+extern void ext_0046C3C0(void* buf);
+
+// @name ExprParser::ReadMethodType<Randomizer,int,getSeed>::vfunc_1
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Reads the Randomizer seed through the stored object pointer; throws if the object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* object
+float fn_0068DE60(void* self) {
+    // self: ValuePtrType*; first dword is the target object pointer.
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        // Dispatches AnimationType::vfunc_11 on obj; result is converted to float.
+        int seed = ext_0052F600(obj);
+        return static_cast<float>(seed);
+    }
+    // Null path: build exception object, then throw.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    throw std::runtime_error("ReadMethodType: null object pointer");
+}
+} // namespace lift_0068DE60
