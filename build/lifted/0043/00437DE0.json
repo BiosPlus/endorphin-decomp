@@ -1,0 +1,13 @@
+{
+  "va": "0x00437DE0",
+  "size": 8,
+  "orig_symbol": "sub_00437DE0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "callSub00437DC0WithOne",
+  "signature": "void fn_00437DE0()",
+  "summary": "Calls ext_00437DC0 with argument 1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:24Z"
+}

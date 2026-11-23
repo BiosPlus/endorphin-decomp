@@ -1200,6 +1200,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005A9960 (NMData::BackGroundData::vfunc_6).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00437DE0": {
+    "name": "callSub00437DC0WithOne",
+    "signature": "void fn_00437DE0()",
+    "summary": "Calls ext_00437DC0 with argument 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00437E50": {
     "name": "MainFrame::vfunc_1",
     "class": "MainFrame",

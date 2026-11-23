@@ -24,3 +24,15 @@ void fn_00437DC0(void* arg) {
     ext_00436FA0(arg, 9632248);
 }
 } // namespace lift_00437DC0
+
+// [0x00437DE0]
+namespace lift_00437DE0 {
+// @name callSub00437DC0WithOne
+// @summary Calls ext_00437DC0 with argument 1.
+
+extern void ext_00437DC0(void* arg);
+
+void fn_00437DE0() {
+    ext_00437DC0(reinterpret_cast<void*>(static_cast<uintptr_t>(1)));
+}
+} // namespace lift_00437DE0
