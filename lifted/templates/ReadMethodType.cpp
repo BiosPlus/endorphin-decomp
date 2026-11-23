@@ -18074,3 +18074,28 @@ float fn_00497E20(void* self) {
     return static_cast<float>(mem_009251F0(text));
 }
 } // namespace lift_00497E20
+
+// [0x0049B520]
+namespace lift_0049B520 {
+extern const std::string* ext_0049AA10(void* state); // sub_0049AA10: NMData::State accessor returning const std::string&
+extern void ext_0046C3C0(void* self);                // sub_0046C3C0: default-constructs the error object
+extern void fn_006A6DD2(void);                       // thunk to MSVCR80!_CxxThrowException
+
+// @name ReadMethodType_State_getFileName_vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, const std::string&, NMData::State::getFileName, 0>
+// @summary Fetches the NMData::State pointer from the argument, reads its file name and returns it parsed as a float (atof); throws if the state is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+float fn_0049B520(void* const* arg) {
+    void* state = arg[0];
+    if (state == nullptr) {
+        // Original builds a local object and throws it; the exact exception
+        // type behind RTTI 0x009DEC1C is not recovered, so std::string is used.
+        std::string err;
+        ext_0046C3C0(&err);
+        throw err;
+    }
+    const std::string* name = ext_0049AA10(state);
+    return static_cast<float>(std::atof(name->c_str()));
+}
+} // namespace lift_0049B520

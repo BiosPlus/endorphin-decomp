@@ -4110,6 +4110,13 @@
     "summary": "Evaluates getFileName() on a non-null NMData::State pointer or throws an exception if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049B520": {
+    "name": "ReadMethodType_State_getFileName_vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, const std::string\u0026, NMData::State::getFileName, 0\u003e",
+    "signature": "extern \"C\" const std::string* ext_0049AA10(void* state); // sub_0049AA10: NMData::State accessor returning const std::string\u0026 extern \"C\" void ext_0046C3C0(void* self);                // sub_0046C3C0: default-constructs the error object extern \"C\" void fn_006A6DD2(void);                       // thunk to MSVCR80!_CxxThrowException float fn_0049B520(void* const* arg)",
+    "summary": "Fetches the NMData::State pointer from the argument, reads its file name and returns it parsed as a float (atof); throws if the state is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049B780": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State,std::string const \u0026,getPropertySourceDescription\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::State,std::string const \u0026,getPropertySourceDescription\u003e",
