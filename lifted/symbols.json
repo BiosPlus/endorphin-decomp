@@ -2818,6 +2818,12 @@
     "summary": "Sets field_0x4 of the object referenced by this-\u003efield_0x4 to 1.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462A90": {
+    "name": "sub_00462A90",
+    "signature": "void __thiscall sub_00462A90(uint32_t this_)",
+    "summary": "Clears the dword at offset 0x4 of the object pointed to by field_0x04.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00462F40": {
     "name": "VersionControlObserver::vfunc_0",
     "class": "VersionControlObserver",

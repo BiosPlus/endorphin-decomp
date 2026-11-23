@@ -340,3 +340,18 @@ void __thiscall sub_00462A80(uint8_t* this_ptr) {
     *reinterpret_cast<uint32_t*>(obj + 0x4) = 1;
 }
 } // namespace lift_00462A80
+
+// [0x00462A90]
+namespace lift_00462A90 {
+// @name sub_00462A90
+// @summary Clears the dword at offset 0x4 of the object pointed to by field_0x04.
+// @field unknown +0x04 uint32_t field_0x04
+
+
+uint32_t& mem_u32(uint32_t addr);
+
+void __thiscall sub_00462A90(uint32_t this_) {
+    uint32_t eax = mem_u32(this_ + 0x4);
+    mem_u32(eax + 0x4) = 0;
+}
+} // namespace lift_00462A90
