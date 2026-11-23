@@ -8,6 +8,6 @@
 // Recovered field layout for ExpressionEntry:
 namespace lifted_layout {
 struct ExpressionEntry_Fields {
-    // +0x1C  std::string              expression  (evidence: 0x004B8920, 0x005B2D00, 0x00674C90)
+    // +0x1C  std::string              expression  (evidence: 0x004B8920, 0x005B2D00, 0x0066F700, 0x00674C90)
 };
 } // namespace lifted_layout

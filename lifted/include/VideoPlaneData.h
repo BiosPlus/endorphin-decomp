@@ -10,7 +10,7 @@
 // Recovered field layout for VideoPlaneData:
 namespace lifted_layout {
 struct VideoPlaneData_Fields {
-    // +0x38  float                    field_0x38  (evidence: 0x005D2C00)
-    // +0x3C  float                    field_0x3c  (evidence: 0x005D3000)
+    // +0x38  float                    field_0x38  (evidence: 0x005D2C00, 0x0066F700)
+    // +0x3C  float                    field_0x3c  (evidence: 0x005D3000, 0x0066F700)
 };
 } // namespace lifted_layout
