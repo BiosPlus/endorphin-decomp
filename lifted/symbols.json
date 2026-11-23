@@ -3536,6 +3536,13 @@
     "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns the bool byte stored there.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049AE90": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_4",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "void* fn_0049AE90(void* self, const void* src)",
+    "summary": "Reads the bool stored behind the ValuePtrType argument, forwards it with self to ext_0046C460, and returns self.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049AF00": {
     "name": "GuiBaseElement::vfunc_0",
     "class": "GuiBaseElement",

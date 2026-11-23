@@ -223,6 +223,7 @@ int32_t __stdcall fn_00497930(void* arg) {
     return ext_006A6DE0(rounded);
 }
 extern "C" void ext_0046C500(void* self, int32_t value);
+extern "C" void ext_0046C460(void* self, uint8_t raw_value);
 
 // [0x00499190] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_38 (15 bytes)
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_38
@@ -337,5 +338,21 @@ void* fn_0049C050(void* self, const void* src) {
     const int32_t* value_ptr = *static_cast<const int32_t* const*>(src);
     const int32_t value = *value_ptr;
     ext_0046C500(self, value);
+    return self;
+}
+
+// [0x0049AE90] ExprParser::PrimitiveProxyType<bool>::vfunc_4 (40 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_4
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Reads the bool stored behind the ValuePtrType argument, forwards it with self to ext_0046C460, and returns self.
+// @field ValuePtrType +0x00 const uint8_t* value_ptr
+void* fn_0049AE90(void* self, const void* src) {
+    // src is a ValuePtrType*; its first field is the pointer to the stored value.
+    const uint8_t* value_ptr = lift_field<const uint8_t*>(src, 0);
+    // Raw byte is zero-extended and forwarded as-is (not normalized to bool).
+    // The original's trailing zero store only overwrites a saved-ecx stack slot
+    // and has no observable effect, so it is omitted.
+    const uint8_t raw_value = *value_ptr;
+    ext_0046C460(self, raw_value);
     return self;
 }

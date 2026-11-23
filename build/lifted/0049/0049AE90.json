@@ -1,0 +1,22 @@
+{
+  "va": "0x0049AE90",
+  "size": 40,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_4",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_4",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "void* fn_0049AE90(void* self, const void* src)",
+  "summary": "Reads the bool stored behind the ValuePtrType argument, forwards it with self to ext_0046C460, and returns self.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "const uint8_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:40:26Z"
+}
