@@ -51,3 +51,17 @@ extern "C" int __thiscall fn_0048FB60(void* self) {
     const int32_t diff = end - begin;
     return diff >> 3;
 }
+
+// [0x0048FB00]
+namespace lift_0048FB00 {
+extern uint32_t mem_read32(uintptr_t);
+extern uint8_t mem_read8(uintptr_t);
+
+// @name sub_0048FB00
+// @summary Reads byte at offset +0x1 from the pointer at this+0x4
+// @field unknown +0x04 uint32_t field_0x04
+uint8_t __thiscall sub_0048FB00(void* self) {
+    uint32_t ptr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x4);
+    return mem_read8(static_cast<uintptr_t>(ptr) + 0x1);
+}
+} // namespace lift_0048FB00
