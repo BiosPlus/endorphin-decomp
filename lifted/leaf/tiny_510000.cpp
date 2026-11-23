@@ -44,3 +44,16 @@ extern "C" void __fastcall fn_00517DE0(void* self) {
 extern "C" void __fastcall fn_0051DDD0(void* self) {
     ext_00680800(static_cast<char*>(self) + 0x5C);
 }
+
+// [0x00515830]
+namespace lift_00515830 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name sub_00515830
+// @summary Reads a 32-bit field at +0x30 from the pointer stored at this +0x4.
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t __thiscall sub_00515830(uint32_t this_ptr) {
+    uint32_t ptr = mem_read32(this_ptr + 0x4);
+    return mem_read32(ptr + 0x30);
+}
+} // namespace lift_00515830
