@@ -1,0 +1,14 @@
+{
+  "va": "0x0046F150",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, int, \u0026ImageExporter::getImageWidth, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, \u0026ImageExporter::getImageWidth, 0\u003e",
+  "signature": "extern \"C\" uint32_t __thiscall fn_0046F150(uint32_t /*self*/, uint32_t out, uint32_t* target_ptr)",
+  "summary": "Reads ImageExporter::getImageWidth() into out if the target pointer is non-null, otherwise throws an exception.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:51:18Z"
+}
