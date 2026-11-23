@@ -12513,6 +12513,13 @@
     "summary": "Stdcall float getter: reads the VideoPlaneData pointer held in the value-pointer argument and returns the float at +0x3C; throws a C++ exception if that pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D3080": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getXOffset, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+    "signature": "int fn_005D3080(void* self)",
+    "summary": "Reads the VideoPlaneData X-offset field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D3970": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e",

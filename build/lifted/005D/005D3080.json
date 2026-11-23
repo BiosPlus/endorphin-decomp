@@ -1,0 +1,22 @@
+{
+  "va": "0x005D3080",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getXOffset, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+  "signature": "int fn_005D3080(void* self)",
+  "summary": "Reads the VideoPlaneData X-offset field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:52:51Z"
+}
