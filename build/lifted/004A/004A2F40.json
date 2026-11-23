@@ -1,0 +1,22 @@
+{
+  "va": "0x004A2F40",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView,int,\u0026StateMachineEditor::FSMEditView::getDrawDepth,0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView,int,\u0026StateMachineEditor::FSMEditView::getDrawDepth,0\u003e",
+  "signature": "double fn_004A2F40(void* self, uint32_t* val_ptr)",
+  "summary": "Invokes FSMEditView::getDrawDepth on the dereferenced pointer and returns the result as a double, or throws an exception if null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:57:32Z"
+}

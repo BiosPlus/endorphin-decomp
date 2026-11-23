@@ -10545,3 +10545,30 @@ extern double __thiscall fn_004A5050(void* self, const uint32_t* targetPtr) {
     return 0.0;
 }
 } // namespace lift_004A5050
+
+// [0x004A2F40]
+namespace lift_004A2F40 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView,int,&StateMachineEditor::FSMEditView::getDrawDepth,0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView,int,&StateMachineEditor::FSMEditView::getDrawDepth,0>
+// @summary Invokes FSMEditView::getDrawDepth on the dereferenced pointer and returns the result as a double, or throws an exception if null.
+// @field ExprParser::ValuePtr +0x00 uint32_t ptr
+
+
+extern int32_t ext_0049AA40(void* self);
+extern void ext_0046C3C0(void* exc);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+double fn_004A2F40(void* self, uint32_t* val_ptr) {
+    (void)self;
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*val_ptr));
+    if (obj != nullptr) {
+        int32_t depth = ext_0049AA40(obj);
+        return static_cast<double>(depth);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004A2F40
