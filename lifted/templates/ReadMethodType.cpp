@@ -23593,3 +23593,28 @@ __stdcall int32_t fn_0068D8C0(void* arg) {
 }
 } // namespace lift_004B3110
 } // namespace lift_0068D8C0
+
+// [0x004F53E0]
+namespace lift_004F53E0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, MatrixWithProperties::getPhi, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, MatrixWithProperties::getPhi, 0>
+// @summary Evaluates getPhi on a MatrixWithProperties pointer and returns whether it is >= 1e-6, throwing if null.
+
+
+extern double __thiscall ext_004F4DB0(void* self);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, void* throwInfo);
+extern const double mem_0094CE78;
+
+extern uint32_t __thiscall fn_004F53E0(void* /*self*/, void** ptr) {
+    void* obj = *ptr;
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+    double val = ext_004F4DB0(obj);
+    return (val >= mem_0094CE78) ? 1u : 0u;
+}
+} // namespace lift_004F53E0

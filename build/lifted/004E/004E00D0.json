@@ -1,0 +1,14 @@
+{
+  "va": "0x004E00D0",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, getEntryBlendPeriod\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "uint32_t __stdcall fn_004E00D0(void** arg0)",
+  "summary": "Evaluates getEntryBlendPeriod on the dereferenced object and returns 1 if \u003e= 1e-6, or throws on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:59:01Z"
+}

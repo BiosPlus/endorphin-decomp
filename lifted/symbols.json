@@ -7203,6 +7203,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F53E0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, MatrixWithProperties::getPhi, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, MatrixWithProperties::getPhi, 0\u003e",
+    "signature": "extern \"C\" uint32_t __thiscall fn_004F53E0(void* /*self*/, void** ptr)",
+    "summary": "Evaluates getPhi on a MatrixWithProperties pointer and returns whether it is \u003e= 1e-6, throwing if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F5740": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e",
