@@ -1,0 +1,21 @@
+{
+  "va": "0x007C5900",
+  "size": 11,
+  "orig_symbol": "sub_007C5900",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getField0x1A4",
+  "signature": "extern \"C\" uint32_t sub_007C5900(uint32_t obj)",
+  "summary": "Returns the 32-bit field at offset 0x1A4 of the given object.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x1A4",
+      "type": "uint32_t",
+      "name": "field_0x1A4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:43:03Z"
+}
