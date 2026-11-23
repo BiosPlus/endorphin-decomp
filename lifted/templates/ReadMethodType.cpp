@@ -8797,3 +8797,31 @@ bool fn_0046E210(void* self) {
     return ext_0046C070(target) != 0;
 }
 } // namespace lift_0046E210
+
+// [0x0046D950] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_006AD1C0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_0046D950(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_006AD1C0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950

@@ -1,0 +1,22 @@
+{
+  "va": "0x0046D950",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageHeight, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e",
+  "signature": "extern \"C\" int __fastcall ext_006AD1C0(void* self);  // SelectionBuffer::vfunc_21 extern \"C\" void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor) int fn_0046D950(void* self)",
+  "summary": "Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:55:15Z"
+}
