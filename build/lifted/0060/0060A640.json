@@ -1,0 +1,28 @@
+{
+  "va": "0x0060A640",
+  "size": 91,
+  "orig_symbol": "NMData::DisabledCollisionPairList::vfunc_13",
+  "src_path": "src/NMData/DisabledCollisionPairList.cpp",
+  "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp",
+  "name": "NMData::DisabledCollisionPairList::vfunc_13",
+  "class": "NMData::DisabledCollisionPairList",
+  "signature": "uint32_t __thiscall fn_0060A640(uint32_t self, uint32_t out, uint32_t key)",
+  "summary": "Returns a property/member wrapper for DisabledCollisionPairList based on string key comparison",
+  "fields": [
+    {
+      "class": "NMData::DisabledCollisionPairList",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::DisabledCollisionPairList",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:02:56Z"
+}
