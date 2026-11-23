@@ -24206,33 +24206,6 @@ float fn_00471050(void* self) {
 } // namespace lift_0046CAE0
 } // namespace lift_00471050
 
-// [0x004A48A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_1 (77 bytes)
-namespace lift_004A48A0 {
-// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_1
-// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
-// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
-namespace lift_0046CAE0 {
-// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
-extern void ext_00496F30();
-
-// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
-// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
-// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
-// @field ValuePtrType +0x00 void* field_0x00
-float fn_004A48A0(void* self) {
-    void* exporter = lift_field<void*>(self, 0);
-    if (exporter == nullptr) {
-        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
-        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
-    }
-
-    using IsEnabledFn = bool (*)(void*);
-    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00496F30);
-    return isEnabled(exporter) ? 1.0f : 0.0f;
-}
-} // namespace lift_0046CAE0
-} // namespace lift_004A48A0
-
 // [0x004A4B80] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_1 (77 bytes)
 namespace lift_004A4B80 {
 // @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_1
@@ -25166,3 +25139,28 @@ float fn_004A4300(void* self) {
     return ext_0049AA50(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
 }
 } // namespace lift_004A4300
+
+// [0x004A48A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00496F30(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004A48A0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00496F30(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0

@@ -4,19 +4,11 @@
   "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e::vfunc_1",
   "src_path": "src/templates/ReadMethodType.cpp",
   "lifted_path": "lifted/templates/ReadMethodType.cpp",
-  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e::vfunc_1",
+  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, drawConditions, 0\u003e::vfunc_1",
   "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e",
   "signature": "float fn_004A48A0(void* self)",
-  "summary": "Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_1).",
-  "fields": [
-    {
-      "class": "ValuePtrType",
-      "offset": "+0x0",
-      "type": "void*",
-      "name": "field_0x00"
-    }
-  ],
+  "summary": "Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.",
   "status": "lifted",
-  "lifted_by": "script:auto_lift_clone",
-  "lifted_at": "2026-11-23T14:03:27Z"
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:03:57Z"
 }
