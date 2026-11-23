@@ -11565,6 +11565,13 @@
     "summary": "Reads a float from the inner reader (vtable slot 1) and stores it into the target Effector's +0x54 field; throws if the target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x006059A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffector,float,getGradient,setGradient\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, float, \u0026public: void __thiscall Effector::setGradient(float)\u003e",
+    "signature": "void fn_006059A0(void* self, void* ctx)",
+    "summary": "Reads a float from the wrapped expression object and stores it into Effector::gradient; throws if the target Effector is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x006059E0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, float, \u0026public: void __thiscall Effector::setGradientCap(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, float, \u0026public: void __thiscall Effector::setGradientCap(float)\u003e",

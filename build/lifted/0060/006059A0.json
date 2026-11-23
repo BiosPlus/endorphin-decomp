@@ -1,0 +1,28 @@
+{
+  "va": "0x006059A0",
+  "size": 63,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, float, \u0026public: void __thiscall Effector::setGradient(float)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cEffector,float,getGradient,setGradient\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, float, \u0026public: void __thiscall Effector::setGradient(float)\u003e",
+  "signature": "void fn_006059A0(void* self, void* ctx)",
+  "summary": "Reads a float from the wrapped expression object and stores it into Effector::gradient; throws if the target Effector is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "gradient"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:01:08Z"
+}

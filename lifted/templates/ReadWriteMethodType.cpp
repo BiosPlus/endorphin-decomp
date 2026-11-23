@@ -1031,3 +1031,35 @@ extern void __stdcall fn_00678960(void* const* self, void* arg) {
 }
 } // namespace lift_004B1D40
 } // namespace lift_00678960
+
+// [0x006059A0] ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, float, &public: void __thiscall Effector::setGradient(float)>::vfunc_41 (63 bytes)
+namespace lift_006059A0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// Virtual slot 1 of the object at ctx+0x04: float (this, ctx).
+typedef float (*ReadMethodSlot1Fn)(void* self, void* ctx);
+
+// @name ExprParser::ReadWriteMethodType<Effector,float,getGradient,setGradient>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, float, &public: void __thiscall Effector::setGradient(float)>
+// @summary Reads a float from the wrapped expression object and stores it into Effector::gradient; throws if the target Effector is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field Effector +0x4c float gradient
+// @field field_0x04 void* object (ctx+0x04; vtable slot 1 is invoked with ctx as argument)
+void fn_006059A0(void* self, void* ctx) {
+    uint8_t* effector = *reinterpret_cast<uint8_t**>(self);
+    if (effector == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return;
+    }
+
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(ctx) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    ReadMethodSlot1Fn read = reinterpret_cast<ReadMethodSlot1Fn>(vtbl[1]);
+    float value = read(obj, ctx);
+
+    *reinterpret_cast<float*>(effector + 0x4c) = value;
+}
+} // namespace lift_006059A0
