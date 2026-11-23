@@ -9254,6 +9254,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/GraphicData.cpp"
   },
+  "0x006204A0": {
+    "name": "Sensors::SensorAbsoluteTime::vfunc_0",
+    "class": "Sensors::SensorAbsoluteTime",
+    "signature": "void* __thiscall fn_006204A0(void* self, uint8_t flags)",
+    "summary": "Scalar deleting destructor: resets the vptr, runs the base destructor, frees the object when flags bit 0 is set, and returns this.",
+    "lifted_path": "lifted/Sensors/SensorAbsoluteTime.cpp"
+  },
   "0x00622320": {
     "name": "NMData::SkeletalCalibrationVariables::vfunc_19",
     "class": "NMData::SkeletalCalibrationVariables",

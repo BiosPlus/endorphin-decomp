@@ -1,0 +1,22 @@
+{
+  "va": "0x006204A0",
+  "size": 36,
+  "orig_symbol": "Sensors::SensorAbsoluteTime::vfunc_0",
+  "src_path": "src/Sensors/SensorAbsoluteTime.cpp",
+  "lifted_path": "lifted/Sensors/SensorAbsoluteTime.cpp",
+  "name": "Sensors::SensorAbsoluteTime::vfunc_0",
+  "class": "Sensors::SensorAbsoluteTime",
+  "signature": "void* __thiscall fn_006204A0(void* self, uint8_t flags)",
+  "summary": "Scalar deleting destructor: resets the vptr, runs the base destructor, frees the object when flags bit 0 is set, and returns this.",
+  "fields": [
+    {
+      "class": "Sensors::SensorAbsoluteTime",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (vtable",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:34:09Z"
+}
