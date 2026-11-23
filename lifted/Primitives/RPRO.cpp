@@ -115,3 +115,63 @@ void fn_0053C0C0(void* self, const float* arg) {
     ext_00538D10((static_cast<uint8_t*>(self) + 0xC4), v, b, a, 10);
 }
 } // namespace lift_0053C0C0
+
+// [0x0053DFD0]
+namespace lift_0053DFD0 {
+extern void ext_0053A610(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern float ext_005B11E0(void* self, uint32_t arg1);
+extern void ext_00538550(void* self, float arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_00538D10(void* self, float arg1, float arg2, float arg3, uint32_t arg4);
+
+extern float mem_00993838;
+extern double mem_0092A280;
+extern double mem_0093F790;
+
+// @name Primitives::RPRO::vfunc_25
+// @class Primitives::RPRO
+// @summary Updates RPRO primitive radius/size from arg1 or arg2, configures sub-objects, and updates flags.
+// @field Primitives::RPRO +0x1C uint32_t field_0x1c
+// @field Primitives::RPRO +0x3C float field_0x3c
+// @field Primitives::RPRO +0xC4 uint8_t field_0xc4
+// @field Primitives::RPRO +0xEC uint8_t field_0xec
+// @field Primitives::RPRO +0x108 void* sub_object
+void fn_0053DFD0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    ext_0053A610(self, arg1, arg2, arg3);
+
+    uint32_t flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if ((flags & 0x4) == 0) {
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags ^ 0x4;
+    }
+
+    float val = ext_005B11E0(reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0);
+    if (val > mem_00993838) {
+        val = ext_005B11E0(reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0);
+    } else {
+        val = *reinterpret_cast<float*>(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(arg2)) + 0xb8);
+    }
+
+    *reinterpret_cast<float*>(s + 0x3c) = val;
+
+    float size = *reinterpret_cast<float*>(s + 0x3c);
+    ext_00538550(s + 0xec, size, 0, 0);
+
+    size = *reinterpret_cast<float*>(s + 0x3c);
+    ext_00538550(s + 0x108, size, 0, 0);
+
+    size = *reinterpret_cast<float*>(s + 0x3c);
+    float scaled_a = static_cast<float>(static_cast<double>(size) * mem_0092A280);
+    float scaled_b = static_cast<float>(static_cast<double>(size) * mem_0093F790);
+    ext_00538D10(s + 0xc4, size, scaled_b, scaled_a, 0xa);
+
+    flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if ((flags & 0x40000) == 0) {
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags ^ 0x40000;
+    }
+
+    flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if ((flags & 0x1) != 0) {
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags ^ 0x1;
+    }
+}
+} // namespace lift_0053DFD0
