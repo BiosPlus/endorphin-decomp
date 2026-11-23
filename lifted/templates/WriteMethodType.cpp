@@ -5749,3 +5749,183 @@ extern void __fastcall fn_004871E0(void* self, void* edx, void* arg1, void* arg2
     mem_00924FF4(local_str);
 }
 } // namespace lift_004871E0
+
+// [0x00486F90] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+namespace lift_00486F90 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41).
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_00486AF0(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_00486F90(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_00486AF0(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0
+} // namespace lift_00486F90
+
+// [0x004870B0] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+namespace lift_004870B0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41).
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_00486B10(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_004870B0(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_00486B10(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0
+} // namespace lift_004870B0
+
+// [0x0048B770] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+namespace lift_0048B770 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41).
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_0048B2A0(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_0048B770(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_0048B2A0(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0
+} // namespace lift_0048B770
+
+// [0x0048BD50] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+namespace lift_0048BD50 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41).
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_0048B9E0(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_0048BD50(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_0048B9E0(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0
+} // namespace lift_0048BD50
+
+// [0x004CA440] ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+namespace lift_004CA440 {
+// @name ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41).
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_004CA300(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_004CA440(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_004CA300(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0
+} // namespace lift_004CA440
+
+// [0x004CA8D0] ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+namespace lift_004CA8D0 {
+// @name ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41).
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_004CA590(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_004CA8D0(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_004CA590(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0
+} // namespace lift_004CA8D0

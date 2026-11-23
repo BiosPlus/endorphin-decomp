@@ -3642,6 +3642,20 @@
     "summary": "Invoke the normalize2 helper on self with flag 0 and return self. The second argument is unused.",
     "lifted_path": "lifted/templates/ROMethod0Type.cpp"
   },
+  "0x00486F90": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern void __fastcall fn_00486F90(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x004870B0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern void __fastcall fn_004870B0(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004871E0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType",
@@ -3808,6 +3822,20 @@
     "signature": "extern \"C\" void __stdcall fn_0048B1F0(void* self, void* unused)",
     "summary": "Stdcall (ret 8) proxy: loads the target pointer stored at the proxy's first dword and forwards it to ext_0048ABF0 in ECX; the second stack argument is ignored.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x0048B770": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern void __fastcall fn_0048B770(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0048BD50": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern void __fastcall fn_0048BD50(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0048C120": {
     "name": "NMData::PoseData::vfunc_6",
@@ -6293,11 +6321,25 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A32978 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CA440": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern void __fastcall fn_004CA440(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004CA560": {
     "name": "sub_004CA560",
     "signature": "extern \"C\" void __fastcall fn_004CA560(void* self)",
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x160.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
+  "0x004CA8D0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern void __fastcall fn_004CA8D0(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x004CAA70": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e::vfunc_0",
