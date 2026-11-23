@@ -237,8 +237,10 @@ void fn_00499190(void* self) {
     uint32_t result = ext_00498F90();
     lift_field<uint32_t>(self, 0x04) = result;
 }
+extern "C" uint8_t ext_0049B170(const std::string& text);
+extern "C" int mem_00924FE0;
 
-// [0x0049DBE0]
+extern "C" int mem_00924FE0;
 // @name ExprParser::PrimitiveProxyType<int>::vfunc_38
 // @class ExprParser::PrimitiveProxyType<int>
 // @summary Calls helper sub_0049DA40 and stores its result at object offset +0x04.
@@ -370,4 +372,17 @@ void* fn_004B71C0(void* self, void* src) {
     float value = *p;
     ext_0046C390(self, value);
     return self;
+}
+
+// [0x0049B2C0] ExprParser::PrimitiveProxyType<bool>::vfunc_10 (45 bytes)
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_10
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Parses a string argument via ext_0049B170 and stores the resulting bool through the value pointer.
+// @field ExprParser::PrimitiveProxyType<bool> +0x00 uint8_t* value_ptr
+void fn_0049B2C0(void* self, const std::string& text) {
+    // Original: copy-constructs a temporary std::string from the argument, calls
+    // sub_0049B170 on it (result in al), then writes al through *(this->value_ptr).
+    uint8_t result = ext_0049B170(text);
+    uint8_t* value_ptr = lift_field<uint8_t*>(self, 0x00);
+    *value_ptr = result;
 }

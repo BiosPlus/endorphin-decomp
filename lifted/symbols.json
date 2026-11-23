@@ -3620,6 +3620,13 @@
     "summary": "Stores the low byte of the argument through the proxy's value pointer (vtable slot 9).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B2C0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_10",
+    "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+    "signature": "void fn_0049B2C0(void* self, const std::string\u0026 text)",
+    "summary": "Parses a string argument via ext_0049B170 and stores the resulting bool through the value pointer.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049B2F0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_41",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

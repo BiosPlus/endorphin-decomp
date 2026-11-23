@@ -1,0 +1,22 @@
+{
+  "va": "0x0049B2C0",
+  "size": 45,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_10",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_10",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "void fn_0049B2C0(void* self, const std::string\u0026 text)",
+  "summary": "Parses a string argument via ext_0049B170 and stores the resulting bool through the value pointer.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:42:00Z"
+}
