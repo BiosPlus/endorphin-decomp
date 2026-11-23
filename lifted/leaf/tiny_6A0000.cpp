@@ -64,3 +64,17 @@ uint8_t __fastcall sub_006ACFC0(uintptr_t ecx) {
     return mem_read8(ptr + 0x4);
 }
 } // namespace lift_006ACFC0
+
+// [0x006AD090]
+namespace lift_006AD090 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+// @name sub_006AD090
+// @summary Reads a byte at offset +0x5 from the pointer stored at this+0x4
+// @field unknown +0x04 uint32_t field_0x04
+uint8_t __thiscall sub_006AD090(uint32_t self) {
+    uint32_t ptr = mem_read32(self + 0x4);
+    return mem_read8(ptr + 0x5);
+}
+} // namespace lift_006AD090
