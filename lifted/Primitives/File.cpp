@@ -72,3 +72,73 @@ void __thiscall fn_0053BD50(void* self, uint32_t /*stack arg, unused, ret 4*/) {
     mem_00925404();
 }
 } // namespace lift_0053BD50
+
+// [0x0053DB40]
+namespace lift_0053DB40 {
+// @name Primitives::File::vfunc_25
+// @class Primitives::File
+// @summary Initializes the file primitive and loads its file data from the path provided by arg1.
+// @field Primitives::File +0x1C uint32_t flags
+// @field Primitives::File +0x3C uint8_t field_0x3C
+// @field Primitives::File +0x86C uint32_t field_0x86C
+
+
+extern void ext_0053A610(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_00551390(void* self, const char* path, void* out_info);
+extern uint8_t ext_006629B0(void* str);
+extern void* ext_006690D0(void* out_str, void* base_str, void* rel_str);
+extern void ext_00669AD0(void* str);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+
+void fn_0053DB40(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_0053A610(self, arg1, arg2, arg3);
+
+    uint32_t flags = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x1C);
+    if ((flags & 0x40) == 0) {
+        *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x1C) = flags ^ 0x40;
+    }
+
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(arg1)) + 0x0C);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using GetPathFn = void* (__thiscall*)(void*);
+    void* path_str = reinterpret_cast<GetPathFn>(vtable[0x20 / 4])(obj);
+
+    using EmptyFn = uint8_t (__thiscall*)(void*);
+    if (reinterpret_cast<EmptyFn>(static_cast<uintptr_t>(mem_00924FEC))(path_str) != 0) {
+        return;
+    }
+
+    using CStrFn = const char* (__thiscall*)(void*);
+    void* field_3c = reinterpret_cast<uint8_t*>(self) + 0x3C;
+    void* field_86c = reinterpret_cast<uint8_t*>(self) + 0x86C;
+
+    if (ext_006629B0(path_str) != 0) {
+        const char* c_str = reinterpret_cast<CStrFn>(static_cast<uintptr_t>(mem_00924FF0))(path_str);
+        ext_00551390(field_3c, c_str, field_86c);
+        return;
+    }
+
+    uint8_t tmp_str1[32];
+    uint8_t tmp_str2[32];
+
+    using CtorFn = void (__thiscall*)(void*, const char*);
+    using DtorFn = void (__thiscall*)(void*);
+
+    reinterpret_cast<CtorFn>(static_cast<uintptr_t>(mem_00924FE4))(
+        tmp_str1, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00955D18)));
+
+    void* resolved = ext_006690D0(tmp_str2, tmp_str1, path_str);
+    ext_00669AD0(resolved);
+
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp_str1);
+
+    const char* c_str = reinterpret_cast<CStrFn>(static_cast<uintptr_t>(mem_00924FF0))(tmp_str2);
+    ext_00551390(field_3c, c_str, field_86c);
+
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp_str2);
+}
+} // namespace lift_0053DB40

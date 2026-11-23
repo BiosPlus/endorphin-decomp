@@ -1,0 +1,34 @@
+{
+  "va": "0x0053DB40",
+  "size": 271,
+  "orig_symbol": "Primitives::File::vfunc_25",
+  "src_path": "src/Primitives/File.cpp",
+  "lifted_path": "lifted/Primitives/File.cpp",
+  "name": "Primitives::File::vfunc_25",
+  "class": "Primitives::File",
+  "signature": "void fn_0053DB40(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Initializes the file primitive and loads its file data from the path provided by arg1.",
+  "fields": [
+    {
+      "class": "Primitives::File",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x3C",
+      "type": "uint8_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x86C",
+      "type": "uint32_t",
+      "name": "field_0x86C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:45:54Z"
+}
