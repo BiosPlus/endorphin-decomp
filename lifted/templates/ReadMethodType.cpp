@@ -17936,3 +17936,23 @@ int fn_0046E040(void* self) {
     return (static_cast<double>(value) >= mem_0093A738) ? 1 : 0;
 }
 } // namespace lift_0046E040
+
+// [0x004707F0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004707F0 {
+extern float ext_00407700(void* self);
+extern const double mem_0093B418;
+
+// @name ExprParser::ReadMethodType<RuntimeEngine,float,RuntimeEngine::getTimeZoomFactor,0>::vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Returns 1 if the value reported by the wrapped getTimeZoomFactor call is >= 1e-6, else 0; throws if the wrapped object pointer is null.
+// @field ValuePtrType +0x00 void* object
+int fn_004707F0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        throw std::runtime_error("ReadMethodType<RuntimeEngine::getTimeZoomFactor>: null object");
+    }
+    float v = ext_00407700(obj);
+    // fcomp + C0 test: returns 0 when v < 1e-6 (or unordered/NaN), 1 otherwise.
+    return (static_cast<double>(v) >= mem_0093B418) ? 1 : 0;
+}
+} // namespace lift_004707F0
