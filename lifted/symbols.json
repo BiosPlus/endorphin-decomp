@@ -5250,6 +5250,13 @@
     "summary": "Dereferences a ForceEventData pointer, calls getFrameNumber, and returns the result as double; throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C5B80": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, float, getRelativeAcceleration, float, setRelativeAcceleration\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004C5B80(void* self, void** arg1, void** arg2)",
+    "summary": "Evaluates the second argument as a float and calls ForceEventData::setRelativeAcceleration, or throws on null target",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",
@@ -5632,6 +5639,13 @@
     "summary": "Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CEEF0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData,float\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData,float\u003e",
+    "signature": "extern \"C\" void __stdcall fn_004CEEF0(void* arg1, void* arg2)",
+    "summary": "Evaluates an expression to a float and sets NMData::IncarnationEventData::momentumScaleFactor, throwing if target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CEFC0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",
@@ -5707,6 +5721,13 @@
     "signature": "extern \"C\" void __thiscall fn_004D0B80(void* self, void* a)",
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
+  "0x004D1C60": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, getMomentumScaleFactor, float, setMomentumScaleFactor\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __stdcall fn_004D1C60(void** targetPtr, void* valueWrapper)",
+    "summary": "Sets the momentum scale factor on a TransitionEventData instance from an expression value, or throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004D1D30": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_1",

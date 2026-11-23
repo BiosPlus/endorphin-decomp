@@ -1,0 +1,14 @@
+{
+  "va": "0x004C5B80",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, float, {public: void __thiscall NMData::ForceEventData::setRelativeAcceleration(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, float, getRelativeAcceleration, float, setRelativeAcceleration\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __thiscall fn_004C5B80(void* self, void** arg1, void** arg2)",
+  "summary": "Evaluates the second argument as a float and calls ForceEventData::setRelativeAcceleration, or throws on null target",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:49:58Z"
+}

@@ -5013,3 +5013,93 @@ extern void __stdcall fn_004B1E80(void** targetPtr, void* valueNode) {
     ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
 }
 } // namespace lift_004B1E80
+
+// [0x004C5B80]
+namespace lift_004C5B80 {
+// @name ExprParser::ReadWriteMethodType<NMData::ForceEventData, float, getRelativeAcceleration, float, setRelativeAcceleration>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Evaluates the second argument as a float and calls ForceEventData::setRelativeAcceleration, or throws on null target
+// @field ExprParser::Value arg2 +0x04 void* valueType
+
+
+extern void __thiscall ext_004C4E80(void* self, float val);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throwInfo);
+
+void __thiscall fn_004C5B80(void* self, void** arg1, void** arg2) {
+    (void)self;
+    void* target = *arg1;
+    if (target != nullptr) {
+        void* valObj = arg2[1];
+        void** vtable = *(void***)valObj;
+        typedef float (__thiscall *EvalFloatFn)(void*, void**);
+        EvalFloatFn evalFloat = (EvalFloatFn)vtable[1];
+        float val = evalFloat(valObj, arg2);
+        ext_004C4E80(target, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+}
+} // namespace lift_004C5B80
+
+// [0x004CEEF0]
+namespace lift_004CEEF0 {
+// @name ExprParser::ReadWriteMethodType<NMData::IncarnationEventData,float>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::IncarnationEventData,float>
+// @summary Evaluates an expression to a float and sets NMData::IncarnationEventData::momentumScaleFactor, throwing if target is null.
+// @field NMData::IncarnationEventData +0x00 void* instance
+// @field ExprParser::ValuePtr +0x04 void* evaluator
+
+extern void __fastcall ext_004CE570(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+extern void __stdcall fn_004CEEF0(void* arg1, void* arg2) {
+    void* instance = *reinterpret_cast<void**>(arg1);
+    if (instance != nullptr) {
+        void* evaluator = *reinterpret_cast<void**>(reinterpret_cast<char*>(arg2) + 0x4);
+        void** vtable = *reinterpret_cast<void***>(evaluator);
+        using EvalFloatFn = float (__thiscall*)(void*, void*);
+        float value = reinterpret_cast<EvalFloatFn>(vtable[1])(evaluator, arg2);
+        ext_004CE570(instance, 0, value);
+        return;
+    }
+
+    char exc[40];
+    ext_0046C3C0(exc);
+    ext_006A6DD2();
+}
+} // namespace lift_004CEEF0
+
+// [0x004D1C60]
+namespace lift_004D1C60 {
+// @name ExprParser::ReadWriteMethodType<NMData::TransitionEventData, float, getMomentumScaleFactor, float, setMomentumScaleFactor>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets the momentum scale factor on a TransitionEventData instance from an expression value, or throws if null.
+// @field NMData::TransitionEventData +0x194 float m_momentumScaleFactor
+
+
+extern void __fastcall ext_004D0AE0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void __stdcall fn_004D1C60(void** targetPtr, void* valueWrapper) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* exprObj = *(void**)((uint8_t*)valueWrapper + 4);
+        void** vtable = *(void***)exprObj;
+        typedef float(__thiscall* EvalFloatFn)(void*, void*);
+        EvalFloatFn evalFloat = (EvalFloatFn)vtable[1];
+        float val = evalFloat(exprObj, valueWrapper);
+        ext_004D0AE0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, (void*)0x009DEC1C);
+}
+} // namespace lift_004D1C60
