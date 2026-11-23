@@ -8714,3 +8714,27 @@ uint8_t fn_005DAA70(void* self) {
     return static_cast<uint8_t>(value != 0);
 }
 } // namespace lift_005DAA70
+
+// [0x005DB620] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_3 (52 bytes)
+namespace lift_005DB620 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, getColor, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the GraphEntryData object held by the value pointer and returns whether its +0x20 field is non-zero; throws if the pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+uint8_t fn_005DB620(void* self) {
+    // self points at the ValuePtr holder; its first word is the target object pointer.
+    auto* obj = *static_cast<uint8_t**>(self);
+    if (obj == nullptr) {
+        // Null target: build an exception object and throw it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    uint32_t value = *reinterpret_cast<uint32_t*>(obj + 0x20);
+    return value != 0 ? 1 : 0;
+}
+} // namespace lift_005DB620

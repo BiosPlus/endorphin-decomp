@@ -9951,6 +9951,13 @@
     "summary": "Returns whether the held VideoPlaneData pointer's field at +0x24 is nonzero; throws if the held pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005DB620": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, getColor, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "uint8_t fn_005DB620(void* self)",
+    "summary": "Reads the GraphEntryData object held by the value pointer and returns whether its +0x20 field is non-zero; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005DC420": {
     "name": "sub_005DC420",
     "signature": "extern \"C\" void __fastcall fn_005DC420(void* self)",
