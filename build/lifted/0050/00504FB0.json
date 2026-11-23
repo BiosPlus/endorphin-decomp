@@ -1,0 +1,14 @@
+{
+  "va": "0x00504FB0",
+  "size": 66,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus,0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+  "signature": "void* fn_00504FB0(void* a1, const int32_t* a2)",
+  "summary": "Returns its first stack argument; if the second argument's leading int is zero it raises an exception, otherwise it invokes ext_006720C0(first, 0) first.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:02:58Z"
+}

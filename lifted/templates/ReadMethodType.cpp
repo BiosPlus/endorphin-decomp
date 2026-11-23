@@ -11173,3 +11173,28 @@ bool fn_00625060(void* self) {
     return lift_field<uint8_t>(obj, 0x30) != 0;
 }
 } // namespace lift_00625060
+
+// [0x00504FB0] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_0 (66 bytes)
+namespace lift_00504FB0 {
+extern void ext_0046C3C0();
+extern void ext_006720C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Interpreter,int,bogus,0>::vfunc_0
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Returns its first stack argument; if the second argument's leading int is zero it raises an exception, otherwise it invokes ext_006720C0(first, 0) first.
+// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 int32_t field_0x00
+void* fn_00504FB0(void* a1, const int32_t* a2) {
+    // Original is stack-argument (ret 0x8) code; a1 is returned, a2 is the checked pointer.
+    if (*a2 == 0) {
+        // Original constructs a local exception object and throws it via _CxxThrowException.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        std::abort();  // not reached: the throw does not return
+    }
+    // Original: thiscall ext_006720C0 with ecx=a1 and one int argument of 0.
+    ext_006720C0();
+    return a1;
+}
+} // namespace lift_00504FB0
