@@ -45,3 +45,41 @@ void fn_0053C8D0(void* self) {
     }
     lift_field<void*>(self, 0x3C) = nullptr;
 }
+
+// [0x0053B7A0]
+namespace lift_0053B7A0 {
+// @name Primitives::Sensor::vfunc_23
+// @class Primitives::Sensor
+// @summary If the sub-object at +0x20 fails the check via sub_006A6DE0, sets flag +0x4, then forwards arg2 as a tagged record to Primitives::Animation::vfunc_23.
+// @field Primitives::Sensor +0x4 uint8_t field_0x04
+// @field Primitives::Sensor +0x20 void* field_0x20
+
+struct AnimCallArg {
+    uint32_t vtable;  // 0x93A444
+    uint32_t value;   // second stack argument of the caller
+};
+
+// sub_005B11D0: thiscall on sub-object, one stack arg (1); returns float*.
+extern float* ext_005B11D0(void* self, int32_t arg);
+// sub_006A6DE0: returns nonzero on success; receiver assumed to be the sub-object.
+extern uint32_t ext_006A6DE0(void* self);
+// Primitives::Animation::vfunc_23: thiscall, receives a pointer to the tagged record.
+extern void ext_0053ADD0(void* self, const AnimCallArg* arg);
+
+void Primitives_Sensor_vfunc_23(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg1;  // first stack argument is not read by this routine
+
+    void* sub = lift_field<void*>(self, 0x20);
+    if (sub != nullptr) {
+        float* p = ext_005B11D0(sub, 1);
+        (void)*p;  // loaded to x87 stack in the original; value is not consumed here
+
+        if (ext_006A6DE0(sub) == 0) {
+            lift_field<uint8_t>(self, 0x04) = 1;
+        }
+    }
+
+    AnimCallArg rec{0x0093A444u, arg2};
+    ext_0053ADD0(self, &rec);
+}
+} // namespace lift_0053B7A0

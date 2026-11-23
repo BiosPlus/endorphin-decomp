@@ -1,0 +1,28 @@
+{
+  "va": "0x0053B7A0",
+  "size": 61,
+  "orig_symbol": "Primitives::Sensor::vfunc_23",
+  "src_path": "src/Primitives/Sensor.cpp",
+  "lifted_path": "lifted/Primitives/Sensor.cpp",
+  "name": "Primitives::Sensor::vfunc_23",
+  "class": "Primitives::Sensor",
+  "signature": "void Primitives_Sensor_vfunc_23(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "If the sub-object at +0x20 fails the check via sub_006A6DE0, sets flag +0x4, then forwards arg2 as a tagged record to Primitives::Animation::vfunc_23.",
+  "fields": [
+    {
+      "class": "Primitives::Sensor",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Primitives::Sensor",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:41:37Z"
+}

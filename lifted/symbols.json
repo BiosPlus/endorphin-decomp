@@ -7973,6 +7973,13 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053B7A0": {
+    "name": "Primitives::Sensor::vfunc_23",
+    "class": "Primitives::Sensor",
+    "signature": "void Primitives_Sensor_vfunc_23(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "If the sub-object at +0x20 fails the check via sub_006A6DE0, sets flag +0x4, then forwards arg2 as a tagged record to Primitives::Animation::vfunc_23.",
+    "lifted_path": "lifted/Primitives/Sensor.cpp"
+  },
   "0x0053B8A0": {
     "name": "Primitives::Sphyl::vfunc_28",
     "class": "Primitives::Sphyl",
