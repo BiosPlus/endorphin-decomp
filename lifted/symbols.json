@@ -8120,6 +8120,13 @@
     "summary": "Forwards three arguments to Plane::vfunc_25, then normalizes flag bits at +0x1c",
     "lifted_path": "lifted/Primitives/CameraFrustum.cpp"
   },
+  "0x0053E1C0": {
+    "name": "Primitives::Bone::vfunc_25",
+    "class": "Primitives::Bone",
+    "signature": "void fn_0053E1C0(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards three args to Plane::vfunc_25, updates status bits in +0x1c (sets 0x4 and 0x40000, clears 0x1), then loads four floats (indices 0..3 via ext_005B11E0) into +0x3c..+0x48.",
+    "lifted_path": "lifted/Primitives/Bone.cpp"
+  },
   "0x0053E240": {
     "name": "Primitives::Animation::vfunc_25",
     "class": "Primitives::Animation",
