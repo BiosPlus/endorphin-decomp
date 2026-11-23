@@ -10643,3 +10643,28 @@ extern uint32_t __stdcall fn_0049CAD0(void** statePtr) {
     return 0;
 }
 } // namespace lift_0049CAD0
+
+// [0x0046D620]
+namespace lift_0046D620 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, getEndFrame>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, int, getEndFrame>
+// @summary Dereferences an ImageExporter pointer and returns its end frame as a double, or throws an exception if null.
+
+
+int32_t __thiscall ext_006ACFB0(uint32_t self);
+void __thiscall ext_0046C3C0(uint32_t self);
+void __stdcall ext_006A6DD2(uint32_t pExceptionObject, uint32_t pThrowInfo);
+
+double __thiscall fn_0046D620(uint32_t self, uint32_t arg0) {
+    (void)self;
+    uint32_t obj = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(arg0));
+    if (obj != 0) {
+        int32_t frame = ext_006ACFB0(obj);
+        return static_cast<double>(frame);
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc)));
+    ext_006A6DD2(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc)), 0x009DEC1C);
+    return 0.0;
+}
+} // namespace lift_0046D620
