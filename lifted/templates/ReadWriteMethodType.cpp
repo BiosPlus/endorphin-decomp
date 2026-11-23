@@ -3879,3 +3879,43 @@ void fn_006332E0(void** dst, void* src) {
     set(target, value);
 }
 } // namespace lift_006332E0
+
+// [0x006362D0] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_006362D0 {
+// Known callee 0x00630E10: sub_00630E10 (EffectorSkeletal::setDesiredTwistAndSwing body, __thiscall, 1 stack arg)
+extern void ext_00630E10();
+// Known callee 0x0046C3C0: sub_0046C3C0 (exception object construction helper, __thiscall on local arg slot)
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// Throw type-info constant referenced at 0x00636305 (push 0x9dec1c).
+extern const char ext_009DEC1C[];
+
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal>::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -> setDesiredTwistAndSwing)
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const &)>
+// @summary Applies a Vector3 value to the bound EffectorSkeletal's desired twist/swing; throws if the bound target is null.
+// @field ExprParser::ReadWriteMethodType +0x00 void* target
+// @field ValuePtrType +0x04 void* field_04
+void fn_006362D0(void* self, void* value) {
+    // self->target (EffectorSkeletal*) at +0x00.
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Null target: construct exception and throw.
+        ext_0046C3C0(self);
+        ext_006A6DD2(self, ext_009DEC1C);
+        return;
+    }
+
+    // value->obj at +0x04; obj's vtable slot 5 (+0x14) yields the NM::Vector3 const& to apply.
+    void* obj = lift_field<void*>(value, 0x04);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VFn = void* (*)(void* thisPtr, void* arg);
+    VFn getter = reinterpret_cast<VFn>(vtable[5]);
+    void* vec = getter(obj, value);
+
+    // Forward the Vector3 to EffectorSkeletal's setter body (sub_00630E10), with target as this.
+    using SetFn = void (*)(void* thisPtr, void* arg);
+    reinterpret_cast<SetFn>(ext_00630E10)(target, vec);
+}
+} // namespace lift_006362D0
