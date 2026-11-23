@@ -67,3 +67,15 @@ extern uint32_t sub_007D5BC0(uint32_t arg0) {
     return mem_read32(arg0 + 0x20);
 }
 } // namespace lift_007D5BC0
+
+// [0x007D8490]
+namespace lift_007D8490 {
+extern float mem_read_f32(uint32_t addr);
+
+// @name getFloatAt0x58
+// @summary Returns the float field at offset 0x58 of the given object.
+// @field Object +0x58 float field_0x58
+float sub_007D8490(uint32_t obj) {
+    return mem_read_f32(obj + 0x58);
+}
+} // namespace lift_007D8490

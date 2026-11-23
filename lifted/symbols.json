@@ -33740,6 +33740,12 @@
     "summary": "Returns address of global mem_0099E074.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8490": {
+    "name": "getFloatAt0x58",
+    "signature": "float sub_007D8490(uint32_t obj)",
+    "summary": "Returns the float field at offset 0x58 of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8700": {
     "name": "sub_007D8700",
     "signature": "extern \"C\" uint32_t fn_007D8700(uint32_t arg0)",
