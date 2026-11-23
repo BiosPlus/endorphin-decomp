@@ -1,0 +1,22 @@
+{
+  "va": "0x006049D0",
+  "size": 106,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, const std::string\u0026, EffectorBase::vcall{64}\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType",
+  "signature": "void fn_006049D0(void* self, void* arg1, void* arg2)",
+  "summary": "Converts an expression value to std::string via ext_0046E780, passes it to EffectorBase virtual slot 16, and destroys the temporary string.",
+  "fields": [
+    {
+      "class": "arg2",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:02Z"
+}

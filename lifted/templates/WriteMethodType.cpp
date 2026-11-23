@@ -5929,3 +5929,49 @@ extern void __fastcall fn_004CA8D0(void* self, void* edx, void* arg1, void* arg2
 }
 } // namespace lift_004871E0
 } // namespace lift_004CA8D0
+
+// [0x006049D0]
+namespace lift_006049D0 {
+// @name ExprParser::WriteMethodType<EffectorBase, const std::string&, EffectorBase::vcall{64}>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Converts an expression value to std::string via ext_0046E780, passes it to EffectorBase virtual slot 16, and destroys the temporary string.
+// @field arg2 +0x04 uint32_t field_0x04
+
+
+extern uint32_t ext_0046E780(void* ecx, void* out_str, void* arg2, void* arg1);
+extern void ext_00603690(void* self, void* str_arg);
+extern uintptr_t mem_00924FF4;
+
+void fn_006049D0(void* self, void* arg1, void* arg2) {
+    (void)self;
+    uint8_t local_str[0x1C];
+    void* target_obj = *reinterpret_cast<void**>(arg1);
+    void* ctx = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(arg2) + 4);
+    uint32_t str_ptr = ext_0046E780(ctx, local_str, arg2, arg1);
+    ext_00603690(target_obj, reinterpret_cast<void*>(static_cast<uintptr_t>(str_ptr)));
+    reinterpret_cast<void(*)(void*)>(mem_00924FF4)(local_str);
+}
+} // namespace lift_006049D0
+
+// [0x006329B0]
+namespace lift_006329B0 {
+void* __fastcall ext_0046E780(void* self, void* edx_unused, void* out_str, void* arg2, void* arg1);
+    void* __fastcall ext_00603670(void* self, void* edx_unused, void* str_arg);
+    extern uint32_t mem_00924FF4;
+
+// @name ExprParser::WriteMethodType<EffectorBase, std::string const&, vcall60>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates argument via ext_0046E780 into a temporary std::string, invokes virtual slot 15 on *arg1, and destroys the temporary string.
+void __thiscall fn_006329B0(void* self, void* arg1, void* arg2) {
+    (void)self;
+    void* target_obj = *reinterpret_cast<void**>(arg1);
+    void* helper_this = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(arg2) + 4);
+
+    uint8_t temp_str[28];
+    void* str_ptr = ext_0046E780(helper_this, nullptr, temp_str, arg2, arg1);
+    ext_00603670(target_obj, nullptr, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(temp_str);
+}
+} // namespace lift_006329B0
