@@ -1,0 +1,28 @@
+{
+  "va": "0x00692310",
+  "size": 109,
+  "orig_symbol": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, int, {public: class ValuePtr const \u0026 __thiscall ValuePtrArrayObject::getElement(int), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, int, ValuePtrArrayObject::getElement\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType",
+  "signature": "uint32_t __thiscall fn_00692310(uint32_t self, uint32_t out_val, uint32_t arg_obj, uint32_t arg_idx)",
+  "summary": "Evaluates ValuePtrArrayObject::getElement(index) on the given ValuePtr arguments and returns the resulting ValuePtr.",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "ValuePtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "type"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:32:05Z"
+}

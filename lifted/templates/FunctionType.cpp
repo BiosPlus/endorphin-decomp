@@ -389,3 +389,42 @@ uint32_t __thiscall fn_00692FD0(uint32_t ecx, uint32_t arg1, uint32_t arg2, uint
     return arg1;
 }
 } // namespace lift_00692FD0
+
+// [0x00692310]
+namespace lift_00692310 {
+// @name ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, int, ValuePtrArrayObject::getElement>::vfunc_48
+// @class ExprParser::FunctionType
+// @summary Evaluates ValuePtrArrayObject::getElement(index) on the given ValuePtr arguments and returns the resulting ValuePtr.
+// @field ValuePtr +0x00 uint32_t value
+// @field ValuePtr +0x04 uint32_t type
+
+
+extern uint32_t mem_r32(uint32_t addr);
+extern void mem_w32(uint32_t addr, uint32_t val);
+extern uint32_t __thiscall ext_00692230(uint32_t self, int32_t index);
+
+uint32_t __thiscall fn_00692310(uint32_t self, uint32_t out_val, uint32_t arg_obj, uint32_t arg_idx) {
+    (void)self;
+    uint32_t array_obj = mem_r32(arg_obj);
+    uint32_t idx_type = mem_r32(arg_idx + 0x4);
+    uint32_t idx_vtable = mem_r32(idx_type);
+    typedef int32_t (__thiscall *GetIntFn)(uint32_t, uint32_t);
+    int32_t index = ((GetIntFn)mem_r32(idx_vtable + 0x8))(idx_type, arg_idx);
+
+    uint32_t elem_ptr = ext_00692230(array_obj, index);
+    uint32_t elem_type = mem_r32(elem_ptr + 0x4);
+
+    uint32_t tmp[2] = {0, 0};
+    if (elem_type != 0) {
+        uint32_t elem_vtable = mem_r32(elem_type);
+        typedef uint32_t (__thiscall *CloneFn)(uint32_t, uint32_t, uint32_t);
+        uint32_t res_ptr = ((CloneFn)mem_r32(elem_vtable + 0x70))(elem_type, (uint32_t)(uintptr_t)tmp, elem_ptr);
+        mem_w32(out_val, mem_r32(res_ptr));
+        mem_w32(out_val + 0x4, mem_r32(elem_ptr + 0x4));
+    } else {
+        mem_w32(out_val, 0);
+        mem_w32(out_val + 0x4, elem_type);
+    }
+    return out_val;
+}
+} // namespace lift_00692310
