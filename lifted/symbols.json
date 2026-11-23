@@ -20585,6 +20585,12 @@
     "summary": "Tail-calls virtual method at vtable +0x18 on member object at +0x4",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006452D0": {
+    "name": "forwardVCall0x1c",
+    "signature": "void __thiscall sub_006452D0(void* self)",
+    "summary": "Tail-call virtual method at vtable +0x1c on delegate at +0x04",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00645F80": {
     "name": "RelationshipHinge::vfunc_0_off_8",
     "class": "RelationshipHinge",
@@ -21989,6 +21995,12 @@
     "name": "sub_00661A00",
     "signature": "extern \"C\" void __fastcall fn_00661A00(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0065D570.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00661A30": {
+    "name": "sub_00661A30_getFloat0x138",
+    "signature": "extern \"C\" float __thiscall sub_00661A30(uint32_t thisPtr)",
+    "summary": "Reads a pointer at this+0x4 and returns the float at offset 0x138 of that object.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
   "0x00661A60": {

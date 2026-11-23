@@ -8,7 +8,8 @@
 // Recovered field layout for Self:
 namespace lifted_layout {
 struct Self_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00462A70)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00462A70, 0x00661A30) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x006452D0) // CONFLICT: multiple definitions at +0x4
     // +0x10  uint32_t                 field_0x10  (evidence: 0x005314C0)
 };
 } // namespace lifted_layout

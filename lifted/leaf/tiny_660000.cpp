@@ -196,3 +196,17 @@ bool __fastcall sub_006658B0(uint32_t ecx, uint32_t /*edx*/) {
     return mem_read<uint32_t>(ecx + 0x24) != 0;
 }
 } // namespace lift_006658B0
+
+// [0x00661A30]
+namespace lift_00661A30 {
+extern uint32_t mem_read32(uint32_t addr);
+extern float mem_readf32(uint32_t addr);
+
+// @name sub_00661A30_getFloat0x138
+// @summary Reads a pointer at this+0x4 and returns the float at offset 0x138 of that object.
+// @field Self +0x04 uint32_t field_0x04
+extern float __thiscall sub_00661A30(uint32_t thisPtr) {
+    uint32_t obj = mem_read32(thisPtr + 0x4);
+    return mem_readf32(obj + 0x138);
+}
+} // namespace lift_00661A30
