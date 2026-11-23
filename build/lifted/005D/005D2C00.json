@@ -1,0 +1,22 @@
+{
+  "va": "0x005D2C00",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getYScale\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
+  "signature": "void* fn_005D2C00(void* arg1, void** arg2)",
+  "summary": "Reads the Y-scale float from a VideoPlaneData reached through a pointer slot; throws if the pointer is null, otherwise forwards the value to the callee and returns the pointer slot.",
+  "fields": [
+    {
+      "class": "VideoPlaneData",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:54:01Z"
+}

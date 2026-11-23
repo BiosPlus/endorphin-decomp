@@ -16835,3 +16835,39 @@ void* __stdcall fn_004B8DF0(void* self, void** pp) {
     return self;
 }
 } // namespace lift_004B8DF0
+
+// [0x005D2C00] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_005D2C00 {
+// Callee 0x00672080: sets a float member on the object (thiscall, float arg on stack).
+extern void __thiscall ext_00672080(void* self, float value);
+// Callee 0x0046C3C0: constructs the exception object (thiscall, ecx = object storage).
+extern void __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw-info descriptor referenced at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getYScale>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Reads the Y-scale float from a VideoPlaneData reached through a pointer slot; throws if the pointer is null, otherwise forwards the value to the callee and returns the pointer slot.
+// @field VideoPlaneData +0x38 float field_0x38
+void* fn_005D2C00(void* arg1, void** arg2) {
+    (void)arg1;
+
+    // arg2 points to a slot holding the VideoPlaneData pointer.
+    unsigned char* object = static_cast<unsigned char*>(*arg2);
+    if (object == nullptr) {
+        // Build an exception object and throw it.
+        alignas(8) unsigned char exception_storage[8] = {};
+        ext_0046C3C0(exception_storage);
+        ext_006A6DD2(exception_storage, mem_009DEC1C);
+        return nullptr; // not reached
+    }
+
+    // Read float at +0x38 (field_0x38) and pass it to the callee on the object.
+    float value;
+    std::memcpy(&value, object + 0x38, sizeof(value));
+    ext_00672080(arg2, value);
+    return arg2;
+}
+} // namespace lift_005D2C00

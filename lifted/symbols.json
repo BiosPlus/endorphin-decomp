@@ -12527,6 +12527,13 @@
     "summary": "Reads the VideoPlaneData X-scale field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2C00": {
+    "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getYScale\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
+    "signature": "void* fn_005D2C00(void* arg1, void** arg2)",
+    "summary": "Reads the Y-scale float from a VideoPlaneData reached through a pointer slot; throws if the pointer is null, otherwise forwards the value to the callee and returns the pointer slot.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D2C50": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_1 (NMData::VideoPlaneData::getYScale)",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
