@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1430",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_3 (NMData::GraphEntryData::isActive)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+  "signature": "bool fn_004B1430(void** arg)",
+  "summary": "Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.",
+  "fields": [
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:13:38Z"
+}
