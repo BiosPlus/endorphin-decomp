@@ -1,0 +1,21 @@
+{
+  "va": "0x006ACFD0",
+  "size": 11,
+  "orig_symbol": "sub_006ACFD0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "getField0x1COrZero",
+  "signature": "uint32_t __thiscall sub_006ACFD0(void* self)",
+  "summary": "Returns the 32-bit field at offset 0x1C if the object pointer is non-null, otherwise 0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:42:11Z"
+}
