@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/classes/AcclaimIO.cpp
 #include "lift_compat.h"
+#include <cstddef>
+#include <cstdint>
 
-// [0x00584660] AcclaimIO::vfunc_43 (34 bytes)
+#include <cstdint>
 // @name AcclaimIO::IsFlaggedAndEnabled
 // @class AcclaimIO
 // @summary Returns true when virtual slot 57 (vtable +0xE4) reports bit 0x02 and the byte at +0x428 is nonzero.
@@ -157,3 +159,43 @@ extern "C" uint32_t __thiscall fn_00584730(void* self, uint32_t arg) {
     auto vfunc13 = reinterpret_cast<SubobjVfunc13Fn>(lift_field<void*>(subobjA_vtable, 0x34));
     return vfunc13(subobjA, arg);
 }
+
+// [0x00584610] AcclaimIO::vfunc_14 (75 bytes)
+namespace lift_00584610 {
+// @name AcclaimIO::vfunc_14
+// @class AcclaimIO
+// @summary Forwards an argument to embedded sub-object +0x46C, runs helper ext_005557A0 on
+//          sub-objects +0x27C/+0x6E8, then feeds the +0x6E8 result into the +0x27C object; returns 0.
+// @field AcclaimIO +0x27C uint8_t field_0x27C   (embedded object; its vptr is read at offset 0)
+// @field AcclaimIO +0x46C uint8_t subobjA       (embedded object; vtable slot at +0x38 called)
+// @field AcclaimIO +0x6E8 uint8_t field_0x6E8   (embedded object; vtable slot at +0x24 called)
+
+extern void ext_005557A0(void* self, void* a, void* b);
+
+namespace {
+
+// Calls the virtual slot stored at byte offset `vtblOff` of the object `obj`.
+// Byte offsets are used to match the original vtable displacements (e.g. +0x38).
+template <typename R, typename... Args>
+R vcall(void* obj, std::size_t vtblOff, Args... args) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    void* fp = *reinterpret_cast<void**>(reinterpret_cast<std::uint8_t*>(vtbl) + vtblOff);
+    using Fn = R (*)(void*, Args...);
+    return reinterpret_cast<Fn>(fp)(obj, args...);
+}
+
+}  // namespace
+
+int fn_00584610(void* self, DWORD arg) {
+    std::uint8_t* base = static_cast<std::uint8_t*>(self);
+    void* subA = base + 0x46C;
+    void* embA = base + 0x27C;
+    void* embB = base + 0x6E8;
+
+    vcall<void, DWORD>(subA, 0x38, arg);
+    ext_005557A0(self, embB, embA);
+    DWORD r = vcall<DWORD>(embB, 0x24);
+    vcall<void, DWORD>(embA, 0x5C, r);
+    return 0;
+}
+} // namespace lift_00584610

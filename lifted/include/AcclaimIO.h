@@ -14,6 +14,7 @@ struct AcclaimIO_Fields {
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00584730)
     // +0x24  uint8_t                  field_0x24  (evidence: 0x00584730)
     // +0x16C uint8_t                  field_0x16C  (evidence: 0x00584730)
+    // +0x27C uint8_t field_0x27C (embedded object; its vptr is read at offset 0)  (evidence: 0x00584610)
     // +0x3D4 uint8_t                  field_0x3D4  (evidence: 0x00584730)
     // +0x3F0 uint32_t                 field_0x3F0  (evidence: 0x00584730)
     // +0x3F4 uint8_t                  field_0x3F4  (evidence: 0x00584730)
@@ -21,7 +22,9 @@ struct AcclaimIO_Fields {
     // +0x418 uint32_t                 field_0x418  (evidence: 0x00584730)
     // +0x420 uint32_t                 field_0x420  (evidence: 0x00584730)
     // +0x428 uint8_t                  field_0x428  (evidence: 0x0055BE30, 0x00584660)
-    // +0x46C uint8_t                  subobjA  (evidence: 0x0055BE60, 0x005846B0, 0x005846F0, 0x00584730)
+    // +0x46C uint8_t subobjA (embedded object; vtable slot at +0x38 called)  (evidence: 0x00584610) // CONFLICT: multiple definitions at +0x46C
+    // +0x46C uint8_t                  subobjA  (evidence: 0x0055BE60, 0x005846B0, 0x005846F0, 0x00584730) // CONFLICT: multiple definitions at +0x46C
+    // +0x6E8 uint8_t field_0x6E8 (embedded object; vtable slot at +0x24 called)  (evidence: 0x00584610)
     // +0x840 uint8_t                  field_0x840  (evidence: 0x00584730)
     // +0x85C uint32_t                 field_0x85C  (evidence: 0x00584730)
     // +0x860 uint8_t                  field_0x860  (evidence: 0x00584730)

@@ -8829,6 +8829,13 @@
     "summary": "Pure jump thunk forwarding to NMFileIO::vfunc_1.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584610": {
+    "name": "AcclaimIO::vfunc_14",
+    "class": "AcclaimIO",
+    "signature": "R vcall(void* obj, std::size_t vtblOff, Args... args)",
+    "summary": "Forwards an argument to embedded sub-object +0x46C, runs helper ext_005557A0 on",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584660": {
     "name": "AcclaimIO::IsFlaggedAndEnabled",
     "class": "AcclaimIO",
