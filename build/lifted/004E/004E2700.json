@@ -1,0 +1,34 @@
+{
+  "va": "0x004E2700",
+  "size": 93,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_77",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_77",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_004E2700(uint8_t* self)",
+  "summary": "Clears the vector at +0x9B0 and resets the iterator at +0x9C0/+0x9C4 to its end",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9B0",
+      "type": "uint8_t[16]",
+      "name": "field_0x9b0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9C0",
+      "type": "uint32_t",
+      "name": "field_0x9c0"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9C4",
+      "type": "uint32_t",
+      "name": "field_0x9c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:03:03Z"
+}

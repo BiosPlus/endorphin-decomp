@@ -176,3 +176,44 @@ void __thiscall fn_004E2760(void* self, uint32_t arg1) {
     }
 }
 } // namespace lift_004E2760
+
+// [0x004E2700]
+namespace lift_004E2700 {
+// @name NMData::AnimationEventData::vfunc_77
+// @class NMData::AnimationEventData
+// @summary Clears the vector at +0x9B0 and resets the iterator at +0x9C0/+0x9C4 to its end
+// @field NMData::AnimationEventData +0x9b0 uint8_t[16] field_0x9b0
+// @field NMData::AnimationEventData +0x9c0 uint32_t field_0x9c0
+// @field NMData::AnimationEventData +0x9c4 uint32_t field_0x9c4
+
+
+extern void (__cdecl* mem_00925134)();
+extern uint32_t (__thiscall* ext_00596660)(void* self, void* ret_iter, void* cont1, uint32_t first, void* cont2, uint32_t last);
+
+void __thiscall fn_004E2700(uint8_t* self) {
+    uint8_t* vec = self + 0x9B0;
+    uint32_t* begin_ptr = reinterpret_cast<uint32_t*>(vec + 0x4);
+    uint32_t* end_ptr = reinterpret_cast<uint32_t*>(vec + 0x8);
+
+    uint32_t end = *end_ptr;
+    if (*begin_ptr > end) {
+        mem_00925134();
+    }
+
+    uint32_t begin = *begin_ptr;
+    if (begin > *end_ptr) {
+        mem_00925134();
+    }
+
+    uint32_t ret_iter[2];
+    ext_00596660(vec, ret_iter, vec, begin, vec, end);
+
+    end = *end_ptr;
+    if (*begin_ptr > end) {
+        mem_00925134();
+    }
+
+    *reinterpret_cast<uint32_t*>(self + 0x9C4) = end;
+    *reinterpret_cast<uint32_t*>(self + 0x9C0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
+}
+} // namespace lift_004E2700

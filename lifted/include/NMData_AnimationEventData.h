@@ -17,6 +17,9 @@ struct NMData_AnimationEventData_Fields {
     // +0x168 int32_t                  field_0x168  (evidence: 0x00486BE0, 0x004BFBE0, 0x004DE0F0)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004E2760)
     // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DE0F0)
+    // +0x9B0 uint8_t[16]              field_0x9b0  (evidence: 0x004E2700)
+    // +0x9C0 uint32_t                 field_0x9c0  (evidence: 0x004E2700)
+    // +0x9C4 uint32_t                 field_0x9c4  (evidence: 0x004E2700)
     // +0x9CC uint32_t                 field_0x9cc  (evidence: 0x004E2760)
     // +0xB74 uint32_t                 field_0xb74  (evidence: 0x004E2760)
 };
