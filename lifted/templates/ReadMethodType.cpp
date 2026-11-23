@@ -8448,3 +8448,29 @@ float fn_004B2440(void* self) {
     std::abort();
 }
 } // namespace lift_004B2440
+
+// [0x005FCC50] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_5 (49 bytes)
+namespace lift_005FCC50 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensor>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Reads the object pointer from the argument holder; if non-null, forwards to virtual slot 14 (0x38) on that object, otherwise raises a C++ exception.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_005FCC50(void* const* holder) {
+    void* const obj = *holder;
+    if (obj != nullptr) {
+        // Virtual slot 14 (byte offset 0x38 in the 32-bit vtable) on the target object, called with the object as `this`.
+        void* const* vtbl = *static_cast<void* const* const*>(obj);
+        using SlotFn = void* (*)(void*);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtbl[14]);
+        return slot(obj);
+    }
+    // Null path: build the exception object and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return nullptr;
+}
+} // namespace lift_005FCC50
