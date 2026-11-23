@@ -143,3 +143,36 @@ uint32_t fn_004DE0F0(void* self, int32_t x) {
     return ext_0047C480(reinterpret_cast<void*>(static_cast<intptr_t>(mem_00AE29D0)), v);
 }
 } // namespace lift_004DE0F0
+
+// [0x004E2760]
+namespace lift_004E2760 {
+extern uint8_t mem_read8(const void* base, uint32_t offset);
+extern uint32_t mem_read32(const void* base, uint32_t offset);
+extern void mem_write32(void* base, uint32_t offset, uint32_t value);
+extern void __thiscall ext_004E1F50(uint32_t self);
+
+// @name NMData::AnimationEventData::vfunc_85
+// @class NMData::AnimationEventData
+// @summary Updates cached frame/time at +0x9CC and triggers ext_004E1F50 on field_0xB74 when matching +0x160
+// @field NMData::AnimationEventData +0x160 uint32_t field_0x160
+// @field NMData::AnimationEventData +0x17C uint8_t field_0x17c
+// @field NMData::AnimationEventData +0x9CC uint32_t field_0x9cc
+// @field NMData::AnimationEventData +0xB74 uint32_t field_0xb74
+void __thiscall fn_004E2760(void* self, uint32_t arg1) {
+    uint32_t target = mem_read32(self, 0xB74);
+    if (target == 0) {
+        return;
+    }
+    if (mem_read8(self, 0x17C) == 0) {
+        return;
+    }
+    if (mem_read32(self, 0x9CC) == arg1) {
+        return;
+    }
+    bool matches = (arg1 == mem_read32(self, 0x160));
+    mem_write32(self, 0x9CC, arg1);
+    if (matches) {
+        ext_004E1F50(target);
+    }
+}
+} // namespace lift_004E2760
