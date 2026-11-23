@@ -4143,6 +4143,13 @@
     "summary": "Stdcall (ret 4) accessor: if the stored pointer at +0x00 is non-null, forwards it to ext_006658C0; otherwise constructs an exception object and throws it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A5050": {
+    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getCodeWindowFontSize\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getCodeWindowFontSize\u003e",
+    "signature": "extern \"C\" double __thiscall fn_004A5050(void* self, const uint32_t* targetPtr)",
+    "summary": "Reads the code window font size from FSMEditView as a double, or throws an exception if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004A5090": {
     "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0\u003e",

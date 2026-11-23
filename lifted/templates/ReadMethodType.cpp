@@ -10519,3 +10519,29 @@ extern double __thiscall fn_004A38F0(void* self, void* arg0) {
     return 0.0;
 }
 } // namespace lift_004A38F0
+
+// [0x004A5050]
+namespace lift_004A5050 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getCodeWindowFontSize>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getCodeWindowFontSize>
+// @summary Reads the code window font size from FSMEditView as a double, or throws an exception if null.
+
+
+extern int32_t fn_004A2490(void);
+extern void __thiscall fn_0046C3C0(void* self);
+extern void __stdcall fn_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern double __thiscall fn_004A5050(void* self, const uint32_t* targetPtr) {
+    (void)self;
+    uint32_t obj = *targetPtr;
+    if (obj != 0) {
+        int32_t val = fn_004A2490();
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    fn_0046C3C0(exc);
+    fn_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004A5050
