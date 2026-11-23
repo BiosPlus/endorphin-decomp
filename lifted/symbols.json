@@ -5545,6 +5545,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004C2070": {
+    "name": "NMData::SeverEventData::vfunc_14",
+    "class": "NMData::SeverEventData",
+    "signature": "extern \"C\" void* __thiscall fn_004C2070(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Dispatches property/event query on SeverEventData; handles 0x8c/0x117 via sub_004C1BF0 and sub_0055DA20, otherwise delegates to vfunc_14 base.",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
   "0x004C2300": {
     "name": "ValuePtrArrayObject::vfunc_0",
     "class": "ValuePtrArrayObject",
