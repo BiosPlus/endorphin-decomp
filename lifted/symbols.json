@@ -4377,6 +4377,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 8 (offset +0x20) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AA9B0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData\u003e",
+    "signature": "void __stdcall fn_004AA9B0(void* ctx, void* src)",
+    "summary": "Writes a bool into BehaviourData: target = *ctx; if null throws; else value = src-\u003evfn3(src) (src = arg2-\u003efield_0x04's vtable slot 3) and calls target-\u003esetter(value) via callee 0x004C1710.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004AAA80": {
     "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e",

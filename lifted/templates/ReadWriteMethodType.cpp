@@ -3709,3 +3709,34 @@ void fn_004A26A0(void* arg1, void* arg2) {
     ext_004A24F0(self, value);
 }
 } // namespace lift_004A26A0
+
+// [0x004AA9B0] ExprParser::ReadWriteMethodType<NMData::BehaviourData,...>::vfunc_41 (68 bytes)
+namespace lift_004AA9B0 {
+// Callee 0x004C1710 (thiscall: ecx = self, one stack argument, callee pops 4 bytes).
+extern void __thiscall ext_004C1710(void* self, uint32_t value);
+// Callee 0x0046C3C0 (thiscall: ecx = exception object slot); builds the null-target exception.
+extern void __thiscall ext_0046C3C0(void* self);
+// IAT thunk forwarding to MSVCR80!_CxxThrowException(object, throw_info).
+extern void __cdecl ext_006A6DD2(void* object, const void* throw_info);
+// ThrowInfo descriptor for the exception thrown on a null target.
+extern uint8_t mem_009DEC1C[];
+
+// @name ExprParser::ReadWriteMethodType<NMData::BehaviourData>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::BehaviourData>
+// @summary Writes a bool into BehaviourData: target = *ctx; if null throws; else value = src->vfn3(src) (src = arg2->field_0x04's vtable slot 3) and calls target->setter(value) via callee 0x004C1710.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void __stdcall fn_004AA9B0(void* ctx, void* src) {
+    void* target = lift_field<void*>(ctx, 0);
+    if (target == nullptr) {
+        ext_0046C3C0(&ctx);
+        ext_006A6DD2(&ctx, mem_009DEC1C);
+        return;
+    }
+    void* holder = lift_field<void*>(src, 4);
+    using VFn3 = uint32_t (__thiscall*)(void*, void*);
+    void** vtbl = *reinterpret_cast<void***>(holder);
+    uint32_t value = reinterpret_cast<VFn3>(vtbl[3])(holder, src);
+    ext_004C1710(target, value);
+}
+} // namespace lift_004AA9B0

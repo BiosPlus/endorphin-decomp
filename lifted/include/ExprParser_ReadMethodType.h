@@ -8,6 +8,7 @@
 // Recovered field layout for ExprParser::ReadMethodType:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_Fields {
+    // +0x0   void*                    field_0x00  (evidence: 0x004AA9B0)
     // +0x4   void*                    inner  (evidence: 0x004A2580, 0x004A25E0)
 };
 } // namespace lifted_layout
