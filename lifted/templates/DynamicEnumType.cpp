@@ -1194,3 +1194,33 @@ extern void* __thiscall fn_00494D00(void* self, void* out_str, uint32_t* ptr) {
     return out_str;
 }
 } // namespace lift_00494D00
+
+// [0x004D4820]
+namespace lift_004D4820 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_0
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary Evaluates/converts RigEventData type index to string or throws if null.
+
+
+extern uint32_t __fastcall ext_004D3CE0(uint32_t self, uint32_t edx_unused);
+extern uint32_t __fastcall ext_006720C0(uint32_t self, uint32_t edx_unused, uint32_t arg0);
+extern void __fastcall ext_0046C3C0(uint32_t self, uint32_t edx_unused);
+extern void __stdcall ext_006A6DD2(uint32_t exc_obj, uint32_t throw_info);
+
+uint32_t __fastcall fn_004D4820(uint32_t self, uint32_t edx_unused, uint32_t out_str, uint32_t arg1) {
+    (void)self;
+    (void)edx_unused;
+    uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg1));
+    if (obj != 0) {
+        uint32_t val = ext_004D3CE0(obj, 0);
+        ext_006720C0(out_str, 0, val);
+        return out_str;
+    }
+
+    uint8_t exc_buf[40];
+    uint32_t exc_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc_buf));
+    ext_0046C3C0(exc_ptr, 0);
+    ext_006A6DD2(exc_ptr, 0x009DEC1Cu);
+    return 0;
+}
+} // namespace lift_004D4820

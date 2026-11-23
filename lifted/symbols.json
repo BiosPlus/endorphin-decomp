@@ -5813,6 +5813,13 @@
     "summary": "Dynamically casts the input object pointer to NMData::RigEventData using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D4820": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_0",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
+    "signature": "uint32_t __fastcall fn_004D4820(uint32_t self, uint32_t edx_unused, uint32_t out_str, uint32_t arg1)",
+    "summary": "Evaluates/converts RigEventData type index to string or throws if null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004D4D50": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::getDoubleValue",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
