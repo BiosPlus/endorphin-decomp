@@ -3418,6 +3418,13 @@
     "summary": "Checks whether the string pointed to by *arg equals either of two constant strings (0x0092F10C or 0x0093A810).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497620": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_4",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+    "signature": "void* fn_00497620(void* self, const uintptr_t* src)",
+    "summary": "Passes the first argument and the value stored at the pointee of the second argument to ext_004276B0, then returns the first argument.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497680": {
     "name": "NMData::Transition::vfunc_12",
     "class": "NMData::Transition",

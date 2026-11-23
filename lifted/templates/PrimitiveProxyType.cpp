@@ -206,8 +206,10 @@ uint32_t __thiscall fn_004975E0(void* self, const std::string* const* arg) {
 }
 extern "C" uint32_t ext_0049B3A0();
 extern "C" uint32_t ext_0049CC60();
+// Callee 0x004276B0 (32B): takes two pointer-sized arguments (cdecl, caller cleans up).
+extern "C" void ext_004276B0(void* a, uintptr_t b);
 
-// [0x00497930]
+extern "C" void ext_004276B0(void* a, uintptr_t b);
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_2
 // @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
 // @summary Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.
@@ -313,4 +315,14 @@ void fn_0049CFE0(void* self) {
 void fn_0049DA30(void* self) {
     uint32_t result = ext_0049CC60();
     lift_field<uint32_t>(self, 0x04) = result;
+}
+
+// [0x00497620] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_4 (37 bytes)
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_4
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Passes the first argument and the value stored at the pointee of the second argument to ext_004276B0, then returns the first argument.
+// @field ExprParser::PrimitiveProxyType<std::string> +0x00 uintptr_t field_0x00
+void* fn_00497620(void* self, const uintptr_t* src) {
+    ext_004276B0(self, *src);
+    return self;
 }

@@ -1,0 +1,22 @@
+{
+  "va": "0x00497620",
+  "size": 37,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_4",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_4",
+  "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+  "signature": "void* fn_00497620(void* self, const uintptr_t* src)",
+  "summary": "Passes the first argument and the value stored at the pointee of the second argument to ext_004276B0, then returns the first argument.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:38:19Z"
+}
