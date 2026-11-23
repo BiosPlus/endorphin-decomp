@@ -164,6 +164,7 @@ uint32_t __stdcall fn_0067A770(uint32_t arg0, uint32_t arg1) {
     fn(obj, arg0);
     return ext_006720A0(arg0, arg1);
 }
+#include <cstdint>
 
 // [0x004C0320] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_13 (13 bytes)
 // @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_13
@@ -268,3 +269,148 @@ void fn_00494A60(void* self) {
     throw std::runtime_error("DynamicEnumType: null value pointer");
 }
 } // namespace lift_00494A60
+
+// [0x004AB340] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_2 (47 bytes)
+namespace lift_004AB340 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004A9CE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004AB340(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004A9CE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004AB340
+
+// [0x004B9B50] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_2 (47 bytes)
+namespace lift_004B9B50 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004B72D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004B9B50(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004B72D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004B9B50
+
+// [0x004D4D90] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_2 (47 bytes)
+namespace lift_004D4D90 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D3CE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D4D90(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D3CE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D4D90
+
+// [0x004D50F0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_2 (47 bytes)
+namespace lift_004D50F0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D3CF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D50F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D3CF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D50F0
+
+// [0x005C8A10] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_2 (47 bytes)
+namespace lift_005C8A10 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3FB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C8A10(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3FB0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C8A10

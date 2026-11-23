@@ -2916,11 +2916,32 @@
     "summary": "Forwards to RuntimeEngine::getNumTicksToRun via the held pointer; throws if the held pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004716A0": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",
+    "signature": "void fn_004716A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00471920": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::getTimeZoomFactor",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",
     "signature": "float fn_00471920(void* self)",
     "summary": "Reads the RuntimeEngine time zoom factor through the stored target pointer; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00471BC0": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e",
+    "signature": "void fn_00471BC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00471DF0": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00471DF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00473C30": {
@@ -3392,6 +3413,13 @@
     "signature": "extern \"C\" int __thiscall fn_0048FB60(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
+  "0x0048FEE0": {
+    "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e",
+    "signature": "void fn_0048FEE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00491A80": {
     "name": "GraphEngine::vfunc_0_off_10",
@@ -4055,6 +4083,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004AB340": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e",
+    "signature": "void fn_004AB340(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004AC240": {
     "name": "NMData::BehaviourData::vfunc_0_off_158",
     "class": "NMData::BehaviourData",
@@ -4193,6 +4228,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B3DE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",
+    "signature": "void fn_004B3DE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B41D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0\u003e",
+    "signature": "void fn_004B41D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
@@ -4305,6 +4354,13 @@
     "summary": "Reads the float at +0x44 of the wrapped EngineData; throws via ext_0046C3C0 if the wrapped pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B9B50": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e",
+    "signature": "void fn_004B9B50(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004BA260": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
@@ -4406,6 +4462,20 @@
     "signature": "extern \"C\" void __fastcall fn_004C0330(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls CharacterSelection::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x004C0380": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e",
+    "signature": "void fn_004C0380(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004C0440": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e",
+    "signature": "void fn_004C0440(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004C0EA0": {
     "name": "sub_004C0EA0",
@@ -4514,6 +4584,13 @@
     "signature": "void* fn_004C4E40(void* self, void* arg)",
     "summary": "Invokes virtual slot 15 (vtable +0x3C) on self with (arg, 0x266, 0), then returns arg.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
+  "0x004C5590": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e",
+    "signature": "void fn_004C5590(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
@@ -4667,6 +4744,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x160.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CAFA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e",
+    "signature": "void fn_004CAFA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CB440": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
@@ -4680,6 +4764,20 @@
     "signature": "void fn_004CB470(void* self)",
     "summary": "Loads the held object pointer at self+0 and forwards the call to its vtable slot +0x160 via ext_004CA560.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x004CC1F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e",
+    "signature": "void fn_004CC1F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004CC440": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0\u003e",
+    "signature": "void fn_004CC440(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004CCC80": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_0",
@@ -4841,6 +4939,13 @@
     "summary": "Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CEFC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",
+    "signature": "void fn_004CEFC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CF310": {
     "name": "NMData::IncarnationEventData::vfunc_1_off_154",
     "class": "NMData::IncarnationEventData",
@@ -4909,6 +5014,13 @@
     "signature": "extern \"C\" void __thiscall fn_004D0B80(void* self, void* a)",
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
+  "0x004D1D30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D1D30(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004D2DD0": {
     "name": "NMData::TransitionEventData::vfunc_0_off_158",
@@ -4986,6 +5098,76 @@
     "signature": "void* __thiscall fn_004D3E20(void* /*self*/, void* obj)",
     "summary": "Dynamically casts the input object pointer to NMData::RigEventData using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x004D4D90": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e",
+    "signature": "void fn_004D4D90(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x004D50F0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e",
+    "signature": "void fn_004D50F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x004D5790": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D5790(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D5AA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D5AA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D5CF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D5CF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D63F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D63F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D6690": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D6690(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D6D50": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D6D50(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D79C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D79C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D7D00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D7D00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004D8B10": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_26",
@@ -5117,6 +5299,62 @@
     "summary": "Pure jump thunk forwarding to sub_004DE440.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004E0430": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0430(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E0700": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0700(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E0820": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0820(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E0B60": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0B60(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E0CC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0CC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E0FB0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0FB0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E1480": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E1480(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E2020": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e",
+    "signature": "void fn_004E2020(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
     "class": "NMData::AnimationEventData",
@@ -5234,6 +5472,13 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Function2Type.cpp"
   },
+  "0x004ECE40": {
+    "name": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e",
+    "signature": "void fn_004ECE40(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004ED7C0": {
     "name": "MetaBodyJointSelection::vfunc_0_off_4",
     "class": "MetaBodyJointSelection",
@@ -5246,6 +5491,13 @@
     "signature": "extern \"C\" void fn_004EDE20(void)",
     "summary": "Pure jump thunk forwarding to sub_004ED9D0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x004EE840": {
+    "name": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e",
+    "signature": "void fn_004EE840(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004F0B00": {
     "name": "Properties::TargetSelectionProxy::vfunc_0_off_4",
@@ -5298,6 +5550,69 @@
     "signature": "extern \"C\" void __fastcall fn_004F4E20(void* self, int edx_unused, float value)",
     "summary": "Setter storing float argument into field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
+  "0x004F5340": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e",
+    "signature": "void fn_004F5340(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F5740": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e",
+    "signature": "void fn_004F5740(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F5AD0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e",
+    "signature": "void fn_004F5AD0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F6DC0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e",
+    "signature": "void fn_004F6DC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F72A0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0\u003e",
+    "signature": "void fn_004F72A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F7640": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getTheta(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getTheta(void) const, 0\u003e",
+    "signature": "void fn_004F7640(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F7BE0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getBeta(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getBeta(void) const, 0\u003e",
+    "signature": "void fn_004F7BE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F7E90": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getGamma(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getGamma(void) const, 0\u003e",
+    "signature": "void fn_004F7E90(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F89E0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0\u003e",
+    "signature": "void fn_004F89E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004F9820": {
     "name": "sub_004F9820",
@@ -5400,6 +5715,34 @@
     "signature": "extern void __stdcall fn_004FE0F0(void* out, void* const* targetRef, void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x004FE1D0": {
+    "name": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1\u003e",
+    "signature": "void fn_004FE1D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004FE7E0": {
+    "name": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1\u003e",
+    "signature": "void fn_004FE7E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004FEDF0": {
+    "name": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1\u003e",
+    "signature": "void fn_004FEDF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004FF430": {
+    "name": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e",
+    "signature": "void fn_004FF430(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004FFF60": {
     "name": "sub_004FFF60",
@@ -5566,6 +5909,20 @@
     "summary": "Returns the ID of the NMData::Task held by the value pointer; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005096D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e",
+    "signature": "void fn_005096D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0050A230": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e",
+    "signature": "void fn_0050A230(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",
@@ -5652,6 +6009,20 @@
     "signature": "void fn_00511F80(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
+  "0x00512600": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0\u003e",
+    "signature": "void fn_00512600(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00513AA0": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e",
+    "signature": "void fn_00513AA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00515820": {
     "name": "sub_00515820",
@@ -5798,6 +6169,20 @@
     "summary": "Forwards self and the entry ecx value to ext_0051AE20, then returns self.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051AF70": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, 0\u003e",
+    "signature": "void fn_0051AF70(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0051B860": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, 0\u003e",
+    "signature": "void fn_0051B860(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0051BA70": {
     "name": "NMData::RealChannel::vfunc_6",
     "class": "NMData::RealChannel",
@@ -5927,12 +6312,33 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B12A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00525080": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0\u003e",
+    "signature": "void fn_00525080(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00525A00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0\u003e",
+    "signature": "void fn_00525A00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005261E0": {
     "name": "NMData::NetworkConnectorData::vfunc_27",
     "class": "NMData::NetworkConnectorData",
     "signature": "extern \"C\" void __thiscall fn_005261E0(void* self)",
     "summary": "Forwards to ext_00525E80 on the sub-object at this+0x60, passing the original this as a stack argument.",
     "lifted_path": "lifted/NMData/NetworkConnectorData.cpp"
+  },
+  "0x005263B0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, float, \u0026public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, float, \u0026public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1\u003e",
+    "signature": "void fn_005263B0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00526C60": {
     "name": "NMData::NetworkConnectorData::vfunc_28",
@@ -7365,6 +7771,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005F09E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005856F0": {
+    "name": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_005856F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005877A0": {
     "name": "IdentityNode::vfunc_1_off_C",
     "class": "IdentityNode",
@@ -7428,6 +7841,55 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::Marker::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0058BD10": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058BD10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0058C420": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058C420(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0058C820": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058C820(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0058D210": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, NM::Vector4 const \u0026, {protected: class NM::Vector4 const \u0026 __thiscall AnimatableTransform::getQuat(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, NM::Vector4 const \u0026, {protected: class NM::Vector4 const \u0026 __thiscall AnimatableTransform::getQuat(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058D210(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0058D930": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058D930(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0058DF70": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058DF70(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0058E4D0": {
+    "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058E4D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0058F2C0": {
     "name": "AnimatableTransform::vfunc_1_off_C",
     "class": "AnimatableTransform",
@@ -7484,6 +7946,48 @@
     "signature": "void* fn_0058F6B0(void* self, void* arg1, uint32_t arg2)",
     "summary": "Returns arg1; if arg2 == 0x199 calls sub_00661650 on arg1, otherwise calls AnimatableTransform::vfunc_13 on self with (arg1, arg2).",
     "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
+  "0x0058FEE0": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e",
+    "signature": "void fn_0058FEE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00590250": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0\u003e",
+    "signature": "void fn_00590250(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00590B20": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0\u003e",
+    "signature": "void fn_00590B20(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00590F60": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0\u003e",
+    "signature": "void fn_00590F60(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00591BA0": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0\u003e",
+    "signature": "void fn_00591BA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00591EE0": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0\u003e",
+    "signature": "void fn_00591EE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005938E0": {
     "name": "Transform::vfunc_1_off_C",
@@ -7601,6 +8105,48 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594C30": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e",
+    "signature": "void fn_00594C30(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00595140": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1\u003e",
+    "signature": "void fn_00595140(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00595D50": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e",
+    "signature": "void fn_00595D50(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00597E30": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e",
+    "signature": "void fn_00597E30(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00598340": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1\u003e",
+    "signature": "void fn_00598340(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00599620": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1\u003e",
+    "signature": "void fn_00599620(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059CBB0": {
     "name": "World::vfunc_1_off_C",
     "class": "World",
@@ -7691,6 +8237,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0059E1E0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0065F440 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
+  "0x0059E400": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1\u003e",
+    "signature": "void fn_0059E400(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0059E9B0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_13 (NMData::CharacterData::setPoseFromFSM)",
@@ -8393,6 +8946,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005B75F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B75F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B7AE0": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e",
@@ -8435,6 +8995,55 @@
     "summary": "RTTI-checked cast of self to the getNearestGeomPoint FunctionType descriptor; returns the cast pointer or NULL.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x005B8F80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B8F80(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B9630": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B9630(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B9B20": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B9B20(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005B9FE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B9FE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BA500": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1\u003e",
+    "signature": "void fn_005BA500(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BA9F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1\u003e",
+    "signature": "void fn_005BA9F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BAEE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1\u003e",
+    "signature": "void fn_005BAEE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005BB2D0": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}\u003e",
@@ -8448,6 +9057,69 @@
     "signature": "void* fn_005BB330(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x005BB3D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1\u003e",
+    "signature": "void fn_005BB3D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BBD00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BBD00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BC3C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BC3C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BCB00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BCB00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BCED0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BCED0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BD1A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BD1A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BD810": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BD810(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BD9C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BD9C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005BDF40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0\u003e",
+    "signature": "void fn_005BDF40(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005C1050": {
     "name": "NMData::MetaBodyData::vfunc_1_off_C",
@@ -8609,6 +9281,34 @@
     "summary": "Dynamically casts the input object pointer to NMData::CollisionModelDataBase using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x005C4A00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C4A00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C4EF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C4EF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C5410": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C5410(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C5860": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C5860(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005C5E10": {
     "name": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
     "class": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const \u0026), 0}\u003e",
@@ -8651,6 +9351,27 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x005C66D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0\u003e",
+    "signature": "void fn_005C66D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C74B0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e",
+    "signature": "void fn_005C74B0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C7A60": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0\u003e",
+    "signature": "void fn_005C7A60(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005C84A0": {
     "name": "NMData::CollisionModelDataBase::vfunc_1_off_C",
     "class": "NMData::CollisionModelDataBase",
@@ -8678,6 +9399,76 @@
     "signature": "extern \"C\" void __fastcall fn_005C88F0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::FluidObjectData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005C8A10": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e",
+    "signature": "void fn_005C8A10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x005C8FE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C8FE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C9460": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C9460(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C9AE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1\u003e",
+    "signature": "void fn_005C9AE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CA000": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1\u003e",
+    "signature": "void fn_005CA000(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CA4F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1\u003e",
+    "signature": "void fn_005CA4F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CA9E0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1\u003e",
+    "signature": "void fn_005CA9E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CAE30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1\u003e",
+    "signature": "void fn_005CAE30(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CB4C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1\u003e",
+    "signature": "void fn_005CB4C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CBA00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e",
+    "signature": "void fn_005CBA00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005CC1E0": {
     "name": "NMData::CollisionModelDataBase::vfunc_0",
@@ -8817,6 +9608,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647EE0.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CEA50": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e",
+    "signature": "void fn_005CEA50(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005CF480": {
     "name": "NMData::InertialBodyData::vfunc_0",
     "class": "NMData::InertialBodyData",
@@ -8830,6 +9628,13 @@
     "signature": "void* __thiscall fn_005D06E0(void* self, uint32_t arg)",
     "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
+  "0x005D1520": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D1520(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D2410": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_1",
@@ -8873,6 +9678,62 @@
     "summary": "Stdcall float getter: reads the VideoPlaneData pointer held in the value-pointer argument and returns the float at +0x3C; throws a C++ exception if that pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D3970": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D3970(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D3D90": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D3D90(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D46C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D46C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D4B40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D4B40(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D4E20": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D4E20(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D5B50": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D5B50(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D5DB0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D5DB0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D6170": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D6170(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D6980": {
     "name": "ExprParser::ReadMethodType\u003cEffector\u003e::vfunc_1 (Effector::getScaledDesiredDisplacement)",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
@@ -8885,6 +9746,41 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e",
     "signature": "float fn_005D78F0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D8090": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D8090(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D8BC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D8BC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D8FA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D8FA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D93A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D93A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005DA210": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0\u003e",
+    "signature": "void fn_005DA210(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005DAA10": {
@@ -9024,6 +9920,111 @@
     "signature": "void* __thiscall fn_005E2A90(void* self, void* a, void* b)",
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
+  "0x005E5150": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E5150(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E5380": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E5380(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E5FC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E5FC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E6220": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E6220(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E6560": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E6560(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E6850": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E6850(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E6E90": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E6E90(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E7550": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E7550(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E7740": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E7740(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E81C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E81C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E87C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E87C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E8C30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E8C30(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005E94C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005E94C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005EA390": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0\u003e",
+    "signature": "void fn_005EA390(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005EA8D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0\u003e",
+    "signature": "void fn_005EA8D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
@@ -9296,6 +10297,55 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEA8 and tail-calls sub_005F5410.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005F6070": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F6070(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F6B60": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F6B60(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F7400": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F7400(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F76F0": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getPosition(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getPosition(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F76F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F7CE0": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F7CE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F8130": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F8130(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F87C0": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getColour(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getColour(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F87C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005F9A30": {
     "name": "HelperGraphic::vfunc_1_off_C",
     "class": "HelperGraphic",
@@ -9324,6 +10374,34 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x154 and tail-calls HelperGraphic::vfunc_21.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005F9D20": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F9D20(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FA0E0": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0\u003e",
+    "signature": "void fn_005FA0E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FA830": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0\u003e",
+    "signature": "void fn_005FA830(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FAD10": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0\u003e",
+    "signature": "void fn_005FAD10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005FB220": {
     "name": "HelperGraphic::vfunc_0",
     "class": "HelperGraphic",
@@ -9337,6 +10415,34 @@
     "signature": "void* fn_005FCB30(void* self)",
     "summary": "Reads the object's vtable pointer and returns the function pointer stored at vtable byte offset 0x48 (the original is a tail-jump to that slot; here the target is returned, since a portable tail-call needs the target's signature).",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
+  },
+  "0x005FD3D0": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1\u003e",
+    "signature": "void fn_005FD3D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FDE00": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1\u003e",
+    "signature": "void fn_005FDE00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FE410": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1\u003e",
+    "signature": "void fn_005FE410(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FEA20": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1\u003e",
+    "signature": "void fn_005FEA20(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005FF0E0": {
     "name": "CompoundSensor::vfunc_14",
@@ -9464,6 +10570,27 @@
     "signature": "extern \"C\" void* __fastcall fn_00603700(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00602EF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00603A10": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getForce(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getForce(void) const, 1\u003e",
+    "signature": "void fn_00603A10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00603F00": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getTorque(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getTorque(void) const, 1\u003e",
+    "signature": "void fn_00603F00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00604380": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorBase, float, \u0026public: float __thiscall EffectorBase::getTorqueZ(void) const, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEffectorBase, float, \u0026public: float __thiscall EffectorBase::getTorqueZ(void) const, 1\u003e",
+    "signature": "void fn_00604380(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00604930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_41",
@@ -9849,6 +10976,20 @@
     "summary": "Forwards two arguments to the shared helper 0x00612310, using the subobject at self+0x224 when the flag argument is nonzero and self+0x164 otherwise.",
     "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
   },
+  "0x00612F10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0\u003e",
+    "signature": "void fn_00612F10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00613960": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0\u003e",
+    "signature": "void fn_00613960(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00613FB0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e",
@@ -9861,6 +11002,20 @@
     "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e",
     "signature": "float fn_00614290(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00614370": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0\u003e",
+    "signature": "void fn_00614370(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00614CA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0\u003e",
+    "signature": "void fn_00614CA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00614E20": {
@@ -9891,6 +11046,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00616130": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0\u003e",
+    "signature": "void fn_00616130(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00616320": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0\u003e",
+    "signature": "void fn_00616320(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00617340": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
@@ -9910,6 +11079,27 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0\u003e",
     "signature": "void* fn_006178B0(void* self)",
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::HingeLimit\u003e object (getLowerDamping), else NULL; identity for valid objects.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00617A00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0\u003e",
+    "signature": "void fn_00617A00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00619320": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0\u003e",
+    "signature": "void fn_00619320(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00619630": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0\u003e",
+    "signature": "void fn_00619630(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0061A2F0": {
@@ -9947,11 +11137,39 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint\u003e object (getUserInitialSwing1), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061C4C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0\u003e",
+    "signature": "void fn_0061C4C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061C6D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_0061C6D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0061C910": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint\u003e::vfunc_16 (NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled)",
     "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e",
     "signature": "void* fn_0061C910(void* self)",
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint\u003e object (isLinearEnabled), else NULL; identity for valid objects.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061CA00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_0061CA00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061CE10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_0061CE10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0061D250": {
@@ -10217,6 +11435,34 @@
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00627BA0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1\u003e",
+    "signature": "void fn_00627BA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00628090": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1\u003e",
+    "signature": "void fn_00628090(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00628580": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1\u003e",
+    "signature": "void fn_00628580(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00628A70": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1\u003e",
+    "signature": "void fn_00628A70(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006294C0": {
     "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
     "class": "Sensors::SensorAbsoluteGeneralEulers",
@@ -10308,6 +11554,20 @@
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x44 (slot 17 on x86). The original tail-jumps to that address; this lift returns it so the caller can perform the call.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x0062A850": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1\u003e",
+    "signature": "void fn_0062A850(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0062AAF0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIntegral, float, \u0026public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIntegral, float, \u0026public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1\u003e",
+    "signature": "void fn_0062AAF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062B140": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
@@ -10392,6 +11652,13 @@
     "summary": "Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062E9E0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e",
+    "signature": "const void* fn_0062E9E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062EEC0": {
     "name": "Sensors::CompoundSensorFrontalPlane::vfunc_27",
     "class": "Sensors::CompoundSensorFrontalPlane",
@@ -10427,6 +11694,41 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x006311D0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1\u003e",
+    "signature": "void fn_006311D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006316F0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1\u003e",
+    "signature": "void fn_006316F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00631BE0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1\u003e",
+    "signature": "void fn_00631BE0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006320D0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualPosition(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualPosition(void) const, 1\u003e",
+    "signature": "void fn_006320D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006325C0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1\u003e",
+    "signature": "void fn_006325C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00633AE0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e",
@@ -10453,6 +11755,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
     "signature": "int fn_00635160(const void* holder)",
     "summary": "Auto-lifted identical-shape clone of 0x004B12A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00636CE0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e",
+    "signature": "const void* fn_00636CE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00636E80": {
@@ -10509,6 +11818,69 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0\u003e",
     "signature": "float fn_00639090(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00639520": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0\u003e",
+    "signature": "void fn_00639520(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006397B0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e",
+    "signature": "const void* fn_006397B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00639AA0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
+    "signature": "const void* fn_00639AA0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00639DD0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0\u003e",
+    "signature": "void fn_00639DD0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00639ED0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e",
+    "signature": "const void* fn_00639ED0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0063A0D0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0\u003e",
+    "signature": "void fn_0063A0D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0063A690": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getActualQuat(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getActualQuat(void) const, 1\u003e",
+    "signature": "void fn_0063A690(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0063AB80": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1\u003e",
+    "signature": "void fn_0063AB80(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0063B2D0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0\u003e",
+    "signature": "void fn_0063B2D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0063CA50": {
@@ -10806,6 +12178,48 @@
     "signature": "extern \"C\" void __fastcall fn_00642740(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00648850.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006427A0": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_006427A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00642A80": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00642A80(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00642DC0": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00642DC0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00643100": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00643100(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00643440": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00643440(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006436D0": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_006436D0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006449C0": {
     "name": "MainPhysicsAdapter::vfunc_0",
@@ -11250,6 +12664,27 @@
     "signature": "extern void __stdcall fn_00649DF0(void* out, void* const* targetRef, void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00649ED0": {
+    "name": "ExprParser::ReadMethodType\u003cRelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1\u003e",
+    "signature": "void fn_00649ED0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0064A4E0": {
+    "name": "ExprParser::ReadMethodType\u003cRelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1\u003e",
+    "signature": "void fn_0064A4E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0064AAF0": {
+    "name": "ExprParser::ReadMethodType\u003cRelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1\u003e",
+    "signature": "void fn_0064AAF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0064B0A0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (RelationshipRPROMagnet::applyCachedSettings)",
@@ -11767,6 +13202,76 @@
     "signature": "extern void __stdcall fn_00651410(uint32_t* out, void* b, void* c)",
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x006514E0": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1\u003e",
+    "signature": "void fn_006514E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00651AF0": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1\u003e",
+    "signature": "void fn_00651AF0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00652100": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1\u003e",
+    "signature": "void fn_00652100(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00652710": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1\u003e",
+    "signature": "void fn_00652710(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00652D20": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1\u003e",
+    "signature": "void fn_00652D20(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00653330": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1\u003e",
+    "signature": "void fn_00653330(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006539B0": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1\u003e",
+    "signature": "void fn_006539B0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00653EA0": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1\u003e",
+    "signature": "void fn_00653EA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00656480": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1\u003e",
+    "signature": "void fn_00656480(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006569A0": {
+    "name": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1\u003e",
+    "signature": "void fn_006569A0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006595B0": {
     "name": "RelationshipRPROJoint::vfunc_49",
@@ -12711,6 +14216,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006700F0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e",
+    "signature": "void fn_006700F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670CB0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_1",
     "class": "ExprParser::ExpressionContainerType",
@@ -13210,6 +14722,41 @@
     "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0068C5F0": {
+    "name": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e",
+    "signature": "void fn_0068C5F0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068CC00": {
+    "name": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1\u003e",
+    "signature": "void fn_0068CC00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068D210": {
+    "name": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1\u003e",
+    "signature": "void fn_0068D210(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068D820": {
+    "name": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1\u003e",
+    "signature": "void fn_0068D820(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068E190": {
+    "name": "ExprParser::ReadMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0\u003e",
+    "signature": "void fn_0068E190(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00692210": {
     "name": "sub_00692210",
     "signature": "extern \"C\" int __thiscall fn_00692210(void* self)",
@@ -13229,6 +14776,13 @@
     "signature": "uint32_t __stdcall fn_006922F0(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
     "summary": "Forwards arg1 to ext_00671F30 (one stack argument, caller-cleaned) and returns arg1 unchanged.",
     "lifted_path": "lifted/templates/ROMethod2Type.cpp"
+  },
+  "0x00692540": {
+    "name": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e",
+    "signature": "void fn_00692540(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00693040": {
     "name": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_0",

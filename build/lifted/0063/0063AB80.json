@@ -1,0 +1,14 @@
+{
+  "va": "0x0063AB80",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1\u003e",
+  "signature": "void fn_0063AB80(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:17:29Z"
+}

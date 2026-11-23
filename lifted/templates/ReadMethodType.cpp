@@ -1990,3 +1990,6341 @@ uint32_t fn_004AAAC0(const uint32_t* arg) {
     throw std::runtime_error("ExprParser::ReadMethodType::vfunc_3: null object pointer");
 }
 } // namespace lift_004AAAC0
+
+// [0x004716A0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004716A0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0046C110();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004716A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0046C110();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004716A0
+
+// [0x00471BC0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00471BC0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0046F860();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00471BC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0046F860();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00471BC0
+
+// [0x00471DF0] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_00471DF0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0046F910();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00471DF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0046F910();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00471DF0
+
+// [0x0048FEE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0048FEE0 {
+// @name ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0048FB10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0048FEE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0048FB10();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0048FEE0
+
+// [0x004B3DE0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004B3DE0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0048FAE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004B3DE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0048FAE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004B3DE0
+
+// [0x004B41D0] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004B41D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006AD190();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004B41D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006AD190();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004B41D0
+
+// [0x004C0380] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004C0380 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C84B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004C0380(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C84B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004C0380
+
+// [0x004C0440] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004C0440 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00410450();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004C0440(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00410450();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004C0440
+
+// [0x004C5590] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004C5590 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004C4DB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004C5590(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004C4DB0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004C5590
+
+// [0x004CAFA0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004CAFA0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004CA2F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004CAFA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004CA2F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004CAFA0
+
+// [0x004CC1F0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004CC1F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004CB3E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004CC1F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004CB3E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004CC1F0
+
+// [0x004CC440] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004CC440 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004CB400();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004CC440(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004CB400();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004CC440
+
+// [0x004CEFC0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004CEFC0 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004CE580();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004CEFC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004CE580();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004CEFC0
+
+// [0x004D1D30] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004D1D30 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D0B10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D1D30(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D0B10();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D1D30
+
+// [0x004D5790] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004D5790 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D39B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D5790(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D39B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D5790
+
+// [0x004D5AA0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004D5AA0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D39C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D5AA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D39C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D5AA0
+
+// [0x004D5CF0] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004D5CF0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D39D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D5CF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D39D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D5CF0
+
+// [0x004D63F0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004D63F0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D39F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D63F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D39F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D63F0
+
+// [0x004D6690] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004D6690 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D3A00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D6690(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D3A00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D6690
+
+// [0x004D6D50] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004D6D50 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00528530();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D6D50(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00528530();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D6D50
+
+// [0x004D79C0] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004D79C0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D39E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D79C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D39E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D79C0
+
+// [0x004D7D00] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004D7D00 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D3C10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D7D00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D3C10();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004D7D00
+
+// [0x004E0430] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004E0430 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DDE60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E0430(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DDE60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E0430
+
+// [0x004E0700] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004E0700 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DDE50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E0700(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DDE50();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E0700
+
+// [0x004E0820] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004E0820 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DDE70();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E0820(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DDE70();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E0820
+
+// [0x004E0B60] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004E0B60 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DE160();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E0B60(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DE160();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E0B60
+
+// [0x004E0CC0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004E0CC0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DE320();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E0CC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DE320();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E0CC0
+
+// [0x004E0FB0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004E0FB0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DDE40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E0FB0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DDE40();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E0FB0
+
+// [0x004E1480] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004E1480 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004DE440();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E1480(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004DE440();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E1480
+
+// [0x004E2020] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_004E2020 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004E1980();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004E2020(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004E1980();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004E2020
+
+// [0x004ECE40] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004ECE40 {
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00536F00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004ECE40(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00536F00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004ECE40
+
+// [0x004EE840] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_3 (47 bytes)
+namespace lift_004EE840 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004EDE20();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004EE840(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004EDE20();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004EE840
+
+// [0x004F5340] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F5340 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4DB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F5340(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4DB0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F5340
+
+// [0x004F5740] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F5740 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4DD0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F5740(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4DD0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F5740
+
+// [0x004F5AD0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F5AD0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4DE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F5AD0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4DE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F5AD0
+
+// [0x004F6DC0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F6DC0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4DF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F6DC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4DF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F6DC0
+
+// [0x004F72A0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F72A0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4EA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F72A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4EA0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F72A0
+
+// [0x004F7640] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F7640 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4F00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F7640(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4F00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F7640
+
+// [0x004F7BE0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F7BE0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4F80();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F7BE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4F80();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F7BE0
+
+// [0x004F7E90] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F7E90 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4FE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F7E90(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4FE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F7E90
+
+// [0x004F89E0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_004F89E0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004F4F20();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004F89E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004F4F20();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004F89E0
+
+// [0x004FE1D0] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_004FE1D0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004FD810();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004FE1D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004FD810();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004FE1D0
+
+// [0x004FE7E0] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_004FE7E0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004FD830();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004FE7E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004FD830();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004FE7E0
+
+// [0x004FEDF0] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_004FEDF0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004FD850();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004FEDF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004FD850();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004FEDF0
+
+// [0x004FF430] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_004FF430 {
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006A7C10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004FF430(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006A7C10();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_004FF430
+
+// [0x005096D0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005096D0 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00503A00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005096D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00503A00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005096D0
+
+// [0x0050A230] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_0050A230 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00508BA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0050A230(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00508BA0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0050A230
+
+// [0x00512600] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00512600 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00511280();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00512600(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00511280();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00512600
+
+// [0x00513AA0] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00513AA0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00511270();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00513AA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00511270();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00513AA0
+
+// [0x0051AF70] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_0051AF70 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0051AE90();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0051AF70(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0051AE90();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0051AF70
+
+// [0x0051B860] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_0051B860 {
+// @name ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0051AEF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0051B860(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0051AEF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0051B860
+
+// [0x00525080] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00525080 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00524A60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00525080(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00524A60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00525080
+
+// [0x00525A00] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00525A00 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00524AE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00525A00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00524AE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00525A00
+
+// [0x005263B0] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_1 (47 bytes)
+namespace lift_005263B0 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00525E70();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005263B0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00525E70();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005263B0
+
+// [0x005856F0] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005856F0 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00584C00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005856F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00584C00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005856F0
+
+// [0x0058BD10] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058BD10 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058A960();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058BD10(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058A960();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058BD10
+
+// [0x0058C420] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058C420 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058A8F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058C420(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058A8F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058C420
+
+// [0x0058C820] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058C820 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058A920();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058C820(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058A920();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058C820
+
+// [0x0058D210] ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0058D210 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058B2A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058D210(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058B2A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058D210
+
+// [0x0058D930] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058D930 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058CFB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058D930(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058CFB0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058D930
+
+// [0x0058DF70] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058DF70 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058CFD0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058DF70(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058CFD0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058DF70
+
+// [0x0058E4D0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058E4D0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058CFC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058E4D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058CFC0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058E4D0
+
+// [0x0058FEE0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0058FEE0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058F5A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0058FEE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058F5A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0058FEE0
+
+// [0x00590250] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00590250 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058F5B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00590250(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058F5B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00590250
+
+// [0x00590B20] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00590B20 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058F5E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00590B20(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058F5E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00590B20
+
+// [0x00590F60] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00590F60 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058F5F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00590F60(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058F5F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00590F60
+
+// [0x00591BA0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00591BA0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058F5C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00591BA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058F5C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00591BA0
+
+// [0x00591EE0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00591EE0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0058F5D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00591EE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0058F5D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00591EE0
+
+// [0x00594C30] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_00594C30 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00594060();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00594C30(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00594060();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00594C30
+
+// [0x00595140] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00595140 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00594070();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00595140(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00594070();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00595140
+
+// [0x00595D50] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00595D50 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00594700();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00595D50(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00594700();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00595D50
+
+// [0x00597E30] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_00597E30 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00596330();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00597E30(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00596330();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00597E30
+
+// [0x00598340] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00598340 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005963B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00598340(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005963B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00598340
+
+// [0x00599620] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00599620 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005971D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00599620(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005971D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00599620
+
+// [0x0059E400] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0059E400 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0059D580();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0059E400(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0059D580();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0059E400
+
+// [0x005B75F0] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_3 (47 bytes)
+namespace lift_005B75F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B64D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005B75F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B64D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005B75F0
+
+// [0x005B8F80] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_005B8F80 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6970();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005B8F80(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6970();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005B8F80
+
+// [0x005B9630] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005B9630 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6B60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005B9630(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6B60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005B9630
+
+// [0x005B9B20] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005B9B20 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6B90();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005B9B20(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6B90();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005B9B20
+
+// [0x005B9FE0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005B9FE0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6BC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005B9FE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6BC0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005B9FE0
+
+// [0x005BA500] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005BA500 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6BF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BA500(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6BF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BA500
+
+// [0x005BA9F0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005BA9F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6C20();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BA9F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6C20();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BA9F0
+
+// [0x005BAEE0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005BAEE0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6C50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BAEE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6C50();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BAEE0
+
+// [0x005BB3D0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_005BB3D0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B7040();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BB3D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B7040();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BB3D0
+
+// [0x005BBD00] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005BBD00 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6A80();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BBD00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6A80();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BBD00
+
+// [0x005BC3C0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005BC3C0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B68F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BC3C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B68F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BC3C0
+
+// [0x005BCB00] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005BCB00 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6FC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BCB00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6FC0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BCB00
+
+// [0x005BCED0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005BCED0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6930();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BCED0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6930();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BCED0
+
+// [0x005BD1A0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005BD1A0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6A10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BD1A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6A10();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BD1A0
+
+// [0x005BD810] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005BD810 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6AF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BD810(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6AF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BD810
+
+// [0x005BD9C0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005BD9C0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B69A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BD9C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B69A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BD9C0
+
+// [0x005BDF40] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005BDF40 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6FE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005BDF40(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6FE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005BDF40
+
+// [0x005C4A00] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005C4A00 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3110();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C4A00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3110();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C4A00
+
+// [0x005C4EF0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005C4EF0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3130();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C4EF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3130();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C4EF0
+
+// [0x005C5410] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005C5410 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3150();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C5410(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3150();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C5410
+
+// [0x005C5860] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_005C5860 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C2FF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C5860(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C2FF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C5860
+
+// [0x005C66D0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005C66D0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6470();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C66D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6470();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C66D0
+
+// [0x005C74B0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005C74B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6490();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C74B0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6490();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C74B0
+
+// [0x005C7A60] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005C7A60 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005B6480();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C7A60(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005B6480();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C7A60
+
+// [0x005C8FE0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005C8FE0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3A30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C8FE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3A30();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C8FE0
+
+// [0x005C9460] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_005C9460 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3AA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C9460(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3AA0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C9460
+
+// [0x005C9AE0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005C9AE0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C38F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005C9AE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C38F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005C9AE0
+
+// [0x005CA000] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005CA000 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3930();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CA000(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3930();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CA000
+
+// [0x005CA4F0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005CA4F0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3970();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CA4F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3970();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CA4F0
+
+// [0x005CA9E0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_005CA9E0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C39B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CA9E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C39B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CA9E0
+
+// [0x005CAE30] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_005CAE30 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3C00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CAE30(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3C00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CAE30
+
+// [0x005CB4C0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_3 (47 bytes)
+namespace lift_005CB4C0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3650();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CB4C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3650();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CB4C0
+
+// [0x005CBA00] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005CBA00 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005C3640();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CBA00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005C3640();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CBA00
+
+// [0x005CEA50] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005CEA50 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005CE4E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005CEA50(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005CE4E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005CEA50
+
+// [0x005D1520] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D1520 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005D06D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D1520(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005D06D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D1520
+
+// [0x005D3970] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D3970 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005478A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D3970(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005478A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D3970
+
+// [0x005D3D90] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D3D90 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005D0670();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D3D90(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005D0670();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D3D90
+
+// [0x005D46C0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D46C0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00552160();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D46C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00552160();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D46C0
+
+// [0x005D4B40] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D4B40 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005478B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D4B40(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005478B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D4B40
+
+// [0x005D4E20] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D4E20 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005D0710();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D4E20(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005D0710();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D4E20
+
+// [0x005D5B50] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005D5B50 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005CF940();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D5B50(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005CF940();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D5B50
+
+// [0x005D5DB0] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005D5DB0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005CFE50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D5DB0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005CFE50();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D5DB0
+
+// [0x005D6170] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005D6170 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005CF950();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D6170(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005CF950();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D6170
+
+// [0x005D8090] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D8090 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005CF930();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D8090(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005CF930();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D8090
+
+// [0x005D8BC0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D8BC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005478E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D8BC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005478E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D8BC0
+
+// [0x005D8FA0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D8FA0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005478C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D8FA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005478C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D8FA0
+
+// [0x005D93A0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005D93A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005478D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005D93A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005478D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005D93A0
+
+// [0x005DA210] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005DA210 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005D12A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005DA210(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005D12A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005DA210
+
+// [0x005E5150] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E5150 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2620();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E5150(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2620();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E5150
+
+// [0x005E5380] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E5380 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2690();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E5380(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2690();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E5380
+
+// [0x005E5FC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E5FC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2810();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E5FC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2810();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E5FC0
+
+// [0x005E6220] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E6220 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E28B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E6220(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E28B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E6220
+
+// [0x005E6560] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E6560 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2900();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E6560(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2900();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E6560
+
+// [0x005E6850] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E6850 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2950();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E6850(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2950();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E6850
+
+// [0x005E6E90] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E6E90 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E1EE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E6E90(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E1EE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E6E90
+
+// [0x005E7550] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E7550 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E1F40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E7550(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E1F40();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E7550
+
+// [0x005E7740] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E7740 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E25B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E7740(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E25B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E7740
+
+// [0x005E81C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E81C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2700();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E81C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2700();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E81C0
+
+// [0x005E87C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E87C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2770();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E87C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2770();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E87C0
+
+// [0x005E8C30] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E8C30 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E27C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E8C30(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E27C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E8C30
+
+// [0x005E94C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005E94C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E2860();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005E94C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E2860();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005E94C0
+
+// [0x005EA390] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005EA390 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E29A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005EA390(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E29A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005EA390
+
+// [0x005EA8D0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005EA8D0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005E1F10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005EA8D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005E1F10();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005EA8D0
+
+// [0x005F6070] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005F6070 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F51C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F6070(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F51C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F6070
+
+// [0x005F6B60] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_005F6B60 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5130();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F6B60(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5130();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F6B60
+
+// [0x005F7400] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_005F7400 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F51B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F7400(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F51B0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F7400
+
+// [0x005F76F0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F76F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5140();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F76F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5140();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F76F0
+
+// [0x005F7CE0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F7CE0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5160();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F7CE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5160();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F7CE0
+
+// [0x005F8130] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F8130 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5190();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F8130(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5190();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F8130
+
+// [0x005F87C0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F87C0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5410();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F87C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5410();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F87C0
+
+// [0x005F9D20] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F9D20 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F57F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005F9D20(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F57F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005F9D20
+
+// [0x005FA0E0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005FA0E0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F58D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FA0E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F58D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FA0E0
+
+// [0x005FA830] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005FA830 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5860();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FA830(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5860();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FA830
+
+// [0x005FAD10] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005FAD10 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005F5940();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FAD10(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005F5940();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FAD10
+
+// [0x005FD3D0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_1 (47 bytes)
+namespace lift_005FD3D0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064F8F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FD3D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064F8F0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FD3D0
+
+// [0x005FDE00] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_1 (47 bytes)
+namespace lift_005FDE00 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_005FCB30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FDE00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_005FCB30();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FDE00
+
+// [0x005FE410] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_1 (47 bytes)
+namespace lift_005FE410 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00603680();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FE410(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00603680();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FE410
+
+// [0x005FEA20] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_1 (47 bytes)
+namespace lift_005FEA20 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006036A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_005FEA20(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006036A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_005FEA20
+
+// [0x00603A10] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00603A10 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00602F00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00603A10(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00602F00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603A10
+
+// [0x00603F00] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00602F20();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00603F00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00602F20();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+
+// [0x00604380] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_1 (47 bytes)
+namespace lift_00604380 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00602F40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00604380(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00602F40();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00604380
+
+// [0x00612F10] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00612F10 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00610B20();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00612F10(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00610B20();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00612F10
+
+// [0x00613960] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00613960 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00610CB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00613960(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00610CB0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00613960
+
+// [0x00614370] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00614370 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00611170();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00614370(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00611170();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00614370
+
+// [0x00614CA0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00614CA0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00611160();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00614CA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00611160();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00614CA0
+
+// [0x00616130] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00616130 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00611870();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00616130(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00611870();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00616130
+
+// [0x00616320] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00616320 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006118E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00616320(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006118E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00616320
+
+// [0x00617A00] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00617A00 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00610CE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00617A00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00610CE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00617A00
+
+// [0x00619320] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00619320 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006111A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00619320(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006111A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00619320
+
+// [0x00619630] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_1 (47 bytes)
+namespace lift_00619630 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006111D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00619630(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006111D0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00619630
+
+// [0x0061C4C0] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_0061C4C0 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00611950();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0061C4C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00611950();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0061C4C0
+
+// [0x0061C6D0] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_0061C6D0 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00610A80();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0061C6D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00610A80();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0061C6D0
+
+// [0x0061CA00] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_0061CA00 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00610A90();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0061CA00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00610A90();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0061CA00
+
+// [0x0061CE10] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_0061CE10 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00610AA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0061CE10(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00610AA0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0061CE10
+
+// [0x00627BA0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00627BA0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00627530();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00627BA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00627530();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00627BA0
+
+// [0x00628090] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00628090 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006275A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00628090(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006275A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00628090
+
+// [0x00628580] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00628580 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00627610();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00628580(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00627610();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00628580
+
+// [0x00628A70] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00628A70 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00627680();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00628A70(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00627680();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00628A70
+
+// [0x0062A850] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_1 (47 bytes)
+namespace lift_0062A850 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0062A580();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0062A850(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0062A580();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0062A850
+
+// [0x0062AAF0] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_1 (47 bytes)
+namespace lift_0062AAF0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0062A590();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0062AAF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0062A590();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0062AAF0
+
+// [0x0062E9E0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_0062E9E0 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)).
+namespace lift_0062E4F0 {
+// Helper that constructs the error temporary on the stack (thiscall, ecx = &tmp).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// Throw-type descriptor referenced by the original throw at 0x0062E50E.
+static constexpr uintptr_t kThrowInfo_0009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 field_0x78
+//
+// Original asm: self points at a ValuePtrType whose first dword is the object pointer.
+// If the object pointer is non-null, return obj + 0x78. Otherwise build an error
+// temporary via ext_0046C3C0 and raise a C++ exception via _CxxThrowException.
+const void* fn_0062E9E0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return static_cast<const unsigned char*>(obj) + 0x84;
+    }
+
+    // Original reserves 0x28 bytes of stack for the temporary (sub esp, 0x28).
+    alignas(8) unsigned char tmp[0x28] = {};
+    ext_0046C3C0(tmp);
+    ext_006A6DD2(tmp, reinterpret_cast<const void*>(kThrowInfo_0009DEC1C));
+    // _CxxThrowException never returns.
+    std::abort();
+}
+} // namespace lift_0062E4F0
+} // namespace lift_0062E9E0
+
+// [0x006311D0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_006311D0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630580();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006311D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630580();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006311D0
+
+// [0x006316F0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_006316F0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006305A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006316F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006305A0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006316F0
+
+// [0x00631BE0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_00631BE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006305C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00631BE0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006305C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00631BE0
+
+// [0x006320D0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_006320D0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630560();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006320D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630560();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006320D0
+
+// [0x006325C0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_006325C0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006305E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006325C0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006305E0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006325C0
+
+// [0x00636CE0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_00636CE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)).
+namespace lift_0062E4F0 {
+// Helper that constructs the error temporary on the stack (thiscall, ecx = &tmp).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// Throw-type descriptor referenced by the original throw at 0x0062E50E.
+static constexpr uintptr_t kThrowInfo_0009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 field_0x78
+//
+// Original asm: self points at a ValuePtrType whose first dword is the object pointer.
+// If the object pointer is non-null, return obj + 0x78. Otherwise build an error
+// temporary via ext_0046C3C0 and raise a C++ exception via _CxxThrowException.
+const void* fn_00636CE0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return static_cast<const unsigned char*>(obj) + 0xB4;
+    }
+
+    // Original reserves 0x28 bytes of stack for the temporary (sub esp, 0x28).
+    alignas(8) unsigned char tmp[0x28] = {};
+    ext_0046C3C0(tmp);
+    ext_006A6DD2(tmp, reinterpret_cast<const void*>(kThrowInfo_0009DEC1C));
+    // _CxxThrowException never returns.
+    std::abort();
+}
+} // namespace lift_0062E4F0
+} // namespace lift_00636CE0
+
+// [0x00639520] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_00639520 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630540();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00639520(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630540();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00639520
+
+// [0x006397B0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_006397B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)).
+namespace lift_0062E4F0 {
+// Helper that constructs the error temporary on the stack (thiscall, ecx = &tmp).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// Throw-type descriptor referenced by the original throw at 0x0062E50E.
+static constexpr uintptr_t kThrowInfo_0009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 field_0x78
+//
+// Original asm: self points at a ValuePtrType whose first dword is the object pointer.
+// If the object pointer is non-null, return obj + 0x78. Otherwise build an error
+// temporary via ext_0046C3C0 and raise a C++ exception via _CxxThrowException.
+const void* fn_006397B0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return static_cast<const unsigned char*>(obj) + 0x9C;
+    }
+
+    // Original reserves 0x28 bytes of stack for the temporary (sub esp, 0x28).
+    alignas(8) unsigned char tmp[0x28] = {};
+    ext_0046C3C0(tmp);
+    ext_006A6DD2(tmp, reinterpret_cast<const void*>(kThrowInfo_0009DEC1C));
+    // _CxxThrowException never returns.
+    std::abort();
+}
+} // namespace lift_0062E4F0
+} // namespace lift_006397B0
+
+// [0x00639AA0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_00639AA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)).
+namespace lift_0062E4F0 {
+// Helper that constructs the error temporary on the stack (thiscall, ecx = &tmp).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// Throw-type descriptor referenced by the original throw at 0x0062E50E.
+static constexpr uintptr_t kThrowInfo_0009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 field_0x78
+//
+// Original asm: self points at a ValuePtrType whose first dword is the object pointer.
+// If the object pointer is non-null, return obj + 0x78. Otherwise build an error
+// temporary via ext_0046C3C0 and raise a C++ exception via _CxxThrowException.
+const void* fn_00639AA0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return static_cast<const unsigned char*>(obj) + 0xA8;
+    }
+
+    // Original reserves 0x28 bytes of stack for the temporary (sub esp, 0x28).
+    alignas(8) unsigned char tmp[0x28] = {};
+    ext_0046C3C0(tmp);
+    ext_006A6DD2(tmp, reinterpret_cast<const void*>(kThrowInfo_0009DEC1C));
+    // _CxxThrowException never returns.
+    std::abort();
+}
+} // namespace lift_0062E4F0
+} // namespace lift_00639AA0
+
+// [0x00639DD0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_00639DD0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630420();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00639DD0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630420();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00639DD0
+
+// [0x00639ED0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_00639ED0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)).
+namespace lift_0062E4F0 {
+// Helper that constructs the error temporary on the stack (thiscall, ecx = &tmp).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// Throw-type descriptor referenced by the original throw at 0x0062E50E.
+static constexpr uintptr_t kThrowInfo_0009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 field_0x78
+//
+// Original asm: self points at a ValuePtrType whose first dword is the object pointer.
+// If the object pointer is non-null, return obj + 0x78. Otherwise build an error
+// temporary via ext_0046C3C0 and raise a C++ exception via _CxxThrowException.
+const void* fn_00639ED0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return static_cast<const unsigned char*>(obj) + 0x90;
+    }
+
+    // Original reserves 0x28 bytes of stack for the temporary (sub esp, 0x28).
+    alignas(8) unsigned char tmp[0x28] = {};
+    ext_0046C3C0(tmp);
+    ext_006A6DD2(tmp, reinterpret_cast<const void*>(kThrowInfo_0009DEC1C));
+    // _CxxThrowException never returns.
+    std::abort();
+}
+} // namespace lift_0062E4F0
+} // namespace lift_00639ED0
+
+// [0x0063A0D0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_0063A0D0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630740();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0063A0D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630740();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0063A0D0
+
+// [0x0063A690] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_0063A690 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630E60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0063A690(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630E60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0063A690
+
+// [0x0063AB80] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_5 (47 bytes)
+namespace lift_0063AB80 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630E80();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0063AB80(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630E80();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0063AB80
+
+// [0x0063B2D0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_0063B2D0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00630E40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0063B2D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00630E40();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0063B2D0
+
+// [0x006427A0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_006427A0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0048FAF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006427A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0048FAF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006427A0
+
+// [0x00642A80] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_00642A80 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00641FD0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00642A80(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00641FD0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00642A80
+
+// [0x00642DC0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_00642DC0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00641FE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00642DC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00641FE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00642DC0
+
+// [0x00643100] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_00643100 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00641FF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00643100(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00641FF0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00643100
+
+// [0x00643440] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_00643440 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00642000();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00643440(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00642000();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00643440
+
+// [0x006436D0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_006436D0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00642010();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006436D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00642010();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006436D0
+
+// [0x00649ED0] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00649ED0 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00648EC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00649ED0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00648EC0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00649ED0
+
+// [0x0064A4E0] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0064A4E0 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00648ED0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0064A4E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00648ED0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0064A4E0
+
+// [0x0064AAF0] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0064AAF0 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00648EE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0064AAF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00648EE0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0064AAF0
+
+// [0x006514E0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_006514E0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064EA20();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006514E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064EA20();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006514E0
+
+// [0x00651AF0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00651AF0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064EA30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00651AF0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064EA30();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00651AF0
+
+// [0x00652100] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00652100 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064EA40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00652100(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064EA40();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00652100
+
+// [0x00652710] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00652710 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064EA50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00652710(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064EA50();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00652710
+
+// [0x00652D20] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00652D20 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064EA60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00652D20(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064EA60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00652D20
+
+// [0x00653330] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_00653330 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064EA70();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00653330(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064EA70();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00653330
+
+// [0x006539B0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_006539B0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064E220();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006539B0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064E220();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006539B0
+
+// [0x00653EA0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_00653EA0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0064E250();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00653EA0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0064E250();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00653EA0
+
+// [0x00656480] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_00656480 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00650800();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00656480(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00650800();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00656480
+
+// [0x006569A0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_006569A0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006508C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006569A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006508C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006569A0
+
+// [0x006700F0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_1 (47 bytes)
+namespace lift_006700F0 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0067C550();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_006700F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0067C550();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_006700F0
+
+// [0x0068C5F0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0068C5F0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0068BDC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0068C5F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0068BDC0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0068C5F0
+
+// [0x0068CC00] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0068CC00 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0068BED0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0068CC00(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0068BED0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0068CC00
+
+// [0x0068D210] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0068D210 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0068BE70();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0068D210(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0068BE70();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0068D210
+
+// [0x0068D820] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_1 (47 bytes)
+namespace lift_0068D820 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0068BC30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0068D820(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0068BC30();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0068D820
+
+// [0x0068E190] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_0068E190 {
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0052F600();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0068E190(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0052F600();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_0068E190
+
+// [0x00692540] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_00692540 {
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00692210();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00692540(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00692210();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00692540

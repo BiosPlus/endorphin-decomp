@@ -1,0 +1,14 @@
+{
+  "va": "0x0068C5F0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e",
+  "signature": "void fn_0068C5F0(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:17:29Z"
+}
