@@ -2954,6 +2954,13 @@
     "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the int result at target+0x20 (ImageExporter height slot); throws if null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046F080": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter,int,getImageWidth,int,setImageWidth\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageWidth(int), 0}\u003e",
+    "signature": "void fn_0046F080(void* a, void* b)",
+    "summary": "If the first argument's target pointer is set, call the holder's virtual slot 2 to obtain an int and forward it to SelectionBuffer::vfunc_0; otherwise raise a C++ exception.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046F1A0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageWidth\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageWidth\u003e",
