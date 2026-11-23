@@ -1,0 +1,13 @@
+{
+  "va": "0x00465B30",
+  "size": 9,
+  "orig_symbol": "sub_00465B30",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "get_global_field_0x58",
+  "signature": "extern \"C\" int32_t __cdecl fn_00465B30(void)",
+  "summary": "Calls ext_004658C0 and returns the int32_t field at offset +0x58.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:37:59Z"
+}
