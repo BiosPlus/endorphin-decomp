@@ -92,3 +92,37 @@ extern void* __thiscall fn_004C2070(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_004C2070
+
+// [0x004CA1C0]
+namespace lift_004CA1C0 {
+// @name NMData::SeverEventData::vfunc_88
+// @class NMData::SeverEventData
+// @summary Updates field_0x19c, frees the previous object if changed, and initializes the new one.
+// @field NMData::SeverEventData +0x19C void* field_0x19c
+
+
+extern uintptr_t __cdecl ext_004CA1A0(void* self);
+extern void __thiscall ext_004C9560(uintptr_t obj, void* self);
+extern void __cdecl ext_006A5C5C(uintptr_t ptr);
+
+extern void __thiscall fn_004CA1C0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uintptr_t new_obj = ext_004CA1A0(self);
+    uintptr_t old_obj = *reinterpret_cast<uintptr_t*>(base + 0x19C);
+
+    if (new_obj != old_obj && old_obj != 0) {
+        uint8_t* old_bytes = reinterpret_cast<uint8_t*>(old_obj);
+        uintptr_t inner = *reinterpret_cast<uintptr_t*>(old_bytes + 0x8);
+        if (inner != 0) {
+            ext_006A5C5C(inner);
+        }
+        *reinterpret_cast<uint32_t*>(old_bytes + 0x8) = 0;
+        *reinterpret_cast<uint32_t*>(old_bytes + 0xC) = 0;
+        *reinterpret_cast<uint32_t*>(old_bytes + 0x10) = 0;
+        ext_006A5C5C(old_obj);
+    }
+
+    *reinterpret_cast<uintptr_t*>(base + 0x19C) = new_obj;
+    ext_004C9560(new_obj, self);
+}
+} // namespace lift_004CA1C0

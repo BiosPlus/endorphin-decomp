@@ -1,0 +1,22 @@
+{
+  "va": "0x004CA1C0",
+  "size": 94,
+  "orig_symbol": "NMData::SeverEventData::vfunc_88",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_88",
+  "class": "NMData::SeverEventData",
+  "signature": "extern \"C\" void __thiscall fn_004CA1C0(void* self)",
+  "summary": "Updates field_0x19c, frees the previous object if changed, and initializes the new one.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x19C",
+      "type": "void*",
+      "name": "field_0x19c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:03:17Z"
+}
