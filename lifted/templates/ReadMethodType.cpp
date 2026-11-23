@@ -12116,39 +12116,6 @@ extern void* __thiscall fn_00488590(void* self, void* out_val, void** obj_ptr) {
 } // namespace lift_0046D5D0
 } // namespace lift_00488590
 
-// [0x004A38A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
-namespace lift_004A38A0 {
-// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0
-// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
-// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
-namespace lift_0046D5D0 {
-// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
-// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
-// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
-
-
-extern int __thiscall ext_006658C0(void* self);
-extern void __thiscall ext_006720C0(void* self, int value);
-extern void __thiscall ext_0046C3C0(void* self);
-extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
-
-extern void* __thiscall fn_004A38A0(void* self, void* out_val, void** obj_ptr) {
-    (void)self;
-    void* obj = *obj_ptr;
-    if (obj != nullptr) {
-        int val = ext_006658C0(obj);
-        ext_006720C0(out_val, val);
-        return out_val;
-    }
-
-    uint8_t exc_buf[40];
-    ext_0046C3C0(exc_buf);
-    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
-    return nullptr;
-}
-} // namespace lift_0046D5D0
-} // namespace lift_004A38A0
-
 // [0x004A3C20] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
 namespace lift_004A3C20 {
 // @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_0
@@ -15449,3 +15416,31 @@ int fn_004B8CF0(void* self, void* arg) {
     return (static_cast<double>(value) >= threshold) ? 1 : 0;
 }
 } // namespace lift_004B8CF0
+
+// [0x004A38A0]
+namespace lift_004A38A0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getFontSize>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getFontSize>
+// @summary Reads the font size from an FSMEditView instance into a result value, or throws if null.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_006658C0(uint32_t self);
+extern void ext_006720C0(uint32_t self, uint32_t val);
+extern void ext_0046C3C0(uint32_t self);
+extern void ext_006A6DD2(uint32_t pExceptionObject, uint32_t pThrowInfo);
+
+extern uint32_t fn_004A38A0(uint32_t self, uint32_t out_val, uint32_t obj_ptr) {
+    (void)self;
+    uint32_t obj = mem_read32(obj_ptr);
+    if (obj == 0) {
+        uint8_t exc[40]{};
+        uint32_t exc_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc));
+        ext_0046C3C0(exc_addr);
+        ext_006A6DD2(exc_addr, 0x009DEC1Cu);
+    }
+    uint32_t font_size = ext_006658C0(obj);
+    ext_006720C0(out_val, font_size);
+    return out_val;
+}
+} // namespace lift_004A38A0
