@@ -1,0 +1,21 @@
+{
+  "va": "0x007558B0",
+  "size": 8,
+  "orig_symbol": "sub_007558B0",
+  "src_path": "src/leaf/tiny_750000.cpp",
+  "lifted_path": "lifted/leaf/tiny_750000.cpp",
+  "name": "callVtableSlot0x20WithZero",
+  "signature": "void __thiscall sub_007558B0(uint32_t this_ptr)",
+  "summary": "Calls virtual method at vtable offset 0x20 on this with argument 0",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:36:01Z"
+}
