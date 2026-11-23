@@ -1,0 +1,13 @@
+{
+  "va": "0x007137E0",
+  "size": 10,
+  "orig_symbol": "sub_007137E0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "initSingleton_007137E0",
+  "signature": "void sub_007137E0()",
+  "summary": "Tail-calls sub_00714060 with global object at 0x00B5F888 in ecx.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:35:27Z"
+}
