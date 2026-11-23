@@ -4101,6 +4101,13 @@
     "summary": "Returns global int32 value from mem_00A35B7C.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004A2530": {
+    "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_41 (FSMEditView::drawVariables -\u003e setDrawVariables)",
+    "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawVariables(bool), 0}\u003e",
+    "signature": "void fn_004A2530(void* const* self, void* arg)",
+    "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 3 of arg's sub-object with arg and passes the result to sub_004A24B0 on the target; throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004A2580": {
     "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_41 (drawActions -\u003e setDrawActions)",
     "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}\u003e",

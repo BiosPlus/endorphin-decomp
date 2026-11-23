@@ -1273,3 +1273,33 @@ void fn_004A2580(void** dst, void* src) {
     ext_004A24C0(target, value);
 }
 } // namespace lift_004A2580
+
+// [0x004A2530] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawVariables(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A2530 {
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (FSMEditView::drawVariables -> setDrawVariables)
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawVariables(bool), 0}>
+// @summary Dereferences the first pointer in self; if non-null, calls vtable slot 3 of arg's sub-object with arg and passes the result to sub_004A24B0 on the target; throws if the target is null.
+// @field ValuePtrType +0x00 void* target
+// @field ReadMethodType +0x04 void* inner
+
+extern void ext_004A24B0(void* self, uint32_t value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+void fn_004A2530(void* const* self, void* arg) {
+    uint8_t* target = static_cast<uint8_t*>(*self);
+    if (target) {
+        void* sub = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(arg) + 4);
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(sub);
+        using SlotFn = uint32_t (__thiscall*)(void* thisPtr, void* a);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtbl[3]);
+        uint32_t result = slot(sub, arg);
+        ext_004A24B0(target, result);
+        return;
+    }
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+}
+} // namespace lift_004A2530
