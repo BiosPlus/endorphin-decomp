@@ -1332,34 +1332,6 @@ void* __thiscall fn_00650DB0(void* self, void* out, void** target, uint8_t* valu
     return out;
 }
 
-// [0x0063CB90] ExprParser::WriteMethodType<EffectorWithMemory, float, &EffectorWithMemory::setIntegralGradient>::vfunc_48
-// @name ExprParser::WriteMethodType<EffectorWithMemory,float,setIntegralGradient>::write
-// @class ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
-// @summary Evaluates a float expression, stores it into EffectorWithMemory+0x60 (integral gradient), and returns the expression result pair.
-// @field EffectorWithMemory +0x60 float integralGradient
-// @field ExprNode +0x04 ExprValue* field_0x04
-void* __thiscall fn_0063CB90(void* self, void* outPtr, void** targetRef, void* expr) {
-    (void)self;
-    ExprResult* out = static_cast<ExprResult*>(outPtr);
-    uint8_t* target = static_cast<uint8_t*>(*targetRef);
-    ExprValue* inner = lift_field<ExprValue*>(expr, 0x04);
-
-    EvalFloatFn evalFloat = reinterpret_cast<EvalFloatFn>(inner->vtbl[1]);
-    lift_field<float>(target, 0x60) = evalFloat(inner, expr);
-
-    inner = lift_field<ExprValue*>(expr, 0x04);
-    void* tmp = nullptr;
-    if (inner != nullptr) {
-        GetResultFn getResult = reinterpret_cast<GetResultFn>(inner->vtbl[0x70 / 4]);
-        void** r = getResult(inner, &tmp, expr);
-        out->value = *r;
-    } else {
-        out->value = nullptr;
-    }
-    out->source = lift_field<ExprValue*>(expr, 0x04);
-    return out;
-}
-
 // [0x00650E50] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48 (110 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48
 // @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>
@@ -1588,3 +1560,32 @@ void __stdcall fn_00603440(void* a1, void* a2) {
     }
 }
 } // namespace lift_00603440
+
+// [0x0063CB90] ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_48 (105 bytes)
+namespace lift_0063CB90 {
+// External virtual dispatch helpers (vtable slots 1 and 28 of the child object).
+extern float ext_child_vfunc1(void* child, void* ctx, void* obj, void* ctx2, uint32_t zero);
+extern void* ext_child_vfunc28(void* child, void* ctx, void* outSlot);
+
+// @name ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>
+// @summary Stores a float produced by the child's vfunc_1 into the target's +0x60 slot and returns a (value, child) pair via out-param.
+// @field ExprParser::ValuePtrType +0x04 void* field_04
+// @field EffectorWithMemory +0x60 float integralGradient
+void fn_0063CB90(void* out, void* const* selfRef, void* ctx) {
+    void* obj = *selfRef;
+    void* child = lift_field<void*>(ctx, 0x04);
+
+    lift_field<float>(obj, 0x60) = ext_child_vfunc1(child, ctx, obj, ctx, 0);
+
+    if (child != nullptr) {
+        void* res = ext_child_vfunc28(child, ctx, out);
+        uint32_t value = *static_cast<uint32_t*>(res);
+        lift_field<uint32_t>(out, 0x00) = value;
+        lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(child));
+    } else {
+        lift_field<uint32_t>(out, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+        lift_field<uint32_t>(out, 0x04) = 0;
+    }
+}
+} // namespace lift_0063CB90

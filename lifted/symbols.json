@@ -9867,6 +9867,13 @@
     "summary": "Calls slot 1 of arg-\u003e+0x04 to get a float and stores it at self-\u003e+0x00 target +0x60 (integral gradient).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0063CB90": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e",
+    "signature": "void fn_0063CB90(void* out, void* const* selfRef, void* ctx)",
+    "summary": "Stores a float produced by the child's vfunc_1 into the target's +0x60 slot and returns a (value, child) pair via out-param.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0063DFF4": {
     "name": "thunk_GLU32_gluErrorString",
     "signature": "extern \"C\" void fn_0063DFF4(void)",
