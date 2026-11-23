@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B840",
+  "size": 10,
+  "orig_symbol": "sub_0072B840",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "tailCall_006B9D70_mem_00B600B8",
+  "signature": "void fn_0072B840(void)",
+  "summary": "Loads global 0x00B600B8 into ECX and tail-calls sub_006B9D70.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:07Z"
+}

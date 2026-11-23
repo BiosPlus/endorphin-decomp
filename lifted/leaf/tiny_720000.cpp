@@ -193,3 +193,28 @@ extern "C" void* __fastcall fn_0072CF90(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0072B840]
+namespace lift_0072B840 {
+extern uint8_t mem_00B600B8[];
+void ext_006B9D70(void);
+
+// @name tailCall_006B9D70_mem_00B600B8
+// @summary Loads global 0x00B600B8 into ECX and tail-calls sub_006B9D70.
+void fn_0072B840(void) {
+    (void)mem_00B600B8;
+    ext_006B9D70();
+}
+} // namespace lift_0072B840
+
+// [0x0072B880]
+namespace lift_0072B880 {
+// @name initGlobalNoop_0072B880
+// @summary Tail-calls ext_006D80A0 with global 0x00B60020 in ECX.
+
+extern void __cdecl ext_006D80A0(void);
+
+extern void __cdecl fn_0072B880(void) {
+    ext_006D80A0();
+}
+} // namespace lift_0072B880
