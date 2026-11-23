@@ -1,0 +1,21 @@
+{
+  "va": "0x006488F0",
+  "size": 7,
+  "orig_symbol": "sub_006488F0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "get_field_0x28_float_0x08",
+  "signature": "float __thiscall sub_006488F0(const void* self)",
+  "summary": "Reads a float at offset +0x08 from the pointer stored at this+0x28",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x28",
+      "type": "const uint8_t*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:39:08Z"
+}

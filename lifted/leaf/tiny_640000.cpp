@@ -534,3 +534,15 @@ extern uint32_t __thiscall sub_00648910(uintptr_t self) {
     return mem_read32(ptr + 0x0C);
 }
 } // namespace lift_00648910
+
+// [0x006488F0]
+namespace lift_006488F0 {
+// @name get_field_0x28_float_0x08
+// @summary Reads a float at offset +0x08 from the pointer stored at this+0x28
+// @field unknown +0x28 const uint8_t* field_0x28
+float __thiscall sub_006488F0(const void* self) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    const uint8_t* ptr = *reinterpret_cast<const uint8_t* const*>(base + 0x28);
+    return *reinterpret_cast<const float*>(ptr + 0x08);
+}
+} // namespace lift_006488F0
