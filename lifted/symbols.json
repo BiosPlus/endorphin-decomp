@@ -35148,6 +35148,18 @@
     "summary": "Reads a 16-bit value at offset 0x24 from the given pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8810": {
+    "name": "getField0x8cFloat",
+    "signature": "float sub_007C8810(const void* obj)",
+    "summary": "Returns the float at offset 0x8c from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C8880": {
+    "name": "get_field_0xa8",
+    "signature": "uint32_t sub_007C8880(uint32_t a1)",
+    "summary": "Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8D70": {
     "name": "thunk_MSVCR80_malloc",
     "signature": "extern \"C\" void fn_007C8D70(void)",

@@ -323,3 +323,25 @@ float __cdecl sub_007C6120(uintptr_t arg0) {
     return mem_read<float>(arg0 + 0x1D0u);
 }
 } // namespace lift_007C6120
+
+// [0x007C8880]
+namespace lift_007C8880 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name get_field_0xa8
+// @summary Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.
+// @field Object +0xA8 uint32_t field_0xa8
+uint32_t sub_007C8880(uint32_t a1) {
+    return mem_read32(a1 + 0xA8u);
+}
+} // namespace lift_007C8880
+
+// [0x007C8810]
+namespace lift_007C8810 {
+// @name getField0x8cFloat
+// @summary Returns the float at offset 0x8c from the given object pointer.
+// @field Object +0x8C float field_0x8c
+float sub_007C8810(const void* obj) {
+    return *reinterpret_cast<const float*>(reinterpret_cast<const uint8_t*>(obj) + 0x8c);
+}
+} // namespace lift_007C8810
