@@ -9549,6 +9549,13 @@
     "summary": "Computes the volume of a sphyl (capsule) from its radius and length.",
     "lifted_path": "lifted/Geometry/SphylType.cpp"
   },
+  "0x005B1A70": {
+    "name": "Geometry::FrustumType::vfunc_3",
+    "class": "Geometry::FrustumType",
+    "signature": "float fn_005B1A70(float /*unused*/)",
+    "summary": "Returns s2 * pi * m^2 where m = (s1 + s0) / 2 (rounded to float) and s_k = ext_005B11E0(k); the float argument is overwritten before being read, so it is unused.",
+    "lifted_path": "lifted/Geometry/FrustumType.cpp"
+  },
   "0x005B2150": {
     "name": "ExprParser::ReadMethodType\u003cGeometry,getParam0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e",
