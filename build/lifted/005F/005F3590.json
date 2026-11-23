@@ -1,0 +1,13 @@
+{
+  "va": "0x005F3590",
+  "size": 11,
+  "orig_symbol": "sub_005F3590",
+  "src_path": "src/leaf/tiny_5F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5F0000.cpp",
+  "name": "resetGlobalFlag_00B46790",
+  "signature": "void sub_005F3590()",
+  "summary": "Clears the 32-bit global variable at 0x00B46790 to 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:41:37Z"
+}

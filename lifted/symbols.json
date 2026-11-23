@@ -13515,6 +13515,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BA30 (ExprParser::ExtROType::vfunc_38).",
     "lifted_path": "lifted/Geometry/CylinderType.cpp"
   },
+  "0x005B11D0": {
+    "name": "UnknownClass::getElementPtr",
+    "class": "UnknownClass",
+    "signature": "uint32_t* __thiscall sub_005B11D0(uintptr_t self, uint32_t index)",
+    "summary": "Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B12B0": {
     "name": "Geometry::CuboidType::vfunc_16",
     "class": "Geometry::CuboidType",
@@ -16656,6 +16663,12 @@
     "signature": "extern \"C\" void fn_005F30D0(void)",
     "summary": "Pure jump thunk forwarding to NMData::NullRelationshipData::vfunc_21.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x005F3590": {
+    "name": "resetGlobalFlag_00B46790",
+    "signature": "void sub_005F3590()",
+    "summary": "Clears the 32-bit global variable at 0x00B46790 to 0.",
+    "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
   "0x005F35A0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorGroup vcall 84)",

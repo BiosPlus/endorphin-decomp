@@ -31,3 +31,14 @@ extern "C" void __fastcall fn_005F5110(void* self, int edx_unused, float value) 
     (void)edx_unused;
     lift_field<float>(self, 0x17C) = value;
 }
+
+// [0x005F3590]
+namespace lift_005F3590 {
+extern uint32_t mem_00B46790;
+
+// @name resetGlobalFlag_00B46790
+// @summary Clears the 32-bit global variable at 0x00B46790 to 0.
+void sub_005F3590() {
+    mem_00B46790 = 0;
+}
+} // namespace lift_005F3590
