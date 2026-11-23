@@ -26686,3 +26686,29 @@ void* fn_004B2B30(void* unused, void** targetPtr) {
     return nullptr;
 }
 } // namespace lift_004B2B30
+
+// [0x004B33D0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004B33D0 {
+// Callee 0x0048FAC0 is labelled NMData::SkeletalCalibrationVariables::vfunc_13 by RTTI,
+// but it is invoked on the GraphEngineData object here and returns a float: used as the getter.
+extern float ext_0048FAC0(void* self);
+// Callee 0x00672080: thiscall setter taking one float (writes the value into dst).
+extern void ext_00672080(void* self, float value);
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMax, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Calls getXMax on the GraphEngineData object referenced by src, stores the result into dst, and returns dst; throws if the object is null.
+// (No direct field offsets are accessed in this function; the object is only used through calls.)
+void* fn_004B33D0(void* self, void* dst, void** src) {
+    (void)self;
+    void* obj = *src;
+    if (obj == nullptr) {
+        // Original throws via MSVCR80 _CxxThrowException with a message built by sub_0046C3C0;
+        // the message text is not recoverable from the disassembly.
+        throw std::runtime_error("ReadMethodType: null GraphEngineData object");
+    }
+    float value = ext_0048FAC0(obj);
+    ext_00672080(dst, value);
+    return dst;
+}
+} // namespace lift_004B33D0
