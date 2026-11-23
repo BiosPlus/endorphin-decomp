@@ -4051,3 +4051,58 @@ void vfunc_48(PtrPair* out, void** targetHandle, void* valuePtr)
     }
 }
 } // namespace lift_0064F0C0
+
+// [0x0064EF60] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle1(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064EF60 {
+extern void ext_0064DC60();  // SkeletalJoint::setHardLimitSwingAngle1(float), __thiscall
+
+// @name ExprParser::WriteMethodType<SkeletalJoint,float>::setHardLimitSwingAngle1_vfunc48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle1(float), 0}>
+// @summary Evaluates the source value provider and forwards the float result to SkeletalJoint::setHardLimitSwingAngle1; returns the (value, object) pair of the source.
+// @field ExprParser::ValuePtrType +0x04 void* m_object
+
+namespace {
+
+struct ValuePair {
+    uint32_t value;   // +0x0
+    void*    object;  // +0x4
+};
+
+// Source value provider: the object at +0x4 of the source pair is the expression.
+struct ValuePtrSource {
+    void*  pad_0x00;  // +0x0 (unused here)
+    void** m_object;  // +0x4 (vtable-carrying expression object)
+};
+
+using SlotValueFn = float (*)(void* self, ValuePtrSource* src, void* joint, ValuePtrSource* src2, int zero);
+using SlotPairFn  = ValuePair* (*)(void* self, ValuePair* scratch, ValuePtrSource* src);
+using SetterFn    = void (*)(void* joint, float value);
+
+inline void* vslot(void* obj, int index) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return vtbl[index];
+}
+
+} // namespace
+
+// __stdcall (ret 0xc): (out pair, joint-pointer-pointer, source pair)
+void fn_0064EF60(ValuePair* out, void** joint_ref, ValuePtrSource* src) {
+    void* joint = *joint_ref;
+
+    // Read the value provider and push it into the joint's setter.
+    void* obj = src->m_object;
+    float value = reinterpret_cast<SlotValueFn>(vslot(obj, 1))(obj, src, joint, src, 0);
+    reinterpret_cast<SetterFn>(ext_0064DC60)(joint, value);
+
+    ValuePair scratch{0, nullptr};
+    if (src->m_object != nullptr) {
+        void* o = src->m_object;
+        ValuePair* r = reinterpret_cast<SlotPairFn>(vslot(o, 28))(o, &scratch, src);
+        out->value = r->value;
+        out->object = src->m_object;
+    } else {
+        out->value = 0;
+        out->object = nullptr;
+    }
+}
+} // namespace lift_0064EF60
