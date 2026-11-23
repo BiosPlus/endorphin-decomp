@@ -4550,3 +4550,19 @@ uint32_t __thiscall CColorCheck_vfunc_82(void* self) {
     return *(const uint32_t*)((const uint8_t*)self + 0x54) == 1 ? 1u : 0u;
 }
 } // namespace lift_0040FD20
+
+// [0x00437E70]
+namespace lift_00437E70 {
+uint32_t mem_read32(uintptr_t addr);
+
+// @name BaseEventDispatcher::vfunc_2
+// @class BaseEventDispatcher
+// @summary Dispatches to vtable slot 1 with argument 0.
+// @field BaseEventDispatcher +0x00 void** vtable
+
+void __thiscall BaseEventDispatcher_vfunc_2(void* self) {
+    uint32_t vtable = mem_read32(reinterpret_cast<uintptr_t>(self));
+    uint32_t vfunc_1 = mem_read32(static_cast<uintptr_t>(vtable) + 4u);
+    reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(static_cast<uintptr_t>(vfunc_1))(self, 0u);
+}
+} // namespace lift_00437E70

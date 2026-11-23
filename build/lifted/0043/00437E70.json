@@ -1,0 +1,22 @@
+{
+  "va": "0x00437E70",
+  "size": 10,
+  "orig_symbol": "BaseEventDispatcher::vfunc_2",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "BaseEventDispatcher::vfunc_2",
+  "class": "BaseEventDispatcher",
+  "signature": "void __thiscall BaseEventDispatcher_vfunc_2(void* self)",
+  "summary": "Dispatches to vtable slot 1 with argument 0.",
+  "fields": [
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:28:02Z"
+}
