@@ -75,3 +75,34 @@ void* fn_0066CE30(void* self, int32_t arg) {
     }
     return obj;
 }
+
+// [0x0066EDE0] ExprParser::RealType::vfunc_50 (63 bytes)
+namespace lift_0066EDE0 {
+// Callee 0x00487A30 (thiscall: ecx = self, one float stack argument, callee pops 4 bytes).
+extern void __thiscall ext_00487A30(void* self, float value);
+// Read-only string literal "RealValue" in .rdata.
+extern const char mem_0098B7B4[];
+
+// @name ExprParser::RealType::vfunc_50
+// @class ExprParser::RealType
+// @summary Reads a float from a2's sub-object via vfn1, forwards it with "RealValue" to a1's sub-object via vfn1, then passes the returned float to ext_00487A30.
+// @field ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_0066EDE0(void* a1, void* a2, uint32_t a3, uint32_t a4) {
+    (void)a3;
+
+    // r1 = a2->field_0x04->vfn1(a2)
+    void* m2 = lift_field<void*>(a2, 4);
+    void** vtbl2 = *reinterpret_cast<void***>(m2);
+    float r1 = reinterpret_cast<float (*)(void*, void*)>(vtbl2[1])(m2, a2);
+
+    // r2 = a1->field_0x04->vfn1(a1, r1, "RealValue")
+    void* m1 = lift_field<void*>(a1, 4);
+    void** vtbl1 = *reinterpret_cast<void***>(m1);
+    float r2 = reinterpret_cast<float (*)(void*, void*, float, const char*)>(vtbl1[1])(
+        m1, a1, r1, mem_0098B7B4);
+
+    // ecx = caller-frame slot just above the stack arguments (as in the original code).
+    void* frame_slot = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(&a4) + 4);
+    ext_00487A30(frame_slot, r2);
+}
+} // namespace lift_0066EDE0

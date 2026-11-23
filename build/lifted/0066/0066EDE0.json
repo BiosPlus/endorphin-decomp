@@ -1,0 +1,22 @@
+{
+  "va": "0x0066EDE0",
+  "size": 63,
+  "orig_symbol": "ExprParser::RealType::vfunc_50",
+  "src_path": "src/ExprParser/RealType.cpp",
+  "lifted_path": "lifted/ExprParser/RealType.cpp",
+  "name": "ExprParser::RealType::vfunc_50",
+  "class": "ExprParser::RealType",
+  "signature": "void __stdcall fn_0066EDE0(void* a1, void* a2, uint32_t a3, uint32_t a4)",
+  "summary": "Reads a float from a2's sub-object via vfn1, forwards it with \"RealValue\" to a1's sub-object via vfn1, then passes the returned float to ext_00487A30.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:02:11Z"
+}

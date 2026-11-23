@@ -15455,6 +15455,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0066EDB0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066EDE0": {
+    "name": "ExprParser::RealType::vfunc_50",
+    "class": "ExprParser::RealType",
+    "signature": "void __stdcall fn_0066EDE0(void* a1, void* a2, uint32_t a3, uint32_t a4)",
+    "summary": "Reads a float from a2's sub-object via vfn1, forwards it with \"RealValue\" to a1's sub-object via vfn1, then passes the returned float to ext_00487A30.",
+    "lifted_path": "lifted/ExprParser/RealType.cpp"
+  },
   "0x0066EFE0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
