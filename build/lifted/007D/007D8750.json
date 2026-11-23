@@ -1,0 +1,21 @@
+{
+  "va": "0x007D8750",
+  "size": 8,
+  "orig_symbol": "sub_007D8750",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "getField0x5CFromArg1",
+  "signature": "uint32_t sub_007D8750(uint32_t /*unused*/, uintptr_t obj)",
+  "summary": "Returns the 32-bit field at offset 0x5C of the second pointer argument.",
+  "fields": [
+    {
+      "class": "Arg1",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:37:41Z"
+}

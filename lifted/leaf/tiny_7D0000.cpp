@@ -79,3 +79,13 @@ float sub_007D8490(uint32_t obj) {
     return mem_read_f32(obj + 0x58);
 }
 } // namespace lift_007D8490
+
+// [0x007D8750]
+namespace lift_007D8750 {
+// @name getField0x5CFromArg1
+// @summary Returns the 32-bit field at offset 0x5C of the second pointer argument.
+// @field Arg1 +0x5C uint32_t field_0x5C
+uint32_t sub_007D8750(uint32_t /*unused*/, uintptr_t obj) {
+    return *reinterpret_cast<const uint32_t*>(obj + 0x5c);
+}
+} // namespace lift_007D8750

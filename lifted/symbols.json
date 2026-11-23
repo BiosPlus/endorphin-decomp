@@ -33752,6 +33752,12 @@
     "summary": "Returns its first stack argument unchanged (mov eax, [esp+4]; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8750": {
+    "name": "getField0x5CFromArg1",
+    "signature": "uint32_t sub_007D8750(uint32_t /*unused*/, uintptr_t obj)",
+    "summary": "Returns the 32-bit field at offset 0x5C of the second pointer argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8840": {
     "name": "sub_007D8840",
     "signature": "extern \"C\" void fn_007D8840(void)",
