@@ -1,0 +1,28 @@
+{
+  "va": "0x00571B90",
+  "size": 565,
+  "orig_symbol": "CDLCharacterIO::vfunc_10",
+  "src_path": "src/classes/CDLCharacterIO.cpp",
+  "lifted_path": "lifted/classes/CDLCharacterIO.cpp",
+  "name": "CDLCharacterIO::LoadFromPath",
+  "class": "CDLCharacterIO",
+  "signature": "void fn_00571B90(void* self, const std::string\u0026 path)",
+  "summary": "Opens the file named by the std::string argument, runs the load steps through the member/callee chain, and throws std::runtime_error on any failure.",
+  "fields": [
+    {
+      "class": "CDLCharacterIO",
+      "offset": "+0x414",
+      "type": "void*",
+      "name": "field_0x414"
+    },
+    {
+      "class": "CDLCharacterIO",
+      "offset": "+0x424",
+      "type": "void*",
+      "name": "field_0x424"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:18:56Z"
+}

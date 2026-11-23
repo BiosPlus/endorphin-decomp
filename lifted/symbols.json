@@ -8781,6 +8781,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/CDLCharacterIO.cpp"
   },
+  "0x00571B90": {
+    "name": "CDLCharacterIO::LoadFromPath",
+    "class": "CDLCharacterIO",
+    "signature": "void fn_00571B90(void* self, const std::string\u0026 path)",
+    "summary": "Opens the file named by the std::string argument, runs the load steps through the member/callee chain, and throws std::runtime_error on any failure.",
+    "lifted_path": "lifted/classes/CDLCharacterIO.cpp"
+  },
   "0x00571DF0": {
     "name": "CSMMotionIO::vfunc_3",
     "class": "CSMMotionIO",
