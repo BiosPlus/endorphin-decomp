@@ -1,0 +1,14 @@
+{
+  "va": "0x004C1C20",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType_NetworkConnectorData_string_vfunc_1",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "float __stdcall fn_004C1C20(void* self, void** objPtr)",
+  "summary": "Reads a string via NetworkConnectorData::vcall{36} and converts it to float via atof, or throws an exception if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:58:30Z"
+}
