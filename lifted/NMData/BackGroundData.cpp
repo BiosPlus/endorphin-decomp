@@ -104,3 +104,23 @@ void fn_005A5400(void* self, void* arg) {
     ext_00479C80(arg, arg, ebx, esi, local, esi, ebp, arg);
 }
 } // namespace lift_005A5400
+
+// [0x0059F490]
+namespace lift_0059F490 {
+extern uint8_t ext_0059E060(void* self);
+extern void ext_00661650(void* self, void* arg1);
+extern void* ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+
+// @name NMData::BackGroundData::vfunc_14_off_4
+// @class NMData::BackGroundData
+// @summary Handles property 0x14B if ext_0059E060 succeeds by calling ext_00661650 on field at +0x61C; otherwise delegates to ext_0058F6B0.
+// @field NMData::BackGroundData +0x61C void* field_0x61c
+void* fn_0059F490(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 == 0x14B && ext_0059E060(static_cast<uint8_t*>(self) - 4) != 0) {
+        ext_00661650(arg1, static_cast<uint8_t*>(self) + 0x61C);
+        return arg1;
+    }
+    ext_0058F6B0(self, arg1, arg2);
+    return arg1;
+}
+} // namespace lift_0059F490

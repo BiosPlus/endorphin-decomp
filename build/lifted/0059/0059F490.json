@@ -1,0 +1,22 @@
+{
+  "va": "0x0059F490",
+  "size": 84,
+  "orig_symbol": "NMData::BackGroundData::vfunc_14_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_14_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "void* fn_0059F490(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Handles property 0x14B if ext_0059E060 succeeds by calling ext_00661650 on field at +0x61C; otherwise delegates to ext_0058F6B0.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x61C",
+      "type": "void*",
+      "name": "field_0x61c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:00:11Z"
+}
