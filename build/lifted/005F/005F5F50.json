@@ -1,0 +1,28 @@
+{
+  "va": "0x005F5F50",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, NM::Vector4 const \u0026, {public: void __thiscall HelperGraphic::setOrientationQuat(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, NM::Vector4 const \u0026, {public: void __thiscall HelperGraphic::setOrientationQuat(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, NM::Vector4 const \u0026, {public: void __thiscall HelperGraphic::setOrientationQuat(class NM::Vector4 const \u0026), 0}\u003e",
+  "signature": "void fn_005F5F50(void* const* self, void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x00635740 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "EffectorSkeletal*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "accessor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:09:34Z"
+}

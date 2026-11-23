@@ -12,6 +12,6 @@ namespace lifted_layout {
 struct NMData_Task_Fields {
     // +0x4   void* field_0x04 (address taken only, not dereferenced)  (evidence: 0x0050AAB0)
     // +0x14  int                      field_0x14  (evidence: 0x004B1FF0, 0x00508EB0, 0x00508EE0, 0x0068DE60) // CONFLICT: multiple definitions at +0x14
-    // +0x14  int32_t                  field_0x14  (evidence: 0x00508E30) // CONFLICT: multiple definitions at +0x14
+    // +0x14  int32_t                  field_0x14  (evidence: 0x00508E30, 0x00522330, 0x00638E50) // CONFLICT: multiple definitions at +0x14
 };
 } // namespace lifted_layout

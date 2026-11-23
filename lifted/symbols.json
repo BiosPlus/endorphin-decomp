@@ -5346,6 +5346,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CCB90": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_004CCB90(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004CCBE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_004CCBE0(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CCC80": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
@@ -7275,6 +7289,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BEF0 (NMData::RealChannel::vfunc_16).",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051D310": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const \u0026)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const \u0026)\u003e",
+    "signature": "void fn_0051D310(void* const* self, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00635740 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0051D8C0": {
     "name": "NMData::QuatChannel::vfunc_8",
     "class": "NMData::QuatChannel",
@@ -7361,6 +7382,13 @@
     "signature": "void fn_00522260(ValuePtrTypeLite* self, void* ctx)",
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00522330": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+    "signature": "void* fn_00522330(void* out, const void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508E30 (ExprParser::ReadMethodType\u003cNMData::Task\u003e::vfunc_0 (NMData::Task::getID)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00522380": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_1",
@@ -8933,6 +8961,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0058C010": {
+    "name": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, NM::Vector4 const \u0026, {protected: class NM::Vector4 const \u0026 __thiscall AnimatableTransform::getQuat(void) const, 0}, NM::Vector4 const \u0026, {protected: void __thiscall AnimatableTransform::setQuat(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, NM::Vector4 const \u0026, {protected: class NM::Vector4 const \u0026 __thiscall AnimatableTransform::getQuat(void) const, 0}, NM::Vector4 const \u0026, {protected: void __thiscall AnimatableTransform::setQuat(class NM::Vector4 const \u0026), 0}\u003e",
+    "signature": "void fn_0058C010(void* const* self, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00635740 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0058C420": {
     "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e",
@@ -10177,6 +10212,41 @@
     "signature": "void* fn_005B8660(void* self)",
     "summary": "RTTI-checked cast of self to the getNearestGeomPoint FunctionType descriptor; returns the cast pointer or NULL.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
+  "0x005B8680": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B8680(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005B8750": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B8750(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005B8820": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B8820(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005B88F0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B88F0(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005B89C0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B89C0(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x005B8F80": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1\u003e::vfunc_1",
@@ -11718,6 +11788,41 @@
     "summary": "Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005F5E10": {
+    "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTS(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationTS(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTS(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationTS(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005F5E10(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005F5E60": {
+    "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationTSA(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005F5E60(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005F5EB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationSE(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationSE(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationSE(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationSE(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005F5EB0(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005F5F00": {
+    "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationE(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationE(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationE(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationE(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005F5F00(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x005F5F50": {
+    "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, NM::Vector4 const \u0026, {public: void __thiscall HelperGraphic::setOrientationQuat(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector4 const \u0026, {public: class NM::Vector4 const \u0026 __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, NM::Vector4 const \u0026, {public: void __thiscall HelperGraphic::setOrientationQuat(class NM::Vector4 const \u0026), 0}\u003e",
+    "signature": "void fn_005F5F50(void* const* self, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00635740 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005F6070": {
     "name": "ExprParser::ReadMethodType\u003cHelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cHelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0\u003e",
@@ -11752,6 +11857,13 @@
     "signature": "void fn_005F7CE0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F8030": {
+    "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationXVector(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setOrientationXVector(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005F8030(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x005F8130": {
     "name": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0\u003e::vfunc_5",
@@ -13304,6 +13416,13 @@
     "summary": "RTTI-checked cast of self to the CompoundSensorPlanes::checkDistance FunctionType descriptor; returns the cast pointer or NULL.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x0062E3E0": {
+    "name": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e",
+    "signature": "void* fn_0062E3E0(void* thisPtr, void* unusedArg, void* argRef, void* valueArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B8130 (FunctionType_MetaBodyData_getAreaToNormal_vfunc_48).",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x0062E4F0": {
     "name": "ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
@@ -13465,6 +13584,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x006331A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const \u0026)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_006331A0(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x006331F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingAngle -\u003e setDesiredTwistAndSwingAngle)",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngle(class NM::Vector3 const \u0026)\u003e",
@@ -13479,11 +13605,25 @@
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00633290": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingNormalized(class NM::Vector3 const \u0026)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingNormalized(class NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_00633290(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x006332E0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingVelocity -\u003e setDesiredTwistAndSwingVelocity)",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocity(class NM::Vector3 const \u0026)\u003e",
     "signature": "void fn_006332E0(void** dst, void* src)",
     "summary": "Reads a Vector3 through the source's accessor (vtable slot 5) and writes it into the target EffectorSkeletal via the setter; throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00633330": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocityRaw(class NM::Vector3 const \u0026)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocityRaw(class NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_00633330(void* self, void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00633AE0": {
@@ -13596,6 +13736,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0\u003e",
     "signature": "float fn_00638900(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00638E50": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
+    "signature": "void* fn_00638E50(void* out, const void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508E30 (ExprParser::ReadMethodType\u003cNMData::Task\u003e::vfunc_0 (NMData::Task::getID)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00639090": {

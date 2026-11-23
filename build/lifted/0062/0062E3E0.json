@@ -1,0 +1,28 @@
+{
+  "va": "0x0062E3E0",
+  "size": 69,
+  "orig_symbol": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e",
+  "signature": "void* fn_0062E3E0(void* thisPtr, void* unusedArg, void* argRef, void* valueArg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B8130 (FunctionType_MetaBodyData_getAreaToNormal_vfunc_48).",
+  "fields": [
+    {
+      "class": "UnknownArg",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:09:34Z"
+}
