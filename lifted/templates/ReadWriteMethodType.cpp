@@ -148,3 +148,36 @@ extern void __stdcall fn_004B7B80(void* const* self, void* arg) {
     ext_006A6DD2(exc + 4, 0x009DEC1Cu);
 }
 } // namespace lift_004B7B80
+
+// [0x00605960] ExprParser::ReadWriteMethodType<Effector, float, getForceBaseCap, setBaseForceCap>::vfunc_41 (63 bytes)
+namespace lift_00605960 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// RTTI/throw info referenced by the null-target error path (pushed as the throw's ThrowInfo argument).
+extern const char mem_009DEC1C[];
+
+// @name ExprParser::ReadWriteMethodType<Effector, float, getForceBaseCap, setBaseForceCap>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Effector, float, getForceBaseCap, setBaseForceCap>
+// @summary Reads a float from the inner reader (vtable slot 1) and stores it into the target Effector's +0x54 field; throws if the target is null.
+// @field ExprParser::ReadWriteMethodType<Effector, float, getForceBaseCap, setBaseForceCap> +0x04 void* field_0x04
+// @field Effector +0x54 float field_0x54
+void fn_00605960(void** target_holder, void* reader_holder) {
+    // target_holder: pointer to the Effector pointer (first stack arg).
+    void* target = *target_holder;
+    if (target == nullptr) {
+        ext_0046C3C0();
+        (void)mem_009DEC1C;
+        ext_006A6DD2();
+        return;
+    }
+
+    // reader_holder->+0x04 is the inner reader object; its vtable slot 1 yields the float.
+    void* reader = *reinterpret_cast<void**>(static_cast<uint8_t*>(reader_holder) + 0x04);
+    void** vtable = *reinterpret_cast<void***>(reader);
+    auto getter = reinterpret_cast<float (*)(void*, void*)>(vtable[1]);
+    float value = getter(reader, reader_holder);
+
+    lift_field<float>(target, 0x54) = value;
+}
+} // namespace lift_00605960

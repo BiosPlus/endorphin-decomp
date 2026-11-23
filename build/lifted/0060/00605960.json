@@ -1,0 +1,22 @@
+{
+  "va": "0x00605960",
+  "size": 63,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, float, \u0026public: void __thiscall Effector::setBaseForceCap(float)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cEffector, float, getForceBaseCap, setBaseForceCap\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, getForceBaseCap, setBaseForceCap\u003e",
+  "signature": "void fn_00605960(void** target_holder, void* reader_holder)",
+  "summary": "Reads a float from the inner reader (vtable slot 1) and stores it into the target Effector's +0x54 field; throws if the target is null.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:00:58Z"
+}
