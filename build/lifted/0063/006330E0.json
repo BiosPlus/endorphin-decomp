@@ -1,0 +1,34 @@
+{
+  "va": "0x006330E0",
+  "size": 86,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredPosition(class NM::Vector3 const \u0026)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026EffectorSkeletal::getDesiredPosition, NM::Vector3 const \u0026, \u0026EffectorSkeletal::setDesiredPosition\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __stdcall fn_006330E0(uint32_t* arg1, uint32_t* arg2)",
+  "summary": "Sets EffectorSkeletal::desiredPosition from a parsed Vector3 value, or throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "desiredPosition_x"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xA0",
+      "type": "float",
+      "name": "desiredPosition_y"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xA4",
+      "type": "float",
+      "name": "desiredPosition_z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:00:35Z"
+}

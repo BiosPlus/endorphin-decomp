@@ -8320,3 +8320,37 @@ void* fn_0059EF40(void** arg1, void* arg2) {
     return ext_006036C0(static_cast<void*>(target), value);
 }
 } // namespace lift_0059EF40
+
+// [0x006330E0]
+namespace lift_006330E0 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &EffectorSkeletal::getDesiredPosition, NM::Vector3 const &, &EffectorSkeletal::setDesiredPosition>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets EffectorSkeletal::desiredPosition from a parsed Vector3 value, or throws if the target pointer is null.
+// @field EffectorSkeletal +0x9c float desiredPosition_x
+// @field EffectorSkeletal +0xa0 float desiredPosition_y
+// @field EffectorSkeletal +0xa4 float desiredPosition_z
+
+
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void __stdcall fn_006330E0(uint32_t* arg1, uint32_t* arg2) {
+    uint8_t* esi = reinterpret_cast<uint8_t*>(*arg1);
+    if (esi == nullptr) {
+        uint8_t exceptionObj[0x28];
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+        return;
+    }
+
+    void* ecx = reinterpret_cast<void*>(arg2[1]);
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(ecx);
+    using VFunc5 = const float* (__thiscall*)(void*, uint32_t*);
+    auto vfunc5 = reinterpret_cast<VFunc5>(vtable[5]);
+    const float* vec = vfunc5(ecx, arg2);
+
+    *reinterpret_cast<float*>(esi + 0x9C) = vec[0];
+    *reinterpret_cast<float*>(esi + 0xA0) = vec[1];
+    *reinterpret_cast<float*>(esi + 0xA4) = vec[2];
+}
+} // namespace lift_006330E0
