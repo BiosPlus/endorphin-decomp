@@ -385,3 +385,28 @@ bool fn_004EAA10(void* self) {
     return false; // unreachable
 }
 } // namespace lift_004EAA10
+
+// [0x004EADE0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_3 (45 bytes)
+namespace lift_004EADE0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions,bool,isGravityEnabled>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Reads the bool isGravityEnabled flag from the PoseToolOptions pointed to by the value pointer; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00 (target object pointer, dereferenced first)
+// @field NMData::PoseToolOptions +0x06 bool isGravityEnabled
+bool fn_004EADE0(void* self) {
+    // Stack argument: pointer to the value-pointer object (stdcall-style, callee pops 4 bytes).
+    void** valuePtr = reinterpret_cast<void**>(self);
+    void* obj = valuePtr[0];
+    if (obj != nullptr) {
+        return lift_field<bool>(obj, 0x06);
+    }
+    // Null target: build the exception object and throw (matches original path).
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return false; // unreachable
+}
+} // namespace lift_004EADE0

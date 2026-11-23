@@ -1,0 +1,28 @@
+{
+  "va": "0x004EADE0",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions,bool,isGravityEnabled\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
+  "signature": "bool fn_004EADE0(void* self)",
+  "summary": "Reads the bool isGravityEnabled flag from the PoseToolOptions pointed to by the value pointer; throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (target object pointer, dereferenced",
+      "name": "first)"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x6",
+      "type": "bool",
+      "name": "isGravityEnabled"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:14:05Z"
+}
