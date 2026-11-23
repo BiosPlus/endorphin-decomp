@@ -284,3 +284,17 @@ uint32_t sub_007C59B0(uint32_t obj) {
     return mem_read32(obj + 0x1B8);
 }
 } // namespace lift_007C59B0
+
+// [0x007C5910]
+namespace lift_007C5910 {
+// @name get_field_0x1a8
+// @summary Returns the float field at offset 0x1a8 from the given object pointer.
+// @field struct_0 +0x1a8 float field_0x1a8
+
+
+extern float mem_read_f32(uint32_t);
+
+float sub_007C5910(uint32_t arg0) {
+    return mem_read_f32(arg0 + 0x1a8);
+}
+} // namespace lift_007C5910

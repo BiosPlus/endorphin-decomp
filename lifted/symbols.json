@@ -35052,6 +35052,12 @@
     "summary": "Returns the 32-bit field at offset 0x1A4 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5910": {
+    "name": "get_field_0x1a8",
+    "signature": "float sub_007C5910(uint32_t arg0)",
+    "summary": "Returns the float field at offset 0x1a8 from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C59B0": {
     "name": "getField0x1B8",
     "signature": "uint32_t sub_007C59B0(uint32_t obj)",
