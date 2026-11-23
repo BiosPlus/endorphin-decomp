@@ -11813,3 +11813,27 @@ extern void* __stdcall fn_005D27C0(void* const* holder, void* arg2) {
     return const_cast<void*>(static_cast<const void*>(holder));
 }
 } // namespace lift_005D27C0
+
+// [0x00670700] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_3 (70 bytes)
+namespace lift_00670700 {
+namespace NM {
+struct Vector3;
+}
+
+// @name ExprParser::ReadMethodType<NM::Vector3>::vfunc_3 (NM::Vector3::getX)
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Returns true when the Vector3 X component read through the value pointer is >= 1e-6 (NaN yields false); throws if the value pointer is null.
+// @field ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0> +0x00 NM::Vector3* field_0x00
+// @field NM::Vector3 +0x00 float x
+
+bool fn_00670700(void* self) {
+    const float* value = *static_cast<const float* const*>(self);
+    if (value == nullptr) {
+        throw std::runtime_error("ReadMethodType<NM::Vector3>: null value pointer");
+    }
+    // Original uses x87 fcomp against the 1e-6 double constant and returns 0
+    // when the C0 flag is set (less-than or unordered). `>=` gives the same
+    // result, including false for NaN.
+    return static_cast<double>(*value) >= 1e-6;
+}
+} // namespace lift_00670700

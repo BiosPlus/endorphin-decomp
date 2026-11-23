@@ -1,0 +1,22 @@
+{
+  "va": "0x00670700",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3\u003e::vfunc_3 (NM::Vector3::getX)",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+  "signature": "bool fn_00670700(void* self)",
+  "summary": "Returns true when the Vector3 X component read through the value pointer is \u003e= 1e-6 (NaN yields false); throws if the value pointer is null.",
+  "fields": [
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:48:48Z"
+}
