@@ -8524,3 +8524,28 @@ bool fn_004EA570(void* self) {
     return lift_field<uint8_t>(obj, 0x9) != 0;
 }
 } // namespace lift_004EA570
+
+// [0x004B13F0]
+namespace lift_004B13F0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, bool, isActive, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &NMData::GraphEntryData::isActive, 0>
+// @summary Reads the GraphEntryData pointer held by the value pointer and returns its active flag; throws if the pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+// sub_0046C3C0: constructs an exception object into the buffer passed in ecx.
+extern void ext_0046C3C0(void* buffer);
+// thunk to MSVCR80!_CxxThrowException.
+extern void ext_006A6DD2(void);
+
+extern DWORD fn_004B13F0(const void* self) {
+    void* obj = *reinterpret_cast<void* const*>(self);
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0;
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x1);
+    return flag != 0 ? 1u : 0u;
+}
+} // namespace lift_004B13F0
