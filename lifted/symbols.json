@@ -5413,6 +5413,13 @@
     "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051AED0": {
+    "name": "NMData::RealChannel::vfunc_8",
+    "class": "NMData::RealChannel",
+    "signature": "void* fn_0051AED0(void* self, uint32_t ecx_in)",
+    "summary": "Forwards self and the entry ecx value to ext_0051AE20, then returns self.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051BA70": {
     "name": "NMData::RealChannel::vfunc_6",
     "class": "NMData::RealChannel",

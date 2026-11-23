@@ -50,8 +50,10 @@ float fn_0051AB80(void* self) {
 
     return *reinterpret_cast<const float*>(static_cast<uintptr_t>(last));
 }
+// Callee takes two stack arguments (caller cleans up with add esp,8).
+extern "C" void ext_0051AE20(void* self, uint32_t arg2);
 
-// [0x0051ABD0] NMData::RealChannel::vfunc_13 (89 bytes)
+extern "C" void ext_0051AE20(void* self, uint32_t arg2);
 // @name NMData::RealChannel::vfunc_13
 // @class NMData::RealChannel
 // @summary Multiplies the float at +4 of each 8-byte entry in the [begin, end) range by the scale argument.
@@ -101,4 +103,19 @@ void fn_0051BA70(void* self, float lo, float hi) {
             cur += 8;
         }
     }
+}
+
+// [0x0051AED0] NMData::RealChannel::vfunc_8 (31 bytes)
+// @name NMData::RealChannel::vfunc_8
+// @class NMData::RealChannel
+// @summary Forwards self and the entry ecx value to ext_0051AE20, then returns self.
+//
+// Notes:
+//  - Stdcall-style (ret 8): the second stack argument is never read.
+//  - ecx at entry is pushed as the callee's second argument. The original code
+//    then zeroes a saved-ecx stack slot before popping, so ecx is 0 on return.
+//    That clobber is not modelled here.
+void* fn_0051AED0(void* self, uint32_t ecx_in) {
+    ext_0051AE20(self, ecx_in);
+    return self;
 }

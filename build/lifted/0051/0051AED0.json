@@ -1,0 +1,14 @@
+{
+  "va": "0x0051AED0",
+  "size": 31,
+  "orig_symbol": "NMData::RealChannel::vfunc_8",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_8",
+  "class": "NMData::RealChannel",
+  "signature": "void* fn_0051AED0(void* self, uint32_t ecx_in)",
+  "summary": "Forwards self and the entry ecx value to ext_0051AE20, then returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:32:42Z"
+}
