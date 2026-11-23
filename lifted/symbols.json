@@ -8871,6 +8871,13 @@
     "summary": "Copies string/scalar fields to shadow offsets, configures subobjA (+0x46C), and forwards the call to subobjA-\u003evtable[13].",
     "lifted_path": "lifted/classes/AcclaimIO.cpp"
   },
+  "0x005847C0": {
+    "name": "AcclaimIO::vfunc_10",
+    "class": "AcclaimIO",
+    "signature": "extern \"C\" void __thiscall fn_005847C0(void* self, uint32_t arg)",
+    "summary": "Refreshes the cached 0x880-0x890 values from +0x414/+0x420/+0x424, re-initializes the subobject at +0x42C, and dispatches a virtual call on subobject +0x46C.",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584B00": {
     "name": "AnimatableTransform::vfunc_54",
     "class": "AnimatableTransform",

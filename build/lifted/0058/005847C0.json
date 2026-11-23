@@ -1,0 +1,88 @@
+{
+  "va": "0x005847C0",
+  "size": 147,
+  "orig_symbol": "AcclaimIO::vfunc_10",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::vfunc_10",
+  "class": "AcclaimIO",
+  "signature": "extern \"C\" void __thiscall fn_005847C0(void* self, uint32_t arg)",
+  "summary": "Refreshes the cached 0x880-0x890 values from +0x414/+0x420/+0x424, re-initializes the subobject at +0x42C, and dispatches a virtual call on subobject +0x46C.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x414",
+      "type": "uint32_t",
+      "name": "field_0x414"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x418",
+      "type": "uint32_t",
+      "name": "field_0x418"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x420",
+      "type": "uint32_t",
+      "name": "field_0x420"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x424",
+      "type": "uint32_t",
+      "name": "field_0x424"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x42C",
+      "type": "uint8_t",
+      "name": "field_0x42C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x46C",
+      "type": "uint8_t",
+      "name": "subobjA"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x4C8",
+      "type": "uint8_t",
+      "name": "field_0x4C8"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x16C",
+      "type": "uint8_t",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x880",
+      "type": "uint32_t",
+      "name": "field_0x880"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x88C",
+      "type": "uint32_t",
+      "name": "field_0x88C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x890",
+      "type": "uint32_t",
+      "name": "field_0x890"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:14:55Z"
+}

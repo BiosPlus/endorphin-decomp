@@ -199,3 +199,51 @@ int fn_00584610(void* self, DWORD arg) {
     return 0;
 }
 } // namespace lift_00584610
+
+// [0x005847C0] AcclaimIO::vfunc_10 (147 bytes)
+namespace lift_005847C0 {
+extern void __thiscall ext_00406FC0(void* self, void* arg);
+extern void __thiscall ext_0055D2C0(void* self, uint32_t arg);
+extern void __thiscall ext_0055D600(void* self);
+// Known callee 0x00558A10: sub_00558A10 (This-adjustor thunk: adjusts `this` by +0x5C and tail-calls sub_00406FC0.)
+extern void __thiscall ext_00558A10(void* self, void* arg);
+extern void __thiscall ext_00559180(void* self, uint32_t arg);
+
+// @name AcclaimIO::vfunc_10
+// @class AcclaimIO
+// @summary Refreshes the cached 0x880-0x890 values from +0x414/+0x420/+0x424, re-initializes the subobject at +0x42C, and dispatches a virtual call on subobject +0x46C.
+// @field AcclaimIO +0x0414 uint32_t field_0x414
+// @field AcclaimIO +0x0418 uint32_t field_0x418
+// @field AcclaimIO +0x0420 uint32_t field_0x420
+// @field AcclaimIO +0x0424 uint32_t field_0x424
+// @field AcclaimIO +0x042C uint8_t field_0x42C
+// @field AcclaimIO +0x046C uint8_t subobjA
+// @field AcclaimIO +0x04C8 uint8_t field_0x4C8
+// @field AcclaimIO +0x005C uint8_t field_0x5C
+// @field AcclaimIO +0x016C uint8_t field_0x16C
+// @field AcclaimIO +0x0880 uint32_t field_0x880
+// @field AcclaimIO +0x088C uint32_t field_0x88C
+// @field AcclaimIO +0x0890 uint32_t field_0x890
+extern void __thiscall fn_005847C0(void* self, uint32_t arg) {
+    void* sub_5c = &lift_field<uint8_t>(self, 0x5C);
+    void* subobjA = &lift_field<uint8_t>(self, 0x46C);
+
+    ext_00558A10(subobjA, sub_5c);
+    ext_00559180(subobjA, lift_field<uint32_t>(self, 0x418));
+
+    lift_field<uint32_t>(self, 0x880) = lift_field<uint32_t>(self, 0x414);
+    void* sub_42c = &lift_field<uint8_t>(self, 0x42C);
+    lift_field<uint32_t>(self, 0x88C) = lift_field<uint32_t>(self, 0x420);
+    lift_field<uint32_t>(self, 0x890) = lift_field<uint32_t>(self, 0x424);
+    ext_0055D600(sub_42c);
+
+    // Virtual call: subobjA vtable slot at +0x28 (slot 10), this = subobjA, one stack arg.
+    void** vtbl = lift_field<void**>(subobjA, 0);
+    auto virt = reinterpret_cast<void (__thiscall*)(void*, uint32_t)>(lift_field<void*>(vtbl, 0x28));
+    virt(subobjA, arg);
+
+    ext_0055D2C0(sub_42c, lift_field<uint32_t>(self, 0x880));
+    ext_00406FC0(sub_5c, &lift_field<uint8_t>(self, 0x4C8));
+    ext_00406FC0(&lift_field<uint8_t>(self, 0x16C), sub_5c);
+}
+} // namespace lift_005847C0
