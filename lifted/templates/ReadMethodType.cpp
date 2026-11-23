@@ -1625,3 +1625,22 @@ bool fn_0046CB30(void* self) {
     return false; // not reached: _CxxThrowException does not return
 }
 } // namespace lift_0046CB30
+
+// [0x0046D920] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_0046D920 {
+// Callee 0x006AD1C0 (SelectionBuffer::vfunc_21): invoked with the value object as `this`; result is returned in eax.
+extern int ext_006AD1C0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getImageHeight)
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Reads the wrapped value pointer at +0x00 of the holder; if non-null forwards to SelectionBuffer::vfunc_21, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x00 void* valuePtr
+int fn_0046D920(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        // Original builds the exception object via sub_0046C3C0 and throws it; its message text is not recovered from the binary.
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null value pointer");
+    }
+    return ext_006AD1C0(obj);
+}
+} // namespace lift_0046D920

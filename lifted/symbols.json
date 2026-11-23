@@ -2849,6 +2849,13 @@
     "summary": "Virtual getter: if the held pointer is non-null, delegates to sub_0046C2E0; otherwise constructs a temporary and throws via _CxxThrowException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046D920": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getImageHeight)",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e",
+    "signature": "int fn_0046D920(void* const* holder)",
+    "summary": "Reads the wrapped value pointer at +0x00 of the holder; if non-null forwards to SelectionBuffer::vfunc_21, otherwise throws a C++ exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046F7F0": {
     "name": "sub_0046F7F0",
     "signature": "extern \"C\" int32_t __cdecl fn_0046F7F0(void)",

@@ -22,6 +22,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   void*                    target  (evidence: 0x0046CB30, 0x004B8E40, 0x004EB230, 0x0050E0A0, 0x0050F190, 0x00516550, 0x00516B10, 0x005D3050, 0x0066EFE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    valuePtr  (evidence: 0x0046D920) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0064F0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x005F3600, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    field_04  (evidence: 0x0063CB90, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
