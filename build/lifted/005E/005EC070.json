@@ -1,0 +1,14 @@
+{
+  "va": "0x005EC070",
+  "size": 30,
+  "orig_symbol": "NMData::DriveFrame::vfunc_68",
+  "src_path": "src/NMData/DriveFrame.cpp",
+  "lifted_path": "lifted/NMData/DriveFrame.cpp",
+  "name": "NMData::DriveFrame::vfunc_68",
+  "class": "NMData::DriveFrame",
+  "signature": "float* fn_005EC070(void* self, float* out)",
+  "summary": "Fetches a 3-float vector from ext_006125B0() and copies it into the caller-supplied output buffer, returning that buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:32:06Z"
+}
