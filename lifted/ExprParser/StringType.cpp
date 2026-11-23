@@ -64,3 +64,23 @@ void* fn_0066B320(void* self, void* arg2, [[maybe_unused]] void* arg3,
     ext_006720E0(self, subobject, 0);
     return self;
 }
+
+// [0x0066B200]
+namespace lift_0066B200 {
+// @name ExprParser::StringType::vfunc_0
+// @class ExprParser::StringType
+// @summary Converts or formats a StringType value pointer into an output string object.
+
+extern void __thiscall ext_006720E0(void* self, uint32_t value);
+extern void __thiscall ext_0041CE40(void* self, uint32_t str_addr);
+
+void* __stdcall fn_0066B200(void* out_str, const uint32_t* value_ptr) {
+    uint32_t val = *value_ptr;
+    if (val != 0) {
+        ext_006720E0(out_str, val);
+    } else {
+        ext_0041CE40(out_str, 0x00928B5Du);
+    }
+    return out_str;
+}
+} // namespace lift_0066B200

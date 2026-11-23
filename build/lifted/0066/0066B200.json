@@ -1,0 +1,14 @@
+{
+  "va": "0x0066B200",
+  "size": 56,
+  "orig_symbol": "ExprParser::StringType::vfunc_0",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_0",
+  "class": "ExprParser::StringType",
+  "signature": "void* __stdcall fn_0066B200(void* out_str, const uint32_t* value_ptr)",
+  "summary": "Converts or formats a StringType value pointer into an output string object.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:58:20Z"
+}
