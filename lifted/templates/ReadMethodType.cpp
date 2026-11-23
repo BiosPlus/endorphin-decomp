@@ -18464,3 +18464,29 @@ float __stdcall fn_004CF340(void** targetPtr) {
     ext_006A6DD2(excBuf, 0x009DEC1Cu);
 }
 } // namespace lift_004CF340
+
+// [0x004D1310]
+namespace lift_004D1310 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, float, getMomentumScaleFactor>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, float, getMomentumScaleFactor>
+// @summary Evaluates getMomentumScaleFactor() on TransitionEventData* and returns true if >= 1e-06, or throws on null.
+
+
+extern float __thiscall ext_004D0B10(void* self);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+extern double mem_00947AF0;
+
+uint32_t __thiscall fn_004D1310(void* /*this*/, void** arg1) {
+    void* obj = *arg1;
+    if (obj != nullptr) {
+        double val = static_cast<double>(ext_004D0B10(obj));
+        return (val >= mem_00947AF0) ? 1u : 0u;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    return 0u;
+}
+} // namespace lift_004D1310

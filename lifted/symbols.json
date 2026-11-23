@@ -6121,6 +6121,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D1310": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, getMomentumScaleFactor\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, getMomentumScaleFactor\u003e",
+    "signature": "uint32_t __thiscall fn_004D1310(void* /*this*/, void** arg1)",
+    "summary": "Evaluates getMomentumScaleFactor() on TransitionEventData* and returns true if \u003e= 1e-06, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D18C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0\u003e",
