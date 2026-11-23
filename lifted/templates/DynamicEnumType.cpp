@@ -785,3 +785,34 @@ double __stdcall fn_005C89D0(uint32_t* arg0) {
 }
 } // namespace lift_004D50B0
 } // namespace lift_005C89D0
+
+// [0x00515B90] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_41 (63 bytes)
+namespace lift_00515B90 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Requires the holder's bound target (holder->target) to be non-null, then stores the int returned by the inner object's vtable slot +0x08 (called with arg2) into target+0x0C.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field <unknown> +0x04 void* field_0x04
+// @field <unknown> +0x0C int32_t field_0x0C
+
+// Callee-pops (ret 8) two-argument function:
+//   arg1 (holder): pointer to a slot holding the target object pointer.
+//   arg2: block whose +0x04 word is the inner object that receives the virtual call.
+void fn_00515B90(void** holder, void* arg2) {
+    void* target = *holder;
+    if (target == nullptr) {
+        // Original builds an MSVC exception object (sub_0046C3C0) and throws it
+        // via _CxxThrowException (type 0x009DEC1C); message is not recoverable,
+        // so a portable std::runtime_error stands in.
+        throw std::runtime_error("ExprParser::DynamicEnumType: null target");
+    }
+
+    using VFn = int32_t (*)(void* self, void* arg);
+    void* inner = lift_field<void*>(arg2, 0x04);
+    void* vtable = lift_field<void*>(inner, 0x00);
+    VFn vfn = reinterpret_cast<VFn>(lift_field<void*>(vtable, 0x08));
+    int32_t result = vfn(inner, arg2);
+
+    lift_field<int32_t>(target, 0x0C) = result;
+}
+} // namespace lift_00515B90
