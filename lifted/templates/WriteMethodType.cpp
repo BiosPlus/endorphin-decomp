@@ -3395,3 +3395,47 @@ void fn_00649150(void* out, void* targetHolder, void* self) {
     }
 }
 } // namespace lift_00649150
+
+// [0x00649200] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionX(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649200 {
+// Stdcall-style helper: stores the float argument into the target object's field at +0x78
+// (RelationshipRPROMagnet::setCachedDesiredPositionX).
+extern void ext_00648E40(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionX(float), 0}>
+// @summary Evaluates the child float expression, applies it to the target's setCachedDesiredPositionX, and writes the resulting value/object pair to out.
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionX(float), 0}> +0x04 void* field_0x04
+void fn_00649200(void* out, void* targetHolder, void* self) {
+    // child expression node pointer stored at self+0x04
+    void* child = lift_field<void*>(self, 0x04);
+
+    // vtable slot 1 on child: evaluate to float
+    void** childVtbl = *reinterpret_cast<void***>(child);
+    using FloatEval = float (*)(void* self, void* tmp);
+    float value = reinterpret_cast<FloatEval>(childVtbl[1])(child, nullptr);
+
+    // apply the float to the target object (*targetHolder) via setCachedDesiredPositionX helper
+    void* target = *reinterpret_cast<void**>(targetHolder);
+    ext_00648E40(target, 0, value);
+
+    struct ValuePtr {
+        void* value;
+        void* object;
+    };
+    ValuePtr* result = reinterpret_cast<ValuePtr*>(out);
+
+    if (child != nullptr) {
+        // vtable slot 0x70 on child: produce a ValuePtr into a temp
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using PtrEval = ValuePtr* (*)(void* self, void* node, ValuePtr* tmp);
+        ValuePtr tmp{nullptr, nullptr};
+        ValuePtr* got = reinterpret_cast<PtrEval>(vtbl[0x70 / sizeof(void*)])(child, self, &tmp);
+        result->value = got->value;
+        result->object = child;
+    } else {
+        result->value = nullptr;
+        result->object = nullptr;
+    }
+}
+} // namespace lift_00649200
