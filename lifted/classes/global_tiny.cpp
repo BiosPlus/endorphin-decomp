@@ -4524,3 +4524,17 @@ void __thiscall fn_00646220(uint32_t ecx) {
 }
 } // namespace lift_006B0480
 } // namespace lift_00646220
+
+// [0x0053A560]
+namespace lift_0053A560 {
+// @name HasRelativeTMPtr::vfunc_4
+// @class HasRelativeTMPtr
+// @summary Clears fields at +0x04 and +0x08 and returns 0.
+// @field HasRelativeTMPtr +0x04 uint32_t field_0x04
+// @field HasRelativeTMPtr +0x08 uint32_t field_0x08
+uint32_t __thiscall fn_0053A560(uint8_t* self) {
+    *reinterpret_cast<uint32_t*>(self + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x04) = 0;
+    return 0;
+}
+} // namespace lift_0053A560

@@ -1,0 +1,28 @@
+{
+  "va": "0x0053A560",
+  "size": 9,
+  "orig_symbol": "HasRelativeTMPtr::vfunc_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasRelativeTMPtr::vfunc_4",
+  "class": "HasRelativeTMPtr",
+  "signature": "uint32_t __thiscall fn_0053A560(uint8_t* self)",
+  "summary": "Clears fields at +0x04 and +0x08 and returns 0.",
+  "fields": [
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:07Z"
+}
