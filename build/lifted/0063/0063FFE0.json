@@ -1,0 +1,21 @@
+{
+  "va": "0x0063FFE0",
+  "size": 11,
+  "orig_symbol": "sub_0063FFE0",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "sub_0063FFE0",
+  "signature": "void* __thiscall sub_0063FFE0(void* self, uint32_t /*unused*/)",
+  "summary": "Sets vtable pointer at +0x0 to 0x0097CC34 and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:41:48Z"
+}

@@ -21,3 +21,16 @@ uint32_t __thiscall sub_0063E960(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_0063E960
+
+// [0x0063FFE0]
+namespace lift_0063FFE0 {
+extern uint32_t mem_0097CC34;
+
+// @name sub_0063FFE0
+// @summary Sets vtable pointer at +0x0 to 0x0097CC34 and returns this.
+// @field Unknown +0x00 void* vtable
+void* __thiscall sub_0063FFE0(void* self, uint32_t /*unused*/) {
+    *reinterpret_cast<void**>(self) = &mem_0097CC34;
+    return self;
+}
+} // namespace lift_0063FFE0
