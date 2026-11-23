@@ -11451,6 +11451,13 @@
     "summary": "Copies the first dword of the source object (src) into the destination slot (dst); self is unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0067AA30": {
+    "name": "ExprParser::BoolType::vfunc_25",
+    "class": "ExprParser::BoolType",
+    "signature": "void* fn_0067AA30(void* self, void* arg2)",
+    "summary": "Forwards its first argument to sub_0041CEB0 with a zero flag, then returns the first argument unchanged.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0067AA50": {
     "name": "ExprParser::BoolType::vfunc_46",
     "class": "ExprParser::BoolType",

@@ -256,3 +256,20 @@ extern "C" void fn_005B65E0(void) {
     (void)&mem_009DEC1C;
     fn_006A6DD2();
 }
+
+// [0x0067AA30]
+#include "lift_compat.h"
+
+extern "C" void ext_0041CEB0(void* a, uintptr_t b, uint32_t c);
+
+// @name ExprParser::BoolType::vfunc_25
+// @class ExprParser::BoolType
+// @summary Forwards its first argument to sub_0041CEB0 with a zero flag, then returns the first argument unchanged.
+// @field none - no offsets from `this` are accessed directly; field_0x04 is untouched.
+void* fn_0067AA30(void* self, void* arg2) {
+    (void)arg2; // second argument is loaded into ecx but never read
+    // The original pushes the first argument, a preserved-register copy (not modelled here as 0),
+    // and a zero flag, then calls sub_0041CEB0. Stack cleanup in the original is not reproduced.
+    ext_0041CEB0(self, 0, 0);
+    return self;
+}
