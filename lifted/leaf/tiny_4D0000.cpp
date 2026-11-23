@@ -24,3 +24,14 @@ extern "C" void __fastcall fn_004DDE90(void* self, int edx_unused, float value) 
     (void)edx_unused;
     lift_field<float>(self, 0x994) = value;
 }
+
+// [0x004DDE00]
+namespace lift_004DDE00 {
+extern uint32_t mem_00A85D54;
+
+// @name clearFlag_004DDE00
+// @summary Clears the low byte flag at mem_00A85D54 to zero.
+void sub_004DDE00() {
+    *reinterpret_cast<uint8_t*>(&mem_00A85D54) = 0;
+}
+} // namespace lift_004DDE00

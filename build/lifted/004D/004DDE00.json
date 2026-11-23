@@ -1,0 +1,13 @@
+{
+  "va": "0x004DDE00",
+  "size": 8,
+  "orig_symbol": "sub_004DDE00",
+  "src_path": "src/leaf/tiny_4D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4D0000.cpp",
+  "name": "clearFlag_004DDE00",
+  "signature": "void sub_004DDE00()",
+  "summary": "Clears the low byte flag at mem_00A85D54 to zero.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:49Z"
+}
