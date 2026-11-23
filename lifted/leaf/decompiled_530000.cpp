@@ -72,3 +72,19 @@ void* fn_00530190() {
     return ext_0052FC10(obj);
 }
 } // namespace lift_00530190
+
+// [0x00537EC0]
+namespace lift_00537EC0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void ext_0063E006(uint32_t quadric);
+
+// @name QuadricWrapper::destroy
+// @class QuadricWrapper
+// @summary Deletes the GLU quadric object stored at offset +0x00.
+// @field QuadricWrapper +0x00 uint32_t quadric
+void __fastcall fn_00537EC0(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t quadric = mem_read32(ecx);
+    ext_0063E006(quadric);
+}
+} // namespace lift_00537EC0

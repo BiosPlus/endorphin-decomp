@@ -9800,6 +9800,13 @@
     "summary": "Pure jump thunk forwarding to sub_00537250.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0052EF40": {
+    "name": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_17",
+    "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+    "signature": "uint32_t __thiscall fn_0052EF40(uintptr_t ecx)",
+    "summary": "Returns whether the byte field at offset 0x0C is non-zero.",
+    "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
   "0x0052EF80": {
     "name": "Primitives::Animation::vfunc_10",
     "class": "Primitives::Animation",
@@ -10216,6 +10223,13 @@
     "signature": "extern \"C\" void __fastcall fn_00537E40(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x2C and tail-calls sub_0050BE20.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00537EC0": {
+    "name": "QuadricWrapper::destroy",
+    "class": "QuadricWrapper",
+    "signature": "void __fastcall fn_00537EC0(uint32_t ecx, uint32_t edx)",
+    "summary": "Deletes the GLU quadric object stored at offset +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x005394F0": {
     "name": "UtilityGraphics::Locator::vfunc_0",
