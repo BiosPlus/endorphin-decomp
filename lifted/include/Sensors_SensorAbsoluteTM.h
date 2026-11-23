@@ -11,6 +11,12 @@
 namespace lifted_layout {
 struct Sensors_SensorAbsoluteTM_Fields {
     // +0x30  char[0x30] field_0x30 (sub-object; address passed as argument and returned)  (evidence: 0x006274B0)
+    // +0x54  float                    field_0x54  (evidence: 0x00627480)
+    // +0x58  float                    field_0x58  (evidence: 0x00627480)
+    // +0x5C  float                    field_0x5C  (evidence: 0x00627480)
     // +0x60  char[] field_0x60 (sub-object; used as `this` for ext_0067DAD0)  (evidence: 0x006274B0)
+    // +0x90  float                    field_0x90  (evidence: 0x00627480)
+    // +0x94  float                    field_0x94  (evidence: 0x00627480)
+    // +0x98  float                    field_0x98  (evidence: 0x00627480)
 };
 } // namespace lifted_layout

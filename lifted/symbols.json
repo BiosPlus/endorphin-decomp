@@ -9447,6 +9447,13 @@
     "summary": "Calls the base update routine, then returns the magnitude (absolute value) of the float at +0x34.",
     "lifted_path": "lifted/Sensors/SensorAbsoluteVerticalVelocityMag.cpp"
   },
+  "0x00627480": {
+    "name": "Sensors::SensorAbsoluteTM::vfunc_14",
+    "class": "Sensors::SensorAbsoluteTM",
+    "signature": "void __thiscall fn_00627480(void* self)",
+    "summary": "Calls ext_00627450 on self, then copies three floats from +0x90/+0x94/+0x98 to +0x54/+0x58/+0x5C.",
+    "lifted_path": "lifted/Sensors/SensorAbsoluteTM.cpp"
+  },
   "0x006274B0": {
     "name": "Sensors::SensorAbsoluteTM::vfunc_15",
     "class": "Sensors::SensorAbsoluteTM",
