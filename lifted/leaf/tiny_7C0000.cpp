@@ -158,3 +158,17 @@ uint32_t sub_007CC9F0(uintptr_t arg0) {
     return mem_read32(arg0 + 0x0C);
 }
 } // namespace lift_007CC9F0
+
+// [0x007C6C10]
+namespace lift_007C6C10 {
+// @name setFlag0x4At0x0C
+// @summary Sets bit 0x4 in the 32-bit flags field at offset +0x0C of the passed object.
+// @field Object +0x0C uint32_t field_0x0C
+
+
+extern uint32_t& mem_u32(uint32_t addr);
+
+void sub_007C6C10(uint32_t arg0) {
+    mem_u32(arg0 + 0x0C) |= 0x4u;
+}
+} // namespace lift_007C6C10
