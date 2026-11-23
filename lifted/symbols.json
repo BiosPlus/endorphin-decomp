@@ -2863,6 +2863,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0046C120 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046CA90": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
+    "signature": "void* fn_0046CA90(void* arg0, void** arg1)",
+    "summary": "Throws if the held pointer is null; otherwise evaluates the held object's bool and forwards it to ext_006720A0, returning arg1.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046CAE0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",

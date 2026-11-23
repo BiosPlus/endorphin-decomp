@@ -25222,3 +25222,34 @@ int fn_00695A20(void* self) {
     return (static_cast<double>(v) >= 1e-6) ? 1 : 0;
 }
 } // namespace lift_00695A20
+
+// [0x0046CA90]
+namespace lift_0046CA90 {
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Throws if the held pointer is null; otherwise evaluates the held object's bool and forwards it to ext_006720A0, returning arg1.
+// @field ValuePtrType +0x00 void* field_0x00
+
+extern uint8_t ext_0046C070(void* self);
+extern void ext_006720A0(void* self, uint32_t value);
+extern void ext_0046C3C0(void* self);
+extern void fn_006A6DD2(void);
+extern const uint32_t mem_009DEC1C;
+
+void* fn_0046CA90(void* arg0, void** arg1) {
+    (void)arg0;
+    void* target = *arg1;
+    if (target == nullptr) {
+        // Null path: build an exception object and throw it
+        // (original pushes &mem_009DEC1C as the type info argument).
+        uint32_t exception_slot = 0;
+        ext_0046C3C0(&exception_slot);
+        (void)mem_009DEC1C;
+        fn_006A6DD2();
+        return nullptr;
+    }
+    uint8_t value = ext_0046C070(target);
+    ext_006720A0(arg1, static_cast<uint32_t>(value));
+    return arg1;
+}
+} // namespace lift_0046CA90
