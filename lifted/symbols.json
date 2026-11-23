@@ -11655,6 +11655,13 @@
     "summary": "RTTI-checked cast of self to the ValuePtrArrayObject::push FunctionType descriptor; returns the cast pointer or NULL.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x006922F0": {
+    "name": "ExprParser::ROMethod2Type::vfunc_49",
+    "class": "ExprParser::ROMethod2Type",
+    "signature": "uint32_t __stdcall fn_006922F0(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Forwards arg1 to ext_00671F30 (one stack argument, caller-cleaned) and returns arg1 unchanged.",
+    "lifted_path": "lifted/templates/ROMethod2Type.cpp"
+  },
   "0x00693040": {
     "name": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e",

@@ -1,0 +1,14 @@
+{
+  "va": "0x006922F0",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROMethod2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_E(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+  "src_path": "src/templates/ROMethod2Type.cpp",
+  "lifted_path": "lifted/templates/ROMethod2Type.cpp",
+  "name": "ExprParser::ROMethod2Type::vfunc_49",
+  "class": "ExprParser::ROMethod2Type",
+  "signature": "uint32_t __stdcall fn_006922F0(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Forwards arg1 to ext_00671F30 (one stack argument, caller-cleaned) and returns arg1 unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:31:55Z"
+}
