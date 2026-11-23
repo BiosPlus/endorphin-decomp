@@ -82,3 +82,29 @@ void __thiscall vfunc_73(void* self, const int32_t* range) {
 
     ext_004C0340(self);
 }
+
+// [0x004C5350]
+namespace lift_004C5350 {
+// @name NMData::ForceEventData::vfunc_6_off_C
+// @class NMData::ForceEventData
+// @summary Computes a 4D vector with x=y=z from a subobject's float property and w=0.0f.
+// @field NMData::ForceEventData +0x4 void** TransformInterface_vptr
+
+
+extern uint32_t mem_00B40640;
+extern float __thiscall ext_004C50C0(void* self);
+
+void* __thiscall fn_004C5350(void* self, float* out_vec) {
+    uint8_t* ti = static_cast<uint8_t*>(self) - 8;
+    void** vtable = *reinterpret_cast<void***>(ti);
+    using VFunc2 = void* (__thiscall*)(void*, uint32_t);
+    auto vfunc = reinterpret_cast<VFunc2>(vtable[2]);
+    void* obj = vfunc(ti, mem_00B40640);
+    float val = ext_004C50C0(obj);
+    out_vec[0] = val;
+    out_vec[1] = val;
+    out_vec[2] = val;
+    out_vec[3] = 0.0f;
+    return out_vec;
+}
+} // namespace lift_004C5350

@@ -1,0 +1,22 @@
+{
+  "va": "0x004C5350",
+  "size": 53,
+  "orig_symbol": "NMData::ForceEventData::vfunc_6_off_C",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_6_off_C",
+  "class": "NMData::ForceEventData",
+  "signature": "void* __thiscall fn_004C5350(void* self, float* out_vec)",
+  "summary": "Computes a 4D vector with x=y=z from a subobject's float property and w=0.0f.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "TransformInterface_vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:59:53Z"
+}

@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct NMData_ForceEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004C4DD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004C4E40) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void**                   TransformInterface_vptr  (evidence: 0x004C5350)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1B20)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1B20)
     // +0x184 uint32_t                 field_0x184  (evidence: 0x004C66F0)
