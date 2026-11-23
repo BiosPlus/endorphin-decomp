@@ -1,0 +1,14 @@
+{
+  "va": "0x0049CAD0",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e",
+  "signature": "extern \"C\" uint32_t __stdcall fn_0049CAD0(void** statePtr)",
+  "summary": "Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:58:45Z"
+}

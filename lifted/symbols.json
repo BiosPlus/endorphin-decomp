@@ -3935,6 +3935,13 @@
     "summary": "Reads the NMData::State pointer held in the ValuePtrType argument; if it is null throws an exception, otherwise returns the result of NMData::State::isDeactivated (via sub_0049AA20).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049CAD0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e",
+    "signature": "extern \"C\" uint32_t __stdcall fn_0049CAD0(void** statePtr)",
+    "summary": "Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049CCC0": {
     "name": "NMData::NameTableLoader::vfunc_1",
     "class": "NMData::NameTableLoader",

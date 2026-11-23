@@ -10618,3 +10618,28 @@ double __thiscall fn_004C0400(uintptr_t /*self*/, uintptr_t arg0) {
     ext_006A6DD2(reinterpret_cast<uintptr_t>(exc), 0x009DEC1Cu);
 }
 } // namespace lift_004C0400
+
+// [0x0049CAD0]
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0049AA20(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_0049CAD0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0049AA20(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
