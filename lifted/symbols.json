@@ -3760,6 +3760,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0048AF30": {
+    "name": "NMData::AnimationEventData::vfunc_1_off_154",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_0048AF30(void* self, void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004C8440 (NMData::BehaviourData::vfunc_1_off_154).",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x0048B020": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",
