@@ -10980,11 +10980,25 @@
     "summary": "Forwards ToolClient::vfunc_8 to the target object stored at offset -0x10 from the ToolClient subobject (ReshapeTool + 0x88)",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544E10": {
+    "name": "SnapTranslateTool::vfunc_19_off_98",
+    "class": "SnapTranslateTool",
+    "signature": "void __thiscall SnapTranslateTool_vfunc_19_off_98(void* self)",
+    "summary": "Tail-calls virtual method +0x4c on the object at offset -0x10 from ToolClient (SnapTranslateTool +0x88)",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005450A0": {
     "name": "SnapTranslateTool::vfunc_1",
     "class": "SnapTranslateTool",
     "signature": "extern \"C\" void* __fastcall fn_005450A0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00544F30 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00545630": {
+    "name": "CameraTool::vfunc_27",
+    "class": "CameraTool",
+    "signature": "uint32_t __thiscall CameraTool_vfunc_27(void* self, uint32_t arg1)",
+    "summary": "Dispatches to vtable slot 26 (offset +0x68) on this, ignoring the 4-byte stack argument.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00545790": {

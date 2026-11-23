@@ -4645,3 +4645,40 @@ uint32_t __thiscall fn_005FC040(void* self) {
     return vfunc_16(self, 2);
 }
 } // namespace lift_005FC040
+
+// [0x00545630]
+namespace lift_00545630 {
+// @name CameraTool::vfunc_27
+// @class CameraTool
+// @summary Dispatches to vtable slot 26 (offset +0x68) on this, ignoring the 4-byte stack argument.
+// @field CameraTool +0x0 void* vtable
+
+
+uint32_t mem_read32(uintptr_t addr);
+
+uint32_t __thiscall CameraTool_vfunc_27(void* self, uint32_t arg1) {
+    (void)arg1;
+    uintptr_t vtable = mem_read32(reinterpret_cast<uintptr_t>(self));
+    uintptr_t fn_addr = mem_read32(vtable + 0x68);
+    using fn_t = uint32_t(__thiscall*)(void*);
+    return reinterpret_cast<fn_t>(fn_addr)(self);
+}
+} // namespace lift_00545630
+
+// [0x00544E10]
+namespace lift_00544E10 {
+// @name SnapTranslateTool::vfunc_19_off_98
+// @class SnapTranslateTool
+// @summary Tail-calls virtual method +0x4c on the object at offset -0x10 from ToolClient (SnapTranslateTool +0x88)
+// @field SnapTranslateTool +0x88 uint32_t field_0x88
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+void __thiscall SnapTranslateTool_vfunc_19_off_98(void* self) {
+    uint32_t target = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) - 0x10);
+    uint32_t vtable = mem_read32(target);
+    uint32_t fn = mem_read32(vtable + 0x4c);
+    reinterpret_cast<void(__thiscall*)(uint32_t)>(fn)(target);
+}
+} // namespace lift_00544E10

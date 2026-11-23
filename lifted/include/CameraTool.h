@@ -10,6 +10,6 @@
 // Recovered field layout for CameraTool:
 namespace lifted_layout {
 struct CameraTool_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0041B2F0, 0x00540100, 0x00540110)
+    // +0x0   void*                    vtable  (evidence: 0x0041B2F0, 0x00540100, 0x00540110, 0x00545630)
 };
 } // namespace lifted_layout
