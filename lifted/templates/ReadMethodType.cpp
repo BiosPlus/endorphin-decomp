@@ -16806,3 +16806,32 @@ void* fn_004B9320(void* out, void* const* src) {
     return out;
 }
 } // namespace lift_004B9320
+
+// [0x004B8DF0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_004B8DF0 {
+// Callee signatures inferred from the call sites:
+//   sub_0046C3C0: thiscall, ecx = object to construct (exception payload).
+//   sub_00672080: thiscall, ecx = self, one float stack argument, callee cleans up (ret 4).
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __thiscall ext_00672080(void* self, float value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getTimeZoomFactor, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Reads the float at +0x24 of the object referenced by *pp, forwards it to ext_00672080 on self, and returns self; throws if *pp is null.
+// @field EngineData +0x24 float field_0x24
+void* __stdcall fn_004B8DF0(void* self, void** pp) {
+    void* obj = *pp;
+    if (obj == nullptr) {
+        // Exception payload object; its real size is not recovered, so it is sized to the frame slot.
+        alignas(8) unsigned char exception_object[0x28]{};
+        ext_0046C3C0(exception_object);
+        constexpr std::uintptr_t kThrowInfoVA = 0x009DEC1CU;
+        ext_006A6DD2(exception_object, reinterpret_cast<const void*>(kThrowInfoVA));
+    }
+    const float value = lift_field<float>(obj, 0x24);
+    ext_00672080(self, value);
+    return self;
+}
+} // namespace lift_004B8DF0

@@ -5089,6 +5089,13 @@
     "summary": "Returns 1 if the EngineData float at +0x1C is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B8DF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getTimeZoomFactor, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+    "signature": "void* __stdcall fn_004B8DF0(void* self, void** pp)",
+    "summary": "Reads the float at +0x24 of the object referenced by *pp, forwards it to ext_00672080 on self, and returns self; throws if *pp is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B8E40": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getTimeZoomFactor)",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
