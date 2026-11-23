@@ -2983,10 +2983,10 @@
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x0046E570": {
-    "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, getUseRenderer, 0\u003e::vfunc_1",
-    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
-    "signature": "float fn_0046E570(void* self)",
-    "summary": "Reads the wrapped ImageExporter::getUseRenderer() result as a float (1.0 if true, 0.0 if false); throws if the wrapped object pointer is null.",
+    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
+    "signature": "void* fn_00617340(void* self)",
+    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0046EA50": {
@@ -8386,6 +8386,13 @@
     "class": "NMData::QuatChannel",
     "signature": "void fn_0051C7C0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051BEF0 (NMData::RealChannel::vfunc_16).",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
+  "0x0051CDE0": {
+    "name": "NMData::QuatChannel::clone",
+    "class": "NMData::QuatChannel",
+    "signature": "void* __thiscall fn_0051CDE0(const void* self)",
+    "summary": "Allocates and copy-constructs a clone of this QuatChannel instance.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
   "0x0051D310": {
@@ -15330,6 +15337,13 @@
     "signature": "float fn_0060A150(void* self)",
     "summary": "Forwards the object's vtable pointer to AddCharacterDialog::vfunc_3 (ext_00493D90) and returns 0.0f.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x0060A640": {
+    "name": "NMData::DisabledCollisionPairList::vfunc_13",
+    "class": "NMData::DisabledCollisionPairList",
+    "signature": "uint32_t __thiscall fn_0060A640(uint32_t self, uint32_t out, uint32_t key)",
+    "summary": "Returns a property/member wrapper for DisabledCollisionPairList based on string key comparison",
+    "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp"
   },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
