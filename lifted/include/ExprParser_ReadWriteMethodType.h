@@ -8,7 +8,7 @@
 // Recovered field layout for ExprParser::ReadWriteMethodType:
 namespace lifted_layout {
 struct ExprParser_ReadWriteMethodType_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0046E450, 0x0046EA50, 0x0046EDA0, 0x004A2580) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0046E450, 0x0046EA50, 0x0046EDA0, 0x004A2580, 0x004A25E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x0046E450, 0x0046EA50, 0x0049BF20, 0x004A2580, 0x004A25E0, 0x0066EBA0, 0x00695620) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
