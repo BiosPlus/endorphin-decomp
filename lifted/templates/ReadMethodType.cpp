@@ -24128,3 +24128,24 @@ float fn_0046E570(void* self) {
     return ext_0046C2E0(obj) ? 1.0f : 0.0f;
 }
 } // namespace lift_0046E570
+
+// [0x0049CA80] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0049CA80 {
+// Callee 0x0049AA20: NMData::State::isDeactivated (__thiscall, bool result in AL).
+extern bool __thiscall ext_0049AA20(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_1 (NMData::State::isDeactivated)
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads the NMData::State pointer from the holder; throws if null, otherwise returns 1.0f when isDeactivated() is true and 0.0f when false (float result in ST(0)).
+// @field ExprParser::ValuePtrType +0x00 void* statePtr
+float fn_0049CA80(void* const* holder) {
+    void* state = holder ? *holder : nullptr;
+    if (state == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::State>: null value pointer");
+    }
+    if (ext_0049AA20(state)) {
+        return 1.0f;
+    }
+    return 0.0f;
+}
+} // namespace lift_0049CA80

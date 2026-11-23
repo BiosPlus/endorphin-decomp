@@ -4257,6 +4257,13 @@
     "summary": "Reads the NMData::State pointer held in the ValuePtrType argument; if it is null throws an exception, otherwise returns the result of NMData::State::isDeactivated (via sub_0049AA20).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049CA80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_1 (NMData::State::isDeactivated)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
+    "signature": "float fn_0049CA80(void* const* holder)",
+    "summary": "Reads the NMData::State pointer from the holder; throws if null, otherwise returns 1.0f when isDeactivated() is true and 0.0f when false (float result in ST(0)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049CAD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e",
