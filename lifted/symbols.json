@@ -5480,6 +5480,13 @@
     "summary": "Reads the bound PoseToolOptions object from the value pointer (throws if null) and returns its isProjectRootEnabled flag byte.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA700": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, NMData::PoseToolOptions::isGroundCollisionEnabled, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, NMData::PoseToolOptions::isGroundCollisionEnabled, 0\u003e",
+    "signature": "bool __stdcall fn_004EA700(void* self)",
+    "summary": "Reads the bool returned by isGroundCollisionEnabled from the held PoseToolOptions; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EAA10": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions,bool,isCollisionEnabled\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",

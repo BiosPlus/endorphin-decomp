@@ -8549,3 +8549,30 @@ extern DWORD fn_004B13F0(const void* self) {
     return flag != 0 ? 1u : 0u;
 }
 } // namespace lift_004B13F0
+
+// [0x004EA700]
+namespace lift_004EA700 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, NMData::PoseToolOptions::isGroundCollisionEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, NMData::PoseToolOptions::isGroundCollisionEnabled, 0>
+// @summary Reads the bool returned by isGroundCollisionEnabled from the held PoseToolOptions; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::PoseToolOptions +0x04 bool field_0x04
+
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+extern const uint8_t mem_009DEC1C[];
+
+bool __stdcall fn_004EA700(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        return lift_field<uint8_t>(target, 0x04) != 0;
+    }
+
+    // Null target: construct an exception object on the stack and throw.
+    alignas(8) uint8_t exc_obj[0x28] = {};
+    ext_0046C3C0(exc_obj);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+    return false;
+}
+} // namespace lift_004EA700
