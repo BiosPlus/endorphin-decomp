@@ -3835,3 +3835,46 @@ void fn_0064ECB0(ValuePair* out, void** joint_slot, void* self) {
     }
 }
 } // namespace lift_0064ECB0
+
+// [0x0064EC00] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064EC00 {
+extern void ext_0064DEA0(void* self, float value);
+
+namespace {
+// Fetch vtable slot `index` from an object's vtable (slot n lives at offset n*4).
+inline void* vslot(void* obj, size_t index) {
+    return (*static_cast<void***>(obj))[index];
+}
+}  // namespace
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setDesiredSwing1>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}>
+// @summary Stdcall (ret 0xc) helper: if src's target object is set, reads a float from it, applies it to the joint in *arg2 via setDesiredSwing1, then writes {result->first, target} to out; otherwise writes a zeroed pair.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field ValuePair +0x00 void* first
+// @field ValuePair +0x04 void* second
+void fn_0064EC00(void* out, void* arg2, void* src) {
+    void* obj = lift_field<void*>(src, 0x04);
+
+    if (obj == nullptr) {
+        // Null target: arg2 scratch slot is zeroed and out receives {0, 0}.
+        arg2 = nullptr;
+        lift_field<void*>(out, 0x00) = arg2;
+        lift_field<void*>(out, 0x04) = obj;
+        return;
+    }
+
+    void* joint = *static_cast<void**>(arg2);
+
+    // obj->vtable[1](src) -> float
+    float value = reinterpret_cast<float (*)(void*, void*)>(vslot(obj, 1))(obj, src);
+    ext_0064DEA0(joint, value);
+
+    // obj->vtable[28](&arg2, src) -> pointer to a {first, ...} result
+    void* result = reinterpret_cast<void* (*)(void*, void**, void*)>(vslot(obj, 28))(
+        obj, &arg2, src);
+
+    lift_field<void*>(out, 0x00) = lift_field<void*>(result, 0x00);
+    lift_field<void*>(out, 0x04) = lift_field<void*>(src, 0x04);
+}
+} // namespace lift_0064EC00

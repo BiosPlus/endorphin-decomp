@@ -1,0 +1,34 @@
+{
+  "va": "0x0064EC00",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setDesiredSwing1\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}\u003e",
+  "signature": "inline void* vslot(void* obj, size_t index)",
+  "summary": "Stdcall (ret 0xc) helper: if src's target object is set, reads a float from it, applies it to the joint in *arg2 via setDesiredSwing1, then writes {result-\u003efirst, target} to out; otherwise writes a zeroed pair.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ValuePair",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "first"
+    },
+    {
+      "class": "ValuePair",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "second"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:09:29Z"
+}

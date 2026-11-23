@@ -10747,6 +10747,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064EC00": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setDesiredSwing1\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}\u003e",
+    "signature": "inline void* vslot(void* obj, size_t index)",
+    "summary": "Stdcall (ret 0xc) helper: if src's target object is set, reads a float from it, applies it to the joint in *arg2 via setDesiredSwing1, then writes {result-\u003efirst, target} to out; otherwise writes a zeroed pair.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064EC80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing2(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing2(float), 0}\u003e",
