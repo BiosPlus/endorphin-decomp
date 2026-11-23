@@ -475,3 +475,32 @@ void* __thiscall sub_006B0040(void* self) {
     return self;
 }
 } // namespace lift_006B0040
+
+// [0x006B1830]
+namespace lift_006B1830 {
+// @name sub_006B1830
+// @summary Sets the vftable pointer at +0x00 to 0x00991744 and returns this.
+// @field unknown +0x00 uint32_t vftable
+
+
+extern uint32_t mem_00991744;
+
+void* __thiscall sub_006B1830(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00991744));
+    return self;
+}
+} // namespace lift_006B1830
+
+// [0x006B1900]
+namespace lift_006B1900 {
+// @name sub_006B1900
+// @summary Sets the vtable pointer at offset 0x00 to 0x00991750 and returns this
+
+
+extern uint8_t mem_00991750[];
+
+void* __thiscall sub_006B1900(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00991750));
+    return self;
+}
+} // namespace lift_006B1900

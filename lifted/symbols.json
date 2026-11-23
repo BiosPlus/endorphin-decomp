@@ -28534,12 +28534,24 @@
     "summary": "Pure jump thunk forwarding to sub_006B1810.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B1830": {
+    "name": "sub_006B1830",
+    "signature": "void* __thiscall sub_006B1830(void* self)",
+    "summary": "Sets the vftable pointer at +0x00 to 0x00991744 and returns this.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B18E0": {
     "name": "GWCDateTimePropertiesFactory::vfunc_0",
     "class": "GWCDateTimePropertiesFactory",
     "signature": "extern \"C\" void* __fastcall fn_006B18E0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B19C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B1900": {
+    "name": "sub_006B1900",
+    "signature": "void* __thiscall sub_006B1900(void* self)",
+    "summary": "Sets the vtable pointer at offset 0x00 to 0x00991750 and returns this",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
   "0x006B19C0": {
     "name": "sub_006B19C0",

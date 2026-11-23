@@ -1,0 +1,13 @@
+{
+  "va": "0x006B1900",
+  "size": 9,
+  "orig_symbol": "sub_006B1900",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B1900",
+  "signature": "void* __thiscall sub_006B1900(void* self)",
+  "summary": "Sets the vtable pointer at offset 0x00 to 0x00991750 and returns this",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:25:51Z"
+}
