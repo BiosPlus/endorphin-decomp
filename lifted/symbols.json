@@ -11056,10 +11056,10 @@
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064F660": {
-    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}\u003e::vfunc_48",
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitTwistDamping\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}\u003e",
-    "signature": "extern void __stdcall fn_0064F660(void* out, void* const* targetRef, void* self)",
-    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "signature": "ExprResult fn_0064F660(void* a1, void* a2)",
+    "summary": "Evaluates the float from the ValuePtr's source via vtable slot 1, forwards it to the twist-damping setter on the target, then returns the source's slot-28 result as {value, source} (or {0, 0} when there is no source).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064F6E0": {

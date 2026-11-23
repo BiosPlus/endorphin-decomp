@@ -4908,52 +4908,6 @@ extern void __stdcall fn_0064F5B0(void* out, void* const* targetRef, void* self)
 } // namespace lift_006492B0
 } // namespace lift_0064F5B0
 
-// [0x0064F660] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>::vfunc_48 (113 bytes)
-namespace lift_0064F660 {
-extern void ext_0064DDA0(void* self, float value);
-
-// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>::vfunc_48
-// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>
-// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
-namespace lift_006492B0 {
-// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
-extern void __fastcall ext_0064DDA0(void* self, int edx_unused, float value);
-
-// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
-// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
-// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
-// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
-extern void __stdcall fn_0064F660(void* out, void* const* targetRef, void* self) {
-    void* source = lift_field<void*>(self, 0x04);
-
-    // Getter: vtable slot +0x04 on the source; produces the float to forward.
-    using GetFloatFn = float (*)(void* thisp, void* scratch);
-    void** srcVtable = *reinterpret_cast<void***>(source);
-    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
-    float value = getFloat(source, nullptr);
-
-    // Setter on the object referenced by *targetRef (stores into field +0x7C).
-    void* target = *targetRef;
-    ext_0064DDA0(target, 0, value);
-
-    if (source != nullptr) {
-        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
-        using GetPairFn = void* (*)(void* thisp, void* scratch);
-        void** vt = *reinterpret_cast<void***>(source);
-        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
-        void* scratch = nullptr;
-        void* pair = getPair(source, &scratch);
-        uint32_t first = *static_cast<uint32_t*>(pair);
-        lift_field<uint32_t>(out, 0x0) = first;
-        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
-    } else {
-        lift_field<uint32_t>(out, 0x0) = 0;
-        lift_field<void*>(out, 0x4) = source;
-    }
-}
-} // namespace lift_006492B0
-} // namespace lift_0064F660
-
 // [0x0064F710] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}>::vfunc_48 (113 bytes)
 namespace lift_0064F710 {
 extern void ext_0064DDC0(void* self, float value);
@@ -5565,3 +5519,44 @@ void fn_0064F500(uint32_t* out, uintptr_t arg2, void* self) {
     }
 }
 } // namespace lift_0064F500
+
+// [0x0064F660] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F660 {
+// Setter for SkeletalJoint::setSoftLimitTwistDamping(float) (23 bytes).
+extern void ext_0064DDA0(void* self, float value);
+
+// Return-by-value pair { value, source } (matches lifted/include/ExprResult.h layout).
+struct ExprResult {
+    void* value;   // +0x0
+    void* source;  // +0x4
+};
+
+// ExprValue vtable slot 1 (+0x04): float getter, this = source, one stack arg.
+using GetFloatFn = float (*)(void* self, void* expr);
+// ExprValue vtable slot 28 (+0x70): returns pointer to result slot; this = source.
+using GetResultFn = void** (*)(void* self, void** outTmp, void* expr);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setSoftLimitTwistDamping>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>
+// @summary Evaluates the float from the ValuePtr's source via vtable slot 1, forwards it to the twist-damping setter on the target, then returns the source's slot-28 result as {value, source} (or {0, 0} when there is no source).
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::ValuePtrType +0x04 void* source
+ExprResult fn_0064F660(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* sub = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(sub, 0x00);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(sub, a2);
+    ext_0064DDA0(target, value);
+
+    sub = lift_field<void*>(a2, 0x04);
+    if (sub == nullptr) {
+        return ExprResult{nullptr, nullptr};
+    }
+    void* subVtbl = lift_field<void*>(sub, 0x00);
+    auto getResult = reinterpret_cast<GetResultFn>(lift_field<void*>(subVtbl, 0x70));
+    void* outTmp = nullptr;
+    void** res = getResult(sub, &outTmp, a2);
+    return ExprResult{*res, lift_field<void*>(a2, 0x04)};
+}
+} // namespace lift_0064F660
