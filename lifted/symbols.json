@@ -5830,6 +5830,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::SeverEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CA1C0": {
+    "name": "NMData::SeverEventData::vfunc_88",
+    "class": "NMData::SeverEventData",
+    "signature": "extern \"C\" void __thiscall fn_004CA1C0(void* self)",
+    "summary": "Updates field_0x19c, frees the previous object if changed, and initializes the new one.",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
   "0x004CA310": {
     "name": "NMData::MetaBodyConstraintData::vfunc_14",
     "class": "NMData::MetaBodyConstraintData",
