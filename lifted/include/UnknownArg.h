@@ -8,6 +8,6 @@
 // Recovered field layout for UnknownArg:
 namespace lifted_layout {
 struct UnknownArg_Fields {
-    // +0x0   void*                    calibrationVars  (evidence: 0x004B2440, 0x00508EE0)
+    // +0x0   void*                    calibrationVars  (evidence: 0x004B2440, 0x00508EE0, 0x0068DE60)
 };
 } // namespace lifted_layout

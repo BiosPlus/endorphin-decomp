@@ -10,6 +10,6 @@
 // Recovered field layout for ImageExporter:
 namespace lifted_layout {
 struct ImageExporter_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0046F1A0)
+    // +0x0   void*                    field_0x00  (evidence: 0x0046F1A0, 0x0068DE60)
 };
 } // namespace lifted_layout

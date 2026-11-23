@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::TriggeredEventData:
 namespace lifted_layout {
 struct NMData_TriggeredEventData_Fields {
-    // +0x0   uintptr_t                ptr  (evidence: 0x004C0400)
+    // +0x0   uintptr_t                ptr  (evidence: 0x004C0400, 0x0068DE60)
 };
 } // namespace lifted_layout
