@@ -607,35 +607,6 @@ int fn_005223C0(const void* holder) {
 } // namespace lift_004B12A0
 } // namespace lift_005223C0
 
-// [0x005D6980] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_1 (45 bytes)
-namespace lift_005D6980 {
-// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_1
-// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>
-// @summary Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)).
-namespace lift_004B8970 {
-extern void ext_0046C3C0();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-
-// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)
-// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
-// @summary Reads the target pointer held at +0x00 of the single stack argument and returns the float at target+0x48; if the target pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
-// @field ExprParser::ValuePtrType +0x00 void* field_0x00
-// @field NMData::EngineData +0x48 float field_0x48
-// The original builds a local exception object (sub_0046C3C0) before throwing; the argument's own type is not identified, so only its pointer at +0x00 is accessed.
-float fn_005D6980(void* self) {
-    auto* holder = static_cast<uint8_t*>(self);
-    auto* target = *reinterpret_cast<uint8_t**>(holder);
-    if (target != nullptr) {
-        return lift_field<float>(target, 0x2C);
-    }
-    ext_0046C3C0();
-    ext_006A6DD2();
-    return 0.0f;
-}
-} // namespace lift_004B8970
-} // namespace lift_005D6980
-
 // [0x005D78F0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_1 (45 bytes)
 namespace lift_005D78F0 {
 // @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_1
@@ -1524,3 +1495,18 @@ float fn_005D2C50(void* self) {
     return 0.0f;
 }
 } // namespace lift_005D2C50
+
+// [0x005D6980] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D6980 {
+// @name ExprParser::ReadMethodType<Effector>::vfunc_1 (Effector::getScaledDesiredDisplacement)
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>
+// @summary Reads the Effector float at +0x2c through the holder's pointer (getScaledDesiredDisplacement); throws if the holder's pointer is null.
+// @field Effector +0x2c float field_0x2c
+float fn_005D6980(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<Effector>: null value pointer");
+    }
+    return lift_field<float>(obj, 0x2c);
+}
+} // namespace lift_005D6980

@@ -8741,10 +8741,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D6980": {
-    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e::vfunc_1",
+    "name": "ExprParser::ReadMethodType\u003cEffector\u003e::vfunc_1 (Effector::getScaledDesiredDisplacement)",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
-    "signature": "float fn_005D6980(void* self)",
-    "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
+    "signature": "float fn_005D6980(void* const* holder)",
+    "summary": "Reads the Effector float at +0x2c through the holder's pointer (getScaledDesiredDisplacement); throws if the holder's pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D78F0": {
