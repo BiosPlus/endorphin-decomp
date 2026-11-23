@@ -3915,3 +3915,48 @@ void __stdcall fn_0064EB50(uint32_t* out, void* const* value, void* self) {
     }
 }
 } // namespace lift_0064EB50
+
+// [0x0064EE00]
+namespace lift_0064EE00 {
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setHardLimitRadius>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitRadius(float), 0}>
+// @summary Reads a float via the value-pointer's vfunc slot 1, applies it to the target SkeletalJoint via setHardLimitRadius, then returns {value-of-vfunc28 result, owner} through the out buffer.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+// Callee: SkeletalJoint::setHardLimitRadius(float), thiscall (this in ecx, float on stack).
+void ext_0064DC20(void* self, float value);
+
+using VFnGetFloat = float(__thiscall*)(void* self, void* arg);
+using VFnGetPtr   = void*(__thiscall*)(void* self, void* slot, void* arg);
+
+// out: arg1 (8-byte result buffer), arg2: pointer to target joint pointer, arg3: value-ptr holder.
+void* lift_0064EE00(void* out, void* arg2, void* arg3) {
+    auto* holder = static_cast<uint8_t*>(arg3);
+    void* owner = lift_field<void*>(holder, 0x04);
+
+    // edi = *arg2: the SkeletalJoint whose radius is being set.
+    void* target = *static_cast<void**>(arg2);
+
+    // Fetch float from owner's vtable slot 1.
+    void** vtbl = *static_cast<void***>(owner);
+    float value = reinterpret_cast<VFnGetFloat>(vtbl[1])(owner, arg3);
+
+    ext_0064DC20(target, value);
+
+    if (owner != nullptr) {
+        // Slot 0x70 (index 28): returns a pointer to an 8-byte result; arg2 slot is passed by address.
+        void* slot = arg2;
+        void** vtbl2 = *static_cast<void***>(owner);
+        void* res = reinterpret_cast<VFnGetPtr>(vtbl2[0x70 / sizeof(void*)])(owner, &slot, arg3);
+        DWORD first = lift_field<DWORD>(res, 0);
+        void* ownerNow = lift_field<void*>(holder, 0x04);
+        lift_field<DWORD>(out, 0) = first;
+        lift_field<void*>(out, 0x04) = ownerNow;
+    } else {
+        lift_field<DWORD>(out, 0) = 0;
+        lift_field<void*>(out, 0x04) = owner;
+    }
+
+    return out;
+}
+} // namespace lift_0064EE00

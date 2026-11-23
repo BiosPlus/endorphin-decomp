@@ -1,0 +1,22 @@
+{
+  "va": "0x0064EE00",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitRadius(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setHardLimitRadius\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitRadius(float), 0}\u003e",
+  "signature": "void* lift_0064EE00(void* out, void* arg2, void* arg3)",
+  "summary": "Reads a float via the value-pointer's vfunc slot 1, applies it to the target SkeletalJoint via setHardLimitRadius, then returns {value-of-vfunc28 result, owner} through the out buffer.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:09:57Z"
+}
