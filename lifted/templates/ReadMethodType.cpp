@@ -433,3 +433,27 @@ bool fn_004EB230(void* self) {
     return false; // not reached
 }
 } // namespace lift_004EB230
+
+// [0x00508EB0] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_2 (45 bytes)
+namespace lift_00508EB0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Task, int, getID, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Returns the ID of the NMData::Task held by the value pointer; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::Task +0x14 int field_0x14
+int fn_00508EB0(void* self) {
+    // Stack argument (ret 4): self points at a value-pointer whose first word is the Task*.
+    void* task = *reinterpret_cast<void**>(self);
+    if (task != nullptr) {
+        return lift_field<int>(task, 0x14);
+    }
+    // Null task: build the exception object and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0; // not reached; the throw above does not return
+}
+} // namespace lift_00508EB0

@@ -5426,6 +5426,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00508EB0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, getID, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+    "signature": "int fn_00508EB0(void* self)",
+    "summary": "Returns the ID of the NMData::Task held by the value pointer; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",
