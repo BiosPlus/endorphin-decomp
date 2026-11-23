@@ -34075,6 +34075,12 @@
     "summary": "Returns address of global mem_00AB6B0C.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x008523A4": {
+    "name": "adjustStackAndTailCall_0084A145",
+    "signature": "void sub_008523A4()",
+    "summary": "Adjusts the stack pointer by 4 bytes and tail-calls ext_0084A145.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x00852427": {
     "name": "thunk_jmp_esi_00852427",
     "signature": "void thunk_jmp_esi_00852427(uint32_t esi)",

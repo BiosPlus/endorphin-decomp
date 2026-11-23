@@ -1,0 +1,13 @@
+{
+  "va": "0x008523A4",
+  "size": 9,
+  "orig_symbol": "sub_008523A4",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "adjustStackAndTailCall_0084A145",
+  "signature": "void sub_008523A4()",
+  "summary": "Adjusts the stack pointer by 4 bytes and tail-calls ext_0084A145.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:26:59Z"
+}

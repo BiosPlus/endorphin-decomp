@@ -43,3 +43,14 @@ void thunk_jmp_esi_00852427(uint32_t esi) {
     target();
 }
 } // namespace lift_00852427
+
+// [0x008523A4]
+namespace lift_008523A4 {
+extern void ext_0084A145();
+
+// @name adjustStackAndTailCall_0084A145
+// @summary Adjusts the stack pointer by 4 bytes and tail-calls ext_0084A145.
+void sub_008523A4() {
+    ext_0084A145();
+}
+} // namespace lift_008523A4
