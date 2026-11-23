@@ -1,0 +1,14 @@
+{
+  "va": "0x006329B0",
+  "size": 106,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::string const\u0026, vcall60\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType",
+  "signature": "void __thiscall fn_006329B0(void* self, void* arg1, void* arg2)",
+  "summary": "Evaluates argument via ext_0046E780 into a temporary std::string, invokes virtual slot 15 on *arg1, and destroys the temporary string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:03Z"
+}

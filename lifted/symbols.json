@@ -15958,6 +15958,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::MagnetJointData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005F0FA0": {
+    "name": "NMData::MagnetJointData::vfunc_17_off_C",
+    "class": "NMData::MagnetJointData",
+    "signature": "extern \"C\" void* __thiscall fn_005F0FA0(uint8_t* self_off_c)",
+    "summary": "Allocates and constructs a 0x318-byte object (likely MagnetJointData) and copies a flag from TransformInterface::vfunc_0x20 to offset +0x148.",
+    "lifted_path": "lifted/NMData/MagnetJointData.cpp"
+  },
   "0x005F18B0": {
     "name": "NMData::HingeData::vfunc_0",
     "class": "NMData::HingeData",
