@@ -1368,3 +1368,2240 @@ void fn_004A2580(void** dst, void* src) {
     ext_004A24C0(target, value);
 }
 } // namespace lift_004A2580
+
+// [0x004701F0] ExprParser::ReadWriteMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, bool, {public: void __thiscall RuntimeEngine::enablePlaybackLooping(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004701F0 {
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, bool, {public: void __thiscall RuntimeEngine::enablePlaybackLooping(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, bool, {public: void __thiscall RuntimeEngine::enablePlaybackLooping(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_0046F8F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004701F0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_0046F8F0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004701F0
+
+// [0x004712B0] ExprParser::ReadWriteMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, int, {public: void __thiscall RuntimeEngine::setNumTicksToRun(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004712B0 {
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, int, {public: void __thiscall RuntimeEngine::setNumTicksToRun(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, int, {public: void __thiscall RuntimeEngine::setNumTicksToRun(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_0046FF50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004712B0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_0046FF50)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004712B0
+
+// [0x004A2740] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A2740 {
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004A24A0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004A2740(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004A24A0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004A2740
+
+// [0x004B54F0] ExprParser::ReadWriteMethodType<NMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004B54F0 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004B5250();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004B54F0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004B5250)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004B54F0
+
+// [0x004C0FF0] ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getStartFrameNumber(void) const, 0}, int, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{276, {flat}}, 0}>::vfunc_41 (68 bytes)
+namespace lift_004C0FF0 {
+// @name ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getStartFrameNumber(void) const, 0}, int, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{276, {flat}}, 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getStartFrameNumber(void) const, 0}, int, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{276, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004C0FE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004C0FF0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004C0FE0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004C0FF0
+
+// [0x004C1C70] ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004C1C70 {
+// @name ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004C1AC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004C1C70(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004C1AC0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004C1C70
+
+// [0x004C5840] ExprParser::ReadWriteMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::ForceEventData::setFrameNumber(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004C5840 {
+// @name ExprParser::ReadWriteMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::ForceEventData::setFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::ForceEventData::setFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004C4DC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004C5840(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004C4DC0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004C5840
+
+// [0x004CAE90] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004CAE90 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004CA2E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004CAE90(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004CA2E0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004CAE90
+
+// [0x004D5320] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsInitTargetPoseEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D5320 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsInitTargetPoseEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsInitTargetPoseEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004D3B30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004D5320(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004D3B30)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004D5320
+
+// [0x004D5370] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D5370 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004D3B50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004D5370(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004D3B50)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004D5370
+
+// [0x004D53C0] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setInitialPhysicsTicks(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D53C0 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setInitialPhysicsTicks(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setInitialPhysicsTicks(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004D3B70();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004D53C0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004D3B70)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004D53C0
+
+// [0x004D5410] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setPhysicsTicks(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D5410 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setPhysicsTicks(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setPhysicsTicks(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004D3B90();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004D5410(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004D3B90)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004D5410
+
+// [0x004D5460] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setGravityEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D5460 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setGravityEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setGravityEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004D3BD0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004D5460(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004D3BD0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004D5460
+
+// [0x004D54B0] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D54B0 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004D3BF0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004D54B0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004D3BF0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004D54B0
+
+// [0x004D6C80] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D6C80 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004D4650();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004D6C80(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004D4650)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004D6C80
+
+// [0x004D9DA0] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004D9DA0 {
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004D9CE0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004D9DA0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004D9CE0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004D9DA0
+
+// [0x004DE7D0] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004DE7D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004DDEB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004DE7D0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004DDEB0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004DE7D0
+
+// [0x004DE840] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsActiveAnimationEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004DE840 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsActiveAnimationEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsActiveAnimationEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004DDEA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004DE840(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004DDEA0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004DE840
+
+// [0x004DE930] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::copyFromReferenceObject(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004DE930 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::copyFromReferenceObject(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::copyFromReferenceObject(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00402040();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004DE930(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00402040)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004DE930
+
+// [0x004E25D0] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004E25D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004E1D10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004E25D0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004E1D10)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004E25D0
+
+// [0x004E2620] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionEndFrameNumber(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004E2620 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionEndFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionEndFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004E1D40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004E2620(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004E1D40)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004E2620
+
+// [0x004E2670] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setAnimationVisibility(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004E2670 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setAnimationVisibility(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setAnimationVisibility(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_004E1DC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_004E2670(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_004E1DC0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004E2670
+
+// [0x004ECCA0] ExprParser::ReadWriteMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004ECCA0 {
+// @name ExprParser::ReadWriteMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004D3930();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004ECCA0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004D3930)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004ECCA0
+
+// [0x00505A30] ExprParser::ReadWriteMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, int, &public: void __thiscall Interpreter::printThroughProperties(int)>::vfunc_41 (68 bytes)
+namespace lift_00505A30 {
+// @name ExprParser::ReadWriteMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, int, &public: void __thiscall Interpreter::printThroughProperties(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, int, &public: void __thiscall Interpreter::printThroughProperties(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00505980();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_00505A30(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00505980)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_00505A30
+
+// [0x00509600] ExprParser::ReadWriteMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_00509600 {
+// @name ExprParser::ReadWriteMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00508C10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_00509600(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00508C10)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_00509600
+
+// [0x00522260] ExprParser::ReadWriteMethodType<ThreeLayerNet, int, &public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, &public: void __thiscall ThreeLayerNet::setNumHidden(int)>::vfunc_41 (68 bytes)
+namespace lift_00522260 {
+// @name ExprParser::ReadWriteMethodType<ThreeLayerNet, int, &public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, &public: void __thiscall ThreeLayerNet::setNumHidden(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ThreeLayerNet, int, &public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, &public: void __thiscall ThreeLayerNet::setNumHidden(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00522190();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_00522260(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00522190)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_00522260
+
+// [0x005C73A0] ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithAncestors(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005C73A0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithAncestors(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithAncestors(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005B6460();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005C73A0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005B6460)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005C73A0
+
+// [0x005C76E0] ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithParent(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005C76E0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithParent(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithParent(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005B6440();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005C76E0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005B6440)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005C76E0
+
+// [0x005C7900] ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithSiblings(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005C7900 {
+// @name ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithSiblings(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithSiblings(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005B6450();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005C7900(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005B6450)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005C7900
+
+// [0x005C7C50] ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}>::vfunc_41 (68 bytes)
+namespace lift_005C7C50 {
+// @name ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{104, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_0064F930();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005C7C50(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_0064F930)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005C7C50
+
+// [0x005D1760] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, bool, &public: void __thiscall NMData::VideoPlaneData::setMustDrawTimeCode(bool)>::vfunc_41 (68 bytes)
+namespace lift_005D1760 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, bool, &public: void __thiscall NMData::VideoPlaneData::setMustDrawTimeCode(bool)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, bool, &public: void __thiscall NMData::VideoPlaneData::setMustDrawTimeCode(bool)>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005CFB60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005D1760(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005CFB60)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005D1760
+
+// [0x005D1B20] ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, bool, {private: void __thiscall NMData::CameraData::setFrustumVisible(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005D1B20 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, bool, {private: void __thiscall NMData::CameraData::setFrustumVisible(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, bool, {private: void __thiscall NMData::CameraData::setFrustumVisible(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005CFE10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005D1B20(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005CFE10)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005D1B20
+
+// [0x005D1B70] ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, bool, {public: void __thiscall NMData::CameraData::setIsSettingsLocked(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005D1B70 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, bool, {public: void __thiscall NMData::CameraData::setIsSettingsLocked(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, bool, {public: void __thiscall NMData::CameraData::setIsSettingsLocked(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005CF920();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005D1B70(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005CF920)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005D1B70
+
+// [0x005DC510] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)>::vfunc_41 (68 bytes)
+namespace lift_005DC510 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_005DC1E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_005DC510(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_005DC1E0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_005DC510
+
+// [0x005DC560] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)>::vfunc_41 (68 bytes)
+namespace lift_005DC560 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setEndFrame(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_005DC270();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_005DC560(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_005DC270)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_005DC560
+
+// [0x005DC5B0] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)>::vfunc_41 (68 bytes)
+namespace lift_005DC5B0 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_005DC390();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_005DC5B0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_005DC390)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_005DC5B0
+
+// [0x005DCD10] ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, bool, {public: void __thiscall NMData::CameraData::setIsVideoPlaneEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005DCD10 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, bool, {public: void __thiscall NMData::CameraData::setIsVideoPlaneEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, bool, {public: void __thiscall NMData::CameraData::setIsVideoPlaneEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005DCBC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005DCD10(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005DCBC0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005DCD10
+
+// [0x005F5D70] ExprParser::ReadWriteMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, bool, {public: void __thiscall HelperGraphic::setFSMVisibility(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5D70 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, bool, {public: void __thiscall HelperGraphic::setFSMVisibility(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, bool, {public: void __thiscall HelperGraphic::setFSMVisibility(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_005F51D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_005F5D70(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_005F51D0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_005F5D70
+
+// [0x0061B910] ExprParser::ReadWriteMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, bool, {private: void __thiscall NMData::HingeConstraint::setIsEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0061B910 {
+// @name ExprParser::ReadWriteMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, bool, {private: void __thiscall NMData::HingeConstraint::setIsEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, bool, {private: void __thiscall NMData::HingeConstraint::setIsEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_00610A60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_0061B910(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_00610A60)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_0061B910
+
+// [0x0061C8C0] ExprParser::ReadWriteMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, bool, {private: void __thiscall NMData::PrimaryTwistAndSwingConstraint::setIsSwingEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0061C8C0 {
+// @name ExprParser::ReadWriteMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, bool, {private: void __thiscall NMData::PrimaryTwistAndSwingConstraint::setIsSwingEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, bool, {private: void __thiscall NMData::PrimaryTwistAndSwingConstraint::setIsSwingEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_00610AB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_0061C8C0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_00610AB0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_0061C8C0
+
+// [0x0061CCA0] ExprParser::ReadWriteMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, bool, {private: void __thiscall NMData::PrimaryTwistAndSwingConstraint::setIsLinearEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0061CCA0 {
+// @name ExprParser::ReadWriteMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, bool, {private: void __thiscall NMData::PrimaryTwistAndSwingConstraint::setIsLinearEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, bool, {private: void __thiscall NMData::PrimaryTwistAndSwingConstraint::setIsLinearEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_00610AD0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_0061CCA0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_00610AD0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_0061CCA0
+
+// [0x00632FF0] ExprParser::ReadWriteMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, int, &public: void __thiscall EffectorSkeletal::setAngularDriveMode(int)>::vfunc_41 (68 bytes)
+namespace lift_00632FF0 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, int, &public: void __thiscall EffectorSkeletal::setAngularDriveMode(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, int, &public: void __thiscall EffectorSkeletal::setAngularDriveMode(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00630370();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_00632FF0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00630370)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_00632FF0
+
+// [0x00633040] ExprParser::ReadWriteMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, int, &public: void __thiscall EffectorSkeletal::setLinearDriveMode(int)>::vfunc_41 (68 bytes)
+namespace lift_00633040 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, int, &public: void __thiscall EffectorSkeletal::setLinearDriveMode(int)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, int, &public: void __thiscall EffectorSkeletal::setLinearDriveMode(int)>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00630380();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_00633040(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00630380)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_00633040
+
+// [0x00642040] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_00642040 {
+// @name ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_00641FA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_00642040(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_00641FA0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_00642040
+
+// [0x006429E0] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactsEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_006429E0 {
+// @name ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactsEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactsEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_00642390();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_006429E0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_00642390)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_006429E0
+
+// [0x00642D20] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactForcesEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_00642D20 {
+// @name ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactForcesEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactForcesEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_006423B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_00642D20(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_006423B0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_00642D20
+
+// [0x00643060] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawAABBSEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_00643060 {
+// @name ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawAABBSEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawAABBSEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_006423D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_00643060(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_006423D0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_00643060
+
+// [0x006433A0] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawGeometryEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_006433A0 {
+// @name ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawGeometryEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawGeometryEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_006423F0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_006433A0(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_006423F0)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_006433A0
+
+// [0x00643630] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawEnabledOnlyEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_00643630 {
+// @name ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawEnabledOnlyEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawEnabledOnlyEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_00642410();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_00643630(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_00642410)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_00643630
+
+// [0x0068C460] ExprParser::ReadWriteMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_0068C460 {
+// @name ExprParser::ReadWriteMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, int, {public: void __thiscall Randomizer::setSeed(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_006B0C30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_0068C460(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_006B0C30)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_0068C460
+
+// [0x006930E0] ExprParser::ReadWriteMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, int, {public: void __thiscall ValuePtrArrayObject::setSize(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_006930E0 {
+// @name ExprParser::ReadWriteMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, int, {public: void __thiscall ValuePtrArrayObject::setSize(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, int, {public: void __thiscall ValuePtrArrayObject::setSize(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004EDC60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_006930E0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004EDC60)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_006930E0

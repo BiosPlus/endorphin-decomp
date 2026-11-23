@@ -854,3 +854,273 @@ void fn_00515C50(void* holder, void* source) {
     lift_field<uint32_t>(target, 0x08) = result;
 }
 } // namespace lift_00515C50
+
+// [0x00496DA0] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_41 (68 bytes)
+namespace lift_00496DA0 {
+// @name ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_41
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_00496CC0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_00496DA0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00496CC0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_00496DA0
+
+// [0x004ACC80] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_41 (68 bytes)
+namespace lift_004ACC80 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004ACA60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004ACC80(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004ACA60)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004ACC80
+
+// [0x004B7410] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_41 (68 bytes)
+namespace lift_004B7410 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004B7340();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004B7410(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004B7340)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004B7410
+
+// [0x004DC660] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_41 (68 bytes)
+namespace lift_004DC660 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004DBD10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004DC660(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004DBD10)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004DC660
+
+// [0x004DC6B0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_41 (68 bytes)
+namespace lift_004DC6B0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004DBD90();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004DC6B0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004DBD90)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004DC6B0
+
+// [0x005C47A0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_41 (68 bytes)
+namespace lift_005C47A0 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_005C3EA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_005C47A0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_005C3EA0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_005C47A0
