@@ -816,3 +816,41 @@ void fn_00515B90(void** holder, void* arg2) {
     lift_field<int32_t>(target, 0x0C) = result;
 }
 } // namespace lift_00515B90
+
+// [0x00515C50] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_41 (63 bytes)
+namespace lift_00515C50 {
+// Known callee 0x0046C3C0: sub_0046C3C0 (builds the error/exception payload in-place)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Throw-info descriptor referenced by the throw path (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType<EvolverRuntimeOptions>::vfunc_41
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary If the holder's stored target pointer is non-null, invoke source->inner->vfunc[2](source) and store the uint32 result into target+0x08; otherwise build an exception payload and throw.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::DynamicEnumType +0x04 void* field_0x04
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x08 uint32_t field_0x08
+void fn_00515C50(void* holder, void* source) {
+    // esi = *holder
+    void* target = lift_field<void*>(holder, 0x00);
+    if (target == nullptr) {
+        // lea ecx,[holder]; call sub_0046C3C0; throw(holder, 0x009DEC1C)
+        ext_0046C3C0(holder);
+        ext_006A6DD2(holder, mem_009DEC1C);
+        return;
+    }
+
+    // ecx = source->inner (source+0x04); edx = inner->vtable; eax = vtable[2]
+    void* inner = lift_field<void*>(source, 0x04);
+    void** vtable = *reinterpret_cast<void***>(inner);
+    using VFunc = uint32_t (*)(void* self, void* arg);
+    VFunc vfunc2 = reinterpret_cast<VFunc>(vtable[2]);
+    uint32_t result = vfunc2(inner, source);
+
+    // mov [target+8], eax
+    lift_field<uint32_t>(target, 0x08) = result;
+}
+} // namespace lift_00515C50

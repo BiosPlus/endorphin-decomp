@@ -8,8 +8,9 @@
 // Recovered field layout for ExprParser::DynamicEnumType:
 namespace lifted_layout {
 struct ExprParser_DynamicEnumType_Fields {
-    // +0x0   void*                    ptr  (evidence: 0x00494D50, 0x00516580)
-    // +0x4   void*                    field_0x04  (evidence: 0x00516550, 0x0067A770)
+    // +0x0   void*                    field_0x00  (evidence: 0x00515C50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    ptr  (evidence: 0x00494D50, 0x00516580) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void*                    field_0x04  (evidence: 0x00515C50, 0x00516550, 0x0067A770)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00516580)
 };
 } // namespace lifted_layout
