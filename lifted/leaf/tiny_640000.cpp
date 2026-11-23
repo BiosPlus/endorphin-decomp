@@ -678,3 +678,18 @@ extern void fn_00642650(void) {
 }
 } // namespace lift_0041B3B0
 } // namespace lift_00642650
+
+// [0x006452D0]
+namespace lift_006452D0 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name forwardVCall0x1c
+// @summary Tail-call virtual method at vtable +0x1c on delegate at +0x04
+// @field Self +0x04 void* field_0x04
+void __thiscall sub_006452D0(void* self) {
+    uint32_t delegate = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x4));
+    uint32_t vtable = mem_read32(delegate);
+    uint32_t target = mem_read32(vtable + 0x1c);
+    reinterpret_cast<void(__thiscall*)(uint32_t)>(target)(delegate);
+}
+} // namespace lift_006452D0
