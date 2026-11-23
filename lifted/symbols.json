@@ -10968,6 +10968,13 @@
     "summary": "Forwards the object pointer to ExprParser::ExtROType helper at 0x00672000.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066BA40": {
+    "name": "ExprParser::ExtROType::vfunc_41",
+    "class": "ExprParser::ExtROType",
+    "signature": "void fn_0066BA40(void* self, void* arg)",
+    "summary": "Calls the base-class helper on self, then forwards (self, arg) to vtable slot 41 of the object at self+0x04.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066BA70": {
     "name": "ExprParser::ExtROType::vfunc_42_forward",
     "class": "ExprParser::ExtROType",
