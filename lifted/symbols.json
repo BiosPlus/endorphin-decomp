@@ -10214,6 +10214,13 @@
     "summary": "Returns the volume of the sphere, (4/3)*pi*r^3, where r is the value returned by ext_005B11E0(self, 0).",
     "lifted_path": "lifted/Geometry/SphereType.cpp"
   },
+  "0x005B4E40": {
+    "name": "Geometry::SphylType::vfunc_16",
+    "class": "Geometry::SphylType",
+    "signature": "void fn_005B4E40(void* arg1, void* self, int32_t ringCount, int32_t segCount)",
+    "summary": "Emits the vertex rings of a sphere-like primitive (lower latitude rings, equator, upper latitude rings) via SphylType::emitVertex.",
+    "lifted_path": "lifted/Geometry/SphylType.cpp"
+  },
   "0x005B5320": {
     "name": "Geometry::AnimationType::getStaticList",
     "class": "Geometry::AnimationType",

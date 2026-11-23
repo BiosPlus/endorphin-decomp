@@ -53,3 +53,75 @@ float __stdcall fn_005B1A30(void* arg0) {
     return static_cast<float>(vol);
 }
 } // namespace lift_005B1A30
+
+// [0x005B4E40] Geometry::SphylType::vfunc_16 (806 bytes)
+namespace lift_005B4E40 {
+extern float ext_005B11E0(int32_t index);
+extern void ext_00539AA0(void* self, float* out, void* a, uint32_t lo, void* b, int32_t hi);
+extern void ext_00539FB0(void* self, const float* vertex);
+// MSVCR80!_invalid_parameter_noinfo (loaded through IAT slot mem_00925134)
+extern void (*mem_00925134)(void);
+
+// @name Geometry::SphylType::vfunc_16
+// @class Geometry::SphylType
+// @summary Emits the vertex rings of a sphere-like primitive (lower latitude rings, equator, upper latitude rings) via SphylType::emitVertex.
+// @field Geometry::SphylType +0x04 uint32_t field_0x04
+// @field Geometry::SphylType +0x08 int32_t field_0x08
+void fn_005B4E40(void* arg1, void* self, int32_t ringCount, int32_t segCount) {
+    // arg1 is loaded into ecx on entry but never read afterwards.
+    (void)arg1;
+
+    constexpr double kTwoPi = 6.2831854820251465;  // mem_00955090
+
+    const float radius = ext_005B11E0(0);  // A
+    const float param1 = ext_005B11E0(1);  // only feeds a store that is overwritten before use
+    (void)param1;
+
+    const uint32_t lo = lift_field<uint32_t>(self, 0x04);
+    const int32_t hi = lift_field<int32_t>(self, 0x08);
+    // Both range checks in the original test the same condition (lo > hi).
+    if (lo > static_cast<uint32_t>(hi)) {
+        mem_00925134();
+    }
+    float scratch[3] = {0.0f, 0.0f, 0.0f};
+    ext_00539AA0(self, scratch, self, lo, self, hi);
+
+    const int32_t h = ringCount / 2;  // truncating toward zero, matches (n - sign) >> 1
+    const int32_t M = segCount;       // segments per ring
+    const float step = radius / static_cast<float>(h);
+
+    // Emit one ring of M vertices at radius r. The y slot is zero for every ring.
+    auto emit_ring = [&](float r) {
+        for (int32_t j = 0; j < M; ++j) {
+            const float theta = static_cast<float>(static_cast<double>(j) * kTwoPi / static_cast<double>(M));
+            const float c = static_cast<float>(std::cos(static_cast<double>(theta)));
+            const float s = static_cast<float>(std::sin(static_cast<double>(theta)));
+            float v[3];
+            v[0] = c * r;
+            v[1] = 0.0f;
+            v[2] = s * r;
+            ext_00539FB0(self, v);
+        }
+    };
+
+    // Ring radius at latitude index k: sqrt(A^2 - (k*step)^2), computed as A*cos(asin(s/A)).
+    auto ring_radius = [&](int32_t k) -> float {
+        const float s = static_cast<float>(k) * step;
+        const float u = s / radius;
+        const float phi = static_cast<float>(std::asin(static_cast<double>(u)));
+        const float c = static_cast<float>(std::cos(static_cast<double>(phi)));
+        return c * radius;
+    };
+
+    // Lower latitude rings: k = -h .. -1
+    for (int32_t k = -h; k < 0; ++k) {
+        emit_ring(ring_radius(k));
+    }
+    // Equator ring (always emitted)
+    emit_ring(radius);
+    // Upper latitude rings: k = 1 .. h
+    for (int32_t k = 1; k <= h; ++k) {
+        emit_ring(ring_radius(k));
+    }
+}
+} // namespace lift_005B4E40

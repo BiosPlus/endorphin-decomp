@@ -1,0 +1,28 @@
+{
+  "va": "0x005B4E40",
+  "size": 806,
+  "orig_symbol": "Geometry::SphylType::vfunc_16",
+  "src_path": "src/Geometry/SphylType.cpp",
+  "lifted_path": "lifted/Geometry/SphylType.cpp",
+  "name": "Geometry::SphylType::vfunc_16",
+  "class": "Geometry::SphylType",
+  "signature": "void fn_005B4E40(void* arg1, void* self, int32_t ringCount, int32_t segCount)",
+  "summary": "Emits the vertex rings of a sphere-like primitive (lower latitude rings, equator, upper latitude rings) via SphylType::emitVertex.",
+  "fields": [
+    {
+      "class": "Geometry::SphylType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Geometry::SphylType",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:33:05Z"
+}
