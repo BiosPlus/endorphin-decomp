@@ -15,6 +15,7 @@ void* fn_00617340(void* self) {
     return self;
 }
 #include <cstring>
+#include <cmath>
 
 // [0x006178B0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::HingeLimit>::vfunc_16 (NMData::HingeLimit::getLowerDamping)
@@ -18370,3 +18371,36 @@ float __stdcall fn_004C1C20(void* self, void** objPtr) {
     return static_cast<float>(std::atof(str.c_str()));
 }
 } // namespace lift_004C1C20
+
+// [0x004CEBF0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, getMomentumScaleFactor, 0>::vfunc_3 (73 bytes)
+namespace lift_004CEBF0 {
+// Known callee 0x004CE580: sub_004CE580 (7B). Thiscall getter on the wrapped object; returns the
+// momentum scale factor as float (inferred from the caller's fcomp against 1e-6).
+extern float ext_004CE580(void* self);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). Constructs the exception message string on the stack.
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// RDATA constant 0x009473B8: double 1e-06
+extern double mem_009473B8;
+
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, getMomentumScaleFactor, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, getMomentumScaleFactor, 0>
+// @summary Validity check: throws if the wrapped IncarnationEventData is null, otherwise returns 1 when its momentum scale factor is >= 1e-6 (NaN counts as invalid), else 0.
+// @field ExprParser::ValuePtrType +0x00 NMData::IncarnationEventData* field_0x00
+int fn_004CEBF0(void* arg) {
+    // The argument is a ValuePtr-like wrapper; its first dword is the IncarnationEventData pointer.
+    void* obj = *static_cast<void**>(arg);
+    if (obj == nullptr) {
+        // Original constructs a message string and throws it (stdcall, ret 4).
+        throw std::runtime_error("ExprParser: null IncarnationEventData");
+    }
+
+    float factor = ext_004CE580(obj);
+    // Original: fcomp against 1e-6; C0 set (less than, or unordered/NaN) yields 0, otherwise 1.
+    if (!(static_cast<double>(factor) >= mem_009473B8)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_004CEBF0

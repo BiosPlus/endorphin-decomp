@@ -10,6 +10,7 @@
 namespace lifted_layout {
 struct ExprParser_ValuePtrType_Fields {
     // +0x0   void* target (VideoPlaneData* read via the out/ValuePtr at arg2)  (evidence: 0x004986A0, 0x004C5630, 0x004C7690, 0x005D78A0, 0x0066F700) // CONFLICT: multiple definitions at +0x0
+    // +0x0   NMData::IncarnationEventData* field_0x00  (evidence: 0x004CEBF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   const std::string*       field_0x00  (evidence: 0x00497930) // CONFLICT: multiple definitions at +0x0
     // +0x0   double*                  field_0x00  (evidence: 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x005B2D00, 0x0066F700, 0x0068DE60, 0x006959E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      field_0x00  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x00504DA0, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0

@@ -1,0 +1,22 @@
+{
+  "va": "0x004CEBF0",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, getMomentumScaleFactor, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, getMomentumScaleFactor, 0\u003e",
+  "signature": "int fn_004CEBF0(void* arg)",
+  "summary": "Validity check: throws if the wrapped IncarnationEventData is null, otherwise returns 1 when its momentum scale factor is \u003e= 1e-6 (NaN counts as invalid), else 0.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::IncarnationEventData*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:58:34Z"
+}
