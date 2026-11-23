@@ -7889,6 +7889,13 @@
     "summary": "Pure jump thunk forwarding to sub_0050B960.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0050C770": {
+    "name": "NMData::Task::~Task (scalar deleting destructor)",
+    "class": "NMData::Task",
+    "signature": "extern \"C\" void* __thiscall fn_0050C770(void* self, uint32_t flags)",
+    "summary": "Runs the base-subobject teardown on this+4, resets the vptr via ext_0065F440, and frees the object when the deleting flag (bit 0 of the stack argument) is set; returns this.",
+    "lifted_path": "lifted/NMData/Task.cpp"
+  },
   "0x0050D280": {
     "name": "NMData::TaskManager::vfunc_0_off_4",
     "class": "NMData::TaskManager",

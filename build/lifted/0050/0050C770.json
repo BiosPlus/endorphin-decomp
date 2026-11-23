@@ -1,0 +1,28 @@
+{
+  "va": "0x0050C770",
+  "size": 96,
+  "orig_symbol": "NMData::Task::vfunc_0",
+  "src_path": "src/NMData/Task.cpp",
+  "lifted_path": "lifted/NMData/Task.cpp",
+  "name": "NMData::Task::~Task (scalar deleting destructor)",
+  "class": "NMData::Task",
+  "signature": "extern \"C\" void* __thiscall fn_0050C770(void* self, uint32_t flags)",
+  "summary": "Runs the base-subobject teardown on this+4, resets the vptr via ext_0065F440, and frees the object when the deleting flag (bit 0 of the stack argument) is set; returns this.",
+  "fields": [
+    {
+      "class": "NMData::Task",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::Task",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:01:43Z"
+}
