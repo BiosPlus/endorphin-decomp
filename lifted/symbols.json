@@ -3074,6 +3074,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
   },
+  "0x00486BE0": {
+    "name": "NMData::AnimationEventData::vfunc_81",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" void __thiscall fn_00486BE0(void* self, int32_t arg)",
+    "summary": "Sets field +0x168 to ext_00594640(ext_00594000()), then calls ext_004C0340(this); the stack argument is unused.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x00486C10": {
     "name": "sub_00486C10",
     "signature": "extern \"C\" void __fastcall fn_00486C10(void* self, int edx_unused, float value)",

@@ -49,10 +49,14 @@ extern "C" void* __thiscall fn_004DE1B0(void* self, void* a) {
     reinterpret_cast<VFn>(vt[15])(self, a, 0x334, 0);
     return a;
 }
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+// Known callee 0x00594640: sub_00594640 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.)
+extern "C" int32_t __fastcall ext_00594640(void* self);
+// Known callee 0x004C0340: sub_004C0340 (14B)
 
-// [0x004BFC20] NMData::AnimationEventData::vfunc_13_off_C (20 bytes)
-// @name NMData::AnimationEventData::vfunc_13_off_C
-// @class NMData::AnimationEventData
+// Known callee 0x00594640: sub_00594640 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.)
+extern "C" int32_t __fastcall ext_00594640(void* self);
+// Known callee 0x004C0340: sub_004C0340 (14B)
 // @summary Secondary-base thunk: adjusts this by -0xC, calls ext_0047D7C0 on the global object at mem_00AE29D0, returns true.
 extern "C" bool __thiscall fn_004BFC20(void* self, const void* unused) {
     (void)unused;
@@ -82,4 +86,18 @@ extern "C" void __thiscall fn_004DDED0(void* self, void* a) {
     void* r = ext_006404E0(a, g);
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
+}
+
+// [0x00486BE0] NMData::AnimationEventData::vfunc_81 (37 bytes)
+// @name NMData::AnimationEventData::vfunc_81
+// @class NMData::AnimationEventData
+// @summary Sets field +0x168 to ext_00594640(ext_00594000()), then calls ext_004C0340(this); the stack argument is unused.
+// @field NMData::AnimationEventData +0x168 int32_t field_0x168
+extern "C" void __thiscall fn_00486BE0(void* self, int32_t arg) {
+    // The original pushes its stack argument before calling ext_00594000, which takes no
+    // arguments; the caller's argument is cleaned up by the ret 4 and never read here.
+    (void)arg;
+    int32_t r = ext_00594000();
+    lift_field<int32_t>(self, 0x168) = ext_00594640(reinterpret_cast<void*>(static_cast<intptr_t>(r)));
+    ext_004C0340(self);
 }

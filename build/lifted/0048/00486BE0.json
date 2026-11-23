@@ -1,0 +1,22 @@
+{
+  "va": "0x00486BE0",
+  "size": 37,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_81",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_81",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void __thiscall fn_00486BE0(void* self, int32_t arg)",
+  "summary": "Sets field +0x168 to ext_00594640(ext_00594000()), then calls ext_004C0340(this); the stack argument is unused.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x168",
+      "type": "int32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:34:24Z"
+}
