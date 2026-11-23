@@ -10669,38 +10669,6 @@ double __thiscall fn_0046D620(uint32_t self, uint32_t arg0) {
 }
 } // namespace lift_0046D620
 
-// [0x004D7980] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_1 (55 bytes)
-namespace lift_004D7980 {
-extern void ext_0046C3C0();
-extern void ext_006A6DD2();
-
-// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_1
-// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
-// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
-namespace lift_004D50B0 {
-// @name DynamicEnumType::vfunc_1
-// @class ExprParser::DynamicEnumType
-// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
-
-extern int __thiscall ext_004D39E0(void* self);
-extern void __thiscall ext_0046C3C0(void* self);
-extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
-
-double __stdcall fn_004D7980(uint32_t* arg0) {
-    uint32_t obj = *arg0;
-    if (obj != 0) {
-        int val = ext_004D39E0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
-        return static_cast<double>(val);
-    }
-
-    uint8_t exc[0x28];
-    ext_0046C3C0(exc);
-    ext_006A6DD2(exc, 0x009DEC1Cu);
-    return 0.0;
-}
-} // namespace lift_004D50B0
-} // namespace lift_004D7980
-
 // [0x004DEA00] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1 (55 bytes)
 namespace lift_004DEA00 {
 extern void ext_0046C3C0();
@@ -11119,3 +11087,27 @@ extern double __thiscall fn_004C5930(void* self, void* const* objPtr) {
     return static_cast<double>(val);
 }
 } // namespace lift_004C5930
+
+// [0x004D7980]
+namespace lift_004D7980 {
+extern int32_t __thiscall ext_004D39E0(uint32_t self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData,int,getPhysicsTicks>::vfunc_1
+// @class ExprParser::ReadMethodType
+// @summary Dereferences RigEventData pointer, calls getPhysicsTicks() and returns as double, or throws on null.
+extern double __thiscall fn_004D7980(uint32_t self, uint32_t* ptr_to_rig_event_data) {
+    (void)self;
+    uint32_t rig_event_data = *ptr_to_rig_event_data;
+    if (rig_event_data != 0) {
+        int32_t ticks = ext_004D39E0(rig_event_data);
+        return static_cast<double>(ticks);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D7980
