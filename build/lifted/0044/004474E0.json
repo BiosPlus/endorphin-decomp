@@ -1,0 +1,21 @@
+{
+  "va": "0x004474E0",
+  "size": 11,
+  "orig_symbol": "sub_004474E0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "invokeCallbackOrReturn",
+  "signature": "void __thiscall sub_004474E0(void* self, uint32_t arg1)",
+  "summary": "Invokes a non-null callback pointer stored at offset 0 of this, or returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:38:13Z"
+}

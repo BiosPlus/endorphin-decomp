@@ -260,3 +260,19 @@ uint32_t __thiscall sub_0044CF80(uint32_t self) {
     return mem_read32(self + 0x74) != 0 ? 1u : 0u;
 }
 } // namespace lift_0044CF80
+
+// [0x004474E0]
+namespace lift_004474E0 {
+uint32_t mem_r32(uintptr_t addr);
+
+// @name invokeCallbackOrReturn
+// @summary Invokes a non-null callback pointer stored at offset 0 of this, or returns.
+// @field Unknown +0x00 uint32_t field_0x00
+void __thiscall sub_004474E0(void* self, uint32_t arg1) {
+    uint32_t fn = mem_r32(reinterpret_cast<uintptr_t>(self));
+    if (fn != 0) {
+        using FnType = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<FnType>(static_cast<uintptr_t>(fn))(self, arg1);
+    }
+}
+} // namespace lift_004474E0
