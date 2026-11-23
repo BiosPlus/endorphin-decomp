@@ -1,0 +1,22 @@
+{
+  "va": "0x004432D0",
+  "size": 34,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_1",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_1",
+  "class": "MultiTrackView::MultiTrackViewStates::PanState",
+  "signature": "void fn_004432D0(void* self)",
+  "summary": "Forwards the +0x08 member to ext_0043C900(1), then calls SetCapture on that member's +0x20 handle and passes the result to ext_006A5E00.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::PanState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:33:23Z"
+}

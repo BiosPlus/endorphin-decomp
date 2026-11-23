@@ -1336,6 +1336,13 @@
     "summary": "Warps the cursor to the (x, y) pair stored in this state and returns whether SetCursorPos succeeded.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x004432D0": {
+    "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_1",
+    "class": "MultiTrackView::MultiTrackViewStates::PanState",
+    "signature": "void fn_004432D0(void* self)",
+    "summary": "Forwards the +0x08 member to ext_0043C900(1), then calls SetCapture on that member's +0x20 handle and passes the result to ext_006A5E00.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
+  },
   "0x00443370": {
     "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_0",
     "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
