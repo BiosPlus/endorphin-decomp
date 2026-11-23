@@ -88,3 +88,12 @@ uint32_t __cdecl sub_007C9270(uint32_t arg0) {
     return mem_read32(arg0 + 0x40);
 }
 } // namespace lift_007C9270
+
+// [0x007C9DE0]
+namespace lift_007C9DE0 {
+// @name addOffset0x40
+// @summary Adds 0x40 to the first 32-bit argument and returns the result.
+uint32_t sub_007C9DE0(uint32_t arg0) {
+    return arg0 + 0x40u;
+}
+} // namespace lift_007C9DE0

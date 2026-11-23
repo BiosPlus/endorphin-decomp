@@ -33680,6 +33680,12 @@
     "summary": "Returns the input pointer/value offset by 0x30 bytes.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9DE0": {
+    "name": "addOffset0x40",
+    "signature": "uint32_t sub_007C9DE0(uint32_t arg0)",
+    "summary": "Adds 0x40 to the first 32-bit argument and returns the result.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CA110": {
     "name": "sub_007CA110",
     "signature": "extern \"C\" void fn_007CA110(void)",
