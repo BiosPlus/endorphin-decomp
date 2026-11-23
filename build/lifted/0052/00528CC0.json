@@ -1,0 +1,13 @@
+{
+  "va": "0x00528CC0",
+  "size": 10,
+  "orig_symbol": "sub_00528CC0",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "bswap16",
+  "signature": "uint16_t bswap16(uint16_t val)",
+  "summary": "Byte-swaps a 16-bit unsigned integer (endianness swap).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:28:19Z"
+}

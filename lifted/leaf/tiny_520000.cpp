@@ -18,3 +18,12 @@ extern "C" void __fastcall fn_00521350(void* self) {
 extern "C" void __fastcall fn_00528AB0(void* self) {
     lift_field<void*>(self, 0x0) = &mem_00953454;
 }
+
+// [0x00528CC0]
+namespace lift_00528CC0 {
+// @name bswap16
+// @summary Byte-swaps a 16-bit unsigned integer (endianness swap).
+uint16_t bswap16(uint16_t val) {
+    return static_cast<uint16_t>((val >> 8) | (val << 8));
+}
+} // namespace lift_00528CC0
