@@ -127,3 +127,32 @@ uint32_t __thiscall fn_0068BF40(uint32_t self, uint32_t out_val, uint32_t obj_pt
     return out_val;
 }
 } // namespace lift_0068BF40
+
+// [0x005B80A0] ExprParser::FunctionType<NMData::MetaBodyData, float, NM::Vector3 const &, {public: float __thiscall NMData::MetaBodyData::getDistanceToPoint(class NM::Vector3 const &), 0}>::vfunc_48 (69 bytes)
+namespace lift_005B80A0 {
+// sub_005B7060: thiscall (this in ECX, one 4-byte arg, callee cleans), returns float in ST0.
+extern float ext_005B7060(void* self, int32_t arg);
+// sub_00672080: thiscall (this in ECX, one float arg, callee cleans), no result used.
+extern void ext_00672080(void* self, float value);
+
+// @name ExprParser::FunctionType::vfunc_48 (getDistanceToPoint wrapper)
+// @class ExprParser::FunctionType<NMData::MetaBodyData, float, NM::Vector3 const &, {public: float __thiscall NMData::MetaBodyData::getDistanceToPoint(class NM::Vector3 const &), 0}>
+// @summary Calls a virtual accessor (vtable slot 5) on the argument's sub-object, forwards the result to ext_005B7060 for the float computation, passes that float to ext_00672080, and returns the wrapped object pointer.
+// @field Unknown +0x04 void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)
+// Note: the vtable call's second stack slot holds the caller's saved ESI (stale); modelled as 0.
+// Note: the first stack argument (ret 0xC, 3 args total) is unused.
+void* fn_005B80A0(void* /*unused*/, void** objRef, void* arg) {
+    void* self = *objRef;
+
+    // arg->sub (at +0x04), then vtable slot 5 (offset 0x14) on that sub-object.
+    void* sub = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using VirtFn = int32_t (*)(void* self, void* a, uint32_t b, uint32_t c);
+    auto method = reinterpret_cast<VirtFn>(vtbl[5]);
+    int32_t r = method(sub, arg, 0, 0);
+
+    float f = ext_005B7060(self, r);
+    ext_00672080(self, f);
+    return self;
+}
+} // namespace lift_005B80A0

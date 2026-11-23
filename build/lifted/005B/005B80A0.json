@@ -1,0 +1,22 @@
+{
+  "va": "0x005B80A0",
+  "size": 69,
+  "orig_symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::MetaBodyData::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType::vfunc_48 (getDistanceToPoint wrapper)",
+  "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::MetaBodyData::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void* fn_005B80A0(void* /*unused*/, void** objRef, void* arg)",
+  "summary": "Calls a virtual accessor (vtable slot 5) on the argument's sub-object, forwards the result to ext_005B7060 for the float computation, passes that float to ext_00672080, and returns the wrapped object pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (sub-object pointer read from the NM::Vector3 const \u0026",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:09:10Z"
+}
