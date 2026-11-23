@@ -1,0 +1,22 @@
+{
+  "va": "0x005C38B0",
+  "size": 54,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_0_off_154",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_0_off_154",
+  "class": "NMData::CollisionModelData",
+  "signature": "void __thiscall fn_005C38B0(void* self, uint32_t arg1)",
+  "summary": "Copies a 64-byte transform matrix from TransformInterface vfunc[5] into the buffer returned by ext_00648480 if field_0x18 is non-null.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:59:35Z"
+}
