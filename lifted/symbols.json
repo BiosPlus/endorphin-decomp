@@ -7041,6 +7041,13 @@
     "summary": "Reads the byte at +0x09 of the pointee of the second argument, forwards it to ext_006720A0 on the first argument, and returns the first argument; throws if the pointee is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA520": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026NMData::PoseToolOptions::isProjectRootEnabled, 0\u003e",
+    "signature": "extern \"C\" float __stdcall fn_004EA520(void* const* objPtr)",
+    "summary": "Reads PoseToolOptions::isProjectRootEnabled() as a float (1.0f or 0.0f), throwing if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA570": {
     "name": "ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
