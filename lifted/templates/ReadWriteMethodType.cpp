@@ -3919,3 +3919,40 @@ void fn_006362D0(void* self, void* value) {
     reinterpret_cast<SetFn>(ext_00630E10)(target, vec);
 }
 } // namespace lift_006362D0
+
+// [0x00635740] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, NM::Vector4 const &, &public: void __thiscall EffectorSkeletal::setDesiredQuat(class NM::Vector4 const &)>::vfunc_41 (68 bytes)
+namespace lift_00635740 {
+extern void ext_00630D90();
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+// RTTI/throw info referenced by the null-target error path (pushed as the throw's ThrowInfo argument).
+extern const char mem_009DEC1C[];
+
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal>::vfunc_41 (EffectorSkeletal::getDesiredQuat -> setDesiredQuat)
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, NM::Vector4 const &, &public: void __thiscall EffectorSkeletal::setDesiredQuat(class NM::Vector4 const &)>
+// @summary Copies a quaternion from the source's getter sub-object (vtable slot 6) into the target EffectorSkeletal via setDesiredQuat; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 EffectorSkeletal* target
+// @field ExprParser::ReadMethodType +0x04 void* accessor
+void fn_00635740(void* const* self, void* src) {
+    // self +0x00: pointer to the EffectorSkeletal target. Null means the write target is missing.
+    void* target = *self;
+    if (target == nullptr) {
+        // Original throws a MSVC C++ exception (type descriptor 0x009DEC1C). No portable equivalent exists.
+        ext_0046C3C0();
+        (void)mem_009DEC1C;
+        ext_006A6DD2();
+        return;
+    }
+
+    // src +0x04: accessor sub-object; its vtable slot 6 (+0x18) takes src and returns a NM::Vector4 const&.
+    void* accessor = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(accessor);
+    using GetQuatFn = const void* (*)(void* self, void* holder);
+    GetQuatFn get = reinterpret_cast<GetQuatFn>(vtbl[6]);
+    const void* quat = get(accessor, src);
+
+    // Forward to EffectorSkeletal::setDesiredQuat(const Vector4&) on the target (sub_00630D90).
+    using SetQuatFn = void (*)(void* self, const void* quat);
+    reinterpret_cast<SetQuatFn>(&ext_00630D90)(target, quat);
+}
+} // namespace lift_00635740

@@ -1,0 +1,28 @@
+{
+  "va": "0x00635740",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getDesiredQuat(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredQuat(class NM::Vector4 const \u0026)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)",
+  "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getDesiredQuat(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredQuat(class NM::Vector4 const \u0026)\u003e",
+  "signature": "void fn_00635740(void* const* self, void* src)",
+  "summary": "Copies a quaternion from the source's getter sub-object (vtable slot 6) into the target EffectorSkeletal via setDesiredQuat; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "EffectorSkeletal*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "accessor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:06:56Z"
+}

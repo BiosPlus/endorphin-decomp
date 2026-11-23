@@ -13430,6 +13430,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00508EE0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00635740": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredQuat -\u003e setDesiredQuat)",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall EffectorSkeletal::getDesiredQuat(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredQuat(class NM::Vector4 const \u0026)\u003e",
+    "signature": "void fn_00635740(void* const* self, void* src)",
+    "summary": "Copies a quaternion from the source's getter sub-object (vtable slot 6) into the target EffectorSkeletal via setDesiredQuat; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x006362D0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const \u0026)\u003e",
