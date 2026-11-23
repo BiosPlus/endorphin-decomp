@@ -11573,10 +11573,10 @@
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x006059E0": {
-    "name": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, float, \u0026public: void __thiscall Effector::setGradientCap(float)\u003e::vfunc_41",
+    "name": "ExprParser::ReadWriteMethodType\u003cEffector,float,getGradientCap,setGradientCap\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, float, \u0026public: void __thiscall Effector::setGradientCap(float)\u003e",
-    "signature": "extern void __stdcall fn_006059E0(void* const* self, void* arg)",
-    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "signature": "void fn_006059E0(void* self, void* ctx)",
+    "summary": "Reads a float from the wrapped expression object and stores it into Effector::gradientCap; throws if the target Effector is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00605E70": {
