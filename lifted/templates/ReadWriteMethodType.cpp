@@ -1203,42 +1203,6 @@ void __stdcall fn_0046EDA0(void* const* self, void* arg) {
 }
 } // namespace lift_0046EDA0
 
-// [0x004A2580] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>::vfunc_41 (68 bytes)
-namespace lift_004A2580 {
-// Setter: StateMachineEditor::FSMEditView::setDrawActions(bool), thiscall with one stack argument.
-extern void ext_004A24C0(void* self, bool value);
-// Non-null-target path helper (sub_0046C3C0): constructs the exception object from arg1.
-extern void ext_0046C3C0();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-
-// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (drawActions -> setDrawActions)
-// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>
-// @summary Reads a bool via the source's inner getter (vtable slot 3) and forwards it to FSMEditView::setDrawActions; throws if the target object is null.
-// @field ExprParser::ValuePtrType +0x00 void* target
-// @field ExprParser::ReadMethodType +0x04 void* inner
-void fn_004A2580(void** dst, void* src) {
-    // dst +0x00: FSMEditView* whose setDrawActions() receives the value. Null means the target is missing, which is an error.
-    void* target = *dst;
-    if (target == nullptr) {
-        // The original throws a MSVC C++ exception here (MSVCR80 _CxxThrowException with a
-        // type descriptor at 0x009DEC1C). No portable equivalent of that exact type exists.
-        ext_0046C3C0();
-        ext_006A6DD2();
-        return;
-    }
-
-    // src +0x04: inner object whose vtable slot 3 (+0x0c) returns the bool getter result; src is passed as its single stack argument.
-    void* inner = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(src) + 0x04);
-    void** vtbl = *reinterpret_cast<void***>(inner);
-    using GetBoolFn = bool (*)(void* self, void* holder);
-    GetBoolFn get = reinterpret_cast<GetBoolFn>(vtbl[3]);
-    const bool value = get(inner, src);
-
-    ext_004A24C0(target, value);
-}
-} // namespace lift_004A2580
-
 // [0x004A2530] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawVariables(bool), 0}>::vfunc_41 (68 bytes)
 namespace lift_004A2530 {
 // @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (FSMEditView::drawVariables -> setDrawVariables)
@@ -1368,3 +1332,39 @@ void fn_0046F080(void* a, void* b) {
     ext_006AD060(target, value);
 }
 } // namespace lift_0046F080
+
+// [0x004A2580] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A2580 {
+// Setter: StateMachineEditor::FSMEditView::setDrawActions(bool), thiscall with one stack argument.
+extern void ext_004A24C0(void* self, bool value);
+// Null-target path helper (sub_0046C3C0): constructs the exception object from arg1.
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (drawActions -> setDrawActions)
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>
+// @summary Reads a bool via the source's inner getter (vtable slot 3) and forwards it to FSMEditView::setDrawActions; throws if the target object is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_004A2580(void** dst, void* src) {
+    // dst +0x00: FSMEditView* whose setDrawActions() receives the value. Null means the target is missing, which is an error.
+    void* target = *dst;
+    if (target == nullptr) {
+        // The original throws a MSVC C++ exception here (MSVCR80 _CxxThrowException with a
+        // type descriptor at 0x009DEC1C). No portable equivalent of that exact type exists.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return;
+    }
+
+    // src +0x04: inner object whose vtable slot 3 (+0x0c) returns the bool getter result; src is passed as its single stack argument.
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<char*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using GetBoolFn = bool (*)(void* self, void* holder);
+    GetBoolFn get = reinterpret_cast<GetBoolFn>(vtbl[3]);
+    const bool value = get(inner, src);
+
+    ext_004A24C0(target, value);
+}
+} // namespace lift_004A2580
