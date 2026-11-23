@@ -172,3 +172,25 @@ int fn_00504D70(const uint32_t* holder) {
     return 0;
 }
 } // namespace lift_00504D70
+
+// [0x00504DA0] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_3 (43 bytes)
+namespace lift_00504DA0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Interpreter,int,bogus>::vfunc_3
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Returns false when the first dword of the argument is nonzero; otherwise raises an exception via the CRT throw thunk.
+// @field ExprParser::ValuePtrType +0x00 int field_0x00
+bool fn_00504DA0(void* self) {
+    int32_t* p = static_cast<int32_t*>(self);
+    if (*p == 0) {
+        // Original builds a local exception object (sub_0046C3C0), then throws
+        // through _CxxThrowException with the RTTI/type-info at 0x009DEC1C.
+        ext_0046C3C0();
+        ext_006A6DD2();
+    }
+    return false;
+}
+} // namespace lift_00504DA0

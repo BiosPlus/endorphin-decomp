@@ -5259,6 +5259,13 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00504DA0": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+    "signature": "bool fn_00504DA0(void* self)",
+    "summary": "Returns false when the first dword of the argument is nonzero; otherwise raises an exception via the CRT throw thunk.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00505340": {
     "name": "NMData::VariableValue::vfunc_0",
     "class": "NMData::VariableValue",

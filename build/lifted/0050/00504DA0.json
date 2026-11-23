@@ -1,0 +1,22 @@
+{
+  "va": "0x00504DA0",
+  "size": 43,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+  "signature": "bool fn_00504DA0(void* self)",
+  "summary": "Returns false when the first dword of the argument is nonzero; otherwise raises an exception via the CRT throw thunk.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "int",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:13:01Z"
+}
