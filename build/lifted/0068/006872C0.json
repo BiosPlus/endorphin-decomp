@@ -1,0 +1,21 @@
+{
+  "va": "0x006872C0",
+  "size": 10,
+  "orig_symbol": "sub_006872C0",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "getTableFlagAt0x48",
+  "signature": "uint8_t sub_006872C0(uint32_t self)",
+  "summary": "Reads a 32-bit index at +0x48 and returns the byte at 0x00AA2FAC + index.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:39:59Z"
+}

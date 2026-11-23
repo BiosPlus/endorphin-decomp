@@ -75,3 +75,29 @@ extern "C" void __fastcall fn_00687220(void* self) {
 extern "C" void __fastcall fn_0068BBF0(void* self) {
     ext_00508680(static_cast<char*>(self) + 0x10);
 }
+
+// [0x006872C0]
+namespace lift_006872C0 {
+uint32_t mem_read32(uint32_t addr);
+uint8_t mem_read8(uint32_t addr);
+
+// @name getTableFlagAt0x48
+// @summary Reads a 32-bit index at +0x48 and returns the byte at 0x00AA2FAC + index.
+// @field Self +0x48 uint32_t field_0x48
+uint8_t sub_006872C0(uint32_t self) {
+    uint32_t idx = mem_read32(self + 0x48u);
+    return mem_read8(idx + 0x00AA2FACu);
+}
+} // namespace lift_006872C0
+
+// [0x006829D0]
+namespace lift_006829D0 {
+extern uint32_t mem_00B5ACC8;
+
+// @name setGlobal00B5ACC8
+// @summary Stores the 32-bit argument into global mem_00B5ACC8.
+
+void sub_006829D0(uint32_t val) {
+    mem_00B5ACC8 = val;
+}
+} // namespace lift_006829D0

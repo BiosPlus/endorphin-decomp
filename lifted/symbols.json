@@ -23248,6 +23248,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00679A30": {
+    "name": "queryPerformanceCounter",
+    "signature": "uint32_t __thiscall sub_00679A30(uint32_t* self)",
+    "summary": "Calls KERNEL32!QueryPerformanceCounter with the pointer stored at [ecx]",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00679A50": {
     "name": "sub_00679A50",
     "signature": "extern \"C\" void __fastcall fn_00679A50(void* self)",
@@ -23441,6 +23447,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x006829D0": {
+    "name": "setGlobal00B5ACC8",
+    "signature": "void sub_006829D0(uint32_t val)",
+    "summary": "Stores the 32-bit argument into global mem_00B5ACC8.",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
   "0x00682C20": {
     "name": "NMData::ValuePtrData::vfunc_19",
     "class": "NMData::ValuePtrData",
@@ -23568,6 +23580,12 @@
     "name": "sub_00687220",
     "signature": "extern \"C\" void __fastcall fn_00687220(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and forwards through mem_00924FF4.",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x006872C0": {
+    "name": "getTableFlagAt0x48",
+    "signature": "uint8_t sub_006872C0(uint32_t self)",
+    "summary": "Reads a 32-bit index at +0x48 and returns the byte at 0x00AA2FAC + index.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
   "0x00688ED0": {
