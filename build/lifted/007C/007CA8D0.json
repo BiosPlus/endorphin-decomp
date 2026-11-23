@@ -1,0 +1,13 @@
+{
+  "va": "0x007CA8D0",
+  "size": 8,
+  "orig_symbol": "sub_007CA8D0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "add_0x10",
+  "signature": "uint32_t sub_007CA8D0(uint32_t arg0)",
+  "summary": "Adds 0x10 to the 32-bit argument and returns the result.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:36:56Z"
+}
