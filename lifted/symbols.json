@@ -2982,6 +2982,13 @@
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046E570": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, getUseRenderer, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+    "signature": "float fn_0046E570(void* self)",
+    "summary": "Reads the wrapped ImageExporter::getUseRenderer() result as a float (1.0 if true, 0.0 if false); throws if the wrapped object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046EA50": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",

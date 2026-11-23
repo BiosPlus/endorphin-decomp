@@ -24102,3 +24102,29 @@ float fn_0046CAE0(void* self) {
     return isEnabled(exporter) ? 1.0f : 0.0f;
 }
 } // namespace lift_0046CAE0
+
+// [0x0046E570] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0046E570 {
+// sub_0046C2E0 (4B): thiscall helper, takes object pointer in ECX, returns bool in AL.
+extern bool ext_0046C2E0(void* obj);
+// sub_0046C3C0 (105B): thiscall helper, takes exception buffer pointer in ECX, constructs the exception.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, getUseRenderer, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Reads the wrapped ImageExporter::getUseRenderer() result as a float (1.0 if true, 0.0 if false); throws if the wrapped object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_0046E570(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        // Null object: build an exception object and throw it.
+        alignas(16) unsigned char exc[64] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0.0f;
+    }
+    return ext_0046C2E0(obj) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046E570
