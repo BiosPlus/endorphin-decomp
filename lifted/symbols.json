@@ -10760,6 +10760,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00650DB0": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}\u003e",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Dispatches via the holder's sub-object (vslot +0x08 and +0x70), then rewrites the pair at io as {*io-derived value, holder sub-object}.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006510F0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e",

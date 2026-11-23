@@ -1292,46 +1292,6 @@ void __fastcall fn_0064F7C0(void* self, void* edx, ValuePtrResult* ret, void** a
     }
 }
 
-// [0x00650DB0]
-// @name ExprParser::WriteMethodType<SkeletalJoint,int,vcall84>::vfunc_48
-// @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
-// @summary Reads an int from the value expression's sub-object via vslot 2, forwards it to the target object's slot-21 thunk, then writes a (result, object) pair to the hidden return buffer.
-// @field ExprParser::ValuePtrType +0x04 void* object
-
-extern "C" void ext_0064F900(void* self, uint32_t value);
-
-static inline void* vslot(void* obj, size_t index) {
-    return reinterpret_cast<void**>(*reinterpret_cast<void***>(obj))[index];
-}
-
-// Stack args: out (hidden return buffer), target (void**), value (expression object).
-void* __thiscall fn_00650DB0(void* self, void* out, void** target, uint8_t* value) {
-    (void)self;
-
-    void* obj = *target;
-    void* inner = *reinterpret_cast<void**>(value + 0x4);
-
-    using IntGetter = uint32_t(__thiscall*)(void*);
-    uint32_t r = reinterpret_cast<IntGetter>(vslot(inner, 2))(inner);
-
-    ext_0064F900(obj, r);
-
-    uint32_t a = 0;
-    void* b = nullptr;
-    void* cur = *reinterpret_cast<void**>(value + 0x4);
-    if (cur != nullptr) {
-        uint32_t tmp = 0;
-        using PairGetter = void*(__thiscall*)(void*, uint8_t*, uint32_t*);
-        void* p = reinterpret_cast<PairGetter>(vslot(cur, 28))(cur, value, &tmp);
-        a = *static_cast<uint32_t*>(p);
-        b = *reinterpret_cast<void**>(value + 0x4);
-    }
-
-    lift_field<uint32_t>(out, 0) = a;
-    lift_field<void*>(out, 4) = b;
-    return out;
-}
-
 // [0x00650E50] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48 (110 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48
 // @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>
@@ -1589,3 +1549,51 @@ void fn_0063CB90(void* out, void* const* selfRef, void* ctx) {
     }
 }
 } // namespace lift_0063CB90
+
+// [0x00650DB0] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>::vfunc_48 (110 bytes)
+namespace lift_00650DB0 {
+// Known callee 0x0064F900: VirtualSlot21Thunk (virtual dispatch thunk; tail-calls slot 21 with the same this pointer).
+extern void* ext_0064F900(void* self, int32_t arg);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, int, ...>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}>
+// @summary Dispatches via the holder's sub-object (vslot +0x08 and +0x70), then rewrites the pair at io as {*io-derived value, holder sub-object}.
+// @field ExprParser::WriteMethodType +0x04 void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and +0x70)
+
+struct Pair {
+    uint32_t first;
+    uint32_t second;
+};
+
+struct Holder {
+    void* vtableUnused;   // +0x00: not accessed directly by this function
+    void* subObject;      // +0x04: sub-object used for virtual dispatch
+};
+
+static inline void* vslot(void* obj, size_t byteOffset) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    return vt[byteOffset / sizeof(void*)];
+}
+
+// Parameters: [e+4] unused, [e+8] io pair pointer, [e+0xc] holder.
+void fn_00650DB0(void* /*unused*/, Pair* io, Holder* holder) {
+    void* self = reinterpret_cast<void*>(static_cast<uintptr_t>(io->first));
+    int32_t local = 0;
+
+    // Call holder->subObject->vslot[+0x08] (no args) and forward its result to ext_0064F900.
+    using Slot8Fn = int32_t (*)(void*);
+    int32_t r = reinterpret_cast<Slot8Fn>(vslot(holder->subObject, 0x08))(holder->subObject);
+    (void)local;
+    ext_0064F900(self, r);
+
+    if (holder->subObject != nullptr) {
+        using Slot70Fn = void* (*)(void*, int32_t*);
+        void* p = reinterpret_cast<Slot70Fn>(vslot(holder->subObject, 0x70))(holder, &local);
+        io->first = *static_cast<uint32_t*>(p);
+        io->second = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(holder->subObject));
+    } else {
+        io->first = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        io->second = 0;
+    }
+}
+} // namespace lift_00650DB0

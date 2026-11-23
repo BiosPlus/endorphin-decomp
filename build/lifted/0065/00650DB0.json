@@ -1,0 +1,22 @@
+{
+  "va": "0x00650DB0",
+  "size": 110,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}\u003e",
+  "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+  "summary": "Dispatches via the holder's sub-object (vslot +0x08 and +0x70), then rewrites the pair at io as {*io-derived value, holder sub-object}.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and",
+      "name": "+0x70)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:04:17Z"
+}
