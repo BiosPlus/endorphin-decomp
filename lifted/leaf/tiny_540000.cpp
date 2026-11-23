@@ -75,3 +75,19 @@ void __thiscall fn_00543620(uint32_t ecx) {
 }
 } // namespace lift_006B0480
 } // namespace lift_00543620
+
+// [0x00543210]
+namespace lift_00543210 {
+uint32_t mem_read32(uintptr_t addr);
+
+// @name forwardToMemberVtableSlot0x6c
+// @summary Tail-calls vtable slot +0x6c on member pointer at +0x14.
+// @field Unknown +0x14 void* field_0x14
+void __thiscall sub_00543210(void* self) {
+    uint32_t member = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x14);
+    uint32_t vtable = mem_read32(member);
+    uint32_t target = mem_read32(vtable + 0x6c);
+    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(target))(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(member)));
+}
+} // namespace lift_00543210
