@@ -6848,6 +6848,13 @@
     "summary": "Rebinds the self-pointer at +0x3C to +0x2C and copies begin into +0x40, aborting if begin \u003e end.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051BF10": {
+    "name": "NMData::RealChannel::clear",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_0051BF10(uint8_t* self)",
+    "summary": "Clears the RealChannel data vector by erasing from begin to end.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051C7A0": {
     "name": "NMData::QuatChannel::vfunc_9",
     "class": "NMData::QuatChannel",
