@@ -10345,6 +10345,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp"
   },
+  "0x005CE760": {
+    "name": "NMData::InertialBodyData::vfunc_14",
+    "class": "NMData::InertialBodyData",
+    "signature": "extern \"C\" void* __thiscall fn_005CE760(void* self, void* a, int32_t id)",
+    "summary": "If id == 0x9C, forwards this+0x24 to ext_00661650 on a; if id == 0xB7, forwards this to it; otherwise calls ext_0046F7D0(a). Returns a.",
+    "lifted_path": "lifted/NMData/InertialBodyData.cpp"
+  },
   "0x005CE8B0": {
     "name": "sub_005CE8B0",
     "signature": "extern \"C\" void __fastcall fn_005CE8B0(void* self)",
