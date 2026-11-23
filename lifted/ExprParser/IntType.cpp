@@ -30,3 +30,30 @@ void* fn_0066AE60(void* self, const void* src) {
     ext_0046C500(self, value);
     return self;
 }
+
+// [0x0066EE20] ExprParser::IntType::vfunc_50 (65 bytes)
+namespace lift_0066EE20 {
+extern int32_t __thiscall ext_004769F0(void* self, const int32_t* lhs, const int32_t* rhs, uint32_t tag);
+
+// Virtual slot 2 of the object held at +4 of an argument, called with the argument as its sole parameter.
+using ValueSlot2Fn = int32_t(__thiscall*)(void* self, void* arg);
+
+static int32_t call_inner_vslot2(void* arg) {
+    void* inner = lift_field<void*>(arg, 4);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    auto fn = reinterpret_cast<ValueSlot2Fn>(vtbl[2]);
+    return fn(inner, arg);
+}
+
+// @name ExprParser::IntType::vfunc_50
+// @class ExprParser::IntType
+// @summary Evaluates two value operands via their inner objects' slot 2, then forwards both results and a constant tag to ext_004769F0 (self unused).
+// @field ValuePtrType +0x04 void* field_0x04
+int32_t __thiscall fn_0066EE20(void* /*self*/, void* arg1, void* arg2, uint32_t arg3, uint32_t arg4) {
+    (void)arg4; // popped by the ret 0x10 but never read
+    const int32_t rhsValue = call_inner_vslot2(arg2);
+    const int32_t lhsValue = call_inner_vslot2(arg1);
+    // arg3's stack slot is passed as the 'this' pointer to ext_004769F0.
+    return ext_004769F0(&arg3, &lhsValue, &rhsValue, 0x0098B7C0u);
+}
+} // namespace lift_0066EE20

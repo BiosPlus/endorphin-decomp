@@ -13,7 +13,7 @@ struct ValuePtrType_Fields {
     // +0x0   void*                    ptr  (evidence: 0x004B1D40, 0x004B7B80, 0x004B7BC0, 0x00617300, 0x00617520, 0x00618010, 0x00618460, 0x00618880, 0x00618BB0, 0x00619F40, 0x0061A220, 0x0061A4E0, 0x0061A7D0, 0x0061AE50, 0x0061B2F0, 0x00632D20, 0x00632D70, 0x00632DC0, 0x00632E10, 0x00632E60, 0x00632EB0, 0x00632F00, 0x00632F50, 0x00632FA0, 0x0066EC60, 0x00678960) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x0046F1E0, 0x004B1FF0, 0x00508EE0, 0x00635060, 0x006351A0, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
     // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE90) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x0066EDE0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0066EDE0, 0x0066EE20) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x00594550, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    target  (evidence: 0x0064F2F0) // CONFLICT: multiple definitions at +0x4
 };

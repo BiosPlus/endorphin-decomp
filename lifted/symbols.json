@@ -15476,6 +15476,13 @@
     "summary": "Reads a float from a2's sub-object via vfn1, forwards it with \"RealValue\" to a1's sub-object via vfn1, then passes the returned float to ext_00487A30.",
     "lifted_path": "lifted/ExprParser/RealType.cpp"
   },
+  "0x0066EE20": {
+    "name": "ExprParser::IntType::vfunc_50",
+    "class": "ExprParser::IntType",
+    "signature": "static int32_t call_inner_vslot2(void* arg)",
+    "summary": "Evaluates two value operands via their inner objects' slot 2, then forwards both results and a constant tag to ext_004769F0 (self unused).",
+    "lifted_path": "lifted/ExprParser/IntType.cpp"
+  },
   "0x0066EE70": {
     "name": "ExprParser::BoolType::vfunc_50",
     "class": "ExprParser::BoolType",

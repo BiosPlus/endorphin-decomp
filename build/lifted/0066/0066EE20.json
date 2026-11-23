@@ -1,0 +1,22 @@
+{
+  "va": "0x0066EE20",
+  "size": 65,
+  "orig_symbol": "ExprParser::IntType::vfunc_50",
+  "src_path": "src/ExprParser/IntType.cpp",
+  "lifted_path": "lifted/ExprParser/IntType.cpp",
+  "name": "ExprParser::IntType::vfunc_50",
+  "class": "ExprParser::IntType",
+  "signature": "static int32_t call_inner_vslot2(void* arg)",
+  "summary": "Evaluates two value operands via their inner objects' slot 2, then forwards both results and a constant tag to ext_004769F0 (self unused).",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:02:51Z"
+}
