@@ -183,3 +183,37 @@ void* fn_005C5E50(void* self, void* a1, void* p, void* q) {
     return p;
 }
 } // namespace lift_005C5E50
+
+// [0x005B8130] ExprParser::FunctionType<NMData::MetaBodyData, float, NM::Vector3 const &, {public: float __thiscall NMData::MetaBodyData::getAreaToNormal(class NM::Vector3 const &), 0}>::vfunc_48 (69 bytes)
+namespace lift_005B8130 {
+extern float ext_005B71E0(void* self, uint32_t value);
+extern void ext_00672080(void* self, float value);
+
+// @name FunctionType_MetaBodyData_getAreaToNormal_vfunc_48
+// @class ExprParser::FunctionType<NMData::MetaBodyData, float, NM::Vector3 const &, {public: float __thiscall NMData::MetaBodyData::getAreaToNormal(class NM::Vector3 const &), 0}>
+// @summary Evaluates the value argument through its owner's vtable slot 5, feeds the result to ext_005B71E0 to get a float, stores it via ext_00672080 on the target object, and returns the target object (eax).
+// @field UnknownArg +0x00 void* field_0x00
+// @field UnknownArg +0x04 void* field_0x04
+void* fn_005B8130(void* thisPtr, void* unusedArg, void* argRef, void* valueArg) {
+    (void)thisPtr;
+    (void)unusedArg;
+
+    // *argRef is the target object (kept in esi in the original).
+    void* obj = *reinterpret_cast<void**>(argRef);
+
+    // valueArg->owner at +0x04; owner's vtable slot 5 (+0x14) is called
+    // with (owner, valueArg, obj, 0) as in the original stack layout.
+    void* owner = lift_field<void*>(valueArg, 4);
+    void** vtbl = *reinterpret_cast<void***>(owner);
+    using Slot5Fn = uint32_t (*)(void* self, void* a, void* b, uint32_t c);
+    Slot5Fn slot5 = reinterpret_cast<Slot5Fn>(vtbl[5]);
+    uint32_t v = slot5(owner, valueArg, obj, 0u);
+
+    float r = ext_005B71E0(obj, v);
+    ext_00672080(obj, r);
+
+    // Original leaves the object pointer in eax; the FPU stack is balanced
+    // (fld/fstp pairs), so the declared float return is not produced here.
+    return obj;
+}
+} // namespace lift_005B8130

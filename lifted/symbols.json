@@ -10164,6 +10164,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x005B8130": {
+    "name": "FunctionType_MetaBodyData_getAreaToNormal_vfunc_48",
+    "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::MetaBodyData::getAreaToNormal(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void* fn_005B8130(void* thisPtr, void* unusedArg, void* argRef, void* valueArg)",
+    "summary": "Evaluates the value argument through its owner's vtable slot 5, feeds the result to ext_005B71E0 to get a float, stores it via ext_00672080 on the target object, and returns the target object (eax).",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x005B8660": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",
