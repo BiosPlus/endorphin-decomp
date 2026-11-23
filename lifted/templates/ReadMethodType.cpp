@@ -10467,3 +10467,29 @@ double __thiscall fn_0046D8E0(void* self, uint32_t* ptr) {
     return 0.0;
 }
 } // namespace lift_0046D8E0
+
+// [0x0046F1A0]
+namespace lift_0046F1A0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageWidth>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, int, getImageWidth>
+// @summary Reads image width from an ImageExporter pointer and returns it as double, or throws on null
+// @field ImageExporter +0x00 void* field_0x00
+
+
+extern int32_t __thiscall ext_0046C090(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern double __thiscall fn_0046F1A0(void* self, void* arg0) {
+    (void)self;
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(arg0);
+    if (ptr != 0) {
+        int32_t val = ext_0046C090(reinterpret_cast<void*>(static_cast<uintptr_t>(ptr)));
+        return static_cast<double>(val);
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+    return 0.0;
+}
+} // namespace lift_0046F1A0
