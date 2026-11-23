@@ -1303,3 +1303,34 @@ void fn_004A2530(void* const* self, void* arg) {
     ext_006A6DD2(exc, 0x009DEC1Cu);
 }
 } // namespace lift_004A2530
+
+// [0x0049BF20] ExprParser::ReadWriteMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0049BF20 {
+// Callee sub_0049AA00 (10 bytes): NMData::State::setIsDeactivated(bool), thiscall with one stack argument.
+extern void ext_0049AA00(void* self, bool value);
+
+// @name ExprParser::ReadWriteMethodType<NMData::State>::vfunc_41 (NMData::State::setIsDeactivated)
+// @class ExprParser::ReadWriteMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}>
+// @summary Reads a bool through the source's inner accessor (vtable slot 3) and stores it into the NMData::State target via setIsDeactivated; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::State* target
+// @field ExprParser::ReadWriteMethodType +0x04 void* inner
+void fn_0049BF20(void* dst, void* src) {
+    // dst +0x00: NMData::State* target. Null means there is no object to write to, which is an error.
+    void* target = *reinterpret_cast<void**>(dst);
+    if (target == nullptr) {
+        // The original constructs an exception object and throws it through MSVCR80 _CxxThrowException.
+        // No portable equivalent of that exact type exists, so a std::runtime_error stands in.
+        throw std::runtime_error("ReadWriteMethodType<NMData::State>: null State target");
+    }
+
+    // src +0x04: inner accessor object. Its vtable slot 3 (+0x0C) takes src as its single argument and returns the bool.
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<std::uint8_t*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using GetBoolFn = bool (__thiscall*)(void* self, void* arg);
+    GetBoolFn get = reinterpret_cast<GetBoolFn>(vtbl[3]);
+    const bool value = get(inner, src);
+
+    // Write the value through NMData::State::setIsDeactivated (sub_0049AA00).
+    ext_0049AA00(target, value);
+}
+} // namespace lift_0049BF20

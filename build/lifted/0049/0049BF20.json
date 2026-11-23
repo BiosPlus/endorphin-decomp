@@ -1,0 +1,28 @@
+{
+  "va": "0x0049BF20",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::State\u003e::vfunc_41 (NMData::State::setIsDeactivated)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}\u003e",
+  "signature": "void fn_0049BF20(void* dst, void* src)",
+  "summary": "Reads a bool through the source's inner accessor (vtable slot 3) and stores it into the NMData::State target via setIsDeactivated; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::State*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:04:38Z"
+}
