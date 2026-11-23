@@ -10996,6 +10996,13 @@
     "summary": "Calls the base-class helper on self, then forwards (self, arg) to vtable slot 44 of the object at self+0x04.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066BAF0": {
+    "name": "ExprParser::ExtROType::vfunc_45",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t ExprParser_ExtROType_vfunc_45(void* self, void* arg2)",
+    "summary": "Calls ext_0066BA00 on the wrapper object, then forwards (obj, arg2) to vtable slot 45 (+0xB4) of the object held at +0x04.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066BB50": {
     "name": "ExprParser::ExtROType::vfunc_47",
     "class": "ExprParser::ExtROType",
