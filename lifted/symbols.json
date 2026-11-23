@@ -3884,7 +3884,7 @@
     "name": "NMData::Transition::vfunc_26",
     "class": "NMData::Transition",
     "signature": "void fn_004997E0(void* self, const DWORD* src, DWORD index)",
-    "summary": "Bounds-checks index against the entry array at +0x88/+0x8C, stores the 8-byte pair at src into that slot, then calls the refresh routine sub_004996E0.",
+    "summary": "Bounds-checks index against the 8-byte entry array at +0x88/+0x8C, stores the DWORD pair at src into that slot, then calls sub_004996E0 on this.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
   "0x00499AF0": {

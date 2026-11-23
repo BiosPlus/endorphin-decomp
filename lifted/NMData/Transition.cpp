@@ -117,9 +117,9 @@ uint32_t __thiscall fn_00499CE0(void* self, void* a1) {
 namespace lift_004997E0 {
 // @name NMData::Transition::vfunc_26
 // @class NMData::Transition
-// @summary Bounds-checks index against the entry array at +0x88/+0x8C, stores the 8-byte pair at src into that slot, then calls the refresh routine sub_004996E0.
-// @field NMData::Transition +0x88 void* field_0x88 (entry array base; 8-byte entries)
-// @field NMData::Transition +0x8C void* field_0x8C (entry array end)
+// @summary Bounds-checks index against the 8-byte entry array at +0x88/+0x8C, stores the DWORD pair at src into that slot, then calls sub_004996E0 on this.
+// @field NMData::Transition +0x88 void* field_0x88
+// @field NMData::Transition +0x8C void* field_0x8C
 
 // sub_004996E0 (253B), __thiscall, takes the transition as `this`.
 void ext_004996E0(void* self);
