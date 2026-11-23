@@ -1,0 +1,22 @@
+{
+  "va": "0x00610780",
+  "size": 37,
+  "orig_symbol": "NMData::MetaBodySensorData::vfunc_8",
+  "src_path": "src/NMData/MetaBodySensorData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodySensorData.cpp",
+  "name": "NMData::MetaBodySensorData::vfunc_8",
+  "class": "NMData::MetaBodySensorData",
+  "signature": "void* fn_00610780(void* self, void* arg)",
+  "summary": "Forwards the incoming pointer with the address of this+0x154 and a zero flag to ext_006105E0, then returns the incoming pointer.",
+  "fields": [
+    {
+      "class": "MetaBodySensorData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:38:44Z"
+}

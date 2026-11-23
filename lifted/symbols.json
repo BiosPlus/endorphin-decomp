@@ -9093,6 +9093,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060FBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00610780": {
+    "name": "NMData::MetaBodySensorData::vfunc_8",
+    "class": "NMData::MetaBodySensorData",
+    "signature": "void* fn_00610780(void* self, void* arg)",
+    "summary": "Forwards the incoming pointer with the address of this+0x154 and a zero flag to ext_006105E0, then returns the incoming pointer.",
+    "lifted_path": "lifted/NMData/MetaBodySensorData.cpp"
+  },
   "0x006114A0": {
     "name": "NMData::Constraint::vfunc_29",
     "class": "NMData::Constraint",
