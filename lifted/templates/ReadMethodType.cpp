@@ -15507,3 +15507,27 @@ int fn_005B21E0(void* self) {
     return 1;
 }
 } // namespace lift_005B21E0
+
+// [0x005B2F60] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_005B2F60 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern const double mem_0095F7E0;
+
+// @name ExprParser::ReadMethodType<Geometry,float,getParam2,0>::vfunc_3
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>
+// @summary Returns 1 if the float at the referenced object's +0x18 is >= 1e-6 (NaN yields 0); throws if the object pointer is null.
+// @field Geometry +0x18 float field_0x18
+int fn_005B2F60(void** self) {
+    void* obj = *self;
+    if (obj == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0; // not reached: exception thrown above
+    }
+    float v = *reinterpret_cast<float*>(static_cast<char*>(obj) + 0x18);
+    // Matches x87 fcomp + C0 test: NaN (unordered) returns 0.
+    return (v >= static_cast<float>(mem_0095F7E0)) ? 1 : 0;
+}
+} // namespace lift_005B2F60

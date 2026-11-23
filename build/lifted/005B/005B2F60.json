@@ -1,0 +1,22 @@
+{
+  "va": "0x005B2F60",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry,float,getParam2,0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e",
+  "signature": "int fn_005B2F60(void** self)",
+  "summary": "Returns 1 if the float at the referenced object's +0x18 is \u003e= 1e-6 (NaN yields 0); throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "Geometry",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:52:27Z"
+}
