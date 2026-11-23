@@ -1,0 +1,14 @@
+{
+  "va": "0x004720D0",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,RuntimeEngine::getNumTicksToRun\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,RuntimeEngine::getNumTicksToRun\u003e",
+  "signature": "extern \"C\" double __stdcall fn_004720D0(const uint32_t* ptr)",
+  "summary": "Dereferences RuntimeEngine*, calls getNumTicksToRun() and returns as double, or throws on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:56:47Z"
+}
