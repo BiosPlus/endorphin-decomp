@@ -2098,6 +2098,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_00453E00.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00453F40": {
+    "name": "RigEditorFrame::vfunc_0_off_144",
+    "class": "RigEditorFrame",
+    "signature": "void fn_00453F40(void* self, uint32_t /*unused*/)",
+    "summary": "Forwards the virtual call at offset +0x144 to sub_00453E00 on delegate_0xC.",
+    "lifted_path": "lifted/classes/RigEditorFrame.cpp"
+  },
   "0x004543E0": {
     "name": "sub_004543E0",
     "signature": "extern \"C\" const int* fn_004543E0()",
@@ -2797,6 +2804,12 @@
     "name": "getInnerByte1C",
     "signature": "uint8_t __thiscall sub_00462A60(uint32_t this_ptr)",
     "summary": "Reads a byte at offset 0x1C from the pointer stored at this+0x00.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x00462A70": {
+    "name": "setSubField0x4To2",
+    "signature": "void __thiscall sub_00462A70(void* self)",
+    "summary": "Sets dword at offset 0x4 of the pointer at this+0x4 to 2",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
   "0x00462F40": {

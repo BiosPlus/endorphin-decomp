@@ -1,0 +1,22 @@
+{
+  "va": "0x00453F40",
+  "size": 11,
+  "orig_symbol": "RigEditorFrame::vfunc_0_off_144",
+  "src_path": "src/classes/RigEditorFrame.cpp",
+  "lifted_path": "lifted/classes/RigEditorFrame.cpp",
+  "name": "RigEditorFrame::vfunc_0_off_144",
+  "class": "RigEditorFrame",
+  "signature": "void fn_00453F40(void* self, uint32_t /*unused*/)",
+  "summary": "Forwards the virtual call at offset +0x144 to sub_00453E00 on delegate_0xC.",
+  "fields": [
+    {
+      "class": "RigEditorFrame",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "delegate_0xC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:38:18Z"
+}
