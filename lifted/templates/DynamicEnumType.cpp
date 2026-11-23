@@ -159,16 +159,26 @@ extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcTyp
 void* __thiscall fn_005C4870(void* /*self*/, void* obj) {
     return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
+// Callee 0x0046C3C0: constructor-like routine, receives the exception buffer as its thiscall `this` (ecx).
+extern "C" void __thiscall ext_0046C3C0(void* self);
+// Callee 0x006A6DD2: IAT thunk forwarding to MSVCR80!_CxxThrowException(object, throwInfo) (cdecl).
+extern "C" void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Throw-info descriptor pushed as the second argument of the throw (address 0x009DEC1C).
+static const void* const kThrowInfo_009DEC1C = reinterpret_cast<const void*>(0x009DEC1Cu);
 
-// [0x00515850] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_16 (30 bytes)
-// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
-// @summary Dynamic-casts the given pointer from RTTI type 0x00A2E2F8 to 0x00A4279C via __RTDynamicCast (returns nullptr on failure).
-void* fn_00515850(void* /*self*/, void* ptr) {
+extern "C" void __thiscall ext_0046C3C0(void* self);
+// Callee 0x006A6DD2: IAT thunk forwarding to MSVCR80!_CxxThrowException(object, throwInfo) (cdecl).
+extern "C" void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Throw-info descriptor pushed as the second argument of the throw (address 0x009DEC1C).
+static const void* const kThrowInfo_009DEC1C = reinterpret_cast<const void*>(0x009DEC1Cu);
     return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A4279C, 0);
 }
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Callee 0x0046C3C0: constructor-like routine (builds the exception object in the caller's frame).
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
 
-// [0x0067A770]
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
 // @name DynamicEnumType::vfunc_9
 // @class ExprParser::DynamicEnumType
 // @summary Dispatches vtable+0x78 on field_0x4 with arg0, then calls sub_006720A0 on arg0 with arg1.
@@ -208,4 +218,71 @@ double fn_00515E80(void* const* holder) {
     }
     const int value = lift_field<int>(obj, 0x0C);
     return static_cast<double>(value);
+}
+
+// [0x00516550] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_2 (45 bytes)
+// @name ExprParser::DynamicEnumType::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Loads the int value through the holder's pointer at +0x00 (throws if null) and returns the int at +0x08 of the pointee.
+// @field ExprParser::DynamicEnumType +0x00 void* ptr
+// @field ExprParser::DynamicEnumType +0x08 int field_0x08
+
+struct DynamicEnumHolder {
+    void* ptr;
+};
+
+struct DynamicEnumTarget {
+    unsigned char field_0x00_pad[8];
+    int field_0x08;
+};
+
+// Argument is a pointer to a holder whose first member points at the target object.
+// If the target pointer is null, the original code raises a C++ exception; that path is
+// modeled here with a call through the known thunk symbol, which the lift toolchain resolves.
+extern "C" int fn_00516550(void* arg) {
+    auto* holder = static_cast<DynamicEnumHolder*>(arg);
+    auto* target = static_cast<DynamicEnumTarget*>(holder->ptr);
+    if (target == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    return target->field_0x08;
+}
+
+// [0x00516170] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_2 (45 bytes)
+// @name ExprParser::DynamicEnumType::vfunc_2
+// @class ExprParser::DynamicEnumType
+// @summary Loads the wrapped pointer at (*self) and returns its +0x0C field as a 32-bit value; throws if the wrapped pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+// @field ExprParser::DynamicEnumType +0x0C uint32_t field_0x0C
+//
+// Original (stdcall, one stack argument, `ret 4`): eax = *(*arg); if eax == 0, the
+// original builds a C++ exception object via sub_0046C3C0 and throws it. The throw
+// is modeled here with a standard exception type; the exception-object construction
+// has no portable equivalent and is dropped.
+uint32_t fn_00516170(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* inner = lift_field<void*>(base, 0x00);
+    if (inner == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType::vfunc_2: null wrapped pointer");
+    }
+    return lift_field<uint32_t>(inner, 0x0C);
+}
+
+// [0x00515FD0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1 (45 bytes)
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_1 (value read through the held pointer)
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Reads the int at +0x08 of the object pointed to by self's first pointer and returns it as a float (x87 st0 via fild); throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field unknown +0x08 int field_0x08
+float fn_00515FD0(void* self) {
+    void* ptr = *reinterpret_cast<void**>(self);
+    if (ptr == nullptr) {
+        // Null-pointer path: construct the exception object and throw (original: sub_0046C3C0 then _CxxThrowException).
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0.0f;
+    }
+    return static_cast<float>(*reinterpret_cast<int*>(static_cast<unsigned char*>(ptr) + 0x08));
 }
