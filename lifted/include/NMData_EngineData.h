@@ -14,6 +14,7 @@ struct NMData_EngineData_Fields {
     // +0x44  float                    field_0x44  (evidence: 0x004B1FF0, 0x004B9370, 0x00508EE0, 0x0068DE60) // CONFLICT: multiple definitions at +0x44
     // +0x44  float                    unitLength  (evidence: 0x004B7C10) // CONFLICT: multiple definitions at +0x44
     // +0x48  float                    field_0x48  (evidence: 0x004B1FF0, 0x004B8970, 0x00508EE0, 0x005D78F0, 0x00605E70, 0x00606640, 0x00606C00, 0x00607230, 0x00613FB0, 0x00614290, 0x00614E20, 0x006155D0, 0x00615A20, 0x00615C50, 0x006173F0, 0x0061A2F0, 0x0061A8F0, 0x00633AE0, 0x006349F0, 0x00636E80, 0x006371C0, 0x00637800, 0x00637B10, 0x00637F20, 0x00638310, 0x00638900, 0x00639090, 0x0066F320, 0x0066F750, 0x0068DE60) // CONFLICT: multiple definitions at +0x48
+    // +0x48  float                    m_unitMass  (evidence: 0x004B8A00) // CONFLICT: multiple definitions at +0x48
     // +0x48  float                    unitMass  (evidence: 0x004B7C60) // CONFLICT: multiple definitions at +0x48
     // +0x84  uint8_t                  field_0x84  (evidence: 0x004B7C10, 0x004B7C60)
 };
