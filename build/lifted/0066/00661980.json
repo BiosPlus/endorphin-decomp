@@ -1,0 +1,21 @@
+{
+  "va": "0x00661980",
+  "size": 9,
+  "orig_symbol": "sub_00661980",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "setVtable_0093BFB4",
+  "signature": "void fn_00661980(void* self)",
+  "summary": "Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T15:25:00Z"
+}

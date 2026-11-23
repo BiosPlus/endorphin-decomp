@@ -146,3 +146,14 @@ void sub_00661880(uint32_t ecx) {
     ((void(__thiscall*)(uint32_t))fn)(inner);
 }
 } // namespace lift_00661880
+
+// [0x00661980] sub_00661980 (9 bytes)
+namespace lift_00661980 {
+// @name setVtable_0093BFB4
+// @summary Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).
+// @field Unknown +0x00 uint32_t field_0x00
+
+void fn_00661980(void* self) {
+    *static_cast<uint32_t*>(self) = 0x0093BFB4u;
+}
+} // namespace lift_00661980

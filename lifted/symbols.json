@@ -21613,6 +21613,12 @@
     "summary": "Tail-calls virtual method at vtable+0x10 on dereferenced first field",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00661980": {
+    "name": "setVtable_0093BFB4",
+    "signature": "void fn_00661980(void* self)",
+    "summary": "Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661A00": {
     "name": "sub_00661A00",
     "signature": "extern \"C\" void __fastcall fn_00661A00(void* self)",
