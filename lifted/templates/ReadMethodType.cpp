@@ -1946,3 +1946,28 @@ bool fn_004A48F0(void* self) {
     return false; // not reached
 }
 } // namespace lift_004A48F0
+
+// [0x004A4E10] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004A4E10 {
+extern void __fastcall ext_006658C0(void* value);
+extern void __fastcall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getFontSize, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Stdcall (ret 4) accessor: if the stored pointer at +0x00 is non-null, forwards it to ext_006658C0; otherwise constructs an exception object and throws it.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0> +0x00 void* field_0x00
+void __stdcall fn_004A4E10(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value != nullptr) {
+        ext_006658C0(value);
+        return;
+    }
+
+    // Local exception object (frame is 0x28 bytes in the original; exact layout not recovered).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_004A4E10
