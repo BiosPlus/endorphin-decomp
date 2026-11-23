@@ -1670,3 +1670,31 @@ int fn_0046F1E0(void* self) {
     return 0; // unreachable: _CxxThrowException does not return
 }
 } // namespace lift_0046F1E0
+
+// [0x0046EB20]
+namespace lift_0046EB20 {
+// @name ExprParser::ReadMethodType<ImageExporter, getEndFrame>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Stdcall (ret 4) virtual: if the proxied target pointer is non-null, forwards to ext_006ACFB0 with it as this and returns its result; otherwise builds an exception object and throws it.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+extern int __fastcall ext_006ACFB0(void* self);
+extern void __fastcall ext_0046C3C0(void* self);
+// Throw helper: 0x006A6DD2 is an IAT thunk forwarding to MSVCR80!_CxxThrowException.
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// RTTI/throw-info descriptor referenced by the original code at 0x009DEC1C.
+static const void* const kThrowInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+
+extern int __stdcall fn_0046EB20(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        return ext_006ACFB0(target);
+    }
+
+    alignas(8) unsigned char exception_object[0x24] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, kThrowInfo);
+    return 0;
+}
+} // namespace lift_0046EB20

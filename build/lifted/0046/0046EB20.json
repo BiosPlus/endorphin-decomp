@@ -1,0 +1,22 @@
+{
+  "va": "0x0046EB20",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, getEndFrame\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0\u003e",
+  "signature": "extern \"C\" int __stdcall fn_0046EB20(void* self)",
+  "summary": "Stdcall (ret 4) virtual: if the proxied target pointer is non-null, forwards to ext_006ACFB0 with it as this and returns its result; otherwise builds an exception object and throws it.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:15:56Z"
+}

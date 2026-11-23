@@ -2856,6 +2856,13 @@
     "summary": "Reads the wrapped value pointer at +0x00 of the holder; if non-null forwards to SelectionBuffer::vfunc_21, otherwise throws a C++ exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046EB20": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, getEndFrame\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0\u003e",
+    "signature": "extern \"C\" int __stdcall fn_0046EB20(void* self)",
+    "summary": "Stdcall (ret 4) virtual: if the proxied target pointer is non-null, forwards to ext_006ACFB0 with it as this and returns its result; otherwise builds an exception object and throws it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046F1E0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getImageWidth)",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e",
