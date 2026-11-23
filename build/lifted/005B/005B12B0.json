@@ -4,11 +4,25 @@
   "orig_symbol": "Geometry::CuboidType::vfunc_4",
   "src_path": "src/Geometry/CuboidType.cpp",
   "lifted_path": "lifted/Geometry/CuboidType.cpp",
-  "name": "Geometry::CuboidType::vfunc_4",
+  "name": "Geometry::CuboidType::vfunc_16",
   "class": "Geometry::CuboidType",
-  "signature": "extern \"C\" float __stdcall fn_005B12B0(float* out, void* self, const float* in)",
-  "summary": "Clamps the input point to the cuboid half-extents (0.5 * ext_005B11E0(self, axis)), transforms the clamped point (w=1) via ext_0047FFA0 using the input as this, and returns the Euclidean length of the transformed vector.",
+  "signature": "uint32_t __stdcall fn_005B1030(uint32_t first, uint32_t second)",
+  "summary": "Generates the 8 scaled cuboid corner vertices and appends them to a vector.",
+  "fields": [
+    {
+      "class": "std::vector\u003cVec3\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "std::vector\u003cVec3\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T13:33:02Z"
+  "lifted_at": "2026-11-23T13:33:17Z"
 }
