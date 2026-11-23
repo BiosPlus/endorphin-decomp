@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/classes/BVHIO.cpp
 #include "lift_compat.h"
+#include <fstream>
+#include <string>
 
-// [0x0056DA30]
+#include <string>
 // @name BVHIO::vfunc_3
 // @class BVHIO
 // @summary Formats or resolves a path/string using sub_00640390 and delegates to NMFileIO::vfunc_3, returning arg0.
@@ -127,3 +129,109 @@ void __thiscall fn_0056EAC0(void* self, const std::string* filename) {
 
     out.close();
 }
+
+// [0x0056E630] BVHIO::vfunc_11 (689 bytes)
+namespace lift_0056E630 {
+// Callee prototypes (thiscall on MSVC; plain member-style on other compilers).
+extern int32_t __thiscall ext_0055D0F0(void* self);
+extern void __thiscall ext_0056E1C0(void* self, void* elem, std::istream& in, int32_t t);
+extern void __thiscall ext_00661A10(void* self, float value);
+extern void __thiscall ext_005576F0(void* self);
+
+namespace {
+
+// Virtual slot dispatch on a polymorphic sub-object stored at a field.
+template <typename Fn>
+Fn vtable_slot(void* obj, size_t slot) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vt[slot]);
+}
+
+using VtableIntInt = void(__thiscall*)(void*, int32_t, int32_t);  // slot 2
+using VtableInt = void(__thiscall*)(void*, int32_t);              // slot 1
+using VtableString = void(__thiscall*)(void*, const std::string*); // slot 3
+
+// Loads a 32-bit pointer-sized field and reinterprets it as an object address.
+void* field_object(uint8_t* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+}  // namespace
+
+// @name BVHIO::vfunc_11
+// @class BVHIO
+// @summary Parses a BVH motion header from a file (frame count, frame time), notifies the progress object, reads per-frame values through sub_0056E1C0, then sets the timeline frame rate from 1/frameTime.
+// @field BVHIO +0x108 int32_t field_0x108
+// @field BVHIO +0x10c int32_t field_0x10c
+// @field BVHIO +0x110 int32_t field_0x110
+// @field BVHIO +0x114 uint8_t field_0x114
+// @field BVHIO +0x420 uint32_t timeline
+// @field BVHIO +0x424 uint32_t progressCallback
+// @field BVHIO +0x42c uint8_t field_0x42c
+// @field BVHIO +0x46c uint8_t field_0x46c
+// @field BVHIO +0x470 uint32_t field_0x470
+// @field BVHIO +0x474 uint32_t field_0x474
+void __thiscall fn_0056E630(void* self, const std::string* filename) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    std::ifstream in(filename->c_str(), std::ios::in);
+    std::string token;
+
+    // Skip tokens until the frame-count tag (0x009592D8).
+    while (in >> token) {
+        if (token == reinterpret_cast<const char*>(0x009592D8)) {
+            break;
+        }
+    }
+
+    int32_t frames = 0;
+    in >> frames;
+
+    void* progress = field_object(base, 0x424);
+    if (progress != nullptr) {
+        if (lift_field<uint8_t>(base, 0x114) != 0) {
+            int32_t total = (lift_field<int32_t>(base, 0x110) + 3) * frames +
+                            (frames - 1) * lift_field<int32_t>(base, 0x10c) +
+                            lift_field<int32_t>(base, 0x108);
+            vtable_slot<VtableIntInt>(progress, 2)(progress, 0, total);
+        } else {
+            vtable_slot<VtableIntInt>(progress, 2)(progress, 0, frames * 3);
+        }
+        std::string tag(reinterpret_cast<const char*>(0x009592BC));
+        vtable_slot<VtableString>(progress, 3)(progress, &tag);
+    }
+
+    // Skip tokens until the frame-time tag (0x009592B4), then read frame time.
+    while (in >> token) {
+        if (token == reinterpret_cast<const char*>(0x009592B4)) {
+            break;
+        }
+    }
+
+    float frameTime = 0.0f;
+    in >> frameTime;
+
+    if (frames - 1 >= 0) {
+        int32_t t = 0;
+        do {
+            t = ext_0055D0F0(base + 0x42c);
+
+            uintptr_t cursor = lift_field<uint32_t>(base, 0x470);
+            uintptr_t end = lift_field<uint32_t>(base, 0x474);
+            for (; cursor != end; cursor += 4) {
+                void* elem = *reinterpret_cast<void**>(cursor);
+                ext_0056E1C0(self, elem, in, t);
+            }
+
+            void* prog = field_object(base, 0x424);
+            if (prog != nullptr) {
+                vtable_slot<VtableInt>(prog, 1)(prog, t);
+            }
+        } while (t <= frames - 1);
+    }
+
+    float fps = 1.0f / frameTime;
+    void* timeline = field_object(base, 0x420);
+    ext_00661A10(timeline, fps);
+    ext_005576F0(self);
+}
+} // namespace lift_0056E630

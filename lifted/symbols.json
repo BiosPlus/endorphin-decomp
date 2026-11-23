@@ -4802,6 +4802,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B1D40 (ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B7C10": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, getUnitLength, float, setUnitLength\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "extern \"C\" void __stdcall fn_004B7C10(uint32_t target_ptr_addr, uint32_t value_addr)",
+    "summary": "Sets NMData::EngineData::unitLength from an expression value via virtual getter, or throws on null target",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004B7C60": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float\u003e",
+    "signature": "void __stdcall fn_004B7C60(uint32_t* pObjPtr, uint32_t* pExpr)",
+    "summary": "Evaluates a float expression and sets NMData::EngineData unitMass (+0x48) and dirty flag (+0x84), or throws on null object.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B83E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
@@ -8723,6 +8737,13 @@
     "class": "BVHIO",
     "signature": "void* __thiscall fn_0056DA30(void* self, void* arg0)",
     "summary": "Formats or resolves a path/string using sub_00640390 and delegates to NMFileIO::vfunc_3, returning arg0.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
+  "0x0056E630": {
+    "name": "BVHIO::vfunc_11",
+    "class": "BVHIO",
+    "signature": "Fn vtable_slot(void* obj, size_t slot)",
+    "summary": "Parses a BVH motion header from a file (frame count, frame time), notifies the progress object, reads per-frame values through sub_0056E1C0, then sets the timeline frame rate from 1/frameTime.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
   "0x0056EAC0": {

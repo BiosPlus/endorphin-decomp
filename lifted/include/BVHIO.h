@@ -10,10 +10,18 @@
 // Recovered field layout for BVHIO:
 namespace lifted_layout {
 struct BVHIO_Fields {
+    // +0x108 int32_t                  field_0x108  (evidence: 0x0056E630)
+    // +0x10C int32_t                  field_0x10c  (evidence: 0x0056E630)
+    // +0x110 int32_t                  field_0x110  (evidence: 0x0056E630)
+    // +0x114 uint8_t                  field_0x114  (evidence: 0x0056E630)
     // +0x16C int32_t                  startFrame  (evidence: 0x0056EAC0)
     // +0x170 int32_t                  endFrame  (evidence: 0x0056EAC0)
     // +0x414 uint32_t                 skeletonData  (evidence: 0x0056EAC0)
-    // +0x420 uint32_t                 timeline  (evidence: 0x0056EAC0)
-    // +0x424 uint32_t                 progressCallback  (evidence: 0x0056EAC0)
+    // +0x420 uint32_t                 timeline  (evidence: 0x0056E630, 0x0056EAC0)
+    // +0x424 uint32_t                 progressCallback  (evidence: 0x0056E630, 0x0056EAC0)
+    // +0x42C uint8_t                  field_0x42c  (evidence: 0x0056E630)
+    // +0x46C uint8_t                  field_0x46c  (evidence: 0x0056E630)
+    // +0x470 uint32_t                 field_0x470  (evidence: 0x0056E630)
+    // +0x474 uint32_t                 field_0x474  (evidence: 0x0056E630)
 };
 } // namespace lifted_layout
