@@ -25123,3 +25123,21 @@ float fn_00644680(void* self) {
 }
 } // namespace lift_0046CAE0
 } // namespace lift_00644680
+
+// [0x004A2810] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A2810 {
+// Callee 0x0049AA60 (sub_0049AA60): thiscall taking the inner object in ECX, returns bool in AL.
+extern uint8_t ext_0049AA60(void* thisObj);
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_1 (FSMEditView::drawVariables)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Evaluates the wrapped object's predicate and returns 1.0f when it is true, 0.0f otherwise; throws if the wrapped object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004A2810(void* self) {
+    void* inner = lift_field<void*>(self, 0);
+    if (inner == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null object pointer");
+    }
+    return ext_0049AA60(inner) ? 1.0f : 0.0f;
+}
+} // namespace lift_004A2810
