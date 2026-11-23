@@ -10520,6 +10520,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x005C5E50": {
+    "name": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void* fn_005C5E50(void* self, void* a1, void* p, void* q)",
+    "summary": "Fetches obj=*p and o=q-\u003e+0x04, calls o slot 5 with (q, 0), passes the result to ext_005C3C20 (this=obj) as a float, forwards that float to ext_00672080 (this=p), returns p.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x005C5EA0": {
     "name": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
     "class": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e",

@@ -1,0 +1,28 @@
+{
+  "va": "0x005C5E50",
+  "size": 69,
+  "orig_symbol": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void* fn_005C5E50(void* self, void* a1, void* p, void* q)",
+  "summary": "Fetches obj=*p and o=q-\u003e+0x04, calls o slot 5 with (q, 0), passes the result to ext_005C3C20 (this=obj) as a float, forwards that float to ext_00672080 (this=p), returns p.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:09:13Z"
+}

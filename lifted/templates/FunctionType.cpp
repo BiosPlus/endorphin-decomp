@@ -156,3 +156,30 @@ void* fn_005B80A0(void* /*unused*/, void** objRef, void* arg) {
     return self;
 }
 } // namespace lift_005B80A0
+
+// [0x005C5E50] ExprParser::FunctionType<NMData::CollisionModelDataBase, float, NM::Vector3 const &, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const &), 0}>::vfunc_48 (69 bytes)
+namespace lift_005C5E50 {
+extern float __thiscall ext_005C3C20(void* self, uint32_t arg);
+extern void __thiscall ext_00672080(void* self, float value);
+
+// @name ExprParser::FunctionType<NMData::CollisionModelDataBase, float, NM::Vector3 const &, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const &), 0}>::vfunc_48
+// @class ExprParser::FunctionType<NMData::CollisionModelDataBase, float, NM::Vector3 const &, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const &), 0}>
+// @summary Fetches obj=*p and o=q->+0x04, calls o slot 5 with (q, 0), passes the result to ext_005C3C20 (this=obj) as a float, forwards that float to ext_00672080 (this=p), returns p.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void* fn_005C5E50(void* self, void* a1, void* p, void* q) {
+    (void)self;  // ecx is spilled and reused as a scratch register only
+    (void)a1;    // first stack argument is never read
+
+    void* obj = *static_cast<void**>(p);
+    void* o = *reinterpret_cast<void**>(static_cast<char*>(q) + 0x04);
+
+    // Indirect call through vtable slot 5 (offset 0x14) on o; args (q, 0).
+    void** vtbl = *static_cast<void***>(o);
+    uint32_t r = reinterpret_cast<uint32_t (*)(void*, void*, uint32_t)>(vtbl[5])(o, q, 0u);
+
+    float f = ext_005C3C20(obj, r);
+    ext_00672080(p, f);
+    return p;
+}
+} // namespace lift_005C5E50
