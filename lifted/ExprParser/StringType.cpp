@@ -19,9 +19,12 @@ std::string& fn_006718A0(void* self, const std::string& value) {
     auto* str = static_cast<std::string*>(lift_field<void*>(self, 0x00));
     return *str = value;
 }
+// Known callee 0x006720E0 (43B): called with the holder as implicit this, a
+// pointer to the +0x2C subobject of arg2, and a zero flag.
+extern "C" void ext_006720E0(void* self, void* subobject, int flag);
 
-// [0x0066B240] ExprParser::StringType::vfunc_1 (42 bytes)
-// @name ExprParser::StringType::vfunc_1
+// pointer to the +0x2C subobject of arg2, and a zero flag.
+extern "C" void ext_006720E0(void* self, void* subobject, int flag);
 // @class ExprParser::StringType
 // @summary Returns atof() of the held std::string as a float, or 0.0f if the string pointer is null.
 // @field ExprParser::StringType +0x00 std::string* field_0x00
@@ -49,4 +52,15 @@ int fn_0066B290(void* self) {
         return 1;
     }
     return 0;
+}
+
+// [0x0066B320] ExprParser::StringType::vfunc_23 (36 bytes)
+// @name ExprParser::StringType::vfunc_23
+// @class ExprParser::StringType
+// @summary Calls ext_006720E0(self, &arg2->+0x2C, 0) and returns self; arguments 3-5 are unused.
+void* fn_0066B320(void* self, void* arg2, [[maybe_unused]] void* arg3,
+                  [[maybe_unused]] void* arg4, [[maybe_unused]] void* arg5) {
+    void* subobject = static_cast<char*>(arg2) + 0x2C;
+    ext_006720E0(self, subobject, 0);
+    return self;
 }

@@ -10926,6 +10926,13 @@
     "summary": "Returns 1 if the held std::string equals either of two literal strings, else 0 (0 if the string pointer is null).",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B320": {
+    "name": "ExprParser::StringType::vfunc_23",
+    "class": "ExprParser::StringType",
+    "signature": "void* fn_0066B320(void* self, void* arg2, [[maybe_unused]] void* arg3, [[maybe_unused]] void* arg4, [[maybe_unused]] void* arg5)",
+    "summary": "Calls ext_006720E0(self, \u0026arg2-\u003e+0x2C, 0) and returns self; arguments 3-5 are unused.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B530": {
     "name": "ExprParser::Vector3Type::vfunc_0",
     "class": "ExprParser::Vector3Type",
