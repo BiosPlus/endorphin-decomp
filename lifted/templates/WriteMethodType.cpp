@@ -116,67 +116,7 @@ struct ExprResult {
     ExprValue* source;
 };
 
-struct ExprValue;
-struct ExprValueVtbl;
-typedef float (__thiscall *EvalFloatFn)(ExprValue* self, void* expr);
-typedef void** (__thiscall *GetResultFn)(ExprValue* self, void** outTmp, void* expr);
-struct ExprValue {
-    void** vtbl;
-};
-struct ExprResult {
-    void* value;
-    ExprValue* source;
-};
-    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
-    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
-    uint32_t value = getVec3(typeObj, valuePtr);
-    ext_0064DDE0(target, value);
-}
-// Expression node: +0x04 holds the evaluated sub-expression object (polymorphic).
-struct ExprValue;
-struct ExprValueVtbl;
-struct ExprValue {
-    void** vtbl;
-};
-struct ExprResult {
-    void* value;
-    ExprValue* source;
-};
-
-struct ExprValue;
-struct ExprValueVtbl;
-struct ExprValue {
-    void** vtbl;
-};
-struct ExprResult {
-    void* value;
-    ExprValue* source;
-};
-    void* vtbl = lift_field<void*>(reader, 0x00);
-    using GetFloatFn = float (*)(void* self, void* arg);
-    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
-    float value = getFloat(reader, a2);
-    ext_00594080(target, value);
-}
 extern "C" void ext_00402040(void* self, DWORD arg);
-namespace lift_0063CB90 {
-struct ExprValue {
-    void** vtbl;
-};
-struct ExprResult {
-    void* value;
-    ExprValue* source;
-};
-} // namespace lift_0063CB90
-
-struct ExprValue {
-    void** vtbl;
-};
-struct ExprResult {
-    void* value;
-    ExprValue* source;
-};
-} // namespace lift_0063CB90
 void* fn_005F35D0(void* arg1, void* arg2) {
     // esi = *(void**)arg1
     void* self = *reinterpret_cast<void**>(arg1);
@@ -1428,7 +1368,6 @@ void* __thiscall fn_00650DB0(void* self, void* out, void** target, uint8_t* valu
 // @field EffectorWithMemory +0x60 float integralGradient
 // @field ExprNode +0x04 ExprValue* field_0x04
 void* __thiscall fn_0063CB90(void* self, void* outPtr, void** targetRef, void* expr) {
-    using namespace lift_0063CB90;
     (void)self;
     ExprResult* out = static_cast<ExprResult*>(outPtr);
     uint8_t* target = static_cast<uint8_t*>(*targetRef);
@@ -1486,15 +1425,13 @@ void fn_0064F870(void* self, DWORD* out, void** a2, void* a3) {
 }
 
 // [0x00604BD0]
+namespace lift_00604BD0 {
 // @name WriteMethodType::vfunc_48
 // @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, EffectorBase::vcall{76}>
 // @summary Evaluates RHS via its type's vfunc_6, invokes EffectorBase::vcall{76} (slot 19) on target, and returns the converted value pair.
 // @field ExprValue +0x04 uint32_t type
 
-#include "lift_compat.h"
-#include <cstdint>
-
-extern "C" void ext_00603680(void* self);
+extern void ext_00603680(void* self);
 
 void* fn_00604BD0(void* self, uint32_t* out, uint32_t* target_ptr, uint32_t* rhs) {
     (void)self;
@@ -1522,6 +1459,7 @@ void* fn_00604BD0(void* self, uint32_t* out, uint32_t* target_ptr, uint32_t* rhs
     out[1] = rhs[1];
     return out;
 }
+} // namespace lift_00604BD0
 
 // [0x00650E50] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48 (110 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48

@@ -303,3 +303,104 @@ struct Foo_Fields {
 		t.Fatalf("compactClassHeader missing fields/conflict:\n%s", got)
 	}
 }
+
+func TestMergeLiftedFileIsolationCompiles(t *testing.T) {
+	if _, err := findNativeCompiler(); err != nil {
+		t.Skip("no native C++ compiler available")
+	}
+	origWD, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	compatBytes, err := os.ReadFile(filepath.Join(origWD, "..", "..", "lifted", "include", "lift_compat.h"))
+	if err != nil {
+		t.Fatalf("reading lift_compat.h: %v", err)
+	}
+
+	tmp := t.TempDir()
+	if err := os.Chdir(tmp); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(origWD)
+
+	if err := writeFileAtomic(filepath.Join("lifted", "include", "lift_compat.h"), compatBytes, 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// Pre-populate destination with a legacy file-scope extern "C" declaration that has a different signature.
+	dst := "lifted/templates/WriteMethodType.cpp"
+	legacy := `// Lifted C++ translation unit: lifted/templates/WriteMethodType.cpp
+#include "lift_compat.h"
+extern "C" void ext_006A6DD2();
+extern "C" void* mem_00924FF4;
+
+// [0x00640000]
+// @name Legacy::fn
+// @summary Legacy function
+void fn_00640000() { ext_006A6DD2(); }
+`
+	if err := writeFileAtomic(dst, []byte(legacy), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// WIP 1: uses extern "C" { ... } block, different ext_006A6DD2 signature, struct ExprValue, static const.
+	wip1 := wipPathForVA("0x0064F450")
+	src1 := `// Isolated lift WIP: lifted/wip/fn_0064F450.cpp -> lifted/templates/WriteMethodType.cpp
+#include "lift_compat.h"
+#include <cmath>
+
+extern "C" {
+void ext_006A6DD2(void* obj, const void* info);
+uint32_t mem_00924FF4;
+}
+
+struct ExprValue { int a; };
+static const void* const kThrowInfo_009DEC1C = reinterpret_cast<const void*>(0x009DEC1Cu);
+
+// [0x0064F450]
+// @name WriteMethodType::setA
+// @summary Sets A
+void fn_0064F450(void* self) {
+    ExprValue v{ static_cast<int>(mem_00924FF4) };
+    ext_006A6DD2(&v, kThrowInfo_009DEC1C);
+}
+`
+	if err := writeFileAtomic(wip1, []byte(src1), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := mergeLiftedFile(wip1, dst, "0x0064F450"); err != nil {
+		t.Fatalf("merge wip1: %v", err)
+	}
+
+	// WIP 2: same helper struct name, same static const name, YET ANOTHER signature for ext_006A6DD2 and type for mem_00924FF4.
+	wip2 := wipPathForVA("0x0064F500")
+	src2 := `// Isolated lift WIP: lifted/wip/fn_0064F500.cpp -> lifted/templates/WriteMethodType.cpp
+#include "lift_compat.h"
+
+extern "C" int ext_006A6DD2(void* obj, void* info, int flags);
+extern "C" const char mem_00924FF4[];
+
+struct ExprValue { float b; double c; };
+static const void* const kThrowInfo_009DEC1C = reinterpret_cast<const void*>(0x009DEC1Cu);
+
+// [0x0064F500]
+// @name WriteMethodType::setB
+// @summary Sets B
+void fn_0064F500(void* self) {
+    ExprValue v{ 1.0f, 2.0 };
+    (void)mem_00924FF4[0];
+    ext_006A6DD2(&v, const_cast<void*>(kThrowInfo_009DEC1C), 0);
+}
+`
+	if err := writeFileAtomic(wip2, []byte(src2), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := mergeLiftedFile(wip2, dst, "0x0064F500"); err != nil {
+		t.Fatalf("merge wip2: %v", err)
+	}
+
+	if out, err := syntaxCheckCpp(dst); err != nil {
+		b, _ := os.ReadFile(dst)
+		t.Fatalf("merged file failed syntax check:\n%s\n--- FILE ---\n%s", out, string(b))
+	}
+}

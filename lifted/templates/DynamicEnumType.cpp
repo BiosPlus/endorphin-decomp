@@ -144,47 +144,14 @@ extern "C" void ext_0046C3C0();
 // Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
 extern "C" void ext_006A6DD2();
 
-extern "C" void ext_0046C3C0();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern "C" void ext_006A6DD2();
-// @summary Dynamically casts the input object pointer to NMData::CollisionModelDataBase using __RTDynamicCast.
-
-#include "lift_compat.h"
-
-extern "C" const char mem_00A2E2F8[];
-extern "C" const char mem_00A8AFF4[];
-extern "C" void* ext_006A6E9E(void* inPtr, ptrdiff_t vfDelta, const void* srcType,
-                              const void* targetType, int isReference);
-
 void* __thiscall fn_005C4870(void* /*self*/, void* obj) {
     return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A8AFF4, 0);
 }
-// Callee 0x0046C3C0: constructor-like routine, receives the exception buffer as its thiscall `this` (ecx).
-extern "C" void __thiscall ext_0046C3C0(void* self);
-// Callee 0x006A6DD2: IAT thunk forwarding to MSVCR80!_CxxThrowException(object, throwInfo) (cdecl).
-extern "C" void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
-// Throw-info descriptor pushed as the second argument of the throw (address 0x009DEC1C).
-static const void* const kThrowInfo_009DEC1C = reinterpret_cast<const void*>(0x009DEC1Cu);
 
-extern "C" void __thiscall ext_0046C3C0(void* self);
-// Callee 0x006A6DD2: IAT thunk forwarding to MSVCR80!_CxxThrowException(object, throwInfo) (cdecl).
-extern "C" void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
-// Throw-info descriptor pushed as the second argument of the throw (address 0x009DEC1C).
-static const void* const kThrowInfo_009DEC1C = reinterpret_cast<const void*>(0x009DEC1Cu);
-    return ext_006A6E9E(ptr, 0, mem_00A2E2F8, mem_00A4279C, 0);
-}
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-// Callee 0x0046C3C0: constructor-like routine (builds the exception object in the caller's frame).
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
 // @name DynamicEnumType::vfunc_9
 // @class ExprParser::DynamicEnumType
 // @summary Dispatches vtable+0x78 on field_0x4 with arg0, then calls sub_006720A0 on arg0 with arg1.
 // @field ExprParser::DynamicEnumType +0x04 void* field_0x04
-
-#include "lift_compat.h"
 
 extern uint32_t mem_read32(uint32_t addr);
 extern uint32_t __thiscall ext_006720A0(uint32_t self, uint32_t arg1);

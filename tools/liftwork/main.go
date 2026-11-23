@@ -550,8 +550,8 @@ func cmdCheck(args []string) {
 		os.Exit(1)
 	}
 
-	recordLiftCheckRun(va, liftedBy, "pass")
 	if *dryRun {
+		recordLiftCheckRun(va, liftedBy, "pass")
 		fmt.Printf("DRY-RUN PASS: %s -> %s\n", va, meta.Name)
 		fmt.Printf("  class:     %s\n", meta.Class)
 		fmt.Printf("  signature: %s\n", meta.Signature)
@@ -579,12 +579,23 @@ func cmdCheck(args []string) {
 	var mergeErr error
 	worklock.With(func() {
 		if usingWip {
+			origBytes, origErr := os.ReadFile(liftedPath)
+			rollback := func() {
+				if origErr == nil {
+					_ = writeFileAtomic(liftedPath, origBytes, 0o644)
+				} else {
+					_ = os.Remove(liftedPath)
+				}
+			}
 			if err := mergeLiftedFile(wipPath, liftedPath, va); err != nil {
+				rollback()
 				mergeErr = fmt.Errorf("merging %s into %s: %w", wipPath, liftedPath, err)
 				return
 			}
-			// Re-verify the merged destination file compiles cleanly!
+			// Re-verify the merged destination file compiles cleanly; roll back on failure
+			// so a broken merge can never poison liftedPath for subsequent workers.
 			if out, err := syntaxCheckCpp(liftedPath); err != nil {
+				rollback()
 				mergeErr = fmt.Errorf("merged file %s failed compile check:\n%s", liftedPath, out)
 				return
 			}
@@ -605,10 +616,12 @@ func cmdCheck(args []string) {
 		}
 	})
 	if mergeErr != nil {
+		recordLiftCheckRun(va, liftedBy, "reject:merge")
 		fmt.Fprintf(os.Stderr, "FAIL [merge] %s: %v\n", va, mergeErr)
 		os.Exit(1)
 	}
 
+	recordLiftCheckRun(va, liftedBy, "pass")
 	fmt.Printf("LIFTED %s -> %s (%d fields) [%s]\n", va, entry.Name, len(entry.Fields), entry.LiftedBy)
 }
 

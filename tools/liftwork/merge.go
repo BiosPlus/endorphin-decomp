@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 
@@ -15,6 +16,58 @@ const (
 	liftWipBannerPrefix   = "// Isolated lift WIP:"
 	liftShardBannerPrefix = "// Lifted C++ translation unit:"
 )
+
+var (
+	externCBlockStartRe = regexp.MustCompile(`^extern\s+"C"\s*\{\s*$`)
+	externCInlineRe     = regexp.MustCompile(`\bextern\s+"C"\s+`)
+)
+
+// stripExternCForNamespace rewrites `extern "C"` declarations and `extern "C" { ... }`
+// blocks so they use C++ linkage scoped to the enclosing per-VA namespace. This prevents
+// cross-function collisions when two lifted functions in the same translation unit declare
+// the same ext_XXXXXXXX or mem_XXXXXXXX symbol with different parameter lists or types.
+func stripExternCForNamespace(lines []string) []string {
+	out := make([]string, 0, len(lines))
+	inExternCBlock := false
+	blockDepth := 0
+	for _, l := range lines {
+		t := strings.TrimSpace(l)
+		if !inExternCBlock && externCBlockStartRe.MatchString(t) {
+			inExternCBlock = true
+			blockDepth = 1
+			continue
+		}
+		if inExternCBlock {
+			code := stripCppComments(l)
+			opens := strings.Count(code, "{")
+			closes := strings.Count(code, "}")
+			nextDepth := blockDepth + opens - closes
+			if nextDepth <= 0 && t == "}" {
+				inExternCBlock = false
+				blockDepth = 0
+				continue
+			}
+			blockDepth = nextDepth
+			if blockDepth <= 0 {
+				inExternCBlock = false
+				blockDepth = 0
+			}
+		}
+		if strings.Contains(l, `extern "C"`) {
+			// Replace `extern "C" ` with `extern ` unless followed by typedef/using.
+			replaced := externCInlineRe.ReplaceAllStringFunc(l, func(m string) string {
+				return "extern "
+			})
+			// Fix rare `extern typedef` / `extern using` if present.
+			replaced = strings.ReplaceAll(replaced, "extern typedef ", "typedef ")
+			replaced = strings.ReplaceAll(replaced, "extern using ", "using ")
+			out = append(out, replaced)
+			continue
+		}
+		out = append(out, l)
+	}
+	return out
+}
 
 // stripLiftedFunc removes any existing // [0xVA] block from a lifted .cpp file content.
 func stripLiftedFunc(content, vaHex string) string {
@@ -39,34 +92,38 @@ func stripLiftedFunc(content, vaHex string) string {
 }
 
 // mergeLiftedFile merges a verified lifted WIP file into dstPath (lifted/<rel-path>.cpp).
-// Deduplicates #include and preamble extern/using/typedef declarations, strips any prior
-// block for vaHex, and writes dstPath atomically.
+// Deduplicates #include lines into the file preamble, isolates per-function declarations,
+// helper structs/constants, and the function body inside `namespace lift_<VA> { ... }`
+// so independently lifted functions never collide in the same translation unit, strips
+// any prior block for vaHex, and writes dstPath atomically.
 func mergeLiftedFile(wipPath, dstPath, vaHex string) error {
 	wipBytes, err := os.ReadFile(wipPath)
 	if err != nil {
 		return err
 	}
 	norm := unitstore.NormVA(vaHex)
+	vaHexUpper := strings.TrimPrefix(norm, "0x")
 	wipLines := strings.Split(strings.ReplaceAll(string(wipBytes), "\r\n", "\n"), "\n")
 
 	var wipIncludes []string
 	var wipPreamble []string
 	var wipFuncLines []string
+	markerLine := ""
 	inFunc := false
 
 	for _, l := range wipLines {
 		t := strings.TrimSpace(l)
-		if !inFunc && strings.HasPrefix(t, "#include") {
+		if strings.HasPrefix(t, "#include") {
 			wipIncludes = append(wipIncludes, t)
 			continue
 		}
 		if !inFunc {
 			if m := markerLineRe.FindStringSubmatch(t); len(m) == 2 {
 				inFunc = true
-				wipFuncLines = append(wipFuncLines, l)
+				markerLine = l
 				continue
 			}
-			if strings.HasPrefix(t, liftWipBannerPrefix) || strings.HasPrefix(t, liftShardBannerPrefix) || t == "" {
+			if strings.HasPrefix(t, liftWipBannerPrefix) || strings.HasPrefix(t, liftShardBannerPrefix) {
 				continue
 			}
 			wipPreamble = append(wipPreamble, l)
@@ -75,14 +132,27 @@ func mergeLiftedFile(wipPath, dstPath, vaHex string) error {
 		}
 	}
 
-	var funcBlock string
-	if inFunc {
-		funcBlock = strings.TrimSpace(strings.Join(wipFuncLines, "\n"))
-	} else {
-		body := append(wipPreamble, wipFuncLines...)
-		wipPreamble = nil
-		funcBlock = fmt.Sprintf("// [%s]\n%s", norm, strings.TrimSpace(strings.Join(body, "\n")))
+	if markerLine == "" {
+		markerLine = fmt.Sprintf("// [%s]", norm)
 	}
+
+	var innerLines []string
+	trimmedPreamble := strings.TrimSpace(strings.Join(wipPreamble, "\n"))
+	if trimmedPreamble != "" {
+		innerLines = append(innerLines, strings.Split(trimmedPreamble, "\n")...)
+	}
+	trimmedFunc := strings.TrimSpace(strings.Join(wipFuncLines, "\n"))
+	if trimmedFunc != "" {
+		if len(innerLines) > 0 {
+			innerLines = append(innerLines, "")
+		}
+		innerLines = append(innerLines, strings.Split(trimmedFunc, "\n")...)
+	}
+	innerLines = stripExternCForNamespace(innerLines)
+
+	nsName := "lift_" + vaHexUpper
+	funcBlock := fmt.Sprintf("%s\nnamespace %s {\n%s\n} // namespace %s",
+		markerLine, nsName, strings.TrimSpace(strings.Join(innerLines, "\n")), nsName)
 
 	var dstContent string
 	if curBytes, err := os.ReadFile(dstPath); err == nil {
@@ -122,27 +192,11 @@ func mergeLiftedFile(wipPath, dstPath, vaHex string) error {
 			newIncludes = append(newIncludes, inc)
 		}
 	}
-	var newDecls []string
-	for _, decl := range wipPreamble {
-		t := strings.TrimSpace(decl)
-		if t == "" {
-			continue
-		}
-		if strings.HasPrefix(t, "extern ") || strings.HasPrefix(t, "using ") ||
-			strings.HasPrefix(t, "typedef ") || strings.HasPrefix(t, "#define ") {
-			if existing[t] {
-				continue
-			}
-			existing[t] = true
-		}
-		newDecls = append(newDecls, decl)
-	}
 
 	for len(dstPreamble) > 0 && strings.TrimSpace(dstPreamble[len(dstPreamble)-1]) == "" {
 		dstPreamble = dstPreamble[:len(dstPreamble)-1]
 	}
 	dstPreamble = append(dstPreamble, newIncludes...)
-	dstPreamble = append(dstPreamble, newDecls...)
 
 	var out strings.Builder
 	out.WriteString(strings.Join(dstPreamble, "\n"))
