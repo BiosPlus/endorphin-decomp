@@ -1,0 +1,22 @@
+{
+  "va": "0x006272B0",
+  "size": 27,
+  "orig_symbol": "Sensors::SensorAbsoluteVerticalVelocityMag::vfunc_17",
+  "src_path": "src/Sensors/SensorAbsoluteVerticalVelocityMag.cpp",
+  "lifted_path": "lifted/Sensors/SensorAbsoluteVerticalVelocityMag.cpp",
+  "name": "SensorAbsoluteVerticalVelocityMag::vfunc_17",
+  "class": "Sensors::SensorAbsoluteVerticalVelocityMag",
+  "signature": "float fn_006272B0(void* self)",
+  "summary": "Calls the base update routine, then returns the magnitude (absolute value) of the float at +0x34.",
+  "fields": [
+    {
+      "class": "Sensors::SensorAbsoluteVerticalVelocityMag",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:30:41Z"
+}

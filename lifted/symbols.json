@@ -9321,6 +9321,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006268F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006272B0": {
+    "name": "SensorAbsoluteVerticalVelocityMag::vfunc_17",
+    "class": "Sensors::SensorAbsoluteVerticalVelocityMag",
+    "signature": "float fn_006272B0(void* self)",
+    "summary": "Calls the base update routine, then returns the magnitude (absolute value) of the float at +0x34.",
+    "lifted_path": "lifted/Sensors/SensorAbsoluteVerticalVelocityMag.cpp"
+  },
   "0x006274B0": {
     "name": "Sensors::SensorAbsoluteTM::vfunc_15",
     "class": "Sensors::SensorAbsoluteTM",
