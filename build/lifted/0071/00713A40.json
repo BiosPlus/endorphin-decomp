@@ -1,0 +1,13 @@
+{
+  "va": "0x00713A40",
+  "size": 10,
+  "orig_symbol": "sub_00713A40",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "thunk_sub_00714060",
+  "signature": "void sub_00713A40()",
+  "summary": "Tail-call thunk passing global object mem_00B5F780 as this to sub_00714060",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:05Z"
+}
