@@ -15,5 +15,6 @@ struct Effector_Fields {
     // +0x4C  float                    gradient  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x006059A0, 0x00633240)
     // +0x50  float                    gradientCap  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x006059E0, 0x00633240)
     // +0x54  float                    field_0x54  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x00605960, 0x00633240)
+    // +0x58  float                    field_0x58  (evidence: 0x006065F0)
 };
 } // namespace lifted_layout

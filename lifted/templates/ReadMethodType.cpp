@@ -16958,3 +16958,29 @@ void* fn_005D78A0(void* /*self_unused*/, void* out) {
     return out;
 }
 } // namespace lift_005D78A0
+
+// [0x006065F0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_006065F0 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Effector, float, getRawDesiredDisplacement>::vfunc_0
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>
+// @summary Reads the Effector pointer held in the holder; if present, forwards its +0x58 float via sub_00672080 and returns the holder, otherwise throws.
+// @field Effector +0x58 float field_0x58
+void* fn_006065F0(void* holder, void* /*unused*/) {
+    void* obj = *reinterpret_cast<void**>(holder);
+    if (obj == nullptr) {
+        // Null path: construct the exception object in a 0x28-byte local and throw it.
+        unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return nullptr;
+    }
+    float value = lift_field<float>(obj, 0x58);
+    ext_00672080(holder, value);
+    return holder;
+}
+} // namespace lift_006065F0

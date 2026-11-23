@@ -14106,6 +14106,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006065F0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, getRawDesiredDisplacement\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0\u003e",
+    "signature": "void* fn_006065F0(void* holder, void* /*unused*/)",
+    "summary": "Reads the Effector pointer held in the holder; if present, forwards its +0x58 float via sub_00672080 and returns the holder, otherwise throws.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00606640": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0\u003e",
