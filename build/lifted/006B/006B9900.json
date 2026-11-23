@@ -1,0 +1,13 @@
+{
+  "va": "0x006B9900",
+  "size": 10,
+  "orig_symbol": "sub_006B9900",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B9900",
+  "signature": "extern void fn_006B9900(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:36:56Z"
+}

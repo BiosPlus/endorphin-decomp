@@ -1,0 +1,13 @@
+{
+  "va": "0x007B1F90",
+  "size": 10,
+  "orig_symbol": "sub_007B1F90",
+  "src_path": "src/leaf/tiny_7B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7B0000.cpp",
+  "name": "sub_007B1F90",
+  "signature": "extern void fn_007B1F90(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:36:56Z"
+}

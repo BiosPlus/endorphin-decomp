@@ -29310,6 +29310,18 @@
     "summary": "Pure jump thunk forwarding to NMCAutoCompleteEdit::vfunc_80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B98E0": {
+    "name": "sub_006B98E0",
+    "signature": "extern void fn_006B98E0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
+  "0x006B9900": {
+    "name": "sub_006B9900",
+    "signature": "extern void fn_006B9900(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B99C0": {
     "name": "sub_006B99C0",
     "signature": "extern \"C\" int32_t __fastcall fn_006B99C0(void* self)",
@@ -32658,6 +32670,18 @@
     "summary": "Returns address of global mem_00AAC03C.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713760": {
+    "name": "sub_00713760",
+    "signature": "extern void fn_00713760(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007137A0": {
+    "name": "sub_007137A0",
+    "signature": "extern void fn_007137A0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x007137E0": {
     "name": "initSingleton_007137E0",
     "signature": "void sub_007137E0()",
@@ -32722,6 +32746,198 @@
     "name": "thunk_sub_00714060",
     "signature": "void sub_00713A40()",
     "summary": "Tail-call thunk passing global object mem_00B5F780 as this to sub_00714060",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713A80": {
+    "name": "sub_00713A80",
+    "signature": "extern void fn_00713A80(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713AC0": {
+    "name": "sub_00713AC0",
+    "signature": "extern void fn_00713AC0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713B00": {
+    "name": "sub_00713B00",
+    "signature": "extern void fn_00713B00(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713B40": {
+    "name": "sub_00713B40",
+    "signature": "extern void fn_00713B40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713B80": {
+    "name": "sub_00713B80",
+    "signature": "extern void fn_00713B80(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713BC0": {
+    "name": "sub_00713BC0",
+    "signature": "extern void fn_00713BC0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713C00": {
+    "name": "sub_00713C00",
+    "signature": "extern void fn_00713C00(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713C40": {
+    "name": "sub_00713C40",
+    "signature": "extern void fn_00713C40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713C80": {
+    "name": "sub_00713C80",
+    "signature": "extern void fn_00713C80(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713CC0": {
+    "name": "sub_00713CC0",
+    "signature": "extern void fn_00713CC0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713D00": {
+    "name": "sub_00713D00",
+    "signature": "extern void fn_00713D00(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713E20": {
+    "name": "sub_00713E20",
+    "signature": "extern void fn_00713E20(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713EB0": {
+    "name": "sub_00713EB0",
+    "signature": "extern void fn_00713EB0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713F20": {
+    "name": "sub_00713F20",
+    "signature": "extern void fn_00713F20(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714050": {
+    "name": "sub_00714050",
+    "signature": "extern void fn_00714050(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007140A0": {
+    "name": "sub_007140A0",
+    "signature": "extern void fn_007140A0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714110": {
+    "name": "sub_00714110",
+    "signature": "extern void fn_00714110(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714150": {
+    "name": "sub_00714150",
+    "signature": "extern void fn_00714150(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714190": {
+    "name": "sub_00714190",
+    "signature": "extern void fn_00714190(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007141D0": {
+    "name": "sub_007141D0",
+    "signature": "extern void fn_007141D0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714210": {
+    "name": "sub_00714210",
+    "signature": "extern void fn_00714210(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714250": {
+    "name": "sub_00714250",
+    "signature": "extern void fn_00714250(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007142C0": {
+    "name": "sub_007142C0",
+    "signature": "extern void fn_007142C0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714300": {
+    "name": "sub_00714300",
+    "signature": "extern void fn_00714300(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714340": {
+    "name": "sub_00714340",
+    "signature": "extern void fn_00714340(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714380": {
+    "name": "sub_00714380",
+    "signature": "extern void fn_00714380(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007143C0": {
+    "name": "sub_007143C0",
+    "signature": "extern void fn_007143C0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714430": {
+    "name": "sub_00714430",
+    "signature": "extern void fn_00714430(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007144A0": {
+    "name": "sub_007144A0",
+    "signature": "extern void fn_007144A0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007144E0": {
+    "name": "sub_007144E0",
+    "signature": "extern void fn_007144E0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714520": {
+    "name": "sub_00714520",
+    "signature": "extern void fn_00714520(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714560": {
+    "name": "sub_00714560",
+    "signature": "extern void fn_00714560(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x00714970": {
@@ -33204,6 +33420,12 @@
     "summary": "Loads global 0x00B600B8 into ECX and tail-calls sub_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B860": {
+    "name": "sub_0072B860",
+    "signature": "extern void __cdecl fn_0072B860(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072B880 (initGlobalNoop_0072B880).",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x0072B880": {
     "name": "initGlobalNoop_0072B880",
     "signature": "extern \"C\" void __cdecl fn_0072B880(void)",
@@ -33383,6 +33605,12 @@
     "signature": "extern \"C\" int32_t __cdecl fn_0077FE40(void)",
     "summary": "Returns constant 0xB1.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
+  "0x00780290": {
+    "name": "sub_00780290",
+    "signature": "extern void fn_00780290(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
   "0x00782D20": {
     "name": "sub_00782D20",
@@ -33794,16 +34022,34 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007AD590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AE080": {
+    "name": "sub_007AE080",
+    "signature": "extern void fn_007AE080(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AE0A0": {
     "name": "sub_007AE0A0",
     "signature": "extern \"C\" void fn_007AE0A0(void)",
     "summary": "Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AE0C0": {
+    "name": "sub_007AE0C0",
+    "signature": "extern void fn_007AE0C0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AE0E0": {
     "name": "tailCallWithGlobal_007AE0E0",
     "signature": "extern \"C\" void fn_007AE0E0(void)",
     "summary": "Sets this pointer to global 0x00B61708 and tail-calls sub_006B9D70.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AE100": {
+    "name": "sub_007AE100",
+    "signature": "extern void fn_007AE100(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
   "0x007AE120": {
@@ -33829,6 +34075,36 @@
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007B1E90": {
+    "name": "sub_007B1E90",
+    "signature": "extern void fn_007B1E90(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B1EB0": {
+    "name": "sub_007B1EB0",
+    "signature": "extern void fn_007B1EB0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B1F70": {
+    "name": "sub_007B1F70",
+    "signature": "extern void fn_007B1F70(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B1F90": {
+    "name": "sub_007B1F90",
+    "signature": "extern void fn_007B1F90(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B2080": {
+    "name": "sub_007B2080",
+    "signature": "extern void fn_007B2080(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
   "0x007B2290": {
     "name": "sub_007B2290",

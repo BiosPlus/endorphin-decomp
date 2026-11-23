@@ -240,3 +240,23 @@ void __thiscall sub_0078D1E0(void* self) {
     LeaveCriticalSection(criticalSection);
 }
 } // namespace lift_0078D1E0
+
+// [0x00780290] sub_00780290 (10 bytes)
+namespace lift_00780290 {
+// @name sub_00780290
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00780250(void);
+
+extern uint8_t mem_00B608A0[];
+
+extern void fn_00780290(void) {
+    (void)mem_00B608A0;
+    ext_00780250();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00780290

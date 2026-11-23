@@ -844,3 +844,683 @@ void sub_00713A40() {
     ext_00714060(mem_00B5F780);
 }
 } // namespace lift_00713A40
+
+// [0x00713760] sub_00713760 (10 bytes)
+namespace lift_00713760 {
+// @name sub_00713760
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F810[];
+
+extern void fn_00713760(void) {
+    (void)mem_00B5F810;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713760
+
+// [0x007137A0] sub_007137A0 (10 bytes)
+namespace lift_007137A0 {
+// @name sub_007137A0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F7B0[];
+
+extern void fn_007137A0(void) {
+    (void)mem_00B5F7B0;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007137A0
+
+// [0x00713A80] sub_00713A80 (10 bytes)
+namespace lift_00713A80 {
+// @name sub_00713A80
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F650[];
+
+extern void fn_00713A80(void) {
+    (void)mem_00B5F650;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713A80
+
+// [0x00713AC0] sub_00713AC0 (10 bytes)
+namespace lift_00713AC0 {
+// @name sub_00713AC0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F608[];
+
+extern void fn_00713AC0(void) {
+    (void)mem_00B5F608;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713AC0
+
+// [0x00713B00] sub_00713B00 (10 bytes)
+namespace lift_00713B00 {
+// @name sub_00713B00
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F620[];
+
+extern void fn_00713B00(void) {
+    (void)mem_00B5F620;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713B00
+
+// [0x00713B40] sub_00713B40 (10 bytes)
+namespace lift_00713B40 {
+// @name sub_00713B40
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F428[];
+
+extern void fn_00713B40(void) {
+    (void)mem_00B5F428;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713B40
+
+// [0x00713B80] sub_00713B80 (10 bytes)
+namespace lift_00713B80 {
+// @name sub_00713B80
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F440[];
+
+extern void fn_00713B80(void) {
+    (void)mem_00B5F440;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713B80
+
+// [0x00713BC0] sub_00713BC0 (10 bytes)
+namespace lift_00713BC0 {
+// @name sub_00713BC0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F6D8[];
+
+extern void fn_00713BC0(void) {
+    (void)mem_00B5F6D8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713BC0
+
+// [0x00713C00] sub_00713C00 (10 bytes)
+namespace lift_00713C00 {
+// @name sub_00713C00
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F4C8[];
+
+extern void fn_00713C00(void) {
+    (void)mem_00B5F4C8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713C00
+
+// [0x00713C40] sub_00713C40 (10 bytes)
+namespace lift_00713C40 {
+// @name sub_00713C40
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F398[];
+
+extern void fn_00713C40(void) {
+    (void)mem_00B5F398;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713C40
+
+// [0x00713C80] sub_00713C80 (10 bytes)
+namespace lift_00713C80 {
+// @name sub_00713C80
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F738[];
+
+extern void fn_00713C80(void) {
+    (void)mem_00B5F738;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713C80
+
+// [0x00713CC0] sub_00713CC0 (10 bytes)
+namespace lift_00713CC0 {
+// @name sub_00713CC0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F720[];
+
+extern void fn_00713CC0(void) {
+    (void)mem_00B5F720;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713CC0
+
+// [0x00713D00] sub_00713D00 (10 bytes)
+namespace lift_00713D00 {
+// @name sub_00713D00
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F5D8[];
+
+extern void fn_00713D00(void) {
+    (void)mem_00B5F5D8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713D00
+
+// [0x00713E20] sub_00713E20 (10 bytes)
+namespace lift_00713E20 {
+// @name sub_00713E20
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F870[];
+
+extern void fn_00713E20(void) {
+    (void)mem_00B5F870;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713E20
+
+// [0x00713EB0] sub_00713EB0 (10 bytes)
+namespace lift_00713EB0 {
+// @name sub_00713EB0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F768[];
+
+extern void fn_00713EB0(void) {
+    (void)mem_00B5F768;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713EB0
+
+// [0x00713F20] sub_00713F20 (10 bytes)
+namespace lift_00713F20 {
+// @name sub_00713F20
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F750[];
+
+extern void fn_00713F20(void) {
+    (void)mem_00B5F750;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00713F20
+
+// [0x00714050] sub_00714050 (10 bytes)
+namespace lift_00714050 {
+// @name sub_00714050
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F668[];
+
+extern void fn_00714050(void) {
+    (void)mem_00B5F668;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714050
+
+// [0x007140A0] sub_007140A0 (10 bytes)
+namespace lift_007140A0 {
+// @name sub_007140A0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F5A8[];
+
+extern void fn_007140A0(void) {
+    (void)mem_00B5F5A8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007140A0
+
+// [0x00714110] sub_00714110 (10 bytes)
+namespace lift_00714110 {
+// @name sub_00714110
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F698[];
+
+extern void fn_00714110(void) {
+    (void)mem_00B5F698;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714110
+
+// [0x00714150] sub_00714150 (10 bytes)
+namespace lift_00714150 {
+// @name sub_00714150
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F828[];
+
+extern void fn_00714150(void) {
+    (void)mem_00B5F828;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714150
+
+// [0x00714190] sub_00714190 (10 bytes)
+namespace lift_00714190 {
+// @name sub_00714190
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F4F8[];
+
+extern void fn_00714190(void) {
+    (void)mem_00B5F4F8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714190
+
+// [0x007141D0] sub_007141D0 (10 bytes)
+namespace lift_007141D0 {
+// @name sub_007141D0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F3C8[];
+
+extern void fn_007141D0(void) {
+    (void)mem_00B5F3C8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007141D0
+
+// [0x00714210] sub_00714210 (10 bytes)
+namespace lift_00714210 {
+// @name sub_00714210
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F6C0[];
+
+extern void fn_00714210(void) {
+    (void)mem_00B5F6C0;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714210
+
+// [0x00714250] sub_00714250 (10 bytes)
+namespace lift_00714250 {
+// @name sub_00714250
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F7C8[];
+
+extern void fn_00714250(void) {
+    (void)mem_00B5F7C8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714250
+
+// [0x007142C0] sub_007142C0 (10 bytes)
+namespace lift_007142C0 {
+// @name sub_007142C0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F5C0[];
+
+extern void fn_007142C0(void) {
+    (void)mem_00B5F5C0;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007142C0
+
+// [0x00714300] sub_00714300 (10 bytes)
+namespace lift_00714300 {
+// @name sub_00714300
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F6F0[];
+
+extern void fn_00714300(void) {
+    (void)mem_00B5F6F0;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714300
+
+// [0x00714340] sub_00714340 (10 bytes)
+namespace lift_00714340 {
+// @name sub_00714340
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F680[];
+
+extern void fn_00714340(void) {
+    (void)mem_00B5F680;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714340
+
+// [0x00714380] sub_00714380 (10 bytes)
+namespace lift_00714380 {
+// @name sub_00714380
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F638[];
+
+extern void fn_00714380(void) {
+    (void)mem_00B5F638;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714380
+
+// [0x007143C0] sub_007143C0 (10 bytes)
+namespace lift_007143C0 {
+// @name sub_007143C0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F3F8[];
+
+extern void fn_007143C0(void) {
+    (void)mem_00B5F3F8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007143C0
+
+// [0x00714430] sub_00714430 (10 bytes)
+namespace lift_00714430 {
+// @name sub_00714430
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F3B0[];
+
+extern void fn_00714430(void) {
+    (void)mem_00B5F3B0;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714430
+
+// [0x007144A0] sub_007144A0 (10 bytes)
+namespace lift_007144A0 {
+// @name sub_007144A0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F550[];
+
+extern void fn_007144A0(void) {
+    (void)mem_00B5F550;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007144A0
+
+// [0x007144E0] sub_007144E0 (10 bytes)
+namespace lift_007144E0 {
+// @name sub_007144E0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F4B0[];
+
+extern void fn_007144E0(void) {
+    (void)mem_00B5F4B0;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007144E0
+
+// [0x00714520] sub_00714520 (10 bytes)
+namespace lift_00714520 {
+// @name sub_00714520
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F840[];
+
+extern void fn_00714520(void) {
+    (void)mem_00B5F840;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714520
+
+// [0x00714560] sub_00714560 (10 bytes)
+namespace lift_00714560 {
+// @name sub_00714560
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714060(void);
+
+extern uint8_t mem_00B5F7F8[];
+
+extern void fn_00714560(void) {
+    (void)mem_00B5F7F8;
+    ext_00714060();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_00714560
