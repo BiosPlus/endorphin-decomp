@@ -4,11 +4,11 @@
   "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0\u003e::vfunc_0",
   "src_path": "src/templates/ReadMethodType.cpp",
   "lifted_path": "lifted/templates/ReadMethodType.cpp",
-  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0\u003e::vfunc_0",
-  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0\u003e",
-  "signature": "extern void* __thiscall fn_004A38A0(void* self, void* out_val, void** obj_ptr)",
-  "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
+  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getFontSize\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getFontSize\u003e",
+  "signature": "extern \"C\" uint32_t fn_004A38A0(uint32_t self, uint32_t out_val, uint32_t obj_ptr)",
+  "summary": "Reads the font size from an FSMEditView instance into a result value, or throws if null.",
   "status": "lifted",
-  "lifted_by": "script:auto_lift_clone",
-  "lifted_at": "2026-11-23T13:51:23Z"
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:52:08Z"
 }
