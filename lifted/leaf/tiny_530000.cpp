@@ -62,3 +62,18 @@ extern "C" void __fastcall fn_0053F690(void* self) {
     void* delegate_obj = lift_field<void*>(self, 0xB4);
     ext_00533CF0(delegate_obj);
 }
+
+// [0x0053F550]
+namespace lift_0053F550 {
+// @name sub_0053F550
+// @summary Sets the vtable pointer at offset 0 of the object in ecx and returns this.
+// @field Object +0x00 uint32_t vftable
+
+
+extern uint8_t mem_00955D6C[];
+
+uint32_t __thiscall sub_0053F550(uint32_t self) {
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self)) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00955D6C));
+    return self;
+}
+} // namespace lift_0053F550

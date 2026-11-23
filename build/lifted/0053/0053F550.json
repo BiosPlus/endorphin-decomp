@@ -1,0 +1,21 @@
+{
+  "va": "0x0053F550",
+  "size": 9,
+  "orig_symbol": "sub_0053F550",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "sub_0053F550",
+  "signature": "uint32_t __thiscall sub_0053F550(uint32_t self)",
+  "summary": "Sets the vtable pointer at offset 0 of the object in ecx and returns this.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:19Z"
+}

@@ -10749,6 +10749,12 @@
     "summary": "Renders the cuboid base and, if enabled and having \u003e1 keyframes, draws GL_LINES connecting keyframe positions.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053F550": {
+    "name": "sub_0053F550",
+    "signature": "uint32_t __thiscall sub_0053F550(uint32_t self)",
+    "summary": "Sets the vtable pointer at offset 0 of the object in ecx and returns this.",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x0053F5D0": {
     "name": "NullRenderer::vfunc_0",
     "class": "NullRenderer",
@@ -19861,6 +19867,12 @@
     "signature": "extern \"C\" void fn_0063E930(void)",
     "summary": "Pure jump thunk forwarding to sub_0063E890.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0063E960": {
+    "name": "sub_0063E960_ctor",
+    "signature": "uint32_t __thiscall sub_0063E960(uint32_t this_ptr)",
+    "summary": "Initializes object vtable pointer at +0x00 to 0x0097CC34 and returns this.",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
   "0x0063E970": {
     "name": "sub_0063E970",
