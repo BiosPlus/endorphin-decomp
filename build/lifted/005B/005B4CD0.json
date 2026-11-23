@@ -1,0 +1,28 @@
+{
+  "va": "0x005B4CD0",
+  "size": 359,
+  "orig_symbol": "Geometry::SphereType::vfunc_16",
+  "src_path": "src/Geometry/SphereType.cpp",
+  "lifted_path": "lifted/Geometry/SphereType.cpp",
+  "name": "Geometry::SphereType::vfunc_16",
+  "class": "Geometry::SphereType",
+  "signature": "void fn_005B4CD0(void* unusedArg1, void* obj, int32_t rings, int32_t segments)",
+  "summary": "Emits sphere geometry as latitude rings (rings = arg3) of segments (segments = arg4), with ring height step 2r/rings.",
+  "fields": [
+    {
+      "class": "Geometry::SphereType",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Geometry::SphereType",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:32:48Z"
+}

@@ -10200,6 +10200,13 @@
     "summary": "Generates the 8 scaled cuboid corner vertices and appends them to a vector.",
     "lifted_path": "lifted/Geometry/CuboidType.cpp"
   },
+  "0x005B4CD0": {
+    "name": "Geometry::SphereType::vfunc_16",
+    "class": "Geometry::SphereType",
+    "signature": "void fn_005B4CD0(void* unusedArg1, void* obj, int32_t rings, int32_t segments)",
+    "summary": "Emits sphere geometry as latitude rings (rings = arg3) of segments (segments = arg4), with ring height step 2r/rings.",
+    "lifted_path": "lifted/Geometry/SphereType.cpp"
+  },
   "0x005B5320": {
     "name": "Geometry::AnimationType::getStaticList",
     "class": "Geometry::AnimationType",
