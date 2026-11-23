@@ -1,0 +1,22 @@
+{
+  "va": "0x005F36B0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
+  "signature": "void fn_005F36B0(void* out, void** arg, void* self)",
+  "summary": "Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:05:44Z"
+}

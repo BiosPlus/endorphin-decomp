@@ -13,5 +13,6 @@ struct ExprParser_WriteMethodType_Fields {
     // +0x0   void*                    targetObj  (evidence: 0x00604C40) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and +0x70)  (evidence: 0x005A2C40, 0x00627720, 0x0062B380, 0x00650DB0, 0x00650E50, 0x0068BC90) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    expr  (evidence: 0x00604C70) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    inner  (evidence: 0x005F36B0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

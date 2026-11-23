@@ -3146,3 +3146,35 @@ void fn_00594550(uint32_t* out, uint32_t* world_ref, void* src) {
     }
 }
 } // namespace lift_00594550
+
+// [0x005F36B0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_005F36B0 {
+// Known callee 0x0064F900: VirtualSlot21Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 21 (offset +0x54) with the same this pointer; the callee's result is passed through.)
+extern void ext_0064F900(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
+// @summary Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).
+// @field ExprParser::WriteMethodType +0x04 void* inner
+void fn_005F36B0(void* out, void** arg, void* self) {
+    void* innerObj = lift_field<void*>(self, 0x04);
+
+    // Slot 1 of the inner object's vtable, called with self; yields a float.
+    void** innerVtbl = *reinterpret_cast<void***>(innerObj);
+    float v = reinterpret_cast<float (*)(void*, void*)>(innerVtbl[1])(innerObj, self);
+
+    void* target = *arg;
+    ext_0064F900(target, v);
+
+    uint32_t outValue = 0;
+    void* outPtr = lift_field<void*>(self, 0x04);
+    if (outPtr != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(outPtr);
+        uint32_t* p = reinterpret_cast<uint32_t* (*)(void*, void*)>(vtbl[0x70 / 4])(outPtr, self);
+        outValue = *p;
+    }
+
+    lift_field<uint32_t>(out, 0x00) = outValue;
+    lift_field<void*>(out, 0x04) = outPtr;
+}
+} // namespace lift_005F36B0

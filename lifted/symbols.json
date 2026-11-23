@@ -8877,6 +8877,13 @@
     "summary": "Evaluates the value expression as float and writes it to the target object via its vtable slot 21 setter.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F36B0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
+    "signature": "void fn_005F36B0(void* out, void** arg, void* self)",
+    "summary": "Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F4930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e",
