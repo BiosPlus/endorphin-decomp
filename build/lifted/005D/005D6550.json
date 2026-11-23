@@ -1,0 +1,22 @@
+{
+  "va": "0x005D6550",
+  "size": 69,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType\u003e",
+  "signature": "void* __thiscall fn_005D6550(void* self, void* out_str, const void* const* obj_ptr)",
+  "summary": "Reads Interpreter::getType() into output string or throws if Interpreter pointer is null.",
+  "fields": [
+    {
+      "class": "Interpreter",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:10:17Z"
+}

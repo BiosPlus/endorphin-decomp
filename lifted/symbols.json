@@ -13458,6 +13458,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B8130 (FunctionType_MetaBodyData_getAreaToNormal_vfunc_48).",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x0062E430": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026Sensors::CompoundSensorPlanes::getVertAxis, 1\u003e",
+    "signature": "void* __thiscall fn_0062E430(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062E4F0": {
     "name": "ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
@@ -16458,6 +16465,13 @@
     "signature": "extern \"C\" void __fastcall fn_006744A0(void* self)",
     "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x00674C90": {
+    "name": "ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1",
+    "class": "ExprParser::ReadMethodType_ExpressionEntry_getExpression",
+    "signature": "float __thiscall fn_00674C90(void* /*this*/, void* arg0)",
+    "summary": "Reads an ExpressionEntry's expression string and converts it to float via atof, throwing an exception if the entry pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00675100": {
     "name": "sub_00675100",

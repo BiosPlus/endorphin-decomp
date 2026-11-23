@@ -11421,3 +11421,62 @@ void* fn_005DA9C0(void* self, void* out, void* const* in) {
     return out;
 }
 } // namespace lift_005DA9C0
+
+// [0x00674C90]
+namespace lift_00674C90 {
+// @name ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1
+// @class ExprParser::ReadMethodType_ExpressionEntry_getExpression
+// @summary Reads an ExpressionEntry's expression string and converts it to float via atof, throwing an exception if the entry pointer is null.
+// @field ExpressionEntry +0x1c std::string expression
+
+
+    void ext_0046C3C0(void* self);
+    void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+    extern uint32_t mem_00924FF0;
+    extern uint32_t mem_009251F0;
+
+float __thiscall fn_00674C90(void* /*this*/, void* arg0) {
+    uint32_t entry = *reinterpret_cast<uint32_t*>(arg0);
+    if (entry != 0) {
+        using c_str_fn = const char* (__thiscall*)(void*);
+        using atof_fn = double (__cdecl*)(const char*);
+        const char* str = reinterpret_cast<c_str_fn>(mem_00924FF0)(reinterpret_cast<void*>(entry + 0x1c));
+        double val = reinterpret_cast<atof_fn>(mem_009251F0)(str);
+        return static_cast<float>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0f;
+}
+} // namespace lift_00674C90
+
+// [0x0062E430]
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_00672110(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_0062E430(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_00672110(out_val, obj + 0x78);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
