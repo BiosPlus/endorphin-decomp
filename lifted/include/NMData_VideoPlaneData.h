@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct NMData_VideoPlaneData_Fields {
     // +0x28  int                      field_0x28  (evidence: 0x005D2440)
     // +0x30  bool                     field_0x30  (evidence: 0x005D2860)
+    // +0x34  float                    field_0x34  (evidence: 0x005D29F0)
 };
 } // namespace lifted_layout

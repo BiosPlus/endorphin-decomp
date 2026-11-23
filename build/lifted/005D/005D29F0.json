@@ -1,0 +1,28 @@
+{
+  "va": "0x005D29F0",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getXScale, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0\u003e",
+  "signature": "float fn_005D29F0(void* const* self)",
+  "summary": "Returns the X scale (float at +0x34) of the wrapped VideoPlaneData; throws if the wrapped pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "object"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:15:02Z"
+}

@@ -1473,3 +1473,28 @@ bool fn_00678A20(void** arg) {
 }
 } // namespace lift_004B1430
 } // namespace lift_00678A20
+
+// [0x005D29F0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D29F0 {
+// Stack-constructed exception object helper (ecx = object buffer), and the
+// IAT throw thunk forwarding to MSVCR80!_CxxThrowException.
+extern void ext_0046C3C0(void* buf);
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, getXScale, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>
+// @summary Returns the X scale (float at +0x34) of the wrapped VideoPlaneData; throws if the wrapped pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* object
+// @field NMData::VideoPlaneData +0x34 float field_0x34
+float fn_005D29F0(void* const* self) {
+    void* obj = self[0];
+    if (obj != nullptr) {
+        return *reinterpret_cast<float*>(static_cast<unsigned char*>(obj) + 0x34);
+    }
+
+    alignas(8) unsigned char err[0x28];
+    ext_0046C3C0(err);
+    ext_006A6DD2();
+    return 0.0f; // unreachable: the thunk throws
+}
+} // namespace lift_005D29F0

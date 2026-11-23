@@ -8726,6 +8726,13 @@
     "summary": "Reads the bool at +0x30 of the VideoPlaneData object referenced by self's first pointer; if that pointer is null, constructs an exception and throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D29F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getXScale, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0\u003e",
+    "signature": "float fn_005D29F0(void* const* self)",
+    "summary": "Returns the X scale (float at +0x34) of the wrapped VideoPlaneData; throws if the wrapped pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D6980": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
