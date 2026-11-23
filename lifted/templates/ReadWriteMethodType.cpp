@@ -3997,3 +3997,45 @@ void fn_006331F0(void** self, void* src) {
     set(target, value);
 }
 } // namespace lift_006331F0
+
+// [0x00633240] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngleRaw(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_00633240 {
+extern void ext_006304B0(void* self, const void* value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+namespace lift_00633240 {
+
+// Virtual-call shape of the source's inner getter (vtable +0x14 = slot 5): returns a Vector3 const* and takes one stack argument.
+typedef const void* (__thiscall* GetVector3RefFn)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal>::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingAngle -> setDesiredTwistAndSwingAngleRaw)
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngleRaw(class NM::Vector3 const &)>
+// @summary Reads a Vector3 const& from the source's inner getter (vtable slot 5) and forwards it to EffectorSkeletal::setDesiredTwistAndSwingAngleRaw on the target; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadWriteMethodType +0x04 void* inner
+extern void __stdcall fn_00633240(void* const* self, void* arg) {
+    // self +0x00: EffectorSkeletal* target. Null means the write target is missing, which is an error.
+    void* target = *self;
+    if (target != nullptr) {
+        // arg +0x04: inner object whose vtable slot 5 (+0x14) returns the Vector3 const& to store.
+        void* inner = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(arg) + 0x04);
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(inner);
+        GetVector3RefFn getter = reinterpret_cast<GetVector3RefFn>(vtbl[5]);
+
+        const void* value = getter(inner, arg);
+        // Forward to EffectorSkeletal::setDesiredTwistAndSwingAngleRaw (sub_006304B0) with this = target.
+        ext_006304B0(target, value);
+        return;
+    }
+
+    // The original throws a MSVC C++ exception here (MSVCR80 _CxxThrowException with a
+    // type descriptor at 0x009DEC1C). No portable equivalent of that exact type exists.
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+}
+
+} // namespace lift_00633240
+} // namespace lift_00633240
