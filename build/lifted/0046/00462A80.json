@@ -1,0 +1,21 @@
+{
+  "va": "0x00462A80",
+  "size": 11,
+  "orig_symbol": "sub_00462A80",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "sub_00462A80",
+  "signature": "void __thiscall sub_00462A80(uint8_t* this_ptr)",
+  "summary": "Sets field_0x4 of the object referenced by this-\u003efield_0x4 to 1.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:38:35Z"
+}

@@ -329,3 +329,14 @@ void __thiscall sub_00462A70(void* self) {
     mem_write32(ptr + 0x4, 2);
 }
 } // namespace lift_00462A70
+
+// [0x00462A80]
+namespace lift_00462A80 {
+// @name sub_00462A80
+// @summary Sets field_0x4 of the object referenced by this->field_0x4 to 1.
+// @field unknown +0x04 uint32_t field_0x04
+void __thiscall sub_00462A80(uint8_t* this_ptr) {
+    uint8_t* obj = *reinterpret_cast<uint8_t* const*>(this_ptr + 0x4);
+    *reinterpret_cast<uint32_t*>(obj + 0x4) = 1;
+}
+} // namespace lift_00462A80

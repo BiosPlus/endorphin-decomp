@@ -2812,6 +2812,12 @@
     "summary": "Sets dword at offset 0x4 of the pointer at this+0x4 to 2",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462A80": {
+    "name": "sub_00462A80",
+    "signature": "void __thiscall sub_00462A80(uint8_t* this_ptr)",
+    "summary": "Sets field_0x4 of the object referenced by this-\u003efield_0x4 to 1.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00462F40": {
     "name": "VersionControlObserver::vfunc_0",
     "class": "VersionControlObserver",
