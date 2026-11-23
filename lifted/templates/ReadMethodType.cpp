@@ -11143,3 +11143,33 @@ bool fn_006250B0(void* self) {
     return *(obj + 0x30) != 0;
 }
 } // namespace lift_006250B0
+
+// [0x00625060] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_2 (64 bytes)
+namespace lift_00625060 {
+// Known callee 0x0046C3C0: sub_0046C3C0 (105 bytes). Called with the argument slot as `this`
+// on the null-reference path before throwing.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<SensorIsCollidingWith>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>
+// @summary Dereferences the held Sensors::SensorIsCollidingWith pointer (throws if null), invokes its vtable slot 17 with the float result discarded, and returns whether byte +0x30 is nonzero.
+// @field Sensors::SensorIsCollidingWith +0x30 BYTE field_0x30
+bool fn_00625060(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        ext_0046C3C0(self);
+        ext_006A6DD2(self, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return false;
+    }
+
+    // Virtual call through vtable slot 17 (offset 0x44); float result is popped and discarded.
+    void** vtbl = *static_cast<void***>(obj);
+    using VoidFloatFn = float (*)(void*);
+    VoidFloatFn slot17 = reinterpret_cast<VoidFloatFn>(vtbl[17]);
+    (void)slot17(obj);
+
+    return lift_field<uint8_t>(obj, 0x30) != 0;
+}
+} // namespace lift_00625060

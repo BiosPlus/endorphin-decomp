@@ -1,0 +1,22 @@
+{
+  "va": "0x00625060",
+  "size": 64,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensorIsCollidingWith\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+  "signature": "bool fn_00625060(void* self)",
+  "summary": "Dereferences the held Sensors::SensorIsCollidingWith pointer (throws if null), invokes its vtable slot 17 with the float result discarded, and returns whether byte +0x30 is nonzero.",
+  "fields": [
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "BYTE",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:01:53Z"
+}
