@@ -12053,3 +12053,32 @@ extern void* __thiscall fn_0046D890(void* self, void* outValue, void** targetPtr
     return outValue;
 }
 } // namespace lift_0046D890
+
+// [0x0046F150]
+namespace lift_0046F150 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, &ImageExporter::getImageWidth, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, &ImageExporter::getImageWidth, 0>
+// @summary Reads ImageExporter::getImageWidth() into out if the target pointer is non-null, otherwise throws an exception.
+
+
+extern uint32_t __thiscall ext_0046C090(uint32_t self);
+extern void __thiscall ext_006720C0(uint32_t self, uint32_t val);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exc, void* throw_info);
+
+extern uint32_t mem_009DEC1C;
+
+extern uint32_t __thiscall fn_0046F150(uint32_t /*self*/, uint32_t out, uint32_t* target_ptr) {
+    uint32_t target = *target_ptr;
+    if (target != 0) {
+        uint32_t val = ext_0046C090(target);
+        ext_006720C0(out, val);
+        return out;
+    }
+
+    uint32_t exc[10];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return 0;
+}
+} // namespace lift_0046F150

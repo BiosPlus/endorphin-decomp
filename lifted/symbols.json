@@ -2989,6 +2989,13 @@
     "summary": "If the first argument's target pointer is set, call the holder's virtual slot 2 to obtain an int and forward it to SelectionBuffer::vfunc_0; otherwise raise a C++ exception.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046F150": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, int, \u0026ImageExporter::getImageWidth, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, \u0026ImageExporter::getImageWidth, 0\u003e",
+    "signature": "extern \"C\" uint32_t __thiscall fn_0046F150(uint32_t /*self*/, uint32_t out, uint32_t* target_ptr)",
+    "summary": "Reads ImageExporter::getImageWidth() into out if the target pointer is non-null, otherwise throws an exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046F1A0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageWidth\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageWidth\u003e",
