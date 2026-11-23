@@ -13,6 +13,8 @@ struct Object_Fields {
     // +0x0   void**                   vptr  (evidence: 0x0062A580, 0x00682ED0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x005F35C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x007558B0) // CONFLICT: multiple definitions at +0x0
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6FC0)
+    // +0x1C  float                    field_0x1C  (evidence: 0x007C6F30)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00648920)
 };
 } // namespace lifted_layout
