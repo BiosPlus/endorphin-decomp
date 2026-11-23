@@ -170,3 +170,24 @@ void fn_0053AE40(void* self, uint32_t mode) {
     }
 }
 } // namespace lift_0053AE40
+
+// [0x0053A8E0] Primitives::Animation::vfunc_18 (75 bytes)
+namespace lift_0053A8E0 {
+// @name Primitives::Animation::vfunc_18
+// @class Primitives::Animation
+// @summary Tests bits of the flags word at +0x1C selected by a mode argument (0: bit 3 clear, 1: bit 3 set, 2: bits 3-4 both set, else 0).
+// @field Primitives::Animation +0x1C uint32_t flags
+int fn_0053A8E0(void* self, uint32_t mode) {
+    const uint32_t flags = lift_field<uint32_t>(self, 0x1C);
+    switch (mode) {
+        case 0:
+            return (flags & 0x8u) != 0x8u ? 1 : 0;
+        case 1:
+            return (flags & 0x8u) == 0x8u ? 1 : 0;
+        case 2:
+            return (flags & 0x18u) == 0x18u ? 1 : 0;
+        default:
+            return 0;
+    }
+}
+} // namespace lift_0053A8E0

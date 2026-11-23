@@ -7917,6 +7917,13 @@
     "summary": "Returns true when every bit set in the argument is also set in the field at +0x1C.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053A8E0": {
+    "name": "Primitives::Animation::vfunc_18",
+    "class": "Primitives::Animation",
+    "signature": "int fn_0053A8E0(void* self, uint32_t mode)",
+    "summary": "Tests bits of the flags word at +0x1C selected by a mode argument (0: bit 3 clear, 1: bit 3 set, 2: bits 3-4 both set, else 0).",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053ABF0": {
     "name": "Primitives::Animation::vfunc_30",
     "class": "Primitives::Animation",
