@@ -8576,3 +8576,25 @@ bool __stdcall fn_004EA700(void* self) {
     return false;
 }
 } // namespace lift_004EA700
+
+// [0x004EA9D0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_2 (52 bytes)
+namespace lift_004EA9D0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<PoseToolOptions>::isCollisionEnabled_vfunc_2
+// @class NMData::PoseToolOptions
+// @summary Reads the isCollisionEnabled flag from the PoseToolOptions pointed to by the holder; throws if the target pointer is null.
+// @field NMData::PoseToolOptions +0x05 bool isCollisionEnabled
+bool fn_004EA9D0(void** holder) {
+    void* target = *holder;
+    if (target == nullptr) {
+        // Original builds an exception object on the stack and throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+    return lift_field<uint8_t>(target, 0x5) != 0;
+}
+} // namespace lift_004EA9D0
