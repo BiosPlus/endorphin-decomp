@@ -1061,3 +1061,43 @@ void fn_006059E0(void* self, void* ctx) {
     *reinterpret_cast<float*>(effector + 0x50) = value;
 }
 } // namespace lift_006059E0
+
+// [0x0046EA50] ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_0046EA50 {
+extern void ext_00454BB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_0046EA50(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_00454BB0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50

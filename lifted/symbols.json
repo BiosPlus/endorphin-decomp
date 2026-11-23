@@ -2912,6 +2912,13 @@
     "summary": "Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046EA50": {
+    "name": "ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}\u003e",
+    "signature": "void fn_0046EA50(ValuePtrTypeLite* self, void* ctx)",
+    "summary": "Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046EB20": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, getEndFrame\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0\u003e",
