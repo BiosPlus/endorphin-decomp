@@ -135,3 +135,31 @@ uint32_t __thiscall fn_0066CFD0(void* self, uint32_t arg1) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B59670));
 }
 } // namespace lift_0066CFD0
+
+// [0x006718C0]
+namespace lift_006718C0 {
+// @name ExprParser::StringType::vfunc_41
+// @class ExprParser::StringType
+// @summary Assigns a string value from arg2 to the std::string pointed to by arg1.
+// @field ExprParser::StringType +0x00 std::string* field_0x00
+
+
+void __stdcall ext_00671840(void* arg1);
+void* __thiscall ext_0041CEB0(void* self, void* out_str);
+void* __thiscall ext_006291BE(void* self, const void* other);
+void __thiscall ext_00628FF0(void* self);
+
+// MSVCP80!??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
+static auto& mem_00924FDC = *reinterpret_cast<void* (__thiscall**)(void*, const void*)>(0x00924FDC);
+// MSVCP80!??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+static auto& mem_00924FF4 = *reinterpret_cast<void (__thiscall**)(void*)>(0x00924FF4);
+
+void __thiscall fn_006718C0(void* /*self*/, void* arg1, void* arg2) {
+    ext_00671840(arg1);
+    alignas(4) uint8_t local_str[28];
+    void* str_ptr = ext_0041CEB0(arg2, local_str);
+    void* dst_str = *reinterpret_cast<void**>(arg1);
+    mem_00924FDC(dst_str, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_006718C0

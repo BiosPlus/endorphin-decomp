@@ -1,0 +1,22 @@
+{
+  "va": "0x006718C0",
+  "size": 102,
+  "orig_symbol": "ExprParser::StringType::vfunc_41",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_41",
+  "class": "ExprParser::StringType",
+  "signature": "void __thiscall fn_006718C0(void* /*self*/, void* arg1, void* arg2)",
+  "summary": "Assigns a string value from arg2 to the std::string pointed to by arg1.",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "std::string*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:39Z"
+}

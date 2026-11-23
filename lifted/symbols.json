@@ -21365,6 +21365,13 @@
     "summary": "Call helper ext_00671840(self), then assign value to the std::string referenced by self-\u003e+0x00; returns that string by reference.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x006718C0": {
+    "name": "ExprParser::StringType::vfunc_41",
+    "class": "ExprParser::StringType",
+    "signature": "void __thiscall fn_006718C0(void* /*self*/, void* arg1, void* arg2)",
+    "summary": "Assigns a string value from arg2 to the std::string pointed to by arg1.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x006719C0": {
     "name": "ExprParser::Vector3Type::vfunc_43",
     "class": "ExprParser::Vector3Type",
@@ -22073,6 +22080,13 @@
     "signature": "void __thiscall fn_00692D90(uint8_t* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00692FD0": {
+    "name": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, ValuePtr const \u0026, ValuePtrArrayObject::push\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, ValuePtr const \u0026, ValuePtrArrayObject::push\u003e",
+    "signature": "uint32_t __thiscall fn_00692FD0(uint32_t ecx, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Evaluates FunctionType by looking up ValuePtrArrayObject and invoking push vfunc at +0x70 if non-null, returning ValuePtr via sret.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
   },
   "0x00693040": {
     "name": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_0",
