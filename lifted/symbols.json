@@ -18570,6 +18570,13 @@
     "summary": "Evaluates a boolean from both stack operands via their child's vfunc slot 3, then forwards both results to ext_0049AD90.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0066EF90": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "void* fn_0066EF90(void* arg0, void** arg1)",
+    "summary": "Dereferences the value pointer held in arg1, forwards the float it points to into ext_00672080 with arg1 as receiver, and returns arg1; throws if the inner pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066EFE0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",

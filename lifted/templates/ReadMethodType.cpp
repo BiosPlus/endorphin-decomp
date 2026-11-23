@@ -16743,3 +16743,32 @@ void* fn_004B7D30(void* self, void* const* holder) {
     return self;
 }
 } // namespace lift_004B7D30
+
+// [0x0066EF90] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_0066EF90 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, getX, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Dereferences the value pointer held in arg1, forwards the float it points to into ext_00672080 with arg1 as receiver, and returns arg1; throws if the inner pointer is null.
+// @field none (no direct field offsets accessed; the float is read through the pointer chain)
+void* fn_0066EF90(void* arg0, void** arg1) {
+    (void)arg0;
+
+    float* value = static_cast<float*>(*arg1);
+    if (value == nullptr) {
+        // Null value pointer: build the exception object and throw it.
+        alignas(8) unsigned char exception_object[8] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // not reached
+    }
+
+    ext_00672080(arg1, *value);
+    return arg1;
+}
+} // namespace lift_0066EF90
