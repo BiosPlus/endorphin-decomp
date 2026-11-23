@@ -7987,6 +7987,13 @@
     "summary": "Forwards its argument, with the address of a constant .rdata tag, to the shared helper sub_0053A930.",
     "lifted_path": "lifted/Primitives/Hinge.cpp"
   },
+  "0x0053BEF0": {
+    "name": "Primitives::HingeLimit::vfunc_28",
+    "class": "Primitives::HingeLimit",
+    "signature": "void fn_0053BEF0(void* self)",
+    "summary": "Pushes GL matrix, rotates 90 deg about Y, draws the hinge limit via sub_00537ED0 at this+0x44, then pops the matrix.",
+    "lifted_path": "lifted/Primitives/HingeLimit.cpp"
+  },
   "0x0053C150": {
     "name": "Primitives::RPRO::vfunc_29",
     "class": "Primitives::RPRO",
