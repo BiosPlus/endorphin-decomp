@@ -7938,6 +7938,13 @@
     "summary": "Toggles the mask bits in the flags word at +0x1C when \"all mask bits set\" disagrees with the low byte of set.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053B4F0": {
+    "name": "Primitives::Cuboid::vfunc_28",
+    "class": "Primitives::Cuboid",
+    "signature": "void fn_0053B4F0(void* self)",
+    "summary": "Emits the cuboid as six immediate-mode GL quads (normal, texcoord, vertex per corner) when the enable flag at +0x20 is set.",
+    "lifted_path": "lifted/Primitives/Cuboid.cpp"
+  },
   "0x0053B760": {
     "name": "Primitives::Sphere::vfunc_28",
     "class": "Primitives::Sphere",
