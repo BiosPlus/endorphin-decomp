@@ -489,3 +489,48 @@ extern "C" void __fastcall fn_0064F920(void* self) {
     VFunc target = lift_field<VFunc>(vtable, 0x84);
     target(self);
 }
+
+// [0x00648930]
+namespace lift_00648930 {
+extern uint8_t* mem_read_ptr(const void* addr);
+extern float mem_read_f32(const void* addr);
+
+// @name getField0x28Float0x04
+// @summary Reads a pointer at +0x28 and returns the float at +0x04 of that object.
+// @field unknown +0x28 void* field_0x28
+// @field unknown +0x04 float field_0x04
+float __thiscall sub_00648930(void* this_ptr) {
+    uint8_t* ptr = mem_read_ptr(static_cast<uint8_t*>(this_ptr) + 0x28);
+    return mem_read_f32(ptr + 0x04);
+}
+} // namespace lift_00648930
+
+// [0x00648920]
+namespace lift_00648920 {
+uint32_t mem_r32(uint32_t addr);
+
+// @name sub_00648920
+// @summary Reads a 32-bit value at offset 0x04 of the pointer stored at this+0x2c
+// @field Object +0x2c uint32_t field_0x2c
+
+uint32_t __fastcall sub_00648920(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t ptr = mem_r32(ecx + 0x2c);
+    return mem_r32(ptr + 0x4);
+}
+} // namespace lift_00648920
+
+// [0x00648910]
+namespace lift_00648910 {
+// @name getNestedField0x0C
+// @summary Reads a 32-bit value at offset 0x0C from the pointer stored at this+0x28.
+// @field Unknown +0x28 uint32_t field_0x28
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+extern uint32_t __thiscall sub_00648910(uintptr_t self) {
+    uint32_t ptr = mem_read32(static_cast<uint32_t>(self + 0x28));
+    return mem_read32(ptr + 0x0C);
+}
+} // namespace lift_00648910

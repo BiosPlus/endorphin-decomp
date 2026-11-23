@@ -20126,6 +20126,24 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5C and tail-calls sub_0065AEC0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00648910": {
+    "name": "getNestedField0x0C",
+    "signature": "extern \"C\" uint32_t __thiscall sub_00648910(uintptr_t self)",
+    "summary": "Reads a 32-bit value at offset 0x0C from the pointer stored at this+0x28.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648920": {
+    "name": "sub_00648920",
+    "signature": "uint32_t __fastcall sub_00648920(uint32_t ecx, uint32_t edx)",
+    "summary": "Reads a 32-bit value at offset 0x04 of the pointer stored at this+0x2c",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648930": {
+    "name": "getField0x28Float0x04",
+    "signature": "float __thiscall sub_00648930(void* this_ptr)",
+    "summary": "Reads a pointer at +0x28 and returns the float at +0x04 of that object.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x006489D0": {
     "name": "sub_006489D0",
     "signature": "extern \"C\" void __fastcall fn_006489D0(void* self)",
