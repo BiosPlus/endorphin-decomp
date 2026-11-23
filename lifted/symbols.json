@@ -5320,6 +5320,13 @@
     "summary": "Computes r = ext_006404E0(a, global at mem_00A9ED30), then calls this-\u003evtable[22](r).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004DE0F0": {
+    "name": "NMData::AnimationEventData::vfunc_69",
+    "class": "NMData::AnimationEventData",
+    "signature": "uint32_t fn_004DE0F0(void* self, int32_t x)",
+    "summary": "Accumulates (x - field_0x15c) into field_0x9a0, forwards x to the ForceEventData base vfunc_69, then tail-calls sub_0047C480 with the global mem_00AE29D0 as receiver and field_0x168 as its argument.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004DE170": {
     "name": "NMData::AnimationEventData::vfunc_66",
     "class": "NMData::AnimationEventData",

@@ -1,0 +1,34 @@
+{
+  "va": "0x004DE0F0",
+  "size": 51,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_69",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_69",
+  "class": "NMData::AnimationEventData",
+  "signature": "uint32_t fn_004DE0F0(void* self, int32_t x)",
+  "summary": "Accumulates (x - field_0x15c) into field_0x9a0, forwards x to the ForceEventData base vfunc_69, then tail-calls sub_0047C480 with the global mem_00AE29D0 as receiver and field_0x168 as its argument.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x168",
+      "type": "int32_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x9A0",
+      "type": "int32_t",
+      "name": "field_0x9a0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:53:12Z"
+}

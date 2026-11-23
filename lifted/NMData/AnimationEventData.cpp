@@ -112,3 +112,34 @@ std::string fn_004BF800(const void* self) {
         static_cast<const unsigned char*>(self) + 0x14);
     return std::string("Events.") + *name;
 }
+
+// [0x004DE0F0] NMData::AnimationEventData::vfunc_69 (51 bytes)
+namespace lift_004DE0F0 {
+extern void ext_004C1AF0(void* self, int32_t arg);
+extern uint32_t ext_0047C480(void* ecx, int32_t arg);
+extern int mem_00AE29D0;
+
+// @name NMData::AnimationEventData::vfunc_69
+// @class NMData::AnimationEventData
+// @summary Accumulates (x - field_0x15c) into field_0x9a0, forwards x to the ForceEventData base vfunc_69, then tail-calls sub_0047C480 with the global mem_00AE29D0 as receiver and field_0x168 as its argument.
+// @field NMData::AnimationEventData +0x15C int32_t field_0x15c
+// @field NMData::AnimationEventData +0x168 int32_t field_0x168
+// @field NMData::AnimationEventData +0x9A0 int32_t field_0x9a0
+uint32_t fn_004DE0F0(void* self, int32_t x) {
+    // delta = x - this->field_0x15c
+    int32_t delta = x - lift_field<int32_t>(self, 0x15c);
+
+    // this->field_0x9a0 += delta
+    lift_field<int32_t>(self, 0x9a0) += delta;
+
+    // ForceEventData::vfunc_69(this, x); callee pops its own argument
+    ext_004C1AF0(self, x);
+
+    // v = this->field_0x168 (read after the call)
+    int32_t v = lift_field<int32_t>(self, 0x168);
+
+    // Tail call: sub_0047C480 with ecx = mem_00AE29D0 and one stack argument v.
+    // Its eax result is returned unchanged.
+    return ext_0047C480(reinterpret_cast<void*>(static_cast<intptr_t>(mem_00AE29D0)), v);
+}
+} // namespace lift_004DE0F0
