@@ -228,3 +228,15 @@ void fn_006719C0(void* self, uint32_t* out) {
     uint32_t result = ext_006715C0(sub, 0u, 0u);
     *out = result;
 }
+
+// [0x006719E0] ExprParser::Vector3Type::vfunc_28 (28 bytes)
+// @name ExprParser::Vector3Type::vfunc_28
+// @class ExprParser::Vector3Type
+// @summary Reads a dword from the input pointer, passes it with flag 1 to the helper at this+8, and stores the helper's result into the output slot.
+// @field ExprParser::Vector3Type +0x08 void* field_0x08
+uint32_t* fn_006719E0(void* self, uint32_t* out, const uint32_t* in) {
+    uint32_t value = *in;
+    uint32_t result = ext_006715C0(static_cast<char*>(self) + 0x08, 1u, value);
+    *out = result;
+    return out;
+}

@@ -11240,6 +11240,13 @@
     "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x006719E0": {
+    "name": "ExprParser::Vector3Type::vfunc_28",
+    "class": "ExprParser::Vector3Type",
+    "signature": "uint32_t* fn_006719E0(void* self, uint32_t* out, const uint32_t* in)",
+    "summary": "Reads a dword from the input pointer, passes it with flag 1 to the helper at this+8, and stores the helper's result into the output slot.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x00671F10": {
     "name": "sub_00671F10",
     "signature": "extern \"C\" void fn_00671F10(void)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x006719E0",
+  "size": 28,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_28",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_28",
+  "class": "ExprParser::Vector3Type",
+  "signature": "uint32_t* fn_006719E0(void* self, uint32_t* out, const uint32_t* in)",
+  "summary": "Reads a dword from the input pointer, passes it with flag 1 to the helper at this+8, and stores the helper's result into the output slot.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:31:21Z"
+}
