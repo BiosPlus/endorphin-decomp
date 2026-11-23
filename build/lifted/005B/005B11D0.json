@@ -1,0 +1,22 @@
+{
+  "va": "0x005B11D0",
+  "size": 11,
+  "orig_symbol": "sub_005B11D0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "UnknownClass::getElementPtr",
+  "class": "UnknownClass",
+  "signature": "uint32_t* __thiscall sub_005B11D0(uintptr_t self, uint32_t index)",
+  "summary": "Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x10",
+      "type": "uint32_t[]",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:41:39Z"
+}

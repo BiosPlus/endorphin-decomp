@@ -13522,6 +13522,12 @@
     "summary": "Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B11E0": {
+    "name": "getFloatAt",
+    "signature": "float __thiscall sub_005B11E0(uint32_t ecx, uint32_t index)",
+    "summary": "Returns a float from a 32-bit float array at offset +0x10 indexed by the argument",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B12B0": {
     "name": "Geometry::CuboidType::vfunc_16",
     "class": "Geometry::CuboidType",
@@ -20272,6 +20278,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0063FCC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0063F9C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/AdvXMLParser/auto_tiny.cpp"
+  },
+  "0x0063FFE0": {
+    "name": "sub_0063FFE0",
+    "signature": "void* __thiscall sub_0063FFE0(void* self, uint32_t /*unused*/)",
+    "summary": "Sets vtable pointer at +0x0 to 0x0097CC34 and returns this.",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
   "0x00640100": {
     "name": "AdvXMLParser::EntityRef::vfunc_4",
