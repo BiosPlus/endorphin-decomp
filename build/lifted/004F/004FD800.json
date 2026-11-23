@@ -1,0 +1,22 @@
+{
+  "va": "0x004FD800",
+  "size": 6,
+  "orig_symbol": "sub_004FD800",
+  "src_path": "src/leaf/tiny_4F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4F0000.cpp",
+  "name": "StringBuffer::clear",
+  "class": "StringBuffer",
+  "signature": "void __fastcall sub_004FD800(uint32_t ecx, uint32_t edx)",
+  "summary": "Clears the string buffer by writing a null terminator at the start of its data pointer.",
+  "fields": [
+    {
+      "class": "StringBuffer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:39:18Z"
+}

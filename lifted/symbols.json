@@ -8564,6 +8564,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x178.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004FD800": {
+    "name": "StringBuffer::clear",
+    "class": "StringBuffer",
+    "signature": "void __fastcall sub_004FD800(uint32_t ecx, uint32_t edx)",
+    "summary": "Clears the string buffer by writing a null terminator at the start of its data pointer.",
+    "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
   "0x004FDA70": {
     "name": "NMData::EvolveEngineData::vfunc_7",
     "class": "NMData::EvolveEngineData",
@@ -9074,6 +9081,12 @@
     "summary": "Loads a double at offset 0x18 from a pointer stored at offset 0x08 of this.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050EA10": {
+    "name": "sub_0050EA10",
+    "signature": "double __thiscall sub_0050EA10(void* self)",
+    "summary": "Returns a double at offset 0x20 from the object pointed to by this+0x8.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050F190": {
     "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, randomizeNow\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e",
@@ -9187,6 +9200,12 @@
     "name": "sub_00515820",
     "signature": "extern \"C\" void __fastcall fn_00515820(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_00951934 and tail-calls base destructor sub_0065F440.",
+    "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
+  "0x00515830": {
+    "name": "sub_00515830",
+    "signature": "uint32_t __thiscall sub_00515830(uint32_t this_ptr)",
+    "summary": "Reads a 32-bit field at +0x30 from the pointer stored at this +0x4.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
   "0x00515850": {
