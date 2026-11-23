@@ -62,3 +62,20 @@ void __thiscall sub_00494060(void* self, uint32_t mask)
     *reinterpret_cast<uint32_t*>(self) ^= mask;
 }
 } // namespace lift_00494060
+
+// [0x00493E30]
+namespace lift_00493E30 {
+// @name forwardVtable1A0
+// @summary Tail-calls vtable slot 0x1A0 on the object pointed to by field_0x00.
+// @field Unknown +0x00 uint32_t field_0x00
+
+
+uint32_t mem_r32(uint32_t addr);
+
+uint32_t __fastcall sub_00493E30(uint32_t ecx) {
+    uint32_t inner = mem_r32(ecx);
+    uint32_t vtable = mem_r32(inner);
+    uint32_t fn = mem_r32(vtable + 0x1a0u);
+    return reinterpret_cast<uint32_t (__fastcall *)(uint32_t)>(fn)(inner);
+}
+} // namespace lift_00493E30
