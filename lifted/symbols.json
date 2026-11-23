@@ -21518,6 +21518,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x68 and tail-calls sub_0065C2C0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0065A8B0": {
+    "name": "initZeroField0",
+    "signature": "uint32_t __fastcall sub_0065A8B0(uint32_t ecx, uint32_t edx)",
+    "summary": "Sets the 32-bit field at offset 0 of the object in ecx to zero and returns the object pointer.",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
   "0x0065A9A0": {
     "name": "sub_0065A9A0",
     "signature": "extern \"C\" void fn_0065A9A0(void)",

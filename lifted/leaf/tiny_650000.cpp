@@ -44,3 +44,18 @@ extern "C" void __fastcall fn_0065C7F0(void* self) {
 extern "C" void __fastcall fn_0065F440(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0093BF24;
 }
+
+// [0x0065A8B0]
+namespace lift_0065A8B0 {
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name initZeroField0
+// @summary Sets the 32-bit field at offset 0 of the object in ecx to zero and returns the object pointer.
+// @field Object +0x00 uint32_t field_0x00
+uint32_t __fastcall sub_0065A8B0(uint32_t ecx, uint32_t edx)
+{
+    (void)edx;
+    mem_write32(ecx, 0);
+    return ecx;
+}
+} // namespace lift_0065A8B0
