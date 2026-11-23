@@ -17854,3 +17854,36 @@ void* fn_006388B0(void* out, void* const* src) {
 }
 } // namespace lift_004B9320
 } // namespace lift_006388B0
+
+// [0x0066F700] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_0066F700 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Throw info descriptor referenced by the throw path at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::getZ,0>::vfunc_0
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>
+// @summary Loads the first pointer at *src; if non-null, reads the float at +0x08 (Z) of that Vector3 and passes it to ext_00672080 on src, returning src; otherwise builds an exception and throws it.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NM::Vector3 +0x08 float field_0x08
+void* fn_0066F700(void* out, void* src) {
+    (void)out; // Unused by this path; the callee receives src as its object.
+
+    void* const vec = *static_cast<void* const*>(src);
+    if (vec != nullptr) {
+        float z;
+        std::memcpy(&z, static_cast<const unsigned char*>(vec) + 0x08, sizeof z);
+        ext_00672080(src, z);
+        return src;
+    }
+
+    // Null path: construct an exception object in the 0x28-byte local frame and throw it.
+    unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_0066F700

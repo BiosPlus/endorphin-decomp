@@ -1,0 +1,28 @@
+{
+  "va": "0x0066F700",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getZ(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::getZ,0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getZ(void) const, 0\u003e",
+  "signature": "void* fn_0066F700(void* out, void* src)",
+  "summary": "Loads the first pointer at *src; if non-null, reads the float at +0x08 (Z) of that Vector3 and passes it to ext_00672080 on src, returning src; otherwise builds an exception and throws it.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:56:14Z"
+}
