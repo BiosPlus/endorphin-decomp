@@ -4124,6 +4124,13 @@
     "summary": "Reads property source description from NMData::State or throws on null pointer",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049B7D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, ...getPropertySourceDescription...\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1\u003e",
+    "signature": "float fn_0049B7D0(void* self)",
+    "summary": "Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049BE50": {
     "name": "NMData::ValuePtrData::vfunc_0",
     "class": "NMData::ValuePtrData",

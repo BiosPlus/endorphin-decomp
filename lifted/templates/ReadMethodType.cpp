@@ -18171,3 +18171,27 @@ int fn_004B2470(void* self) {
     return 0;
 }
 } // namespace lift_004B2470
+
+// [0x0049B7D0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_1 (73 bytes)
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_004C0310(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_0049B7D0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_004C0310(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
