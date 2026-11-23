@@ -1,0 +1,40 @@
+{
+  "va": "0x0053C520",
+  "size": 509,
+  "orig_symbol": "Primitives::Bone::vfunc_28",
+  "src_path": "src/Primitives/Bone.cpp",
+  "lifted_path": "lifted/Primitives/Bone.cpp",
+  "name": "Primitives::Bone::vfunc_28",
+  "class": "Primitives::Bone",
+  "signature": "inline Fn iat_slot(const int\u0026 slot)",
+  "summary": "Draws the bone as GL_LINES from the origin to four points around its normalized direction, scaled by +0x48, using an orthonormal side/across frame.",
+  "fields": [
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "value0"
+    },
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "value1"
+    },
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "value2"
+    },
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "value3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:46:33Z"
+}
