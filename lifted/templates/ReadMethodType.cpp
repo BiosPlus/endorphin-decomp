@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/templates/ReadMethodType.cpp
 #include "lift_compat.h"
 #include <stdexcept>
+#include <cstdint>
 
 // [0x00617340] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)
@@ -194,3 +195,21 @@ bool fn_00504DA0(void* self) {
     return false;
 }
 } // namespace lift_00504DA0
+
+// [0x00505000] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_1 (43 bytes)
+namespace lift_00505000 {
+// @name ExprParser::ReadMethodType<Interpreter>::vfunc_1 (Interpreter::bogus)
+// @class ExprParser::ValuePtrType
+// @summary Reads a 32-bit value from the object's first dword; returns 0.0f if it is nonzero, otherwise throws (original: constructs an exception object and throws via MSVCR80 _CxxThrowException).
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+float fn_00505000(void* self) {
+    const uint32_t first = *static_cast<const uint32_t*>(self);
+    if (first != 0) {
+        return 0.0f;
+    }
+    // The original builds an MSVC exception object via sub_0046C3C0 (ext_0046C3C0) and throws it
+    // with an MSVC type descriptor (0x009DEC1C). Its layout and message are not recovered, so a
+    // portable std exception stands in for it.
+    throw std::runtime_error("Interpreter::bogus: null value");
+}
+} // namespace lift_00505000

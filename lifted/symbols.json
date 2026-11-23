@@ -5266,6 +5266,13 @@
     "summary": "Returns false when the first dword of the argument is nonzero; otherwise raises an exception via the CRT throw thunk.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00505000": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_1 (Interpreter::bogus)",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "float fn_00505000(void* self)",
+    "summary": "Reads a 32-bit value from the object's first dword; returns 0.0f if it is nonzero, otherwise throws (original: constructs an exception object and throws via MSVCR80 _CxxThrowException).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00505340": {
     "name": "NMData::VariableValue::vfunc_0",
     "class": "NMData::VariableValue",
