@@ -1,0 +1,14 @@
+{
+  "va": "0x005B19C0",
+  "size": 40,
+  "orig_symbol": "Geometry::CuboidType::vfunc_3",
+  "src_path": "src/Geometry/CuboidType.cpp",
+  "lifted_path": "lifted/Geometry/CuboidType.cpp",
+  "name": "Geometry::CuboidType::vfunc_3",
+  "class": "Geometry::CuboidType",
+  "signature": "float fn_005B19C0(void* self)",
+  "summary": "Returns the product of extents ext(1) * ext(0) * ext(2) via sub_005B11E0 (float).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:40:49Z"
+}

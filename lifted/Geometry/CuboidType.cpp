@@ -21,7 +21,7 @@ extern "C" uint32_t mem_00925134;
 extern "C" void* __thiscall ext_00539AA0(void* self, uint32_t* out, void* b1, void* it1, void* b2, void* it2);
 extern "C" float __thiscall ext_005B11E0(void* self, int32_t index);
 extern "C" void __thiscall ext_00539FB0(void* self, const float* vec3);
-// [0x005B1030] Geometry::CuboidType::vfunc_2 (17 bytes)
+
 // @name Geometry::CuboidType::vfunc_2
 // @class Geometry::CuboidType
 // @summary Auto-lifted identical-shape clone of 0x0066B0B0 (ExprParser::RealType::vfunc_8).
@@ -33,6 +33,7 @@ uint32_t __stdcall fn_005B1030(uint32_t first, uint32_t second) {
     // ret 8             -> callee-cleans-two-arguments (stdcall)
     return ext_006484C0(first, second);
 }
+extern "C" float __thiscall ext_005B11E0(void* self, int32_t axis);
 
 // [0x005B1680]
 // @name Geometry::CuboidType::vfunc_5
@@ -89,4 +90,17 @@ void __thiscall fn_005B4B10(void* self, uint32_t arg1, void* arg2, uint32_t arg3
         }
         ext_00539FB0(arg2, v);
     }
+}
+
+// [0x005B19C0] Geometry::CuboidType::vfunc_3 (40 bytes)
+// @name Geometry::CuboidType::vfunc_3
+// @class Geometry::CuboidType
+// @summary Returns the product of extents ext(1) * ext(0) * ext(2) via sub_005B11E0 (float).
+// @field Geometry::CuboidType (no direct field accesses; only calls to ext_005B11E0)
+float fn_005B19C0(void* self) {
+    // self is passed as the thiscall receiver (ecx) to each callee.
+    const float a = ext_005B11E0(self, 1);
+    const float b = ext_005B11E0(self, 0);
+    const float c = ext_005B11E0(self, 2);
+    return (a * b) * c;
 }
