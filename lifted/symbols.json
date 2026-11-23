@@ -33870,6 +33870,12 @@
     "summary": "Returns the 32-bit value at offset 0x7C of the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C70E0": {
+    "name": "getField0x24",
+    "signature": "uint16_t sub_007C70E0(uint32_t obj)",
+    "summary": "Reads a 16-bit value at offset 0x24 from the given pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8D70": {
     "name": "thunk_MSVCR80_malloc",
     "signature": "extern \"C\" void fn_007C8D70(void)",

@@ -185,3 +185,15 @@ void sub_007C6C20(uintptr_t obj) {
     mem_write32(obj + 0x0C, mem_read32(obj + 0x0C) | 0x8u);
 }
 } // namespace lift_007C6C20
+
+// [0x007C70E0]
+namespace lift_007C70E0 {
+uint16_t mem_read16(uint32_t addr);
+
+// @name getField0x24
+// @summary Reads a 16-bit value at offset 0x24 from the given pointer.
+// @field Object +0x24 uint16_t field_0x24
+uint16_t sub_007C70E0(uint32_t obj) {
+    return mem_read16(obj + 0x24);
+}
+} // namespace lift_007C70E0
