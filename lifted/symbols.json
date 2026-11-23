@@ -5802,6 +5802,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::SeverEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CA310": {
+    "name": "NMData::MetaBodyConstraintData::vfunc_14",
+    "class": "NMData::MetaBodyConstraintData",
+    "signature": "extern \"C\" void* __thiscall fn_004CA310(void* self, void* out, uint32_t id)",
+    "summary": "Dispatches property/attribute lookup for MetaBodyConstraintData (IDs 0xd and 0x134) or delegates to SeverEventData::vfunc_14.",
+    "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp"
+  },
   "0x004CA380": {
     "name": "NMData::MetaBodyConstraintData::vfunc_59",
     "class": "NMData::MetaBodyConstraintData",

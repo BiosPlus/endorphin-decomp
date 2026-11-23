@@ -1,0 +1,22 @@
+{
+  "va": "0x004C2070",
+  "size": 90,
+  "orig_symbol": "NMData::SeverEventData::vfunc_14",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_14",
+  "class": "NMData::SeverEventData",
+  "signature": "extern \"C\" void* __thiscall fn_004C2070(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Dispatches property/event query on SeverEventData; handles 0x8c/0x117 via sub_004C1BF0 and sub_0055DA20, otherwise delegates to vfunc_14 base.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x16C",
+      "type": "uint8_t",
+      "name": "field_0x16c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:02:34Z"
+}

@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct NMData_SeverEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004C7190, 0x004C7870)
     // +0x15C uint32_t                 field_0x15c  (evidence: 0x004C7870)
+    // +0x16C uint8_t                  field_0x16c  (evidence: 0x004C2070)
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004C7870)
     // +0x19C void*                    field_0x19c  (evidence: 0x004C7870, 0x004C8160)
 };

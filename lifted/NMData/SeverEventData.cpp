@@ -70,3 +70,25 @@ void fn_004C8160(void* self) {
     }
     ext_004C7F50(&lift_field<void*>(self, 0x19C), 0);
 }
+
+// [0x004C2070]
+namespace lift_004C2070 {
+// @name NMData::SeverEventData::vfunc_14
+// @class NMData::SeverEventData
+// @summary Dispatches property/event query on SeverEventData; handles 0x8c/0x117 via sub_004C1BF0 and sub_0055DA20, otherwise delegates to vfunc_14 base.
+// @field NMData::SeverEventData +0x16c uint8_t field_0x16c
+
+extern void* __stdcall ext_004C1BF0(void* ptr);
+extern void __thiscall ext_0055DA20(void* self, void* arg1);
+extern void* __thiscall ext_0058F6B0(void* self, void* arg1, uint32_t arg2);
+
+extern void* __thiscall fn_004C2070(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 == 0x8c || arg2 == 0x117) {
+        void* val = ext_004C1BF0(static_cast<uint8_t*>(self) + 0x16c);
+        ext_0055DA20(arg1, val);
+        return arg1;
+    }
+    ext_0058F6B0(self, arg1, arg2);
+    return arg1;
+}
+} // namespace lift_004C2070
