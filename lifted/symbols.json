@@ -10144,6 +10144,13 @@
     "summary": "Dispatches CylinderType factory/type action by selector id and returns arg0",
     "lifted_path": "lifted/Geometry/CylinderType.cpp"
   },
+  "0x005B4270": {
+    "name": "Geometry::PlaneType::vfunc_18",
+    "class": "Geometry::PlaneType",
+    "signature": "void* fn_005B4270(void* self, uint32_t msgId, uint32_t arg)",
+    "summary": "Dispatches on message id (0x271 / 0x37e) to a handler, otherwise to a default handler; always returns self.",
+    "lifted_path": "lifted/Geometry/PlaneType.cpp"
+  },
   "0x005B42D0": {
     "name": "Geometry::FrustumType::vfunc_18",
     "class": "Geometry::FrustumType",

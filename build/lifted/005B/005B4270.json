@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4270",
+  "size": 90,
+  "orig_symbol": "Geometry::PlaneType::vfunc_18",
+  "src_path": "src/Geometry/PlaneType.cpp",
+  "lifted_path": "lifted/Geometry/PlaneType.cpp",
+  "name": "Geometry::PlaneType::vfunc_18",
+  "class": "Geometry::PlaneType",
+  "signature": "void* fn_005B4270(void* self, uint32_t msgId, uint32_t arg)",
+  "summary": "Dispatches on message id (0x271 / 0x37e) to a handler, otherwise to a default handler; always returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:31:28Z"
+}
