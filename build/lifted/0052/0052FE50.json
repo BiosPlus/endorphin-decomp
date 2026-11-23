@@ -1,0 +1,22 @@
+{
+  "va": "0x0052FE50",
+  "size": 96,
+  "orig_symbol": "Primitives::Arrow::vfunc_0",
+  "src_path": "src/Primitives/Arrow.cpp",
+  "lifted_path": "lifted/Primitives/Arrow.cpp",
+  "name": "Primitives::Arrow::scalar_deleting_dtor",
+  "class": "Primitives::Arrow",
+  "signature": "void* fn_0052FE50(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor: destroys the +0x3C subobject, runs the base destructor, and frees this if flags bit 0 is set.",
+  "fields": [
+    {
+      "class": "Primitives::Arrow",
+      "offset": "+0x3C",
+      "type": "\u003csubobject with vtable\u003e",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:38:55Z"
+}
