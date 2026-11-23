@@ -11996,3 +11996,60 @@ extern void* __thiscall fn_0046D5D0(void* self, void* out_val, void** obj_ptr) {
     return nullptr;
 }
 } // namespace lift_0046D5D0
+
+// [0x004EA6B0]
+namespace lift_004EA6B0 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &NMData::PoseToolOptions::isGroundCollisionEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &NMData::PoseToolOptions::isGroundCollisionEnabled, 0>
+// @summary Reads isGroundCollisionEnabled from PoseToolOptions or throws if null
+// @field NMData::PoseToolOptions +0x04 uint8_t m_isGroundCollisionEnabled
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+extern void ext_006720A0(uint32_t self, uint32_t value);
+extern void ext_0046C3C0(uint32_t self);
+extern void ext_006A6DD2(uint32_t exception_object, uint32_t throw_info);
+
+uint32_t fn_004EA6B0(uint32_t out_ptr, uint32_t arg_ptr) {
+    uint32_t obj = mem_read32(arg_ptr);
+    if (obj == 0) {
+        uint8_t exc_buf[0x28];
+        uint32_t exc_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc_buf));
+        ext_0046C3C0(exc_addr);
+        ext_006A6DD2(exc_addr, 0x009DEC1Cu);
+        return 0;
+    }
+
+    uint32_t enabled = static_cast<uint32_t>(mem_read8(obj + 0x4u));
+    ext_006720A0(out_ptr, enabled);
+    return out_ptr;
+}
+} // namespace lift_004EA6B0
+
+// [0x0046D890]
+namespace lift_0046D890 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, getImageHeight>
+// @summary Evaluates ImageExporter::getImageHeight on the target object or throws if null.
+
+extern int __thiscall ext_006AD1C0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throwInfo);
+
+extern void* __thiscall fn_0046D890(void* self, void* outValue, void** targetPtr) {
+    (void)self;
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        int height = ext_006AD1C0(target);
+        ext_006720C0(outValue, height);
+        return outValue;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return outValue;
+}
+} // namespace lift_0046D890
