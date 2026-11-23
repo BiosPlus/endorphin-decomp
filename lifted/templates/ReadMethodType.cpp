@@ -15473,3 +15473,37 @@ int fn_004B9400(void* self, void* arg) {
     return (static_cast<double>(value) >= threshold) ? 1 : 0;
 }
 } // namespace lift_004B9400
+
+// [0x005B21E0] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_005B21E0 {
+// Helper: constructs the exception object in the caller-provided buffer.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// Read-only double constant at 0x0095F7E0 (1e-06).
+extern double mem_0095F7E0;
+
+// @name ExprParser::ReadMethodType<Geometry,float,Geometry::getParam0,0>::vfunc_3
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Reads the value pointed to by the holder at self; returns 1 if its float at +0x10 is >= 1e-6 (NaN yields 0), throws if the holder is null.
+// @field ExprParser::ValuePtrType +0x10 float field_0x10
+int fn_005B21E0(void* self) {
+    // self points at a slot holding the target object pointer.
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        // Original builds an exception object on the stack and throws it.
+        // The ThrowInfo argument (0x009DEC1C) is not forwarded by the stub.
+        alignas(16) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0; // not reached when the throw thunk is live
+    }
+
+    float value = *reinterpret_cast<float*>(static_cast<unsigned char*>(obj) + 0x10);
+    // Original: fcomp against double 1e-6; "below" (or unordered/NaN) returns 0.
+    if (!(static_cast<double>(value) >= mem_0095F7E0)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_005B21E0

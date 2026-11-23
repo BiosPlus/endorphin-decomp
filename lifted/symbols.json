@@ -11082,6 +11082,13 @@
     "summary": "Returns the float at +0x10 of the object referenced by this-\u003efield_0x00; throws if that reference is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B21E0": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry,float,Geometry::getParam0,0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e",
+    "signature": "int fn_005B21E0(void* self)",
+    "summary": "Reads the value pointed to by the holder at self; returns 1 if its float at +0x10 is \u003e= 1e-6 (NaN yields 0), throws if the holder is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B2A00": {
     "name": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, float, \u0026private: void __thiscall Geometry::setParam0(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, float, \u0026private: void __thiscall Geometry::setParam0(float)\u003e",

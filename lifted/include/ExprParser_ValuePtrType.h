@@ -44,5 +44,6 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00515C50) // CONFLICT: multiple definitions at +0x8
     // +0x9   uint8_t                  field_0x09  (evidence: 0x004EA4D0)
     // +0xC   std::uint32_t            field_0x0c  (evidence: 0x00516170, 0x00516550)
+    // +0x10  float                    field_0x10  (evidence: 0x005B21E0)
 };
 } // namespace lifted_layout
