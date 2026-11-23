@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE0E0",
+  "size": 10,
+  "orig_symbol": "sub_007AE0E0",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "tailCallWithGlobal_007AE0E0",
+  "signature": "extern \"C\" void fn_007AE0E0(void)",
+  "summary": "Sets this pointer to global 0x00B61708 and tail-calls sub_006B9D70.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:29Z"
+}
