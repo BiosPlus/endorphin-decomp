@@ -11708,3 +11708,28 @@ void* fn_004EA4D0(void* a, void** b) {
     return a;
 }
 } // namespace lift_004EA4D0
+
+// [0x004EA030] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_004EA030 {
+extern void ext_006720A0(void* self, uint32_t flag);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x05 uint8_t field_0x05
+void* fn_004EA030(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        alignas(8) unsigned char exception_obj[0x28];
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // _CxxThrowException does not return
+    }
+    uint32_t flag = lift_field<uint8_t>(obj, 5);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA030
