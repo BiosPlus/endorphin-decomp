@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1A70",
+  "size": 63,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, int, \u0026public: void __thiscall NMData::GraphEntryData::setColor(int)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e",
+  "signature": "extern \"C\" void __stdcall fn_004B1A70(void* const* self, void* arg)",
+  "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the result at target+0x20; throws if null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:00:22Z"
+}

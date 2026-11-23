@@ -4452,6 +4452,13 @@
     "summary": "Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1A70": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e",
+    "signature": "extern \"C\" void __stdcall fn_004B1A70(void* const* self, void* arg)",
+    "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the result at target+0x20; throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B1B30": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",

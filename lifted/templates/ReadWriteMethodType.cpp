@@ -61,3 +61,32 @@ void fn_0066EBA0(void** out, void* holder) {
     *dest = value;
 }
 } // namespace lift_0066EBA0
+
+// [0x004B1A70]
+namespace lift_004B1A70 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEntryData,int,getColor,setColor>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEntryData,int,getColor,setColor>
+// @summary Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the result at target+0x20; throws if null.
+// @field Unknown +0x20 uint32_t field_0x20
+
+
+extern void ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern void __stdcall fn_004B1A70(void* const* self, void* arg) {
+    uint8_t* target = static_cast<uint8_t*>(*self);
+    if (target) {
+        void* sub = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(arg) + 4);
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(sub);
+        using SlotFn = uint32_t (__thiscall*)(void* thisPtr, void* a);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtbl[2]);
+        uint32_t result = slot(sub, arg);
+        *reinterpret_cast<uint32_t*>(target + 0x20) = result;
+        return;
+    }
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return;
+}
+} // namespace lift_004B1A70
