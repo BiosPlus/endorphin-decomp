@@ -457,3 +457,20 @@ int fn_00508EB0(void* self) {
     return 0; // not reached; the throw above does not return
 }
 } // namespace lift_00508EB0
+
+// [0x005B2150] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005B2150 {
+// @name ExprParser::ReadMethodType<Geometry,getParam0>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Returns the float at +0x10 of the object referenced by this->field_0x00; throws if that reference is null.
+// @field ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0> +0x00 void* field_0x00
+float fn_005B2150(void* self) {
+    // The original raises a C++ exception (MSVCR80 _CxxThrowException) when the
+    // pointer is null; modelled here with std::runtime_error.
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null target");
+    }
+    return lift_field<float>(target, 0x10);
+}
+} // namespace lift_005B2150

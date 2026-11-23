@@ -8100,6 +8100,13 @@
     "summary": "Returns the product of extents ext(1) * ext(0) * ext(2) via sub_005B11E0 (float).",
     "lifted_path": "lifted/Geometry/CuboidType.cpp"
   },
+  "0x005B2150": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry,getParam0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e",
+    "signature": "float fn_005B2150(void* self)",
+    "summary": "Returns the float at +0x10 of the object referenced by this-\u003efield_0x00; throws if that reference is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3590": {
     "name": "Geometry::vfunc_0",
     "class": "Geometry",
