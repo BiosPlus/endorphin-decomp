@@ -24,5 +24,6 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x4   void*                    m_object  (evidence: 0x0064EF60) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    owner  (evidence: 0x00649570, 0x0064EC00, 0x0064F0C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    reader  (evidence: 0x00594470, 0x00594520, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    source  (evidence: 0x0064F240) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

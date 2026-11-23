@@ -4213,3 +4213,53 @@ void fn_0064F2F0(ResultPair* out, void** srcPtr, uint8_t* self) {
     out->second = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(target));
 }
 } // namespace lift_0064F2F0
+
+// [0x0064F240]
+namespace lift_0064F240 {
+// Callee 0x0064DCE0: sub_0064DCE0 (23B), thiscall-style setter taking one float (setSoftLimitSwingAngle1).
+extern void ext_0064DCE0(void* self, float value);
+
+// Result pair written through the output pointer: {value, source}.
+struct ExprResult {
+    void* value;
+    void* source;
+};
+
+// Virtual slot 1 (+0x04) of the source expression: returns a float, takes four stack args.
+using EvalFloatFn = float (*)(void* self, void* a0, void* a1, void* a2, uint32_t a3);
+// Virtual slot 28 (+0x70) of the source expression: writes into tmp and returns a pointer to the result.
+using EvalResultFn = ExprResult* (*)(void* self, ExprResult* tmp, void* arg);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setSoftLimitSwingAngle1>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle1(float), 0}>
+// @summary Evaluates the float argument from the source expression, applies it to the target SkeletalJoint via setSoftLimitSwingAngle1, then writes {target, source} back to the output result.
+// @field ExprResult +0x00 void* value
+// @field ExprResult +0x04 void* source
+// @field ExprParser::ValuePtrType +0x04 void* source
+void __stdcall fn_0064F240(void* a1, void* a2, void* a3) {
+    (void)a1;
+    ExprResult* out = reinterpret_cast<ExprResult*>(a2);
+    void* node = a3;
+
+    void* target = lift_field<void*>(out, 0x00);
+    void* source = lift_field<void*>(node, 0x04);
+
+    void* vtbl = lift_field<void*>(source, 0x00);
+    auto evalFloat = reinterpret_cast<EvalFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = evalFloat(source, node, target, node, 0);
+    ext_0064DCE0(target, value);
+
+    void* source2 = lift_field<void*>(node, 0x04);
+    if (source2 != nullptr) {
+        void* vtbl2 = lift_field<void*>(source2, 0x00);
+        auto evalResult = reinterpret_cast<EvalResultFn>(lift_field<void*>(vtbl2, 0x70));
+        ExprResult tmp{nullptr, nullptr};
+        ExprResult* res = evalResult(source2, &tmp, node);
+        out->value = res->value;
+        out->source = source2;
+    } else {
+        out->value = nullptr;
+        out->source = nullptr;
+    }
+}
+} // namespace lift_0064F240

@@ -1,0 +1,34 @@
+{
+  "va": "0x0064F240",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle1(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitSwingAngle1\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle1(float), 0}\u003e",
+  "signature": "void __stdcall fn_0064F240(void* a1, void* a2, void* a3)",
+  "summary": "Evaluates the float argument from the source expression, applies it to the target SkeletalJoint via setSoftLimitSwingAngle1, then writes {target, source} back to the output result.",
+  "fields": [
+    {
+      "class": "ExprResult",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "value"
+    },
+    {
+      "class": "ExprResult",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "source"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "source"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:11:20Z"
+}
