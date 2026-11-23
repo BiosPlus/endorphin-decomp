@@ -24001,3 +24001,30 @@ float fn_0049D460(void* const* argPtr) {
     return static_cast<float>(std::atof(str->c_str()));
 }
 } // namespace lift_0049D460
+
+// [0x004F66F0]
+namespace lift_004F66F0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getX, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getX, 0>
+// @summary Reads a float property via MatrixWithProperties::getX or throws on null pointer
+
+
+extern float __thiscall ext_004F4DD0(void* self);
+extern void __thiscall ext_00672080(void* self, float value);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, void* throwInfo);
+
+void* __thiscall fn_004F66F0(void* self, void* out_val, void** src_ptr) {
+    (void)self;
+    void* obj = *src_ptr;
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1Cu));
+        return out_val;
+    }
+    float val = ext_004F4DD0(obj);
+    ext_00672080(out_val, val);
+    return out_val;
+}
+} // namespace lift_004F66F0

@@ -7357,6 +7357,13 @@
     "summary": "Evaluates a float expression and sets MatrixWithProperties::x, or throws if target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004F66F0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getX, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getX, 0\u003e",
+    "signature": "void* __thiscall fn_004F66F0(void* self, void* out_val, void** src_ptr)",
+    "summary": "Reads a float property via MatrixWithProperties::getX or throws on null pointer",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F6740": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e",
