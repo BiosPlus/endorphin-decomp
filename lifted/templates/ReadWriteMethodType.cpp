@@ -4887,3 +4887,69 @@ void fn_00633330(void* self, void* value) {
 }
 } // namespace lift_006362D0
 } // namespace lift_00633330
+
+// [0x004B7C60]
+namespace lift_004B7C60 {
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData,float>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData,float>
+// @summary Evaluates a float expression and sets NMData::EngineData unitMass (+0x48) and dirty flag (+0x84), or throws on null object.
+// @field NMData::EngineData +0x48 float unitMass
+// @field NMData::EngineData +0x84 uint8_t field_0x84
+void __stdcall fn_004B7C60(uint32_t* pObjPtr, uint32_t* pExpr) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(*pObjPtr);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1C);
+        return;
+    }
+
+    typedef float (__thiscall *EvalFloatFn)(void* self, void* arg);
+    void* target = reinterpret_cast<void*>(pExpr[1]);
+    void** vtable = *reinterpret_cast<void***>(target);
+    EvalFloatFn evalFn = reinterpret_cast<EvalFloatFn>(vtable[1]);
+
+    float val = evalFn(target, pExpr);
+    *reinterpret_cast<float*>(obj + 0x48) = val;
+    *(obj + 0x84) = 1;
+}
+} // namespace lift_004B7C60
+
+// [0x004B7C10]
+namespace lift_004B7C10 {
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData, float, getUnitLength, float, setUnitLength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets NMData::EngineData::unitLength from an expression value via virtual getter, or throws on null target
+// @field NMData::EngineData +0x44 float unitLength
+// @field NMData::EngineData +0x84 uint8_t field_0x84
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write_f32(uint32_t addr, float val);
+extern void mem_write8(uint32_t addr, uint8_t val);
+extern void ext_0046C3C0(uint32_t self);
+extern void ext_006A6DD2(uint32_t exc_ptr, uint32_t throw_info);
+
+extern void __stdcall fn_004B7C10(uint32_t target_ptr_addr, uint32_t value_addr) {
+    uint32_t target = mem_read32(target_ptr_addr);
+    if (target == 0) {
+        uint8_t exc_buf[0x28];
+        uint32_t exc_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc_buf));
+        ext_0046C3C0(exc_addr);
+        ext_006A6DD2(exc_addr, 0x009DEC1Cu);
+        return;
+    }
+
+    uint32_t obj = mem_read32(value_addr + 0x4u);
+    uint32_t vtable = mem_read32(obj);
+    uint32_t vfunc = mem_read32(vtable + 0x4u);
+    using GetFloatFn = float(__thiscall*)(uint32_t, uint32_t);
+    float val = reinterpret_cast<GetFloatFn>(static_cast<uintptr_t>(vfunc))(obj, value_addr);
+
+    mem_write_f32(target + 0x44u, val);
+    mem_write8(target + 0x84u, 1);
+}
+} // namespace lift_004B7C10

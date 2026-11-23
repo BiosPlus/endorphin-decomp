@@ -1,0 +1,28 @@
+{
+  "va": "0x004B7C60",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitMass(float)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float\u003e",
+  "signature": "void __stdcall fn_004B7C60(uint32_t* pObjPtr, uint32_t* pExpr)",
+  "summary": "Evaluates a float expression and sets NMData::EngineData unitMass (+0x48) and dirty flag (+0x84), or throws on null object.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "unitMass"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x84",
+      "type": "uint8_t",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:10:59Z"
+}
