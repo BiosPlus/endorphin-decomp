@@ -1247,51 +1247,6 @@ void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value
     ext_0064F900(obj, bits);
 }
 
-// [0x0064F7C0]
-// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, setDriveAngularVel>::vfunc_48
-// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, SkeletalJoint::setDriveAngularVel>
-// @summary Fetches the argument's holder, calls its vtable slot 5 and ext_0064DDE0, then returns {value, holder} via the sret buffer.
-// @field ValuePtrType +0x00 uint32_t field_0x00
-// @field ValuePtrType +0x04 void* field_0x04
-
-extern "C" void ext_0064DDE0(void* self, uint32_t arg);
-
-// Argument block: +0x00 = dereferenced value, +0x04 = holder object.
-// Return block (sret): +0x00 = value, +0x04 = holder object.
-struct ValuePtrResult {
-    uint32_t value;
-    void*    obj;
-};
-
-// Stack arg layout: ret (sret), a2slot (pointer-to-pointer, may be overwritten), a3 (holder block).
-void __fastcall fn_0064F7C0(void* self, void* edx, ValuePtrResult* ret, void** a2slot, uint8_t* a3) {
-    (void)self; (void)edx;
-
-    uint32_t* a2 = reinterpret_cast<uint32_t*>(*a2slot);
-    uint32_t value = *a2;
-
-    void*  holder = *reinterpret_cast<void**>(a3 + 0x4);
-    void** vt     = *reinterpret_cast<void***>(holder);
-
-    // vtable slot 5 (offset 0x14) on holder, one stack arg a3
-    using Slot5Fn = uint32_t (__fastcall*)(void* self, void* edx, uint8_t* arg);
-    uint32_t v1 = reinterpret_cast<Slot5Fn>(vt[5])(holder, nullptr, a3);
-
-    ext_0064DDE0(reinterpret_cast<void*>(static_cast<uintptr_t>(value)), v1);
-
-    if (holder != nullptr) {
-        // vtable slot 28 (offset 0x70) on holder: (outp, a3) -> pointer to value
-        using Slot28Fn = uint32_t* (__fastcall*)(void* self, void* edx, void** outp, uint8_t* arg);
-        uint32_t* p = reinterpret_cast<Slot28Fn>(vt[28])(holder, nullptr, a2slot, a3);
-        ret->value = *p;
-        ret->obj   = holder;
-    } else {
-        *a2slot    = nullptr;
-        ret->value = 0;
-        ret->obj   = nullptr;
-    }
-}
-
 // [0x00650E50] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48 (110 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48
 // @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>
@@ -1597,3 +1552,57 @@ void fn_00650DB0(void* /*unused*/, Pair* io, Holder* holder) {
     }
 }
 } // namespace lift_00650DB0
+
+// [0x0064F7C0] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, setDriveAngularVel>::vfunc_48 (110 bytes)
+namespace lift_0064F7C0 {
+extern void __fastcall ext_0064DDE0(void* self, int edx_unused, uint32_t arg);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, SkeletalJoint::setDriveAngularVel>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
+// @summary Reads a value through the source holder's object (vtable slot 5), passes it to SkeletalJoint::setDriveAngularVel on the joint pointed to by arg b, then writes a pair {first, holder object} through the out pointer; when the holder object is null, writes {0, 0}.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+// @field <unknown: arg b> +0x00 void* joint   (first dword of arg b is the SkeletalJoint* used as `this` for setDriveAngularVel; SkeletalJoint offsets not accessed here)
+
+// Stdcall, 3 stack args (ret 0xc). ecx is saved and restored, not used as `this`.
+// out: 8-byte result pair; b: pointer whose first dword is the SkeletalJoint*; c: ValuePtrType holder.
+extern void __stdcall fn_0064F7C0(uint32_t* out, void* b, void* c) {
+    // Local copy of the b argument: the original zeroes this stack slot on the null path
+    // and passes its address to the slot-28 call on the non-null path.
+    void* b_arg = b;
+
+    // joint = *b (read before the virtual call, as in the original).
+    void* joint = *static_cast<void**>(b_arg);
+
+    // value = holder->+0x04->vtable[slot 5](holder->+0x04, holder)
+    void* src = lift_field<void*>(c, 0x04);
+    void** src_vtbl = lift_field<void**>(src, 0x00);
+    using Slot5Fn = uint32_t (*)(void* self, void* a0);
+    const uint32_t value = reinterpret_cast<Slot5Fn>(lift_field<void*>(src_vtbl, 0x14))(src, c);
+
+    // joint->setDriveAngularVel(value)
+    ext_0064DDE0(joint, 0, value);
+
+    // Re-read holder->+0x04 after the calls, as in the original.
+    void* obj = lift_field<void*>(c, 0x04);
+
+    uint32_t first = 0;
+    void* second = nullptr;
+
+    if (obj != nullptr) {
+        // p = obj->vtable[slot 28](b_slot_addr, holder); result = first dword of *p.
+        void** obj_vtbl = lift_field<void**>(obj, 0x00);
+        using Slot28Fn = void* (*)(void* self, void* a0, void* a1);
+        void* p = reinterpret_cast<Slot28Fn>(lift_field<void*>(obj_vtbl, 0x70))(obj, &b_arg, c);
+        first = *static_cast<uint32_t*>(p);
+        second = lift_field<void*>(c, 0x04);
+    } else {
+        // Null path: the original zeroes the b argument slot, then loads the first dword through it.
+        b_arg = nullptr;
+        first = 0;
+        second = lift_field<void*>(c, 0x04);
+    }
+
+    out[0] = first;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(second));
+}
+} // namespace lift_0064F7C0

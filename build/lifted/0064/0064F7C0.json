@@ -1,0 +1,22 @@
+{
+  "va": "0x0064F7C0",
+  "size": 110,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "extern \"C\" void __stdcall fn_0064F7C0(uint32_t* out, void* b, void* c)",
+  "summary": "Reads a value through the source holder's object (vtable slot 5), passes it to SkeletalJoint::setDriveAngularVel on the joint pointed to by arg b, then writes a pair {first, holder object} through the out pointer; when the holder object is null, writes {0, 0}.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:04:28Z"
+}
