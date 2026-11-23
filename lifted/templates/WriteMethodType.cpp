@@ -4106,3 +4106,57 @@ void fn_0064EF60(ValuePair* out, void** joint_ref, ValuePtrSource* src) {
     }
 }
 } // namespace lift_0064EF60
+
+// [0x0064F170] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistAngle(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F170 {
+extern void ext_0064DCC0(void* self, float value);
+
+// Layout of the 8-byte value returned through the hidden sret pointer.
+struct ValueResult {
+    uint32_t value;  // first dword read from the vfunc_0x70 result
+    uint32_t owner;  // copy of the ctx's +0x04 object pointer
+};
+
+// Vtable-slot helpers: byte offsets in the vtable, as in the original code.
+static inline void* vtbl_entry(void* obj, std::size_t byteOffset) {
+    void* vt = *reinterpret_cast<void**>(obj);
+    return *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vt) + byteOffset);
+}
+
+using GetFloatFn = float (*)(void* self, void* ctx);
+using GetRefFn   = void* (*)(void* self, void* ctx, void** ref);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint,float,SkeletalJoint::setSoftLimitTwistAngle>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistAngle(float), 0}>
+// @summary Evaluates the float source via ctx->+0x04 vfunc[1], writes it to the joint's soft twist limit, then returns {value, owner} from vfunc[0x70].
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+ValueResult fn_0064F170(void* arg2, void* ctx) {
+    // Original code: joint = *arg2 is read before the getter call.
+    void* joint = *reinterpret_cast<void**>(arg2);
+
+    // Getter: float value = ctx->owner->vfunc[1](ctx).
+    void* owner = lift_field<void*>(ctx, 0x04);
+    float value = reinterpret_cast<GetFloatFn>(vtbl_entry(owner, 0x04))(owner, ctx);
+
+    // Setter: joint->setSoftLimitTwistAngle(value).
+    ext_0064DCC0(joint, value);
+
+    // Chained write: if ctx->owner is non-null, call vfunc[0x70] with &arg2.
+    void* ownerNow = lift_field<void*>(ctx, 0x04);
+    if (ownerNow != nullptr) {
+        void* ref = arg2;
+        void* ret = reinterpret_cast<GetRefFn>(vtbl_entry(ownerNow, 0x70))(ownerNow, ctx, &ref);
+        ValueResult out{};
+        out.value = *reinterpret_cast<uint32_t*>(ret);
+        out.owner = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(lift_field<void*>(ctx, 0x04)));
+        return out;
+    }
+
+    // Null owner: the original zeroes the argument slot and returns {0, 0}.
+    arg2 = nullptr;
+    ValueResult out{};
+    out.value = 0;
+    out.owner = 0;
+    return out;
+}
+} // namespace lift_0064F170
