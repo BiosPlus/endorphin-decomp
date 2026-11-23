@@ -1,0 +1,13 @@
+{
+  "va": "0x005CF910",
+  "size": 8,
+  "orig_symbol": "sub_005CF910",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "sub_005CF910",
+  "signature": "void sub_005CF910()",
+  "summary": "Clears the global byte flag at 0x00B3F200 to 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:49Z"
+}

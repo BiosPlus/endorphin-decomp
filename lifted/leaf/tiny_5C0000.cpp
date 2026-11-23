@@ -166,3 +166,14 @@ extern "C" void __fastcall fn_005CEA20(void* self) {
     void* delegate_obj = lift_field<void*>(self, 0xAC);
     ext_00647EE0(delegate_obj);
 }
+
+// [0x005CF910]
+namespace lift_005CF910 {
+extern uint8_t mem_00B3F200;
+
+// @name sub_005CF910
+// @summary Clears the global byte flag at 0x00B3F200 to 0.
+void sub_005CF910() {
+    mem_00B3F200 = 0;
+}
+} // namespace lift_005CF910
