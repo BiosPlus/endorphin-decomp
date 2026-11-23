@@ -1,0 +1,27 @@
+{
+  "va": "0x00640930",
+  "size": 9,
+  "orig_symbol": "sub_00640930",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "sub_00640930",
+  "signature": "void __thiscall sub_00640930(void* self)",
+  "summary": "Decrements dword at +0xc and sets byte at +0x10 to 1",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:36Z"
+}

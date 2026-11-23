@@ -546,3 +546,23 @@ float __thiscall sub_006488F0(const void* self) {
     return *reinterpret_cast<const float*>(ptr + 0x08);
 }
 } // namespace lift_006488F0
+
+// [0x00640930]
+namespace lift_00640930 {
+// @name sub_00640930
+// @summary Decrements dword at +0xc and sets byte at +0x10 to 1
+// @field unknown +0x0c int32_t field_0x0c
+// @field unknown +0x10 uint8_t field_0x10
+
+
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+void mem_write8(uint32_t addr, uint8_t val);
+
+void __thiscall sub_00640930(void* self) {
+    uint32_t base = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    uint32_t val = mem_read32(base + 0x0c);
+    mem_write32(base + 0x0c, val - 1);
+    mem_write8(base + 0x10, 1);
+}
+} // namespace lift_00640930
