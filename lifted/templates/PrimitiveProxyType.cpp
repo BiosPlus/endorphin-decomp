@@ -402,3 +402,21 @@ void fn_0049C0F0(void* self, const std::string& src) {
     auto* valuePtr = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
     *valuePtr = parsed;
 }
+
+// [0x004B7AE0]
+namespace lift_004B7AE0 {
+extern uint32_t mem_00924FE0;
+extern float ext_004B79B0(char[0x1c], void*);
+
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_10
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Evaluates expression string via sub_004B79B0 and stores float result into *arg1
+void __thiscall fn_004B7AE0(void* self, float** arg1, void* arg2) {
+    (void)self;
+    char str_buf[0x1c];
+    using copy_ctor_t = void (__thiscall*)(void*, void*);
+    reinterpret_cast<copy_ctor_t>(static_cast<uintptr_t>(mem_00924FE0))(str_buf, arg2);
+    float val = ext_004B79B0(str_buf, arg2);
+    **arg1 = val;
+}
+} // namespace lift_004B7AE0
