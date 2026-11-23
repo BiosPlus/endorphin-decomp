@@ -5568,6 +5568,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00516170": {
+    "name": "ExprParser::DynamicEnumType\u003cEvolverRuntimeOptions\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",
+    "signature": "std::uint32_t fn_00516170(void* self)",
+    "summary": "Returns the dword at +0x0C of the object referenced by the holder's first pointer; throws if that pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00516B10": {
     "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, printCurrentIndividual\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e",

@@ -16,6 +16,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00489540, 0x0048B060, 0x0048B1F0, 0x004B8970, 0x004CB470, 0x004CCCC0, 0x00508EB0, 0x005C61F0, 0x0066DD10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer, dereferenced first)  (evidence: 0x004EAA10, 0x004EADE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   ptr  (evidence: 0x004B71C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    ptr  (evidence: 0x00516170) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x004B8E40, 0x004EB230, 0x0050E0A0, 0x0050F190, 0x00516B10, 0x0066EFE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0
@@ -28,5 +29,6 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x4   void*                    owner  (evidence: 0x00649570, 0x0064EC00, 0x0064F0C0, 0x00651070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    reader  (evidence: 0x00594470, 0x00594520, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    source  (evidence: 0x0064F240, 0x0064F660) // CONFLICT: multiple definitions at +0x4
+    // +0xC   std::uint32_t            field_0x0c  (evidence: 0x00516170)
 };
 } // namespace lifted_layout

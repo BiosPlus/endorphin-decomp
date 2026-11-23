@@ -217,26 +217,6 @@ extern "C" int fn_00516550(void* arg) {
     return target->field_0x08;
 }
 
-// [0x00516170] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_2 (45 bytes)
-// @name ExprParser::DynamicEnumType::vfunc_2
-// @class ExprParser::DynamicEnumType
-// @summary Loads the wrapped pointer at (*self) and returns its +0x0C field as a 32-bit value; throws if the wrapped pointer is null.
-// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
-// @field ExprParser::DynamicEnumType +0x0C uint32_t field_0x0C
-//
-// Original (stdcall, one stack argument, `ret 4`): eax = *(*arg); if eax == 0, the
-// original builds a C++ exception object via sub_0046C3C0 and throws it. The throw
-// is modeled here with a standard exception type; the exception-object construction
-// has no portable equivalent and is dropped.
-uint32_t fn_00516170(void* self) {
-    auto* base = static_cast<uint8_t*>(self);
-    void* inner = lift_field<void*>(base, 0x00);
-    if (inner == nullptr) {
-        throw std::runtime_error("ExprParser::DynamicEnumType::vfunc_2: null wrapped pointer");
-    }
-    return lift_field<uint32_t>(inner, 0x0C);
-}
-
 // [0x00515FD0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1 (45 bytes)
 namespace lift_00515FD0 {
 // @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1
@@ -251,3 +231,28 @@ double fn_00515FD0(void* const* holder) {
     return static_cast<double>(value);
 }
 } // namespace lift_00515FD0
+
+// [0x00516170] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_2 (45 bytes)
+namespace lift_00516170 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<EvolverRuntimeOptions>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Returns the dword at +0x0C of the object referenced by the holder's first pointer; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+// @field ExprParser::ValuePtrType +0x0C std::uint32_t field_0x0c
+std::uint32_t fn_00516170(void* self) {
+    // holder->ptr
+    void* target = *reinterpret_cast<void**>(self);
+    if (target == nullptr) {
+        // Original: builds an exception object via sub_0046C3C0 and throws
+        // through _CxxThrowException (type 0x009DEC1C).
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    return *reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(target) + 0x0C);
+}
+} // namespace lift_00516170
