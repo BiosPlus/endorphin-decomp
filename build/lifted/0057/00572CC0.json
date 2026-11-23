@@ -1,0 +1,14 @@
+{
+  "va": "0x00572CC0",
+  "size": 1157,
+  "orig_symbol": "CSMMotionIO::vfunc_11",
+  "src_path": "src/classes/CSMMotionIO.cpp",
+  "lifted_path": "lifted/classes/CSMMotionIO.cpp",
+  "name": "CSMMotionIO::vfunc_11",
+  "class": "CSMMotionIO",
+  "signature": "extern \"C\" void ext_004F15A0(void* self, const void* first, const void* last); // sub_004F15A0: consumes parsed block extern \"C\" const char mem_009597FC[]; // block marker extern \"C\" const char mem_009597F0[]; // int tag A (low index) extern \"C\" const char mem_009597E4[]; // int tag B (high index) extern \"C\" const char mem_009597DC[]; // int tag C (config int) extern \"C\" const char mem_009597D4[]; // skip tag (consumes one extra token) struct MotionRecord",
+  "summary": "Parses a keyword-tagged text motion file and hands the decoded record range to the consumer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:20:57Z"
+}
