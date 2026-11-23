@@ -1,0 +1,28 @@
+{
+  "va": "0x005F0FA0",
+  "size": 106,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_17_off_C",
+  "src_path": "src/NMData/MagnetJointData.cpp",
+  "lifted_path": "lifted/NMData/MagnetJointData.cpp",
+  "name": "NMData::MagnetJointData::vfunc_17_off_C",
+  "class": "NMData::MagnetJointData",
+  "signature": "extern \"C\" void* __thiscall fn_005F0FA0(uint8_t* self_off_c)",
+  "summary": "Allocates and constructs a 0x318-byte object (likely MagnetJointData) and copies a flag from TransformInterface::vfunc_0x20 to offset +0x148.",
+  "fields": [
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "vptr_TransformInterface"
+    },
+    {
+      "class": "NMData::MagnetJointData",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:08Z"
+}

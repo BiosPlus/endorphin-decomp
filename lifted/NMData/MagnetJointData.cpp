@@ -27,3 +27,33 @@ void* fn_005F0D20(void* self, void* arg) {
     reinterpret_cast<VFn>(vtbl[59])(self, arg, 0);
     return arg;
 }
+
+// [0x005F0FA0]
+namespace lift_005F0FA0 {
+// @name NMData::MagnetJointData::vfunc_17_off_C
+// @class NMData::MagnetJointData
+// @summary Allocates and constructs a 0x318-byte object (likely MagnetJointData) and copies a flag from TransformInterface::vfunc_0x20 to offset +0x148.
+// @field NMData::MagnetJointData +0x04 void* vptr_TransformInterface
+// @field NMData::MagnetJointData +0x148 uint8_t field_0x148
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_005F0AE0(void* self);
+
+extern void* __thiscall fn_005F0FA0(uint8_t* self_off_c) {
+    uint8_t* obj = static_cast<uint8_t*>(ext_006A5C62(0x318));
+    uint8_t* result = nullptr;
+    if (obj != nullptr) {
+        result = static_cast<uint8_t*>(ext_005F0AE0(obj));
+    }
+
+    uint8_t* transform_iface = self_off_c - 0x8;
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(transform_iface);
+    using VFunc20 = uint8_t(__thiscall*)(void*);
+    VFunc20 vfunc_20 = *reinterpret_cast<VFunc20*>(vtable + 0x20);
+    uint8_t flag = vfunc_20(transform_iface);
+
+    result[0x148] = flag;
+    return result;
+}
+} // namespace lift_005F0FA0
