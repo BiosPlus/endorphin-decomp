@@ -14170,10 +14170,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006071E0": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
-    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
-    "signature": "void* fn_00617340(void* self)",
-    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, Effector::getGradientCap, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
+    "signature": "void* fn_006071E0(void* self, void* const* effectorRef)",
+    "summary": "Reads Effector::getGradientCap from the referenced Effector and forwards it to ext_00672080 on self; throws if the Effector pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00607230": {

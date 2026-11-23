@@ -17013,39 +17013,6 @@ void* fn_00605BA0(void* self) {
 }
 } // namespace lift_00605BA0
 
-// [0x006071E0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_0 (72 bytes)
-namespace lift_006071E0 {
-// Known callee 0x00672080: sub_00672080 (18B). Called as a thiscall-style setter:
-// ecx = self (arg1), one float on the stack.
-extern void ext_00672080(void* self, float value);
-
-// Known callee 0x0046C3C0: sub_0046C3C0 (105B). Constructs an exception object
-// in a local slot before the throw. Message/contents not recovered.
-extern void ext_0046C3C0(void* exc);
-
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk
-// forwarding to MSVCR80!_CxxThrowException). Replaced by a C++ throw below.
-
-// @name ExprParser::ReadMethodType<Effector, float, Effector::getGradientCap, 0>::vfunc_0
-// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>
-// @summary Reads Effector::getGradientCap from the referenced Effector and forwards it to ext_00672080 on self; throws if the Effector pointer is null.
-// @field Effector +0x50 float field_0x50
-void* fn_006071E0(void* self, void* const* effectorRef) {
-    const unsigned char* effector =
-        effectorRef ? static_cast<const unsigned char*>(*effectorRef) : nullptr;
-
-    if (effector != nullptr) {
-        float cap = lift_field<float>(effector, 0x50);
-        ext_00672080(self, cap);
-        return self;
-    }
-
-    // Null Effector: original builds an exception object and throws it.
-    // Exact exception type/message not recovered; use std::runtime_error.
-    throw std::runtime_error("ExprParser: null Effector in getGradientCap read");
-}
-} // namespace lift_006071E0
-
 // [0x00606A00] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_0 (72 bytes)
 namespace lift_00606A00 {
 // Callee 0x00672080: thiscall (ecx = this, one float on the stack, callee-cleaned).
@@ -17133,3 +17100,32 @@ void* fn_006175E0(void* out, const void* const* src) {
     return nullptr;
 }
 } // namespace lift_006175E0
+
+// [0x006071E0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_006071E0 {
+// Known callee 0x00672080: sub_00672080 (18B). Called as a thiscall-style setter:
+// ecx = self (arg1), one float on the stack.
+extern void ext_00672080(void* self, float value);
+
+// Known callees 0x0046C3C0 (exception object constructor) and 0x006A6DD2
+// (thunk to MSVCR80!_CxxThrowException) are replaced by a C++ throw below.
+
+// @name ExprParser::ReadMethodType<Effector, float, Effector::getGradientCap, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>
+// @summary Reads Effector::getGradientCap from the referenced Effector and forwards it to ext_00672080 on self; throws if the Effector pointer is null.
+// @field Effector +0x50 float field_0x50
+void* fn_006071E0(void* self, void* const* effectorRef) {
+    const unsigned char* effector =
+        effectorRef ? static_cast<const unsigned char*>(*effectorRef) : nullptr;
+
+    if (effector != nullptr) {
+        float cap = lift_field<float>(effector, 0x50);
+        ext_00672080(self, cap);
+        return self;
+    }
+
+    // Null Effector: original builds an exception object and throws it.
+    // Exact exception type/message not recovered; use std::runtime_error.
+    throw std::runtime_error("ExprParser: null Effector in getGradientCap read");
+}
+} // namespace lift_006071E0
