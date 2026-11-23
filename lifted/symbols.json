@@ -8786,6 +8786,13 @@
     "summary": "Computes a weighted sum of cuboid face areas projected onto a 3D vector",
     "lifted_path": "lifted/Geometry/CuboidType.cpp"
   },
+  "0x005B1700": {
+    "name": "Geometry::SphereType::vfunc_5",
+    "class": "Geometry::SphereType",
+    "signature": "extern \"C\" double mem_009576E8; // pi (stored as double) float __stdcall fn_005B1700(void* self, uint32_t /*unused*/)",
+    "summary": "Returns |pi * r * r| where r = ext_005B11E0(self, 0); the second stack argument is unused.",
+    "lifted_path": "lifted/Geometry/SphereType.cpp"
+  },
   "0x005B1740": {
     "name": "Geometry::CylinderType::vfunc_5",
     "class": "Geometry::CylinderType",

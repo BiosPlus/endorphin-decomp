@@ -70,3 +70,21 @@ float __stdcall fn_005B1370(float* out_vec, void* sphere, const float* point) {
                  + local_buf[2] * local_buf[2];
     return std::sqrt(len_sq);
 }
+
+// [0x005B1700]
+namespace lift_005B1700 {
+extern float __thiscall ext_005B11E0(void* self, uint32_t arg0);
+extern double mem_009576E8; // pi (stored as double)
+
+// @name Geometry::SphereType::vfunc_5
+// @class Geometry::SphereType
+// @summary Returns |pi * r * r| where r = ext_005B11E0(self, 0); the second stack argument is unused.
+float __stdcall fn_005B1700(void* self, uint32_t /*unused*/) {
+    const float r = ext_005B11E0(self, 0);
+    const double rd = static_cast<double>(r);
+    // Original order: st0 = pi * r, then st1 = r * st0, rounded to float on store.
+    const double pr = mem_009576E8 * rd;
+    const float v = static_cast<float>(rd * pr);
+    return std::fabs(v);
+}
+} // namespace lift_005B1700
