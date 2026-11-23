@@ -1,0 +1,22 @@
+{
+  "va": "0x004EAD50",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026NMData::PoseToolOptions::isGravityEnabled, 0\u003e",
+  "signature": "extern \"C\" float __stdcall fn_004EAD50(uint32_t* pPtr)",
+  "summary": "Reads isGravityEnabled from PoseToolOptions as a float (1.0f or 0.0f), or throws if null.",
+  "fields": [
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "isGravityEnabled"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:01:36Z"
+}

@@ -23744,3 +23744,25 @@ extern float __thiscall fn_004B13A0(void* /*this*/, const uint32_t* ptr_holder) 
     return (*reinterpret_cast<const uint8_t*>(uintptr_t(obj) + 1) != 0) ? 1.0f : 0.0f;
 }
 } // namespace lift_004B13A0
+
+// [0x004EAD50]
+namespace lift_004EAD50 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &NMData::PoseToolOptions::isGravityEnabled, 0>
+// @summary Reads isGravityEnabled from PoseToolOptions as a float (1.0f or 0.0f), or throws if null.
+// @field NMData::PoseToolOptions +0x06 uint8_t isGravityEnabled
+
+
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern float __stdcall fn_004EAD50(uint32_t* pPtr) {
+    uint32_t obj = *pPtr;
+    if (obj == 0) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+    }
+    return (*reinterpret_cast<const uint8_t*>(obj + 0x6) != 0) ? 1.0f : 0.0f;
+}
+} // namespace lift_004EAD50

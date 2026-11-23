@@ -7062,6 +7062,13 @@
     "summary": "Reads the bool isCollisionEnabled flag from the PoseToolOptions pointed to by the value pointer; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EAD50": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026NMData::PoseToolOptions::isGravityEnabled, 0\u003e",
+    "signature": "extern \"C\" float __stdcall fn_004EAD50(uint32_t* pPtr)",
+    "summary": "Reads isGravityEnabled from PoseToolOptions as a float (1.0f or 0.0f), or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EADA0": {
     "name": "ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
