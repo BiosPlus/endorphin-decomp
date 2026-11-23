@@ -1,0 +1,13 @@
+{
+  "va": "0x007DFB50",
+  "size": 11,
+  "orig_symbol": "sub_007DFB50",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "zeroU32Ptr",
+  "signature": "uint32_t* sub_007DFB50(uint32_t* ptr)",
+  "summary": "Zero-initializes a 32-bit value at the given pointer and returns the pointer",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:44:43Z"
+}
