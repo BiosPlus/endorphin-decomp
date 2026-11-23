@@ -10677,6 +10677,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00649CD0": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}\u003e",
+    "signature": "void fn_00649CD0(PairOut* out, void** slot, uint8_t* ctx)",
+    "summary": "Reads a float from the owner's vtable getter, applies it to the target via setRotationAxisZ, then writes back the resolved pointer pair.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00649D50": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}\u003e",

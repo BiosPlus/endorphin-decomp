@@ -133,6 +133,7 @@ void* fn_005F35D0(void* arg1, void* arg2) {
     // Forward: ecx = self, stack arg = value (float); result passed through.
     return ext_0064F8E0(self, value);
 }
+#include <cstdint>
 
 // [0x00487420] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_41 (37 bytes)
 // @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_41
@@ -3735,3 +3736,54 @@ extern void __stdcall fn_00649C20(ValuePtrOut* out, void** target_holder, ValueP
     }
 }
 } // namespace lift_00649C20
+
+// [0x00649CD0] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649CD0 {
+// Known callee 0x00648E20: sub_00648E20 (Setter storing float argument into field at offset +0x74.)
+extern void ext_00648E20();
+
+namespace {
+
+using SetFloatFn = void (*)(void* self, int edx_unused, float value);
+using GetFloatFn = float (*)(void* self, void* ctx);
+using GetPtrFn = void* (*)(void* self, void** slot);
+
+struct PairOut {
+    uintptr_t first;
+    uintptr_t second;
+};
+
+}  // namespace
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>
+// @summary Reads a float from the owner's vtable getter, applies it to the target via setRotationAxisZ, then writes back the resolved pointer pair.
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}> +0x04 void* owner
+void fn_00649CD0(PairOut* out, void** slot, uint8_t* ctx) {
+    // Target object held in *slot (RelationshipRPROMagnet instance).
+    void* self = *slot;
+
+    // ctx+0x04 holds the owner whose vtable supplies the value and pointer getters.
+    void* owner = *reinterpret_cast<void**>(ctx + 0x04);
+    void** owner_vt = *reinterpret_cast<void***>(owner);
+
+    // Slot 1: float getter on the owner.
+    float value = reinterpret_cast<GetFloatFn>(owner_vt[1])(owner, ctx);
+
+    // Setter 0x00648E20 stores the float into the target's field at +0x74.
+    reinterpret_cast<SetFloatFn>(&ext_00648E20)(self, 0, value);
+
+    if (*reinterpret_cast<void**>(ctx + 0x04) != nullptr) {
+        // Slot 0x70: pointer resolver on the owner, returns pointer to a value pair.
+        void** vt = *reinterpret_cast<void***>(*reinterpret_cast<void**>(ctx + 0x04));
+        void** resolved_ptr = static_cast<void**>(
+            reinterpret_cast<GetPtrFn>(vt[0x70 / sizeof(void*)])(owner, slot));
+        out->first = reinterpret_cast<uintptr_t>(*resolved_ptr);
+        out->second = reinterpret_cast<uintptr_t>(*reinterpret_cast<void**>(ctx + 0x04));
+    } else {
+        *slot = nullptr;
+        out->first = 0;
+        out->second = 0;
+    }
+}
+} // namespace lift_00649CD0
