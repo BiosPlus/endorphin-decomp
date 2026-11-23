@@ -717,3 +717,55 @@ void fn_0071A160(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0x1C08) = a0;
     lift_field<uint32_t>(self, 0x1C0C) = a1;
 }
+
+// [0x00713860]
+namespace lift_00713860 {
+extern uint8_t mem_00B5F410[];
+extern void ext_00714060(void* self);
+
+// @name tailcall_00714060_global_00B5F410
+// @summary Tail-calls sub_00714060 with global object mem_00B5F410 in ecx.
+void sub_00713860() {
+    ext_00714060(mem_00B5F410);
+}
+} // namespace lift_00713860
+
+// [0x007138A0]
+namespace lift_007138A0 {
+// @name sub_007138A0
+// @summary Tail-calls sub_00714060 with global object mem_00B5F8A0 as this
+
+
+extern uint8_t mem_00B5F8A0[];
+extern void __thiscall ext_00714060(void* self);
+
+extern void sub_007138A0() {
+    ext_00714060(mem_00B5F8A0);
+}
+} // namespace lift_007138A0
+
+// [0x007137E0]
+namespace lift_007137E0 {
+// @name initSingleton_007137E0
+// @summary Tail-calls sub_00714060 with global object at 0x00B5F888 in ecx.
+
+
+extern uint8_t mem_00B5F888[];
+extern void __thiscall ext_00714060(void* self);
+
+void sub_007137E0() {
+    ext_00714060(mem_00B5F888);
+}
+} // namespace lift_007137E0
+
+// [0x00713820]
+namespace lift_00713820 {
+extern uint8_t mem_00B5F708[];
+extern void ext_00714060(void* ecx);
+
+// @name initGlobal_00B5F708
+// @summary Tail-calls sub_00714060 with global object mem_00B5F708 in ecx.
+void sub_00713820(void) {
+    ext_00714060(mem_00B5F708);
+}
+} // namespace lift_00713820

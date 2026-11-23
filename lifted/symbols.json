@@ -32658,6 +32658,30 @@
     "summary": "Returns address of global mem_00AAC03C.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007137E0": {
+    "name": "initSingleton_007137E0",
+    "signature": "void sub_007137E0()",
+    "summary": "Tail-calls sub_00714060 with global object at 0x00B5F888 in ecx.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713820": {
+    "name": "initGlobal_00B5F708",
+    "signature": "void sub_00713820(void)",
+    "summary": "Tail-calls sub_00714060 with global object mem_00B5F708 in ecx.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713860": {
+    "name": "tailcall_00714060_global_00B5F410",
+    "signature": "void sub_00713860()",
+    "summary": "Tail-calls sub_00714060 with global object mem_00B5F410 in ecx.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007138A0": {
+    "name": "sub_007138A0",
+    "signature": "extern \"C\" void sub_007138A0()",
+    "summary": "Tail-calls sub_00714060 with global object mem_00B5F8A0 as this",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00713930": {
     "name": "sub_00713930",
     "signature": "extern \"C\" void* __fastcall fn_00713930(void* self, int edx_unused, unsigned int flags)",
