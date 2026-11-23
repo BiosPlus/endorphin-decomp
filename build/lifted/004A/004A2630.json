@@ -1,0 +1,22 @@
+{
+  "va": "0x004A2630",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditions(bool), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, drawConditions, bool, setDrawConditions\u003e",
+  "signature": "static inline uint32_t rd32(uint32_t addr)",
+  "summary": "Reads the bound FSMEditView pointer; if null throws, otherwise gets the value from the source's getter and forwards it to setDrawConditions.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (source object pointer; its vtable slot +0x0c is the",
+      "name": "getter)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:05:39Z"
+}

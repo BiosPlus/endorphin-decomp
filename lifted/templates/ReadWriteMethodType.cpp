@@ -3641,3 +3641,40 @@ void fn_004A26F0(void* dst, void* src) {
     set(target, value);
 }
 } // namespace lift_004A26F0
+
+// [0x004A2630] ExprParser::ReadWriteMethodType<...>::vfunc_41 (68 bytes)
+namespace lift_004A2630 {
+extern void ext_004A24E0(uint32_t self, uint32_t value);   // FSMEditView::setDrawConditions (thiscall, 1 arg)
+extern void ext_0046C3C0(uint32_t self);                    // exception object constructor (thiscall)
+extern void ext_006A6DD2(uint32_t exc, uint32_t throw_info); // thunk_MSVCR80__CxxThrowException
+extern const uint8_t mem_009DEC1C[];                        // RTTI throw info for the exception
+
+// Thiscall virtual getter, invoked through vtable slot +0x0c.
+typedef uint32_t (__thiscall* GetterFn)(uint32_t self, uint32_t arg);
+
+static inline uint32_t rd32(uint32_t addr) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, bool, setDrawConditions>
+// @summary Reads the bound FSMEditView pointer; if null throws, otherwise gets the value from the source's getter and forwards it to setDrawConditions.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04 (source object pointer; its vtable slot +0x0c is the getter)
+void fn_004A2630(uint32_t self_ptr, uint32_t arg) {
+    uint32_t target = rd32(self_ptr);
+    if (target == 0) {
+        uint32_t exc = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&self_ptr));
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_009DEC1C)));
+        return;
+    }
+
+    uint32_t obj = rd32(arg + 0x04);
+    uint32_t vtbl = rd32(obj);
+    uint32_t slot = rd32(vtbl + 0x0c);
+    GetterFn getter = reinterpret_cast<GetterFn>(static_cast<uintptr_t>(slot));
+    uint32_t value = getter(obj, arg);
+
+    ext_004A24E0(target, value);
+}
+} // namespace lift_004A2630

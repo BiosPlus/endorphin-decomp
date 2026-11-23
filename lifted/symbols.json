@@ -4157,6 +4157,13 @@
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004A2630": {
+    "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, drawConditions, bool, setDrawConditions\u003e",
+    "signature": "static inline uint32_t rd32(uint32_t addr)",
+    "summary": "Reads the bound FSMEditView pointer; if null throws, otherwise gets the value from the source's getter and forwards it to setDrawConditions.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004A26F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_41 (FSMEditView::getFontSize -\u003e setFontSize)",
     "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}\u003e",
