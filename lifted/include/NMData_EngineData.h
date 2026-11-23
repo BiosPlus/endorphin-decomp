@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct NMData_EngineData_Fields {
     // +0x24  float                    field_0x24  (evidence: 0x004B1430, 0x004B8E40)
+    // +0x44  float                    field_0x44  (evidence: 0x004B9370)
 };
 } // namespace lifted_layout

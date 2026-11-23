@@ -316,3 +316,24 @@ float fn_004B8E40(void* self) {
     return 0.0f; // not reached
 }
 } // namespace lift_004B8E40
+
+// [0x004B9370] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_004B9370 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the float at +0x44 of the wrapped EngineData; throws via ext_0046C3C0 if the wrapped pointer is null.
+// @field NMData::EngineData +0x44 float field_0x44
+float fn_004B9370(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);
+    if (inner != nullptr) {
+        return *reinterpret_cast<float*>(static_cast<unsigned char*>(inner) + 0x44);
+    }
+    ext_0046C3C0();  // builds the exception object in local storage
+    ext_006A6DD2();  // _CxxThrowException; does not return
+    return 0.0f;
+}
+} // namespace lift_004B9370
