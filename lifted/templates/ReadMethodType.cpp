@@ -8347,3 +8347,31 @@ bool fn_004AAD40(void* self) {
     return ext_004A9A50(receiver);
 }
 } // namespace lift_004AAD40
+
+// [0x004B1FF0] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004B1FF0 {
+// Callee 0x0046C080: NMData::SkeletalCalibrationVariables::vfunc_12 (4 bytes). Called with the target object as `this`; returns float.
+extern float ext_0046C080(void* self);
+// Callee 0x0046C3C0: sub_0046C3C0 (105 bytes). Constructs an exception object in the caller frame (`this` = frame).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo) [[noreturn]];
+// Data: throw-type info referenced at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>
+// @summary Returns the float from the held target's vfunc_12 (ImageExporter frame rate); throws a C++ exception if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004B1FF0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target != nullptr) {
+        return ext_0046C080(target);
+    }
+
+    // Null target: build the exception object in a 0x28-byte frame and throw it.
+    alignas(16) unsigned char frame[0x28] = {};
+    ext_0046C3C0(frame);
+    ext_006A6DD2(frame, mem_009DEC1C);
+}
+} // namespace lift_004B1FF0

@@ -4235,6 +4235,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1FF0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",
+    "signature": "float fn_004B1FF0(void* self)",
+    "summary": "Returns the float from the held target's vfunc_12 (ImageExporter frame rate); throws a C++ exception if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B3DE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",

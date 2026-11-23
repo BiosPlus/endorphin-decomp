@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1FF0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e",
+  "signature": "float fn_004B1FF0(void* self)",
+  "summary": "Returns the float from the held target's vfunc_12 (ImageExporter frame rate); throws a C++ exception if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:17:40Z"
+}
