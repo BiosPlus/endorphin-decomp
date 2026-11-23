@@ -14155,6 +14155,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006071E0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, Effector::getGradientCap, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
+    "signature": "void* fn_006071E0(void* self, void* const* effectorRef)",
+    "summary": "Reads Effector::getGradientCap from the referenced Effector and forwards it to ext_00672080 on self; throws if the Effector pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00607230": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
