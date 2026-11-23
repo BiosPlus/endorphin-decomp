@@ -10,8 +10,8 @@
 // Recovered field layout for NMData::HingeCalibrationVariables:
 namespace lifted_layout {
 struct NMData_HingeCalibrationVariables_Fields {
-    // +0x4   float                    field_0x04  (evidence: 0x004A9B50, 0x00622780)
-    // +0x8   float                    field_0x08  (evidence: 0x004A9B50, 0x00622790)
-    // +0xC   float                    field_0x0C  (evidence: 0x004A9B50, 0x006227A0)
+    // +0x4   float                    field_0x04  (evidence: 0x004A9B50, 0x00622780, 0x006228E0)
+    // +0x8   float                    field_0x08  (evidence: 0x004A9B50, 0x00622790, 0x006228E0)
+    // +0xC   float                    field_0x0C  (evidence: 0x004A9B50, 0x006227A0, 0x006228E0)
 };
 } // namespace lifted_layout

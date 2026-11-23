@@ -10989,6 +10989,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType\u003cNMData::State, ...getPropertySourceDescription...\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F490": {
+    "name": "NMData::BackGroundData::vfunc_14_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "void* fn_0059F490(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Handles property 0x14B if ext_0059E060 succeeds by calling ext_00661650 on field at +0x61C; otherwise delegates to ext_0058F6B0.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x0059F820": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData\u003e::vfunc_1 (CharacterData vcall-128 accessor)",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",

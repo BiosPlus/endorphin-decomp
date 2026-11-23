@@ -1,0 +1,34 @@
+{
+  "va": "0x006228E0",
+  "size": 84,
+  "orig_symbol": "NMData::HingeCalibrationVariables::vfunc_27",
+  "src_path": "src/NMData/HingeCalibrationVariables.cpp",
+  "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp",
+  "name": "NMData::HingeCalibrationVariables::vfunc_27",
+  "class": "NMData::HingeCalibrationVariables",
+  "signature": "void* __thiscall fn_006228E0(uint8_t* self)",
+  "summary": "Allocates and constructs a 16-byte object and initializes it with three float fields via virtual setters.",
+  "fields": [
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:00:08Z"
+}
