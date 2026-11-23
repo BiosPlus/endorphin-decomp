@@ -8113,6 +8113,13 @@
     "summary": "Forwards three args to Plane::vfunc_25, sets flag bit 0x40 in +0x1c if clear, and copies arg2+0x88/+0x8c into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Frustum.cpp"
   },
+  "0x0053DE20": {
+    "name": "Primitives::SkeletalJoint::vfunc_25",
+    "class": "Primitives::SkeletalJoint",
+    "signature": "static inline uint32_t\u0026 u32_at(void* base, size_t off)",
+    "summary": "Calls the Hinge base implementation, copies two dwords from the argument at +0x88/+0x8c into this+0xcc/+0xd0, then sets/clears flag bits in this+0x1c.",
+    "lifted_path": "lifted/Primitives/SkeletalJoint.cpp"
+  },
   "0x0053E170": {
     "name": "CameraFrustum::vfunc_25",
     "class": "Primitives::CameraFrustum",

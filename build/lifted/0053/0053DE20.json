@@ -1,0 +1,34 @@
+{
+  "va": "0x0053DE20",
+  "size": 117,
+  "orig_symbol": "Primitives::SkeletalJoint::vfunc_25",
+  "src_path": "src/Primitives/SkeletalJoint.cpp",
+  "lifted_path": "lifted/Primitives/SkeletalJoint.cpp",
+  "name": "Primitives::SkeletalJoint::vfunc_25",
+  "class": "Primitives::SkeletalJoint",
+  "signature": "static inline uint32_t\u0026 u32_at(void* base, size_t off)",
+  "summary": "Calls the Hinge base implementation, copies two dwords from the argument at +0x88/+0x8c into this+0xcc/+0xd0, then sets/clears flag bits in this+0x1c.",
+  "fields": [
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0xCC",
+      "type": "uint32_t",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Primitives::SkeletalJoint",
+      "offset": "+0xD0",
+      "type": "uint32_t",
+      "name": "field_0xd0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:38:55Z"
+}
