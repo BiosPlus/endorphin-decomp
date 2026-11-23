@@ -8107,6 +8107,13 @@
     "summary": "Returns the float at +0x10 of the object referenced by this-\u003efield_0x00; throws if that reference is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B2ED0": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, float, getParam2, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e",
+    "signature": "float __stdcall fn_005B2ED0(void* const* holder)",
+    "summary": "Stdcall float getter: loads the Geometry pointer stored in *holder; if it is null, builds a local exception object and throws it, otherwise returns the float at Geometry+0x18.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3590": {
     "name": "Geometry::vfunc_0",
     "class": "Geometry",

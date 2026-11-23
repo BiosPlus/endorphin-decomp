@@ -474,3 +474,30 @@ float fn_005B2150(void* self) {
     return lift_field<float>(target, 0x10);
 }
 } // namespace lift_005B2150
+
+// [0x005B2ED0] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005B2ED0 {
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+// ThrowInfo descriptor passed to _CxxThrowException (0x009DEC1C); only its address is used.
+extern const uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Geometry, float, getParam2, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>
+// @summary Stdcall float getter: loads the Geometry pointer stored in *holder; if it is null, builds a local exception object and throws it, otherwise returns the float at Geometry+0x18.
+// @field Geometry +0x18 float field_0x18
+float __stdcall fn_005B2ED0(void* const* holder) {
+    void* geometry = *holder;
+    if (geometry != nullptr) {
+        return lift_field<float>(geometry, 0x18);
+    }
+
+    // Null path: construct the exception object in a local buffer, then throw it.
+    alignas(8) uint8_t exc_obj[0x28];
+    ext_0046C3C0(exc_obj);
+    (void)&mem_009DEC1C;
+    ext_006A6DD2();
+    return 0.0f; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_005B2ED0

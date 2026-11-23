@@ -1,0 +1,22 @@
+{
+  "va": "0x005B2ED0",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry, float, getParam2, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e",
+  "signature": "float __stdcall fn_005B2ED0(void* const* holder)",
+  "summary": "Stdcall float getter: loads the Geometry pointer stored in *holder; if it is null, builds a local exception object and throws it, otherwise returns the float at Geometry+0x18.",
+  "fields": [
+    {
+      "class": "Geometry",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:14:39Z"
+}
