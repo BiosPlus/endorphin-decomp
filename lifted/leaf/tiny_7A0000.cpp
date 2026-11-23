@@ -226,3 +226,31 @@ void* __thiscall sub_007ABBE0(void* self) {
     return self;
 }
 } // namespace lift_007ABBE0
+
+// [0x007AE0A0]
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_006B9D70(void);
+
+extern uint8_t mem_00B616B8[];
+
+extern void fn_007AE0A0(void) {
+    (void)mem_00B616B8;
+    ext_006B9D70();
+}
+} // namespace lift_007AE0A0
+
+// [0x007AE0E0]
+namespace lift_007AE0E0 {
+extern uint8_t mem_00B61708[];
+extern void __thiscall ext_006B9D70(void* self);
+
+// @name tailCallWithGlobal_007AE0E0
+// @summary Sets this pointer to global 0x00B61708 and tail-calls sub_006B9D70.
+extern void fn_007AE0E0(void) {
+    ext_006B9D70(mem_00B61708);
+}
+} // namespace lift_007AE0E0
