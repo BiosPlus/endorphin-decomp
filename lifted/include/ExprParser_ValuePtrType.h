@@ -29,6 +29,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   void*                    target  (evidence: 0x0046CB30, 0x0046D950, 0x0046E450, 0x0046EA50, 0x004986A0, 0x0049C6E0, 0x004A2580, 0x004A25E0, 0x004B1FF0, 0x004B8920, 0x004B8E40, 0x004EB230, 0x00508E30, 0x00508EE0, 0x0050E0A0, 0x0050F190, 0x00515B90, 0x00516550, 0x00516B10, 0x00522330, 0x0059F820, 0x005B2D00, 0x005D3050, 0x005F5CC0, 0x005F5DC0, 0x006059A0, 0x006059E0, 0x00633240, 0x006332E0, 0x00638E50, 0x0066EFE0, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    value  (evidence: 0x004AA140) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    valuePtr  (evidence: 0x0046D920, 0x004986A0, 0x004B1FF0, 0x004B8920, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0064F0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x005F3600, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0

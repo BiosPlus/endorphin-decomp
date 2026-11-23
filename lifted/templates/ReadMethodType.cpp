@@ -18099,3 +18099,22 @@ float fn_0049B520(void* const* arg) {
     return static_cast<float>(std::atof(name->c_str()));
 }
 } // namespace lift_0049B520
+
+// [0x004AA140] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004AA140 {
+// Callee 0x004A9A40: NMData::BehaviourData::getCharacterName (thiscall, returns const std::string*).
+extern const std::string* ext_004A9A40(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::BehaviourData>::vfunc_1 (NMData::BehaviourData::getCharacterName)
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Reads BehaviourData::getCharacterName through a value holder and parses it as a float (atof); throws if the held object is null.
+// @field ExprParser::ValuePtrType +0x00 void* value
+float fn_004AA140(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::BehaviourData>: null value pointer");
+    }
+    const std::string* name = ext_004A9A40(obj);
+    return static_cast<float>(std::atof(name->c_str()));
+}
+} // namespace lift_004AA140

@@ -4594,6 +4594,13 @@
     "summary": "Dynamic-casts self to the BehaviourData enum type via __RTDynamicCast (pointer cast; returns null on failure).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004AA140": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData\u003e::vfunc_1 (NMData::BehaviourData::getCharacterName)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0\u003e",
+    "signature": "float fn_004AA140(void* const* holder)",
+    "summary": "Reads BehaviourData::getCharacterName through a value holder and parses it as a float (atof); throws if the held object is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004AA580": {
     "name": "VirtualSlot8Thunk",
     "class": "VTable",
