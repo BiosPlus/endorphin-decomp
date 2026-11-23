@@ -3178,3 +3178,48 @@ void fn_005F36B0(void* out, void** arg, void* self) {
     lift_field<void*>(out, 0x04) = outPtr;
 }
 } // namespace lift_005F36B0
+
+// [0x005F3600] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_005F3600 {
+// Known callee 0x0064F8F0: VirtualSlot24Thunk (loads the object's vtable pointer and dispatches
+// through vtable slot 24 (offset +0x60), passing the caller's arguments through).
+// Called as thiscall: ecx = target object, one float stack argument.
+extern void ext_0064F8F0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>
+// @summary Evaluates the float source expression (reader vtbl slot 1), writes it into the target EffectorGroup via slot-24 thunk, then returns a {value, source} result pair through the hidden out pointer.
+// @field ExprParser::ValuePtrType +0x00 void** vtbl
+// @field ExprParser::ValuePtrType +0x04 void* reader
+// @field ExprParser::WriteMethodType +0x00 void* target
+void* fn_005F3600(void* out, void* targetPtr, void* expr) {
+    // reader = expr->reader (+0x04)
+    void* reader = lift_field<void*>(expr, 0x04);
+
+    // Evaluate float: reader->vtbl[1](reader, expr)
+    void** readerVtbl = lift_field<void**>(reader, 0x00);
+    using GetFloatFn = float (__thiscall*)(void* self, void* expr);
+    float value = reinterpret_cast<GetFloatFn>(readerVtbl[1])(reader, expr);
+
+    // target = *targetPtr; target->vtbl[24] via thunk ext_0064F8F0(target, value)
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    ext_0064F8F0(target, value);
+
+    if (reader == nullptr) {
+        // No source: result is {0, null}
+        lift_field<uint32_t>(out, 0x00) = 0;
+        lift_field<void*>(out, 0x04) = nullptr;
+        return out;
+    }
+
+    // Result from reader->vtbl[28](tmp, expr) (vtable offset +0x70); returns pointer to value.
+    using GetResultFn = void** (__thiscall*)(void* self, void* outTmp, void* expr);
+    uint32_t tmp = 0;
+    void** resultPtr = reinterpret_cast<GetResultFn>(readerVtbl[28])(reader, &tmp, expr);
+    uint32_t resultValue = *reinterpret_cast<uint32_t*>(resultPtr);
+
+    lift_field<uint32_t>(out, 0x00) = resultValue;
+    lift_field<void*>(out, 0x04) = reader;
+    return out;
+}
+} // namespace lift_005F3600

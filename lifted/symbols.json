@@ -8870,6 +8870,13 @@
     "summary": "Fetches a float from the second argument's sub-object via its vtable slot 1, then forwards it to the thunk ext_0064F8E0 on the object held by the first argument; returns that thunk's result (stdcall, 8 bytes of args).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3600": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}\u003e",
+    "signature": "void* fn_005F3600(void* out, void* targetPtr, void* expr)",
+    "summary": "Evaluates the float source expression (reader vtbl slot 1), writes it into the target EffectorGroup via slot-24 thunk, then returns a {value, source} result pair through the hidden out pointer.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F3680": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup,float,vcall84\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
