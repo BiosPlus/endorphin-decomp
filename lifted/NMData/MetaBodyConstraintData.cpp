@@ -65,3 +65,30 @@ extern void __thiscall fn_004CD090(void* self) {
     }
 }
 } // namespace lift_004CD090
+
+// [0x004CA310]
+namespace lift_004CA310 {
+// @name NMData::MetaBodyConstraintData::vfunc_14
+// @class NMData::MetaBodyConstraintData
+// @summary Dispatches property/attribute lookup for MetaBodyConstraintData (IDs 0xd and 0x134) or delegates to SeverEventData::vfunc_14.
+// @field NMData::MetaBodyConstraintData +0x188 void* field_0x188
+// @field NMData::MetaBodyConstraintData +0x194 void* field_0x194
+
+
+extern int32_t __thiscall ext_004C2070(void* self, void* out, uint32_t id);
+extern void __thiscall ext_00661680(void* self, int32_t type, void* ptr);
+
+extern void* __thiscall fn_004CA310(void* self, void* out, uint32_t id) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    if (id == 0xd) {
+        ext_00661680(out, 3, base + 0x194);
+        return out;
+    }
+    if (id == 0x134) {
+        ext_00661680(out, 3, base + 0x188);
+        return out;
+    }
+    ext_004C2070(self, out, id);
+    return out;
+}
+} // namespace lift_004CA310

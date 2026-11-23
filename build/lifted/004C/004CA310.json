@@ -1,0 +1,28 @@
+{
+  "va": "0x004CA310",
+  "size": 90,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_14",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_14",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void* __thiscall fn_004CA310(void* self, void* out, uint32_t id)",
+  "summary": "Dispatches property/attribute lookup for MetaBodyConstraintData (IDs 0xd and 0x134) or delegates to SeverEventData::vfunc_14.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x188",
+      "type": "void*",
+      "name": "field_0x188"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x194",
+      "type": "void*",
+      "name": "field_0x194"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:02:40Z"
+}
