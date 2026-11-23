@@ -1,0 +1,14 @@
+{
+  "va": "0x004F53E0",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, MatrixWithProperties::getPhi, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, MatrixWithProperties::getPhi, 0\u003e",
+  "signature": "extern \"C\" uint32_t __thiscall fn_004F53E0(void* /*self*/, void** ptr)",
+  "summary": "Evaluates getPhi on a MatrixWithProperties pointer and returns whether it is \u003e= 1e-6, throwing if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:59:08Z"
+}
