@@ -11066,6 +11066,13 @@
     "summary": "Reads the first dword of the pointer in arg1 and forwards it, with arg2 as this, to ext_00699000; returns that result.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B5F0": {
+    "name": "ExprParser::Vector3Type::vfunc_4",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void* fn_0066B5F0(void* self, void* arg1, void* arg2)",
+    "summary": "Calls virtual slot 5 on self with (arg2, arg1, 0), passes the result to ext_0067B5F0, and returns arg1.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B620": {
     "name": "ExprParser::Vector3Type::vfunc_42",
     "class": "ExprParser::Vector3Type",

@@ -49,6 +49,7 @@ void fn_0066B680(void* self, void** a1, void* a2) {
     }
 }
 extern "C" void __stdcall ext_006719A0(void* self);
+extern "C" void ext_0067B5F0(void* self);
 
 // [0x0066B6B0] ExprParser::Vector3Type::vfunc_44 (48 bytes)
 // @name ExprParser::Vector3Type::vfunc_44
@@ -272,4 +273,20 @@ void fn_00671A00(void* self, const float* src) {
     data[0] = src[0];
     data[1] = src[1];
     data[2] = src[2];
+}
+
+// [0x0066B5F0]
+// @name ExprParser::Vector3Type::vfunc_4
+// @class ExprParser::Vector3Type
+// @summary Calls virtual slot 5 on self with (arg2, arg1, 0), passes the result to ext_0067B5F0, and returns arg1.
+// @field ExprParser::Vector3Type +0x00 void* vtable
+void* fn_0066B5F0(void* self, void* arg1, void* arg2) {
+    using VSlot5 = void* (*)(void* self, void* a, void* b, uint32_t c);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto slot5 = reinterpret_cast<VSlot5>(vtable[5]);
+    void* result = slot5(self, arg2, arg1, 0);
+
+    ext_0067B5F0(result);
+    return arg1;
 }
