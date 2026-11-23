@@ -7650,6 +7650,13 @@
     "summary": "Scalar deleting destructor: destroys the +0x44 subobject, runs the SwingLimit base dtor, frees this if flags bit 0 is set, returns this.",
     "lifted_path": "lifted/Primitives/TwistLimit.cpp"
   },
+  "0x0052FD30": {
+    "name": "Primitives::HingeLimit::vfunc_0",
+    "class": "Primitives::HingeLimit",
+    "signature": "void* fn_0052FD30(void* self, uint32_t flags)",
+    "summary": "Scalar deleting destructor: destroys embedded object at +0x44, runs base destructor chain, frees storage when flags bit 0 is set, returns this.",
+    "lifted_path": "lifted/Primitives/HingeLimit.cpp"
+  },
   "0x0052FE50": {
     "name": "Primitives::Arrow::scalar_deleting_dtor",
     "class": "Primitives::Arrow",

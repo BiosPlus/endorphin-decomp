@@ -13,5 +13,6 @@ struct HingeLimit_Fields {
     // +0x20  void*                    renderer  (evidence: 0x0053BEF0)
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0053BEF0)
     // +0x40  float                    field_0x40  (evidence: 0x0053BEF0)
+    // +0x44  uint8_t                  field_0x44  (evidence: 0x0052FD30)
 };
 } // namespace lifted_layout

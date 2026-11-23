@@ -1,0 +1,22 @@
+{
+  "va": "0x0052FD30",
+  "size": 96,
+  "orig_symbol": "Primitives::HingeLimit::vfunc_0",
+  "src_path": "src/Primitives/HingeLimit.cpp",
+  "lifted_path": "lifted/Primitives/HingeLimit.cpp",
+  "name": "Primitives::HingeLimit::vfunc_0",
+  "class": "Primitives::HingeLimit",
+  "signature": "void* fn_0052FD30(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor: destroys embedded object at +0x44, runs base destructor chain, frees storage when flags bit 0 is set, returns this.",
+  "fields": [
+    {
+      "class": "HingeLimit",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:42:26Z"
+}
