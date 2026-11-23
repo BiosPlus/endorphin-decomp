@@ -11941,3 +11941,30 @@ uint32_t __thiscall fn_00497DD0(uint32_t /*this_ptr*/, uint32_t out_str, uint32_
     return 0;
 }
 } // namespace lift_00497DD0
+
+// [0x0049B4D0]
+namespace lift_0049B4D0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::string const&, &NMData::State::getFileName>::vfunc_0
+// @class ExprParser::ReadMethodType
+// @summary Evaluates getFileName() on a non-null NMData::State pointer or throws an exception if null.
+
+void* __thiscall ext_0049AA10(void* self);
+void* __thiscall ext_006720E0(void* self, void* arg);
+void __thiscall ext_0046C3C0(void* self);
+void __stdcall ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+void* __thiscall fn_0049B4D0(void* self, void* outValue, void** statePtr) {
+    (void)self;
+    void* state = *statePtr;
+    if (state != nullptr) {
+        void* fileName = ext_0049AA10(state);
+        ext_006720E0(outValue, fileName);
+        return outValue;
+    }
+
+    uint8_t exceptionObj[40];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return outValue;
+}
+} // namespace lift_0049B4D0
