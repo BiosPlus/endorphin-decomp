@@ -8724,6 +8724,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005F0F60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005F2F50": {
+    "name": "NMData::RootRelationshipData::vfunc_21",
+    "class": "NMData::RootRelationshipData",
+    "signature": "void __thiscall fn_005F2F50(void* self, uint32_t arg)",
+    "summary": "Forwards the argument to NullRelationshipData::vfunc_21, then sets the string at +0x14 to \"root\" if it is empty.",
+    "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
+  },
   "0x005F30D0": {
     "name": "NMData::FixedPathJointData::vfunc_21",
     "class": "NMData::FixedPathJointData",
