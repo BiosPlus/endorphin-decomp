@@ -8134,6 +8134,13 @@
     "summary": "Runs the Hinge base draw, then if flag 0x20000 is set draws a two-cylinder cone marker (rotated 90 deg about Y) inside a GL attrib/matrix push-pop.",
     "lifted_path": "lifted/Primitives/SkeletalJoint.cpp"
   },
+  "0x0053D1E0": {
+    "name": "Primitives::RadiusLimit::vfunc_23",
+    "class": "Primitives::RadiusLimit",
+    "signature": "uint8_t fn_0053D1E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Runs the base-class update with a temporary {vtable 0x0093A444, arg} record, then latches the flag at +0x04 when the object at +0x20 has a nonzero byte at +0x04.",
+    "lifted_path": "lifted/Primitives/RadiusLimit.cpp"
+  },
   "0x0053D260": {
     "name": "Primitives::RadiusLimit::vfunc_0",
     "class": "Primitives::RadiusLimit",
