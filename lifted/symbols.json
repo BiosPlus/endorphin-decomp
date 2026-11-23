@@ -10755,10 +10755,10 @@
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064EC00": {
-    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setDesiredSwing1\u003e::vfunc_48",
-    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}\u003e",
-    "signature": "inline void* vslot(void* obj, size_t index)",
-    "summary": "Stdcall (ret 0xc) helper: if src's target object is set, reads a float from it, applies it to the joint in *arg2 via setDesiredSwing1, then writes {result-\u003efirst, target} to out; otherwise writes a zeroed pair.",
+    "name": "WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+    "signature": "void fn_00604C40(void* self, void* arg)",
+    "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064EC80": {
