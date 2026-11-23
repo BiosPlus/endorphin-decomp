@@ -16871,3 +16871,37 @@ void* fn_005D2C00(void* arg1, void** arg2) {
     return arg2;
 }
 } // namespace lift_005D2C00
+
+// [0x005D3000] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_005D3000 {
+// Callee 0x00672080: sets a float member on the object (thiscall, float arg on stack).
+extern void __thiscall ext_00672080(void* self, float value);
+// Callee 0x0046C3C0: constructs the exception object (thiscall, ecx = object storage).
+extern void __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw-info descriptor referenced at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reads the X-offset float from a VideoPlaneData reached through a pointer slot; throws if the pointer is null, otherwise forwards the value to the callee on arg1 and returns arg1.
+// @field VideoPlaneData +0x3c float field_0x3c
+void* fn_005D3000(void* arg1, void** arg2) {
+    // arg2 points to a slot holding the VideoPlaneData pointer.
+    unsigned char* object = static_cast<unsigned char*>(*arg2);
+    if (object == nullptr) {
+        // Build an exception object and throw it.
+        alignas(8) unsigned char exception_storage[8] = {};
+        ext_0046C3C0(exception_storage);
+        ext_006A6DD2(exception_storage, mem_009DEC1C);
+        return nullptr; // not reached
+    }
+
+    // Read float at +0x3c (field_0x3c) and pass it to the callee with arg1 as this.
+    float value;
+    std::memcpy(&value, object + 0x3c, sizeof(value));
+    ext_00672080(arg1, value);
+    return arg1;
+}
+} // namespace lift_005D3000

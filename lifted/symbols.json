@@ -12541,6 +12541,13 @@
     "summary": "Reads the float at +0x38 of the VideoPlaneData object referenced by self's first pointer; if that pointer is null, constructs an exception and throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D3000": {
+    "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+    "signature": "void* fn_005D3000(void* arg1, void** arg2)",
+    "summary": "Reads the X-offset float from a VideoPlaneData reached through a pointer slot; throws if the pointer is null, otherwise forwards the value to the callee on arg1 and returns arg1.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D3050": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_1 (NMData::VideoPlaneData::getXOffset)",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
