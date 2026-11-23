@@ -131,8 +131,10 @@ void __thiscall fn_0056EAC0(void* self, const std::string* filename) {
 
     out.close();
 }
+#include <cstddef>
+#include <cstdlib>
 
-// [0x0056E630] BVHIO::vfunc_11 (689 bytes)
+#include <cstdlib>
 namespace lift_0056E630 {
 // Callee prototypes (thiscall on MSVC; plain member-style on other compilers).
 extern int32_t __thiscall ext_0055D0F0(void* self);
@@ -355,3 +357,124 @@ void fn_0056FD30(void* self, const std::string& path) {
     ext_005A3610(skel);
 }
 } // namespace lift_0056FD30
+
+// [0x0056E310]
+namespace lift_0056E310 {
+// Original-binary helpers (addresses from the 0x0056E310 disassembly).
+extern void ext_0058F200(void* self);                             // sub_0058F200: base ctor of a loader object
+extern void ext_00587920(void* container, void* obj, int flag);   // sub_00587920: register loader in a container
+extern void ext_0056DCA0(void* self, void* loader, void* stream); // sub_0056DCA0: attach loader + open stream
+extern void ext_005557A0(void* self, void* loader);               // sub_005557A0: store active loader
+extern void ext_00401D20(void* self);                             // sub_00401D20: destroy default loader
+extern void* ext_006A5C62(uint32_t size);                         // thunk_MFC80_ord_762: allocator
+extern void* ext_006A6E9E(void* obj, int vfDelta, const void* srcType,
+                              const void* dstType, int isReference);  // thunk_MSVCR80___RTDynamicCast
+
+// Literal and RTTI data referenced by address.
+extern const char mem_009592AC[]; // keyword: stop scanning
+extern const char mem_009592A4[]; // keyword: loader type B (counted)
+extern const char mem_00959278[]; // keyword: loader type C (not counted)
+extern const char mem_00A2E2BC[]; // type_info: source type for dynamic cast
+extern const char mem_00A2E264[]; // type_info: target type for dynamic cast
+
+// @name BVHIO::vfunc_14
+// @class BVHIO
+// @summary Opens a file, scans keyword tokens to pick a loader (default or the single counted candidate), dispatches through the embedded object at +0x27c, and stores the dynamic_cast result as the active loader.
+// @field BVHIO +0x27c void* field_0x27c
+
+namespace {
+
+constexpr uint32_t kLoaderSize = 0x154;
+constexpr uintptr_t kCandidateOffset = 0x8;     // candidate list sub-object inside the default loader
+constexpr uintptr_t kCandidateBegin = 0x78;     // begin/end pointers inside that sub-object
+constexpr uintptr_t kCandidateEnd = 0x7C;
+
+// Loader vptr set installed by the constructors (bases at +0x00/+0x04/+0x08/+0x0C, final at +0x150).
+void init_loader_vptrs(uint8_t* obj) {
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x0092912C;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0x009290E4;
+    *reinterpret_cast<uint32_t*>(obj + 0x08) = 0x009290A4;
+    *reinterpret_cast<uint32_t*>(obj + 0x0C) = 0x00929054;
+    *reinterpret_cast<uint32_t*>(obj + 0x150) = 0x00929040;
+}
+
+// Allocates and constructs a loader object; returns nullptr if allocation fails.
+uint8_t* make_loader() {
+    void* mem = ext_006A5C62(kLoaderSize);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    ext_0058F200(mem);
+    init_loader_vptrs(static_cast<uint8_t*>(mem));
+    return static_cast<uint8_t*>(mem);
+}
+
+// Reads the vtable entry at byteOffset from obj's vptr.
+uintptr_t vfn(void* obj, uintptr_t byteOffset) {
+    uintptr_t vptr = *reinterpret_cast<uint32_t*>(obj);
+    return *reinterpret_cast<uint32_t*>(vptr + byteOffset);
+}
+
+} // namespace
+
+int __thiscall fn_0056E310(void* self, const std::string* filename) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* embedded = base + 0x27C;
+
+    // embedded->vfunc(+0x84): pre-scan call, result unused.
+    reinterpret_cast<void (*)(void*)>(vfn(embedded, 0x84))(embedded);
+
+    std::ifstream file(filename->c_str(), std::ios::in);
+    std::string token;
+
+    uint8_t defaultLoader[kLoaderSize] = {};
+    ext_0058F200(defaultLoader);
+    init_loader_vptrs(defaultLoader);
+    uint8_t* candidates = defaultLoader + kCandidateOffset;
+
+    uint32_t countedB = 0;
+    uint8_t* lastB = nullptr;
+
+    bool ok = static_cast<bool>(file >> token);
+    while (ok) {
+        if (token == mem_009592AC) {
+            break;
+        }
+
+        if (token == mem_009592A4) {
+            ++countedB;
+            uint8_t* loader = make_loader();
+            lastB = loader;
+            ext_00587920(candidates, loader, 1);
+            ext_0056DCA0(self, loader, &file);
+        } else if (token == mem_00959278) {
+            uint8_t* loader = make_loader();
+            ext_00587920(lastB, loader, 1);
+            ext_0056DCA0(self, loader, &file);
+        }
+
+        ok = static_cast<bool>(file >> token);
+    }
+
+    // Choose the active loader: the sole counted candidate, otherwise the default.
+    void* chosen = defaultLoader;
+    if (countedB == 1) {
+        uintptr_t begin = *reinterpret_cast<uint32_t*>(candidates + kCandidateBegin);
+        uintptr_t end = *reinterpret_cast<uint32_t*>(candidates + kCandidateEnd);
+        if (begin >= end) {
+            std::abort(); // original calls _invalid_parameter_noinfo here
+        }
+        chosen = *reinterpret_cast<void**>(begin);
+    }
+
+    // chosen->vfunc(+0x24)() -> r ; embedded->vfunc(+0x5C)(r)
+    uint32_t r = reinterpret_cast<uint32_t (*)(void*)>(vfn(chosen, 0x24))(chosen);
+    reinterpret_cast<void (*)(void*, uint32_t)>(vfn(embedded, 0x5C))(embedded, r);
+
+    void* typed = ext_006A6E9E(chosen, 0, mem_00A2E2BC, mem_00A2E264, 0);
+    ext_005557A0(self, typed);
+
+    ext_00401D20(defaultLoader);
+    return 0;
+}
+} // namespace lift_0056E310
