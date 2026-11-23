@@ -17076,3 +17076,30 @@ void* fn_00606A00(void* dst, void* const* src) {
     return dst;
 }
 } // namespace lift_00606A00
+
+// [0x00606F90] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00606F90 {
+// Callee 0x00672080 (18B): thiscall-style helper; receives the target object and the gradient float.
+extern void ext_00672080(void* self, float value);
+// Callee 0x0046C3C0 (105B): constructs the exception object in-place.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Effector, float, getGradient, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>
+// @summary Forwards Effector::getGradient() into the target via ext_00672080 and returns the first argument; throws if the Effector pointer is null.
+// @field Effector +0x4C float field_0x4c
+void* fn_00606F90(void* self, void** source) {
+    void* effector = *source;
+    if (effector == nullptr) {
+        alignas(8) unsigned char exception[16] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+        return self;
+    }
+    float gradient = lift_field<float>(effector, 0x4C);
+    ext_00672080(self, gradient);
+    return self;
+}
+} // namespace lift_00606F90
