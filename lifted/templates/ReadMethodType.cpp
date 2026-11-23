@@ -17103,3 +17103,33 @@ void* fn_00606F90(void* self, void** source) {
     return self;
 }
 } // namespace lift_00606F90
+
+// [0x006175E0] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_006175E0 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Throw info descriptor referenced by the throw path at 0x009DEC1C.
+extern const unsigned char mem_009dec1c[];
+
+// @name ExprParser::ReadMethodType<Geometry,float,Geometry::getParam0,0>::vfunc_0
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Reads Geometry::param0 (float at +0x10) from the pointed-to Geometry and forwards it to the out-object's setter; throws if the Geometry pointer is null.
+// @field Geometry +0x10 float field_0x10
+void* fn_006175E0(void* out, const void* const* src) {
+    const unsigned char* geom = static_cast<const unsigned char*>(*src);
+    if (geom != nullptr) {
+        float value;
+        std::memcpy(&value, geom + 0x10, sizeof value);
+        ext_00672080(out, value);
+        return out;
+    }
+
+    // Null path: build an exception object in the 0x28-byte local frame and throw it.
+    unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009dec1c);
+    return nullptr;
+}
+} // namespace lift_006175E0

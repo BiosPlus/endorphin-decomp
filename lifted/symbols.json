@@ -14721,6 +14721,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x006175E0": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry,float,Geometry::getParam0,0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e",
+    "signature": "void* fn_006175E0(void* out, const void* const* src)",
+    "summary": "Reads Geometry::param0 (float at +0x10) from the pointed-to Geometry and forwards it to the out-object's setter; throws if the Geometry pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006178B0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit\u003e::vfunc_16 (NMData::HingeLimit::getLowerDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0\u003e",
