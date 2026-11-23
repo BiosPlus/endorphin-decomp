@@ -24466,6 +24466,12 @@
     "summary": "Pure jump thunk forwarding to sub_006632B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006A3F80": {
+    "name": "setGlobal_00AA4B74",
+    "signature": "uint32_t sub_006A3F80(uint32_t value)",
+    "summary": "Stores the 32-bit argument into mem_00AA4B74 and returns it.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A4CD0": {
     "name": "sub_006A4CD0_init_one",
     "signature": "uint32_t __fastcall sub_006A4CD0(uint32_t self)",
@@ -33593,6 +33599,12 @@
     "signature": "void fn_0072B840(void)",
     "summary": "Loads global 0x00B600B8 into ECX and tail-calls sub_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x0072B850": {
+    "name": "initAndRegisterGlobal_0072B850",
+    "signature": "void __cdecl fn_0072B850(void)",
+    "summary": "Calls initGlobalNoop_0072B860 and tail-calls sub_0072B870.",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
   },
   "0x0072B860": {
     "name": "sub_0072B860",

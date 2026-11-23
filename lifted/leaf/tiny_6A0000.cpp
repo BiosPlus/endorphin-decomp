@@ -117,3 +117,15 @@ uint32_t __fastcall sub_006A4CD0(uint32_t self) {
     return self;
 }
 } // namespace lift_006A4CD0
+
+// [0x006A3F80]
+namespace lift_006A3F80 {
+extern uint32_t mem_00AA4B74;
+
+// @name setGlobal_00AA4B74
+// @summary Stores the 32-bit argument into mem_00AA4B74 and returns it.
+uint32_t sub_006A3F80(uint32_t value) {
+    mem_00AA4B74 = value;
+    return value;
+}
+} // namespace lift_006A3F80

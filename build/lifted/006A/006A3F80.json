@@ -1,0 +1,13 @@
+{
+  "va": "0x006A3F80",
+  "size": 10,
+  "orig_symbol": "sub_006A3F80",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "setGlobal_00AA4B74",
+  "signature": "uint32_t sub_006A3F80(uint32_t value)",
+  "summary": "Stores the 32-bit argument into mem_00AA4B74 and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:40:18Z"
+}
