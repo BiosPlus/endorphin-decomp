@@ -63,3 +63,79 @@ void* __thiscall fn_005EBFF0(void* self, void* outPtr, uint32_t arg2, uint32_t a
     return outPtr;
 }
 } // namespace lift_005EBFF0
+
+// [0x006127A0]
+namespace lift_006127A0 {
+// @name NMData::Constraint::vfunc_74
+// @class NMData::Constraint
+// @summary Lazily initializes and returns a static object at 0x00B48D00, registering its destructor at 0x0091EB40.
+
+
+extern uint32_t mem_00B48DC0;
+extern uint8_t mem_00B48D00;
+extern uint8_t mem_0091EB40;
+
+extern void __thiscall ext_00612270(void* self, uint32_t* arg);
+extern int __cdecl ext_006A6C87(void* fn);
+
+void* __thiscall fn_006127A0(void* self) {
+    (void)self;
+    if ((static_cast<uint8_t>(mem_00B48DC0) & 1u) == 0) {
+        mem_00B48DC0 |= 1u;
+        uint32_t local_arg = 0;
+        ext_00612270(&mem_00B48D00, &local_arg);
+        ext_006A6C87(&mem_0091EB40);
+    }
+    return &mem_00B48D00;
+}
+} // namespace lift_006127A0
+
+// [0x00612810]
+namespace lift_00612810 {
+// @name Constraint::vfunc_71
+// @class NMData::Constraint
+// @summary Lazily initializes and returns a static object at 0x00B48DC8.
+
+
+extern uint32_t mem_00B48E88;
+
+extern void __thiscall ext_00612270(void* self, uint32_t* arg);
+extern void __cdecl ext_006A6C87(void* func);
+
+void* __thiscall fn_00612810(void* self) {
+    (void)self;
+    uint32_t local_var = 0;
+    if ((mem_00B48E88 & 1u) == 0) {
+        mem_00B48E88 |= 1u;
+        ext_00612270(reinterpret_cast<void*>(0x00B48DC8u), &local_var);
+        ext_006A6C87(reinterpret_cast<void*>(0x0091EB50u));
+    }
+    return reinterpret_cast<void*>(0x00B48DC8u);
+}
+} // namespace lift_00612810
+
+// [0x00612730]
+namespace lift_00612730 {
+// @name NMData::Constraint::vfunc_72
+// @class NMData::Constraint
+// @summary Lazily initializes and returns a pointer to a static object at 0x00B48C38.
+
+
+extern uint32_t mem_00B48CF8;
+extern uint8_t mem_00B48C38;
+extern uint8_t mem_0091EB30;
+
+extern void __thiscall ext_00612270(void* self, uint32_t* arg);
+extern void __cdecl ext_006A6C87(void* atexit_fn);
+
+void* __thiscall fn_00612730(void* self) {
+    (void)self;
+    uint32_t local_arg = 0;
+    if ((mem_00B48CF8 & 1u) == 0) {
+        mem_00B48CF8 |= 1u;
+        ext_00612270(&mem_00B48C38, &local_arg);
+        ext_006A6C87(&mem_0091EB30);
+    }
+    return &mem_00B48C38;
+}
+} // namespace lift_00612730

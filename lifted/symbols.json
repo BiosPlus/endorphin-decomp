@@ -16551,6 +16551,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00610D10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00612730": {
+    "name": "NMData::Constraint::vfunc_72",
+    "class": "NMData::Constraint",
+    "signature": "void* __thiscall fn_00612730(void* self)",
+    "summary": "Lazily initializes and returns a pointer to a static object at 0x00B48C38.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x006127A0": {
     "name": "NMData::Constraint::vfunc_74",
     "class": "NMData::Constraint",

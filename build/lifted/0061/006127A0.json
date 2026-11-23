@@ -1,0 +1,14 @@
+{
+  "va": "0x006127A0",
+  "size": 97,
+  "orig_symbol": "NMData::Constraint::vfunc_74",
+  "src_path": "src/NMData/Constraint.cpp",
+  "lifted_path": "lifted/NMData/Constraint.cpp",
+  "name": "NMData::Constraint::vfunc_74",
+  "class": "NMData::Constraint",
+  "signature": "void* __thiscall fn_006127A0(void* self)",
+  "summary": "Lazily initializes and returns a static object at 0x00B48D00, registering its destructor at 0x0091EB40.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:28:43Z"
+}
