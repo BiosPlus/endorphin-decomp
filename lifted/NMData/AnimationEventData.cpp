@@ -217,3 +217,23 @@ void __thiscall fn_004E2700(uint8_t* self) {
     *reinterpret_cast<uint32_t*>(self + 0x9C0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
 }
 } // namespace lift_004E2700
+
+// [0x004C28F0]
+namespace lift_004C28F0 {
+// @name NMData::AnimationEventData::vfunc_92
+// @class NMData::AnimationEventData
+// @summary Copies the input string, passes it to sub_004C2790, then invokes vtable+0x5C with it.
+// @field NMData::AnimationEventData +0x00 void** vptr
+
+extern void __thiscall ext_004C2790(void* self, void* str);
+
+void __thiscall fn_004C28F0(void* self, const std::string& arg0) {
+    std::string local_str(arg0);
+    ext_004C2790(self, &local_str);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    using vfunc_t = void(__thiscall*)(void*, void*);
+    auto vfunc_5c = reinterpret_cast<vfunc_t>(vtable[0x5C / 4]);
+    vfunc_5c(self, &local_str);
+}
+} // namespace lift_004C28F0
