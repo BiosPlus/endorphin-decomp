@@ -4,10 +4,10 @@
   "orig_symbol": "NMData::AxisDefineSensorData::vfunc_8",
   "src_path": "src/NMData/AxisDefineSensorData.cpp",
   "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
-  "name": "NMData::AxisDefineSensorData::vfunc_8",
+  "name": "NMData::AxisDefineSensorData::vfunc_14",
   "class": "NMData::AxisDefineSensorData",
-  "signature": "void* __thiscall fn_0062CC60(void* self, void* arg)",
-  "summary": "Forwards the stack argument and the sub-object at +0x154 to ext_0062CC10, then returns the argument.",
+  "signature": "void fn_0060F0B0(void* dst)",
+  "summary": "Fetches a 64-byte (16 x DWORD) block via ext_00480920 and copies it into the caller-supplied destination buffer.",
   "fields": [
     {
       "class": "NMData::AxisDefineSensorData",
@@ -18,5 +18,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T11:39:02Z"
+  "lifted_at": "2026-11-23T11:39:08Z"
 }
