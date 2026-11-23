@@ -10214,6 +10214,13 @@
     "summary": "Generates the 8 scaled cuboid corner vertices and appends them to a vector.",
     "lifted_path": "lifted/Geometry/CuboidType.cpp"
   },
+  "0x005B4BA0": {
+    "name": "Geometry::CylinderType::vfunc_16",
+    "class": "Geometry::CylinderType",
+    "signature": "void fn_005B4BA0(void* self, void* target, int32_t heightSteps, int32_t segments)",
+    "summary": "Tessellates a cylinder: for each height step, emits one point per segment on a circle of radius from self into target.",
+    "lifted_path": "lifted/Geometry/CylinderType.cpp"
+  },
   "0x005B4CD0": {
     "name": "Geometry::SphereType::vfunc_3",
     "class": "Geometry::SphereType",
