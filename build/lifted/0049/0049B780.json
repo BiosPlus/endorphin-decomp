@@ -4,11 +4,11 @@
   "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1\u003e::vfunc_0",
   "src_path": "src/templates/ReadMethodType.cpp",
   "lifted_path": "lifted/templates/ReadMethodType.cpp",
-  "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1\u003e::vfunc_0",
-  "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1\u003e",
-  "signature": "extern void* __thiscall fn_0049B780(void* self, void* out_val, void** obj_ptr)",
-  "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State,std::string const \u0026,getPropertySourceDescription\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State,std::string const \u0026,getPropertySourceDescription\u003e",
+  "signature": "void* __thiscall fn_0049B780(void* /*self*/, void* out_val, void** obj_ptr)",
+  "summary": "Reads property source description from NMData::State or throws on null pointer",
   "status": "lifted",
-  "lifted_by": "script:auto_lift_clone",
-  "lifted_at": "2026-11-23T13:51:23Z"
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:52:04Z"
 }
