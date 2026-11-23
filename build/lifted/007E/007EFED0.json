@@ -1,0 +1,13 @@
+{
+  "va": "0x007EFED0",
+  "size": 11,
+  "orig_symbol": "sub_007EFED0",
+  "src_path": "src/leaf/tiny_7E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7E0000.cpp",
+  "name": "clearFlag_00AB2BD0",
+  "signature": "void sub_007EFED0()",
+  "summary": "Clears the 32-bit global flag at 0x00AB2BD0 to zero.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:44:53Z"
+}

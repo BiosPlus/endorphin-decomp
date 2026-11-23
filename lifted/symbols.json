@@ -35389,6 +35389,12 @@
     "summary": "Zero-initializes a 32-bit value at the given pointer and returns the pointer",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007EFED0": {
+    "name": "clearFlag_00AB2BD0",
+    "signature": "void sub_007EFED0()",
+    "summary": "Clears the 32-bit global flag at 0x00AB2BD0 to zero.",
+    "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
+  },
   "0x007F2AC0": {
     "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",
     "class": "MdtArthur::arthurSolver_vanilla",
