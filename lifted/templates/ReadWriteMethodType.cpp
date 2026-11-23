@@ -8354,3 +8354,37 @@ void __stdcall fn_006330E0(uint32_t* arg1, uint32_t* arg2) {
     *reinterpret_cast<float*>(esi + 0xA4) = vec[2];
 }
 } // namespace lift_006330E0
+
+// [0x00633140]
+namespace lift_00633140 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, ...>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets EffectorSkeletal::m_desiredLinearVelocity (at +0xA8..+0xB0) from an ExprParser value or throws if target is null.
+// @field EffectorSkeletal +0xA8 float desiredLinearVelocity_x
+// @field EffectorSkeletal +0xAC float desiredLinearVelocity_y
+// @field EffectorSkeletal +0xB0 float desiredLinearVelocity_z
+
+extern void __thiscall ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern void __stdcall fn_00633140(uint32_t* targetPtr, uint32_t* valueArg) {
+    uint32_t target = *targetPtr;
+    if (target == 0) {
+        uint8_t exceptionObj[0x28];
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, 0x009DEC1Cu);
+        return;
+    }
+
+    uint32_t* obj = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
+    using GetVecFn = float* (__thiscall*)(void* self, uint32_t* arg);
+    auto getVec = reinterpret_cast<GetVecFn>(vtable[0x14 / 4]);
+    float* vec = getVec(obj, valueArg);
+
+    uint8_t* dst = reinterpret_cast<uint8_t*>(target);
+    *reinterpret_cast<float*>(dst + 0xA8) = vec[0];
+    *reinterpret_cast<float*>(dst + 0xAC) = vec[1];
+    *reinterpret_cast<float*>(dst + 0xB0) = vec[2];
+}
+} // namespace lift_00633140

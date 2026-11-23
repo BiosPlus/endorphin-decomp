@@ -16867,6 +16867,13 @@
     "summary": "Sets EffectorSkeletal::desiredPosition from a parsed Vector3 value, or throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00633140": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, ...\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "extern \"C\" void __stdcall fn_00633140(uint32_t* targetPtr, uint32_t* valueArg)",
+    "summary": "Sets EffectorSkeletal::m_desiredLinearVelocity (at +0xA8..+0xB0) from an ExprParser value or throws if target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x006331A0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const \u0026)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const \u0026)\u003e",
