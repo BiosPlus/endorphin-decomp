@@ -23847,3 +23847,26 @@ extern float __thiscall fn_00678A50(void* /*this*/, const uint32_t* ptr_holder) 
 }
 } // namespace lift_004B13A0
 } // namespace lift_00678A50
+
+// [0x004EA520]
+namespace lift_004EA520 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isProjectRootEnabled>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &NMData::PoseToolOptions::isProjectRootEnabled, 0>
+// @summary Reads PoseToolOptions::isProjectRootEnabled() as a float (1.0f or 0.0f), throwing if the object pointer is null.
+// @field NMData::PoseToolOptions +0x09 uint8_t isProjectRootEnabled
+
+
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern float __stdcall fn_004EA520(void* const* objPtr)
+{
+    const uint8_t* obj = static_cast<const uint8_t*>(*objPtr);
+    if (!obj) {
+        alignas(16) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    return (obj[0x9] != 0) ? 1.0f : 0.0f;
+}
+} // namespace lift_004EA520

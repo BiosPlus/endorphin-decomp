@@ -19,5 +19,6 @@ struct NMData_PoseToolOptions_Fields {
     // +0x6   uint8_t                  isGravityEnabled  (evidence: 0x004EAD50) // CONFLICT: multiple definitions at +0x6
     // +0x9   uint8_t                  field_0x09  (evidence: 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA570, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x9
     // +0x9   bool                     isProjectRootEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EB230, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x9
+    // +0x9   uint8_t                  isProjectRootEnabled  (evidence: 0x004EA520) // CONFLICT: multiple definitions at +0x9
 };
 } // namespace lifted_layout
