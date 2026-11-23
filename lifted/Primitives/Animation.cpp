@@ -228,3 +228,36 @@ uint8_t fn_0053ADD0(void* self, uint32_t unused_a1, uint32_t arg) {
     return lift_field<uint8_t>(self, 0x04);
 }
 } // namespace lift_0053ADD0
+
+// [0x0053B2B0] Primitives::Animation::vfunc_12 (112 bytes)
+namespace lift_0053B2B0 {
+extern uint8_t ext_00661B10(void* self);
+extern uint32_t* ext_0053B1F0(void* self, uint32_t index);
+
+// @name Primitives::Animation::vfunc_12
+// @class Primitives::Animation
+// @summary Sets or clears the bit mask in a1 on either the indexed slot of obj (when obj predicate is false and field_0x30 is valid) or on this->field_0x1C, depending on flag.
+// @field Animation +0x1C uint32_t field_0x1C
+// @field Animation +0x30 uint32_t field_0x30
+void fn_0053B2B0(void* self, uint32_t mask, uint8_t flag, void* obj) {
+    if (ext_00661B10(obj) == 0) {
+        uint32_t index = lift_field<uint32_t>(self, 0x30);
+        if (index != 0x7FFFFFFFu) {
+            uint32_t value = *ext_0053B1F0(obj, index);
+            uint8_t isSet = ((value & mask) == mask) ? 1 : 0;
+            if (isSet != flag) {
+                value ^= mask;
+            }
+            *ext_0053B1F0(obj, index) = value;
+            return;
+        }
+    }
+
+    uint32_t bits = lift_field<uint32_t>(self, 0x1C);
+    uint8_t isSet = ((bits & mask) == mask) ? 1 : 0;
+    if (isSet != flag) {
+        bits ^= mask;
+        lift_field<uint32_t>(self, 0x1C) = bits;
+    }
+}
+} // namespace lift_0053B2B0

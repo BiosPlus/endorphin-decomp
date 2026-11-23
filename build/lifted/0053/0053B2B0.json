@@ -1,0 +1,28 @@
+{
+  "va": "0x0053B2B0",
+  "size": 112,
+  "orig_symbol": "Primitives::Animation::vfunc_12",
+  "src_path": "src/Primitives/Animation.cpp",
+  "lifted_path": "lifted/Primitives/Animation.cpp",
+  "name": "Primitives::Animation::vfunc_12",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0053B2B0(void* self, uint32_t mask, uint8_t flag, void* obj)",
+  "summary": "Sets or clears the bit mask in a1 on either the indexed slot of obj (when obj predicate is false and field_0x30 is valid) or on this-\u003efield_0x1C, depending on flag.",
+  "fields": [
+    {
+      "class": "Animation",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Animation",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:43:04Z"
+}
