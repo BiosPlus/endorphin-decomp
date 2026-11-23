@@ -12,7 +12,7 @@ struct Unknown_Fields {
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   field_0x00  (evidence: 0x004B7A10, 0x0066B680, 0x0066B6B0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x004986A0, 0x004AAAC0, 0x004B1FF0, 0x004B8920, 0x004C7690, 0x00508EE0, 0x0053F894, 0x005B2D00, 0x0066F700, 0x0067A700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x004986A0, 0x004AAAC0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x00508EE0, 0x0053F894, 0x005B2D00, 0x0066F700, 0x0067A700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x0046E140, 0x0046E450, 0x004A25E0, 0x005C5E50, 0x00633240, 0x0066B560, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x004104E0) // CONFLICT: multiple definitions at +0x0

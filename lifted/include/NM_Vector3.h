@@ -8,8 +8,8 @@
 // Recovered field layout for NM::Vector3:
 namespace lifted_layout {
 struct NM_Vector3_Fields {
-    // +0x0   float                    x  (evidence: 0x004986A0, 0x004B8920, 0x004C7690, 0x005B2D00, 0x0066F700, 0x00670700)
-    // +0x4   float                    y  (evidence: 0x004986A0, 0x004C7690, 0x0066F2D0, 0x0066F700)
-    // +0x8   float                    field_0x08  (evidence: 0x004986A0, 0x004C7690, 0x0066F700)
+    // +0x0   float                    x  (evidence: 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x005B2D00, 0x0066F700, 0x00670700)
+    // +0x4   float                    y  (evidence: 0x004986A0, 0x004C5630, 0x004C7690, 0x0066F2D0, 0x0066F700)
+    // +0x8   float                    field_0x08  (evidence: 0x004986A0, 0x004C5630, 0x004C7690, 0x0066F700)
 };
 } // namespace lifted_layout

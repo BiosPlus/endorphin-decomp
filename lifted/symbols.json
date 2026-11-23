@@ -5566,10 +5566,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004C5630": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData\u003e::vfunc_3 (NMData::ForceEventData::getRelativeAcceleration \u003e= 1e-6 check)",
-    "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e",
-    "signature": "int fn_004C5630(void* self)",
-    "summary": "Reads the wrapped ForceEventData pointer from self; throws if null, otherwise returns 1 when getRelativeAcceleration() \u003e= 1e-6 (false for NaN), else 0.",
+    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
+    "signature": "void* fn_00617340(void* self)",
+    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004C5840": {
