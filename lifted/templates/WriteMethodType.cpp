@@ -5701,3 +5701,51 @@ void __thiscall fn_005A46E0(void* self, void* out, void** arg2, void** arg3) {
     lift_field<void*>(out, 0x04) = second;
 }
 } // namespace lift_005A46E0
+
+// [0x00487300]
+namespace lift_00487300 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setRootFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression to a string and invokes DesiredPoseEventData::setRootFromFSM on the target object.
+// @field arg1 +0x04 uint32_t field_0x04
+
+extern uint32_t __thiscall ext_0046E780(uint32_t ecx, uint32_t out_str, uint32_t arg1, uint32_t arg0);
+extern void __thiscall ext_00402040(uint32_t ecx, uint32_t str_ptr);
+extern uint32_t mem_00924FF4;
+
+void __thiscall fn_00487300(uint32_t this_ptr, uint32_t arg0, uint32_t arg1) {
+    (void)this_ptr;
+    uint32_t target = *(uint32_t*)arg0;
+    uint32_t ctx = *(uint32_t*)(arg1 + 4);
+    uint8_t local_str[0x1c];
+    uint32_t str_ptr = ext_0046E780(ctx, (uint32_t)(uintptr_t)local_str, arg1, arg0);
+    ext_00402040(target, str_ptr);
+    using dtor_fn = void (__thiscall *)(uint32_t);
+    ((dtor_fn)(uintptr_t)mem_00924FF4)((uint32_t)(uintptr_t)local_str);
+}
+} // namespace lift_00487300
+
+// [0x004871E0]
+namespace lift_004871E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::string const &, setStrengthFromFSM>::vfunc_41
+// @class ExprParser::WriteMethodType
+// @summary Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.
+
+
+extern void* __fastcall ext_0046E780(void* self, void* edx, void* out_str, void* arg2, void* arg1);
+extern void __fastcall ext_004C6F50(void* self, void* edx, void* str_ptr);
+extern void (__thiscall* mem_00924FF4)(void* self);
+
+extern void __fastcall fn_004871E0(void* self, void* edx, void* arg1, void* arg2) {
+    (void)self;
+    (void)edx;
+
+    uint8_t local_str[0x1c];
+    void* target = *reinterpret_cast<void**>(arg1);
+    void* expr_ctx = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 4);
+
+    void* str_ptr = ext_0046E780(expr_ctx, nullptr, local_str, arg2, arg1);
+    ext_004C6F50(target, nullptr, str_ptr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_004871E0

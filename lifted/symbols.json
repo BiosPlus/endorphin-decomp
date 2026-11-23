@@ -3642,6 +3642,20 @@
     "summary": "Invoke the normalize2 helper on self with flag 0 and return self. The second argument is unused.",
     "lifted_path": "lifted/templates/ROMethod0Type.cpp"
   },
+  "0x004871E0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType",
+    "signature": "extern \"C\" void __fastcall fn_004871E0(void* self, void* edx, void* arg1, void* arg2)",
+    "summary": "Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00487300": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setRootFromFSM\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType",
+    "signature": "void __thiscall fn_00487300(uint32_t this_ptr, uint32_t arg0, uint32_t arg1)",
+    "summary": "Evaluates an expression to a string and invokes DesiredPoseEventData::setRootFromFSM on the target object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00487420": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}\u003e",

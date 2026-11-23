@@ -1,0 +1,22 @@
+{
+  "va": "0x00487300",
+  "size": 106,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setRootFromFSM\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType",
+  "signature": "void __thiscall fn_00487300(uint32_t this_ptr, uint32_t arg0, uint32_t arg1)",
+  "summary": "Evaluates an expression to a string and invokes DesiredPoseEventData::setRootFromFSM on the target object.",
+  "fields": [
+    {
+      "class": "arg1",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:37Z"
+}
