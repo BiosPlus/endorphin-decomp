@@ -120,3 +120,17 @@ float sub_007CAFC0(uint32_t obj) {
     return std::bit_cast<float>(mem_read32(obj + 0x14));
 }
 } // namespace lift_007CAFC0
+
+// [0x007CB970]
+namespace lift_007CB970 {
+// @name getField0x10Float
+// @summary Reads a 32-bit float from offset 0x10 of the passed struct pointer.
+// @field struct_0x10 +0x10 float field_0x10
+
+
+float mem_r32f(uint32_t addr);
+
+float sub_007CB970(uint32_t arg0) {
+    return mem_r32f(arg0 + 0x10);
+}
+} // namespace lift_007CB970
