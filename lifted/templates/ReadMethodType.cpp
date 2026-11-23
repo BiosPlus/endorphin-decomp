@@ -243,3 +243,26 @@ float __stdcall fn_0066EFE0(void* self) {
     return 0.0f;
 }
 } // namespace lift_0066EFE0
+
+// [0x004B12A0] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_2 (45 bytes)
+namespace lift_004B12A0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_2 (NMData::GraphEntryData::getColor)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0> +0x00 void* field_0x00
+// @field NMData::GraphEntryData +0x20 int32_t field_0x20
+// @summary Dereferences its single stack argument (a holder whose first pointer is the GraphEntryData object) and returns the dword at object+0x20 (color); if the object pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
+// The holder's type is not identified; only its pointer at +0x00 is read. Stack cleanup is 4 bytes (ret 4), which the C++ signature covers implicitly.
+int fn_004B12A0(const void* holder) {
+    void* obj = *reinterpret_cast<void* const*>(holder);
+    if (obj != nullptr) {
+        return lift_field<int32_t>(obj, 0x20);
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0;
+}
+} // namespace lift_004B12A0

@@ -4046,6 +4046,13 @@
     "summary": "Setter storing float argument into field at offset +0x2C.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004B12A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "int fn_004B12A0(const void* holder)",
+    "summary": "Dereferences its single stack argument (a holder whose first pointer is the GraphEntryData object) and returns the dword at object+0x20 (color); if the object pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1B30": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
