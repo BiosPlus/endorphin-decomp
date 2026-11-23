@@ -8474,3 +8474,30 @@ void* fn_005FCC50(void* const* holder) {
     return nullptr;
 }
 } // namespace lift_005FCC50
+
+// [0x0059F820] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_1 (50 bytes)
+namespace lift_0059F820 {
+// Known callee 0x0059DEB0: sub_0059DEB0 (Virtual dispatch thunk: forwards to vtable slot at +0x80.)
+extern void ext_0059DEB0(void* self);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B, exception-object setup on the null path)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData>::vfunc_1 (CharacterData vcall-128 accessor)
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Dereferences the ValuePtr argument, forwards to the CharacterData vcall thunk on target+4 if non-null, else throws.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_0059F820(void* self) {
+    // self is the stdcall argument (ValuePtrType*); its first dword is the target pointer.
+    void* target = *reinterpret_cast<void**>(self);
+    if (target != nullptr) {
+        // ecx = target + 4 (this for the forwarded call); the thunk's result is left in the return register.
+        ext_0059DEB0(static_cast<char*>(target) + 4);
+        return;
+    }
+    // Null path: build an exception object and throw.
+    ext_0046C3C0(nullptr);
+    ext_006A6DD2();
+}
+} // namespace lift_0059F820

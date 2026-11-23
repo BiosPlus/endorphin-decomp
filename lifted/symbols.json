@@ -8301,6 +8301,13 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A402C4 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0059F820": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData\u003e::vfunc_1 (CharacterData vcall-128 accessor)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_0059F820(void* self)",
+    "summary": "Dereferences the ValuePtr argument, forwards to the CharacterData vcall thunk on target+4 if non-null, else throws.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059FF60": {
     "name": "NMData::BackGroundData::vfunc_10_off_10",
     "class": "NMData::BackGroundData",

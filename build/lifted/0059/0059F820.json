@@ -1,0 +1,22 @@
+{
+  "va": "0x0059F820",
+  "size": 50,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData\u003e::vfunc_1 (CharacterData vcall-128 accessor)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+  "signature": "void fn_0059F820(void* self)",
+  "summary": "Dereferences the ValuePtr argument, forwards to the CharacterData vcall thunk on target+4 if non-null, else throws.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:18:51Z"
+}
