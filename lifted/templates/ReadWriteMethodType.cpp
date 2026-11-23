@@ -5228,3 +5228,34 @@ extern void __thiscall fn_004F69A0(void* self, void* target_ptr, void* value_obj
     ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
 }
 } // namespace lift_004F69A0
+
+// [0x00470190]
+namespace lift_00470190 {
+extern void __thiscall ext_0046FA50(void* self, float value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine,float,&RuntimeEngine::getTimeZoomFactor,float,&RuntimeEngine::setTimeZoomFactor>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine,float,&RuntimeEngine::getTimeZoomFactor,float,&RuntimeEngine::setTimeZoomFactor>
+// @summary Evaluates an expression value and invokes RuntimeEngine::setTimeZoomFactor on the target object, or throws if null.
+// @field ExprParser::ValuePtr arg1 +0x00 uint32_t target
+// @field ExprParser::ExprNode arg2 +0x04 void* evaluator
+extern void __thiscall fn_00470190(void* self, uint32_t* arg1, uint8_t* arg2)
+{
+    (void)self;
+    uint32_t target = *arg1;
+    if (target != 0) {
+        void* evaluator = *reinterpret_cast<void**>(arg2 + 0x4);
+        void** vtable = *reinterpret_cast<void***>(evaluator);
+        using EvalFn = float(__thiscall*)(void*, void*);
+        EvalFn eval = reinterpret_cast<EvalFn>(vtable[1]);
+        float value = eval(evaluator, arg2);
+        ext_0046FA50(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), value);
+        return;
+    }
+
+    alignas(16) uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+}
+} // namespace lift_00470190
