@@ -1,0 +1,28 @@
+{
+  "va": "0x005D78A0",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getYOffset, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getYOffset, 0\u003e",
+  "signature": "void* fn_005D78A0(void* /*self_unused*/, void* out)",
+  "summary": "Reads VideoPlaneData::getYOffset() from the target object held by the ValuePtr and stores it into the output ValuePtr; throws if the target is null.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x40",
+      "type": "float field_0x40 (getYOffset return value; name not",
+      "name": "recovered)"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* target (VideoPlaneData* read via the out/ValuePtr at",
+      "name": "arg2)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:54:25Z"
+}

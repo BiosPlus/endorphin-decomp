@@ -16927,3 +16927,34 @@ void* fn_005D6FA0(void* self, void* const* src) {
     return self;
 }
 } // namespace lift_005D6FA0
+
+// [0x005D78A0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_005D78A0 {
+// Callee 0x00672080: writes a float into the output ValuePtr (thiscall, one float arg).
+extern void ext_00672080(void* self, float value);
+// Callee 0x0046C3C0: constructs/initialises a local temporary used on the error path.
+extern void ext_0046C3C0(void* local);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Replaced below by a portable C++ throw; the original throw type-info is 0x009DEC1C (not recovered).
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, getYOffset, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, getYOffset, 0>
+// @summary Reads VideoPlaneData::getYOffset() from the target object held by the ValuePtr and stores it into the output ValuePtr; throws if the target is null.
+// @field NMData::VideoPlaneData +0x40 float field_0x40 (getYOffset return value; name not recovered)
+// @field ExprParser::ValuePtrType +0x00 void* target (VideoPlaneData* read via the out/ValuePtr at arg2)
+void* fn_005D78A0(void* /*self_unused*/, void* out) {
+    // out->target (first dword of the ValuePtr)
+    void* target = lift_field<void*>(out, 0);
+    if (target == nullptr) {
+        // Error path: build a local temporary, then throw.
+        alignas(8) uint8_t tmp[16] = {};
+        ext_0046C3C0(tmp);
+        throw std::runtime_error("ExprParser::ReadMethodType<VideoPlaneData>::vfunc_0: null target");
+    }
+
+    // Read float at VideoPlaneData +0x40 and hand it to the output ValuePtr's setter.
+    float yOffset = lift_field<float>(target, 0x40);
+    ext_00672080(out, yOffset);
+    return out;
+}
+} // namespace lift_005D78A0

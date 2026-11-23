@@ -18,5 +18,6 @@ struct NMData_VideoPlaneData_Fields {
     // +0x34  float                    field_0x34  (evidence: 0x004B1FF0, 0x004B8920, 0x00508EE0, 0x005B2D00, 0x005D29F0, 0x005D2A80, 0x005D6FA0, 0x0068DE60)
     // +0x38  float                    field_0x38  (evidence: 0x004B1FF0, 0x004B8920, 0x00508EE0, 0x005B2D00, 0x005D2C50, 0x005D7450, 0x0068DE60)
     // +0x3C  float                    field_0x3c  (evidence: 0x004B1FF0, 0x004B8920, 0x00508EE0, 0x005B2D00, 0x005D3050, 0x005D3080, 0x0068DE60)
+    // +0x40  float field_0x40 (getYOffset return value; name not recovered)  (evidence: 0x005D78A0)
 };
 } // namespace lifted_layout
