@@ -4054,10 +4054,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B1430": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
-    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
-    "signature": "void* fn_00617340(void* self)",
-    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_3 (NMData::GraphEntryData::isActive)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+    "signature": "bool fn_004B1430(void** arg)",
+    "summary": "Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B1B30": {

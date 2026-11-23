@@ -267,29 +267,6 @@ int fn_004B12A0(const void* holder) {
 }
 } // namespace lift_004B12A0
 
-// [0x004B1430] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_3 (45 bytes)
-namespace lift_004B1430 {
-// Known callee 0x0046C3C0: sub_0046C3C0 (105B, builds exception object on stack for throw path)
-extern void ext_0046C3C0();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-
-// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_3 (NMData::GraphEntryData::isActive)
-// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
-// @summary Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.
-// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
-bool fn_004B1430(void** arg) {
-    void* graphEntry = arg ? *arg : nullptr;
-    if (graphEntry == nullptr) {
-        ext_0046C3C0();
-        ext_006A6DD2();
-        return false;
-    }
-    const uint8_t* data = static_cast<const uint8_t*>(graphEntry);
-    return data[0x01] != 0;
-}
-} // namespace lift_004B1430
-
 // [0x004B8E40] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_1 (45 bytes)
 namespace lift_004B8E40 {
 extern void ext_0046C3C0();
@@ -361,3 +338,26 @@ float fn_004B8970(void* self) {
     return 0.0f;
 }
 } // namespace lift_004B8970
+
+// [0x004B1430] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_3 (45 bytes)
+namespace lift_004B1430 {
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B, builds exception object on stack for throw path)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_3 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.
+// @field NMData::GraphEntryData +0x01 unsigned char field_0x01
+bool fn_004B1430(void** arg) {
+    void* graphEntry = arg ? *arg : nullptr;
+    if (graphEntry == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+    const unsigned char* data = static_cast<const unsigned char*>(graphEntry);
+    return data[0x01] != 0;
+}
+} // namespace lift_004B1430
