@@ -1,0 +1,21 @@
+{
+  "va": "0x006AD180",
+  "size": 6,
+  "orig_symbol": "sub_006AD180",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "getDerefField0x4",
+  "signature": "uint32_t __thiscall sub_006AD180(void* self)",
+  "summary": "Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:38:57Z"
+}

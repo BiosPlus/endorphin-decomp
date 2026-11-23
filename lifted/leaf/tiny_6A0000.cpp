@@ -78,3 +78,14 @@ uint8_t __thiscall sub_006AD090(uint32_t self) {
     return mem_read8(ptr + 0x5);
 }
 } // namespace lift_006AD090
+
+// [0x006AD180]
+namespace lift_006AD180 {
+// @name getDerefField0x4
+// @summary Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.
+// @field unknown +0x04 uint32_t* field_0x04
+uint32_t __thiscall sub_006AD180(void* self) {
+    uint32_t ptr = *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x4);
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ptr));
+}
+} // namespace lift_006AD180
