@@ -78,3 +78,42 @@ void __thiscall fn_004A9C90(void* self, const int32_t* range) {
     uint32_t field_0x168 = lift_field<uint32_t>(self, 0x168);
     ext_0047D300(mem_00AE29D0, field_0x168);
 }
+
+// [0x004A9A70]
+namespace lift_004A9A70 {
+// @name NMData::BehaviourData::vfunc_81
+// @class NMData::BehaviourData
+// @summary Assigns a string field at +0x328, invokes vfunc_82 with the looked-up object, and notifies subobject at +0x180.
+// @field NMData::BehaviourData +0x0 void** vptr
+// @field NMData::BehaviourData +0x180 void* field_0x180
+// @field NMData::BehaviourData +0x328 std::string field_0x328
+
+
+    int32_t __cdecl ext_00594000(void);
+    void* __fastcall ext_00594620(void* self, void* /*edx*/, void* arg0);
+    void __fastcall ext_004EC300(void* self, void* /*edx*/, void* arg0);
+    extern uint32_t mem_00924FDC;
+
+extern void __fastcall fn_004A9A70(void* self, void* /*edx*/, void* arg0) {
+    int32_t mgr = ext_00594000();
+    if (!mgr) {
+        return;
+    }
+
+    void* obj = ext_00594620((void*)(uintptr_t)mgr, nullptr, arg0);
+    if (!obj) {
+        return;
+    }
+
+    void* str_field = (uint8_t*)self + 0x328;
+    using assign_fn_t = void* (__fastcall*)(void*, void*, void*);
+    ((assign_fn_t)(uintptr_t)mem_00924FDC)(str_field, nullptr, arg0);
+
+    void** vtable = *(void***)self;
+    using vfunc_82_t = void (__fastcall*)(void*, void*, void*);
+    ((vfunc_82_t)vtable[0x148 / 4])(self, nullptr, obj);
+
+    void* subobj = *(void**)((uint8_t*)self + 0x180);
+    ext_004EC300(subobj, nullptr, str_field);
+}
+} // namespace lift_004A9A70
