@@ -11,3 +11,15 @@ void sub_007EFED0() {
     mem_00AB2BD0 = 0;
 }
 } // namespace lift_007EFED0
+
+// [0x007EFEF0]
+namespace lift_007EFEF0 {
+extern uint32_t mem_00AB2BD8;
+
+// @name resetFlag_00AB2BD8
+// @summary Clears global flag mem_00AB2BD8 to 0
+
+void sub_007EFEF0() {
+    mem_00AB2BD8 = 0;
+}
+} // namespace lift_007EFEF0

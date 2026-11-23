@@ -35395,6 +35395,12 @@
     "summary": "Clears the 32-bit global flag at 0x00AB2BD0 to zero.",
     "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
   },
+  "0x007EFEF0": {
+    "name": "resetFlag_00AB2BD8",
+    "signature": "void sub_007EFEF0()",
+    "summary": "Clears global flag mem_00AB2BD8 to 0",
+    "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
+  },
   "0x007F2AC0": {
     "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",
     "class": "MdtArthur::arthurSolver_vanilla",
