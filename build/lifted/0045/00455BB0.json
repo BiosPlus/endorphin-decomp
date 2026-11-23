@@ -1,0 +1,13 @@
+{
+  "va": "0x00455BB0",
+  "size": 22,
+  "orig_symbol": "sub_00455BB0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "sub_00455BB0",
+  "signature": "void fn_00455BB0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct RigEditorFrame_Fields {
     // +0x4   void*                    delegate_0x4  (evidence: 0x00454500)
     // +0xC   void*                    delegate_0xC  (evidence: 0x00453F30, 0x004544F0)
+    // +0x150 uint32_t                 field_0x150  (evidence: 0x0044D0C0)
 };
 } // namespace lifted_layout

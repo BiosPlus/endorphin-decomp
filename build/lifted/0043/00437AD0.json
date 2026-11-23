@@ -1,0 +1,40 @@
+{
+  "va": "0x00437AD0",
+  "size": 60,
+  "orig_symbol": "BaseEventDispatcher::vfunc_3",
+  "src_path": "src/classes/BaseEventDispatcher.cpp",
+  "lifted_path": "lifted/classes/BaseEventDispatcher.cpp",
+  "name": "BaseEventDispatcher::vfunc_3",
+  "class": "BaseEventDispatcher",
+  "signature": "void __thiscall fn_00437AD0(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
+  "fields": [
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

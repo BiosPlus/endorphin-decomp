@@ -63,6 +63,7 @@ extern "C" int mem_00937E88;
 extern "C" int mem_00937FC8;
 extern "C" void __fastcall ext_0045E700(void* self);
 extern "C" void __fastcall ext_0045E690(void* self);
+#include <cstdint>
 
 // [0x00455BE0] sub_00455BE0 (6 bytes)
 // @name sub_00455BE0
@@ -174,3 +175,25 @@ extern "C" void __fastcall fn_0045E920(void* self) {
 extern "C" void __fastcall fn_0045E930(void* self) {
     ext_0045E690(static_cast<char*>(self) + 0x258);
 }
+
+// [0x00455BB0] sub_00455BB0 (22 bytes)
+namespace lift_00455BB0 {
+extern void ext_00455B50();
+
+// @name sub_00455BB0
+// @summary Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).
+void fn_00455BB0(void* self) {
+    // The original tail-jumps (jmp) to ext_006A60D0; the portable form is a plain call followed by return.
+    // Pointers are modeled as 32-bit handles (the target is a 32-bit binary).
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t target = *reinterpret_cast<uint32_t*>(base + 0x144);
+    if (target == 0) {
+        return;
+    }
+    // Inner object field at +0x20 (type unknown; field_0x20 by convention).
+    auto* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(target));
+    if (*reinterpret_cast<uint32_t*>(obj + 0x20) != 0) {
+        ext_00455B50();
+    }
+}
+} // namespace lift_00455BB0

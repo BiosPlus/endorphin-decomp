@@ -1,0 +1,40 @@
+{
+  "va": "0x00687100",
+  "size": 71,
+  "orig_symbol": "SymbolContainer::vfunc_6",
+  "src_path": "src/classes/SymbolContainer.cpp",
+  "lifted_path": "lifted/classes/SymbolContainer.cpp",
+  "name": "SymbolContainer::vfunc_6",
+  "class": "SymbolContainer",
+  "signature": "extern void (*mem_00925134)(); // MSVCR80!_invalid_parameter_noinfo (IAT slot) void fn_00687100(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A5400 (NMData::BackGroundData::vfunc_6_off_4).",
+  "fields": [
+    {
+      "class": "SymbolContainer",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "SymbolContainer",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x540",
+      "type": "void*",
+      "name": "field_0x540"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x544",
+      "type": "void*",
+      "name": "field_0x544"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

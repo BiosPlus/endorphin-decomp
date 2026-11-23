@@ -1,0 +1,14 @@
+{
+  "va": "0x006408B0",
+  "size": 8,
+  "orig_symbol": "AdvXMLParser::Document::vfunc_4",
+  "src_path": "src/AdvXMLParser/Document.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Document.cpp",
+  "name": "AdvXMLParser::Document::vfunc_4",
+  "class": "AdvXMLParser::Document",
+  "signature": "void fn_006408B0(uint32_t arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0065F7C0",
+  "size": 34,
+  "orig_symbol": "SymbolResolver::vfunc_1",
+  "src_path": "src/classes/SymbolResolver.cpp",
+  "lifted_path": "lifted/classes/SymbolResolver.cpp",
+  "name": "SymbolResolver::vfunc_1",
+  "class": "SymbolResolver",
+  "signature": "void* __thiscall fn_0065F7C0(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0059CC60",
+  "size": 8,
+  "orig_symbol": "IdentityNode::vfunc_2_off_4",
+  "src_path": "src/classes/IdentityNode.cpp",
+  "lifted_path": "lifted/classes/IdentityNode.cpp",
+  "name": "IdentityNode::vfunc_2_off_4",
+  "class": "IdentityNode",
+  "signature": "void fn_0059CC60(uint32_t arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

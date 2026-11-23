@@ -1,0 +1,13 @@
+{
+  "va": "0x00870E30",
+  "size": 7,
+  "orig_symbol": "sub_00870E30",
+  "src_path": "src/leaf/tiny_870000.cpp",
+  "lifted_path": "lifted/leaf/tiny_870000.cpp",
+  "name": "sub_00870E30",
+  "signature": "extern \"C\" void __fastcall fn_00870E30(void* self)",
+  "summary": "Stores address of mem_0099F140 into field at offset +0x0.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

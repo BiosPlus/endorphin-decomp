@@ -1,0 +1,13 @@
+{
+  "va": "0x00437DC0",
+  "size": 18,
+  "orig_symbol": "sub_00437DC0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00437DC0",
+  "signature": "void fn_00437DC0(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A9960 (NMData::BackGroundData::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

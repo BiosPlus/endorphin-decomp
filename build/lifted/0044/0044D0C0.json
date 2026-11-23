@@ -1,0 +1,22 @@
+{
+  "va": "0x0044D0C0",
+  "size": 22,
+  "orig_symbol": "RigEditorFrame::vfunc_106",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RigEditorFrame::vfunc_106",
+  "class": "RigEditorFrame",
+  "signature": "void fn_0044D0C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).",
+  "fields": [
+    {
+      "class": "RigEditorFrame",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x00553E40",
+  "size": 31,
+  "orig_symbol": "sub_00553E40",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "sub_00553E40",
+  "signature": "int32_t fn_00553E40(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051C7A0 (NMData::QuatChannel::vfunc_9).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

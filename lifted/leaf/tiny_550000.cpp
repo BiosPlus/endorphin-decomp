@@ -14,8 +14,10 @@ extern "C" void __fastcall ext_0065C660(void* self);
 extern "C" void __fastcall fn_00552850(void* self) {
     lift_field<void*>(self, 0x0) = &mem_00957534;
 }
+#include <cstring>
+#include <cstdint>
 
-// [0x00553750] sub_00553750 (9 bytes)
+#include <cstdint>
 // @name sub_00553750
 // @summary This-adjustor thunk: adjusts `this` by +0x24 and forwards through mem_00924FDC.
 extern "C" void __fastcall fn_00553750(void* self) {
@@ -66,3 +68,19 @@ extern "C" void __fastcall fn_0055D670(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0095841C;
     ext_0065C660(self);
 }
+
+// [0x00553E40] sub_00553E40 (31 bytes)
+namespace lift_00553E40 {
+// @name sub_00553E40
+// @summary Auto-lifted identical-shape clone of 0x0051C7A0 (NMData::QuatChannel::vfunc_9).
+int32_t fn_00553E40(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x4);
+    if (begin == 0) {
+        return 0;
+    }
+    uint32_t end = lift_field<uint32_t>(self, 0x8);
+    int32_t span = static_cast<int32_t>(end - begin);
+    // Compiler-emitted magic multiply (0x66666667, sar 3) computes signed /20.
+    return span / 20;
+}
+} // namespace lift_00553E40

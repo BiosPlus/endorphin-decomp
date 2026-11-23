@@ -1,0 +1,14 @@
+{
+  "va": "0x00574D00",
+  "size": 37,
+  "orig_symbol": "VIO::vfunc_3",
+  "src_path": "src/classes/VIO.cpp",
+  "lifted_path": "lifted/classes/VIO.cpp",
+  "name": "VIO::vfunc_3",
+  "class": "VIO",
+  "signature": "void* fn_00574D00(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

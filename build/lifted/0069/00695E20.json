@@ -1,0 +1,13 @@
+{
+  "va": "0x00695E20",
+  "size": 31,
+  "orig_symbol": "sub_00695E20",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_00695E20",
+  "signature": "void* fn_00695E20(void* self, uint32_t ecx_in)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051AED0 (NMData::RealChannel::vfunc_8).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

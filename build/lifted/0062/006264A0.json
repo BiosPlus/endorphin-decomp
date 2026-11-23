@@ -1,0 +1,14 @@
+{
+  "va": "0x006264A0",
+  "size": 99,
+  "orig_symbol": "TransformRefNode::vfunc_17_off_C",
+  "src_path": "src/classes/TransformRefNode.cpp",
+  "lifted_path": "lifted/classes/TransformRefNode.cpp",
+  "name": "TransformRefNode::vfunc_17_off_C",
+  "class": "TransformRefNode",
+  "signature": "void* fn_006264A0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

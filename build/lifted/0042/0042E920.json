@@ -1,0 +1,14 @@
+{
+  "va": "0x0042E920",
+  "size": 35,
+  "orig_symbol": "KeyMappingManager::vfunc_6",
+  "src_path": "src/classes/KeyMappingManager.cpp",
+  "lifted_path": "lifted/classes/KeyMappingManager.cpp",
+  "name": "KeyMappingManager::vfunc_6",
+  "class": "KeyMappingManager",
+  "signature": "std::string* fn_0042E920(void* self, std::string* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x00584FD0 (NMData::RPROJointData::vfunc_59).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

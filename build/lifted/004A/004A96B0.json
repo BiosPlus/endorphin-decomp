@@ -1,0 +1,14 @@
+{
+  "va": "0x004A96B0",
+  "size": 34,
+  "orig_symbol": "VersionControlManager::vfunc_6",
+  "src_path": "src/classes/VersionControlManager.cpp",
+  "lifted_path": "lifted/classes/VersionControlManager.cpp",
+  "name": "VersionControlManager::vfunc_6",
+  "class": "VersionControlManager",
+  "signature": "void* __thiscall fn_004A96B0(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

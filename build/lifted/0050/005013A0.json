@@ -1,0 +1,28 @@
+{
+  "va": "0x005013A0",
+  "size": 73,
+  "orig_symbol": "EvolveEngine::vfunc_2_off_10",
+  "src_path": "src/classes/EvolveEngine.cpp",
+  "lifted_path": "lifted/classes/EvolveEngine.cpp",
+  "name": "EvolveEngine::vfunc_2_off_10",
+  "class": "EvolveEngine",
+  "signature": "void* fn_005013A0(void* self, void* a1, uint32_t a2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051EBB0 (StateMachine::State::vfunc_2).",
+  "fields": [
+    {
+      "class": "EvolveEngine",
+      "offset": "+0x68",
+      "type": "uint8_t field_0x158 (sub-object; only its address is",
+      "name": "field_0x68"
+    },
+    {
+      "class": "StateMachine::State",
+      "offset": "+0x158",
+      "type": "uint8_t field_0x158 (sub-object; only its address is",
+      "name": "taken)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

@@ -12,6 +12,6 @@ namespace lifted_layout {
 struct NMData_DesiredPoseEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004869A0)
     // +0x224 uint8_t field_0x154 (address of subobject only; not read or written field_0x224  (evidence: 0x00486C40)
-    // +0x234 void*                    field_0x234  (evidence: 0x0048DE30)
+    // +0x234 void*                    field_0x234  (evidence: 0x0048DE30, 0x005CF3E0)
 };
 } // namespace lifted_layout

@@ -1,0 +1,14 @@
+{
+  "va": "0x00563600",
+  "size": 37,
+  "orig_symbol": "XSIIO::vfunc_3",
+  "src_path": "src/classes/XSIIO.cpp",
+  "lifted_path": "lifted/classes/XSIIO.cpp",
+  "name": "XSIIO::vfunc_3",
+  "class": "XSIIO",
+  "signature": "void* fn_00563600(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

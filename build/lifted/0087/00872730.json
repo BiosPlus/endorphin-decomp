@@ -1,0 +1,13 @@
+{
+  "va": "0x00872730",
+  "size": 11,
+  "orig_symbol": "sub_00872730",
+  "src_path": "src/leaf/tiny_870000.cpp",
+  "lifted_path": "lifted/leaf/tiny_870000.cpp",
+  "name": "sub_00872730",
+  "signature": "DWORD NMData_GraphicData_vfunc_0_off_C(const void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00587D40 (NMData::GraphicData::vfunc_0_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0055D680",
+  "size": 36,
+  "orig_symbol": "Loader\u003cNMData::CameraData\u003e::vfunc_0",
+  "src_path": "src/templates/Loader.cpp",
+  "lifted_path": "lifted/templates/Loader.cpp",
+  "name": "Loader\u003cNMData::CameraData\u003e::vfunc_0",
+  "class": "Loader\u003cNMData::CameraData\u003e",
+  "signature": "void* __thiscall fn_0055D680(void* self, uint8_t flags)",
+  "summary": "Auto-lifted identical-shape clone of 0x006204A0 (Sensors::SensorAbsoluteTime::vfunc_0).",
+  "fields": [
+    {
+      "class": "Loader\u003cNMData::CameraData\u003e",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (vtable",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

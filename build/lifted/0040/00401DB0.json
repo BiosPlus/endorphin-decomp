@@ -1,0 +1,22 @@
+{
+  "va": "0x00401DB0",
+  "size": 36,
+  "orig_symbol": "AVIException::vfunc_0",
+  "src_path": "src/classes/AVIException.cpp",
+  "lifted_path": "lifted/classes/AVIException.cpp",
+  "name": "AVIException::vfunc_0",
+  "class": "AVIException",
+  "signature": "void* __thiscall fn_00401DB0(void* self, uint8_t flags)",
+  "summary": "Auto-lifted identical-shape clone of 0x006204A0 (Sensors::SensorAbsoluteTime::vfunc_0).",
+  "fields": [
+    {
+      "class": "AVIException",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (vtable",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

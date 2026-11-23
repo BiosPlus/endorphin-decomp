@@ -1,0 +1,13 @@
+{
+  "va": "0x00530130",
+  "size": 89,
+  "orig_symbol": "sub_00530130",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "sub_00530130",
+  "signature": "void* fn_00530130()",
+  "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

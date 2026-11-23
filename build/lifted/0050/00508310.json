@@ -1,0 +1,14 @@
+{
+  "va": "0x00508310",
+  "size": 93,
+  "orig_symbol": "sub_00508310",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00508310",
+  "class": "NMData::RealChannel",
+  "signature": "void* __thiscall fn_00508310(const void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

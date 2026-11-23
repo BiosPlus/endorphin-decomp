@@ -1,0 +1,28 @@
+{
+  "va": "0x005CF3E0",
+  "size": 58,
+  "orig_symbol": "sub_005CF3E0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "sub_005CF3E0",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "extern void __thiscall fn_005CF3E0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048DE30 (NMData::DesiredPoseEventData::vfunc_87).",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:25:53Z"
+}

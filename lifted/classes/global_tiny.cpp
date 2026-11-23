@@ -342,6 +342,7 @@ extern "C" void __fastcall ext_006B86E0(void* self);
 extern "C" int mem_009931A4;
 extern "C" void __fastcall ext_006B95D0(void* self);
 extern "C" void __fastcall ext_007DD020(void* self);
+#include <cstdint>
 
 // [0x00419720] ExportUnavailableDialog::vfunc_0 (6 bytes)
 // @name ExportUnavailableDialog::vfunc_0
@@ -4422,3 +4423,27 @@ void fn_0053A710(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0x8) = a0;
     lift_field<uint32_t>(self, 0x4) = a1;
 }
+
+// [0x0044D0C0] RigEditorFrame::vfunc_106 (22 bytes)
+namespace lift_0044D0C0 {
+extern void ext_006A60D0();
+
+// @name RigEditorFrame::vfunc_106
+// @class RigEditorFrame
+// @summary Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).
+// @field RigEditorFrame +0x150 uint32_t field_0x150
+void fn_0044D0C0(void* self) {
+    // The original tail-jumps (jmp) to ext_006A60D0; the portable form is a plain call followed by return.
+    // Pointers are modeled as 32-bit handles (the target is a 32-bit binary).
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t target = *reinterpret_cast<uint32_t*>(base + 0x150);
+    if (target == 0) {
+        return;
+    }
+    // Inner object field at +0x20 (type unknown; field_0x20 by convention).
+    auto* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(target));
+    if (*reinterpret_cast<uint32_t*>(obj + 0x20) != 0) {
+        ext_006A60D0();
+    }
+}
+} // namespace lift_0044D0C0
