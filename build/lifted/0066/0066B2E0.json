@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B2E0",
+  "size": 61,
+  "orig_symbol": "ExprParser::StringType::vfunc_4",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_4",
+  "class": "ExprParser::StringType",
+  "signature": "void* __stdcall fn_0066B2E0(void* out_str, const uint32_t* value_ptr)",
+  "summary": "Fills an output string from a StringType value pointer, or assigns a literal when the value is null.",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:59:33Z"
+}

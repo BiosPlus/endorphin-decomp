@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct ExprParser_StringType_Fields {
     // +0x0   std::string*             field_0x00  (evidence: 0x0066B240, 0x0066B290) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x006718A0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x0066B2E0, 0x006718A0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

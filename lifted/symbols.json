@@ -9716,6 +9716,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005C1250 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005C2F70": {
+    "name": "NMData::CollisionModelData::vfunc_0_off_158",
+    "class": "NMData::CollisionModelData",
+    "signature": "extern \"C\" int32_t __thiscall fn_005C2F70(void* self)",
+    "summary": "Updates the render object owner and calls sub_005866C0 with a global offset and nested field.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C2FB0": {
     "name": "NMData::CollisionModelData::vfunc_1_off_158",
     "class": "NMData::CollisionModelData",
@@ -14487,6 +14494,13 @@
     "class": "ExprParser::StringType",
     "signature": "int fn_0066B290(void* self)",
     "summary": "Returns 1 if the held std::string equals either of two literal strings, else 0 (0 if the string pointer is null).",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
+  "0x0066B2E0": {
+    "name": "ExprParser::StringType::vfunc_4",
+    "class": "ExprParser::StringType",
+    "signature": "void* __stdcall fn_0066B2E0(void* out_str, const uint32_t* value_ptr)",
+    "summary": "Fills an output string from a StringType value pointer, or assigns a literal when the value is null.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
   "0x0066B320": {

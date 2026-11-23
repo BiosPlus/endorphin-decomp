@@ -84,3 +84,28 @@ void* __stdcall fn_0066B200(void* out_str, const uint32_t* value_ptr) {
     return out_str;
 }
 } // namespace lift_0066B200
+
+// [0x0066B2E0]
+namespace lift_0066B2E0 {
+namespace lift_0066B2E0 {
+// @name ExprParser::StringType::vfunc_4
+// @class ExprParser::StringType
+// @summary Fills an output string from a StringType value pointer, or assigns a literal when the value is null.
+// @field ExprParser::StringType +0x00 void* field_0x00
+
+// Callee: sub_004276B0 (cdecl, 2 args: value, out).
+extern void __cdecl ext_004276B0(uint32_t value, void* out);
+// Indirect IAT slot mem_00924FE4 resolves to MSVCP80 basic_string(const char*) ctor (thiscall).
+extern void __thiscall ext_00629122(void* self, const char* s);
+
+void* __stdcall fn_0066B2E0(void* out_str, const uint32_t* value_ptr) {
+    uint32_t val = *value_ptr;
+    if (val != 0) {
+        ext_004276B0(val, out_str);
+    } else {
+        ext_00629122(out_str, reinterpret_cast<const char*>(0x00928B5Du));
+    }
+    return out_str;
+}
+} // namespace lift_0066B2E0
+} // namespace lift_0066B2E0
