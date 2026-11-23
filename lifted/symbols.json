@@ -8106,6 +8106,13 @@
     "summary": "Enables GL_RESCALE_NORMAL, rotates 90 degrees about -Y, invokes the embedded sub-object's vtable slot 0x58 with -1.0f, then restores the matrix and disables GL_RESCALE_NORMAL.",
     "lifted_path": "lifted/Primitives/Arrow.cpp"
   },
+  "0x0053C250": {
+    "name": "Primitives::CameraFrustum::vfunc_28",
+    "class": "Primitives::CameraFrustum",
+    "signature": "extern \"C\" void (*mem_00925414)(void);                // glPushMatrix extern \"C\" void (*mem_00925490)(GLenum);              // glBegin extern \"C\" void (*mem_0092548C)(float, float, float); // glVertex3f extern \"C\" void (*mem_00925488)(void);                // glEnd extern \"C\" void (*mem_00925404)(void);                // glPopMatrix void fn_0053C250(void* self, int mode)",
+    "summary": "Draws the camera frustum as a GL_QUAD_STRIP between near and far rectangles unless mode == 2.",
+    "lifted_path": "lifted/Primitives/CameraFrustum.cpp"
+  },
   "0x0053C8B0": {
     "name": "Primitives::Sphere::vfunc_0",
     "class": "Primitives::Sphere",
