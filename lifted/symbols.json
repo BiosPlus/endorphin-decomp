@@ -1936,6 +1936,12 @@
     "summary": "Returns the address of the static constant mem_00935578 (a .rdata word holding 0x0093556C); ignores this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044CF80": {
+    "name": "hasField0x74",
+    "signature": "uint32_t __thiscall sub_0044CF80(uint32_t self)",
+    "summary": "Checks whether the 32-bit field at offset 0x74 is non-zero.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044CFB0": {
     "name": "RigEditorAddRenameDialog::vfunc_0",
     "class": "RigEditorAddRenameDialog",
