@@ -3056,6 +3056,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0046FD40.",
     "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp"
   },
+  "0x00470190": {
+    "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine,float,\u0026RuntimeEngine::getTimeZoomFactor,float,\u0026RuntimeEngine::setTimeZoomFactor\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine,float,\u0026RuntimeEngine::getTimeZoomFactor,float,\u0026RuntimeEngine::setTimeZoomFactor\u003e",
+    "signature": "extern \"C\" void __thiscall fn_00470190(void* self, uint32_t* arg1, uint8_t* arg2)",
+    "summary": "Evaluates an expression value and invokes RuntimeEngine::setTimeZoomFactor on the target object, or throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004701F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, bool, {public: void __thiscall RuntimeEngine::enablePlaybackLooping(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, bool, {public: void __thiscall RuntimeEngine::enablePlaybackLooping(bool), 0}\u003e",
