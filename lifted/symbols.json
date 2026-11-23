@@ -33728,6 +33728,12 @@
     "summary": "Dereference a 32-bit pointer and return its uint32_t value.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5BC0": {
+    "name": "getField0x20",
+    "signature": "extern \"C\" uint32_t sub_007D5BC0(uint32_t arg0)",
+    "summary": "Reads and returns the 32-bit value at offset 0x20 of the passed struct pointer.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D7A20": {
     "name": "sub_007D7A20",
     "signature": "extern \"C\" void* __cdecl fn_007D7A20(void)",

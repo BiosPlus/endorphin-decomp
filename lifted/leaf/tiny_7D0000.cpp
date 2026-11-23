@@ -55,3 +55,15 @@ uint32_t sub_007D48A0(uint32_t arg0) {
     return mem_read32(arg0 + 0x4);
 }
 } // namespace lift_007D48A0
+
+// [0x007D5BC0]
+namespace lift_007D5BC0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getField0x20
+// @summary Reads and returns the 32-bit value at offset 0x20 of the passed struct pointer.
+// @field Struct +0x20 uint32_t field_0x20
+extern uint32_t sub_007D5BC0(uint32_t arg0) {
+    return mem_read32(arg0 + 0x20);
+}
+} // namespace lift_007D5BC0
