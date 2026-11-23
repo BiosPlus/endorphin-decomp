@@ -9,7 +9,7 @@
 // Recovered field layout for ValuePtrType:
 namespace lifted_layout {
 struct ValuePtrType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x004713D0, 0x004B1FF0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x004713D0, 0x004B1FF0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x0046F1E0, 0x004B1FF0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE90) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    inner  (evidence: 0x00594550, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4

@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::Task:
 namespace lifted_layout {
 struct NMData_Task_Fields {
-    // +0x14  int                      field_0x14  (evidence: 0x004B1FF0, 0x00508EB0)
+    // +0x14  int                      field_0x14  (evidence: 0x004B1FF0, 0x00508EB0, 0x00508EE0)
 };
 } // namespace lifted_layout

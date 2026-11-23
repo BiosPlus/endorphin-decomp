@@ -10,20 +10,20 @@
 namespace lifted_layout {
 struct ExprParser_ValuePtrType_Fields {
     // +0x0   const std::string*       field_0x00  (evidence: 0x00497930) // CONFLICT: multiple definitions at +0x0
-    // +0x0   int                      field_0x00  (evidence: 0x004B1FF0, 0x00504DA0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int                      field_0x00  (evidence: 0x004B1FF0, 0x00504DA0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int*                     field_0x00  (evidence: 0x0049C040) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x004B1FF0, 0x00505000) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x0046EB20, 0x004887D0, 0x00489540, 0x0048B060, 0x0048B1F0, 0x004A28A0, 0x004A2F80, 0x004B1FF0, 0x004B20F0, 0x004B27E0, 0x004B8970, 0x004CB470, 0x004CCCC0, 0x004EA570, 0x004EA700, 0x00508EB0, 0x005C61F0, 0x005D78F0, 0x005FCC50, 0x00605E70, 0x00606640, 0x00606C00, 0x00607230, 0x00613FB0, 0x00614290, 0x00614E20, 0x006155D0, 0x00615A20, 0x00615C50, 0x006173F0, 0x0061A2F0, 0x0061A8F0, 0x00633AE0, 0x006349F0, 0x00636E80, 0x006371C0, 0x00637800, 0x00637B10, 0x00637F20, 0x00638310, 0x00638900, 0x00639090, 0x0066DD10, 0x0066F320, 0x0066F750) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void* field_0x00 (target object pointer, dereferenced first)  (evidence: 0x00471920, 0x004B1FF0, 0x004EAA10, 0x004EADE0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    inner_ptr  (evidence: 0x004A4BD0, 0x004B1FF0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    object  (evidence: 0x004B1FF0, 0x005D29F0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x004B1FF0, 0x00505000, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x0046EB20, 0x004887D0, 0x00489540, 0x0048B060, 0x0048B1F0, 0x004A28A0, 0x004A2F80, 0x004B1FF0, 0x004B20F0, 0x004B27E0, 0x004B8970, 0x004CB470, 0x004CCCC0, 0x004EA570, 0x004EA700, 0x00508EB0, 0x00508EE0, 0x005C61F0, 0x005D78F0, 0x005FCC50, 0x00605E70, 0x00606640, 0x00606C00, 0x00607230, 0x00613FB0, 0x00614290, 0x00614E20, 0x006155D0, 0x00615A20, 0x00615C50, 0x006173F0, 0x0061A2F0, 0x0061A8F0, 0x00633AE0, 0x006349F0, 0x00636E80, 0x006371C0, 0x00637800, 0x00637B10, 0x00637F20, 0x00638310, 0x00638900, 0x00639090, 0x0066DD10, 0x0066F320, 0x0066F750) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (target object pointer, dereferenced first)  (evidence: 0x00471920, 0x004B1FF0, 0x004EAA10, 0x004EADE0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    inner_ptr  (evidence: 0x004A4BD0, 0x004B1FF0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    object  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D29F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   ptr  (evidence: 0x004B71C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr  (evidence: 0x00516170, 0x00516550) // CONFLICT: multiple definitions at +0x0
-    // +0x0   NMData::VideoPlaneData*  target  (evidence: 0x004B1FF0, 0x005D2860, 0x005D2C50) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    target  (evidence: 0x0046CB30, 0x0049C6E0, 0x004B1FF0, 0x004B8E40, 0x004EB230, 0x0050E0A0, 0x0050F190, 0x00516550, 0x00516B10, 0x0059F820, 0x005D3050, 0x0066EFE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   NMData::VideoPlaneData*  target  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2860, 0x005D2C50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    target  (evidence: 0x0046CB30, 0x0049C6E0, 0x004B1FF0, 0x004B8E40, 0x004EB230, 0x00508EE0, 0x0050E0A0, 0x0050F190, 0x00516550, 0x00516B10, 0x0059F820, 0x005D3050, 0x0066EFE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    valuePtr  (evidence: 0x0046D920, 0x004B1FF0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    valuePtr  (evidence: 0x0046D920, 0x004B1FF0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0064F0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x005F3600, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    field_04  (evidence: 0x0063CB90, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
