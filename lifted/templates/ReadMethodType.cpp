@@ -1510,3 +1510,31 @@ float fn_005D6980(void* const* holder) {
     return lift_field<float>(obj, 0x2c);
 }
 } // namespace lift_005D6980
+
+// [0x005D3050] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D3050 {
+// Callee 0x0046C3C0 (sub_0046C3C0): builds the exception object in the caller's buffer.
+extern void ext_0046C3C0(void* exceptionObj);
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+// ThrowInfo descriptor passed to _CxxThrowException (VA 0x009DEC1C); only its address is used.
+extern const uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_1 (NMData::VideoPlaneData::getXOffset)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Stdcall float getter: reads the VideoPlaneData pointer held in the value-pointer argument and returns the float at +0x3C; throws a C++ exception if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field NMData::VideoPlaneData +0x3C float field_0x3c
+float __stdcall fn_005D3050(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj != nullptr) {
+        return lift_field<float>(obj, 0x3C);
+    }
+
+    // Null path: construct the exception object in a local buffer, then throw it.
+    alignas(8) uint8_t exc_obj[0x28];
+    ext_0046C3C0(exc_obj);
+    ext_006A6DD2(exc_obj, reinterpret_cast<const void*>(&mem_009DEC1C));
+    return 0.0f; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_005D3050

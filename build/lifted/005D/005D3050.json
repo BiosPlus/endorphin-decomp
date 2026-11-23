@@ -1,0 +1,28 @@
+{
+  "va": "0x005D3050",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_1 (NMData::VideoPlaneData::getXOffset)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+  "signature": "float __stdcall fn_005D3050(void* const* holder)",
+  "summary": "Stdcall float getter: reads the VideoPlaneData pointer held in the value-pointer argument and returns the float at +0x3C; throws a C++ exception if that pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:15:22Z"
+}
