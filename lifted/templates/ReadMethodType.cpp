@@ -23870,3 +23870,33 @@ extern float __stdcall fn_004EA520(void* const* objPtr)
     return (obj[0x9] != 0) ? 1.0f : 0.0f;
 }
 } // namespace lift_004EA520
+
+// [0x00514020] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_0 (74 bytes)
+namespace lift_00514020 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk. Given a receiver, returns the code
+// address stored at vtable byte offset 0x24; the caller performs the call.
+extern void* ext_00682ED0(void* self);
+// Known callee 0x006720E0 (thiscall: ecx = self, one stack argument).
+extern void ext_006720E0(void* self, void* arg);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::string const &, vcall{36}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::string const &, vcall{36}, 0>
+// @summary Null-checks the held value pointer, invokes the slot-9 (vtable +0x24) getter on the held object's +4 sub-object, passes the result to ext_006720E0, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_00514020(void* p, void* q) {
+    (void)q;
+
+    void* held = *static_cast<void**>(p);
+    if (held == nullptr) {
+        // Original constructs an MSVC exception object and calls _CxxThrowException.
+        throw std::runtime_error("ExprParser::ReadMethodType: null value");
+    }
+
+    void* receiver = static_cast<char*>(held) + 4;
+    void* target = ext_00682ED0(receiver);
+    void* arg = reinterpret_cast<void* (*)(void*)>(target)(receiver);
+
+    ext_006720E0(p, arg);
+    return p;
+}
+} // namespace lift_00514020
