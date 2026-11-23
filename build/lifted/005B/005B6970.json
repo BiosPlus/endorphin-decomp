@@ -1,0 +1,13 @@
+{
+  "va": "0x005B6970",
+  "size": 9,
+  "orig_symbol": "sub_005B6970",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getField0x04From005B6930",
+  "signature": "float sub_005B6970()",
+  "summary": "Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:28Z"
+}

@@ -13581,6 +13581,12 @@
     "summary": "Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005B6970": {
+    "name": "getField0x04From005B6930",
+    "signature": "float sub_005B6970()",
+    "summary": "Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6E70": {
     "name": "NMData::MetaBodyData::vfunc_36",
     "class": "NMData::MetaBodyData",
