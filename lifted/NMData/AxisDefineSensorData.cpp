@@ -41,3 +41,20 @@ void* __thiscall fn_0062CC60(void* self, void* arg) {
     ext_0062CC10(arg, tm);
     return arg;
 }
+
+// [0x0060E7B0] NMData::AxisDefineSensorData::vfunc_2 (47 bytes)
+namespace lift_0060E7B0 {
+extern void* __stdcall ext_006798D0(void* a0, void* a1, uint32_t a2, void* a3);
+extern void __thiscall ext_00679030(void* self);
+
+// @name NMData::AxisDefineSensorData::vfunc_2
+// @class NMData::AxisDefineSensorData
+// @summary Passes the arguments plus this->field_0x170 to ext_006798D0, hands its result to ext_00679030, and returns the first argument.
+// @field NMData::AxisDefineSensorData +0x170 void* field_0x170
+void* fn_0060E7B0(void* self, void* arg1, uint32_t arg2) {
+    void* sub = lift_field<void*>(self, 0x170);
+    void* result = ext_006798D0(arg1, sub, arg2, self);
+    ext_00679030(result);
+    return arg1;
+}
+} // namespace lift_0060E7B0

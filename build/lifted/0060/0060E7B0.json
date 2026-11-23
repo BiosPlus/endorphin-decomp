@@ -1,0 +1,22 @@
+{
+  "va": "0x0060E7B0",
+  "size": 47,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_2",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_2",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void* fn_0060E7B0(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Passes the arguments plus this-\u003efield_0x170 to ext_006798D0, hands its result to ext_00679030, and returns the first argument.",
+  "fields": [
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x170",
+      "type": "void*",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:53:32Z"
+}

@@ -10934,6 +10934,13 @@
     "summary": "Builds the string \"\u003cprefix\u003e\" + this-\u003efield_0x04 + \"\u003csuffix\u003e\" into the caller's hidden return buffer (thiscall, two stack args, ret 8; the second stack arg is never read).",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
+  "0x0060E7B0": {
+    "name": "NMData::AxisDefineSensorData::vfunc_2",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "void* fn_0060E7B0(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Passes the arguments plus this-\u003efield_0x170 to ext_006798D0, hands its result to ext_00679030, and returns the first argument.",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
   "0x0060EC20": {
     "name": "NMData::SensorData::vfunc_1_off_C",
     "class": "NMData::SensorData",
