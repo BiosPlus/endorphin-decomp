@@ -1,0 +1,22 @@
+{
+  "va": "0x004B2B90",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getMaxAutoWidth, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",
+  "signature": "int fn_004B2B90(void* self)",
+  "summary": "Returns 1 if the wrapped GraphEngineData's getMaxAutoWidth() is \u003e= 1e-6 (NaN gives 0); throws via sub_0046C3C0 when the wrapped pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:58:11Z"
+}

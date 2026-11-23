@@ -18259,3 +18259,30 @@ __stdcall int32_t fn_004B3110(void* arg) {
     return 0;
 }
 } // namespace lift_004B3110
+
+// [0x004B2B90] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004B2B90 {
+extern float ext_0048FAE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern const double mem_00942058; // 1e-6
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getMaxAutoWidth, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped GraphEngineData's getMaxAutoWidth() is >= 1e-6 (NaN gives 0); throws via sub_0046C3C0 when the wrapped pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+int fn_004B2B90(void* self) {
+    void* obj = *static_cast<void* const*>(self);
+    if (obj == nullptr) {
+        alignas(8) uint8_t exc_obj[0x28];
+        ext_0046C3C0(exc_obj);
+        ext_006A6DD2(); // original also passes the throw-info descriptor at 0x009DEC1C; not modelled
+        return 0;
+    }
+    float width = ext_0048FAE0(obj);
+    // Original: fcomp against 1e-6, then branch on C0 (less-than or unordered).
+    // Equivalent to !(width < 1e-6) for non-NaN; NaN yields 0 to match the unordered branch.
+    return (static_cast<double>(width) >= mem_00942058) ? 1 : 0;
+}
+} // namespace lift_004B2B90
