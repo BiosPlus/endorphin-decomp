@@ -11,5 +11,9 @@
 namespace lifted_layout {
 struct NMData_EffectorWithModesData_Fields {
     // +0x4   std::string              field_0x04  (evidence: 0x0060C3D0)
+    // +0x5C  int                      field_0x5C  (evidence: 0x0060C490)
+    // +0x60  std::string              field_0x60  (evidence: 0x0060C490)
+    // +0x7C  float                    field_0x7C  (evidence: 0x0060C490)
+    // +0x80  float                    field_0x80  (evidence: 0x0060C490)
 };
 } // namespace lifted_layout
