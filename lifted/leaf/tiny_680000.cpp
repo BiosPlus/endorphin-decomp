@@ -101,3 +101,18 @@ void sub_006829D0(uint32_t val) {
     mem_00B5ACC8 = val;
 }
 } // namespace lift_006829D0
+
+// [0x006872D0]
+namespace lift_006872D0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+// @name sub_006872D0
+// @summary Reads a byte from a table at 0x00AA2FC8 indexed by the 32-bit field at offset 0x48.
+// @field unknown +0x48 uint32_t field_0x48
+
+uint8_t __thiscall sub_006872D0(uint32_t self) {
+    uint32_t index = mem_read32(self + 0x48);
+    return mem_read8(index + 0x00AA2FC8);
+}
+} // namespace lift_006872D0

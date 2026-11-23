@@ -1,0 +1,21 @@
+{
+  "va": "0x006872D0",
+  "size": 10,
+  "orig_symbol": "sub_006872D0",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "sub_006872D0",
+  "signature": "uint8_t __thiscall sub_006872D0(uint32_t self)",
+  "summary": "Reads a byte from a table at 0x00AA2FC8 indexed by the 32-bit field at offset 0x48.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:40:13Z"
+}
