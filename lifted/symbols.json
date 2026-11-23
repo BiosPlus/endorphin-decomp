@@ -10266,6 +10266,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00532B40 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0053A560": {
+    "name": "HasRelativeTMPtr::vfunc_4",
+    "class": "HasRelativeTMPtr",
+    "signature": "uint32_t __thiscall fn_0053A560(uint8_t* self)",
+    "summary": "Clears fields at +0x04 and +0x08 and returns 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0053A5D0": {
     "name": "Primitives::Animation::vfunc_24",
     "class": "Primitives::Animation",

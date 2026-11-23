@@ -1,0 +1,22 @@
+{
+  "va": "0x0052EF40",
+  "size": 9,
+  "orig_symbol": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_17",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_17",
+  "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+  "signature": "uint32_t __thiscall fn_0052EF40(uintptr_t ecx)",
+  "summary": "Returns whether the byte field at offset 0x0C is non-zero.",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:03Z"
+}

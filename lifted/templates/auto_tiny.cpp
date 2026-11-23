@@ -110,3 +110,16 @@ extern "C" void* __fastcall fn_006A7FD0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0052EF40]
+namespace lift_0052EF40 {
+extern uint8_t mem_read8(uintptr_t addr);
+
+// @name ManagedDisplayList<UtilityGraphics::Grid>::vfunc_17
+// @class ManagedDisplayList<UtilityGraphics::Grid>
+// @summary Returns whether the byte field at offset 0x0C is non-zero.
+// @field ManagedDisplayList<UtilityGraphics::Grid> +0x0C uint8_t field_0x0C
+uint32_t __thiscall fn_0052EF40(uintptr_t ecx) {
+    return static_cast<uint32_t>(mem_read8(ecx + 0xC) != 0);
+}
+} // namespace lift_0052EF40
