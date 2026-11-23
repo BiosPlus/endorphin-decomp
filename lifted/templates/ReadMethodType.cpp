@@ -1538,3 +1538,27 @@ float __stdcall fn_005D3050(void* const* holder) {
     return 0.0f; // not reached: _CxxThrowException does not return
 }
 } // namespace lift_005D3050
+
+// [0x0046CE60] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_0046CE60 {
+extern void ext_0046C2E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_3 (ImageExporter::getUseRenderer)
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Virtual getter: if the held pointer is non-null, delegates to sub_0046C2E0; otherwise constructs a temporary and throws via _CxxThrowException.
+// @field ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0046CE60(void* self) {
+    // Load the held pointer from *self (first dword of the argument object).
+    void* held = lift_field<void*>(self, 0);
+    if (held != nullptr) {
+        ext_0046C2E0();
+        return;
+    }
+    // Null path: build the exception object, then throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_0046CE60

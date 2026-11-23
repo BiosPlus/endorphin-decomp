@@ -1,0 +1,14 @@
+{
+  "va": "0x0046CE60",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_3 (ImageExporter::getUseRenderer)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+  "signature": "void fn_0046CE60(void* self)",
+  "summary": "Virtual getter: if the held pointer is non-null, delegates to sub_0046C2E0; otherwise constructs a temporary and throws via _CxxThrowException.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:15:26Z"
+}
