@@ -94,3 +94,24 @@ extern "C" float __stdcall fn_005B1420(float* out_pt, void* cyl, const float* in
     ext_0047FFA0(in_pt, diff, out_pt);
     return std::sqrt(diff[0] * diff[0] + diff[1] * diff[1] + diff[2] * diff[2]);
 }
+
+// [0x005B19F0] Geometry::CylinderType::vfunc_3 (49 bytes)
+namespace lift_005B19F0 {
+extern float __stdcall ext_005B11E0(int32_t index);
+extern const double mem_009576E8;
+
+// @name Geometry::CylinderType::getVolume
+// @class Geometry::CylinderType
+// @summary Returns pi * r^2 * h, with r = ext_005B11E0(0) and h = ext_005B11E0(1); the stack argument is overwritten and unused.
+// @field Geometry::CylinderType (no direct this-relative field accesses)
+float __stdcall fn_005B19F0(int32_t unused) {
+    (void)unused;
+    // Original order of operations: r0 = f(0), r1 = f(1), result = pi * r0 * r0 * r1.
+    const float r0 = ext_005B11E0(0);
+    const float r1 = ext_005B11E0(1);
+    double t = mem_009576E8 * static_cast<double>(r0);
+    t = static_cast<double>(r0) * t;
+    t = static_cast<double>(r1) * t;
+    return static_cast<float>(t);
+}
+} // namespace lift_005B19F0
