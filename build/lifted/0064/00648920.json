@@ -1,0 +1,21 @@
+{
+  "va": "0x00648920",
+  "size": 7,
+  "orig_symbol": "sub_00648920",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "sub_00648920",
+  "signature": "uint32_t __fastcall sub_00648920(uint32_t ecx, uint32_t edx)",
+  "summary": "Reads a 32-bit value at offset 0x04 of the pointer stored at this+0x2c",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:34:27Z"
+}
