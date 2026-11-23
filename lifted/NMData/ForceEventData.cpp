@@ -58,3 +58,27 @@ void* fn_004C6710(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_004C6520(mem, owner);
 }
+
+// [0x004C1B20]
+// @name NMData::ForceEventData::vfunc_73
+// @class NMData::ForceEventData
+// @summary Stores a [first, second] int pair into the event's range fields, widening an empty range by one, then calls ext_004C0340.
+// @field NMData::ForceEventData +0x15c int32_t field_0x15c
+// @field NMData::ForceEventData +0x160 int32_t field_0x160
+
+// ext_004C0340: sub_004C0340 (thiscall, this in ECX, no stack args)
+void __thiscall ext_004C0340(void* self);
+
+void __thiscall vfunc_73(void* self, const int32_t* range) {
+    int32_t first = range[0];
+    int32_t second = range[1];
+
+    lift_field<int32_t>(self, 0x15c) = first;
+    lift_field<int32_t>(self, 0x160) = second;
+
+    if (first >= second) {
+        lift_field<int32_t>(self, 0x160) = first + 1;
+    }
+
+    ext_004C0340(self);
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x004C1B20",
+  "size": 42,
+  "orig_symbol": "NMData::ForceEventData::vfunc_73",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_73",
+  "class": "NMData::ForceEventData",
+  "signature": "void __thiscall vfunc_73(void* self, const int32_t* range)",
+  "summary": "Stores a [first, second] int pair into the event's range fields, widening an empty range by one, then calls ext_004C0340.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:40:47Z"
+}

@@ -4201,6 +4201,13 @@
     "summary": "Assigns the std::string argument into the member at +0x14, then calls ext_004C0340(this).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004C1B20": {
+    "name": "NMData::ForceEventData::vfunc_73",
+    "class": "NMData::ForceEventData",
+    "signature": "void __thiscall vfunc_73(void* self, const int32_t* range)",
+    "summary": "Stores a [first, second] int pair into the event's range fields, widening an empty range by one, then calls ext_004C0340.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C2300": {
     "name": "ValuePtrArrayObject::vfunc_0",
     "class": "ValuePtrArrayObject",
