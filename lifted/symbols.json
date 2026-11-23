@@ -4970,6 +4970,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B3110": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e",
+    "signature": "__stdcall int32_t fn_004B3110(void* arg)",
+    "summary": "Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value \u003e= 1e-6, else 0; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B3DE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",

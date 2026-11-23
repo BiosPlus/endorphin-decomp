@@ -18222,3 +18222,40 @@ int fn_004B2810(void* valuePtr) {
     return (static_cast<double>(yMax) >= 1e-6) ? 1 : 0;
 }
 } // namespace lift_004B2810
+
+// [0x004B3110]
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0046C080(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00942058;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004B3110(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0046C080(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00942058) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
