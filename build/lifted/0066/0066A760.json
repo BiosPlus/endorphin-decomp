@@ -1,0 +1,21 @@
+{
+  "va": "0x0066A760",
+  "size": 10,
+  "orig_symbol": "sub_0066A760",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_0066A760",
+  "signature": "void __thiscall fn_0066A760(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046FAC0 (sub_0046FAC0).",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:30:05Z"
+}

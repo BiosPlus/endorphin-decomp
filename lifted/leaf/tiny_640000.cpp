@@ -47,6 +47,7 @@ extern "C" void __fastcall ext_0065AF30(void* self);
 extern "C" void __fastcall ext_0065AEC0(void* self);
 extern "C" void __fastcall ext_0065B140(void* self);
 extern "C" void __fastcall ext_0065B250(void* self);
+#include <cstdint>
 
 // [0x0064F900] sub_0064F900 (5 bytes)
 // @name VirtualSlot21Thunk
@@ -597,3 +598,63 @@ uint32_t sub_006452C0(uint32_t self) {
     return reinterpret_cast<uint32_t (*)(uint32_t)>(static_cast<uintptr_t>(fn))(obj);
 }
 } // namespace lift_006452C0
+
+// [0x00648EC0] sub_00648EC0 (10 bytes)
+namespace lift_00648EC0 {
+// @name sub_00648EC0
+// @summary Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).
+namespace lift_00629B00 {
+// @name CompoundSensor::vfunc_19
+// @class CompoundSensor
+// @summary Calls vtable slot 16 (offset 0x40) on this with argument 1
+// @field CompoundSensor +0x0 void** vtable
+
+
+uint32_t __thiscall fn_00648EC0(void* self) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x20));
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 0);
+}
+} // namespace lift_00629B00
+} // namespace lift_00648EC0
+
+// [0x00648ED0] sub_00648ED0 (10 bytes)
+namespace lift_00648ED0 {
+// @name sub_00648ED0
+// @summary Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).
+namespace lift_00629B00 {
+// @name CompoundSensor::vfunc_19
+// @class CompoundSensor
+// @summary Calls vtable slot 16 (offset 0x40) on this with argument 1
+// @field CompoundSensor +0x0 void** vtable
+
+
+uint32_t __thiscall fn_00648ED0(void* self) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x20));
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 1);
+}
+} // namespace lift_00629B00
+} // namespace lift_00648ED0
+
+// [0x00648EE0] sub_00648EE0 (10 bytes)
+namespace lift_00648EE0 {
+// @name sub_00648EE0
+// @summary Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).
+namespace lift_00629B00 {
+// @name CompoundSensor::vfunc_19
+// @class CompoundSensor
+// @summary Calls vtable slot 16 (offset 0x40) on this with argument 1
+// @field CompoundSensor +0x0 void** vtable
+
+
+uint32_t __thiscall fn_00648EE0(void* self) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x20));
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 2);
+}
+} // namespace lift_00629B00
+} // namespace lift_00648EE0

@@ -1,0 +1,22 @@
+{
+  "va": "0x00610A80",
+  "size": 13,
+  "orig_symbol": "sub_00610A80",
+  "src_path": "src/leaf/tiny_610000.cpp",
+  "lifted_path": "lifted/leaf/tiny_610000.cpp",
+  "name": "sub_00610A80",
+  "class": "CompoundSensor",
+  "signature": "uint32_t __thiscall fn_00610A80(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+  "fields": [
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:30:05Z"
+}

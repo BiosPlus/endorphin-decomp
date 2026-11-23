@@ -10966,6 +10966,13 @@
     "summary": "Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544B20": {
+    "name": "ReshapeTool::vfunc_50_off_98",
+    "class": "ReshapeTool",
+    "signature": "uint32_t __thiscall fn_00544B20(uint32_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00544B00 (ReshapeTool::vfunc_19_off_98).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00544BC0": {
     "name": "ReshapeTool::vfunc_1",
     "class": "ReshapeTool",
@@ -10999,6 +11006,13 @@
     "class": "CameraTool",
     "signature": "uint32_t __thiscall CameraTool_vfunc_27(void* self, uint32_t arg1)",
     "summary": "Dispatches to vtable slot 26 (offset +0x68) on this, ignoring the 4-byte stack argument.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00545650": {
+    "name": "PoseTool::vfunc_8_off_98",
+    "class": "PoseTool",
+    "signature": "void __fastcall fn_00545650(void* ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00544E00 (ReshapeTool::vfunc_8_off_98).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00545790": {
@@ -17729,6 +17743,27 @@
     "summary": "Forwards a1 and the address of the embedded subobject at this+0x154 to ext_00610730, then returns a1.",
     "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
   },
+  "0x00610A80": {
+    "name": "sub_00610A80",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00610A80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_610000.cpp"
+  },
+  "0x00610A90": {
+    "name": "sub_00610A90",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00610A90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_610000.cpp"
+  },
+  "0x00610AA0": {
+    "name": "sub_00610AA0",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00610AA0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_610000.cpp"
+  },
   "0x00611270": {
     "name": "NMData::Constraint::vfunc_22",
     "class": "NMData::Constraint",
@@ -20698,6 +20733,27 @@
     "summary": "Setter storing float argument into field at offset +0x8C.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00648EC0": {
+    "name": "sub_00648EC0",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00648EC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648ED0": {
+    "name": "sub_00648ED0",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00648ED0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648EE0": {
+    "name": "sub_00648EE0",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00648EE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x006490F0": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e",
@@ -21906,6 +21962,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00668ED0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00668E30 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0066A760": {
+    "name": "sub_0066A760",
+    "signature": "void __thiscall fn_0066A760(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046FAC0 (sub_0046FAC0).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x0066AC80": {
     "name": "sub_0066AC80",

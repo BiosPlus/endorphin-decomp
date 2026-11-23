@@ -1,0 +1,28 @@
+{
+  "va": "0x00545650",
+  "size": 13,
+  "orig_symbol": "PoseTool::vfunc_8_off_98",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "PoseTool::vfunc_8_off_98",
+  "class": "PoseTool",
+  "signature": "void __fastcall fn_00545650(void* ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00544E00 (ReshapeTool::vfunc_8_off_98).",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:30:05Z"
+}

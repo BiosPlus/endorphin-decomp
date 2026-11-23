@@ -4714,3 +4714,46 @@ uint32_t __thiscall fn_00629B00(void* self) {
     return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 1);
 }
 } // namespace lift_00629B00
+
+// [0x00544B20] ReshapeTool::vfunc_50_off_98 (13 bytes)
+namespace lift_00544B20 {
+// @name ReshapeTool::vfunc_50_off_98
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00544B00 (ReshapeTool::vfunc_19_off_98).
+// @field ReshapeTool +0x88 uint32_t field_0x88
+namespace lift_00544B00 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name ReshapeTool::vfunc_19_off_98
+// @class ReshapeTool
+// @summary Tail-calls vtable slot +0x7c on the object pointer at this - 0x10 (ToolClient subobject).
+// @field ReshapeTool +0x88 uint32_t field_0x88
+uint32_t __thiscall fn_00544B20(uint32_t self) {
+    uint32_t target = mem_read32(self - 0x10);
+    uint32_t vtable = mem_read32(target);
+    uint32_t fn = mem_read32(vtable + 0xC8);
+    return ((uint32_t(__thiscall*)(uint32_t))(uintptr_t)fn)(target);
+}
+} // namespace lift_00544B00
+} // namespace lift_00544B20
+
+// [0x00545650] PoseTool::vfunc_8_off_98 (13 bytes)
+namespace lift_00545650 {
+// @name PoseTool::vfunc_8_off_98
+// @class PoseTool
+// @summary Auto-lifted identical-shape clone of 0x00544E00 (ReshapeTool::vfunc_8_off_98).
+// @field PoseTool +0x88 void* field_0x88
+namespace lift_00544E00 {
+// @name ReshapeTool::vfunc_8_off_98
+// @class ReshapeTool
+// @summary Forwards ToolClient::vfunc_8 to the target object stored at offset -0x10 from the ToolClient subobject (ReshapeTool + 0x88)
+// @field ReshapeTool +0x88 void* field_0x88
+
+void __fastcall fn_00545650(void* ecx) {
+    uint32_t target = *(uint32_t*)((char*)ecx - 0x10);
+    uint32_t vtable = *(uint32_t*)(uintptr_t)target;
+    uint32_t fn = *(uint32_t*)(uintptr_t)(vtable + 0x94);
+    ((void(__thiscall*)(void*))(uintptr_t)fn)((void*)(uintptr_t)target);
+}
+} // namespace lift_00544E00
+} // namespace lift_00545650
