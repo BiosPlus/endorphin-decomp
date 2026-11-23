@@ -107,3 +107,17 @@ void* __thiscall sub_0067EC60(void* self) {
     return self;
 }
 } // namespace lift_0067EC60
+
+// [0x0067F5A0]
+namespace lift_0067F5A0 {
+extern uint32_t mem_00B5CA88[];
+
+// @name lookupTableByIndexField
+// @class Unknown (no class recovered; receiver is passed in ecx)
+// @summary Reads a 32-bit index from the receiver and returns the entry at that index in the global table at 0x00B5CA88.
+// @field Unknown +0x00 uint32_t field_0x00
+uint32_t __fastcall fn_0067F5A0(void* self) {
+    const uint32_t index = lift_field<uint32_t>(self, 0x00);
+    return mem_00B5CA88[index];
+}
+} // namespace lift_0067F5A0

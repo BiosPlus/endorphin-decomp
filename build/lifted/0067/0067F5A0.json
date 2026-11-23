@@ -1,0 +1,22 @@
+{
+  "va": "0x0067F5A0",
+  "size": 10,
+  "orig_symbol": "sub_0067F5A0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "lookupTableByIndexField",
+  "class": "Unknown (no class recovered; receiver is passed in ecx)",
+  "signature": "uint32_t __fastcall fn_0067F5A0(void* self)",
+  "summary": "Reads a 32-bit index from the receiver and returns the entry at that index in the global table at 0x00B5CA88.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T15:35:04Z"
+}
