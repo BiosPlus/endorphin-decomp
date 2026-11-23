@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::DynamicEnumType:
 namespace lifted_layout {
 struct ExprParser_DynamicEnumType_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0067A770)
+    // +0x4   void*                    field_0x04  (evidence: 0x00516550, 0x0067A770)
 };
 } // namespace lifted_layout
