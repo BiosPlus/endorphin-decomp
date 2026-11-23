@@ -7938,6 +7938,13 @@
     "summary": "Resets animation state: clears counters, sets flag bits 0x2 and 0x1000 in +0x1C, sets +0x30 to INT_MAX, releases the object at +0x38 via its vtable slot 0 (deleting dtor, arg 1), then marks the DirtyOrCleanBase byte at +0x04 as dirty.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053ADD0": {
+    "name": "Primitives::Animation::vfunc_23",
+    "class": "Primitives::Animation",
+    "signature": "uint8_t fn_0053ADD0(void* self, uint32_t unused_a1, uint32_t arg)",
+    "summary": "Calls the child object's vfunc slot 7, runs base refresh helpers, then transfers a pending flag from the linked object at +0x20 into self+0x04 and returns it.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053AE20": {
     "name": "Primitives::Animation::vfunc_11",
     "class": "Primitives::Animation",

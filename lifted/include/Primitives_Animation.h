@@ -11,11 +11,13 @@
 namespace lifted_layout {
 struct Primitives_Animation_Fields {
     // +0x0   void*                    vtable  (evidence: 0x0052EF80)
-    // +0x4   uint8_t                  field_0x04  (evidence: 0x0053AD10)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0053AD10)
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x0053AD10, 0x0053ADD0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0053AD10) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x0053ADD0) // CONFLICT: multiple definitions at +0x8
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0052F5F0, 0x0052FA20, 0x0053A8C0, 0x0053AD10, 0x0053AE20, 0x0053AE40, 0x0053E240) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 flags  (evidence: 0x0053A8E0) // CONFLICT: multiple definitions at +0x1C
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x0053AD10)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x0053AD10) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    field_0x20  (evidence: 0x0053ADD0) // CONFLICT: multiple definitions at +0x20
     // +0x24  uint32_t                 field_0x24  (evidence: 0x0053AD10)
     // +0x28  uint32_t                 field_0x28  (evidence: 0x0052EFA0, 0x0052FA20, 0x0053AD10)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0052EFA0, 0x0052FA20, 0x0053AD10)

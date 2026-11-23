@@ -191,3 +191,40 @@ int fn_0053A8E0(void* self, uint32_t mode) {
     }
 }
 } // namespace lift_0053A8E0
+
+// [0x0053ADD0] Primitives::Animation::vfunc_23 (77 bytes)
+namespace lift_0053ADD0 {
+extern void ext_0053AD70(void* self);
+extern void ext_0053A5E0(void* self, const void* tag, uint32_t arg);
+extern uint8_t mem_0093A444;
+
+// @name Primitives::Animation::vfunc_23
+// @class Primitives::Animation
+// @summary Calls the child object's vfunc slot 7, runs base refresh helpers, then transfers a pending flag from the linked object at +0x20 into self+0x04 and returns it.
+// @field Primitives::Animation +0x04 uint8_t field_0x04
+// @field Primitives::Animation +0x08 void* field_0x08
+// @field Primitives::Animation +0x20 void* field_0x20
+uint8_t fn_0053ADD0(void* self, uint32_t unused_a1, uint32_t arg) {
+    (void)unused_a1;
+
+    // Notify the object at +0x08 through its vtable slot 7 (offset 0x1C).
+    void* child = lift_field<void*>(self, 0x08);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using VSlot7 = void (*)(void*);
+        reinterpret_cast<VSlot7>(vtbl[7])(child);
+    }
+
+    ext_0053AD70(self);
+    ext_0053A5E0(self, &mem_0093A444, arg);
+
+    // If the object at +0x20 has its flag byte (+0x04) set, move the flag to self.
+    void* other = lift_field<void*>(self, 0x20);
+    if (other != nullptr && lift_field<uint8_t>(other, 0x04) != 0) {
+        lift_field<uint8_t>(self, 0x04) = 1;
+        lift_field<uint8_t>(other, 0x04) = 0;
+    }
+
+    return lift_field<uint8_t>(self, 0x04);
+}
+} // namespace lift_0053ADD0
