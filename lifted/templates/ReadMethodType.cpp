@@ -10572,3 +10572,27 @@ double fn_004A2F40(void* self, uint32_t* val_ptr) {
     return 0.0;
 }
 } // namespace lift_004A2F40
+
+// [0x004B4190]
+namespace lift_004B4190 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, getMinNumTimeSteps>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, getMinNumTimeSteps>
+// @summary Reads an int via getMinNumTimeSteps on a GraphEngineData* (or throws if null) and returns it as double.
+
+
+extern int __thiscall ext_006AD190(void* self);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern __declspec(noreturn) void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern double __thiscall fn_004B4190(void* self, void* arg0) {
+    (void)self;
+    uint32_t obj = *reinterpret_cast<uint32_t*>(arg0);
+    if (obj != 0) {
+        int val = ext_006AD190(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+}
+} // namespace lift_004B4190

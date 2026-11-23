@@ -1,0 +1,14 @@
+{
+  "va": "0x004B4190",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, getMinNumTimeSteps\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, getMinNumTimeSteps\u003e",
+  "signature": "extern \"C\" double __thiscall fn_004B4190(void* self, void* arg0)",
+  "summary": "Reads an int via getMinNumTimeSteps on a GraphEngineData* (or throws if null) and returns it as double.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:57:39Z"
+}
