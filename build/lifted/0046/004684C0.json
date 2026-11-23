@@ -1,0 +1,13 @@
+{
+  "va": "0x004684C0",
+  "size": 12,
+  "orig_symbol": "sub_004684C0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "setGlobalByte_00B58DFC",
+  "signature": "void __stdcall sub_004684C0(uint8_t value)",
+  "summary": "Stores a byte argument into global mem_00B58DFC.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:46:04Z"
+}

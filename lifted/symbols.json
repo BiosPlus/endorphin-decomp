@@ -3162,6 +3162,12 @@
     "summary": "Returns global int32 value from mem_00AD7CD8.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004684C0": {
+    "name": "setGlobalByte_00B58DFC",
+    "signature": "void __stdcall sub_004684C0(uint8_t value)",
+    "summary": "Stores a byte argument into global mem_00B58DFC.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468660": {
     "name": "getNestedField_0x18_0xc",
     "signature": "uint32_t __thiscall sub_00468660(uint32_t this_ptr)",
@@ -4336,6 +4342,12 @@
     "summary": "Reads byte at offset +0x1 from the pointer at this+0x4",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x0048FB10": {
+    "name": "sub_0048FB10",
+    "signature": "float __thiscall sub_0048FB10(void* self)",
+    "summary": "Loads a double from offset +0x58 of this and returns it as a float",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x0048FB60": {
     "name": "sub_0048FB60",
     "signature": "extern \"C\" int __thiscall fn_0048FB60(void* self)",
@@ -4380,6 +4392,12 @@
     "name": "isFieldZero",
     "signature": "bool __thiscall fn_00492540(void* self)",
     "summary": "Returns true if the 32-bit value at offset 0 of the object is zero.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x00493E30": {
+    "name": "forwardVtable1A0",
+    "signature": "uint32_t __fastcall sub_00493E30(uint32_t ecx)",
+    "summary": "Tail-calls vtable slot 0x1A0 on the object pointed to by field_0x00.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
   "0x00494060": {

@@ -393,3 +393,16 @@ extern void fn_00465B10(void) {
 }
 } // namespace lift_0041B3B0
 } // namespace lift_00465B10
+
+// [0x004684C0]
+namespace lift_004684C0 {
+// @name setGlobalByte_00B58DFC
+// @summary Stores a byte argument into global mem_00B58DFC.
+
+
+extern uint8_t mem_00B58DFC;
+
+void __stdcall sub_004684C0(uint8_t value) {
+    mem_00B58DFC = value;
+}
+} // namespace lift_004684C0
