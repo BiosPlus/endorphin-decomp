@@ -11669,6 +11669,13 @@
     "summary": "Returns the byte at this + index + 0x328 (index is the single stack argument, thiscall).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00611CA0": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_66",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void __thiscall fn_00611CA0(void* self, int32_t index, uint8_t value)",
+    "summary": "Stores a byte at this+0x328+index, calls vtable slot 79, then if ext_00468180() is nonzero tail-calls ext_00469530(result, 5, 0).",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x006122F0": {
     "name": "NMData::TwistAndSwingLimit::vfunc_0",
     "class": "NMData::TwistAndSwingLimit",

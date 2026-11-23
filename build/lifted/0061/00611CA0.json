@@ -1,0 +1,22 @@
+{
+  "va": "0x00611CA0",
+  "size": 60,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_66",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_66",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void __thiscall fn_00611CA0(void* self, int32_t index, uint8_t value)",
+  "summary": "Stores a byte at this+0x328+index, calls vtable slot 79, then if ext_00468180() is nonzero tail-calls ext_00469530(result, 5, 0).",
+  "fields": [
+    {
+      "class": "PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:59:29Z"
+}
