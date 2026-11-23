@@ -12228,6 +12228,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0066EDB0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066EFE0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "float __stdcall fn_0066EFE0(void* self)",
+    "summary": "Reads the float at the pointer stored in the ValuePtrType argument; throws if that pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670CB0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_1",
     "class": "ExprParser::ExpressionContainerType",

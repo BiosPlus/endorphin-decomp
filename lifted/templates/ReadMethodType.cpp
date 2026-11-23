@@ -213,3 +213,33 @@ int fn_00504D70(const uint32_t* holder) {
     return 0;
 }
 } // namespace lift_00504D70
+
+// [0x0066EFE0] ExprParser::ReadMethodType<NM::Vector3, float, &getX, 0>::vfunc_1
+namespace lift_0066EFE0 {
+// Callee 0x0046C3C0 (sub_0046C3C0): constructs a 0x28-byte exception object in the
+// caller's stack buffer (receiver passed in ecx on the original call).
+extern void ext_0046C3C0(void* exceptionObj);
+
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception type raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float>::vfunc_1
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Reads the float at the pointer stored in the ValuePtrType argument; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+float __stdcall fn_0066EFE0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        return lift_field<float>(target, 0x00);
+    }
+
+    // Null target: build the exception object and throw it.
+    alignas(8) uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+    return 0.0f;
+}
+} // namespace lift_0066EFE0
