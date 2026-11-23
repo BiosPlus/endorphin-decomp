@@ -1,0 +1,22 @@
+{
+  "va": "0x005B36D0",
+  "size": 78,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry, std::string const \u0026, Geometry::getFileName, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, std::string const \u0026, Geometry::getFileName, 0\u003e",
+  "signature": "extern \"C\" const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException (0x009DEC1C) float fn_005B36D0(void* self)",
+  "summary": "Reads the Geometry-side object pointer held at +0x00 of the method-type object, throws if it is null, calls the object's vtable slot 8 (Geometry::getFileName) and returns atof() of the resulting file name as a float.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:03:59Z"
+}

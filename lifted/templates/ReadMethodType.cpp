@@ -25164,3 +25164,35 @@ float fn_004A48A0(void* self) {
     return ext_00496F30(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
 }
 } // namespace lift_004A48A0
+
+// [0x005B36D0] ExprParser::ReadMethodType<Geometry, std::string const &, Geometry::getFileName, 0>::vfunc_1 (78 bytes)
+namespace lift_005B36D0 {
+// Callees and data referenced by 0x005B36D0.
+extern void ext_0046C3C0(void* self);                     // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException (0x009DEC1C)
+// mem_00924FF0 (MSVCP80 std::string::c_str import slot) and mem_009251F0 ("b|b" / MSVCR80 atof import slot)
+// are replaced by direct std:: calls below; their IAT slots are not needed in portable code.
+
+// @name ExprParser::ReadMethodType<Geometry, std::string const &, Geometry::getFileName, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, std::string const &, Geometry::getFileName, 0>
+// @summary Reads the Geometry-side object pointer held at +0x00 of the method-type object, throws if it is null, calls the object's vtable slot 8 (Geometry::getFileName) and returns atof() of the resulting file name as a float.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Geometry, std::string const &, Geometry::getFileName, 0> +0x0C void* field_0x0C
+float fn_005B36D0(void* self) {
+    void* value = *static_cast<void**>(self);                 // mov eax, [[esp+4]]
+    if (value == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    void* geometry = *reinterpret_cast<void**>(static_cast<unsigned char*>(value) + 0x0C);  // mov ecx, [eax+0xc]
+    void** vtable = *static_cast<void***>(geometry);          // mov edx, [ecx]
+    using GetFileNameFn = const std::string* (__thiscall*)(void*);
+    auto get_file_name = reinterpret_cast<GetFileNameFn>(vtable[0x20 / sizeof(void*)]);  // call [edx+0x20]
+    const std::string* file_name = get_file_name(geometry);   // returns std::string const& in eax
+    return static_cast<float>(std::atof(file_name->c_str())); // c_str(), push, atof, fstp/fld -> st0
+}
+} // namespace lift_005B36D0
