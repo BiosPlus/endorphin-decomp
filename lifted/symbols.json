@@ -4318,6 +4318,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::SeverEventData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C8160": {
+    "name": "NMData::SeverEventData::vfunc_87",
+    "class": "NMData::SeverEventData",
+    "signature": "void fn_004C8160(void* self)",
+    "summary": "If the dispatcher slot at +0x19C is non-null, notify it via ext_00437AD0, then call ext_004C7F50 on the slot with argument 0.",
+    "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
   "0x004C8180": {
     "name": "NMData::SeverEventData::vfunc_17_off_C",
     "class": "NMData::SeverEventData",
@@ -9313,6 +9320,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00626E60(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006268F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x006274B0": {
+    "name": "Sensors::SensorAbsoluteTM::vfunc_15",
+    "class": "Sensors::SensorAbsoluteTM",
+    "signature": "void* __thiscall fn_006274B0(void* self)",
+    "summary": "Initialises the base sub-object via ext_00627450(self), then calls ext_0067DAD0 on the self+0x60 member with self+0x30 as its argument, and returns self+0x30.",
+    "lifted_path": "lifted/Sensors/SensorAbsoluteTM.cpp"
   },
   "0x006274D0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorAbsoluteOrientation::setReference)",

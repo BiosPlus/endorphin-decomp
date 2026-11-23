@@ -19,8 +19,10 @@ extern "C" void __thiscall fn_004C7190(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
+extern "C" void ext_00437AD0(void* self);
+extern "C" void ext_004C7F50(void* self, uint32_t arg1);
 
-// [0x004C7870] NMData::SeverEventData::vfunc_84 (42 bytes)
+extern "C" void ext_004C7F50(void* self, uint32_t arg1);
 // @name NMData::SeverEventData::vfunc_84
 // @class NMData::SeverEventData
 // @summary Stdcall (ret 4, ECX = this): if the sever target at +0x19C is set, the enabled flag at +0x17C is true, and the argument matches the key at +0x15C, calls virtual slot 0 on the target.
@@ -54,4 +56,17 @@ void* fn_004C8180(void* self) {
     }
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_004C7FA0(mem, owner);
+}
+
+// [0x004C8160] NMData::SeverEventData::vfunc_87 (29 bytes)
+// @name NMData::SeverEventData::vfunc_87
+// @class NMData::SeverEventData
+// @summary If the dispatcher slot at +0x19C is non-null, notify it via ext_00437AD0, then call ext_004C7F50 on the slot with argument 0.
+// @field NMData::SeverEventData +0x19C void* field_0x19c
+void fn_004C8160(void* self) {
+    void* dispatcher = lift_field<void*>(self, 0x19C);
+    if (dispatcher != nullptr) {
+        ext_00437AD0(dispatcher);
+    }
+    ext_004C7F50(&lift_field<void*>(self, 0x19C), 0);
 }

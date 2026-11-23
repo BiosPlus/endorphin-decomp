@@ -1,0 +1,22 @@
+{
+  "va": "0x004C8160",
+  "size": 29,
+  "orig_symbol": "NMData::SeverEventData::vfunc_87",
+  "src_path": "src/NMData/SeverEventData.cpp",
+  "lifted_path": "lifted/NMData/SeverEventData.cpp",
+  "name": "NMData::SeverEventData::vfunc_87",
+  "class": "NMData::SeverEventData",
+  "signature": "void fn_004C8160(void* self)",
+  "summary": "If the dispatcher slot at +0x19C is non-null, notify it via ext_00437AD0, then call ext_004C7F50 on the slot with argument 0.",
+  "fields": [
+    {
+      "class": "NMData::SeverEventData",
+      "offset": "+0x19C",
+      "type": "void*",
+      "name": "field_0x19c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:30:41Z"
+}
