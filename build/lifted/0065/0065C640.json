@@ -1,0 +1,22 @@
+{
+  "va": "0x0065C640",
+  "size": 10,
+  "orig_symbol": "sub_0065C640",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "CriticalSectionLock::enter",
+  "class": "CriticalSectionLock",
+  "signature": "void __thiscall sub_0065C640(void* self)",
+  "summary": "Enters the critical section referenced at offset 0x00 of the object.",
+  "fields": [
+    {
+      "class": "CriticalSectionLock",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "criticalSection"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:39:33Z"
+}
