@@ -1,0 +1,13 @@
+{
+  "va": "0x006B98D0",
+  "size": 10,
+  "orig_symbol": "sub_006B98D0",
+  "src_path": "src/clones/auto_clones_6B0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6B0000.cpp",
+  "name": "sub_006B98D0",
+  "signature": "void fn_006B98D0(void)",
+  "summary": "Calls sub_006B98E0 and tail-calls sub_006B98F0",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:40:24Z"
+}
