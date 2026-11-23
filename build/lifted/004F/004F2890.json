@@ -1,0 +1,28 @@
+{
+  "va": "0x004F2890",
+  "size": 11,
+  "orig_symbol": "VMCSModes::SimulationMode::vfunc_143",
+  "src_path": "src/VMCSModes/auto_tiny.cpp",
+  "lifted_path": "lifted/VMCSModes/auto_tiny.cpp",
+  "name": "VMCSModes::SimulationMode::vfunc_143",
+  "class": "VMCSModes::SimulationMode",
+  "signature": "uint32_t __thiscall fn_004F2890(void* this_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x004F9BD0 (VMCSModes::DefaultImplementation::vfunc_33).",
+  "fields": [
+    {
+      "class": "VMCSModes::SimulationMode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:39:14Z"
+}

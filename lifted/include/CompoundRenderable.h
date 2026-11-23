@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct CompoundRenderable_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x00537AA0)
+    // +0x18  uint32_t*                field_0x18  (evidence: 0x005379F0)
 };
 } // namespace lifted_layout

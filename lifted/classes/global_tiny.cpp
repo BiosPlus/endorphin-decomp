@@ -4789,3 +4789,75 @@ void __thiscall AnimatableTransform_vfunc_39(void* self) {
     reinterpret_cast<fn_t>(vtable[2])(subobj);
 }
 } // namespace lift_00402070
+
+// [0x005379F0] CompoundRenderable::vfunc_9 (11 bytes)
+namespace lift_005379F0 {
+// @name CompoundRenderable::vfunc_9
+// @class CompoundRenderable
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+// @field CompoundRenderable +0x18 uint32_t* field_0x18
+namespace lift_00402050 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
+// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
+
+uint32_t __thiscall fn_005379F0(uint32_t self) {
+    uint32_t subobj = self + 0x18;
+    uint32_t vtable = mem_read32(subobj);
+    uint32_t target = mem_read32(vtable + 0x20);
+    using Fn = uint32_t(__thiscall*)(uint32_t);
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
+}
+} // namespace lift_00402050
+} // namespace lift_005379F0
+
+// [0x00544980] ReshapeTool::vfunc_28 (17 bytes)
+namespace lift_00544980 {
+// @name ReshapeTool::vfunc_28
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+// @field ReshapeTool +0x9C uint32_t* field_0x9C
+namespace lift_00402050 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
+// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
+
+uint32_t __thiscall fn_00544980(uint32_t self) {
+    uint32_t subobj = self + 0x9C;
+    uint32_t vtable = mem_read32(subobj);
+    uint32_t target = mem_read32(vtable + 0x70);
+    using Fn = uint32_t(__thiscall*)(uint32_t);
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
+}
+} // namespace lift_00402050
+} // namespace lift_00544980
+
+// [0x00544A90] ReshapeTool::vfunc_31 (17 bytes)
+namespace lift_00544A90 {
+// @name ReshapeTool::vfunc_31
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+// @field ReshapeTool +0x9C uint32_t* field_0x9C
+namespace lift_00402050 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
+// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
+
+uint32_t __thiscall fn_00544A90(uint32_t self) {
+    uint32_t subobj = self + 0x9C;
+    uint32_t vtable = mem_read32(subobj);
+    uint32_t target = mem_read32(vtable + 0x7C);
+    using Fn = uint32_t(__thiscall*)(uint32_t);
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
+}
+} // namespace lift_00402050
+} // namespace lift_00544A90

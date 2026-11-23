@@ -48,6 +48,7 @@ extern "C" void __fastcall ext_0065AEC0(void* self);
 extern "C" void __fastcall ext_0065B140(void* self);
 extern "C" void __fastcall ext_0065B250(void* self);
 #include <cstdint>
+#include <cstring>
 
 // [0x0064F900] sub_0064F900 (5 bytes)
 // @name VirtualSlot21Thunk
@@ -658,3 +659,22 @@ uint32_t __thiscall fn_00648EE0(void* self) {
 }
 } // namespace lift_00629B00
 } // namespace lift_00648EE0
+
+// [0x00642650] sub_00642650 (11 bytes)
+namespace lift_00642650 {
+// @name sub_00642650
+// @summary Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).
+namespace lift_0041B3B0 {
+// @name callGlobalThunk00430D40
+// @summary Loads global pointer at 0x00ACDB40 into ECX and tail-calls 0x00430D40.
+
+
+extern uint32_t mem_00B55748;
+extern void ext_00648930(void);
+
+extern void fn_00642650(void) {
+    (void)mem_00B55748;
+    ext_00648930();
+}
+} // namespace lift_0041B3B0
+} // namespace lift_00642650

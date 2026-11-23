@@ -2975,6 +2975,18 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1922.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00465B00": {
+    "name": "sub_00465B00",
+    "signature": "extern void fn_00465B00(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x00465B10": {
+    "name": "sub_00465B10",
+    "signature": "extern void fn_00465B10(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00465B30": {
     "name": "get_global_field_0x58",
     "signature": "extern \"C\" int32_t __cdecl fn_00465B30(void)",
@@ -3893,6 +3905,13 @@
     "signature": "extern \"C\" void __thiscall fn_004869A0(void* self, void* a)",
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
+  "0x00486AF0": {
+    "name": "sub_00486AF0",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t __thiscall fn_00486AF0(uint32_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
   "0x00486BE0": {
     "name": "NMData::AnimationEventData::vfunc_81",
@@ -8381,6 +8400,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00469150.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F2890": {
+    "name": "VMCSModes::SimulationMode::vfunc_143",
+    "class": "VMCSModes::SimulationMode",
+    "signature": "uint32_t __thiscall fn_004F2890(void* this_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9BD0 (VMCSModes::DefaultImplementation::vfunc_33).",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004F2E00": {
     "name": "VMCSModes::DefaultImplementation::vfunc_141",
     "class": "VMCSModes::DefaultImplementation",
@@ -10365,6 +10391,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00536AB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005379F0": {
+    "name": "CompoundRenderable::vfunc_9",
+    "class": "CompoundRenderable",
+    "signature": "uint32_t __thiscall fn_005379F0(uint32_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537A20": {
     "name": "CompoundRenderable::vfunc_4",
     "class": "CompoundRenderable",
@@ -11021,6 +11054,20 @@
     "class": "ForceApplicationTool",
     "signature": "extern \"C\" void* __fastcall fn_00544220(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00544130 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00544980": {
+    "name": "ReshapeTool::vfunc_28",
+    "class": "ReshapeTool",
+    "signature": "uint32_t __thiscall fn_00544980(uint32_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00544A90": {
+    "name": "ReshapeTool::vfunc_31",
+    "class": "ReshapeTool",
+    "signature": "uint32_t __thiscall fn_00544A90(uint32_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00544B00": {
@@ -20271,6 +20318,12 @@
     "name": "sub_00642620",
     "signature": "extern \"C\" void __fastcall fn_00642620(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_006488F0.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00642650": {
+    "name": "sub_00642650",
+    "signature": "extern void fn_00642650(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
   "0x00642680": {

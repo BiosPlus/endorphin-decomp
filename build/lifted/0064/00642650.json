@@ -1,0 +1,13 @@
+{
+  "va": "0x00642650",
+  "size": 11,
+  "orig_symbol": "sub_00642650",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "sub_00642650",
+  "signature": "extern void fn_00642650(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:39:14Z"
+}

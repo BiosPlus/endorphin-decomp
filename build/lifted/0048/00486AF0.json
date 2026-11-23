@@ -1,0 +1,22 @@
+{
+  "va": "0x00486AF0",
+  "size": 17,
+  "orig_symbol": "sub_00486AF0",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "sub_00486AF0",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t __thiscall fn_00486AF0(uint32_t self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xC",
+      "type": "uint32_t*",
+      "name": "renderObjectOwner_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:39:14Z"
+}

@@ -65,3 +65,25 @@ uint8_t __thiscall sub_0048FB00(void* self) {
     return mem_read8(static_cast<uintptr_t>(ptr) + 0x1);
 }
 } // namespace lift_0048FB00
+
+// [0x00486AF0] sub_00486AF0 (17 bytes)
+namespace lift_00486AF0 {
+// @name sub_00486AF0
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+namespace lift_00402050 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
+// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
+
+uint32_t __thiscall fn_00486AF0(uint32_t self) {
+    uint32_t subobj = self + 0x19C;
+    uint32_t vtable = mem_read32(subobj);
+    uint32_t target = mem_read32(vtable + 0x1C);
+    using Fn = uint32_t(__thiscall*)(uint32_t);
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
+}
+} // namespace lift_00402050
+} // namespace lift_00486AF0

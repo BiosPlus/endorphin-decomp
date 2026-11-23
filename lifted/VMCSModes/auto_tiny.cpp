@@ -139,3 +139,27 @@ uint32_t __thiscall fn_004F9BE0(uint32_t self) {
     return ext_0046F8A0(target);
 }
 } // namespace lift_004F9BE0
+
+// [0x004F2890] VMCSModes::SimulationMode::vfunc_143 (11 bytes)
+namespace lift_004F2890 {
+// @name VMCSModes::SimulationMode::vfunc_143
+// @class VMCSModes::SimulationMode
+// @summary Auto-lifted identical-shape clone of 0x004F9BD0 (VMCSModes::DefaultImplementation::vfunc_33).
+// @field VMCSModes::SimulationMode +0x8 void* delegate_0x8
+namespace lift_004F9BD0 {
+// @name VMCSModes::DefaultImplementation::vfunc_33
+// @class VMCSModes::DefaultImplementation
+// @summary Tail-calls sub_0046F890 on the object at delegate_0x8 + 0x14.
+// @field VMCSModes::DefaultImplementation +0x8 void* delegate_0x8
+
+
+extern uint32_t __thiscall ext_00472350(void* this_ptr);
+
+uint32_t __thiscall fn_004F2890(void* this_ptr) {
+    const auto* self = static_cast<const uint8_t*>(this_ptr);
+    const auto* delegate = *reinterpret_cast<const uint8_t* const*>(self + 0x8);
+    void* target = *reinterpret_cast<void* const*>(delegate + 0x14);
+    return ext_00472350(target);
+}
+} // namespace lift_004F9BD0
+} // namespace lift_004F2890

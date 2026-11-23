@@ -355,3 +355,41 @@ void __thiscall sub_00462A90(uint32_t this_) {
     mem_u32(eax + 0x4) = 0;
 }
 } // namespace lift_00462A90
+
+// [0x00465B00] sub_00465B00 (11 bytes)
+namespace lift_00465B00 {
+// @name sub_00465B00
+// @summary Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).
+namespace lift_0041B3B0 {
+// @name callGlobalThunk00430D40
+// @summary Loads global pointer at 0x00ACDB40 into ECX and tail-calls 0x00430D40.
+
+
+extern uint32_t mem_00ACDB40;
+extern void ext_00434A00(void);
+
+extern void fn_00465B00(void) {
+    (void)mem_00ACDB40;
+    ext_00434A00();
+}
+} // namespace lift_0041B3B0
+} // namespace lift_00465B00
+
+// [0x00465B10] sub_00465B10 (11 bytes)
+namespace lift_00465B10 {
+// @name sub_00465B10
+// @summary Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).
+namespace lift_0041B3B0 {
+// @name callGlobalThunk00430D40
+// @summary Loads global pointer at 0x00ACDB40 into ECX and tail-calls 0x00430D40.
+
+
+extern uint32_t mem_00ACDB40;
+extern void ext_00434930(void);
+
+extern void fn_00465B10(void) {
+    (void)mem_00ACDB40;
+    ext_00434930();
+}
+} // namespace lift_0041B3B0
+} // namespace lift_00465B10
