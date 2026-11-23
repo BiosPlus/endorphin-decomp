@@ -89,3 +89,18 @@ uint32_t __thiscall sub_006AD180(void* self) {
     return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ptr));
 }
 } // namespace lift_006AD180
+
+// [0x006AFDC0]
+namespace lift_006AFDC0 {
+// @name sub_006AFDC0
+// @summary Constructor/initializer setting vtable pointer at +0x00 to 0x00991178
+// @field this +0x00 uint32_t vtable
+
+
+extern uint32_t mem_00991178;
+
+uint32_t __thiscall sub_006AFDC0(uint32_t ecx) {
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ecx)) = 0x00991178u;
+    return ecx;
+}
+} // namespace lift_006AFDC0

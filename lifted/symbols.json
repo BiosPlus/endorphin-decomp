@@ -28429,6 +28429,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006AF490 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006AFDC0": {
+    "name": "sub_006AFDC0",
+    "signature": "uint32_t __thiscall sub_006AFDC0(uint32_t ecx)",
+    "summary": "Constructor/initializer setting vtable pointer at +0x00 to 0x00991178",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AFDD0": {
     "name": "GWCPropertyCheckboxLook::vfunc_0",
     "class": "GWCPropertyCheckboxLook",
