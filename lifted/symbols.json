@@ -11253,6 +11253,13 @@
     "summary": "Pure jump thunk forwarding to NMData::CollisionModelDataBase::vfunc_21.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005AAAB0": {
+    "name": "NMData::SourceRigNode::vfunc_59",
+    "class": "NMData::SourceRigNode",
+    "signature": "void fn_005AAAB0(void* /*ecx: overwritten in original*/, void* target)",
+    "summary": "Builds a std::string from the literal at 0x00934904 and forwards it with the target object to sub_005B18E0.",
+    "lifted_path": "lifted/NMData/SourceRigNode.cpp"
+  },
   "0x005AAD30": {
     "name": "NMData::RigRoot::vfunc_21",
     "class": "NMData::RigRoot",

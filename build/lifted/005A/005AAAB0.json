@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAAB0",
+  "size": 94,
+  "orig_symbol": "NMData::SourceRigNode::vfunc_59",
+  "src_path": "src/NMData/SourceRigNode.cpp",
+  "lifted_path": "lifted/NMData/SourceRigNode.cpp",
+  "name": "NMData::SourceRigNode::vfunc_59",
+  "class": "NMData::SourceRigNode",
+  "signature": "void fn_005AAAB0(void* /*ecx: overwritten in original*/, void* target)",
+  "summary": "Builds a std::string from the literal at 0x00934904 and forwards it with the target object to sub_005B18E0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:01:58Z"
+}
