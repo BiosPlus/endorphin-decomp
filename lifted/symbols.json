@@ -6184,6 +6184,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00516580": {
+    "name": "ExprParser::DynamicEnumType\u003cEvolverRuntimeOptions\u003e::vfunc_3",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "bool fn_00516580(void* arg)",
+    "summary": "Returns true if the bound pointer (arg-\u003eptr) is non-null and its +0x08 word is nonzero; throws via CxxThrowException when the pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00516B10": {
     "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, printCurrentIndividual\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e",

@@ -414,3 +414,26 @@ void fn_005C8A10(void* arg) {
 }
 } // namespace lift_004A2B90
 } // namespace lift_005C8A10
+
+// [0x00516580] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_3 (52 bytes)
+namespace lift_00516580 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<EvolverRuntimeOptions>::vfunc_3
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Returns true if the bound pointer (arg->ptr) is non-null and its +0x08 word is nonzero; throws via CxxThrowException when the pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* ptr
+// @field ExprParser::DynamicEnumType +0x08 uint32_t field_0x08
+bool fn_00516580(void* arg) {
+    void* p = *reinterpret_cast<void**>(arg);
+    if (p == nullptr) {
+        ext_0046C3C0();   // constructs local exception object (sub_0046C3C0)
+        ext_006A6DD2();   // _CxxThrowException(&exc, ThrowInfo @ 0x009DEC1C)
+        return false;     // unreachable
+    }
+    uint32_t v = lift_field<uint32_t>(p, 0x08);
+    return v != 0;
+}
+} // namespace lift_00516580
