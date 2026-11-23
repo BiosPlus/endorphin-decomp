@@ -3915,6 +3915,13 @@
     "summary": "Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497B50": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_41",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+    "signature": "void __thiscall fn_00497B50(void* /*this*/, uint32_t* arg0, uint32_t arg1)",
+    "summary": "Evaluates arg1 into a temporary std::string via ext_00497650 and assigns it to *arg0.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497DD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e",
