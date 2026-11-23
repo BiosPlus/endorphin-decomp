@@ -16772,3 +16772,37 @@ void* fn_0066EF90(void* arg0, void** arg1) {
     return arg1;
 }
 } // namespace lift_0066EF90
+
+// [0x004B9320] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_004B9320(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0x44);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320

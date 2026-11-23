@@ -5117,6 +5117,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004EA9D0 (ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::isCollisionEnabled_vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B9320": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitLength, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",
+    "signature": "void* fn_004B9320(void* out, void* const* src)",
+    "summary": "Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B9370": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitLength, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",
