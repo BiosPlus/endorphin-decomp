@@ -16690,3 +16690,27 @@ int fn_005D2640(void* self) {
     return 1;
 }
 } // namespace lift_005D2640
+
+// [0x004B8920] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_004B8920 {
+extern void ext_00672080(void* self, float value); // thiscall(out, float): constructs the float result in place
+extern void ext_0046C3C0(void* self);              // thiscall(temp): builds the error-message temporary
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData unit-mass float (+0x48) from the object referenced by *pobj into the result at out; throws if the object pointer is null.
+// @field NMData::EngineData +0x48 float field_0x48
+void* fn_004B8920(void* self, void* out, void** pobj) {
+    (void)self;
+    unsigned char* obj = static_cast<unsigned char*>(*pobj);
+    if (obj == nullptr) {
+        unsigned char temp[16] = {};
+        ext_0046C3C0(temp);
+        throw std::runtime_error("ExprParser: null NMData::EngineData object");
+    }
+    float mass;
+    std::memcpy(&mass, obj + 0x48, sizeof mass);
+    ext_00672080(out, mass);
+    return out;
+}
+} // namespace lift_004B8920

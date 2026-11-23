@@ -1,0 +1,22 @@
+{
+  "va": "0x004B8920",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitMass, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e",
+  "signature": "extern \"C\" void ext_00672080(void* self, float value); // thiscall(out, float): constructs the float result in place extern \"C\" void ext_0046C3C0(void* self);              // thiscall(temp): builds the error-message temporary void* fn_004B8920(void* self, void* out, void** pobj)",
+  "summary": "Reads the EngineData unit-mass float (+0x48) from the object referenced by *pobj into the result at out; throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:53:25Z"
+}
