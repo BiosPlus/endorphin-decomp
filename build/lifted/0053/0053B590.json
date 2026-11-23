@@ -1,0 +1,22 @@
+{
+  "va": "0x0053B590",
+  "size": 277,
+  "orig_symbol": "Primitives::Plane::vfunc_28",
+  "src_path": "src/Primitives/Plane.cpp",
+  "lifted_path": "lifted/Primitives/Plane.cpp",
+  "name": "Primitives::Plane::vfunc_28",
+  "class": "Primitives::Plane",
+  "signature": "void fn_0053B590(void* self, uint32_t arg1)",
+  "summary": "Draws a unit quad (-0.5..0.5 in X/Y, Z=0, normal +Z) under a scaled matrix, where the X/Y scale comes from float elements 0 and 2 of the object at +0x20, with rescale-normal enabled.",
+  "fields": [
+    {
+      "class": "Primitives::Plane",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:40:14Z"
+}

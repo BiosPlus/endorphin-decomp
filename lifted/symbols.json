@@ -7945,6 +7945,13 @@
     "summary": "Emits the cuboid as six immediate-mode GL quads (normal, texcoord, vertex per corner) when the enable flag at +0x20 is set.",
     "lifted_path": "lifted/Primitives/Cuboid.cpp"
   },
+  "0x0053B590": {
+    "name": "Primitives::Plane::vfunc_28",
+    "class": "Primitives::Plane",
+    "signature": "void fn_0053B590(void* self, uint32_t arg1)",
+    "summary": "Draws a unit quad (-0.5..0.5 in X/Y, Z=0, normal +Z) under a scaled matrix, where the X/Y scale comes from float elements 0 and 2 of the object at +0x20, with rescale-normal enabled.",
+    "lifted_path": "lifted/Primitives/Plane.cpp"
+  },
   "0x0053B760": {
     "name": "Primitives::Sphere::vfunc_28",
     "class": "Primitives::Sphere",

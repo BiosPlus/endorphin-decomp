@@ -12,7 +12,8 @@ namespace lifted_layout {
 struct Primitives_Plane_Fields {
     // +0x4   uint8_t                  field_0x04  (evidence: 0x0053A610)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0053A610)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x0053A610)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x0053A610) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    field_0x20  (evidence: 0x0053B590) // CONFLICT: multiple definitions at +0x20
     // +0x30  void*                    field_0x30  (evidence: 0x0053A610)
 };
 } // namespace lifted_layout
