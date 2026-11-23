@@ -17045,3 +17045,34 @@ void* fn_006071E0(void* self, void* const* effectorRef) {
     throw std::runtime_error("ExprParser: null Effector in getGradientCap read");
 }
 } // namespace lift_006071E0
+
+// [0x00606A00] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00606A00 {
+// Callee 0x00672080: thiscall (ecx = this, one float on the stack, callee-cleaned).
+extern void __thiscall ext_00672080(void* self, float value);
+// Callee 0x0046C3C0: thiscall on a stack-local exception buffer (ecx = buffer).
+extern void __thiscall ext_0046C3C0(void* buffer);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __cdecl ext_006A6DD2(void* thrownObject, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Effector, float, getScaledDesiredDisplacement, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>
+// @summary Reads the float at Effector+0x2c from the Effector held in *src and forwards it to ext_00672080 on dst; throws if the Effector pointer is null. Returns dst.
+// @field Effector +0x2c float field_0x2c
+void* fn_00606A00(void* dst, void* const* src) {
+    // Effector pointer held by the source slot.
+    void* effector = *src;
+    if (effector == nullptr) {
+        // Null source: build the exception object and throw it.
+        // The exception storage is a local buffer (ecx = &local) passed to ext_0046C3C0.
+        alignas(8) unsigned char exc[8] = {};
+        ext_0046C3C0(exc);
+        // ThrowInfo descriptor at VA 0x009DEC1C.
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(uintptr_t{0x009DEC1C}));
+        return dst;
+    }
+    float value = lift_field<float>(effector, 0x2c);
+    ext_00672080(dst, value);
+    return dst;
+}
+} // namespace lift_00606A00

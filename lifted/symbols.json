@@ -14134,6 +14134,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00606A00": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, getScaledDesiredDisplacement, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
+    "signature": "void* fn_00606A00(void* dst, void* const* src)",
+    "summary": "Reads the float at Effector+0x2c from the Effector held in *src and forwards it to ext_00672080 on dst; throws if the Effector pointer is null. Returns dst.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00606A50": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
