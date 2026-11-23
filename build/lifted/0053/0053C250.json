@@ -4,11 +4,17 @@
   "orig_symbol": "Primitives::CameraFrustum::vfunc_28",
   "src_path": "src/Primitives/CameraFrustum.cpp",
   "lifted_path": "lifted/Primitives/CameraFrustum.cpp",
-  "name": "Primitives::CameraFrustum::vfunc_28",
+  "name": "CameraFrustum::vfunc_25",
   "class": "Primitives::CameraFrustum",
-  "signature": "extern \"C\" void (*mem_00925414)(void);                // glPushMatrix extern \"C\" void (*mem_00925490)(GLenum);              // glBegin extern \"C\" void (*mem_0092548C)(float, float, float); // glVertex3f extern \"C\" void (*mem_00925488)(void);                // glEnd extern \"C\" void (*mem_00925404)(void);                // glPopMatrix void fn_0053C250(void* self, int mode)",
-  "summary": "Draws the camera frustum as a GL_QUAD_STRIP between near and far rectangles unless mode == 2.",
+  "signature": "void fn_0053E170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards three arguments to Plane::vfunc_25, then normalizes flag bits at +0x1c",
   "fields": [
+    {
+      "class": "Primitives::CameraFrustum",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
     {
       "class": "CameraFrustum",
       "offset": "+0x20",
@@ -18,5 +24,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T13:43:10Z"
+  "lifted_at": "2026-11-23T13:43:23Z"
 }

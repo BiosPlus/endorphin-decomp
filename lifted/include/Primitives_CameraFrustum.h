@@ -10,6 +10,6 @@
 // Recovered field layout for Primitives::CameraFrustum:
 namespace lifted_layout {
 struct Primitives_CameraFrustum_Fields {
-    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053E170)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053C250, 0x0053E170)
 };
 } // namespace lifted_layout
