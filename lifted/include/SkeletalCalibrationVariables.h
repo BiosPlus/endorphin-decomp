@@ -10,6 +10,6 @@
 // Recovered field layout for SkeletalCalibrationVariables:
 namespace lifted_layout {
 struct SkeletalCalibrationVariables_Fields {
-    // +0x0   void*                    self  (evidence: 0x004B3110, 0x004C5630, 0x004C7690)
+    // +0x0   void*                    self  (evidence: 0x004B3110, 0x004C5630, 0x004C7690, 0x004CEBF0)
 };
 } // namespace lifted_layout
