@@ -4242,6 +4242,13 @@
     "summary": "Returns the float from the held target's vfunc_12 (ImageExporter frame rate); throws a C++ exception if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B27E0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getYMax, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0\u003e",
+    "signature": "extern \"C\" float ext_0048FAD0(void* self);  // NMData::SkeletalCalibrationVariables::vfunc_15 (4B) float fn_004B27E0(void* self)",
+    "summary": "Returns the float result of the wrapped target's vfunc_15 call; throws if the wrapped target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B3DE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",

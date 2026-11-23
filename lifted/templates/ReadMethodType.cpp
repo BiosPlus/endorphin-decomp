@@ -8375,3 +8375,22 @@ float fn_004B1FF0(void* self) {
     ext_006A6DD2(frame, mem_009DEC1C);
 }
 } // namespace lift_004B1FF0
+
+// [0x004B27E0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004B27E0 {
+extern float ext_0048FAD0(void* self);  // NMData::SkeletalCalibrationVariables::vfunc_15 (4B)
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getYMax, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Returns the float result of the wrapped target's vfunc_15 call; throws if the wrapped target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004B27E0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        return ext_0048FAD0(target);
+    }
+    // Original raised an MSVC C++ exception (ThrowInfo 0x009DEC1C) on the null path.
+    // The MSVC exception object and ThrowInfo cannot be reproduced portably; use std::runtime_error.
+    throw std::runtime_error("ExprParser::ReadMethodType: null value pointer");
+}
+} // namespace lift_004B27E0
