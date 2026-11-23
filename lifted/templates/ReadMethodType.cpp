@@ -16905,3 +16905,25 @@ void* fn_005D3000(void* arg1, void** arg2) {
     return arg1;
 }
 } // namespace lift_005D3000
+
+// [0x005D6FA0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_005D6FA0 {
+// Original sub_00672080: thiscall taking one float on the stack (value setter on self).
+extern void ext_00672080(void* self, float value);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_0 (NMData::VideoPlaneData::getXScale)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>
+// @summary Reads the float at +0x34 of the VideoPlaneData referenced by *src, forwards it to ext_00672080 on self, and returns self; throws if *src is null.
+// @field NMData::VideoPlaneData +0x34 float field_0x34
+void* fn_005D6FA0(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        // Original constructs an exception object via sub_0046C3C0 and throws it; message text is not recovered.
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::VideoPlaneData>: null object");
+    }
+    float value = 0.0f;
+    std::memcpy(&value, static_cast<const unsigned char*>(obj) + 0x34, sizeof(value));
+    ext_00672080(self, value);
+    return self;
+}
+} // namespace lift_005D6FA0
