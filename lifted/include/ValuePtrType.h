@@ -10,6 +10,7 @@
 namespace lifted_layout {
 struct ValuePtrType_Fields {
     // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE90)
-    // +0x4   void*                    inner  (evidence: 0x00594550, 0x00649150, 0x006492B0, 0x0064EC00)
+    // +0x4   void*                    inner  (evidence: 0x00594550, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* owner (inner object pointer; vtable dispatched on)  (evidence: 0x0064F0C0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

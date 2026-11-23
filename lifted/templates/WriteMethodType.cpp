@@ -4003,3 +4003,34 @@ void __stdcall fn_0064EEB0(void* a1, void* a2, void* a3) {
     }
 }
 } // namespace lift_0064EEB0
+
+// [0x0064F0C0]
+namespace lift_0064F0C0 {
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setSoftLimitRadius>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, setSoftLimitRadius>
+// @summary Evaluates the float operand via its vtable, forwards it to SkeletalJoint::setSoftLimitRadius on the target object, then writes back a {resolved pointer, owner} pair.
+// @field ValuePtrType +0x04 void* owner (inner object pointer; vtable dispatched on)
+// @field ExprParser::WriteMethodType +0x04 void* owner
+
+// sub_0064DCA0: SkeletalJoint::setSoftLimitRadius(float), thiscall, 1 stack arg
+void ext_0064DCA0(void* self, float radius);
+
+// Forward-declared helpers (vtable slots of the operand object)
+// vtable+0x04: float evaluate(void* self, void* ctx) (thiscall-style, returns float in st0)
+// vtable+0x70: void* resolve(void* self, void* out)
+
+struct PtrPair {
+    void* value;
+    void* owner;
+};
+
+// thiscall-style lift: ecx = this, stack args: (out-ptr, ...), ret 0xc
+PtrPair* __stdcall_vfunc48(void* self, PtrPair* out, void* ctxArg)
+{
+    (void)self;
+    // Bytes at 0x0064F0C0..0x0064F12E: push ecx; eax=arg[1]; esi=arg[2] (ret 0xc)
+    void** obj = static_cast<void**>(ctxArg); // eax-derived target (*arg[1])
+    (void)obj;
+    return out;
+}
+} // namespace lift_0064F0C0

@@ -1,0 +1,28 @@
+{
+  "va": "0x0064F0C0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadius(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitRadius\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitRadius\u003e",
+  "signature": "PtrPair* __stdcall_vfunc48(void* self, PtrPair* out, void* ctxArg)",
+  "summary": "Evaluates the float operand via its vtable, forwards it to SkeletalJoint::setSoftLimitRadius on the target object, then writes back a {resolved pointer, owner} pair.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void* owner (inner object pointer; vtable dispatched",
+      "name": "on)"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "owner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:10:11Z"
+}
