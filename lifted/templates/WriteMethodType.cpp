@@ -1389,78 +1389,6 @@ void* __thiscall fn_0063CB90(void* self, void* outPtr, void** targetRef, void* e
     return out;
 }
 
-// [0x0064F870] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_48 (110 bytes)
-// @name WriteMethodType<SkeletalJoint, Vector4>::vfunc_48
-// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
-// @summary Pulls a value from a3's target via vtable slot 6, forwards it to AVIIO::vfunc_1 on *a2, then writes a two-dword result to out.
-// @field ValuePtrType +0x04 void* field_0x04
-void fn_0064F870(void* self, DWORD* out, void** a2, void* a3) {
-    (void)self;
-
-    // edi = *a2 (AVIIO instance).
-    void* io = *a2;
-
-    // First target: P = a3->+0x04, call vtable slot 6 (+0x18) with a3.
-    void* p = lift_field<void*>(a3, 4);
-    void** vt = *reinterpret_cast<void***>(p);
-    auto fn6 = reinterpret_cast<DWORD (*)(void*, void*)>(vt[6]);
-    DWORD v = fn6(p, a3);
-
-    // AVIIO::vfunc_1(io, v).
-    ext_00402040(io, v);
-
-    DWORD tmp[2] = {0, 0};
-    void* p2 = lift_field<void*>(a3, 4);
-    if (p2 != nullptr) {
-        // Second target: vtable slot 0x1C (+0x70) writes its result into tmp and returns its address.
-        void** vt2 = *reinterpret_cast<void***>(p2);
-        auto fn28 = reinterpret_cast<void* (*)(void*, void*, void*)>(vt2[28]);
-        void* r = fn28(p2, tmp, a3);
-        out[0] = *static_cast<DWORD*>(r);
-        out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(lift_field<void*>(a3, 4)));
-    } else {
-        out[0] = tmp[0];
-        out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(p2));
-    }
-}
-
-// [0x00604BD0]
-namespace lift_00604BD0 {
-// @name WriteMethodType::vfunc_48
-// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, EffectorBase::vcall{76}>
-// @summary Evaluates RHS via its type's vfunc_6, invokes EffectorBase::vcall{76} (slot 19) on target, and returns the converted value pair.
-// @field ExprValue +0x04 uint32_t type
-
-extern void ext_00603680(void* self);
-
-void* fn_00604BD0(void* self, uint32_t* out, uint32_t* target_ptr, uint32_t* rhs) {
-    (void)self;
-    void* target = reinterpret_cast<void*>(static_cast<uintptr_t>(*target_ptr));
-    void* rhs_type = reinterpret_cast<void*>(static_cast<uintptr_t>(rhs[1]));
-    void** vtable = *reinterpret_cast<void***>(rhs_type);
-
-    using GetValueFn = void* (*)(void* type_obj, uint32_t* rhs);
-    void* val = reinterpret_cast<GetValueFn>(vtable[6])(rhs_type, rhs);
-
-    using ThunkFn = void (*)(void* target, void* val);
-    reinterpret_cast<ThunkFn>(ext_00603680)(target, val);
-
-    uint32_t out_val = 0;
-    rhs_type = reinterpret_cast<void*>(static_cast<uintptr_t>(rhs[1]));
-    if (rhs_type != nullptr) {
-        void** vtable2 = *reinterpret_cast<void***>(rhs_type);
-        using ConvertFn = uint32_t* (*)(void* type_obj, uint32_t* out_buf, uint32_t* rhs);
-        uint32_t tmp = 0;
-        uint32_t* res = reinterpret_cast<ConvertFn>(vtable2[28])(rhs_type, &tmp, rhs);
-        out_val = *res;
-    }
-
-    out[0] = out_val;
-    out[1] = rhs[1];
-    return out;
-}
-} // namespace lift_00604BD0
-
 // [0x00650E50] ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48 (110 bytes)
 // @name ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>::vfunc_48
 // @class ExprParser::WriteMethodType<SkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}>
@@ -1507,3 +1435,153 @@ void fn_00650E50(LiftPair* out, void* arg2, void* ctx) {
         out->second = child;
     }
 }
+
+// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
+namespace lift_00604930 {
+extern void __thiscall ext_0062A580(void* self, bool value);
+
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x006495F0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_41).
+void __thiscall fn_00604930(void* self, void* dst, void* src) {
+    (void)self;
+    void* target = lift_field<void*>(dst, 0x00);
+    void* srcType = lift_field<void*>(src, 0x04);
+    void** vtable = lift_field<void**>(srcType, 0x00);
+
+    using GetBoolFn = uint8_t (__thiscall*)(void* typeObj, void* valueObj);
+    auto getBool = reinterpret_cast<GetBoolFn>(vtable[0x0C / 4]);
+    bool value = getBool(srcType, src) != 0;
+
+    ext_0062A580(target, value);
+}
+} // namespace lift_00604930
+
+// [0x00604BD0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_48 (110 bytes)
+namespace lift_00604BD0 {
+extern void ext_00603680(void* self, uint32_t value);
+
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x00604C70 (ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &>::vfunc_48).
+// @field ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}> +0x4 void* expr
+extern void ext_006036A0(void* self, uint32_t value);
+
+struct ExprVT{ void* pad[6]; void* (__thiscall *eval)(void*, void*); void* pad2[9]; void** (__thiscall *get)(void*, void*, void*); };
+struct ExprNode { ExprVT* vt; };
+struct ParserSelf { void* f0; ExprNode* expr; };
+struct Pair { void* value; void* expr; };
+
+Pair* __stdcall fn_00604BD0(Pair* out, void** target, ParserSelf* self)
+{
+    void* tmp = nullptr;
+    void* obj = *target;
+    void* v = self->expr->vt->eval(self->expr, self);
+    ext_00603680(obj, (uint32_t)(uintptr_t)v);
+    void* result;
+    if (self->expr) {
+        void** p = self->expr->vt->get(self->expr, &tmp, self);
+        result = *p;
+    } else {
+        tmp = nullptr;
+        result = tmp;
+    }
+    out->value = result;
+    out->expr = self->expr;
+    return out;
+}
+} // namespace lift_00604BD0
+
+// [0x0064F840] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_41 (34 bytes)
+namespace lift_0064F840 {
+extern void ext_00402040(void* self, uint32_t value);
+extern void ext_00402040(void* self, DWORD arg);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const &), 0}>::vfunc_41).
+void __thiscall fn_0064F840(void* self, void* targetPtr, void* valuePtr) {
+    (void)self;
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    void* typeObj = lift_field<void*>(valuePtr, 0x04);
+    void** vtable = lift_field<void**>(typeObj, 0x00);
+    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
+    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x18 / sizeof(void*)]);
+    uint32_t value = getVec3(typeObj, valuePtr);
+    ext_00402040(target, value);
+}
+} // namespace lift_0064F840
+
+// [0x0064F870] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_48 (110 bytes)
+namespace lift_0064F870 {
+extern void ext_00402040(void* self, uint32_t value);
+extern void ext_00402040(void* self, DWORD arg);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00604C70 (ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &>::vfunc_48).
+// @field ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}> +0x4 void* expr
+extern void ext_006036A0(void* self, uint32_t value);
+
+struct ExprVT{ void* pad[6]; void* (__thiscall *eval)(void*, void*); void* pad2[9]; void** (__thiscall *get)(void*, void*, void*); };
+struct ExprNode { ExprVT* vt; };
+struct ParserSelf { void* f0; ExprNode* expr; };
+struct Pair { void* value; void* expr; };
+
+Pair* __stdcall fn_0064F870(Pair* out, void** target, ParserSelf* self)
+{
+    void* tmp = nullptr;
+    void* obj = *target;
+    void* v = self->expr->vt->eval(self->expr, self);
+    ext_00402040(obj, (uint32_t)(uintptr_t)v);
+    void* result;
+    if (self->expr) {
+        void** p = self->expr->vt->get(self->expr, &tmp, self);
+        result = *p;
+    } else {
+        tmp = nullptr;
+        result = tmp;
+    }
+    out->value = result;
+    out->expr = self->expr;
+    return out;
+}
+} // namespace lift_0064F870
+
+// [0x006513E0] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_41 (34 bytes)
+namespace lift_006513E0 {
+extern void ext_0064F920(void* self, uint32_t value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const &), 0}>::vfunc_41).
+void __thiscall fn_006513E0(void* self, void* targetPtr, void* valuePtr) {
+    (void)self;
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    void* typeObj = lift_field<void*>(valuePtr, 0x04);
+    void** vtable = lift_field<void**>(typeObj, 0x00);
+    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
+    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
+    uint32_t value = getVec3(typeObj, valuePtr);
+    ext_0064F920(target, value);
+}
+} // namespace lift_006513E0
+
+// [0x0068BC60] ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (34 bytes)
+namespace lift_0068BC60 {
+extern void ext_006B0C30(void* self, uint32_t value);
+
+// @name ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const &), 0}>::vfunc_41).
+void __thiscall fn_0068BC60(void* self, void* targetPtr, void* valuePtr) {
+    (void)self;
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    void* typeObj = lift_field<void*>(valuePtr, 0x04);
+    void** vtable = lift_field<void**>(typeObj, 0x00);
+    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
+    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x8 / sizeof(void*)]);
+    uint32_t value = getVec3(typeObj, valuePtr);
+    ext_006B0C30(target, value);
+}
+} // namespace lift_0068BC60

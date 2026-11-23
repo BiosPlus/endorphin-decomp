@@ -4032,6 +4032,13 @@
     "summary": "Setter storing float argument into field at offset +0x2C.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004B1B30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "double fn_004B1B30(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
@@ -5314,6 +5321,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00508E80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+    "signature": "double fn_00508E80(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",
@@ -5440,6 +5454,13 @@
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",
     "signature": "double fn_00515E80(void* const* holder)",
     "summary": "Reads the int at +0x0C of the object referenced by the first pointer in the argument block and returns it as a double; throws if that pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x00515FD0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_1",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "double fn_00515FD0(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x00516B10": {
@@ -5639,6 +5660,13 @@
     "signature": "extern \"C\" void fn_00522150(void)",
     "summary": "Pure jump thunk forwarding to NMData::NetworkConnectorData::vfunc_27.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00522380": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+    "signature": "double fn_00522380(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005261E0": {
     "name": "NMData::NetworkConnectorData::vfunc_27",
@@ -8460,6 +8488,20 @@
     "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005D2410": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+    "signature": "double fn_005D2410(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005DAA10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
+    "signature": "double fn_005DAA10(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005DC420": {
     "name": "sub_005DC420",
     "signature": "extern \"C\" void __fastcall fn_005DC420(void* self)",
@@ -8968,6 +9010,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00602EF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00604930": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
+    "signature": "void __thiscall fn_00604930(void* self, void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006495F0 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00604960": {
     "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
@@ -8980,6 +9029,13 @@
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
     "signature": "void __thiscall fn_00604BA0(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00604BD0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+    "signature": "Pair* __stdcall fn_00604BD0(Pair* out, void** target, ParserSelf* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00604C70 (ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00604C40": {
@@ -9782,6 +9838,13 @@
     "signature": "void* fn_00630CE0(void* self)",
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
+  "0x00635120": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
+    "signature": "double fn_00635120(void* const* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0063CA50": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorWithMemory::setIntegralGradient)",
@@ -10614,6 +10677,20 @@
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 4 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0064F840": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e",
+    "signature": "void __thiscall fn_0064F840(void* self, void* targetPtr, void* valuePtr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0064F870": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e",
+    "signature": "Pair* __stdcall fn_0064F870(Pair* out, void** target, ParserSelf* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00604C70 (ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F8E0": {
     "name": "VirtualSlot23Thunk",
     "class": "VTable",
@@ -10702,6 +10779,13 @@
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}\u003e",
     "signature": "void __stdcall fn_00651330(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x006513E0": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e",
+    "signature": "void __thiscall fn_006513E0(void* self, void* targetPtr, void* valuePtr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x006595B0": {
@@ -11942,6 +12026,13 @@
     "signature": "extern \"C\" void __fastcall fn_0068BBF0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and tail-calls sub_00508680.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x0068BC60": {
+    "name": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e",
+    "signature": "void __thiscall fn_0068BC60(void* self, void* targetPtr, void* valuePtr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0068BD10": {
     "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",

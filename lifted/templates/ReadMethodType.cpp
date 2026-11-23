@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/templates/ReadMethodType.cpp
 #include "lift_compat.h"
+#include <stdexcept>
 
 // [0x00617340] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)
@@ -60,3 +61,93 @@ void* fn_0061BE80(void* self) {
 void* fn_0061C910(void* self) {
     return self;
 }
+
+// [0x004B1B30] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_004B1B30 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_004B1B30(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0x20);
+    return static_cast<double>(value);
+}
+} // namespace lift_004B1B30
+
+// [0x00508E80] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_1 (45 bytes)
+namespace lift_00508E80 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_00508E80(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0x14);
+    return static_cast<double>(value);
+}
+} // namespace lift_00508E80
+
+// [0x00522380] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_1 (48 bytes)
+namespace lift_00522380 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_00522380(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0xC4);
+    return static_cast<double>(value);
+}
+} // namespace lift_00522380
+
+// [0x005D2410] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D2410 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_005D2410(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0x28);
+    return static_cast<double>(value);
+}
+} // namespace lift_005D2410
+
+// [0x005DAA10] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005DAA10 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_005DAA10(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0x24);
+    return static_cast<double>(value);
+}
+} // namespace lift_005DAA10
+
+// [0x00635120] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_1 (48 bytes)
+namespace lift_00635120 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_00635120(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0xC0);
+    return static_cast<double>(value);
+}
+} // namespace lift_00635120

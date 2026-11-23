@@ -238,18 +238,16 @@ uint32_t fn_00516170(void* self) {
 }
 
 // [0x00515FD0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1 (45 bytes)
-// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_1 (value read through the held pointer)
+namespace lift_00515FD0 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1
 // @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
-// @summary Reads the int at +0x08 of the object pointed to by self's first pointer and returns it as a float (x87 st0 via fild); throws if that pointer is null.
-// @field ExprParser::ValuePtrType +0x00 void* field_0x00
-// @field unknown +0x08 int field_0x08
-float fn_00515FD0(void* self) {
-    void* ptr = *reinterpret_cast<void**>(self);
-    if (ptr == nullptr) {
-        // Null-pointer path: construct the exception object and throw (original: sub_0046C3C0 then _CxxThrowException).
-        ext_0046C3C0();
-        ext_006A6DD2();
-        return 0.0f;
+// @summary Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).
+double fn_00515FD0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
     }
-    return static_cast<float>(*reinterpret_cast<int*>(static_cast<unsigned char*>(ptr) + 0x08));
+    const int value = lift_field<int>(obj, 0x8);
+    return static_cast<double>(value);
 }
+} // namespace lift_00515FD0

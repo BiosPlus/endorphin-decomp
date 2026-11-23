@@ -1,0 +1,14 @@
+{
+  "va": "0x0064F840",
+  "size": 34,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e",
+  "signature": "void __thiscall fn_0064F840(void* self, void* targetPtr, void* valuePtr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:02:22Z"
+}

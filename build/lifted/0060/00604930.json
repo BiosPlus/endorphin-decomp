@@ -1,0 +1,14 @@
+{
+  "va": "0x00604930",
+  "size": 34,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
+  "signature": "void __thiscall fn_00604930(void* self, void* dst, void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x006495F0 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_41).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:02:22Z"
+}
