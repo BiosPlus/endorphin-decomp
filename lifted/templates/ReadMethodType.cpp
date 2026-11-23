@@ -8501,3 +8501,26 @@ void fn_0059F820(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_0059F820
+
+// [0x004EA570] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_2 (52 bytes)
+namespace lift_004EA570 {
+// Known callee 0x0046C3C0: sub_0046C3C0 (105 bytes); constructs the exception object on the error path.
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<PoseToolOptions>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>
+// @summary Reads the bound PoseToolOptions object from the value pointer (throws if null) and returns its isProjectRootEnabled flag byte.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::PoseToolOptions +0x09 uint8_t field_0x09
+bool fn_004EA570(void* self) {
+    void* obj = lift_field<void*>(self, 0);
+    if (obj == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false; // not reached: _CxxThrowException does not return
+    }
+    return lift_field<uint8_t>(obj, 0x9) != 0;
+}
+} // namespace lift_004EA570

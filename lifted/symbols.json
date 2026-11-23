@@ -5466,6 +5466,13 @@
     "summary": "Pure jump thunk forwarding to sub_004E96C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004EA570": {
+    "name": "ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
+    "signature": "bool fn_004EA570(void* self)",
+    "summary": "Reads the bound PoseToolOptions object from the value pointer (throws if null) and returns its isProjectRootEnabled flag byte.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EAA10": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions,bool,isCollisionEnabled\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
