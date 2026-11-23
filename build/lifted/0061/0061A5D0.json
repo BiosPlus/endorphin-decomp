@@ -1,0 +1,28 @@
+{
+  "va": "0x0061A5D0",
+  "size": 75,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0\u003e",
+  "signature": "void* fn_0061A5D0(void* out, void* const* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitLength, 0\u003e::vfunc_0).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "unitLength"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:56:10Z"
+}

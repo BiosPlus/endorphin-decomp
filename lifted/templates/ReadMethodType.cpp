@@ -17230,3 +17230,627 @@ float fn_0046D1E0(void* self) {
     return static_cast<float>(std::atof(dest->c_str()));
 }
 } // namespace lift_0046D1E0
+
+// [0x00614DD0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00614DD0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00614DD0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xA0);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00614DD0
+
+// [0x006151C0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_006151C0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_006151C0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xA4);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_006151C0
+
+// [0x0061A5D0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_0061A5D0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_0061A5D0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xA8);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_0061A5D0
+
+// [0x0061A8A0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_0061A8A0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_0061A8A0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xB0);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_0061A8A0
+
+// [0x0061AF20] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_0061AF20 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_0061AF20(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xAC);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_0061AF20
+
+// [0x0061B3C0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_0061B3C0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_0061B3C0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xB4);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_0061B3C0
+
+// [0x006349A0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_006349A0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_006349A0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xE0);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_006349A0
+
+// [0x00635500] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00635500 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00635500(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xF0);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00635500
+
+// [0x00636E30] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00636E30 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00636E30(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xCC);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00636E30
+
+// [0x00637170] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00637170 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00637170(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xD0);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00637170
+
+// [0x00637450] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00637450 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00637450(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xEC);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00637450
+
+// [0x006377B0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_006377B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_006377B0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xD4);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_006377B0
+
+// [0x00637AC0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00637AC0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00637AC0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xDC);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00637AC0
+
+// [0x00637ED0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_00637ED0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00637ED0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xE4);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00637ED0
+
+// [0x006382C0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_006382C0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_006382C0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xD8);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_006382C0
+
+// [0x006388B0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>::vfunc_0 (75 bytes)
+namespace lift_006388B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_006388B0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0xE8);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_006388B0
