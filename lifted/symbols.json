@@ -7973,6 +7973,13 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053B8A0": {
+    "name": "Primitives::Sphyl::vfunc_28",
+    "class": "Primitives::Sphyl",
+    "signature": "void fn_0053B8A0(void* self)",
+    "summary": "Draws the sphyl as a GLU sphere, a GLU cylinder body and a second sphere, with a Z-offset translation between them.",
+    "lifted_path": "lifted/Primitives/Sphyl.cpp"
+  },
   "0x0053BC40": {
     "name": "Primitives::Frustum::vfunc_28",
     "class": "Primitives::Frustum",

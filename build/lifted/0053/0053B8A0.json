@@ -1,0 +1,46 @@
+{
+  "va": "0x0053B8A0",
+  "size": 278,
+  "orig_symbol": "Primitives::Sphyl::vfunc_28",
+  "src_path": "src/Primitives/Sphyl.cpp",
+  "lifted_path": "lifted/Primitives/Sphyl.cpp",
+  "name": "Primitives::Sphyl::vfunc_28",
+  "class": "Primitives::Sphyl",
+  "signature": "void fn_0053B8A0(void* self)",
+  "summary": "Draws the sphyl as a GLU sphere, a GLU cylinder body and a second sphere, with a Z-offset translation between them.",
+  "fields": [
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x4C",
+      "type": "GLUquadric*",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:41:05Z"
+}
