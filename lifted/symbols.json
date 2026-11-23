@@ -4025,6 +4025,13 @@
     "summary": "Reads x = *ptr, passes x - 0.5 (if x \u003c 0 or NaN) or x + 0.5 (otherwise) to ext_006A6DE0.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004B71C0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_4",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void* fn_004B71C0(void* self, void* src)",
+    "summary": "Loads the float referenced by the source's first pointer, forwards it to ext_0046C390 with self, and returns self.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004B7A10": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",

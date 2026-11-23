@@ -224,9 +224,12 @@ int32_t __stdcall fn_00497930(void* arg) {
 }
 extern "C" void ext_0046C500(void* self, int32_t value);
 extern "C" void ext_0046C460(void* self, uint8_t raw_value);
+// Known callee 0x0046C390: sub_0046C390 (36B). Called with two stack arguments (self, float value);
+// the caller pops both (add esp, 8), so it is modelled as a cdecl-style external taking (void*, float).
+extern "C" void ext_0046C390(void* self, float value);
 
-// [0x00499190] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_38 (15 bytes)
-// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_38
+// the caller pops both (add esp, 8), so it is modelled as a cdecl-style external taking (void*, float).
+extern "C" void ext_0046C390(void* self, float value);
 // @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
 // @summary Calls ext_00498F90 and stores its 32-bit result into self+0x04; takes one stack argument (self) and returns with ret 4.
 // @field ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>> +0x04 uint32_t field_0x04
@@ -354,5 +357,17 @@ void* fn_0049AE90(void* self, const void* src) {
     // and has no observable effect, so it is omitted.
     const uint8_t raw_value = *value_ptr;
     ext_0046C460(self, raw_value);
+    return self;
+}
+
+// [0x004B71C0] ExprParser::PrimitiveProxyType<float>::vfunc_4 (42 bytes)
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_4
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Loads the float referenced by the source's first pointer, forwards it to ext_0046C390 with self, and returns self.
+// @field ExprParser::ValuePtrType +0x00 float* ptr
+void* fn_004B71C0(void* self, void* src) {
+    float* p = *static_cast<float**>(src);
+    float value = *p;
+    ext_0046C390(self, value);
     return self;
 }
