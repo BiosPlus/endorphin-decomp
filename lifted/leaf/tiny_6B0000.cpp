@@ -504,3 +504,18 @@ void* __thiscall sub_006B1900(void* self) {
     return self;
 }
 } // namespace lift_006B1900
+
+// [0x006B19B0]
+namespace lift_006B19B0 {
+// @name initVtable_006B19B0
+// @summary Initializes object vtable pointer to 0x0099175C and returns this
+// @field Object +0x00 uint32_t vtable
+
+
+extern uint32_t mem_0099175C;
+
+void* __thiscall sub_006B19B0(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0099175C));
+    return self;
+}
+} // namespace lift_006B19B0

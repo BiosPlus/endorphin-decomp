@@ -28577,6 +28577,12 @@
     "summary": "Sets the vtable pointer at offset 0x00 to 0x00991750 and returns this",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B19B0": {
+    "name": "initVtable_006B19B0",
+    "signature": "void* __thiscall sub_006B19B0(void* self)",
+    "summary": "Initializes object vtable pointer to 0x0099175C and returns this",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B19C0": {
     "name": "sub_006B19C0",
     "signature": "extern \"C\" void __fastcall fn_006B19C0(void* self)",
