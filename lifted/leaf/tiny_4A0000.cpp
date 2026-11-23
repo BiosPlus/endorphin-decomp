@@ -74,3 +74,15 @@ extern "C" void __fastcall fn_004AEC80(void* self) {
 extern "C" void __fastcall fn_004AF860(void* self) {
     ext_004E78B0(static_cast<char*>(self) + 0x8);
 }
+
+// [0x004AEC90]
+namespace lift_004AEC90 {
+// @name sub_004AEC90
+// @summary Reads a 32-bit value at offset +0x08 and returns it plus 0x30.
+// @field Unknown +0x08 uint32_t field_0x08
+
+
+uint32_t __thiscall sub_004AEC90(void* self) {
+    return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x8) + 0x30;
+}
+} // namespace lift_004AEC90

@@ -1,0 +1,21 @@
+{
+  "va": "0x004AEC90",
+  "size": 7,
+  "orig_symbol": "sub_004AEC90",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "sub_004AEC90",
+  "signature": "uint32_t __thiscall sub_004AEC90(void* self)",
+  "summary": "Reads a 32-bit value at offset +0x08 and returns it plus 0x30.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:38:13Z"
+}

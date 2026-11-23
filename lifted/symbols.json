@@ -5414,6 +5414,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00676C70.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AEC90": {
+    "name": "sub_004AEC90",
+    "signature": "uint32_t __thiscall sub_004AEC90(void* self)",
+    "summary": "Reads a 32-bit value at offset +0x08 and returns it plus 0x30.",
+    "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
+  },
   "0x004AF040": {
     "name": "Properties::PropertySelectionEngine::vfunc_1",
     "class": "Properties::PropertySelectionEngine",
