@@ -1,0 +1,21 @@
+{
+  "va": "0x0048FB10",
+  "size": 12,
+  "orig_symbol": "sub_0048FB10",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "sub_0048FB10",
+  "signature": "float __thiscall sub_0048FB10(void* self)",
+  "summary": "Loads a double from offset +0x58 of this and returns it as a float",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:46:04Z"
+}

@@ -87,3 +87,15 @@ uint32_t __thiscall fn_00486AF0(uint32_t self) {
 }
 } // namespace lift_00402050
 } // namespace lift_00486AF0
+
+// [0x0048FB10]
+namespace lift_0048FB10 {
+// @name sub_0048FB10
+// @summary Loads a double from offset +0x58 of this and returns it as a float
+// @field Unknown +0x58 double field_0x58
+
+
+float __thiscall sub_0048FB10(void* self) {
+    return static_cast<float>(*reinterpret_cast<const double*>(reinterpret_cast<const uint8_t*>(self) + 0x58));
+}
+} // namespace lift_0048FB10
