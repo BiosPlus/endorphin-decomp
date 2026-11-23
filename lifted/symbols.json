@@ -4623,6 +4623,13 @@
     "summary": "Calls helper sub_0049DA40 and stores its result at object offset +0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049E000": {
+    "name": "NMData::State::vfunc_21_off_8",
+    "class": "NMData::State",
+    "signature": "uint8_t __thiscall fn_0049E000(void* self, void* arg0)",
+    "summary": "Checks whether the rectangle returned for the element at +0xE0 has positive width and height.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049E2E0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
@@ -6097,6 +6104,13 @@
     "signature": "extern \"C\" void __fastcall fn_004C28B0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::TriggeredEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004C28F0": {
+    "name": "NMData::AnimationEventData::vfunc_92",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_004C28F0(void* self, const std::string\u0026 arg0)",
+    "summary": "Copies the input string, passes it to sub_004C2790, then invokes vtable+0x5C with it.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
   "0x004C4DD0": {
     "name": "NMData::ForceEventData::vfunc_59",

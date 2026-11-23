@@ -96,3 +96,27 @@ void __thiscall fn_0049FC80(uint32_t self, uint32_t arg0) {
     }
 }
 } // namespace lift_0049FC80
+
+// [0x0049E000]
+namespace lift_0049E000 {
+// @name NMData::State::vfunc_21_off_8
+// @class NMData::State
+// @summary Checks whether the rectangle returned for the element at +0xE0 has positive width and height.
+// @field NMData::State +0xE0 float field_0xE0
+
+
+extern void* __thiscall ext_00498B60(void* self, void* out_rect, void* arg0);
+
+uint8_t __thiscall fn_0049E000(void* self, void* arg0) {
+    float buf[4];
+    float* rect = static_cast<float*>(ext_00498B60(static_cast<uint8_t*>(self) + 0xE0, buf, arg0));
+    float width = rect[2] - rect[0];
+    if (width > 0.0f) {
+        float height = rect[3] - rect[1];
+        if (height > 0.0f) {
+            return 1;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0049E000

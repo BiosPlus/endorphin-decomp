@@ -1,0 +1,22 @@
+{
+  "va": "0x0049E000",
+  "size": 112,
+  "orig_symbol": "NMData::State::vfunc_21_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_21_off_8",
+  "class": "NMData::State",
+  "signature": "uint8_t __thiscall fn_0049E000(void* self, void* arg0)",
+  "summary": "Checks whether the rectangle returned for the element at +0xE0 has positive width and height.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xE0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:32:27Z"
+}
