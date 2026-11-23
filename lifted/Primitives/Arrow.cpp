@@ -79,3 +79,44 @@ void* fn_0052FE50(void* self, uint32_t flags) {
     return self;
 }
 } // namespace lift_0052FE50
+
+// [0x0053E0C0] Primitives::Arrow::vfunc_25 (162 bytes)
+namespace lift_0053E0C0 {
+// Known callee 0x0053A610: Primitives::Plane::vfunc_25 (thiscall; self in ecx, three stack args, ret 0xC).
+extern void ext_0053A610(void* self, void* arg1, void* arg2, uint32_t arg3);
+// Callee 0x005B11E0: thiscall accessor on arg1; takes an index and one 32-bit value, returns a float.
+extern float ext_005B11E0(void* self, uint32_t index, uint32_t value);
+// Callee 0x00538D10: thiscall on the subobject at self+0x3C; takes one float argument.
+extern void ext_00538D10(void* self, float value);
+
+// @name Primitives::Arrow::vfunc_25
+// @class Primitives::Arrow
+// @summary Calls Plane::vfunc_25 with (arg1, arg2, arg3), sets flag bit 0x4 and clears flag bit 0x200 in self+0x1C, then scales three accessor results from arg1 by arg2's float at +0xC0 and chained products, and forwards the final product to the subobject at self+0x3C.
+// @field Primitives::Arrow +0x1C uint32_t field_0x1c
+// @field Primitives::Arrow +0x3C void field_0x3c
+void fn_0053E0C0(void* self, void* arg1, void* arg2, uint32_t arg3) {
+    ext_0053A610(self, arg1, arg2, arg3);
+
+    // Flags: force bit 0x4 on, force bit 0x200 off.
+    uint32_t flags = lift_field<uint32_t>(self, 0x1C);
+    if ((flags & 0x4) == 0) {
+        flags ^= 0x4;
+    }
+    if (flags & 0x200) {
+        flags ^= 0x200;
+    }
+    lift_field<uint32_t>(self, 0x1C) = flags;
+
+    // arg2 supplies a scale factor (float at +0xC0) and an integer value (at +0x90).
+    float scale = lift_field<float>(arg2, 0xC0);
+    uint32_t raw = lift_field<uint32_t>(arg2, 0x90);
+
+    // Chain: each step multiplies the accessor result by the previous product.
+    float p1 = ext_005B11E0(arg1, 2, raw) * scale;
+    float p2 = ext_005B11E0(arg1, 1, std::bit_cast<uint32_t>(p1)) * p1;
+    float p3 = ext_005B11E0(arg1, 0, std::bit_cast<uint32_t>(p2)) * p2;
+
+    // Forward the final product to the subobject at +0x3C.
+    ext_00538D10(static_cast<uint8_t*>(self) + 0x3C, p3);
+}
+} // namespace lift_0053E0C0

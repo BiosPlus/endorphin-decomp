@@ -1,0 +1,28 @@
+{
+  "va": "0x0053E0C0",
+  "size": 162,
+  "orig_symbol": "Primitives::Arrow::vfunc_25",
+  "src_path": "src/Primitives/Arrow.cpp",
+  "lifted_path": "lifted/Primitives/Arrow.cpp",
+  "name": "Primitives::Arrow::vfunc_25",
+  "class": "Primitives::Arrow",
+  "signature": "void fn_0053E0C0(void* self, void* arg1, void* arg2, uint32_t arg3)",
+  "summary": "Calls Plane::vfunc_25 with (arg1, arg2, arg3), sets flag bit 0x4 and clears flag bit 0x200 in self+0x1C, then scales three accessor results from arg1 by arg2's float at +0xC0 and chained products, and forwards the final product to the subobject at self+0x3C.",
+  "fields": [
+    {
+      "class": "Primitives::Arrow",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Arrow",
+      "offset": "+0x3C",
+      "type": "void",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:45:02Z"
+}

@@ -8288,6 +8288,13 @@
     "summary": "Calls the Hinge base implementation, copies two dwords from the argument at +0x88/+0x8c into this+0xcc/+0xd0, then sets/clears flag bits in this+0x1c.",
     "lifted_path": "lifted/Primitives/SkeletalJoint.cpp"
   },
+  "0x0053E0C0": {
+    "name": "Primitives::Arrow::vfunc_25",
+    "class": "Primitives::Arrow",
+    "signature": "void fn_0053E0C0(void* self, void* arg1, void* arg2, uint32_t arg3)",
+    "summary": "Calls Plane::vfunc_25 with (arg1, arg2, arg3), sets flag bit 0x4 and clears flag bit 0x200 in self+0x1C, then scales three accessor results from arg1 by arg2's float at +0xC0 and chained products, and forwards the final product to the subobject at self+0x3C.",
+    "lifted_path": "lifted/Primitives/Arrow.cpp"
+  },
   "0x0053E170": {
     "name": "CameraFrustum::vfunc_25",
     "class": "Primitives::CameraFrustum",
