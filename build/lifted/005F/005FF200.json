@@ -1,0 +1,52 @@
+{
+  "va": "0x005FF200",
+  "size": 51,
+  "orig_symbol": "Sensors::SensorTreeCentreOfMassVelocity::vfunc_14",
+  "src_path": "src/Sensors/SensorTreeCentreOfMassVelocity.cpp",
+  "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassVelocity.cpp",
+  "name": "Sensors::SensorTreeCentreOfMassVelocity::vfunc_14",
+  "class": "Sensors::SensorTreeCentreOfMassVelocity",
+  "signature": "void fn_005FF200(void* self)",
+  "summary": "Calls the base sensor update, then copies the 3-float vector at +0x60 to +0x70.",
+  "fields": [
+    {
+      "class": "Sensors::SensorTreeCentreOfMassVelocity",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Sensors::SensorTreeCentreOfMassVelocity",
+      "offset": "+0x64",
+      "type": "float",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Sensors::SensorTreeCentreOfMassVelocity",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Sensors::SensorTreeCentreOfMassVelocity",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Sensors::SensorTreeCentreOfMassVelocity",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Sensors::SensorTreeCentreOfMassVelocity",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:53:05Z"
+}
