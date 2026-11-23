@@ -8459,10 +8459,10 @@
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
   "0x005E1060": {
-    "name": "NMData::FixedPathJointData::vfunc_15_off_4",
+    "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",
-    "signature": "void fn_005E1060(void* self, void* arg)",
-    "summary": "Forwards arg to HelperGraphic::vfunc_15_off_4 on self, then, if the sub-object at +0x178 is set, invokes its interface vtable slot 15 with arg.",
+    "signature": "void* __thiscall fn_005EFF60(void* self, void* out)",
+    "summary": "Constructs a std::string from the literal at 0x0096B92C in the caller's sret buffer and returns that buffer.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
   "0x005E20F0": {
