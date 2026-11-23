@@ -1,0 +1,21 @@
+{
+  "va": "0x00679A30",
+  "size": 10,
+  "orig_symbol": "sub_00679A30",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "queryPerformanceCounter",
+  "signature": "uint32_t __thiscall sub_00679A30(uint32_t* self)",
+  "summary": "Calls KERNEL32!QueryPerformanceCounter with the pointer stored at [ecx]",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:40:03Z"
+}

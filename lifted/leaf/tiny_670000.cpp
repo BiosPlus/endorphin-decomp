@@ -121,3 +121,17 @@ uint32_t __fastcall fn_0067F5A0(void* self) {
     return mem_00B5CA88[index];
 }
 } // namespace lift_0067F5A0
+
+// [0x00679A30]
+namespace lift_00679A30 {
+// @name queryPerformanceCounter
+// @summary Calls KERNEL32!QueryPerformanceCounter with the pointer stored at [ecx]
+// @field Unknown +0x00 uint32_t field_0x00
+
+extern uint32_t ext_QueryPerformanceCounter(uint32_t lpPerformanceCount);
+
+uint32_t __thiscall sub_00679A30(uint32_t* self) {
+    uint32_t lpPerformanceCount = self[0];
+    return ext_QueryPerformanceCounter(lpPerformanceCount);
+}
+} // namespace lift_00679A30
