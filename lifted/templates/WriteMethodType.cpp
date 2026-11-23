@@ -3645,3 +3645,45 @@ extern void __stdcall fn_00649B70(ValuePtrOut* out, void** target_holder, ValueP
     }
 }
 } // namespace lift_00649B70
+
+// [0x00649360] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionZ(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649360 {
+// Callee 0x00648E60: setter storing the float argument into the object's field at +0x80 (this = object).
+extern void ext_00648E60(void* self, float value);
+
+// Virtual-call shapes recovered from the disassembly (thiscall, 32-bit vtable slots).
+using VGetFloat = float (__thiscall*)(void* self, void* a, void* b, void* c, int zero); // slot 1 (+0x04)
+using VGetPtr = void* (__thiscall*)(void* self, uint32_t* tmp, void* src);             // slot 28 (+0x70)
+
+// @name ExprParser::WriteMethodType::setCachedDesiredPositionZ_vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionZ(float), 0}>
+// @summary Reads a float via the inner object's vtable slot 1 and stores it with setCachedDesiredPositionZ's setter on *objSlot, then writes {value, src->inner} to out (value from vtable slot 28 when inner is non-null, else 0).
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_00649360(uint32_t* out, void* const* objSlot, void* src) {
+    // inner = src->+0x04; obj = *objSlot (the RelationshipRPROMagnet target).
+    void* inner = lift_field<void*>(src, 0x04);
+    void* obj = *objSlot;
+
+    // Slot 1 on inner, args (src, obj, src, 0), returns float in st0.
+    void** vt = *static_cast<void***>(inner);
+    const float v = reinterpret_cast<VGetFloat>(vt[1])(inner, src, obj, src, 0);
+
+    // Setter on obj with the float value.
+    ext_00648E60(obj, v);
+
+    // Default result slot is 0; when inner is non-null, slot 28 on inner fills it.
+    uint32_t tmp = 0;
+    uint32_t* result = &tmp;
+    void* p = lift_field<void*>(src, 0x04);
+    if (p != nullptr) {
+        void** pvt = *static_cast<void***>(p);
+        result = static_cast<uint32_t*>(reinterpret_cast<VGetPtr>(pvt[28])(p, &tmp, src));
+    }
+
+    // Output pair: {value, src->inner (reloaded)}.
+    const uint32_t value = *result;
+    void* after = lift_field<void*>(src, 0x04);
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(after));
+}
+} // namespace lift_00649360

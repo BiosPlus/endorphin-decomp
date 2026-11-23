@@ -1,0 +1,22 @@
+{
+  "va": "0x00649360",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionZ(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType::setCachedDesiredPositionZ_vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionZ(float), 0}\u003e",
+  "signature": "void __stdcall fn_00649360(uint32_t* out, void* const* objSlot, void* src)",
+  "summary": "Reads a float via the inner object's vtable slot 1 and stores it with setCachedDesiredPositionZ's setter on *objSlot, then writes {value, src-\u003einner} to out (value from vtable slot 28 when inner is non-null, else 0).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:08:25Z"
+}

@@ -10565,6 +10565,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00649360": {
+    "name": "ExprParser::WriteMethodType::setCachedDesiredPositionZ_vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionZ(float), 0}\u003e",
+    "signature": "void __stdcall fn_00649360(uint32_t* out, void* const* objSlot, void* src)",
+    "summary": "Reads a float via the inner object's vtable slot 1 and stores it with setCachedDesiredPositionZ's setter on *objSlot, then writes {value, src-\u003einner} to out (value from vtable slot 28 when inner is non-null, else 0).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006493E0": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}\u003e",
