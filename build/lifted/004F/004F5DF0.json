@@ -1,0 +1,14 @@
+{
+  "va": "0x004F5DF0",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getZ, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getZ, 0\u003e",
+  "signature": "void* __thiscall fn_004F5DF0(void* self, void* out_val, void** obj_ptr)",
+  "summary": "Reads the Z component from a MatrixWithProperties pointer into an output value, throwing an exception if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:02:06Z"
+}
