@@ -8394,3 +8394,26 @@ float fn_004B27E0(void* self) {
     throw std::runtime_error("ExprParser::ReadMethodType: null value pointer");
 }
 } // namespace lift_004B27E0
+
+// [0x004B20F0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004B20F0 {
+extern float ext_0048FAC0(void* obj);                 // NMData::SkeletalCalibrationVariables::vfunc_13 (thiscall, ecx = obj)
+extern void ext_0046C3C0(void* exc);                  // sub_0046C3C0 (thiscall, ecx = exception storage)
+extern void ext_006A6DD2(void* exc, void* throwInfo); // thunk_MSVCR80__CxxThrowException
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMax, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Forwards to the wrapped object's float getter if the stored pointer is set; otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004B20F0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return ext_0048FAC0(obj);
+    }
+
+    alignas(8) unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return 0.0f; // unreachable: _CxxThrowException does not return
+}
+} // namespace lift_004B20F0

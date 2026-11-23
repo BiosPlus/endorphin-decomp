@@ -1,0 +1,22 @@
+{
+  "va": "0x004B20F0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMax, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e",
+  "signature": "extern \"C\" float ext_0048FAC0(void* obj);                 // NMData::SkeletalCalibrationVariables::vfunc_13 (thiscall, ecx = obj) extern \"C\" void ext_0046C3C0(void* exc);                  // sub_0046C3C0 (thiscall, ecx = exception storage) extern \"C\" void ext_006A6DD2(void* exc, void* throwInfo); // thunk_MSVCR80__CxxThrowException float fn_004B20F0(void* self)",
+  "summary": "Forwards to the wrapped object's float getter if the stored pointer is set; otherwise throws.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:17:46Z"
+}
