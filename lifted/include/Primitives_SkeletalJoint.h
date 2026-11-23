@@ -10,8 +10,10 @@
 // Recovered field layout for Primitives::SkeletalJoint:
 namespace lifted_layout {
 struct Primitives_SkeletalJoint_Fields {
-    // +0x1C  uint32_t                 flags  (evidence: 0x0053DE20)
-    // +0xCC  uint32_t                 field_0xcc  (evidence: 0x0053DE20)
-    // +0xD0  uint32_t                 field_0xd0  (evidence: 0x0053DE20)
+    // +0x1C  uint32_t                 flags  (evidence: 0x0053D0D0, 0x0053DE20)
+    // +0x3C  float                    field_0x3c  (evidence: 0x0053D0D0)
+    // +0xCC  uint32_t                 field_0xcc  (evidence: 0x0053D0D0, 0x0053DE20)
+    // +0xD0  uint32_t                 field_0xd0  (evidence: 0x0053D0D0, 0x0053DE20)
+    // +0xD4  void*                    field_0xd4  (evidence: 0x0053D0D0)
 };
 } // namespace lifted_layout

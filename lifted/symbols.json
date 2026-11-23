@@ -8092,6 +8092,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053BE80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053D0D0": {
+    "name": "Primitives::SkeletalJoint::vfunc_28",
+    "class": "Primitives::SkeletalJoint",
+    "signature": "extern \"C\" void (*mem_0092546C)(GLbitfield mask);                          // glPushAttrib extern \"C\" void (*mem_00925520)(GLfloat width);                            // glLineWidth extern \"C\" void (*mem_00925414)(void);                                     // glPushMatrix extern \"C\" void (*mem_009254CC)(GLfloat angle, GLfloat x, GLfloat y, GLfloat z); // glRotatef extern \"C\" void (*mem_009253D0)(GLfloat x, GLfloat y, GLfloat z);          // glTranslatef extern \"C\" void (*mem_00925404)(void);                                     // glPopMatrix extern \"C\" void (*mem_0092552C)(void);                                     // glPopAttrib extern \"C\" const double mem_0092A280; // 0.01 (fmul qword) extern \"C\" const double mem_00955C80; // 0.65 (fmul qword) extern \"C\" const double mem_0092C508; // 0.1  (fmul qword) extern \"C\" const float  mem_00955A30; // 90.0f void fn_0053D0D0(void* self, uint32_t arg)",
+    "summary": "Runs the Hinge base draw, then if flag 0x20000 is set draws a two-cylinder cone marker (rotated 90 deg about Y) inside a GL attrib/matrix push-pop.",
+    "lifted_path": "lifted/Primitives/SkeletalJoint.cpp"
+  },
   "0x0053D260": {
     "name": "Primitives::RadiusLimit::vfunc_0",
     "class": "Primitives::RadiusLimit",
