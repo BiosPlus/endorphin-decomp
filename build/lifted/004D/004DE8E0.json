@@ -1,0 +1,22 @@
+{
+  "va": "0x004DE8E0",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,float,getEntryBlendPeriod,setEntryBlendPeriod\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "extern \"C\" void __stdcall fn_004DE8E0(void** targetPtr, void* exprArg)",
+  "summary": "Evaluates a float expression and sets AnimationEventData::entryBlendPeriod, or throws if target is null.",
+  "fields": [
+    {
+      "class": "ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "valueObj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:50:27Z"
+}
