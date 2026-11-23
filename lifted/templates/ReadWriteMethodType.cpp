@@ -22,7 +22,7 @@ void fn_00695620(void* dst, void* src) {
     }
 
     // src +0x04: inner object whose vtable slot 1 (+0x04) returns the float value.
-    void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<char*>(src) + 0x04);
     void** vtbl = *reinterpret_cast<void***>(inner);
     ReadFloatVFunc getter = reinterpret_cast<ReadFloatVFunc>(vtbl[1]);
 

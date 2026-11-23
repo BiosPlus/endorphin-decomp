@@ -4907,6 +4907,13 @@
     "summary": "Invokes virtual slot 15 (vtable +0x3C) on self with (arg, 0x266, 0), then returns arg.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C5350": {
+    "name": "NMData::ForceEventData::vfunc_6_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void* __thiscall fn_004C5350(void* self, float* out_vec)",
+    "summary": "Computes a 4D vector with x=y=z from a subobject's float property and w=0.0f.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C5590": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e",
