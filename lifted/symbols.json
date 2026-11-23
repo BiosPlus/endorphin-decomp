@@ -8829,6 +8829,13 @@
     "summary": "Pure jump thunk forwarding to NMFileIO::vfunc_1.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584510": {
+    "name": "AcclaimIO::vfunc_11",
+    "class": "AcclaimIO",
+    "signature": "extern \"C\" int mem_00924FE4;            // MSVCP80 basic_string\u003cchar\u003e::basic_string(const char*) (IAT slot) extern \"C\" int mem_00924FF4;            // MSVCP80 basic_string\u003cchar\u003e::~basic_string() (IAT slot) extern \"C\" const char mem_00928B5D[];   // C string literal passed to the string constructor extern \"C\" void __thiscall fn_00584510(void* self, uint32_t arg)",
+    "summary": "Caches +0x414/+0x420 into +0xD78/+0xD84 and \u0026+0x42C into +0xD9C; if the object at +0x424 is non-null, calls its vfunc 1, builds a string literal and passes it to its vfunc 3, and caches +0x424 into +0xD88. Then forwards arg to subobject +0x964's vfunc 14 and 11, calls ext_005576F0 on self, and clears +0xD9C.",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584610": {
     "name": "AcclaimIO::vfunc_14",
     "class": "AcclaimIO",

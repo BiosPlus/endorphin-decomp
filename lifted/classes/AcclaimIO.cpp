@@ -247,3 +247,81 @@ extern void __thiscall fn_005847C0(void* self, uint32_t arg) {
     ext_00406FC0(&lift_field<uint8_t>(self, 0x16C), sub_5c);
 }
 } // namespace lift_005847C0
+
+// [0x00584510] AcclaimIO::vfunc_11 (247 bytes)
+namespace lift_00584510 {
+extern void __thiscall ext_00558A10(void* self, void* arg);
+extern void __thiscall ext_00559180(void* self, uint32_t arg);
+extern void __thiscall ext_005576F0(void* self);
+extern int mem_00924FE4;            // MSVCP80 basic_string<char>::basic_string(const char*) (IAT slot)
+extern int mem_00924FF4;            // MSVCP80 basic_string<char>::~basic_string() (IAT slot)
+extern const char mem_00928B5D[];   // C string literal passed to the string constructor
+
+// @name AcclaimIO::vfunc_11
+// @class AcclaimIO
+// @summary Caches +0x414/+0x420 into +0xD78/+0xD84 and &+0x42C into +0xD9C; if the object at +0x424 is non-null, calls its vfunc 1, builds a string literal and passes it to its vfunc 3, and caches +0x424 into +0xD88. Then forwards arg to subobject +0x964's vfunc 14 and 11, calls ext_005576F0 on self, and clears +0xD9C.
+// @field AcclaimIO +0x414 uint32_t field_0x414
+// @field AcclaimIO +0x418 uint32_t field_0x418
+// @field AcclaimIO +0x420 uint32_t field_0x420
+// @field AcclaimIO +0x424 uint32_t field_0x424
+// @field AcclaimIO +0x964 uint8_t subobjB
+// @field AcclaimIO +0xD78 uint32_t field_0xD78
+// @field AcclaimIO +0xD84 uint32_t field_0xD84
+// @field AcclaimIO +0xD88 uint32_t field_0xD88
+// @field AcclaimIO +0xD9C uint32_t field_0xD9C
+extern void __thiscall fn_00584510(void* self, uint32_t arg) {
+    using StringCtorFn = void (__thiscall*)(void* dst, const char* src);
+    using StringDtorFn = void (__thiscall*)(void* dst);
+    using ObjVfunc1Fn = void (__thiscall*)(void* obj, uint32_t arg);
+    using ObjVfunc3Fn = void (__thiscall*)(void* obj, void* out);
+    using SubVfunc14Fn = void (__thiscall*)(void* sub, uint32_t arg);
+    using SubVfunc11Fn = void (__thiscall*)(void* sub, uint32_t arg);
+
+    void* const subB = &lift_field<uint8_t>(self, 0x964);
+
+    // Phase 1: forward into embedded subobject +0x964 and cache scalars.
+    ext_00558A10(subB, &lift_field<uint8_t>(self, 0x5C));
+    ext_00559180(subB, lift_field<uint32_t>(self, 0x418));
+
+    lift_field<uint32_t>(self, 0xD78) = lift_field<uint32_t>(self, 0x414);
+    lift_field<uint32_t>(self, 0xD84) = lift_field<uint32_t>(self, 0x420);
+    lift_field<uint32_t>(self, 0xD9C) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&lift_field<uint8_t>(self, 0x42C)));
+
+    // Phase 2: optional object at +0x424.
+    const uint32_t obj_value = lift_field<uint32_t>(self, 0x424);
+    if (obj_value != 0) {
+        void* const obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_value));
+        void* const obj_vtable = lift_field<void*>(obj, 0x00);
+
+        auto vfunc1 = reinterpret_cast<ObjVfunc1Fn>(lift_field<void*>(obj_vtable, 0x04));
+        vfunc1(obj, 0);
+
+        auto string_ctor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+        auto string_dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+        alignas(8) uint8_t str_buf[0x1C] = {};
+        string_ctor(str_buf, mem_00928B5D);
+
+        auto vfunc3 = reinterpret_cast<ObjVfunc3Fn>(lift_field<void*>(obj_vtable, 0x0C));
+        vfunc3(obj, str_buf);
+
+        string_dtor(str_buf);
+
+        lift_field<uint32_t>(self, 0xD88) = lift_field<uint32_t>(self, 0x424);
+    }
+
+    // Phase 3: forward arg to subobject +0x964 (vtable slots 14 and 11).
+    void* const subB_vtable_a = lift_field<void*>(subB, 0x00);
+    auto sub_vfunc14 = reinterpret_cast<SubVfunc14Fn>(lift_field<void*>(subB_vtable_a, 0x38));
+    sub_vfunc14(subB, arg);
+
+    void* const subB_vtable_b = lift_field<void*>(subB, 0x00);
+    auto sub_vfunc11 = reinterpret_cast<SubVfunc11Fn>(lift_field<void*>(subB_vtable_b, 0x2C));
+    sub_vfunc11(subB, arg);
+
+    ext_005576F0(self);
+
+    lift_field<uint32_t>(self, 0xD9C) = 0;
+}
+} // namespace lift_00584510

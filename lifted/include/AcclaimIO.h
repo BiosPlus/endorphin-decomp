@@ -20,10 +20,10 @@ struct AcclaimIO_Fields {
     // +0x3F0 uint32_t                 field_0x3F0  (evidence: 0x00584730)
     // +0x3F4 uint8_t                  field_0x3F4  (evidence: 0x00584730)
     // +0x410 uint32_t                 field_0x410  (evidence: 0x00584730)
-    // +0x414 uint32_t                 field_0x414  (evidence: 0x005847C0)
-    // +0x418 uint32_t                 field_0x418  (evidence: 0x00584730, 0x005847C0)
-    // +0x420 uint32_t                 field_0x420  (evidence: 0x00584730, 0x005847C0)
-    // +0x424 uint32_t                 field_0x424  (evidence: 0x005847C0)
+    // +0x414 uint32_t                 field_0x414  (evidence: 0x00584510, 0x005847C0)
+    // +0x418 uint32_t                 field_0x418  (evidence: 0x00584510, 0x00584730, 0x005847C0)
+    // +0x420 uint32_t                 field_0x420  (evidence: 0x00584510, 0x00584730, 0x005847C0)
+    // +0x424 uint32_t                 field_0x424  (evidence: 0x00584510, 0x005847C0)
     // +0x428 uint8_t                  field_0x428  (evidence: 0x0055BE30, 0x00584660)
     // +0x42C uint8_t                  field_0x42C  (evidence: 0x005847C0)
     // +0x46C uint8_t subobjA (embedded object; vtable slot at +0x38 called)  (evidence: 0x00584610) // CONFLICT: multiple definitions at +0x46C
@@ -37,6 +37,10 @@ struct AcclaimIO_Fields {
     // +0x880 uint32_t                 field_0x880  (evidence: 0x005847C0)
     // +0x88C uint32_t                 field_0x88C  (evidence: 0x00584730, 0x005847C0)
     // +0x890 uint32_t                 field_0x890  (evidence: 0x005847C0)
-    // +0x964 uint8_t                  subobjB  (evidence: 0x0055BE60, 0x005846B0, 0x005846F0)
+    // +0x964 uint8_t                  subobjB  (evidence: 0x0055BE60, 0x00584510, 0x005846B0, 0x005846F0)
+    // +0xD78 uint32_t                 field_0xD78  (evidence: 0x00584510)
+    // +0xD84 uint32_t                 field_0xD84  (evidence: 0x00584510)
+    // +0xD88 uint32_t                 field_0xD88  (evidence: 0x00584510)
+    // +0xD9C uint32_t                 field_0xD9C  (evidence: 0x00584510)
 };
 } // namespace lifted_layout
