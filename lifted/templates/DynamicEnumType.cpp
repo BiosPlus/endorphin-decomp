@@ -1355,3 +1355,31 @@ extern void* __thiscall fn_005C8C10(void* self, void* out_val, void** obj_ptr) {
 }
 } // namespace lift_0046D5D0
 } // namespace lift_005C8C10
+
+// [0x0067AAA0]
+namespace lift_0067AAA0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData>::vfunc_18
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData>
+// @summary Lazily initializes a static TypeInfo/descriptor at 0x00B59F2C and returns its address.
+
+
+extern uint32_t __cdecl ext_00671100(uint32_t);
+extern void __cdecl ext_006A6C87(uint32_t);
+
+extern uint32_t mem_00B59F2C;
+extern uint32_t mem_00B59F30;
+extern uint32_t mem_00B59F34;
+
+uint32_t __thiscall fn_0067AAA0(void* self, uint32_t arg0) {
+    (void)self;
+    (void)arg0;
+    if ((mem_00B59F34 & 1u) == 0) {
+        mem_00B59F34 |= 1u;
+        uint32_t val = ext_00671100(7u);
+        mem_00B59F2C = 0u;
+        mem_00B59F30 = val;
+        ext_006A6C87(0x00921A80u);
+    }
+    return 0x00B59F2Cu;
+}
+} // namespace lift_0067AAA0

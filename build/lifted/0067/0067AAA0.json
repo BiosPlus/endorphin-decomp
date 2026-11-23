@@ -1,0 +1,14 @@
+{
+  "va": "0x0067AAA0",
+  "size": 104,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_18",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e::vfunc_18",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e",
+  "signature": "uint32_t __thiscall fn_0067AAA0(void* self, uint32_t arg0)",
+  "summary": "Lazily initializes a static TypeInfo/descriptor at 0x00B59F2C and returns its address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:13Z"
+}
