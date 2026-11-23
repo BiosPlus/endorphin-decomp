@@ -1738,3 +1738,33 @@ float fn_00471920(void* self) {
     throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: null target pointer");
 }
 } // namespace lift_00471920
+
+// [0x004887D0] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004887D0 {
+// Callees (raw, unlifted bodies). Calling convention in the original is thiscall
+// (object in ecx); here the object pointer is passed as the first argument.
+extern float ext_00486970(void* self);   // sub_00486970 (7B): forwards to the bound value's getter, returns float
+extern void  ext_0046C3C0(void* self);   // sub_0046C3C0 (105B): constructs the exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+[[noreturn]] void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Throw-info descriptor for the exception type (VA 0x009DEC1C).
+inline constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ReadMethodType<DesiredPoseEventData>::getEntryBlendPeriod
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Reads the bound DesiredPoseEventData value pointer from the argument; if present, returns its entry blend period via ext_00486970, otherwise constructs and throws an exception.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004887D0(void* self) {
+    // self points at a handle whose first dword is the bound value pointer.
+    void* value = *reinterpret_cast<void**>(self);
+    if (value != nullptr) {
+        return ext_00486970(value);
+    }
+
+    // Null binding: build an exception object in the 0x28-byte scratch frame and throw it.
+    alignas(8) uint8_t exception_object[0x28] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+}
+} // namespace lift_004887D0

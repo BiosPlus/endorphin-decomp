@@ -3198,6 +3198,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x144.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x004887D0": {
+    "name": "ReadMethodType\u003cDesiredPoseEventData\u003e::getEntryBlendPeriod",
+    "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+    "signature": "extern \"C\" float ext_00486970(void* self);   // sub_00486970 (7B): forwards to the bound value's getter, returns float extern \"C\" void  ext_0046C3C0(void* self);   // sub_0046C3C0 (105B): constructs the exception object in place extern \"C\"",
+    "summary": "Reads the bound DesiredPoseEventData value pointer from the argument; if present, returns its entry blend period via ext_00486970, otherwise constructs and throws an exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00489540": {
     "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
     "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",

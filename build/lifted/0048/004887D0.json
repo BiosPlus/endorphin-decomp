@@ -1,0 +1,22 @@
+{
+  "va": "0x004887D0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType\u003cDesiredPoseEventData\u003e::getEntryBlendPeriod",
+  "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+  "signature": "extern \"C\" float ext_00486970(void* self);   // sub_00486970 (7B): forwards to the bound value's getter, returns float extern \"C\" void  ext_0046C3C0(void* self);   // sub_0046C3C0 (105B): constructs the exception object in place extern \"C\"",
+  "summary": "Reads the bound DesiredPoseEventData value pointer from the argument; if present, returns its entry blend period via ext_00486970, otherwise constructs and throws an exception.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:16:17Z"
+}
