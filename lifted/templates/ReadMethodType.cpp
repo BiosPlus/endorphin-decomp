@@ -1920,3 +1920,29 @@ extern uint32_t fn_004A4BD0(uint32_t arg)
     return 0;
 }
 } // namespace lift_004A4BD0
+
+// [0x004A48F0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004A48F0 {
+// Known callee 0x00496F30: sub_00496F30 (4 bytes; takes the inner pointer in ecx, returns bool in eax).
+extern bool ext_00496F30(void* ecx);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105 bytes; constructs the exception object in the buffer passed via ecx).
+extern void ext_0046C3C0(void* ecx);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the first pointer-sized field of the object; if non-null, returns the result of sub_00496F30 on it, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+bool fn_004A48F0(void* self) {
+    void* ptr = *reinterpret_cast<void**>(self);
+    if (ptr != nullptr) {
+        return ext_00496F30(ptr);
+    }
+    // Null path: construct the exception object and throw.
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2();
+    return false; // not reached
+}
+} // namespace lift_004A48F0
