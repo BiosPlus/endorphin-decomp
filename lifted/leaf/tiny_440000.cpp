@@ -246,3 +246,17 @@ void fn_0044D010(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0xCC) = a0;
     lift_field<uint32_t>(self, 0xD0) = a1;
 }
+
+// [0x0044CF80]
+namespace lift_0044CF80 {
+// @name hasField0x74
+// @summary Checks whether the 32-bit field at offset 0x74 is non-zero.
+// @field Unknown +0x74 uint32_t field_0x74
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __thiscall sub_0044CF80(uint32_t self) {
+    return mem_read32(self + 0x74) != 0 ? 1u : 0u;
+}
+} // namespace lift_0044CF80
