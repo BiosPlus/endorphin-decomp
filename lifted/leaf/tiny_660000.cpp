@@ -114,3 +114,19 @@ extern "C" void __fastcall fn_006667D0(void* self) {
 extern "C" void __fastcall fn_0066AC80(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0092DF34;
 }
+
+// [0x006616B0]
+namespace lift_006616B0 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name forwardVtableSlot0x18
+// @summary Tail-calls vtable slot +0x18 on the object pointed to by this+0x00.
+// @field Unknown +0x00 void* inner
+int __thiscall sub_006616B0(void* thisPtr) {
+    uint32_t inner = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(thisPtr)));
+    uint32_t vtable = mem_read32(inner);
+    uint32_t fnAddr = mem_read32(vtable + 0x18);
+    using Vfn = int(__thiscall*)(uint32_t);
+    return reinterpret_cast<Vfn>(static_cast<uintptr_t>(fnAddr))(inner);
+}
+} // namespace lift_006616B0

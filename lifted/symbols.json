@@ -21601,6 +21601,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006601E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006616B0": {
+    "name": "forwardVtableSlot0x18",
+    "signature": "int __thiscall sub_006616B0(void* thisPtr)",
+    "summary": "Tail-calls vtable slot +0x18 on the object pointed to by this+0x00.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661A00": {
     "name": "sub_00661A00",
     "signature": "extern \"C\" void __fastcall fn_00661A00(void* self)",
