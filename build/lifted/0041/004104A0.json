@@ -1,0 +1,22 @@
+{
+  "va": "0x004104A0",
+  "size": 52,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_1",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_1",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "extern \"C\" int32_t __thiscall fn_004104A0(void* self)",
+  "summary": "Looks up an object via ext_00594000/ext_00597630; if both the global pointer and the object are non-null, forwards ext_0059DC50's result to ext_0052ADA0 on the global and returns its value, else returns 0.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:53:19Z"
+}

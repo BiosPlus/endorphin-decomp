@@ -10,6 +10,6 @@
 // Recovered field layout for MultiTrackView::CompositeEventTrack:
 namespace lifted_layout {
 struct MultiTrackView_CompositeEventTrack_Fields {
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x004104E0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x004104A0, 0x004104E0)
 };
 } // namespace lifted_layout

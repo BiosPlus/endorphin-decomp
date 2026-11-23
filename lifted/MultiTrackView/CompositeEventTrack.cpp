@@ -34,3 +34,38 @@ extern "C" int32_t __thiscall fn_004104E0(void* self) {
     }
     return 1;
 }
+
+// [0x004104A0] MultiTrackView::CompositeEventTrack::vfunc_1 (52 bytes)
+namespace lift_004104A0 {
+// Known callee 0x00594000: sub_00594000 (cdecl, no args; returns global int32 mem_00B40D08).
+extern int32_t __cdecl ext_00594000();
+// Callee 0x00597630: sub_00597630 (99B, not yet lifted). ecx = int32 key, returns object pointer in eax.
+extern void* __thiscall ext_00597630(void* self);
+// Callee 0x0059DC50: sub_0059DC50 (7B, not yet lifted). ecx = object pointer, returns uint32 in eax.
+extern uint32_t __thiscall ext_0059DC50(void* self);
+// Callee 0x0052ADA0: sub_0052ADA0 (16B, not yet lifted). ecx = this, one stack arg, returns int32 in eax.
+extern int32_t __thiscall ext_0052ADA0(void* self, uint32_t arg);
+// Global pointer loaded into esi (mem_00AED9D0 = 0x00AED9D0).
+extern void* mem_00AED9D0;
+
+// @name MultiTrackView::CompositeEventTrack::vfunc_1
+// @class MultiTrackView::CompositeEventTrack
+// @summary Looks up an object via ext_00594000/ext_00597630; if both the global pointer and the object are non-null, forwards ext_0059DC50's result to ext_0052ADA0 on the global and returns its value, else returns 0.
+// @field MultiTrackView::CompositeEventTrack +0x14 uint32_t field_0x14
+extern int32_t __thiscall fn_004104A0(void* self) {
+    // The original reads self+0x14 and pushes it, but ext_00594000 takes no args and the
+    // pushed value is not consumed by the lifted data flow (same treatment as fn_004104E0).
+    (void)lift_field<uint32_t>(self, 0x14);
+
+    void* global_obj = mem_00AED9D0;
+    const int32_t key = ext_00594000();
+    void* obj = ext_00597630(reinterpret_cast<void*>(static_cast<intptr_t>(key)));
+
+    if (global_obj == nullptr || obj == nullptr) {
+        return 0;
+    }
+
+    const uint32_t token = ext_0059DC50(obj);
+    return ext_0052ADA0(global_obj, token);
+}
+} // namespace lift_004104A0
