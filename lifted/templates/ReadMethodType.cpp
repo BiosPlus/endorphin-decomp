@@ -15399,3 +15399,33 @@ uint32_t __thiscall fn_004B8A00(void* /*self*/, void* const* targetPtr) {
     return (static_cast<double>(unitMass) >= mem_009433D8) ? 1u : 0u;
 }
 } // namespace lift_004B8A00
+
+// [0x004B8ED0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_004B8ED0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+extern double mem_009433D8;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getTimeZoomFactor, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Returns 1 if the EngineData time zoom factor (float at +0x24) is >= 1e-6, else 0; throws if the object pointer is null.
+// @field NMData::EngineData +0x24 float field_0x24
+int fn_004B8ED0(void* const* holder) {
+    const void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        // Original: builds an exception object via sub_0046C3C0 then throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    const double value = static_cast<double>(lift_field<float>(obj, 0x24));
+    const double threshold = mem_009433D8;
+    // Written as !(value >= threshold) so NaN yields 0, matching the x87 fcomp branch.
+    if (!(value >= threshold)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_004B8ED0
