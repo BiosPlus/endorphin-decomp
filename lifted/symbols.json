@@ -10793,6 +10793,13 @@
     "summary": "Returns 1 if the 32-bit integer stored at the first dword of the argument object is nonzero, else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066AE60": {
+    "name": "ExprParser::IntType::vfunc_4",
+    "class": "ExprParser::IntType",
+    "signature": "void* fn_0066AE60(void* self, const void* src)",
+    "summary": "Reads the int32 at offset 0 of src and forwards it to ext_0046C500 on self; returns self.",
+    "lifted_path": "lifted/ExprParser/IntType.cpp"
+  },
   "0x0066AE90": {
     "name": "ExprParser::BoolType::vfunc_0",
     "class": "ExprParser::BoolType",
