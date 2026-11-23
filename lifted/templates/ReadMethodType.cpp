@@ -501,3 +501,26 @@ float __stdcall fn_005B2ED0(void* const* holder) {
     return 0.0f; // not reached: _CxxThrowException does not return
 }
 } // namespace lift_005B2ED0
+
+// [0x005D2440] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_2 (45 bytes)
+namespace lift_005D2440 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &NMData::VideoPlaneData::getFrameOffset, 0>
+// @summary Reads the VideoPlaneData object held in the wrapper and returns its frame offset (+0x28); throws if the object pointer is null.
+// @field NMData::VideoPlaneData +0x28 int field_0x28
+int fn_005D2440(void* self) {
+    // self points at the wrapper; the wrapper's first dword is the VideoPlaneData*.
+    auto* obj = *reinterpret_cast<unsigned char**>(self);
+    if (obj == nullptr) {
+        // Original path: build an exception object and throw via MSVCR80 (no return).
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    return *reinterpret_cast<int*>(obj + 0x28);
+}
+} // namespace lift_005D2440

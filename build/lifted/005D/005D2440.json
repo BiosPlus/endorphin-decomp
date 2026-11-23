@@ -1,0 +1,22 @@
+{
+  "va": "0x005D2440",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026NMData::VideoPlaneData::getFrameOffset, 0\u003e",
+  "signature": "int fn_005D2440(void* self)",
+  "summary": "Reads the VideoPlaneData object held in the wrapper and returns its frame offset (+0x28); throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x28",
+      "type": "int",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:14:44Z"
+}
