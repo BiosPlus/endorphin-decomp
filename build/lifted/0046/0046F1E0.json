@@ -1,0 +1,22 @@
+{
+  "va": "0x0046F1E0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getImageWidth)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e",
+  "signature": "int fn_0046F1E0(void* self)",
+  "summary": "Returns the ImageExporter width via the held object pointer; throws a C++ exception if the pointer is null.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:15:54Z"
+}

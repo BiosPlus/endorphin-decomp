@@ -1644,3 +1644,29 @@ int fn_0046D920(void* const* holder) {
     return ext_006AD1C0(obj);
 }
 } // namespace lift_0046D920
+
+// [0x0046F1E0] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_0046F1E0 {
+// Callee 0x0046C090: sub_0046C090 (4B), invoked with the target object as `this`; returns int.
+extern int ext_0046C090(void* thisObj);
+// Callee 0x0046C3C0: sub_0046C3C0 (105B), constructs the exception object in a local buffer.
+extern void ext_0046C3C0(void* localBuf);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getImageWidth)
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>
+// @summary Returns the ImageExporter width via the held object pointer; throws a C++ exception if the pointer is null.
+// @field ValuePtrType +0x00 void* target
+int fn_0046F1E0(void* self) {
+    void* target = lift_field<void*>(self, 0);
+    if (target != nullptr) {
+        return ext_0046C090(target);
+    }
+    // Null path: build exception object (sub_0046C3C0) and throw with type info 0x009DEC1C.
+    alignas(8) unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2();
+    return 0; // unreachable: _CxxThrowException does not return
+}
+} // namespace lift_0046F1E0
