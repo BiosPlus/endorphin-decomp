@@ -1,0 +1,22 @@
+{
+  "va": "0x004EA4D0",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
+  "signature": "void* fn_004EA4D0(void* a, void** b)",
+  "summary": "Reads the byte at +0x09 of the pointee of the second argument, forwards it to ext_006720A0 on the first argument, and returns the first argument; throws if the pointee is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x9",
+      "type": "uint8_t",
+      "name": "field_0x09"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:48:02Z"
+}

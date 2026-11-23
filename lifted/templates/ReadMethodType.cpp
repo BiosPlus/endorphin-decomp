@@ -11684,3 +11684,27 @@ void* __thiscall fn_00674900(void* self, void* out_val, void** obj_ptr)
 }
 } // namespace lift_0062E430
 } // namespace lift_00674900
+
+// [0x004EA4D0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_004EA4D0 {
+extern void ext_006720A0(void* self, uint8_t flag);
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isProjectRootEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>
+// @summary Reads the byte at +0x09 of the pointee of the second argument, forwards it to ext_006720A0 on the first argument, and returns the first argument; throws if the pointee is null.
+// @field ExprParser::ValuePtrType +0x09 uint8_t field_0x09
+void* fn_004EA4D0(void* a, void** b) {
+    if (*b == nullptr) {
+        // Null pointee: the original code constructs an exception object and throws.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return nullptr;
+    }
+    uint8_t flag = *reinterpret_cast<uint8_t*>(static_cast<char*>(*b) + 0x09);
+    ext_006720A0(a, flag);
+    return a;
+}
+} // namespace lift_004EA4D0
