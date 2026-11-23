@@ -18146,3 +18146,28 @@ int fn_004B2120(void** arg) {
     return (xMax >= mem_00942058) ? 1 : 0;
 }
 } // namespace lift_004B2120
+
+// [0x004B2470] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004B2470 {
+extern float ext_00622310(void* self);  // NMData::SkeletalCalibrationVariables::vfunc_14 (4B)
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getYMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>
+// @summary Returns 1 if the value reported by the wrapped object's vfunc_14 is >= 1e-6 (NaN yields 0); throws if the wrapped object pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+int fn_004B2470(void* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null object pointer");
+    }
+
+    const float value = ext_00622310(obj);
+    const double threshold = 1e-6;
+
+    // Original: fcomp against 1e-6, test C0; NaN sets C0 so it takes the 0 path.
+    if (static_cast<double>(value) >= threshold) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B2470
