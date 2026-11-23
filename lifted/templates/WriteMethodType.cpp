@@ -3878,3 +3878,40 @@ void fn_0064EC00(void* out, void* arg2, void* src) {
     lift_field<void*>(out, 0x04) = lift_field<void*>(src, 0x04);
 }
 } // namespace lift_0064EC00
+
+// [0x0064EB50] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064EB50 {
+// Callee 0x0064DE80: SkeletalJoint::setDesiredTwist(float), thiscall (joint in ecx, one stack float).
+extern void __thiscall ext_0064DE80(void* joint, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setDesiredTwist>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}>
+// @summary Reads a float from the wrapped source object (vslot 1), forwards it to SkeletalJoint::setDesiredTwist on the joint referenced by *value, then writes the result pair {first, obj} to the hidden return slot (or {0,0} when the wrapper has no object).
+// @field ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}> +0x04 void* field_0x04
+// Stdcall-style: out (hidden result pointer), value (pointer to joint reference), self (wrapper). ret 0xc.
+void __stdcall fn_0064EB50(uint32_t* out, void* const* value, void* self) {
+    void* const obj = lift_field<void*>(self, 0x04);
+
+    // Slot 1 on obj: float f(obj, self) -> twist value (returned on x87 stack).
+    void* const vt1 = lift_field<void*>(obj, 0x00);
+    using Slot1Fn = float (__thiscall*)(void* obj_this, void* arg);
+    const float twist = reinterpret_cast<Slot1Fn>(lift_field<void*>(vt1, 0x04))(obj, self);
+
+    // joint = *value (first dword of the reference), then setDesiredTwist(twist).
+    void* const joint = *value;
+    ext_0064DE80(joint, twist);
+
+    uint32_t local = 0;
+    if (obj != nullptr) {
+        // Slot 28 (0x70) on obj: void* g(&local, self) -> pointer whose dword is the result.
+        void* const vt2 = lift_field<void*>(obj, 0x00);
+        using Slot28Fn = void* (__thiscall*)(void* obj_this, uint32_t* local_out, void* arg);
+        void* const p = reinterpret_cast<Slot28Fn>(lift_field<void*>(vt2, 0x70))(obj, &local, self);
+        out[0] = *static_cast<const uint32_t*>(p);
+        out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+    } else {
+        out[0] = local;
+        out[1] = 0;
+    }
+}
+} // namespace lift_0064EB50

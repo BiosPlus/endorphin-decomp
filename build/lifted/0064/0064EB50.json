@@ -1,0 +1,14 @@
+{
+  "va": "0x0064EB50",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setDesiredTwist\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}\u003e",
+  "signature": "void __stdcall fn_0064EB50(uint32_t* out, void* const* value, void* self)",
+  "summary": "Reads a float from the wrapped source object (vslot 1), forwards it to SkeletalJoint::setDesiredTwist on the joint referenced by *value, then writes the result pair {first, obj} to the hidden return slot (or {0,0} when the wrapper has no object).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:09:38Z"
+}

@@ -10740,6 +10740,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064EB50": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setDesiredTwist\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}\u003e",
+    "signature": "void __stdcall fn_0064EB50(uint32_t* out, void* const* value, void* self)",
+    "summary": "Reads a float from the wrapped source object (vslot 1), forwards it to SkeletalJoint::setDesiredTwist on the joint referenced by *value, then writes the result pair {first, obj} to the hidden return slot (or {0,0} when the wrapper has no object).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064EBD0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing1(float), 0}\u003e",
