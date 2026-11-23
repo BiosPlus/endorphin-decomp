@@ -10611,6 +10611,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B7AE0 (ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x005C5EE0": {
+    "name": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const\u0026, getAreaToNormal\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const\u0026, getAreaToNormal\u003e",
+    "signature": "void* fn_005C5EE0(void* self, void* a, void** b, void* c)",
+    "summary": "Calls CollisionModelDataBase::getAreaToNormal on the object held by arg B, using the vector obtained via a virtual call on arg C, and stores the float result into B; returns B.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x005C61B0": {
     "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",

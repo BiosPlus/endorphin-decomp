@@ -1,0 +1,28 @@
+{
+  "va": "0x005C5EE0",
+  "size": 69,
+  "orig_symbol": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getAreaToNormal(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const\u0026, getAreaToNormal\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const\u0026, getAreaToNormal\u003e",
+  "signature": "void* fn_005C5EE0(void* self, void* a, void** b, void* c)",
+  "summary": "Calls CollisionModelDataBase::getAreaToNormal on the object held by arg B, using the vector obtained via a virtual call on arg C, and stores the float result into B; returns B.",
+  "fields": [
+    {
+      "class": "ExprParser::FunctionType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (deref of arg B: target",
+      "name": "CollisionModelDataBase*)"
+    },
+    {
+      "class": "ExprParser::FunctionType",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (arg C: holder object pointer at",
+      "name": "C+4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:09:46Z"
+}

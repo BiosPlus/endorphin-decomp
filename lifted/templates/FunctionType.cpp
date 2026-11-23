@@ -256,3 +256,33 @@ void* fn_0062E3E0(void* thisPtr, void* unusedArg, void* argRef, void* valueArg) 
 }
 } // namespace lift_005B8130
 } // namespace lift_0062E3E0
+
+// [0x005C5EE0] ExprParser::FunctionType<NMData::CollisionModelDataBase, float, NM::Vector3 const &, {public: float __thiscall NMData::CollisionModelDataBase::getAreaToNormal(class NM::Vector3 const &), 0}>::vfunc_48 (69 bytes)
+namespace lift_005C5EE0 {
+// @name ExprParser::FunctionType<NMData::CollisionModelDataBase, float, NM::Vector3 const&, getAreaToNormal>::vfunc_48
+// @class ExprParser::FunctionType<NMData::CollisionModelDataBase, float, NM::Vector3 const&, getAreaToNormal>
+// @summary Calls CollisionModelDataBase::getAreaToNormal on the object held by arg B, using the vector obtained via a virtual call on arg C, and stores the float result into B; returns B.
+// @field ExprParser::FunctionType +0x00 void* field_0x00 (deref of arg B: target CollisionModelDataBase*)
+// @field ExprParser::FunctionType +0x04 void* field_0x04 (arg C: holder object pointer at C+4)
+
+extern float ext_005C3DB0(void* self, const void* vec);   // CollisionModelDataBase::getAreaToNormal (thiscall)
+extern void  ext_00672080(void* self, float value);       // stores float result into the ValuePtr
+
+// Virtual slot 5 (vtable +0x14) on the holder object; returns a Vector3 const*.
+using VSlot5Fn = const void* (*)(void* self, const void* arg, int flags);
+
+void* fn_005C5EE0(void* self, void* a, void** b, void* c) {
+    (void)self;
+    (void)a;
+
+    void* target = b[0];                             // esi = *B
+    void* holder = lift_field<void*>(c, 4);          // *(C + 4)
+    void** vtbl = *static_cast<void***>(holder);     // holder->vtable
+    VSlot5Fn slot5 = reinterpret_cast<VSlot5Fn>(vtbl[5]);   // vtable +0x14
+    const void* vec = slot5(holder, c, 0);
+
+    float result = ext_005C3DB0(target, vec);
+    ext_00672080(b, result);
+    return b;                                        // eax = B
+}
+} // namespace lift_005C5EE0
