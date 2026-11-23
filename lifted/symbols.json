@@ -22416,6 +22416,13 @@
     "summary": "Calls slot 1 of the object at +0x04 twice, combines the two float results with pow, then passes the result to slot 7 of that object.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0067AAA0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e::vfunc_18",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e",
+    "signature": "uint32_t __thiscall fn_0067AAA0(void* self, uint32_t arg0)",
+    "summary": "Lazily initializes a static TypeInfo/descriptor at 0x00B59F2C and returns its address.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x0067AB80": {
     "name": "sub_0067AB80",
     "signature": "extern \"C\" void fn_0067AB80(void)",

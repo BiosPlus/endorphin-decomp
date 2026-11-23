@@ -1,0 +1,28 @@
+{
+  "va": "0x00551CB0",
+  "size": 104,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_19",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_19",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void __thiscall fn_00551CB0(void* self, const float* in_coords, int32_t* out_coords)",
+  "summary": "Converts normalized/world 2D coordinates to integer screen/viewport coordinates.",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xB0",
+      "type": "double",
+      "name": "field_0xb0"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xB8",
+      "type": "double",
+      "name": "field_0xb8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:08Z"
+}
