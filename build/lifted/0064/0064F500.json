@@ -1,0 +1,14 @@
+{
+  "va": "0x0064F500",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitSwingStiffness\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}\u003e",
+  "signature": "void fn_0064F500(uint32_t* out, uintptr_t arg2, void* self)",
+  "summary": "Evaluates the value source (object at +0x04) and applies it to the target SkeletalJoint via setSoftLimitSwingStiffness; returns {value-or-0, owner} by hidden pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:12:19Z"
+}

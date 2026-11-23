@@ -5522,3 +5522,46 @@ void* __stdcall fn_0064F3A0(void* retBuf, void* targetRef, void* self) {
     return retBuf;
 }
 } // namespace lift_0064F3A0
+
+// [0x0064F500] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F500 {
+// SkeletalJoint::setSoftLimitSwingStiffness(float) at 0x0064DD60 (thiscall, callee-cleans 4 bytes).
+extern void ext_0064DD60(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setSoftLimitSwingStiffness>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}>
+// @summary Evaluates the value source (object at +0x04) and applies it to the target SkeletalJoint via setSoftLimitSwingStiffness; returns {value-or-0, owner} by hidden pointer.
+// @field ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}> +0x04 pointer field_0x04 (value-source object)
+void fn_0064F500(uint32_t* out, uintptr_t arg2, void* self) {
+    // edi = *(SkeletalJoint**)arg2 : target joint is read before evaluation.
+    const uint32_t joint = *reinterpret_cast<const uint32_t*>(arg2);
+
+    // value = owner->vtable[1](self)   (owner = self->field_0x04)
+    // The original calls the owner's vfunc unconditionally here (no null check).
+    const uint32_t owner_raw = lift_field<uint32_t>(self, 0x04);
+    void* owner = reinterpret_cast<void*>(static_cast<uintptr_t>(owner_raw));
+    void** owner_vt = *reinterpret_cast<void***>(owner);
+    using EvalFn = float (*)(void*, void*);
+    auto eval = reinterpret_cast<EvalFn>(owner_vt[1]);
+    const float value = eval(owner, self);
+
+    // joint->setSoftLimitSwingStiffness(value)
+    ext_0064DD60(reinterpret_cast<void*>(static_cast<uintptr_t>(joint)), value);
+
+    // Re-check owner (the original re-reads field_0x04 after the setter call).
+    const uint32_t owner_raw2 = lift_field<uint32_t>(self, 0x04);
+    if (owner_raw2 != 0) {
+        void* owner2 = reinterpret_cast<void*>(static_cast<uintptr_t>(owner_raw2));
+        void** vt2 = *reinterpret_cast<void***>(owner2);
+        // vfunc at byte offset 0x70 of the vtable (slot 28 on a 32-bit build).
+        using RefFn = const uint32_t* (*)(void*, uintptr_t, void*);
+        auto get_ref = reinterpret_cast<RefFn>(vt2[0x70 / sizeof(void*)]);
+        const uint32_t* r = get_ref(owner2, arg2, self);
+        out[0] = *r;
+        out[1] = owner_raw2;
+    } else {
+        out[0] = 0;
+        out[1] = owner_raw2;
+    }
+}
+} // namespace lift_0064F500
