@@ -1,0 +1,22 @@
+{
+  "va": "0x0040FD20",
+  "size": 10,
+  "orig_symbol": "CColorCheck::vfunc_82",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CColorCheck::vfunc_82",
+  "class": "CColorCheck",
+  "signature": "uint32_t __thiscall CColorCheck_vfunc_82(void* self)",
+  "summary": "Checks whether field_0x54 equals 1.",
+  "fields": [
+    {
+      "class": "CColorCheck",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:27:20Z"
+}

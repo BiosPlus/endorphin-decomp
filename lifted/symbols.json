@@ -26,6 +26,12 @@
     "summary": "Pure jump thunk forwarding to sub_00401840.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00401970": {
+    "name": "sub_00401970",
+    "signature": "void __thiscall sub_00401970(void* self)",
+    "summary": "Tail-calls a callback function pointer stored at offset 0x14 if non-null",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401A60": {
     "name": "HasBufferedTM::vfunc_3",
     "class": "HasBufferedTM",
@@ -452,6 +458,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0092B9D4 and tail-calls base destructor thunk_MFC80_ord_587.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040FD20": {
+    "name": "CColorCheck::vfunc_82",
+    "class": "CColorCheck",
+    "signature": "uint32_t __thiscall CColorCheck_vfunc_82(void* self)",
+    "summary": "Checks whether field_0x54 equals 1.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0040FDF0": {
     "name": "CColorCheck::vfunc_1",
     "class": "CColorCheck",
@@ -763,6 +776,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00419920(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00419840 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00419E20": {
+    "name": "FolderDialog::vfunc_79",
+    "class": "FolderDialog",
+    "signature": "uint32_t __thiscall fn_00419E20(uintptr_t self)",
+    "summary": "Forwards pointer to field_0x68 to sub_00419DF0",
+    "lifted_path": "lifted/classes/FolderDialog.cpp"
   },
   "0x00419ED0": {
     "name": "FolderDialog::vfunc_1",

@@ -4538,3 +4538,15 @@ uint32_t __thiscall fn_0053A560(uint8_t* self) {
     return 0;
 }
 } // namespace lift_0053A560
+
+// [0x0040FD20]
+namespace lift_0040FD20 {
+// @name CColorCheck::vfunc_82
+// @class CColorCheck
+// @summary Checks whether field_0x54 equals 1.
+// @field CColorCheck +0x54 uint32_t field_0x54
+
+uint32_t __thiscall CColorCheck_vfunc_82(void* self) {
+    return *(const uint32_t*)((const uint8_t*)self + 0x54) == 1 ? 1u : 0u;
+}
+} // namespace lift_0040FD20
