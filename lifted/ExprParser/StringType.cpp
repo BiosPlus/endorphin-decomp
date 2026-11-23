@@ -163,3 +163,32 @@ void __thiscall fn_006718C0(void* /*self*/, void* arg1, void* arg2) {
     mem_00924FF4(local_str);
 }
 } // namespace lift_006718C0
+
+// [0x00671930]
+namespace lift_00671930 {
+// @name ExprParser::StringType::vfunc_43
+// @class ExprParser::StringType
+// @summary Appends a string representation of the second argument to the string value pointed to by the first argument.
+
+
+extern void __cdecl ext_00671840(void* arg);
+extern void* __thiscall ext_0041CEB0(void* self, void* out_str);
+
+extern void* mem_00924FD8;
+extern void* mem_00924FF4;
+
+using StringAppendAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+using StringDtorFn = void (__thiscall*)(void* self);
+
+void __thiscall fn_00671930(void* self, void* dst, void* src) {
+    (void)self;
+    ext_00671840(dst);
+
+    alignas(4) uint8_t local_str[0x1C]{};
+    void* rhs_str = ext_0041CEB0(src, local_str);
+
+    void* dst_str = *reinterpret_cast<void**>(dst);
+    reinterpret_cast<StringAppendAssignFn>(mem_00924FD8)(dst_str, rhs_str);
+    reinterpret_cast<StringDtorFn>(mem_00924FF4)(local_str);
+}
+} // namespace lift_00671930

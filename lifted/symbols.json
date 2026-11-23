@@ -6744,6 +6744,13 @@
     "summary": "Dynamically casts the input object pointer to NMData::RigEventData using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D4730": {
+    "name": "NMData::RigEventData::vfunc_1_off_184",
+    "class": "NMData::RigEventData",
+    "signature": "uint8_t __thiscall fn_004D4730(void* self)",
+    "summary": "Checks whether the string returned by sub_004D40E0 differs from the global string at 0x00A34650.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004D4820": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_0",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
@@ -21377,6 +21384,13 @@
     "class": "ExprParser::StringType",
     "signature": "void __thiscall fn_006718C0(void* /*self*/, void* arg1, void* arg2)",
     "summary": "Assigns a string value from arg2 to the std::string pointed to by arg1.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
+  "0x00671930": {
+    "name": "ExprParser::StringType::vfunc_43",
+    "class": "ExprParser::StringType",
+    "signature": "void __thiscall fn_00671930(void* self, void* dst, void* src)",
+    "summary": "Appends a string representation of the second argument to the string value pointed to by the first argument.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
   "0x006719C0": {

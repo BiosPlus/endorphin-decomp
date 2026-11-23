@@ -1,0 +1,14 @@
+{
+  "va": "0x00671930",
+  "size": 102,
+  "orig_symbol": "ExprParser::StringType::vfunc_43",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_43",
+  "class": "ExprParser::StringType",
+  "signature": "void __thiscall fn_00671930(void* self, void* dst, void* src)",
+  "summary": "Appends a string representation of the second argument to the string value pointed to by the first argument.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:57Z"
+}
