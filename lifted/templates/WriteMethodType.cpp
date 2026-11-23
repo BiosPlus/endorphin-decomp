@@ -3478,3 +3478,42 @@ extern void __stdcall fn_006492B0(void* out, void* const* targetRef, void* self)
     }
 }
 } // namespace lift_006492B0
+
+// [0x00649410] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649410 {
+// Known callee 0x00648E70: sub_00648E70 (Setter storing float argument into field at offset +0x84.)
+extern void __fastcall ext_00648E70(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredOrientationAlpha>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}>
+// @summary Evaluates the wrapped value expression (vslot 1, float), forwards it to setCachedDesiredOrientationAlpha via ext_00648E70, then returns {first dword of sub-result or 0, sub-object} as an 8-byte value.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_00649410(void* sret, void** arg2, void* arg3) {
+    // arg2: pointer to the target object pointer (RelationshipRPROMagnet*).
+    void* self = *arg2;
+
+    // arg3 -> sub-object at +0x04 (ValuePtrType::field_0x04).
+    void* sub = lift_field<void*>(arg3, 4);
+
+    // Virtual slot 1 (offset +0x04) on sub: float getter.
+    void** vt = *reinterpret_cast<void***>(sub);
+    using GetFloatFn = float (*)(void* self_, void* arg3_, int zero_);
+    float value = reinterpret_cast<GetFloatFn>(vt[1])(sub, arg3, 0);
+
+    ext_00648E70(self, 0, value);
+
+    uint32_t first = 0;
+    if (sub != nullptr) {
+        // Virtual slot 28 (offset +0x70) on sub: returns pointer to a 4-byte result.
+        void** vt2 = *reinterpret_cast<void***>(sub);
+        using GetPtrFn = void* (*)(void* self_, void* arg3_, uint32_t* out_);
+        uint32_t tmp = 0;
+        void* retp = reinterpret_cast<GetPtrFn>(vt2[28])(sub, arg3, &tmp);
+        first = *static_cast<uint32_t*>(retp);
+    }
+
+    // Write the 8-byte result {first, sub} to the sret slot.
+    lift_field<uint32_t>(sret, 0) = first;
+    lift_field<void*>(sret, 4) = sub;
+}
+} // namespace lift_00649410

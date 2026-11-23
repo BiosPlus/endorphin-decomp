@@ -1,0 +1,22 @@
+{
+  "va": "0x00649410",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setCachedDesiredOrientationAlpha\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}\u003e",
+  "signature": "void fn_00649410(void* sret, void** arg2, void* arg3)",
+  "summary": "Evaluates the wrapped value expression (vslot 1, float), forwards it to setCachedDesiredOrientationAlpha via ext_00648E70, then returns {first dword of sub-result or 0, sub-object} as an 8-byte value.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:07:49Z"
+}
