@@ -1,0 +1,21 @@
+{
+  "va": "0x00566FE0",
+  "size": 11,
+  "orig_symbol": "sub_00566FE0",
+  "src_path": "src/leaf/tiny_560000.cpp",
+  "lifted_path": "lifted/leaf/tiny_560000.cpp",
+  "name": "setField00AndReturnThis",
+  "signature": "uint32_t __thiscall sub_00566FE0(void* this_ptr, uint32_t value)",
+  "summary": "Sets the 32-bit field at offset 0x00 of the object and returns this.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:41:11Z"
+}
