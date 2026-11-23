@@ -1,0 +1,34 @@
+{
+  "va": "0x006250B0",
+  "size": 59,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith,bool,getBool,1\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
+  "signature": "bool fn_006250B0(void* self)",
+  "summary": "Reads the bool value of a held sensor object (null-checked; throws if the pointer is null); calls virtual slot 17 on the object before reading its bool at +0x30.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SensorIsCollidingWith",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "bool",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:00:24Z"
+}

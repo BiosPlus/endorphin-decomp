@@ -11111,3 +11111,35 @@ extern double __thiscall fn_004D7980(uint32_t self, uint32_t* ptr_to_rig_event_d
     return 0.0;
 }
 } // namespace lift_004D7980
+
+// [0x006250B0] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_3 (59 bytes)
+namespace lift_006250B0 {
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith,bool,getBool,1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>
+// @summary Reads the bool value of a held sensor object (null-checked; throws if the pointer is null); calls virtual slot 17 on the object before reading its bool at +0x30.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field SensorIsCollidingWith +0x00 void* field_0x00
+// @field SensorIsCollidingWith +0x30 bool field_0x30
+bool fn_006250B0(void* self) {
+    // self points at the ValuePtrType; its first word is the held object pointer.
+    auto* obj = *reinterpret_cast<unsigned char**>(self);
+    if (obj == nullptr) {
+        // Build an exception object and throw it (null dereference guard).
+        unsigned char exc[8] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+        return false; // unreachable: the throw helper does not return
+    }
+
+    // Call virtual slot 17 (offset +0x44) on the object; its float result is discarded.
+    auto** vtbl = *reinterpret_cast<void***>(obj);
+    auto slot = reinterpret_cast<void (*)(void*)>(vtbl[17]);
+    slot(obj);
+
+    return *(obj + 0x30) != 0;
+}
+} // namespace lift_006250B0
