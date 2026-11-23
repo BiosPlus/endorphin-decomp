@@ -437,3 +437,24 @@ bool fn_00516580(void* arg) {
     return v != 0;
 }
 } // namespace lift_00516580
+
+// [0x005161A0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_3 (52 bytes)
+namespace lift_005161A0 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_3
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Returns true when the wrapped NMData::EvolverRuntimeOptions has a nonzero dword at +0x0C; throws if no target is bound.
+// @field ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions> +0x00 void* field_0x00
+// @field NMData::EvolverRuntimeOptions +0x0C int32_t field_0x0c
+//
+// Callee-pops (ret 4) single-argument member: `self` is the DynamicEnumType object.
+// The original throws an MSVC exception object (sub_0046C3C0 + _CxxThrowException with
+// type info 0x009DEC1C) on a null target; its layout and message are not recovered, so a
+// portable std exception stands in for it.
+extern bool fn_005161A0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        return lift_field<int32_t>(target, 0x0C) != 0;
+    }
+    throw std::runtime_error("NMData::EvolverRuntimeOptions: null value");
+}
+} // namespace lift_005161A0
