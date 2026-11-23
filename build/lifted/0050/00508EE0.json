@@ -1,0 +1,28 @@
+{
+  "va": "0x00508EE0",
+  "size": 52,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, getID, 1\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+  "signature": "bool fn_00508EE0(void* self)",
+  "summary": "Returns true if the Task object referenced by this's pointer has a nonzero field at +0x14; throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Task",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:54:02Z"
+}

@@ -8598,3 +8598,32 @@ bool fn_004EA9D0(void** holder) {
     return lift_field<uint8_t>(target, 0x5) != 0;
 }
 } // namespace lift_004EA9D0
+
+// [0x00508EE0] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_3 (52 bytes)
+namespace lift_00508EE0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Task, int, getID, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Returns true if the Task object referenced by this's pointer has a nonzero field at +0x14; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* target
+// @field Task +0x14 uint32_t field_0x14
+
+// Portable equivalent of the original: load the target pointer from *self,
+// and if it is non-null return (target->field_0x14 != 0). Otherwise the
+// original builds an exception object and throws it.
+bool fn_00508EE0(void* self) {
+    auto** holder = static_cast<uint8_t**>(self);
+    uint8_t* target = holder ? *holder : nullptr;
+    if (target != nullptr) {
+        uint32_t field_0x14 = *reinterpret_cast<uint32_t*>(target + 0x14);
+        return field_0x14 != 0;
+    }
+    // Null target: original constructs an exception object and throws it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return false;
+}
+} // namespace lift_00508EE0
