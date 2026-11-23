@@ -6980,6 +6980,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::GraphicData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00587DD0": {
+    "name": "NMData::LookAtNode::vfunc_22",
+    "class": "NMData::LookAtNode",
+    "signature": "uint32_t __thiscall fn_00587DD0(void* self, uint32_t arg1)",
+    "summary": "Fetches a global value, resolves it through sub_00640390 using the first stack argument, and forwards the result to CollisionModelDataBase::vfunc_22 on this.",
+    "lifted_path": "lifted/NMData/LookAtNode.cpp"
+  },
   "0x00587FA0": {
     "name": "NMData::Marker::vfunc_0",
     "class": "NMData::Marker",

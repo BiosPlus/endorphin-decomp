@@ -1,0 +1,14 @@
+{
+  "va": "0x00587DD0",
+  "size": 32,
+  "orig_symbol": "NMData::LookAtNode::vfunc_22",
+  "src_path": "src/NMData/LookAtNode.cpp",
+  "lifted_path": "lifted/NMData/LookAtNode.cpp",
+  "name": "NMData::LookAtNode::vfunc_22",
+  "class": "NMData::LookAtNode",
+  "signature": "uint32_t __thiscall fn_00587DD0(void* self, uint32_t arg1)",
+  "summary": "Fetches a global value, resolves it through sub_00640390 using the first stack argument, and forwards the result to CollisionModelDataBase::vfunc_22 on this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:32:53Z"
+}
