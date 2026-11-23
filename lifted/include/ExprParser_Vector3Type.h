@@ -10,6 +10,7 @@
 // Recovered field layout for ExprParser::Vector3Type:
 namespace lifted_layout {
 struct ExprParser_Vector3Type_Fields {
+    // +0x0   float* data (first dword of the destination object is a float* buffer; conflicts with base vtable slot at +0x0)  (evidence: 0x00671A00) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   data  (evidence: 0x0066B6E0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (unverified; no direct field access in this function)  (evidence: 0x0066B5D0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0066B530, 0x0066B5A0, 0x0066D0C0, 0x006719C0) // CONFLICT: multiple definitions at +0x0

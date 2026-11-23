@@ -48,6 +48,7 @@ void fn_0066B680(void* self, void** a1, void* a2) {
         dst[i] += src[i];
     }
 }
+extern "C" void __stdcall ext_006719A0(void* self);
 
 // [0x0066B6B0] ExprParser::Vector3Type::vfunc_44 (48 bytes)
 // @name ExprParser::Vector3Type::vfunc_44
@@ -258,4 +259,17 @@ void fn_0066B5A0(void* self, void* arg1, void* arg2, void* arg3) {
     // Forward: receiver = arg2, stack args = arg3 and the pointer-sized value stored at arg1.
     void* first = *reinterpret_cast<void**>(arg1);
     ext_00698B50(arg2, arg3, first);
+}
+
+// [0x00671A00] ExprParser::Vector3Type::vfunc_11 (37 bytes)
+// @name ExprParser::Vector3Type::vfunc_11
+// @class ExprParser::Vector3Type
+// @summary Calls the helper on the destination object, then copies three floats from src into the destination's float buffer.
+// @field ExprParser::Vector3Type +0x00 float* data (first dword of the destination object is a float* buffer; conflicts with base vtable slot at +0x0)
+void fn_00671A00(void* self, const float* src) {
+    ext_006719A0(self);
+    float* data = lift_field<float*>(self, 0x00);
+    data[0] = src[0];
+    data[1] = src[1];
+    data[2] = src[2];
 }

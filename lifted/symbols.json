@@ -11436,6 +11436,13 @@
     "summary": "Reads a dword from the input pointer, passes it with flag 1 to the helper at this+8, and stores the helper's result into the output slot.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x00671A00": {
+    "name": "ExprParser::Vector3Type::vfunc_11",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_00671A00(void* self, const float* src)",
+    "summary": "Calls the helper on the destination object, then copies three floats from src into the destination's float buffer.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x00671F10": {
     "name": "sub_00671F10",
     "signature": "extern \"C\" void fn_00671F10(void)",
