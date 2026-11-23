@@ -16,6 +16,6 @@ struct NMData_State_Fields {
     // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049FAC0)
     // +0xE8  float                    field_0xE8  (evidence: 0x0049AF70, 0x0049FAC0, 0x0049FB50)
     // +0xEC  float                    field_0xEC  (evidence: 0x0049ABA0, 0x0049AF70, 0x0049FAC0, 0x0049FB50)
-    // +0x10C void*                    field_0x10C  (evidence: 0x0049FC80)
+    // +0x10C void*                    field_0x10C  (evidence: 0x0049FC80, 0x008703F0)
 };
 } // namespace lifted_layout

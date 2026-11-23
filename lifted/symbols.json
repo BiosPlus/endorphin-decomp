@@ -33570,6 +33570,13 @@
     "summary": "No-op: `add eax, 0` (opcode 05 with imm32 0), which leaves eax unchanged; only flags are touched.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008703F0": {
+    "name": "sub_008703F0",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_008703F0(uint32_t self, uint32_t arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049FC80 (NMData::State::vfunc_7_off_10).",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00870E00": {
     "name": "sub_00870E00",
     "signature": "extern \"C\" void fn_00870E00(void)",
