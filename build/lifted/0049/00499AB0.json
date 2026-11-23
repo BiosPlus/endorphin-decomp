@@ -1,0 +1,22 @@
+{
+  "va": "0x00499AB0",
+  "size": 7,
+  "orig_symbol": "GuiBaseElement::vfunc_19",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GuiBaseElement::vfunc_19",
+  "class": "GuiBaseElement",
+  "signature": "void* GuiBaseElement_vfunc_19(void* self)",
+  "summary": "Virtual thunk: forwards the call to vtable slot 20 (offset 0x50) on the same object and returns its result.",
+  "fields": [
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:33:47Z"
+}

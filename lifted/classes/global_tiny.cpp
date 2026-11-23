@@ -4447,3 +4447,20 @@ void fn_0044D0C0(void* self) {
     }
 }
 } // namespace lift_0044D0C0
+
+// [0x00499AB0]
+namespace lift_00499AB0 {
+// @name GuiBaseElement::vfunc_19
+// @class GuiBaseElement
+// @summary Virtual thunk: forwards the call to vtable slot 20 (offset 0x50) on the same object and returns its result.
+// @field GuiBaseElement +0x00 void* vptr
+void* GuiBaseElement_vfunc_19(void* self) {
+    // Load the vtable pointer stored at the start of the object.
+    void** vtable = lift_field<void**>(self, 0x00);
+    // Slot 20 (0x50 / sizeof(void*) on 32-bit) holds the target virtual method.
+    using VFn = uintptr_t (*)(void*);
+    VFn target = reinterpret_cast<VFn>(vtable[20]);
+    // Tail-forward with the same `this`; the result is returned unchanged.
+    return reinterpret_cast<void*>(target(self));
+}
+} // namespace lift_00499AB0
