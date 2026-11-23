@@ -11103,6 +11103,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005B2D00": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry,float,Geometry::getParam1,0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e",
+    "signature": "int fn_005B2D00(void* self)",
+    "summary": "Returns 1 if the target Geometry's field at +0x14 is \u003e= 1e-6, else 0; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B2E00": {
     "name": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, float, \u0026private: void __thiscall Geometry::setParam2(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, float, \u0026private: void __thiscall Geometry::setParam2(float)\u003e",

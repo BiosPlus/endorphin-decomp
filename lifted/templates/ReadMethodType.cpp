@@ -15531,3 +15531,24 @@ int fn_005B2F60(void** self) {
     return (v >= static_cast<float>(mem_0095F7E0)) ? 1 : 0;
 }
 } // namespace lift_005B2F60
+
+// [0x005B2D00] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_005B2D00 {
+// @name ExprParser::ReadMethodType<Geometry,float,Geometry::getParam1,0>::vfunc_3
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>
+// @summary Returns 1 if the target Geometry's field at +0x14 is >= 1e-6, else 0; throws if the target pointer is null.
+// @field Geometry +0x00 void* target
+// @field Geometry +0x14 float field_0x14
+int fn_005B2D00(void* self) {
+    // Original compares a float against the double constant 1e-6 (mem_0095F7E0).
+    // Ordered >= returns false for NaN, matching the original's unordered-compare handling.
+    auto** holder = static_cast<void**>(self);
+    auto* geometry = static_cast<const std::uint8_t*>(holder[0]);
+    if (geometry == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null target");
+    }
+    float value;
+    std::memcpy(&value, geometry + 0x14, sizeof(value));
+    return (static_cast<double>(value) >= 1e-6) ? 1 : 0;
+}
+} // namespace lift_005B2D00

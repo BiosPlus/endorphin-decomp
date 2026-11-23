@@ -1,0 +1,28 @@
+{
+  "va": "0x005B2D00",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry,float,Geometry::getParam1,0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e",
+  "signature": "int fn_005B2D00(void* self)",
+  "summary": "Returns 1 if the target Geometry's field at +0x14 is \u003e= 1e-6, else 0; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "Geometry",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Geometry",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:52:28Z"
+}
