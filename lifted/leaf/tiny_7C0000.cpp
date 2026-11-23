@@ -298,3 +298,15 @@ float sub_007C5910(uint32_t arg0) {
     return mem_read_f32(arg0 + 0x1a8);
 }
 } // namespace lift_007C5910
+
+// [0x007C6110]
+namespace lift_007C6110 {
+// @name get_field_0x1cc_f32
+// @summary Returns the 32-bit float at offset 0x1CC of the given struct pointer.
+// @field unknown +0x1CC float field_0x1cc
+
+
+float sub_007C6110(uint32_t arg0) {
+    return *(const float*)(uintptr_t)(arg0 + 0x1cc);
+}
+} // namespace lift_007C6110

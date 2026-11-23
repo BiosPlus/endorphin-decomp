@@ -24,5 +24,6 @@ struct unknown_Fields {
     // +0x28  const uint8_t*           field_0x28  (evidence: 0x006488F0) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x00648930) // CONFLICT: multiple definitions at +0x28
     // +0x48  uint32_t                 field_0x48  (evidence: 0x006872D0)
+    // +0x1CC float                    field_0x1cc  (evidence: 0x007C6110)
 };
 } // namespace lifted_layout

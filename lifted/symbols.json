@@ -35088,6 +35088,12 @@
     "summary": "Adds 0xC0 to the 32-bit argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6110": {
+    "name": "get_field_0x1cc_f32",
+    "signature": "float sub_007C6110(uint32_t arg0)",
+    "summary": "Returns the 32-bit float at offset 0x1CC of the given struct pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6C10": {
     "name": "setFlag0x4At0x0C",
     "signature": "void sub_007C6C10(uint32_t arg0)",

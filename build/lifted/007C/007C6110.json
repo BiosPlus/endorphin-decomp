@@ -1,0 +1,21 @@
+{
+  "va": "0x007C6110",
+  "size": 11,
+  "orig_symbol": "sub_007C6110",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "get_field_0x1cc_f32",
+  "signature": "float sub_007C6110(uint32_t arg0)",
+  "summary": "Returns the 32-bit float at offset 0x1CC of the given struct pointer.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x1CC",
+      "type": "float",
+      "name": "field_0x1cc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:43:23Z"
+}
