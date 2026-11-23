@@ -35286,6 +35286,12 @@
     "summary": "Returns the 32-bit value at offset +0x04 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D48B0": {
+    "name": "getRangeSize",
+    "signature": "uint32_t sub_007D48B0(uint32_t arg0)",
+    "summary": "Computes the difference between the 32-bit fields at +0x0C and +0x04 of a struct.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",

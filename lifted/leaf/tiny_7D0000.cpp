@@ -130,3 +130,18 @@ uint32_t sub_007D5C50(uint32_t arg0) {
     return static_cast<uint32_t>(mem_r8(ptr));
 }
 } // namespace lift_007D5C50
+
+// [0x007D48B0]
+namespace lift_007D48B0 {
+// @name getRangeSize
+// @summary Computes the difference between the 32-bit fields at +0x0C and +0x04 of a struct.
+// @field Struct +0x04 uint32_t field_0x04
+// @field Struct +0x0C uint32_t field_0x0C
+
+
+uint32_t mem_r32(uint32_t addr);
+
+uint32_t sub_007D48B0(uint32_t arg0) {
+    return mem_r32(arg0 + 0x0C) - mem_r32(arg0 + 0x04);
+}
+} // namespace lift_007D48B0

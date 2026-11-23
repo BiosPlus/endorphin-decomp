@@ -1,0 +1,27 @@
+{
+  "va": "0x007D48B0",
+  "size": 11,
+  "orig_symbol": "sub_007D48B0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "getRangeSize",
+  "signature": "uint32_t sub_007D48B0(uint32_t arg0)",
+  "summary": "Computes the difference between the 32-bit fields at +0x0C and +0x04 of a struct.",
+  "fields": [
+    {
+      "class": "Struct",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:44:25Z"
+}
