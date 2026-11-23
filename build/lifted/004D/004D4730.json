@@ -1,0 +1,14 @@
+{
+  "va": "0x004D4730",
+  "size": 104,
+  "orig_symbol": "NMData::RigEventData::vfunc_1_off_184",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_1_off_184",
+  "class": "NMData::RigEventData",
+  "signature": "uint8_t __thiscall fn_004D4730(void* self)",
+  "summary": "Checks whether the string returned by sub_004D40E0 differs from the global string at 0x00A34650.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:01Z"
+}

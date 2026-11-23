@@ -74,3 +74,33 @@ void* __thiscall fn_004D3C60(void* self, void* out_result, const void* name) {
     return out_result;
 }
 } // namespace lift_004D3C60
+
+// [0x004D4730]
+namespace lift_004D4730 {
+// @name NMData::RigEventData::vfunc_1_off_184
+// @class NMData::RigEventData
+// @summary Checks whether the string returned by sub_004D40E0 differs from the global string at 0x00A34650.
+
+
+extern void* __thiscall ext_004D40E0(void* self, void* out_str);
+
+extern uint32_t mem_00A34650;
+extern uint32_t mem_00924FC8;
+extern uint32_t mem_00924FF4;
+
+uint8_t __thiscall fn_004D4730(void* self) {
+    uint8_t str_buf[28];
+    void* rig_event = reinterpret_cast<uint8_t*>(self) - 0x184;
+    void* str_ptr = ext_004D40E0(rig_event, str_buf);
+
+    using op_neq_fn = uint8_t(__cdecl*)(void*, uint32_t);
+    auto op_neq = reinterpret_cast<op_neq_fn>(static_cast<uintptr_t>(mem_00924FC8));
+    uint8_t result = op_neq(str_ptr, mem_00A34650);
+
+    using dtor_fn = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<dtor_fn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(str_buf);
+
+    return result;
+}
+} // namespace lift_004D4730
