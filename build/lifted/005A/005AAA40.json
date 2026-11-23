@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAA40",
+  "size": 36,
+  "orig_symbol": "NMData::RigRoot::vfunc_22",
+  "src_path": "src/NMData/RigRoot.cpp",
+  "lifted_path": "lifted/NMData/RigRoot.cpp",
+  "name": "NMData::RigRoot::vfunc_22",
+  "class": "NMData::RigRoot",
+  "signature": "void* fn_005AAA40(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x005AAA70 (NMData::Characterization::vfunc_22).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T11:34:50Z"
+}

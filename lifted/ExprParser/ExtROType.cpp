@@ -36,6 +36,7 @@ void* ExprParser_ExtROType_vfunc_2(void* self) {
     return target(inner);
 }
 extern "C" void ext_0066BA00(void* self);
+extern "C" void ext_0041CEB0(void* obj, int flag);
 
 // [0x0066AFC0]
 // @name ExprParser::ExtROType::vfunc_1
@@ -276,4 +277,13 @@ uint32_t ExprParser_ExtROType_vfunc_45(void* self, void* arg2) {
     VFunc45 target = reinterpret_cast<VFunc45>(vtbl[0xB4 / sizeof(void*)]);
     // push arg2; push self; call eax (this = inner)
     return target(inner, self, arg2);
+}
+
+// [0x0066B000] ExprParser::ExtROType::vfunc_4 (33 bytes)
+// @name ExprParser::ExtROType::vfunc_4
+// @class ExprParser::ExtROType
+// @summary Auto-lifted identical-shape clone of 0x0066CDF0 (ExprParser::ExtROType::vfunc_0).
+void* fn_0066B000(void* self, void* /*arg2*/) {
+    ext_0041CEB0(self, 0);
+    return self;
 }
