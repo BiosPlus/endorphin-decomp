@@ -18195,3 +18195,30 @@ float fn_0049B7D0(void* self) {
     return static_cast<float>(std::atof(desc->c_str()));
 }
 } // namespace lift_0049B7D0
+
+// [0x004B2810] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004B2810 {
+extern float ext_0048FAD0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getYMax, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Evaluates GraphEngineData::getYMax() through the value pointer and returns 1 if the result is >= 1e-6 (NaN yields 0); throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004B2810(void* valuePtr) {
+    void* self = lift_field<void*>(valuePtr, 0x00);
+    if (self == nullptr) {
+        // Build an exception object on the stack and throw it.
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0;
+    }
+    float yMax = ext_0048FAD0(self);
+    // x87 fcomp against 1e-6 with C0 test: returns 0 when yMax < 1e-6 or unordered (NaN).
+    return (static_cast<double>(yMax) >= 1e-6) ? 1 : 0;
+}
+} // namespace lift_004B2810
