@@ -25141,3 +25141,28 @@ float fn_004A2810(void* self) {
     return ext_0049AA60(inner) ? 1.0f : 0.0f;
 }
 } // namespace lift_004A2810
+
+// [0x004A4300] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A4300 {
+// Callees and data referenced by 0x004A4300.
+extern BOOLEAN __thiscall ext_0049AA50(void* self);       // sub_0049AA50 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawActions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_0049AA50) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004A4300(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [[esp+4]]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_0049AA50(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A4300
