@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAA70",
+  "size": 36,
+  "orig_symbol": "NMData::Characterization::vfunc_22",
+  "src_path": "src/NMData/Characterization.cpp",
+  "lifted_path": "lifted/NMData/Characterization.cpp",
+  "name": "NMData::Characterization::vfunc_22",
+  "class": "NMData::Characterization",
+  "signature": "void* fn_005AAA70(void* self, void* arg)",
+  "summary": "Passes the argument and a global u32 to sub_006404E0, forwards its result to NMData::CollisionModelDataBase::vfunc_22 on this, and returns that result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:34:04Z"
+}
