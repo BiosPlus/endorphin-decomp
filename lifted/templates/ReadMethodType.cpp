@@ -1971,3 +1971,22 @@ void __stdcall fn_004A4E10(void* self) {
     ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_004A4E10
+
+// [0x004AAAC0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004AAAC0 {
+extern uint32_t __thiscall ext_004A9A60(uint32_t self);
+
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Reads the dword at the argument; if non-null, forwards it as `this` to ext_004A9A60 and returns its result, otherwise throws (original builds an exception object and calls _CxxThrowException).
+// @field Unknown +0x00 uint32_t field_0x00
+uint32_t fn_004AAAC0(const uint32_t* arg) {
+    const uint32_t obj = *arg;
+    if (obj != 0) {
+        return ext_004A9A60(obj);
+    }
+    // The original throws a MSVC C++ exception object built by sub_0046C3C0; that
+    // ABI-specific throw cannot be reproduced portably, so a standard exception is used.
+    throw std::runtime_error("ExprParser::ReadMethodType::vfunc_3: null object pointer");
+}
+} // namespace lift_004AAAC0

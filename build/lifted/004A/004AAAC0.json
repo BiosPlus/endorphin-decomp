@@ -1,0 +1,22 @@
+{
+  "va": "0x004AAAC0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e",
+  "signature": "uint32_t fn_004AAAC0(const uint32_t* arg)",
+  "summary": "Reads the dword at the argument; if non-null, forwards it as `this` to ext_004A9A60 and returns its result, otherwise throws (original builds an exception object and calls _CxxThrowException).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:17:17Z"
+}

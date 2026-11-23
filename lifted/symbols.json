@@ -4041,6 +4041,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 8 (offset +0x20) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AAAC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e",
+    "signature": "uint32_t fn_004AAAC0(const uint32_t* arg)",
+    "summary": "Reads the dword at the argument; if non-null, forwards it as `this` to ext_004A9A60 and returns its result, otherwise throws (original builds an exception object and calls _CxxThrowException).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004AB2B0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_26",
     "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e",
