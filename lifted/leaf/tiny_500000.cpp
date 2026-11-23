@@ -52,3 +52,18 @@ double __thiscall sub_0050EA00(void* self) {
     return *reinterpret_cast<const double*>(inner + 0x18);
 }
 } // namespace lift_0050EA00
+
+// [0x0050EA10]
+namespace lift_0050EA10 {
+extern uint32_t mem_read32(uintptr_t addr);
+extern double mem_read_f64(uintptr_t addr);
+
+// @name sub_0050EA10
+// @summary Returns a double at offset 0x20 from the object pointed to by this+0x8.
+// @field Class +0x08 void* field_0x08
+
+double __thiscall sub_0050EA10(void* self) {
+    uint32_t ptr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x8);
+    return mem_read_f64(static_cast<uintptr_t>(ptr) + 0x20);
+}
+} // namespace lift_0050EA10
