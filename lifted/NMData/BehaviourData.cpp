@@ -1,14 +1,17 @@
 // Lifted C++ translation unit: lifted/NMData/BehaviourData.cpp
 #include "lift_compat.h"
-#include <string>
-extern "C" void* __thiscall ext_006404E0(void* self, void* arg);
-extern "C" void* mem_00A9F240;
 #include <new>
-extern "C" void* ext_006A5C62(size_t size);
-extern "C" void* ext_004AC750(void* self, void* owner);
+#include <string>
 
+extern "C" void* mem_00A9F240;
+extern "C" void* mem_00AE29D0;
+extern "C" void* __thiscall ext_006404E0(void* self, void* arg);
 extern "C" void* ext_006A5C62(size_t size);
 extern "C" void* ext_004AC750(void* self, void* owner);
+extern "C" void __thiscall ext_0047D300(void* self, uint32_t arg);
+extern "C" void __thiscall ext_004C1AF0(void* self, uint32_t arg);
+extern "C" void ext_004C1B20(void* self, const int32_t* range);
+
 // @class NMData::BehaviourData
 // @summary Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).
 // @field NMData::BehaviourData +0x0 void** vptr
@@ -19,10 +22,7 @@ extern "C" void __thiscall fn_004A9B70(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
-extern "C" void __thiscall ext_0047D300(void* self, uint32_t arg);
-extern "C" void* mem_00AE29D0;
 
-extern "C" void* mem_00AE29D0;
 // @name NMData::BehaviourData::vfunc_17_off_C
 // @class NMData::BehaviourData
 // @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
@@ -35,8 +35,6 @@ void* fn_004AC9F0(void* self) {
     return ext_004AC750(mem, owner);
 }
 
-// [0x00486C20] NMData::BehaviourData::vfunc_68 (31 bytes)
-// @name NMData::BehaviourData::vfunc_68
 // @class NMData::BehaviourData
 // @summary Stores the byte argument at +0x17C, then tail-calls ext_0047D300 on the global object at mem_00AE29D0 passing the dword at +0x168 as its argument.
 // @field NMData::BehaviourData +0x168 uint32_t field_0x168
@@ -45,4 +43,38 @@ extern "C" void __thiscall fn_00486C20(void* self, uint8_t v) {
     lift_field<uint8_t>(self, 0x17C) = v;
     uint32_t f = lift_field<uint32_t>(self, 0x168);
     ext_0047D300(mem_00AE29D0, f);
+}
+// Known callee 0x004C1B20: NMData::ForceEventData::vfunc_73 (thiscall: self in ecx, range pointer on stack).
+extern "C" void __thiscall ext_004C1B20(void* self, const int32_t* range);
+// Tail-jump target 0x0047D300 (sub_0047D300): receives ecx = mem_00AE29D0 and one stack arg = field_0x168.
+extern "C" void __thiscall ext_0047D300(void* self, uint32_t value);
+// Global object pointer loaded into ecx before the tail jump.
+
+extern "C" void __thiscall ext_004C1B20(void* self, const int32_t* range);
+// Tail-jump target 0x0047D300 (sub_0047D300): receives ecx = mem_00AE29D0 and one stack arg = field_0x168.
+extern "C" void __thiscall ext_0047D300(void* self, uint32_t value);
+// Global object pointer loaded into ecx before the tail jump.
+// @field NMData::BehaviourData +0x168 uint32_t field_0x168
+
+#include "lift_compat.h"
+
+extern "C" void* mem_00AE29D0;
+extern "C" void __thiscall ext_004C1AF0(void* self, uint32_t arg);
+extern "C" void __thiscall ext_0047D300(void* self, uint32_t arg);
+
+void __thiscall fn_004A9C60(void* self, uint32_t arg) {
+    ext_004C1AF0(self, arg);
+    uint32_t field_0x168 = lift_field<uint32_t>(self, 0x168);
+    ext_0047D300(mem_00AE29D0, field_0x168);
+}
+
+// [0x004A9C90] NMData::BehaviourData::vfunc_73 (35 bytes)
+// @name NMData::BehaviourData::vfunc_73
+// @class NMData::BehaviourData
+// @summary Forwards the range pointer to NMData::ForceEventData::vfunc_73, then tail-calls sub_0047D300 with mem_00AE29D0 as this and field_0x168 as its argument.
+// @field NMData::BehaviourData +0x168 uint32_t field_0x168
+void __thiscall fn_004A9C90(void* self, const int32_t* range) {
+    ext_004C1B20(self, range);
+    uint32_t field_0x168 = lift_field<uint32_t>(self, 0x168);
+    ext_0047D300(mem_00AE29D0, field_0x168);
 }

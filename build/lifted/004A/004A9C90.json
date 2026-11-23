@@ -1,0 +1,22 @@
+{
+  "va": "0x004A9C90",
+  "size": 35,
+  "orig_symbol": "NMData::BehaviourData::vfunc_73",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_73",
+  "class": "NMData::BehaviourData",
+  "signature": "void __thiscall fn_004A9C90(void* self, const int32_t* range)",
+  "summary": "Forwards the range pointer to NMData::ForceEventData::vfunc_73, then tail-calls sub_0047D300 with mem_00AE29D0 as this and field_0x168 as its argument.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-23T11:42:43Z"
+}
