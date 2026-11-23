@@ -13340,6 +13340,13 @@
     "summary": "Reads the bool value of a held sensor object (null-checked; throws if the pointer is null); calls virtual slot 17 on the object before reading its bool at +0x30.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006259C0": {
+    "name": "Sensors::SensorIsCollidingWith::vfunc_2",
+    "class": "Sensors::SensorIsCollidingWith",
+    "signature": "extern \"C\" int mem_00924FC0;                                  // MSVCP80 operator==(const std::string\u0026, const char*) IAT slot extern \"C\" void __cdecl ext_006259A0(void* self, void* a1);   // sub_006259A0: called on match with (this, a1) extern \"C\" void __cdecl ext_00671F30(void* a1);               // sub_00671F30: called on no match with (a1) namespace",
+    "summary": "Compares the std::string at a2 against \"Normalized\" and \"UnNormalized\"; on a match calls sub_006259A0(this, a1), otherwise sub_00671F30(a1). Returns a1.",
+    "lifted_path": "lifted/Sensors/SensorIsCollidingWith.cpp"
+  },
   "0x00626290": {
     "name": "Sensors::SensorIsCollidingWith::vfunc_26",
     "class": "Sensors::SensorIsCollidingWith",
