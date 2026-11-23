@@ -121,7 +121,7 @@ func cmdNext(args []string) {
 	limit := fs.Int("limit", 20, "Maximum number of results")
 	shortN := fs.Int("n", 0, "Alias for --limit")
 	asJSON := fs.Bool("json", false, "Output JSON array")
-	addrsOnly := fs.Bool("addrs-only", false, "Output pipe-delimited VA|size|lifted_path lines for orchestrator")
+	addrsOnly := fs.Bool("addrs-only", false, "Output pipe-delimited VA|size|lifted_path|symbol lines for orchestrator")
 	_ = fs.Parse(args)
 	if *shortN > 0 {
 		*limit = *shortN
@@ -227,7 +227,7 @@ func cmdNext(args []string) {
 	}
 	if *addrsOnly {
 		for _, c := range cands {
-			fmt.Printf("%s|%d|%s\n", c.item.VA, c.item.Size, c.item.LiftedPath)
+			fmt.Printf("%s|%d|%s|%s\n", c.item.VA, c.item.Size, c.item.LiftedPath, c.item.Symbol)
 		}
 		return
 	}

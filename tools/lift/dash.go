@@ -46,10 +46,16 @@ func eventColor(ev string) (string, bool) {
 		return cGrn, true
 	case strings.Contains(ev, "[x]"), strings.Contains(ev, "[!]"):
 		return cRed, true
-	case strings.Contains(ev, "[*] Push"):
+	case strings.Contains(ev, "[-]"):
+		return cYel, true
+	case strings.Contains(ev, "[*]"):
+		return cCyn, true
+	case strings.Contains(ev, "[pull]"):
+		return cBlu, true
+	case strings.Contains(ev, "[>]"), strings.Contains(ev, "[~]"), strings.Contains(ev, "[done]"):
 		return cDim, true
 	}
-	return "", false
+	return cRst, true
 }
 
 func fmtTok(n int) string {
@@ -108,9 +114,20 @@ func (d *dashboard) render(l *lifter) {
 		eta = fmtDur(elapsed * int64(total-l.finished) / int64(l.finished))
 		per = fmtDur(elapsed / int64(l.finished))
 	}
+	autoTag := ""
+	if l.cfg.AutoLiftEvery > 0 {
+		switch {
+		case l.autoLiftDraining:
+			autoTag = fmt.Sprintf("  %s[draining for auto-lift]%s", cYel, cRst)
+		case l.autoLiftRunning:
+			autoTag = fmt.Sprintf("  %s[auto-lift running]%s", cCyn, cRst)
+		default:
+			autoTag = fmt.Sprintf("  %s[auto-lift in %d/%d]%s", cDim, l.autoLiftRemaining(), l.cfg.AutoLiftEvery, cRst)
+		}
+	}
 	var rows []string
-	rows = append(rows, fmt.Sprintf("%sLifted:      %s %s%d%s / %d (%d%%), %s%d deferred%s  %s  [scope=%s]",
-		cDim, cRst, cGrn, l.lifted, cRst, total, pct, cYel, l.deferred, cRst, miniBar(l.finished, total, miniBarWidth), l.cfg.Scope))
+	rows = append(rows, fmt.Sprintf("%sLifted:      %s %s%d%s / %d (%d%%), %s%d deferred%s  %s  [scope=%s]%s",
+		cDim, cRst, cGrn, l.lifted, cRst, total, pct, cYel, l.deferred, cRst, miniBar(l.finished, total, miniBarWidth), l.cfg.Scope, autoTag))
 	rows = append(rows, fmt.Sprintf("%sElapsed:     %s %s, ETA %s, ~%s/function", cDim, cRst, fmtDur(elapsed), eta, per))
 
 	var st strings.Builder
@@ -130,8 +147,11 @@ func (d *dashboard) render(l *lifter) {
 		}
 		st.WriteString(" ")
 	}
+	if l.autoLiftDraining {
+		fmt.Fprintf(&st, "%sdraining for auto-lift (%d active)%s ", cYel, len(l.jobs), cRst)
+	}
 	if l.autoLiftRunning {
-		st.WriteString("auto-lift running ")
+		fmt.Fprintf(&st, "%sauto-lift running (workers paused)%s ", cCyn, cRst)
 	}
 	agents := st.String()
 	if agents == "" {
@@ -181,9 +201,17 @@ func (d *dashboard) render(l *lifter) {
 			if backend == "claude" && logPath != "" {
 				tok = d.agentTokens(addr, logPath)
 			}
-			rows = append(rows, fmt.Sprintf(" * %s %5dB  %s%-27s%s %s%-9s%s %7s tok  (total %s)",
-				addr, l.funcSize[addr], mc, backend+"/"+strings.TrimPrefix(tag, "claude-"), cRst,
-				tc, fmt.Sprintf("%ds/%ds", att, tmo), cRst, tok, fmtDur(int64(now.Sub(l.fnStart[addr]).Seconds()))))
+			sys := l.funcSys[addr]
+			if sys == "" {
+				sys = "?"
+			}
+			sym := l.funcSym[addr]
+			if strings.HasPrefix(sym, sys+"::") {
+				sym = strings.TrimPrefix(sym, sys+"::")
+			}
+			rows = append(rows, fmt.Sprintf(" * %s %-16s %5dB  %s%-27s%s %s%-9s%s %7s tok (%s) %s",
+				addr, "["+sys+"]", l.funcSize[addr], mc, backend+"/"+strings.TrimPrefix(tag, "claude-"), cRst,
+				tc, fmt.Sprintf("%ds/%ds", att, tmo), cRst, tok, fmtDur(int64(now.Sub(l.fnStart[addr]).Seconds())), sym))
 		}
 	}
 

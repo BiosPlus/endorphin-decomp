@@ -54,10 +54,11 @@ func main() {
 		slugCache: map[string]string{}, runInfo: map[string]*runInfo{},
 		agyNoModel: map[string]bool{}, noCheck: map[string]int{},
 		results: make(chan attemptResult, 64),
-		autoLiftDone: make(chan int, 1),
+		autoLiftDone: make(chan autoLiftResult, 1),
 		jobs: map[string]int{}, fnTier: map[string]int{}, fnOwed: map[string][]string{},
 		inflightAddr: map[string]bool{}, inflightCpp: map[string]int{}, seen: map[string]bool{},
-		funcCpp: map[string]string{}, funcSize: map[string]int{}, fnStart: map[string]time.Time{},
+		funcCpp: map[string]string{}, funcSym: map[string]string{}, funcSys: map[string]string{},
+		funcSize: map[string]int{}, fnStart: map[string]time.Time{},
 		dash: newDashboard(cfg.Plain),
 	}
 	l.pools = newPools(cfg, l.emit)
@@ -209,8 +210,8 @@ func (l *lifter) printBanner() {
 	}
 	efforts := strings.Join(c.Efforts, "->")
 	if !c.Verbose {
-		fmt.Printf("Endorphin lifter: scope=%s deps_first=%d tier0 x%d, esc cap %d/model, %d waves, efforts %s, timeout %ds (claude=%d agy=%d; LIFT_VERBOSE=1 for details)\n",
-			c.Scope, b(c.DepsFirst), c.WaveSize, c.EscCap, c.MaxWaves, efforts, c.AgentTimeout, b(l.hasClaude), b(l.hasAgy))
+		fmt.Printf("Endorphin lifter: scope=%s deps_first=%d tier0 x%d, esc cap %d/model, %d waves, auto_lift_every=%d, efforts %s, timeout %ds (claude=%d agy=%d; LIFT_VERBOSE=1 for details)\n",
+			c.Scope, b(c.DepsFirst), c.WaveSize, c.EscCap, c.MaxWaves, c.AutoLiftEvery, efforts, c.AgentTimeout, b(l.hasClaude), b(l.hasAgy))
 		return
 	}
 	var tiers []string
@@ -219,7 +220,7 @@ func (l *lifter) printBanner() {
 	}
 	fmt.Println("=== Endorphin Autonomous Parallel Lifter (De-ASM & Struct/Naming) ===")
 	fmt.Printf("Verified CLIs : claude=%d | agy=%d | efforts=%s\n", b(l.hasClaude), b(l.hasAgy), efforts)
-	fmt.Printf("Scope         : %s | deps_first=%d | include_cpp=%d | isolated=%d\n", c.Scope, b(c.DepsFirst), b(c.IncludeCpp), b(c.LiftIsolated))
+	fmt.Printf("Scope         : %s | deps_first=%d | include_cpp=%d | isolated=%d | auto_lift_every=%d\n", c.Scope, b(c.DepsFirst), b(c.IncludeCpp), b(c.LiftIsolated), c.AutoLiftEvery)
 	fmt.Printf("Pipeline      : tier0 runners=%d | escalation cap=%d/model | total_pulls=%d | push_every=%d | timeout=%ds\n",
 		c.WaveSize, c.EscCap, c.MaxWaves*c.WaveSize, c.PushEvery*c.WaveSize, c.AgentTimeout)
 	fmt.Printf("Model Tiers   : %s\n", strings.Join(tiers, "  ->  "))

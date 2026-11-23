@@ -25,6 +25,9 @@ func TestLoadConfigDefaults(t *testing.T) {
 	if cfg.AttemptsFile != ".local/lift_attempts.tsv" {
 		t.Fatalf("AttemptsFile = %q", cfg.AttemptsFile)
 	}
+	if cfg.AutoLiftEvery != 5 {
+		t.Fatalf("AutoLiftEvery = %d, want 5", cfg.AutoLiftEvery)
+	}
 }
 
 func TestAgyLiftSettings(t *testing.T) {
@@ -81,6 +84,13 @@ func newTestLifter() *lifter {
 		fnTier:     map[string]int{},
 		fnOwed:     map[string][]string{},
 		funcSize:   map[string]int{},
+		funcCpp:    map[string]string{},
+		funcSym:    map[string]string{},
+		funcSys:    map[string]string{},
+		inflightAddr: map[string]bool{},
+		inflightCpp:  map[string]int{},
+		jobs:         map[string]int{},
+		fnStart:      map[string]time.Time{},
 	}
 	l.pools = newPools(cfg, func(string, ...any) {})
 	for t, ms := range cfg.Tiers {
@@ -113,5 +123,75 @@ func TestTokenCounter(t *testing.T) {
 	d := &dashboard{tokens: map[string]*tokenCounter{}}
 	if got := d.agentTokens("0x0056DA30", p); got != "2.2k" {
 		t.Fatalf("agentTokens = %q, want 2.2k", got)
+	}
+}
+
+func TestFuncSystem(t *testing.T) {
+	cases := []struct {
+		cpp, sym, want string
+	}{
+		{"lifted/NMData/State.cpp", "NMData::State::vfunc_1", "NMData"},
+		{"lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp", "MultiTrackView::MoveState::vfunc_4", "MultiTrackView"},
+		{"lifted/classes/BVHIO.cpp", "BVHIO::readJoint", "BVHIO"},
+		{"lifted/classes/global_tiny.cpp", "RuntimeEngine::tick", "RuntimeEngine"},
+		{"lifted/classes/BVHIO.cpp", "fn_00412340", "BVHIO"},
+		{"lifted/leaf/tiny_660000.cpp", "fn_00660010", "leaf"},
+	}
+	for _, tc := range cases {
+		if got := funcSystem(tc.cpp, tc.sym); got != tc.want {
+			t.Errorf("funcSystem(%q, %q) = %q, want %q", tc.cpp, tc.sym, got, tc.want)
+		}
+	}
+}
+
+func TestAutoLiftDrainOnAgentMatchesOnly(t *testing.T) {
+	l := newTestLifter()
+	l.cfg.AutoLiftEvery = 5
+	l.cfg.ResultsLog = filepath.Join(t.TempDir(), "results.log")
+
+	// Deferred and auto_lift completions should not trigger draining.
+	for i := 0; i < 6; i++ {
+		l.finish("0x00000001", "deferred", "all-eligible-models")
+		l.finish("0x00000002", "lifted", "auto_lift")
+	}
+	if l.autoLiftDraining {
+		t.Fatalf("autoLiftDraining triggered by deferred/auto_lift completions")
+	}
+	if got := l.autoLiftRemaining(); got != 5 {
+		t.Fatalf("autoLiftRemaining = %d, want 5", got)
+	}
+
+	// 4 agent-lifted matches should not trigger yet.
+	for i := 0; i < 4; i++ {
+		l.finish("0x00000003", "lifted", "claude-haiku-5.5@low")
+	}
+	if l.autoLiftDraining {
+		t.Fatalf("autoLiftDraining triggered too early at %d matches", l.agentLifted)
+	}
+	if got := l.autoLiftRemaining(); got != 1 {
+		t.Fatalf("autoLiftRemaining = %d, want 1", got)
+	}
+
+	// 5th agent-lifted match triggers draining.
+	l.jobs["0x00000099"] = 0
+	l.finish("0x00000004", "lifted", "claude-haiku-5.5@low")
+	if !l.autoLiftDraining {
+		t.Fatalf("expected autoLiftDraining=true after 5th agent match")
+	}
+}
+
+func TestEventColorShowsVerboseEvents(t *testing.T) {
+	for _, ev := range []string{
+		"12:00:00 [pull] #1/50 0x00400000 [NMData]",
+		"12:00:01 [>] 0x00400000 [NMData]: step 1/5",
+		"12:00:02 [-] Unlifted 0x00400000 [NMData]",
+		"12:00:03 [~] 0x00400000 [NMData]: tier 1",
+		"12:00:04 [*] Auto-lift threshold reached",
+		"12:00:05 [+] LIFTED 0x00400000 [NMData]",
+		"12:00:06 [done] 0x00400000 [NMData]",
+	} {
+		if _, ok := eventColor(ev); !ok {
+			t.Errorf("eventColor(%q) unexpectedly hidden", ev)
+		}
 	}
 }
