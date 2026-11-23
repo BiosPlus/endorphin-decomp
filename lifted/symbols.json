@@ -12957,6 +12957,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
   },
+  "0x0061DBF0": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_70",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061DBF0(void* self, void* arg1, void* arg2, uint32_t flag)",
+    "summary": "Forwards (arg1, arg2) to ext_0061CF90 on the sub-object at this+0x164 when flag is zero, otherwise at this+0x224; returns arg1.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061E910": {
     "name": "NMData::HingeConstraint::vfunc_0",
     "class": "NMData::HingeConstraint",

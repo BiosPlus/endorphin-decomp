@@ -82,3 +82,21 @@ void __thiscall fn_00611CA0(void* self, int32_t index, uint8_t value) {
     }
 }
 } // namespace lift_00611CA0
+
+// [0x0061DBF0] NMData::PrimaryTwistAndSwingConstraint::vfunc_70 (69 bytes)
+namespace lift_0061DBF0 {
+extern void ext_0061CF90(void* self, void* arg1, void* arg2);
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_70
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Forwards (arg1, arg2) to ext_0061CF90 on the sub-object at this+0x164 when flag is zero, otherwise at this+0x224; returns arg1.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x164 uint8_t field_0x164
+// @field NMData::PrimaryTwistAndSwingConstraint +0x224 uint8_t field_0x224
+void* fn_0061DBF0(void* self, void* arg1, void* arg2, uint32_t flag) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* sub = (flag == 0) ? static_cast<void*>(base + 0x164)
+                            : static_cast<void*>(base + 0x224);
+    ext_0061CF90(sub, arg1, arg2);
+    return arg1;
+}
+} // namespace lift_0061DBF0

@@ -10,8 +10,8 @@
 // Recovered field layout for NMData::PrimaryTwistAndSwingConstraint:
 namespace lifted_layout {
 struct NMData_PrimaryTwistAndSwingConstraint_Fields {
-    // +0x164 uint8_t                  field_0x164  (evidence: 0x00612E80)
-    // +0x224 uint8_t                  field_0x224  (evidence: 0x00612E80)
+    // +0x164 uint8_t                  field_0x164  (evidence: 0x00612E80, 0x0061DBF0)
+    // +0x224 uint8_t                  field_0x224  (evidence: 0x00612E80, 0x0061DBF0)
     // +0x328 uint8_t                  field_0x328  (evidence: 0x004A9B50, 0x00611C90)
 };
 } // namespace lifted_layout
