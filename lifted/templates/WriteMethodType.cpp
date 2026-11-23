@@ -3787,3 +3787,51 @@ void fn_00649CD0(PairOut* out, void** slot, uint8_t* ctx) {
     }
 }
 } // namespace lift_00649CD0
+
+// [0x0064ECB0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing2(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064ECB0 {
+extern void ext_0064DEC0(void* joint, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setDesiredSwing2>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing2(float), 0}>
+// @summary Evaluates the float value expression, applies it to the target SkeletalJoint via setDesiredSwing2, then returns a {value, source} pair.
+// @field ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredSwing2(float), 0}> +0x04 void* field_0x04
+
+struct ValuePair {
+    uint32_t value;
+    void*    source;
+};
+
+namespace {
+
+// Virtual slot helpers: slot index n lives at byte offset n * 4 of the vtable.
+using FloatGetter = float (*)(void* self);
+using PtrGetter   = uint32_t* (*)(void* self, void* owner, uint32_t* out);
+
+inline void** vtable_of(void* obj) {
+    return *reinterpret_cast<void***>(obj);
+}
+
+} // namespace
+
+void fn_0064ECB0(ValuePair* out, void** joint_slot, void* self) {
+    void* inner = lift_field<void*>(self, 0x04);
+
+    // Evaluate the float expression (vtable slot 1).
+    float value = reinterpret_cast<FloatGetter>(vtable_of(inner)[1])(inner);
+
+    // Apply to the joint (joint is the pointer stored at joint_slot).
+    ext_0064DEC0(*joint_slot, value);
+
+    if (inner != nullptr) {
+        // Fetch the resolved value through vtable slot 28 (offset 0x70).
+        uint32_t local = 0;
+        uint32_t* resolved = reinterpret_cast<PtrGetter>(vtable_of(inner)[28])(inner, self, &local);
+        out->value  = *resolved;
+        out->source = inner;
+    } else {
+        out->value  = 0;
+        out->source = nullptr;
+    }
+}
+} // namespace lift_0064ECB0
