@@ -247,3 +247,24 @@ int32_t fn_00516550(const void* const* holder) {
     return value;
 }
 } // namespace lift_00516550
+
+// [0x00494A60] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_2 (47 bytes)
+namespace lift_00494A60 {
+extern void ext_006AD970(void* ptr);
+
+// @name ExprParser::DynamicEnumType<RigManager>::vfunc_2
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary If the holder's first pointer is set, release it via ext_006AD970; otherwise throw.
+// @field DynamicEnumType +0x00 void* field_0x00
+void fn_00494A60(void* self) {
+    void* ptr = lift_field<void*>(self, 0x00);
+    if (ptr != nullptr) {
+        ext_006AD970(ptr);
+        return;
+    }
+    // Original constructs a local exception object via sub_0046C3C0 and throws it
+    // through _CxxThrowException; the message text is not recoverable from the
+    // disassembly, so a portable std::runtime_error stands in.
+    throw std::runtime_error("DynamicEnumType: null value pointer");
+}
+} // namespace lift_00494A60
