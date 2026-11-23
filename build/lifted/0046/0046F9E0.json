@@ -1,0 +1,28 @@
+{
+  "va": "0x0046F9E0",
+  "size": 70,
+  "orig_symbol": "RuntimeEngine::vfunc_14_off_4",
+  "src_path": "src/classes/RuntimeEngine.cpp",
+  "lifted_path": "lifted/classes/RuntimeEngine.cpp",
+  "name": "RuntimeEngine::vfunc_14_off_4",
+  "class": "RuntimeEngine",
+  "signature": "uint32_t fn_0046F9E0(void* self, uint32_t a, uint32_t b)",
+  "summary": "Dispatches arg 0x21 to a helper with the address of this+0x180 (when this+0x17c is non-null); otherwise forwards arg to ext_0046F7D0. Returns the second argument.",
+  "fields": [
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0x180",
+      "type": "uint8_t",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:27:47Z"
+}
