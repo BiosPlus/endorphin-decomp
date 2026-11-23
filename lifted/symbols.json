@@ -10524,10 +10524,10 @@
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00649150": {
-    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_48",
-    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setOrientationStrength(float), 0}\u003e",
-    "signature": "void fn_00649150(void* out, void* targetHolder, void* self)",
-    "summary": "Evaluates the child float expression, applies it to the target's setOrientationStrength, and writes the resulting value/object pair to out.",
+    "name": "WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+    "signature": "void fn_00604C40(void* self, void* arg)",
+    "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x006491D0": {

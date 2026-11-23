@@ -10,6 +10,6 @@
 // Recovered field layout for EffectorWithMemory:
 namespace lifted_layout {
 struct EffectorWithMemory_Fields {
-    // +0x60  float                    integralGradient  (evidence: 0x0063CB90)
+    // +0x60  float                    integralGradient  (evidence: 0x0063CB90, 0x00649150)
 };
 } // namespace lifted_layout

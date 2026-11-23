@@ -10,6 +10,6 @@
 namespace lifted_layout {
 struct ValuePtrType_Fields {
     // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE90)
-    // +0x4   void*                    inner  (evidence: 0x00594550)
+    // +0x4   void*                    inner  (evidence: 0x00594550, 0x00649150)
 };
 } // namespace lifted_layout
