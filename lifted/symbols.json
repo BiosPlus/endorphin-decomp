@@ -8316,6 +8316,13 @@
     "summary": "Applies the renderer's scale, then draws each primitive as GL_POLYGON, emitting normal, texcoord and vertex per index step.",
     "lifted_path": "lifted/Primitives/Mesh.cpp"
   },
+  "0x0053E650": {
+    "name": "SwingLimit::vfunc_28",
+    "class": "Primitives::SwingLimit",
+    "signature": "float clampSwingAngle(float v)",
+    "summary": "Draws the swing-limit cone: builds a ring of segment points on a sphere of radius scale, then draws the cone surface and a slightly offset cap with OpenGL immediate mode.",
+    "lifted_path": "lifted/Primitives/SwingLimit.cpp"
+  },
   "0x0053F5D0": {
     "name": "NullRenderer::vfunc_0",
     "class": "NullRenderer",
