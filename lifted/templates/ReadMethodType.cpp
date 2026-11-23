@@ -11480,3 +11480,207 @@ void* __thiscall fn_0062E430(void* self, void* out_val, void** obj_ptr)
     return out_val;
 }
 } // namespace lift_0062E430
+
+// [0x0062E910] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_0062E910 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0).
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_00672110(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_0062E910(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_00672110(out_val, obj + 0x84);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
+} // namespace lift_0062E910
+
+// [0x00635AA0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_00635AA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0).
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_00672110(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_00635AA0(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_00672110(out_val, obj + 0x9C);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
+} // namespace lift_00635AA0
+
+// [0x00635D50] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_00635D50 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0).
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_00672110(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_00635D50(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_00672110(out_val, obj + 0xA8);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
+} // namespace lift_00635D50
+
+// [0x00636420] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_00636420 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0).
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_00672110(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_00636420(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_00672110(out_val, obj + 0x90);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
+} // namespace lift_00636420
+
+// [0x00636BE0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_00636BE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0).
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_00672110(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_00636BE0(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_00672110(out_val, obj + 0xB4);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
+} // namespace lift_00636BE0
+
+// [0x00674900] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_0 (69 bytes)
+namespace lift_00674900 {
+// @name ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0).
+namespace lift_0062E430 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, getVertAxis, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &Sensors::CompoundSensorPlanes::getVertAxis, 1>
+// @summary Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 vertAxis
+
+
+extern void __thiscall ext_006720E0(void* self, const void* vec);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_00674900(void* self, void* out_val, void** obj_ptr)
+{
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr);
+    if (obj != nullptr)
+    {
+        ext_006720E0(out_val, obj + 0x1C);
+        return out_val;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_val;
+}
+} // namespace lift_0062E430
+} // namespace lift_00674900

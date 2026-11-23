@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct Sensors_CompoundSensorPlanes_Fields {
     // +0x78  NM::Vector3              field_0x78  (evidence: 0x004B1FF0, 0x00508EE0, 0x0062E4F0, 0x0062E9E0, 0x00636CE0, 0x006397B0, 0x00639AA0, 0x00639ED0, 0x0068DE60) // CONFLICT: multiple definitions at +0x78
-    // +0x78  NM::Vector3              vertAxis  (evidence: 0x0062E430) // CONFLICT: multiple definitions at +0x78
+    // +0x78  NM::Vector3              vertAxis  (evidence: 0x0062E430, 0x0062E910, 0x00635AA0, 0x00635D50, 0x00636420, 0x00636BE0, 0x00674900) // CONFLICT: multiple definitions at +0x78
 };
 } // namespace lifted_layout

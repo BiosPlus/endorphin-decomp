@@ -1,0 +1,22 @@
+{
+  "va": "0x00635D50",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
+  "signature": "void* __thiscall fn_00635D50(void* self, void* out_val, void** obj_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+  "fields": [
+    {
+      "class": "Sensors::CompoundSensorPlanes",
+      "offset": "+0x78",
+      "type": "NM::Vector3",
+      "name": "vertAxis"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:47:32Z"
+}

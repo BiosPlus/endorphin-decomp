@@ -13920,6 +13920,13 @@
     "summary": "Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062E910": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e",
+    "signature": "void* __thiscall fn_0062E910(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062E9E0": {
     "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e",
@@ -14165,12 +14172,40 @@
     "summary": "Copies a quaternion from the source's getter sub-object (vtable slot 6) into the target EffectorSkeletal via setDesiredQuat; throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00635AA0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e",
+    "signature": "void* __thiscall fn_00635AA0(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00635D50": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
+    "signature": "void* __thiscall fn_00635D50(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006362D0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const \u0026)\u003e",
     "signature": "void fn_006362D0(void* self, void* value)",
     "summary": "Applies a Vector3 value to the bound EffectorSkeletal's desired twist/swing; throws if the bound target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00636420": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e",
+    "signature": "void* __thiscall fn_00636420(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00636BE0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e",
+    "signature": "void* __thiscall fn_00636BE0(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00636CE0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e::vfunc_5",
@@ -16913,6 +16948,13 @@
     "signature": "extern \"C\" void __fastcall fn_006744A0(void* self)",
     "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x00674900": {
+    "name": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",
+    "signature": "void* __thiscall fn_00674900(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00674C90": {
     "name": "ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1",
