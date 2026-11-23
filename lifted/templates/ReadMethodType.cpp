@@ -8691,3 +8691,26 @@ bool fn_005D6BA0(void* argPtr) {
     return flag != 0;
 }
 } // namespace lift_005D6BA0
+
+// [0x005DAA70] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_3 (52 bytes)
+namespace lift_005DAA70 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Returns whether the held VideoPlaneData pointer's field at +0x24 is nonzero; throws if the held pointer is null.
+// @field NMData::VideoPlaneData +0x24 int field_0x24
+uint8_t fn_005DAA70(void* self) {
+    // self points at the ValuePtr-style holder; first member is the target object pointer.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0; // not reached: exception thrown above
+    }
+    int32_t value = *reinterpret_cast<int32_t*>(static_cast<uint8_t*>(obj) + 0x24);
+    return static_cast<uint8_t>(value != 0);
+}
+} // namespace lift_005DAA70
