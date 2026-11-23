@@ -1,0 +1,22 @@
+{
+  "va": "0x004CD090",
+  "size": 58,
+  "orig_symbol": "NMData::MetaBodyConstraintData::vfunc_87",
+  "src_path": "src/NMData/MetaBodyConstraintData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyConstraintData.cpp",
+  "name": "NMData::MetaBodyConstraintData::vfunc_87",
+  "class": "NMData::MetaBodyConstraintData",
+  "signature": "extern \"C\" void __thiscall fn_004CD090(void* self)",
+  "summary": "Cleans up, destroys, and clears the subobject at +0x180 if non-null.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:59:05Z"
+}

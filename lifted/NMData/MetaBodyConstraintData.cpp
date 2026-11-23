@@ -39,3 +39,29 @@ extern "C" void __thiscall fn_004CCFB0(void* self, void* src) {
         ext_004CCE20(self, casted);
     }
 }
+
+// [0x004CD090]
+namespace lift_004CD090 {
+// @name NMData::MetaBodyConstraintData::vfunc_87
+// @class NMData::MetaBodyConstraintData
+// @summary Cleans up, destroys, and clears the subobject at +0x180 if non-null.
+// @field NMData::MetaBodyConstraintData +0x180 void* field_0x180
+
+
+extern void __thiscall ext_004CCC60(void* self);
+extern void __thiscall ext_0046AC30(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+
+extern void __thiscall fn_004CD090(void* self) {
+    void* obj = lift_field<void*>(self, 0x180);
+    if (obj != nullptr) {
+        ext_004CCC60(obj);
+        void* obj2 = lift_field<void*>(self, 0x180);
+        if (obj2 != nullptr) {
+            ext_0046AC30(obj2);
+            ext_006A5C5C(obj2);
+        }
+        lift_field<void*>(self, 0x180) = nullptr;
+    }
+}
+} // namespace lift_004CD090
