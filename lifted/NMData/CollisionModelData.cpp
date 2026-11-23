@@ -20,6 +20,7 @@ void* fn_005C3180(void* self, void* ret_slot) {
 }
 extern "C" const float* __thiscall ext_005B11F0(void* self);
 extern "C" void ext_005C3660(void* self);
+#include <cstring>
 
 // [0x005C2FB0]
 // @name NMData::CollisionModelData::vfunc_1_off_158
@@ -263,3 +264,30 @@ void fn_005C37A0(void* self, const void* arg) {
     fn(iface, value);
 }
 } // namespace lift_005C37A0
+
+// [0x005C38B0]
+namespace lift_005C38B0 {
+// @name NMData::CollisionModelData::vfunc_0_off_154
+// @class NMData::CollisionModelData
+// @summary Copies a 64-byte transform matrix from TransformInterface vfunc[5] into the buffer returned by ext_00648480 if field_0x18 is non-null.
+// @field NMData::CollisionModelData +0x16C void* field_0x16c
+
+extern void* __thiscall ext_00648480(void* self);
+
+void __thiscall fn_005C38B0(void* self, uint32_t arg1) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* target = *reinterpret_cast<void**>(base + 0x18);
+    if (!target) {
+        return;
+    }
+
+    uint8_t* iface = base - 0x150;
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(iface);
+    using VFunc = const void* (__thiscall*)(void*, uint32_t);
+    VFunc fn = *reinterpret_cast<VFunc*>(vtable + 0x14);
+    const void* src = fn(iface, arg1);
+
+    void* dst = ext_00648480(target);
+    std::memcpy(dst, src, 64);
+}
+} // namespace lift_005C38B0

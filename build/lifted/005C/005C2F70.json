@@ -1,0 +1,22 @@
+{
+  "va": "0x005C2F70",
+  "size": 53,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_0_off_158",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_0_off_158",
+  "class": "NMData::CollisionModelData",
+  "signature": "extern \"C\" int32_t __thiscall fn_005C2F70(void* self)",
+  "summary": "Updates the render object owner and calls sub_005866C0 with a global offset and nested field.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x94",
+      "type": "void*",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:59:32Z"
+}
