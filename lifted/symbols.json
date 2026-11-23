@@ -5302,6 +5302,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_004E81C0.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004A5880": {
+    "name": "sub_004A5880",
+    "signature": "void __fastcall sub_004A5880(void* ecx)",
+    "summary": "Adjusts this by +4 and tail-calls vtable slot 3 (+0xc)",
+    "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
+  },
   "0x004A6C60": {
     "name": "sub_004A6C60",
     "signature": "extern \"C\" void fn_004A6C60(void)",
@@ -8698,6 +8704,13 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "extern \"C\" void __fastcall fn_004F9920(void* self)",
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x178.",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
+  "0x004F9BD0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_33",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t __thiscall fn_004F9BD0(void* this_ptr)",
+    "summary": "Tail-calls sub_0046F890 on the object at delegate_0x8 + 0x14.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
   "0x004FD800": {

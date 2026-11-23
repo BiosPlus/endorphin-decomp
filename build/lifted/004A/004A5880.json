@@ -1,0 +1,21 @@
+{
+  "va": "0x004A5880",
+  "size": 11,
+  "orig_symbol": "sub_004A5880",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "sub_004A5880",
+  "signature": "void __fastcall sub_004A5880(void* ecx)",
+  "summary": "Adjusts this by +4 and tail-calls vtable slot 3 (+0xc)",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:38:55Z"
+}
