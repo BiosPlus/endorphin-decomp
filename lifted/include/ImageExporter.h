@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct ImageExporter_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x0046F1A0, 0x0068DE60)
-    // +0x20  int                      field_0x20  (evidence: 0x0046EDA0, 0x004A25E0)
+    // +0x20  int                      field_0x20  (evidence: 0x0046EDA0, 0x004A25E0, 0x00633240)
 };
 } // namespace lifted_layout

@@ -13389,10 +13389,10 @@
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00633240": {
-    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingAngle -\u003e setDesiredTwistAndSwingAngleRaw)",
-    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngleRaw(class NM::Vector3 const \u0026)\u003e",
-    "signature": "extern \"C\" void __stdcall fn_00633240(void* const* self, void* arg)",
-    "summary": "Reads a Vector3 const\u0026 from the source's inner getter (vtable slot 5) and forwards it to EffectorSkeletal::setDesiredTwistAndSwingAngleRaw on the target; throws if the target is null.",
+    "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
+    "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
+    "signature": "void fn_00695620(void* dst, void* src)",
+    "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x006332E0": {
