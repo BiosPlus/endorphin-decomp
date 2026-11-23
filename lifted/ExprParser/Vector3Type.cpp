@@ -290,3 +290,36 @@ void* fn_0066B5F0(void* self, void* arg1, void* arg2) {
     ext_0067B5F0(result);
     return arg1;
 }
+
+// [0x0066D0E0] ExprParser::Vector3Type::vfunc_50 (49 bytes)
+namespace lift_0066D0E0 {
+// Callee sub_004B70B0 (164B): thiscall, this = stack slot of arg3, three stack args.
+extern void ext_004B70B0(void* self, void* p0, void* p1, void* p2);
+// Constant data pointer pushed as the last argument (0x0098B17C).
+extern uint8_t mem_0098B17C[];
+
+// @name ExprParser::Vector3Type::vfunc_50
+// @class ExprParser::Vector3Type
+// @summary Calls vfunc_5 on each argument's +0x04 sub-object (argument as parameter), then passes both results and mem_0098B17C to sub_004B70B0 with the arg3 slot as this.
+// @field Unknown +0x04 void* field_0x04
+void fn_0066D0E0(void* a0, void* a1, void* a2, void* a3) {
+    (void)a3;  // fourth stack argument is popped by the caller's ret 0x10 but never read
+
+    // Virtual slot 5 (offset 0x14) of obj's vtable, called with arg as its single argument.
+    auto callSlot5 = [](void* obj, void* arg) -> void* {
+        void** vtbl = *static_cast<void***>(obj);
+        return reinterpret_cast<void* (*)(void*, void*)>(vtbl[5])(obj, arg);
+    };
+
+    // r1 = a1->sub->vfunc_5(a1)
+    void* sub1 = *reinterpret_cast<void**>(static_cast<char*>(a1) + 0x04);
+    void* r1 = callSlot5(sub1, a1);
+
+    // r2 = a0->sub->vfunc_5(a0)
+    void* sub0 = *reinterpret_cast<void**>(static_cast<char*>(a0) + 0x04);
+    void* r2 = callSlot5(sub0, a0);
+
+    // sub_004B70B0(this = &a2, r2, r1, 0x0098B17C)
+    ext_004B70B0(&a2, r2, r1, mem_0098B17C);
+}
+} // namespace lift_0066D0E0

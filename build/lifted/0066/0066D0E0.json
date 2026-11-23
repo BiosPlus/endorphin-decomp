@@ -1,0 +1,22 @@
+{
+  "va": "0x0066D0E0",
+  "size": 49,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_50",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_50",
+  "class": "ExprParser::Vector3Type",
+  "signature": "void fn_0066D0E0(void* a0, void* a1, void* a2, void* a3)",
+  "summary": "Calls vfunc_5 on each argument's +0x04 sub-object (argument as parameter), then passes both results and mem_0098B17C to sub_004B70B0 with the arg3 slot as this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:18:54Z"
+}

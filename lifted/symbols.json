@@ -14223,6 +14223,13 @@
     "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066D0E0": {
+    "name": "ExprParser::Vector3Type::vfunc_50",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_0066D0E0(void* a0, void* a1, void* a2, void* a3)",
+    "summary": "Calls vfunc_5 on each argument's +0x04 sub-object (argument as parameter), then passes both results and mem_0098B17C to sub_004B70B0 with the arg3 slot as this.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066D120": {
     "name": "ExprParser::Vector3Type::vfunc_46",
     "class": "ExprParser::Vector3Type",
