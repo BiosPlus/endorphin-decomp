@@ -1,0 +1,22 @@
+{
+  "va": "0x0062B380",
+  "size": 110,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026public: void __thiscall Sensors::SensorIntegral::resize(int)\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026public: void __thiscall Sensors::SensorIntegral::resize(int)\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026public: void __thiscall Sensors::SensorIntegral::resize(int)\u003e",
+  "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+  "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and",
+      "name": "+0x70)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:05:00Z"
+}

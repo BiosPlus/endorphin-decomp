@@ -7440,6 +7440,13 @@
     "summary": "Iterates the pointer vector at +0x74..+0x78 and, for each element, calls its AnimationInterface (+0xC) vtable slots 9 (arg) and 10 (arg, 1).",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A2C40": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005A46C0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
@@ -8092,12 +8099,40 @@
     "summary": "Scales a dimension of the render object's bounding/transform vector and updates the attached object.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005B7420": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005B7420(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005B7AE0": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e",
     "signature": "extern \"C\" void* ext_005B6C80(void* self, void* arg);  // sub_005B6C80 (40B) extern \"C\" void ext_00672110(void* self, void* arg);    // sub_00672110 (52B) void* fn_005B7AE0(void* self, void* const* arg2, void* arg3)",
     "summary": "Calls arg3's vtable slot 5 to get a value, feeds it to the object behind arg2 via ext_005B6C80, pushes that result into self via ext_00672110, and returns self.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
+  "0x005B7B50": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addForce(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addForce(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005B7B50(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005B7C70": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005B7C70(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005B7D90": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addImpulse(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addImpulse(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005B7D90(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x005B80F0": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
@@ -8190,11 +8225,32 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005C3410": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForce(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForce(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005C3410(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005C34B0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addTorque(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addTorque(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005C34B0(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005C3520": {
     "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e",
     "signature": "void __thiscall fn_005C3520(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005C3550": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulse(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_005C3550(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x005C3640": {
@@ -9671,6 +9727,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x00627720": {
+    "name": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006294C0": {
     "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
     "class": "Sensors::SensorAbsoluteGeneralEulers",
@@ -9761,6 +9824,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0062B230(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0062B1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Sensors/auto_tiny.cpp"
+  },
+  "0x0062B380": {
+    "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026public: void __thiscall Sensors::SensorIntegral::resize(int)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026public: void __thiscall Sensors::SensorIntegral::resize(int)\u003e",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0062B6D0": {
     "name": "Sensors::AxisSensor::vfunc_14",
@@ -10544,6 +10614,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064EAB0": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064EAB0(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064EB20": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setDesiredTwist(float), 0}\u003e",
@@ -10570,6 +10647,13 @@
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwing(class NM::Vector3 const \u0026), 0}\u003e",
     "signature": "void __thiscall fn_0064ED30(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0064ED60": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwing(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwing(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064ED60(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064EDD0": {
@@ -10774,6 +10858,13 @@
     "summary": "Dispatches via the holder's sub-object (vslot +0x08 and +0x70), then rewrites the pair at io as {*io-derived value, holder sub-object}.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00650E50": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{80, {flat}}, 0}\u003e",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006510F0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e",
@@ -10814,6 +10905,13 @@
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e",
     "signature": "void __thiscall fn_006513E0(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00651410": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e",
+    "signature": "extern void __stdcall fn_00651410(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x006595B0": {
@@ -11535,11 +11633,81 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0066C590": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationTS(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationTS(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C590(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0066C600": {
     "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationTSA(class NM::Vector3 const \u0026)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationTSA(class NM::Vector3 const \u0026)\u003e",
     "signature": "void __thiscall fn_0066C600(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C630": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationTSA(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationTSA(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C630(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C6D0": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationSE(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationSE(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C6D0(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C770": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationE(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationE(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C770(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C810": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTStoTSA(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTStoTSA(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C810(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C8B0": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTStoE(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTStoE(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C8B0(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C950": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTSAtoTS(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTSAtoTS(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C950(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C9F0": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTSAtoE(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertTSAtoE(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066C9F0(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066CA90": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066CA90(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066CB30": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTSA(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTSA(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066CB30(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0066CBA0": {
@@ -11554,6 +11722,13 @@
     "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::getOrthonormalVector(class NM::Vector3 const \u0026)\u003e",
     "signature": "void __thiscall fn_0066CBC0(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066CBF0": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::getOrthonormalVector(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::getOrthonormalVector(class NM::Vector3 const \u0026)\u003e",
+    "signature": "extern void __stdcall fn_0066CBF0(uint32_t* out, void* b, void* c)",
+    "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0066CDF0": {
@@ -12060,6 +12235,13 @@
     "class": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e",
     "signature": "void __thiscall fn_0068BC60(void* self, void* targetPtr, void* valuePtr)",
     "summary": "Auto-lifted identical-shape clone of 0x0064EA80 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0068BC90": {
+    "name": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e",
+    "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0068BD10": {
