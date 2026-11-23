@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B990",
+  "size": 67,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_46",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_46",
+  "class": "ExprParser::Vector4Type",
+  "signature": "void __stdcall ExprParser_Vector4Type_vfunc_46(void* self, void* src)",
+  "summary": "Fetches the source operand's 4-float value (inner object vfunc 6, then sub_00547820) and copies it into this-\u003edata.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector4Type",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:03:30Z"
+}

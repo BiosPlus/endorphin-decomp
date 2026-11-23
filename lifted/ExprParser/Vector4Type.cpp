@@ -163,3 +163,32 @@ void fn_0066D190(void* dstHolder, void* srcHolder, void* c, void* d) {
     ext_004D02B0(&c, dst, src, mem_0098B18C);
 }
 } // namespace lift_0066D190
+
+// [0x0066B990]
+namespace lift_0066B990 {
+// @name ExprParser::Vector4Type::vfunc_46
+// @class ExprParser::Vector4Type
+// @summary Fetches the source operand's 4-float value (inner object vfunc 6, then sub_00547820) and copies it into this->data.
+// @field ExprParser::Vector4Type +0x00 float* data
+
+// sub_00547820: thiscall (ecx = dst float*), stack args: &temp, source value; returns const float* to 4 floats.
+extern float* ext_00547820(float* self, float* temp, const float* value);
+
+// Stdcall: arg1 = this (Vector4Type*), arg2 = source operand; ret 8.
+// Source operand field +0x04 is the inner object whose vtable slot 6 (+0x18) yields a const float*.
+void __stdcall ExprParser_Vector4Type_vfunc_46(void* self, void* src) {
+    void* inner = lift_field<void*>(src, 0x04);
+
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using Slot6Fn = const float* (*)(void* self, void* arg);
+    const float* value = reinterpret_cast<Slot6Fn>(vtbl[6])(inner, src);
+
+    float* dst = lift_field<float*>(self, 0x00);
+    float temp[4];
+    const float* result = ext_00547820(dst, temp, value);
+
+    for (int i = 0; i < 4; ++i) {
+        dst[i] = result[i];
+    }
+}
+} // namespace lift_0066B990

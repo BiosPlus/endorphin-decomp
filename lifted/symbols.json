@@ -15042,6 +15042,13 @@
     "summary": "Dot-products the ctx float4 with the source operand's float4 and pushes it via vslot 7; otherwise evaluates the source scalar and stores the transformed vector into *arg1.",
     "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
   },
+  "0x0066B990": {
+    "name": "ExprParser::Vector4Type::vfunc_46",
+    "class": "ExprParser::Vector4Type",
+    "signature": "void __stdcall ExprParser_Vector4Type_vfunc_46(void* self, void* src)",
+    "summary": "Fetches the source operand's 4-float value (inner object vfunc 6, then sub_00547820) and copies it into this-\u003edata.",
+    "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
+  },
   "0x0066B9E0": {
     "name": "ExprParser::ExtROType::vfunc_14",
     "class": "ExprParser::ExtROType",
