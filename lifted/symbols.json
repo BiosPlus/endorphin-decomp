@@ -9813,6 +9813,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0xF4.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C37A0": {
+    "name": "NMData::CollisionModelData::vfunc_4_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "void fn_005C37A0(void* self, const void* arg)",
+    "summary": "Forwards arg to the buffered-TM object at +0x150, then calls vtable slot 13 of the object at +0x4 with the buffered-TM's OglRenderer value.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C3840": {
     "name": "NMData::CollisionModelData::vfunc_6_off_C",
     "class": "NMData::CollisionModelData",

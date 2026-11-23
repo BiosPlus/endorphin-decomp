@@ -1,0 +1,28 @@
+{
+  "va": "0x005C37A0",
+  "size": 60,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_4_off_C",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_4_off_C",
+  "class": "NMData::CollisionModelData",
+  "signature": "void fn_005C37A0(void* self, const void* arg)",
+  "summary": "Forwards arg to the buffered-TM object at +0x150, then calls vtable slot 13 of the object at +0x4 with the buffered-TM's OglRenderer value.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x150",
+      "type": "void*",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:59:35Z"
+}

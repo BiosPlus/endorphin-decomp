@@ -206,3 +206,60 @@ void fn_005C3B40(void* self, const float* scale) {
         fn13(obj2, r);
     }
 }
+
+// [0x005C2F70]
+namespace lift_005C2F70 {
+// @name NMData::CollisionModelData::vfunc_0_off_158
+// @class NMData::CollisionModelData
+// @summary Updates the render object owner and calls sub_005866C0 with a global offset and nested field.
+// @field NMData::CollisionModelData +0x94 void* field_0x94
+
+
+void __thiscall ext_00528B60(void* self);
+int32_t __cdecl ext_00594000(void);
+int32_t __thiscall ext_005866C0(void* self, int32_t arg1, uint32_t arg2);
+
+extern int32_t __thiscall fn_005C2F70(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* obj1 = *reinterpret_cast<uint8_t**>(base - 0xC4);
+    uint8_t* obj2 = *reinterpret_cast<uint8_t**>(obj1 + 0x10);
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj2 + 0x10);
+
+    ext_00528B60(base - 0x14C);
+    int32_t global_val = ext_00594000();
+    return ext_005866C0(base - 0x158, global_val + 0x258, val);
+}
+} // namespace lift_005C2F70
+
+// [0x005C37A0] NMData::CollisionModelData::vfunc_4_off_C (60 bytes)
+namespace lift_005C37A0 {
+extern void __thiscall ext_005B1AB0(void* self, const void* arg);
+extern const float* __thiscall ext_005B11F0(void* self);
+
+// @name NMData::CollisionModelData::vfunc_4_off_C
+// @class NMData::CollisionModelData
+// @summary Forwards arg to the buffered-TM object at +0x150, then calls vtable slot 13 of the object at +0x4 with the buffered-TM's OglRenderer value.
+// @field NMData::CollisionModelData +0x04 void* field_0x04
+// @field NMData::CollisionModelData +0x150 void* field_0x150
+void fn_005C37A0(void* self, const void* arg) {
+    char* base = static_cast<char*>(self);
+
+    void* buffered = *reinterpret_cast<void**>(base + 0x150);
+    if (buffered == nullptr) {
+        return;
+    }
+
+    ext_005B1AB0(buffered, arg);
+
+    void* iface = *reinterpret_cast<void**>(base + 0x4);
+    if (iface == nullptr) {
+        return;
+    }
+
+    const float* value = ext_005B11F0(buffered);
+
+    void** vtbl = *reinterpret_cast<void***>(iface);
+    auto fn = reinterpret_cast<void (__thiscall*)(void*, const float*)>(vtbl[0x34 / sizeof(void*)]);
+    fn(iface, value);
+}
+} // namespace lift_005C37A0
