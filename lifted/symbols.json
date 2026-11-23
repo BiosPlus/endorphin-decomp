@@ -34304,6 +34304,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B1F60": {
+    "name": "initAndDispatch_007B1F60",
+    "signature": "void fn_007B1F60(void)",
+    "summary": "Calls sub_007B1F70 and tail-calls sub_007B1F80",
+    "lifted_path": "lifted/clones/auto_clones_7B0000.cpp"
+  },
   "0x007B1F70": {
     "name": "sub_007B1F70",
     "signature": "extern void fn_007B1F70(void)",
