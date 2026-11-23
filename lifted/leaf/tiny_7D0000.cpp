@@ -145,3 +145,18 @@ uint32_t sub_007D48B0(uint32_t arg0) {
     return mem_r32(arg0 + 0x0C) - mem_r32(arg0 + 0x04);
 }
 } // namespace lift_007D48B0
+
+// [0x007D47A0]
+namespace lift_007D47A0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getSpanDiff
+// @summary Returns the difference between two 32-bit fields at +0x14 and +0x0C of the passed object.
+// @field Obj +0x0C uint32_t field_0x0C
+// @field Obj +0x14 uint32_t field_0x14
+uint32_t sub_007D47A0(uint32_t obj) {
+    uint32_t a = mem_read32(obj + 0x14);
+    uint32_t b = mem_read32(obj + 0x0C);
+    return a - b;
+}
+} // namespace lift_007D47A0
