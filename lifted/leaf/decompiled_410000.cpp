@@ -36,3 +36,16 @@ void __thiscall fn_0041A4F0(uint8_t* self) {
 }
 } // namespace lift_0051BF10
 } // namespace lift_0041A4F0
+
+// [0x0041FD10]
+namespace lift_0041FD10 {
+extern void fn_006A608E(void);
+
+// @name sub_0041FD10
+// @summary Forwards to MFC80!ord_6236 with a zero argument and cleans up 8 bytes of stack arguments
+void __stdcall fn_0041FD10(uint32_t arg0, uint32_t arg1) {
+    (void)arg0;
+    (void)arg1;
+    fn_006A608E();
+}
+} // namespace lift_0041FD10
