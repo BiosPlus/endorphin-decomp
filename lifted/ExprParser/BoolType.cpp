@@ -285,3 +285,49 @@ void* fn_0066AF10(void* self, const uint8_t* flag_src) {
     ext_0046C460(self, flag);
     return self;
 }
+
+// [0x0066EE70] ExprParser::BoolType::vfunc_50 (65 bytes)
+namespace lift_0066EE70 {
+extern void ext_0049AD90();
+
+namespace {
+
+// Vtable slot 3 (byte offset 0x0C) of an ExprParser value object, called with `arg`
+// as its single stack argument and `self` as the implicit this pointer.
+using BoolVSlot3Fn = uint8_t(__thiscall*)(void* self, void* arg);
+
+inline uint8_t call_child_vslot3(void* child, void* arg) {
+    void* vtbl = lift_field<void*>(child, 0x00);
+    auto fn = reinterpret_cast<BoolVSlot3Fn>(lift_field<void*>(vtbl, 0x0C));
+    return fn(child, arg);
+}
+
+// Callee takes `this` plus three stack arguments and cleans its own stack.
+using ThisCall3Fn = void(__thiscall*)(void* self, void* a, void* b, void* c);
+
+}  // namespace
+
+// @name ExprParser::BoolType::vfunc_50
+// @class ExprParser::BoolType
+// @summary Evaluates a boolean from both stack operands via their child's vfunc slot 3, then forwards both results to ext_0049AD90.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066EE70(void* arg1, void* arg2, void* arg3, void* arg4) {
+    (void)arg4;
+
+    // Second operand first (original: arg2 -> child -> vfunc3(arg2)).
+    uint8_t result2 = call_child_vslot3(lift_field<void*>(arg2, 0x04), arg2);
+    // First operand (original: arg1 -> child -> vfunc3(arg1)).
+    uint8_t result1 = call_child_vslot3(lift_field<void*>(arg1, 0x04), arg1);
+
+    // Original spills both results into the argument slots and passes their
+    // addresses to the callee: &arg1-slot (holds result1), &arg2-slot (holds result2).
+    uint8_t slot1 = result1;
+    uint8_t slot2 = result2;
+
+    auto callee = reinterpret_cast<ThisCall3Fn>(reinterpret_cast<void*>(&ext_0049AD90));
+    callee(static_cast<void*>(&arg3),
+           static_cast<void*>(&slot1),
+           static_cast<void*>(&slot2),
+           reinterpret_cast<void*>(static_cast<uintptr_t>(0x0098B7CCu)));
+}
+} // namespace lift_0066EE70

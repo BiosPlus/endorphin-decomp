@@ -15476,6 +15476,13 @@
     "summary": "Reads a float from a2's sub-object via vfn1, forwards it with \"RealValue\" to a1's sub-object via vfn1, then passes the returned float to ext_00487A30.",
     "lifted_path": "lifted/ExprParser/RealType.cpp"
   },
+  "0x0066EE70": {
+    "name": "ExprParser::BoolType::vfunc_50",
+    "class": "ExprParser::BoolType",
+    "signature": "inline uint8_t call_child_vslot3(void* child, void* arg)",
+    "summary": "Evaluates a boolean from both stack operands via their child's vfunc slot 3, then forwards both results to ext_0049AD90.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0066EFE0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
