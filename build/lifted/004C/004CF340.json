@@ -1,0 +1,14 @@
+{
+  "va": "0x004CF340",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e",
+  "signature": "float __stdcall fn_004CF340(void** targetPtr)",
+  "summary": "Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:58:43Z"
+}
