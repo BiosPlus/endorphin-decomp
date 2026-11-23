@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B5A0",
+  "size": 34,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_33",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_33",
+  "class": "ExprParser::Vector3Type",
+  "signature": "void fn_0066B5A0(void* self, void* arg1, void* arg2, void* arg3)",
+  "summary": "Invokes virtual slot 29 (+0x74) on this with arg1, then forwards *arg1 and arg3 to ext_00698B50 using arg2 as the receiver.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:33:23Z"
+}

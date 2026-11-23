@@ -10884,6 +10884,13 @@
     "summary": "Returns the float[3] already held in *a1, or lazily initialises and returns the shared zero vector.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B5A0": {
+    "name": "ExprParser::Vector3Type::vfunc_33",
+    "class": "ExprParser::Vector3Type",
+    "signature": "void fn_0066B5A0(void* self, void* arg1, void* arg2, void* arg3)",
+    "summary": "Invokes virtual slot 29 (+0x74) on this with arg1, then forwards *arg1 and arg3 to ext_00698B50 using arg2 as the receiver.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B5D0": {
     "name": "ExprParser::Vector3Type::vfunc_35",
     "class": "ExprParser::Vector3Type",

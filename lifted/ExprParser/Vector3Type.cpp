@@ -29,8 +29,10 @@ void* fn_0066B530(void* self, void* a1, void* a2) {
 extern "C" uint32_t __thiscall ext_00699000(uint32_t self, uint32_t arg);
 // Helper (sub_006715C0, 208 bytes): thiscall with two stack arguments, callee pops 8.
 extern "C" uint32_t __thiscall ext_006715C0(void* self, uint32_t arg1, uint32_t arg2);
+// Known callee 0x00698B50: sub_00698B50 (49B), thiscall taking this=arg2 and two stack args.
+extern "C" void ext_00698B50(void* self, void* p0, void* p1);
 
-// [0x0066B680] ExprParser::Vector3Type::vfunc_43 (48 bytes)
+extern "C" void ext_00698B50(void* self, void* p0, void* p1);
 // @name ExprParser::Vector3Type::vfunc_43
 // @class ExprParser::Vector3Type
 // @summary Adds the vector from arg2->+0x04->vfunc_5(arg2) component-wise into the float[3] at *a1.
@@ -239,4 +241,21 @@ uint32_t* fn_006719E0(void* self, uint32_t* out, const uint32_t* in) {
     uint32_t result = ext_006715C0(static_cast<char*>(self) + 0x08, 1u, value);
     *out = result;
     return out;
+}
+
+// [0x0066B5A0]
+// @name ExprParser::Vector3Type::vfunc_33
+// @class ExprParser::Vector3Type
+// @summary Invokes virtual slot 29 (+0x74) on this with arg1, then forwards *arg1 and arg3 to ext_00698B50 using arg2 as the receiver.
+// @field ExprParser::Vector3Type +0x00 void* vtable
+void fn_0066B5A0(void* self, void* arg1, void* arg2, void* arg3) {
+    // Virtual call: vtable[0x74 / 4] (slot 29), this=self, one argument arg1.
+    void** vtable = *reinterpret_cast<void***>(self);
+    using VirtFn = void (*)(void* self, void* a);
+    // Slot index 29 = 0x74 / 4 (32-bit vtable entry size), kept as a literal for portability.
+    reinterpret_cast<VirtFn>(vtable[29])(self, arg1);
+
+    // Forward: receiver = arg2, stack args = arg3 and the pointer-sized value stored at arg1.
+    void* first = *reinterpret_cast<void**>(arg1);
+    ext_00698B50(arg2, arg3, first);
 }
