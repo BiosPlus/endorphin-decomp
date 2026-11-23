@@ -1843,3 +1843,28 @@ void* fn_004A28A0(void* self) {
     throw std::runtime_error("ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_3: null value pointer");
 }
 } // namespace lift_004A28A0
+
+// [0x004A2F80] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004A2F80 {
+// sub_0049AA40: called with the held pointer (ecx) when non-null.
+extern void ext_0049AA40(void* held);
+// sub_0046C3C0: constructs the exception object in a 0x28-byte stack buffer (ecx = buffer).
+extern void ext_0046C3C0(void* buffer);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getDrawDepth, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Reads the held pointer from the argument; if non-null forwards it to sub_0049AA40, otherwise constructs and throws an exception.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004A2F80(void** arg) {
+    void* held = *arg;
+    if (held != nullptr) {
+        ext_0049AA40(held);
+        return;
+    }
+    alignas(8) unsigned char exception_object[0x28];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+}
+} // namespace lift_004A2F80
