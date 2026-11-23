@@ -1,0 +1,22 @@
+{
+  "va": "0x0051EBB0",
+  "size": 76,
+  "orig_symbol": "StateMachine::State::vfunc_2",
+  "src_path": "src/StateMachine/State.cpp",
+  "lifted_path": "lifted/StateMachine/State.cpp",
+  "name": "StateMachine::State::vfunc_2",
+  "class": "StateMachine::State",
+  "signature": "void* fn_0051EBB0(void* self, void* a1, uint32_t a2)",
+  "summary": "Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.",
+  "fields": [
+    {
+      "class": "StateMachine::State",
+      "offset": "+0x158",
+      "type": "uint8_t field_0x158 (sub-object; only its address is",
+      "name": "taken)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:36:19Z"
+}

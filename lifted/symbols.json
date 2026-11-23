@@ -7371,6 +7371,13 @@
     "summary": "Pure jump thunk forwarding to sub_0051E560.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0051EBB0": {
+    "name": "StateMachine::State::vfunc_2",
+    "class": "StateMachine::State",
+    "signature": "void* fn_0051EBB0(void* self, void* a1, uint32_t a2)",
+    "summary": "Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.",
+    "lifted_path": "lifted/StateMachine/State.cpp"
+  },
   "0x0051F830": {
     "name": "sub_0051F830",
     "signature": "extern \"C\" void fn_0051F830(void)",

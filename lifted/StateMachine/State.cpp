@@ -42,3 +42,24 @@ uint32_t __thiscall fn_0051DE30(void* self) {
     const GuestCodePtr target = reinterpret_cast<GuestCodePtr>(static_cast<uintptr_t>(code));
     return target(guest_ptr(forward_this));
 }
+
+// [0x0051EBB0]
+namespace lift_0051EBB0 {
+extern uint32_t __thiscall ext_00501140(void* self, uint32_t arg);
+extern void ext_006721F0(void* arg0, uint32_t arg1);
+extern void __thiscall ext_0065F450(void* self, void* arg);
+
+// @name StateMachine::State::vfunc_2
+// @class StateMachine::State
+// @summary Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.
+// @field StateMachine::State +0x158 uint8_t field_0x158 (sub-object; only its address is taken)
+void* fn_0051EBB0(void* self, void* a1, uint32_t a2) {
+    uint32_t sel = ext_00501140(static_cast<uint8_t*>(self) + 0x158, a2);
+    if (sel != 0) {
+        ext_006721F0(a1, sel);
+    } else {
+        ext_0065F450(self, a1);
+    }
+    return a1;
+}
+} // namespace lift_0051EBB0
