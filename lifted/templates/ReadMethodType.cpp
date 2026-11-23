@@ -8909,3 +8909,1487 @@ bool fn_004A2860(void* self) {
     return ext_0049AA60(value) != 0;
 }
 } // namespace lift_004A2860
+
+// [0x00471DB0] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00471DB0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_0046F910(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00471DB0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_0046F910(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00471DB0
+
+// [0x004A31C0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A31C0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00496F30(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004A31C0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00496F30(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004A31C0
+
+// [0x004A3530] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A3530 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00496F40(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004A3530(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00496F40(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004A3530
+
+// [0x004A3930] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004A3930 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_006658C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004A3930(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_006658C0() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004A3930
+
+// [0x004A4560] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004A4560 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_0049AA40();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004A4560(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_0049AA40() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004A4560
+
+// [0x004A5090] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004A5090 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_004A2490();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004A5090(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_004A2490() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004A5090
+
+// [0x004AAA80] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004AAA80 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004A9A60(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004AAA80(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004A9A60(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004AAA80
+
+// [0x004AAD00] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004AAD00 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004A9A50(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004AAD00(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004A9A50(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004AAD00
+
+// [0x004B2E60] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004B2E60 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_006AD190();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004B2E60(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_006AD190() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004B2E60
+
+// [0x004B90D0] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_2 (55 bytes)
+namespace lift_004B90D0 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA9D0 (ExprParser::ReadMethodType<PoseToolOptions>::isCollisionEnabled_vfunc_2).
+// @field ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0> +0x83 bool field_0x83
+namespace lift_004EA9D0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<PoseToolOptions>::isCollisionEnabled_vfunc_2
+// @class NMData::PoseToolOptions
+// @summary Reads the isCollisionEnabled flag from the PoseToolOptions pointed to by the holder; throws if the target pointer is null.
+// @field NMData::PoseToolOptions +0x05 bool isCollisionEnabled
+bool fn_004B90D0(void** holder) {
+    void* target = *holder;
+    if (target == nullptr) {
+        // Original builds an exception object on the stack and throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+    return lift_field<uint8_t>(target, 0x83) != 0;
+}
+} // namespace lift_004EA9D0
+} // namespace lift_004B90D0
+
+// [0x004C1110] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004C1110 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_005C84B0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004C1110(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_005C84B0() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004C1110
+
+// [0x004C1400] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004C1400 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00410450();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004C1400(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00410450() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004C1400
+
+// [0x004CAF60] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004CAF60 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004CA2F0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004CAF60(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004CA2F0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004CAF60
+
+// [0x004D5E40] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004D5E40 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_004D39E0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004D5E40(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_004D39E0() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004D5E40
+
+// [0x004D6650] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D6650 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004D3A00(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004D6650(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004D3A00(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004D6650
+
+// [0x004D6E20] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D6E20 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004D39B0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004D6E20(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004D39B0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004D6E20
+
+// [0x004D7160] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D7160 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004D39C0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004D7160(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004D39C0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004D7160
+
+// [0x004D7550] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004D7550 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_004D39D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004D7550(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_004D39D0() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004D7550
+
+// [0x004D7CC0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D7CC0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004D3C10(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004D7CC0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004D3C10(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004D7CC0
+
+// [0x004D8030] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D8030 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004D39F0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004D8030(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004D39F0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004D8030
+
+// [0x004DE4B0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004DE4B0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00528530();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004DE4B0(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00528530() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004DE4B0
+
+// [0x004DECD0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004DECD0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004DDE60(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004DECD0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004DDE60(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004DECD0
+
+// [0x004DF050] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004DF050 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004DDE50(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004DF050(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004DDE50(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004DF050
+
+// [0x004DFDB0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004DFDB0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004DE320(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004DFDB0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004DE320(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004DFDB0
+
+// [0x004E0B90] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004E0B90 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_004DE160();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004E0B90(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_004DE160() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004E0B90
+
+// [0x004E15D0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004E15D0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_004DE440();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004E15D0(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_004DE440() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004E15D0
+
+// [0x004ECE70] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004ECE70 {
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00536F00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004ECE70(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00536F00() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004ECE70
+
+// [0x004EE800] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_2 (53 bytes)
+namespace lift_004EE800 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_004EDE20(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004EE800(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_004EDE20(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_004EE800
+
+// [0x004FF460] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_004FF460 {
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_006A7C10();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_004FF460(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_006A7C10() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_004FF460
+
+// [0x00509700] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_00509700 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00503A00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_00509700(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00503A00() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_00509700
+
+// [0x0050A260] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_0050A260 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00508BA0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_0050A260(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00508BA0() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_0050A260
+
+// [0x005856B0] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005856B0 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00584C00(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005856B0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00584C00(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005856B0
+
+// [0x00594C60] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_00594C60 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00594060();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_00594C60(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00594060() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_00594C60
+
+// [0x00597E60] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_00597E60 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00596330();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_00597E60(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00596330() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_00597E60
+
+// [0x005B75B0] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_2 (53 bytes)
+namespace lift_005B75B0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005B64D0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005B75B0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005B64D0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005B75B0
+
+// [0x005C7470] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005C7470 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005B6490(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005C7470(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005B6490(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005C7470
+
+// [0x005C77B0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005C77B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005B6470(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005C77B0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005B6470(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005C77B0
+
+// [0x005C7A20] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005C7A20 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005B6480(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005C7A20(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005B6480(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005C7A20
+
+// [0x005CB480] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_2 (53 bytes)
+namespace lift_005CB480 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005C3650(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005CB480(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005C3650(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005CB480
+
+// [0x005CBC40] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005CBC40 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005C3640(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005CBC40(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005C3640(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005CBC40
+
+// [0x005D9630] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005D9630 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005CF940(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005D9630(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005CF940(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005D9630
+
+// [0x005D9A20] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005D9A20 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005CFE50(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005D9A20(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005CFE50(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005D9A20
+
+// [0x005D9CB0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005D9CB0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005CF950(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005D9CB0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005CF950(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005D9CB0
+
+// [0x005F8F70] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005F8F70 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_005F51B0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_005F8F70(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_005F51B0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_005F8F70
+
+// [0x00616A20] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00616A20 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00610A90(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00616A20(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00610A90(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00616A20
+
+// [0x00616CB0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00616CB0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00610AA0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00616CB0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00610AA0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00616CB0
+
+// [0x0061BA00] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_0061BA00 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00610A80(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_0061BA00(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00610A80(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_0061BA00
+
+// [0x00635060] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_3 (55 bytes)
+namespace lift_00635060 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508EE0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_00508EE0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Task, int, getID, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Returns true if the Task object referenced by this's pointer has a nonzero field at +0x14; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* target
+// @field Task +0x14 uint32_t field_0x14
+
+// Portable equivalent of the original: load the target pointer from *self,
+// and if it is non-null return (target->field_0x14 != 0). Otherwise the
+// original builds an exception object and throws it.
+bool fn_00635060(void* self) {
+    auto** holder = static_cast<uint8_t**>(self);
+    uint8_t* target = holder ? *holder : nullptr;
+    if (target != nullptr) {
+        uint32_t field_0x14 = *reinterpret_cast<uint32_t*>(target + 0xC4);
+        return field_0x14 != 0;
+    }
+    // Null target: original constructs an exception object and throws it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return false;
+}
+} // namespace lift_00508EE0
+} // namespace lift_00635060
+
+// [0x006351A0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_3 (55 bytes)
+namespace lift_006351A0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00508EE0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_00508EE0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Task, int, getID, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Returns true if the Task object referenced by this's pointer has a nonzero field at +0x14; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* target
+// @field Task +0x14 uint32_t field_0x14
+
+// Portable equivalent of the original: load the target pointer from *self,
+// and if it is non-null return (target->field_0x14 != 0). Otherwise the
+// original builds an exception object and throws it.
+bool fn_006351A0(void* self) {
+    auto** holder = static_cast<uint8_t**>(self);
+    uint8_t* target = holder ? *holder : nullptr;
+    if (target != nullptr) {
+        uint32_t field_0x14 = *reinterpret_cast<uint32_t*>(target + 0xC0);
+        return field_0x14 != 0;
+    }
+    // Null target: original constructs an exception object and throws it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return false;
+}
+} // namespace lift_00508EE0
+} // namespace lift_006351A0
+
+// [0x00643960] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00643960 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_0048FAF0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00643960(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_0048FAF0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00643960
+
+// [0x00643AA0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00643AA0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00641FD0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00643AA0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00641FD0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00643AA0
+
+// [0x00643D80] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00643D80 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00641FE0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00643D80(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00641FE0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00643D80
+
+// [0x00644060] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00644060 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00641FF0(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00644060(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00641FF0(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00644060
+
+// [0x00644340] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00644340 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00642000(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_00644340(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00642000(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_00644340
+
+// [0x006446D0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_006446D0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_00642010(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_006446D0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_00642010(target) != 0;
+}
+} // namespace lift_0046E210
+} // namespace lift_006446D0
+
+// [0x0068DEA0] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0068DEA0 {
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_0052F600();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_0068DEA0(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_0052F600() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_0068DEA0
+
+// [0x00692570] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_00692570 {
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3).
+namespace lift_0046EB50 {
+extern int ext_00692210();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_00692570(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_00692210() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50
+} // namespace lift_00692570
