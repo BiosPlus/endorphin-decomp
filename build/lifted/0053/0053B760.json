@@ -1,0 +1,40 @@
+{
+  "va": "0x0053B760",
+  "size": 42,
+  "orig_symbol": "Primitives::Sphere::vfunc_28",
+  "src_path": "src/Primitives/Sphere.cpp",
+  "lifted_path": "lifted/Primitives/Sphere.cpp",
+  "name": "Primitives::Sphere::vfunc_28",
+  "class": "Primitives::Sphere",
+  "signature": "void fn_0053B760(void* self)",
+  "summary": "Reads the radius float through the sub-object at +0x20 and draws a GLU sphere using quadric +0x44, slices +0x3C and stacks +0x40.",
+  "fields": [
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Sphere",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:41:10Z"
+}

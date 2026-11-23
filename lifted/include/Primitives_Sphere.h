@@ -11,7 +11,9 @@
 namespace lifted_layout {
 struct Primitives_Sphere_Fields {
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053D2E0)
-    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0053D2E0)
-    // +0x40  uint32_t                 field_0x40  (evidence: 0x0053D2E0)
+    // +0x20  void*                    field_0x20  (evidence: 0x0053B760)
+    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0053B760, 0x0053D2E0)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x0053B760, 0x0053D2E0)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x0053B760)
 };
 } // namespace lifted_layout
