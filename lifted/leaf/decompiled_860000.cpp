@@ -60,3 +60,13 @@ void fn_0086C014(void) {
 void fn_0086CA64(void) {
     // No-op stub (add eax, 0x0).
 }
+
+// [0x00862976]
+namespace lift_00862976 {
+// @name alignmentPadding_00862976
+// @summary Multi-byte alignment NOP padding (lea ecx, [ecx]; lea esp, [esp])
+
+
+void sub_00862976() {
+}
+} // namespace lift_00862976

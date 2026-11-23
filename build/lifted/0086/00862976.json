@@ -1,0 +1,13 @@
+{
+  "va": "0x00862976",
+  "size": 10,
+  "orig_symbol": "sub_00862976",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "alignmentPadding_00862976",
+  "signature": "void sub_00862976()",
+  "summary": "Multi-byte alignment NOP padding (lea ecx, [ecx]; lea esp, [esp])",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:37:34Z"
+}
