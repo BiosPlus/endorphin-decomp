@@ -1,0 +1,21 @@
+{
+  "va": "0x00644F20",
+  "size": 9,
+  "orig_symbol": "sub_00644F20",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "forwardVCall24",
+  "signature": "void __fastcall sub_00644F20(uint32_t ecx)",
+  "summary": "Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:49Z"
+}

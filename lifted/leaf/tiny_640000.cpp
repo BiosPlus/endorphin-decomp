@@ -566,3 +566,19 @@ void __thiscall sub_00640930(void* self) {
     mem_write8(base + 0x10, 1);
 }
 } // namespace lift_00640930
+
+// [0x00644F20]
+namespace lift_00644F20 {
+// @name forwardVCall24
+// @summary Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24
+// @field Object +0x00 uint32_t field_0x00
+
+void __fastcall sub_00644F20(uint32_t ecx)
+{
+    uint32_t inner = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ecx));
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(inner));
+    uint32_t target = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x24));
+    using Fn = void(__fastcall*)(uint32_t);
+    reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(inner);
+}
+} // namespace lift_00644F20
