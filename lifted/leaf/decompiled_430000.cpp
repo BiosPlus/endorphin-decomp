@@ -67,3 +67,18 @@ void fn_00434E30() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_00434E30
+
+// [0x00430360]
+namespace lift_00430360 {
+// @name getGlobalField0x58AndCall00469040
+// @summary Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern void __thiscall ext_00469040(int32_t self);
+
+extern void __cdecl fn_00430360(void) {
+    int32_t obj = ext_00465B30();
+    ext_00469040(obj);
+}
+} // namespace lift_00430360

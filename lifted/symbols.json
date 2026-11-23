@@ -1179,6 +1179,12 @@
     "summary": "Pure jump thunk forwarding to sub_0042FE90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00430360": {
+    "name": "getGlobalField0x58AndCall00469040",
+    "signature": "extern \"C\" void __cdecl fn_00430360(void)",
+    "summary": "Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",
