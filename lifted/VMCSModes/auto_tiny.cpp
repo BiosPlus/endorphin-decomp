@@ -104,3 +104,38 @@ extern "C" void __fastcall fn_004F9920(void* self) {
     VFunc target = lift_field<VFunc>(vtable, 0x178);
     target(self);
 }
+
+// [0x004F9BD0]
+namespace lift_004F9BD0 {
+// @name VMCSModes::DefaultImplementation::vfunc_33
+// @class VMCSModes::DefaultImplementation
+// @summary Tail-calls sub_0046F890 on the object at delegate_0x8 + 0x14.
+// @field VMCSModes::DefaultImplementation +0x8 void* delegate_0x8
+
+
+extern uint32_t __thiscall ext_0046F890(void* this_ptr);
+
+uint32_t __thiscall fn_004F9BD0(void* this_ptr) {
+    const auto* self = static_cast<const uint8_t*>(this_ptr);
+    const auto* delegate = *reinterpret_cast<const uint8_t* const*>(self + 0x8);
+    void* target = *reinterpret_cast<void* const*>(delegate + 0x14);
+    return ext_0046F890(target);
+}
+} // namespace lift_004F9BD0
+
+// [0x004F9BE0]
+namespace lift_004F9BE0 {
+extern uint32_t mem_r32(uint32_t addr);
+extern uint32_t __thiscall ext_0046F8A0(uint32_t self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_34
+// @class VMCSModes::DefaultImplementation
+// @summary Forwards vfunc_34 to sub_0046F8A0 on the object at delegate_0x8 + 0x14
+// @field VMCSModes::DefaultImplementation +0x8 uint32_t delegate_0x8
+
+uint32_t __thiscall fn_004F9BE0(uint32_t self) {
+    uint32_t delegate = mem_r32(self + 0x8);
+    uint32_t target = mem_r32(delegate + 0x14);
+    return ext_0046F8A0(target);
+}
+} // namespace lift_004F9BE0

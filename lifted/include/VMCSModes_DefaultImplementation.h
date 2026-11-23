@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct VMCSModes_DefaultImplementation_Fields {
     // +0x0   void*                    vtable  (evidence: 0x004F9920)
-    // +0x8   void*                    delegate_0x8  (evidence: 0x004F9830, 0x004F98C0, 0x004F98F0, 0x004F9900, 0x004F9910)
+    // +0x8   uint32_t                 delegate_0x8  (evidence: 0x004F9BE0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    delegate_0x8  (evidence: 0x004F9830, 0x004F98C0, 0x004F98F0, 0x004F9900, 0x004F9910, 0x004F9BD0) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

@@ -8713,6 +8713,13 @@
     "summary": "Tail-calls sub_0046F890 on the object at delegate_0x8 + 0x14.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9BE0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_34",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t __thiscall fn_004F9BE0(uint32_t self)",
+    "summary": "Forwards vfunc_34 to sub_0046F8A0 on the object at delegate_0x8 + 0x14",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004FD800": {
     "name": "StringBuffer::clear",
     "class": "StringBuffer",
