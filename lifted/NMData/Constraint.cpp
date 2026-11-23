@@ -43,3 +43,23 @@ void* fn_00611270(void* self, void* other) {
     ext_0067F040(result);
     return other;
 }
+
+// [0x005EBFF0]
+namespace lift_005EBFF0 {
+void __thiscall ext_00661980(void* self);
+void __thiscall ext_00610AF0(void* self);
+
+// @name NMData::Constraint::vfunc_70
+// @class NMData::Constraint
+// @summary Constructs an object at outPtr by calling base/member constructors and setting vtable 0x00958C0C.
+void* __thiscall fn_005EBFF0(void* self, void* outPtr, uint32_t arg2, uint32_t arg3) {
+    (void)self;
+    (void)arg2;
+    (void)arg3;
+
+    ext_00661980(outPtr);
+    *reinterpret_cast<uint32_t*>(outPtr) = 0x00958C0Cu;
+    ext_00610AF0(outPtr);
+    return outPtr;
+}
+} // namespace lift_005EBFF0

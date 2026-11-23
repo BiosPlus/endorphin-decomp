@@ -16219,6 +16219,13 @@
     "summary": "Constructs a std::string from the literal at 0x009770F4 in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
   },
+  "0x006228E0": {
+    "name": "NMData::HingeCalibrationVariables::vfunc_27",
+    "class": "NMData::HingeCalibrationVariables",
+    "signature": "void* __thiscall fn_006228E0(uint8_t* self)",
+    "summary": "Allocates and constructs a 16-byte object and initializes it with three float fields via virtual setters.",
+    "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
   "0x006244C0": {
     "name": "sub_006244C0",
     "signature": "extern \"C\" void __fastcall fn_006244C0(void* self)",
