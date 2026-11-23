@@ -192,3 +192,32 @@ void __thiscall fn_00671930(void* self, void* dst, void* src) {
     reinterpret_cast<StringDtorFn>(mem_00924FF4)(local_str);
 }
 } // namespace lift_00671930
+
+// [0x0066B4A0]
+namespace lift_0066B4A0 {
+// @name ExprParser::StringType::vfunc_33
+// @class ExprParser::StringType
+// @summary Evaluates/concatenates or assigns a string value via vfunc_29 and sub_00698AD0
+// @field ExprParser::StringType +0x00 void* vtable
+
+
+extern void* __thiscall ext_00698AD0(void* self, void* out_str, void* arg3);
+extern uintptr_t mem_00924FDC;
+extern uintptr_t mem_00924FF4;
+
+void __thiscall fn_0066B4A0(void* self, void* arg1, void* arg2, void* arg3) {
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfunc_29 = reinterpret_cast<void (__thiscall*)(void*, void*)>(vtable[0x74 / 4]);
+    vfunc_29(self, arg1);
+
+    uint8_t local_str[0x1C];
+    void* res = ext_00698AD0(arg2, local_str, arg3);
+
+    void* dst_str = *reinterpret_cast<void**>(arg1);
+    auto str_assign = reinterpret_cast<void* (__thiscall*)(void*, void*)>(mem_00924FDC);
+    str_assign(dst_str, res);
+
+    auto str_dtor = reinterpret_cast<void (__thiscall*)(void*)>(mem_00924FF4);
+    str_dtor(local_str);
+}
+} // namespace lift_0066B4A0

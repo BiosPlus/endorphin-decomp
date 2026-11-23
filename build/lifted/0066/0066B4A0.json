@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B4A0",
+  "size": 109,
+  "orig_symbol": "ExprParser::StringType::vfunc_33",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_33",
+  "class": "ExprParser::StringType",
+  "signature": "void __thiscall fn_0066B4A0(void* self, void* arg1, void* arg2, void* arg3)",
+  "summary": "Evaluates/concatenates or assigns a string value via vfunc_29 and sub_00698AD0",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:31Z"
+}
