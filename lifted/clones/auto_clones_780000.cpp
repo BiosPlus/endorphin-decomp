@@ -33,3 +33,20 @@ void sub_00784820() {
     ext_00784840();
 }
 } // namespace lift_00784820
+
+// [0x00780260] sub_00780260 (10 bytes)
+namespace lift_00780260 {
+// @name sub_00780260
+// @summary Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).
+namespace lift_007AE0F0 {
+extern void ext_00780270(void);
+extern void ext_00780280(void);
+
+// @name sub_007AE0F0
+// @summary Calls ext_007AE100 and tail-calls ext_007AE110.
+void fn_00780260(void) {
+    ext_00780270();
+    ext_00780280();
+}
+} // namespace lift_007AE0F0
+} // namespace lift_00780260

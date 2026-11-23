@@ -8939,6 +8939,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00517DE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00504930": {
+    "name": "sub_00504930",
+    "signature": "void fn_00504930(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504A70": {
     "name": "thunk_MSVCP80_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
     "signature": "extern \"C\" void fn_00504A70(void)",
@@ -30421,6 +30427,12 @@
     "summary": "Returns `this` pointer unchanged.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2C80": {
+    "name": "sub_006D2C80",
+    "signature": "void fn_006D2C80(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_6D0000.cpp"
+  },
   "0x006D2F90": {
     "name": "sub_006D2F90",
     "signature": "extern \"C\" void* __fastcall fn_006D2F90(void* self, int edx_unused, unsigned int flags)",
@@ -32539,6 +32551,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00704780 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00704BE0": {
+    "name": "sub_00704BE0",
+    "signature": "void fn_00704BE0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x00704CE0": {
     "name": "sub_00704CE0",
     "signature": "extern \"C\" void* __fastcall fn_00704CE0(void* self, int edx_unused, unsigned int flags)",
@@ -32869,11 +32887,23 @@
     "summary": "Returns address of global mem_00AAC03C.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713730": {
+    "name": "sub_00713730",
+    "signature": "void fn_00713730(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713760": {
     "name": "sub_00713760",
     "signature": "extern void fn_00713760(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713770": {
+    "name": "sub_00713770",
+    "signature": "void fn_00713770(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007137A0": {
     "name": "sub_007137A0",
@@ -32881,11 +32911,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007137B0": {
+    "name": "sub_007137B0",
+    "signature": "void fn_007137B0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007137E0": {
     "name": "initSingleton_007137E0",
     "signature": "void sub_007137E0()",
     "summary": "Tail-calls sub_00714060 with global object at 0x00B5F888 in ecx.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007137F0": {
+    "name": "sub_007137F0",
+    "signature": "void fn_007137F0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713820": {
     "name": "initGlobal_00B5F708",
@@ -32893,11 +32935,23 @@
     "summary": "Tail-calls sub_00714060 with global object mem_00B5F708 in ecx.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713830": {
+    "name": "sub_00713830",
+    "signature": "void fn_00713830(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713860": {
     "name": "tailcall_00714060_global_00B5F410",
     "signature": "void sub_00713860()",
     "summary": "Tail-calls sub_00714060 with global object mem_00B5F410 in ecx.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713870": {
+    "name": "sub_00713870",
+    "signature": "void fn_00713870(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007138A0": {
     "name": "sub_007138A0",
@@ -32905,11 +32959,23 @@
     "summary": "Tail-calls sub_00714060 with global object mem_00B5F8A0 as this",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007138B0": {
+    "name": "sub_007138B0",
+    "signature": "void fn_007138B0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007138E0": {
     "name": "tailCall_00714060_with_00B5F7E0",
     "signature": "int32_t sub_007138E0(void)",
     "summary": "Tail-calls sub_00714060 with global object mem_00B5F7E0 as this",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007138F0": {
+    "name": "sub_007138F0",
+    "signature": "void fn_007138F0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713920": {
     "name": "thunk_sub_00714060",
@@ -32923,11 +32989,23 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00714060 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713950": {
+    "name": "sub_00713950",
+    "signature": "void fn_00713950(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713980": {
     "name": "sub_00713980_tailcall_00714060",
     "signature": "void __cdecl sub_00713980()",
     "summary": "Tail-calls sub_00714060 with global object mem_00B5F3E0 as this",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713990": {
+    "name": "sub_00713990",
+    "signature": "void fn_00713990(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007139C0": {
     "name": "initGlobal_00B5F498",
@@ -32935,11 +33013,23 @@
     "summary": "Tail-calls ext_00714060 with global object mem_00B5F498 as this.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007139D0": {
+    "name": "sub_007139D0",
+    "signature": "void fn_007139D0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713A00": {
     "name": "sub_00713A00",
     "signature": "void fn_00713A00()",
     "summary": "Tail-call wrapper that passes global 0x00B5F5F0 in ecx to sub_00714060.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713A10": {
+    "name": "sub_00713A10",
+    "signature": "void fn_00713A10(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713A40": {
     "name": "thunk_sub_00714060",
@@ -32947,11 +33037,23 @@
     "summary": "Tail-call thunk passing global object mem_00B5F780 as this to sub_00714060",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713A50": {
+    "name": "sub_00713A50",
+    "signature": "void fn_00713A50(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713A80": {
     "name": "sub_00713A80",
     "signature": "extern void fn_00713A80(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713A90": {
+    "name": "sub_00713A90",
+    "signature": "void fn_00713A90(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713AC0": {
     "name": "sub_00713AC0",
@@ -32959,11 +33061,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713AD0": {
+    "name": "sub_00713AD0",
+    "signature": "void fn_00713AD0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713B00": {
     "name": "sub_00713B00",
     "signature": "extern void fn_00713B00(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713B10": {
+    "name": "sub_00713B10",
+    "signature": "void fn_00713B10(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713B40": {
     "name": "sub_00713B40",
@@ -32971,11 +33085,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713B50": {
+    "name": "sub_00713B50",
+    "signature": "void fn_00713B50(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713B80": {
     "name": "sub_00713B80",
     "signature": "extern void fn_00713B80(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713B90": {
+    "name": "sub_00713B90",
+    "signature": "void fn_00713B90(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713BC0": {
     "name": "sub_00713BC0",
@@ -32983,11 +33109,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713BD0": {
+    "name": "sub_00713BD0",
+    "signature": "void fn_00713BD0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713C00": {
     "name": "sub_00713C00",
     "signature": "extern void fn_00713C00(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713C10": {
+    "name": "sub_00713C10",
+    "signature": "void fn_00713C10(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713C40": {
     "name": "sub_00713C40",
@@ -32995,11 +33133,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713C50": {
+    "name": "sub_00713C50",
+    "signature": "void fn_00713C50(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713C80": {
     "name": "sub_00713C80",
     "signature": "extern void fn_00713C80(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713C90": {
+    "name": "sub_00713C90",
+    "signature": "void fn_00713C90(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713CC0": {
     "name": "sub_00713CC0",
@@ -33007,11 +33157,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713CD0": {
+    "name": "sub_00713CD0",
+    "signature": "void fn_00713CD0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713D00": {
     "name": "sub_00713D00",
     "signature": "extern void fn_00713D00(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713DF0": {
+    "name": "sub_00713DF0",
+    "signature": "void fn_00713DF0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713E20": {
     "name": "sub_00713E20",
@@ -33019,11 +33181,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713E80": {
+    "name": "sub_00713E80",
+    "signature": "void fn_00713E80(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713EB0": {
     "name": "sub_00713EB0",
     "signature": "extern void fn_00713EB0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713EF0": {
+    "name": "sub_00713EF0",
+    "signature": "void fn_00713EF0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713F20": {
     "name": "sub_00713F20",
@@ -33031,11 +33205,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714020": {
+    "name": "sub_00714020",
+    "signature": "void fn_00714020(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714050": {
     "name": "sub_00714050",
     "signature": "extern void fn_00714050(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714070": {
+    "name": "sub_00714070",
+    "signature": "void fn_00714070(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007140A0": {
     "name": "sub_007140A0",
@@ -33043,11 +33229,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007140E0": {
+    "name": "sub_007140E0",
+    "signature": "void fn_007140E0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714110": {
     "name": "sub_00714110",
     "signature": "extern void fn_00714110(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714120": {
+    "name": "sub_00714120",
+    "signature": "void fn_00714120(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714150": {
     "name": "sub_00714150",
@@ -33055,11 +33253,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714160": {
+    "name": "sub_00714160",
+    "signature": "void fn_00714160(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714190": {
     "name": "sub_00714190",
     "signature": "extern void fn_00714190(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007141A0": {
+    "name": "sub_007141A0",
+    "signature": "void fn_007141A0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007141D0": {
     "name": "sub_007141D0",
@@ -33067,11 +33277,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007141E0": {
+    "name": "sub_007141E0",
+    "signature": "void fn_007141E0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714210": {
     "name": "sub_00714210",
     "signature": "extern void fn_00714210(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714220": {
+    "name": "sub_00714220",
+    "signature": "void fn_00714220(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714250": {
     "name": "sub_00714250",
@@ -33079,11 +33301,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714290": {
+    "name": "sub_00714290",
+    "signature": "void fn_00714290(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007142C0": {
     "name": "sub_007142C0",
     "signature": "extern void fn_007142C0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007142D0": {
+    "name": "sub_007142D0",
+    "signature": "void fn_007142D0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714300": {
     "name": "sub_00714300",
@@ -33091,11 +33325,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714310": {
+    "name": "sub_00714310",
+    "signature": "void fn_00714310(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714340": {
     "name": "sub_00714340",
     "signature": "extern void fn_00714340(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714350": {
+    "name": "sub_00714350",
+    "signature": "void fn_00714350(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714380": {
     "name": "sub_00714380",
@@ -33103,11 +33349,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714390": {
+    "name": "sub_00714390",
+    "signature": "void fn_00714390(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007143C0": {
     "name": "sub_007143C0",
     "signature": "extern void fn_007143C0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714400": {
+    "name": "sub_00714400",
+    "signature": "void fn_00714400(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714430": {
     "name": "sub_00714430",
@@ -33115,11 +33373,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714470": {
+    "name": "sub_00714470",
+    "signature": "void fn_00714470(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007144A0": {
     "name": "sub_007144A0",
     "signature": "extern void fn_007144A0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007144B0": {
+    "name": "sub_007144B0",
+    "signature": "void fn_007144B0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007144E0": {
     "name": "sub_007144E0",
@@ -33127,11 +33397,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007144F0": {
+    "name": "sub_007144F0",
+    "signature": "void fn_007144F0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714520": {
     "name": "sub_00714520",
     "signature": "extern void fn_00714520(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714530": {
+    "name": "sub_00714530",
+    "signature": "void fn_00714530(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714560": {
     "name": "sub_00714560",
@@ -33613,6 +33895,12 @@
     "summary": "Returns address of global mem_00B600A8.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B810": {
+    "name": "sub_0072B810",
+    "signature": "void fn_0072B810(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072B840": {
     "name": "tailCall_006B9D70_mem_00B600B8",
     "signature": "void fn_0072B840(void)",
@@ -33810,6 +34098,12 @@
     "signature": "extern \"C\" int32_t __cdecl fn_0077FE40(void)",
     "summary": "Returns constant 0xB1.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
+  "0x00780260": {
+    "name": "sub_00780260",
+    "signature": "void fn_00780260(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
   "0x00780290": {
     "name": "sub_00780290",

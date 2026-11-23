@@ -1,0 +1,13 @@
+{
+  "va": "0x00504930",
+  "size": 10,
+  "orig_symbol": "sub_00504930",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00504930",
+  "signature": "void fn_00504930(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:41:21Z"
+}

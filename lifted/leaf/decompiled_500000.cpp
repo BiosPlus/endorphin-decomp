@@ -28,3 +28,20 @@ void* __thiscall fn_00508310(const void* self) {
 } // namespace lift_0051CDE0
 } // namespace lift_0051C6D0
 } // namespace lift_00508310
+
+// [0x00504930] sub_00504930 (10 bytes)
+namespace lift_00504930 {
+// @name sub_00504930
+// @summary Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).
+namespace lift_007AE0F0 {
+extern void ext_00527280(void);
+extern void ext_005220C0(void);
+
+// @name sub_007AE0F0
+// @summary Calls ext_007AE100 and tail-calls ext_007AE110.
+void fn_00504930(void) {
+    ext_00527280();
+    ext_005220C0();
+}
+} // namespace lift_007AE0F0
+} // namespace lift_00504930
