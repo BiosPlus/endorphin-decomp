@@ -8795,6 +8795,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/CSMMotionIO.cpp"
   },
+  "0x005722F0": {
+    "name": "CSMMotionIO::vfunc_13",
+    "class": "CSMMotionIO",
+    "signature": "void fn_005722F0(void* self, const std::string\u0026 path)",
+    "summary": "Validates field_0x414 and this, opens path for writing (throws on failure), writes a header via the sink at field_0x424, emits one record per index through the container at field_0x420, and closes the file.",
+    "lifted_path": "lifted/classes/CSMMotionIO.cpp"
+  },
   "0x00572CC0": {
     "name": "CSMMotionIO::vfunc_11",
     "class": "CSMMotionIO",
