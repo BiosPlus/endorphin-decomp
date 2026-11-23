@@ -89,3 +89,29 @@ uint32_t sub_007D8750(uint32_t /*unused*/, uintptr_t obj) {
     return *reinterpret_cast<const uint32_t*>(obj + 0x5c);
 }
 } // namespace lift_007D8750
+
+// [0x007DB730]
+namespace lift_007DB730 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getField0x1C
+// @summary Reads and returns the 32-bit field at offset 0x1C of the given object.
+// @field Object +0x1C uint32_t field_0x1C
+uint32_t sub_007DB730(uint32_t obj) {
+    return mem_read32(obj + 0x1Cu);
+}
+} // namespace lift_007DB730
+
+// [0x007DB720]
+namespace lift_007DB720 {
+// @name getField0x18
+// @summary Reads a 32-bit value at offset 0x18 from the given object pointer.
+// @field Object +0x18 uint32_t field_0x18
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_007DB720(uint32_t obj) {
+    return mem_read32(obj + 0x18);
+}
+} // namespace lift_007DB720

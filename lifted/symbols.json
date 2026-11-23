@@ -33770,6 +33770,18 @@
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DB720": {
+    "name": "getField0x18",
+    "signature": "uint32_t sub_007DB720(uint32_t obj)",
+    "summary": "Reads a 32-bit value at offset 0x18 from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DB730": {
+    "name": "getField0x1C",
+    "signature": "uint32_t sub_007DB730(uint32_t obj)",
+    "summary": "Reads and returns the 32-bit field at offset 0x1C of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DE020": {
     "name": "CxSmallSort::vfunc_0",
     "class": "CxSmallSort",

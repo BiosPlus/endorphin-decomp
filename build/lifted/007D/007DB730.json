@@ -1,0 +1,21 @@
+{
+  "va": "0x007DB730",
+  "size": 8,
+  "orig_symbol": "sub_007DB730",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "getField0x1C",
+  "signature": "uint32_t sub_007DB730(uint32_t obj)",
+  "summary": "Reads and returns the 32-bit field at offset 0x1C of the given object.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:37:48Z"
+}
