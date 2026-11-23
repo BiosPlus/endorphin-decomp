@@ -13688,6 +13688,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005C0E00": {
+    "name": "NMData::MetaBodyData::vfunc_6",
+    "class": "NMData::MetaBodyData",
+    "signature": "void __thiscall fn_005C0E00(void* self, void* arg1)",
+    "summary": "Iterates over elements in vector at +0x7C, calls vtable+0x24 on each, and passes the result to sub_0040ECB0",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005C1050": {
     "name": "NMData::MetaBodyData::vfunc_1_off_C",
     "class": "NMData::MetaBodyData",

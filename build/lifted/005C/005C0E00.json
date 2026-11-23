@@ -1,0 +1,28 @@
+{
+  "va": "0x005C0E00",
+  "size": 111,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_6",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_6",
+  "class": "NMData::MetaBodyData",
+  "signature": "void __thiscall fn_005C0E00(void* self, void* arg1)",
+  "summary": "Iterates over elements in vector at +0x7C, calls vtable+0x24 on each, and passes the result to sub_0040ECB0",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x80",
+      "type": "uint32_t*",
+      "name": "field_0x80"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x84",
+      "type": "uint32_t*",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:58Z"
+}

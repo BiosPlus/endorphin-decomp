@@ -120,3 +120,50 @@ void __thiscall fn_005B6F00(void* self, const float* scale) {
         reinterpret_cast<UpdateFn>(vtbl_10[0x34 / 4])(field_10, res);
     }
 }
+
+// [0x005C0E00]
+namespace lift_005C0E00 {
+// @name NMData::MetaBodyData::vfunc_6
+// @class NMData::MetaBodyData
+// @summary Iterates over elements in vector at +0x7C, calls vtable+0x24 on each, and passes the result to sub_0040ECB0
+// @field NMData::MetaBodyData +0x80 uint32_t* field_0x80
+// @field NMData::MetaBodyData +0x84 uint32_t* field_0x84
+
+
+extern uint32_t mem_00925134;
+extern void __thiscall ext_0040ECB0(void* self, uint32_t arg);
+
+void __thiscall fn_005C0E00(void* self, void* arg1) {
+    uint8_t* esi = static_cast<uint8_t*>(self) + 0x7C;
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    uint32_t* edi = *reinterpret_cast<uint32_t**>(esi + 0x04);
+    if (edi > *reinterpret_cast<uint32_t**>(esi + 0x08)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t* ebx = *reinterpret_cast<uint32_t**>(esi + 0x08);
+        if (*reinterpret_cast<uint32_t**>(esi + 0x04) > ebx) {
+            invalid_param();
+        }
+        if (edi == ebx) {
+            break;
+        }
+        if (edi >= *reinterpret_cast<uint32_t**>(esi + 0x08)) {
+            invalid_param();
+        }
+
+        void* elem = reinterpret_cast<void*>(*edi);
+        void** vtable = *reinterpret_cast<void***>(elem);
+        auto vfunc = reinterpret_cast<uint32_t(__thiscall*)(void*)>(vtable[0x24 / 4]);
+        uint32_t res = vfunc(elem);
+        ext_0040ECB0(arg1, res);
+
+        if (edi >= *reinterpret_cast<uint32_t**>(esi + 0x08)) {
+            invalid_param();
+        }
+        ++edi;
+    }
+}
+} // namespace lift_005C0E00
