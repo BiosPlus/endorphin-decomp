@@ -1,0 +1,21 @@
+{
+  "va": "0x005B11E0",
+  "size": 11,
+  "orig_symbol": "sub_005B11E0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "getFloatAt",
+  "signature": "float __thiscall sub_005B11E0(uint32_t ecx, uint32_t index)",
+  "summary": "Returns a float from a 32-bit float array at offset +0x10 indexed by the argument",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "float[]",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:41:47Z"
+}

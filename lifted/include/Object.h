@@ -19,6 +19,7 @@ struct Object_Fields {
     // +0x0   void**                   vtable  (evidence: 0x007558B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x007D48A0)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x007C6C10, 0x007C6C20, 0x007CC9F0)
+    // +0x10  float[]                  field_0x10  (evidence: 0x005B11E0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6FC0)
     // +0x18  uint32_t                 field_0x18  (evidence: 0x007DB720)
     // +0x1C  float                    field_0x1C  (evidence: 0x007C6F30) // CONFLICT: multiple definitions at +0x1C
