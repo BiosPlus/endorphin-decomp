@@ -2916,6 +2916,13 @@
     "summary": "Forwards to RuntimeEngine::getNumTicksToRun via the held pointer; throws if the held pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00471920": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::getTimeZoomFactor",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",
+    "signature": "float fn_00471920(void* self)",
+    "summary": "Reads the RuntimeEngine time zoom factor through the stored target pointer; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00473C30": {
     "name": "RuntimeEngine::CaptureTicker::vfunc_0",
     "class": "RuntimeEngine::CaptureTicker",

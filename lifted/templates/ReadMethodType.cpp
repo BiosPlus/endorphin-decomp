@@ -1719,3 +1719,22 @@ int fn_004713D0(void* self) {
     return ext_0046F7C0(obj);
 }
 } // namespace lift_004713D0
+
+// [0x00471920] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00471920 {
+// Known callee 0x00407700 (sub_00407700, 7 bytes): invoked with the target object pointer
+// in ecx and returns a float (x87 st0). Modelled here as taking the object pointer explicitly.
+extern float ext_00407700(void* target);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine>::getTimeZoomFactor
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Reads the RuntimeEngine time zoom factor through the stored target pointer; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00 (target object pointer, dereferenced first)
+float fn_00471920(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target != nullptr) {
+        return ext_00407700(target);
+    }
+    throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: null target pointer");
+}
+} // namespace lift_00471920
