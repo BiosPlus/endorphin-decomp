@@ -15194,6 +15194,13 @@
     "summary": "Short-circuit AND: tests the left operand (vtable +0x0C) against this, tests the right operand against arg only if the left passed, then forwards the boolean result to this's operand vtable +0x24.",
     "lifted_path": "lifted/ExprParser/Operators/And.cpp"
   },
+  "0x006A1500": {
+    "name": "ExprParser::Operators::Conditional::vfunc_3",
+    "class": "ExprParser::Operators::Conditional",
+    "signature": "uint32_t fn_006A1500(void* self, void* arg2, void* arg3)",
+    "summary": "Evaluates the condition held in the object's +0x04 pointer via virtual slot 3; forwards arg2 to helper 0x006A1490 when true, otherwise forwards arg3.",
+    "lifted_path": "lifted/ExprParser/Operators/Conditional.cpp"
+  },
   "0x006A1540": {
     "name": "ExprParser::Operators::Divide::vfunc_3",
     "class": "ExprParser::Operators::Divide",

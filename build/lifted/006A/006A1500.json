@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1500",
+  "size": 52,
+  "orig_symbol": "ExprParser::Operators::Conditional::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Conditional.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Conditional.cpp",
+  "name": "ExprParser::Operators::Conditional::vfunc_3",
+  "class": "ExprParser::Operators::Conditional",
+  "signature": "uint32_t fn_006A1500(void* self, void* arg2, void* arg3)",
+  "summary": "Evaluates the condition held in the object's +0x04 pointer via virtual slot 3; forwards arg2 to helper 0x006A1490 when true, otherwise forwards arg3.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Conditional",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:55:03Z"
+}
