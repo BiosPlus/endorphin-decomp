@@ -236,3 +236,12 @@ uint32_t sub_007C9C50(uint32_t arg0) {
     return arg0 + 0x160u;
 }
 } // namespace lift_007C9C50
+
+// [0x007CC9C0]
+namespace lift_007CC9C0 {
+// @name getShiftedField0
+// @summary Dereferences a 32-bit unsigned integer pointer and shifts the value right by 8 bits.
+uint32_t sub_007CC9C0(const uint32_t* ptr) {
+    return (*ptr) >> 8;
+}
+} // namespace lift_007CC9C0

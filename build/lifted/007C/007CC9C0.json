@@ -1,0 +1,13 @@
+{
+  "va": "0x007CC9C0",
+  "size": 10,
+  "orig_symbol": "sub_007CC9C0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getShiftedField0",
+  "signature": "uint32_t sub_007CC9C0(const uint32_t* ptr)",
+  "summary": "Dereferences a 32-bit unsigned integer pointer and shifts the value right by 8 bits.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:37:34Z"
+}

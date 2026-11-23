@@ -34592,6 +34592,12 @@
     "summary": "Reads and returns the 32-bit value at offset 0x28 of the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CC9C0": {
+    "name": "getShiftedField0",
+    "signature": "uint32_t sub_007CC9C0(const uint32_t* ptr)",
+    "summary": "Dereferences a 32-bit unsigned integer pointer and shifts the value right by 8 bits.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CC9F0": {
     "name": "getField0x0C",
     "signature": "uint32_t sub_007CC9F0(uintptr_t arg0)",
@@ -34832,6 +34838,12 @@
     "signature": "extern \"C\" void fn_00862970(void)",
     "summary": "IAT jump thunk forwarding to KERNEL32!GetCurrentProcessId.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00862976": {
+    "name": "alignmentPadding_00862976",
+    "signature": "void sub_00862976()",
+    "summary": "Multi-byte alignment NOP padding (lea ecx, [ecx]; lea esp, [esp])",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x008683E4": {
     "name": "sub_008683E4",
