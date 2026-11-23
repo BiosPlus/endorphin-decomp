@@ -4862,52 +4862,6 @@ extern void __stdcall fn_0064F010(void* out, void* const* targetRef, void* self)
 } // namespace lift_006492B0
 } // namespace lift_0064F010
 
-// [0x0064F5B0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>::vfunc_48 (113 bytes)
-namespace lift_0064F5B0 {
-extern void ext_0064DD80(void* self, float value);
-
-// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>::vfunc_48
-// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>
-// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
-namespace lift_006492B0 {
-// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
-extern void __fastcall ext_0064DD80(void* self, int edx_unused, float value);
-
-// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
-// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
-// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
-// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
-extern void __stdcall fn_0064F5B0(void* out, void* const* targetRef, void* self) {
-    void* source = lift_field<void*>(self, 0x04);
-
-    // Getter: vtable slot +0x04 on the source; produces the float to forward.
-    using GetFloatFn = float (*)(void* thisp, void* scratch);
-    void** srcVtable = *reinterpret_cast<void***>(source);
-    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
-    float value = getFloat(source, nullptr);
-
-    // Setter on the object referenced by *targetRef (stores into field +0x7C).
-    void* target = *targetRef;
-    ext_0064DD80(target, 0, value);
-
-    if (source != nullptr) {
-        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
-        using GetPairFn = void* (*)(void* thisp, void* scratch);
-        void** vt = *reinterpret_cast<void***>(source);
-        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
-        void* scratch = nullptr;
-        void* pair = getPair(source, &scratch);
-        uint32_t first = *static_cast<uint32_t*>(pair);
-        lift_field<uint32_t>(out, 0x0) = first;
-        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
-    } else {
-        lift_field<uint32_t>(out, 0x0) = 0;
-        lift_field<void*>(out, 0x4) = source;
-    }
-}
-} // namespace lift_006492B0
-} // namespace lift_0064F5B0
-
 // [0x0064F710] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}>::vfunc_48 (113 bytes)
 namespace lift_0064F710 {
 extern void ext_0064DDC0(void* self, float value);
@@ -5560,3 +5514,59 @@ ExprResult fn_0064F660(void* a1, void* a2) {
     return ExprResult{*res, lift_field<void*>(a2, 0x04)};
 }
 } // namespace lift_0064F660
+
+// [0x0064F5B0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F5B0 {
+namespace lift_0064F5B0 {
+// Callee 0x0064DD80: sub_0064DD80 (23B), thiscall setter taking one float (setSoftLimitRadialDamping).
+extern void ext_0064DD80(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>
+// @summary Samples a float from the value source (vtable slot 1), applies it to the target via setSoftLimitRadialDamping, then returns {value-ref, source} via slot 28 (or {0, 0} when there is no source).
+// @field ExprParser::WriteMethodType +0x00 void* target
+// @field ExprParser::WriteMethodType +0x04 void* subObject
+
+// Result pair written through the hidden return buffer (ExprResult-style, two pointer-sized fields).
+struct ExprResult {
+    void* value;   // +0x00
+    void* source;  // +0x04
+};
+
+// Slot 1 of the value source: float sample(void* self, void* expr).
+using SampleFloatFn = float (*)(void* self, void* expr);
+// Slot 28 of the value source: void** getValueRef(void* self, void** outTmp, void* expr).
+using GetValueRefFn = void* (*)(void* self, void** outTmp, void* expr);
+
+void* __stdcall fn_0064F5B0(void* retBuf, void* targetRef, void* self) {
+    // Target object pointer is stored at +0 of the holder passed as targetRef.
+    void* target = lift_field<void*>(targetRef, 0x00);
+
+    // Value source sub-object at +4 of self; its vtable drives sample (slot 1) and get-ref (slot 28).
+    void* sub = lift_field<void*>(self, 0x04);
+    void* subVtbl = lift_field<void*>(sub, 0x00);
+    auto sample = reinterpret_cast<SampleFloatFn>(lift_field<void*>(subVtbl, 0x04));
+    float value = sample(sub, self);
+
+    ext_0064DD80(target, value);
+
+    // Re-read the source after the setter (the original code reloads +4 here).
+    void* sub2 = lift_field<void*>(self, 0x04);
+    if (sub2 != nullptr) {
+        void* sub2Vtbl = lift_field<void*>(sub2, 0x00);
+        auto getRef = reinterpret_cast<GetValueRefFn>(lift_field<void*>(sub2Vtbl, 0x70));
+        // The original reuses the targetRef argument slot as scratch for the out-temp.
+        void* outTmp = targetRef;
+        void* ref = getRef(sub2, &outTmp, self);
+
+        lift_field<void*>(retBuf, 0x00) = lift_field<void*>(ref, 0x00);
+        lift_field<void*>(retBuf, 0x04) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<void*>(retBuf, 0x00) = nullptr;
+        lift_field<void*>(retBuf, 0x04) = nullptr;
+    }
+
+    return retBuf;
+}
+} // namespace lift_0064F5B0
+} // namespace lift_0064F5B0

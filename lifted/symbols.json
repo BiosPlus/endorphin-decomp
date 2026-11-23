@@ -11044,8 +11044,8 @@
   "0x0064F5B0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}\u003e",
-    "signature": "extern void __stdcall fn_0064F5B0(void* out, void* const* targetRef, void* self)",
-    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "signature": "void* __stdcall fn_0064F5B0(void* retBuf, void* targetRef, void* self)",
+    "summary": "Samples a float from the value source (vtable slot 1), applies it to the target via setSoftLimitRadialDamping, then returns {value-ref, source} via slot 28 (or {0, 0} when there is no source).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064F630": {
