@@ -11361,3 +11361,63 @@ void* fn_005D65A0(void* out, void** src) {
     return out;
 }
 } // namespace lift_005D65A0
+
+// [0x005D6550]
+namespace lift_005D6550 {
+// @name ExprParser::ReadMethodType<Interpreter, std::string const &, &Interpreter::getType>::vfunc_0
+// @class ExprParser::ReadMethodType<Interpreter, std::string const &, &Interpreter::getType>
+// @summary Reads Interpreter::getType() into output string or throws if Interpreter pointer is null.
+// @field Interpreter +0x04 std::string field_0x04
+
+
+extern void __thiscall ext_006720E0(void* dst, const void* src);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* object, const void* throwInfo);
+
+void* __thiscall fn_005D6550(void* self, void* out_str, const void* const* obj_ptr) {
+    (void)self;
+    const uint8_t* obj = static_cast<const uint8_t*>(*obj_ptr);
+    if (obj != nullptr) {
+        ext_006720E0(out_str, obj + 0x04);
+        return out_str;
+    }
+
+    uint8_t exc_buf[0x28]{};
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<const void*>(uintptr_t{0x009DEC1Cu}));
+    return nullptr;
+}
+} // namespace lift_005D6550
+
+// [0x005DA9C0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_0 (69 bytes)
+namespace lift_005DA9C0 {
+// Thiscall-style external: `self` is the out ValueType, `value` the int read from the object.
+extern void ext_006720C0(void* self, int value);
+// Exception-object constructor (thiscall; `self` is the storage for the exception object).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo for the exception thrown on a null handle (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Reads VideoPlaneData::endFrame (+0x24) from the handle's object into the out value; throws if the handle is null.
+// @field NMData::VideoPlaneData +0x24 int field_0x24
+void* fn_005DA9C0(void* self, void* out, void* const* in) {
+    (void)self;  // `this` (ecx) is unused by the original code.
+
+    void* obj = *in;
+    if (obj == nullptr) {
+        // Original builds an exception object in the frame and throws it.
+        // Storage size is not recovered; 64 bytes is a conservative placeholder.
+        alignas(16) unsigned char exception[64] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, mem_009DEC1C);
+        return out;  // not reached: the throw above does not return
+    }
+
+    ext_006720C0(out, lift_field<int>(obj, 0x24));
+    return out;
+}
+} // namespace lift_005DA9C0

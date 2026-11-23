@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::VideoPlaneData:
 namespace lifted_layout {
 struct NMData_VideoPlaneData_Fields {
-    // +0x24  int                      field_0x24  (evidence: 0x005DAA70, 0x0068DE60)
+    // +0x24  int                      field_0x24  (evidence: 0x005DA9C0, 0x005DAA70, 0x0068DE60)
     // +0x28  int                      field_0x28  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2440, 0x005D65A0, 0x005D65F0, 0x0068DE60)
     // +0x30  bool                     field_0x30  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2860, 0x0068DE60) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint8_t                  field_0x30  (evidence: 0x005D6BA0, 0x0068DE60) // CONFLICT: multiple definitions at +0x30
