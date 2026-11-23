@@ -10642,6 +10642,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00649B70": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setRotationAxisX\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setRotationAxisX\u003e",
+    "signature": "extern \"C\" void __stdcall fn_00649B70(ValuePtrOut* out, void** target_holder, ValuePtrType* self)",
+    "summary": "Reads the float value from the bound accessor (vtable slot 1), stores it into the magnet via ext_00648E00, then writes the result ValuePtr {value, owner} to the out-parameter.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00649BF0": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}\u003e",

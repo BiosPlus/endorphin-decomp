@@ -1,0 +1,22 @@
+{
+  "va": "0x00649B70",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setRotationAxisX\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setRotationAxisX\u003e",
+  "signature": "extern \"C\" void __stdcall fn_00649B70(ValuePtrOut* out, void** target_holder, ValuePtrType* self)",
+  "summary": "Reads the float value from the bound accessor (vtable slot 1), stores it into the magnet via ext_00648E00, then writes the result ValuePtr {value, owner} to the out-parameter.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void* owner (object whose vtable is used for",
+      "name": "get/set)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:08:18Z"
+}

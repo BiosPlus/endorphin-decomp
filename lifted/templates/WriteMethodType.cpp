@@ -3597,3 +3597,51 @@ void fn_00649570(void* out, void** target_ref, void* arg) {
     }
 }
 } // namespace lift_00649570
+
+// [0x00649B70]
+namespace lift_00649B70 {
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setRotationAxisX>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setRotationAxisX>
+// @summary Reads the float value from the bound accessor (vtable slot 1), stores it into the magnet via ext_00648E00, then writes the result ValuePtr {value, owner} to the out-parameter.
+// @field ExprParser::ValuePtrType +0x4 void* owner (object whose vtable is used for get/set)
+
+extern void ext_00648E00(void* self, int edx_unused, float value);
+
+struct ValuePtrOut {
+    void* value;
+    void* owner;
+};
+
+struct ValuePtrType {
+    void* vtable;
+    void* owner;  // +0x4
+};
+
+// Vtable slot indices (byte offsets / 4): slot 1 = get float, slot 28 (+0x70) = get value pointer.
+using GetFloatFn = float(__thiscall*)(void* self, void* unused);
+using GetValuePtrFn = void*(__thiscall*)(void* self, void** out);
+
+// Arguments: out (ValuePtrOut*), target holder (void**), self (ValuePtrType*)
+// Original is __stdcall-like with `ret 0xc`.
+extern void __stdcall fn_00649B70(ValuePtrOut* out, void** target_holder, ValuePtrType* self) {
+    void* owner = self->owner;
+    void** owner_vtbl = *reinterpret_cast<void***>(owner);
+
+    // Fetch float from owner vtable slot 1.
+    float value = reinterpret_cast<GetFloatFn>(owner_vtbl[1])(owner, nullptr);
+
+    void* target = *target_holder;
+    ext_00648E00(target, 0, value);
+
+    if (self->owner != nullptr) {
+        void** o = *reinterpret_cast<void***>(self->owner);
+        void* tmp = nullptr;
+        void* result = reinterpret_cast<GetValuePtrFn>(o[28])(self->owner, &tmp);
+        out->value = *reinterpret_cast<void**>(result);
+        out->owner = self->owner;
+    } else {
+        out->value = nullptr;
+        out->owner = self->owner;
+    }
+}
+} // namespace lift_00649B70
