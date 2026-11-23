@@ -23900,3 +23900,86 @@ void* fn_00514020(void* p, void* q) {
     return p;
 }
 } // namespace lift_00514020
+
+// [0x004F52F0]
+namespace lift_004F52F0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getPhi, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getPhi, 0>
+// @summary Evaluates MatrixWithProperties::getPhi() on the target pointer and constructs a float Value, or throws on null.
+
+extern float __thiscall ext_004F4DB0(void* self);
+extern void __thiscall ext_00672080(void* self, float value);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_004F52F0(void* self, void* out_value, void* const* target_ptr) {
+    (void)self;
+    void* obj = *target_ptr;
+    if (obj != nullptr) {
+        float val = ext_004F4DB0(obj);
+        ext_00672080(out_value, val);
+        return out_value;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return out_value;
+}
+} // namespace lift_004F52F0
+
+// [0x004F5A80]
+namespace lift_004F5A80 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getY, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getY, 0>
+// @summary Evaluates MatrixWithProperties::getY on the dereferenced object pointer and stores the float result, or throws if null.
+
+
+extern float __thiscall ext_004F4DE0(void* self);
+extern void __thiscall ext_00672080(void* self, float value);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __thiscall fn_004F5A80(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (!obj) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+        return nullptr;
+    }
+    float result = ext_004F4DE0(obj);
+    ext_00672080(out_val, result);
+    return out_val;
+}
+} // namespace lift_004F5A80
+
+// [0x004F5DF0]
+namespace lift_004F5DF0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getZ, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getZ, 0>
+// @summary Reads the Z component from a MatrixWithProperties pointer into an output value, throwing an exception if null.
+
+
+    void __thiscall ext_0046C3C0(void* self);
+    float __thiscall ext_004F4DF0(void* self);
+    void __thiscall ext_00672080(void* self, float value);
+    void __stdcall ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+    extern const uint32_t mem_009DEC1C;
+
+void* __thiscall fn_004F5DF0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        float val = ext_004F4DF0(obj);
+        ext_00672080(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return out_val;
+}
+} // namespace lift_004F5DF0

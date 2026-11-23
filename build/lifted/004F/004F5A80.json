@@ -1,0 +1,14 @@
+{
+  "va": "0x004F5A80",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e",
+  "signature": "void* __thiscall fn_004F5A80(void* self, void* out_val, void** obj_ptr)",
+  "summary": "Evaluates MatrixWithProperties::getY on the dereferenced object pointer and stores the float result, or throws if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:02:01Z"
+}

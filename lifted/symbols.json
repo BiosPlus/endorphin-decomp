@@ -7266,6 +7266,13 @@
     "summary": "Setter storing float argument into field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004F52F0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getPhi, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getPhi, 0\u003e",
+    "signature": "void* __thiscall fn_004F52F0(void* self, void* out_value, void* const* target_ptr)",
+    "summary": "Evaluates MatrixWithProperties::getPhi() on the target pointer and constructs a float Value, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F5340": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e",
@@ -7287,6 +7294,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F5A80": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e",
+    "signature": "void* __thiscall fn_004F5A80(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Evaluates MatrixWithProperties::getY on the dereferenced object pointer and stores the float result, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F5AD0": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e",
@@ -7299,6 +7313,13 @@
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e",
     "signature": "uint32_t __thiscall fn_004F5B00(void* /*self*/, void** arg1)",
     "summary": "Evaluates MatrixWithProperties::getY() on the dereferenced argument and returns true if \u003e= 1e-6, throwing if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F5DF0": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getZ, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getZ, 0\u003e",
+    "signature": "void* __thiscall fn_004F5DF0(void* self, void* out_val, void** obj_ptr)",
+    "summary": "Reads the Z component from a MatrixWithProperties pointer into an output value, throwing an exception if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004F63B0": {
