@@ -1,0 +1,22 @@
+{
+  "va": "0x005D6BA0",
+  "size": 52,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, mustDrawTimeCode, 0\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
+  "signature": "bool fn_005D6BA0(void* argPtr)",
+  "summary": "Reads the ValuePtr's target VideoPlaneData and returns its mustDrawTimeCode flag (byte at +0x30); throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:54:32Z"
+}

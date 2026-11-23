@@ -8666,3 +8666,28 @@ bool fn_005D65F0(void* self) {
     return value != 0;
 }
 } // namespace lift_005D65F0
+
+// [0x005D6BA0] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_2 (52 bytes)
+namespace lift_005D6BA0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, mustDrawTimeCode, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
+// @summary Reads the ValuePtr's target VideoPlaneData and returns its mustDrawTimeCode flag (byte at +0x30); throws if the pointer is null.
+// @field NMData::VideoPlaneData +0x30 uint8_t field_0x30
+bool fn_005D6BA0(void* argPtr) {
+    // argPtr is the ValuePtrType slot passed on the stack; its first word is the target object pointer.
+    void* obj = *reinterpret_cast<void**>(argPtr);
+    if (obj == nullptr) {
+        // Null target: build the exception object via sub_0046C3C0, then throw.
+        alignas(8) uint8_t exc[0x28] = {};
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false; // unreachable: ext_006A6DD2 throws
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x30);
+    return flag != 0;
+}
+} // namespace lift_005D6BA0

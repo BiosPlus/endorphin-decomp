@@ -9881,6 +9881,13 @@
     "summary": "Reads the Effector float at +0x2c through the holder's pointer (getScaledDesiredDisplacement); throws if the holder's pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D6BA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, mustDrawTimeCode, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
+    "signature": "bool fn_005D6BA0(void* argPtr)",
+    "summary": "Reads the ValuePtr's target VideoPlaneData and returns its mustDrawTimeCode flag (byte at +0x30); throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D78F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e",

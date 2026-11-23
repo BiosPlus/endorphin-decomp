@@ -11,7 +11,8 @@
 namespace lifted_layout {
 struct NMData_VideoPlaneData_Fields {
     // +0x28  int                      field_0x28  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2440, 0x005D65F0)
-    // +0x30  bool                     field_0x30  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2860)
+    // +0x30  bool                     field_0x30  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2860) // CONFLICT: multiple definitions at +0x30
+    // +0x30  uint8_t                  field_0x30  (evidence: 0x005D6BA0) // CONFLICT: multiple definitions at +0x30
     // +0x34  float                    field_0x34  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D29F0)
     // +0x38  float                    field_0x38  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D2C50)
     // +0x3C  float                    field_0x3c  (evidence: 0x004B1FF0, 0x00508EE0, 0x005D3050)
