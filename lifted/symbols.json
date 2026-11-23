@@ -3763,6 +3763,20 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x3B4 and tail-calls sub_004A6710.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x004816E0": {
+    "name": "Commands::BufferTransformsCommand::vfunc_1",
+    "class": "Commands::BufferTransformsCommand",
+    "signature": "uint32_t __thiscall fn_004816E0(uintptr_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
+    "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
+  },
+  "0x004816F0": {
+    "name": "Commands::BufferTransformsCommand::vfunc_2",
+    "class": "Commands::BufferTransformsCommand",
+    "signature": "uint32_t __thiscall fn_004816F0(uintptr_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
+    "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
+  },
   "0x00483070": {
     "name": "ToolEngine::vfunc_63",
     "class": "ToolEngine",
@@ -4138,6 +4152,20 @@
     "signature": "extern \"C\" void* __fastcall fn_0048F0D0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0048F070 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
+  },
+  "0x0048F4F0": {
+    "name": "Commands::BufferChannelsCommand::vfunc_1",
+    "class": "Commands::BufferChannelsCommand",
+    "signature": "uint32_t __thiscall fn_0048F4F0(uintptr_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
+    "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp"
+  },
+  "0x0048F500": {
+    "name": "Commands::BufferChannelsCommand::vfunc_2",
+    "class": "Commands::BufferChannelsCommand",
+    "signature": "uint32_t __thiscall fn_0048F500(uintptr_t self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
+    "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp"
   },
   "0x0048F600": {
     "name": "Commands::CreateTriggeredEventCommand::vfunc_0",

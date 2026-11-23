@@ -1,0 +1,28 @@
+{
+  "va": "0x004816E0",
+  "size": 10,
+  "orig_symbol": "Commands::BufferTransformsCommand::vfunc_1",
+  "src_path": "src/Commands/BufferTransformsCommand.cpp",
+  "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp",
+  "name": "Commands::BufferTransformsCommand::vfunc_1",
+  "class": "Commands::BufferTransformsCommand",
+  "signature": "uint32_t __thiscall fn_004816E0(uintptr_t self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
+  "fields": [
+    {
+      "class": "Commands::BufferTransformsCommand",
+      "offset": "+0x50",
+      "type": "uint8_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "FolderDialog",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:27:35Z"
+}

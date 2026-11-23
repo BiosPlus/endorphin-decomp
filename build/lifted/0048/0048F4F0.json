@@ -1,0 +1,28 @@
+{
+  "va": "0x0048F4F0",
+  "size": 10,
+  "orig_symbol": "Commands::BufferChannelsCommand::vfunc_1",
+  "src_path": "src/Commands/BufferChannelsCommand.cpp",
+  "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp",
+  "name": "Commands::BufferChannelsCommand::vfunc_1",
+  "class": "Commands::BufferChannelsCommand",
+  "signature": "uint32_t __thiscall fn_0048F4F0(uintptr_t self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
+  "fields": [
+    {
+      "class": "Commands::BufferChannelsCommand",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "FolderDialog",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T15:27:35Z"
+}

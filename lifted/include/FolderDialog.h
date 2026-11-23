@@ -10,6 +10,6 @@
 // Recovered field layout for FolderDialog:
 namespace lifted_layout {
 struct FolderDialog_Fields {
-    // +0x68  uint8_t                  field_0x68  (evidence: 0x00419E20)
+    // +0x68  uint8_t                  field_0x68  (evidence: 0x00419E20, 0x004816E0, 0x004816F0, 0x0048F4F0, 0x0048F500)
 };
 } // namespace lifted_layout
