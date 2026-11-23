@@ -4,11 +4,17 @@
   "orig_symbol": "Primitives::Bone::vfunc_28",
   "src_path": "src/Primitives/Bone.cpp",
   "lifted_path": "lifted/Primitives/Bone.cpp",
-  "name": "Primitives::Bone::vfunc_28",
+  "name": "Primitives::Bone::vfunc_25",
   "class": "Primitives::Bone",
-  "signature": "inline Fn iat_slot(const int\u0026 slot)",
-  "summary": "Draws the bone as GL_LINES from the origin to four points around its normalized direction, scaled by +0x48, using an orthonormal side/across frame.",
+  "signature": "void fn_0053E1C0(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards three args to Plane::vfunc_25, updates status bits in +0x1c (sets 0x4 and 0x40000, clears 0x1), then loads four floats (indices 0..3 via ext_005B11E0) into +0x3c..+0x48.",
   "fields": [
+    {
+      "class": "Primitives::Bone",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "flags"
+    },
     {
       "class": "Primitives::Bone",
       "offset": "+0x3C",
@@ -36,5 +42,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T13:46:33Z"
+  "lifted_at": "2026-11-23T13:46:38Z"
 }
