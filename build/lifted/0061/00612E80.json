@@ -1,0 +1,28 @@
+{
+  "va": "0x00612E80",
+  "size": 45,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void fn_00612E80(void* self, uint32_t a, uint32_t b, uint32_t flag)",
+  "summary": "Forwards two arguments to the shared helper 0x00612310, using the subobject at self+0x224 when the flag argument is nonzero and self+0x164 otherwise.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x224",
+      "type": "uint8_t",
+      "name": "field_0x224"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:43:38Z"
+}

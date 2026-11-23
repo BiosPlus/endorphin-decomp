@@ -9289,6 +9289,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00610D10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00612E80": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void fn_00612E80(void* self, uint32_t a, uint32_t b, uint32_t flag)",
+    "summary": "Forwards two arguments to the shared helper 0x00612310, using the subobject at self+0x224 when the flag argument is nonzero and self+0x164 otherwise.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00617340": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

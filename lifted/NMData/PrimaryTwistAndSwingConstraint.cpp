@@ -23,9 +23,12 @@ extern "C" void* __stdcall fn_00611B80(void* out, uint32_t kind) {
     new (out) std::string(text);
     return out;
 }
+// Known callee 0x00612310: sub_00612310 (82B). Called with ecx = this + offset (thiscall-style)
+// and two stack arguments forwarded unchanged from this function's arguments.
+extern "C" void ext_00612310(void* self, uint32_t a, uint32_t b);
 
-// [0x0061DB80] NMData::PrimaryTwistAndSwingConstraint::vfunc_17_off_C (99 bytes)
-// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_17_off_C
+// and two stack arguments forwarded unchanged from this function's arguments.
+extern "C" void ext_00612310(void* self, uint32_t a, uint32_t b);
 // @class NMData::PrimaryTwistAndSwingConstraint
 // @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
 void* fn_0061DB80(void* self) {
@@ -35,4 +38,18 @@ void* fn_0061DB80(void* self) {
     }
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_0061D7C0(mem, owner);
+}
+
+// [0x00612E80] NMData::PrimaryTwistAndSwingConstraint::vfunc_59 (45 bytes)
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_59
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Forwards two arguments to the shared helper 0x00612310, using the subobject at self+0x224 when the flag argument is nonzero and self+0x164 otherwise.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x164 uint8_t field_0x164
+// @field NMData::PrimaryTwistAndSwingConstraint +0x224 uint8_t field_0x224
+void fn_00612E80(void* self, uint32_t a, uint32_t b, uint32_t flag) {
+    if (flag != 0) {
+        ext_00612310(&lift_field<uint8_t>(self, 0x224), a, b);
+    } else {
+        ext_00612310(&lift_field<uint8_t>(self, 0x164), a, b);
+    }
 }
