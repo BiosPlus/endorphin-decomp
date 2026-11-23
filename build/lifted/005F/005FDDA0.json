@@ -1,0 +1,22 @@
+{
+  "va": "0x005FDDA0",
+  "size": 82,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1\u003e",
+  "signature": "void* fn_005FDDA0(void* unused, void** targetPtr)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not",
+      "name": "confirmed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:30:10Z"
+}

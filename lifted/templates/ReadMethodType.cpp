@@ -26712,3 +26712,3845 @@ void* fn_004B33D0(void* self, void* dst, void** src) {
     return dst;
 }
 } // namespace lift_004B33D0
+
+// [0x0046DFE0] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0046DFE0 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0046C080(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0046DFE0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0046C080(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0046DFE0
+
+// [0x00470310] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00470310 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0046C110(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00470310(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0046C110(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00470310
+
+// [0x00470720] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00470720 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00407700(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00470720(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00407700(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00470720
+
+// [0x00471B60] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00471B60 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0046F860(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00471B60(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0046F860(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00471B60
+
+// [0x00488770] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00488770 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00486970(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00488770(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00486970(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00488770
+
+// [0x0048FE80] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0048FE80 {
+// @name ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0048FB10(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0048FE80(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0048FB10(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0048FE80
+
+// [0x004B3760] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004B3760 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00622310(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004B3760(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00622310(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004B3760
+
+// [0x004B3AA0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004B3AA0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0048FAD0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004B3AA0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0048FAD0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004B3AA0
+
+// [0x004C5C50] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004C5C50 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004C4DB0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004C5C50(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004C4DB0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004C5C50
+
+// [0x004CEB20] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004CEB20 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004CE580(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004CEB20(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004CE580(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004CEB20
+
+// [0x004D1240] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004D1240 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004D0B10(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004D1240(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004D0B10(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004D1240
+
+// [0x004DF4E0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004DF4E0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004DDE70(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004DF4E0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004DDE70(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004DF4E0
+
+// [0x004E0070] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004E0070 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004DDE40(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004E0070(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004DDE40(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004E0070
+
+// [0x004E1FC0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_004E1FC0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004E1980(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004E1FC0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004E1980(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004E1FC0
+
+// [0x004F77C0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_004F77C0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004F4F20(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004F77C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004F4F20(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004F77C0
+
+// [0x004F7B80] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_004F7B80 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004F4F80(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004F7B80(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004F4F80(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004F7B80
+
+// [0x004F8240] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_004F8240 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004F4EA0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004F8240(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004F4EA0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004F8240
+
+// [0x004F8550] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_004F8550 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004F4F00(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004F8550(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004F4F00(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004F8550
+
+// [0x004F8F30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_004F8F30 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004F4FE0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004F8F30(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004F4FE0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004F8F30
+
+// [0x004FE170] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_004FE170 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004FD810(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004FE170(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004FD810(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004FE170
+
+// [0x004FE780] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_004FE780 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004FD830(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004FE780(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004FD830(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004FE780
+
+// [0x004FED90] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_004FED90 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_004FD850(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004FED90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_004FD850(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_004FED90
+
+// [0x00512130] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00512130 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00511270(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00512130(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00511270(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00512130
+
+// [0x00513BE0] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00513BE0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00511280(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00513BE0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00511280(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00513BE0
+
+// [0x0051B490] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_0051B490 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0051AE90(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0051B490(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0051AE90(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0051B490
+
+// [0x00525020] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_00525020 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00524A60(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00525020(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00524A60(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00525020
+
+// [0x005259A0] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_005259A0 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00524AE0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005259A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00524AE0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005259A0
+
+// [0x00526350] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_0 (82 bytes)
+namespace lift_00526350 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00525E70(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00526350(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00525E70(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00526350
+
+// [0x0058B6A0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058B6A0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058A8F0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058B6A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058A8F0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058B6A0
+
+// [0x0058B980] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058B980 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058A920(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058B980(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058A920(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058B980
+
+// [0x0058CB90] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058CB90 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058A960(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058CB90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058A960(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058CB90
+
+// [0x0058DC90] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058DC90 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058CFC0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058DC90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058CFC0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058DC90
+
+// [0x0058DF10] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058DF10 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058CFD0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058DF10(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058CFD0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058DF10
+
+// [0x0058E220] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058E220 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058CFB0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058E220(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058CFB0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058E220
+
+// [0x0058FE80] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0058FE80 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058F5A0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0058FE80(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058F5A0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0058FE80
+
+// [0x005904A0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005904A0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058F5C0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005904A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058F5C0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005904A0
+
+// [0x005907F0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005907F0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058F5D0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005907F0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058F5D0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005907F0
+
+// [0x00590F00] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00590F00 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058F5F0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00590F00(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058F5F0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00590F00
+
+// [0x00591760] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00591760 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058F5B0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00591760(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058F5B0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00591760
+
+// [0x00592240] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00592240 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0058F5E0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00592240(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0058F5E0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00592240
+
+// [0x005950E0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005950E0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00594070(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005950E0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00594070(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005950E0
+
+// [0x00595CF0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_00595CF0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00594700(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00595CF0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00594700(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00595CF0
+
+// [0x005982E0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005982E0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005963B0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005982E0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005963B0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005982E0
+
+// [0x005995C0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005995C0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005971D0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005995C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005971D0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005995C0
+
+// [0x0059E3A0] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0059E3A0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0059D580(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0059E3A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0059D580(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0059E3A0
+
+// [0x005B8F20] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005B8F20 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005B6970(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005B8F20(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005B6970(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005B8F20
+
+// [0x005BB370] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005BB370 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005B7040(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005BB370(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005B7040(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005BB370
+
+// [0x005BC360] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005BC360 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005B68F0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005BC360(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005B68F0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005BC360
+
+// [0x005BC740] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005BC740 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005B6FE0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005BC740(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005B6FE0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005BC740
+
+// [0x005BCAA0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005BCAA0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005B6FC0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005BCAA0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005B6FC0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005BCAA0
+
+// [0x005C5800] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005C5800 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005C2FF0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005C5800(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005C2FF0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005C5800
+
+// [0x005C9400] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005C9400 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005C3AA0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005C9400(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005C3AA0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005C9400
+
+// [0x005CADD0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_005CADD0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005C3C00(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005CADD0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005C3C00(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005CADD0
+
+// [0x005CEE80] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005CEE80 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005CE4E0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005CEE80(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005CE4E0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005CEE80
+
+// [0x005D14C0] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D14C0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005D06D0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D14C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005D06D0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D14C0
+
+// [0x005D3910] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D3910 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005478A0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D3910(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005478A0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D3910
+
+// [0x005D4170] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D4170 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005CF930(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D4170(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005CF930(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D4170
+
+// [0x005D4AE0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D4AE0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005478B0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D4AE0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005478B0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D4AE0
+
+// [0x005D4DC0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D4DC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005D0710(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D4DC0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005D0710(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D4DC0
+
+// [0x005D7D90] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D7D90 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005D0670(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D7D90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005D0670(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D7D90
+
+// [0x005D8220] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D8220 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00552160(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D8220(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00552160(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D8220
+
+// [0x005D8B60] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D8B60 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005478E0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D8B60(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005478E0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D8B60
+
+// [0x005D8F40] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D8F40 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005478C0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D8F40(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005478C0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D8F40
+
+// [0x005D9340] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005D9340 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005478D0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005D9340(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005478D0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005D9340
+
+// [0x005DA1B0] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005DA1B0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005D12A0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005DA1B0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005D12A0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005DA1B0
+
+// [0x005E5570] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E5570 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2700(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E5570(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2700(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E5570
+
+// [0x005E5CF0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E5CF0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E27C0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E5CF0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E27C0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E5CF0
+
+// [0x005E69F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E69F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E29A0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E69F0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E29A0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E69F0
+
+// [0x005E6E30] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E6E30 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E1EE0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E6E30(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E1EE0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E6E30
+
+// [0x005E70D0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E70D0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E1F10(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E70D0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E1F10(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E70D0
+
+// [0x005E76E0] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E76E0 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E25B0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E76E0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E25B0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E76E0
+
+// [0x005E79C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E79C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2620(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E79C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2620(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E79C0
+
+// [0x005E7DA0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E7DA0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2690(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E7DA0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2690(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E7DA0
+
+// [0x005E8760] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E8760 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2770(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E8760(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2770(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E8760
+
+// [0x005E8F70] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E8F70 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2810(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E8F70(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2810(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E8F70
+
+// [0x005E9460] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E9460 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2860(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E9460(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2860(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E9460
+
+// [0x005E9930] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E9930 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E28B0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E9930(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E28B0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E9930
+
+// [0x005E9C00] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E9C00 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2900(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E9C00(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2900(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E9C00
+
+// [0x005E9F20] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005E9F20 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E2950(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005E9F20(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E2950(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005E9F20
+
+// [0x005EAA60] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005EAA60 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005E1F40(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005EAA60(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005E1F40(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005EAA60
+
+// [0x005F82A0] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005F82A0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005F51C0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005F82A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005F51C0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005F82A0
+
+// [0x005F8A00] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_005F8A00 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005F5130(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005F8A00(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005F5130(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005F8A00
+
+// [0x005FD370] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_0 (82 bytes)
+namespace lift_005FD370 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064F8F0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005FD370(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064F8F0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005FD370
+
+// [0x005FD980] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_0 (82 bytes)
+namespace lift_005FD980 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0062A580(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005FD980(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0062A580(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005FD980
+
+// [0x005FDDA0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_0 (82 bytes)
+namespace lift_005FDDA0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_005FCB30(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005FDDA0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_005FCB30(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005FDDA0
+
+// [0x005FE3B0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_0 (82 bytes)
+namespace lift_005FE3B0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00603680(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005FE3B0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00603680(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005FE3B0
+
+// [0x005FE9C0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_0 (82 bytes)
+namespace lift_005FE9C0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_006036A0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_005FE9C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_006036A0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_005FE9C0
+
+// [0x00604320] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_0 (82 bytes)
+namespace lift_00604320 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00602F40(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00604320(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00602F40(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00604320
+
+// [0x00612EB0] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_00612EB0 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00610B20(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00612EB0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00610B20(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00612EB0
+
+// [0x00614620] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_00614620 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_006111A0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00614620(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_006111A0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00614620
+
+// [0x006149F0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_006149F0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_006111D0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_006149F0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_006111D0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_006149F0
+
+// [0x00615FE0] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_00615FE0 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00611870(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00615FE0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00611870(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00615FE0
+
+// [0x006162C0] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_006162C0 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_006118E0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_006162C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_006118E0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_006162C0
+
+// [0x006179A0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_006179A0 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00610CE0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_006179A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00610CE0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_006179A0
+
+// [0x00617C20] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_00617C20 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00610CB0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00617C20(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00610CB0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00617C20
+
+// [0x00618EF0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_00618EF0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00611170(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00618EF0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00611170(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00618EF0
+
+// [0x00619A60] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_0 (82 bytes)
+namespace lift_00619A60 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00611160(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00619A60(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00611160(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00619A60
+
+// [0x0061C460] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_0061C460 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00611950(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0061C460(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00611950(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0061C460
+
+// [0x0062AA90] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_0 (82 bytes)
+namespace lift_0062AA90 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0062A590(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0062AA90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0062A590(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0062AA90
+
+// [0x00649E70] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_00649E70 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00648EC0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00649E70(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00648EC0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00649E70
+
+// [0x0064A480] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0064A480 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00648ED0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0064A480(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00648ED0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0064A480
+
+// [0x0064AA90] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0064AA90 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_00648EE0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0064AA90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_00648EE0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0064AA90
+
+// [0x00651480] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_00651480 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064EA20(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00651480(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064EA20(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00651480
+
+// [0x00651A90] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_00651A90 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064EA30(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00651A90(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064EA30(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00651A90
+
+// [0x006520A0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_006520A0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064EA40(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_006520A0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064EA40(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_006520A0
+
+// [0x006526B0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_006526B0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064EA50(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_006526B0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064EA50(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_006526B0
+
+// [0x00652CC0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_00652CC0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064EA60(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00652CC0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064EA60(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00652CC0
+
+// [0x006532D0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_006532D0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0064EA70(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_006532D0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0064EA70(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_006532D0
+
+// [0x00670090] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_0 (82 bytes)
+namespace lift_00670090 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0067C550(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_00670090(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0067C550(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_00670090
+
+// [0x0068C590] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0068C590 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0068BDC0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0068C590(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0068BDC0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0068C590
+
+// [0x0068CBA0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0068CBA0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0068BED0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0068CBA0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0068BED0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0068CBA0
+
+// [0x0068D1B0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0068D1B0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0068BE70(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0068D1B0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0068BE70(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0068D1B0
+
+// [0x0068D7C0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_0 (82 bytes)
+namespace lift_0068D7C0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0068BC30(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_0068D7C0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0068BC30(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0068D7C0

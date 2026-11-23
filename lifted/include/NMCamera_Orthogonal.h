@@ -20,5 +20,7 @@ struct NMCamera_Orthogonal_Fields {
     // +0x74  void*                    field_0x74  (evidence: 0x00551AF0)
     // +0x90  void*                    field_0x90  (evidence: 0x00551AF0)
     // +0xA0  int32_t                  field_0xa0  (evidence: 0x00551AF0)
+    // +0xB0  double                   field_0xb0  (evidence: 0x00551CB0)
+    // +0xB8  double                   field_0xb8  (evidence: 0x00551CB0)
 };
 } // namespace lifted_layout

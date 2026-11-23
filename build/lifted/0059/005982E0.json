@@ -1,0 +1,22 @@
+{
+  "va": "0x005982E0",
+  "size": 82,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1\u003e",
+  "signature": "void* fn_005982E0(void* unused, void** targetPtr)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not",
+      "name": "confirmed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:30:10Z"
+}
