@@ -23,3 +23,18 @@ extern "C" int __thiscall fn_00508BA0(void* self) {
     const int32_t diff = end - begin;
     return diff >> 2;
 }
+
+// [0x0050E9F0]
+namespace lift_0050E9F0 {
+// @name sub_0050E9F0
+// @summary Loads a double from a sub-object pointed to by this+0x08 at offset +0x10 and returns it on the x87 stack.
+// @field field_0x08 ptr  (this+0x08: pointer to sub-object)
+// @field field_0x10 double (sub-object+0x10: double value)
+
+double sub_0050E9F0(void* self) {
+    // mov eax, [ecx + 0x8]
+    uintptr_t eax = *reinterpret_cast<uintptr_t*>(static_cast<uint8_t*>(self) + 0x8);
+    // fld qword ptr [eax + 0x10]; ret  (value returned in st(0))
+    return *reinterpret_cast<double*>(eax + 0x10);
+}
+} // namespace lift_0050E9F0

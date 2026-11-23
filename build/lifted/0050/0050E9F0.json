@@ -1,0 +1,13 @@
+{
+  "va": "0x0050E9F0",
+  "size": 7,
+  "orig_symbol": "sub_0050E9F0",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "sub_0050E9F0",
+  "signature": "double sub_0050E9F0(void* self)",
+  "summary": "Loads a double from a sub-object pointed to by this+0x08 at offset +0x10 and returns it on the x87 stack.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:33:42Z"
+}
