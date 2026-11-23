@@ -1,0 +1,22 @@
+{
+  "va": "0x00629F70",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, resetTime\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e",
+  "signature": "void fn_00629F70(ValuePair* out, void** argRef, void* self)",
+  "summary": "Reads a float from the holder (vslot +0x04), forwards it to SensorRelativeTime::resetTime on the target, and returns {holder result, holder}.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:06:29Z"
+}

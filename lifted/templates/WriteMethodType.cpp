@@ -3267,3 +3267,49 @@ void* fn_005944A0(void* out, void* targetRef, void* arg) {
     return out;
 }
 } // namespace lift_005944A0
+
+// [0x00629F70] ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_48 (113 bytes)
+namespace lift_00629F70 {
+// Callee: Sensors::SensorRelativeTime::resetTime(float) (thiscall, one float arg).
+extern void ext_00629EB0(void* self, float value);
+
+// 8-byte result returned through the hidden pointer (stack arg 1).
+struct ValuePair {
+    void* first;
+    void* second;
+};
+
+// @name ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, resetTime>::vfunc_48
+// @class ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>
+// @summary Reads a float from the holder (vslot +0x04), forwards it to SensorRelativeTime::resetTime on the target, and returns {holder result, holder}.
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00629F70(ValuePair* out, void** argRef, void* self) {
+    auto* base = reinterpret_cast<unsigned char*>(self);
+
+    // Holder sub-object at +0x04; its vtable provides the float getter at slot +0x04.
+    void* holder = *reinterpret_cast<void**>(base + 0x04);
+    void* target = *argRef;
+
+    using FloatGetter = float (*)(void* self, void* ctx);
+    void* const* holderVt = *reinterpret_cast<void* const* const*>(holder);
+    float value = reinterpret_cast<FloatGetter>(holderVt[0x04 / sizeof(void*)])(holder, self);
+
+    ext_00629EB0(target, value);
+
+    // Second result: the holder, when present, fetched via vslot +0x70 with &argRef as out-slot.
+    void* argSlot = *argRef;
+    void* first = nullptr;
+    if (*reinterpret_cast<void**>(base + 0x04) != nullptr) {
+        using RetGetter = void* (*)(void* self, void* ctx, void** outSlot);
+        void* const* vt = *reinterpret_cast<void* const* const*>(holder);
+        void* r = reinterpret_cast<RetGetter>(vt[0x70 / sizeof(void*)])(holder, self, &argSlot);
+        first = *static_cast<void**>(r);
+    } else {
+        argSlot = nullptr;
+        first = argSlot;
+    }
+
+    out->first = first;
+    out->second = *reinterpret_cast<void**>(base + 0x04);
+}
+} // namespace lift_00629F70

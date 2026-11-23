@@ -9804,6 +9804,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00629F70": {
+    "name": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, resetTime\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e",
+    "signature": "void fn_00629F70(ValuePair* out, void** argRef, void* self)",
+    "summary": "Reads a float from the holder (vslot +0x04), forwards it to SensorRelativeTime::resetTime on the target, and returns {holder result, holder}.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00629FF0": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e",
