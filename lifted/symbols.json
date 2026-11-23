@@ -4685,6 +4685,13 @@
     "summary": "Copies the two floats at +0xE8/+0xEC into the caller-supplied out pair (stdcall-style, ret 8).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049FC80": {
+    "name": "NMData::State::vfunc_7_off_10",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_0049FC80(uint32_t self, uint32_t arg0)",
+    "summary": "Iterates over vector at +0x10C, calls vfunc +0x24 on each element, and passes result to sub_0040ECB0",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049FCF0": {
     "name": "NMData::State::vfunc_6_off_10",
     "class": "NMData::State",
@@ -22620,6 +22627,13 @@
     "summary": "If field +0x4C is set, calls its vtable slot 24 with \u0026field+0x48, dynamic-casts the result; returns 0x67 if arg==0x67 else 0x66 on cast success, otherwise arg.",
     "lifted_path": "lifted/NMData/ValuePtrData.cpp"
   },
+  "0x00682C70": {
+    "name": "NMData::ValuePtrData::vfunc_14",
+    "class": "NMData::ValuePtrData",
+    "signature": "extern \"C\" void* __thiscall fn_00682C70(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Queries sub-object at +0x4C, dynamic-casts result, and initializes arg1 via ext_00661650 or fallback ext_0046F7D0.",
+    "lifted_path": "lifted/NMData/ValuePtrData.cpp"
+  },
   "0x00682CE0": {
     "name": "NMData::ValuePtrData::vfunc_17",
     "class": "NMData::ValuePtrData",
@@ -23004,6 +23018,13 @@
     "signature": "uint32_t __stdcall fn_006922F0(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
     "summary": "Forwards arg1 to ext_00671F30 (one stack argument, caller-cleaned) and returns arg1 unchanged.",
     "lifted_path": "lifted/templates/ROMethod2Type.cpp"
+  },
+  "0x00692310": {
+    "name": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, int, ValuePtrArrayObject::getElement\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType",
+    "signature": "uint32_t __thiscall fn_00692310(uint32_t self, uint32_t out_val, uint32_t arg_obj, uint32_t arg_idx)",
+    "summary": "Evaluates ValuePtrArrayObject::getElement(index) on the given ValuePtr arguments and returns the resulting ValuePtr.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
   },
   "0x00692540": {
     "name": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e::vfunc_2",

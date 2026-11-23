@@ -71,3 +71,28 @@ extern void __thiscall fn_0049FCF0(void* self, void* arg) {
     }
 }
 } // namespace lift_0049FCF0
+
+// [0x0049FC80]
+namespace lift_0049FC80 {
+// @name NMData::State::vfunc_7_off_10
+// @class NMData::State
+// @summary Iterates over vector at +0x10C, calls vfunc +0x24 on each element, and passes result to sub_0040ECB0
+// @field NMData::State +0x10C void* field_0x10C
+
+
+extern void __thiscall ext_0040ECB0(uint32_t self, uint32_t arg);
+
+void __thiscall fn_0049FC80(uint32_t self, uint32_t arg0) {
+    uintptr_t vec = (uintptr_t)self + 0x10C;
+    uint32_t it = *(uint32_t*)(vec + 0x4);
+    while (it != *(uint32_t*)(vec + 0x8)) {
+        uint32_t elem = *(uint32_t*)(uintptr_t)it;
+        uint32_t vtable = *(uint32_t*)(uintptr_t)elem;
+        typedef uint32_t (__thiscall *vfunc_t)(uint32_t);
+        vfunc_t vfunc = (vfunc_t)(uintptr_t)(*(uint32_t*)(uintptr_t)(vtable + 0x24));
+        uint32_t res = vfunc(elem);
+        ext_0040ECB0(arg0, res);
+        it += 4;
+    }
+}
+} // namespace lift_0049FC80

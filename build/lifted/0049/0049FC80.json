@@ -1,0 +1,22 @@
+{
+  "va": "0x0049FC80",
+  "size": 111,
+  "orig_symbol": "NMData::State::vfunc_7_off_10",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_7_off_10",
+  "class": "NMData::State",
+  "signature": "void __thiscall fn_0049FC80(uint32_t self, uint32_t arg0)",
+  "summary": "Iterates over vector at +0x10C, calls vfunc +0x24 on each element, and passes result to sub_0040ECB0",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x10C",
+      "type": "void*",
+      "name": "field_0x10C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:32:04Z"
+}
