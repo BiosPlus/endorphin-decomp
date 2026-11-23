@@ -1595,3 +1595,33 @@ const void* fn_0062E4F0(void* self) {
     std::abort();
 }
 } // namespace lift_0062E4F0
+
+// [0x0046CB30] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_0046CB30 {
+// Callee 0x0046C070 (sub_0046C070, 4B leaf): takes the ImageExporter object in ecx, returns its isEnabled result in al.
+extern bool ext_0046C070(void* self);
+// Callee 0x0046C3C0 (sub_0046C3C0, 105B): constructs a 0x28-byte exception object in the caller's buffer.
+extern void ext_0046C3C0(void* exceptionObj);
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception type raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_3 (ImageExporter::isEnabled)
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter pointer held by the value-pointer argument and returns its isEnabled result; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+bool fn_0046CB30(void* self) {
+    void* exporter = lift_field<void*>(self, 0x00);
+    if (exporter != nullptr) {
+        return ext_0046C070(exporter);
+    }
+
+    // Null target: build the exception object and throw it.
+    alignas(8) uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+    return false; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_0046CB30
