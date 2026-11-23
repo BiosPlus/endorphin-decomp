@@ -1,0 +1,22 @@
+{
+  "va": "0x00537AA0",
+  "size": 10,
+  "orig_symbol": "CompoundRenderable::vfunc_13",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_13",
+  "class": "CompoundRenderable",
+  "signature": "void CompoundRenderable_vfunc_13(void* self)",
+  "summary": "Forwards vfunc_13 call to the child object at +0x14.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:28:30Z"
+}

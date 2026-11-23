@@ -4566,3 +4566,18 @@ void __thiscall BaseEventDispatcher_vfunc_2(void* self) {
     reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(static_cast<uintptr_t>(vfunc_1))(self, 0u);
 }
 } // namespace lift_00437E70
+
+// [0x00537AA0]
+namespace lift_00537AA0 {
+// @name CompoundRenderable::vfunc_13
+// @class CompoundRenderable
+// @summary Forwards vfunc_13 call to the child object at +0x14.
+// @field CompoundRenderable +0x14 void* field_0x14
+
+void CompoundRenderable_vfunc_13(void* self) {
+    void* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x14);
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(child);
+    using VFunc13 = void(__thiscall*)(void*);
+    reinterpret_cast<VFunc13>(vtable[0x34 / 4])(child);
+}
+} // namespace lift_00537AA0

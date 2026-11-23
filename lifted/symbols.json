@@ -10118,6 +10118,12 @@
     "summary": "Returns global int32 value from mem_00A44B84.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x005314C0": {
+    "name": "getNestedField_0x10_0x1b0",
+    "signature": "uint32_t __thiscall sub_005314C0(uint32_t this_ptr)",
+    "summary": "Reads a 32-bit value at offset +0x1b0 from a sub-object pointer at +0x10.",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x00531B60": {
     "name": "sub_00531B60",
     "signature": "extern \"C\" void __fastcall fn_00531B60(void* self)",
@@ -10293,6 +10299,13 @@
     "class": "CompoundRenderable",
     "signature": "extern \"C\" void __fastcall fn_00537A20(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x18 and tail-calls sub_0054C640.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00537AA0": {
+    "name": "CompoundRenderable::vfunc_13",
+    "class": "CompoundRenderable",
+    "signature": "void CompoundRenderable_vfunc_13(void* self)",
+    "summary": "Forwards vfunc_13 call to the child object at +0x14.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00537E20": {
