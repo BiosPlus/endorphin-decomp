@@ -23980,3 +23980,24 @@ float fn_005D2810(const void* const* holder) {
     return flag != 0 ? 1.0f : 0.0f;
 }
 } // namespace lift_005D2810
+
+// [0x0049D460] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_1 (76 bytes)
+namespace lift_0049D460 {
+// Known callee 0x0046A470: VirtualSlot1Thunk (loads the object's vtable and calls slot 1 with the same this pointer; returns a string reference).
+extern void* ext_0046A470(void* self);
+
+// @name ExprParser::ReadMethodType::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Reads the object's string value via virtual slot 1 on its +0x8 subobject and returns it converted to float (atof).
+// @field ExprParser::ReadMethodType +0x00 void* object
+// @field ExprParser::ReadMethodType +0x08 void* valueSubobject
+float fn_0049D460(void* const* argPtr) {
+    void* obj = argPtr ? *argPtr : nullptr;
+    if (!obj) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null object");
+    }
+    void* subobj = lift_field<void*>(obj, 0x8);
+    auto* str = static_cast<std::string*>(ext_0046A470(subobj));
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_0049D460
