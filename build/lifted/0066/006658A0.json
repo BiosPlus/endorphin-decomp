@@ -1,0 +1,21 @@
+{
+  "va": "0x006658A0",
+  "size": 9,
+  "orig_symbol": "sub_006658A0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "hasField0x18",
+  "signature": "uint32_t __thiscall sub_006658A0(void* self)",
+  "summary": "Returns 1 if the 32-bit field at offset 0x18 is non-zero, otherwise 0.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:26:13Z"
+}
