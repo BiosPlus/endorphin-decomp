@@ -13,6 +13,7 @@ struct Primitives_TwistLimit_Fields {
     // +0x20  void*                    field_0x20  (evidence: 0x0053BF90)
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0053BF90)
     // +0x40  float                    field_0x40  (evidence: 0x0053BF90)
-    // +0x44  (subobject, address only, passed as this) field_0x44  (evidence: 0x0053BF90)
+    // +0x44  (subobject, address only, passed as this) field_0x44  (evidence: 0x0053BF90) // CONFLICT: multiple definitions at +0x44
+    // +0x44  subobject                field_0x44  (evidence: 0x0052FC70) // CONFLICT: multiple definitions at +0x44
 };
 } // namespace lifted_layout

@@ -1,0 +1,22 @@
+{
+  "va": "0x0052FC70",
+  "size": 96,
+  "orig_symbol": "Primitives::TwistLimit::vfunc_0",
+  "src_path": "src/Primitives/TwistLimit.cpp",
+  "lifted_path": "lifted/Primitives/TwistLimit.cpp",
+  "name": "Primitives::TwistLimit::scalar_deleting_dtor",
+  "class": "Primitives::TwistLimit",
+  "signature": "void* fn_0052FC70(void* self, unsigned int flags)",
+  "summary": "Scalar deleting destructor: destroys the +0x44 subobject, runs the SwingLimit base dtor, frees this if flags bit 0 is set, returns this.",
+  "fields": [
+    {
+      "class": "Primitives::TwistLimit",
+      "offset": "+0x44",
+      "type": "subobject",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:42:14Z"
+}

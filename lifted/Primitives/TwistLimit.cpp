@@ -49,3 +49,27 @@ void fn_0053BF90(void* self) {
     mem_00925404();                                  // glPopMatrix()
 }
 } // namespace lift_0053BF90
+
+// [0x0052FC70] Primitives::TwistLimit::vfunc_0 (96 bytes)
+namespace lift_0052FC70 {
+// Callee 0x00537EC0: destructor of the subobject at this+0x44 (thiscall, ecx = this+0x44).
+extern void ext_00537EC0(void* self);
+// Callee 0x0053A810: base-class destructor, SwingLimit part (thiscall, ecx = this).
+extern void ext_0053A810(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764).
+// Called with `this` as its single cdecl argument when the delete flag is set.
+extern void ext_006A5C5C(void* p);
+
+// @name Primitives::TwistLimit::scalar_deleting_dtor
+// @class Primitives::TwistLimit
+// @summary Scalar deleting destructor: destroys the +0x44 subobject, runs the SwingLimit base dtor, frees this if flags bit 0 is set, returns this.
+// @field Primitives::TwistLimit +0x44 subobject field_0x44
+void* fn_0052FC70(void* self, unsigned int flags) {
+    ext_00537EC0(static_cast<unsigned char*>(self) + 0x44);
+    ext_0053A810(self);
+    if (flags & 1u) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_0052FC70
