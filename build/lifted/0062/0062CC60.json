@@ -1,0 +1,22 @@
+{
+  "va": "0x0062CC60",
+  "size": 37,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_8",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_8",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void* __thiscall fn_0062CC60(void* self, void* arg)",
+  "summary": "Forwards the stack argument and the sub-object at +0x154 to ext_0062CC10, then returns the argument.",
+  "fields": [
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:39:02Z"
+}

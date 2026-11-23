@@ -9573,6 +9573,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0062C450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Sensors/auto_tiny.cpp"
   },
+  "0x0062CC60": {
+    "name": "NMData::AxisDefineSensorData::vfunc_8",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "void* __thiscall fn_0062CC60(void* self, void* arg)",
+    "summary": "Forwards the stack argument and the sub-object at +0x154 to ext_0062CC10, then returns the argument.",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
   "0x0062CF40": {
     "name": "CompoundSensor::vfunc_0",
     "class": "CompoundSensor",

@@ -15,6 +15,7 @@ void fn_0060F0B0(void* dst) {
     const DWORD* src = ext_00480920();
     std::memcpy(dst, src, 16 * sizeof(DWORD));
 }
+extern "C" void ext_0062CC10(void* arg, void* tm);
 
 // [0x0058F6B0] NMData::AxisDefineSensorData::vfunc_14 (54 bytes)
 // @name NMData::AxisDefineSensorData::vfunc_14
@@ -28,4 +29,15 @@ void* fn_0058F6B0(void* self, void* arg1, uint32_t arg2) {
         ext_006619B0(self, arg1, arg2);
     }
     return arg1;
+}
+
+// [0x0062CC60] NMData::AxisDefineSensorData::vfunc_8 (37 bytes)
+// @name NMData::AxisDefineSensorData::vfunc_8
+// @class NMData::AxisDefineSensorData
+// @summary Forwards the stack argument and the sub-object at +0x154 to ext_0062CC10, then returns the argument.
+// @field NMData::AxisDefineSensorData +0x154 void* field_0x154
+void* __thiscall fn_0062CC60(void* self, void* arg) {
+    void* tm = reinterpret_cast<uint8_t*>(self) + 0x154;
+    ext_0062CC10(arg, tm);
+    return arg;
 }
