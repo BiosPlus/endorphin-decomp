@@ -1,0 +1,28 @@
+{
+  "va": "0x0053DD90",
+  "size": 138,
+  "orig_symbol": "Primitives::NullJoint::vfunc_25",
+  "src_path": "src/Primitives/NullJoint.cpp",
+  "lifted_path": "lifted/Primitives/NullJoint.cpp",
+  "name": "Primitives::NullJoint::vfunc_25",
+  "class": "Primitives::NullJoint",
+  "signature": "inline uint32_t as_u32(const void* p)",
+  "summary": "Forwards to the base plane setter, forces flag bits 0x4 and 0x40000 on, clears bit 0x1, then pushes a float (from arg or a constant) into the subobject at +0x3c.",
+  "fields": [
+    {
+      "class": "Primitives::NullJoint",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::NullJoint",
+      "offset": "+0x3C",
+      "type": "uint8_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:44:09Z"
+}
