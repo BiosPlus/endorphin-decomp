@@ -6314,6 +6314,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004C80A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C8440": {
+    "name": "NMData::BehaviourData::vfunc_1_off_154",
+    "class": "NMData::BehaviourData",
+    "signature": "void __thiscall fn_004C8440(void* self, void* arg0)",
+    "summary": "Thunk at +0x154 (HasDependentSelection) that queries arg0-\u003evfunc_0x34 into a local buffer, passes it to ext_004C28C0 on BehaviourData, and destroys the buffer",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004C9370": {
     "name": "NMData::SeverEventData::vfunc_1_off_158",
     "class": "NMData::SeverEventData",

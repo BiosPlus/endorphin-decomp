@@ -149,3 +149,33 @@ void* __thiscall fn_004A9BA0(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_004A9BA0
+
+// [0x004C8440]
+namespace lift_004C8440 {
+extern void __thiscall ext_004026E0(void* self);
+extern void __thiscall ext_004C28C0(void* self, void* arg);
+
+// @name NMData::BehaviourData::vfunc_1_off_154
+// @class NMData::BehaviourData
+// @summary Thunk at +0x154 (HasDependentSelection) that queries arg0->vfunc_0x34 into a local buffer, passes it to ext_004C28C0 on BehaviourData, and destroys the buffer
+void __thiscall fn_004C8440(void* self, void* arg0) {
+    struct LocalBuf {
+        uint32_t f0;
+        uint32_t f4;
+        uint32_t f8;
+        uint32_t fC;
+    } local_buf;
+    local_buf.f4 = 0;
+    local_buf.f8 = 0;
+    local_buf.fC = 0;
+
+    using VFunc34 = void(__thiscall*)(void*, void*);
+    void** vtbl = *reinterpret_cast<void***>(arg0);
+    reinterpret_cast<VFunc34>(vtbl[0x34 / 4])(arg0, &local_buf);
+
+    void* behaviour_data = reinterpret_cast<uint8_t*>(self) - 0x154;
+    ext_004C28C0(behaviour_data, &local_buf);
+
+    ext_004026E0(&local_buf);
+}
+} // namespace lift_004C8440

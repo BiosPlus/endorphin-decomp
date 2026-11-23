@@ -1,0 +1,14 @@
+{
+  "va": "0x004C8440",
+  "size": 112,
+  "orig_symbol": "NMData::BehaviourData::vfunc_1_off_154",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_1_off_154",
+  "class": "NMData::BehaviourData",
+  "signature": "void __thiscall fn_004C8440(void* self, void* arg0)",
+  "summary": "Thunk at +0x154 (HasDependentSelection) that queries arg0-\u003evfunc_0x34 into a local buffer, passes it to ext_004C28C0 on BehaviourData, and destroys the buffer",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:32:37Z"
+}
