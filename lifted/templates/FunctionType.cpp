@@ -360,3 +360,32 @@ uint32_t __thiscall fn_0068C230(uint32_t self, uint32_t arg1, uint32_t arg2, uin
     return arg1;
 }
 } // namespace lift_0068C230
+
+// [0x00692FD0]
+namespace lift_00692FD0 {
+extern uint32_t mem_r32(uint32_t addr);
+extern void mem_w32(uint32_t addr, uint32_t val);
+extern uint32_t __thiscall ext_00692F50(uint32_t ecx, uint32_t arg);
+
+// @name ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, ValuePtr const &, ValuePtrArrayObject::push>::vfunc_48
+// @class ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, ValuePtr const &, ValuePtrArrayObject::push>
+// @summary Evaluates FunctionType by looking up ValuePtrArrayObject and invoking push vfunc at +0x70 if non-null, returning ValuePtr via sret.
+uint32_t __thiscall fn_00692FD0(uint32_t ecx, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)ecx;
+    uint32_t res = ext_00692F50(mem_r32(arg2), arg3);
+    uint32_t obj = mem_r32(res + 0x4);
+    if (obj != 0) {
+        uint32_t vtbl = mem_r32(obj);
+        typedef uint32_t (__thiscall *vfunc_t)(uint32_t, uint32_t, uint32_t);
+        vfunc_t vfunc = reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(mem_r32(vtbl + 0x70)));
+        uint32_t ret_ptr = vfunc(obj, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&arg2)), res);
+        mem_w32(arg1, mem_r32(ret_ptr));
+        mem_w32(arg1 + 0x4, mem_r32(res + 0x4));
+        return arg1;
+    }
+    arg2 = 0;
+    mem_w32(arg1, arg2);
+    mem_w32(arg1 + 0x4, obj);
+    return arg1;
+}
+} // namespace lift_00692FD0

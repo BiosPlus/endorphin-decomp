@@ -1,0 +1,14 @@
+{
+  "va": "0x00692FD0",
+  "size": 100,
+  "orig_symbol": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, ValuePtr const \u0026, {public: class ValuePtr const \u0026 __thiscall ValuePtrArrayObject::push(class ValuePtr const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, ValuePtr const \u0026, ValuePtrArrayObject::push\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, ValuePtr const \u0026, ValuePtrArrayObject::push\u003e",
+  "signature": "uint32_t __thiscall fn_00692FD0(uint32_t ecx, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Evaluates FunctionType by looking up ValuePtrArrayObject and invoking push vfunc at +0x70 if non-null, returning ValuePtr via sret.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:41Z"
+}
