@@ -1,0 +1,22 @@
+{
+  "va": "0x005FCB40",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e",
+  "signature": "uint32_t __stdcall fn_005FCB40(uint32_t out_ptr, uint32_t sensor_ptr_ptr)",
+  "summary": "Reads a Sensor's mutable Vector3 via vtable +0x38 and constructs/copies into out_ptr, or throws on null Sensor.",
+  "fields": [
+    {
+      "class": "Sensor",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:01:09Z"
+}
