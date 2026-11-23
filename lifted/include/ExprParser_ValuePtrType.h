@@ -18,7 +18,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   void*                    object  (evidence: 0x005D29F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   ptr  (evidence: 0x004B71C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr  (evidence: 0x00516170, 0x00516550) // CONFLICT: multiple definitions at +0x0
-    // +0x0   NMData::VideoPlaneData*  target  (evidence: 0x005D2860) // CONFLICT: multiple definitions at +0x0
+    // +0x0   NMData::VideoPlaneData*  target  (evidence: 0x005D2860, 0x005D2C50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x004B8E40, 0x004EB230, 0x0050E0A0, 0x0050F190, 0x00516550, 0x00516B10, 0x0066EFE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0

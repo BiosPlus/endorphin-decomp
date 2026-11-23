@@ -1498,3 +1498,29 @@ float fn_005D29F0(void* const* self) {
     return 0.0f; // unreachable: the thunk throws
 }
 } // namespace lift_005D29F0
+
+// [0x005D2C50] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D2C50 {
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_1 (NMData::VideoPlaneData::getYScale)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Reads the float at +0x38 of the VideoPlaneData object referenced by self's first pointer; if that pointer is null, constructs an exception and throws.
+// @field ExprParser::ValuePtrType +0x00 NMData::VideoPlaneData* target
+// @field NMData::VideoPlaneData +0x38 float field_0x38
+float fn_005D2C50(void* self) {
+    auto* const target = *reinterpret_cast<unsigned char**>(self);
+    if (target != nullptr) {
+        return *reinterpret_cast<const float*>(target + 0x38);
+    }
+
+    // Null target: build an exception object on the stack and throw it.
+    alignas(8) unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1C));
+    // _CxxThrowException does not return.
+    return 0.0f;
+}
+} // namespace lift_005D2C50
