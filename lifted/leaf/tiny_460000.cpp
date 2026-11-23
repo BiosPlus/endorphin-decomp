@@ -315,3 +315,17 @@ uint8_t __thiscall sub_00462A60(uint32_t this_ptr) {
     return mem_r8(inner + 0x1c);
 }
 } // namespace lift_00462A60
+
+// [0x00462A70]
+namespace lift_00462A70 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name setSubField0x4To2
+// @summary Sets dword at offset 0x4 of the pointer at this+0x4 to 2
+// @field Self +0x04 uint32_t field_0x04
+void __thiscall sub_00462A70(void* self) {
+    uint32_t ptr = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) + 0x4);
+    mem_write32(ptr + 0x4, 2);
+}
+} // namespace lift_00462A70
