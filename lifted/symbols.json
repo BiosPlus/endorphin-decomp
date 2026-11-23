@@ -32677,6 +32677,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00783270 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007835F0": {
+    "name": "sub_007835F0",
+    "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",
+    "summary": "Reads a byte at offset +0x4 from the pointer stored at this+0x4",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x00784640": {
     "name": "sub_00784640",
     "signature": "extern \"C\" void fn_00784640(void)",
@@ -33415,6 +33421,12 @@
     "signature": "extern \"C\" void fn_007C8DB0(void)",
     "summary": "IAT jump thunk forwarding to MSVCR80!realloc.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x007C9CB0": {
+    "name": "readFloatPtr",
+    "signature": "float sub_007C9CB0(const float* ptr)",
+    "summary": "Dereference a float pointer and return its value.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007CA110": {
     "name": "sub_007CA110",

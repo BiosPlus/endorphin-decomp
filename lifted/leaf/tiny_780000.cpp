@@ -210,3 +210,19 @@ extern "C" void* __fastcall fn_0078D830(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x007835F0]
+namespace lift_007835F0 {
+// @name sub_007835F0
+// @summary Reads a byte at offset +0x4 from the pointer stored at this+0x4
+// @field unknown +0x04 uint32_t field_0x04
+
+
+uint32_t mem_read32(uint32_t addr);
+uint8_t mem_read8(uint32_t addr);
+
+uint8_t __fastcall sub_007835F0(uint32_t ecx) {
+    uint32_t eax = mem_read32(ecx + 0x4);
+    return mem_read8(eax + 0x4);
+}
+} // namespace lift_007835F0
