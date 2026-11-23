@@ -11837,3 +11837,27 @@ bool fn_00670700(void* self) {
     return static_cast<double>(*value) >= 1e-6;
 }
 } // namespace lift_00670700
+
+// [0x0046D190]
+namespace lift_0046D190 {
+// Callees, shapes inferred from the disassembly:
+//   ext_0042F6E0: receives the object pointer in ecx, returns a 32-bit value in eax.
+//   ext_006720E0: thiscall on the self object with one 32-bit argument.
+extern uint32_t ext_0042F6E0(void* obj);
+extern void ext_006720E0(void* self, uint32_t value);
+
+// @name ExprParser::ReadMethodType<ImageExporter, getDestination, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char> const &, ImageExporter::getDestination, 0>
+// @summary Dereferences the value pointer *src (throws if null), passes the object to ext_0042F6E0, forwards the result to ext_006720E0 on self, and returns self.
+// Calling convention: both arguments are on the stack and the callee pops 8 bytes (ret 0x8).
+void* fn_0046D190(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        // Original throws an MSVC exception object (type info at mem_009DEC1C) via _CxxThrowException.
+        throw std::invalid_argument("ReadMethodType: null value pointer");
+    }
+    uint32_t value = ext_0042F6E0(obj);
+    ext_006720E0(self, value);
+    return self;
+}
+} // namespace lift_0046D190
