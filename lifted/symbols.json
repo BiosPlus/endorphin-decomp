@@ -20476,6 +20476,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0068C190": {
+    "name": "ExprParser::FunctionType\u003cRandomizer, float, float, Randomizer::randDblExcN\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType",
+    "signature": "uint32_t __thiscall fn_0068C190(uint32_t self, uint32_t out_val, uint32_t obj_ptr, uint32_t arg_ptr)",
+    "summary": "Evaluates Randomizer::randDblExcN(float) on a Randomizer instance and stores the float result.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
+  "0x0068C1E0": {
+    "name": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}\u003e",
+    "signature": "uint32_t __thiscall fn_0068C1E0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Evaluates an argument expression, invokes Randomizer::randExcN(float), and stores the float result into the output value.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x0068C460": {
     "name": "ExprParser::ReadWriteMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e",

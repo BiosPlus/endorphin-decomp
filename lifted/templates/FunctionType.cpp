@@ -286,3 +286,51 @@ void* fn_005C5EE0(void* self, void* a, void** b, void* c) {
     return b;                                        // eax = B
 }
 } // namespace lift_005C5EE0
+
+// [0x0068C1E0]
+namespace lift_0068C1E0 {
+float __thiscall ext_0068BEA0(uint32_t self, float val);
+void __thiscall ext_00672080(uint32_t self, float val);
+
+// @name ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>
+// @summary Evaluates an argument expression, invokes Randomizer::randExcN(float), and stores the float result into the output value.
+// @field ExprParser::ValuePtrType +0x4 uint32_t field_0x4
+uint32_t __thiscall fn_0068C1E0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)self;
+    uint32_t randomizer = *reinterpret_cast<uint32_t*>(arg2);
+    uint32_t expr = *reinterpret_cast<uint32_t*>(arg3 + 0x4);
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(expr);
+    auto eval_fn = reinterpret_cast<float(__thiscall*)(uint32_t, uint32_t)>(*reinterpret_cast<uint32_t*>(vtable + 0x4));
+    float input = eval_fn(expr, arg3);
+    float result = ext_0068BEA0(randomizer, input);
+    ext_00672080(arg1, result);
+    return arg1;
+}
+} // namespace lift_0068C1E0
+
+// [0x0068C190]
+namespace lift_0068C190 {
+// @name ExprParser::FunctionType<Randomizer, float, float, Randomizer::randDblExcN>::vfunc_48
+// @class ExprParser::FunctionType
+// @summary Evaluates Randomizer::randDblExcN(float) on a Randomizer instance and stores the float result.
+// @field ExprParser::ValuePtr +0x00 uint32_t value_ptr
+// @field ExprParser::ValuePtr +0x04 uint32_t type_ptr
+
+    uint32_t mem_read32(uint32_t addr);
+    float __thiscall ext_0068BF00(uint32_t self, float arg);
+    void __thiscall ext_00672080(uint32_t self, float arg);
+
+uint32_t __thiscall fn_0068C190(uint32_t self, uint32_t out_val, uint32_t obj_ptr, uint32_t arg_ptr) {
+    (void)self;
+    uint32_t randomizer = mem_read32(obj_ptr);
+    uint32_t arg_type = mem_read32(arg_ptr + 0x4);
+    uint32_t vtable = mem_read32(arg_type);
+    using GetFloatFn = float (__thiscall*)(uint32_t, uint32_t);
+    auto get_float = reinterpret_cast<GetFloatFn>(mem_read32(vtable + 0x4));
+    float arg_val = get_float(arg_type, arg_ptr);
+    float res = ext_0068BF00(randomizer, arg_val);
+    ext_00672080(out_val, res);
+    return out_val;
+}
+} // namespace lift_0068C190

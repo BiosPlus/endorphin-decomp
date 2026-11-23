@@ -1,0 +1,22 @@
+{
+  "va": "0x0068C1E0",
+  "size": 80,
+  "orig_symbol": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}\u003e",
+  "signature": "uint32_t __thiscall fn_0068C1E0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Evaluates an argument expression, invokes Randomizer::randExcN(float), and stores the float result into the output value.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:59:45Z"
+}
