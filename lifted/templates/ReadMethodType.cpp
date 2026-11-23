@@ -24051,3 +24051,32 @@ float fn_0059F600(void* self) {
     return static_cast<float>(std::atof(value->c_str()));
 }
 } // namespace lift_0059F600
+
+// [0x0059F8D0] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_3 (76 bytes)
+namespace lift_0059F8D0 {
+// Known callee 0x0059DEB0: sub_0059DEB0 (virtual dispatch thunk: forwards to vtable slot at +0x80).
+// Thiscall (this in ecx), no stack arguments; the float result is returned in ST(0).
+extern float __thiscall ext_0059DEB0(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Loads the object pointer held in *arg; if it is null throws, otherwise returns 1 when the float from the child's getter (sub_0059DEB0) is >= 1e-6 (NaN yields 0), else 0.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+uint32_t __stdcall fn_0059F8D0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        // Original builds an exception object and calls _CxxThrowException; the
+        // exception type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ExprParser::ReadMethodType: null object pointer");
+    }
+
+    // ecx = obj + 4 passed as this to sub_0059DEB0; ST(0) holds its float result.
+    void* child = static_cast<uint8_t*>(obj) + 0x04;
+    const float value = ext_0059DEB0(child);
+
+    // fcomp against the double constant 1e-6, then test C0: value < 1e-6 (or NaN) -> 0.
+    // Equivalent to the comparison `value >= 1e-6` being true, which is false for NaN.
+    return (static_cast<double>(value) >= 1e-6) ? 1u : 0u;
+}
+} // namespace lift_0059F8D0

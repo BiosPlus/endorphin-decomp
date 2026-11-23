@@ -11143,6 +11143,13 @@
     "summary": "Dereferences the ValuePtr argument, forwards to the CharacterData vcall thunk on target+4 if non-null, else throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F8D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "uint32_t __stdcall fn_0059F8D0(void* arg)",
+    "summary": "Loads the object pointer held in *arg; if it is null throws, otherwise returns 1 when the float from the child's getter (sub_0059DEB0) is \u003e= 1e-6 (NaN yields 0), else 0.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059FF60": {
     "name": "NMData::BackGroundData::vfunc_10_off_10",
     "class": "NMData::BackGroundData",
