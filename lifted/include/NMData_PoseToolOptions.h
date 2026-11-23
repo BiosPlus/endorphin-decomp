@@ -12,7 +12,8 @@ namespace lifted_layout {
 struct NMData_PoseToolOptions_Fields {
     // +0x4   bool                     field_0x04  (evidence: 0x004EA700)
     // +0x5   bool                     isCollisionEnabled  (evidence: 0x004B1FF0, 0x004EA9D0, 0x004EAA10)
-    // +0x6   bool                     isGravityEnabled  (evidence: 0x004B1FF0, 0x004EADE0)
+    // +0x6   uint8_t                  field_0x06  (evidence: 0x004EADA0) // CONFLICT: multiple definitions at +0x6
+    // +0x6   bool                     isGravityEnabled  (evidence: 0x004B1FF0, 0x004EADE0) // CONFLICT: multiple definitions at +0x6
     // +0x9   uint8_t                  field_0x09  (evidence: 0x004EA570) // CONFLICT: multiple definitions at +0x9
     // +0x9   bool                     isProjectRootEnabled  (evidence: 0x004B1FF0, 0x004EB230) // CONFLICT: multiple definitions at +0x9
 };

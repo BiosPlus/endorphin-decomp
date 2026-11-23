@@ -8627,3 +8627,18 @@ bool fn_00508EE0(void* self) {
     return false;
 }
 } // namespace lift_00508EE0
+
+// [0x004EADA0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_2 (52 bytes)
+namespace lift_004EADA0 {
+// @name ExprParser::ReadMethodType<PoseToolOptions>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Reads the PoseToolOptions object held by the value pointer and returns its gravity-enabled byte (+0x06) as bool; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+bool fn_004EADA0(void* const* valuePtr) {
+    void* obj = *valuePtr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<PoseToolOptions>::vfunc_2: null value");
+    }
+    return lift_field<uint8_t>(obj, 0x06) != 0;
+}
+} // namespace lift_004EADA0
