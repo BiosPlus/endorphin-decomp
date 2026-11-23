@@ -3406,6 +3406,12 @@
     "summary": "Adjusts this from the +0xC (BaseEventListener) subobject back to RuntimeEngine and forwards to 0x0046F930.",
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
   },
+  "0x0046FAC0": {
+    "name": "sub_0046FAC0",
+    "signature": "void __thiscall fn_0046FAC0(void* self)",
+    "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FF70": {
     "name": "RuntimeEngine::AdvanceVisibleFrameTicker::vfunc_0",
     "class": "RuntimeEngine::AdvanceVisibleFrameTicker",
@@ -9840,6 +9846,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00528C80(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00528AE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00528CC0": {
+    "name": "bswap16",
+    "signature": "uint16_t bswap16(uint16_t val)",
+    "summary": "Byte-swaps a 16-bit unsigned integer (endianness swap).",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
   "0x0052ED00": {
     "name": "MaterialList::vfunc_6",

@@ -143,3 +143,18 @@ extern int32_t __cdecl fn_00465B30(void) {
     return *reinterpret_cast<int32_t*>(base + 0x58);
 }
 } // namespace lift_00465B30
+
+// [0x0046FAC0]
+namespace lift_0046FAC0 {
+// @name sub_0046FAC0
+// @summary Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.
+// @field unknown +0x00 uint32_t field_0x00
+
+
+extern void ext_006A5C5C(uint32_t arg);
+
+void __thiscall fn_0046FAC0(void* self) {
+    uint32_t val = *reinterpret_cast<const uint32_t*>(self);
+    ext_006A5C5C(val);
+}
+} // namespace lift_0046FAC0
