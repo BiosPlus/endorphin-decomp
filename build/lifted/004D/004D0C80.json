@@ -1,0 +1,28 @@
+{
+  "va": "0x004D0C80",
+  "size": 86,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_14",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_14",
+  "class": "NMData::TransitionEventData",
+  "signature": "void* __thiscall fn_004D0C80(void* self, void* out, uint32_t id)",
+  "summary": "Returns property value for ID 0x40 from field_0x198 if field_0x168-\u003evfunc_10() is false, otherwise delegates to base vfunc_14.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x198",
+      "type": "uint8_t",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:00:35Z"
+}

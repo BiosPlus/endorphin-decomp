@@ -32,3 +32,30 @@ void* fn_004D3070(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_004D2F60(mem, owner);
 }
+
+// [0x004D0C80]
+namespace lift_004D0C80 {
+// @name NMData::TransitionEventData::vfunc_14
+// @class NMData::TransitionEventData
+// @summary Returns property value for ID 0x40 from field_0x198 if field_0x168->vfunc_10() is false, otherwise delegates to base vfunc_14.
+// @field NMData::TransitionEventData +0x168 void* field_0x168
+// @field NMData::TransitionEventData +0x198 uint8_t field_0x198
+
+
+extern void __thiscall ext_00661650(void* dst, const void* src);
+extern void* __thiscall ext_004C2070(void* self, void* out, uint32_t id);
+
+void* __thiscall fn_004D0C80(void* self, void* out, uint32_t id) {
+    if (id == 0x40) {
+        void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x168);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto vfunc = reinterpret_cast<uint8_t(__thiscall*)(void*)>(vtable[0x28 / 4]);
+        if (vfunc(obj) == 0) {
+            ext_00661650(out, reinterpret_cast<uint8_t*>(self) + 0x198);
+            return out;
+        }
+    }
+    ext_004C2070(self, out, id);
+    return out;
+}
+} // namespace lift_004D0C80
