@@ -10,6 +10,6 @@
 // Recovered field layout for Primitives::Arrow:
 namespace lifted_layout {
 struct Primitives_Arrow_Fields {
-    // +0x3C  <subobject with vtable>  field_0x3c  (evidence: 0x0053C1F0)
+    // +0x3C  <subobject with vtable>  field_0x3c  (evidence: 0x0052F420, 0x0053C1F0)
 };
 } // namespace lifted_layout

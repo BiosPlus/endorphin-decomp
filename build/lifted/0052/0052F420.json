@@ -1,0 +1,22 @@
+{
+  "va": "0x0052F420",
+  "size": 37,
+  "orig_symbol": "Primitives::Arrow::vfunc_13",
+  "src_path": "src/Primitives/Arrow.cpp",
+  "lifted_path": "lifted/Primitives/Arrow.cpp",
+  "name": "Primitives::Arrow::vfunc_13",
+  "class": "Primitives::Arrow",
+  "signature": "void fn_0052F420(void* self, const float* v)",
+  "summary": "Forwards the vector pointed to by the stack argument (x, y, z) to the subobject at +0x3C.",
+  "fields": [
+    {
+      "class": "Primitives::Arrow",
+      "offset": "+0x3C",
+      "type": "\u003csubobject with vtable\u003e",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:38:15Z"
+}

@@ -5662,6 +5662,13 @@
     "summary": "Resets Null state: stores stack arg 3 at +0x08, clears +0x20 (DWORD) and +0x04 (BYTE).",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052F420": {
+    "name": "Primitives::Arrow::vfunc_13",
+    "class": "Primitives::Arrow",
+    "signature": "void fn_0052F420(void* self, const float* v)",
+    "summary": "Forwards the vector pointed to by the stack argument (x, y, z) to the subobject at +0x3C.",
+    "lifted_path": "lifted/Primitives/Arrow.cpp"
+  },
   "0x0052F5F0": {
     "name": "Primitives::Animation::vfunc_19",
     "class": "Primitives::Animation",

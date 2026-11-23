@@ -15,8 +15,10 @@ extern "C" void (*mem_00925438)(unsigned int cap);
 extern "C" const float mem_00955A30;
 // Rotation axis component constant: -1.0f.
 extern "C" const float mem_0093F7B8;
+// Callee: thiscall on (self + 0x3C) with three float stack arguments (x, y, z).
+extern "C" void ext_00538CF0(void* self, float x, float y, float z);
 
-// [0x0053C1F0] Primitives::Arrow::vfunc_28 (95 bytes)
+extern "C" void ext_00538CF0(void* self, float x, float y, float z);
 // @name Primitives::Arrow::vfunc_28
 // @class Primitives::Arrow
 // @summary Enables GL_RESCALE_NORMAL, rotates 90 degrees about -Y, invokes the embedded sub-object's vtable slot 0x58 with -1.0f, then restores the matrix and disables GL_RESCALE_NORMAL.
@@ -36,4 +38,16 @@ void fn_0053C1F0(void* self) {
 
     mem_00925404();
     mem_00925438(kRescaleNormal);
+}
+
+// [0x0052F420] Primitives::Arrow::vfunc_13 (37 bytes)
+// @name Primitives::Arrow::vfunc_13
+// @class Primitives::Arrow
+// @summary Forwards the vector pointed to by the stack argument (x, y, z) to the subobject at +0x3C.
+// @field Primitives::Arrow +0x3C <subobject with vtable> field_0x3c
+void fn_0052F420(void* self, const float* v) {
+    const float x = v[0];
+    const float y = v[1];
+    const float z = v[2];
+    ext_00538CF0(static_cast<uint8_t*>(self) + 0x3C, x, y, z);
 }
