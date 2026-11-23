@@ -8458,6 +8458,13 @@
     "summary": "If the flag at +0x140 is clear and the object at +0xE0 is set, query the primary base via vtable slot 5 with the stack argument, then forward that result to the object at +0xE0 via vtable slot 43 (+0xAC).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E1060": {
+    "name": "NMData::FixedPathJointData::vfunc_15_off_4",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005E1060(void* self, void* arg)",
+    "summary": "Forwards arg to HelperGraphic::vfunc_15_off_4 on self, then, if the sub-object at +0x178 is set, invokes its interface vtable slot 15 with arg.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E20F0": {
     "name": "NMData::SkeletalJointData::isAxisUnlocked",
     "class": "NMData::SkeletalJointData",

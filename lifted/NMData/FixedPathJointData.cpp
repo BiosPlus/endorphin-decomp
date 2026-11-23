@@ -63,8 +63,10 @@ void __fastcall NMData_FixedPathJointData_vfunc_0_off_154(void* ecx, std::uint32
     auto forwardFn = reinterpret_cast<SlotSetFn>(objVptr[0xAC / sizeof(void*)]);
     forwardFn(obj, result);
 }
+#include <cstddef>
+extern "C" void ext_0058F670(void* self, void* arg);
 
-// [0x005E29F0]
+extern "C" void ext_0058F670(void* self, void* arg);
 // @name NMData::FixedPathJointData::vfunc_14
 // @class NMData::FixedPathJointData
 // @summary Dispatches on the request code: for codes 0x40/0x137 (and 0x158 via the second slot) forwards arg1 to sub_00661650 with a non-zero stored value, otherwise defers to AxisDefineSensorData::vfunc_14; always returns arg1.
@@ -128,4 +130,26 @@ void fn_005ECCF0(void* self, const float* value) {
     float v = *value;
     void* base = static_cast<unsigned char*>(self) - 0xC;
     ext_005EBC10(base, &v);
+}
+
+// [0x005E1060] NMData::FixedPathJointData::vfunc_15_off_4 (41 bytes)
+// @name NMData::FixedPathJointData::vfunc_15_off_4
+// @class NMData::FixedPathJointData
+// @summary Forwards arg to HelperGraphic::vfunc_15_off_4 on self, then, if the sub-object at +0x178 is set, invokes its interface vtable slot 15 with arg.
+// @field NMData::FixedPathJointData +0x178 void* field_0x178
+void fn_005E1060(void* self, void* arg) {
+    ext_0058F670(self, arg);
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* obj = *reinterpret_cast<void**>(base + 0x178);
+    if (obj == nullptr) {
+        return;
+    }
+
+    // Interface sub-object lives at obj+4; its vtable slot 15 (byte offset 0x3C) is called.
+    uint8_t* iface = static_cast<uint8_t*>(obj) + 4;
+    void** vtbl = *reinterpret_cast<void***>(iface);
+    using SlotFn = void (*)(void* self, void* arg);
+    auto slot15 = reinterpret_cast<SlotFn>(vtbl[15]);
+    slot15(iface, arg);
 }

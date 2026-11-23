@@ -1,0 +1,22 @@
+{
+  "va": "0x005E1060",
+  "size": 41,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_15_off_4",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_15_off_4",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void fn_005E1060(void* self, void* arg)",
+  "summary": "Forwards arg to HelperGraphic::vfunc_15_off_4 on self, then, if the sub-object at +0x178 is set, invokes its interface vtable slot 15 with arg.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x178",
+      "type": "void*",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:40:35Z"
+}
