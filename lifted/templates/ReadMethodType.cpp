@@ -11861,3 +11861,29 @@ void* fn_0046D190(void* self, void* const* src) {
     return self;
 }
 } // namespace lift_0046D190
+
+// [0x00471380]
+namespace lift_00471380 {
+extern int __thiscall ext_0046F7C0(void* obj);
+extern void __thiscall ext_006720C0(void* out_val, int val);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun>::vfunc_0
+// @class ExprParser::ReadMethodType
+// @summary Reads RuntimeEngine::getNumTicksToRun() into the output value, or throws if the object pointer is null.
+extern void* __thiscall fn_00471380(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0046F7C0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return nullptr;
+}
+} // namespace lift_00471380
