@@ -14051,6 +14051,13 @@
     "summary": "Forwards to the base NMData::RelationshipData::vfunc_22 for this object and returns this.",
     "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
   },
+  "0x005EBFF0": {
+    "name": "NMData::Constraint::vfunc_70",
+    "class": "NMData::Constraint",
+    "signature": "void* __thiscall fn_005EBFF0(void* self, void* outPtr, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructs an object at outPtr by calling base/member constructors and setting vtable 0x00958C0C.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x005EC050": {
     "name": "NMData::DriveFrame::vfunc_61",
     "class": "NMData::DriveFrame",
@@ -20488,6 +20495,13 @@
     "class": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}\u003e",
     "signature": "uint32_t __thiscall fn_0068C1E0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
     "summary": "Evaluates an argument expression, invokes Randomizer::randExcN(float), and stores the float result into the output value.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
+  "0x0068C230": {
+    "name": "ExprParser::FunctionType\u003cRandomizer, float, float, Randomizer::randN\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cRandomizer, float, float, Randomizer::randN\u003e",
+    "signature": "uint32_t __thiscall fn_0068C230(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Evaluates an argument as float, calls Randomizer::randN, and stores the result.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
   "0x0068C460": {

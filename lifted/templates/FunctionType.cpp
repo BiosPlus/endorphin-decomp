@@ -334,3 +334,29 @@ uint32_t __thiscall fn_0068C190(uint32_t self, uint32_t out_val, uint32_t obj_pt
     return out_val;
 }
 } // namespace lift_0068C190
+
+// [0x0068C230]
+namespace lift_0068C230 {
+// @name ExprParser::FunctionType<Randomizer, float, float, Randomizer::randN>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, float, float, Randomizer::randN>
+// @summary Evaluates an argument as float, calls Randomizer::randN, and stores the result.
+// @field ExprParser::Value +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_u32(uint32_t addr);
+extern float __thiscall ext_0068BE40(uint32_t self, float arg);
+extern void __thiscall ext_00672080(uint32_t self, float arg);
+
+uint32_t __thiscall fn_0068C230(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)self;
+    uint32_t obj = mem_u32(arg2);
+    uint32_t val_obj = mem_u32(arg3 + 0x4);
+    uint32_t vtable = mem_u32(val_obj);
+    using EvalFn = float(__thiscall*)(uint32_t, uint32_t);
+    EvalFn eval_fn = reinterpret_cast<EvalFn>(mem_u32(vtable + 0x4));
+    float arg_val = eval_fn(val_obj, arg3);
+    float res = ext_0068BE40(obj, arg_val);
+    ext_00672080(arg1, res);
+    return arg1;
+}
+} // namespace lift_0068C230
