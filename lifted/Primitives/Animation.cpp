@@ -86,3 +86,32 @@ void fn_0053AD10(void* self) {
 
     *(base + 0x04) = 1;
 }
+
+// [0x0053ABF0]
+namespace lift_0053ABF0 {
+// @name Primitives::Animation::vfunc_30
+// @class Primitives::Animation
+// @summary Builds a stack record {0x009553B0, flags} and passes it to sub_0053A930; if flags has 0x200, copies the returned float[3] plus 0.5f into mem_00AF053C[0..3] and returns that buffer, otherwise returns the callee's result.
+
+struct AnimationFlagRecord {
+    uint32_t vtable;  // 0x009553B0
+    uint32_t flags;
+};
+
+extern float* ext_0053A930(AnimationFlagRecord rec);
+extern float mem_00AF053C[4];        // contiguous 0x00AF053C..0x00AF0548
+extern const float mem_009324A4;     // .rdata float 0.5
+
+float* fn_0053ABF0(uint32_t /*arg0, unused*/, uint32_t flags) {
+    AnimationFlagRecord rec{0x009553B0u, flags};
+    if ((flags & 0x200u) == 0) {
+        return ext_0053A930(rec);
+    }
+    float* src = ext_0053A930(rec);
+    mem_00AF053C[0] = src[0];
+    mem_00AF053C[1] = src[1];
+    mem_00AF053C[2] = src[2];
+    mem_00AF053C[3] = mem_009324A4;
+    return mem_00AF053C;
+}
+} // namespace lift_0053ABF0
