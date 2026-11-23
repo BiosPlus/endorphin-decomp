@@ -1,0 +1,13 @@
+{
+  "va": "0x007D5AE0",
+  "size": 7,
+  "orig_symbol": "sub_007D5AE0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "derefDword",
+  "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",
+  "summary": "Dereference a 32-bit pointer and return its uint32_t value.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:34Z"
+}

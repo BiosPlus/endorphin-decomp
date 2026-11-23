@@ -28,3 +28,16 @@ extern "C" uint32_t fn_007D8700(uint32_t arg0) {
 extern "C" void* __cdecl fn_007D7A20(void) {
     return &mem_0099E074;
 }
+
+// [0x007D5AE0]
+namespace lift_007D5AE0 {
+// @name derefDword
+// @summary Dereference a 32-bit pointer and return its uint32_t value.
+
+
+uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_007D5AE0(uint32_t ptr) {
+    return mem_read32(ptr);
+}
+} // namespace lift_007D5AE0
