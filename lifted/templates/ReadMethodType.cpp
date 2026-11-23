@@ -8777,3 +8777,23 @@ bool fn_0046CE20(void* self) {
     return ext_0046C2E0(obj) != 0;
 }
 } // namespace lift_0046CE20
+
+// [0x0046E210] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_0046E210 {
+// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
+extern uint8_t ext_0046C070(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_0046E210(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
+        // its concrete type is not recovered, so a standard exception is used here.
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
+    }
+    return ext_0046C070(target) != 0;
+}
+} // namespace lift_0046E210
