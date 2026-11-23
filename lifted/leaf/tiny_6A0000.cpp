@@ -142,3 +142,29 @@ uint32_t __thiscall sub_006AD110(uintptr_t self) {
     return *reinterpret_cast<const uint32_t*>(self + 0x24);
 }
 } // namespace lift_006AD110
+
+// [0x006AD120]
+namespace lift_006AD120 {
+// @name get_field_0x20
+// @summary Returns the 32-bit field at offset 0x20, or 0 if self is null.
+// @field Object +0x20 uint32_t field_0x20
+uint32_t __fastcall sub_006AD120(uint32_t self) {
+    if (self == 0) {
+        return 0;
+    }
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(self) + 0x20);
+}
+} // namespace lift_006AD120
+
+// [0x006ACFD0]
+namespace lift_006ACFD0 {
+// @name getField0x1COrZero
+// @summary Returns the 32-bit field at offset 0x1C if the object pointer is non-null, otherwise 0.
+// @field Object +0x1C uint32_t field_0x1C
+uint32_t __thiscall sub_006ACFD0(void* self) {
+    if (!self) {
+        return 0;
+    }
+    return *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + 0x1c);
+}
+} // namespace lift_006ACFD0

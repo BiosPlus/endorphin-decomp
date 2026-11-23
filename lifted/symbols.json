@@ -28840,6 +28840,12 @@
     "summary": "Reads a byte at offset +0x4 from the pointer stored at this + 0x4",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006ACFD0": {
+    "name": "getField0x1COrZero",
+    "signature": "uint32_t __thiscall sub_006ACFD0(void* self)",
+    "summary": "Returns the 32-bit field at offset 0x1C if the object pointer is non-null, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AD000": {
     "name": "sub_006AD000",
     "signature": "extern \"C\" void __fastcall fn_006AD000(void* self)",
@@ -28862,6 +28868,12 @@
     "name": "sub_006AD110_getField24",
     "signature": "uint32_t __thiscall sub_006AD110(uintptr_t self)",
     "summary": "Returns the 32-bit value at offset +0x24 if the pointer is non-null, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
+  "0x006AD120": {
+    "name": "get_field_0x20",
+    "signature": "uint32_t __fastcall sub_006AD120(uint32_t self)",
+    "summary": "Returns the 32-bit field at offset 0x20, or 0 if self is null.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
   "0x006AD180": {

@@ -1,0 +1,21 @@
+{
+  "va": "0x006AD120",
+  "size": 11,
+  "orig_symbol": "sub_006AD120",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "get_field_0x20",
+  "signature": "uint32_t __fastcall sub_006AD120(uint32_t self)",
+  "summary": "Returns the 32-bit field at offset 0x20, or 0 if self is null.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:42:08Z"
+}
