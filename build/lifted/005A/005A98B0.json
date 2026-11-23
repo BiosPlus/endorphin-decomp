@@ -1,0 +1,14 @@
+{
+  "va": "0x005A98B0",
+  "size": 54,
+  "orig_symbol": "NMData::CharacterData::vfunc_11",
+  "src_path": "src/NMData/CharacterData.cpp",
+  "lifted_path": "lifted/NMData/CharacterData.cpp",
+  "name": "NMData::CharacterData::vfunc_11",
+  "class": "NMData::CharacterData",
+  "signature": "uint8_t __thiscall fn_005A98B0(void* self)",
+  "summary": "Returns true if vfunc_10() or ext_00410390(this) returns non-zero.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:59:10Z"
+}

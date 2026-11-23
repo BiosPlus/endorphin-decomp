@@ -8868,6 +8868,13 @@
     "summary": "Calls the virtual at vtable byte offset 0x24 (thiscall, no args), which returns a std::string*, and copy-constructs that string into the caller's hidden return buffer (ret 4).",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A98B0": {
+    "name": "NMData::CharacterData::vfunc_11",
+    "class": "NMData::CharacterData",
+    "signature": "uint8_t __thiscall fn_005A98B0(void* self)",
+    "summary": "Returns true if vfunc_10() or ext_00410390(this) returns non-zero.",
+    "lifted_path": "lifted/NMData/CharacterData.cpp"
+  },
   "0x005A98F0": {
     "name": "NMData::BackGroundData::vfunc_6",
     "class": "NMData::BackGroundData",
