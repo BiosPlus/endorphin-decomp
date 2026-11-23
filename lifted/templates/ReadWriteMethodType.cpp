@@ -1300,6 +1300,40 @@ void fn_0049BF20(void* dst, void* src) {
 }
 } // namespace lift_0049BF20
 
+// [0x004A25E0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A25E0 {
+// Known callee 0x004A24D0: FSMEditView::setDrawDepth(int) (thiscall, one stack argument).
+extern void ext_004A24D0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Replaced below by a portable std::runtime_error throw.
+
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (FSMEditView::getDrawDepth -> setDrawDepth)
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>
+// @summary Reads an int through the source's inner getter (vtable slot 2) and forwards it to FSMEditView::setDrawDepth; throws if the target view pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadWriteMethodType +0x04 void* inner
+void fn_004A25E0(void** dst, void* src) {
+    // dst +0x00: pointer to the FSMEditView that receives the write. Null means the target is missing.
+    void* view = *dst;
+    if (view == nullptr) {
+        // The original throws a MSVC C++ exception here (MSVCR80 _CxxThrowException). No portable equivalent of that exact type exists.
+        throw std::runtime_error("ReadWriteMethodType: null FSMEditView target");
+    }
+
+    // src +0x04: inner accessor object. Its vtable slot 2 (+0x08) is the int getter; src is passed as its single stack argument.
+    void* inner = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using GetIntFn = int(__thiscall*)(void* self, void* arg);
+    GetIntFn get = reinterpret_cast<GetIntFn>(vtbl[2]);
+    const int value = get(inner, src);
+
+    // Forward to FSMEditView::setDrawDepth (sub_004A24D0) with the view as `this`.
+    using SetDrawDepthFn = void(__thiscall*)(void* self, int depth);
+    SetDrawDepthFn setDrawDepth = reinterpret_cast<SetDrawDepthFn>(ext_004A24D0);
+    setDrawDepth(view, value);
+}
+} // namespace lift_004A25E0
+
 // [0x0046F080] ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageWidth(int), 0}>::vfunc_41 (68 bytes)
 namespace lift_0046F080 {
 // Callee 0x0046C3C0: sub_0046C3C0 (thiscall, takes the address of the first argument as `self`).
@@ -1334,37 +1368,3 @@ void fn_0046F080(void* a, void* b) {
     ext_006AD060(target, value);
 }
 } // namespace lift_0046F080
-
-// [0x004A25E0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>::vfunc_41 (68 bytes)
-namespace lift_004A25E0 {
-// Known callee 0x004A24D0: FSMEditView::setDrawDepth(int) (thiscall, one stack argument).
-extern void ext_004A24D0();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-// Replaced below by a portable std::runtime_error throw.
-
-// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (FSMEditView::getDrawDepth -> setDrawDepth)
-// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>
-// @summary Reads an int through the source's inner getter (vtable slot 2) and forwards it to FSMEditView::setDrawDepth; throws if the target view pointer is null.
-// @field ExprParser::ValuePtrType +0x00 void* target
-// @field ExprParser::ReadWriteMethodType +0x04 void* inner
-void fn_004A25E0(void** dst, void* src) {
-    // dst +0x00: pointer to the FSMEditView that receives the write. Null means the target is missing.
-    void* view = *dst;
-    if (view == nullptr) {
-        // The original throws a MSVC C++ exception here (MSVCR80 _CxxThrowException). No portable equivalent of that exact type exists.
-        throw std::runtime_error("ReadWriteMethodType: null FSMEditView target");
-    }
-
-    // src +0x04: inner accessor object. Its vtable slot 2 (+0x08) is the int getter; src is passed as its single stack argument.
-    void* inner = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(src) + 0x04);
-    void** vtbl = *reinterpret_cast<void***>(inner);
-    using GetIntFn = int(__thiscall*)(void* self, void* arg);
-    GetIntFn get = reinterpret_cast<GetIntFn>(vtbl[2]);
-    const int value = get(inner, src);
-
-    // Forward to FSMEditView::setDrawDepth (sub_004A24D0) with the view as `this`.
-    using SetDrawDepthFn = void(__thiscall*)(void* self, int depth);
-    SetDrawDepthFn setDrawDepth = reinterpret_cast<SetDrawDepthFn>(ext_004A24D0);
-    setDrawDepth(view, value);
-}
-} // namespace lift_004A25E0
