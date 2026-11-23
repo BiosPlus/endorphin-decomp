@@ -8411,6 +8411,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005CF2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005D06E0": {
+    "name": "NMData::CameraData::vfunc_57",
+    "class": "NMData::CameraData",
+    "signature": "void* __thiscall fn_005D06E0(void* self, uint32_t arg)",
+    "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005DC420": {
     "name": "sub_005DC420",
     "signature": "extern \"C\" void __fastcall fn_005DC420(void* self)",
