@@ -15444,3 +15444,32 @@ extern uint32_t fn_004A38A0(uint32_t self, uint32_t out_val, uint32_t obj_ptr) {
     return out_val;
 }
 } // namespace lift_004A38A0
+
+// [0x004B9400] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_004B9400 {
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+extern const double mem_009433D8;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitLength, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitLength, 0>
+// @summary Returns 1 if the EngineData float at +0x44 is >= 1e-6 (false for NaN); throws if the EngineData pointer is null.
+// @field NMData::EngineData +0x44 float field_0x44
+int fn_004B9400(void* self, void* arg) {
+    (void)self;
+
+    // arg points at a slot holding the NMData::EngineData pointer.
+    auto* engine = *static_cast<unsigned char**>(arg);
+    if (engine == nullptr) {
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(uintptr_t{0x009DEC1C}));
+    }
+
+    float value;
+    std::memcpy(&value, engine + 0x44, sizeof value);
+    const double threshold = mem_009433D8;
+    return (static_cast<double>(value) >= threshold) ? 1 : 0;
+}
+} // namespace lift_004B9400
