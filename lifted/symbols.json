@@ -9212,6 +9212,13 @@
     "summary": "Forwards a1 and the address of the embedded subobject at this+0x154 to ext_00610730, then returns a1.",
     "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
   },
+  "0x00611270": {
+    "name": "NMData::Constraint::vfunc_22",
+    "class": "NMData::Constraint",
+    "signature": "void* fn_00611270(void* self, void* other)",
+    "summary": "Calls a method on the argument object with a global value and this's +0x154 sub-object, forwards the result to ext_0067F040, and returns the argument.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x006114A0": {
     "name": "NMData::Constraint::vfunc_29",
     "class": "NMData::Constraint",

@@ -1,0 +1,22 @@
+{
+  "va": "0x00611270",
+  "size": 42,
+  "orig_symbol": "NMData::Constraint::vfunc_22",
+  "src_path": "src/NMData/Constraint.cpp",
+  "lifted_path": "lifted/NMData/Constraint.cpp",
+  "name": "NMData::Constraint::vfunc_22",
+  "class": "NMData::Constraint",
+  "signature": "void* fn_00611270(void* self, void* other)",
+  "summary": "Calls a method on the argument object with a global value and this's +0x154 sub-object, forwards the result to ext_0067F040, and returns the argument.",
+  "fields": [
+    {
+      "class": "NMData::Constraint",
+      "offset": "+0x154",
+      "type": "uint8_t",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-23T11:42:54Z"
+}
