@@ -1,0 +1,28 @@
+{
+  "va": "0x004997E0",
+  "size": 73,
+  "orig_symbol": "NMData::Transition::vfunc_26",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_26",
+  "class": "NMData::Transition",
+  "signature": "void fn_004997E0(void* self, const DWORD* src, DWORD index)",
+  "summary": "Bounds-checks index against the entry array at +0x88/+0x8C, stores the 8-byte pair at src into that slot, then calls the refresh routine sub_004996E0.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "void* field_0x88 (entry array base; 8-byte",
+      "name": "entries)"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "void* field_0x8C (entry array",
+      "name": "end)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:51:48Z"
+}

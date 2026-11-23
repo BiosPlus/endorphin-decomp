@@ -112,3 +112,42 @@ uint32_t __thiscall fn_00499CE0(void* self, void* a1) {
     void* subobj = obj + 0x84;
     return ext_00505F00(a1, subobj);
 }
+
+// [0x004997E0]
+namespace lift_004997E0 {
+// @name NMData::Transition::vfunc_26
+// @class NMData::Transition
+// @summary Bounds-checks index against the entry array at +0x88/+0x8C, stores the 8-byte pair at src into that slot, then calls the refresh routine sub_004996E0.
+// @field NMData::Transition +0x88 void* field_0x88 (entry array base; 8-byte entries)
+// @field NMData::Transition +0x8C void* field_0x8C (entry array end)
+
+// sub_004996E0 (253B), __thiscall, takes the transition as `this`.
+void ext_004996E0(void* self);
+
+// MSVCR80!_invalid_parameter_noinfo (via IAT slot 0x925134).
+void ext_invalid_parameter_noinfo(void);
+
+// Original: __thiscall(this=ecx), stdcall args (src, index), `ret 8`.
+void fn_004997E0(void* self, const DWORD* src, DWORD index) {
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x88);
+    if (begin == nullptr) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    uint8_t* end = lift_field<uint8_t*>(self, 0x8C);
+    // Entry count = (end - begin) / 8, signed shift, compared unsigned against index.
+    ptrdiff_t diff = end - begin;
+    uint32_t count = static_cast<uint32_t>(diff >> 3);
+    if (index >= count) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    DWORD* slot = reinterpret_cast<DWORD*>(begin + static_cast<size_t>(index) * 8);
+    slot[0] = src[0];
+    slot[1] = src[1];
+
+    ext_004996E0(self);
+}
+} // namespace lift_004997E0
