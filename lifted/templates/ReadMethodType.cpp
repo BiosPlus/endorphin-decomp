@@ -1894,3 +1894,29 @@ int32_t fn_004A3C70(void* self) {
     return 0; // not reached
 }
 } // namespace lift_004A3C70
+
+// [0x004A4BD0]
+namespace lift_004A4BD0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditionNumber, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditionNumber, 0>
+// @summary Virtual slot 3: if the held pointer at +0x0 is non-null, forward to sub_00496F40; otherwise throw.
+// @field ExprParser::ValuePtrType +0x00 void* inner_ptr
+
+extern uint32_t ext_00496F40(uint32_t self);
+extern void ext_0046C3C0(uint32_t local_obj);
+extern void ext_006A6DD2(void);
+
+extern uint32_t fn_004A4BD0(uint32_t arg)
+{
+    // arg is the object pointer passed on the stack (esp+4).
+    uint32_t inner = *reinterpret_cast<uint32_t*>(arg);   // mov ecx, [eax]
+    if (inner != 0) {                                     // test ecx, ecx / je
+        return ext_00496F40(arg);                         // call sub_00496F40; ret 4
+    }
+
+    uint32_t local_obj = 0;                               // lea ecx, [esp]
+    ext_0046C3C0(local_obj);                              // call sub_0046C3C0
+    ext_006A6DD2();                                       // _CxxThrowException(&type 0x009DEC1C, ...)
+    return 0;
+}
+} // namespace lift_004A4BD0
