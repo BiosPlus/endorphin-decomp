@@ -702,6 +702,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00417CD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00418DE0": {
+    "name": "ExportDialog::vfunc_84",
+    "class": "ExportDialog",
+    "signature": "extern \"C\" int mem_00A9ED98;            // .data pointer value (-\u003e \"Character\") namespace lift_00418DE0",
+    "summary": "Initializes the export dialog: sets window icons, fills combo boxes and check/text controls from the settings object and predicate, and refreshes the dependent sub-panels.",
+    "lifted_path": "lifted/classes/ExportDialog.cpp"
+  },
   "0x00419700": {
     "name": "sub_00419700",
     "signature": "extern \"C\" const DWORD* fn_00419700(void)",

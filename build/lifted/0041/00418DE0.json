@@ -1,0 +1,214 @@
+{
+  "va": "0x00418DE0",
+  "size": 2333,
+  "orig_symbol": "ExportDialog::vfunc_84",
+  "src_path": "src/classes/ExportDialog.cpp",
+  "lifted_path": "lifted/classes/ExportDialog.cpp",
+  "name": "ExportDialog::vfunc_84",
+  "class": "ExportDialog",
+  "signature": "extern \"C\" int mem_00A9ED98;            // .data pointer value (-\u003e \"Character\") namespace lift_00418DE0",
+  "summary": "Initializes the export dialog: sets window icons, fills combo boxes and check/text controls from the settings object and predicate, and refreshes the dependent sub-panels.",
+  "fields": [
+    {
+      "class": "ExportDialog",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "predObj"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "settings"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x7C",
+      "type": "uint8_t",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "numericCtrl"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0xC8",
+      "type": "object",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0xE8",
+      "type": "HWND",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x11C",
+      "type": "object",
+      "name": "field_0x11C"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x13C",
+      "type": "HWND",
+      "name": "hwndCombo1"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x170",
+      "type": "object",
+      "name": "field_0x170"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x190",
+      "type": "HWND",
+      "name": "hwndCombo3"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x1E4",
+      "type": "HWND",
+      "name": "hwndCtrlK"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x218",
+      "type": "void*",
+      "name": "floatCtrlA"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x26C",
+      "type": "object",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x28C",
+      "type": "HWND",
+      "name": "hwndCheck1"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x2C0",
+      "type": "object",
+      "name": "field_0x2C0"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x2E0",
+      "type": "HWND",
+      "name": "hwndCheck2"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x314",
+      "type": "object",
+      "name": "field_0x314"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x334",
+      "type": "HWND",
+      "name": "hwndCheck3"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x3C4",
+      "type": "object",
+      "name": "field_0x3C4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x3E4",
+      "type": "HWND",
+      "name": "field_0x3E4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x418",
+      "type": "object",
+      "name": "field_0x418"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x438",
+      "type": "HWND",
+      "name": "field_0x438"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x46C",
+      "type": "object",
+      "name": "field_0x46C"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x4C0",
+      "type": "void*",
+      "name": "textCtrlB"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x514",
+      "type": "void*",
+      "name": "textCtrlC"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x568",
+      "type": "object",
+      "name": "field_0x568"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x5BC",
+      "type": "object",
+      "name": "field_0x5BC"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x5DC",
+      "type": "HWND",
+      "name": "field_0x5DC"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x808",
+      "type": "object",
+      "name": "field_0x808"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x85C",
+      "type": "object",
+      "name": "field_0x85C"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x8B0",
+      "type": "object",
+      "name": "field_0x8B0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:26:38Z"
+}
