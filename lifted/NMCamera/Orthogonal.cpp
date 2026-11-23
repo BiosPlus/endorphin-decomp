@@ -84,3 +84,26 @@ void __thiscall fn_00551CB0(void* self, const float* in_coords, int32_t* out_coo
     out_coords[1] = ext_006A6DE0(y);
 }
 } // namespace lift_00551CB0
+
+// [0x00551A80]
+namespace lift_00551A80 {
+double __thiscall ext_005480D0(void* self);
+extern double mem_00993828;
+extern void (__stdcall *mem_00925410)(double left, double right, double bottom, double top, double zNear, double zFar);
+
+// @name NMCamera::Orthogonal::vfunc_4
+// @class NMCamera::Orthogonal
+// @summary Sets up an orthographic projection matrix via glOrtho using camera aspect and near/far planes
+// @field NMCamera::Orthogonal +0xC0 double field_0xc0
+// @field NMCamera::Orthogonal +0xC8 double field_0xc8
+// @field NMCamera::Orthogonal +0xD0 double field_0xd0
+void __thiscall fn_00551A80(void* self) {
+    float half_h = static_cast<float>(ext_005480D0(self) * mem_00993828);
+    double top = static_cast<double>(half_h);
+    double bottom = static_cast<double>(-half_h);
+    double aspect = *reinterpret_cast<const double*>(reinterpret_cast<const uint8_t*>(self) + 0xC0);
+    double zNear = *reinterpret_cast<const double*>(reinterpret_cast<const uint8_t*>(self) + 0xD0);
+    double zFar = *reinterpret_cast<const double*>(reinterpret_cast<const uint8_t*>(self) + 0xC8);
+    mem_00925410(bottom * aspect, top * aspect, bottom, top, zNear, zFar);
+}
+} // namespace lift_00551A80

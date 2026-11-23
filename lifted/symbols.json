@@ -10728,6 +10728,13 @@
     "summary": "Pure jump thunk forwarding to Camera::vfunc_1.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00551A80": {
+    "name": "NMCamera::Orthogonal::vfunc_4",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void __thiscall fn_00551A80(void* self)",
+    "summary": "Sets up an orthographic projection matrix via glOrtho using camera aspect and near/far planes",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00551AF0": {
     "name": "NMCamera::Orthogonal::vfunc_8",
     "class": "NMCamera::Orthogonal",

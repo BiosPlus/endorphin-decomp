@@ -1,0 +1,34 @@
+{
+  "va": "0x00551A80",
+  "size": 106,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_4",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_4",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void __thiscall fn_00551A80(void* self)",
+  "summary": "Sets up an orthographic projection matrix via glOrtho using camera aspect and near/far planes",
+  "fields": [
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xC0",
+      "type": "double",
+      "name": "field_0xc0"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xC8",
+      "type": "double",
+      "name": "field_0xc8"
+    },
+    {
+      "class": "NMCamera::Orthogonal",
+      "offset": "+0xD0",
+      "type": "double",
+      "name": "field_0xd0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:54Z"
+}
