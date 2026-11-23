@@ -1,0 +1,22 @@
+{
+  "va": "0x00419E20",
+  "size": 10,
+  "orig_symbol": "FolderDialog::vfunc_79",
+  "src_path": "src/classes/FolderDialog.cpp",
+  "lifted_path": "lifted/classes/FolderDialog.cpp",
+  "name": "FolderDialog::vfunc_79",
+  "class": "FolderDialog",
+  "signature": "uint32_t __thiscall fn_00419E20(uintptr_t self)",
+  "summary": "Forwards pointer to field_0x68 to sub_00419DF0",
+  "fields": [
+    {
+      "class": "FolderDialog",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:27:22Z"
+}
