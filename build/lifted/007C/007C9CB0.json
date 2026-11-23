@@ -1,0 +1,13 @@
+{
+  "va": "0x007C9CB0",
+  "size": 7,
+  "orig_symbol": "sub_007C9CB0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "readFloatPtr",
+  "signature": "float sub_007C9CB0(const float* ptr)",
+  "summary": "Dereference a float pointer and return its value.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:13Z"
+}
