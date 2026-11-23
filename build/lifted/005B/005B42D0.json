@@ -1,0 +1,14 @@
+{
+  "va": "0x005B42D0",
+  "size": 114,
+  "orig_symbol": "Geometry::FrustumType::vfunc_18",
+  "src_path": "src/Geometry/FrustumType.cpp",
+  "lifted_path": "lifted/Geometry/FrustumType.cpp",
+  "name": "Geometry::FrustumType::vfunc_18",
+  "class": "Geometry::FrustumType",
+  "signature": "u32 fn_005B42D0(u32 self, u32 selector, u32 arg)",
+  "summary": "Dispatches on a selector argument (0x29E, 0x2F8, 0x29F, else) to one of three helpers or sub_00671F30, then returns the first argument unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:31:20Z"
+}
