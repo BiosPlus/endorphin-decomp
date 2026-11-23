@@ -4076,6 +4076,13 @@
     "summary": "Reads the dword at the argument; if non-null, forwards it as `this` to ext_004A9A60 and returns its result, otherwise throws (original builds an exception object and calls _CxxThrowException).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004AAD40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData\u003e::getVisibility (vfunc_3)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e",
+    "signature": "bool fn_004AAD40(void* self)",
+    "summary": "Forwards to BehaviourData::getVisibility via the stored object pointer at +0x00; throws if that pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004AB2B0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_26",
     "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e",

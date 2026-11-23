@@ -8328,3 +8328,22 @@ void fn_00692540(void* arg) {
 }
 } // namespace lift_004A2B90
 } // namespace lift_00692540
+
+// [0x004AAD40] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004AAD40 {
+// Known callee 0x004A9A50: sub_004A9A50 (Pure jump thunk forwarding to sub_00584C00.)
+// Called with the object pointer in the receiver slot (ecx in the original); returns bool in al.
+extern bool ext_004A9A50(void* receiver);
+
+// @name ExprParser::ReadMethodType<NMData::BehaviourData>::getVisibility (vfunc_3)
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Forwards to BehaviourData::getVisibility via the stored object pointer at +0x00; throws if that pointer is null.
+// @field ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0> +0x00 void* field_0x00
+bool fn_004AAD40(void* self) {
+    void* receiver = *reinterpret_cast<void**>(self);
+    if (receiver == nullptr) {
+        throw std::runtime_error("ReadMethodType<BehaviourData>::vfunc_3: null object pointer");
+    }
+    return ext_004A9A50(receiver);
+}
+} // namespace lift_004AAD40

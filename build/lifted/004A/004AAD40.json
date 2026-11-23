@@ -1,0 +1,14 @@
+{
+  "va": "0x004AAD40",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData\u003e::getVisibility (vfunc_3)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e",
+  "signature": "bool fn_004AAD40(void* self)",
+  "summary": "Forwards to BehaviourData::getVisibility via the stored object pointer at +0x00; throws if that pointer is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:17:33Z"
+}
