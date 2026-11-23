@@ -4757,3 +4757,21 @@ void __fastcall fn_00545650(void* ecx) {
 }
 } // namespace lift_00544E00
 } // namespace lift_00545650
+
+// [0x00402050]
+namespace lift_00402050 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
+// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
+
+uint32_t __thiscall fn_00402050(uint32_t self) {
+    uint32_t subobj = self + 0x0C;
+    uint32_t vtable = mem_read32(subobj);
+    uint32_t target = mem_read32(vtable + 0x10);
+    using Fn = uint32_t(__thiscall*)(uint32_t);
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
+}
+} // namespace lift_00402050
