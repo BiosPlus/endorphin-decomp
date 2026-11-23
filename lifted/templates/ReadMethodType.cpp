@@ -1868,3 +1868,29 @@ void fn_004A2F80(void** arg) {
     ext_006A6DD2(exception_object, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1CU)));
 }
 } // namespace lift_004A2F80
+
+// [0x004A3C70] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004A3C70 {
+// Known callee 0x004A2490: sub_004A2490 (Returns global int32 value from mem_00A35B7C.)
+extern int32_t ext_004A2490(void);
+extern void ext_0046C3C0(void* ecx);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+extern void ext_00496F30(void);
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_2 (getCodeWindowFontSize)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Reads the first pointer-sized field of the object; if non-null, returns the global int32 via sub_004A2490, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0> +0x00 void* field_0x00
+int32_t fn_004A3C70(void* self) {
+    void* ptr = *reinterpret_cast<void**>(self);
+    if (ptr != nullptr) {
+        return ext_004A2490();
+    }
+    // Null path: construct the exception object and throw (0x009DEC1C = throw info).
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2();
+    return 0; // not reached
+}
+} // namespace lift_004A3C70
