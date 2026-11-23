@@ -1,0 +1,14 @@
+{
+  "va": "0x00650F70",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffector, float, EffectorBase vcall112\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
+  "signature": "void fn_00650F70(uint32_t* out, uintptr_t arg2, void* self)",
+  "summary": "Reads a float from the value-source object at self+0x04 (vtable slot 1), pushes it into the target effector (*arg2, vtable slot 28 via thunk), then, if self+0x04 is non-null, queries it via vtable slot 28 and writes {value, owner} to out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:12:53Z"
+}

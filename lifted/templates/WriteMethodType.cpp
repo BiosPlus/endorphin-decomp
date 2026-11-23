@@ -5570,3 +5570,54 @@ void* __stdcall fn_0064F5B0(void* retBuf, void* targetRef, void* self) {
 }
 } // namespace lift_0064F5B0
 } // namespace lift_0064F5B0
+
+// [0x00650F70] ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_00650F70 {
+// Virtual dispatch thunk at 0x006036B0: loads this->vtable and tail-calls slot 28 (+0x70)
+// with the same this pointer; the float stack argument is forwarded unchanged.
+extern void* ext_006036B0(void* self, float value);
+
+// Stack-argument convention: callee-cleans 12 bytes (ret 0xc); ecx is not used as input.
+// @name ExprParser::WriteMethodType<Effector, float, EffectorBase vcall112>::vfunc_48
+// @class ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>
+// @summary Reads a float from the value-source object at self+0x04 (vtable slot 1), pushes it into the target effector (*arg2, vtable slot 28 via thunk), then, if self+0x04 is non-null, queries it via vtable slot 28 and writes {value, owner} to out.
+// @field ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}> +0x04 pointer field_0x04 (value-source / owner object)
+void fn_00650F70(uint32_t* out, uintptr_t arg2, void* self) {
+    // target = *(Effector**)arg2
+    const uint32_t target = *reinterpret_cast<const uint32_t*>(arg2);
+
+    // owner = self->field_0x04; value = owner->vtable[1](owner, <stack args>)
+    // The original pushes self, target, self, and 0 as stack arguments; callee shape is inferred.
+    const uint32_t owner_raw = lift_field<uint32_t>(self, 0x04);
+    void* owner = reinterpret_cast<void*>(static_cast<uintptr_t>(owner_raw));
+    void** owner_vt = *reinterpret_cast<void***>(owner);
+    using EvalFn = float (*)(void*, uintptr_t, uintptr_t, uintptr_t, uint32_t);
+    auto eval = reinterpret_cast<EvalFn>(owner_vt[1]);
+    const float value = eval(owner,
+                             reinterpret_cast<uintptr_t>(self),
+                             static_cast<uintptr_t>(target),
+                             reinterpret_cast<uintptr_t>(self),
+                             0u);
+
+    // Forward value to the target via the slot-28 thunk (its eax result is unused).
+    (void)ext_006036B0(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), value);
+
+    // if (self->field_0x04 == 0) return {0, 0};
+    const uint32_t owner_raw2 = lift_field<uint32_t>(self, 0x04);
+    if (owner_raw2 == 0) {
+        out[0] = 0;
+        out[1] = 0;
+        return;
+    }
+
+    // Otherwise: r = owner->vtable[28](owner, &tmp, self); out = {*r, owner}
+    void* owner2 = reinterpret_cast<void*>(static_cast<uintptr_t>(owner_raw2));
+    void** vt2 = *reinterpret_cast<void***>(owner2);
+    uint32_t tmp[2] = {0, 0};
+    using RefFn = void* (*)(void*, uint32_t*, void*);
+    auto get_ref = reinterpret_cast<RefFn>(vt2[0x70 / sizeof(void*)]);
+    const auto* r = static_cast<const uint32_t*>(get_ref(owner2, tmp, self));
+    out[0] = *r;
+    out[1] = lift_field<uint32_t>(self, 0x04);
+}
+} // namespace lift_00650F70
