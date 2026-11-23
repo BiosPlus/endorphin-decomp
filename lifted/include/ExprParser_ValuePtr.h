@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct ExprParser_ValuePtr_Fields {
     // +0x0   uint32_t                 ptr  (evidence: 0x004A2F40)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0068BF40)
 };
 } // namespace lifted_layout

@@ -103,3 +103,27 @@ void* fn_005C5EA0(void* self, void* const* arg2, void* arg3) {
     ext_00672110(self, r2);
     return self;
 }
+
+// [0x0068BF40]
+namespace lift_0068BF40 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_0068BC00(uint32_t self, uint32_t arg);
+extern uint32_t ext_006720C0(uint32_t self, uint32_t arg);
+
+// @name ExprParser::FunctionType<Randomizer, int, int, randIntExcN>::vfunc_48
+// @class ExprParser::FunctionType
+// @summary Evaluates argument via vtable+0x8, calls Randomizer::randIntExcN (0x0068BC00), and wraps result into out-value (0x006720C0).
+// @field ExprParser::ValuePtr +0x4 uint32_t field_0x04
+uint32_t __thiscall fn_0068BF40(uint32_t self, uint32_t out_val, uint32_t obj_ptr, uint32_t arg_ptr) {
+    (void)self;
+    uint32_t target = mem_read32(obj_ptr);
+    uint32_t arg_obj = mem_read32(arg_ptr + 0x4);
+    uint32_t vtable = mem_read32(arg_obj);
+    uint32_t vfunc = mem_read32(vtable + 0x8);
+    using VFunc = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    uint32_t eval_res = reinterpret_cast<VFunc>(vfunc)(arg_obj, arg_ptr);
+    uint32_t rand_res = ext_0068BC00(target, eval_res);
+    ext_006720C0(out_val, rand_res);
+    return out_val;
+}
+} // namespace lift_0068BF40

@@ -1,0 +1,22 @@
+{
+  "va": "0x0068BF40",
+  "size": 58,
+  "orig_symbol": "ExprParser::FunctionType\u003cRandomizer, int, int, {public: int __thiscall Randomizer::randIntExcN(int), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/FunctionType.cpp",
+  "lifted_path": "lifted/templates/FunctionType.cpp",
+  "name": "ExprParser::FunctionType\u003cRandomizer, int, int, randIntExcN\u003e::vfunc_48",
+  "class": "ExprParser::FunctionType",
+  "signature": "uint32_t __thiscall fn_0068BF40(uint32_t self, uint32_t out_val, uint32_t obj_ptr, uint32_t arg_ptr)",
+  "summary": "Evaluates argument via vtable+0x8, calls Randomizer::randIntExcN (0x0068BC00), and wraps result into out-value (0x006720C0).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:59:01Z"
+}
