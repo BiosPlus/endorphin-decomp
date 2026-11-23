@@ -33614,6 +33614,18 @@
     "summary": "IAT jump thunk forwarding to XSIFtk-3.6.2.1!?CreateScene@CSLScene@@SAPAV1@XZ.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C6F60": {
+    "name": "offsetBy0x44",
+    "signature": "uint32_t sub_007C6F60(uint32_t arg0)",
+    "summary": "Returns the first argument offset by 0x44 bytes.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C6FA0": {
+    "name": "get_field_0x10",
+    "signature": "uint32_t sub_007C6FA0(const void* ptr)",
+    "summary": "Returns the 32-bit value at offset 0x10 of the given struct pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8D70": {
     "name": "thunk_MSVCR80_malloc",
     "signature": "extern \"C\" void fn_007C8D70(void)",

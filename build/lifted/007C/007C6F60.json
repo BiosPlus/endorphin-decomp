@@ -1,0 +1,13 @@
+{
+  "va": "0x007C6F60",
+  "size": 8,
+  "orig_symbol": "sub_007C6F60",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "offsetBy0x44",
+  "signature": "uint32_t sub_007C6F60(uint32_t arg0)",
+  "summary": "Returns the first argument offset by 0x44 bytes.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:36:09Z"
+}
