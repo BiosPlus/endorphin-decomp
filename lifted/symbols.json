@@ -3919,6 +3919,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051A4D0 (ExprParser::ROWriteMethodType::vfunc_13 (EffectorBase vcall 76)).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004A28A0": {
+    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_3 (StateMachineEditor::FSMEditView::drawVariables)",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e",
+    "signature": "void* fn_004A28A0(void* self)",
+    "summary": "Reads the object's stored pointer at +0x00; if non-null, forwards it to ext_0049AA60 and returns that result, otherwise throws an exception (original throws via _CxxThrowException).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004A2B90": {
     "name": "ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0\u003e",

@@ -1,0 +1,22 @@
+{
+  "va": "0x004A28A0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_3 (StateMachineEditor::FSMEditView::drawVariables)",
+  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e",
+  "signature": "void* fn_004A28A0(void* self)",
+  "summary": "Reads the object's stored pointer at +0x00; if non-null, forwards it to ext_0049AA60 and returns that result, otherwise throws an exception (original throws via _CxxThrowException).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:16:39Z"
+}

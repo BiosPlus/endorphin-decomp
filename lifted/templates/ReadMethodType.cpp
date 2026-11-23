@@ -1825,3 +1825,21 @@ void fn_004A2B90(void* arg) {
     ext_006A6DD2();
 }
 } // namespace lift_004A2B90
+
+// [0x004A28A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004A28A0 {
+extern void* ext_0049AA60(void* inner);
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_3 (StateMachineEditor::FSMEditView::drawVariables)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Reads the object's stored pointer at +0x00; if non-null, forwards it to ext_0049AA60 and returns that result, otherwise throws an exception (original throws via _CxxThrowException).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_004A28A0(void* self) {
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        return ext_0049AA60(inner);
+    }
+    // Original constructs a local exception object (sub_0046C3C0) and calls _CxxThrowException.
+    throw std::runtime_error("ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_3: null value pointer");
+}
+} // namespace lift_004A28A0
