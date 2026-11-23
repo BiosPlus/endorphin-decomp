@@ -10586,6 +10586,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x006494C0": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationBeta(float), 0}\u003e",
+    "signature": "void fn_006494C0(void* out, void* targetHolder, void* self)",
+    "summary": "Evaluates the child float expression, applies it to the target's setCachedDesiredOrientationBeta, and writes the resulting value/object pair to out.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00649540": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationGamma(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationGamma(float), 0}\u003e",

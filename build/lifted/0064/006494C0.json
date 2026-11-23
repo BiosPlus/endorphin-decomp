@@ -1,0 +1,14 @@
+{
+  "va": "0x006494C0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationBeta(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationBeta(float), 0}\u003e",
+  "signature": "void fn_006494C0(void* out, void* targetHolder, void* self)",
+  "summary": "Evaluates the child float expression, applies it to the target's setCachedDesiredOrientationBeta, and writes the resulting value/object pair to out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:07:50Z"
+}
