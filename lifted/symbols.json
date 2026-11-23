@@ -34232,6 +34232,12 @@
     "summary": "Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AE0B0": {
+    "name": "sub_007AE0B0",
+    "signature": "void fn_007AE0B0(void)",
+    "summary": "Calls sub_007AE0C0 and tail-calls sub_007AE0D0.",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
   "0x007AE0C0": {
     "name": "sub_007AE0C0",
     "signature": "extern void fn_007AE0C0(void)",
@@ -34243,6 +34249,12 @@
     "signature": "extern \"C\" void fn_007AE0E0(void)",
     "summary": "Sets this pointer to global 0x00B61708 and tail-calls sub_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AE0F0": {
+    "name": "sub_007AE0F0",
+    "signature": "void fn_007AE0F0(void)",
+    "summary": "Calls ext_007AE100 and tail-calls ext_007AE110.",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
   "0x007AE100": {
     "name": "sub_007AE100",
@@ -34273,6 +34285,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007B1E80": {
+    "name": "sub_007B1E80",
+    "signature": "void fn_007B1E80()",
+    "summary": "Calls sub_007B1E90 and tail-calls sub_007B1EA0.",
+    "lifted_path": "lifted/clones/auto_clones_7B0000.cpp"
   },
   "0x007B1E90": {
     "name": "sub_007B1E90",

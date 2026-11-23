@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE0B0",
+  "size": 10,
+  "orig_symbol": "sub_007AE0B0",
+  "src_path": "src/clones/auto_clones_7A0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_7A0000.cpp",
+  "name": "sub_007AE0B0",
+  "signature": "void fn_007AE0B0(void)",
+  "summary": "Calls sub_007AE0C0 and tail-calls sub_007AE0D0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:40:38Z"
+}
