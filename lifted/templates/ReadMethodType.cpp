@@ -11247,3 +11247,26 @@ float fn_00505510(const void* self) {
     return static_cast<float>(std::atof(text->c_str()));
 }
 } // namespace lift_00505510
+
+// [0x00508E30] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_0 (69 bytes)
+namespace lift_00508E30 {
+extern void ext_006720C0(void* self, int32_t value);
+
+// @name ExprParser::ReadMethodType<NMData::Task>::vfunc_0 (NMData::Task::getID)
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Reads the task ID (dword at Task+0x14) through the ValuePtrType holder's target pointer, stores it into the output value via ext_006720C0, and returns the output pointer; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field NMData::Task +0x14 int32_t field_0x14
+void* fn_00508E30(void* out, const void* holder) {
+    // Original: arg2 is a ValuePtrType holder; its +0x00 target is the NMData::Task object.
+    const void* const task = *static_cast<void* const*>(holder);
+    if (task == nullptr) {
+        // Original builds an MSVC exception and throws via CxxThrowException (0x009DEC1C).
+        // Its layout is not recovered, so a portable std exception stands in for it.
+        throw std::runtime_error("NMData::Task::getID: null target");
+    }
+    const int32_t id = lift_field<int32_t>(task, 0x14);
+    ext_006720C0(out, id);
+    return out;
+}
+} // namespace lift_00508E30

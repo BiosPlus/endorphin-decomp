@@ -6840,6 +6840,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00508E30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Task\u003e::vfunc_0 (NMData::Task::getID)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+    "signature": "void* fn_00508E30(void* out, const void* holder)",
+    "summary": "Reads the task ID (dword at Task+0x14) through the ValuePtrType holder's target pointer, stores it into the output value via ext_006720C0, and returns the output pointer; throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00508E80": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",

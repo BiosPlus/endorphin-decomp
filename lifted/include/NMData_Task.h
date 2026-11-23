@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::Task:
 namespace lifted_layout {
 struct NMData_Task_Fields {
-    // +0x14  int                      field_0x14  (evidence: 0x004B1FF0, 0x00508EB0, 0x00508EE0, 0x0068DE60)
+    // +0x14  int                      field_0x14  (evidence: 0x004B1FF0, 0x00508EB0, 0x00508EE0, 0x0068DE60) // CONFLICT: multiple definitions at +0x14
+    // +0x14  int32_t                  field_0x14  (evidence: 0x00508E30) // CONFLICT: multiple definitions at +0x14
 };
 } // namespace lifted_layout
