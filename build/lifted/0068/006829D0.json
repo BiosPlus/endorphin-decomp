@@ -1,0 +1,13 @@
+{
+  "va": "0x006829D0",
+  "size": 10,
+  "orig_symbol": "sub_006829D0",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "setGlobal00B5ACC8",
+  "signature": "void sub_006829D0(uint32_t val)",
+  "summary": "Stores the 32-bit argument into global mem_00B5ACC8.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:40:03Z"
+}
