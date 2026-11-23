@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1A30",
+  "size": 59,
+  "orig_symbol": "Geometry::SphylType::vfunc_3",
+  "src_path": "src/Geometry/SphylType.cpp",
+  "lifted_path": "lifted/Geometry/SphylType.cpp",
+  "name": "Geometry::SphylType::computeVolume",
+  "class": "Geometry::SphylType",
+  "signature": "float __stdcall fn_005B1A30(void* arg0)",
+  "summary": "Computes the volume of a sphyl (capsule) from its radius and length.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:00:30Z"
+}

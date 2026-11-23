@@ -33,3 +33,23 @@ float __stdcall fn_005B17B0(void* geom, const float* dir) {
 
     return dir[0] * side_area + z_proj + dir[1] * side_area;
 }
+
+// [0x005B1A30]
+namespace lift_005B1A30 {
+// @name Geometry::SphylType::computeVolume
+// @class Geometry::SphylType
+// @summary Computes the volume of a sphyl (capsule) from its radius and length.
+
+
+double __thiscall ext_005B11E0(void* self, int index);
+extern double mem_0095FFC8;
+extern double mem_009576E8;
+
+float __stdcall fn_005B1A30(void* arg0) {
+    float r = static_cast<float>(ext_005B11E0(arg0, 0));
+    double h = ext_005B11E0(arg0, 1);
+    double vol = (mem_009576E8 * static_cast<double>(r) * static_cast<double>(r)) *
+                 (h + mem_0095FFC8 * static_cast<double>(r));
+    return static_cast<float>(vol);
+}
+} // namespace lift_005B1A30
