@@ -4466,6 +4466,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515E80 (ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1D40": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e",
+    "signature": "extern \"C\" void __stdcall fn_004B1D40(void* const* self, void* arg)",
+    "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 3 of arg's sub-object with arg and stores the bool result at target+0x01; throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B1FF0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

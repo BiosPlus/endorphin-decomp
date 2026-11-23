@@ -90,3 +90,32 @@ extern void __stdcall fn_004B1A70(void* const* self, void* arg) {
     return;
 }
 } // namespace lift_004B1A70
+
+// [0x004B1D40]
+namespace lift_004B1D40 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEntryData,bool,isActive,activate>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEntryData,bool,isActive,activate>
+// @summary Dereferences the first pointer in self; if non-null, calls vtable slot 3 of arg's sub-object with arg and stores the bool result at target+0x01; throws if null.
+// @field ValuePtrType +0x00 void* ptr
+// @field Unknown +0x01 uint8_t field_0x01
+
+
+extern void ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern void __stdcall fn_004B1D40(void* const* self, void* arg) {
+    uint8_t* target = static_cast<uint8_t*>(*self);
+    if (target) {
+        void* sub = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(arg) + 4);
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(sub);
+        using SlotFn = uint8_t (__thiscall*)(void* thisPtr, void* a);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtbl[3]);
+        uint8_t result = slot(sub, arg);
+        target[1] = result;
+        return;
+    }
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+}
+} // namespace lift_004B1D40
