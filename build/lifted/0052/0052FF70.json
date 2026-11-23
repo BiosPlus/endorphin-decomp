@@ -1,0 +1,22 @@
+{
+  "va": "0x0052FF70",
+  "size": 96,
+  "orig_symbol": "Primitives::Marker::vfunc_0",
+  "src_path": "src/Primitives/Marker.cpp",
+  "lifted_path": "lifted/Primitives/Marker.cpp",
+  "name": "Primitives::Marker::vfunc_0",
+  "class": "Primitives::Marker",
+  "signature": "void fn_0052FF70(void* self, unsigned int flags)",
+  "summary": "Scalar deleting destructor: destroys the +0x3C sub-object and base, then frees self when flags bit 0 is set.",
+  "fields": [
+    {
+      "class": "Primitives::Marker",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:42:46Z"
+}

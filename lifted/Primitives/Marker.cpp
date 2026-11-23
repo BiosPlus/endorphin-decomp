@@ -33,3 +33,26 @@ void fn_0052F6F0(void* self, const float* value) {
     void* sub = reinterpret_cast<uint8_t*>(self) + 0x3c;
     ext_00538550(sub, v, 0, 0);
 }
+
+// [0x0052FF70] Primitives::Marker::vfunc_0 (96 bytes)
+namespace lift_0052FF70 {
+// Member sub-object destructor at this+0x3C (thiscall, this passed as first arg).
+extern void ext_00532B40(void* self);
+// Base-class destructor body for Primitives::Marker (thiscall).
+extern void ext_0053A810(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Used as operator delete(void*) in the scalar deleting destructor path.
+extern void ext_006A5C5C(void* p);
+
+// @name Primitives::Marker::vfunc_0
+// @class Primitives::Marker
+// @summary Scalar deleting destructor: destroys the +0x3C sub-object and base, then frees self when flags bit 0 is set.
+// @field Primitives::Marker +0x3c void* field_0x3c
+void fn_0052FF70(void* self, unsigned int flags) {
+    ext_00532B40(static_cast<uint8_t*>(self) + 0x3C);
+    ext_0053A810(self);
+    if (flags & 1) {
+        ext_006A5C5C(self);
+    }
+}
+} // namespace lift_0052FF70

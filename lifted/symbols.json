@@ -7664,6 +7664,13 @@
     "summary": "Scalar deleting destructor: destroys the +0x3C subobject, runs the base destructor, and frees this if flags bit 0 is set.",
     "lifted_path": "lifted/Primitives/Arrow.cpp"
   },
+  "0x0052FF70": {
+    "name": "Primitives::Marker::vfunc_0",
+    "class": "Primitives::Marker",
+    "signature": "void fn_0052FF70(void* self, unsigned int flags)",
+    "summary": "Scalar deleting destructor: destroys the +0x3C sub-object and base, then frees self when flags bit 0 is set.",
+    "lifted_path": "lifted/Primitives/Marker.cpp"
+  },
   "0x00530050": {
     "name": "Primitives::Sensor::vfunc_0",
     "class": "Primitives::Sensor",
