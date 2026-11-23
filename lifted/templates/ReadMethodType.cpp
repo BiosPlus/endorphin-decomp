@@ -17185,3 +17185,24 @@ void* fn_00618520(void* a1, void* const* a2) {
     return a1;
 }
 } // namespace lift_00618520
+
+// [0x00618C70] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00618C70 {
+// Callee 0x00672080 (sub_00672080): takes `this` in ecx and one float on the stack.
+extern void ext_00672080(void* self, float value);
+
+// @name ExprParser::ReadMethodType<Geometry,float,Geometry::getParam1,0>::vfunc_0
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>
+// @summary Reads Geometry::param1 (float at +0x14) from the bound Geometry instance and forwards it to the callee; throws if no instance is bound; returns this.
+// @field Geometry +0x14 float field_0x14
+void* fn_00618C70(void* self, void* holder) {
+    // holder points at a pointer slot; the bound Geometry instance is *holder.
+    auto* const geometry = *static_cast<unsigned char**>(holder);
+    if (geometry == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<Geometry>::vfunc_0: null Geometry instance");
+    }
+    const float value = *reinterpret_cast<float*>(geometry + 0x14);
+    ext_00672080(self, value);
+    return self;
+}
+} // namespace lift_00618C70
