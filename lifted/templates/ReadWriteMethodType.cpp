@@ -3806,3 +3806,39 @@ void fn_005F5CC0(void** target, void* src) {
     ext_006A6DD2(target, 0x009DEC1Cu);
 }
 } // namespace lift_005F5CC0
+
+// [0x005F5DC0] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F5670();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F5DC0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005F5670));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
