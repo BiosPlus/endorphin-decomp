@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct Effector_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00603010)
-    // +0x2C  float                    field_0x2c  (evidence: 0x004B1FF0, 0x00508EE0, 0x005B2D00, 0x005D6980, 0x0068DE60)
+    // +0x2C  float                    field_0x2c  (evidence: 0x004B1FF0, 0x00508EE0, 0x005B2D00, 0x005D2640, 0x005D6980, 0x0068DE60)
     // +0x4C  float                    gradient  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x006059A0, 0x00633240)
     // +0x50  float                    gradientCap  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x006059E0, 0x00633240)
     // +0x54  float                    field_0x54  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x00605960, 0x00633240)

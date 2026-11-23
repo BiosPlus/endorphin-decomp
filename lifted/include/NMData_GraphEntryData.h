@@ -8,10 +8,10 @@
 // Recovered field layout for NMData::GraphEntryData:
 namespace lifted_layout {
 struct NMData_GraphEntryData_Fields {
-    // +0x1   uint8_t                  field_0x01  (evidence: 0x004B13F0, 0x00508EE0, 0x005B2D00, 0x0068DE60) // CONFLICT: multiple definitions at +0x1
-    // +0x1   unsigned char            field_0x01  (evidence: 0x004B1430, 0x004B1FF0, 0x004B83E0, 0x00508EE0, 0x005B2D00, 0x00678A20, 0x0068DE60) // CONFLICT: multiple definitions at +0x1
-    // +0x20  int                      field_0x20  (evidence: 0x004B1250, 0x005B2D00) // CONFLICT: multiple definitions at +0x20
-    // +0x20  int32_t                  field_0x20  (evidence: 0x004B12A0, 0x004B1FF0, 0x00508EE0, 0x005223C0, 0x005B2D00, 0x005DAA40, 0x00635160, 0x0068DE60) // CONFLICT: multiple definitions at +0x20
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x005B2D00, 0x005DB620, 0x0068DE60) // CONFLICT: multiple definitions at +0x20
+    // +0x1   uint8_t                  field_0x01  (evidence: 0x004B13F0, 0x00508EE0, 0x005B2D00, 0x005D2640, 0x0068DE60) // CONFLICT: multiple definitions at +0x1
+    // +0x1   unsigned char            field_0x01  (evidence: 0x004B1430, 0x004B1FF0, 0x004B83E0, 0x00508EE0, 0x005B2D00, 0x005D2640, 0x00678A20, 0x0068DE60) // CONFLICT: multiple definitions at +0x1
+    // +0x20  int                      field_0x20  (evidence: 0x004B1250, 0x005B2D00, 0x005D2640) // CONFLICT: multiple definitions at +0x20
+    // +0x20  int32_t                  field_0x20  (evidence: 0x004B12A0, 0x004B1FF0, 0x00508EE0, 0x005223C0, 0x005B2D00, 0x005D2640, 0x005DAA40, 0x00635160, 0x0068DE60) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x005B2D00, 0x005D2640, 0x005DB620, 0x0068DE60) // CONFLICT: multiple definitions at +0x20
 };
 } // namespace lifted_layout
