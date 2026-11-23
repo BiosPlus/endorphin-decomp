@@ -443,3 +443,28 @@ void __thiscall fn_00497B50(void* /*this*/, uint32_t* arg0, uint32_t arg1) {
     reinterpret_cast<DtorFn>(mem_00924FF4)(local_str);
 }
 } // namespace lift_00497B50
+
+// [0x00497BB0]
+namespace lift_00497BB0 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_43
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Appends the string representation of arg1 to *arg0
+
+
+extern uint32_t __stdcall ext_00497650(void* out_str, void* val);
+extern uint32_t mem_00924FD8;
+extern uint32_t mem_00924FF4;
+
+void __thiscall fn_00497BB0(void* self, void** arg0, void* arg1) {
+    uint8_t local_str[0x1c];
+    uint32_t str_ptr = ext_00497650(local_str, arg1);
+
+    using AppendFn = void(__thiscall*)(void*, uint32_t);
+    auto append_fn = reinterpret_cast<AppendFn>(mem_00924FD8);
+    append_fn(*arg0, str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    auto dtor_fn = reinterpret_cast<DtorFn>(mem_00924FF4);
+    dtor_fn(local_str);
+}
+} // namespace lift_00497BB0

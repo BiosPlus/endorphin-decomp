@@ -1,0 +1,14 @@
+{
+  "va": "0x00497BB0",
+  "size": 94,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_43",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_43",
+  "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+  "signature": "void __thiscall fn_00497BB0(void* self, void** arg0, void* arg1)",
+  "summary": "Appends the string representation of arg1 to *arg0",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:03:20Z"
+}
