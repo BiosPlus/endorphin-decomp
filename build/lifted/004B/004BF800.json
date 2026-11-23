@@ -1,0 +1,22 @@
+{
+  "va": "0x004BF800",
+  "size": 40,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_3",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_3",
+  "class": "NMData::AnimationEventData",
+  "signature": "std::string fn_004BF800(const void* self)",
+  "summary": "Returns \"Events.\" concatenated with the string stored at +0x14.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:40:18Z"
+}

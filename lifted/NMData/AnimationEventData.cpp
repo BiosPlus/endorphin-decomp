@@ -101,3 +101,14 @@ extern "C" void __thiscall fn_00486BE0(void* self, int32_t arg) {
     lift_field<int32_t>(self, 0x168) = ext_00594640(reinterpret_cast<void*>(static_cast<intptr_t>(r)));
     ext_004C0340(self);
 }
+
+// [0x004BF800] NMData::AnimationEventData::vfunc_3 (40 bytes)
+// @name NMData::AnimationEventData::vfunc_3
+// @class NMData::AnimationEventData
+// @summary Returns "Events." concatenated with the string stored at +0x14.
+// @field NMData::AnimationEventData +0x14 std::string field_0x14
+std::string fn_004BF800(const void* self) {
+    const auto* name = reinterpret_cast<const std::string*>(
+        static_cast<const unsigned char*>(self) + 0x14);
+    return std::string("Events.") + *name;
+}
