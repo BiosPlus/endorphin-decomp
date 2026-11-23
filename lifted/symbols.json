@@ -11222,6 +11222,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00651070": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e",
+    "signature": "void fn_00651070(LiftPair* out, void** srcRef, void* vp)",
+    "summary": "Calls the owner's vtable slot 1 to get a float, forwards it with *src to ext_0064F8E0, then writes {*(owner slot 28 result), owner} to out (or {0,0} if owner is null).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006510F0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e",

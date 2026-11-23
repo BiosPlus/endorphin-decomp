@@ -5621,3 +5621,45 @@ void fn_00650F70(uint32_t* out, uintptr_t arg2, void* self) {
     out[1] = lift_field<uint32_t>(self, 0x04);
 }
 } // namespace lift_00650F70
+
+// [0x00651070] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_00651070 {
+// Known callee 0x0064F8E0: VirtualSlot23Thunk (loads the object's vtable and tail-calls slot 23 with the same this pointer).
+// Takes the receiver in ecx and one float on the stack; the result is discarded by the caller.
+extern void* ext_0064F8E0(void* self, float value);
+
+// Pair returned through the hidden out-pointer: {value pointer, owner pointer}.
+struct LiftPair {
+    void* first;
+    void* second;
+};
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>
+// @summary Calls the owner's vtable slot 1 to get a float, forwards it with *src to ext_0064F8E0, then writes {*(owner slot 28 result), owner} to out (or {0,0} if owner is null).
+// @field ExprParser::ValuePtrType +0x04 void* owner
+void fn_00651070(LiftPair* out, void** srcRef, void* vp) {
+    using Slot1Fn = float (*)(void* self, void* a, void* b, void* c, uint32_t d);
+    using Slot28Fn = void* (*)(void* self, void** slot, void* vp);
+
+    void* owner = lift_field<void*>(vp, 0x04);
+    void** ownerVtbl = *reinterpret_cast<void***>(owner);
+    float value = reinterpret_cast<Slot1Fn>(ownerVtbl[0x04 / sizeof(void*)])(
+        owner, vp, *srcRef, vp, 0u);
+
+    ext_0064F8E0(*srcRef, value);
+
+    owner = lift_field<void*>(vp, 0x04);
+    if (owner == nullptr) {
+        out->first = nullptr;
+        out->second = nullptr;
+        return;
+    }
+
+    void** vtbl = *reinterpret_cast<void***>(owner);
+    void* slot = nullptr;
+    void* r = reinterpret_cast<Slot28Fn>(vtbl[0x70 / sizeof(void*)])(owner, &slot, vp);
+    out->first = *static_cast<void**>(r);
+    out->second = lift_field<void*>(vp, 0x04);
+}
+} // namespace lift_00651070

@@ -1,0 +1,22 @@
+{
+  "va": "0x00651070",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e",
+  "signature": "void fn_00651070(LiftPair* out, void** srcRef, void* vp)",
+  "summary": "Calls the owner's vtable slot 1 to get a float, forwards it with *src to ext_0064F8E0, then writes {*(owner slot 28 result), owner} to out (or {0,0} if owner is null).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "owner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:13:10Z"
+}
