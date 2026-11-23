@@ -3313,3 +3313,41 @@ void fn_00629F70(ValuePair* out, void** argRef, void* self) {
     out->second = *reinterpret_cast<void**>(base + 0x04);
 }
 } // namespace lift_00629F70
+
+// [0x0062B170] ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_48 (113 bytes)
+namespace lift_0062B170 {
+// Callee at 0x0062B0A0 (159 bytes): SensorIntegral::insert(float) body; takes the sensor and the sampled value.
+extern void ext_0062B0A0(void* sensor, float value);
+
+// @name ExprParser::WriteMethodType<SensorIntegral, float, insert>::vfunc_48
+// @class ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>
+// @summary Samples the bound float value source, feeds it into SensorIntegral::insert, then writes back a (value, source) pair.
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 = get-value-ref)
+struct ValuePair {
+    DWORD value;
+    void* owner;
+};
+
+void fn_0062B170(ValuePair* out, void** sensorRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+    void* sensor = *sensorRef;
+
+    // Sample the source (unconditional, as in the original).
+    using SampleFn = float (*)(void* source, void* self, void* sensor, void* self2, DWORD zero);
+    void** sourceVt = *reinterpret_cast<void***>(source);
+    float value = reinterpret_cast<SampleFn>(sourceVt[1])(source, self, sensor, self, 0);
+    ext_0062B0A0(sensor, value);
+
+    DWORD tmp = 0;
+    if (source != nullptr) {
+        using GetRefFn = const DWORD* (*)(void* source, DWORD* tmpOut, void* self);
+        void** vt = *reinterpret_cast<void***>(source);
+        const DWORD* ref = reinterpret_cast<GetRefFn>(vt[28])(source, &tmp, self);
+        out->value = *ref;
+        out->owner = source;
+    } else {
+        out->value = tmp;  // 0
+        out->owner = nullptr;
+    }
+}
+} // namespace lift_0062B170

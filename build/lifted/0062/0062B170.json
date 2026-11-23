@@ -1,0 +1,22 @@
+{
+  "va": "0x0062B170",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensorIntegral, float, insert\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
+  "signature": "void fn_0062B170(ValuePair* out, void** sensorRef, void* self)",
+  "summary": "Samples the bound float value source, feeds it into SensorIntegral::insert, then writes back a (value, source) pair.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 =",
+      "name": "get-value-ref)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:06:48Z"
+}

@@ -9853,6 +9853,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0062B170": {
+    "name": "ExprParser::WriteMethodType\u003cSensorIntegral, float, insert\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
+    "signature": "void fn_0062B170(ValuePair* out, void** sensorRef, void* self)",
+    "summary": "Samples the bound float value source, feeds it into SensorIntegral::insert, then writes back a (value, source) pair.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0062B230": {
     "name": "Sensors::SensorIntegral::vfunc_0",
     "class": "Sensors::SensorIntegral",
