@@ -13381,6 +13381,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x006331F0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingAngle -\u003e setDesiredTwistAndSwingAngle)",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngle(class NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_006331F0(void** self, void* src)",
+    "summary": "Reads an NM::Vector3 const\u0026 via the source's inner accessor (vtable slot 5) and forwards it to EffectorSkeletal::setDesiredTwistAndSwingAngle on the target held in *self; throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x006332E0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingVelocity -\u003e setDesiredTwistAndSwingVelocity)",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocity(class NM::Vector3 const \u0026)\u003e",

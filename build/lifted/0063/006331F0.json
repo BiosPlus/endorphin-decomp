@@ -1,0 +1,28 @@
+{
+  "va": "0x006331F0",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngle(class NM::Vector3 const \u0026)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingAngle -\u003e setDesiredTwistAndSwingAngle)",
+  "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngle(class NM::Vector3 const \u0026)\u003e",
+  "signature": "void fn_006331F0(void** self, void* src)",
+  "summary": "Reads an NM::Vector3 const\u0026 via the source's inner accessor (vtable slot 5) and forwards it to EffectorSkeletal::setDesiredTwistAndSwingAngle on the target held in *self; throws if the target is null.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:07:00Z"
+}

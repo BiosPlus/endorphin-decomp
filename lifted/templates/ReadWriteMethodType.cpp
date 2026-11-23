@@ -3956,3 +3956,44 @@ void fn_00635740(void* const* self, void* src) {
     reinterpret_cast<SetQuatFn>(&ext_00630D90)(target, quat);
 }
 } // namespace lift_00635740
+
+// [0x006331F0] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngle(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_006331F0 {
+// Setter: EffectorSkeletal::setDesiredTwistAndSwingAngle (thiscall, one stack argument).
+extern void ext_00630480(void);
+// Exception helper (sub_0046C3C0): builds the exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, uint32_t throwInfo);
+
+// Getter shape: vtable slot 5 (+0x14) of the source's inner object; thiscall, one stack argument, returns NM::Vector3 const*.
+typedef const void* (__thiscall* GetVector3Fn)(void* self, void* arg);
+// Setter shape: thiscall, one stack argument (NM::Vector3 const*).
+typedef void (__thiscall* SetVector3Fn)(void* self, const void* value);
+
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal>::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingAngle -> setDesiredTwistAndSwingAngle)
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngle(class NM::Vector3 const &)>
+// @summary Reads an NM::Vector3 const& via the source's inner accessor (vtable slot 5) and forwards it to EffectorSkeletal::setDesiredTwistAndSwingAngle on the target held in *self; throws if the target is null.
+// @field ValuePtrType +0x00 void* ptr
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_006331F0(void** self, void* src) {
+    // *self: EffectorSkeletal* target. Null means the write target is missing, which is an error.
+    void* target = *self;
+    if (target == nullptr) {
+        // The exception object is constructed in the self slot, matching the original's `lea ecx,[esp+4]`.
+        ext_0046C3C0(self);
+        ext_006A6DD2(self, 0x009DEC1Cu);
+        return;
+    }
+
+    // src +0x04: inner accessor object; its vtable slot 5 (+0x14) produces the Vector3 const&.
+    void* accessor = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(accessor);
+    GetVector3Fn get = reinterpret_cast<GetVector3Fn>(vtbl[5]);
+    const void* value = get(accessor, src);
+
+    // Forward to the non-virtual setter with `target` as this.
+    SetVector3Fn set = reinterpret_cast<SetVector3Fn>(&ext_00630480);
+    set(target, value);
+}
+} // namespace lift_006331F0
