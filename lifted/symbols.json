@@ -20191,6 +20191,13 @@
     "summary": "Pure jump thunk forwarding to sub_00672D10.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00672EC0": {
+    "name": "ExprParser::DeclarationsParser::vfunc_7",
+    "class": "ExprParser::DeclarationsParser",
+    "signature": "extern \"C\" void __thiscall fn_00672EC0(void* self, void* arg0)",
+    "summary": "Iterates over declarations vector at +0x4 and calls ext_0040ECB0 on each 0x20-byte element",
+    "lifted_path": "lifted/ExprParser/DeclarationsParser.cpp"
+  },
   "0x006737A0": {
     "name": "sub_006737A0",
     "signature": "extern \"C\" void fn_006737A0(void)",

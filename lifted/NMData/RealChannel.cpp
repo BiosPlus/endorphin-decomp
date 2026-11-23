@@ -149,3 +149,25 @@ void __thiscall fn_0051BF10(uint8_t* self) {
     ext_0048EF80(vec, local_iter, vec, begin_val, vec, end_val);
 }
 } // namespace lift_0051BF10
+
+// [0x0051C2A0]
+namespace lift_0051C2A0 {
+// @name NMData::RealChannel::vfunc_10
+// @class NMData::RealChannel
+// @summary Iterates over 8-byte elements in the vector at +0x2C and invokes ext_0047B170 on each element with arg0.
+// @field NMData::RealChannel +0x30 uint8_t* begin
+// @field NMData::RealChannel +0x34 uint8_t* end
+
+
+extern void __thiscall ext_0047B170(void* self, const void* elem);
+
+void __thiscall fn_0051C2A0(void* self, void* arg0) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* it = *reinterpret_cast<uint8_t**>(base + 0x30);
+    uint8_t* end = *reinterpret_cast<uint8_t**>(base + 0x34);
+
+    for (; it != end; it += 8) {
+        ext_0047B170(arg0, it);
+    }
+}
+} // namespace lift_0051C2A0
