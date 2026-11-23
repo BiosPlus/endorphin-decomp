@@ -48,3 +48,19 @@ extern "C" void __fastcall fn_006AD040(void* self) {
     ForwardFn target = reinterpret_cast<ForwardFn>(mem_009242F8);
     target(static_cast<char*>(self) + 0xC);
 }
+
+// [0x006ACFC0]
+namespace lift_006ACFC0 {
+// @name sub_006ACFC0
+// @summary Reads a byte at offset +0x4 from the pointer stored at this + 0x4
+// @field unknown +0x04 uint32_t field_0x04
+
+
+uint32_t mem_read32(uintptr_t addr);
+uint8_t mem_read8(uintptr_t addr);
+
+uint8_t __fastcall sub_006ACFC0(uintptr_t ecx) {
+    uint32_t ptr = mem_read32(ecx + 0x4);
+    return mem_read8(ptr + 0x4);
+}
+} // namespace lift_006ACFC0

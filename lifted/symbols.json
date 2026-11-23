@@ -28005,6 +28005,12 @@
     "summary": "Returns address of global mem_0099101C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006ACFC0": {
+    "name": "sub_006ACFC0",
+    "signature": "uint8_t __fastcall sub_006ACFC0(uintptr_t ecx)",
+    "summary": "Reads a byte at offset +0x4 from the pointer stored at this + 0x4",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AD000": {
     "name": "sub_006AD000",
     "signature": "extern \"C\" void __fastcall fn_006AD000(void* self)",
