@@ -1,0 +1,22 @@
+{
+  "va": "0x004C7690",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cDesiredPoseEventData\u003e::vfunc_1 (DesiredPoseEventData::getStrength as float)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0\u003e",
+  "signature": "float fn_004C7690(const void* const* self)",
+  "summary": "Reads the DesiredPoseEventData strength string and returns it parsed as a float (atof); throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::DesiredPoseEventData*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:58:12Z"
+}

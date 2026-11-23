@@ -5655,6 +5655,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C7690": {
+    "name": "ExprParser::ReadMethodType\u003cDesiredPoseEventData\u003e::vfunc_1 (DesiredPoseEventData::getStrength as float)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0\u003e",
+    "signature": "float fn_004C7690(const void* const* self)",
+    "summary": "Reads the DesiredPoseEventData strength string and returns it parsed as a float (atof); throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C7870": {
     "name": "NMData::SeverEventData::vfunc_59",
     "class": "NMData::SeverEventData",

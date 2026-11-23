@@ -18286,3 +18286,30 @@ int fn_004B2B90(void* self) {
     return (static_cast<double>(width) >= mem_00942058) ? 1 : 0;
 }
 } // namespace lift_004B2B90
+
+// [0x004C7690] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004C7690 {
+// Callee 0x00486960: NMData::DesiredPoseEventData::getStrength (const, returns const std::string&).
+extern const std::string& ext_00486960(const void* self);
+// Callee 0x0046C3C0: builds a local exception-argument object (not needed in portable form).
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// Data at 0x00924FF0 is the std::string::c_str import slot; 0x009251F0 is the atof import slot.
+// Both are replaced by the standard library calls below.
+extern int mem_00924FF0;
+extern int mem_009251F0;
+
+// @name ExprParser::ReadMethodType<DesiredPoseEventData>::vfunc_1 (DesiredPoseEventData::getStrength as float)
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Reads the DesiredPoseEventData strength string and returns it parsed as a float (atof); throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::DesiredPoseEventData* target
+float fn_004C7690(const void* const* self) {
+    const void* target = self[0];
+    if (target == nullptr) {
+        throw std::runtime_error("ReadMethodType<DesiredPoseEventData>: null target");
+    }
+    const std::string& strength = ext_00486960(target);
+    return static_cast<float>(std::atof(strength.c_str()));
+}
+} // namespace lift_004C7690
