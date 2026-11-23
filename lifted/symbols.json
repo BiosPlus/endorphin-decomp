@@ -11901,6 +11901,13 @@
     "summary": "Scalar deleting destructor: destroys the member string at +0x04, runs the GeometryType base destructor, and frees the object when bit 0 of deleteFlag is set.",
     "lifted_path": "lifted/Geometry/FileType.cpp"
   },
+  "0x005B3680": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_0 (Geometry::getFileName)",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "void* fn_005B3680(void* out, void* const* in)",
+    "summary": "Reads the file name from the ValuePtr argument's inner object via vtable slot 8 (+0x20), assigns it into the output string object, and returns that output; throws if the input ValuePtr is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B4150": {
     "name": "Geometry::SphereType::vfunc_18",
     "class": "Geometry::SphereType",

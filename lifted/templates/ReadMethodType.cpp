@@ -24149,3 +24149,32 @@ float fn_0049CA80(void* const* holder) {
     return 0.0f;
 }
 } // namespace lift_0049CA80
+
+// [0x005B3680] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_0 (76 bytes)
+namespace lift_005B3680 {
+// Known callees (typed so the call sites below are checked):
+//   ext_006720E0: sub_006720E0 (43B), thiscall-style assign: (out_object, value_pointer)
+//   ext_0046C3C0: sub_0046C3C0 (105B), exception object constructor (replaced by std::runtime_error below)
+//   ext_006A6DD2: thunk_MSVCR80__CxxThrowException (replaced by C++ throw below)
+extern void ext_006720E0(void* self, void* value);
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getFileName)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Reads the file name from the ValuePtr argument's inner object via vtable slot 8 (+0x20), assigns it into the output string object, and returns that output; throws if the input ValuePtr is null.
+// @field ExprParser::ValuePtrType +0x0c void* field_0x0c
+void* fn_005B3680(void* out, void* const* in) {
+    void* inner = in ? in[0] : nullptr;
+    if (inner == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<Geometry>::vfunc_0: null ValuePtr");
+    }
+
+    // inner->field_0x0c is the sub-object whose vtable slot 8 (offset 0x20) produces the value.
+    void* sub = *reinterpret_cast<void**>(static_cast<char*>(inner) + 0x0c);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using Slot8Fn = void* (*)(void* self);
+    void* value = reinterpret_cast<Slot8Fn>(vtbl[8])(sub);
+
+    ext_006720E0(out, value);
+    return out;
+}
+} // namespace lift_005B3680

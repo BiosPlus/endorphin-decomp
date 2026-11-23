@@ -51,7 +51,8 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x8   int                      field_0x08  (evidence: 0x00515F80) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00515C50) // CONFLICT: multiple definitions at +0x8
     // +0x9   uint8_t                  field_0x09  (evidence: 0x0046E570, 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA4D0, 0x005B2D00, 0x0066F700)
-    // +0xC   std::uint32_t            field_0x0c  (evidence: 0x00516170, 0x00516550)
+    // +0xC   std::uint32_t            field_0x0c  (evidence: 0x00516170, 0x00516550) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0c  (evidence: 0x005B3680) // CONFLICT: multiple definitions at +0xC
     // +0x10  float                    field_0x10  (evidence: 0x0046E570, 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B21E0, 0x005B2D00, 0x0066F700)
     // +0x18  float                    field_0x18  (evidence: 0x0046E570, 0x004986A0, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00618520, 0x0066F700)
 };
