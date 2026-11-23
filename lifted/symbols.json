@@ -8944,6 +8944,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x00603440": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e",
+    "signature": "void __stdcall fn_00603440(void* a1, void* a2)",
+    "summary": "Evaluates a bool from a2's sub-object via vtable slot 3, then dispatches to vtable slot 6 (true) or slot 7 (false) on the target's sub-object at +0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00603500": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e",

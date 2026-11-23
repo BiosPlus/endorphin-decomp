@@ -1,0 +1,28 @@
+{
+  "va": "0x00603440",
+  "size": 49,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e",
+  "signature": "void __stdcall fn_00603440(void* a1, void* a2)",
+  "summary": "Evaluates a bool from a2's sub-object via vtable slot 3, then dispatches to vtable slot 6 (true) or slot 7 (false) on the target's sub-object at +0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:02:52Z"
+}

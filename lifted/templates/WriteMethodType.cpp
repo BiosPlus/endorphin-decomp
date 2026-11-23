@@ -1247,35 +1247,6 @@ void __fastcall fn_005F3680(void* self, void* edx, void** target, uint8_t* value
     ext_0064F900(obj, bits);
 }
 
-// [0x00603440]
-// @name ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>::vfunc_41
-// @class ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>
-// @summary Evaluates a boolean value from arg2 and dispatches vtable+0x18 (true) or vtable+0x1c (false) on the target object from arg1.
-// @field EffectorBase +0x04 void* field_0x04
-#include "lift_compat.h"
-
-void __thiscall fn_00603440(void* self, void* arg1, void* arg2) {
-    (void)self;
-    void* target = *reinterpret_cast<void**>(arg1);
-
-    void* src_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(arg2) + 0x04);
-    void** src_vtable = *reinterpret_cast<void***>(src_obj);
-    using EvalBoolFn = uint8_t(__thiscall*)(void*, void*);
-    auto eval_bool = reinterpret_cast<EvalBoolFn>(src_vtable[0x0c / sizeof(void*)]);
-    uint8_t val = eval_bool(src_obj, arg2);
-
-    void* dst_obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(target) + 0x04);
-    void** dst_vtable = *reinterpret_cast<void***>(dst_obj);
-    using DispatchFn = void(__thiscall*)(void*);
-    if (val != 0) {
-        auto fn_true = reinterpret_cast<DispatchFn>(dst_vtable[0x18 / sizeof(void*)]);
-        fn_true(dst_obj);
-    } else {
-        auto fn_false = reinterpret_cast<DispatchFn>(dst_vtable[0x1c / sizeof(void*)]);
-        fn_false(dst_obj);
-    }
-}
-
 // [0x0064F7C0]
 // @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, setDriveAngularVel>::vfunc_48
 // @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, SkeletalJoint::setDriveAngularVel>
@@ -1585,3 +1556,35 @@ void __thiscall fn_0068BC60(void* self, void* targetPtr, void* valuePtr) {
     ext_006B0C30(target, value);
 }
 } // namespace lift_0068BC60
+
+// [0x00603440] ExprParser::WriteMethodType<EffectorBase, bool, &public: void __thiscall EffectorBase::setEnabled(bool)>::vfunc_41 (49 bytes)
+namespace lift_00603440 {
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &public: void __thiscall EffectorBase::setEnabled(bool)>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &public: void __thiscall EffectorBase::setEnabled(bool)>
+// @summary Evaluates a bool from a2's sub-object via vtable slot 3, then dispatches to vtable slot 6 (true) or slot 7 (false) on the target's sub-object at +0x04.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_00603440(void* a1, void* a2) {
+    // esi = *(void**)a1 : target-side sub-object holder
+    void* holder = lift_field<void*>(a1, 0x00);
+
+    // ecx = ((void**)a2)[1] : value sub-object; edx = its vtable
+    void* valueObj = lift_field<void*>(a2, 0x04);
+    void** valueVtbl = lift_field<void**>(valueObj, 0x00);
+
+    // call vtable slot 3 (offset +0x0C) with a2 as the stack argument -> bool result
+    using EvalBoolFn = uint8_t (*)(void* self, void* expr);
+    uint8_t flag = reinterpret_cast<EvalBoolFn>(valueVtbl[0x0C / sizeof(void*)])(valueObj, a2);
+
+    // ecx = ((void**)holder)[1] : target object; edx = its vtable
+    void* target = lift_field<void*>(holder, 0x04);
+    void** targetVtbl = lift_field<void**>(target, 0x00);
+
+    using VoidFn = void (*)(void* self);
+    if (flag != 0) {
+        reinterpret_cast<VoidFn>(targetVtbl[0x18 / sizeof(void*)])(target);
+    } else {
+        reinterpret_cast<VoidFn>(targetVtbl[0x1C / sizeof(void*)])(target);
+    }
+}
+} // namespace lift_00603440

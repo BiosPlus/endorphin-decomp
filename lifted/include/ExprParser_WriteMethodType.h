@@ -8,6 +8,7 @@
 // Recovered field layout for ExprParser::WriteMethodType:
 namespace lifted_layout {
 struct ExprParser_WriteMethodType_Fields {
+    // +0x0   void*                    field_0x00  (evidence: 0x00603440) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x00594470, 0x00594520, 0x00605360) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    targetObj  (evidence: 0x00604C40) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    expr  (evidence: 0x00604C70)
