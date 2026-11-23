@@ -1,0 +1,28 @@
+{
+  "va": "0x004A25E0",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_41 (FSMEditView::getDrawDepth -\u003e setDrawDepth)",
+  "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}\u003e",
+  "signature": "void fn_004A25E0(void** dst, void* src)",
+  "summary": "Reads an int through the source's inner getter (vtable slot 2) and forwards it to FSMEditView::setDrawDepth; throws if the target view pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:04:48Z"
+}
