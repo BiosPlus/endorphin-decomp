@@ -1,0 +1,34 @@
+{
+  "va": "0x006292E0",
+  "size": 143,
+  "orig_symbol": "Sensors::SensorRelativeOrientation::vfunc_15",
+  "src_path": "src/Sensors/SensorRelativeOrientation.cpp",
+  "lifted_path": "lifted/Sensors/SensorRelativeOrientation.cpp",
+  "name": "Sensors::SensorRelativeOrientation::vfunc_15",
+  "class": "Sensors::SensorRelativeOrientation",
+  "signature": "inline void* call_vslot5(void* self, void* out)",
+  "summary": "Refreshes the 36-byte block at +0x30 from the owner's transform, optionally composes it with a second transform, then composes it with the block at +0x54.",
+  "fields": [
+    {
+      "class": "Sensors::SensorRelativeOrientation",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Sensors::SensorRelativeOrientation",
+      "offset": "+0x30",
+      "type": "std::uint32_t",
+      "name": "field_0x30[9]"
+    },
+    {
+      "class": "Sensors::SensorRelativeOrientation",
+      "offset": "+0x54",
+      "type": "std::uint32_t",
+      "name": "field_0x54[9]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:35:00Z"
+}

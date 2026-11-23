@@ -13444,6 +13444,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006292E0": {
+    "name": "Sensors::SensorRelativeOrientation::vfunc_15",
+    "class": "Sensors::SensorRelativeOrientation",
+    "signature": "inline void* call_vslot5(void* self, void* out)",
+    "summary": "Refreshes the 36-byte block at +0x30 from the owner's transform, optionally composes it with a second transform, then composes it with the block at +0x54.",
+    "lifted_path": "lifted/Sensors/SensorRelativeOrientation.cpp"
+  },
   "0x006294C0": {
     "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
     "class": "Sensors::SensorAbsoluteGeneralEulers",
