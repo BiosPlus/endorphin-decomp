@@ -1,0 +1,28 @@
+{
+  "va": "0x005A46E0",
+  "size": 94,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+  "signature": "void __thiscall fn_005A46E0(void* self, void* out, void** arg2, void** arg3)",
+  "summary": "Calls a helper on the target object, then writes a ValuePtr to out: the value from the input's object via vtable slot +0x70 if the object is non-null, otherwise a null ValuePtr.",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "obj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:02:17Z"
+}

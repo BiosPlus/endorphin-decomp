@@ -11129,6 +11129,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BC40 (ExprParser::VPtrProxyType::vfunc_39).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005A46E0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+    "signature": "void __thiscall fn_005A46E0(void* self, void* out, void** arg2, void** arg3)",
+    "summary": "Calls a helper on the target object, then writes a ValuePtr to out: the value from the input's object via vtable slot +0x70 if the object is non-null, otherwise a null ValuePtr.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005A5400": {
     "name": "NMData::BackGroundData::vfunc_6_off_4",
     "class": "NMData::BackGroundData",

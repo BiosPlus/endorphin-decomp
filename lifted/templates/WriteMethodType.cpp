@@ -5663,3 +5663,41 @@ void fn_00651070(LiftPair* out, void** srcRef, void* vp) {
     out->second = lift_field<void*>(vp, 0x04);
 }
 } // namespace lift_00651070
+
+// [0x005A46E0]
+namespace lift_005A46E0 {
+// @name ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
+// @summary Calls a helper on the target object, then writes a ValuePtr to out: the value from the input's object via vtable slot +0x70 if the object is non-null, otherwise a null ValuePtr.
+// @field ValuePtr +0x00 void* ptr
+// @field ValuePtr +0x04 void* obj
+
+
+extern void __thiscall ext_005A45A0(void* self, void* arg3, uint32_t saved_esi_slot, uint32_t zero);
+
+void __thiscall fn_005A46E0(void* self, void* out, void** arg2, void** arg3) {
+    (void)self;
+    void* target = *arg2;
+    // Caller's saved ESI is passed in the second stack slot; its value is not recoverable here, so 0 is used.
+    ext_005A45A0(target, arg3, 0u, 0u);
+
+    void* temp = nullptr;
+    void* obj = lift_field<void*>(arg3, 0x04);
+    void* first;
+    void* second;
+    if (obj != nullptr) {
+        void* vtbl = lift_field<void*>(obj, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x70);
+        using GetFn = void* (*)(void* self_obj, void* out_tmp, void* in_val);
+        GetFn get = reinterpret_cast<GetFn>(slot);
+        void* result = get(obj, &temp, arg3);
+        first = lift_field<void*>(result, 0x00);
+        second = lift_field<void*>(arg3, 0x04);
+    } else {
+        first = temp;
+        second = obj;
+    }
+    lift_field<void*>(out, 0x00) = first;
+    lift_field<void*>(out, 0x04) = second;
+}
+} // namespace lift_005A46E0
