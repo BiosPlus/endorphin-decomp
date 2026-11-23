@@ -119,3 +119,32 @@ extern void __stdcall fn_004B1D40(void* const* self, void* arg) {
     ext_006A6DD2(exc, 0x009DEC1Cu);
 }
 } // namespace lift_004B1D40
+
+// [0x004B7B80]
+namespace lift_004B7B80 {
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor>
+// @summary Dereferences the first pointer in self; if non-null, calls vtable slot 1 of arg's sub-object and stores the float result at target+0x24; throws if null.
+// @field ValuePtrType +0x00 void* ptr
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x24 float field_0x24
+
+extern void ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern void __stdcall fn_004B7B80(void* const* self, void* arg) {
+    uint8_t* target = static_cast<uint8_t*>(*self);
+    if (target) {
+        void* sub = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(arg) + 4);
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(sub);
+        using SlotFn = float (__thiscall*)(void* thisPtr, void* a);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtbl[1]);
+        float result = slot(sub, arg);
+        *reinterpret_cast<float*>(target + 0x24) = result;
+        return;
+    }
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc + 4);
+    ext_006A6DD2(exc + 4, 0x009DEC1Cu);
+}
+} // namespace lift_004B7B80
