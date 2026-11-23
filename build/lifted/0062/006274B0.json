@@ -1,0 +1,28 @@
+{
+  "va": "0x006274B0",
+  "size": 26,
+  "orig_symbol": "Sensors::SensorAbsoluteTM::vfunc_15",
+  "src_path": "src/Sensors/SensorAbsoluteTM.cpp",
+  "lifted_path": "lifted/Sensors/SensorAbsoluteTM.cpp",
+  "name": "Sensors::SensorAbsoluteTM::vfunc_15",
+  "class": "Sensors::SensorAbsoluteTM",
+  "signature": "void* __thiscall fn_006274B0(void* self)",
+  "summary": "Initialises the base sub-object via ext_00627450(self), then calls ext_0067DAD0 on the self+0x60 member with self+0x30 as its argument, and returns self+0x30.",
+  "fields": [
+    {
+      "class": "Sensors::SensorAbsoluteTM",
+      "offset": "+0x30",
+      "type": "char[0x30] field_0x30 (sub-object; address passed as argument and",
+      "name": "returned)"
+    },
+    {
+      "class": "Sensors::SensorAbsoluteTM",
+      "offset": "+0x60",
+      "type": "char[] field_0x60 (sub-object; used as `this` for",
+      "name": "ext_0067DAD0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-22T14:52:30Z"
+}
