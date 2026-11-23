@@ -16665,3 +16665,29 @@ int fn_005D3080(void* self) {
     return 1;
 }
 } // namespace lift_005D3080
+
+// [0x005D7450] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_005D7450 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_3 (NMData::VideoPlaneData::getYScale)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Validity check: dereferences the holder to a VideoPlaneData, returns 1 if its float at +0x38 is >= 1e-6 (NaN yields 0), else 0; a null holder throws.
+// @field NMData::VideoPlaneData +0x38 float field_0x38
+int __stdcall fn_005D7450(void** holder) {
+    // Stdcall, one argument: holder is a pointer to a slot holding the VideoPlaneData*.
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Original constructs an exception object on the stack and throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    // x87 fcomp + fnstsw/test ah,1: C0 set (x < 1e-6, or unordered/NaN) -> 0; otherwise 1.
+    const float value = *reinterpret_cast<float*>(static_cast<char*>(obj) + 0x38);
+    const double threshold = 1e-06;
+    return (static_cast<double>(value) >= threshold) ? 1 : 0;
+}
+} // namespace lift_005D7450

@@ -12639,6 +12639,13 @@
     "summary": "Reads the ValuePtr's target VideoPlaneData and returns its mustDrawTimeCode flag (byte at +0x30); throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D7450": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_3 (NMData::VideoPlaneData::getYScale)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
+    "signature": "int __stdcall fn_005D7450(void** holder)",
+    "summary": "Validity check: dereferences the holder to a VideoPlaneData, returns 1 if its float at +0x38 is \u003e= 1e-6 (NaN yields 0), else 0; a null holder throws.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D78F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e",

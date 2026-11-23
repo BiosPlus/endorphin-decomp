@@ -1,0 +1,22 @@
+{
+  "va": "0x005D7450",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_3 (NMData::VideoPlaneData::getYScale)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
+  "signature": "int __stdcall fn_005D7450(void** holder)",
+  "summary": "Validity check: dereferences the holder to a VideoPlaneData, returns 1 if its float at +0x38 is \u003e= 1e-6 (NaN yields 0), else 0; a null holder throws.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:52:51Z"
+}
