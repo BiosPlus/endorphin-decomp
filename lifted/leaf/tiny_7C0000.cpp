@@ -197,3 +197,42 @@ uint16_t sub_007C70E0(uint32_t obj) {
     return mem_read16(obj + 0x24);
 }
 } // namespace lift_007C70E0
+
+// [0x007C60A0]
+namespace lift_007C60A0 {
+// @name addOffset0xC0
+// @summary Adds 0xC0 to the 32-bit argument and returns the result.
+
+uint32_t sub_007C60A0(uint32_t arg0) {
+    return arg0 + 0xC0u;
+}
+} // namespace lift_007C60A0
+
+// [0x007C5F80]
+namespace lift_007C5F80 {
+// @name getOffset0x110
+// @summary Returns the input pointer or value offset by 0x110 bytes.
+
+
+uint32_t sub_007C5F80(uint32_t arg0) {
+    return arg0 + 0x110u;
+}
+} // namespace lift_007C5F80
+
+// [0x007C6060]
+namespace lift_007C6060 {
+// @name addOffset0xB0
+// @summary Returns the first argument plus 0xb0
+uint32_t sub_007C6060(uint32_t a1) {
+    return a1 + 0xb0u;
+}
+} // namespace lift_007C6060
+
+// [0x007C9C50]
+namespace lift_007C9C50 {
+// @name addOffset0x160
+// @summary Returns the first argument plus 0x160.
+uint32_t sub_007C9C50(uint32_t arg0) {
+    return arg0 + 0x160u;
+}
+} // namespace lift_007C9C50
