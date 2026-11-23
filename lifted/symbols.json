@@ -6993,6 +6993,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004E2700": {
+    "name": "NMData::AnimationEventData::vfunc_77",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_004E2700(uint8_t* self)",
+    "summary": "Clears the vector at +0x9B0 and resets the iterator at +0x9C0/+0x9C4 to its end",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004E2760": {
     "name": "NMData::AnimationEventData::vfunc_85",
     "class": "NMData::AnimationEventData",
