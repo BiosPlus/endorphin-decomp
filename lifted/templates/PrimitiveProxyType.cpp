@@ -492,3 +492,28 @@ void __stdcall fn_004979F0(uint32_t* arg0, uint32_t arg1) {
     dtor_fn(temp_str);
 }
 } // namespace lift_004979F0
+
+// [0x00497A60]
+namespace lift_00497A60 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_9
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Converts/copies arg1 via sub_00497860 into a temporary std::string and assigns it to *arg0.
+
+
+extern uint32_t ext_00497860(void* out_str, uint32_t a1, uint32_t a2);
+extern uint32_t mem_00924FDC; // std::string::operator=(const std::string&)
+extern uint32_t mem_00924FF4; // std::string::~basic_string()
+
+void __stdcall fn_00497A60(uint32_t* arg0, uint32_t arg1) {
+    uint8_t temp_str[28];
+    uint32_t str_ptr = ext_00497860(temp_str, arg1, arg1);
+
+    using AssignFn = uint32_t (__thiscall*)(void*, uint32_t);
+    auto assign_fn = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+    assign_fn(reinterpret_cast<void*>(static_cast<uintptr_t>(*arg0)), str_ptr);
+
+    using DtorFn = void (__thiscall*)(void*);
+    auto dtor_fn = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor_fn(temp_str);
+}
+} // namespace lift_00497A60
