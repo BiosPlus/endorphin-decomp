@@ -16984,3 +16984,31 @@ void* fn_006065F0(void* holder, void* /*unused*/) {
     return holder;
 }
 } // namespace lift_006065F0
+
+// [0x00605BA0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00605BA0 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Effector>::vfunc_0 (Effector::getForceBaseCap)
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>
+// @summary Reads the float at Effector+0x54 (base force cap) from the wrapped object, forwards it to ext_00672080 on self, and returns self; if the wrapped object pointer is null, throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Effector +0x54 float field_0x54
+void* fn_00605BA0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        float value;
+        std::memcpy(&value, static_cast<unsigned char*>(obj) + 0x54, sizeof(value));
+        ext_00672080(self, value);
+        return self;
+    }
+
+    alignas(8) unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return nullptr; // unreachable: _CxxThrowException does not return
+}
+} // namespace lift_00605BA0

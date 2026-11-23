@@ -1,0 +1,28 @@
+{
+  "va": "0x00605BA0",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffector\u003e::vfunc_0 (Effector::getForceBaseCap)",
+  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, 0\u003e",
+  "signature": "void* fn_00605BA0(void* self)",
+  "summary": "Reads the float at Effector+0x54 (base force cap) from the wrapped object, forwards it to ext_00672080 on self, and returns self; if the wrapped object pointer is null, throws.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:54:48Z"
+}
