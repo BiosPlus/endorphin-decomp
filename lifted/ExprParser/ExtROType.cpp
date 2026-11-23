@@ -214,3 +214,18 @@ void fn_0066BA40(void* self, void* arg) {
     auto fn = reinterpret_cast<VFunc>(vtbl[41]);
     fn(obj, self, arg);
 }
+
+// [0x0066BAC0] ExprParser::ExtROType::vfunc_44 (34 bytes)
+// @name ExprParser::ExtROType::vfunc_44
+// @class ExprParser::ExtROType
+// @summary Calls the base-class helper on self, then forwards (self, arg) to vtable slot 44 of the object at self+0x04.
+// @field ExprParser::ExtROType +0x04 void* field_0x04 // object pointer; its vtable slot 44 (+0xB0) is dispatched
+void fn_0066BAC0(void* self, void* arg) {
+    ext_0066BA00(self);
+
+    auto* obj = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using VFunc = void (*)(void* thisObj, void* a, void* b);
+    auto fn = reinterpret_cast<VFunc>(vtbl[44]);
+    fn(obj, self, arg);
+}
