@@ -153,27 +153,6 @@ double fn_00635120(void* const* holder) {
 }
 } // namespace lift_00635120
 
-// [0x00504D70] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_2 (43 bytes)
-namespace lift_00504D70 {
-extern void ext_0046C3C0();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-
-// @name ExprParser::ReadMethodType<Interpreter>::vfunc_2 (Interpreter::bogus)
-// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
-// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 uint32_t field_0x00
-// @summary Checks the first dword of its single stack argument: if non-zero returns 0; if zero, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
-// The argument's type is not identified; only its dword at +0x00 is accessed. Stack cleanup is 4 bytes (ret 4), which the C++ signature covers implicitly.
-int fn_00504D70(const uint32_t* holder) {
-    if (holder[0] != 0) {
-        return 0;
-    }
-    ext_0046C3C0();
-    ext_006A6DD2();
-    return 0;
-}
-} // namespace lift_00504D70
-
 // [0x00504DA0] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_3 (43 bytes)
 namespace lift_00504DA0 {
 extern void ext_0046C3C0();
@@ -213,3 +192,24 @@ float fn_00505000(void* self) {
     throw std::runtime_error("Interpreter::bogus: null value");
 }
 } // namespace lift_00505000
+
+// [0x00504D70] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_2 (43 bytes)
+namespace lift_00504D70 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Interpreter>::vfunc_2 (Interpreter::bogus)
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 uint32_t field_0x00
+// @summary Checks the first dword of its single stack argument: if non-zero returns 0; if zero, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
+// The argument's type is not identified; only its dword at +0x00 is accessed. Stack cleanup is 4 bytes (ret 4), which the C++ signature covers implicitly.
+int fn_00504D70(const uint32_t* holder) {
+    if (holder[0] != 0) {
+        return 0;
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0;
+}
+} // namespace lift_00504D70

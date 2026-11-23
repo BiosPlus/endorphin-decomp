@@ -5253,10 +5253,10 @@
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
   "0x00504D70": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
-    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
-    "signature": "void* fn_00617340(void* self)",
-    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
+    "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_2 (Interpreter::bogus)",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+    "signature": "int fn_00504D70(const uint32_t* holder)",
+    "summary": "Checks the first dword of its single stack argument: if non-zero returns 0; if zero, raises a C++ exception via ext_006A6DD2 (CxxThrowException).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00504DA0": {
