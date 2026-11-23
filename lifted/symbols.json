@@ -4580,6 +4580,13 @@
     "summary": "Pure jump thunk forwarding to sub_00584C00.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004A9A70": {
+    "name": "NMData::BehaviourData::vfunc_81",
+    "class": "NMData::BehaviourData",
+    "signature": "extern \"C\" void __fastcall fn_004A9A70(void* self, void* /*edx*/, void* arg0)",
+    "summary": "Assigns a string field at +0x328, invokes vfunc_82 with the looked-up object, and notifies subobject at +0x180.",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004A9B50": {
     "name": "NMData::State::vfunc_9_off_10",
     "class": "NMData::State",
@@ -7222,6 +7229,13 @@
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getY(void) const, 0\u003e",
     "signature": "void fn_004F5AD0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F5B00": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e",
+    "signature": "uint32_t __thiscall fn_004F5B00(void* /*self*/, void** arg1)",
+    "summary": "Evaluates MatrixWithProperties::getY() on the dereferenced argument and returns true if \u003e= 1e-6, throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004F63B0": {

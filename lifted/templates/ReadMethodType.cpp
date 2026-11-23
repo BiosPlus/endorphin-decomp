@@ -23618,3 +23618,27 @@ extern uint32_t __thiscall fn_004F53E0(void* /*self*/, void** ptr) {
     return (val >= mem_0094CE78) ? 1u : 0u;
 }
 } // namespace lift_004F53E0
+
+// [0x004F5B00]
+namespace lift_004F5B00 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getY, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &MatrixWithProperties::getY, 0>
+// @summary Evaluates MatrixWithProperties::getY() on the dereferenced argument and returns true if >= 1e-6, throwing if null.
+
+
+double __thiscall ext_004F4DE0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+extern double mem_0094CE78;
+
+uint32_t __thiscall fn_004F5B00(void* /*self*/, void** arg1) {
+    void* obj = *arg1;
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    double val = ext_004F4DE0(obj);
+    return (val >= mem_0094CE78) ? 1u : 0u;
+}
+} // namespace lift_004F5B00
