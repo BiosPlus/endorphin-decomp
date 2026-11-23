@@ -1,0 +1,14 @@
+{
+  "va": "0x00497780",
+  "size": 105,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_42",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_42",
+  "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+  "signature": "uint8_t __thiscall fn_00497780(void* self, uint32_t* arg1, uint32_t arg2)",
+  "summary": "Compares a dereferenced string pointer with the string value extracted from arg2.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:22Z"
+}
