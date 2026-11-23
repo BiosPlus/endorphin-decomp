@@ -6045,6 +6045,13 @@
     "summary": "Virtual dispatcher: loads this-\u003evtable[7] (offset 0x1C) and calls it with this, then pops the one stack argument.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CF340": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e",
+    "signature": "float __stdcall fn_004CF340(void** targetPtr)",
+    "summary": "Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CF500": {
     "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0\u003e",
@@ -6690,6 +6697,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e",
     "signature": "bool fn_004DF050(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004DF540": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, getStrength\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "uint32_t __thiscall fn_004DF540(void* self, void** objPtr)",
+    "summary": "Evaluates AnimationEventData::getStrength() \u003e= 1e-6 as a boolean, throwing an exception if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004DFDB0": {

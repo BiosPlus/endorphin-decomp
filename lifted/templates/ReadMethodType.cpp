@@ -18404,3 +18404,63 @@ int fn_004CEBF0(void* arg) {
     return 1;
 }
 } // namespace lift_004CEBF0
+
+// [0x004DF540]
+namespace lift_004DF540 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, getStrength>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Evaluates AnimationEventData::getStrength() >= 1e-6 as a boolean, throwing an exception if the object pointer is null.
+
+
+double __thiscall ext_004DDE70(void* self);
+void __thiscall ext_0046C3C0(void* self);
+void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern double mem_00949D50;
+
+uint32_t __thiscall fn_004DF540(void* self, void** objPtr) {
+    (void)self;
+    void* obj = *objPtr;
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+    double val = ext_004DDE70(obj);
+    return (val >= mem_00949D50) ? 1u : 0u;
+}
+} // namespace lift_004DF540
+
+// [0x004CF340]
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004CEA30(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004CF340(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004CEA30(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
