@@ -21613,6 +21613,12 @@
     "summary": "Tail-calls virtual method at vtable+0x10 on dereferenced first field",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00661890": {
+    "name": "forwardVtableSlot5",
+    "signature": "void __thiscall sub_00661890(void* self)",
+    "summary": "Tail-calls virtual method at vtable offset 0x14 on the inner object pointed to by field_0x00",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661980": {
     "name": "setVtable_0093BFB4",
     "signature": "void fn_00661980(void* self)",
@@ -21701,6 +21707,12 @@
     "name": "sub_00665870",
     "signature": "extern \"C\" int32_t __cdecl fn_00665870(void)",
     "summary": "Returns global int32 value from mem_00B59420.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x006658A0": {
+    "name": "hasField0x18",
+    "signature": "uint32_t __thiscall sub_006658A0(void* self)",
+    "summary": "Returns 1 if the 32-bit field at offset 0x18 is non-zero, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
   "0x00666340": {
@@ -24038,6 +24050,12 @@
     "signature": "extern \"C\" void fn_006A34D0(void)",
     "summary": "Pure jump thunk forwarding to sub_006632B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006A4CD0": {
+    "name": "sub_006A4CD0_init_one",
+    "signature": "uint32_t __fastcall sub_006A4CD0(uint32_t self)",
+    "summary": "Sets the 32-bit field at offset +0x00 to 1 and returns this.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
   "0x006A5C5C": {
     "name": "thunk_MFC80_ord_764",

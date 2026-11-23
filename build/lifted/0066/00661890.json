@@ -1,0 +1,21 @@
+{
+  "va": "0x00661890",
+  "size": 9,
+  "orig_symbol": "sub_00661890",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "forwardVtableSlot5",
+  "signature": "void __thiscall sub_00661890(void* self)",
+  "summary": "Tail-calls virtual method at vtable offset 0x14 on the inner object pointed to by field_0x00",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:26:08Z"
+}

@@ -157,3 +157,29 @@ void fn_00661980(void* self) {
     *static_cast<uint32_t*>(self) = 0x0093BFB4u;
 }
 } // namespace lift_00661980
+
+// [0x00661890]
+namespace lift_00661890 {
+// @name forwardVtableSlot5
+// @summary Tail-calls virtual method at vtable offset 0x14 on the inner object pointed to by field_0x00
+// @field Object +0x00 void* field_0x00
+
+
+void __thiscall sub_00661890(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);
+    void** vtable = *reinterpret_cast<void***>(inner);
+    using Fn = void(__thiscall*)(void*);
+    Fn fn = reinterpret_cast<Fn>(vtable[5]);
+    fn(inner);
+}
+} // namespace lift_00661890
+
+// [0x006658A0]
+namespace lift_006658A0 {
+// @name hasField0x18
+// @summary Returns 1 if the 32-bit field at offset 0x18 is non-zero, otherwise 0.
+// @field unknown +0x18 uint32_t field_0x18
+uint32_t __thiscall sub_006658A0(void* self) {
+    return *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x18) != 0 ? 1u : 0u;
+}
+} // namespace lift_006658A0
