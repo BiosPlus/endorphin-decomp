@@ -1,0 +1,28 @@
+{
+  "va": "0x00553720",
+  "size": 36,
+  "orig_symbol": "NMFileIO::vfunc_3",
+  "src_path": "src/classes/NMFileIO.cpp",
+  "lifted_path": "lifted/classes/NMFileIO.cpp",
+  "name": "NMFileIO::vfunc_3",
+  "class": "NMFileIO",
+  "signature": "void* fn_00553720(void* self, void* arg)",
+  "summary": "Forwards the single argument to sub_00552B00 on two embedded sub-objects (+0x5C and +0x16C) and returns it.",
+  "fields": [
+    {
+      "class": "NMFileIO",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "NMFileIO",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:33:59Z"
+}
