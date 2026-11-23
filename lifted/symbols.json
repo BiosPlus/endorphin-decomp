@@ -15035,6 +15035,13 @@
     "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0066EBA0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNM::Vector3\u003e::vfunc_41 (NM::Vector3::getX into float out-slot)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, float, \u0026public: void __thiscall NM::Vector3::setX(float)\u003e",
+    "signature": "void fn_0066EBA0(void** out, void* holder)",
+    "summary": "Reads a float through the holder's accessor sub-object (vtable slot 1) and stores it into the float slot pointed to by *out; throws if *out is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0066EDA0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_0_off_4",
     "class": "ExprParser::ExpressionContainerType",

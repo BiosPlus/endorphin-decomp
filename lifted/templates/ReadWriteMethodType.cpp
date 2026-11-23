@@ -30,3 +30,34 @@ void fn_00695620(void* dst, void* src) {
     *out = static_cast<double>(value);
 }
 } // namespace lift_00695620
+
+// [0x0066EBA0] ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, float, &public: void __thiscall NM::Vector3::setX(float)>::vfunc_41 (62 bytes)
+namespace lift_0066EBA0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadWriteMethodType<NM::Vector3>::vfunc_41 (NM::Vector3::getX into float out-slot)
+// @class ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, float, &public: void __thiscall NM::Vector3::setX(float)>
+// @summary Reads a float through the holder's accessor sub-object (vtable slot 1) and stores it into the float slot pointed to by *out; throws if *out is null.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0066EBA0(void** out, void* holder) {
+    // *out must point at a writable float; a null destination throws.
+    float* dest = reinterpret_cast<float*>(*out);
+    if (dest == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return;
+    }
+
+    // Accessor sub-object lives at holder+0x04. Its vtable slot 1 takes the
+    // holder as its single stack argument (original: call [vtbl+4], push holder).
+    void* accessor = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(holder) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(accessor);
+    using GetFn = float (*)(void* self, void* holder);
+    GetFn get = reinterpret_cast<GetFn>(vtbl[1]);
+    const float value = get(accessor, holder);
+
+    *dest = value;
+}
+} // namespace lift_0066EBA0
