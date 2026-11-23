@@ -11143,6 +11143,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F790 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0066CDF0": {
+    "name": "ExprParser::ExtROType::vfunc_0",
+    "class": "ExprParser::ExtROType",
+    "signature": "void* fn_0066CDF0(void* self, void* /*arg2*/)",
+    "summary": "Calls ext_004ECB40(self, 0) and returns self; second argument is read but unused.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066CE20": {
     "name": "ExprParser::Vector3Type::vfunc_24",
     "class": "ExprParser::Vector3Type",

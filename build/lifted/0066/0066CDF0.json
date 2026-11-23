@@ -1,0 +1,14 @@
+{
+  "va": "0x0066CDF0",
+  "size": 33,
+  "orig_symbol": "ExprParser::ExtROType::vfunc_0",
+  "src_path": "src/ExprParser/ExtROType.cpp",
+  "lifted_path": "lifted/ExprParser/ExtROType.cpp",
+  "name": "ExprParser::ExtROType::vfunc_0",
+  "class": "ExprParser::ExtROType",
+  "signature": "void* fn_0066CDF0(void* self, void* /*arg2*/)",
+  "summary": "Calls ext_004ECB40(self, 0) and returns self; second argument is read but unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:33:13Z"
+}

@@ -14,8 +14,10 @@ extern "C" void ext_00672000(void* self);
 void fn_0066BA30(void* self) {
     ext_00672000(self);
 }
+// Callee sub_004ECB40 receives (this-like object, 0) and cleans its own stack (stdcall-style, no caller cleanup).
+extern "C" void ext_004ECB40(void* obj, int flag);
 
-// [0x0066AFE0]
+extern "C" void ext_004ECB40(void* obj, int flag);
 // @name ExprParser::ExtROType::vfunc_2
 // @class ExprParser::ExtROType
 // @summary Tail-forwards to vtable slot 2 of the object at (*this)->+0x04, passing (*this) as the this/arg.
@@ -186,4 +188,13 @@ void __stdcall fn_0066BB50(void* esi) {
     using Slot47 = void(__thiscall*)(void* self, void* arg);
     auto fn = reinterpret_cast<Slot47>(vtbl[47]);
     fn(inner, esi);
+}
+
+// [0x0066CDF0] ExprParser::ExtROType::vfunc_0 (33 bytes)
+// @name ExprParser::ExtROType::vfunc_0
+// @class ExprParser::ExtROType
+// @summary Calls ext_004ECB40(self, 0) and returns self; second argument is read but unused.
+void* fn_0066CDF0(void* self, void* /*arg2*/) {
+    ext_004ECB40(self, 0);
+    return self;
 }
