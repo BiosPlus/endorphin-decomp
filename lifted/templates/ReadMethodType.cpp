@@ -8935,31 +8935,6 @@ bool fn_00471DB0(void* self) {
 } // namespace lift_0046E210
 } // namespace lift_00471DB0
 
-// [0x004A31C0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2 (53 bytes)
-namespace lift_004A31C0 {
-// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2
-// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
-// @summary Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2).
-namespace lift_0046E210 {
-// Callee sub_0046C070 (4B): takes the target object in ecx, returns a bool in al.
-extern uint8_t ext_00496F30(void* self);
-
-// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_2
-// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
-// @summary Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.
-// @field ExprParser::ValuePtrType +0x00 void* field_0x00
-bool fn_004A31C0(void* self) {
-    void* target = lift_field<void*>(self, 0x00);
-    if (target == nullptr) {
-        // Original raises a C++ exception via _CxxThrowException (type descriptor 0x009DEC1C);
-        // its concrete type is not recovered, so a standard exception is used here.
-        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_2: null target");
-    }
-    return ext_00496F30(target) != 0;
-}
-} // namespace lift_0046E210
-} // namespace lift_004A31C0
-
 // [0x004A3530] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_2 (53 bytes)
 namespace lift_004A3530 {
 // @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_2
@@ -10418,3 +10393,27 @@ bool fn_004A2B50(void* self) {
     return ext_0049AA50(view) != 0;
 }
 } // namespace lift_004A2B50
+
+// [0x004A31C0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A31C0 {
+// Callees (not yet lifted). ext_00496F30 is a 4-byte helper that takes the value in ecx
+// and returns a bool in al. ext_0046C3C0 constructs an exception object (on the stack in
+// the original). ext_006A6DD2 is an IAT thunk forwarding to MSVCR80!_CxxThrowException.
+extern uint8_t ext_00496F30(void* ecx);
+extern void ext_0046C3C0(void* ecx);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_2 (StateMachineEditor::FSMEditView::drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the object's first pointer-sized word; if null throws an exception, otherwise returns bool(helper(word)) (drawConditions read-method).
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView> +0x00 void* field_0x00
+bool fn_004A31C0(void* self) {
+    // The first word of self is read and passed to the helper; a null word raises an exception.
+    void* ptr = *reinterpret_cast<void**>(self);
+    if (ptr == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<FSMEditView>::vfunc_2: null value pointer");
+    }
+    return ext_00496F30(ptr) != 0;
+}
+} // namespace lift_004A31C0

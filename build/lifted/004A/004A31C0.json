@@ -4,19 +4,19 @@
   "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e::vfunc_2",
   "src_path": "src/templates/ReadMethodType.cpp",
   "lifted_path": "lifted/templates/ReadMethodType.cpp",
-  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e::vfunc_2",
+  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_2 (StateMachineEditor::FSMEditView::drawConditions)",
   "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e",
   "signature": "bool fn_004A31C0(void* self)",
-  "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+  "summary": "Reads the object's first pointer-sized word; if null throws an exception, otherwise returns bool(helper(word)) (drawConditions read-method).",
   "fields": [
     {
-      "class": "ExprParser::ValuePtrType",
+      "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e",
       "offset": "+0x0",
       "type": "void*",
       "name": "field_0x00"
     }
   ],
   "status": "lifted",
-  "lifted_by": "script:auto_lift_clone",
-  "lifted_at": "2026-11-23T12:55:59Z"
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:56:19Z"
 }
