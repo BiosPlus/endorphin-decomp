@@ -125,3 +125,56 @@ void fn_005B4E40(void* arg1, void* self, int32_t ringCount, int32_t segCount) {
     }
 }
 } // namespace lift_005B4E40
+
+// [0x005B1540] Geometry::SphylType::vfunc_4 (305 bytes)
+namespace lift_005B1540 {
+extern float __thiscall ext_005B11E0(void* self, int index);
+extern float* __thiscall ext_0047FFA0(void* self, float* arg0, float* arg1);
+extern void __thiscall ext_00540D60(float* self);
+extern float* __thiscall ext_0053B470(float* self, float value, float* scratch);
+extern float* __thiscall ext_00547080(float* self, float* in, float* scratch);
+extern const double mem_00993828;
+
+// @name Geometry::SphylType::vfunc_4
+// @class Geometry::SphylType
+// @summary Writes a clamped Z-extent plus a derived 4-float vector into out and returns the Euclidean length of a transformed vector.
+// @field Geometry::GeometryType +0x08 float field_0x08
+float fn_005B1540(float* out, void* a, float* b) {
+    out[0] = 0.0f;
+    out[1] = 0.0f;
+
+    // half = 0.5 * a.component(1), then clamp b.z into [-half, half].
+    float half = static_cast<float>(ext_005B11E0(a, 1) * mem_00993828);
+    float z;
+    if (half < b[2]) {
+        z = half;
+    } else if (-half > b[2]) {
+        z = -half;
+    } else {
+        z = b[2];
+    }
+    out[2] = z;
+    out[3] = 1.0f;
+
+    float tmp[4] = {};
+    ext_0047FFA0(b, tmp, out);
+    ext_00540D60(tmp);
+
+    float r = ext_005B11E0(a, 0);
+    float scratch_a[4] = {};
+    float scratch_b[4] = {};
+    float* p = ext_0053B470(scratch_a, r, scratch_b);
+    float in[4] = {p[0], p[1], p[2], p[3]};
+    float* q = ext_00547080(out, in, tmp);
+    out[0] = q[0];
+    out[1] = q[1];
+    out[2] = q[2];
+    out[3] = q[3];
+
+    float tmp2[4] = {};
+    float* v = ext_0047FFA0(b, tmp2, out);
+    float sum = static_cast<float>(v[0] * v[0]) + static_cast<float>(v[1] * v[1]) +
+                static_cast<float>(v[2] * v[2]);
+    return std::sqrt(sum);
+}
+} // namespace lift_005B1540
