@@ -6890,6 +6890,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00574CF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00582B60": {
+    "name": "Acclaim2MotionIO::vfunc_3",
+    "class": "Acclaim2MotionIO",
+    "signature": "void* fn_00582B60(void* self, void* arg)",
+    "summary": "Looks up a result via sub_00640390 using the global at mem_00A9ECE8, passes it to NMFileIO::vfunc_3 on this, and returns the original argument.",
+    "lifted_path": "lifted/classes/Acclaim2MotionIO.cpp"
+  },
   "0x00582BA0": {
     "name": "Acclaim2MotionIO::vfunc_57",
     "class": "Acclaim2MotionIO",
