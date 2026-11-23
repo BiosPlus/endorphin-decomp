@@ -6736,6 +6736,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005052F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00505510": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+    "signature": "float fn_00505510(const void* self)",
+    "summary": "Reads the wrapped value object's string at +0x04 and returns it converted to float via atof; throws if the wrapped pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00505820": {
     "name": "Chromosome::Descriptor::vfunc_0_off_4",
     "class": "Chromosome::Descriptor",

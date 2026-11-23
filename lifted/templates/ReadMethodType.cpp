@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 #include <stdexcept>
 #include <cstdint>
+#include <cstdlib>
+#include <string>
 
-// [0x00617340] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>::vfunc_16 (30 bytes)
+#include <string>
 // @name ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)
 // @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>
 // @summary Runtime type check: returns self for a ReadMethodType<NMData::JointLimit> object (getDamping), else NULL; identity for valid objects.
@@ -11227,3 +11229,21 @@ extern void* fn_004B1250(void* sink, void** target) {
     return nullptr;
 }
 } // namespace lift_004B1250
+
+// [0x00505510] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_1 (69 bytes)
+namespace lift_00505510 {
+// @name ExprParser::ReadMethodType<Interpreter>::vfunc_1
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Reads the wrapped value object's string at +0x04 and returns it converted to float via atof; throws if the wrapped pointer is null.
+// @field ExprParser::ReadMethodType<Interpreter> +0x00 void* field_0x00
+// @field Value +0x04 std::string field_0x04
+float fn_00505510(const void* self) {
+    const void* const inner = *static_cast<const void* const*>(self);
+    if (inner == nullptr) {
+        throw std::runtime_error("ExprParser: null value object");
+    }
+    const auto* text = reinterpret_cast<const std::string*>(
+        static_cast<const unsigned char*>(inner) + 0x04);
+    return static_cast<float>(std::atof(text->c_str()));
+}
+} // namespace lift_00505510
