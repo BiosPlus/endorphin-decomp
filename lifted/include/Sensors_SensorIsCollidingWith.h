@@ -10,6 +10,6 @@
 // Recovered field layout for Sensors::SensorIsCollidingWith:
 namespace lifted_layout {
 struct Sensors_SensorIsCollidingWith_Fields {
-    // +0x30  BYTE                     field_0x30  (evidence: 0x00625060)
+    // +0x30  BYTE                     field_0x30  (evidence: 0x005B2D00, 0x00625060)
 };
 } // namespace lifted_layout

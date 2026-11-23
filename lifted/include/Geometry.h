@@ -13,6 +13,6 @@ struct Geometry_Fields {
     // +0x0   void*                    target  (evidence: 0x005B2D00)
     // +0xC   void*                    field_0x0c  (evidence: 0x005B5C30)
     // +0x14  float                    field_0x14  (evidence: 0x005B2D00)
-    // +0x18  float                    field_0x18  (evidence: 0x004B1FF0, 0x00508EE0, 0x005B2ED0, 0x005B2F60, 0x0068DE60)
+    // +0x18  float                    field_0x18  (evidence: 0x004B1FF0, 0x00508EE0, 0x005B2D00, 0x005B2ED0, 0x005B2F60, 0x0068DE60)
 };
 } // namespace lifted_layout
