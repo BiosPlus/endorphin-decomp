@@ -7094,6 +7094,13 @@
     "summary": "Reads the int at +0x0C of the object referenced by the first pointer in the argument block and returns it as a double; throws if that pointer is null.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00515F80": {
+    "name": "ExprParser::DynamicEnumType::vfunc_0",
+    "class": "ExprParser::DynamicEnumType",
+    "signature": "void* fn_00515F80(void* out, void** src)",
+    "summary": "Forwards the value at offset +0x08 of the object referenced by *src into the output slot and returns it; throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00515FD0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_1",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",

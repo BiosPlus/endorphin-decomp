@@ -38,7 +38,8 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x4   void*                    owner  (evidence: 0x00649570, 0x0064EC00, 0x0064F0C0, 0x00651070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    reader  (evidence: 0x00594470, 0x00594520, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    source  (evidence: 0x0064F240, 0x0064F660) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00515C50)
+    // +0x8   int                      field_0x08  (evidence: 0x00515F80) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00515C50) // CONFLICT: multiple definitions at +0x8
     // +0xC   std::uint32_t            field_0x0c  (evidence: 0x00516170, 0x00516550)
 };
 } // namespace lifted_layout

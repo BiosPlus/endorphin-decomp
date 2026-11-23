@@ -1148,3 +1148,22 @@ void* fn_00515E30(void* result, void* holder) {
     return result;
 }
 } // namespace lift_00515E30
+
+// [0x00515F80] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_0 (69 bytes)
+namespace lift_00515F80 {
+extern void ext_006720C0(void* self, int value);
+
+// @name ExprParser::DynamicEnumType::vfunc_0
+// @class ExprParser::DynamicEnumType
+// @summary Forwards the value at offset +0x08 of the object referenced by *src into the output slot and returns it; throws if the object pointer is null.
+// @field ExprParser::ValuePtrType +0x08 int field_0x08
+void* fn_00515F80(void* out, void** src) {
+    void* obj = (src != nullptr) ? *src : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType::vfunc_0: null object");
+    }
+    int value = lift_field<int>(obj, 8);
+    ext_006720C0(out, value);
+    return out;
+}
+} // namespace lift_00515F80
