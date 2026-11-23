@@ -3351,3 +3351,47 @@ void fn_0062B170(ValuePair* out, void** sensorRef, void* self) {
     }
 }
 } // namespace lift_0062B170
+
+// [0x00649150] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setOrientationStrength(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649150 {
+// Stdcall-style helper: sets the float value on the target object (RelationshipRPROMagnet::setOrientationStrength).
+extern void ext_00649050(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setOrientationStrength(float), 0}>
+// @summary Evaluates the child float expression, applies it to the target's setOrientationStrength, and writes the resulting value/object pair to out.
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setOrientationStrength(float), 0}> +0x04 void* field_0x04
+void fn_00649150(void* out, void* targetHolder, void* self) {
+    // child expression node pointer stored at self+0x04
+    void* child = lift_field<void*>(self, 0x04);
+
+    // vtable slot 1 on child: evaluate to float, passing a null out-temp
+    using FloatEval = float (*)(void* self, void* tmp);
+    void* floatFn = lift_field<void*>(*reinterpret_cast<void**>(child), 0x04);
+    float value = reinterpret_cast<FloatEval>(floatFn)(child, nullptr);
+
+    // apply the float to the target object (*targetHolder)
+    void* target = *reinterpret_cast<void**>(targetHolder);
+    ext_00649050(target, value);
+
+    // Build the result pair { value, object } into out.
+    struct ValuePtr {
+        void* value;
+        void* object;
+    };
+    ValuePtr* result = reinterpret_cast<ValuePtr*>(out);
+
+    if (child != nullptr) {
+        // vtable slot 0x70 on child: produce a ValuePtr into a temp
+        using PtrEval = ValuePtr* (*)(void* self, void* node, ValuePtr* tmp);
+        void* ptrFn = lift_field<void*>(*reinterpret_cast<void**>(child), 0x70);
+        ValuePtr tmp{nullptr, nullptr};
+        ValuePtr* got = reinterpret_cast<PtrEval>(ptrFn)(child, self, &tmp);
+        result->value = got->value;
+        result->object = child;
+    } else {
+        result->value = nullptr;
+        result->object = nullptr;
+    }
+}
+} // namespace lift_00649150
