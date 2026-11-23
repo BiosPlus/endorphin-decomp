@@ -2947,6 +2947,13 @@
     "summary": "Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046EDA0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter\u003e::vfunc_41 (ImageExporter::getImageHeight -\u003e setImageHeight)",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}\u003e",
+    "signature": "void __stdcall fn_0046EDA0(void* const* self, void* arg)",
+    "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the int result at target+0x20 (ImageExporter height slot); throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046F1A0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageWidth\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, getImageWidth\u003e",

@@ -1171,3 +1171,34 @@ void fn_0046E450(void* arg1, void* arg2) {
     reinterpret_cast<SetFn>(&ext_0046C2D0)(target, r);
 }
 } // namespace lift_0046E450
+
+// [0x0046EDA0] ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_0046EDA0 {
+// Callee 0x0046C3C0: exception-object initializer (thiscall, takes the exception buffer).
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+// @name ExprParser::ReadWriteMethodType<ImageExporter>::vfunc_41 (ImageExporter::getImageHeight -> setImageHeight)
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}>
+// @summary Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the int result at target+0x20 (ImageExporter height slot); throws if null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+// @field ImageExporter +0x20 int field_0x20
+void __stdcall fn_0046EDA0(void* const* self, void* arg) {
+    uint8_t* target = static_cast<uint8_t*>(*self);
+    if (target) {
+        void* sub = *reinterpret_cast<void* const*>(static_cast<uint8_t*>(arg) + 4);
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(sub);
+        using SlotFn = int32_t (__thiscall*)(void* thisPtr, void* a);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtbl[2]);
+        int32_t result = slot(sub, arg);
+        *reinterpret_cast<int32_t*>(target + 0x20) = result;
+        return;
+    }
+    // Null target: the original builds an MSVC exception object and throws it.
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+}
+} // namespace lift_0046EDA0
