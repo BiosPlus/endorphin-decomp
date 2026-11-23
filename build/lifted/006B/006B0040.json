@@ -1,0 +1,21 @@
+{
+  "va": "0x006B0040",
+  "size": 9,
+  "orig_symbol": "sub_006B0040",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "initVtable_006B0040",
+  "signature": "void* __thiscall sub_006B0040(void* self)",
+  "summary": "Sets the object's vtable pointer at +0x00 to 0x00991188 and returns this.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:25:41Z"
+}

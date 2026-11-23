@@ -462,3 +462,16 @@ extern "C" int32_t __fastcall fn_006BC7F0(void* self) {
 extern "C" void __fastcall fn_006BC960(void* self) {
     ext_006E7460(static_cast<char*>(self) + 0x78);
 }
+
+// [0x006B0040]
+namespace lift_006B0040 {
+extern uint32_t mem_00991188;
+
+// @name initVtable_006B0040
+// @summary Sets the object's vtable pointer at +0x00 to 0x00991188 and returns this.
+// @field Object +0x00 uint32_t vptr
+void* __thiscall sub_006B0040(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00991188));
+    return self;
+}
+} // namespace lift_006B0040
