@@ -1,0 +1,14 @@
+{
+  "va": "0x006492B0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setCachedDesiredPositionY\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}\u003e",
+  "signature": "extern \"C\" void __stdcall fn_006492B0(void* out, void* const* targetRef, void* self)",
+  "summary": "Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:07:36Z"
+}

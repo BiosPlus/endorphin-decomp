@@ -3439,3 +3439,42 @@ void fn_00649200(void* out, void* targetHolder, void* self) {
     }
 }
 } // namespace lift_00649200
+
+// [0x006492B0] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_00648E50(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_006492B0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_00648E50(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
