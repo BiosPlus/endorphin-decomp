@@ -40,3 +40,36 @@ void* fn_0060C040(void* self, void* arg1, uint32_t arg2) {
 }
 } // namespace lift_0060E7B0
 } // namespace lift_0060C040
+
+// [0x0060C530] NMData::EffectorBaseData::vfunc_21 (63 bytes)
+namespace lift_0060C530 {
+// String-property copy helper at 0x00486CB0 (143 bytes). Original ABI is thiscall
+// with a stack-allocated receiver and three stack args (ret 0xC); modelled here as
+// (destination, source value, property key).
+extern void ext_00486CB0(void* dst, const void* value, const char* key);
+
+// Property-key string literals in .rdata.
+extern int mem_0093F7BC;  // "m_name"
+extern int mem_009722A8;  // "m_jointName"
+
+// Virtual slot 9 (offset 0x24) of the source object: returns a const void* value.
+typedef const void* (*GetValueSlot9Fn)(void* self);
+
+// @name NMData::EffectorBaseData::vfunc_21
+// @class NMData::EffectorBaseData
+// @summary Copies the m_name and m_jointName string properties from a source EffectorBaseData into this object via the string-property helper.
+// @field EffectorBaseData +0x04 std::string field_0x04
+// @field EffectorBaseData +0x20 std::string field_0x20
+void fn_0060C530(void* self, void* src) {
+    uint8_t* dst = static_cast<uint8_t*>(self);
+    uint8_t* from = static_cast<uint8_t*>(src);
+
+    // value = src->vfunc_9()
+    void** vtbl = *reinterpret_cast<void***>(from);
+    GetValueSlot9Fn getValue = reinterpret_cast<GetValueSlot9Fn>(vtbl[9]);
+    const void* value = getValue(src);
+
+    ext_00486CB0(dst + 0x04, value, reinterpret_cast<const char*>(&mem_0093F7BC));
+    ext_00486CB0(dst + 0x20, from + 0x20, reinterpret_cast<const char*>(&mem_009722A8));
+}
+} // namespace lift_0060C530
