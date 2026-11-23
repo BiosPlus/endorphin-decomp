@@ -4151,6 +4151,13 @@
     "summary": "Calls virtual slot 1 of arg-\u003efield_0x04 (passing arg) and adds the float result into *ptr.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004B8E40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getTimeZoomFactor)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+    "signature": "float fn_004B8E40(void* self)",
+    "summary": "Returns the float at EngineData+0x24 (time zoom factor) via the value pointer; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BA260": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",

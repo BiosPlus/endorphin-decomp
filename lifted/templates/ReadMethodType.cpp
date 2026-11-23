@@ -289,3 +289,30 @@ bool fn_004B1430(void** arg) {
     return data[0x01] != 0;
 }
 } // namespace lift_004B1430
+
+// [0x004B8E40] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_004B8E40 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getTimeZoomFactor)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Returns the float at EngineData+0x24 (time zoom factor) via the value pointer; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field NMData::EngineData +0x24 float field_0x24
+float fn_004B8E40(void* self) {
+    // self->target (ValuePtrType base at +0x0)
+    uint8_t* target = *static_cast<uint8_t**>(self);
+    if (target != nullptr) {
+        float value;
+        std::memcpy(&value, target + 0x24, sizeof(value));
+        return value;
+    }
+
+    // Null target: build the exception object and throw.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0.0f; // not reached
+}
+} // namespace lift_004B8E40
