@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1350",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026NMData::GraphEntryData::isActive, 0\u003e::vfunc_0",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "void* __stdcall fn_004B1350(void* arg1, void** arg2)",
+  "summary": "Reads a ValuePtr's target byte at +1 and forwards it to the holder's handler; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:48:09Z"
+}

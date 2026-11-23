@@ -4606,6 +4606,13 @@
     "summary": "Dereferences its single stack argument (a holder whose first pointer is the GraphEntryData object) and returns the dword at object+0x20 (color); if the object pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1350": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026NMData::GraphEntryData::isActive, 0\u003e::vfunc_0",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "void* __stdcall fn_004B1350(void* arg1, void** arg2)",
+    "summary": "Reads a ValuePtr's target byte at +1 and forwards it to the holder's handler; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B13F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, isActive, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026NMData::GraphEntryData::isActive, 0\u003e",

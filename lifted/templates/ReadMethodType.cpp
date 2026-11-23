@@ -11755,3 +11755,40 @@ void* fn_004EA330(void* self, void* const* src) {
     return self;
 }
 } // namespace lift_004EA330
+
+// [0x004B1350] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_004B1350 {
+// Callee 0x006720A0: thiscall (ecx = self), one stack argument (uint8_t).
+extern void ext_006720A0(void* self, uint8_t arg);
+// Callee 0x0046C3C0: thiscall (ecx = exception-storage buffer), no stack args.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Stack args: (object, ThrowInfo*).
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &NMData::GraphEntryData::isActive, 0>::vfunc_0
+// @class ExprParser::ValuePtrType
+// @summary Reads a ValuePtr's target byte at +1 and forwards it to the holder's handler; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_004B1350(void* arg1, void** arg2) {
+    // Unused on the success path; on the failure path arg1's slot is used as scratch (see below).
+    (void)arg1;
+
+    // Dereference the holder to get the target object pointer.
+    void* target = *arg2;
+
+    if (target != nullptr) {
+        // Target object byte at +0x01 is passed to ext_006720A0 (accessed object's class not yet recovered).
+        uint8_t flag = lift_field<uint8_t>(target, 0x01);
+        ext_006720A0(arg2, flag);
+        return arg2;
+    }
+
+    // Null target: build an exception object in scratch storage and throw it.
+    // Storage size is not recovered; 0x28 is a conservative placeholder.
+    alignas(8) uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return nullptr;  // not reached: _CxxThrowException does not return
+}
+} // namespace lift_004B1350
