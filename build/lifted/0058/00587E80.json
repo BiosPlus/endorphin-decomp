@@ -1,0 +1,14 @@
+{
+  "va": "0x00587E80",
+  "size": 32,
+  "orig_symbol": "NMData::UpVectorNode::vfunc_22",
+  "src_path": "src/NMData/UpVectorNode.cpp",
+  "lifted_path": "lifted/NMData/UpVectorNode.cpp",
+  "name": "NMData::UpVectorNode::vfunc_22",
+  "class": "NMData::UpVectorNode",
+  "signature": "void fn_00587E80(void* self, uint32_t arg)",
+  "summary": "Passes the global constant at mem_00A9F37C and the caller argument through ext_00640390, then forwards the result to CollisionModelDataBase::vfunc_22 on this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:33:07Z"
+}

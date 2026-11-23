@@ -6987,6 +6987,13 @@
     "summary": "Fetches a global value, resolves it through sub_00640390 using the first stack argument, and forwards the result to CollisionModelDataBase::vfunc_22 on this.",
     "lifted_path": "lifted/NMData/LookAtNode.cpp"
   },
+  "0x00587E80": {
+    "name": "NMData::UpVectorNode::vfunc_22",
+    "class": "NMData::UpVectorNode",
+    "signature": "void fn_00587E80(void* self, uint32_t arg)",
+    "summary": "Passes the global constant at mem_00A9F37C and the caller argument through ext_00640390, then forwards the result to CollisionModelDataBase::vfunc_22 on this.",
+    "lifted_path": "lifted/NMData/UpVectorNode.cpp"
+  },
   "0x00587FA0": {
     "name": "NMData::Marker::vfunc_0",
     "class": "NMData::Marker",
