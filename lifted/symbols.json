@@ -2891,6 +2891,13 @@
     "summary": "Dereferences the value pointer *src (throws if null), passes the object to ext_0042F6E0, forwards the result to ext_006720E0 on self, and returns self.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046D1E0": {
+    "name": "ReadMethodType_ImageExporter_getDestination_vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, std::string const\u0026, ImageExporter::getDestination, 0\u003e",
+    "signature": "float fn_0046D1E0(void* self)",
+    "summary": "Reads the ImageExporter destination string via its first pointer field and returns it parsed as float; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046D5D0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e",

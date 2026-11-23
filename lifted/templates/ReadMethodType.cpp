@@ -17206,3 +17206,27 @@ void* fn_00618C70(void* self, void* holder) {
     return self;
 }
 } // namespace lift_00618C70
+
+// [0x0046D1E0]
+namespace lift_0046D1E0 {
+// @name ReadMethodType_ImageExporter_getDestination_vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, std::string const&, ImageExporter::getDestination, 0>
+// @summary Reads the ImageExporter destination string via its first pointer field and returns it parsed as float; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+
+
+extern const std::string* ext_0042F6E0(void* exporter);
+extern void ext_0046C3C0(void* errorBuf);
+
+float fn_0046D1E0(void* self) {
+    void* exporter = lift_field<void*>(self, 0x00);
+    if (exporter == nullptr) {
+        std::string err;
+        ext_0046C3C0(&err);
+        throw std::runtime_error(err);
+    }
+    const std::string* dest = ext_0042F6E0(exporter);
+    return static_cast<float>(std::atof(dest->c_str()));
+}
+} // namespace lift_0046D1E0
