@@ -1,0 +1,46 @@
+{
+  "va": "0x0056FD30",
+  "size": 953,
+  "orig_symbol": "BVHIO::vfunc_10",
+  "src_path": "src/classes/BVHIO.cpp",
+  "lifted_path": "lifted/classes/BVHIO.cpp",
+  "name": "BVHIO::vfunc_10",
+  "class": "BVHIO",
+  "signature": "extern const std::string kStr_009593B8; // error prefix (open failure) extern const std::string kStr_00959408; // error prefix (validation failure) extern const std::string kStr_00941F08; // error suffix namespace",
+  "summary": "Opens the BVH file at path, refreshes per-joint cached values on the skeleton, and throws std::runtime_error if the file cannot be opened or fails validation.",
+  "fields": [
+    {
+      "class": "BVHIO",
+      "offset": "+0x414",
+      "type": "uint32_t",
+      "name": "skeletonData"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x42C",
+      "type": "uint32_t",
+      "name": "field_0x42c"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x480",
+      "type": "uint32_t",
+      "name": "field_0x480"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x484",
+      "type": "uint32_t",
+      "name": "field_0x484"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x488",
+      "type": "uint32_t",
+      "name": "field_0x488"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:13:04Z"
+}

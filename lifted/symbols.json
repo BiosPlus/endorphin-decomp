@@ -8753,6 +8753,13 @@
     "summary": "Exports hierarchy and motion data to a BVH file.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056FD30": {
+    "name": "BVHIO::vfunc_10",
+    "class": "BVHIO",
+    "signature": "extern const std::string kStr_009593B8; // error prefix (open failure) extern const std::string kStr_00959408; // error prefix (validation failure) extern const std::string kStr_00941F08; // error suffix namespace",
+    "summary": "Opens the BVH file at path, refreshes per-joint cached values on the skeleton, and throws std::runtime_error if the file cannot be opened or fails validation.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
   "0x00570350": {
     "name": "CDLCharacterIO::vfunc_3",
     "class": "CDLCharacterIO",

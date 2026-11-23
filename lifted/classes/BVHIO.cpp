@@ -19,8 +19,10 @@ void* __thiscall fn_0056DA30(void* self, void* arg0) {
     ext_00553720(self, val);
     return arg0;
 }
+#include <stdexcept>
+#include <vector>
 
-// [0x0056EAC0]
+#include <vector>
 // @name BVHIO::exportBVH
 // @class BVHIO
 // @summary Exports hierarchy and motion data to a BVH file.
@@ -235,3 +237,121 @@ void __thiscall fn_0056E630(void* self, const std::string* filename) {
     ext_005576F0(self);
 }
 } // namespace lift_0056E630
+
+// [0x0056FD30] BVHIO::vfunc_10 (953 bytes)
+namespace lift_0056FD30 {
+// Callees (original addresses kept; signatures inferred from call sites).
+extern void ext_0055D600(void* self);                    // guard acquire on this+0x42c
+extern void ext_0055D2C0(void* self, uint32_t skeleton); // guard release on this+0x42c
+extern void ext_004F0FB0(void* self, uint32_t value);    // list-like insert on this+0x480
+extern bool ext_0056FAA0(void* self, void* ifs);         // validate/parse opened stream
+extern void ext_005A3610(void* self);                    // skeleton cleanup
+extern void ext_005EED30(void* self, void* out);         // collect joint pointers into vector
+extern void* ext_00663B30(void* out, const char* cstr);  // path helper, returns std::string*
+
+// Data globals.
+extern int mem_00B37F40; // load counter
+
+// String constants (contents not recovered yet).
+extern const std::string kStr_00B3B704;
+extern const std::string kStr_00B3B934;
+extern const std::string kStr_009593B8; // error prefix (open failure)
+extern const std::string kStr_00959408; // error prefix (validation failure)
+extern const std::string kStr_00941F08; // error suffix
+
+namespace {
+
+inline uint8_t* ptr_from(uint32_t v) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(v));
+}
+
+inline uint32_t addr_of(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// Virtual slot call on an object whose first dword is its vtable pointer.
+inline void vcall0(void* obj, int slot) {
+    void** vt = *static_cast<void***>(obj);
+    reinterpret_cast<void (*)(void*)>(vt[slot])(obj);
+}
+
+inline void vcall1(void* obj, int slot, void* arg) {
+    void** vt = *static_cast<void***>(obj);
+    reinterpret_cast<void (*)(void*, void*)>(vt[slot])(obj, arg);
+}
+
+} // namespace
+
+// @name BVHIO::vfunc_10
+// @class BVHIO
+// @summary Opens the BVH file at path, refreshes per-joint cached values on the skeleton, and throws std::runtime_error if the file cannot be opened or fails validation.
+// @field BVHIO +0x414 uint32_t skeletonData
+// @field BVHIO +0x42c uint32_t field_0x42c
+// @field BVHIO +0x480 uint32_t field_0x480
+// @field BVHIO +0x484 uint32_t field_0x484
+// @field BVHIO +0x488 uint32_t field_0x488
+void fn_0056FD30(void* self, const std::string& path) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    ext_0055D600(base + 0x42c);
+
+    const uint32_t skelWord = lift_field<uint32_t>(self, 0x414);
+    uint8_t* skel = ptr_from(skelWord);
+    uint8_t* skelSub = skel + 4;
+    vcall0(skelSub, 33); // +0x84
+
+    std::string tmp70 = kStr_00B3B704;
+    (void)tmp70;
+
+    std::string tmp34;
+    const std::string* resolved =
+        static_cast<const std::string*>(ext_00663B30(&tmp34, path.c_str()));
+    const std::string joined = *resolved + kStr_00B3B934;
+    (void)joined;
+
+    std::string tmp74;
+    std::string tmp90;
+    vcall1(skelSub, 23, &tmp74); // +0x5C
+    vcall1(skelSub, 24, &tmp90); // +0x60
+
+    mem_00B37F40 += 1;
+
+    // Append an entry to the list-like container at +0x480, then reset its sentinel.
+    const uint32_t listValue = lift_field<uint32_t>(ptr_from(lift_field<uint32_t>(self, 0x484)), 4);
+    ext_004F0FB0(base + 0x480, listValue);
+
+    uint8_t* head = ptr_from(lift_field<uint32_t>(self, 0x484));
+    lift_field<uint32_t>(head, 4) = addr_of(head);
+    lift_field<uint32_t>(self, 0x488) = 0;
+    lift_field<uint32_t>(head, 0) = addr_of(head);
+    lift_field<uint32_t>(head, 8) = addr_of(head);
+
+    std::ifstream ifs(path.c_str(), std::ios::in);
+    if (!ifs) {
+        std::string msg = kStr_009593B8 + path + kStr_00941F08;
+        throw std::runtime_error(msg);
+    }
+
+    if (!ext_0056FAA0(self, &ifs)) {
+        ifs.close();
+        std::string msg = kStr_00959408 + path + kStr_00941F08;
+        throw std::runtime_error(msg);
+    }
+
+    std::vector<void*> joints;
+    ext_005EED30(skel + 0x160, &joints);
+
+    for (void* entry : joints) {
+        if (lift_field<uint32_t>(entry, 0x228) != 0) {
+            continue;
+        }
+        uint8_t* sub = ptr_from(lift_field<uint32_t>(entry, 0x190));
+        lift_field<uint32_t>(entry, 0x228) = lift_field<uint32_t>(sub, 0x22c);
+        lift_field<std::string>(entry, 0x198) = lift_field<std::string>(sub, 0x1b4);
+    }
+
+    ifs.close();
+    ext_0055D2C0(base + 0x42c, skelWord);
+    ext_005A3610(skel);
+}
+} // namespace lift_0056FD30
