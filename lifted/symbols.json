@@ -16593,6 +16593,13 @@
     "summary": "Lazily initializes and returns a static object at 0x00B48DC8.",
     "lifted_path": "lifted/NMData/Constraint.cpp"
   },
+  "0x00612880": {
+    "name": "NMData::Constraint::vfunc_73",
+    "class": "NMData::Constraint",
+    "signature": "void* __thiscall fn_00612880(void* self)",
+    "summary": "Lazily initializes and returns a static singleton object at 0x00B48E90.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x00612E80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

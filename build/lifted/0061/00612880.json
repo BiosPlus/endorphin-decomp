@@ -1,0 +1,14 @@
+{
+  "va": "0x00612880",
+  "size": 97,
+  "orig_symbol": "NMData::Constraint::vfunc_73",
+  "src_path": "src/NMData/Constraint.cpp",
+  "lifted_path": "lifted/NMData/Constraint.cpp",
+  "name": "NMData::Constraint::vfunc_73",
+  "class": "NMData::Constraint",
+  "signature": "void* __thiscall fn_00612880(void* self)",
+  "summary": "Lazily initializes and returns a static singleton object at 0x00B48E90.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:15Z"
+}

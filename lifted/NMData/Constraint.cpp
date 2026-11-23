@@ -139,3 +139,29 @@ void* __thiscall fn_00612730(void* self) {
     return &mem_00B48C38;
 }
 } // namespace lift_00612730
+
+// [0x00612880]
+namespace lift_00612880 {
+// @name NMData::Constraint::vfunc_73
+// @class NMData::Constraint
+// @summary Lazily initializes and returns a static singleton object at 0x00B48E90.
+
+
+extern uint32_t mem_00B48F50;
+extern uint8_t mem_00B48E90;
+extern uint8_t mem_0091EB60;
+
+extern void __thiscall ext_00612270(void* self, uint32_t* arg);
+extern int ext_006A6C87(void* func);
+
+void* __thiscall fn_00612880(void* self) {
+    (void)self;
+    if ((mem_00B48F50 & 1u) == 0) {
+        mem_00B48F50 |= 1u;
+        uint32_t local_arg = 0;
+        ext_00612270(&mem_00B48E90, &local_arg);
+        ext_006A6C87(&mem_0091EB60);
+    }
+    return &mem_00B48E90;
+}
+} // namespace lift_00612880
