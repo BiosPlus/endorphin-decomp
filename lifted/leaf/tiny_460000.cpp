@@ -289,3 +289,16 @@ void fn_0046F920(void* self) {
     auto fn = reinterpret_cast<void (*)(void*)>(vtbl[2]);
     fn(sub);
 }
+
+// [0x00468660]
+namespace lift_00468660 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getNestedField_0x18_0xc
+// @summary Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18
+// @field Unknown +0x18 uint32_t field_0x18
+uint32_t __thiscall sub_00468660(uint32_t this_ptr) {
+    uint32_t inner = mem_read32(this_ptr + 0x18);
+    return mem_read32(inner + 0x0c);
+}
+} // namespace lift_00468660

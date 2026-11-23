@@ -1,0 +1,21 @@
+{
+  "va": "0x00468660",
+  "size": 7,
+  "orig_symbol": "sub_00468660",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "getNestedField_0x18_0xc",
+  "signature": "uint32_t __thiscall sub_00468660(uint32_t this_ptr)",
+  "summary": "Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:38:26Z"
+}

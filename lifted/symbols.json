@@ -3000,6 +3000,12 @@
     "summary": "Returns global int32 value from mem_00AD7CD8.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468660": {
+    "name": "getNestedField_0x18_0xc",
+    "signature": "uint32_t __thiscall sub_00468660(uint32_t this_ptr)",
+    "summary": "Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468F30": {
     "name": "sub_00468F30",
     "signature": "extern \"C\" void __fastcall fn_00468F30(void* self)",
@@ -4120,6 +4126,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0048FAA0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0048FA40 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
+  },
+  "0x0048FB00": {
+    "name": "sub_0048FB00",
+    "signature": "uint8_t __thiscall sub_0048FB00(void* self)",
+    "summary": "Reads byte at offset +0x1 from the pointer at this+0x4",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
   "0x0048FB60": {
     "name": "sub_0048FB60",
@@ -33854,6 +33866,12 @@
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
     "summary": "Returns address of global mem_00AB6B0C.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
+  },
+  "0x00852427": {
+    "name": "thunk_jmp_esi_00852427",
+    "signature": "void thunk_jmp_esi_00852427(uint32_t esi)",
+    "summary": "Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
   "0x0085D504": {
     "name": "sub_0085D504",
