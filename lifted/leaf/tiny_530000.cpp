@@ -77,3 +77,16 @@ uint32_t __thiscall sub_0053F550(uint32_t self) {
     return self;
 }
 } // namespace lift_0053F550
+
+// [0x005314C0]
+namespace lift_005314C0 {
+uint32_t mem_r32(uint32_t addr);
+
+// @name getNestedField_0x10_0x1b0
+// @summary Reads a 32-bit value at offset +0x1b0 from a sub-object pointer at +0x10.
+// @field Self +0x10 uint32_t field_0x10
+uint32_t __thiscall sub_005314C0(uint32_t this_ptr) {
+    uint32_t obj = mem_r32(this_ptr + 0x10u);
+    return mem_r32(obj + 0x1b0u);
+}
+} // namespace lift_005314C0

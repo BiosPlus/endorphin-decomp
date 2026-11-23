@@ -1,0 +1,21 @@
+{
+  "va": "0x005314C0",
+  "size": 10,
+  "orig_symbol": "sub_005314C0",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "getNestedField_0x10_0x1b0",
+  "signature": "uint32_t __thiscall sub_005314C0(uint32_t this_ptr)",
+  "summary": "Reads a 32-bit value at offset +0x1b0 from a sub-object pointer at +0x10.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:28:32Z"
+}
