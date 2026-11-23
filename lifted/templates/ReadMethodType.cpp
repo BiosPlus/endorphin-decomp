@@ -11792,3 +11792,24 @@ void* __stdcall fn_004B1350(void* arg1, void** arg2) {
     return nullptr;  // not reached: _CxxThrowException does not return
 }
 } // namespace lift_004B1350
+
+// [0x005D27C0] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_005D27C0 {
+extern void __thiscall ext_006720A0(void* self, uint8_t value);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_0 (NMData::VideoPlaneData::mustDrawTimeCode)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
+// @summary Reads the bool result of VideoPlaneData::mustDrawTimeCode from the held VideoPlaneData (byte at +0x30) and forwards it to ext_006720A0; throws if the held pointer is null.
+// @field NMData::VideoPlaneData +0x30 uint8_t field_0x30
+extern void* __stdcall fn_005D27C0(void* const* holder, void* arg2) {
+    (void)arg2;
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception via MSVCR80 _CxxThrowException; message text not recovered.
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::VideoPlaneData>: null value pointer");
+    }
+    const uint8_t value = lift_field<uint8_t>(obj, 0x30);
+    ext_006720A0(const_cast<void*>(static_cast<const void*>(holder)), value);
+    return const_cast<void*>(static_cast<const void*>(holder));
+}
+} // namespace lift_005D27C0
