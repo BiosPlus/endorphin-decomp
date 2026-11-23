@@ -8417,3 +8417,34 @@ float fn_004B20F0(void* self) {
     return 0.0f; // unreachable: _CxxThrowException does not return
 }
 } // namespace lift_004B20F0
+
+// [0x004B2440] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004B2440 {
+extern float ext_00622310(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Throw-info descriptor for the exception raised on a null target (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getYMin, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>
+// @summary Returns the Y-min value by forwarding to the bound SkeletalCalibrationVariables object; throws if the bound pointer is null.
+// @field UnknownArg +0x00 void* calibrationVars
+float fn_004B2440(void* self) {
+    // Load the target object pointer stored at the start of the argument block.
+    void* target = *reinterpret_cast<void**>(self);
+
+    if (target != nullptr) {
+        // Tail-forward to SkeletalCalibrationVariables::vfunc_14, which yields the float result.
+        return ext_00622310(target);
+    }
+
+    // Null target: build an exception object and throw it.
+    alignas(8) unsigned char exception_object[0x28] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, mem_009DEC1C);
+    // The throw thunk never returns; abort keeps control flow well-defined if it did.
+    std::abort();
+}
+} // namespace lift_004B2440
