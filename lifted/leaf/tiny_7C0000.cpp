@@ -245,3 +245,42 @@ uint32_t sub_007CC9C0(const uint32_t* ptr) {
     return (*ptr) >> 8;
 }
 } // namespace lift_007CC9C0
+
+// [0x007C5F90]
+namespace lift_007C5F90 {
+// @name getField0x1c8
+// @summary Loads and returns the float at offset 0x1c8 from the first argument.
+// @field Unknown +0x1c8 float field_0x1c8
+
+
+extern float mem_f32(uint32_t addr);
+
+float sub_007C5F90(uint32_t arg0) {
+    return mem_f32(arg0 + 0x1c8);
+}
+} // namespace lift_007C5F90
+
+// [0x007C5900]
+namespace lift_007C5900 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name getField0x1A4
+// @summary Returns the 32-bit field at offset 0x1A4 of the given object.
+// @field Object +0x1A4 uint32_t field_0x1A4
+extern uint32_t sub_007C5900(uint32_t obj) {
+    return mem_read32(obj + 0x1A4);
+}
+} // namespace lift_007C5900
+
+// [0x007C59B0]
+namespace lift_007C59B0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getField0x1B8
+// @summary Reads a 32-bit field at offset 0x1B8 from the passed object pointer.
+// @field Object +0x1B8 uint32_t field_0x1b8
+
+uint32_t sub_007C59B0(uint32_t obj) {
+    return mem_read32(obj + 0x1B8);
+}
+} // namespace lift_007C59B0

@@ -45,6 +45,7 @@ struct Unknown_Fields {
     // +0x8C  uint32_t                 field_0x8c  (evidence: 0x0053DAA0)
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0)
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070)
+    // +0x1C8 float                    field_0x1c8  (evidence: 0x007C5F90)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
 };
 } // namespace lifted_layout
