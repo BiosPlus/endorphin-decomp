@@ -1648,6 +1648,18 @@
     "summary": "Tail-calls the callback stored at this+0x8 with arg0 if non-null, otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00447510": {
+    "name": "sub_00447510",
+    "signature": "void __thiscall sub_00447510(void* self, uint32_t arg1)",
+    "summary": "Tail-calls callback at this+0x0C if non-null, otherwise returns",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x00447520": {
+    "name": "invokeCallback0x10",
+    "signature": "void __thiscall sub_00447520(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Tail-calls the 2-arg __thiscall function pointer at this+0x10 if non-null",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447580": {
     "name": "PrimitivesPropertyPage::vfunc_0",
     "class": "PrimitivesPropertyPage",

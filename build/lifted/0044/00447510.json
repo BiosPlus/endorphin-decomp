@@ -1,0 +1,21 @@
+{
+  "va": "0x00447510",
+  "size": 12,
+  "orig_symbol": "sub_00447510",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_00447510",
+  "signature": "void __thiscall sub_00447510(void* self, uint32_t arg1)",
+  "summary": "Tail-calls callback at this+0x0C if non-null, otherwise returns",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:45:33Z"
+}

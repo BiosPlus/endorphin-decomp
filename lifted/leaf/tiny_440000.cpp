@@ -313,3 +313,37 @@ uint32_t __thiscall sub_00447500(uint32_t self, uint32_t arg0) {
     return 0u;
 }
 } // namespace lift_00447500
+
+// [0x00447510]
+namespace lift_00447510 {
+// @name sub_00447510
+// @summary Tail-calls callback at this+0x0C if non-null, otherwise returns
+// @field unknown +0x0C uint32_t field_0x0C
+
+
+void __thiscall sub_00447510(void* self, uint32_t arg1) {
+    uint32_t fn_ptr = *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x0C);
+    if (fn_ptr != 0) {
+        using fn_t = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn_ptr))(self, arg1);
+    }
+}
+} // namespace lift_00447510
+
+// [0x00447520]
+namespace lift_00447520 {
+// @name invokeCallback0x10
+// @summary Tail-calls the 2-arg __thiscall function pointer at this+0x10 if non-null
+// @field struct_0 +0x10 uint32_t field_0x10
+
+
+uint32_t mem_read32(uintptr_t addr);
+
+void __thiscall sub_00447520(void* self, uint32_t arg1, uint32_t arg2) {
+    uint32_t fn_addr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x10);
+    if (fn_addr != 0) {
+        using FnType = void(__thiscall*)(void*, uint32_t, uint32_t);
+        reinterpret_cast<FnType>(static_cast<uintptr_t>(fn_addr))(self, arg1, arg2);
+    }
+}
+} // namespace lift_00447520
