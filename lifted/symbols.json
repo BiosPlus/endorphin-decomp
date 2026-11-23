@@ -4347,6 +4347,13 @@
     "summary": "Copies the two floats at +0xE8/+0xEC into the caller-supplied out pair (stdcall-style, ret 8).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049FCF0": {
+    "name": "NMData::State::vfunc_6_off_10",
+    "class": "NMData::State",
+    "signature": "extern \"C\" void __thiscall fn_0049FCF0(void* self, void* arg)",
+    "summary": "Walks the circular intrusive list headed at this+0xD0; for each node whose byte at +0x6D is zero, calls virtual slot 1 on the node's embedded object at +0x10 and passes the result to ext_0040ECB0(arg, result).",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x004A0130": {
     "name": "NMData::State::vfunc_0",
     "class": "NMData::State",

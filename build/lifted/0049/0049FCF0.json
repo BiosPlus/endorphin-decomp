@@ -1,0 +1,40 @@
+{
+  "va": "0x0049FCF0",
+  "size": 96,
+  "orig_symbol": "NMData::State::vfunc_6_off_10",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_6_off_10",
+  "class": "NMData::State",
+  "signature": "extern \"C\" void __thiscall fn_0049FCF0(void* self, void* arg)",
+  "summary": "Walks the circular intrusive list headed at this+0xD0; for each node whose byte at +0x6D is zero, calls virtual slot 1 on the node's embedded object at +0x10 and passes the result to ext_0040ECB0(arg, result).",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0xD0",
+      "type": "void*",
+      "name": "list_sentinel"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "ListNode*",
+      "name": "next"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "embedded_obj"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x6D",
+      "type": "uint8_t",
+      "name": "skip_flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:01:48Z"
+}
