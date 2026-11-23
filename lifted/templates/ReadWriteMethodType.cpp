@@ -1203,41 +1203,6 @@ void __stdcall fn_0046EDA0(void* const* self, void* arg) {
 }
 } // namespace lift_0046EDA0
 
-// [0x0046F080] ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageWidth(int), 0}>::vfunc_41 (68 bytes)
-namespace lift_0046F080 {
-// Callee 0x0046C3C0: sub_0046C3C0 (thiscall, takes the address of the first argument as `self`).
-extern void ext_0046C3C0(void* self);
-// Callee 0x006AD060: SelectionBuffer::vfunc_0 (thiscall, one value argument).
-extern void ext_006AD060(void* self, int value);
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
-extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
-
-// Throw info (RTTI/ThrowInfo) pointer pushed before the throw call in the original.
-static constexpr uintptr_t kThrowInfo_0x009DEC1C = 0x009DEC1Cu;
-
-// @name ExprParser::ReadWriteMethodType<ImageExporter,int,getImageWidth,int,setImageWidth>::vfunc_41
-// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageWidth(int), 0}>
-// @summary If the first argument's target pointer is set, call the holder's virtual slot 2 to obtain an int and forward it to SelectionBuffer::vfunc_0; otherwise raise a C++ exception.
-// @field ExprParser::ValuePtrType +0x00 void* field_0x00
-void fn_0046F080(void* a, void* b) {
-    void* target = lift_field<void*>(a, 0x00);
-    if (target == nullptr) {
-        ext_0046C3C0(a);
-        ext_006A6DD2(a, reinterpret_cast<const void*>(kThrowInfo_0x009DEC1C));
-        return;
-    }
-
-    // b is an untyped holder; its +0x04 member is an object whose vtable slot +0x08 is invoked.
-    void* inner = lift_field<void*>(b, 0x04);
-    void* vtable = lift_field<void*>(inner, 0x00);
-    using Slot2Fn = int (*)(void* self, void* arg);
-    auto slot2 = reinterpret_cast<Slot2Fn>(lift_field<void*>(vtable, 0x08));
-    int value = slot2(inner, b);
-
-    ext_006AD060(target, value);
-}
-} // namespace lift_0046F080
-
 // [0x004A2580] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>::vfunc_41 (68 bytes)
 namespace lift_004A2580 {
 // Setter: StateMachineEditor::FSMEditView::setDrawActions(bool), thiscall with one stack argument.
@@ -1334,3 +1299,38 @@ void fn_0049BF20(void* dst, void* src) {
     ext_0049AA00(target, value);
 }
 } // namespace lift_0049BF20
+
+// [0x0046F080] ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageWidth(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_0046F080 {
+// Callee 0x0046C3C0: sub_0046C3C0 (thiscall, takes the address of the first argument as `self`).
+extern void ext_0046C3C0(void* self);
+// Callee 0x006AD060: SelectionBuffer::vfunc_0 (thiscall, one value argument).
+extern void ext_006AD060(void* self, int value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// ThrowInfo pointer pushed before the throw call in the original (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfo = 0x009DEC1Cu;
+
+// @name ExprParser::ReadWriteMethodType<ImageExporter,int,getImageWidth,int,setImageWidth>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageWidth(int), 0}>
+// @summary If the first argument's target pointer is set, call the holder's virtual slot 2 to obtain an int and forward it to SelectionBuffer::vfunc_0; otherwise raise a C++ exception.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0046F080(void* a, void* b) {
+    void* target = lift_field<void*>(a, 0x00);
+    if (target == nullptr) {
+        ext_0046C3C0(a);
+        ext_006A6DD2(a, reinterpret_cast<const void*>(kThrowInfo));
+        return;
+    }
+
+    // b is an untyped holder; its +0x04 member is an object whose vtable slot +0x08 is invoked.
+    void* inner = lift_field<void*>(b, 0x04);
+    void* vtable = lift_field<void*>(inner, 0x00);
+    using Slot2Fn = int (*)(void* self, void* arg);
+    auto slot2 = reinterpret_cast<Slot2Fn>(lift_field<void*>(vtable, 0x08));
+    int value = slot2(inner, b);
+
+    ext_006AD060(target, value);
+}
+} // namespace lift_0046F080
