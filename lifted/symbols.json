@@ -2856,6 +2856,13 @@
     "summary": "Reads the ImageExporter pointer held by the value-pointer argument and returns its isEnabled result; throws if that pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046CE20": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getUseRenderer)",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+    "signature": "bool fn_0046CE20(void* self)",
+    "summary": "Reads the ImageExporter pointer held in the value holder, throws if it is null, otherwise returns sub_0046C2E0's result normalised to 0/1.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046CE60": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_3 (ImageExporter::getUseRenderer)",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",

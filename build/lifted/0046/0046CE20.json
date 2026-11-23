@@ -1,0 +1,14 @@
+{
+  "va": "0x0046CE20",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getUseRenderer)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+  "signature": "bool fn_0046CE20(void* self)",
+  "summary": "Reads the ImageExporter pointer held in the value holder, throws if it is null, otherwise returns sub_0046C2E0's result normalised to 0/1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:55:06Z"
+}

@@ -8755,3 +8755,25 @@ float fn_006959E0(void* self) {
     throw std::runtime_error("ExprParser: null value pointer in DoubleWithProperties::getValue");
 }
 } // namespace lift_006959E0
+
+// [0x0046CE20] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_0046CE20 {
+extern uint8_t ext_0046C2E0(void* self);
+// Known callee 0x0046C3C0 (builds an exception object; not needed in the portable path).
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getUseRenderer)
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Reads the ImageExporter pointer held in the value holder, throws if it is null, otherwise returns sub_0046C2E0's result normalised to 0/1.
+// @field none - no offsets from the ImageExporter object are accessed directly; the flag is computed by ext_0046C2E0.
+bool fn_0046CE20(void* self) {
+    // holder: self points at a pointer-sized slot holding the ImageExporter instance.
+    void* obj = self ? *static_cast<void**>(self) : nullptr;
+    if (obj == nullptr) {
+        // Original builds an MSVC exception object and calls _CxxThrowException.
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null value pointer");
+    }
+    // Original: neg al / sbb eax,eax / neg eax  ==>  eax = (al != 0).
+    return ext_0046C2E0(obj) != 0;
+}
+} // namespace lift_0046CE20
