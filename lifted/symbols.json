@@ -4085,6 +4085,13 @@
     "summary": "Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004979F0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_8",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+    "signature": "void __stdcall fn_004979F0(uint32_t* arg0, uint32_t arg1)",
+    "summary": "Evaluates/converts a value to std::string via sub_00497830 and assigns it to *arg0",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497B50": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_41",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",

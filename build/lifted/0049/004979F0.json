@@ -1,0 +1,14 @@
+{
+  "va": "0x004979F0",
+  "size": 102,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_8",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_8",
+  "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+  "signature": "void __stdcall fn_004979F0(uint32_t* arg0, uint32_t arg1)",
+  "summary": "Evaluates/converts a value to std::string via sub_00497830 and assigns it to *arg0",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:31Z"
+}

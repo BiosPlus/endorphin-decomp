@@ -468,3 +468,27 @@ void __thiscall fn_00497BB0(void* self, void** arg0, void* arg1) {
     dtor_fn(local_str);
 }
 } // namespace lift_00497BB0
+
+// [0x004979F0]
+namespace lift_004979F0 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_8
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Evaluates/converts a value to std::string via sub_00497830 and assigns it to *arg0
+
+extern uint32_t __cdecl ext_00497830(void* out_str, uint32_t a1, uint32_t a2);
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FF4;
+
+void __stdcall fn_004979F0(uint32_t* arg0, uint32_t arg1) {
+    uint8_t temp_str[0x1c];
+    uint32_t str_ptr = ext_00497830(temp_str, arg1, arg1);
+
+    using AssignFn = void(__thiscall*)(void*, uint32_t);
+    auto assign_fn = reinterpret_cast<AssignFn>(mem_00924FDC);
+    assign_fn(reinterpret_cast<void*>(*arg0), str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    auto dtor_fn = reinterpret_cast<DtorFn>(mem_00924FF4);
+    dtor_fn(temp_str);
+}
+} // namespace lift_004979F0
