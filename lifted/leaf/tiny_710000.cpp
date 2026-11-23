@@ -1524,3 +1524,20 @@ extern void fn_00714560(void) {
 }
 } // namespace lift_007AE0A0
 } // namespace lift_00714560
+
+// [0x007101E0]
+namespace lift_007101E0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name forwardVtableSlot4
+// @summary Tail-calls vtable slot 4 (+0x10) on the subobject at this+0xf4.
+// @field Class +0xf4 uint32_t field_0xf4
+
+void __fastcall sub_007101E0(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t obj = mem_read32(ecx + 0xf4);
+    uint32_t vtable = mem_read32(obj);
+    uint32_t fn = mem_read32(vtable + 0x10);
+    reinterpret_cast<void(__fastcall *)(uint32_t, uint32_t)>(static_cast<uintptr_t>(fn))(obj, edx);
+}
+} // namespace lift_007101E0

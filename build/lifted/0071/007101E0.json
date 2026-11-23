@@ -1,0 +1,21 @@
+{
+  "va": "0x007101E0",
+  "size": 11,
+  "orig_symbol": "sub_007101E0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "forwardVtableSlot4",
+  "signature": "void __fastcall sub_007101E0(uint32_t ecx, uint32_t edx)",
+  "summary": "Tail-calls vtable slot 4 (+0x10) on the subobject at this+0xf4.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0xF4",
+      "type": "uint32_t",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:42:43Z"
+}
