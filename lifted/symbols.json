@@ -10913,6 +10913,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00536A30 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00543210": {
+    "name": "forwardToMemberVtableSlot0x6c",
+    "signature": "void __thiscall sub_00543210(void* self)",
+    "summary": "Tail-calls vtable slot +0x6c on member pointer at +0x14.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00543320": {
     "name": "sub_00543320",
     "signature": "extern \"C\" void __fastcall fn_00543320(void* self)",
@@ -10946,11 +10952,25 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544B00": {
+    "name": "ReshapeTool::vfunc_19_off_98",
+    "class": "ReshapeTool",
+    "signature": "uint32_t __thiscall fn_00544B00(uint32_t self)",
+    "summary": "Tail-calls vtable slot +0x7c on the object pointer at this - 0x10 (ToolClient subobject).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00544BC0": {
     "name": "ReshapeTool::vfunc_1",
     "class": "ReshapeTool",
     "signature": "extern \"C\" void* __fastcall fn_00544BC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00544920 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00544E00": {
+    "name": "ReshapeTool::vfunc_8_off_98",
+    "class": "ReshapeTool",
+    "signature": "void __fastcall fn_00544E00(void* ecx)",
+    "summary": "Forwards ToolClient::vfunc_8 to the target object stored at offset -0x10 from the ToolClient subobject (ReshapeTool + 0x88)",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x005450A0": {
