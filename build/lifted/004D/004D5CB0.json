@@ -1,0 +1,14 @@
+{
+  "va": "0x004D5CB0",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, getInitialPhysicsTicks\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, getInitialPhysicsTicks\u003e",
+  "signature": "extern \"C\" double __thiscall fn_004D5CB0(void* /*this*/, uint32_t* ptr)",
+  "summary": "Dereferences the RigEventData pointer, calls getInitialPhysicsTicks, and returns it as double, or throws on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:00:04Z"
+}

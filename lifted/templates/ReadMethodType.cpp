@@ -11044,3 +11044,28 @@ float fn_0068DE60(void* self) {
     throw std::runtime_error("ReadMethodType: null object pointer");
 }
 } // namespace lift_0068DE60
+
+// [0x004D5CB0]
+namespace lift_004D5CB0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, getInitialPhysicsTicks>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, getInitialPhysicsTicks>
+// @summary Dereferences the RigEventData pointer, calls getInitialPhysicsTicks, and returns it as double, or throws on null.
+
+
+extern int32_t __thiscall ext_004D39D0(uint32_t self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern double __thiscall fn_004D5CB0(void* /*this*/, uint32_t* ptr) {
+    uint32_t obj = *ptr;
+    if (obj != 0) {
+        int32_t ticks = ext_004D39D0(obj);
+        return static_cast<double>(ticks);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D5CB0
