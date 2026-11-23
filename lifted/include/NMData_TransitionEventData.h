@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct NMData_TransitionEventData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004D0B80)
+    // +0x194 float                    m_momentumScaleFactor  (evidence: 0x004D1C60)
 };
 } // namespace lifted_layout

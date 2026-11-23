@@ -1,0 +1,22 @@
+{
+  "va": "0x004D1C60",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, getMomentumScaleFactor, float, setMomentumScaleFactor\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __stdcall fn_004D1C60(void** targetPtr, void* valueWrapper)",
+  "summary": "Sets the momentum scale factor on a TransitionEventData instance from an expression value, or throws if null.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "m_momentumScaleFactor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:50:02Z"
+}
