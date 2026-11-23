@@ -10919,6 +10919,13 @@
     "summary": "Forwards (inner, arg) to vtable slot 42 of inner-\u003e+0x04 and returns its result.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066BB50": {
+    "name": "ExprParser::ExtROType::vfunc_47",
+    "class": "ExprParser::ExtROType",
+    "signature": "void __stdcall fn_0066BB50(void* esi)",
+    "summary": "Calls ext_0066BA00 on the object, then invokes vtable slot 47 (+0xBC) of the inner object at +0x4 with the object as argument.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066BB70": {
     "name": "ExprParser::ExtROType::vfunc_13",
     "class": "ExprParser::ExtROType",

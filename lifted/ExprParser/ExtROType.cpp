@@ -167,3 +167,23 @@ uint32_t fn_0066B9E0(void* self) {
     VFuncSlot14 fn = reinterpret_cast<VFuncSlot14>(vtbl[14]);                         // slot 14 (+0x38)
     return fn(inner);
 }
+
+// [0x0066BB50]
+// @name ExprParser::ExtROType::vfunc_47
+// @class ExprParser::ExtROType
+// @summary Calls ext_0066BA00 on the object, then invokes vtable slot 47 (+0xBC) of the inner object at +0x4 with the object as argument.
+// @field ExprParser::ExtROType +0x04 void* field_0x04
+
+#include "lift_compat.h"
+
+void __cdecl ext_0066BA00(void* arg);
+
+void __stdcall fn_0066BB50(void* esi) {
+    ext_0066BA00(esi);
+
+    void* inner = lift_field<void*>(esi, 4);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using Slot47 = void(__thiscall*)(void* self, void* arg);
+    auto fn = reinterpret_cast<Slot47>(vtbl[47]);
+    fn(inner, esi);
+}
