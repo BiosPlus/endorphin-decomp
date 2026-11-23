@@ -3510,6 +3510,13 @@
     "summary": "If the holder's first pointer is set, release it via ext_006AD970; otherwise throw.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00494D50": {
+    "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_3",
+    "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
+    "signature": "bool fn_00494D50(void* self)",
+    "summary": "Returns true if the bound pointer (self-\u003eptr) is non-null and the helper 0x006AD970 on it returns nonzero; throws std::runtime_error when the pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00495020": {
     "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26",
     "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",

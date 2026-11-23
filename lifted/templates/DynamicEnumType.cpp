@@ -458,3 +458,24 @@ extern bool fn_005161A0(void* self) {
     throw std::runtime_error("NMData::EvolverRuntimeOptions: null value");
 }
 } // namespace lift_005161A0
+
+// [0x00494D50] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_3 (53 bytes)
+namespace lift_00494D50 {
+// Callee 0x006AD970 (thiscall, `this` in ecx, no stack arguments, returns int in eax).
+extern int32_t ext_006AD970(void* self);
+
+// @name ExprParser::DynamicEnumType<RigManager>::vfunc_3
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Returns true if the bound pointer (self->ptr) is non-null and the helper 0x006AD970 on it returns nonzero; throws std::runtime_error when the pointer is null.
+// @field ExprParser::DynamicEnumType +0x00 void* ptr
+bool fn_00494D50(void* self) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        // Original builds an MSVC exception object (sub_0046C3C0) and throws it
+        // via _CxxThrowException (type 0x009DEC1C); the message is not recoverable,
+        // so a portable std::runtime_error stands in.
+        throw std::runtime_error("ExprParser::DynamicEnumType<RigManager>: null value pointer");
+    }
+    return ext_006AD970(inner) != 0;
+}
+} // namespace lift_00494D50
