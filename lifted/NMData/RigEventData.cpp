@@ -48,3 +48,29 @@ void* fn_004DCB20(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_004DC710(mem, owner);
 }
+
+// [0x004D3C60]
+namespace lift_004D3C60 {
+// @name NMData::RigEventData::vfunc_13
+// @class NMData::RigEventData
+// @summary Returns property/value at +0x398 if name matches 0x948360, otherwise initializes default out_result
+// @field NMData::RigEventData +0x398 uint8_t field_0x398
+
+
+extern uint32_t mem_00924FC0;
+extern void __thiscall ext_00661650(void* self, const void* src);
+extern void __cdecl ext_0046F7D0(void* out_result);
+
+void* __thiscall fn_004D3C60(void* self, void* out_result, const void* name) {
+    using StdStringEqCStrFn = uint8_t(__cdecl*)(const void*, const char*);
+    auto str_eq = reinterpret_cast<StdStringEqCStrFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(name, reinterpret_cast<const char*>(0x00948360)) != 0) {
+        ext_00661650(out_result, static_cast<const uint8_t*>(self) + 0x398);
+        return out_result;
+    }
+
+    ext_0046F7D0(out_result);
+    return out_result;
+}
+} // namespace lift_004D3C60

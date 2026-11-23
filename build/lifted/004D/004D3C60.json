@@ -1,0 +1,22 @@
+{
+  "va": "0x004D3C60",
+  "size": 80,
+  "orig_symbol": "NMData::RigEventData::vfunc_13",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_13",
+  "class": "NMData::RigEventData",
+  "signature": "void* __thiscall fn_004D3C60(void* self, void* out_result, const void* name)",
+  "summary": "Returns property/value at +0x398 if name matches 0x948360, otherwise initializes default out_result",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x398",
+      "type": "uint8_t",
+      "name": "field_0x398"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:59:37Z"
+}

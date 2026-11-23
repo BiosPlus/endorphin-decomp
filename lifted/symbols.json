@@ -6247,6 +6247,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
     "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
+  "0x004D3C60": {
+    "name": "NMData::RigEventData::vfunc_13",
+    "class": "NMData::RigEventData",
+    "signature": "void* __thiscall fn_004D3C60(void* self, void* out_result, const void* name)",
+    "summary": "Returns property/value at +0x398 if name matches 0x948360, otherwise initializes default out_result",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004D3CB0": {
     "name": "NMData::AnimationEventData::vfunc_61",
     "class": "NMData::AnimationEventData",
