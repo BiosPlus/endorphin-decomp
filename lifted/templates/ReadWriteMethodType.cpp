@@ -4039,3 +4039,50 @@ extern void __stdcall fn_00633240(void* const* self, void* arg) {
 
 } // namespace lift_00633240
 } // namespace lift_00633240
+
+// [0x005853E0] ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool>::vfunc_41 (69 bytes)
+namespace lift_005853E0 {
+// Exception-object constructor (called with `this` = caller-provided buffer).
+extern void __fastcall ext_0046C3C0(void* self);
+// MSVCR80 _CxxThrowException(exception object, ThrowInfo).
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// RTTI ThrowInfo descriptor used when throwing.
+extern const uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool>
+// @summary Reads a value from the context's inner object via its vfunc_3, then writes it into the target object's +0x0C sub-object through that sub-object's vfunc_8; throws if the target pointer is null.
+// @field Unknown +0x00 void* field_0x00 (target object pointer; *arg1)
+// @field Unknown +0x04 void* field_0x04 (inner object of the context argument)
+// @field Unknown +0x0C void* field_0x0C (sub-object that receives the value via vfunc_8)
+
+// Thiscall shapes used here (ecx carries `this`, remaining words on the stack):
+//   value getter : vtable slot 3 (offset 0x0C) on the context's inner object, takes the context.
+//   value setter : vtable slot 8 (offset 0x20) on the +0x0C sub-object, takes the value.
+using GetFn = uint32_t (__thiscall*)(void* self, void* ctx);
+using SetFn = void (__thiscall*)(void* self, uint32_t value);
+
+void fn_005853E0(void** target, void* ctx) {
+    // esi = *target
+    void* obj = *target;
+
+    // Null target: build an exception object in a local buffer and throw it.
+    if (obj == nullptr) {
+        alignas(8) uint8_t excBuf[0x28] = {};
+        ext_0046C3C0(excBuf);
+        ext_006A6DD2(excBuf, &mem_009DEC1C);
+        return;  // _CxxThrowException does not return.
+    }
+
+    // inner = ctx->+0x04; value = inner->vtbl[3](ctx)
+    void* inner = lift_field<void*>(ctx, 0x04);
+    void** innerVt = *static_cast<void***>(inner);
+    uint32_t value = reinterpret_cast<GetFn>(innerVt[3])(inner, ctx);
+
+    // The original tail-jumps through VirtualSlot8Thunk (ext_004AA580) with
+    // ecx = obj+0x0C; that thunk is exactly vtbl[8](this, value), so it is inlined.
+    void* sub = lift_field<void*>(obj, 0x0C);
+    void** subVt = *static_cast<void***>(sub);
+    reinterpret_cast<SetFn>(subVt[8])(sub, value);
+}
+} // namespace lift_005853E0
