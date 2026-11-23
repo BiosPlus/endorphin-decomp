@@ -1,0 +1,28 @@
+{
+  "va": "0x005944A0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setGravity(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cWorld, float, setGravity\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setGravity(float), 0}\u003e",
+  "signature": "void* fn_005944A0(void* out, void* targetRef, void* arg)",
+  "summary": "Evaluates the wrapped value from arg's inner object (vtable slot 1), forwards it to setGravity on the target held behind targetRef, then returns {inner result, inner object} via out.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:06:20Z"
+}

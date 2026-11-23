@@ -7291,6 +7291,13 @@
     "summary": "Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setGravity setter ext_00594080.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005944A0": {
+    "name": "ExprParser::WriteMethodType\u003cWorld, float, setGravity\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setGravity(float), 0}\u003e",
+    "signature": "void* fn_005944A0(void* out, void* targetRef, void* arg)",
+    "summary": "Evaluates the wrapped value from arg's inner object (vtable slot 1), forwards it to setGravity on the target held behind targetRef, then returns {inner result, inner object} via out.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00594520": {
     "name": "ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",

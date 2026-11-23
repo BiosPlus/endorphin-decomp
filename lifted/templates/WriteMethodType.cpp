@@ -3223,3 +3223,47 @@ void* fn_005F3600(void* out, void* targetPtr, void* expr) {
     return out;
 }
 } // namespace lift_005F3600
+
+// [0x005944A0] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_005944A0 {
+// Callee 0x00594080: sub_00594080 (22B), thiscall-style setter taking one float (World::setGravity).
+extern void ext_00594080(void* self, float value);
+
+// @name ExprParser::WriteMethodType<World, float, setGravity>::vfunc_48
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>
+// @summary Evaluates the wrapped value from arg's inner object (vtable slot 1), forwards it to setGravity on the target held behind targetRef, then returns {inner result, inner object} via out.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+//
+// Stack layout (stdcall, ret 0xC): out (hidden return slot, returned in eax), targetRef, arg.
+// targetRef is dereferenced to obtain the World* passed to ext_00594080; its owning class is not confirmed.
+// Result struct is two pointer-sized words: {first, second}. The second word is arg->field_0x04 (the inner object).
+void* fn_005944A0(void* out, void* targetRef, void* arg) {
+    void* target = *static_cast<void**>(targetRef);
+
+    // Evaluate the inner object via vtable slot 1 (byte offset 0x04), passing arg.
+    void* inner = lift_field<void*>(arg, 0x04);
+    void** innerVt = *reinterpret_cast<void***>(inner);
+    float value = reinterpret_cast<float (*)(void*, void*)>(innerVt[0x04 / 4])(inner, arg);
+
+    ext_00594080(target, value);
+
+    // Reload the inner object after the setter call, as the original does.
+    void* obj = lift_field<void*>(arg, 0x04);
+    if (obj == nullptr) {
+        lift_field<void*>(out, 0x00) = nullptr;
+        lift_field<void*>(out, 0x04) = nullptr;
+        return out;
+    }
+
+    // Non-null path: call vtable slot 28 (byte offset 0x70) with a temp return buffer and arg.
+    void* tmp[2] = {nullptr, nullptr};
+    void** objVt = *reinterpret_cast<void***>(obj);
+    void* resultPtr = reinterpret_cast<void* (*)(void*, void*, void*)>(objVt[0x70 / 4])(obj, tmp, arg);
+
+    obj = lift_field<void*>(arg, 0x04);
+    lift_field<void*>(out, 0x00) = *static_cast<void**>(resultPtr);
+    lift_field<void*>(out, 0x04) = obj;
+    return out;
+}
+} // namespace lift_005944A0
