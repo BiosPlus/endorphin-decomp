@@ -1226,3 +1226,17 @@ void fn_006C0DD0(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0x1050) = a0;
     lift_field<uint32_t>(self, 0x1054) = a1;
 }
+
+// [0x006C2070]
+namespace lift_006C2070 {
+// @name forwardVtableSlot4
+// @summary Tail-calls vtable slot +0x10 on the subobject at offset 0xf0.
+// @field Unknown +0xf0 void* field_0xf0
+void __thiscall sub_006C2070(void* self) {
+    void* obj = *reinterpret_cast<void* const*>(static_cast<const uint8_t*>(self) + 0xf0);
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(obj);
+    using Fn = void(__thiscall*)(void*);
+    auto fn = reinterpret_cast<Fn>(vtbl[0x10 / sizeof(void*)]);
+    fn(obj);
+}
+} // namespace lift_006C2070

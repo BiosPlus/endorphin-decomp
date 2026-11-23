@@ -29774,6 +29774,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006C1DD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C2070": {
+    "name": "forwardVtableSlot4",
+    "signature": "void __thiscall sub_006C2070(void* self)",
+    "summary": "Tail-calls vtable slot +0x10 on the subobject at offset 0xf0.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C2F10": {
     "name": "sub_006C2F10",
     "signature": "extern \"C\" void __fastcall fn_006C2F10(void* self, int edx_unused, int32_t value)",

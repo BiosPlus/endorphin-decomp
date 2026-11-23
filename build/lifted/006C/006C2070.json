@@ -1,0 +1,21 @@
+{
+  "va": "0x006C2070",
+  "size": 11,
+  "orig_symbol": "sub_006C2070",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "forwardVtableSlot4",
+  "signature": "void __thiscall sub_006C2070(void* self)",
+  "summary": "Tail-calls vtable slot +0x10 on the subobject at offset 0xf0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "void*",
+      "name": "field_0xf0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:42:18Z"
+}
