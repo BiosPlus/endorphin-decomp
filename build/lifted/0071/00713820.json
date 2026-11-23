@@ -1,0 +1,13 @@
+{
+  "va": "0x00713820",
+  "size": 10,
+  "orig_symbol": "sub_00713820",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "initGlobal_00B5F708",
+  "signature": "void sub_00713820(void)",
+  "summary": "Tail-calls sub_00714060 with global object mem_00B5F708 in ecx.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:35:27Z"
+}
