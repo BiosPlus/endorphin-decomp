@@ -79,3 +79,29 @@ void __thiscall fn_0061FE60(void* self, uint32_t arg0) {
     }
 }
 } // namespace lift_0061FE60
+
+// [0x0061FEA0] NMData::GraphicData::vfunc_5_off_C (78 bytes)
+namespace lift_0061FEA0 {
+extern void ext_005B1B60(void* self, const float* v);
+
+// @name NMData::GraphicData::vfunc_5_off_C
+// @class NMData::GraphicData
+// @summary Forwards a 3-component vector to the embedded sub-object at +0x148, then if the object at +0x4 is non-null, calls its vtable slot 13 with a w=0 padded copy of the vector.
+// @field NMData::GraphicData +0x04 void* field_0x04
+// @field NMData::GraphicData +0x148 void* field_0x148
+void fn_0061FEA0(void* self, const float* v) {
+    // Hand the input vector to the embedded sub-object at this+0x148.
+    ext_005B1B60(static_cast<uint8_t*>(self) + 0x148, v);
+
+    // Build a float4 {x, y, z, 0} from the input vector.
+    float tmp[4] = {v[0], v[1], v[2], 0.0f};
+
+    void* child = lift_field<void*>(self, 0x04);
+    if (child != nullptr) {
+        // vtable slot 13 (offset 0x34)
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using VMethod = void (*)(void* self, float* vec4);
+        reinterpret_cast<VMethod>(vtbl[0x34 / sizeof(void*)])(child, tmp);
+    }
+}
+} // namespace lift_0061FEA0

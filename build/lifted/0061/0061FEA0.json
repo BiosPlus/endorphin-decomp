@@ -1,0 +1,28 @@
+{
+  "va": "0x0061FEA0",
+  "size": 78,
+  "orig_symbol": "NMData::GraphicData::vfunc_5_off_C",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_5_off_C",
+  "class": "NMData::GraphicData",
+  "signature": "void fn_0061FEA0(void* self, const float* v)",
+  "summary": "Forwards a 3-component vector to the embedded sub-object at +0x148, then if the object at +0x4 is non-null, calls its vtable slot 13 with a w=0 padded copy of the vector.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x148",
+      "type": "void*",
+      "name": "field_0x148"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:51:50Z"
+}
