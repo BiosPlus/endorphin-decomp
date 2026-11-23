@@ -185,3 +185,70 @@ void fn_0053BE10(void* self) {
     ext_0053A050(static_cast<uint8_t*>(self) + 0x5C, c, b, 5, 10);
 }
 } // namespace lift_0053BE10
+
+// [0x0053DC50]
+namespace lift_0053DC50 {
+// @name Primitives::Hinge::vfunc_25
+// @class Primitives::Hinge
+// @summary Initializes Hinge primitive flags, scaled dimensions, and registers resource at +0xbc.
+// @field Primitives::Hinge +0x1c uint32_t field_0x1c
+// @field Primitives::Hinge +0x3c float field_0x3c
+// @field Primitives::Hinge +0x5c subobject field_0x5c
+// @field Primitives::Hinge +0xa0 subobject field_0xa0
+// @field Primitives::Hinge +0xbc subobject field_0xbc
+
+extern void ext_0053A610(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_00538550(void* self, float arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_0053A050(void* self, float arg1, float arg2, uint32_t arg3, uint32_t arg4);
+extern void* ext_005371F0();
+
+extern double mem_0092C508;
+extern double mem_00932470;
+extern double mem_009559A0;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+
+void fn_0053DC50(void* self, uint32_t arg1, void* arg2, uint32_t arg3) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    ext_0053A610(self, arg1, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)), arg3);
+
+    uint32_t flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if (flags & 0x40) {
+        flags ^= 0x40;
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags;
+    }
+    flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if (!(flags & 0x4)) {
+        flags ^= 0x4;
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags;
+    }
+    flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if (!(flags & 0x20000)) {
+        flags ^= 0x20000;
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags;
+    }
+    flags = *reinterpret_cast<uint32_t*>(s + 0x1c);
+    if (!(flags & 0x40000)) {
+        flags ^= 0x40000;
+        *reinterpret_cast<uint32_t*>(s + 0x1c) = flags;
+    }
+
+    float val = *reinterpret_cast<float*>(static_cast<uint8_t*>(arg2) + 0xb8);
+    *reinterpret_cast<float*>(s + 0x3c) = val;
+
+    float scaled_a0 = static_cast<float>(static_cast<double>(val) * mem_0092C508);
+    ext_00538550(s + 0xa0, scaled_a0, 0, 0);
+
+    float v3c = *reinterpret_cast<float*>(s + 0x3c);
+    float scaled_5c_1 = static_cast<float>(static_cast<double>(v3c) * mem_00932470);
+    float scaled_5c_2 = static_cast<float>(static_cast<double>(v3c) * mem_009559A0);
+    ext_0053A050(s + 0x5c, scaled_5c_2, scaled_5c_1, 5, 10);
+
+    uint8_t str_buf[32]{};
+    reinterpret_cast<void(*)(void*, uint32_t)>(static_cast<uintptr_t>(mem_00924FE4))(str_buf, 0x9349fc);
+    void* mgr = ext_005371F0();
+    void** vtbl = *reinterpret_cast<void***>(mgr);
+    reinterpret_cast<void(*)(void*, void*, void*)>(vtbl[0xcc / 4])(mgr, str_buf, s + 0xbc);
+    reinterpret_cast<void(*)(void*)>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+}
+} // namespace lift_0053DC50

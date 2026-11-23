@@ -1,0 +1,46 @@
+{
+  "va": "0x0053DC50",
+  "size": 307,
+  "orig_symbol": "Primitives::Hinge::vfunc_25",
+  "src_path": "src/Primitives/Hinge.cpp",
+  "lifted_path": "lifted/Primitives/Hinge.cpp",
+  "name": "Primitives::Hinge::vfunc_25",
+  "class": "Primitives::Hinge",
+  "signature": "void fn_0053DC50(void* self, uint32_t arg1, void* arg2, uint32_t arg3)",
+  "summary": "Initializes Hinge primitive flags, scaled dimensions, and registers resource at +0xbc.",
+  "fields": [
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0x5C",
+      "type": "subobject",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0xA0",
+      "type": "subobject",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "Primitives::Hinge",
+      "offset": "+0xBC",
+      "type": "subobject",
+      "name": "field_0xbc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:45:26Z"
+}
