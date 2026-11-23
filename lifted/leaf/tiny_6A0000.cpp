@@ -129,3 +129,16 @@ uint32_t sub_006A3F80(uint32_t value) {
     return value;
 }
 } // namespace lift_006A3F80
+
+// [0x006AD110]
+namespace lift_006AD110 {
+// @name sub_006AD110_getField24
+// @summary Returns the 32-bit value at offset +0x24 if the pointer is non-null, otherwise 0.
+// @field unknown +0x24 uint32_t field_0x24
+uint32_t __thiscall sub_006AD110(uintptr_t self) {
+    if (self == 0) {
+        return 0;
+    }
+    return *reinterpret_cast<const uint32_t*>(self + 0x24);
+}
+} // namespace lift_006AD110
