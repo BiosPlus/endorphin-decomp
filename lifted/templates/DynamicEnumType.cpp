@@ -689,3 +689,99 @@ double __stdcall fn_004D50B0(uint32_t* arg0) {
     return 0.0;
 }
 } // namespace lift_004D50B0
+
+// [0x004AB610] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_1 (55 bytes)
+namespace lift_004AB610 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_1
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004A9CE0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004AB610(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004A9CE0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004AB610
+
+// [0x004B9B10] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_1 (55 bytes)
+namespace lift_004B9B10 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_1
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004B72D0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004B9B10(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004B72D0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004B9B10
+
+// [0x005C89D0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_1 (55 bytes)
+namespace lift_005C89D0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_1
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_005C3FB0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_005C89D0(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_005C3FB0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_005C89D0

@@ -3464,6 +3464,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
   },
+  "0x0048DE30": {
+    "name": "NMData::DesiredPoseEventData::vfunc_87",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "extern void __thiscall fn_0048DE30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CD090 (NMData::MetaBodyConstraintData::vfunc_87).",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x0048DE70": {
     "name": "NMData::DesiredPoseEventData::vfunc_0",
     "class": "NMData::DesiredPoseEventData",
@@ -4300,6 +4307,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004AB610": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_1",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e",
+    "signature": "double __stdcall fn_004AB610(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004AC240": {
     "name": "NMData::BehaviourData::vfunc_0_off_158",
     "class": "NMData::BehaviourData",
@@ -4626,6 +4640,13 @@
     "signature": "float fn_004B9370(void* self)",
     "summary": "Reads the float at +0x44 of the wrapped EngineData; throws via ext_0046C3C0 if the wrapped pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B9B10": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_1",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e",
+    "signature": "double __stdcall fn_004B9B10(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x004B9B50": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_2",
@@ -5533,6 +5554,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D7980": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_004D7980(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D79C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e",
@@ -5705,6 +5733,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DEA00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_004DEA00(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004DECD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e",
@@ -5747,6 +5782,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004E0B20": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_004E0B20(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004E0B60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e",
@@ -5773,6 +5815,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
     "signature": "void fn_004E0FB0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E1440": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_004E1440(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004E1480": {
@@ -5960,6 +6009,13 @@
     "class": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e",
     "signature": "int fn_004ECE70(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004ED090": {
+    "name": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_004ED090(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004ED7C0": {
@@ -6227,6 +6283,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004FF3F0": {
+    "name": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e",
+    "signature": "double __stdcall fn_004FF3F0(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004FF430": {
     "name": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e",
@@ -6425,6 +6488,20 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e",
     "signature": "int fn_00509700(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00509830": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_00509830(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0050A1F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e",
+    "signature": "double __stdcall fn_0050A1F0(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0050A230": {
@@ -8644,6 +8721,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594BF0": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e",
+    "signature": "double __stdcall fn_00594BF0(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00594C30": {
     "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e",
@@ -8670,6 +8754,13 @@
     "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e",
     "signature": "void fn_00595D50(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00597DF0": {
+    "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e",
+    "signature": "double __stdcall fn_00597DF0(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00597E30": {
@@ -10029,6 +10120,13 @@
     "signature": "extern \"C\" void __fastcall fn_005C88F0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::FluidObjectData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005C89D0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_1",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e",
+    "signature": "double __stdcall fn_005C89D0(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x005C8A10": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_2",
@@ -15664,6 +15762,13 @@
     "class": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e",
     "signature": "int fn_00692570(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00692810": {
+    "name": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e",
+    "signature": "double __stdcall fn_00692810(uint32_t* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00693040": {

@@ -10668,3 +10668,355 @@ double __thiscall fn_0046D620(uint32_t self, uint32_t arg0) {
     return 0.0;
 }
 } // namespace lift_0046D620
+
+// [0x004D7980] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004D7980 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004D39E0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004D7980(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004D39E0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004D7980
+
+// [0x004DEA00] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004DEA00 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00528530(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004DEA00(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00528530(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004DEA00
+
+// [0x004E0B20] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004E0B20 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004DE160(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004E0B20(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004DE160(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004E0B20
+
+// [0x004E1440] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004E1440 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004DE440(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004E1440(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004DE440(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004E1440
+
+// [0x004ED090] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004ED090 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00536F00(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004ED090(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00536F00(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004ED090
+
+// [0x004FF3F0] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_1 (55 bytes)
+namespace lift_004FF3F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_006A7C10(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004FF3F0(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_006A7C10(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004FF3F0
+
+// [0x00509830] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_00509830 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00503A00(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_00509830(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00503A00(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_00509830
+
+// [0x0050A1F0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_1 (55 bytes)
+namespace lift_0050A1F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00508BA0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_0050A1F0(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00508BA0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_0050A1F0
+
+// [0x00594BF0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_1 (55 bytes)
+namespace lift_00594BF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00594060(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_00594BF0(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00594060(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_00594BF0
+
+// [0x00597DF0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_1 (55 bytes)
+namespace lift_00597DF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00596330(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_00597DF0(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00596330(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_00597DF0
+
+// [0x00692810] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_00692810 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_00692210(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_00692810(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_00692210(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_00692810

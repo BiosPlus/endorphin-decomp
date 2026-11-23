@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct NMData_MetaBodyConstraintData_Fields {
     // +0x0   void**                   vptr  (evidence: 0x004CA380, 0x004CCFB0)
-    // +0x180 void*                    field_0x180  (evidence: 0x004CD090)
+    // +0x180 void*                    field_0x180  (evidence: 0x0048DE30, 0x004CD090)
     // +0x184 int                      field_0x184  (evidence: 0x004A9B50, 0x004CA3D0)
 };
 } // namespace lifted_layout

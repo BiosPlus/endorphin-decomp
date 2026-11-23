@@ -1,0 +1,28 @@
+{
+  "va": "0x0048DE30",
+  "size": 58,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_87",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_87",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "extern void __thiscall fn_0048DE30(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CD090 (NMData::MetaBodyConstraintData::vfunc_87).",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:59:46Z"
+}
