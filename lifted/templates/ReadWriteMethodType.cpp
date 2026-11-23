@@ -3842,3 +3842,40 @@ void fn_005F5DC0(void** target, void* src) {
     ext_006A6DD2(target, 0x009DEC1Cu);
 }
 } // namespace lift_005F5DC0
+
+// [0x006332E0] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocity(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_006332E0 {
+extern void ext_006304E0();
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal>::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwingVelocity -> setDesiredTwistAndSwingVelocity)
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocity(class NM::Vector3 const &)>
+// @summary Reads a Vector3 through the source's accessor (vtable slot 5) and writes it into the target EffectorSkeletal via the setter; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadWriteMethodType +0x04 void* accessor
+void fn_006332E0(void** dst, void* src) {
+    // dst +0x00 holds the EffectorSkeletal target. Null means the write target is missing, which is an error.
+    void* target = *dst;
+    if (target == nullptr) {
+        // The original throws a MSVC C++ exception here (type descriptor at 0x009DEC1C).
+        // The exception object is the dst slot itself.
+        ext_0046C3C0(dst);
+        ext_006A6DD2(dst, 0x009DEC1Cu);
+        return;
+    }
+
+    // src +0x04: accessor sub-object whose vtable slot 5 (+0x14) returns a Vector3 const*.
+    void* accessor = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(accessor);
+    using GetFn = void* (*)(void* self, void* holder);
+    GetFn get = reinterpret_cast<GetFn>(vtbl[5]);
+    void* value = get(accessor, src);
+
+    // Setter at 0x006304E0 is called with the target as `this` and the Vector3 pointer as its one argument.
+    using SetFn = void (*)(void* self, void* value);
+    SetFn set = reinterpret_cast<SetFn>(ext_006304E0);
+    set(target, value);
+}
+} // namespace lift_006332E0
