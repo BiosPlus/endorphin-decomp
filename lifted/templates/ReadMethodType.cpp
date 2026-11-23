@@ -17987,3 +17987,31 @@ int fn_00471C60(void* self) {
     return (static_cast<double>(rate) >= mem_0093B418) ? 1 : 0;
 }
 } // namespace lift_00471C60
+
+// [0x00488DE0] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00488DE0 {
+extern float ext_00486970(void* self);  // thiscall getter, float result in st0
+extern void ext_0046C3C0();             // constructs an exception-message object (replaced by throw below)
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern double mem_0093C668;             // .rdata double 1e-06
+
+// @name ReadMethodType_DesiredPoseEventData_getEntryBlendPeriod_vfunc_3
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Returns 1 if the DesiredPoseEventData's entry blend period is at least 1e-6 (and not NaN), else 0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::DesiredPoseEventData* m_target
+int fn_00488DE0(void* self) {
+    auto** slot = static_cast<void**>(self);
+    void* target = slot[0];
+    if (target == nullptr) {
+        throw std::runtime_error("ReadMethodType<DesiredPoseEventData>::vfunc_3: null target");
+    }
+    const float blendPeriod = ext_00486970(target);
+    const double threshold = mem_0093C668;
+    // fcomp + C0 test: unordered or less-than yields 0, otherwise 1.
+    if (std::isnan(blendPeriod) || static_cast<double>(blendPeriod) < threshold) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00488DE0

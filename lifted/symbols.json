@@ -3506,6 +3506,13 @@
     "summary": "Reads the bound DesiredPoseEventData value pointer from the argument; if present, returns its entry blend period via ext_00486970, otherwise constructs and throws an exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00488DE0": {
+    "name": "ReadMethodType_DesiredPoseEventData_getEntryBlendPeriod_vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+    "signature": "int fn_00488DE0(void* self)",
+    "summary": "Returns 1 if the DesiredPoseEventData's entry blend period is at least 1e-6 (and not NaN), else 0; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00489540": {
     "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
     "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",

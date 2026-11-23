@@ -1,0 +1,22 @@
+{
+  "va": "0x00488DE0",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType_DesiredPoseEventData_getEntryBlendPeriod_vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+  "signature": "int fn_00488DE0(void* self)",
+  "summary": "Returns 1 if the DesiredPoseEventData's entry blend period is at least 1e-6 (and not NaN), else 0; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::DesiredPoseEventData*",
+      "name": "m_target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:56:57Z"
+}
