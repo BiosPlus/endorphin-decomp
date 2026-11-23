@@ -1,0 +1,22 @@
+{
+  "va": "0x0053AE40",
+  "size": 343,
+  "orig_symbol": "Primitives::Animation::vfunc_8",
+  "src_path": "src/Primitives/Animation.cpp",
+  "lifted_path": "lifted/Primitives/Animation.cpp",
+  "name": "Primitives::Animation::vfunc_8",
+  "class": "Primitives::Animation",
+  "signature": "void fn_0053AE40(void* self, uint32_t mode)",
+  "summary": "Normalizes the flag word at +0x1C (clearing mutually-exclusive flag pairs), then applies mode-specific set/clear or forwards to ext_0053ACF0 for modes 4-7; mode 8 is a no-op.",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:40:46Z"
+}

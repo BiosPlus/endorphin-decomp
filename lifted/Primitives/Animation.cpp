@@ -115,3 +115,58 @@ float* fn_0053ABF0(uint32_t /*arg0, unused*/, uint32_t flags) {
     return mem_00AF053C;
 }
 } // namespace lift_0053ABF0
+
+// [0x0053AE40] Primitives::Animation::vfunc_8 (343 bytes)
+namespace lift_0053AE40 {
+extern void ext_0053ACF0(void* self, uint32_t mask, uint32_t flag);
+
+// @name Primitives::Animation::vfunc_8
+// @class Primitives::Animation
+// @summary Normalizes the flag word at +0x1C (clearing mutually-exclusive flag pairs), then applies mode-specific set/clear or forwards to ext_0053ACF0 for modes 4-7; mode 8 is a no-op.
+// @field Primitives::Animation +0x1C uint32_t field_0x1C
+void fn_0053AE40(void* self, uint32_t mode) {
+    if (mode == 8) {
+        return;
+    }
+
+    uint32_t& flags = lift_field<uint32_t>(self, 0x1C);
+
+    // Normalize: any mask whose bits are all set gets toggled off.
+    if ((flags & 0x8008u) == 0x8008u) flags ^= 0x8008u;
+    if ((flags & 0x4008u) == 0x4008u) flags ^= 0x4008u;
+    if ((flags & 0x10008u) == 0x10008u) flags ^= 0x10008u;
+    if ((flags & 0x18u) == 0x18u) flags ^= 0x18u;
+    if ((flags & 0x400008u) == 0x400008u) flags ^= 0x400008u;
+    if ((flags & 0x800008u) == 0x800008u) flags ^= 0x800008u;
+    if (flags & 0x8u) flags ^= 0x8u;
+
+    switch (mode) {
+    case 1:
+        if (flags & 0x8u) return;
+        flags ^= 0x8u;
+        return;
+    case 2:
+        if ((flags & 0x18u) == 0x18u) return;
+        flags ^= 0x18u;
+        return;
+    case 3:
+        if ((flags & 0x400008u) == 0x400008u) return;
+        flags ^= 0x400008u;
+        return;
+    case 4:
+        ext_0053ACF0(static_cast<uint8_t*>(self) + 0x18, 0x800008u, 1u);
+        return;
+    case 5:
+        ext_0053ACF0(static_cast<uint8_t*>(self) + 0x18, 0x4008u, 1u);
+        return;
+    case 6:
+        ext_0053ACF0(static_cast<uint8_t*>(self) + 0x18, 0x10008u, 1u);
+        return;
+    case 7:
+        ext_0053ACF0(static_cast<uint8_t*>(self) + 0x18, 0x8008u, 1u);
+        return;
+    default:
+        return;
+    }
+}
+} // namespace lift_0053AE40
