@@ -216,3 +216,21 @@ uint32_t __fastcall sub_004584B0(uint32_t ecx, uint32_t edx) {
     return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn_addr))(obj, 0);
 }
 } // namespace lift_004584B0
+
+// [0x004584A0]
+namespace lift_004584A0 {
+// @name forwardVtableSlot5
+// @summary Tail-calls virtual method at vtable offset 0x14 on member at +0x10
+// @field unknown +0x10 void* field_0x10
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+void sub_004584A0(uint32_t self) {
+    uint32_t inner = mem_read32(self + 0x10);
+    uint32_t vtable = mem_read32(inner);
+    uint32_t fn = mem_read32(vtable + 0x14);
+    using Fn = void (*)(uint32_t);
+    reinterpret_cast<Fn>(static_cast<uintptr_t>(fn))(inner);
+}
+} // namespace lift_004584A0
