@@ -1,0 +1,22 @@
+{
+  "va": "0x004986A0",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::Transition\u003e::getResultantStateID_asFloat",
+  "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0\u003e",
+  "signature": "float fn_004986A0(void* self)",
+  "summary": "Reads the Transition from the argument pointer, fetches its resultant state ID string and returns it parsed as a float (atof); throws if the Transition pointer is null.",
+  "fields": [
+    {
+      "class": "Transition",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:56:59Z"
+}

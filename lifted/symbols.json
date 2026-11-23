@@ -3901,6 +3901,13 @@
     "summary": "Reads getResultantStateID from a Transition pointer into sret, or throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004986A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Transition\u003e::getResultantStateID_asFloat",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0\u003e",
+    "signature": "float fn_004986A0(void* self)",
+    "summary": "Reads the Transition from the argument pointer, fetches its resultant state ID string and returns it parsed as a float (atof); throws if the Transition pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00498F80": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",

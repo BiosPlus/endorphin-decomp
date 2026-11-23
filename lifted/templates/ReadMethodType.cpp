@@ -18015,3 +18015,29 @@ int fn_00488DE0(void* self) {
     return 1;
 }
 } // namespace lift_00488DE0
+
+// [0x004986A0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004986A0 {
+// Lifted from the MSVC x86 __stdcall-style helper; the original calls out to
+// NMData::Transition::getResultantStateID (thiscall, returns const std::string&).
+extern const std::string& ext_00496F10(void* transition);
+extern void ext_0046C3C0(void* exception_storage);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Transition>::getResultantStateID_asFloat
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Reads the Transition from the argument pointer, fetches its resultant state ID string and returns it parsed as a float (atof); throws if the Transition pointer is null.
+// @field Transition +0x00 void* object
+float fn_004986A0(void* self) {
+    void* transition = *static_cast<void**>(self);
+    if (transition == nullptr) {
+        unsigned char exception_storage[16] = {};
+        ext_0046C3C0(exception_storage);
+        ext_006A6DD2();
+        return 0.0f;
+    }
+    const std::string& state_id = ext_00496F10(transition);
+    return static_cast<float>(std::atof(state_id.c_str()));
+}
+} // namespace lift_004986A0
