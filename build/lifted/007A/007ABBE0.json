@@ -1,0 +1,21 @@
+{
+  "va": "0x007ABBE0",
+  "size": 9,
+  "orig_symbol": "sub_007ABBE0",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "sub_007ABBE0",
+  "signature": "void* __thiscall sub_007ABBE0(void* self)",
+  "summary": "Sets vtable pointer mem_009983BC at offset 0 of this and returns this",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:26:32Z"
+}

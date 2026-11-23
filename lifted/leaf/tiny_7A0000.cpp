@@ -213,3 +213,16 @@ extern "C" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x007ABBE0]
+namespace lift_007ABBE0 {
+extern uint32_t mem_009983BC;
+
+// @name sub_007ABBE0
+// @summary Sets vtable pointer mem_009983BC at offset 0 of this and returns this
+// @field Object +0x00 uint32_t vptr
+void* __thiscall sub_007ABBE0(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009983BC));
+    return self;
+}
+} // namespace lift_007ABBE0
