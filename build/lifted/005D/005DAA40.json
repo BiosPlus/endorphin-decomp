@@ -1,0 +1,22 @@
+{
+  "va": "0x005DAA40",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
+  "signature": "int fn_005DAA40(const void* holder)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B12A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)).",
+  "fields": [
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:14:58Z"
+}
