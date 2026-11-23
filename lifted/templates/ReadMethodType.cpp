@@ -23794,33 +23794,6 @@ extern float __thiscall fn_004B8390(void* /*this*/, const uint32_t* ptr_holder) 
 } // namespace lift_004B13A0
 } // namespace lift_004B8390
 
-// [0x005D2810] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_1 (74 bytes)
-namespace lift_005D2810 {
-// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_1
-// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
-// @summary Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType<NMData::GraphEntryData,bool,&NMData::GraphEntryData::isActive,0>::vfunc_1).
-namespace lift_004B13A0 {
-// @name ExprParser::ReadMethodType<NMData::GraphEntryData,bool,&NMData::GraphEntryData::isActive,0>::vfunc_1
-// @class ExprParser::ReadMethodType<NMData::GraphEntryData,bool,&NMData::GraphEntryData::isActive,0>
-// @summary Evaluates NMData::GraphEntryData::isActive() as a float (1.0f or 0.0f), throwing if the pointer is null.
-// @field NMData::GraphEntryData +0x01 uint8_t isActive
-
-
-extern void __thiscall ext_0046C3C0(void* exc);
-extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
-
-extern float __thiscall fn_005D2810(void* /*this*/, const uint32_t* ptr_holder) {
-    uint32_t obj = *ptr_holder;
-    if (obj == 0) {
-        alignas(4) uint8_t exc[0x28];
-        ext_0046C3C0(exc);
-        ext_006A6DD2(exc, 0x009DEC1Cu);
-    }
-    return (*reinterpret_cast<const uint8_t*>(uintptr_t(obj) + 48) != 0) ? 48.0f : 0.0f;
-}
-} // namespace lift_004B13A0
-} // namespace lift_005D2810
-
 // [0x00678A50] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_1 (74 bytes)
 namespace lift_00678A50 {
 // @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_1
@@ -23983,3 +23956,27 @@ void* __thiscall fn_004F5DF0(void* self, void* out_val, void** obj_ptr) {
     return out_val;
 }
 } // namespace lift_004F5DF0
+
+// [0x005D2810] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_1 (74 bytes)
+namespace lift_005D2810 {
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, mustDrawTimeCode, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, mustDrawTimeCode, 0>
+// @summary Reads the VideoPlaneData pointer from the holder argument; returns 1.0f if the byte at +0x30 is nonzero, else 0.0f; throws if the pointer is null.
+// @field NMData::VideoPlaneData +0x30 uint8_t field_0x30
+float fn_005D2810(const void* const* holder) {
+    const auto* self = static_cast<const uint8_t*>(*holder);
+    if (self == nullptr) {
+        // Null target: build the exception object and throw it (never returns).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, nullptr);
+        std::abort();
+    }
+    const uint8_t flag = lift_field<uint8_t>(self, 0x30);
+    return flag != 0 ? 1.0f : 0.0f;
+}
+} // namespace lift_005D2810

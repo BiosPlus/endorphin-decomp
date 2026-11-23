@@ -13214,10 +13214,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D2810": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_1",
-    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
-    "signature": "extern float __thiscall fn_005D2810(void* /*this*/, const uint32_t* ptr_holder)",
-    "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, mustDrawTimeCode, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, mustDrawTimeCode, 0\u003e",
+    "signature": "float fn_005D2810(const void* const* holder)",
+    "summary": "Reads the VideoPlaneData pointer from the holder argument; returns 1.0f if the byte at +0x30 is nonzero, else 0.0f; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D2860": {
