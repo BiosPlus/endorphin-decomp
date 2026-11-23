@@ -1,0 +1,21 @@
+{
+  "va": "0x007C8810",
+  "size": 11,
+  "orig_symbol": "sub_007C8810",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getField0x8cFloat",
+  "signature": "float sub_007C8810(const void* obj)",
+  "summary": "Returns the float at offset 0x8c from the given object pointer.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:43:55Z"
+}
