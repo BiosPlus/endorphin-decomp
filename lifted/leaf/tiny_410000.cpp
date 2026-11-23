@@ -162,3 +162,18 @@ extern "C" int __thiscall fn_0041CD60(void* self) {
     const int32_t diff = end - begin;
     return diff >> 2;
 }
+
+// [0x0041B3B0]
+namespace lift_0041B3B0 {
+// @name callGlobalThunk00430D40
+// @summary Loads global pointer at 0x00ACDB40 into ECX and tail-calls 0x00430D40.
+
+
+extern uint32_t mem_00ACDB40;
+extern void ext_00430D40(void);
+
+extern void fn_0041B3B0(void) {
+    (void)mem_00ACDB40;
+    ext_00430D40();
+}
+} // namespace lift_0041B3B0

@@ -819,6 +819,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x68.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041B3B0": {
+    "name": "callGlobalThunk00430D40",
+    "signature": "extern \"C\" void fn_0041B3B0(void)",
+    "summary": "Loads global pointer at 0x00ACDB40 into ECX and tail-calls 0x00430D40.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041B580": {
     "name": "sub_0041B580",
     "signature": "extern \"C\" const char* __cdecl fn_0041B580()",
