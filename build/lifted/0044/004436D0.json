@@ -1,0 +1,34 @@
+{
+  "va": "0x004436D0",
+  "size": 44,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_1",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_1",
+  "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+  "signature": "void fn_004436D0(void* self)",
+  "summary": "Records the current cursor position into the state, starts the owner's capture-based resize.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "cursorX"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "cursorY"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:41:26Z"
+}

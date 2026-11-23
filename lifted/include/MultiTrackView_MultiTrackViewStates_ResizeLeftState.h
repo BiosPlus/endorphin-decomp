@@ -10,7 +10,10 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::ResizeLeftState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_ResizeLeftState_Fields {
-    // +0xC   int32_t                  field_0x0C  (evidence: 0x00442CD0)
-    // +0x10  int32_t                  field_0x10  (evidence: 0x00442CD0)
+    // +0x8   void*                    owner  (evidence: 0x004436D0)
+    // +0xC   int32_t                  cursorX  (evidence: 0x004436D0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t                  field_0x0C  (evidence: 0x00442CD0) // CONFLICT: multiple definitions at +0xC
+    // +0x10  int32_t                  cursorY  (evidence: 0x004436D0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  int32_t                  field_0x10  (evidence: 0x00442CD0) // CONFLICT: multiple definitions at +0x10
 };
 } // namespace lifted_layout
