@@ -10137,6 +10137,13 @@
     "summary": "Dispatches to SphereType helper when tag == 0x2f7 or fallback otherwise, returning arg1",
     "lifted_path": "lifted/Geometry/SphereType.cpp"
   },
+  "0x005B4190": {
+    "name": "Geometry::CuboidType::vfunc_18",
+    "class": "Geometry::CuboidType",
+    "signature": "void* __stdcall fn_005B4190(void* self, uint32_t key, uint32_t value)",
+    "summary": "Dispatches on a 32-bit selector (key) to one of three handlers, passing the value argument; for any other key calls a default handler. Returns self.",
+    "lifted_path": "lifted/Geometry/CuboidType.cpp"
+  },
   "0x005B4210": {
     "name": "Geometry::CylinderType::vfunc_18",
     "class": "Geometry::CylinderType",

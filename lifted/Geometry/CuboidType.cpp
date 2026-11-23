@@ -104,3 +104,34 @@ float fn_005B19C0(void* self) {
     const float c = ext_005B11E0(self, 2);
     return (a * b) * c;
 }
+
+// [0x005B4190] Geometry::CuboidType::vfunc_18 (116 bytes)
+namespace lift_005B4190 {
+// Callees (cdecl: self pushed last, i.e. (self, value) order).
+extern void ext_005B3FF0(void* self, uint32_t value);
+extern void ext_005B4010(void* self, uint32_t value);
+extern void ext_005B4030(void* self, uint32_t value);
+extern void ext_00671F30(void* self);
+
+// @name Geometry::CuboidType::vfunc_18
+// @class Geometry::CuboidType
+// @summary Dispatches on a 32-bit selector (key) to one of three handlers, passing the value argument; for any other key calls a default handler. Returns self.
+// (No fields accessed: the function never dereferences the object; ECX is saved but unused.)
+void* __stdcall fn_005B4190(void* self, uint32_t key, uint32_t value) {
+    switch (key) {
+    case 0x271:
+        ext_005B4010(self, value);
+        break;
+    case 0x29E:
+        ext_005B4030(self, value);
+        break;
+    case 0x37E:
+        ext_005B3FF0(self, value);
+        break;
+    default:
+        ext_00671F30(self);
+        break;
+    }
+    return self;
+}
+} // namespace lift_005B4190

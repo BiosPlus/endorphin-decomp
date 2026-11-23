@@ -1,0 +1,14 @@
+{
+  "va": "0x005B4190",
+  "size": 116,
+  "orig_symbol": "Geometry::CuboidType::vfunc_18",
+  "src_path": "src/Geometry/CuboidType.cpp",
+  "lifted_path": "lifted/Geometry/CuboidType.cpp",
+  "name": "Geometry::CuboidType::vfunc_18",
+  "class": "Geometry::CuboidType",
+  "signature": "void* __stdcall fn_005B4190(void* self, uint32_t key, uint32_t value)",
+  "summary": "Dispatches on a 32-bit selector (key) to one of three handlers, passing the value argument; for any other key calls a default handler. Returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:31:53Z"
+}
