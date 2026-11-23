@@ -1,0 +1,21 @@
+{
+  "va": "0x006B1830",
+  "size": 9,
+  "orig_symbol": "sub_006B1830",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B1830",
+  "signature": "void* __thiscall sub_006B1830(void* self)",
+  "summary": "Sets the vftable pointer at +0x00 to 0x00991744 and returns this.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:25:45Z"
+}
