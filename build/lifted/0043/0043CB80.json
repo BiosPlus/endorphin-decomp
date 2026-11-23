@@ -1,0 +1,13 @@
+{
+  "va": "0x0043CB80",
+  "size": 8,
+  "orig_symbol": "sub_0043CB80",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "call_MFC80_ord_1903_ret8",
+  "signature": "extern \"C\" void fn_0043CB80(uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls thunk_MFC80_ord_1903 and returns, cleaning 8 bytes of stack arguments.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:32Z"
+}

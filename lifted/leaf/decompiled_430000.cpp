@@ -36,3 +36,18 @@ void fn_00437DE0() {
     ext_00437DC0(reinterpret_cast<void*>(static_cast<uintptr_t>(1)));
 }
 } // namespace lift_00437DE0
+
+// [0x0043CB80]
+namespace lift_0043CB80 {
+// @name call_MFC80_ord_1903_ret8
+// @summary Calls thunk_MFC80_ord_1903 and returns, cleaning 8 bytes of stack arguments.
+
+
+extern void ext_006A5EA8(void);
+
+extern void fn_0043CB80(uint32_t arg1, uint32_t arg2) {
+    (void)arg1;
+    (void)arg2;
+    ext_006A5EA8();
+}
+} // namespace lift_0043CB80

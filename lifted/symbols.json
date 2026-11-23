@@ -1252,6 +1252,12 @@
     "summary": "Virtual dispatch thunk: reads the object's vtable pointer and calls slot 0 with the same object.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043CB80": {
+    "name": "call_MFC80_ord_1903_ret8",
+    "signature": "extern \"C\" void fn_0043CB80(uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls thunk_MFC80_ord_1903 and returns, cleaning 8 bytes of stack arguments.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CC40": {
     "name": "MultiTrackView::Frame::vfunc_1",
     "class": "MultiTrackView::Frame",
@@ -4014,6 +4020,12 @@
     "name": "sub_00491FC0",
     "signature": "extern \"C\" void* __fastcall fn_00491FC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00491A90 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x00492540": {
+    "name": "isFieldZero",
+    "signature": "bool __thiscall fn_00492540(void* self)",
+    "summary": "Returns true if the 32-bit value at offset 0 of the object is zero.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
   "0x004947D0": {
@@ -33445,6 +33457,12 @@
     "signature": "extern \"C\" void fn_007CA820(void)",
     "summary": "Pure jump thunk forwarding to sub_007CC930.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x007D5AE0": {
+    "name": "derefDword",
+    "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",
+    "summary": "Dereference a 32-bit pointer and return its uint32_t value.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007D7A20": {
     "name": "sub_007D7A20",
