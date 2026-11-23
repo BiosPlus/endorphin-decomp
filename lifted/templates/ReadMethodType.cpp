@@ -11094,3 +11094,28 @@ float fn_00604D40(void* self) {
     return *result;
 }
 } // namespace lift_00604D40
+
+// [0x004C5930]
+namespace lift_004C5930 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData,int,getFrameNumber>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ForceEventData,int,getFrameNumber>
+// @summary Dereferences a ForceEventData pointer, calls getFrameNumber, and returns the result as double; throws if null.
+
+
+extern int32_t __thiscall ext_005C84B0(void* self);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+
+extern double __thiscall fn_004C5930(void* self, void* const* objPtr) {
+    (void)self;
+    void* obj = *objPtr;
+    if (!obj) {
+        alignas(16) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0.0;
+    }
+    int32_t val = ext_005C84B0(obj);
+    return static_cast<double>(val);
+}
+} // namespace lift_004C5930

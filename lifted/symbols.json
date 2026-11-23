@@ -4921,6 +4921,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C5930": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData,int,getFrameNumber\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData,int,getFrameNumber\u003e",
+    "signature": "extern \"C\" double __thiscall fn_004C5930(void* self, void* const* objPtr)",
+    "summary": "Dereferences a ForceEventData pointer, calls getFrameNumber, and returns the result as double; throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",
