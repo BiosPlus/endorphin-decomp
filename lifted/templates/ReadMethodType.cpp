@@ -17129,3 +17129,33 @@ void* fn_006071E0(void* self, void* const* effectorRef) {
     throw std::runtime_error("ExprParser: null Effector in getGradientCap read");
 }
 } // namespace lift_006071E0
+
+// [0x00618360] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00618360 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Throw info descriptor referenced by the throw path at 0x009DEC1C.
+extern const unsigned char mem_009dec1c[];
+
+// @name ExprParser::ReadMethodType<NMData::HingeLimit,float,NMData::HingeLimit::getUpperStiffness,0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>
+// @summary Reads the float at +0x0C of the pointed-to HingeLimit (upper stiffness) and forwards it to the out-object's setter; throws if the HingeLimit pointer is null.
+// @field NMData::HingeLimit +0x0C float field_0x0C
+void* fn_00618360(void* out, const void* const* src) {
+    const unsigned char* limit = static_cast<const unsigned char*>(*src);
+    if (limit != nullptr) {
+        float value;
+        std::memcpy(&value, limit + 0x0C, sizeof value);
+        ext_00672080(out, value);
+        return out;
+    }
+
+    // Null path: build an exception object in the 0x28-byte local frame and throw it.
+    unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009dec1c);
+    return nullptr;
+}
+} // namespace lift_00618360

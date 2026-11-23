@@ -1,0 +1,22 @@
+{
+  "va": "0x00618360",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit,float,NMData::HingeLimit::getUpperStiffness,0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0\u003e",
+  "signature": "void* fn_00618360(void* out, const void* const* src)",
+  "summary": "Reads the float at +0x0C of the pointed-to HingeLimit (upper stiffness) and forwards it to the out-object's setter; throws if the HingeLimit pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::HingeLimit",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:55:33Z"
+}

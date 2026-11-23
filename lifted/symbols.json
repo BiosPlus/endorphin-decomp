@@ -14763,6 +14763,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00618360": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit,float,NMData::HingeLimit::getUpperStiffness,0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0\u003e",
+    "signature": "void* fn_00618360(void* out, const void* const* src)",
+    "summary": "Reads the float at +0x0C of the pointed-to HingeLimit (upper stiffness) and forwards it to the out-object's setter; throws if the HingeLimit pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00618460": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerDamping(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerDamping(float)\u003e",
