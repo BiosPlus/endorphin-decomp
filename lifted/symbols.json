@@ -10471,6 +10471,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0066BC40 (ExprParser::VPtrProxyType::vfunc_39).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005A5400": {
+    "name": "NMData::BackGroundData::vfunc_6_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "extern \"C\" void (*mem_00925134)(); // MSVCR80!_invalid_parameter_noinfo (IAT slot) void fn_005A5400(void* self, void* arg)",
+    "summary": "Validates the argument's range fields (+4 \u003c= +8), then forwards the argument and this-owned state to ext_00479C80.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A7110": {
     "name": "NMData::DesiredPoseData::vfunc_0_off_4",
     "class": "NMData::DesiredPoseData",
