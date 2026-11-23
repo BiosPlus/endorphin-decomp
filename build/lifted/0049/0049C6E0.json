@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C6E0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_3 (NMData::State::isDeactivated)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
+  "signature": "bool fn_0049C6E0(void* self)",
+  "summary": "Reads the NMData::State pointer held in the ValuePtrType argument; if it is null throws an exception, otherwise returns the result of NMData::State::isDeactivated (via sub_0049AA20).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:16:33Z"
+}

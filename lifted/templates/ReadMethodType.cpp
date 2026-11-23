@@ -1768,3 +1768,36 @@ float fn_004887D0(void* self) {
     ext_006A6DD2(exception_object, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
 }
 } // namespace lift_004887D0
+
+// [0x0049C6E0] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_0049C6E0 {
+// Callee 0x0049AA20 (sub_0049AA20, 4B): the original calls it with ecx = the NMData::State pointer
+// (thiscall) and returns its result unchanged. Modelled here with the object as an explicit argument.
+extern bool ext_0049AA20(void* state);
+
+// Callee 0x0046C3C0 (sub_0046C3C0, 105B): constructs a 0x28-byte exception object in the caller's buffer.
+extern void ext_0046C3C0(void* exceptionObj);
+
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception type raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_3 (NMData::State::isDeactivated)
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads the NMData::State pointer held in the ValuePtrType argument; if it is null throws an exception, otherwise returns the result of NMData::State::isDeactivated (via sub_0049AA20).
+// @field ExprParser::ValuePtrType +0x00 void* target
+bool fn_0049C6E0(void* self) {
+    void* state = lift_field<void*>(self, 0x00);
+    if (state != nullptr) {
+        return ext_0049AA20(state);
+    }
+
+    // Null target: build the exception object and throw it.
+    alignas(8) uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+    return false; // _CxxThrowException does not return
+}
+} // namespace lift_0049C6E0
