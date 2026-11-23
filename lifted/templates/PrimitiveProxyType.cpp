@@ -420,3 +420,26 @@ void __thiscall fn_004B7AE0(void* self, float** arg1, void* arg2) {
     **arg1 = val;
 }
 } // namespace lift_004B7AE0
+
+// [0x00497B50]
+namespace lift_00497B50 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_41
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Evaluates arg1 into a temporary std::string via ext_00497650 and assigns it to *arg0.
+
+
+extern uint32_t ext_00497650(void* out_str, uint32_t arg1);
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FF4;
+
+void __thiscall fn_00497B50(void* /*this*/, uint32_t* arg0, uint32_t arg1) {
+    uint8_t local_str[0x1c];
+    uint32_t str_ptr = ext_00497650(local_str, arg1);
+
+    using AssignFn = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<AssignFn>(mem_00924FDC)(reinterpret_cast<void*>(*arg0), str_ptr);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(local_str);
+}
+} // namespace lift_00497B50
