@@ -1,0 +1,21 @@
+{
+  "va": "0x007C6FA0",
+  "size": 8,
+  "orig_symbol": "sub_007C6FA0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "get_field_0x10",
+  "signature": "uint32_t sub_007C6FA0(const void* ptr)",
+  "summary": "Returns the 32-bit value at offset 0x10 of the given struct pointer.",
+  "fields": [
+    {
+      "class": "struct",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:36:11Z"
+}
