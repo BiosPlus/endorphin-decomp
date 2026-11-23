@@ -24028,3 +24028,26 @@ void* __thiscall fn_004F66F0(void* self, void* out_val, void** src_ptr) {
     return out_val;
 }
 } // namespace lift_004F66F0
+
+// [0x0059F600] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_1 (76 bytes)
+namespace lift_0059F600 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk. Given the Descriptor subobject address, returns the
+// std::string object (const std::string&) produced by the descriptor's slot-9 virtual accessor.
+extern void* ext_00682ED0(void* self);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_1 (Chromosome::Descriptor string value as float)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Reads the Chromosome::Descriptor held by self, fetches its string value via the slot-9 accessor, and returns it parsed as a float (atof); throws if the descriptor pointer is null.
+// @field ExprParser::ReadMethodType +0x00 Chromosome::Descriptor* descriptor
+// @field Chromosome::Descriptor +0x04 std::string value_subobject
+float fn_0059F600(void* self) {
+    void* desc = *static_cast<void**>(self);
+    if (desc == nullptr) {
+        throw std::runtime_error("null Chromosome::Descriptor in ReadMethodType::vfunc_1");
+    }
+    auto* value = static_cast<const std::string*>(
+        ext_00682ED0(static_cast<char*>(desc) + 0x04));
+    // Original stores atof's double result to a float slot (fstp dword) and reloads it.
+    return static_cast<float>(std::atof(value->c_str()));
+}
+} // namespace lift_0059F600

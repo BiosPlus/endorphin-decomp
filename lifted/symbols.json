@@ -11115,6 +11115,13 @@
     "summary": "Handles property 0x14B if ext_0059E060 succeeds by calling ext_00661650 on field at +0x61C; otherwise delegates to ext_0058F6B0.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x0059F600": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_1 (Chromosome::Descriptor string value as float)",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "float fn_0059F600(void* self)",
+    "summary": "Reads the Chromosome::Descriptor held by self, fetches its string value via the slot-9 accessor, and returns it parsed as a float (atof); throws if the descriptor pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059F820": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData\u003e::vfunc_1 (CharacterData vcall-128 accessor)",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
