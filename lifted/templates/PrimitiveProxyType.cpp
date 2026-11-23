@@ -517,3 +517,53 @@ void __stdcall fn_00497A60(uint32_t* arg0, uint32_t arg1) {
     dtor_fn(temp_str);
 }
 } // namespace lift_00497A60
+
+// [0x00497780]
+namespace lift_00497780 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_42
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Compares a dereferenced string pointer with the string value extracted from arg2.
+
+extern uint32_t __stdcall ext_00497650(void* out_str, uint32_t arg2);
+extern uint32_t mem_00924FC4;
+extern uint32_t mem_00924FF4;
+
+uint8_t __thiscall fn_00497780(void* self, uint32_t* arg1, uint32_t arg2) {
+    (void)self;
+    uint8_t local_str[28];
+    uint32_t rhs = ext_00497650(local_str, arg2);
+    uint32_t lhs = *arg1;
+
+    using OpEqFn = uint8_t(__cdecl*)(uint32_t, uint32_t);
+    uint8_t result = reinterpret_cast<OpEqFn>(mem_00924FC4)(lhs, rhs);
+
+    using DtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(local_str);
+
+    return result;
+}
+} // namespace lift_00497780
+
+// [0x00497980]
+namespace lift_00497980 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_7
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Converts a float argument to std::string via sub_00497800 and assigns it to *out_str_ptr.
+
+extern uint32_t ext_00497800(void* out_str, float val, uint32_t raw_val);
+extern void* mem_00924FDC;
+extern void* mem_00924FF4;
+
+void __thiscall fn_00497980(void* self, void** out_str_ptr, float val) {
+    (void)self;
+    uint8_t temp_str[0x1c];
+    uint32_t raw_val = 0;
+    __builtin_memcpy(&raw_val, &val, sizeof(raw_val));
+    uint32_t str_ptr = ext_00497800(temp_str, val, raw_val);
+
+    using AssignFn = void* (__thiscall*)(void*, uint32_t);
+    using DtorFn = void (__thiscall*)(void*);
+    reinterpret_cast<AssignFn>(mem_00924FDC)(*out_str_ptr, str_ptr);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(temp_str);
+}
+} // namespace lift_00497980

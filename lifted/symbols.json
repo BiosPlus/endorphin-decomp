@@ -4113,6 +4113,13 @@
     "summary": "Copies the 8-byte element at index from the array at +0x88 (end at +0x8C) into out and returns out; aborts on a null array or out-of-range index.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00497780": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_42",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+    "signature": "uint8_t __thiscall fn_00497780(void* self, uint32_t* arg1, uint32_t arg2)",
+    "summary": "Compares a dereferenced string pointer with the string value extracted from arg2.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497900": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
@@ -4125,6 +4132,13 @@
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
     "signature": "int32_t __stdcall fn_00497930(void* arg)",
     "summary": "Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
+  "0x00497980": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_7",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+    "signature": "void __thiscall fn_00497980(void* self, void** out_str_ptr, float val)",
+    "summary": "Converts a float argument to std::string via sub_00497800 and assigns it to *out_str_ptr.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
   "0x004979F0": {

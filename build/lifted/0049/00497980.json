@@ -1,0 +1,14 @@
+{
+  "va": "0x00497980",
+  "size": 105,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_7",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_7",
+  "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+  "signature": "void __thiscall fn_00497980(void* self, void** out_str_ptr, float val)",
+  "summary": "Converts a float argument to std::string via sub_00497800 and assigns it to *out_str_ptr.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:30:30Z"
+}
