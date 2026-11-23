@@ -1,0 +1,28 @@
+{
+  "va": "0x0053D870",
+  "size": 232,
+  "orig_symbol": "Primitives::Sensor::vfunc_28",
+  "src_path": "src/Primitives/Sensor.cpp",
+  "lifted_path": "lifted/Primitives/Sensor.cpp",
+  "name": "Primitives::Sensor::vfunc_28",
+  "class": "Primitives::Sensor",
+  "signature": "void fn_0053D870(void* self, int arg)",
+  "summary": "Pushes GL matrix, applies a fixed rotation selected by a 0-5 index (index 2 and out-of-range: none), forwards arg to child +0x3C vtable slot 0x58, then pops GL matrix; returns immediately if +0x20 is null.",
+  "fields": [
+    {
+      "class": "Primitives::Sensor",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Sensor",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:45:13Z"
+}

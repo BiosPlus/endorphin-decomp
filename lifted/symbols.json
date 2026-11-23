@@ -8239,6 +8239,13 @@
     "summary": "Forwards three args to Plane::vfunc_25, normalises flag bits at +0x1C (clear 0x1 and 0x2, set 0x4 and 0x40000), then stores arg3 at +0x08.",
     "lifted_path": "lifted/Primitives/Sensor.cpp"
   },
+  "0x0053D870": {
+    "name": "Primitives::Sensor::vfunc_28",
+    "class": "Primitives::Sensor",
+    "signature": "void fn_0053D870(void* self, int arg)",
+    "summary": "Pushes GL matrix, applies a fixed rotation selected by a 0-5 index (index 2 and out-of-range: none), forwards arg to child +0x3C vtable slot 0x58, then pops GL matrix; returns immediately if +0x20 is null.",
+    "lifted_path": "lifted/Primitives/Sensor.cpp"
+  },
   "0x0053D970": {
     "name": "Primitives::Sensor2::vfunc_0",
     "class": "Primitives::Sensor2",
