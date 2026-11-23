@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE120",
+  "size": 10,
+  "orig_symbol": "sub_007AE120",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "tailCallWithGlobal_007AE120",
+  "signature": "extern \"C\" void fn_007AE120(void)",
+  "summary": "Sets ECX to global mem_00B61758 and tail-calls sub_006B9D70",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:46Z"
+}

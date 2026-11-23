@@ -254,3 +254,16 @@ extern void fn_007AE0E0(void) {
     ext_006B9D70(mem_00B61708);
 }
 } // namespace lift_007AE0E0
+
+// [0x007AE120]
+namespace lift_007AE120 {
+extern void* mem_00B61758;
+extern void ext_006B9D70(void);
+
+// @name tailCallWithGlobal_007AE120
+// @summary Sets ECX to global mem_00B61758 and tail-calls sub_006B9D70
+extern void fn_007AE120(void) {
+    (void)mem_00B61758;
+    ext_006B9D70();
+}
+} // namespace lift_007AE120

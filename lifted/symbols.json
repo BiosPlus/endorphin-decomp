@@ -33806,6 +33806,12 @@
     "summary": "Sets this pointer to global 0x00B61708 and tail-calls sub_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AE120": {
+    "name": "tailCallWithGlobal_007AE120",
+    "signature": "extern \"C\" void fn_007AE120(void)",
+    "summary": "Sets ECX to global mem_00B61758 and tail-calls sub_006B9D70",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AE1D0": {
     "name": "sub_007AE1D0",
     "signature": "extern \"C\" void* __fastcall fn_007AE1D0(void* self, int edx_unused, unsigned int flags)",
