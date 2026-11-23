@@ -4062,10 +4062,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0049B780": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1\u003e::vfunc_0",
-    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1\u003e",
-    "signature": "extern void* __thiscall fn_0049B780(void* self, void* out_val, void** obj_ptr)",
-    "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
+    "name": "ExprParser::ReadMethodType\u003cNMData::State,std::string const \u0026,getPropertySourceDescription\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State,std::string const \u0026,getPropertySourceDescription\u003e",
+    "signature": "void* __thiscall fn_0049B780(void* /*self*/, void* out_val, void** obj_ptr)",
+    "summary": "Reads property source description from NMData::State or throws on null pointer",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0049BE50": {
@@ -5066,6 +5066,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitMass, 0\u003e",
     "signature": "uint32_t __thiscall fn_004B8A00(void* /*self*/, void* const* targetPtr)",
     "summary": "Checks whether EngineData's unit mass at +0x48 is at least the threshold, throwing if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B8CF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getPosBufferFrameRate, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getPosBufferFrameRate, 0\u003e",
+    "signature": "int fn_004B8CF0(void* self, void* arg)",
+    "summary": "Returns 1 if the EngineData float at +0x1C is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B8E40": {

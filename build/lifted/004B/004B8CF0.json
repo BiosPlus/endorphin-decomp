@@ -1,0 +1,22 @@
+{
+  "va": "0x004B8CF0",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getPosBufferFrameRate, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getPosBufferFrameRate, 0\u003e",
+  "signature": "int fn_004B8CF0(void* self, void* arg)",
+  "summary": "Returns 1 if the EngineData float at +0x1C is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:52:06Z"
+}

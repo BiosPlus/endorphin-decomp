@@ -12116,39 +12116,6 @@ extern void* __thiscall fn_00488590(void* self, void* out_val, void** obj_ptr) {
 } // namespace lift_0046D5D0
 } // namespace lift_00488590
 
-// [0x0049B780] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_0 (71 bytes)
-namespace lift_0049B780 {
-// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_0
-// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
-// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
-namespace lift_0046D5D0 {
-// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
-// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
-// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
-
-
-extern int __thiscall ext_004C0310(void* self);
-extern void __thiscall ext_006720E0(void* self, int value);
-extern void __thiscall ext_0046C3C0(void* self);
-extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
-
-extern void* __thiscall fn_0049B780(void* self, void* out_val, void** obj_ptr) {
-    (void)self;
-    void* obj = *obj_ptr;
-    if (obj != nullptr) {
-        int val = ext_004C0310(obj);
-        ext_006720E0(out_val, val);
-        return out_val;
-    }
-
-    uint8_t exc_buf[40];
-    ext_0046C3C0(exc_buf);
-    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
-    return nullptr;
-}
-} // namespace lift_0046D5D0
-} // namespace lift_0049B780
-
 // [0x004A38A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
 namespace lift_004A38A0 {
 // @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0
@@ -15429,3 +15396,56 @@ int fn_004B8ED0(void* const* holder) {
     return 1;
 }
 } // namespace lift_004B8ED0
+
+// [0x0049B780]
+namespace lift_0049B780 {
+extern uint32_t ext_004C0310(void* self);
+extern void ext_006720E0(void* self, uint32_t val);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, void* throw_info);
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::State,std::string const &,getPropertySourceDescription>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State,std::string const &,getPropertySourceDescription>
+// @summary Reads property source description from NMData::State or throws on null pointer
+void* __thiscall fn_0049B780(void* /*self*/, void* out_val, void** obj_ptr) {
+    uint8_t exc[40];
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        uint32_t desc = ext_004C0310(obj);
+        ext_006720E0(out_val, desc);
+        return out_val;
+    }
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_0049B780
+
+// [0x004B8CF0] ExprParser::ReadMethodType<NMData::EngineData, float, getPosBufferFrameRate, 0>::vfunc_3 (71 bytes)
+namespace lift_004B8CF0 {
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+extern const double mem_009433D8;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getPosBufferFrameRate, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getPosBufferFrameRate, 0>
+// @summary Returns 1 if the EngineData float at +0x1C is >= 1e-6 (false for NaN); throws if the EngineData pointer is null.
+// @field NMData::EngineData +0x1C float field_0x1C
+int fn_004B8CF0(void* self, void* arg) {
+    (void)self;
+
+    // arg points at a slot holding the NMData::EngineData pointer.
+    auto* engine = *static_cast<unsigned char**>(arg);
+    if (engine == nullptr) {
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(uintptr_t{0x009DEC1C}));
+    }
+
+    float value;
+    std::memcpy(&value, engine + 0x1C, sizeof value);
+    const double threshold = mem_009433D8;
+    return (static_cast<double>(value) >= threshold) ? 1 : 0;
+}
+} // namespace lift_004B8CF0
