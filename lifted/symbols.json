@@ -4264,6 +4264,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049D410": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, vcall{4, 8}, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, vcall{4, 8}, 0\u003e",
+    "signature": "void* __thiscall fn_0049D410(void* self, void* out_str, void** state_ptr_ptr)",
+    "summary": "Reads a const std::string\u0026 property from an NMData::State pointer via vtable slot 1 at offset +0x8, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049DA30": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
@@ -14636,6 +14643,13 @@
     "signature": "void* fn_005FCB30(void* self)",
     "summary": "Reads the object's vtable pointer and returns the function pointer stored at vtable byte offset 0x48 (the original is a tail-jump to that slot; here the target is returned, since a portable tail-call needs the target's signature).",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
+  },
+  "0x005FCB40": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e",
+    "signature": "uint32_t __stdcall fn_005FCB40(uint32_t out_ptr, uint32_t sensor_ptr_ptr)",
+    "summary": "Reads a Sensor's mutable Vector3 via vtable +0x38 and constructs/copies into out_ptr, or throws on null Sensor.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005FCC50": {
     "name": "ExprParser::ReadMethodType\u003cSensor\u003e::vfunc_5",

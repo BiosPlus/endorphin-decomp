@@ -23642,3 +23642,59 @@ uint32_t __thiscall fn_004F5B00(void* /*self*/, void** arg1) {
     return (val >= mem_0094CE78) ? 1u : 0u;
 }
 } // namespace lift_004F5B00
+
+// [0x0049D410]
+namespace lift_0049D410 {
+extern void* __thiscall ext_0046A470(void* self);
+extern void* __thiscall ext_006720E0(void* self, const void* src);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, std::string const &, vcall{4, 8}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, std::string const &, vcall{4, 8}, 0>
+// @summary Reads a const std::string& property from an NMData::State pointer via vtable slot 1 at offset +0x8, or throws if null.
+void* __thiscall fn_0049D410(void* self, void* out_str, void** state_ptr_ptr) {
+    (void)self;
+    void* state_ptr = *state_ptr_ptr;
+    if (state_ptr != nullptr) {
+        void* val = ext_0046A470(static_cast<uint8_t*>(state_ptr) + 0x8);
+        ext_006720E0(out_str, val);
+        return out_str;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1Cu));
+    return nullptr;
+}
+} // namespace lift_0049D410
+
+// [0x005FCB40]
+namespace lift_005FCB40 {
+// @name ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &Sensor::getMutableVector3, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &Sensor::getMutableVector3, 1>
+// @summary Reads a Sensor's mutable Vector3 via vtable +0x38 and constructs/copies into out_ptr, or throws on null Sensor.
+// @field Sensor +0x00 void** vtable
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t __thiscall ext_00672110(uint32_t self, uint32_t val);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+uint32_t __stdcall fn_005FCB40(uint32_t out_ptr, uint32_t sensor_ptr_ptr) {
+    uint32_t sensor = mem_read32(sensor_ptr_ptr);
+    if (sensor != 0) {
+        uint32_t vtable = mem_read32(sensor);
+        using vfunc_t = uint32_t (__thiscall *)(uint32_t);
+        vfunc_t get_vec = reinterpret_cast<vfunc_t>(mem_read32(vtable + 0x38));
+        uint32_t vec_ptr = get_vec(sensor);
+        ext_00672110(out_ptr, vec_ptr);
+        return out_ptr;
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return out_ptr;
+}
+} // namespace lift_005FCB40
