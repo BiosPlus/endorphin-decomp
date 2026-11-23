@@ -1,0 +1,13 @@
+{
+  "va": "0x007C6060",
+  "size": 10,
+  "orig_symbol": "sub_007C6060",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "addOffset0xB0",
+  "signature": "uint32_t sub_007C6060(uint32_t a1)",
+  "summary": "Returns the first argument plus 0xb0",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:37:14Z"
+}
