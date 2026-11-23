@@ -4984,3 +4984,32 @@ extern void __stdcall fn_00488270(void* dst_ptr_holder, void* src_value) {
     ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1C));
 }
 } // namespace lift_00488270
+
+// [0x004B1E80]
+namespace lift_004B1E80 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData,float,getMaxAutoWidth,setMaxAutoWidth>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData,float,getMaxAutoWidth,setMaxAutoWidth>
+// @summary Evaluates an expression value and stores it via setMaxAutoWidth, or throws if target is null.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+
+void __fastcall ext_004B0EC0(void* self, int edx_unused, float value);
+void __fastcall ext_0046C3C0(void* exc, int edx_unused);
+void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void __stdcall fn_004B1E80(void** targetPtr, void* valueNode) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* inner = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueNode) + 0x04);
+        void** vtable = *reinterpret_cast<void***>(inner);
+        auto getFloat = reinterpret_cast<float (__thiscall*)(void*, void*)>(vtable[1]);
+        float val = getFloat(inner, valueNode);
+        ext_004B0EC0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004B1E80

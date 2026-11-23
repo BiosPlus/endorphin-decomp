@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1E80",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setMaxAutoWidth(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getMaxAutoWidth,setMaxAutoWidth\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getMaxAutoWidth,setMaxAutoWidth\u003e",
+  "signature": "extern \"C\" void __stdcall fn_004B1E80(void** targetPtr, void* valueNode)",
+  "summary": "Evaluates an expression value and stores it via setMaxAutoWidth, or throws if target is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:49:43Z"
+}
