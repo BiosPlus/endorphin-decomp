@@ -1,0 +1,14 @@
+{
+  "va": "0x004982E0",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::Transition,getResultantStateID\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, \u0026NMData::Transition::getResultantStateID, 0\u003e",
+  "signature": "void* __thiscall fn_004982E0(void* self, void* sret, void** targetPtr)",
+  "summary": "Reads getResultantStateID from a Transition pointer into sret, or throws if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:49:32Z"
+}

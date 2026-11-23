@@ -11887,3 +11887,57 @@ extern void* __thiscall fn_00471380(void* self, void* out_val, void** obj_ptr) {
     return nullptr;
 }
 } // namespace lift_00471380
+
+// [0x004982E0]
+namespace lift_004982E0 {
+uint32_t __thiscall ext_00496F10(void* self);
+    void __thiscall ext_006720E0(void* self, uint32_t arg);
+    void __thiscall ext_0046C3C0(void* self);
+    void __stdcall ext_006A6DD2(void* exc, uint32_t throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::Transition,getResultantStateID>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::Transition, std::string const &, &NMData::Transition::getResultantStateID, 0>
+// @summary Reads getResultantStateID from a Transition pointer into sret, or throws if null.
+void* __thiscall fn_004982E0(void* self, void* sret, void** targetPtr) {
+    (void)self;
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        uint32_t val = ext_00496F10(target);
+        ext_006720E0(sret, val);
+        return sret;
+    }
+
+    uint8_t exc[40];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return sret;
+}
+} // namespace lift_004982E0
+
+// [0x00497DD0]
+namespace lift_00497DD0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::string const &, NMData::Transition::getCondition, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::Transition, std::string const &, NMData::Transition::getCondition, 0>
+// @summary Reads Transition::getCondition() into an output std::string buffer if the target pointer is non-null, otherwise throws an exception.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t __thiscall ext_00496F20(uint32_t ecx);
+extern uint32_t __thiscall ext_006720E0(uint32_t ecx, uint32_t arg0);
+extern uint32_t __thiscall ext_0046C3C0(uint32_t ecx);
+extern void __stdcall ext_006A6DD2(uint32_t pExceptionObject, uint32_t pThrowInfo);
+
+uint32_t __thiscall fn_00497DD0(uint32_t /*this_ptr*/, uint32_t out_str, uint32_t ptr_to_obj) {
+    uint32_t obj = mem_read32(ptr_to_obj);
+    if (obj != 0) {
+        uint32_t cond_str = ext_00496F20(obj);
+        ext_006720E0(out_str, cond_str);
+        return out_str;
+    }
+
+    uint8_t exc[0x28]{};
+    ext_0046C3C0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc)));
+    ext_006A6DD2(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc)), 0x009DEC1Cu);
+    return 0;
+}
+} // namespace lift_00497DD0

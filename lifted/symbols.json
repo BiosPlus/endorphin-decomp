@@ -3796,6 +3796,20 @@
     "summary": "Parses the std::string pointed to by *arg as a float, rounds half away from zero, and converts to int via ext_006A6DE0.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497DD0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e",
+    "signature": "uint32_t __thiscall fn_00497DD0(uint32_t /*this_ptr*/, uint32_t out_str, uint32_t ptr_to_obj)",
+    "summary": "Reads Transition::getCondition() into an output std::string buffer if the target pointer is non-null, otherwise throws an exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004982E0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Transition,getResultantStateID\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, \u0026NMData::Transition::getResultantStateID, 0\u003e",
+    "signature": "void* __thiscall fn_004982E0(void* self, void* sret, void** targetPtr)",
+    "summary": "Reads getResultantStateID from a Transition pointer into sret, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00498F80": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
