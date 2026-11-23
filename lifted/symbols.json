@@ -7945,6 +7945,13 @@
     "summary": "Returns the double at +0xF8, or tail-calls ext_005D05B0 if the dword at +0xA0 is non-zero.",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x00552270": {
+    "name": "NMCamera::Perspective::vfunc_4",
+    "class": "NMCamera::Perspective",
+    "signature": "void __fastcall fn_00552270(void* self)",
+    "summary": "Applies the perspective projection matrix using gluPerspective.",
+    "lifted_path": "lifted/NMCamera/Perspective.cpp"
+  },
   "0x005522B0": {
     "name": "NMCamera::Perspective::vfunc_20",
     "class": "NMCamera::Perspective",
