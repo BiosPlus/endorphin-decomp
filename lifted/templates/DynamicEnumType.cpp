@@ -665,3 +665,27 @@ double __stdcall fn_004D4D50(uint32_t valuePtr) {
     return 0.0;
 }
 } // namespace lift_004D4D50
+
+// [0x004D50B0]
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004D3CF0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004D50B0(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004D3CF0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0

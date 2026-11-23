@@ -5407,6 +5407,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D50B0": {
+    "name": "DynamicEnumType::vfunc_1",
+    "class": "ExprParser::DynamicEnumType",
+    "signature": "double __stdcall fn_004D50B0(uint32_t* arg0)",
+    "summary": "Reads the tweak name index from RigEventData and returns it as a double, or throws if null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004D50F0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e::vfunc_2",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e",
@@ -5760,6 +5767,13 @@
     "signature": "void fn_004E2020(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E2760": {
+    "name": "NMData::AnimationEventData::vfunc_85",
+    "class": "NMData::AnimationEventData",
+    "signature": "void __thiscall fn_004E2760(void* self, uint32_t arg1)",
+    "summary": "Updates cached frame/time at +0x9CC and triggers ext_004E1F50 on field_0xB74 when matching +0x160",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
