@@ -5164,3 +5164,37 @@ extern void __stdcall fn_004DE8E0(void** targetPtr, void* exprArg) {
     ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
 }
 } // namespace lift_004DE8E0
+
+// [0x004F6620]
+namespace lift_004F6620 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, getX, float, setX>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Evaluates a float expression and sets MatrixWithProperties::x, or throws if target is null.
+// @field ExprArg +0x04 void* evaluator
+
+
+extern void __fastcall ext_004F4E00(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* exc, int edx_unused);
+extern void ext_006A6DD2(void* exc, void* throw_info);
+
+extern void __fastcall fn_004F6620(void* self, int edx_unused, void** target_ptr, void* expr_arg) {
+    (void)self;
+    (void)edx_unused;
+
+    void* target = *target_ptr;
+    if (target == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc, 0);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return;
+    }
+
+    void* evaluator = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(expr_arg) + 0x4);
+    void** vtable = *reinterpret_cast<void***>(evaluator);
+    using EvalFn = float(__fastcall*)(void* self, int edx_unused, void* expr_arg);
+    auto eval_fn = reinterpret_cast<EvalFn>(vtable[1]);
+    float value = eval_fn(evaluator, 0, expr_arg);
+
+    ext_004F4E00(target, 0, value);
+}
+} // namespace lift_004F6620

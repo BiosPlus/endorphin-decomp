@@ -5841,6 +5841,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004D5060": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_0",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
+    "signature": "uint32_t __thiscall fn_004D5060(uint32_t self, uint32_t out_ptr, uint32_t arg_ptr)",
+    "summary": "Reads the tweak name index from RigEventData or throws an exception if null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004D50B0": {
     "name": "DynamicEnumType::vfunc_1",
     "class": "ExprParser::DynamicEnumType",
@@ -6663,6 +6670,13 @@
     "signature": "void fn_004F5AD0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004F6620": {
+    "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, getX, float, setX\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "extern \"C\" void __fastcall fn_004F6620(void* self, int edx_unused, void** target_ptr, void* expr_arg)",
+    "summary": "Evaluates a float expression and sets MatrixWithProperties::x, or throws if target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004F6DC0": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e::vfunc_1",

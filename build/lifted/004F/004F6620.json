@@ -1,0 +1,22 @@
+{
+  "va": "0x004F6620",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setX(float)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, getX, float, setX\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "extern \"C\" void __fastcall fn_004F6620(void* self, int edx_unused, void** target_ptr, void* expr_arg)",
+  "summary": "Evaluates a float expression and sets MatrixWithProperties::x, or throws if target is null.",
+  "fields": [
+    {
+      "class": "ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "evaluator"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:50:40Z"
+}
