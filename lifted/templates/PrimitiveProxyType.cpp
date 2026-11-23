@@ -222,6 +222,7 @@ int32_t __stdcall fn_00497930(void* arg) {
         : static_cast<double>(val) - mem_00993828;
     return ext_006A6DE0(rounded);
 }
+extern "C" void ext_0046C500(void* self, int32_t value);
 
 // [0x00499190] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_38 (15 bytes)
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_38
@@ -324,5 +325,17 @@ void fn_0049DA30(void* self) {
 // @field ExprParser::PrimitiveProxyType<std::string> +0x00 uintptr_t field_0x00
 void* fn_00497620(void* self, const uintptr_t* src) {
     ext_004276B0(self, *src);
+    return self;
+}
+
+// [0x0049C050] ExprParser::PrimitiveProxyType<int>::vfunc_4 (39 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_4
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Reads the int32 through the proxy's value_ptr (src +0x00) and forwards it to ext_0046C500 on self; returns self.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+void* fn_0049C050(void* self, const void* src) {
+    const int32_t* value_ptr = *static_cast<const int32_t* const*>(src);
+    const int32_t value = *value_ptr;
+    ext_0046C500(self, value);
     return self;
 }

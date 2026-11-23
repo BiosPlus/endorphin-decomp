@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C050",
+  "size": 39,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_4",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_4",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void* fn_0049C050(void* self, const void* src)",
+  "summary": "Reads the int32 through the proxy's value_ptr (src +0x00) and forwards it to ext_0046C500 on self; returns self.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:40:08Z"
+}
