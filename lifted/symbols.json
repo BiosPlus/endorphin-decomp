@@ -4865,6 +4865,13 @@
     "summary": "Reads a ValuePtr's target byte at +1 and forwards it to the holder's handler; throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B13A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e",
+    "signature": "extern \"C\" float __thiscall fn_004B13A0(void* /*this*/, const uint32_t* ptr_holder)",
+    "summary": "Evaluates NMData::GraphEntryData::isActive() as a float (1.0f or 0.0f), throwing if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B13F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, isActive, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026NMData::GraphEntryData::isActive, 0\u003e",
@@ -6997,6 +7004,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
     "signature": "void* fn_004EA030(void* self, void* const* src)",
     "summary": "Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EA080": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "float __stdcall fn_004EA080(uint32_t* ptr)",
+    "summary": "Evaluates PoseToolOptions::isCollisionEnabled() as a float (1.0f or 0.0f), throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004EA330": {

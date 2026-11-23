@@ -23698,3 +23698,49 @@ uint32_t __stdcall fn_005FCB40(uint32_t out_ptr, uint32_t sensor_ptr_ptr) {
     return out_ptr;
 }
 } // namespace lift_005FCB40
+
+// [0x004EA080]
+namespace lift_004EA080 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled>::vfunc_1
+// @class ExprParser::ReadMethodType
+// @summary Evaluates PoseToolOptions::isCollisionEnabled() as a float (1.0f or 0.0f), throwing if null.
+// @field NMData::PoseToolOptions +0x05 uint8_t collisionEnabled
+
+
+extern uint32_t mem_009DEC1C;
+
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+
+float __stdcall fn_004EA080(uint32_t* ptr) {
+    uint32_t obj = *ptr;
+    if (obj == 0) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+    }
+    return (*(const uint8_t*)(uintptr_t)(obj + 0x5) != 0) ? 1.0f : 0.0f;
+}
+} // namespace lift_004EA080
+
+// [0x004B13A0]
+namespace lift_004B13A0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData,bool,&NMData::GraphEntryData::isActive,0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData,bool,&NMData::GraphEntryData::isActive,0>
+// @summary Evaluates NMData::GraphEntryData::isActive() as a float (1.0f or 0.0f), throwing if the pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t isActive
+
+
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern float __thiscall fn_004B13A0(void* /*this*/, const uint32_t* ptr_holder) {
+    uint32_t obj = *ptr_holder;
+    if (obj == 0) {
+        alignas(4) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    return (*reinterpret_cast<const uint8_t*>(uintptr_t(obj) + 1) != 0) ? 1.0f : 0.0f;
+}
+} // namespace lift_004B13A0

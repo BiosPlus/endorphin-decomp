@@ -1,0 +1,22 @@
+{
+  "va": "0x004B13A0",
+  "size": 74,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e",
+  "signature": "extern \"C\" float __thiscall fn_004B13A0(void* /*this*/, const uint32_t* ptr_holder)",
+  "summary": "Evaluates NMData::GraphEntryData::isActive() as a float (1.0f or 0.0f), throwing if the pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "isActive"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:01:23Z"
+}
