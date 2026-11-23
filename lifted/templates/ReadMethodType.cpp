@@ -11968,3 +11968,31 @@ void* __thiscall fn_0049B4D0(void* self, void* outValue, void** statePtr) {
     return outValue;
 }
 } // namespace lift_0049B4D0
+
+// [0x0046D5D0]
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006ACFB0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0046D5D0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006ACFB0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
