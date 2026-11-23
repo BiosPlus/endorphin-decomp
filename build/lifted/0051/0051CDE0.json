@@ -1,0 +1,14 @@
+{
+  "va": "0x0051CDE0",
+  "size": 93,
+  "orig_symbol": "NMData::QuatChannel::vfunc_4",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::clone",
+  "class": "NMData::QuatChannel",
+  "signature": "void* __thiscall fn_0051CDE0(const void* self)",
+  "summary": "Allocates and copy-constructs a clone of this QuatChannel instance.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:02:55Z"
+}

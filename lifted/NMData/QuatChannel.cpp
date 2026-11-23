@@ -61,3 +61,22 @@ uint32_t __thiscall fn_0051D8C0(uint32_t self, uint32_t arg1, uint32_t arg2) {
     ext_0051AE40(arg1, self, arg1, 0);
     return arg1;
 }
+
+// [0x0051CDE0]
+namespace lift_0051CDE0 {
+// @name NMData::QuatChannel::clone
+// @class NMData::QuatChannel
+// @summary Allocates and copy-constructs a clone of this QuatChannel instance.
+
+
+void* __cdecl ext_006A5C62(uint32_t size);
+void* __thiscall ext_0051CD30(void* self, const void* other);
+
+void* __thiscall fn_0051CDE0(const void* self) {
+    void* copy = ext_006A5C62(0x64);
+    if (copy == nullptr) {
+        return nullptr;
+    }
+    return ext_0051CD30(copy, self);
+}
+} // namespace lift_0051CDE0
