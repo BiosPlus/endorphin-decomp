@@ -18313,3 +18313,32 @@ float fn_004C7690(const void* const* self) {
     return static_cast<float>(std::atof(strength.c_str()));
 }
 } // namespace lift_004C7690
+
+// [0x004C5630] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004C5630 {
+// Callee 0x004C4DB0 (sub_004C4DB0, 7B): takes the ForceEventData object as `this` (ecx),
+// returns a float in st0 (the relative acceleration value).
+extern float ext_004C4DB0(void* thisPtr);
+// Constant 1e-6 (double) in .rdata at 0x009453C8.
+extern double mem_009453C8;
+
+// @name ExprParser::ReadMethodType<NMData::ForceEventData>::vfunc_3 (NMData::ForceEventData::getRelativeAcceleration >= 1e-6 check)
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Reads the wrapped ForceEventData pointer from self; throws if null, otherwise returns 1 when getRelativeAcceleration() >= 1e-6 (false for NaN), else 0.
+// @field ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004C5630(void* self) {
+    // self->data is the first dword of the ValuePtrType base (ecx = [self]).
+    void* data = *static_cast<void**>(self);
+    if (data == nullptr) {
+        // Original builds an exception object via sub_0046C3C0 and throws it through
+        // _CxxThrowException (0x006A6DD2). Exact exception type is not recovered.
+        throw std::runtime_error("ReadMethodType<ForceEventData>: null data pointer");
+    }
+
+    float accel = ext_004C4DB0(data);
+
+    // fcomp against 1e-6, then `jne` on C0 (set when accel < 1e-6 or unordered/NaN).
+    // Returns 1 only when accel >= 1e-6 and is ordered; `>=` is false for NaN.
+    return (static_cast<double>(accel) >= mem_009453C8) ? 1 : 0;
+}
+} // namespace lift_004C5630

@@ -5565,6 +5565,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C5630": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData\u003e::vfunc_3 (NMData::ForceEventData::getRelativeAcceleration \u003e= 1e-6 check)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e",
+    "signature": "int fn_004C5630(void* self)",
+    "summary": "Reads the wrapped ForceEventData pointer from self; throws if null, otherwise returns 1 when getRelativeAcceleration() \u003e= 1e-6 (false for NaN), else 0.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C5840": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::ForceEventData::setFrameNumber(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::ForceEventData::setFrameNumber(int), 0}\u003e",
