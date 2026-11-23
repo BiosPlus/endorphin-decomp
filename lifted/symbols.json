@@ -2947,6 +2947,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046E040": {
+    "name": "ReadMethodType_ImageExporter_getFrameRate_vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, float, ImageExporter::getFrameRate, 0\u003e",
+    "signature": "int fn_0046E040(void* self)",
+    "summary": "Returns 1 if the target's skeletal calibration value (via vfunc_12) is at least 1e-6 (NaN yields 0), otherwise 0; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046E140": {
     "name": "ExprParser::ReadWriteMethodType\u003cImageExporter,bool,isEnabled,bool,setEnabled\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}\u003e",

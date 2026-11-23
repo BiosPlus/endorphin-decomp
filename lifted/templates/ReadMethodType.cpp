@@ -17909,3 +17909,30 @@ extern void* __stdcall fn_0066F2D0(void* self, const void* const* value_slot) {
     return self;
 }
 } // namespace lift_0066F2D0
+
+// [0x0046E040] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0046E040 {
+// @name ReadMethodType_ImageExporter_getFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, float, ImageExporter::getFrameRate, 0>
+// @summary Returns 1 if the target's skeletal calibration value (via vfunc_12) is at least 1e-6 (NaN yields 0), otherwise 0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+
+
+extern float ext_0046C080(void* target);
+extern void ext_0046C3C0(void* errorBuf);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern const double mem_0093A738;
+
+int fn_0046E040(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string err;
+        ext_0046C3C0(&err);
+        throw std::runtime_error(err);
+    }
+    const float value = ext_0046C080(target);
+    return (static_cast<double>(value) >= mem_0093A738) ? 1 : 0;
+}
+} // namespace lift_0046E040
