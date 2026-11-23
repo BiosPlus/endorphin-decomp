@@ -13,7 +13,7 @@ struct NMCamera_Perspective_Fields {
     // +0xA0  uint32_t                 field_0xA0  (evidence: 0x00552250)
     // +0xB0  double                   field_0xB0  (evidence: 0x005522B0, 0x00552340)
     // +0xB8  double                   field_0xB8  (evidence: 0x005522B0, 0x00552340)
-    // +0xC0  double                   field_0xC0  (evidence: 0x005522B0)
+    // +0xC0  double                   field_0xC0  (evidence: 0x00552270, 0x005522B0)
     // +0xF8  double                   field_0xF8  (evidence: 0x005521D0, 0x00552250)
 };
 } // namespace lifted_layout

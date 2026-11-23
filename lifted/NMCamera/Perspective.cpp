@@ -83,3 +83,25 @@ void fn_00552340(void* self, const float* in, int32_t* out) {
     const double x1 = mem_00993828 + (d1 * mem_00993828 - q1);
     out[1] = ext_006A6DE0(x1);
 }
+
+// [0x00552270]
+namespace lift_00552270 {
+// @name NMCamera::Perspective::vfunc_4
+// @class NMCamera::Perspective
+// @summary Applies the perspective projection matrix using gluPerspective.
+// @field NMCamera::Perspective +0xC0 double field_0xC0
+
+extern double __fastcall ext_005481A0(void* self);
+extern double __fastcall ext_005481C0(void* self);
+extern void __stdcall ext_0063E048(double fovy, double aspect, double zNear, double zFar);
+
+void __fastcall fn_00552270(void* self) {
+    double zFar = ext_005481A0(self);
+    double zNear = ext_005481C0(self);
+    double aspect = *reinterpret_cast<const double*>(reinterpret_cast<const uint8_t*>(self) + 0xC0);
+    void** vtable = *reinterpret_cast<void***>(self);
+    typedef double (__fastcall *vfunc_9_t)(void*);
+    double fovy = reinterpret_cast<vfunc_9_t>(vtable[9])(self);
+    ext_0063E048(fovy, aspect, zNear, zFar);
+}
+} // namespace lift_00552270

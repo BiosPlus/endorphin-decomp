@@ -1,0 +1,22 @@
+{
+  "va": "0x00552270",
+  "size": 59,
+  "orig_symbol": "NMCamera::Perspective::vfunc_4",
+  "src_path": "src/NMCamera/Perspective.cpp",
+  "lifted_path": "lifted/NMCamera/Perspective.cpp",
+  "name": "NMCamera::Perspective::vfunc_4",
+  "class": "NMCamera::Perspective",
+  "signature": "void __fastcall fn_00552270(void* self)",
+  "summary": "Applies the perspective projection matrix using gluPerspective.",
+  "fields": [
+    {
+      "class": "NMCamera::Perspective",
+      "offset": "+0xC0",
+      "type": "double",
+      "name": "field_0xC0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:00:25Z"
+}
