@@ -1,0 +1,14 @@
+{
+  "va": "0x00494A20",
+  "size": 55,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e::vfunc_1",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRigManager, int, \u0026RigManager::getRigTypeIndex, 1\u003e::vfunc_1",
+  "class": "ExprParser::DynamicEnumType\u003cRigManager\u003e",
+  "signature": "double __thiscall fn_00494A20(uint32_t self, uint32_t ptrAddr)",
+  "summary": "Reads the rig type index from a RigManager pointer as a double, or throws an exception if the pointer is null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:57:16Z"
+}

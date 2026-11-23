@@ -614,3 +614,29 @@ int fn_005C8A40(void* self) {
 }
 } // namespace lift_0046EB50
 } // namespace lift_005C8A40
+
+// [0x00494A20]
+namespace lift_00494A20 {
+// @name ExprParser::ReadMethodType<RigManager, int, &RigManager::getRigTypeIndex, 1>::vfunc_1
+// @class ExprParser::DynamicEnumType<RigManager>
+// @summary Reads the rig type index from a RigManager pointer as a double, or throws an exception if the pointer is null.
+
+
+extern int __thiscall ext_006AD970(uint32_t self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+double __thiscall fn_00494A20(uint32_t self, uint32_t ptrAddr) {
+    (void)self;
+    uint32_t obj = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ptrAddr));
+    if (obj != 0) {
+        int val = ext_006AD970(obj);
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_00494A20
