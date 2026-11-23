@@ -8283,3 +8283,40 @@ extern void __stdcall fn_00633090(void** targetPtr, void* valueArg) {
 }
 } // namespace lift_004DE890
 } // namespace lift_00633090
+
+// [0x0059EF40] ExprParser::ReadWriteMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}>::vfunc_41 (72 bytes)
+namespace lift_0059EF40 {
+// Known callee 0x006036C0: VTable::VirtualSlot25Thunk (loads the object's vtable and tail-calls slot 25 (+0x64) with the same this; result passed through).
+extern void* ext_006036C0(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B, not yet lifted). Called with this = address of the arg1 stack slot.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// @name ExprParser::ReadWriteMethodType<NMData::CharacterData, float, getter, float, setter>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}>
+// @summary Reads a float from the source object (virtual slot 1) and forwards it to the target's virtual slot 25; throws if the held value pointer is null.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04 (sub-object used as this for the slot-25 dispatch)
+// @field arg2 (source object) +0x04 void* field_0x04 (pointer to object whose vtable slot 1 yields the float)
+void* fn_0059EF40(void** arg1, void* arg2) {
+    // esi = *arg1 (the held ValuePtrType object).
+    void* esi = *arg1;
+    if (esi == nullptr) {
+        // Null held pointer: report via the MSVC C++ exception runtime. Never returns.
+        ext_0046C3C0(static_cast<void*>(&arg1));
+        ext_006A6DD2(static_cast<void*>(&arg1), reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1C)));
+        return nullptr; // unreachable: the throw does not return
+    }
+
+    // x = *(arg2 + 4); value = x->vtable[1](arg2) as float.
+    auto* src = static_cast<uint8_t*>(arg2);
+    void* x = *reinterpret_cast<void**>(src + 0x04);
+    void** xVtbl = *reinterpret_cast<void***>(x);
+    using Slot1Fn = float (*)(void* self, void* arg);
+    float value = reinterpret_cast<Slot1Fn>(xVtbl[1])(x, arg2);
+
+    // Forward to esi+4 via the slot-25 thunk; its result is returned unchanged.
+    auto* target = static_cast<uint8_t*>(esi) + 0x04;
+    return ext_006036C0(static_cast<void*>(target), value);
+}
+} // namespace lift_0059EF40

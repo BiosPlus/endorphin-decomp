@@ -1,0 +1,22 @@
+{
+  "va": "0x0059EF40",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, float, getter, float, setter\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}\u003e",
+  "signature": "void* fn_0059EF40(void** arg1, void* arg2)",
+  "summary": "Reads a float from the source object (virtual slot 1) and forwards it to the target's virtual slot 25; throws if the held value pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (sub-object used as this for the slot-25",
+      "name": "dispatch)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:54:30Z"
+}
