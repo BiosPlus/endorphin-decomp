@@ -33638,6 +33638,12 @@
     "summary": "Reads and returns the 32-bit value at offset 0x14 from the pointer argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6FF0": {
+    "name": "get_field_0x7c",
+    "signature": "extern \"C\" uint32_t sub_007C6FF0(uint32_t obj)",
+    "summary": "Returns the 32-bit value at offset 0x7C of the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8D70": {
     "name": "thunk_MSVCR80_malloc",
     "signature": "extern \"C\" void fn_007C8D70(void)",
@@ -33660,6 +33666,12 @@
     "name": "readFloatPtr",
     "signature": "float sub_007C9CB0(const float* ptr)",
     "summary": "Dereference a float pointer and return its value.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C9DD0": {
+    "name": "addOffset0x30",
+    "signature": "uint32_t sub_007C9DD0(uint32_t arg0)",
+    "summary": "Returns the input pointer/value offset by 0x30 bytes.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007CA110": {

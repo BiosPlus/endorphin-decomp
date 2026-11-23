@@ -54,3 +54,25 @@ uint32_t sub_007C6FC0(uint32_t arg0) {
     return mem_read_u32(arg0 + 0x14);
 }
 } // namespace lift_007C6FC0
+
+// [0x007C6FF0]
+namespace lift_007C6FF0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name get_field_0x7c
+// @summary Returns the 32-bit value at offset 0x7C of the given object pointer.
+// @field Object +0x7C uint32_t field_0x7c
+extern uint32_t sub_007C6FF0(uint32_t obj) {
+    return mem_read32(obj + 0x7Cu);
+}
+} // namespace lift_007C6FF0
+
+// [0x007C9DD0]
+namespace lift_007C9DD0 {
+// @name addOffset0x30
+// @summary Returns the input pointer/value offset by 0x30 bytes.
+
+uint32_t sub_007C9DD0(uint32_t arg0) {
+    return arg0 + 0x30;
+}
+} // namespace lift_007C9DD0
