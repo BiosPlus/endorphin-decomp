@@ -128,6 +128,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00402070": {
+    "name": "AnimatableTransform::vfunc_39",
+    "class": "AnimatableTransform",
+    "signature": "void __thiscall AnimatableTransform_vfunc_39(void* self)",
+    "summary": "Tail-calls virtual method at +0x8 on the RenderObjectOwner/Updateable subobject at +0xC.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004020C0": {
     "name": "AnimatableTransform::vfunc_13_off_4",
     "class": "AnimatableTransform",

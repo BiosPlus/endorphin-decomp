@@ -4775,3 +4775,17 @@ uint32_t __thiscall fn_00402050(uint32_t self) {
     return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
 }
 } // namespace lift_00402050
+
+// [0x00402070]
+namespace lift_00402070 {
+// @name AnimatableTransform::vfunc_39
+// @class AnimatableTransform
+// @summary Tail-calls virtual method at +0x8 on the RenderObjectOwner/Updateable subobject at +0xC.
+// @field AnimatableTransform +0x0C uint32_t subobj_vtable_0xC
+void __thiscall AnimatableTransform_vfunc_39(void* self) {
+    uint8_t* subobj = static_cast<uint8_t*>(self) + 0xC;
+    void** vtable = *reinterpret_cast<void***>(subobj);
+    using fn_t = void(__thiscall*)(void*);
+    reinterpret_cast<fn_t>(vtable[2])(subobj);
+}
+} // namespace lift_00402070

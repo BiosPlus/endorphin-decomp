@@ -1,0 +1,22 @@
+{
+  "va": "0x00402070",
+  "size": 11,
+  "orig_symbol": "AnimatableTransform::vfunc_39",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_39",
+  "class": "AnimatableTransform",
+  "signature": "void __thiscall AnimatableTransform_vfunc_39(void* self)",
+  "summary": "Tail-calls virtual method at +0x8 on the RenderObjectOwner/Updateable subobject at +0xC.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "subobj_vtable_0xC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:38:04Z"
+}
