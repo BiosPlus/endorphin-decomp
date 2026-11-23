@@ -1,0 +1,28 @@
+{
+  "va": "0x00486C20",
+  "size": 31,
+  "orig_symbol": "NMData::BehaviourData::vfunc_68",
+  "src_path": "src/NMData/BehaviourData.cpp",
+  "lifted_path": "lifted/NMData/BehaviourData.cpp",
+  "name": "NMData::BehaviourData::vfunc_68",
+  "class": "NMData::BehaviourData",
+  "signature": "extern \"C\" void __thiscall fn_00486C20(void* self, uint8_t v)",
+  "summary": "Stores the byte argument at +0x17C, then tail-calls ext_0047D300 on the global object at mem_00AE29D0 passing the dword at +0x168 as its argument.",
+  "fields": [
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::BehaviourData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:32:01Z"
+}

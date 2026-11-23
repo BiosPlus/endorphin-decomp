@@ -3073,6 +3073,13 @@
     "summary": "Setter storing float argument into field at offset +0x220.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486C20": {
+    "name": "NMData::BehaviourData::vfunc_68",
+    "class": "NMData::BehaviourData",
+    "signature": "extern \"C\" void __thiscall fn_00486C20(void* self, uint8_t v)",
+    "summary": "Stores the byte argument at +0x17C, then tail-calls ext_0047D300 on the global object at mem_00AE29D0 passing the dword at +0x168 as its argument.",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x00486C40": {
     "name": "NMData::DesiredPoseEventData::vfunc_14",
     "class": "NMData::DesiredPoseEventData",
