@@ -32682,10 +32682,34 @@
     "summary": "Tail-calls sub_00714060 with global object mem_00B5F8A0 as this",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007138E0": {
+    "name": "tailCall_00714060_with_00B5F7E0",
+    "signature": "int32_t sub_007138E0(void)",
+    "summary": "Tail-calls sub_00714060 with global object mem_00B5F7E0 as this",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713920": {
+    "name": "thunk_sub_00714060",
+    "signature": "void sub_00713920()",
+    "summary": "Tail-calls sub_00714060 with global mem_00B5F798 as this pointer",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00713930": {
     "name": "sub_00713930",
     "signature": "extern \"C\" void* __fastcall fn_00713930(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00714060 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713980": {
+    "name": "sub_00713980_tailcall_00714060",
+    "signature": "void __cdecl sub_00713980()",
+    "summary": "Tail-calls sub_00714060 with global object mem_00B5F3E0 as this",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007139C0": {
+    "name": "initGlobal_00B5F498",
+    "signature": "void __cdecl sub_007139C0()",
+    "summary": "Tail-calls ext_00714060 with global object mem_00B5F498 as this.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x00714970": {

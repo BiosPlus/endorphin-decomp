@@ -1,0 +1,13 @@
+{
+  "va": "0x00713920",
+  "size": 10,
+  "orig_symbol": "sub_00713920",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "thunk_sub_00714060",
+  "signature": "void sub_00713920()",
+  "summary": "Tail-calls sub_00714060 with global mem_00B5F798 as this pointer",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:35:45Z"
+}

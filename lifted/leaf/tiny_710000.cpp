@@ -769,3 +769,52 @@ void sub_00713820(void) {
     ext_00714060(mem_00B5F708);
 }
 } // namespace lift_00713820
+
+// [0x00713920]
+namespace lift_00713920 {
+extern void* mem_00B5F798;
+extern void ext_00714060(void* self);
+
+// @name thunk_sub_00714060
+// @summary Tail-calls sub_00714060 with global mem_00B5F798 as this pointer
+void sub_00713920() {
+    ext_00714060(mem_00B5F798);
+}
+} // namespace lift_00713920
+
+// [0x007138E0]
+namespace lift_007138E0 {
+extern uint8_t mem_00B5F7E0[];
+extern int32_t (__thiscall *ext_00714060)(void* self);
+
+// @name tailCall_00714060_with_00B5F7E0
+// @summary Tail-calls sub_00714060 with global object mem_00B5F7E0 as this
+int32_t sub_007138E0(void) {
+    return ext_00714060(mem_00B5F7E0);
+}
+} // namespace lift_007138E0
+
+// [0x00713980]
+namespace lift_00713980 {
+extern uint8_t mem_00B5F3E0[];
+extern void __thiscall ext_00714060(void* self);
+
+// @name sub_00713980_tailcall_00714060
+// @summary Tail-calls sub_00714060 with global object mem_00B5F3E0 as this
+void __cdecl sub_00713980() {
+    ext_00714060(mem_00B5F3E0);
+}
+} // namespace lift_00713980
+
+// [0x007139C0]
+namespace lift_007139C0 {
+// @name initGlobal_00B5F498
+// @summary Tail-calls ext_00714060 with global object mem_00B5F498 as this.
+
+extern uint8_t mem_00B5F498[];
+extern void __thiscall ext_00714060(void* self);
+
+void __cdecl sub_007139C0() {
+    ext_00714060(mem_00B5F498);
+}
+} // namespace lift_007139C0
