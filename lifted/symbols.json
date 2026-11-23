@@ -3133,6 +3133,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_00472EB0.",
     "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp"
   },
+  "0x00473E70": {
+    "name": "RuntimeEngine::vfunc_1",
+    "class": "RuntimeEngine",
+    "signature": "bool is_sentinel(uint32_t v)",
+    "summary": "Refreshes per-frame state from the handle in `obj`: resolves normalized",
+    "lifted_path": "lifted/classes/RuntimeEngine.cpp"
+  },
   "0x00474ED0": {
     "name": "RuntimeEngine::vfunc_0_off_4",
     "class": "RuntimeEngine",

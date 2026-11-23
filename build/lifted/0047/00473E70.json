@@ -1,0 +1,58 @@
+{
+  "va": "0x00473E70",
+  "size": 1164,
+  "orig_symbol": "RuntimeEngine::vfunc_1",
+  "src_path": "src/classes/RuntimeEngine.cpp",
+  "lifted_path": "lifted/classes/RuntimeEngine.cpp",
+  "name": "RuntimeEngine::vfunc_1",
+  "class": "RuntimeEngine",
+  "signature": "bool is_sentinel(uint32_t v)",
+  "summary": "Refreshes per-frame state from the handle in `obj`: resolves normalized",
+  "fields": [
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0xD4",
+      "type": "object",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0xF8",
+      "type": "void*",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0xFC",
+      "type": "float[3]",
+      "name": "field_0xFC"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0x174",
+      "type": "uint32_t",
+      "name": "field_0x174"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0x180",
+      "type": "object",
+      "name": "field_0x180"
+    },
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0x288",
+      "type": "object",
+      "name": "field_0x288"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:30:36Z"
+}
