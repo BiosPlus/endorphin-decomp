@@ -1124,3 +1124,27 @@ void fn_005C47A0(ValuePtrTypeLite* self, void* ctx) {
 }
 } // namespace lift_0046EA50
 } // namespace lift_005C47A0
+
+// [0x00515E30] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_0 (69 bytes)
+namespace lift_00515E30 {
+// Callee 0x006720C0: __thiscall with `this` in ecx and one 4-byte stack argument (ret 4).
+extern void ext_006720C0(void* self, int32_t value);
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_0
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Reads the int at +0x0C of the object bound through the holder's pointer, passes it to ext_006720C0 on result, and returns result; throws if no target is bound.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+// @field NMData::EvolverRuntimeOptions +0x0C int32_t field_0x0c
+void* fn_00515E30(void* result, void* holder) {
+    void* target = *static_cast<void**>(holder);
+    if (target == nullptr) {
+        // Original constructs an MSVC exception object (ext_0046C3C0) and throws it
+        // (type info 0x009DEC1C); the message is not recoverable, so a portable
+        // std::runtime_error stands in.
+        throw std::runtime_error("ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>: null value pointer");
+    }
+    const int32_t value = lift_field<int32_t>(target, 0x0C);
+    ext_006720C0(result, value);
+    return result;
+}
+} // namespace lift_00515E30
