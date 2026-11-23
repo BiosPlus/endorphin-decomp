@@ -8825,3 +8825,25 @@ int fn_0046D950(void* self) {
     return result != 0 ? 1 : 0;
 }
 } // namespace lift_0046D950
+
+// [0x0046EB50] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0046EB50 {
+extern int ext_006ACFB0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Not referenced: the throw path is expressed portably below (see note there).
+
+// @name ExprParser::ReadMethodType<ImageExporter,int,ImageExporter::getEndFrame,0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* ptr
+int fn_0046EB50(void* self) {
+    void* value = *static_cast<void**>(self);
+    if (value == nullptr) {
+        // Original constructs an exception object via ext_0046C3C0 and throws it
+        // (RTTI type 0x009DEC1C). Portable equivalent: throw a standard exception.
+        throw std::runtime_error("ReadMethodType: null value pointer");
+    }
+    return ext_006ACFB0() != 0 ? 1 : 0;
+}
+} // namespace lift_0046EB50

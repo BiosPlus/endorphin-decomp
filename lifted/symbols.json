@@ -2898,6 +2898,13 @@
     "summary": "Stdcall (ret 4) virtual: if the proxied target pointer is non-null, forwards to ext_006ACFB0 with it as this and returns its result; otherwise builds an exception object and throws it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046EB50": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0\u003e",
+    "signature": "int fn_0046EB50(void* self)",
+    "summary": "Reads the pointer held at self; if non-null returns 1 when ext_006ACFB0() is nonzero, else 0; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046F1E0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getImageWidth)",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e",
