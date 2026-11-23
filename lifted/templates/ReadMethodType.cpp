@@ -10417,3 +10417,53 @@ bool fn_004A31C0(void* self) {
     return ext_00496F30(ptr) != 0;
 }
 } // namespace lift_004A31C0
+
+// [0x004720D0]
+namespace lift_004720D0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine,int,RuntimeEngine::getNumTicksToRun>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine,int,RuntimeEngine::getNumTicksToRun>
+// @summary Dereferences RuntimeEngine*, calls getNumTicksToRun() and returns as double, or throws on null.
+
+
+extern int32_t __thiscall ext_0046F7C0(uint32_t self);
+extern void __thiscall ext_0046C3C0(void* ex);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern double __stdcall fn_004720D0(const uint32_t* ptr) {
+    uint32_t obj = *ptr;
+    if (obj != 0) {
+        int32_t ticks = ext_0046F7C0(obj);
+        return static_cast<double>(ticks);
+    }
+
+    uint8_t ex[0x28];
+    ext_0046C3C0(ex);
+    ext_006A6DD2(ex, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004720D0
+
+// [0x0046D8E0]
+namespace lift_0046D8E0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getImageHeight>::vfunc_1
+// @class ExprParser::ReadMethodType
+// @summary Reads an int property via ImageExporter::getImageHeight and returns it as double, or throws if null.
+
+
+extern int32_t __thiscall ext_006AD1C0(void* obj);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __thiscall fn_0046D8E0(void* self, uint32_t* ptr) {
+    (void)self;
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*ptr));
+    if (obj != nullptr) {
+        int32_t val = ext_006AD1C0(obj);
+        return static_cast<double>(val);
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_0046D8E0
