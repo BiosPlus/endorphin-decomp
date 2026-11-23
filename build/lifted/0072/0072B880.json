@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B880",
+  "size": 10,
+  "orig_symbol": "sub_0072B880",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "initGlobalNoop_0072B880",
+  "signature": "extern \"C\" void __cdecl fn_0072B880(void)",
+  "summary": "Tail-calls ext_006D80A0 with global 0x00B60020 in ECX.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:09Z"
+}
