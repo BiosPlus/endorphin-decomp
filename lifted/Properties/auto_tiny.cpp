@@ -135,3 +135,15 @@ extern "C" void* __fastcall fn_004AF040(void* self, int edx_unused, unsigned int
 extern "C" void __fastcall fn_004F0B00(void* self) {
     ext_004F1210(static_cast<char*>(self) - 0x4);
 }
+
+// [0x00681B20]
+namespace lift_00681B20 {
+// @name Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVector<Interpreter>>, Properties::GetPropertySource>::vfunc_8
+// @class Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVector<Interpreter>>, Properties::GetPropertySource>
+// @summary Virtual method that returns its second stack argument.
+uint32_t fn_00681B20(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)self;
+    (void)arg1;
+    return arg2;
+}
+} // namespace lift_00681B20
