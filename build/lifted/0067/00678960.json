@@ -1,0 +1,28 @@
+{
+  "va": "0x00678960",
+  "size": 63,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e",
+  "signature": "extern void __stdcall fn_00678960(void* const* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B1D40 (ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41).",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:01:00Z"
+}

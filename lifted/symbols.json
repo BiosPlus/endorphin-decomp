@@ -4627,6 +4627,13 @@
     "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 1 of arg's sub-object and stores the float result at target+0x24; throws if null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B7BC0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, bool, \u0026public: void __thiscall NMData::EngineData::setEnableNonSphericalInertialBodies(bool)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, bool, \u0026public: void __thiscall NMData::EngineData::setEnableNonSphericalInertialBodies(bool)\u003e",
+    "signature": "extern void __stdcall fn_004B7BC0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1D40 (ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B83E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
@@ -11551,6 +11558,13 @@
     "summary": "Reads a float from the inner reader (vtable slot 1) and stores it into the target Effector's +0x54 field; throws if the target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x006059E0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, float, \u0026public: void __thiscall Effector::setGradientCap(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, float, \u0026public: void __thiscall Effector::setGradientCap(float)\u003e",
+    "signature": "extern void __stdcall fn_006059E0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00605E70": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e",
@@ -11998,6 +12012,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00617300": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_00617300(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00617340": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
@@ -12011,6 +12032,13 @@
     "signature": "float fn_006173F0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00617520": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerRestitution(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerRestitution(float)\u003e",
+    "signature": "extern void __stdcall fn_00617520(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x006178B0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit\u003e::vfunc_16 (NMData::HingeLimit::getLowerDamping)",
@@ -12026,6 +12054,34 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00618010": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getZ(void) const, float, \u0026public: void __thiscall NM::Vector3::setZ(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getZ(void) const, float, \u0026public: void __thiscall NM::Vector3::setZ(float)\u003e",
+    "signature": "extern void __stdcall fn_00618010(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00618460": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_00618460(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00618880": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, float, \u0026public: void __thiscall NMData::EngineData::setPosBufferFrameRate(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, float, \u0026public: void __thiscall NMData::EngineData::setPosBufferFrameRate(float)\u003e",
+    "signature": "extern void __stdcall fn_00618880(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00618BB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperRestitution(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperRestitution(float)\u003e",
+    "signature": "extern void __stdcall fn_00618BB0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00619320": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0\u003e",
@@ -12040,12 +12096,33 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00619F40": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setTwistStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setTwistStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_00619F40(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x0061A220": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setSwingStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setSwingStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_0061A220(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0061A2F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0\u003e",
     "signature": "float fn_0061A2F0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061A4E0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setLinearStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setLinearStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_0061A4E0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x0061A530": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit\u003e::vfunc_16 (NMData::TwistAndSwingLimit::getLinearDamping)",
@@ -12054,12 +12131,33 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::TwistAndSwingLimit\u003e object (getLinearDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061A7D0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setSwingDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setSwingDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_0061A7D0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0061A8F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0\u003e",
     "signature": "float fn_0061A8F0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061AE50": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setTwistDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setTwistDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_0061AE50(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x0061B2F0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setLinearDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setLinearDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_0061B2F0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x0061B960": {
     "name": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint\u003e::vfunc_16 (NMData::HingeConstraint::isEnabled)",
@@ -12687,6 +12785,69 @@
     "signature": "void fn_006325C0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00632D20": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_00632D20(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632D70": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_00632D70(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632DC0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearForceLimit(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearForceLimit(float)\u003e",
+    "signature": "extern void __stdcall fn_00632DC0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632E10": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_00632E10(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632E60": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_00632E60(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632EB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingForceLimit(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingForceLimit(float)\u003e",
+    "signature": "extern void __stdcall fn_00632EB0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632F00": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistStiffness(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistStiffness(float)\u003e",
+    "signature": "extern void __stdcall fn_00632F00(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632F50": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistDamping(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistDamping(float)\u003e",
+    "signature": "extern void __stdcall fn_00632F50(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00632FA0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistForceLimit(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistForceLimit(float)\u003e",
+    "signature": "extern void __stdcall fn_00632FA0(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00633AE0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e::vfunc_1",
@@ -15238,6 +15399,13 @@
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0066EC60": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, float, \u0026public: void __thiscall NM::Vector3::setY(float)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, float, \u0026public: void __thiscall NM::Vector3::setY(float)\u003e",
+    "signature": "extern void __stdcall fn_0066EC60(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0066EDA0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_0_off_4",
     "class": "ExprParser::ExpressionContainerType",
@@ -15443,6 +15611,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006788C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00678880 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00678960": {
+    "name": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e",
+    "signature": "extern void __stdcall fn_00678960(void* const* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1D40 (ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00678A20": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e::vfunc_3",
