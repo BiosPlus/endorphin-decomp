@@ -1,0 +1,22 @@
+{
+  "va": "0x0060D3A0",
+  "size": 53,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_22",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_22",
+  "class": "NMData::EffectorGroupData",
+  "signature": "void fn_0060D3A0(void* self, void* src, void* arg2, void* arg3)",
+  "summary": "Copies the base EffectorBaseData properties from src into self, then copies the m_childEffectorNames string property.",
+  "fields": [
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x44",
+      "type": "undefined",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:02:27Z"
+}

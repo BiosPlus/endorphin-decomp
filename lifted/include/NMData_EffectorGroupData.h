@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct NMData_EffectorGroupData_Fields {
     // +0x4   std::string              field_0x04  (evidence: 0x0060D500)
+    // +0x44  undefined                field_0x44  (evidence: 0x0060D3A0)
 };
 } // namespace lifted_layout
