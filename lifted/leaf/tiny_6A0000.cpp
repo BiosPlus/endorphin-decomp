@@ -104,3 +104,16 @@ uint32_t __thiscall sub_006AFDC0(uint32_t ecx) {
     return ecx;
 }
 } // namespace lift_006AFDC0
+
+// [0x006A4CD0]
+namespace lift_006A4CD0 {
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name sub_006A4CD0_init_one
+// @summary Sets the 32-bit field at offset +0x00 to 1 and returns this.
+// @field Object +0x00 uint32_t field_0x00
+uint32_t __fastcall sub_006A4CD0(uint32_t self) {
+    mem_write32(self, 1);
+    return self;
+}
+} // namespace lift_006A4CD0
