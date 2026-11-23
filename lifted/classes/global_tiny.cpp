@@ -4682,3 +4682,19 @@ void __thiscall SnapTranslateTool_vfunc_19_off_98(void* self) {
     reinterpret_cast<void(__thiscall*)(uint32_t)>(fn)(target);
 }
 } // namespace lift_00544E10
+
+// [0x00627270]
+namespace lift_00627270 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name CompoundSensor::vfunc_18
+// @class CompoundSensor
+// @summary Virtual method wrapper that invokes vtable slot +0x40 (vfunc_16) with argument 0
+// @field CompoundSensor +0x00 uint32_t* vtable
+uint32_t __thiscall fn_00627270(uint32_t self) {
+    uint32_t vtable = mem_read32(self);
+    uint32_t fn_ptr = mem_read32(vtable + 0x40u);
+    auto fn = reinterpret_cast<uint32_t(__thiscall*)(uint32_t, uint32_t)>(fn_ptr);
+    return fn(self, 0u);
+}
+} // namespace lift_00627270

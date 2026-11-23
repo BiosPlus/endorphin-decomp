@@ -1,0 +1,22 @@
+{
+  "va": "0x00627270",
+  "size": 10,
+  "orig_symbol": "CompoundSensor::vfunc_18",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundSensor::vfunc_18",
+  "class": "CompoundSensor",
+  "signature": "uint32_t __thiscall fn_00627270(uint32_t self)",
+  "summary": "Virtual method wrapper that invokes vtable slot +0x40 (vfunc_16) with argument 0",
+  "fields": [
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:29:33Z"
+}
