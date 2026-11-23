@@ -18490,3 +18490,5106 @@ uint32_t __thiscall fn_004D1310(void* /*this*/, void** arg1) {
     return 0u;
 }
 } // namespace lift_004D1310
+
+// [0x004E00D0]
+namespace lift_004E00D0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, getEntryBlendPeriod>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Evaluates getEntryBlendPeriod on the dereferenced object and returns 1 if >= 1e-6, or throws on null.
+
+
+double __thiscall ext_004DDE40(void* self);
+void __thiscall ext_0046C3C0(void* self);
+void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern double mem_00949D50;
+
+uint32_t __stdcall fn_004E00D0(void** arg0) {
+    void* obj = *arg0;
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    double val = ext_004DDE40(obj);
+    return (val >= mem_00949D50) ? 1u : 0u;
+}
+} // namespace lift_004E00D0
+
+// [0x004703E0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004703E0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0046C110(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0093B418;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004703E0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0046C110(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0093B418) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004703E0
+
+// [0x0048FF80] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0048FF80 {
+// @name ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0048FB10(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0093E7D8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0048FF80(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0048FB10(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0093E7D8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0048FF80
+
+// [0x004CB630] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004CB630 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_004CA5E0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004CB630(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_004CA5E0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_004CB630
+
+// [0x004D1910] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004D1910 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_004D0AF0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004D1910(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_004D0AF0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_004D1910
+
+// [0x004D1FC0] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004D1FC0 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_004D0E00(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004D1FC0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_004D0E00(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_004D1FC0
+
+// [0x004D8EB0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004D8EB0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_004D3FD0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004D8EB0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_004D3FD0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_004D8EB0
+
+// [0x004DEB60] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004DEB60 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_00486C90(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004DEB60(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_00486C90(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_004DEB60
+
+// [0x004E20C0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004E20C0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004E1980(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00949D50;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004E20C0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004E1980(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00949D50) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004E20C0
+
+// [0x004F6740] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F6740 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4DD0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F6740(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4DD0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F6740
+
+// [0x004F6E60] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F6E60 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4DF0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F6E60(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4DF0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F6E60
+
+// [0x004F7340] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F7340 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4EA0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F7340(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4EA0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F7340
+
+// [0x004F7C80] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F7C80 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4F80(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F7C80(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4F80(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F7C80
+
+// [0x004F7F30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F7F30 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4FE0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F7F30(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4FE0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F7F30
+
+// [0x004F8620] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F8620 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4F00(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F8620(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4F00(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F8620
+
+// [0x004F8A80] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F8A80 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004F4F20(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094CE78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004F8A80(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004F4F20(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094CE78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004F8A80
+
+// [0x004FE270] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004FE270 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004FD810(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094E1B8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004FE270(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004FD810(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094E1B8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004FE270
+
+// [0x004FE880] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004FE880 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004FD830(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094E1B8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004FE880(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004FD830(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094E1B8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004FE880
+
+// [0x004FEE90] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004FEE90 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_004FD850(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0094E1B8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_004FEE90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_004FD850(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0094E1B8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_004FEE90
+
+// [0x00512190] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00512190 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00511270(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00950AE0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00512190(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00511270(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00950AE0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00512190
+
+// [0x00513CB0] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00513CB0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00511280(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00950AE0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00513CB0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00511280(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00950AE0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00513CB0
+
+// [0x0051B010] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_0051B010 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0051AE90(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00952190;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0051B010(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0051AE90(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00952190) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0051B010
+
+// [0x00521880] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00521880 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_00687090(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00521880(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_00687090(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_00521880
+
+// [0x005250B0] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_005250B0 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00524A60(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00952C28;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005250B0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00524A60(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00952C28) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005250B0
+
+// [0x00525510] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00525510 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00524AE0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00952C28;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00525510(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00524AE0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00952C28) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00525510
+
+// [0x00526450] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_00526450 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00525E70(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00952C28;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00526450(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00525E70(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00952C28) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00526450
+
+// [0x0058B770] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058B770 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058A8F0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095B338;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058B770(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058A8F0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095B338) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058B770
+
+// [0x0058BA50] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058BA50 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058A920(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095B338;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058BA50(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058A920(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095B338) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058BA50
+
+// [0x0058CBF0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058CBF0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058A960(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095B338;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058CBF0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058A960(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095B338) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058CBF0
+
+// [0x0058D9D0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058D9D0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058CFB0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095B338;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058D9D0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058CFB0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095B338) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058D9D0
+
+// [0x0058DD60] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058DD60 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058CFC0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095B338;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058DD60(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058CFC0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095B338) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058DD60
+
+// [0x0058E010] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058E010 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058CFD0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095B338;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058E010(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058CFD0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095B338) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058E010
+
+// [0x0058FF10] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058FF10 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058F5A0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095C100;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0058FF10(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058F5A0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095C100) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0058FF10
+
+// [0x00590280] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00590280 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058F5B0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095C100;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00590280(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058F5B0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095C100) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00590280
+
+// [0x00590850] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00590850 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058F5D0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095C100;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00590850(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058F5D0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095C100) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00590850
+
+// [0x00591BD0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00591BD0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058F5C0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095C100;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00591BD0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058F5C0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095C100) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00591BD0
+
+// [0x005922A0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005922A0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058F5E0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095C100;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005922A0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058F5E0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095C100) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005922A0
+
+// [0x00592560] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00592560 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0058F5F0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095C100;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00592560(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0058F5F0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095C100) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00592560
+
+// [0x005951E0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005951E0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00594070(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095D040;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005951E0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00594070(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095D040) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005951E0
+
+// [0x00595DF0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00595DF0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00594700(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095D040;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00595DF0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00594700(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095D040) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00595DF0
+
+// [0x005983E0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005983E0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005963B0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095D040;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005983E0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005963B0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095D040) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005983E0
+
+// [0x005996C0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005996C0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005971D0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095D040;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005996C0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005971D0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095D040) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005996C0
+
+// [0x0059E4A0] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0059E4A0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0059D580(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0095DD18;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0059E4A0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0059D580(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0095DD18) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0059E4A0
+
+// [0x0059F060] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_0059F060 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_0042F750(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_0059F060(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_0042F750(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_0059F060
+
+// [0x005AAE50] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005AAE50 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005AA9E0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005AAE50(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005AA9E0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005AAE50
+
+// [0x005AB220] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005AB220 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_0044CCD0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005AB220(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_0044CCD0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005AB220
+
+// [0x005B9020] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005B9020 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005B6970(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00960938;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005B9020(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005B6970(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00960938) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005B9020
+
+// [0x005BB470] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005BB470 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005B7040(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00960938;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005BB470(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005B7040(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00960938) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005BB470
+
+// [0x005BC3F0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005BC3F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005B68F0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00960938;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005BC3F0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005B68F0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00960938) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005BC3F0
+
+// [0x005BC7A0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005BC7A0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005B6FE0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00960938;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005BC7A0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005B6FE0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00960938) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005BC7A0
+
+// [0x005BCB30] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005BCB30 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005B6FC0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00960938;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005BCB30(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005B6FC0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00960938) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005BCB30
+
+// [0x005C5900] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005C5900 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005C2FF0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00963228;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005C5900(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005C2FF0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00963228) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005C5900
+
+// [0x005C7E00] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005C7E00 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005C2F40(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005C7E00(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005C2F40(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005C7E00
+
+// [0x005C9500] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005C9500 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005C3AA0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00963228;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005C9500(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005C3AA0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00963228) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005C9500
+
+// [0x005CAED0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005CAED0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005C3C00(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00963228;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005CAED0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005C3C00(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00963228) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005CAED0
+
+// [0x005CEAF0] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005CEAF0 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005CE4E0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965AB8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005CEAF0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005CE4E0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965AB8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005CEAF0
+
+// [0x005D1DD0] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D1DD0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005D06D0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D1DD0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005D06D0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D1DD0
+
+// [0x005D39A0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D39A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005478A0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D39A0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005478A0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D39A0
+
+// [0x005D46F0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D46F0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00552160(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D46F0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00552160(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D46F0
+
+// [0x005D4EC0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D4EC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005D0710(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D4EC0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005D0710(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D4EC0
+
+// [0x005D5780] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D5780 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005478D0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D5780(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005478D0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D5780
+
+// [0x005D7DF0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D7DF0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005D0670(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D7DF0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005D0670(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D7DF0
+
+// [0x005D80C0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D80C0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005CF930(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D80C0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005CF930(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D80C0
+
+// [0x005D8490] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D8490 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005478B0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D8490(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005478B0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D8490
+
+// [0x005D8BF0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D8BF0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005478E0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D8BF0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005478E0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D8BF0
+
+// [0x005D8FD0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D8FD0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005478C0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005D8FD0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005478C0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005D8FD0
+
+// [0x005DA450] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005DA450 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005D12A0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00965CF0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005DA450(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005D12A0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00965CF0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005DA450
+
+// [0x005DACE0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005DACE0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005D07E0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005DACE0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005D07E0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005DACE0
+
+// [0x005DB210] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005DB210 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005D0810(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005DB210(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005D0810(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005DB210
+
+// [0x005DBD00] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005DBD00 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005D07F0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005DBD00(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005D07F0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005DBD00
+
+// [0x005E33A0] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005E33A0 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005E02A0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005E33A0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005E02A0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005E33A0
+
+// [0x005E3650] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005E3650 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_0044CCE0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005E3650(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_0044CCE0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005E3650
+
+// [0x005E4E90] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E4E90 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E25B0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E4E90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E25B0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E4E90
+
+// [0x005E5890] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005E5890 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005E0E40(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005E5890(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005E0E40(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005E5890
+
+// [0x005E5BB0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E5BB0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2770(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E5BB0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2770(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E5BB0
+
+// [0x005E60E0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E60E0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2860(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E60E0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2860(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E60E0
+
+// [0x005E62C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E62C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E28B0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E62C0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E28B0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E62C0
+
+// [0x005E68F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E68F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2950(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E68F0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2950(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E68F0
+
+// [0x005E6AC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E6AC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E29A0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E6AC0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E29A0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E6AC0
+
+// [0x005E6EC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E6EC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E1EE0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E6EC0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E1EE0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E6EC0
+
+// [0x005E7A90] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E7A90 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2620(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E7A90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2620(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E7A90
+
+// [0x005E7E70] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E7E70 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2690(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E7E70(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2690(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E7E70
+
+// [0x005E81F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E81F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2700(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E81F0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2700(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E81F0
+
+// [0x005E8CD0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E8CD0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E27C0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E8CD0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E27C0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E8CD0
+
+// [0x005E9040] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E9040 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2810(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E9040(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2810(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E9040
+
+// [0x005E9C60] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E9C60 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E2900(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005E9C60(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E2900(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005E9C60
+
+// [0x005EA900] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005EA900 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E1F10(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005EA900(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E1F10(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005EA900
+
+// [0x005EAB30] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005EAB30 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005E1F40(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00968EA0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005EAB30(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005E1F40(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00968EA0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005EAB30
+
+// [0x005F60A0] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005F60A0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005F51C0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096CCC0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005F60A0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005F51C0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096CCC0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005F60A0
+
+// [0x005F6B90] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005F6B90 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005F5130(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096CCC0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005F6B90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005F5130(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096CCC0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005F6B90
+
+// [0x005F7010] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005F7010 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005F5280(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005F7010(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005F5280(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005F7010
+
+// [0x005F8580] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005F8580 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_005F5120(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005F8580(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_005F5120(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_005F8580
+
+// [0x005FD470] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FD470 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064F8F0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096E5D0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005FD470(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064F8F0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096E5D0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005FD470
+
+// [0x005FDA50] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FDA50 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0062A580(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096E5D0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005FDA50(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0062A580(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096E5D0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005FDA50
+
+// [0x005FDEA0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FDEA0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_005FCB30(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096E5D0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005FDEA0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_005FCB30(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096E5D0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005FDEA0
+
+// [0x005FE4B0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FE4B0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00603680(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096E5D0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005FE4B0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00603680(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096E5D0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005FE4B0
+
+// [0x005FEAC0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FEAC0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_006036A0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096E5D0;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_005FEAC0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_006036A0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096E5D0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_005FEAC0
+
+// [0x00604420] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_00604420 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00602F40(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0096F810;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00604420(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00602F40(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0096F810) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00604420
+
+// [0x00609AC0] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_1 (73 bytes)
+namespace lift_00609AC0 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_00609730(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00609AC0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_00609730(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_00609AC0
+
+// [0x00612F40] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00612F40 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00610B20(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00612F40(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00610B20(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00612F40
+
+// [0x00613990] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00613990 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00610CB0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00613990(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00610CB0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00613990
+
+// [0x00614410] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00614410 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00611170(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00614410(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00611170(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00614410
+
+// [0x006146F0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_006146F0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_006111A0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_006146F0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_006111A0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_006146F0
+
+// [0x00614CD0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00614CD0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00611160(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00614CD0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00611160(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00614CD0
+
+// [0x006164D0] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_006164D0 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00611950(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_006164D0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00611950(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_006164D0
+
+// [0x00617AA0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00617AA0 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00610CE0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00617AA0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00610CE0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00617AA0
+
+// [0x006196D0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_006196D0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_006111D0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_006196D0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_006111D0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_006196D0
+
+// [0x0061B700] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0061B700 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00611870(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0061B700(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00611870(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0061B700
+
+// [0x0061BF90] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0061BF90 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_006118E0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00972CC8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0061BF90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_006118E0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00972CC8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0061BF90
+
+// [0x0062A880] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &[thunk]: __thiscall Sensors::SensorIntegral::`vcall'{68, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_0062A880 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &[thunk]: __thiscall Sensors::SensorIntegral::`vcall'{68, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &[thunk]: __thiscall Sensors::SensorIntegral::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0062A580(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00978A48;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0062A880(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0062A580(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00978A48) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0062A880
+
+// [0x0062AB90] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_0062AB90 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0062A590(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00978A48;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0062AB90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0062A590(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00978A48) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0062AB90
+
+// [0x00649F70] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00649F70 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00648EC0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0097E3D8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00649F70(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00648EC0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0097E3D8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00649F70
+
+// [0x0064A580] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0064A580 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00648ED0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0097E3D8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0064A580(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00648ED0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0097E3D8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0064A580
+
+// [0x0064AB90] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0064AB90 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_00648EE0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0097E3D8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0064AB90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_00648EE0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0097E3D8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0064AB90
+
+// [0x00651580] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00651580 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064EA20(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_009802E8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00651580(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064EA20(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_009802E8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00651580
+
+// [0x00651B90] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00651B90 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064EA30(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_009802E8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00651B90(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064EA30(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_009802E8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00651B90
+
+// [0x006521A0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_006521A0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064EA40(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_009802E8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_006521A0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064EA40(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_009802E8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_006521A0
+
+// [0x006527B0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_006527B0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064EA50(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_009802E8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_006527B0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064EA50(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_009802E8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_006527B0
+
+// [0x00652DC0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00652DC0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064EA60(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_009802E8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00652DC0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064EA60(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_009802E8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00652DC0
+
+// [0x006533D0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_006533D0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0064EA70(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_009802E8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_006533D0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0064EA70(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_009802E8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_006533D0
+
+// [0x00670190] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_00670190 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0067C550(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_00987B78;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_00670190(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0067C550(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_00987B78) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_00670190
+
+// [0x00684170] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00684170 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_0049A9F0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00684170(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_0049A9F0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_00684170
+
+// [0x006847C0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_006847C0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_006829E0(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_006847C0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_006829E0(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_006847C0
+
+// [0x00684D20] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00684D20 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_00682E10(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00684D20(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_00682E10(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_00684D20
+
+// [0x00685310] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00685310 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1).
+namespace lift_0049B7D0 {
+// Callees (thiscall: `this` in ECX; ext_ shims keep the original call targets).
+extern void* ext_00672400(void* self);      // CharacterSelection::vfunc_9, returns std::string const*
+extern void ext_0046C3C0(void* self);       // sub_0046C3C0, builds the error message in *self
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::State, ...getPropertySourceDescription...>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the object pointer at +0x00 of the argument; if set, fetches its property source description string and returns atof() of it as float, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00685310(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        std::string msg;
+        ext_0046C3C0(&msg);
+        ext_006A6DD2(&msg, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+    const std::string* desc = static_cast<const std::string*>(ext_00672400(target));
+    return static_cast<float>(std::atof(desc->c_str()));
+}
+} // namespace lift_0049B7D0
+} // namespace lift_00685310
+
+// [0x0068C690] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068C690 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0068BDC0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0098DCD8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0068C690(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0068BDC0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0098DCD8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0068C690
+
+// [0x0068CCA0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068CCA0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0068BED0(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0098DCD8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0068CCA0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0068BED0(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0098DCD8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0068CCA0
+
+// [0x0068D2B0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068D2B0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0068BE70(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0098DCD8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0068D2B0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0068BE70(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0098DCD8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0068D2B0
+
+// [0x0068D8C0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068D8C0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3).
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getXMin, 0>
+// @summary Validity check: reads the GraphEngineData pointer, returns 1 if SkeletalCalibrationVariables value >= 1e-6, else 0; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* obj_ptr
+// @field SkeletalCalibrationVariables +0x00 void* self
+
+    // NMData::SkeletalCalibrationVariables::vfunc_12 (__thiscall, returns float via x87)
+    float ext_0068BC30(void* self);
+    // sub_0046C3C0 (__thiscall, constructs exception object at ecx)
+    void sub_0046C3C0(void* self);
+    // thunk_MSVCR80__CxxThrowException(obj, throwInfo)
+    [[noreturn]] void fn_006A6DD2(void* obj, const void* throwInfo);
+
+// mem_00942058: .rdata double 1e-06
+extern const double mem_0098DCD8;
+// RTTI/ThrowInfo for exception type (0x009DEC1C)
+extern const unsigned char mem_009DEC1C[];
+
+// Stack-passed argument: pointer to ValuePtrType, whose first dword is the object pointer.
+__stdcall int32_t fn_0068D8C0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, mem_009DEC1C);
+    }
+    float v = ext_0068BC30(obj);
+    // fcomp against 1e-6; CF set (v < 1e-6 or unordered) -> return 0
+    if (v >= mem_0098DCD8) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B3110
+} // namespace lift_0068D8C0
