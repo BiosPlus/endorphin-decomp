@@ -10,7 +10,9 @@
 // Recovered field layout for Primitives::File:
 namespace lifted_layout {
 struct Primitives_File_Fields {
-    // +0x86C uint32_t                 field_0x86C  (evidence: 0x0053BD10)
+    // +0x20  void*                    field_0x20  (evidence: 0x0053BD50)
+    // +0x3C  uint8_t                  field_0x3C  (evidence: 0x0053BD50)
+    // +0x86C uint32_t                 field_0x86C  (evidence: 0x0053BD10, 0x0053BD50)
     // +0x870 uint32_t                 field_0x870  (evidence: 0x0053BD10)
     // +0x874 uint32_t                 field_0x874  (evidence: 0x0053BD10)
     // +0x878 uint32_t                 field_0x878  (evidence: 0x0053BD10)

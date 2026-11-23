@@ -1,0 +1,34 @@
+{
+  "va": "0x0053BD50",
+  "size": 120,
+  "orig_symbol": "Primitives::File::vfunc_28",
+  "src_path": "src/Primitives/File.cpp",
+  "lifted_path": "lifted/Primitives/File.cpp",
+  "name": "Primitives::File::vfunc_28",
+  "class": "Primitives::File",
+  "signature": "void __thiscall fn_0053BD50(void* self, uint32_t /*stack arg, unused, ret 4*/)",
+  "summary": "Pushes GL matrix state, enables GL_NORMALIZE, applies glScaled using three floats fetched from the sub-object at +0x20, runs ext_00550FA0 on the +0x3C sub-object with the +0x86C field address, then restores GL state.",
+  "fields": [
+    {
+      "class": "Primitives::File",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x3C",
+      "type": "uint8_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Primitives::File",
+      "offset": "+0x86C",
+      "type": "uint32_t",
+      "name": "field_0x86C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:43:31Z"
+}
