@@ -2909,6 +2909,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0046FD40.",
     "lifted_path": "lifted/RuntimeEngine/auto_tiny.cpp"
   },
+  "0x004713D0": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0\u003e",
+    "signature": "int fn_004713D0(void* self)",
+    "summary": "Forwards to RuntimeEngine::getNumTicksToRun via the held pointer; throws if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00473C30": {
     "name": "RuntimeEngine::CaptureTicker::vfunc_0",
     "class": "RuntimeEngine::CaptureTicker",

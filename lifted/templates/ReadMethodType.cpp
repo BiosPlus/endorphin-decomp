@@ -1698,3 +1698,24 @@ extern int __stdcall fn_0046EB20(void* self) {
     return 0;
 }
 } // namespace lift_0046EB20
+
+// [0x004713D0] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004713D0 {
+extern int ext_0046F7C0(void* self);
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<RuntimeEngine>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Forwards to RuntimeEngine::getNumTicksToRun via the held pointer; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+int fn_004713D0(void* self) {
+    // self is the ValuePtrType* argument; its first word is the held object pointer.
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: null value pointer");
+    }
+    return ext_0046F7C0(obj);
+}
+} // namespace lift_004713D0
