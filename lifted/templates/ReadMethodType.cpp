@@ -11326,3 +11326,38 @@ void* fn_00638E50(void* out, const void* holder) {
 }
 } // namespace lift_00508E30
 } // namespace lift_00638E50
+
+// [0x005D65A0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_0 (69 bytes)
+namespace lift_005D65A0 {
+// Callee 0x006720C0: 18-byte helper. Called with self = out slot and one int argument.
+// Its exact convention is not confirmed; modelled here as (self, value).
+extern void ext_006720C0(void* self, int32_t value);
+// Callee 0x0046C3C0: 105-byte helper. Called with a stack temporary as `this`; builds the exception object.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* type_info);
+// RTTI type descriptor for the thrown exception (VA 0x009DEC1C).
+extern const char mem_009DEC1C[];
+
+// @name NMData::VideoPlaneData::getFrameOffset (ReadMethodType vfunc_0 wrapper)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Reads VideoPlaneData::frameOffset from the object referenced by src into the out slot; throws if src's object is null.
+// @field NMData::VideoPlaneData +0x28 int field_0x28
+//
+// Stack layout on entry: arg1 = out (returned in eax), arg2 = src (pointer to an object pointer).
+// The dead store of 0 into the local slot is omitted.
+void* fn_005D65A0(void* out, void** src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        // Throw path: build the exception object, then throw it. The thrown object sits
+        // 4 bytes past the constructed one (ecx = esp+4, edx = esp+8); layout is unverified.
+        uint32_t exc_storage[4] = {};
+        ext_0046C3C0(&exc_storage[0]);
+        ext_006A6DD2(&exc_storage[1], mem_009DEC1C);
+    }
+    const auto frame_offset = *reinterpret_cast<const int32_t*>(
+        reinterpret_cast<const uint8_t*>(obj) + 0x28);
+    ext_006720C0(out, frame_offset);
+    return out;
+}
+} // namespace lift_005D65A0
