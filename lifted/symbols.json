@@ -5336,6 +5336,13 @@
     "summary": "Evaluates GraphEngineData::getYMax() through the value pointer and returns 1 if the result is \u003e= 1e-6 (NaN yields 0); throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B2B30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",
+    "signature": "void* fn_004B2B30(void* unused, void** targetPtr)",
+    "summary": "Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B2B90": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getMaxAutoWidth, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",
