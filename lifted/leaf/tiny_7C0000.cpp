@@ -134,3 +134,15 @@ float sub_007CB970(uint32_t arg0) {
     return mem_r32f(arg0 + 0x10);
 }
 } // namespace lift_007CB970
+
+// [0x007CC600]
+namespace lift_007CC600 {
+extern uint32_t mem_r32(uint32_t addr);
+
+// @name get_field_0x28
+// @summary Reads and returns the 32-bit value at offset 0x28 of the given object pointer.
+// @field Object +0x28 uint32_t field_0x28
+uint32_t sub_007CC600(uint32_t arg0) {
+    return mem_r32(arg0 + 0x28u);
+}
+} // namespace lift_007CC600

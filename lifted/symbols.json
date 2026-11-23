@@ -33795,6 +33795,12 @@
     "summary": "Reads a 32-bit float from offset 0x10 of the passed struct pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CC600": {
+    "name": "get_field_0x28",
+    "signature": "uint32_t sub_007CC600(uint32_t arg0)",
+    "summary": "Reads and returns the 32-bit value at offset 0x28 of the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007D48A0": {
     "name": "getField_0x04",
     "signature": "uint32_t sub_007D48A0(uint32_t arg0)",
