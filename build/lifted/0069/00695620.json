@@ -20,9 +20,15 @@
       "offset": "+0x4",
       "type": "void*",
       "name": "inner"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T12:59:37Z"
+  "lifted_at": "2026-11-23T12:59:43Z"
 }
