@@ -1,0 +1,46 @@
+{
+  "va": "0x0053BA60",
+  "size": 308,
+  "orig_symbol": "Primitives::Cylinder::vfunc_28",
+  "src_path": "src/Primitives/Cylinder.cpp",
+  "lifted_path": "lifted/Primitives/Cylinder.cpp",
+  "name": "Primitives::Cylinder::vfunc_28",
+  "class": "Primitives::Cylinder",
+  "signature": "extern \"C\" void (*mem_00925414)(void);                        // OPENGL32!glPushMatrix extern \"C\" void (*mem_009253D0)(GLfloat, GLfloat, GLfloat);   // OPENGL32!glTranslatef extern \"C\" void (*mem_00925404)(void);                        // OPENGL32!glPopMatrix extern \"C\" const double mem_00993828;                         // .rdata double 0.5 void fn_0053BA60(void* self, uint32_t stack_arg)",
+  "summary": "Draws the cylinder via GLU (translated by half its height, optional end caps when +0x44 is set), wrapped in a matrix push/pop.",
+  "fields": [
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:41:18Z"
+}

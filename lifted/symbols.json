@@ -7980,6 +7980,13 @@
     "summary": "Draws the sphyl as a GLU sphere, a GLU cylinder body and a second sphere, with a Z-offset translation between them.",
     "lifted_path": "lifted/Primitives/Sphyl.cpp"
   },
+  "0x0053BA60": {
+    "name": "Primitives::Cylinder::vfunc_28",
+    "class": "Primitives::Cylinder",
+    "signature": "extern \"C\" void (*mem_00925414)(void);                        // OPENGL32!glPushMatrix extern \"C\" void (*mem_009253D0)(GLfloat, GLfloat, GLfloat);   // OPENGL32!glTranslatef extern \"C\" void (*mem_00925404)(void);                        // OPENGL32!glPopMatrix extern \"C\" const double mem_00993828;                         // .rdata double 0.5 void fn_0053BA60(void* self, uint32_t stack_arg)",
+    "summary": "Draws the cylinder via GLU (translated by half its height, optional end caps when +0x44 is set), wrapped in a matrix push/pop.",
+    "lifted_path": "lifted/Primitives/Cylinder.cpp"
+  },
   "0x0053BC40": {
     "name": "Primitives::Frustum::vfunc_28",
     "class": "Primitives::Frustum",
