@@ -1,0 +1,22 @@
+{
+  "va": "0x0064F450",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistStiffness(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint,float,SkeletalJoint::setSoftLimitTwistStiffness\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistStiffness(float), 0}\u003e",
+  "signature": "static inline void* vtbl_entry(void* obj, std::size_t byteOffset)",
+  "summary": "Evaluates the float source via ctx-\u003e+0x04 vfunc[1], writes it to the joint's soft twist stiffness, then returns {value, owner} from vfunc[0x70].",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:11:43Z"
+}

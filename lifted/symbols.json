@@ -11006,6 +11006,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064F450": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint,float,SkeletalJoint::setSoftLimitTwistStiffness\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistStiffness(float), 0}\u003e",
+    "signature": "static inline void* vtbl_entry(void* obj, std::size_t byteOffset)",
+    "summary": "Evaluates the float source via ctx-\u003e+0x04 vfunc[1], writes it to the joint's soft twist stiffness, then returns {value, owner} from vfunc[0x70].",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F4D0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingStiffness(float), 0}\u003e",
