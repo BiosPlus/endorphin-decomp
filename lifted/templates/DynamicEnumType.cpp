@@ -1167,3 +1167,30 @@ void* fn_00515F80(void* out, void** src) {
     return out;
 }
 } // namespace lift_00515F80
+
+// [0x00494D00]
+namespace lift_00494D00 {
+extern uint32_t __thiscall ext_006AD970(uint32_t self);
+extern void __thiscall ext_006720C0(void* self, uint32_t arg);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_009DEC1C;
+
+// @name DynamicEnumType::getValueString
+// @class ExprParser::DynamicEnumType<RigManager, ...>
+// @summary Reads the rig type index from the dereferenced pointer and converts it to a string, or throws an exception if null.
+extern void* __thiscall fn_00494D00(void* self, void* out_str, uint32_t* ptr) {
+    (void)self;
+    uint32_t obj = *ptr;
+    if (obj != 0) {
+        uint32_t val = ext_006AD970(obj);
+        ext_006720C0(out_str, val);
+        return out_str;
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return out_str;
+}
+} // namespace lift_00494D00

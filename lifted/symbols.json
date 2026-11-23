@@ -3401,6 +3401,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x144.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00488270": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float\u003e",
+    "signature": "extern \"C\" void __stdcall fn_00488270(void* dst_ptr_holder, void* src_value)",
+    "summary": "Evaluates a float expression value and writes it to DesiredPoseEventData::setEntryBlendPeriod, or throws an exception if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004887D0": {
     "name": "ReadMethodType\u003cDesiredPoseEventData\u003e::getEntryBlendPeriod",
     "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
@@ -3648,6 +3655,13 @@
     "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
     "signature": "void fn_00494A60(void* self)",
     "summary": "If the holder's first pointer is set, release it via ext_006AD970; otherwise throw.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x00494D00": {
+    "name": "DynamicEnumType::getValueString",
+    "class": "ExprParser::DynamicEnumType\u003cRigManager, ...\u003e",
+    "signature": "extern \"C\" void* __thiscall fn_00494D00(void* self, void* out_str, uint32_t* ptr)",
+    "summary": "Reads the rig type index from the dereferenced pointer and converts it to a string, or throws an exception if null.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x00494D50": {
