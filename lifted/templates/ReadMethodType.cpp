@@ -16572,3 +16572,34 @@ int fn_00670AE0(void* self, void* arg) {
 }
 } // namespace lift_004B9400
 } // namespace lift_00670AE0
+
+// [0x005D2640] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_005D2640 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern double mem_00965CF0;
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, getFrameRate, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0>
+// @summary Reads the VideoPlaneData frame-rate field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.
+// @field ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0> +0x00 void* self
+// @field NMData::VideoPlaneData +0x2C float field_0x2C
+int fn_005D2640(void* self) {
+    // self points at a slot holding the VideoPlaneData pointer.
+    void** slot = static_cast<void**>(self);
+    unsigned char* obj = static_cast<unsigned char*>(slot ? *slot : nullptr);
+    if (obj == nullptr) {
+        // Original builds an exception object and throws via MSVCR80.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    float frameRate = *reinterpret_cast<float*>(obj + 0x2C);
+    // Original: fcomp against 1e-6; NaN or below threshold -> 0.
+    if (!(static_cast<double>(frameRate) >= mem_00965CF0)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_005D2640

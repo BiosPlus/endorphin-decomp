@@ -1,0 +1,22 @@
+{
+  "va": "0x005D2640",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getFrameRate, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0\u003e",
+  "signature": "int fn_005D2640(void* self)",
+  "summary": "Reads the VideoPlaneData frame-rate field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:52:41Z"
+}

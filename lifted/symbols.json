@@ -12464,6 +12464,13 @@
     "summary": "Reads the VideoPlaneData object held in the wrapper and returns its frame offset (+0x28); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2640": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getFrameRate, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0\u003e",
+    "signature": "int fn_005D2640(void* self)",
+    "summary": "Reads the VideoPlaneData frame-rate field and returns 1 if it is at least 1e-6 (else 0); throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D27C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_0 (NMData::VideoPlaneData::mustDrawTimeCode)",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
