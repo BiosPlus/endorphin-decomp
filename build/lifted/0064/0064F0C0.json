@@ -6,23 +6,23 @@
   "lifted_path": "lifted/templates/WriteMethodType.cpp",
   "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitRadius\u003e::vfunc_48",
   "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitRadius\u003e",
-  "signature": "PtrPair* __stdcall_vfunc48(void* self, PtrPair* out, void* ctxArg)",
-  "summary": "Evaluates the float operand via its vtable, forwards it to SkeletalJoint::setSoftLimitRadius on the target object, then writes back a {resolved pointer, owner} pair.",
+  "signature": "void vfunc_48(PtrPair* out, void** targetHandle, void* valuePtr)",
+  "summary": "Evaluates the float operand from the owner's vtable, passes it to SkeletalJoint::setSoftLimitRadius on the target, then writes {resolved value, owner} to the out pair.",
   "fields": [
     {
-      "class": "ValuePtrType",
-      "offset": "+0x4",
-      "type": "void* owner (inner object pointer; vtable dispatched",
-      "name": "on)"
-    },
-    {
-      "class": "ExprParser::WriteMethodType",
+      "class": "ExprParser::ValuePtrType",
       "offset": "+0x4",
       "type": "void*",
       "name": "owner"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T12:10:11Z"
+  "lifted_at": "2026-11-23T12:10:27Z"
 }
