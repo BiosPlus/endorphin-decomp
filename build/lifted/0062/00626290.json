@@ -1,0 +1,14 @@
+{
+  "va": "0x00626290",
+  "size": 52,
+  "orig_symbol": "Sensors::SensorIsCollidingWith::vfunc_26",
+  "src_path": "src/Sensors/SensorIsCollidingWith.cpp",
+  "lifted_path": "lifted/Sensors/SensorIsCollidingWith.cpp",
+  "name": "Sensors::SensorIsCollidingWith::vfunc_26",
+  "class": "Sensors::SensorIsCollidingWith",
+  "signature": "void fn_00626290(void* self, DWORD arg1, DWORD arg2, DWORD /*arg3*/, DWORD /*arg4*/)",
+  "summary": "Forward two args to ext_00624E80, look up a slot in the global table keyed by arg1, and store self there if the slot is empty.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:34:46Z"
+}

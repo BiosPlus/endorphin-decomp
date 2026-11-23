@@ -13340,6 +13340,13 @@
     "summary": "Reads the bool value of a held sensor object (null-checked; throws if the pointer is null); calls virtual slot 17 on the object before reading its bool at +0x30.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00626290": {
+    "name": "Sensors::SensorIsCollidingWith::vfunc_26",
+    "class": "Sensors::SensorIsCollidingWith",
+    "signature": "void fn_00626290(void* self, DWORD arg1, DWORD arg2, DWORD /*arg3*/, DWORD /*arg4*/)",
+    "summary": "Forward two args to ext_00624E80, look up a slot in the global table keyed by arg1, and store self there if the slot is empty.",
+    "lifted_path": "lifted/Sensors/SensorIsCollidingWith.cpp"
+  },
   "0x00626820": {
     "name": "NMData::EffectorSkeletalData::vfunc_8",
     "class": "NMData::EffectorSkeletalData",
