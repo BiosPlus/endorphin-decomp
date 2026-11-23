@@ -4354,10 +4354,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004A2EF0": {
-    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0\u003e::vfunc_0",
-    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0\u003e",
-    "signature": "extern void* __thiscall fn_004A2EF0(void* self, void* out_val, void** obj_ptr)",
-    "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
+    "name": "ReadMethodType_FSMEditView_getDrawDepth::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getDrawDepth, 0\u003e",
+    "signature": "extern \"C\" void* __thiscall fn_004A2EF0(void* self, void* out, void** target_ptr)",
+    "summary": "Reads draw depth from FSMEditView into output value, or throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004A2F40": {
@@ -5052,6 +5052,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e",
     "signature": "float fn_004B8970(void* self)",
     "summary": "Reads the target pointer held at +0x00 of the single stack argument and returns the float at target+0x48; if the target pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B8A00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitMass, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitMass, 0\u003e",
+    "signature": "uint32_t __thiscall fn_004B8A00(void* /*self*/, void* const* targetPtr)",
+    "summary": "Checks whether EngineData's unit mass at +0x48 is at least the threshold, throwing if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B8E40": {

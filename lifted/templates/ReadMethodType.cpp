@@ -12149,39 +12149,6 @@ extern void* __thiscall fn_0049B780(void* self, void* out_val, void** obj_ptr) {
 } // namespace lift_0046D5D0
 } // namespace lift_0049B780
 
-// [0x004A2EF0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_0 (71 bytes)
-namespace lift_004A2EF0 {
-// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_0
-// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
-// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
-namespace lift_0046D5D0 {
-// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
-// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
-// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
-
-
-extern int __thiscall ext_0049AA40(void* self);
-extern void __thiscall ext_006720C0(void* self, int value);
-extern void __thiscall ext_0046C3C0(void* self);
-extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
-
-extern void* __thiscall fn_004A2EF0(void* self, void* out_val, void** obj_ptr) {
-    (void)self;
-    void* obj = *obj_ptr;
-    if (obj != nullptr) {
-        int val = ext_0049AA40(obj);
-        ext_006720C0(out_val, val);
-        return out_val;
-    }
-
-    uint8_t exc_buf[40];
-    ext_0046C3C0(exc_buf);
-    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
-    return nullptr;
-}
-} // namespace lift_0046D5D0
-} // namespace lift_004A2EF0
-
 // [0x004A38A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
 namespace lift_004A38A0 {
 // @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0
@@ -15376,3 +15343,59 @@ extern void* __thiscall fn_006927C0(void* self, void* out_val, void** obj_ptr) {
 }
 } // namespace lift_0046D5D0
 } // namespace lift_006927C0
+
+// [0x004A2EF0]
+namespace lift_004A2EF0 {
+// @name ReadMethodType_FSMEditView_getDrawDepth::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, getDrawDepth, 0>
+// @summary Reads draw depth from FSMEditView into output value, or throws if null.
+
+
+extern int32_t __thiscall ext_0049AA40(void* self);
+extern void __thiscall ext_006720C0(void* self, int32_t value);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* __thiscall fn_004A2EF0(void* self, void* out, void** target_ptr) {
+    (void)self;
+    void* target = *target_ptr;
+    if (target != nullptr) {
+        int32_t depth = ext_0049AA40(target);
+        ext_006720C0(out, depth);
+        return out;
+    }
+
+    uint8_t exc[40];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1C);
+    return out;
+}
+} // namespace lift_004A2EF0
+
+// [0x004B8A00]
+namespace lift_004B8A00 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitMass, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitMass, 0>
+// @summary Checks whether EngineData's unit mass at +0x48 is at least the threshold, throwing if the target pointer is null.
+// @field NMData::EngineData +0x48 float m_unitMass
+
+
+    void __thiscall ext_0046C3C0(void* exc);
+    void __stdcall ext_006A6DD2(void* exc, const void* throwInfo);
+    extern const double mem_009433D8;
+    extern const uint8_t mem_009DEC1C;
+
+uint32_t __thiscall fn_004B8A00(void* /*self*/, void* const* targetPtr) {
+    const void* obj = *targetPtr;
+    if (obj == nullptr) {
+        alignas(16) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    const float unitMass = *reinterpret_cast<const float*>(
+        reinterpret_cast<const uint8_t*>(obj) + 0x48);
+    return (static_cast<double>(unitMass) >= mem_009433D8) ? 1u : 0u;
+}
+} // namespace lift_004B8A00
