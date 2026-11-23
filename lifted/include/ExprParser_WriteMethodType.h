@@ -16,6 +16,5 @@ struct ExprParser_WriteMethodType_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00629F70, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 = get-value-ref)  (evidence: 0x0062B170, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x005F36B0, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    owner  (evidence: 0x0064F0C0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

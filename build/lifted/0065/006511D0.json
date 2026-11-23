@@ -1,0 +1,14 @@
+{
+  "va": "0x006511D0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e",
+  "signature": "extern void __stdcall fn_006511D0(void* out, void* const* targetRef, void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T12:11:30Z"
+}

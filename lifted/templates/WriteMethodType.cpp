@@ -4263,3 +4263,1153 @@ void __stdcall fn_0064F240(void* a1, void* a2, void* a3) {
     }
 }
 } // namespace lift_0064F240
+
+// [0x00487450] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00487450 {
+extern void ext_00486C10(void* self, float value);
+
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_00486C10(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00487450(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_00486C10(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00487450
+
+// [0x0048AD80] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0048AD80 {
+extern void ext_0048ABD0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0048ABD0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0048AD80(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0048ABD0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0048AD80
+
+// [0x004FE0F0] ExprParser::WriteMethodType<EvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_004FE0F0 {
+extern void ext_004FDC80(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<EvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_004FDC80(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_004FE0F0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_004FDC80(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_004FE0F0
+
+// [0x005F4960] ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setForceCaps(float)>::vfunc_48 (113 bytes)
+namespace lift_005F4960 {
+extern void ext_005F4480(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setForceCaps(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setForceCaps(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_005F4480(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_005F4960(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_005F4480(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_005F4960
+
+// [0x005F4A10] ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradientCaps(float)>::vfunc_48 (113 bytes)
+namespace lift_005F4A10 {
+extern void ext_005F4570(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradientCaps(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradientCaps(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_005F4570(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_005F4A10(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_005F4570(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_005F4A10
+
+// [0x005F4AC0] ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradients(float)>::vfunc_48 (113 bytes)
+namespace lift_005F4AC0 {
+extern void ext_005F4660(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradients(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradients(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_005F4660(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_005F4AC0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_005F4660(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_005F4AC0
+
+// [0x005F4B70] ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setAll(float)>::vfunc_48 (113 bytes)
+namespace lift_005F4B70 {
+extern void ext_005F4750(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setAll(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setAll(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_005F4750(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_005F4B70(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_005F4750(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_005F4B70
+
+// [0x00603530] ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)>::vfunc_48 (113 bytes)
+namespace lift_00603530 {
+extern void ext_006032B0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_006032B0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00603530(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_006032B0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00603530
+
+// [0x0062A020] ExprParser::WriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_48 (113 bytes)
+namespace lift_0062A020 {
+extern void ext_00629F10(void* self, float value);
+
+// @name ExprParser::WriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_00629F10(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0062A020(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_00629F10(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0062A020
+
+// [0x00649DF0] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649DF0 {
+extern void ext_00649010(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_00649010(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00649DF0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_00649010(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00649DF0
+
+// [0x0064CA80] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064CA80 {
+extern void ext_0064C950(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064C950(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0064CA80(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064C950(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0064CA80
+
+// [0x0064CB90] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064CB90 {
+extern void ext_0064CB00(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064CB00(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0064CB90(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064CB00(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0064CB90
+
+// [0x0064F010] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle2(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F010 {
+extern void ext_0064DC80(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle2(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle2(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064DC80(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0064F010(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064DC80(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0064F010
+
+// [0x0064F5B0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F5B0 {
+extern void ext_0064DD80(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064DD80(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0064F5B0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064DD80(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0064F5B0
+
+// [0x0064F660] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F660 {
+extern void ext_0064DDA0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064DDA0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0064F660(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064DDA0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0064F660
+
+// [0x0064F710] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F710 {
+extern void ext_0064DDC0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064DDC0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0064F710(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064DDC0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0064F710
+
+// [0x00650EF0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_00650EF0 {
+extern void ext_005F35C0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_005F35C0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00650EF0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_005F35C0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00650EF0
+
+// [0x00650FF0] ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_00650FF0 {
+extern void ext_006036C0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_006036C0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00650FF0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_006036C0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00650FF0
+
+// [0x00651120] ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}>::vfunc_48 (113 bytes)
+namespace lift_00651120 {
+extern void ext_0064F910(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064F910(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00651120(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064F910(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00651120
+
+// [0x006511D0] ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}>::vfunc_48 (113 bytes)
+namespace lift_006511D0 {
+extern void ext_0064F930(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064F930(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_006511D0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064F930(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_006511D0
+
+// [0x006512B0] ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>::vfunc_48 (113 bytes)
+namespace lift_006512B0 {
+extern void ext_0064F940(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0064F940(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_006512B0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0064F940(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_006512B0
+
+// [0x00651360] ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}>::vfunc_48 (113 bytes)
+namespace lift_00651360 {
+extern void ext_005C3640(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_005C3640(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00651360(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_005C3640(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_00651360
+
+// [0x0066C380] ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateX(float)>::vfunc_48 (113 bytes)
+namespace lift_0066C380 {
+extern void ext_0067C3D0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateX(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateX(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0067C3D0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0066C380(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0067C3D0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0066C380
+
+// [0x0066C430] ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateY(float)>::vfunc_48 (113 bytes)
+namespace lift_0066C430 {
+extern void ext_0067C450(void* self, float value);
+
+// @name ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateY(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateY(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0067C450(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0066C430(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0067C450(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0066C430
+
+// [0x0066C4E0] ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateZ(float)>::vfunc_48 (113 bytes)
+namespace lift_0066C4E0 {
+extern void ext_0067C4D0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateZ(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateZ(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_0067C4D0(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_0066C4E0(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_0067C4D0(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_0066C4E0

@@ -3129,6 +3129,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487450": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_00487450(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00487EB0": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_16",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
@@ -3154,6 +3161,13 @@
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e",
     "signature": "void __stdcall fn_0048AD50(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0048AD80": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0048AD80(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0048B020": {
@@ -5189,6 +5203,13 @@
     "class": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",
     "signature": "void __stdcall fn_004FE0C0(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x004FE0F0": {
+    "name": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_004FE0F0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x004FFF60": {
@@ -8905,11 +8926,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F4960": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e",
+    "signature": "extern void __stdcall fn_005F4960(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F49E0": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradientCaps(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradientCaps(float)\u003e",
     "signature": "void __stdcall fn_005F49E0(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005F4A10": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradientCaps(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradientCaps(float)\u003e",
+    "signature": "extern void __stdcall fn_005F4A10(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x005F4A90": {
@@ -8919,11 +8954,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F4AC0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradients(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradients(float)\u003e",
+    "signature": "extern void __stdcall fn_005F4AC0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F4B40": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setAll(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setAll(float)\u003e",
     "signature": "void __stdcall fn_005F4B40(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005F4B70": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setAll(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setAll(float)\u003e",
+    "signature": "extern void __stdcall fn_005F4B70(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x005F5110": {
@@ -9040,6 +9089,13 @@
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e",
     "signature": "void __stdcall fn_00603500(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00603530": {
+    "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e",
+    "signature": "extern void __stdcall fn_00603530(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x006035B0": {
@@ -9816,6 +9872,13 @@
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e",
     "signature": "void __stdcall fn_00629FF0(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0062A020": {
+    "name": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e",
+    "signature": "extern void __stdcall fn_0062A020(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0062A0A0": {
@@ -10698,6 +10761,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00649DF0": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_00649DF0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064B0A0": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (RelationshipRPROMagnet::applyCachedSettings)",
     "class": "ExprParser::ROWriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e",
@@ -10712,11 +10782,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064CA80": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064CA80(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064CB60": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e",
     "signature": "void __stdcall fn_0064CB60(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0064CB90": {
+    "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064CB90(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064EA80": {
@@ -10838,6 +10922,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064F010": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle2(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle2(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064F010(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F090": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadius(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadius(float), 0}\u003e",
@@ -10929,6 +11020,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064F5B0": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064F5B0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F630": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}\u003e",
@@ -10936,11 +11034,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064F660": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitTwistDamping(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064F660(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F6E0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}\u003e",
     "signature": "void __stdcall fn_0064F6E0(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0064F710": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingDamping(float), 0}\u003e",
+    "signature": "extern void __stdcall fn_0064F710(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0064F790": {
@@ -11047,6 +11159,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00650EF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}\u003e",
+    "signature": "extern void __stdcall fn_00650EF0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00650FF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e",
+    "signature": "extern void __stdcall fn_00650FF0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006510F0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e",
@@ -11054,11 +11180,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00651120": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{116, {flat}}, 0}\u003e",
+    "signature": "extern void __stdcall fn_00651120(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006511A0": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e",
     "signature": "void __stdcall fn_006511A0(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x006511D0": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{104, {flat}}, 0}\u003e",
+    "signature": "extern void __stdcall fn_006511D0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00651250": {
@@ -11075,11 +11215,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x006512B0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}\u003e",
+    "signature": "extern void __stdcall fn_006512B0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00651330": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}\u003e",
     "signature": "void __stdcall fn_00651330(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00651360": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}\u003e",
+    "signature": "extern void __stdcall fn_00651360(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x006513E0": {
@@ -11794,6 +11948,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0066C380": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e",
+    "signature": "extern void __stdcall fn_0066C380(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0066C400": {
     "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateY(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateY(float)\u003e",
@@ -11801,11 +11962,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0066C430": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateY(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateY(float)\u003e",
+    "signature": "extern void __stdcall fn_0066C430(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0066C4B0": {
     "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateZ(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateZ(float)\u003e",
     "signature": "void __stdcall fn_0066C4B0(void* a1, void* a2)",
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066C4E0": {
+    "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateZ(float)\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateZ(float)\u003e",
+    "signature": "extern void __stdcall fn_0066C4E0(void* out, void* const* targetRef, void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0066C560": {
