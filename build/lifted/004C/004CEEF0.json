@@ -1,0 +1,28 @@
+{
+  "va": "0x004CEEF0",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::IncarnationEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData,float\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData,float\u003e",
+  "signature": "extern \"C\" void __stdcall fn_004CEEF0(void* arg1, void* arg2)",
+  "summary": "Evaluates an expression to a float and sets NMData::IncarnationEventData::momentumScaleFactor, throwing if target is null.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "instance"
+    },
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "evaluator"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:50:01Z"
+}
