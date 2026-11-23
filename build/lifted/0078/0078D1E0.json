@@ -1,0 +1,22 @@
+{
+  "va": "0x0078D1E0",
+  "size": 10,
+  "orig_symbol": "sub_0078D1E0",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "CriticalSectionLock::unlock",
+  "class": "CriticalSectionLock",
+  "signature": "void __thiscall sub_0078D1E0(void* self)",
+  "summary": "Leaves the critical section pointed to by the first member field.",
+  "fields": [
+    {
+      "class": "CriticalSectionLock",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "criticalSection"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:26Z"
+}

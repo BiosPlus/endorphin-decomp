@@ -226,3 +226,17 @@ uint8_t __fastcall sub_007835F0(uint32_t ecx) {
     return mem_read8(eax + 0x4);
 }
 } // namespace lift_007835F0
+
+// [0x0078D1E0]
+namespace lift_0078D1E0 {
+extern void __stdcall LeaveCriticalSection(void* lpCriticalSection);
+
+// @name CriticalSectionLock::unlock
+// @class CriticalSectionLock
+// @summary Leaves the critical section pointed to by the first member field.
+// @field CriticalSectionLock +0x00 void* criticalSection
+void __thiscall sub_0078D1E0(void* self) {
+    void* criticalSection = *reinterpret_cast<void**>(self);
+    LeaveCriticalSection(criticalSection);
+}
+} // namespace lift_0078D1E0
