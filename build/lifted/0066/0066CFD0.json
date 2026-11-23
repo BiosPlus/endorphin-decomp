@@ -1,0 +1,14 @@
+{
+  "va": "0x0066CFD0",
+  "size": 97,
+  "orig_symbol": "ExprParser::StringType::vfunc_18",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_18",
+  "class": "ExprParser::StringType",
+  "signature": "uint32_t __thiscall fn_0066CFD0(void* self, uint32_t arg1)",
+  "summary": "Lazily initializes and returns a static string/type name object at 0x00B59670.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:29:05Z"
+}

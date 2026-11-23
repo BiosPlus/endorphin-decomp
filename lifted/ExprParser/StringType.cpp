@@ -109,3 +109,29 @@ void* __stdcall fn_0066B2E0(void* out_str, const uint32_t* value_ptr) {
 }
 } // namespace lift_0066B2E0
 } // namespace lift_0066B2E0
+
+// [0x0066CFD0]
+namespace lift_0066CFD0 {
+// @name ExprParser::StringType::vfunc_18
+// @class ExprParser::StringType
+// @summary Lazily initializes and returns a static string/type name object at 0x00B59670.
+
+extern uint32_t mem_00B59678;
+extern uint8_t mem_00B59670[];
+
+extern void* __thiscall ext_0041CE40(void* self, uint32_t arg);
+extern int __cdecl ext_006A6C87(uint32_t func);
+
+uint32_t __thiscall fn_0066CFD0(void* self, uint32_t arg1) {
+    (void)self;
+    (void)arg1;
+
+    if ((mem_00B59678 & 1u) == 0u) {
+        mem_00B59678 |= 1u;
+        ext_0041CE40(mem_00B59670, 0x00928B5Du);
+        ext_006A6C87(0x00921790u);
+    }
+
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B59670));
+}
+} // namespace lift_0066CFD0

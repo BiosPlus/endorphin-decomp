@@ -6564,6 +6564,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004CFB90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CFE90": {
+    "name": "NMData::IncarnationEventData::vfunc_86",
+    "class": "NMData::IncarnationEventData",
+    "signature": "extern \"C\" void __thiscall fn_004CFE90(void* self)",
+    "summary": "Resets state flag, allocates and initializes a 12-byte object, frees any previous object at +0x184, and registers the new one.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CFFE0": {
     "name": "sub_004CFFE0",
     "signature": "void* fn_004CFFE0(void* self, void* dst, void* arg2)",
@@ -21099,6 +21106,13 @@
     "signature": "void* __thiscall fn_0066CF70(void* self, uint32_t arg)",
     "summary": "Lazily initializes a function-local static (guarded by bit 0 of mem_00B5966C) and returns its address; the stack argument is unused.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
+  "0x0066CFD0": {
+    "name": "ExprParser::StringType::vfunc_18",
+    "class": "ExprParser::StringType",
+    "signature": "uint32_t __thiscall fn_0066CFD0(void* self, uint32_t arg1)",
+    "summary": "Lazily initializes and returns a static string/type name object at 0x00B59670.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
   "0x0066D040": {
     "name": "ExprParser::Vector3Type::vfunc_18",
