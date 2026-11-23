@@ -5475,6 +5475,13 @@
     "summary": "Stores a [first, second] int pair into the event's range fields, widening an empty range by one, then calls ext_004C0340.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C1C20": {
+    "name": "ExprParser::ReadMethodType_NetworkConnectorData_string_vfunc_1",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "float __stdcall fn_004C1C20(void* self, void** objPtr)",
+    "summary": "Reads a string via NetworkConnectorData::vcall{36} and converts it to float via atof, or throws an exception if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C1C70": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}\u003e",

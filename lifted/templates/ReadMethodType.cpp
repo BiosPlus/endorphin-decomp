@@ -18342,3 +18342,31 @@ int fn_004C5630(void* self) {
     return (static_cast<double>(accel) >= mem_009453C8) ? 1 : 0;
 }
 } // namespace lift_004C5630
+
+// [0x004C1C20]
+namespace lift_004C1C20 {
+// @name ExprParser::ReadMethodType_NetworkConnectorData_string_vfunc_1
+// @class ExprParser::ReadMethodType
+// @summary Reads a string via NetworkConnectorData::vcall{36} and converts it to float via atof, or throws an exception if null.
+
+
+extern void* ext_00682ED0(void* self);
+extern void ext_0046C3C0(void* exc);
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+
+float __stdcall fn_004C1C20(void* self, void** objPtr) {
+    (void)self;
+    void* obj = *objPtr;
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0.0f;
+    }
+
+    using Slot9Fn = const std::string& (__thiscall*)(void*);
+    Slot9Fn slot9 = reinterpret_cast<Slot9Fn>(ext_00682ED0(obj));
+    const std::string& str = slot9(obj);
+    return static_cast<float>(std::atof(str.c_str()));
+}
+} // namespace lift_004C1C20
