@@ -94,3 +94,16 @@ extern "C" void __fastcall fn_0067A100(void* self) {
 extern "C" void __fastcall fn_0067B2E0(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0098C5E4;
 }
+
+// [0x0067EC60]
+namespace lift_0067EC60 {
+// @name initZeroDouble
+// @summary Initializes a double at offset +0x00 to 0.0 and returns the pointer
+// @field Object +0x00 double field_0x00
+
+
+void* __thiscall sub_0067EC60(void* self) {
+    *reinterpret_cast<double*>(self) = 0.0;
+    return self;
+}
+} // namespace lift_0067EC60

@@ -22648,6 +22648,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0067B450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0067EC60": {
+    "name": "initZeroDouble",
+    "signature": "void* __thiscall sub_0067EC60(void* self)",
+    "summary": "Initializes a double at offset +0x00 to 0.0 and returns the pointer",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00682000": {
     "name": "XMLDocumentLoader::vfunc_0",
     "class": "XMLDocumentLoader",

@@ -1,0 +1,21 @@
+{
+  "va": "0x0067EC60",
+  "size": 7,
+  "orig_symbol": "sub_0067EC60",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "initZeroDouble",
+  "signature": "void* __thiscall sub_0067EC60(void* self)",
+  "summary": "Initializes a double at offset +0x00 to 0.0 and returns the pointer",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:34:14Z"
+}
