@@ -345,3 +345,28 @@ float sub_007C8810(const void* obj) {
     return *reinterpret_cast<const float*>(reinterpret_cast<const uint8_t*>(obj) + 0x8c);
 }
 } // namespace lift_007C8810
+
+// [0x007C6F20]
+namespace lift_007C6F20 {
+uint32_t mem_read32(uint32_t addr);
+uint8_t mem_read8(uint32_t addr);
+
+// @name get_byte_at_field_0x44
+// @summary Dereferences the pointer at offset +0x44 of the first argument and returns its first byte zero-extended.
+// @field Object +0x44 uint32_t field_0x44
+
+uint32_t sub_007C6F20(uint32_t arg0) {
+    uint32_t ptr = mem_read32(arg0 + 0x44);
+    return static_cast<uint32_t>(mem_read8(ptr));
+}
+} // namespace lift_007C6F20
+
+// [0x007C7690]
+namespace lift_007C7690 {
+// @name getField_0x214
+// @summary Returns the float field at offset 0x214 of the given object.
+// @field Object +0x214 float field_0x214
+float sub_007C7690(uintptr_t a1) {
+    return *reinterpret_cast<const float*>(a1 + 0x214);
+}
+} // namespace lift_007C7690
