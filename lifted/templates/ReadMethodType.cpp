@@ -1801,3 +1801,27 @@ bool fn_0049C6E0(void* self) {
     return false; // _CxxThrowException does not return
 }
 } // namespace lift_0049C6E0
+
+// [0x004A2B90] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004A2B90 {
+extern void ext_0049AA50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004A2B90(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0049AA50();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
