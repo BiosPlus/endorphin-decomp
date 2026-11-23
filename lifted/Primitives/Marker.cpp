@@ -56,3 +56,38 @@ void fn_0052FF70(void* self, unsigned int flags) {
     }
 }
 } // namespace lift_0052FF70
+
+// [0x0053D320]
+namespace lift_0053D320 {
+// @name Primitives::Marker::vfunc_25
+// @class Primitives::Marker
+// @summary Initializes marker flags and sets its size/radius from arg0 or arg1+0xb8
+// @field Primitives::Marker +0x08 uint32_t field_0x08
+// @field Primitives::Marker +0x1c uint32_t field_0x1c
+// @field Primitives::Marker +0x3c void* field_0x3c
+
+
+    float __thiscall ext_005B11E0(void* self, uint32_t a1);
+    void __thiscall ext_00538550(void* self, float a1, uint32_t a2, uint32_t a3);
+    extern uint32_t mem_00993838;
+
+void __thiscall fn_0053D320(void* self, void* arg0, uint8_t* arg1, uint32_t arg2) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x08) = arg2;
+
+    uint32_t flags = *reinterpret_cast<uint32_t*>(p + 0x1C);
+    flags = (flags & ~0x4Bu) | 0x40000u;
+    *reinterpret_cast<uint32_t*>(p + 0x1C) = flags;
+
+    float zero = *reinterpret_cast<const float*>(&mem_00993838);
+    float val = ext_005B11E0(arg0, 0);
+    float out_val;
+    if (val > zero) {
+        out_val = ext_005B11E0(arg0, 0);
+    } else {
+        out_val = *reinterpret_cast<const float*>(arg1 + 0xB8);
+    }
+
+    ext_00538550(p + 0x3C, out_val, 0, 0);
+}
+} // namespace lift_0053D320

@@ -8239,6 +8239,13 @@
     "summary": "Forwards three args to the Plane base vfunc_25, sets flag 0x40 in +0x1c, and copies two dwords from arg2 (+0x80/+0x84) into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Sphere.cpp"
   },
+  "0x0053D320": {
+    "name": "Primitives::Marker::vfunc_25",
+    "class": "Primitives::Marker",
+    "signature": "void __thiscall fn_0053D320(void* self, void* arg0, uint8_t* arg1, uint32_t arg2)",
+    "summary": "Initializes marker flags and sets its size/radius from arg0 or arg1+0xb8",
+    "lifted_path": "lifted/Primitives/Marker.cpp"
+  },
   "0x0053D810": {
     "name": "Primitives::Sensor::vfunc_25",
     "class": "Primitives::Sensor",
@@ -8287,6 +8294,13 @@
     "signature": "void fn_0053DB00(void* self, uint32_t arg1, void* arg2, uint32_t arg3)",
     "summary": "Forwards three args to Plane::vfunc_25, sets flag bit 0x40 in +0x1c if clear, and copies arg2+0x88/+0x8c into +0x3c/+0x40.",
     "lifted_path": "lifted/Primitives/Frustum.cpp"
+  },
+  "0x0053DB40": {
+    "name": "Primitives::File::vfunc_25",
+    "class": "Primitives::File",
+    "signature": "void fn_0053DB40(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Initializes the file primitive and loads its file data from the path provided by arg1.",
+    "lifted_path": "lifted/Primitives/File.cpp"
   },
   "0x0053DC50": {
     "name": "Primitives::Hinge::vfunc_25",
