@@ -3740,3 +3740,33 @@ void __stdcall fn_004AA9B0(void* ctx, void* src) {
     ext_004C1710(target, value);
 }
 } // namespace lift_004AA9B0
+
+// [0x004B1ED0] ExprParser::ReadWriteMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, int, {public: void __thiscall NMData::GraphEngineData::setMinNumTimeSteps(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004B1ED0 {
+// Setter NMData::GraphEngineData::setMinNumTimeSteps(int) (thiscall in the binary; self = target).
+extern void ext_004B0EB0(void* self, int32_t value);
+// Helper invoked with the address of the valuePtr parameter slot before the throw path (thiscall in the binary).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Replaced below by a portable C++ throw.
+
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, int, {public: void __thiscall NMData::GraphEngineData::setMinNumTimeSteps(int), 0}>
+// @summary Reads an int from the inner read-method (vtable slot 2) and writes it to the target GraphEngineData via setMinNumTimeSteps; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* inner
+void fn_004B1ED0(void** valuePtr, void* readWrite) {
+    void* target = *valuePtr;
+    if (target == nullptr) {
+        ext_0046C3C0(static_cast<void*>(&valuePtr));
+        throw std::runtime_error("ExprParser::ReadWriteMethodType: null target object");
+    }
+
+    using ReadFn = int32_t (*)(void* self, void* ctx);
+    void* inner = lift_field<void*>(readWrite, 0x4);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    int32_t value = reinterpret_cast<ReadFn>(vtbl[2])(inner, readWrite);
+
+    ext_004B0EB0(target, value);
+}
+} // namespace lift_004B1ED0
