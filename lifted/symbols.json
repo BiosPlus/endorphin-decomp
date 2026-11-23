@@ -2965,6 +2965,13 @@
     "summary": "Forwards to RuntimeEngine::getNumTicksToRun via the held pointer; throws if the held pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00471400": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::vfunc_3 (RuntimeEngine::getNumTicksToRun)",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0\u003e",
+    "signature": "int fn_00471400(void* const* holder)",
+    "summary": "Dereferences the holder to get the RuntimeEngine pointer; throws if null, otherwise returns 1 if the callee (sub_0046F7C0) yields nonzero, else 0.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004716A0": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",

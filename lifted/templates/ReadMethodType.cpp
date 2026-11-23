@@ -8866,3 +8866,28 @@ int fn_0046F210(void* self) {
     return ext_0046C090(inner) != 0 ? 1 : 0;
 }
 } // namespace lift_0046F210
+
+// [0x00471400] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_00471400 {
+// Original callees (thiscall: `this` is passed in ECX, result in EAX).
+// Portable declarations: the object pointer is passed as the first argument.
+extern uint32_t ext_0046F7C0(void* self);
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<RuntimeEngine>::vfunc_3 (RuntimeEngine::getNumTicksToRun)
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Dereferences the holder to get the RuntimeEngine pointer; throws if null, otherwise returns 1 if the callee (sub_0046F7C0) yields nonzero, else 0.
+// No RuntimeEngine fields are accessed directly; the only memory access is the holder dereference (*holder).
+int fn_00471400(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        // Original: builds a local exception object (ext_0046C3C0) and calls
+        // _CxxThrowException via ext_006A6DD2.
+        throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: null value pointer");
+    }
+    const uint32_t r = ext_0046F7C0(obj);
+    return r != 0 ? 1 : 0;
+}
+} // namespace lift_00471400
