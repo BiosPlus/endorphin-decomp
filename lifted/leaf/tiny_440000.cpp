@@ -276,3 +276,22 @@ void __thiscall sub_004474E0(void* self, uint32_t arg1) {
     }
 }
 } // namespace lift_004474E0
+
+// [0x004474F0]
+namespace lift_004474F0 {
+// @name invokeCallbackIfSet
+// @summary Invokes a member callback at +0x04 if non-null, passing one argument
+// @field Unknown +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __thiscall sub_004474F0(uint32_t ecx, uint32_t arg1) {
+    uint32_t fn_ptr = mem_read32(ecx + 0x4);
+    if (fn_ptr != 0) {
+        using fn_t = uint32_t(__thiscall*)(uint32_t, uint32_t);
+        return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn_ptr))(ecx, arg1);
+    }
+    return 0;
+}
+} // namespace lift_004474F0
