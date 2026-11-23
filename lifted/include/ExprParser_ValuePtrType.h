@@ -10,6 +10,7 @@
 namespace lifted_layout {
 struct ExprParser_ValuePtrType_Fields {
     // +0x0   const std::string*       field_0x00  (evidence: 0x00497930) // CONFLICT: multiple definitions at +0x0
+    // +0x0   double*                  field_0x00  (evidence: 0x006959E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      field_0x00  (evidence: 0x004B1FF0, 0x00504DA0, 0x00508EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int*                     field_0x00  (evidence: 0x0049C040) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x004B1FF0, 0x00505000, 0x00508EE0) // CONFLICT: multiple definitions at +0x0

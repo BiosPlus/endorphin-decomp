@@ -8738,3 +8738,20 @@ uint8_t fn_005DB620(void* self) {
     return value != 0 ? 1 : 0;
 }
 } // namespace lift_005DB620
+
+// [0x006959E0] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_1 (52 bytes)
+namespace lift_006959E0 {
+// @name ExprParser::ReadMethodType<DoubleWithProperties>::vfunc_1 (DoubleWithProperties::getValue)
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the double referenced by the value pointer at +0x00 and returns it as float; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 double* field_0x00
+float fn_006959E0(void* self) {
+    double* valuePtr = *reinterpret_cast<double**>(self);
+    if (valuePtr != nullptr) {
+        return static_cast<float>(*valuePtr);
+    }
+    // Original path: constructs an exception object via sub_0046C3C0 and calls
+    // _CxxThrowException. Portable equivalent: throw a standard exception.
+    throw std::runtime_error("ExprParser: null value pointer in DoubleWithProperties::getValue");
+}
+} // namespace lift_006959E0
