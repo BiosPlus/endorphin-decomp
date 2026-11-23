@@ -33408,6 +33408,12 @@
     "summary": "Pure jump thunk forwarding to sub_00784720.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00784820": {
+    "name": "sub_00784820",
+    "signature": "void sub_00784820()",
+    "summary": "Calls sub_00784830 and tail-calls sub_00784840.",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x00785410": {
     "name": "sub_00785410",
     "signature": "extern \"C\" void* __fastcall fn_00785410(void* self, int edx_unused, unsigned int flags)",
@@ -33503,6 +33509,13 @@
     "class": "UnknownObject",
     "signature": "extern \"C\" void __fastcall fn_0078CBD0(void* self)",
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x0078D1E0": {
+    "name": "CriticalSectionLock::unlock",
+    "class": "CriticalSectionLock",
+    "signature": "void __thiscall sub_0078D1E0(void* self)",
+    "summary": "Leaves the critical section pointed to by the first member field.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
   "0x0078D2C0": {
@@ -33780,6 +33793,18 @@
     "signature": "extern \"C\" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AD590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007AE0A0": {
+    "name": "sub_007AE0A0",
+    "signature": "extern \"C\" void fn_007AE0A0(void)",
+    "summary": "Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AE0E0": {
+    "name": "tailCallWithGlobal_007AE0E0",
+    "signature": "extern \"C\" void fn_007AE0E0(void)",
+    "summary": "Sets this pointer to global 0x00B61708 and tail-calls sub_006B9D70.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
   "0x007AE1D0": {
     "name": "sub_007AE1D0",

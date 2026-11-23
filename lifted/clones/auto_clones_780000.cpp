@@ -18,3 +18,18 @@ void fn_0078D2C0() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_0078D2C0
+
+// [0x00784820]
+namespace lift_00784820 {
+// @name sub_00784820
+// @summary Calls sub_00784830 and tail-calls sub_00784840.
+
+
+extern void ext_00784830();
+extern void ext_00784840();
+
+void sub_00784820() {
+    ext_00784830();
+    ext_00784840();
+}
+} // namespace lift_00784820

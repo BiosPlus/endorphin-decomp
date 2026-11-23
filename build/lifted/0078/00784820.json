@@ -1,0 +1,13 @@
+{
+  "va": "0x00784820",
+  "size": 10,
+  "orig_symbol": "sub_00784820",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "sub_00784820",
+  "signature": "void sub_00784820()",
+  "summary": "Calls sub_00784830 and tail-calls sub_00784840.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:27Z"
+}
