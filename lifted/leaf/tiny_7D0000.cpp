@@ -41,3 +41,17 @@ uint32_t sub_007D5AE0(uint32_t ptr) {
     return mem_read32(ptr);
 }
 } // namespace lift_007D5AE0
+
+// [0x007D48A0]
+namespace lift_007D48A0 {
+// @name getField_0x04
+// @summary Returns the 32-bit value at offset +0x04 of the given object.
+// @field Object +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_007D48A0(uint32_t arg0) {
+    return mem_read32(arg0 + 0x4);
+}
+} // namespace lift_007D48A0

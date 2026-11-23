@@ -1,0 +1,21 @@
+{
+  "va": "0x007D48A0",
+  "size": 8,
+  "orig_symbol": "sub_007D48A0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "getField_0x04",
+  "signature": "uint32_t sub_007D48A0(uint32_t arg0)",
+  "summary": "Returns the 32-bit value at offset +0x04 of the given object.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:37:21Z"
+}
