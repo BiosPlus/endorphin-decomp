@@ -117,3 +117,35 @@ extern void __fastcall fn_004A9A70(void* self, void* /*edx*/, void* arg0) {
     ext_004EC300(subobj, nullptr, str_field);
 }
 } // namespace lift_004A9A70
+
+// [0x004A9BA0] NMData::BehaviourData::vfunc_14 (97 bytes)
+namespace lift_004A9BA0 {
+// Known callee 0x004C2070: NMData::SeverEventData::vfunc_14 (Dispatches property/event query on SeverEventData; handles 0x8c/0x117 via sub_004C1BF0 and sub_0055DA20, otherwise delegates to vfunc_14 base.)
+extern void* __thiscall ext_004C2070(void* self, void* arg1, uint32_t arg2);
+// Known callee 0x00661650 (35 bytes, signature unrecovered): called thiscall with ecx = arg1 and one pointer argument.
+extern void __thiscall ext_00661650(void* self, void* arg);
+
+// @name NMData::BehaviourData::vfunc_14
+// @class NMData::BehaviourData
+// @summary Property/event query dispatcher: id 0x1B3 forwards to vcall slot 14 of the child at +0x180, id 0x117 calls ext_00661650 on this+0x364, any other id defers to SeverEventData::vfunc_14. Always returns arg1.
+// @field BehaviourData +0x180 void* field_0x180
+// @field BehaviourData +0x364 uint8_t field_0x364 (address taken only, passed to ext_00661650)
+void* __thiscall fn_004A9BA0(void* self, void* arg1, uint32_t arg2) {
+    if (arg2 == 0x1B3) {
+        // child = this->field_0x180; sub = child + 0x10; call sub->vtbl[14](arg1, 0x1B3)
+        uint8_t* child = lift_field<uint8_t*>(self, 0x180);
+        uint8_t* sub = child + 0x10;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        using VFn = void* (__thiscall*)(void* self_, void* a1, uint32_t a2);
+        VFn fn = reinterpret_cast<VFn>(vtbl[14]);
+        fn(sub, arg1, 0x1B3);
+        return arg1;
+    }
+    if (arg2 == 0x117) {
+        ext_00661650(arg1, reinterpret_cast<uint8_t*>(self) + 0x364);
+        return arg1;
+    }
+    ext_004C2070(self, arg1, arg2);
+    return arg1;
+}
+} // namespace lift_004A9BA0

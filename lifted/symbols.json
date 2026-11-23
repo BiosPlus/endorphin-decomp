@@ -3922,6 +3922,13 @@
     "summary": "Evaluates arg1 into a temporary std::string via ext_00497650 and assigns it to *arg0.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497BB0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_43",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+    "signature": "void __thiscall fn_00497BB0(void* self, void** arg0, void* arg1)",
+    "summary": "Appends the string representation of arg1 to *arg0",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497DD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e",
@@ -4648,6 +4655,13 @@
     "class": "NMData::BehaviourData",
     "signature": "extern \"C\" void __thiscall fn_004A9B70(void* self, void* a)",
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
+  "0x004A9BA0": {
+    "name": "NMData::BehaviourData::vfunc_14",
+    "class": "NMData::BehaviourData",
+    "signature": "void* __thiscall fn_004A9BA0(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Property/event query dispatcher: id 0x1B3 forwards to vcall slot 14 of the child at +0x180, id 0x117 calls ext_00661650 on this+0x364, any other id defers to SeverEventData::vfunc_14. Always returns arg1.",
     "lifted_path": "lifted/NMData/BehaviourData.cpp"
   },
   "0x004A9C60": {
