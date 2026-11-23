@@ -7298,6 +7298,13 @@
     "summary": "Reads the target World from a1, evaluates a float from a2's reader via its vtable slot 1, and forwards it to the setFriction setter ext_005940A0.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00594550": {
+    "name": "ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",
+    "signature": "void fn_00594550(uint32_t* out, uint32_t* world_ref, void* src)",
+    "summary": "Fetches a float from the source ValuePtr's inner object, applies it to World friction, and writes the (value, inner) pair to the output slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005945D0": {
     "name": "sub_005945D0",
     "signature": "extern \"C\" void __fastcall fn_005945D0(void* self)",

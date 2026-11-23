@@ -1,0 +1,22 @@
+{
+  "va": "0x00594550",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",
+  "signature": "void fn_00594550(uint32_t* out, uint32_t* world_ref, void* src)",
+  "summary": "Fetches a float from the source ValuePtr's inner object, applies it to World friction, and writes the (value, inner) pair to the output slot.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:05:34Z"
+}

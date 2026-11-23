@@ -3115,3 +3115,34 @@ void fn_0068BC90(void* /*unused*/, Pair* io, Holder* holder) {
 }
 } // namespace lift_00650DB0
 } // namespace lift_0068BC90
+
+// [0x00594550] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00594550 {
+// Setter on the World instance (sub_005940A0, 22 bytes; this = World*, arg = float).
+extern void ext_005940A0(void* self, float value);
+// Virtual calls through the inner object's vtable (slot +0x04 and slot +0x70).
+extern float ext_vcall_slot04(void* obj, void* ctx);
+extern uint32_t* ext_vcall_slot70(void* obj, void* ctx, uint32_t* tmp);
+
+// @name ExprParser::WriteMethodType<World, float, setFriction>::vfunc_48
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>
+// @summary Fetches a float from the source ValuePtr's inner object, applies it to World friction, and writes the (value, inner) pair to the output slot.
+// @field ValuePtrType +0x04 void* inner
+void fn_00594550(uint32_t* out, uint32_t* world_ref, void* src) {
+    void* world = reinterpret_cast<void*>(static_cast<uintptr_t>(*world_ref));
+    void* inner = lift_field<void*>(src, 4);
+
+    float friction = ext_vcall_slot04(inner, src);
+    ext_005940A0(world, friction);
+
+    if (lift_field<void*>(src, 4) != nullptr) {
+        uint32_t tmp = 0;
+        uint32_t* res = ext_vcall_slot70(lift_field<void*>(src, 4), src, &tmp);
+        out[0] = *res;
+        out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(lift_field<void*>(src, 4)));
+    } else {
+        out[0] = 0;
+        out[1] = 0;
+    }
+}
+} // namespace lift_00594550
