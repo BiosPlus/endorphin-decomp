@@ -8891,3 +8891,21 @@ int fn_00471400(void* const* holder) {
     return r != 0 ? 1 : 0;
 }
 } // namespace lift_00471400
+
+// [0x004A2860] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A2860 {
+extern uint8_t ext_0049AA60(void* self);
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_2 (StateMachineEditor::FSMEditView::drawVariables)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Reads the held value pointer; throws if it is null, otherwise returns the boolean result of ext_0049AA60 applied to it (drawVariables flag).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004A2860(void* self) {
+    void* value = lift_field<void*>(self, 0x00);
+    if (value == nullptr) {
+        // Original throws an MSVC exception object (0x009DEC1C); no portable equivalent beyond std::runtime_error.
+        throw std::runtime_error("ExprParser::ReadMethodType<FSMEditView>::vfunc_2: null value pointer");
+    }
+    return ext_0049AA60(value) != 0;
+}
+} // namespace lift_004A2860

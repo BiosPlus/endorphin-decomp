@@ -1,0 +1,22 @@
+{
+  "va": "0x004A2860",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_2 (StateMachineEditor::FSMEditView::drawVariables)",
+  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e",
+  "signature": "bool fn_004A2860(void* self)",
+  "summary": "Reads the held value pointer; throws if it is null, otherwise returns the boolean result of ext_0049AA60 applied to it (drawVariables flag).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:55:56Z"
+}
