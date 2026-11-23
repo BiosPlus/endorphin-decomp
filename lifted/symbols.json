@@ -8339,6 +8339,13 @@
     "summary": "Clears the RealChannel data vector by erasing from begin to end.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051C2A0": {
+    "name": "NMData::RealChannel::vfunc_10",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_0051C2A0(void* self, void* arg0)",
+    "summary": "Iterates over 8-byte elements in the vector at +0x2C and invokes ext_0047B170 on each element with arg0.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051C7A0": {
     "name": "NMData::QuatChannel::vfunc_9",
     "class": "NMData::QuatChannel",
