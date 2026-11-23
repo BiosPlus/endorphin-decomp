@@ -5575,6 +5575,13 @@
     "summary": "Returns the dword at +0x0C of the object referenced by the holder's first pointer; throws if that pointer is null.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00516550": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_2",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "int32_t fn_00516550(const void* const* holder)",
+    "summary": "Returns the int at +0x08 of the object referenced by the holder's target pointer; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00516B10": {
     "name": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, printCurrentIndividual\u003e::vfunc_41",
     "class": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e",

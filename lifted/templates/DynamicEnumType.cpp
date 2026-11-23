@@ -187,36 +187,6 @@ double fn_00515E80(void* const* holder) {
     return static_cast<double>(value);
 }
 
-// [0x00516550] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_2 (45 bytes)
-// @name ExprParser::DynamicEnumType::vfunc_2
-// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
-// @summary Loads the int value through the holder's pointer at +0x00 (throws if null) and returns the int at +0x08 of the pointee.
-// @field ExprParser::DynamicEnumType +0x00 void* ptr
-// @field ExprParser::DynamicEnumType +0x08 int field_0x08
-
-struct DynamicEnumHolder {
-    void* ptr;
-};
-
-struct DynamicEnumTarget {
-    unsigned char field_0x00_pad[8];
-    int field_0x08;
-};
-
-// Argument is a pointer to a holder whose first member points at the target object.
-// If the target pointer is null, the original code raises a C++ exception; that path is
-// modeled here with a call through the known thunk symbol, which the lift toolchain resolves.
-extern "C" int fn_00516550(void* arg) {
-    auto* holder = static_cast<DynamicEnumHolder*>(arg);
-    auto* target = static_cast<DynamicEnumTarget*>(holder->ptr);
-    if (target == nullptr) {
-        ext_0046C3C0();
-        ext_006A6DD2();
-        return 0;
-    }
-    return target->field_0x08;
-}
-
 // [0x00515FD0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1 (45 bytes)
 namespace lift_00515FD0 {
 // @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1
@@ -256,3 +226,24 @@ std::uint32_t fn_00516170(void* self) {
     return *reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(target) + 0x0C);
 }
 } // namespace lift_00516170
+
+// [0x00516550] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_2 (45 bytes)
+namespace lift_00516550 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_2
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Returns the int at +0x08 of the object referenced by the holder's target pointer; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field EvolverRuntimeOptions +0x08 int field_0x08
+
+// Reads the first-level target pointer from the holder (arg at [esp+4]),
+// then returns the 32-bit value stored at target+0x08. A null target throws.
+int32_t fn_00516550(const void* const* holder) {
+    const void* target = *holder;
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null target");
+    }
+    int32_t value;
+    std::memcpy(&value, static_cast<const std::byte*>(target) + 0x08, sizeof(value));
+    return value;
+}
+} // namespace lift_00516550
