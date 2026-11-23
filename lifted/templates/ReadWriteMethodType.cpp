@@ -3770,3 +3770,39 @@ void __stdcall fn_004AA9B0(void* ctx, void* src) {
     ext_004C1710(target, value);
 }
 } // namespace lift_004AA9B0
+
+// [0x005F5CC0] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setColour(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5CC0 {
+// Callee 0x005F53E0: thiscall HelperGraphic::setColour(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F53E0();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetColourFn)(void* self, const void* colour);
+typedef const void* (*GetColourVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getColour -> setColour)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setColour(class NM::Vector3 const &), 0}>
+// @summary Reads a colour via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F5CC0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the colour pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetColourVFunc getter = reinterpret_cast<GetColourVFunc>(vtbl[5]);
+        const void* colour = getter(inner, src);
+
+        SetColourFn setter = reinterpret_cast<SetColourFn>(reinterpret_cast<void*>(ext_005F53E0));
+        setter(helper, colour);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5CC0
