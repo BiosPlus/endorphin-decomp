@@ -32712,6 +32712,18 @@
     "summary": "Tail-calls ext_00714060 with global object mem_00B5F498 as this.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713A00": {
+    "name": "sub_00713A00",
+    "signature": "void fn_00713A00()",
+    "summary": "Tail-call wrapper that passes global 0x00B5F5F0 in ecx to sub_00714060.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713A40": {
+    "name": "thunk_sub_00714060",
+    "signature": "void sub_00713A40()",
+    "summary": "Tail-call thunk passing global object mem_00B5F780 as this to sub_00714060",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00714970": {
     "name": "sub_00714970",
     "signature": "extern \"C\" void __fastcall fn_00714970(void* self, int edx_unused, uint8_t value)",
@@ -33184,6 +33196,18 @@
     "name": "sub_0072B7D0",
     "signature": "extern \"C\" void* __cdecl fn_0072B7D0(void)",
     "summary": "Returns address of global mem_00B600A8.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x0072B840": {
+    "name": "tailCall_006B9D70_mem_00B600B8",
+    "signature": "void fn_0072B840(void)",
+    "summary": "Loads global 0x00B600B8 into ECX and tail-calls sub_006B9D70.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x0072B880": {
+    "name": "initGlobalNoop_0072B880",
+    "signature": "extern \"C\" void __cdecl fn_0072B880(void)",
+    "summary": "Tail-calls ext_006D80A0 with global 0x00B60020 in ECX.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
   "0x0072B970": {

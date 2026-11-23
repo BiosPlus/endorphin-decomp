@@ -1,0 +1,13 @@
+{
+  "va": "0x00713A00",
+  "size": 10,
+  "orig_symbol": "sub_00713A00",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_00713A00",
+  "signature": "void fn_00713A00()",
+  "summary": "Tail-call wrapper that passes global 0x00B5F5F0 in ecx to sub_00714060.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:36:04Z"
+}

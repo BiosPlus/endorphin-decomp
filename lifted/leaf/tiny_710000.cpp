@@ -818,3 +818,29 @@ void __cdecl sub_007139C0() {
     ext_00714060(mem_00B5F498);
 }
 } // namespace lift_007139C0
+
+// [0x00713A00]
+namespace lift_00713A00 {
+// @name sub_00713A00
+// @summary Tail-call wrapper that passes global 0x00B5F5F0 in ecx to sub_00714060.
+
+
+extern uint8_t mem_00B5F5F0[];
+extern void ext_00714060(void* self);
+
+void fn_00713A00() {
+    ext_00714060(mem_00B5F5F0);
+}
+} // namespace lift_00713A00
+
+// [0x00713A40]
+namespace lift_00713A40 {
+extern uint8_t mem_00B5F780[];
+extern void __thiscall ext_00714060(void* thisPtr);
+
+// @name thunk_sub_00714060
+// @summary Tail-call thunk passing global object mem_00B5F780 as this to sub_00714060
+void sub_00713A40() {
+    ext_00714060(mem_00B5F780);
+}
+} // namespace lift_00713A40
