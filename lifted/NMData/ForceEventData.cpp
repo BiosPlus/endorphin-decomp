@@ -108,3 +108,33 @@ void* __thiscall fn_004C5350(void* self, float* out_vec) {
     return out_vec;
 }
 } // namespace lift_004C5350
+
+// [0x004C4FA0]
+namespace lift_004C4FA0 {
+// @name NMData::ForceEventData::vfunc_2_off_C
+// @class NMData::ForceEventData
+// @summary Translates the TransformInterface subobject's matrix by the given 3D vector and notifies the base object.
+// @field NMData::ForceEventData +0x4 void** TransformInterface_vptr
+
+extern uint32_t mem_00B40640;
+extern void __thiscall ext_00586D00(void* self);
+
+void __thiscall fn_004C4FA0(void* self, const float* delta) {
+    uint8_t* base = static_cast<uint8_t*>(self) - 0xC;
+    void* transform_iface = base + 0x4;
+    void** vtable = *reinterpret_cast<void***>(transform_iface);
+
+    float matrix[16];
+    auto get_tm = reinterpret_cast<void(__thiscall*)(void*, float*, int32_t, uint32_t)>(vtable[4]);
+    get_tm(transform_iface, matrix, 0, mem_00B40640);
+
+    matrix[12] += delta[0];
+    matrix[13] += delta[1];
+    matrix[14] += delta[2];
+
+    auto set_tm = reinterpret_cast<void(__thiscall*)(void*, int32_t, float*, uint32_t)>(vtable[0]);
+    set_tm(transform_iface, 0, matrix, mem_00B40640);
+
+    ext_00586D00(base);
+}
+} // namespace lift_004C4FA0

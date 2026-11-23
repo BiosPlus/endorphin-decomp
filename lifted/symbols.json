@@ -1458,6 +1458,13 @@
     "summary": "Stores (owner+0xF0 - owner+0xE8) into this+0x10, then captures the mouse on the owner's window.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp"
   },
+  "0x004433D0": {
+    "name": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_12",
+    "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+    "signature": "uint8_t __thiscall fn_004433D0(void* self, uint32_t arg1, int32_t arg2, uint32_t arg3)",
+    "summary": "Applies horizontal zoom to the owner MultiTrackView based on drag delta and invalidates its window",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp"
+  },
   "0x00443440": {
     "name": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",
@@ -6096,6 +6103,13 @@
     "class": "NMData::ForceEventData",
     "signature": "void* fn_004C4E40(void* self, void* arg)",
     "summary": "Invokes virtual slot 15 (vtable +0x3C) on self with (arg, 0x266, 0), then returns arg.",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
+  "0x004C4FA0": {
+    "name": "NMData::ForceEventData::vfunc_2_off_C",
+    "class": "NMData::ForceEventData",
+    "signature": "void __thiscall fn_004C4FA0(void* self, const float* delta)",
+    "summary": "Translates the TransformInterface subobject's matrix by the given 3D vector and notifies the base object.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
   "0x004C5350": {
@@ -21532,6 +21546,13 @@
     "class": "ExprParser::StringType",
     "signature": "void* fn_0066B320(void* self, void* arg2, [[maybe_unused]] void* arg3, [[maybe_unused]] void* arg4, [[maybe_unused]] void* arg5)",
     "summary": "Calls ext_006720E0(self, \u0026arg2-\u003e+0x2C, 0) and returns self; arguments 3-5 are unused.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
+  "0x0066B4A0": {
+    "name": "ExprParser::StringType::vfunc_33",
+    "class": "ExprParser::StringType",
+    "signature": "void __thiscall fn_0066B4A0(void* self, void* arg1, void* arg2, void* arg3)",
+    "summary": "Evaluates/concatenates or assigns a string value via vfunc_29 and sub_00698AD0",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
   "0x0066B530": {

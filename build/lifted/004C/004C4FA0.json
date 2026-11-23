@@ -1,0 +1,22 @@
+{
+  "va": "0x004C4FA0",
+  "size": 107,
+  "orig_symbol": "NMData::ForceEventData::vfunc_2_off_C",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_2_off_C",
+  "class": "NMData::ForceEventData",
+  "signature": "void __thiscall fn_004C4FA0(void* self, const float* delta)",
+  "summary": "Translates the TransformInterface subobject's matrix by the given 3D vector and notifies the base object.",
+  "fields": [
+    {
+      "class": "NMData::ForceEventData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "TransformInterface_vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:22Z"
+}
