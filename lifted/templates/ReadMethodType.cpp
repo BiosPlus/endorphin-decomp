@@ -12082,3 +12082,3297 @@ extern uint32_t __thiscall fn_0046F150(uint32_t /*self*/, uint32_t out, uint32_t
     return 0;
 }
 } // namespace lift_0046F150
+
+// [0x00488590] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_00488590 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00486C90(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00488590(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00486C90(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00488590
+
+// [0x0049B780] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_0049B780 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004C0310(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0049B780(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004C0310(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0049B780
+
+// [0x004A2EF0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004A2EF0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0049AA40(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004A2EF0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0049AA40(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004A2EF0
+
+// [0x004A38A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004A38A0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006658C0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004A38A0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006658C0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004A38A0
+
+// [0x004A3C20] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004A3C20 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004A2490(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004A3C20(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004A2490(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004A3C20
+
+// [0x004AA610] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004AA610 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004A9A40(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004AA610(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004A9A40(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004AA610
+
+// [0x004B4140] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004B4140 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006AD190(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004B4140(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006AD190(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004B4140
+
+// [0x004B9080] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_0 (73 bytes)
+namespace lift_004B9080 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA330 (ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isGravityEnabled, 0>::vfunc_0).
+namespace lift_004EA330 {
+// Callee 0x006720A0 (sub_006720A0): thiscall on `self` with one byte argument.
+// Signature is approximated here; calling convention is resolved by the target toolchain.
+extern void ext_006720A0(void* self, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isGravityEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Reads the object referenced by *src; throws if it is null, otherwise forwards its byte at +0x06 to ext_006720A0 and returns self.
+// @field ExprParser::ValuePtrType +0x06 uint8_t field_0x06
+void* fn_004B9080(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        // Original throws a MSVC exception object (type at 0x009DEC1C) via _CxxThrowException.
+        throw std::invalid_argument("ReadMethodType: null value pointer");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x83);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA330
+} // namespace lift_004B9080
+
+// [0x004C03B0] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004C03B0 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00410450(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004C03B0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00410450(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004C03B0
+
+// [0x004C10C0] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004C10C0 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C84B0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004C10C0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C84B0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004C10C0
+
+// [0x004C7640] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004C7640 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00486960(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004C7640(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00486960(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004C7640
+
+// [0x004CB5E0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004CB5E0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004CA5E0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004CB5E0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004CA5E0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CB5E0
+
+// [0x004CBE20] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004CBE20 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004CB400(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004CBE20(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004CB400(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CBE20
+
+// [0x004CC160] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004CC160 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004CB3E0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004CC160(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004CB3E0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CC160
+
+// [0x004CF500] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004CF500 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004CEA30(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004CF500(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004CEA30(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CF500
+
+// [0x004D18C0] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004D18C0 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004D0AF0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004D18C0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004D0AF0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004D18C0
+
+// [0x004D2290] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004D2290 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004D0E00(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004D2290(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004D0E00(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004D2290
+
+// [0x004D5C60] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004D5C60 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004D39D0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004D5C60(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004D39D0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004D5C60
+
+// [0x004D7930] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004D7930 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004D39E0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004D7930(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004D39E0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004D7930
+
+// [0x004D90A0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004D90A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004D3FD0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004D90A0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004D3FD0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004D90A0
+
+// [0x004DE460] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004DE460 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00528530(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004DE460(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00528530(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004DE460
+
+// [0x004E0AD0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004E0AD0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004DE160(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004E0AD0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004DE160(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004E0AD0
+
+// [0x004E1580] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004E1580 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004DE440(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004E1580(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004DE440(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004E1580
+
+// [0x004ECDF0] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004ECDF0 {
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00536F00(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004ECDF0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00536F00(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004ECDF0
+
+// [0x004FF3A0] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_004FF3A0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006A7C10(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004FF3A0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006A7C10(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004FF3A0
+
+// [0x005097E0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005097E0 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00503A00(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005097E0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00503A00(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005097E0
+
+// [0x0050A1A0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_0050A1A0 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00508BA0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0050A1A0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00508BA0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0050A1A0
+
+// [0x0051B1B0] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_0051B1B0 {
+// @name ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0051AEF0(void* self);
+extern void __thiscall ext_00672150(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0051B1B0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0051AEF0(obj);
+        ext_00672150(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0051B1B0
+
+// [0x00521830] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_00521830 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00687090(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00521830(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00687090(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00521830
+
+// [0x00585E40] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_0 (71 bytes)
+namespace lift_00585E40 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00682ED0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00585E40(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00682ED0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00585E40
+
+// [0x0058D110] ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_0058D110 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0058B2A0(void* self);
+extern void __thiscall ext_00672150(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0058D110(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0058B2A0(obj);
+        ext_00672150(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0058D110
+
+// [0x00594BA0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_00594BA0 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00594060(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00594BA0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00594060(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00594BA0
+
+// [0x00597DA0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_00597DA0 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00596330(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00597DA0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00596330(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00597DA0
+
+// [0x0059F010] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_0059F010 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0042F750(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0059F010(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0042F750(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0059F010
+
+// [0x005AB4B0] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005AB4B0 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005AA9E0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005AB4B0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005AA9E0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005AB4B0
+
+// [0x005AB730] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005AB730 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0044CCD0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005AB730(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0044CCD0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005AB730
+
+// [0x005B9530] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005B9530 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6B60(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005B9530(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6B60(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005B9530
+
+// [0x005B9A20] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005B9A20 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6B90(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005B9A20(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6B90(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005B9A20
+
+// [0x005B9F10] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005B9F10 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6BC0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005B9F10(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6BC0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005B9F10
+
+// [0x005BA400] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005BA400 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6BF0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BA400(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6BF0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BA400
+
+// [0x005BA8F0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005BA8F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6C20(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BA8F0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6C20(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BA8F0
+
+// [0x005BADE0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005BADE0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6C50(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BADE0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6C50(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BADE0
+
+// [0x005BBCB0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005BBCB0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6A80(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BBCB0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6A80(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BBCB0
+
+// [0x005BC200] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005BC200 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B69A0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BC200(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B69A0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BC200
+
+// [0x005BCE40] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005BCE40 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6930(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BCE40(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6930(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BCE40
+
+// [0x005BD110] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005BD110 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6A10(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BD110(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6A10(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BD110
+
+// [0x005BD780] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005BD780 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005B6AF0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005BD780(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005B6AF0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005BD780
+
+// [0x005C4930] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005C4930 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3110(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C4930(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3110(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C4930
+
+// [0x005C4E20] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005C4E20 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3130(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C4E20(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3130(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C4E20
+
+// [0x005C5310] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005C5310 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3150(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C5310(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3150(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C5310
+
+// [0x005C8080] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005C8080 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C2F40(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C8080(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C2F40(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C8080
+
+// [0x005C8F10] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005C8F10 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3A30(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C8F10(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3A30(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C8F10
+
+// [0x005C9A10] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005C9A10 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C38F0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C9A10(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C38F0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C9A10
+
+// [0x005C9F00] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005C9F00 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3930(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C9F00(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3930(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C9F00
+
+// [0x005CA3F0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005CA3F0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3970(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005CA3F0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3970(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005CA3F0
+
+// [0x005CA8E0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_005CA8E0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C39B0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005CA8E0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C39B0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005CA8E0
+
+// [0x005DAC90] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005DAC90 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005D07E0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005DAC90(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005D07E0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005DAC90
+
+// [0x005DBCB0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005DBCB0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005D07F0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005DBCB0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005D07F0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005DBCB0
+
+// [0x005DBF80] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005DBF80 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005D0810(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005DBF80(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005D0810(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005DBF80
+
+// [0x005E3350] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005E3350 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005E02A0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005E3350(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005E02A0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005E3350
+
+// [0x005E3600] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005E3600 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0044CCE0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005E3600(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0044CCE0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005E3600
+
+// [0x005E84B0] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005E84B0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005E0E40(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005E84B0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005E0E40(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005E84B0
+
+// [0x005F6420] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F6420 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5120(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F6420(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5120(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F6420
+
+// [0x005F7C20] ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F7C20 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5160(void* self);
+extern void __thiscall ext_00672150(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F7C20(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5160(obj);
+        ext_00672150(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F7C20
+
+// [0x005F86F0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F86F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5410(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F86F0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5410(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F86F0
+
+// [0x005F8C70] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F8C70 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5280(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F8C70(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5280(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F8C70
+
+// [0x005F9270] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F9270 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5140(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F9270(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5140(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F9270
+
+// [0x005F9550] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F9550 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5190(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F9550(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5190(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F9550
+
+// [0x005F9CA0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F9CA0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F57F0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F9CA0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F57F0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F9CA0
+
+// [0x005F9F30] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005F9F30 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5860(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005F9F30(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5860(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005F9F30
+
+// [0x005FA090] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005FA090 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F58D0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005FA090(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F58D0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005FA090
+
+// [0x005FA460] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_005FA460 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005F5940(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005FA460(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005F5940(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005FA460
+
+// [0x00603940] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00603940 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00602F00(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00603940(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00602F00(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00603940
+
+// [0x00603E30] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00603E30 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00602F20(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00603E30(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00602F20(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00603E30
+
+// [0x00609A70] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_00609A70 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00609730(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00609A70(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00609730(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00609A70
+
+// [0x00627AA0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00627AA0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00627530(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00627AA0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00627530(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00627AA0
+
+// [0x00627F90] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00627F90 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006275A0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00627F90(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006275A0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00627F90
+
+// [0x00628480] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00628480 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00627610(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00628480(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00627610(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00628480
+
+// [0x00628970] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00628970 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00627680(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00628970(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00627680(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00628970
+
+// [0x00631100] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00631100 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630580(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00631100(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630580(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00631100
+
+// [0x006315F0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_006315F0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006305A0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006315F0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006305A0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006315F0
+
+// [0x00631AE0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00631AE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006305C0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00631AE0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006305C0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00631AE0
+
+// [0x00631FD0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_00631FD0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630560(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00631FD0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630560(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00631FD0
+
+// [0x006324C0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_006324C0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006305E0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006324C0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006305E0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006324C0
+
+// [0x00635F60] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_00635F60 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630420(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00635F60(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630420(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00635F60
+
+// [0x00639450] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_00639450 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630540(void* self);
+extern void __thiscall ext_00672150(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00639450(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630540(obj);
+        ext_00672150(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00639450
+
+// [0x0063A040] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_0063A040 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630740(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0063A040(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630740(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0063A040
+
+// [0x0063A590] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_0063A590 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630E60(void* self);
+extern void __thiscall ext_00672150(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0063A590(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630E60(obj);
+        ext_00672150(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0063A590
+
+// [0x0063AA80] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_0 (71 bytes)
+namespace lift_0063AA80 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630E80(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0063AA80(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630E80(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0063AA80
+
+// [0x0063B210] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_0 (71 bytes)
+namespace lift_0063B210 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00630E40(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0063B210(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00630E40(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0063B210
+
+// [0x006538E0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_006538E0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0064E220(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006538E0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0064E220(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006538E0
+
+// [0x00653DD0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_00653DD0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0064E250(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00653DD0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0064E250(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00653DD0
+
+// [0x006563B0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_006563B0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00650800(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006563B0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00650800(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006563B0
+
+// [0x006568A0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_0 (71 bytes)
+namespace lift_006568A0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006508C0(void* self);
+extern void __thiscall ext_00672110(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006568A0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006508C0(obj);
+        ext_00672110(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006568A0
+
+// [0x00684120] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_00684120 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0049A9F0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00684120(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0049A9F0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00684120
+
+// [0x00684440] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_00684440 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00682E10(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00684440(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00682E10(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00684440
+
+// [0x00684770] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_00684770 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006829E0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00684770(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006829E0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_00684770
+
+// [0x006852C0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_006852C0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00672400(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006852C0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00672400(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006852C0
+
+// [0x0068DE10] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_0068DE10 {
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0052F600(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0068DE10(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0052F600(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_0068DE10
+
+// [0x006927C0] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_006927C0 {
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00692210(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_006927C0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00692210(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_006927C0

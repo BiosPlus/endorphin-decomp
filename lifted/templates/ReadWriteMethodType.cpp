@@ -5259,3 +5259,3027 @@ extern void __thiscall fn_00470190(void* self, uint32_t* arg1, uint8_t* arg2)
     ext_006A6DD2(exc_buf, 0x009DEC1Cu);
 }
 } // namespace lift_00470190
+
+// [0x0046DF10] ExprParser::ReadWriteMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, float, {public: void __thiscall ImageExporter::setFrameRate(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0046DF10 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, float, {public: void __thiscall ImageExporter::setFrameRate(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, float, {public: void __thiscall ImageExporter::setFrameRate(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0046C2F0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0046DF10(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0046C2F0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0046DF10
+
+// [0x00470240] ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setPosBufferFrameRate(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_00470240 {
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setPosBufferFrameRate(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setPosBufferFrameRate(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0046FEA0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00470240(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0046FEA0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00470240
+
+// [0x00470AF0] ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_00470AF0 {
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0046FC10(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00470AF0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0046FC10(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00470AF0
+
+// [0x004B1F20] ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMin(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_004B1F20 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMin(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMin(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004B10A0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004B1F20(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004B10A0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004B1F20
+
+// [0x004B2020] ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMax(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_004B2020 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMax(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMax(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004B10D0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004B2020(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004B10D0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004B2020
+
+// [0x004B2370] ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_004B2370 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004B1100(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004B2370(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004B1100(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004B2370
+
+// [0x004B2710] ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMax(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_004B2710 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMax(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMax(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004B1130(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004B2710(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004B1130(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004B2710
+
+// [0x004F63B0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, &public: void __thiscall MatrixWithProperties::setAlpha(float)>::vfunc_41 (71 bytes)
+namespace lift_004F63B0 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, &public: void __thiscall MatrixWithProperties::setAlpha(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, &public: void __thiscall MatrixWithProperties::setAlpha(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F5170(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F63B0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F5170(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F63B0
+
+// [0x004F6480] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, float, &public: void __thiscall MatrixWithProperties::setBeta(float)>::vfunc_41 (71 bytes)
+namespace lift_004F6480 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, float, &public: void __thiscall MatrixWithProperties::setBeta(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, float, &public: void __thiscall MatrixWithProperties::setBeta(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F51F0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F6480(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F51F0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F6480
+
+// [0x004F6550] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, float, &public: void __thiscall MatrixWithProperties::setGamma(float)>::vfunc_41 (71 bytes)
+namespace lift_004F6550 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, float, &public: void __thiscall MatrixWithProperties::setGamma(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, float, &public: void __thiscall MatrixWithProperties::setGamma(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F5270(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F6550(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F5270(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F6550
+
+// [0x004F6CF0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, float, &public: void __thiscall MatrixWithProperties::setZ(float)>::vfunc_41 (71 bytes)
+namespace lift_004F6CF0 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, float, &public: void __thiscall MatrixWithProperties::setZ(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, float, &public: void __thiscall MatrixWithProperties::setZ(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F4E20(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F6CF0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F4E20(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F6CF0
+
+// [0x004F7250] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, &public: void __thiscall MatrixWithProperties::setMagnitude(float)>::vfunc_41 (71 bytes)
+namespace lift_004F7250 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, &public: void __thiscall MatrixWithProperties::setMagnitude(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, float, &public: void __thiscall MatrixWithProperties::setMagnitude(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F71B0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F7250(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F71B0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F7250
+
+// [0x004F75A0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, float, &public: void __thiscall MatrixWithProperties::setPhi(float)>::vfunc_41 (71 bytes)
+namespace lift_004F75A0 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, float, &public: void __thiscall MatrixWithProperties::setPhi(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, float, &public: void __thiscall MatrixWithProperties::setPhi(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F7160(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F75A0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F7160(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F75A0
+
+// [0x004F75F0] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, float, &public: void __thiscall MatrixWithProperties::setTheta(float)>::vfunc_41 (71 bytes)
+namespace lift_004F75F0 {
+// @name ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, float, &public: void __thiscall MatrixWithProperties::setTheta(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, float, &public: void __thiscall MatrixWithProperties::setTheta(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_004F7110(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_004F75F0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_004F7110(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_004F75F0
+
+// [0x00511F90] ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_00511F90 {
+// @name ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setLowerLimit(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00511290(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00511F90(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00511290(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00511F90
+
+// [0x00512060] ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setUpperLimit(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_00512060 {
+// @name ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setUpperLimit(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, float, {public: void __thiscall Chromosome::Descriptor::setUpperLimit(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005112A0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00512060(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005112A0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00512060
+
+// [0x0051A400] ExprParser::ReadWriteMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, float, &public: void __thiscall NMData::RealChannel::setKeyFrame(float)>::vfunc_41 (71 bytes)
+namespace lift_0051A400 {
+// @name ExprParser::ReadWriteMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, float, &public: void __thiscall NMData::RealChannel::setKeyFrame(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, float, &public: void __thiscall NMData::RealChannel::setKeyFrame(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0051A000(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0051A400(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0051A000(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0051A400
+
+// [0x00524DA0] ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, &public: void __thiscall NMData::VariableValue::setInitialValue(float)>::vfunc_41 (71 bytes)
+namespace lift_00524DA0 {
+// @name ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, &public: void __thiscall NMData::VariableValue::setInitialValue(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, &public: void __thiscall NMData::VariableValue::setInitialValue(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00524B50(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00524DA0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00524B50(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00524DA0
+
+// [0x00524DF0] ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, float, &public: void __thiscall NMData::VariableValue::setBestValue(float)>::vfunc_41 (71 bytes)
+namespace lift_00524DF0 {
+// @name ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, float, &public: void __thiscall NMData::VariableValue::setBestValue(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, float, &public: void __thiscall NMData::VariableValue::setBestValue(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00524BC0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00524DF0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00524BC0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00524DF0
+
+// [0x0058C0E0] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058C0E0 {
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerX(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058B140(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058C0E0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058B140(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058C0E0
+
+// [0x0058C1B0] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058C1B0 {
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerY(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058B190(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058C1B0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058B190(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058C1B0
+
+// [0x0058C280] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058C280 {
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058B1E0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058C280(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058B1E0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058C280
+
+// [0x0058C350] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058C350 {
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTX(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058A9A0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058C350(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058A9A0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058C350
+
+// [0x0058C750] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTY(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058C750 {
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTY(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTY(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058A9E0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058C750(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058A9E0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058C750
+
+// [0x0058CAA0] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTZ(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058CAA0 {
+// @name ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTZ(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTZ(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058AA20(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058CAA0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058AA20(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058CAA0
+
+// [0x0058F800] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058F800 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerX(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058F570(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058F800(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058F570(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058F800
+
+// [0x0058F850] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerY(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058F850 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerY(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerY(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058F580(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058F850(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058F580(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058F850
+
+// [0x0058F8A0] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058F8A0 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserEulerZ(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058F590(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058F8A0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058F590(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058F8A0
+
+// [0x0058F8F0] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTX(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058F8F0 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTX(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTX(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058F600(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058F8F0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058F600(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058F8F0
+
+// [0x0058F940] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTY(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058F940 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTY(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTY(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058F610(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058F940(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058F610(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058F940
+
+// [0x0058F990] ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTZ(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0058F990 {
+// @name ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTZ(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, float, {public: void __thiscall TransformNode::setUserTZ(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_0058F620(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0058F990(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_0058F620(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0058F990
+
+// [0x005B2A00] ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, float, &private: void __thiscall Geometry::setParam0(float)>::vfunc_41 (71 bytes)
+namespace lift_005B2A00 {
+// @name ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, float, &private: void __thiscall Geometry::setParam0(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, float, &private: void __thiscall Geometry::setParam0(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005B1BE0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005B2A00(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005B1BE0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005B2A00
+
+// [0x005B2C30] ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, float, &private: void __thiscall Geometry::setParam1(float)>::vfunc_41 (71 bytes)
+namespace lift_005B2C30 {
+// @name ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, float, &private: void __thiscall Geometry::setParam1(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, float, &private: void __thiscall Geometry::setParam1(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005B1CA0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005B2C30(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005B1CA0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005B2C30
+
+// [0x005B2E00] ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, float, &private: void __thiscall Geometry::setParam2(float)>::vfunc_41 (71 bytes)
+namespace lift_005B2E00 {
+// @name ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, float, &private: void __thiscall Geometry::setParam2(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, float, &private: void __thiscall Geometry::setParam2(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005B1D60(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005B2E00(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005B1D60(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005B2E00
+
+// [0x005B8A90] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setMass(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005B8A90 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setMass(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setMass(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005B67C0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005B8A90(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005B67C0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005B8A90
+
+// [0x005B8B60] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setLinearVelocityDamping(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005B8B60 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setLinearVelocityDamping(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setLinearVelocityDamping(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005B7020(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005B8B60(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005B7020(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005B8B60
+
+// [0x005B8C30] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005B8C30 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005B7000(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005B8C30(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005B7000(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005B8C30
+
+// [0x005CED90] ExprParser::ReadWriteMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, float, {public: void __thiscall NMData::InertialBodyData::setDensity(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005CED90 {
+// @name ExprParser::ReadWriteMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, float, {public: void __thiscall NMData::InertialBodyData::setDensity(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, float, {public: void __thiscall NMData::InertialBodyData::setDensity(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00648E10(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005CED90(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00648E10(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005CED90
+
+// [0x005D17B0] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>::vfunc_41 (71 bytes)
+namespace lift_005D17B0 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXScale(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005CF960(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D17B0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005CF960(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D17B0
+
+// [0x005D1800] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYScale(float)>::vfunc_41 (71 bytes)
+namespace lift_005D1800 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYScale(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYScale(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005CFA60(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1800(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005CFA60(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1800
+
+// [0x005D1850] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXOffset(float)>::vfunc_41 (71 bytes)
+namespace lift_005D1850 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXOffset(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setXOffset(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005CF9E0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1850(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005CF9E0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1850
+
+// [0x005D18A0] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYOffset(float)>::vfunc_41 (71 bytes)
+namespace lift_005D18A0 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYOffset(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setYOffset(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005CFAE0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D18A0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005CFAE0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D18A0
+
+// [0x005D1A10] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D1A10 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setCentreOfInterest(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D0110(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1A10(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D0110(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1A10
+
+// [0x005D1A60] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setSqueezeRatio(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D1A60 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setSqueezeRatio(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setSqueezeRatio(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D01A0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1A60(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D01A0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1A60
+
+// [0x005D1AB0] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setOverscanRatio(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D1AB0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setOverscanRatio(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setOverscanRatio(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D0240(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1AB0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D0240(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1AB0
+
+// [0x005D1BC0] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D1BC0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFieldOfView(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D1460(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1BC0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D1460(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1BC0
+
+// [0x005D1C90] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFocalLength(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D1C90 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFocalLength(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFocalLength(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D1430(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D1C90(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D1430(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D1C90
+
+// [0x005D40A0] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D40A0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureX(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D1020(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D40A0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D1020(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D40A0
+
+// [0x005D45F0] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureY(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D45F0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureY(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setApertureY(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D10C0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D45F0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D10C0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D45F0
+
+// [0x005D5360] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFrontCutPlane(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D5360 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFrontCutPlane(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFrontCutPlane(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D1160(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D5360(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D1160(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D5360
+
+// [0x005D5640] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setBackCutPlane(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005D5640 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setBackCutPlane(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setBackCutPlane(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D1200(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005D5640(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D1200(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005D5640
+
+// [0x005DB580] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFocalLength(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005DB580 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFocalLength(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFocalLength(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D9E00(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005DB580(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D9E00(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005DB580
+
+// [0x005DB5D0] ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setPictureRatio(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005DB5D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setPictureRatio(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setPictureRatio(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005D9EA0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005DB5D0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005D9EA0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005DB5D0
+
+// [0x005DC600] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)>::vfunc_41 (71 bytes)
+namespace lift_005DC600 {
+// @name ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005DC300(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005DC600(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005DC300(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005DC600
+
+// [0x005E3970] ExprParser::ReadWriteMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, float, {private: void __thiscall NMData::HingeData::setUserCurrentAngle(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3970 {
+// @name ExprParser::ReadWriteMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, float, {private: void __thiscall NMData::HingeData::setUserCurrentAngle(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, float, {private: void __thiscall NMData::HingeData::setUserCurrentAngle(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E25E0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3970(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E25E0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3970
+
+// [0x005E3A40] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentTwist(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3A40 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentTwist(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentTwist(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2650(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3A40(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2650(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3A40
+
+// [0x005E3B10] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentSwing1(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3B10 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentSwing1(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentSwing1(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E26C0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3B10(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E26C0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3B10
+
+// [0x005E3BE0] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentSwing2(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3BE0 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentSwing2(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setUserCurrentSwing2(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2730(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3BE0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2730(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3BE0
+
+// [0x005E3DC0] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitTwistSizeFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3DC0 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitTwistSizeFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitTwistSizeFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2790(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3DC0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2790(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3DC0
+
+// [0x005E3E90] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitSwing1SizeFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3E90 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitSwing1SizeFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitSwing1SizeFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E27E0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3E90(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E27E0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3E90
+
+// [0x005E3F60] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitSwing2SizeFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E3F60 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitSwing2SizeFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitSwing2SizeFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2830(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E3F60(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2830(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E3F60
+
+// [0x005E4030] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitRadiusFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E4030 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitRadiusFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setHardLimitRadiusFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2880(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E4030(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2880(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E4030
+
+// [0x005E4100] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitTwistSizeFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E4100 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitTwistSizeFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitTwistSizeFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E28D0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E4100(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E28D0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E4100
+
+// [0x005E41D0] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing1SizeFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E41D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing1SizeFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing1SizeFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2920(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E41D0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2920(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E41D0
+
+// [0x005E42A0] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing2SizeFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E42A0 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing2SizeFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing2SizeFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2970(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E42A0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2970(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E42A0
+
+// [0x005E4370] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitRadiusFromValuePtr(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E4370 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitRadiusFromValuePtr(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitRadiusFromValuePtr(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E29C0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E4370(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E29C0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E4370
+
+// [0x005E4440] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentTwist(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E4440 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentTwist(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentTwist(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2200(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E4440(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2200(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E4440
+
+// [0x005E4510] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentSwing1(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E4510 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentSwing1(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentSwing1(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2240(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E4510(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2240(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E4510
+
+// [0x005E45E0] ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentSwing2(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005E45E0 {
+// @name ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentSwing2(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setCurrentSwing2(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005E2280(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005E45E0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005E2280(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005E45E0
+
+// [0x005F5D10] ExprParser::ReadWriteMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, float, {public: void __thiscall HelperGraphic::setFSMAlpha(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005F5D10 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, float, {public: void __thiscall HelperGraphic::setFSMAlpha(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, float, {public: void __thiscall HelperGraphic::setFSMAlpha(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005F5110(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005F5D10(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005F5110(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005F5D10
+
+// [0x005F5FA0] ExprParser::ReadWriteMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, float, {public: void __thiscall HelperGraphic::setFSMScale(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_005F5FA0 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, float, {public: void __thiscall HelperGraphic::setFSMScale(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, float, {public: void __thiscall HelperGraphic::setFSMScale(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_005F5BC0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_005F5FA0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_005F5BC0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_005F5FA0
+
+// [0x00605A20] ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, float, &public: void __thiscall Effector::setRawDesiredDisplacement(float)>::vfunc_41 (71 bytes)
+namespace lift_00605A20 {
+// @name ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, float, &public: void __thiscall Effector::setRawDesiredDisplacement(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, float, &public: void __thiscall Effector::setRawDesiredDisplacement(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00603090(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00605A20(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00603090(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00605A20
+
+// [0x00605A70] ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, float, &public: void __thiscall Effector::setScaledDesiredDisplacement(float)>::vfunc_41 (71 bytes)
+namespace lift_00605A70 {
+// @name ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, float, &public: void __thiscall Effector::setScaledDesiredDisplacement(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, float, &public: void __thiscall Effector::setScaledDesiredDisplacement(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00603130(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00605A70(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00603130(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00605A70
+
+// [0x00617060] ExprParser::ReadWriteMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, float, &public: void __thiscall NMData::JointLimit::setUserValue(float)>::vfunc_41 (71 bytes)
+namespace lift_00617060 {
+// @name ExprParser::ReadWriteMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, float, &public: void __thiscall NMData::JointLimit::setUserValue(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, float, &public: void __thiscall NMData::JointLimit::setUserValue(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00610B40(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00617060(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00610B40(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00617060
+
+// [0x006178D0] ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, float, &public: void __thiscall NMData::HingeLimit::setUserUpperLimit(float)>::vfunc_41 (71 bytes)
+namespace lift_006178D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, float, &public: void __thiscall NMData::HingeLimit::setUserUpperLimit(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, float, &public: void __thiscall NMData::HingeLimit::setUserUpperLimit(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00612230(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_006178D0(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00612230(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_006178D0
+
+// [0x00617B50] ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, float, &public: void __thiscall NMData::HingeLimit::setUserLowerLimit(float)>::vfunc_41 (71 bytes)
+namespace lift_00617B50 {
+// @name ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, float, &public: void __thiscall NMData::HingeLimit::setUserLowerLimit(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, float, &public: void __thiscall NMData::HingeLimit::setUserLowerLimit(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_006121F0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00617B50(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_006121F0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00617B50
+
+// [0x00618E20] ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserTwistSize(float)>::vfunc_41 (71 bytes)
+namespace lift_00618E20 {
+// @name ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserTwistSize(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserTwistSize(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_006124D0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00618E20(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_006124D0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00618E20
+
+// [0x00619250] ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserSwing1Size(float)>::vfunc_41 (71 bytes)
+namespace lift_00619250 {
+// @name ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserSwing1Size(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserSwing1Size(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00612510(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00619250(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00612510(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00619250
+
+// [0x00619560] ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserSwing2Size(float)>::vfunc_41 (71 bytes)
+namespace lift_00619560 {
+// @name ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserSwing2Size(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserSwing2Size(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00612550(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00619560(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00612550(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00619560
+
+// [0x00619990] ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserRadiusSize(float)>::vfunc_41 (71 bytes)
+namespace lift_00619990 {
+// @name ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserRadiusSize(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, float, &public: void __thiscall NMData::TwistAndSwingLimit::setUserRadiusSize(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_006124B0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00619990(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_006124B0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00619990
+
+// [0x0061B630] ExprParser::ReadWriteMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, float, {private: void __thiscall NMData::HingeConstraint::setUserInitialTwist(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0061B630 {
+// @name ExprParser::ReadWriteMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, float, {private: void __thiscall NMData::HingeConstraint::setUserInitialTwist(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, float, {private: void __thiscall NMData::HingeConstraint::setUserInitialTwist(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_006118A0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0061B630(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_006118A0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0061B630
+
+// [0x0061BE30] ExprParser::ReadWriteMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, float, {private: void __thiscall NMData::SecondaryTwistAndSwingConstraint::setUserInitialSwing1(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0061BE30 {
+// @name ExprParser::ReadWriteMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, float, {private: void __thiscall NMData::SecondaryTwistAndSwingConstraint::setUserInitialSwing1(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, float, {private: void __thiscall NMData::SecondaryTwistAndSwingConstraint::setUserInitialSwing1(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00611910(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0061BE30(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00611910(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0061BE30
+
+// [0x0061C390] ExprParser::ReadWriteMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, float, {private: void __thiscall NMData::SecondaryTwistAndSwingConstraint::setUserInitialSwing2(float), 0}>::vfunc_41 (71 bytes)
+namespace lift_0061C390 {
+// @name ExprParser::ReadWriteMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, float, {private: void __thiscall NMData::SecondaryTwistAndSwingConstraint::setUserInitialSwing2(float), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, float, {private: void __thiscall NMData::SecondaryTwistAndSwingConstraint::setUserInitialSwing2(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00611980(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_0061C390(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00611980(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_0061C390
+
+// [0x00633090] ExprParser::ReadWriteMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, float, &public: void __thiscall EffectorSkeletal::setTimeDelay(float)>::vfunc_41 (71 bytes)
+namespace lift_00633090 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, float, &public: void __thiscall EffectorSkeletal::setTimeDelay(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, float, &public: void __thiscall EffectorSkeletal::setTimeDelay(float)>
+// @summary Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41).
+namespace lift_004DE890 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, getStrength, float, setStrength>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Sets strength on an AnimationEventData instance from a parsed expression value, or throws if null.
+// @field ExprParser::ValuePtr +0x00 void* ptr
+// @field ExprParser::ExprArg +0x04 void* typeObj
+
+
+extern void __fastcall ext_00630CB0(void* self, int edx_unused, float value);
+extern void __fastcall ext_0046C3C0(void* self, int edx_unused);
+extern void __cdecl ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+extern void __stdcall fn_00633090(void** targetPtr, void* valueArg) {
+    void* target = *targetPtr;
+    if (target != nullptr) {
+        void* typeObj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(valueArg) + 4);
+        void** vtable = *reinterpret_cast<void***>(typeObj);
+        using EvalFn = float (__thiscall*)(void*, void*);
+        auto evalFn = reinterpret_cast<EvalFn>(vtable[1]);
+        float val = evalFn(typeObj, valueArg);
+        ext_00630CB0(target, 0, val);
+        return;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc, 0);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+}
+} // namespace lift_004DE890
+} // namespace lift_00633090

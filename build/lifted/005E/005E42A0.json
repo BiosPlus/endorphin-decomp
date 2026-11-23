@@ -1,0 +1,28 @@
+{
+  "va": "0x005E42A0",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing2SizeFromValuePtr(float), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing2SizeFromValuePtr(float), 0}\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, float, {private: void __thiscall NMData::SkeletalJointData::setSoftLimitSwing2SizeFromValuePtr(float), 0}\u003e",
+  "signature": "extern void __stdcall fn_005E42A0(void** targetPtr, void* valueArg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "typeObj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:51:23Z"
+}

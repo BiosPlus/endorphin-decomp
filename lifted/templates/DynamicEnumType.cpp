@@ -165,8 +165,10 @@ uint32_t __stdcall fn_0067A770(uint32_t arg0, uint32_t arg1) {
     return ext_006720A0(arg0, arg1);
 }
 #include <cstdint>
+#include <cstdlib>
+#include <string>
 
-// [0x004C0320] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_13 (13 bytes)
+#include <string>
 // @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_13
 // @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
 // @summary Auto-lifted identical-shape clone of 0x005C3380 (ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13).
@@ -1254,3 +1256,102 @@ uint32_t __thiscall fn_004D5060(uint32_t self, uint32_t out_ptr, uint32_t arg_pt
     return 0;
 }
 } // namespace lift_004D5060
+
+// [0x004AB5C0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_0 (71 bytes)
+namespace lift_004AB5C0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_0
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004A9CE0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004AB5C0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004A9CE0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004AB5C0
+
+// [0x004B9AC0] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_0 (71 bytes)
+namespace lift_004B9AC0 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_0
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_004B72D0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004B9AC0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_004B72D0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004B9AC0
+
+// [0x005C8C10] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_0 (71 bytes)
+namespace lift_005C8C10 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_0
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_005C3FB0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_005C8C10(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_005C3FB0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_005C8C10

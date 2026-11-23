@@ -1,0 +1,14 @@
+{
+  "va": "0x005C8F10",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e",
+  "signature": "extern void* __thiscall fn_005C8F10(void* self, void* out_val, void** obj_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T13:51:23Z"
+}
