@@ -1,0 +1,21 @@
+{
+  "va": "0x0063E960",
+  "size": 9,
+  "orig_symbol": "sub_0063E960",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "sub_0063E960_ctor",
+  "signature": "uint32_t __thiscall sub_0063E960(uint32_t this_ptr)",
+  "summary": "Initializes object vtable pointer at +0x00 to 0x0097CC34 and returns this.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:40:21Z"
+}
