@@ -183,3 +183,16 @@ uint32_t __thiscall sub_006658A0(void* self) {
     return *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x18) != 0 ? 1u : 0u;
 }
 } // namespace lift_006658A0
+
+// [0x006658B0]
+namespace lift_006658B0 {
+template <typename T>
+T mem_read(uint32_t addr);
+
+// @name sub_006658B0_hasField24
+// @summary Returns true if the 32-bit field at offset +0x24 is non-zero.
+// @field unknown +0x24 uint32_t field_0x24
+bool __fastcall sub_006658B0(uint32_t ecx, uint32_t /*edx*/) {
+    return mem_read<uint32_t>(ecx + 0x24) != 0;
+}
+} // namespace lift_006658B0

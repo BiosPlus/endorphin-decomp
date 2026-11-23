@@ -1,0 +1,21 @@
+{
+  "va": "0x006658B0",
+  "size": 9,
+  "orig_symbol": "sub_006658B0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "sub_006658B0_hasField24",
+  "signature": "bool __fastcall sub_006658B0(uint32_t ecx, uint32_t /*edx*/)",
+  "summary": "Returns true if the 32-bit field at offset +0x24 is non-zero.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:26:22Z"
+}

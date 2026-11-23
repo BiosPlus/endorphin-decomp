@@ -21715,6 +21715,12 @@
     "summary": "Returns 1 if the 32-bit field at offset 0x18 is non-zero, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006658B0": {
+    "name": "sub_006658B0_hasField24",
+    "signature": "bool __fastcall sub_006658B0(uint32_t ecx, uint32_t /*edx*/)",
+    "summary": "Returns true if the 32-bit field at offset +0x24 is non-zero.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",
