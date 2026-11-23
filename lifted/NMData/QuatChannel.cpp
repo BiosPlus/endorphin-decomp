@@ -1,8 +1,11 @@
 // Lifted C++ translation unit: lifted/NMData/QuatChannel.cpp
 #include "lift_compat.h"
+// External helper sub_0051AE40 (ext_0051AE40). Cdecl-style call with four
+// stack words: arg1, this (ecx), arg1 again, and 0.
+uint32_t __cdecl ext_0051AE40(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
 
-// [0x0051C7C0] NMData::QuatChannel::vfunc_16 (32 bytes)
-// @name NMData::QuatChannel::vfunc_16
+// stack words: arg1, this (ecx), arg1 again, and 0.
+uint32_t __cdecl ext_0051AE40(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
 // @class NMData::QuatChannel
 // @summary Auto-lifted identical-shape clone of 0x0051BEF0 (NMData::RealChannel::vfunc_16).
 // @field NMData::QuatChannel +0x30 int32_t begin
@@ -44,4 +47,17 @@ float fn_0051ADC0(void* self) {
     // Read the leading float of the last keyframe.
     const int32_t last = end - 20;
     return *reinterpret_cast<const float*>(static_cast<uintptr_t>(static_cast<uint32_t>(last)));
+}
+
+// [0x0051D8C0]
+// @name NMData::QuatChannel::vfunc_8
+// @class NMData::QuatChannel
+// @summary Calls ext_0051AE40 with this, arg1 and a zero word, then returns arg1 unchanged.
+//
+// No fields of NMData::QuatChannel are accessed directly; the function only
+// passes `this` through to the helper.
+uint32_t __thiscall fn_0051D8C0(uint32_t self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;
+    ext_0051AE40(arg1, self, arg1, 0);
+    return arg1;
 }

@@ -1,0 +1,14 @@
+{
+  "va": "0x0051D8C0",
+  "size": 31,
+  "orig_symbol": "NMData::QuatChannel::vfunc_8",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_8",
+  "class": "NMData::QuatChannel",
+  "signature": "uint32_t __thiscall fn_0051D8C0(uint32_t self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls ext_0051AE40 with this, arg1 and a zero word, then returns arg1 unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:32:34Z"
+}
