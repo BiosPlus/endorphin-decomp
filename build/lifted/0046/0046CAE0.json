@@ -1,0 +1,22 @@
+{
+  "va": "0x0046CAE0",
+  "size": 77,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",
+  "signature": "float fn_0046CAE0(void* self)",
+  "summary": "Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T14:02:48Z"
+}
