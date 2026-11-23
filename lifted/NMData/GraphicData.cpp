@@ -52,3 +52,30 @@ void* fn_00620240(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_00587C80(mem, owner);
 }
+
+// [0x0061FE60]
+namespace lift_0061FE60 {
+// @name NMData::GraphicData::vfunc_4_off_C
+// @class NMData::GraphicData
+// @summary Updates subobject at +0x148 and notifies listener at +0x4 via vtable +0x34 if present.
+// @field NMData::GraphicData +0x04 void* field_0x04
+// @field NMData::GraphicData +0x148 void* field_0x148
+
+
+extern void __thiscall ext_005B1AB0(void* self, uint32_t arg0);
+extern uint32_t __thiscall ext_005B11F0(void* self);
+
+void __thiscall fn_0061FE60(void* self, uint32_t arg0) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* subobj = base + 0x148;
+    ext_005B1AB0(subobj, arg0);
+
+    void* listener = *reinterpret_cast<void**>(base + 0x04);
+    if (listener != nullptr) {
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(listener);
+        uint32_t val = ext_005B11F0(subobj);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtable[0x34 / 4]);
+        fn(listener, val);
+    }
+}
+} // namespace lift_0061FE60

@@ -1,0 +1,28 @@
+{
+  "va": "0x0061FE60",
+  "size": 56,
+  "orig_symbol": "NMData::GraphicData::vfunc_4_off_C",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_4_off_C",
+  "class": "NMData::GraphicData",
+  "signature": "void __thiscall fn_0061FE60(void* self, uint32_t arg0)",
+  "summary": "Updates subobject at +0x148 and notifies listener at +0x4 via vtable +0x34 if present.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x148",
+      "type": "void*",
+      "name": "field_0x148"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:58:23Z"
+}
