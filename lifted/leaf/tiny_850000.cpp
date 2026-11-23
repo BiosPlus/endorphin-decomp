@@ -29,3 +29,17 @@ extern "C" void __cdecl fn_0085E210(void) {
 extern "C" void __cdecl fn_0085F730(void) {
     return;
 }
+
+// [0x00852427]
+namespace lift_00852427 {
+template <typename T>
+T mem_read(uint32_t addr);
+
+// @name thunk_jmp_esi_00852427
+// @summary Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]
+void thunk_jmp_esi_00852427(uint32_t esi) {
+    using Fn = void (*)();
+    Fn target = reinterpret_cast<Fn>(static_cast<uintptr_t>(mem_read<uint32_t>(esi)));
+    target();
+}
+} // namespace lift_00852427
