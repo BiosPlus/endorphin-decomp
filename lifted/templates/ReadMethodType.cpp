@@ -8847,3 +8847,22 @@ int fn_0046EB50(void* self) {
     return ext_006ACFB0() != 0 ? 1 : 0;
 }
 } // namespace lift_0046EB50
+
+// [0x0046F210] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0046F210 {
+// Callee 0x0046C090 (sub_0046C090, 4B): called thiscall with the wrapped pointer as `this`; result tested for non-zero.
+extern uint32_t ext_0046C090(void* self);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_3 (ImageExporter::getImageWidth)
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>
+// @summary Reads the wrapped ImageExporter pointer at +0x00; throws if it is null, otherwise returns 1 if ext_0046C090(wrapped) is non-zero, else 0.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+int fn_0046F210(void* self) {
+    void* inner = *static_cast<void**>(self);
+    if (inner == nullptr) {
+        // Original constructs an MSVC exception object (sub_0046C3C0) and calls _CxxThrowException (thunk 0x006A6DD2).
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>::vfunc_3: null wrapped pointer");
+    }
+    return ext_0046C090(inner) != 0 ? 1 : 0;
+}
+} // namespace lift_0046F210

@@ -1,0 +1,22 @@
+{
+  "va": "0x0046F210",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_3 (ImageExporter::getImageWidth)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e",
+  "signature": "int fn_0046F210(void* self)",
+  "summary": "Reads the wrapped ImageExporter pointer at +0x00; throws if it is null, otherwise returns 1 if ext_0046C090(wrapped) is non-zero, else 0.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:55:40Z"
+}

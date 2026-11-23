@@ -2912,6 +2912,13 @@
     "summary": "Returns the ImageExporter width via the held object pointer; throws a C++ exception if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046F210": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_3 (ImageExporter::getImageWidth)",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e",
+    "signature": "int fn_0046F210(void* self)",
+    "summary": "Reads the wrapped ImageExporter pointer at +0x00; throws if it is null, otherwise returns 1 if ext_0046C090(wrapped) is non-zero, else 0.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046F7F0": {
     "name": "sub_0046F7F0",
     "signature": "extern \"C\" int32_t __cdecl fn_0046F7F0(void)",
