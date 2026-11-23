@@ -1,0 +1,28 @@
+{
+  "va": "0x00682C70",
+  "size": 110,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_14",
+  "src_path": "src/NMData/ValuePtrData.cpp",
+  "lifted_path": "lifted/NMData/ValuePtrData.cpp",
+  "name": "NMData::ValuePtrData::vfunc_14",
+  "class": "NMData::ValuePtrData",
+  "signature": "extern \"C\" void* __thiscall fn_00682C70(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Queries sub-object at +0x4C, dynamic-casts result, and initializes arg1 via ext_00661650 or fallback ext_0046F7D0.",
+  "fields": [
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x48",
+      "type": "uint8_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "NMData::ValuePtrData",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:32:08Z"
+}

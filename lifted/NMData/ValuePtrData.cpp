@@ -65,3 +65,42 @@ uint32_t fn_00682CE0(void* self, uint32_t a1, uint32_t a2, uint32_t* a3) {
 
     return a1;
 }
+
+// [0x00682C70]
+namespace lift_00682C70 {
+extern void __cdecl ext_0046F7D0(void* arg1);
+extern void __thiscall ext_00661650(void* self, void* arg1);
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vf_delta, void* src_type, void* target_type, int32_t is_reference);
+
+// @name NMData::ValuePtrData::vfunc_14
+// @class NMData::ValuePtrData
+// @summary Queries sub-object at +0x4C, dynamic-casts result, and initializes arg1 via ext_00661650 or fallback ext_0046F7D0.
+// @field NMData::ValuePtrData +0x48 uint8_t field_0x48
+// @field NMData::ValuePtrData +0x4C void* field_0x4c
+
+extern void* __thiscall fn_00682C70(void* self, void* arg1, uint32_t arg2) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (arg2 == 0x67 || arg2 == 0x66) {
+        void* obj = *reinterpret_cast<void**>(base + 0x4C);
+        if (obj != nullptr) {
+            void** vtable = *reinterpret_cast<void***>(obj);
+            using VFunc60 = void* (__thiscall*)(void*, void*);
+            VFunc60 vfunc = reinterpret_cast<VFunc60>(vtable[0x60 / sizeof(void*)]);
+            void* res = vfunc(obj, base + 0x48);
+            void* casted = ext_006A6E9E(
+                res,
+                0,
+                reinterpret_cast<void*>(0x00A2E2F8),
+                reinterpret_cast<void*>(0x00A2E2D8),
+                0
+            );
+            if (casted != nullptr) {
+                ext_00661650(arg1, casted);
+                return arg1;
+            }
+        }
+    }
+    ext_0046F7D0(arg1);
+    return arg1;
+}
+} // namespace lift_00682C70
