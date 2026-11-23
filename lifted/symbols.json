@@ -10887,6 +10887,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064F2F0": {
+    "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitSwingAngle2\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle2(float), 0}\u003e",
+    "signature": "void fn_0064F2F0(ResultPair* out, void** srcPtr, uint8_t* self)",
+    "summary": "Reads a float from the joint pointer argument via the inner object's vtable, forwards it to SkeletalJoint::setSoftLimitSwingAngle2 (sub_0064DD00), then writes a two-dword result pair (value pointer and target) to the hidden output.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0064F370": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialStiffness(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialStiffness(float), 0}\u003e",

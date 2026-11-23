@@ -4160,3 +4160,56 @@ ValueResult fn_0064F170(void* arg2, void* ctx) {
     return out;
 }
 } // namespace lift_0064F170
+
+// [0x0064F2F0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle2(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_0064F2F0 {
+// sub_0064DD00: thiscall, self in ecx, one float argument.
+extern void ext_0064DD00(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, setSoftLimitSwingAngle2>::vfunc_48
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle2(float), 0}>
+// @summary Reads a float from the joint pointer argument via the inner object's vtable, forwards it to SkeletalJoint::setSoftLimitSwingAngle2 (sub_0064DD00), then writes a two-dword result pair (value pointer and target) to the hidden output.
+// @field ValuePtrType +0x04 void* target
+//
+// Calling convention (from disassembly): stdcall-style, 3 stack args, `ret 0xC`:
+//   out    = [esp+4]  hidden result pointer (2 dwords)
+//   srcPtr = [esp+8]  pointer to a joint pointer; *srcPtr is the SkeletalJoint* (edi)
+//   self   = [esp+12] ValuePtrType instance (esi)
+
+namespace {
+
+struct ResultPair {
+    uint32_t first;
+    uint32_t second;
+};
+
+// Vtable slot 1 (+0x04): returns float. Args as pushed: self, esi, joint, esi, 0.0f.
+using SlotOneFn = float (*)(void* self, void* a, void* joint, void* b, float c);
+// Vtable slot 28 (+0x70): returns pointer to a dword pair.
+using SlotTwentyEightFn = void* (*)(void* self, void* a, void** outPtr);
+
+} // namespace
+
+void fn_0064F2F0(ResultPair* out, void** srcPtr, uint8_t* self) {
+    void* joint = *srcPtr;
+    void* target = *reinterpret_cast<void**>(self + 0x04);
+
+    // Read a float through the target's vtable slot 1, then apply it to the joint.
+    float value = 0.0f;
+    if (target != nullptr) {
+        void** vt = *reinterpret_cast<void***>(target);
+        value = reinterpret_cast<SlotOneFn>(vt[1])(target, self, joint, self, 0.0f);
+    }
+    ext_0064DD00(joint, value);
+
+    void* local = nullptr;
+    if (target != nullptr) {
+        void** vt = *reinterpret_cast<void***>(target);
+        void* p = reinterpret_cast<SlotTwentyEightFn>(vt[0x70 / sizeof(void*)])(target, self, &local);
+        out->first = p ? *reinterpret_cast<uint32_t*>(p) : 0u;
+    } else {
+        out->first = 0u;
+    }
+    out->second = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(target));
+}
+} // namespace lift_0064F2F0

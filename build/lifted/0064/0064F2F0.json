@@ -1,0 +1,22 @@
+{
+  "va": "0x0064F2F0",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle2(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, setSoftLimitSwingAngle2\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle2(float), 0}\u003e",
+  "signature": "void fn_0064F2F0(ResultPair* out, void** srcPtr, uint8_t* self)",
+  "summary": "Reads a float from the joint pointer argument via the inner object's vtable, forwards it to SkeletalJoint::setSoftLimitSwingAngle2 (sub_0064DD00), then writes a two-dword result pair (value pointer and target) to the hidden output.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:11:02Z"
+}
