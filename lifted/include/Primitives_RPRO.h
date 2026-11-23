@@ -10,7 +10,8 @@
 // Recovered field layout for Primitives::RPRO:
 namespace lifted_layout {
 struct Primitives_RPRO_Fields {
-    // +0x3C  float                    field_0x3c  (evidence: 0x0053C150)
+    // +0x4   uint8_t                  field_0x4  (evidence: 0x0053C0C0)
+    // +0x3C  float                    field_0x3c  (evidence: 0x0053C0C0, 0x0053C150)
     // +0x40  int32_t                  field_0x40  (evidence: 0x0053C150)
     // +0x44  float                    field_0x44  (evidence: 0x0053C150) // CONFLICT: multiple definitions at +0x44
     // +0x44  float[16] matrix (passed to glMultMatrixf)  (evidence: 0x0053C1A0) // CONFLICT: multiple definitions at +0x44

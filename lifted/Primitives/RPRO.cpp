@@ -79,3 +79,39 @@ void fn_0053C150(void* self) {
     lift_field<float>(self, 0x80)   = 0.0f;
     lift_field<int32_t>(self, 0x40) = 0;
 }
+
+// [0x0053C0C0] Primitives::RPRO::vfunc_13 (133 bytes)
+namespace lift_0053C0C0 {
+// Callees (declared with the argument list they receive; thiscall receiver passed explicitly):
+//   ext_00538550: sub_00538550 (24B), called on this+0xEC and this+0x108 with (float, int32, int32)
+//   ext_00538D10: sub_00538D10 (41B), called on this+0xC4 with (float, float, float, int32)
+extern void ext_00538550(void* self, float v, int32_t a, int32_t b);
+extern void ext_00538D10(void* self, float v, float b, float a, int32_t c);
+
+// Constants: mem_0092A280 = 0.01 (double multiplier), mem_0093F790 = 0.02 (double multiplier)
+static constexpr double kScale01 = 0.009999999776482582;
+static constexpr double kScale02 = 0.019999999552965164;
+
+// @name Primitives::RPRO::vfunc_13
+// @class Primitives::RPRO
+// @summary Sets the enabled flag and stores a float value, then fans it out to two sub-objects and a scaled parameter set.
+// @field Primitives::RPRO +0x04 uint8_t field_0x4
+// @field Primitives::RPRO +0x3C float field_0x3c
+void fn_0053C0C0(void* self, const float* arg) {
+    lift_field<uint8_t>(self, 0x04) = 1;
+
+    const float v = *arg;
+    lift_field<float>(self, 0x3C) = v;
+
+    // Sub-object at this+0xEC receives (v, 0, 0).
+    ext_00538550((static_cast<uint8_t*>(self) + 0xEC), v, 0, 0);
+
+    // Sub-object at this+0x108 receives (v, 0, 0).
+    ext_00538550((static_cast<uint8_t*>(self) + 0x108), v, 0, 0);
+
+    // Sub-object at this+0xC4 receives (v, v*0.02, v*0.01, 10).
+    const float a = static_cast<float>(v * kScale01);
+    const float b = static_cast<float>(v * kScale02);
+    ext_00538D10((static_cast<uint8_t*>(self) + 0xC4), v, b, a, 10);
+}
+} // namespace lift_0053C0C0

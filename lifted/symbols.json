@@ -8092,6 +8092,13 @@
     "summary": "Clamps the half-angle to [0, pi], then within a GL push/pop draws a 90-degree Y rotation and calls the limit helper with +/-2*angle.",
     "lifted_path": "lifted/Primitives/TwistLimit.cpp"
   },
+  "0x0053C0C0": {
+    "name": "Primitives::RPRO::vfunc_13",
+    "class": "Primitives::RPRO",
+    "signature": "void fn_0053C0C0(void* self, const float* arg)",
+    "summary": "Sets the enabled flag and stores a float value, then fans it out to two sub-objects and a scaled parameter set.",
+    "lifted_path": "lifted/Primitives/RPRO.cpp"
+  },
   "0x0053C150": {
     "name": "Primitives::RPRO::vfunc_29",
     "class": "Primitives::RPRO",
