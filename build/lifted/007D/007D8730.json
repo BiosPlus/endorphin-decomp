@@ -1,0 +1,21 @@
+{
+  "va": "0x007D8730",
+  "size": 11,
+  "orig_symbol": "sub_007D8730",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "get_field_0x168",
+  "signature": "uint32_t sub_007D8730(uint32_t obj)",
+  "summary": "Returns the 32-bit value at offset 0x168 of the given object.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:44:44Z"
+}

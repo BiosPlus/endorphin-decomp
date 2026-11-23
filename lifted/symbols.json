@@ -35334,6 +35334,18 @@
     "summary": "Returns its first stack argument unchanged (mov eax, [esp+4]; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8730": {
+    "name": "get_field_0x168",
+    "signature": "uint32_t sub_007D8730(uint32_t obj)",
+    "summary": "Returns the 32-bit value at offset 0x168 of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D8740": {
+    "name": "getField0x178",
+    "signature": "extern \"C\" uint32_t __cdecl sub_007D8740(uintptr_t obj)",
+    "summary": "Reads and returns the 32-bit value at offset 0x178 from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8750": {
     "name": "getField0x5CFromArg1",
     "signature": "uint32_t sub_007D8750(uint32_t /*unused*/, uintptr_t obj)",
@@ -35370,6 +35382,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007DE020(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007DD020 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x007DFB50": {
+    "name": "zeroU32Ptr",
+    "signature": "uint32_t* sub_007DFB50(uint32_t* ptr)",
+    "summary": "Zero-initializes a 32-bit value at the given pointer and returns the pointer",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007F2AC0": {
     "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",

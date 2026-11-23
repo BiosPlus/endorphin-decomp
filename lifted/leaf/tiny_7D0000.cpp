@@ -160,3 +160,37 @@ uint32_t sub_007D47A0(uint32_t obj) {
     return a - b;
 }
 } // namespace lift_007D47A0
+
+// [0x007DFB50]
+namespace lift_007DFB50 {
+// @name zeroU32Ptr
+// @summary Zero-initializes a 32-bit value at the given pointer and returns the pointer
+uint32_t* sub_007DFB50(uint32_t* ptr) {
+    *ptr = 0;
+    return ptr;
+}
+} // namespace lift_007DFB50
+
+// [0x007D8730]
+namespace lift_007D8730 {
+uint32_t mem_r32(uint32_t addr);
+
+// @name get_field_0x168
+// @summary Returns the 32-bit value at offset 0x168 of the given object.
+// @field unknown +0x168 uint32_t field_0x168
+uint32_t sub_007D8730(uint32_t obj) {
+    return mem_r32(obj + 0x168u);
+}
+} // namespace lift_007D8730
+
+// [0x007D8740]
+namespace lift_007D8740 {
+extern uint32_t mem_read32(uintptr_t addr);
+
+// @name getField0x178
+// @summary Reads and returns the 32-bit value at offset 0x178 from the given object pointer.
+// @field Object +0x178 uint32_t field_0x178
+extern uint32_t __cdecl sub_007D8740(uintptr_t obj) {
+    return mem_read32(obj + 0x178);
+}
+} // namespace lift_007D8740
