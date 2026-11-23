@@ -7952,6 +7952,13 @@
     "summary": "Returns the buffered unsigned int at +0x24 offset by 8.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053BC40": {
+    "name": "Primitives::Frustum::vfunc_28",
+    "class": "Primitives::Frustum",
+    "signature": "void fn_0053BC40(void* self)",
+    "summary": "Samples three floats from the object at +0x20 (indices 2, 1, 0) and draws a cylinder via gluCylinder using them, the slices/stacks at +0x3c/+0x40 and the quadric at +0x44.",
+    "lifted_path": "lifted/Primitives/Frustum.cpp"
+  },
   "0x0053BD10": {
     "name": "Primitives::File::vfunc_29",
     "class": "Primitives::File",

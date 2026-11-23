@@ -1,0 +1,40 @@
+{
+  "va": "0x0053BC40",
+  "size": 82,
+  "orig_symbol": "Primitives::Frustum::vfunc_28",
+  "src_path": "src/Primitives/Frustum.cpp",
+  "lifted_path": "lifted/Primitives/Frustum.cpp",
+  "name": "Primitives::Frustum::vfunc_28",
+  "class": "Primitives::Frustum",
+  "signature": "void fn_0053BC40(void* self)",
+  "summary": "Samples three floats from the object at +0x20 (indices 2, 1, 0) and draws a cylinder via gluCylinder using them, the slices/stacks at +0x3c/+0x40 and the quadric at +0x44.",
+  "fields": [
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Frustum",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:39:08Z"
+}

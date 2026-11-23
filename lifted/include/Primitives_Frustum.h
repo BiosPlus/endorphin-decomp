@@ -11,7 +11,9 @@
 namespace lifted_layout {
 struct Primitives_Frustum_Fields {
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053DB00)
-    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0053DB00)
-    // +0x40  uint32_t                 field_0x40  (evidence: 0x0053DB00)
+    // +0x20  void*                    field_0x20  (evidence: 0x0053BC40)
+    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0053BC40, 0x0053DB00)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x0053BC40, 0x0053DB00)
+    // +0x44  void*                    field_0x44  (evidence: 0x0053BC40)
 };
 } // namespace lifted_layout
