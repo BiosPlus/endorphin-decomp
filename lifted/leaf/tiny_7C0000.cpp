@@ -310,3 +310,16 @@ float sub_007C6110(uint32_t arg0) {
     return *(const float*)(uintptr_t)(arg0 + 0x1cc);
 }
 } // namespace lift_007C6110
+
+// [0x007C6120]
+namespace lift_007C6120 {
+template <typename T>
+T mem_read(uintptr_t addr);
+
+// @name getField_0x1D0
+// @summary Returns the float field at offset 0x1D0 of the given object.
+// @field Object +0x1D0 float field_0x1d0
+float __cdecl sub_007C6120(uintptr_t arg0) {
+    return mem_read<float>(arg0 + 0x1D0u);
+}
+} // namespace lift_007C6120

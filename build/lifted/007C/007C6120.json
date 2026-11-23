@@ -1,0 +1,21 @@
+{
+  "va": "0x007C6120",
+  "size": 11,
+  "orig_symbol": "sub_007C6120",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getField_0x1D0",
+  "signature": "float __cdecl sub_007C6120(uintptr_t arg0)",
+  "summary": "Returns the float field at offset 0x1D0 of the given object.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x1D0",
+      "type": "float",
+      "name": "field_0x1d0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:43:31Z"
+}

@@ -35094,6 +35094,12 @@
     "summary": "Returns the 32-bit float at offset 0x1CC of the given struct pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6120": {
+    "name": "getField_0x1D0",
+    "signature": "float __cdecl sub_007C6120(uintptr_t arg0)",
+    "summary": "Returns the float field at offset 0x1D0 of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6C10": {
     "name": "setFlag0x4At0x0C",
     "signature": "void sub_007C6C10(uint32_t arg0)",
