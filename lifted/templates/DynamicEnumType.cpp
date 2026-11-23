@@ -1224,3 +1224,33 @@ uint32_t __fastcall fn_004D4820(uint32_t self, uint32_t edx_unused, uint32_t out
     return 0;
 }
 } // namespace lift_004D4820
+
+// [0x004D5060]
+namespace lift_004D5060 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_0
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary Reads the tweak name index from RigEventData or throws an exception if null.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern int32_t __thiscall ext_004D3CF0(uint32_t self);
+extern void __thiscall ext_006720C0(uint32_t self, int32_t value);
+extern void __thiscall ext_0046C3C0(uint32_t self);
+extern void __cdecl ext_006A6DD2(uint32_t exceptionObject, uint32_t throwInfo);
+
+uint32_t __thiscall fn_004D5060(uint32_t self, uint32_t out_ptr, uint32_t arg_ptr) {
+    (void)self;
+    uint32_t obj = mem_read32(arg_ptr);
+    if (obj != 0) {
+        int32_t val = ext_004D3CF0(obj);
+        ext_006720C0(out_ptr, val);
+        return out_ptr;
+    }
+
+    uint8_t exc[44]{};
+    uint32_t exc_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(exc));
+    ext_0046C3C0(exc_addr);
+    ext_006A6DD2(exc_addr, 0x009DEC1Cu);
+    return 0;
+}
+} // namespace lift_004D5060
