@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct Class_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x0050EA10)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x004584B0)
     // +0x14  void*                    field_0x14  (evidence: 0x00401970)
 };
 } // namespace lifted_layout

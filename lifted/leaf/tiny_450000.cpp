@@ -197,3 +197,22 @@ void fn_00455BB0(void* self) {
     }
 }
 } // namespace lift_00455BB0
+
+// [0x004584B0]
+namespace lift_004584B0 {
+// @name forwardVirtualSlot3
+// @summary Tail-call virtual method at vtable +0xC on member pointer at +0x10
+// @field Class +0x10 uint32_t field_0x10
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __fastcall sub_004584B0(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t obj = mem_read32(ecx + 0x10);
+    uint32_t vtable = mem_read32(obj);
+    uint32_t fn_addr = mem_read32(vtable + 0xC);
+    using fn_t = uint32_t(__fastcall*)(uint32_t, uint32_t);
+    return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn_addr))(obj, 0);
+}
+} // namespace lift_004584B0
