@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/templates/ReadWriteMethodType.cpp
 #include "lift_compat.h"
 #include <stdexcept>
+#include <cstdint>
 
 // [0x00695620] ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>::vfunc_41 (62 bytes)
 namespace lift_00695620 {
@@ -3605,3 +3606,38 @@ void fn_006930E0(ValuePtrTypeLite* self, void* ctx) {
 }
 } // namespace lift_0046EA50
 } // namespace lift_006930E0
+
+// [0x004A26F0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A26F0 {
+extern void ext_004A2500();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView>::vfunc_41 (FSMEditView::getFontSize -> setFontSize)
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>
+// @summary Reads an int from the source's inner getter (vtable slot 2) and forwards it to the target's setter (sub_004A2500); throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_004A26F0(void* dst, void* src) {
+    // dst +0x00: pointer to the target object whose setter is invoked. Null is an error.
+    void* target = *reinterpret_cast<void**>(dst);
+    if (target == nullptr) {
+        // The original calls sub_0046C3C0 and then throws via _CxxThrowException (type 0x009DEC1C).
+        // No portable equivalent of that exact MSVC exception type exists.
+        throw std::runtime_error("ReadWriteMethodType: null FSMEditView target");
+    }
+
+    // src +0x04: inner accessor object; its vtable slot 2 (+0x08) takes src and returns the int value.
+    void* accessor = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(src) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(accessor);
+    using GetFn = std::int32_t(__thiscall*)(void* self, void* arg);
+    GetFn get = reinterpret_cast<GetFn>(vtbl[2]);
+    const std::int32_t value = get(accessor, src);
+
+    // Forward to the setter sub_004A2500 (thiscall on target, one int argument).
+    using SetFn = void(__thiscall*)(void* self, std::int32_t v);
+    SetFn set = reinterpret_cast<SetFn>(ext_004A2500);
+    set(target, value);
+}
+} // namespace lift_004A26F0
