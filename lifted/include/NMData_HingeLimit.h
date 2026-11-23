@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::HingeLimit:
 namespace lifted_layout {
 struct NMData_HingeLimit_Fields {
-    // +0xC   float                    field_0x0C  (evidence: 0x004986A0, 0x00618360, 0x0066F700)
+    // +0xC   float                    field_0x0C  (evidence: 0x004986A0, 0x004C7690, 0x00618360, 0x0066F700)
 };
 } // namespace lifted_layout

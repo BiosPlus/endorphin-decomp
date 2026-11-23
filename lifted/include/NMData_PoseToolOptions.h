@@ -10,12 +10,12 @@
 // Recovered field layout for NMData::PoseToolOptions:
 namespace lifted_layout {
 struct NMData_PoseToolOptions_Fields {
-    // +0x4   bool                     field_0x04  (evidence: 0x004986A0, 0x004B8920, 0x004EA700, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t                  m_isGroundCollisionEnabled  (evidence: 0x004986A0, 0x004B8920, 0x004EA6B0, 0x005B2D00, 0x0066F700) // CONFLICT: multiple definitions at +0x4
-    // +0x5   bool                     isCollisionEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004B90D0, 0x004EA9D0, 0x004EAA10, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60)
-    // +0x6   uint8_t                  field_0x06  (evidence: 0x004986A0, 0x004B8920, 0x004EADA0, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x6
-    // +0x6   bool                     isGravityEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004EADE0, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x6
-    // +0x9   uint8_t                  field_0x09  (evidence: 0x004986A0, 0x004B8920, 0x004EA570, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x9
-    // +0x9   bool                     isProjectRootEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004EB230, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x9
+    // +0x4   bool                     field_0x04  (evidence: 0x004986A0, 0x004B8920, 0x004C7690, 0x004EA700, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  m_isGroundCollisionEnabled  (evidence: 0x004986A0, 0x004B8920, 0x004C7690, 0x004EA6B0, 0x005B2D00, 0x0066F700) // CONFLICT: multiple definitions at +0x4
+    // +0x5   bool                     isCollisionEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004B90D0, 0x004C7690, 0x004EA9D0, 0x004EAA10, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60)
+    // +0x6   uint8_t                  field_0x06  (evidence: 0x004986A0, 0x004B8920, 0x004C7690, 0x004EADA0, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x6
+    // +0x6   bool                     isGravityEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C7690, 0x004EADE0, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x6
+    // +0x9   uint8_t                  field_0x09  (evidence: 0x004986A0, 0x004B8920, 0x004C7690, 0x004EA570, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x9
+    // +0x9   bool                     isProjectRootEnabled  (evidence: 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C7690, 0x004EB230, 0x00508EE0, 0x005B2D00, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x9
 };
 } // namespace lifted_layout
