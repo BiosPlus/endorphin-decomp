@@ -12,5 +12,6 @@ namespace lifted_layout {
 struct NMData_PoseToolOptions_Fields {
     // +0x5   bool                     isCollisionEnabled  (evidence: 0x004EAA10)
     // +0x6   bool                     isGravityEnabled  (evidence: 0x004EADE0)
+    // +0x9   bool                     isProjectRootEnabled  (evidence: 0x004EB230)
 };
 } // namespace lifted_layout
