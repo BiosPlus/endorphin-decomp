@@ -1,0 +1,28 @@
+{
+  "va": "0x0051BF10",
+  "size": 60,
+  "orig_symbol": "NMData::RealChannel::vfunc_3",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::clear",
+  "class": "NMData::RealChannel",
+  "signature": "void __thiscall fn_0051BF10(uint8_t* self)",
+  "summary": "Clears the RealChannel data vector by erasing from begin to end.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T13:00:39Z"
+}
