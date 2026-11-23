@@ -229,3 +229,27 @@ void fn_0066BAC0(void* self, void* arg) {
     auto fn = reinterpret_cast<VFunc>(vtbl[44]);
     fn(obj, self, arg);
 }
+
+// [0x0066BA90]
+// @name ExprParser::ExtROType::vfunc_43
+// @class ExprParser::ExtROType
+// @summary Calls ext_0066BA00 on the wrapper object, then forwards (obj, arg2) to vtable slot 43 (+0xAC) of the object held at +0x04.
+// @field ExprParser::ExtROType +0x04 void* field_0x04
+
+extern "C" void ext_0066BA00(void* self);
+
+// Callee is a virtual method taking (this, arg1, arg2); the vtable slot is read at +0xAC.
+typedef uint32_t (*VFunc43)(void* self, void* arg1, void* arg2);
+
+uint32_t ExprParser_ExtROType_vfunc_43(void* self, void* arg2) {
+    ext_0066BA00(self);
+
+    // ecx = [self + 0x04]  -> wrapped object
+    void* inner = lift_field<void*>(self, 0x04);
+    // eax = [ecx]         -> vtable of wrapped object
+    void** vtbl = lift_field<void**>(inner, 0);
+    // eax = [vtbl + 0xAC] -> slot 43
+    VFunc43 target = reinterpret_cast<VFunc43>(vtbl[0xAC / sizeof(void*)]);
+    // push arg2; push self; call eax (this = inner)
+    return target(inner, self, arg2);
+}
