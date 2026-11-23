@@ -11198,3 +11198,32 @@ void* fn_00504FB0(void* a1, const int32_t* a2) {
     return a1;
 }
 } // namespace lift_00504FB0
+
+// [0x004B1250] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_0 (69 bytes)
+namespace lift_004B1250 {
+// sub_006720C0: thiscall(this, value); forwards an int into the target object.
+extern void ext_006720C0(void* self, int value);
+// sub_0046C3C0: constructs the exception object used by the throw path.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData,int,getColor>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Forwards the int stored at target+0x20 into the value sink (arg0); throws if the target pointer is null.
+// @field NMData::GraphEntryData +0x20 int field_0x20
+extern void* fn_004B1250(void* sink, void** target) {
+    // Mirrors: local = 0; if (*target != null) { sink->set(target->[0x20]); return sink; }
+    // else throw an exception object.
+    void* exc = nullptr;
+    void* obj = target ? *target : nullptr;
+    if (obj != nullptr) {
+        int value = *reinterpret_cast<int*>(static_cast<unsigned char*>(obj) + 0x20);
+        ext_006720C0(sink, value);
+        return sink;
+    }
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, nullptr);
+    return nullptr;
+}
+} // namespace lift_004B1250

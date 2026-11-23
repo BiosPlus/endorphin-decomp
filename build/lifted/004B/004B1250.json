@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1250",
+  "size": 69,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,int,getColor\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+  "signature": "extern \"C\" void* fn_004B1250(void* sink, void** target)",
+  "summary": "Forwards the int stored at target+0x20 into the value sink (arg0); throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::GraphEntryData",
+      "offset": "+0x20",
+      "type": "int",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:07:29Z"
+}

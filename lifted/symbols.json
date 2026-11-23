@@ -4564,6 +4564,13 @@
     "summary": "Setter storing float argument into field at offset +0x2C.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004B1250": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,int,getColor\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "extern \"C\" void* fn_004B1250(void* sink, void** target)",
+    "summary": "Forwards the int stored at target+0x20 into the value sink (arg0); throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B12A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
