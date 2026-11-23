@@ -130,3 +130,19 @@ int __thiscall sub_006616B0(void* thisPtr) {
     return reinterpret_cast<Vfn>(static_cast<uintptr_t>(fnAddr))(inner);
 }
 } // namespace lift_006616B0
+
+// [0x00661880]
+namespace lift_00661880 {
+// @name sub_00661880
+// @summary Tail-calls virtual method at vtable+0x10 on dereferenced first field
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+void sub_00661880(uint32_t ecx) {
+    uint32_t inner = mem_read32(ecx);
+    uint32_t vtable = mem_read32(inner);
+    uint32_t fn = mem_read32(vtable + 0x10);
+    ((void(__thiscall*)(uint32_t))fn)(inner);
+}
+} // namespace lift_00661880
