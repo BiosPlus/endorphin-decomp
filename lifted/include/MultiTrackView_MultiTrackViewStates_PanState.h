@@ -10,7 +10,7 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::PanState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_PanState_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x00442BA0)
+    // +0x4   void*                    field_0x04  (evidence: 0x00442BA0, 0x004432D0)
     // +0x8   void*                    field_0x08  (evidence: 0x00442CC0, 0x004432D0)
 };
 } // namespace lifted_layout

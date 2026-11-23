@@ -1339,8 +1339,8 @@
   "0x004432D0": {
     "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_1",
     "class": "MultiTrackView::MultiTrackViewStates::PanState",
-    "signature": "void fn_004432D0(void* self)",
-    "summary": "Forwards the +0x08 member to ext_0043C900(1), then calls SetCapture on that member's +0x20 handle and passes the result to ext_006A5E00.",
+    "signature": "bool fn_00442BA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Forwards this-\u003efield_0x04 to ext_0041C880 with flag 0 and returns true.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
   },
   "0x00443370": {
