@@ -178,3 +178,18 @@ extern "C" void __fastcall fn_0040FD00(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0092B9D4;
     ext_006A5DFA(self);
 }
+
+// [0x00401970]
+namespace lift_00401970 {
+extern uint32_t mem_read32(const void* base, uint32_t offset);
+
+// @name sub_00401970
+// @summary Tail-calls a callback function pointer stored at offset 0x14 if non-null
+// @field Class +0x14 void* field_0x14
+void __thiscall sub_00401970(void* self) {
+    uint32_t fn = mem_read32(self, 0x14);
+    if (fn != 0) {
+        ((void (*)())(uintptr_t)fn)();
+    }
+}
+} // namespace lift_00401970
