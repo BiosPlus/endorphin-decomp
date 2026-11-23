@@ -1,0 +1,14 @@
+{
+  "va": "0x0068C120",
+  "size": 109,
+  "orig_symbol": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e::vfunc_49",
+  "src_path": "src/templates/Function2Type.cpp",
+  "lifted_path": "lifted/templates/Function2Type.cpp",
+  "name": "ExprParser::Function2Type\u003cRandomizer, float, float, float, \u0026Randomizer::randBounded\u003e::vfunc_49",
+  "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, \u0026Randomizer::randBounded\u003e",
+  "signature": "void* __thiscall fn_0068C120(void* self, void* arg0, void* arg1, void* arg2, void* arg3)",
+  "summary": "Evaluates two float expression arguments, calls Randomizer::randBounded, and stores the result into arg0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:36Z"
+}

@@ -22831,6 +22831,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0068C120": {
+    "name": "ExprParser::Function2Type\u003cRandomizer, float, float, float, \u0026Randomizer::randBounded\u003e::vfunc_49",
+    "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, \u0026Randomizer::randBounded\u003e",
+    "signature": "void* __thiscall fn_0068C120(void* self, void* arg0, void* arg1, void* arg2, void* arg3)",
+    "summary": "Evaluates two float expression arguments, calls Randomizer::randBounded, and stores the result into arg0.",
+    "lifted_path": "lifted/templates/Function2Type.cpp"
+  },
   "0x0068C190": {
     "name": "ExprParser::FunctionType\u003cRandomizer, float, float, Randomizer::randDblExcN\u003e::vfunc_48",
     "class": "ExprParser::FunctionType",

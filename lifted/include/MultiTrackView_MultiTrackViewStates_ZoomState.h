@@ -10,7 +10,8 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::ZoomState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_ZoomState_Fields {
-    // +0x8   void*                    owner  (evidence: 0x00443390)
-    // +0x10  double                   range  (evidence: 0x00443390)
+    // +0x4   void*                    field_0x04  (evidence: 0x004433D0)
+    // +0x8   void*                    owner  (evidence: 0x00443390, 0x004433D0)
+    // +0x10  double                   range  (evidence: 0x00443390, 0x004433D0)
 };
 } // namespace lifted_layout

@@ -1,0 +1,34 @@
+{
+  "va": "0x004433D0",
+  "size": 109,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_12",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/ZoomState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+  "signature": "uint8_t __thiscall fn_004433D0(void* self, uint32_t arg1, int32_t arg2, uint32_t arg3)",
+  "summary": "Applies horizontal zoom to the owner MultiTrackView based on drag delta and invalidates its window",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "range"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:31:27Z"
+}

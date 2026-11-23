@@ -38,3 +38,44 @@ void fn_00443390(void* self) {
     ext_006A5E00(prev);
 }
 } // namespace lift_00443390
+
+// [0x004433D0]
+namespace lift_004433D0 {
+extern void __thiscall ext_0043DD60(void* self, double start, double end);
+extern uint32_t mem_00925688;
+
+// @name MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_12
+// @class MultiTrackView::MultiTrackViewStates::ZoomState
+// @summary Applies horizontal zoom to the owner MultiTrackView based on drag delta and invalidates its window
+// @field MultiTrackView::MultiTrackViewStates::ZoomState +0x04 void* field_0x04
+// @field MultiTrackView::MultiTrackViewStates::ZoomState +0x08 void* owner
+// @field MultiTrackView::MultiTrackViewStates::ZoomState +0x10 double range
+uint8_t __thiscall fn_004433D0(void* self, uint32_t arg1, int32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg3;
+    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+    uint8_t* owner = *reinterpret_cast<uint8_t**>(self_bytes + 0x8);
+    int32_t origin_x = *reinterpret_cast<int32_t*>(owner + 0xfc);
+
+    uint8_t* state_data = *reinterpret_cast<uint8_t**>(self_bytes + 0x4);
+    int32_t start_x = *reinterpret_cast<int32_t*>(state_data + 0xc);
+
+    int32_t diff1 = start_x - origin_x;
+    int32_t diff2 = arg2 - origin_x;
+
+    if (diff1 > 0 && diff2 > 5) {
+        double range = *reinterpret_cast<double*>(self_bytes + 0x10);
+        double base_start = *reinterpret_cast<double*>(owner + 0xe8);
+        double new_end = base_start + (static_cast<double>(diff1) * range) / static_cast<double>(diff2);
+
+        ext_0043DD60(owner, base_start, new_end);
+
+        uint8_t* owner_after = *reinterpret_cast<uint8_t**>(self_bytes + 0x8);
+        void* hwnd = *reinterpret_cast<void**>(owner_after + 0x20);
+        using InvalidateRectFn = int32_t(__stdcall*)(void*, const void*, int32_t);
+        reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688))(hwnd, nullptr, 1);
+    }
+
+    return 1;
+}
+} // namespace lift_004433D0

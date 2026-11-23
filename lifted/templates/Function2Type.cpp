@@ -55,3 +55,30 @@ void* fn_0068BD10(void* self) {
     return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
                         reinterpret_cast<const void*>(&mem_00AA3000), 0);
 }
+
+// [0x0068C120]
+namespace lift_0068C120 {
+extern float __thiscall ext_0068BDF0(void* self, float minVal, float maxVal);
+extern void __thiscall ext_00672080(void* self, float val);
+
+// @name ExprParser::Function2Type<Randomizer, float, float, float, &Randomizer::randBounded>::vfunc_49
+// @class ExprParser::Function2Type<Randomizer, float, float, float, &Randomizer::randBounded>
+// @summary Evaluates two float expression arguments, calls Randomizer::randBounded, and stores the result into arg0.
+void* __thiscall fn_0068C120(void* self, void* arg0, void* arg1, void* arg2, void* arg3) {
+    (void)self;
+    void* randomizer = *reinterpret_cast<void**>(arg1);
+
+    void* type3 = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg3) + 0x4);
+    void** vtbl3 = *reinterpret_cast<void***>(type3);
+    using EvalFloatFn = float(__stdcall*)(void*);
+    float maxVal = reinterpret_cast<EvalFloatFn>(vtbl3[1])(arg3);
+
+    void* type2 = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(arg2) + 0x4);
+    void** vtbl2 = *reinterpret_cast<void***>(type2);
+    float minVal = reinterpret_cast<EvalFloatFn>(vtbl2[1])(arg2);
+
+    float result = ext_0068BDF0(randomizer, minVal, maxVal);
+    ext_00672080(arg0, result);
+    return arg0;
+}
+} // namespace lift_0068C120
