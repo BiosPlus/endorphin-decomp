@@ -17887,3 +17887,25 @@ void* fn_0066F700(void* out, void* src) {
     return nullptr;
 }
 } // namespace lift_0066F700
+
+// [0x0066F2D0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_0066F2D0 {
+// Sub-routine 0x00672080: __thiscall one-float-argument member (sets the Y component of its receiver).
+extern void ext_00672080(void* self, float value);
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, getY>::vfunc_0
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>
+// @summary Stdcall (ret 8): reads the Y component of the NM::Vector3 referenced by *value_slot, forwards it to ext_00672080 on the destination, and returns the destination pointer. Throws when the source pointer is null.
+// @field NM::Vector3 +0x04 float y
+extern void* __stdcall fn_0066F2D0(void* self, const void* const* value_slot) {
+    const auto* source = static_cast<const uint8_t*>(*value_slot);
+    if (source == nullptr) {
+        // Original raises a MSVC C++ exception via sub_0046C3C0 + _CxxThrowException; its exact type is not recovered.
+        throw std::runtime_error("ExprParser::ReadMethodType<NM::Vector3, float, getY>::vfunc_0: null value source");
+    }
+    float y;
+    std::memcpy(&y, source + 0x04, sizeof(y));
+    ext_00672080(self, y);
+    return self;
+}
+} // namespace lift_0066F2D0

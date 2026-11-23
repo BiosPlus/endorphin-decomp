@@ -18815,6 +18815,13 @@
     "summary": "Reads the float at the pointer stored in the ValuePtrType argument; throws if that pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F2D0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getY\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
+    "signature": "extern \"C\" void* __stdcall fn_0066F2D0(void* self, const void* const* value_slot)",
+    "summary": "Stdcall (ret 8): reads the Y component of the NM::Vector3 referenced by *value_slot, forwards it to ext_00672080 on the destination, and returns the destination pointer. Throws when the source pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066F320": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
