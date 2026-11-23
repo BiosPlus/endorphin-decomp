@@ -25196,3 +25196,29 @@ float fn_005B36D0(void* self) {
     return static_cast<float>(std::atof(file_name->c_str())); // c_str(), push, atof, fstp/fld -> st0
 }
 } // namespace lift_005B36D0
+
+// [0x00695A20] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_3 (78 bytes)
+namespace lift_00695A20 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float, &DoubleWithProperties::getValue, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Returns 1 if the double behind the held pointer, rounded to float, is >= 1e-6 (NaN yields 0); throws via ext_0046C3C0 when the pointer is null.
+// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x00 double* field_0x00
+int fn_00695A20(void* self) {
+    // Held pointer to the source double (ValuePtrType base at +0x0).
+    double* src = lift_field<double*>(self, 0);
+    if (src == nullptr) {
+        // Null: construct the exception object and throw (noreturn in the original).
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return 0;
+    }
+    // The original rounds the double to float (fstp dword) before comparing.
+    float v = static_cast<float>(*src);
+    // Compare against the rdata constant 1e-06 (mem_0098F410). NaN compares false -> 0.
+    return (static_cast<double>(v) >= 1e-6) ? 1 : 0;
+}
+} // namespace lift_00695A20

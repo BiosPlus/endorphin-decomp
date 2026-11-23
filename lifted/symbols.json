@@ -21279,6 +21279,13 @@
     "summary": "Reads the double referenced by the value pointer at +0x00 and returns it as float; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00695A20": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "int fn_00695A20(void* self)",
+    "summary": "Returns 1 if the double behind the held pointer, rounded to float, is \u003e= 1e-6 (NaN yields 0); throws via ext_0046C3C0 when the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00699040": {
     "name": "sub_00699040",
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
