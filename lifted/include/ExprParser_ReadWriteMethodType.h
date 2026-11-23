@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadWriteMethodType:
 namespace lifted_layout {
 struct ExprParser_ReadWriteMethodType_Fields {
-    // +0x4   void*                    inner  (evidence: 0x00695620)
+    // +0x4   void*                    inner  (evidence: 0x0066EBA0, 0x00695620)
 };
 } // namespace lifted_layout

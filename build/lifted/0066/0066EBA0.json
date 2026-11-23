@@ -4,11 +4,23 @@
   "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, float, \u0026public: void __thiscall NM::Vector3::setX(float)\u003e::vfunc_41",
   "src_path": "src/templates/ReadWriteMethodType.cpp",
   "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
-  "name": "ExprParser::ReadWriteMethodType\u003cNM::Vector3\u003e::vfunc_41 (NM::Vector3::getX into float out-slot)",
-  "class": "ExprParser::ReadWriteMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, float, \u0026public: void __thiscall NM::Vector3::setX(float)\u003e",
-  "signature": "void fn_0066EBA0(void** out, void* holder)",
-  "summary": "Reads a float through the holder's accessor sub-object (vtable slot 1) and stores it into the float slot pointed to by *out; throws if *out is null.",
+  "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
+  "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
+  "signature": "void fn_00695620(void* dst, void* src)",
+  "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
   "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "double*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
     {
       "class": "ExprParser::ValuePtrType",
       "offset": "+0x4",
@@ -18,5 +30,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T12:59:39Z"
+  "lifted_at": "2026-11-23T12:59:44Z"
 }
