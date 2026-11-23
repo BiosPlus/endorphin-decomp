@@ -337,3 +337,27 @@ float fn_004B9370(void* self) {
     return 0.0f;
 }
 } // namespace lift_004B9370
+
+// [0x004B8970] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_004B8970 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the target pointer held at +0x00 of the single stack argument and returns the float at target+0x48; if the target pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x48 float field_0x48
+// The original builds a local exception object (sub_0046C3C0) before throwing; the argument's own type is not identified, so only its pointer at +0x00 is accessed.
+float fn_004B8970(void* self) {
+    auto* holder = static_cast<uint8_t*>(self);
+    auto* target = *reinterpret_cast<uint8_t**>(holder);
+    if (target != nullptr) {
+        return lift_field<float>(target, 0x48);
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0.0f;
+}
+} // namespace lift_004B8970
