@@ -254,11 +254,16 @@ void fn_0049DBE0(uint8_t* self) {
     uint32_t result = ext_0049DA40();
     *reinterpret_cast<uint32_t*>(self + 0x04) = result;
 }
+#include <cstdint>
+// Known callee 0x0049BF70: sub_0049BF70 (128B). Takes a std::string by value on the stack
+// (the caller copy-constructs the temporary in place via MSVCP80 IAT slot mem_00924FE0)
+// and returns an int32 in eax. Modelled here as a C++ function taking std::string by value.
+int32_t ext_0049BF70(std::string value);
 
-// [0x00498F80] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_37 (15 bytes)
-// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_37
-// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
-// @summary Calls ext_004989F0 and stores its 32-bit result into self+0x04; takes one stack argument (self) and returns with ret 4.
+// Known callee 0x0049BF70: sub_0049BF70 (128B). Takes a std::string by value on the stack
+// (the caller copy-constructs the temporary in place via MSVCP80 IAT slot mem_00924FE0)
+// and returns an int32 in eax. Modelled here as a C++ function taking std::string by value.
+int32_t ext_0049BF70(std::string value);
 // @field ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>> +0x04 uint32_t field_0x04
 void fn_00498F80(void* self) {
     uint32_t result = ext_004989F0();
@@ -385,4 +390,15 @@ void fn_0049B2C0(void* self, const std::string& text) {
     uint8_t result = ext_0049B170(text);
     uint8_t* value_ptr = lift_field<uint8_t*>(self, 0x00);
     *value_ptr = result;
+}
+
+// [0x0049C0F0] ExprParser::PrimitiveProxyType<int>::vfunc_10 (45 bytes)
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_10
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Parses the std::string argument into an int32 and stores it through the value_ptr at +0x00.
+// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
+void fn_0049C0F0(void* self, const std::string& src) {
+    const int32_t parsed = ext_0049BF70(src);
+    auto* valuePtr = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
+    *valuePtr = parsed;
 }

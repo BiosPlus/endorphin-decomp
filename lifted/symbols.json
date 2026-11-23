@@ -3697,6 +3697,13 @@
     "summary": "Writes (flag != 0) as an int32 through the proxy's value pointer.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C0F0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_10",
+    "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+    "signature": "void fn_0049C0F0(void* self, const std::string\u0026 src)",
+    "summary": "Parses the std::string argument into an int32 and stores it through the value_ptr at +0x00.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x0049C120": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_41",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",

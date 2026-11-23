@@ -1,0 +1,22 @@
+{
+  "va": "0x0049C0F0",
+  "size": 45,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_10",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_10",
+  "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+  "signature": "void fn_0049C0F0(void* self, const std::string\u0026 src)",
+  "summary": "Parses the std::string argument into an int32 and stores it through the value_ptr at +0x00.",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
+      "offset": "+0x0",
+      "type": "const int32_t*",
+      "name": "value_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:42:15Z"
+}
