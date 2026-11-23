@@ -1,0 +1,28 @@
+{
+  "va": "0x0066D190",
+  "size": 49,
+  "orig_symbol": "ExprParser::Vector4Type::vfunc_50",
+  "src_path": "src/ExprParser/Vector4Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector4Type.cpp",
+  "name": "ExprParser::Vector4Type::vfunc_50",
+  "class": "ExprParser::Vector4Type",
+  "signature": "void fn_0066D190(void* dstHolder, void* srcHolder, void* c, void* d)",
+  "summary": "Fetches float[4] from the source operand and the destination operand via their vtable slot 6, then forwards both plus the \"Vector4Value\" name to ext_004D02B0; stdcall, cleans 16 bytes.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector4Type",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (source operand holder; inner object's vtable slot 6 returns const float* to 4",
+      "name": "floats)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4",
+      "name": "floats)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:19:06Z"
+}

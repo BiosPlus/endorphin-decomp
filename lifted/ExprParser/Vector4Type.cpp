@@ -130,3 +130,36 @@ void fn_0066B8E0(void* ecx_unused, void* arg1, void* ctx) {
         }
     }
 }
+
+// [0x0066D190] ExprParser::Vector4Type::vfunc_50 (49 bytes)
+namespace lift_0066D190 {
+extern void ext_004D02B0(void* self, float* dst, const float* src, const char* name);
+extern const char mem_0098B18C[];
+
+// @name ExprParser::Vector4Type::vfunc_50
+// @class ExprParser::Vector4Type
+// @summary Fetches float[4] from the source operand and the destination operand via their vtable slot 6, then forwards both plus the "Vector4Value" name to ext_004D02B0; stdcall, cleans 16 bytes.
+// @field ExprParser::Vector4Type +0x04 void* field_0x04 (source operand holder; inner object's vtable slot 6 returns const float* to 4 floats)
+// @field Unknown +0x04 void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)
+void fn_0066D190(void* dstHolder, void* srcHolder, void* c, void* d) {
+    (void)d;
+
+    // Source: srcHolder->field_0x04 is the inner operand; its vtable slot 6 (+0x18)
+    // is called with srcHolder as the argument.
+    void* srcInner = lift_field<void*>(srcHolder, 0x04);
+    using GetVec4Fn = float* (*)(void* obj, void* arg);
+    GetVec4Fn getSrc = reinterpret_cast<GetVec4Fn>(
+        lift_field<void**>(srcInner, 0x00)[0x18 / sizeof(void*)]);
+    float* src = getSrc(srcInner, srcHolder);
+
+    // Destination: dstHolder->field_0x04 is the inner operand; same slot-6 protocol.
+    void* dstInner = lift_field<void*>(dstHolder, 0x04);
+    GetVec4Fn getDst = reinterpret_cast<GetVec4Fn>(
+        lift_field<void**>(dstInner, 0x00)[0x18 / sizeof(void*)]);
+    float* dst = getDst(dstInner, dstHolder);
+
+    // Hand off to the helper; the original passes the address of the third
+    // argument slot as its implicit `this`.
+    ext_004D02B0(&c, dst, src, mem_0098B18C);
+}
+} // namespace lift_0066D190

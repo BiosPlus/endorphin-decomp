@@ -14237,6 +14237,13 @@
     "summary": "Replaces the float[3] at *a1 with the cross product of itself and the vector returned by a2-\u003e+0x04-\u003evfunc_5(a2).",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066D190": {
+    "name": "ExprParser::Vector4Type::vfunc_50",
+    "class": "ExprParser::Vector4Type",
+    "signature": "void fn_0066D190(void* dstHolder, void* srcHolder, void* c, void* d)",
+    "summary": "Fetches float[4] from the source operand and the destination operand via their vtable slot 6, then forwards both plus the \"Vector4Value\" name to ext_004D02B0; stdcall, cleans 16 bytes.",
+    "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
+  },
   "0x0066DCB0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
