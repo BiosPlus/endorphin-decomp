@@ -4629,3 +4629,19 @@ void __thiscall fn_00544B10(void* self) {
     fn(obj);
 }
 } // namespace lift_00544B10
+
+// [0x005FC040]
+namespace lift_005FC040 {
+// @name CompoundSensor::vfunc_20
+// @class CompoundSensor
+// @summary Dispatches to vtable slot 16 (+0x40) with argument 2.
+// @field CompoundSensor +0x00 void** vtable
+
+
+uint32_t __thiscall fn_005FC040(void* self) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    using vfunc_16_t = uint32_t(__thiscall*)(void*, uint32_t);
+    auto vfunc_16 = reinterpret_cast<vfunc_16_t>(vtable[0x40 / 4]);
+    return vfunc_16(self, 2);
+}
+} // namespace lift_005FC040
