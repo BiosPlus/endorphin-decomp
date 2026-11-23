@@ -1,0 +1,21 @@
+{
+  "va": "0x00492540",
+  "size": 8,
+  "orig_symbol": "sub_00492540",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "isFieldZero",
+  "signature": "bool __thiscall fn_00492540(void* self)",
+  "summary": "Returns true if the 32-bit value at offset 0 of the object is zero.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:35:35Z"
+}

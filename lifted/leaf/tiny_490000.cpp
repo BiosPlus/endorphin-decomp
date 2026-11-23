@@ -42,3 +42,13 @@ extern "C" void __fastcall fn_00496F00(void* self) {
 extern "C" void __fastcall fn_0049ED30(void* self) {
     ext_0049EB50(static_cast<char*>(self) + 0xC4);
 }
+
+// [0x00492540]
+namespace lift_00492540 {
+// @name isFieldZero
+// @summary Returns true if the 32-bit value at offset 0 of the object is zero.
+// @field Object +0x00 uint32_t field_0x00
+bool __thiscall fn_00492540(void* self) {
+    return *reinterpret_cast<const uint32_t*>(self) == 0;
+}
+} // namespace lift_00492540
