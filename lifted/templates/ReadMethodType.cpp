@@ -14,6 +14,7 @@
 void* fn_00617340(void* self) {
     return self;
 }
+#include <cstring>
 
 // [0x006178B0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::HingeLimit>::vfunc_16 (NMData::HingeLimit::getLowerDamping)
@@ -16714,3 +16715,31 @@ void* fn_004B8920(void* self, void* out, void** pobj) {
     return out;
 }
 } // namespace lift_004B8920
+
+// [0x004B7D30] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_004B7D30 {
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getPosBufferFrameRate, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>
+// @summary Reads the float at EngineData+0x1c (pos buffer frame rate) from the held EngineData, forwarding it to ext_00672080; throws if the EngineData pointer is null.
+// @field NMData::EngineData +0x1c float field_0x1c
+void* fn_004B7D30(void* self, void* const* holder) {
+    const auto* engine = static_cast<const std::uint8_t*>(*holder);
+    if (engine == nullptr) {
+        // Null path: build the exception object and throw (never returns).
+        alignas(8) std::uint8_t exc[64] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(std::uintptr_t{0x009DEC1Cu}));
+        return nullptr;
+    }
+
+    float rate = 0.0f;
+    std::memcpy(&rate, engine + 0x1c, sizeof rate);
+    ext_00672080(self, rate);
+    return self;
+}
+} // namespace lift_004B7D30
