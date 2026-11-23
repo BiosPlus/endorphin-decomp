@@ -640,3 +640,28 @@ double __thiscall fn_00494A20(uint32_t self, uint32_t ptrAddr) {
     return 0.0;
 }
 } // namespace lift_00494A20
+
+// [0x004D4D50]
+namespace lift_004D4D50 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::getDoubleValue
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary Reads the RigEventData type name index as a double, or throws an exception if the object pointer is null.
+
+extern uint32_t mem_read32(uint32_t addr);
+extern int32_t __thiscall ext_004D3CE0(uint32_t self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004D4D50(uint32_t valuePtr) {
+    uint32_t obj = mem_read32(valuePtr);
+    if (obj != 0) {
+        int32_t val = ext_004D3CE0(obj);
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D4D50

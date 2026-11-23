@@ -1,0 +1,14 @@
+{
+  "va": "0x004D4D50",
+  "size": 55,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_1",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::getDoubleValue",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
+  "signature": "double __stdcall fn_004D4D50(uint32_t valuePtr)",
+  "summary": "Reads the RigEventData type name index as a double, or throws an exception if the object pointer is null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:57:57Z"
+}
