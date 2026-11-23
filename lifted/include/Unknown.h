@@ -14,6 +14,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0053F894, 0x0067A700) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x0066B560, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vptr  (evidence: 0x004104E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
@@ -26,5 +27,6 @@ struct Unknown_Fields {
     // +0x88  uint32_t                 field_0x88  (evidence: 0x0053DAA0)
     // +0x8C  uint32_t                 field_0x8c  (evidence: 0x0053DAA0)
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0)
+    // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
 };
 } // namespace lifted_layout

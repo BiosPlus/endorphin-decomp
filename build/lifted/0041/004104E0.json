@@ -1,0 +1,34 @@
+{
+  "va": "0x004104E0",
+  "size": 47,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_2",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_2",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "extern \"C\" int32_t __thiscall fn_004104E0(void* self)",
+  "summary": "Reads self+0x14 (value is pushed but unused by the callee), resolves an object via ext_00594000/ext_00597630; if its byte flag at +0x4E2 is set and its vtable slot 10 (+0x28) returns false, returns 1, else 0.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4E2",
+      "type": "uint8_t",
+      "name": "field_0x4E2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T11:44:03Z"
+}
