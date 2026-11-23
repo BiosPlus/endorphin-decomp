@@ -2905,6 +2905,13 @@
     "summary": "Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046E140": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter,bool,isEnabled,bool,setEnabled\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}\u003e",
+    "signature": "void fn_0046E140(void* a, void* b)",
+    "summary": "Two stack-arg method: dereferences arg a (throws if its pointee is null), calls vtable slot 3 on arg b's +4 object, and forwards the result to sub_0046C040 with the pointee as self.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046E210": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",

@@ -1101,3 +1101,35 @@ void fn_0046EA50(ValuePtrTypeLite* self, void* ctx) {
     ext_006A6DD2();
 }
 } // namespace lift_0046EA50
+
+// [0x0046E140] ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0046E140 {
+// Callees
+extern void ext_0046C040(void* self, void* value);  // sub_0046C040 (thiscall, ecx=self, one stack arg)
+extern void ext_0046C3C0(void* self);               // sub_0046C3C0 (thiscall, ecx=self)
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadWriteMethodType<ImageExporter,bool,isEnabled,bool,setEnabled>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}>
+// @summary Two stack-arg method: dereferences arg a (throws if its pointee is null), calls vtable slot 3 on arg b's +4 object, and forwards the result to sub_0046C040 with the pointee as self.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_0046E140(void* a, void* b) {
+    void* esi = lift_field<void*>(a, 0);
+    if (esi == nullptr) {
+        uint32_t exc_obj[4] = {0, 0, 0, 0};
+        ext_0046C3C0(exc_obj);
+        ext_006A6DD2(exc_obj, &mem_009DEC1C);
+        return;  // not reached: thunk throws
+    }
+
+    void* obj = lift_field<void*>(b, 4);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VFunc = void* (*)(void* self, void* arg);
+    void* result = reinterpret_cast<VFunc>(vtable[3])(obj, b);
+
+    ext_0046C040(esi, result);
+}
+} // namespace lift_0046E140
