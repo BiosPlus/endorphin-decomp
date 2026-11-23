@@ -1,0 +1,14 @@
+{
+  "va": "0x0046E450",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cImageExporter,bool,getUseRenderer,bool,setUseRenderer\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}\u003e",
+  "signature": "void fn_0046E450(void* arg1, void* arg2)",
+  "summary": "Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:03:47Z"
+}

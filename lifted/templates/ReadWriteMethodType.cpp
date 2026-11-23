@@ -1133,3 +1133,41 @@ void fn_0046E140(void* a, void* b) {
     ext_0046C040(esi, result);
 }
 } // namespace lift_0046E140
+
+// [0x0046E450] ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0046E450 {
+extern void ext_0046C2D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_0046E450(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_0046C2D0)(target, r);
+}
+} // namespace lift_0046E450
