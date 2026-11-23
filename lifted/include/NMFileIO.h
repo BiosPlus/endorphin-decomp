@@ -10,7 +10,7 @@
 // Recovered field layout for NMFileIO:
 namespace lifted_layout {
 struct NMFileIO_Fields {
-    // +0x5C  void*                    field_0x5c  (evidence: 0x00553720)
-    // +0x16C void*                    field_0x16c  (evidence: 0x00553720)
+    // +0x5C  void*                    field_0x5c  (evidence: 0x00553720, 0x00558D70)
+    // +0x16C void*                    field_0x16c  (evidence: 0x00553720, 0x00558D70)
 };
 } // namespace lifted_layout

@@ -8492,6 +8492,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x16C and tail-calls sub_00406FC0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00558D70": {
+    "name": "NMFileIO::vfunc_1",
+    "class": "NMFileIO",
+    "signature": "static inline uint32_t load_u32(uint32_t addr)",
+    "summary": "Scans a 4-byte-stride pointer range; entries whose std::string at +4 equals a fixed key are routed into this+0x5C (first hit, then moved to +0x16C via ext_00406FC0) or into this+0x16C (later hits).",
+    "lifted_path": "lifted/classes/NMFileIO.cpp"
+  },
   "0x00559E40": {
     "name": "Acclaim2CharacterIO::vfunc_0",
     "class": "Acclaim2CharacterIO",
