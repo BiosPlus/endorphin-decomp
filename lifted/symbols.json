@@ -16551,6 +16551,20 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00610D10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006127A0": {
+    "name": "NMData::Constraint::vfunc_74",
+    "class": "NMData::Constraint",
+    "signature": "void* __thiscall fn_006127A0(void* self)",
+    "summary": "Lazily initializes and returns a static object at 0x00B48D00, registering its destructor at 0x0091EB40.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
+  "0x00612810": {
+    "name": "Constraint::vfunc_71",
+    "class": "NMData::Constraint",
+    "signature": "void* __thiscall fn_00612810(void* self)",
+    "summary": "Lazily initializes and returns a static object at 0x00B48DC8.",
+    "lifted_path": "lifted/NMData/Constraint.cpp"
+  },
   "0x00612E80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
