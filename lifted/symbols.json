@@ -4729,6 +4729,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C0400": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, getEndFrameNumber\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, getEndFrameNumber\u003e",
+    "signature": "double __thiscall fn_004C0400(uintptr_t /*self*/, uintptr_t arg0)",
+    "summary": "Dereferences pointer argument, calls getEndFrameNumber and returns it as double, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004C0440": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e",

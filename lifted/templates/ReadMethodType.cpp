@@ -10596,3 +10596,25 @@ extern double __thiscall fn_004B4190(void* self, void* arg0) {
     ext_006A6DD2(exc, 0x009DEC1Cu);
 }
 } // namespace lift_004B4190
+
+// [0x004C0400]
+namespace lift_004C0400 {
+extern int32_t __thiscall ext_00410450(uintptr_t self);
+extern void __thiscall ext_0046C3C0(uintptr_t self);
+[[noreturn]] extern void __stdcall ext_006A6DD2(uintptr_t exc, uintptr_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, getEndFrameNumber>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, getEndFrameNumber>
+// @summary Dereferences pointer argument, calls getEndFrameNumber and returns it as double, or throws on null.
+// @field NMData::TriggeredEventData +0x00 uintptr_t ptr
+double __thiscall fn_004C0400(uintptr_t /*self*/, uintptr_t arg0) {
+    uintptr_t obj = *reinterpret_cast<const uintptr_t*>(arg0);
+    if (obj != 0) {
+        int32_t val = ext_00410450(obj);
+        return static_cast<double>(val);
+    }
+    uint8_t exc[0x28];
+    ext_0046C3C0(reinterpret_cast<uintptr_t>(exc));
+    ext_006A6DD2(reinterpret_cast<uintptr_t>(exc), 0x009DEC1Cu);
+}
+} // namespace lift_004C0400

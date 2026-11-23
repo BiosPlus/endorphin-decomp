@@ -1,0 +1,22 @@
+{
+  "va": "0x004C0400",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, getEndFrameNumber\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, getEndFrameNumber\u003e",
+  "signature": "double __thiscall fn_004C0400(uintptr_t /*self*/, uintptr_t arg0)",
+  "summary": "Dereferences pointer argument, calls getEndFrameNumber and returns it as double, or throws on null.",
+  "fields": [
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T12:57:48Z"
+}
