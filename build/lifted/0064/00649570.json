@@ -1,0 +1,22 @@
+{
+  "va": "0x00649570",
+  "size": 113,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationGamma(float), 0}\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationGamma(float), 0}\u003e",
+  "signature": "void fn_00649570(void* out, void** target_ref, void* arg)",
+  "summary": "Fetches a float from the inner object via vtable slot 1, forwards it to RelationshipRPROMagnet's gamma setter on the target, and returns a {value, owner} pair (zeroed when the owner is null).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "owner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:08:09Z"
+}

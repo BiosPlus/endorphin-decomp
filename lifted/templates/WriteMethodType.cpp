@@ -3561,3 +3561,39 @@ void fn_006494C0(void* out, void* targetHolder, void* self) {
     }
 }
 } // namespace lift_006494C0
+
+// [0x00649570] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationGamma(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00649570 {
+// Known callee 0x00648E90: sub_00648E90 (Setter storing float argument into field at offset +0x8C.)
+extern void ext_00648E90(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationGamma(float), 0}>
+// @summary Fetches a float from the inner object via vtable slot 1, forwards it to RelationshipRPROMagnet's gamma setter on the target, and returns a {value, owner} pair (zeroed when the owner is null).
+// @field ExprParser::ValuePtrType +0x04 void* owner
+void fn_00649570(void* out, void** target_ref, void* arg) {
+    // Target object for the setter (*target_ref).
+    void* target = *target_ref;
+
+    // Inner object (owner) and its vtable.
+    void* inner = lift_field<void*>(arg, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+
+    // Slot 1 returns the float to store.
+    using GetFloatFn = float (*)(void* self, void* arg);
+    float value = reinterpret_cast<GetFloatFn>(vtbl[1])(inner, arg);
+    ext_00648E90(target, value);
+
+    if (inner != nullptr) {
+        // Slot 28 (+0x70): returns a pointer to a {uint32, void*} pair.
+        using GetPairFn = void* (*)(void* self, void* ret_buf, void* arg);
+        uint32_t local_ret[2] = {0, 0};
+        void* ret = reinterpret_cast<GetPairFn>(vtbl[28])(inner, local_ret, arg);
+        lift_field<uint32_t>(out, 0) = *reinterpret_cast<uint32_t*>(ret);
+        lift_field<void*>(out, 4) = inner;
+    } else {
+        lift_field<uint32_t>(out, 0) = 0;
+        lift_field<void*>(out, 4) = nullptr;
+    }
+}
+} // namespace lift_00649570
