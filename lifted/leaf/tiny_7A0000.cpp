@@ -327,3 +327,20 @@ extern void fn_007AE100(void) {
 }
 } // namespace lift_007AE0A0
 } // namespace lift_007AE100
+
+// [0x007AEEE0]
+namespace lift_007AEEE0 {
+// @name sub_007AEEE0
+// @class UnknownClass
+// @summary Returns true if field_0x58 is non-zero
+// @field UnknownClass +0x58 uint32_t field_0x58
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+bool __thiscall sub_007AEEE0(uint32_t ecx)
+{
+    uint32_t edx = mem_read32(ecx + 0x58);
+    return edx != 0;
+}
+} // namespace lift_007AEEE0
