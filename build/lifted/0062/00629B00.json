@@ -1,0 +1,22 @@
+{
+  "va": "0x00629B00",
+  "size": 10,
+  "orig_symbol": "CompoundSensor::vfunc_19",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundSensor::vfunc_19",
+  "class": "CompoundSensor",
+  "signature": "uint32_t __thiscall fn_00629B00(void* self)",
+  "summary": "Calls vtable slot 16 (offset 0x40) on this with argument 1",
+  "fields": [
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:29:47Z"
+}

@@ -4698,3 +4698,19 @@ uint32_t __thiscall fn_00627270(uint32_t self) {
     return fn(self, 0u);
 }
 } // namespace lift_00627270
+
+// [0x00629B00]
+namespace lift_00629B00 {
+// @name CompoundSensor::vfunc_19
+// @class CompoundSensor
+// @summary Calls vtable slot 16 (offset 0x40) on this with argument 1
+// @field CompoundSensor +0x0 void** vtable
+
+
+uint32_t __thiscall fn_00629B00(void* self) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x40));
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 1);
+}
+} // namespace lift_00629B00

@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct CompoundSensor_Fields {
     // +0x0   uint32_t*                vtable  (evidence: 0x00627270) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x005FC040) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x005FC040, 0x00629B00) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

@@ -19014,6 +19014,13 @@
     "summary": "Calls the base-class update routine on this, then returns the float at +0x6C.",
     "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassZ.cpp"
   },
+  "0x00629B00": {
+    "name": "CompoundSensor::vfunc_19",
+    "class": "CompoundSensor",
+    "signature": "uint32_t __thiscall fn_00629B00(void* self)",
+    "summary": "Calls vtable slot 16 (offset 0x40) on this with argument 1",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00629E40": {
     "name": "MetaBodySensor::vfunc_0",
     "class": "MetaBodySensor",
