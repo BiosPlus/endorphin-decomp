@@ -108,6 +108,13 @@
     "summary": "Pure jump thunk forwarding to sub_00586140.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00402060": {
+    "name": "AnimatableTransform::vfunc_38",
+    "class": "AnimatableTransform",
+    "signature": "void __thiscall fn_00402060(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004020C0": {
     "name": "AnimatableTransform::vfunc_13_off_4",
     "class": "AnimatableTransform",
@@ -1144,6 +1151,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434E30": {
+    "name": "sub_00434E30",
+    "signature": "void fn_00434E30()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434E40": {
     "name": "sub_00434E40",
     "signature": "extern \"C\" void fn_00434E40(void)",
@@ -1843,6 +1856,66 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1361.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044C910": {
+    "name": "sub_0044C910",
+    "signature": "void fn_0044C910()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C920": {
+    "name": "sub_0044C920",
+    "signature": "void fn_0044C920()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C930": {
+    "name": "sub_0044C930",
+    "signature": "void fn_0044C930()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C940": {
+    "name": "sub_0044C940",
+    "signature": "void fn_0044C940()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C950": {
+    "name": "sub_0044C950",
+    "signature": "void fn_0044C950()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C960": {
+    "name": "sub_0044C960",
+    "signature": "void fn_0044C960()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C970": {
+    "name": "sub_0044C970",
+    "signature": "void fn_0044C970()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C980": {
+    "name": "sub_0044C980",
+    "signature": "void fn_0044C980()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C990": {
+    "name": "sub_0044C990",
+    "signature": "void fn_0044C990()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C9A0": {
+    "name": "sub_0044C9A0",
+    "signature": "void fn_0044C9A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044CB80": {
     "name": "sub_0044CB80",
     "signature": "extern \"C\" const char* fn_0044CB80()",
@@ -1932,6 +2005,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0044FF20(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0044D560 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00450A80": {
+    "name": "sub_00450A80",
+    "signature": "extern void fn_00450A80(uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043CB80 (call_MFC80_ord_1903_ret8).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x00450A90": {
     "name": "RigEditorAddRenameDialog::vfunc_1",
@@ -2821,6 +2900,30 @@
     "summary": "Pure jump thunk forwarding to sub_00466970.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00467320": {
+    "name": "sub_00467320",
+    "signature": "void fn_00467320()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x00467330": {
+    "name": "sub_00467330",
+    "signature": "void fn_00467330()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x00467380": {
+    "name": "sub_00467380",
+    "signature": "void fn_00467380()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x00467390": {
+    "name": "sub_00467390",
+    "signature": "void fn_00467390()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004675D0": {
     "name": "sub_004675D0",
     "signature": "extern \"C\" void __fastcall fn_004675D0(void* self)",
@@ -2902,6 +3005,30 @@
     "signature": "extern \"C\" void __fastcall fn_00469170(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x2C and tail-calls sub_004AEC90.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x00469C50": {
+    "name": "sub_00469C50",
+    "signature": "void fn_00469C50()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x00469C60": {
+    "name": "sub_00469C60",
+    "signature": "void fn_00469C60()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x00469C70": {
+    "name": "sub_00469C70",
+    "signature": "void fn_00469C70()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x00469C80": {
+    "name": "sub_00469C80",
+    "signature": "void fn_00469C80()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046A310": {
     "name": "VMCSEngine::vfunc_0_off_8",
@@ -6144,6 +6271,13 @@
     "summary": "Copies the input string, passes it to sub_004C2790, then invokes vtable+0x5C with it.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004C4DC0": {
+    "name": "sub_004C4DC0",
+    "class": "GWCCategoryWithButtonsItem",
+    "signature": "void __thiscall fn_004C4DC0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004C4DD0": {
     "name": "NMData::ForceEventData::vfunc_59",
     "class": "NMData::ForceEventData",
@@ -6366,6 +6500,13 @@
     "signature": "extern \"C\" void __thiscall fn_004CA1C0(void* self)",
     "summary": "Updates field_0x19c, frees the previous object if changed, and initializes the new one.",
     "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
+  "0x004CA300": {
+    "name": "sub_004CA300",
+    "class": "GWCCategoryWithButtonsItem",
+    "signature": "void __thiscall fn_004CA300(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
   "0x004CA310": {
     "name": "NMData::MetaBodyConstraintData::vfunc_14",
@@ -10580,6 +10721,13 @@
     "summary": "Stores address of mem_009560E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543620": {
+    "name": "sub_00543620",
+    "class": "GWCCategoryWithButtonsItem",
+    "signature": "void __thiscall fn_00543620(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00543770": {
     "name": "Tool::vfunc_1",
     "class": "Tool",
@@ -12220,6 +12368,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059C7E0": {
+    "name": "World::vfunc_33",
+    "class": "World",
+    "signature": "void fn_0059C7E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/classes/World.cpp"
+  },
   "0x0059CBB0": {
     "name": "World::vfunc_1_off_C",
     "class": "World",
@@ -12415,6 +12570,12 @@
     "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005A3610": {
+    "name": "sub_005A3610",
+    "signature": "void fn_005A3610()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A46C0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_41",
@@ -20020,6 +20181,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00646190(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00659E10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00646220": {
+    "name": "NullRelationship::vfunc_52",
+    "class": "NullRelationship",
+    "signature": "void __thiscall fn_00646220(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00646230": {
     "name": "NullRelationship::vfunc_0_off_8",
@@ -32803,6 +32971,12 @@
     "signature": "extern \"C\" void __fastcall fn_0078CBD0(void* self)",
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x0078D2C0": {
+    "name": "sub_0078D2C0",
+    "signature": "void fn_0078D2C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
   "0x0078D830": {
     "name": "sub_0078D830",

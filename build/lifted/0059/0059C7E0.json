@@ -1,0 +1,14 @@
+{
+  "va": "0x0059C7E0",
+  "size": 8,
+  "orig_symbol": "World::vfunc_33",
+  "src_path": "src/classes/World.cpp",
+  "lifted_path": "lifted/classes/World.cpp",
+  "name": "World::vfunc_33",
+  "class": "World",
+  "signature": "void fn_0059C7E0()",
+  "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:35:44Z"
+}

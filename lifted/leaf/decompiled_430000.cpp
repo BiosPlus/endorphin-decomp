@@ -51,3 +51,19 @@ extern void fn_0043CB80(uint32_t arg1, uint32_t arg2) {
     ext_006A5EA8();
 }
 } // namespace lift_0043CB80
+
+// [0x00434E30] sub_00434E30 (11 bytes)
+namespace lift_00434E30 {
+// @name sub_00434E30
+// @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
+namespace lift_00437DE0 {
+// @name callSub00437DC0WithOne
+// @summary Calls ext_00437DC0 with argument 1.
+
+extern void ext_004310E0(void* arg);
+
+void fn_00434E30() {
+    ext_004310E0(reinterpret_cast<void*>(static_cast<uintptr_t>(9632248)));
+}
+} // namespace lift_00437DE0
+} // namespace lift_00434E30

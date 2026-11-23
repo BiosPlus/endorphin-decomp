@@ -5,6 +5,7 @@ extern "C" int mem_009560E4;
 extern "C" void __fastcall ext_00541AB0(void* self);
 extern "C" void __fastcall ext_005DC420(void* self);
 extern "C" int mem_00956F94;
+#include <cstdint>
 
 // [0x00548FBB] sub_00548FBB (5 bytes)
 // @name sub_00548FBB
@@ -54,3 +55,23 @@ extern "C" void __fastcall fn_00547D00(void* self) {
 extern "C" void __fastcall fn_0054E890(void* self) {
     lift_field<void*>(self, 0x0) = &mem_00956F94;
 }
+
+// [0x00543620] sub_00543620 (7 bytes)
+namespace lift_00543620 {
+// @name sub_00543620
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+namespace lift_006B0480 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
+// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
+void __thiscall fn_00543620(uint32_t ecx) {
+    uint32_t vtable = mem_read32(ecx);
+    uint32_t target = mem_read32(vtable + 0x48);
+    typedef void (__thiscall *vfunc_t)(uint32_t);
+    ((vfunc_t)(uintptr_t)target)(ecx);
+}
+} // namespace lift_006B0480
+} // namespace lift_00543620

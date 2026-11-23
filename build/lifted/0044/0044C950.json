@@ -1,0 +1,13 @@
+{
+  "va": "0x0044C950",
+  "size": 8,
+  "orig_symbol": "sub_0044C950",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044C950",
+  "signature": "void fn_0044C950()",
+  "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:35:44Z"
+}

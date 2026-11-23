@@ -4480,3 +4480,47 @@ void __thiscall fn_006B0480(uint32_t ecx) {
     ((vfunc_t)(uintptr_t)target)(ecx);
 }
 } // namespace lift_006B0480
+
+// [0x00402060] AnimatableTransform::vfunc_38 (10 bytes)
+namespace lift_00402060 {
+// @name AnimatableTransform::vfunc_38
+// @class AnimatableTransform
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+// @field AnimatableTransform +0x0 uint32_t vtable
+namespace lift_006B0480 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
+// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
+void __thiscall fn_00402060(uint32_t ecx) {
+    uint32_t vtable = mem_read32(ecx);
+    uint32_t target = mem_read32(vtable + 0x90);
+    typedef void (__thiscall *vfunc_t)(uint32_t);
+    ((vfunc_t)(uintptr_t)target)(ecx);
+}
+} // namespace lift_006B0480
+} // namespace lift_00402060
+
+// [0x00646220] NullRelationship::vfunc_52 (10 bytes)
+namespace lift_00646220 {
+// @name NullRelationship::vfunc_52
+// @class NullRelationship
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+// @field NullRelationship +0x0 uint32_t vtable
+namespace lift_006B0480 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
+// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
+void __thiscall fn_00646220(uint32_t ecx) {
+    uint32_t vtable = mem_read32(ecx);
+    uint32_t target = mem_read32(vtable + 0xC0);
+    typedef void (__thiscall *vfunc_t)(uint32_t);
+    ((vfunc_t)(uintptr_t)target)(ecx);
+}
+} // namespace lift_006B0480
+} // namespace lift_00646220

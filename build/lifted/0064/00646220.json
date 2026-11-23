@@ -1,0 +1,28 @@
+{
+  "va": "0x00646220",
+  "size": 10,
+  "orig_symbol": "NullRelationship::vfunc_52",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NullRelationship::vfunc_52",
+  "class": "NullRelationship",
+  "signature": "void __thiscall fn_00646220(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+  "fields": [
+    {
+      "class": "NullRelationship",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "GWCCategoryWithButtonsItem",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:35:44Z"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x00543620",
+  "size": 7,
+  "orig_symbol": "sub_00543620",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_00543620",
+  "class": "GWCCategoryWithButtonsItem",
+  "signature": "void __thiscall fn_00543620(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+  "fields": [
+    {
+      "class": "GWCCategoryWithButtonsItem",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:35:44Z"
+}

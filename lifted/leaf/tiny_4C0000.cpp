@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_4C0000.cpp
 #include "lift_compat.h"
 extern "C" uintptr_t mem_00924FDC;
+#include <cstdint>
 
 // [0x004C0EA0] sub_004C0EA0 (8 bytes)
 // @name sub_004C0EA0
@@ -58,3 +59,43 @@ extern "C" void __fastcall fn_004CE570(void* self, int edx_unused, float value) 
     (void)edx_unused;
     lift_field<float>(self, 0x18C) = value;
 }
+
+// [0x004C4DC0] sub_004C4DC0 (10 bytes)
+namespace lift_004C4DC0 {
+// @name sub_004C4DC0
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+namespace lift_006B0480 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
+// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
+void __thiscall fn_004C4DC0(uint32_t ecx) {
+    uint32_t vtable = mem_read32(ecx);
+    uint32_t target = mem_read32(vtable + 0x114);
+    typedef void (__thiscall *vfunc_t)(uint32_t);
+    ((vfunc_t)(uintptr_t)target)(ecx);
+}
+} // namespace lift_006B0480
+} // namespace lift_004C4DC0
+
+// [0x004CA300] sub_004CA300 (10 bytes)
+namespace lift_004CA300 {
+// @name sub_004CA300
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+namespace lift_006B0480 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
+// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
+void __thiscall fn_004CA300(uint32_t ecx) {
+    uint32_t vtable = mem_read32(ecx);
+    uint32_t target = mem_read32(vtable + 0x140);
+    typedef void (__thiscall *vfunc_t)(uint32_t);
+    ((vfunc_t)(uintptr_t)target)(ecx);
+}
+} // namespace lift_006B0480
+} // namespace lift_004CA300

@@ -1,0 +1,28 @@
+{
+  "va": "0x00402060",
+  "size": 10,
+  "orig_symbol": "AnimatableTransform::vfunc_38",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_38",
+  "class": "AnimatableTransform",
+  "signature": "void __thiscall fn_00402060(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "GWCCategoryWithButtonsItem",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-23T14:35:44Z"
+}
