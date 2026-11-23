@@ -76,3 +76,15 @@ uint32_t sub_007C9DD0(uint32_t arg0) {
     return arg0 + 0x30;
 }
 } // namespace lift_007C9DD0
+
+// [0x007C9270]
+namespace lift_007C9270 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name getField0x40
+// @summary Returns the 32-bit value at offset +0x40 of the given object.
+// @field Object +0x40 uint32_t field_0x40
+uint32_t __cdecl sub_007C9270(uint32_t arg0) {
+    return mem_read32(arg0 + 0x40);
+}
+} // namespace lift_007C9270

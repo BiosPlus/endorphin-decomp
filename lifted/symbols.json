@@ -33662,6 +33662,12 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!realloc.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C9270": {
+    "name": "getField0x40",
+    "signature": "uint32_t __cdecl sub_007C9270(uint32_t arg0)",
+    "summary": "Returns the 32-bit value at offset +0x40 of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9CB0": {
     "name": "readFloatPtr",
     "signature": "float sub_007C9CB0(const float* ptr)",

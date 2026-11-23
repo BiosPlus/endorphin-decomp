@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9270",
+  "size": 8,
+  "orig_symbol": "sub_007C9270",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getField0x40",
+  "signature": "uint32_t __cdecl sub_007C9270(uint32_t arg0)",
+  "summary": "Returns the 32-bit value at offset +0x40 of the given object.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:36:44Z"
+}
