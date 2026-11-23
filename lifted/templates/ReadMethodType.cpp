@@ -1562,3 +1562,36 @@ void fn_0046CE60(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_0046CE60
+
+// [0x0062E4F0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_5 (45 bytes)
+namespace lift_0062E4F0 {
+// Helper that constructs the error temporary on the stack (thiscall, ecx = &tmp).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// Throw-type descriptor referenced by the original throw at 0x0062E50E.
+static constexpr uintptr_t kThrowInfo_0009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::vfunc_5 (CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.
+// @field Sensors::CompoundSensorPlanes +0x78 NM::Vector3 field_0x78
+//
+// Original asm: self points at a ValuePtrType whose first dword is the object pointer.
+// If the object pointer is non-null, return obj + 0x78. Otherwise build an error
+// temporary via ext_0046C3C0 and raise a C++ exception via _CxxThrowException.
+const void* fn_0062E4F0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        return static_cast<const unsigned char*>(obj) + 0x78;
+    }
+
+    // Original reserves 0x28 bytes of stack for the temporary (sub esp, 0x28).
+    alignas(8) unsigned char tmp[0x28] = {};
+    ext_0046C3C0(tmp);
+    ext_006A6DD2(tmp, reinterpret_cast<const void*>(kThrowInfo_0009DEC1C));
+    // _CxxThrowException never returns.
+    std::abort();
+}
+} // namespace lift_0062E4F0

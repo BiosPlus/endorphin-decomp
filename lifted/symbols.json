@@ -10266,6 +10266,13 @@
     "summary": "RTTI-checked cast of self to the CompoundSensorPlanes::checkDistance FunctionType descriptor; returns the cast pointer or NULL.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x0062E4F0": {
+    "name": "ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+    "signature": "const void* fn_0062E4F0(void* self)",
+    "summary": "Returns a pointer to the CompoundSensorPlanes vertical-axis Vector3 (at +0x78) from the holder's object; throws if the holder's object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062EEC0": {
     "name": "Sensors::CompoundSensorFrontalPlane::vfunc_27",
     "class": "Sensors::CompoundSensorFrontalPlane",
