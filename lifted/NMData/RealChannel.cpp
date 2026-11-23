@@ -171,3 +171,27 @@ void __thiscall fn_0051C2A0(void* self, void* arg0) {
     }
 }
 } // namespace lift_0051C2A0
+
+// [0x0051C6D0] NMData::RealChannel::vfunc_4 (93 bytes)
+namespace lift_0051C6D0 {
+// @name NMData::RealChannel::vfunc_4
+// @class NMData::RealChannel
+// @summary Auto-lifted identical-shape clone of 0x0051CDE0 (NMData::QuatChannel::clone).
+namespace lift_0051CDE0 {
+// @name NMData::QuatChannel::clone
+// @class NMData::QuatChannel
+// @summary Allocates and copy-constructs a clone of this QuatChannel instance.
+
+
+void* __cdecl ext_006A5C62(uint32_t size);
+void* __thiscall ext_0051C640(void* self, const void* other);
+
+void* __thiscall fn_0051C6D0(const void* self) {
+    void* copy = ext_006A5C62(0x44);
+    if (copy == nullptr) {
+        return nullptr;
+    }
+    return ext_0051C640(copy, self);
+}
+} // namespace lift_0051CDE0
+} // namespace lift_0051C6D0

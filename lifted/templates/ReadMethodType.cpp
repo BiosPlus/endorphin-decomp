@@ -24178,3 +24178,948 @@ void* fn_005B3680(void* out, void* const* in) {
     return out;
 }
 } // namespace lift_005B3680
+
+// [0x00471050] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00471050 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_0046F910();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00471050(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_0046F910);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00471050
+
+// [0x004A48A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A48A0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00496F30();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004A48A0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00496F30);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004A48A0
+
+// [0x004A4B80] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A4B80 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00496F40();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004A4B80(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00496F40);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004A4B80
+
+// [0x004AACB0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004AACB0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004A9A50();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004AACB0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004A9A50);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004AACB0
+
+// [0x004C1980] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004C1980 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004A9A60();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004C1980(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004A9A60);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004C1980
+
+// [0x004CAAC0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004CAAC0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004CA2F0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004CAAC0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004CA2F0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004CAAC0
+
+// [0x004D5740] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D5740 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004D39B0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004D5740(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004D39B0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004D5740
+
+// [0x004D5A50] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D5A50 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004D39C0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004D5A50(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004D39C0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004D5A50
+
+// [0x004D63A0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D63A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004D39F0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004D63A0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004D39F0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004D63A0
+
+// [0x004D6600] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D6600 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004D3A00();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004D6600(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004D3A00);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004D6600
+
+// [0x004D7C70] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D7C70 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004D3C10();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004D7C70(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004D3C10);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004D7C70
+
+// [0x004DEC80] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004DEC80 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004DDE60();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004DEC80(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004DDE60);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004DEC80
+
+// [0x004DF000] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004DF000 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004DDE50();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004DF000(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004DDE50);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004DF000
+
+// [0x004DFD60] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004DFD60 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004DE320();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004DFD60(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004DE320);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004DFD60
+
+// [0x004EE7B0] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_1 (77 bytes)
+namespace lift_004EE7B0 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_004EDE20();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_004EE7B0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_004EDE20);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_004EE7B0
+
+// [0x00585660] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00585660 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00584C00();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00585660(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00584C00);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00585660
+
+// [0x005B7560] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_1 (77 bytes)
+namespace lift_005B7560 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005B64D0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005B7560(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005B64D0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005B7560
+
+// [0x005C6320] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005C6320 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005B6490();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005C6320(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005B6490);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005C6320
+
+// [0x005C6680] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005C6680 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005B6470();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005C6680(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005B6470);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005C6680
+
+// [0x005C79D0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005C79D0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005B6480();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005C79D0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005B6480);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005C79D0
+
+// [0x005CB430] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_1 (77 bytes)
+namespace lift_005CB430 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005C3650();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005CB430(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005C3650);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005CB430
+
+// [0x005CBBF0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005CBBF0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005C3640();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005CBBF0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005C3640);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005CBBF0
+
+// [0x005D95E0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005D95E0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005CF940();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005D95E0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005CF940);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005D95E0
+
+// [0x005D99D0] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005D99D0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005CFE50();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005D99D0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005CFE50);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005D99D0
+
+// [0x005D9C60] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005D9C60 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005CF950();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005D9C60(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005CF950);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005D9C60
+
+// [0x005F8F20] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005F8F20 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_005F51B0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_005F8F20(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_005F51B0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_005F8F20
+
+// [0x006168D0] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_006168D0 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00610A80();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_006168D0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00610A80);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_006168D0
+
+// [0x0061C9B0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0061C9B0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00610A90();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_0061C9B0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00610A90);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_0061C9B0
+
+// [0x0061CDC0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0061CDC0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00610AA0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_0061CDC0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00610AA0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_0061CDC0
+
+// [0x00642750] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00642750 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_0048FAF0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00642750(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_0048FAF0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00642750
+
+// [0x00642A30] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00642A30 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00641FD0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00642A30(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00641FD0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00642A30
+
+// [0x00642D70] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00642D70 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00641FE0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00642D70(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00641FE0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00642D70
+
+// [0x00644010] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00644010 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00641FF0();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00644010(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00641FF0);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00644010
+
+// [0x006442F0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_006442F0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00642000();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_006442F0(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00642000);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_006442F0
+
+// [0x00644680] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00644680 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1).
+namespace lift_0046CAE0 {
+// Known callee 0x0046C070: ImageExporter::isEnabled (thiscall, returns bool in al).
+extern void ext_00642010();
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Reads the ImageExporter* held at the argument's first dword, calls isEnabled(), and returns 1.0f or 0.0f; throws if the pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+float fn_00644680(void* self) {
+    void* exporter = lift_field<void*>(self, 0);
+    if (exporter == nullptr) {
+        // Original throws an RTTI-typed exception object (type at 0x009DEC1C); std::runtime_error is the portable stand-in.
+        throw std::runtime_error("ExprParser: null ImageExporter in isEnabled read");
+    }
+
+    using IsEnabledFn = bool (*)(void*);
+    auto isEnabled = reinterpret_cast<IsEnabledFn>(&ext_00642010);
+    return isEnabled(exporter) ? 1.0f : 0.0f;
+}
+} // namespace lift_0046CAE0
+} // namespace lift_00644680
