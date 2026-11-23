@@ -6917,6 +6917,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0050AA00": {
+    "name": "NMData::TaskTemplate::vfunc_13",
+    "class": "NMData::TaskTemplate",
+    "signature": "void* fn_0050AA00(void* self, void* arg1, void* arg2)",
+    "summary": "Lazily caches a shared value via ext_0050A030 on first call, then forwards it with the this+4 sub-object address to ext_0055DA20 on arg1; returns arg1.",
+    "lifted_path": "lifted/NMData/TaskTemplate.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",

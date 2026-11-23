@@ -1,0 +1,22 @@
+{
+  "va": "0x0050AA00",
+  "size": 69,
+  "orig_symbol": "NMData::TaskTemplate::vfunc_13",
+  "src_path": "src/NMData/TaskTemplate.cpp",
+  "lifted_path": "lifted/NMData/TaskTemplate.cpp",
+  "name": "NMData::TaskTemplate::vfunc_13",
+  "class": "NMData::TaskTemplate",
+  "signature": "void* fn_0050AA00(void* self, void* arg1, void* arg2)",
+  "summary": "Lazily caches a shared value via ext_0050A030 on first call, then forwards it with the this+4 sub-object address to ext_0055DA20 on arg1; returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::TaskTemplate",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:07:57Z"
+}
