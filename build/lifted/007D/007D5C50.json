@@ -1,0 +1,13 @@
+{
+  "va": "0x007D5C50",
+  "size": 10,
+  "orig_symbol": "sub_007D5C50",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "derefBytePtr",
+  "signature": "uint32_t sub_007D5C50(uint32_t arg0)",
+  "summary": "Dereferences a pointer to a byte pointer and returns the zero-extended byte value.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:37:43Z"
+}

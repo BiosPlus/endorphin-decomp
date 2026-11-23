@@ -114,6 +114,13 @@
     "summary": "Pure jump thunk forwarding to sub_00586140.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00402050": {
+    "name": "AnimatableTransform::vfunc_37",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t __thiscall fn_00402050(uint32_t self)",
+    "summary": "Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402060": {
     "name": "AnimatableTransform::vfunc_38",
     "class": "AnimatableTransform",
@@ -34620,6 +34627,12 @@
     "name": "getField0x20",
     "signature": "extern \"C\" uint32_t sub_007D5BC0(uint32_t arg0)",
     "summary": "Reads and returns the 32-bit value at offset 0x20 of the passed struct pointer.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D5C50": {
+    "name": "derefBytePtr",
+    "signature": "uint32_t sub_007D5C50(uint32_t arg0)",
+    "summary": "Dereferences a pointer to a byte pointer and returns the zero-extended byte value.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007D7A20": {

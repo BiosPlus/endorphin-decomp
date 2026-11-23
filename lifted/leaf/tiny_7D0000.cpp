@@ -115,3 +115,18 @@ uint32_t sub_007DB720(uint32_t obj) {
     return mem_read32(obj + 0x18);
 }
 } // namespace lift_007DB720
+
+// [0x007D5C50]
+namespace lift_007D5C50 {
+// @name derefBytePtr
+// @summary Dereferences a pointer to a byte pointer and returns the zero-extended byte value.
+
+
+extern uint32_t mem_r32(uint32_t addr);
+extern uint8_t mem_r8(uint32_t addr);
+
+uint32_t sub_007D5C50(uint32_t arg0) {
+    uint32_t ptr = mem_r32(arg0);
+    return static_cast<uint32_t>(mem_r8(ptr));
+}
+} // namespace lift_007D5C50
