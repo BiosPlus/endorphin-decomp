@@ -1,0 +1,40 @@
+{
+  "va": "0x0053BF90",
+  "size": 201,
+  "orig_symbol": "Primitives::TwistLimit::vfunc_28",
+  "src_path": "src/Primitives/TwistLimit.cpp",
+  "lifted_path": "lifted/Primitives/TwistLimit.cpp",
+  "name": "Primitives::TwistLimit::vfunc_28",
+  "class": "Primitives::TwistLimit",
+  "signature": "extern \"C\" void* ext_005B11F0(void* self, float* out);   // OglRenderer::vfunc_118 (thiscall, float out-param) extern \"C\" void ext_0053B470(void* self);                 // sub_0053B470 (thiscall) extern \"C\" void ext_00537ED0(void* self, float a, float b, float c, float d, uint32_t e); // sub_00537ED0 (thiscall + 5 stack args) extern \"C\" void (*mem_00925414)(void);                    // OPENGL32!glPushMatrix (IAT slot) extern \"C\" void (*mem_009254CC)(float, float, float, float); // OPENGL32!glRotatef (IAT slot) extern \"C\" void (*mem_00925404)(void);                    // OPENGL32!glPopMatrix (IAT slot) extern \"C\" const float mem_00955A30;                      // 90.0f extern \"C\" const float mem_00955A40;                      // pi as float (3.1415918f) extern \"C\" const double mem_00955A48;                    // pi as double extern \"C\" const double mem_00955A38;                    // 0.04 (double) void fn_0053BF90(void* self)",
+  "summary": "Clamps the half-angle to [0, pi], then within a GL push/pop draws a 90-degree Y rotation and calls the limit helper with +/-2*angle.",
+  "fields": [
+    {
+      "class": "Primitives::TwistLimit",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Primitives::TwistLimit",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::TwistLimit",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::TwistLimit",
+      "offset": "+0x44",
+      "type": "(subobject, address only, passed as this)",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:40:33Z"
+}
