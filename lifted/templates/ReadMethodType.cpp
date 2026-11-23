@@ -17159,3 +17159,29 @@ void* fn_00618360(void* out, const void* const* src) {
     return nullptr;
 }
 } // namespace lift_00618360
+
+// [0x00618520] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00618520 {
+extern void ext_00672080();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Geometry, float, Geometry::getParam2, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>
+// @summary Reads a float at +0x18 from the object referenced by the second argument, forwards it to ext_00672080 and returns the first argument; throws if the referenced pointer is null.
+// @field ExprParser::ValuePtrType +0x18 float field_0x18
+void* fn_00618520(void* a1, void* const* a2) {
+    void* const obj = a2 ? *a2 : nullptr;
+    if (obj == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return nullptr;
+    }
+
+    const float value = lift_field<float>(obj, 0x18);
+    (void)value;
+    ext_00672080();
+    return a1;
+}
+} // namespace lift_00618520
