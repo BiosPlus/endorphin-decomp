@@ -10393,3 +10393,28 @@ int fn_00692570(void* self) {
 }
 } // namespace lift_0046EB50
 } // namespace lift_00692570
+
+// [0x004A2B50] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A2B50 {
+// Callee 0x0049AA50: 4-byte helper taking the StateMachineEditor::FSMEditView* as `this`; returns a byte flag.
+extern uint8_t ext_0049AA50(void* view);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawActions, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held by the value pointer; throws if null, otherwise returns the bool result of sub_0049AA50 on that view.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+bool fn_004A2B50(void* self) {
+    // Original: `mov eax,[esp+4]; mov ecx,[eax]` -> the FSMEditView* stored at offset 0 of self.
+    void* view = lift_field<void*>(self, 0x00);
+
+    if (view == nullptr) {
+        // Original constructs an exception object and throws via _CxxThrowException.
+        throw std::runtime_error("ExprParser::ReadMethodType<StateMachineEditor::FSMEditView>: null view");
+    }
+
+    // Original: call sub_0049AA50 with ecx = view; the al result is normalised to 0/1.
+    return ext_0049AA50(view) != 0;
+}
+} // namespace lift_004A2B50
