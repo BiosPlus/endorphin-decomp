@@ -139,10 +139,14 @@ void* __thiscall fn_004D3E20(void* /*self*/, void* obj) {
     return ext_006A6E9E(obj, 0, mem_00A2E2F8, mem_00A3C268, 0);
 }
 extern "C" void ext_00671100(int selector, void* arg);
+#include <stdexcept>
+extern "C" void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern "C" void ext_006A6DD2();
 
-// [0x005C4870]
-// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>::vfunc_16
-// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>
+extern "C" void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern "C" void ext_006A6DD2();
 // @summary Dynamically casts the input object pointer to NMData::CollisionModelDataBase using __RTDynamicCast.
 
 #include "lift_compat.h"
@@ -190,4 +194,18 @@ uint32_t __stdcall fn_0067A770(uint32_t arg0, uint32_t arg1) {
 // @summary Auto-lifted identical-shape clone of 0x005C3380 (ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13).
 void fn_004C0320(void* arg) {
     ext_00671100(1, arg);
+}
+
+// [0x00515E80] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_1 (45 bytes)
+// @name ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Reads the int at +0x0C of the object referenced by the first pointer in the argument block and returns it as a double; throws if that pointer is null.
+// @field <unknown> +0x0C int field_0x0C
+double fn_00515E80(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::DynamicEnumType: null value pointer");
+    }
+    const int value = lift_field<int>(obj, 0x0C);
+    return static_cast<double>(value);
 }
