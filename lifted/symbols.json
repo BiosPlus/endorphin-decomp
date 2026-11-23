@@ -6924,6 +6924,13 @@
     "summary": "Lazily caches a shared value via ext_0050A030 on first call, then forwards it with the this+4 sub-object address to ext_0055DA20 on arg1; returns arg1.",
     "lifted_path": "lifted/NMData/TaskTemplate.cpp"
   },
+  "0x0050AAB0": {
+    "name": "NMData::Task::vfunc_13",
+    "class": "NMData::Task",
+    "signature": "extern \"C\" DWORD mem_00AEBCB8;  // one-time-init guard word (bit 0 = initialized) extern \"C\" DWORD mem_00AEBCB4;  // cached result of ext_0050A140() void* fn_0050AAB0(void* self, void* arg1, void* /*arg2*/)",
+    "summary": "Lazily caches ext_0050A140() once, then calls ext_0055DA20 on arg1 with the cached value and this+0x04; returns arg1.",
+    "lifted_path": "lifted/NMData/Task.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",

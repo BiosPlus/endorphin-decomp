@@ -1,0 +1,22 @@
+{
+  "va": "0x0050AAB0",
+  "size": 69,
+  "orig_symbol": "NMData::Task::vfunc_13",
+  "src_path": "src/NMData/Task.cpp",
+  "lifted_path": "lifted/NMData/Task.cpp",
+  "name": "NMData::Task::vfunc_13",
+  "class": "NMData::Task",
+  "signature": "extern \"C\" DWORD mem_00AEBCB8;  // one-time-init guard word (bit 0 = initialized) extern \"C\" DWORD mem_00AEBCB4;  // cached result of ext_0050A140() void* fn_0050AAB0(void* self, void* arg1, void* /*arg2*/)",
+  "summary": "Lazily caches ext_0050A140() once, then calls ext_0055DA20 on arg1 with the cached value and this+0x04; returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::Task",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (address taken only, not",
+      "name": "dereferenced)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:08:07Z"
+}
