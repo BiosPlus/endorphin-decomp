@@ -33698,6 +33698,12 @@
     "summary": "Pure jump thunk forwarding to sub_007CC930.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007CA8D0": {
+    "name": "add_0x10",
+    "signature": "uint32_t sub_007CA8D0(uint32_t arg0)",
+    "summary": "Adds 0x10 to the 32-bit argument and returns the result.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",

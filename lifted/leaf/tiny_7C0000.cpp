@@ -97,3 +97,12 @@ uint32_t sub_007C9DE0(uint32_t arg0) {
     return arg0 + 0x40u;
 }
 } // namespace lift_007C9DE0
+
+// [0x007CA8D0]
+namespace lift_007CA8D0 {
+// @name add_0x10
+// @summary Adds 0x10 to the 32-bit argument and returns the result.
+uint32_t sub_007CA8D0(uint32_t arg0) {
+    return arg0 + 0x10u;
+}
+} // namespace lift_007CA8D0
