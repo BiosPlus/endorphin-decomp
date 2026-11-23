@@ -4,11 +4,115 @@
   "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}\u003e::vfunc_48",
   "src_path": "src/templates/WriteMethodType.cpp",
   "lifted_path": "lifted/templates/WriteMethodType.cpp",
-  "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, setCachedDesiredPositionY\u003e::vfunc_48",
-  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}\u003e",
-  "signature": "extern \"C\" void __stdcall fn_006492B0(void* out, void* const* targetRef, void* self)",
-  "summary": "Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).",
+  "name": "WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+  "signature": "void fn_00604C40(void* self, void* arg)",
+  "summary": "Reads the target object from self, computes the value via arg's sub-object vtable slot 6, and forwards both to ext_006036A0.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "targetObj"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "reader"
+    },
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "expr"
+    },
+    {
+      "class": "Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "evaluator"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_04"
+    },
+    {
+      "class": "EffectorWithMemory",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "integralGradient"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and",
+      "name": "+0x70)"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtbl"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 =",
+      "name": "get-value-ref)"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-23T12:07:36Z"
+  "lifted_at": "2026-11-23T12:07:42Z"
 }

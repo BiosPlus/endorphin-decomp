@@ -8,6 +8,6 @@
 // Recovered field layout for Value:
 namespace lifted_layout {
 struct Value_Fields {
-    // +0x4   void*                    evaluator  (evidence: 0x005F3680, 0x00649150)
+    // +0x4   void*                    evaluator  (evidence: 0x005F3680, 0x00649150, 0x006492B0)
 };
 } // namespace lifted_layout
