@@ -3678,3 +3678,34 @@ void fn_004A2630(uint32_t self_ptr, uint32_t arg) {
     ext_004A24E0(target, value);
 }
 } // namespace lift_004A2630
+
+// [0x004A26A0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditionNumber(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A26A0 {
+extern void ext_004A24F0(void* self, uintptr_t value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, uintptr_t throwInfo);
+
+// @name ReadWriteMethodType<FSMEditView>::vfunc_41 (drawConditionNumber -> setDrawConditionNumber)
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditionNumber(bool), 0}>
+// @summary Reads the bool value via the stored target pointer's inner object vtable slot 3 and forwards it to sub_004A24F0 on the target; throws if the target pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field UnknownArg2 +0x04 void* field_0x04
+void fn_004A26A0(void* arg1, void* arg2) {
+    void* self = *static_cast<void**>(arg1);
+    if (self == nullptr) {
+        // Null target: construct an exception object in the frame and throw.
+        uint8_t exc[0x24];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1C);
+        return;
+    }
+
+    uint8_t* obj = static_cast<uint8_t*>(arg2);
+    void* inner = *reinterpret_cast<void**>(obj + 0x04);
+    void* const* vtable = *reinterpret_cast<void* const* const*>(inner);
+    using VFn = uintptr_t (*)(void*, void*);
+    uintptr_t value = reinterpret_cast<VFn>(vtable[3])(inner, arg2);
+    ext_004A24F0(self, value);
+}
+} // namespace lift_004A26A0
