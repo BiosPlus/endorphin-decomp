@@ -1,0 +1,21 @@
+{
+  "va": "0x006452C0",
+  "size": 10,
+  "orig_symbol": "sub_006452C0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "forwardVtable18",
+  "signature": "uint32_t sub_006452C0(uint32_t self)",
+  "summary": "Tail-calls virtual method at vtable +0x18 on member object at +0x4",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:29:55Z"
+}

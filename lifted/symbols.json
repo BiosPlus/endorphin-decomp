@@ -20420,6 +20420,12 @@
     "summary": "Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006452C0": {
+    "name": "forwardVtable18",
+    "signature": "uint32_t sub_006452C0(uint32_t self)",
+    "summary": "Tail-calls virtual method at vtable +0x18 on member object at +0x4",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00645F80": {
     "name": "RelationshipHinge::vfunc_0_off_8",
     "class": "RelationshipHinge",
