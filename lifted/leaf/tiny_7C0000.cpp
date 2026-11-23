@@ -172,3 +172,16 @@ void sub_007C6C10(uint32_t arg0) {
     mem_u32(arg0 + 0x0C) |= 0x4u;
 }
 } // namespace lift_007C6C10
+
+// [0x007C6C20]
+namespace lift_007C6C20 {
+uint32_t mem_read32(uintptr_t addr);
+void mem_write32(uintptr_t addr, uint32_t val);
+
+// @name setFlag0x8At0xC
+// @summary Sets bit 0x8 in the 32-bit flags field at offset +0xC of the given object.
+// @field Object +0x0C uint32_t field_0x0C
+void sub_007C6C20(uintptr_t obj) {
+    mem_write32(obj + 0x0C, mem_read32(obj + 0x0C) | 0x8u);
+}
+} // namespace lift_007C6C20

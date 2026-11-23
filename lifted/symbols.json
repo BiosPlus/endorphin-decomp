@@ -33834,6 +33834,12 @@
     "summary": "Sets bit 0x4 in the 32-bit flags field at offset +0x0C of the passed object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6C20": {
+    "name": "setFlag0x8At0xC",
+    "signature": "void sub_007C6C20(uintptr_t obj)",
+    "summary": "Sets bit 0x8 in the 32-bit flags field at offset +0xC of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6F30": {
     "name": "getFloatField_0x1c",
     "signature": "float sub_007C6F30(uint32_t obj)",
