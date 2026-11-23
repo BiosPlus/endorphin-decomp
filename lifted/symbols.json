@@ -21895,6 +21895,20 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0065BB60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0065C640": {
+    "name": "CriticalSectionLock::enter",
+    "class": "CriticalSectionLock",
+    "signature": "void __thiscall sub_0065C640(void* self)",
+    "summary": "Enters the critical section referenced at offset 0x00 of the object.",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
+  "0x0065C650": {
+    "name": "CriticalSectionLock::leave",
+    "class": "CriticalSectionLock",
+    "signature": "void __thiscall sub_0065C650(void* self)",
+    "summary": "Releases the critical section pointed to by the first field",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
   "0x0065C660": {
     "name": "sub_0065C660",
     "signature": "extern \"C\" void __fastcall fn_0065C660(void* self)",

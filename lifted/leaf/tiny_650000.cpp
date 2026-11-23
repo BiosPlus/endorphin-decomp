@@ -59,3 +59,32 @@ uint32_t __fastcall sub_0065A8B0(uint32_t ecx, uint32_t edx)
     return ecx;
 }
 } // namespace lift_0065A8B0
+
+// [0x0065C650]
+namespace lift_0065C650 {
+extern void (__stdcall *mem_009241BC)(void*);
+
+// @name CriticalSectionLock::leave
+// @class CriticalSectionLock
+// @summary Releases the critical section pointed to by the first field
+// @field CriticalSectionLock +0x00 void* criticalSection
+void __thiscall sub_0065C650(void* self) {
+    mem_009241BC(*reinterpret_cast<void**>(self));
+}
+} // namespace lift_0065C650
+
+// [0x0065C640]
+namespace lift_0065C640 {
+// @name CriticalSectionLock::enter
+// @class CriticalSectionLock
+// @summary Enters the critical section referenced at offset 0x00 of the object.
+// @field CriticalSectionLock +0x00 void* criticalSection
+
+
+extern void __stdcall EnterCriticalSection(void* lpCriticalSection);
+
+void __thiscall sub_0065C640(void* self) {
+    void* cs = *reinterpret_cast<void**>(self);
+    EnterCriticalSection(cs);
+}
+} // namespace lift_0065C640
