@@ -29490,6 +29490,12 @@
     "summary": "Pure jump thunk forwarding to NMCAutoCompleteEdit::vfunc_80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B98D0": {
+    "name": "sub_006B98D0",
+    "signature": "void fn_006B98D0(void)",
+    "summary": "Calls sub_006B98E0 and tail-calls sub_006B98F0",
+    "lifted_path": "lifted/clones/auto_clones_6B0000.cpp"
+  },
   "0x006B98E0": {
     "name": "sub_006B98E0",
     "signature": "extern void fn_006B98E0(void)",
