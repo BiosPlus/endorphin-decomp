@@ -158,3 +158,22 @@ void __thiscall fn_0046FAC0(void* self) {
     ext_006A5C5C(val);
 }
 } // namespace lift_0046FAC0
+
+// [0x00465B40] sub_00465B40 (12 bytes)
+namespace lift_00465B40 {
+// @name sub_00465B40
+// @summary Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).
+namespace lift_00430360 {
+// @name getGlobalField0x58AndCall00469040
+// @summary Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern void __thiscall ext_00468660(int32_t self);
+
+extern void __cdecl fn_00465B40(void) {
+    int32_t obj = ext_00465B30();
+    ext_00468660(obj);
+}
+} // namespace lift_00430360
+} // namespace lift_00465B40

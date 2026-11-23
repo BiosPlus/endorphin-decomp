@@ -82,3 +82,41 @@ extern void __cdecl fn_00430360(void) {
     ext_00469040(obj);
 }
 } // namespace lift_00430360
+
+// [0x004302A0] sub_004302A0 (12 bytes)
+namespace lift_004302A0 {
+// @name sub_004302A0
+// @summary Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).
+namespace lift_00430360 {
+// @name getGlobalField0x58AndCall00469040
+// @summary Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern void __thiscall ext_00469A80(int32_t self);
+
+extern void __cdecl fn_004302A0(void) {
+    int32_t obj = ext_00465B30();
+    ext_00469A80(obj);
+}
+} // namespace lift_00430360
+} // namespace lift_004302A0
+
+// [0x00430330] sub_00430330 (12 bytes)
+namespace lift_00430330 {
+// @name sub_00430330
+// @summary Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).
+namespace lift_00430360 {
+// @name getGlobalField0x58AndCall00469040
+// @summary Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern void __thiscall ext_0046BF80(int32_t self);
+
+extern void __cdecl fn_00430330(void) {
+    int32_t obj = ext_00465B30();
+    ext_0046BF80(obj);
+}
+} // namespace lift_00430360
+} // namespace lift_00430330
