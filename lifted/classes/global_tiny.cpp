@@ -4861,3 +4861,17 @@ uint32_t __thiscall fn_00544A90(uint32_t self) {
 }
 } // namespace lift_00402050
 } // namespace lift_00544A90
+
+// [0x005321A0]
+namespace lift_005321A0 {
+extern void (__stdcall *mem_009253C8)(const float* m);
+
+// @name HasConstantTMPtr::glMultMatrix
+// @class HasConstantTMPtr
+// @summary Multiplies the current OpenGL matrix by the constant transformation matrix.
+// @field HasConstantTMPtr +0x04 const float* field_0x04
+void __thiscall HasConstantTMPtr_vfunc_11(void* self) {
+    const float* m = *reinterpret_cast<const float* const*>(static_cast<const uint8_t*>(self) + 0x4);
+    mem_009253C8(m);
+}
+} // namespace lift_005321A0

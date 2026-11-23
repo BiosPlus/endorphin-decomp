@@ -1,0 +1,22 @@
+{
+  "va": "0x005321A0",
+  "size": 11,
+  "orig_symbol": "HasConstantTMPtr::vfunc_11",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasConstantTMPtr::glMultMatrix",
+  "class": "HasConstantTMPtr",
+  "signature": "void __thiscall HasConstantTMPtr_vfunc_11(void* self)",
+  "summary": "Multiplies the current OpenGL matrix by the constant transformation matrix.",
+  "fields": [
+    {
+      "class": "HasConstantTMPtr",
+      "offset": "+0x4",
+      "type": "const float*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:41:01Z"
+}
