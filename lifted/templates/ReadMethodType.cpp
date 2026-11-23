@@ -18118,3 +18118,31 @@ float fn_004AA140(void* const* holder) {
     return static_cast<float>(std::atof(name->c_str()));
 }
 } // namespace lift_004AA140
+
+// [0x004B2120] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004B2120 {
+extern float ext_0048FAC0(void* self);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+extern const double mem_00942058;   // .rdata double 1e-06
+extern const unsigned char mem_009DEC1C; // RTTI throw info used by the null-object path
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_3 (NMData::GraphEngineData::getXMax >= 1e-6 check)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped GraphEngineData's getXMax() is at least 1e-6 (NaN yields 0); throws if the object pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00
+int fn_004B2120(void** arg) {
+    void* obj = *arg;
+    if (obj == nullptr) {
+        unsigned char exc[0x10] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    float xMax = ext_0048FAC0(obj);
+    // Unordered (NaN) or less-than comparisons yield false, matching the x87 fcomp/C0 test.
+    return (xMax >= mem_00942058) ? 1 : 0;
+}
+} // namespace lift_004B2120

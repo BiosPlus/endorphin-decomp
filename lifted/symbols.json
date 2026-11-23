@@ -4907,6 +4907,13 @@
     "summary": "Forwards to the wrapped object's float getter if the stored pointer is set; otherwise throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B2120": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_3 (NMData::GraphEngineData::getXMax \u003e= 1e-6 check)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e",
+    "signature": "int fn_004B2120(void** arg)",
+    "summary": "Returns 1 if the wrapped GraphEngineData's getXMax() is at least 1e-6 (NaN yields 0); throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B2370": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}\u003e",
