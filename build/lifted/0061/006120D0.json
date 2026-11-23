@@ -1,0 +1,22 @@
+{
+  "va": "0x006120D0",
+  "size": 96,
+  "orig_symbol": "NMData::HingeLimit::vfunc_0",
+  "src_path": "src/NMData/HingeLimit.cpp",
+  "lifted_path": "lifted/NMData/HingeLimit.cpp",
+  "name": "NMData::HingeLimit::scalarDeletingDestructor",
+  "class": "NMData::HingeLimit",
+  "signature": "extern \"C\" void* __thiscall fn_006120D0(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor for NMData::HingeLimit; destroys member at +0x20, resets base vtable, and optionally frees self.",
+  "fields": [
+    {
+      "class": "NMData::HingeLimit",
+      "offset": "+0x20",
+      "type": "uint8_t[1]",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T14:28:49Z"
+}
