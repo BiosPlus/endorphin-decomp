@@ -18041,3 +18041,36 @@ float fn_004986A0(void* self) {
     return static_cast<float>(std::atof(state_id.c_str()));
 }
 } // namespace lift_004986A0
+
+// [0x00497E20] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00497E20 {
+// Helper: resolves the string-valued source from the inner object (sub_00496F20).
+extern void* ext_00496F20(void* self);
+// Helper: builds the error object on the stack for the null path (sub_0046C3C0).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* thrownObject, void* throwInfo);
+// Import slot 0x924FF0: std::string::c_str (MSVCP80).
+extern const char* (*mem_00924FF0)(void* self);
+// Import slot 0x9251F0: atof (MSVCR80).
+extern double (*mem_009251F0)(const char* s);
+// Throw info descriptor at 0x9DEC1C.
+extern void* mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::Transition, std::string const &, Transition::getCondition, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Reads the Transition condition string through the wrapped pointer and returns it parsed as a float (atof); throws if the pointer is null.
+// @field ValuePtrType +0x00 void* target
+float fn_00497E20(void* self) {
+    void* inner = *static_cast<void**>(self);
+    if (inner == nullptr) {
+        alignas(8) unsigned char errBuf[16] = {};
+        ext_0046C3C0(errBuf);
+        ext_006A6DD2(errBuf, mem_009DEC1C);
+        return 0.0f;
+    }
+    void* str = ext_00496F20(inner);
+    const char* text = mem_00924FF0(str);
+    return static_cast<float>(mem_009251F0(text));
+}
+} // namespace lift_00497E20
