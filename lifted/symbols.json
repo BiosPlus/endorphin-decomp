@@ -1357,6 +1357,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00442980 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00443390": {
+    "name": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_1",
+    "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+    "signature": "void fn_00443390(void* self)",
+    "summary": "Stores (owner+0xF0 - owner+0xE8) into this+0x10, then captures the mouse on the owner's window.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp"
+  },
   "0x00443440": {
     "name": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",

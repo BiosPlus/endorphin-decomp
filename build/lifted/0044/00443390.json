@@ -1,0 +1,46 @@
+{
+  "va": "0x00443390",
+  "size": 49,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_1",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/ZoomState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_1",
+  "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+  "signature": "void fn_00443390(void* self)",
+  "summary": "Stores (owner+0xF0 - owner+0xE8) into this+0x10, then captures the mouse on the owner's window.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::ZoomState",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "range"
+    },
+    {
+      "class": "owner",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "hwnd"
+    },
+    {
+      "class": "owner",
+      "offset": "+0xE8",
+      "type": "double",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "owner",
+      "offset": "+0xF0",
+      "type": "double",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T12:18:15Z"
+}
