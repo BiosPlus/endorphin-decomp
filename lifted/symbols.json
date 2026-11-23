@@ -6327,6 +6327,13 @@
     "summary": "Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA330": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isGravityEnabled, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
+    "signature": "void* fn_004EA330(void* self, void* const* src)",
+    "summary": "Reads the object referenced by *src; throws if it is null, otherwise forwards its byte at +0x06 to ext_006720A0 and returns self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA4D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",

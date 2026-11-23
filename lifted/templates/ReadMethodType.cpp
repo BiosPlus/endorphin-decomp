@@ -11733,3 +11733,25 @@ void* fn_004EA030(void* self, void* const* src) {
     return self;
 }
 } // namespace lift_004EA030
+
+// [0x004EA330] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_004EA330 {
+// Callee 0x006720A0 (sub_006720A0): thiscall on `self` with one byte argument.
+// Signature is approximated here; calling convention is resolved by the target toolchain.
+extern void ext_006720A0(void* self, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isGravityEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Reads the object referenced by *src; throws if it is null, otherwise forwards its byte at +0x06 to ext_006720A0 and returns self.
+// @field ExprParser::ValuePtrType +0x06 uint8_t field_0x06
+void* fn_004EA330(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        // Original throws a MSVC exception object (type at 0x009DEC1C) via _CxxThrowException.
+        throw std::invalid_argument("ReadMethodType: null value pointer");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x06);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA330

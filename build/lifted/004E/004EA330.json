@@ -1,0 +1,22 @@
+{
+  "va": "0x004EA330",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isGravityEnabled, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
+  "signature": "void* fn_004EA330(void* self, void* const* src)",
+  "summary": "Reads the object referenced by *src; throws if it is null, otherwise forwards its byte at +0x06 to ext_006720A0 and returns self.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-23T13:48:05Z"
+}
