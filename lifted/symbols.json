@@ -10959,6 +10959,13 @@
     "summary": "Tail-calls vtable slot +0x7c on the object pointer at this - 0x10 (ToolClient subobject).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544B10": {
+    "name": "ForceApplicationTool::vfunc_18_off_98",
+    "class": "ForceApplicationTool",
+    "signature": "void __thiscall fn_00544B10(void* self)",
+    "summary": "Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00544BC0": {
     "name": "ReshapeTool::vfunc_1",
     "class": "ReshapeTool",

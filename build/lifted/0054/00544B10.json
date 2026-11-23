@@ -1,0 +1,22 @@
+{
+  "va": "0x00544B10",
+  "size": 10,
+  "orig_symbol": "ForceApplicationTool::vfunc_18_off_98",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ForceApplicationTool::vfunc_18_off_98",
+  "class": "ForceApplicationTool",
+  "signature": "void __thiscall fn_00544B10(void* self)",
+  "summary": "Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).",
+  "fields": [
+    {
+      "class": "ForceApplicationTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:29:00Z"
+}

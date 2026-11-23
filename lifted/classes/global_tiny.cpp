@@ -4612,3 +4612,20 @@ void __fastcall fn_00544E00(void* ecx) {
     ((void(__thiscall*)(void*))(uintptr_t)fn)((void*)(uintptr_t)target);
 }
 } // namespace lift_00544E00
+
+// [0x00544B10]
+namespace lift_00544B10 {
+// @name ForceApplicationTool::vfunc_18_off_98
+// @class ForceApplicationTool
+// @summary Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).
+// @field ForceApplicationTool +0x88 void* field_0x88
+
+
+void __thiscall fn_00544B10(void* self) {
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) - 0x10);
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+    using Vfunc18 = void (__thiscall*)(void*);
+    Vfunc18 fn = *reinterpret_cast<Vfunc18*>(vtable + 0x48);
+    fn(obj);
+}
+} // namespace lift_00544B10

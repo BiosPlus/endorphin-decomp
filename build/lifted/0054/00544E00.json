@@ -1,0 +1,22 @@
+{
+  "va": "0x00544E00",
+  "size": 10,
+  "orig_symbol": "ReshapeTool::vfunc_8_off_98",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ReshapeTool::vfunc_8_off_98",
+  "class": "ReshapeTool",
+  "signature": "void __fastcall fn_00544E00(void* ecx)",
+  "summary": "Forwards ToolClient::vfunc_8 to the target object stored at offset -0x10 from the ToolClient subobject (ReshapeTool + 0x88)",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-23T15:28:55Z"
+}
