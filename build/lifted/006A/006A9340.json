@@ -1,0 +1,22 @@
+{
+  "va": "0x006A9340",
+  "size": 26,
+  "orig_symbol": "sub_006A9340",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::ForwardField0xA4AndArg",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall sub_006A9340(void* self, uint32_t arg1)",
+  "summary": "Forwards this+0x9C as the thiscall receiver, this-\u003efield_0xA4 and arg1 to ext_006A6796 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "uint32_t",
+      "name": "field_0xA4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:57:10Z"
+}

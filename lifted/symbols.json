@@ -32735,6 +32735,13 @@
     "summary": "Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A9340": {
+    "name": "Unknown::ForwardField0xA4AndArg",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall sub_006A9340(void* self, uint32_t arg1)",
+    "summary": "Forwards this+0x9C as the thiscall receiver, this-\u003efield_0xA4 and arg1 to ext_006A6796 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A95C0": {
     "name": "SubObject::SetWindowUpdateLocked",
     "class": "SubObject",

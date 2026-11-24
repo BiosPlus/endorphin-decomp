@@ -56,3 +56,24 @@ void fn_006ACFE0(void* self, DWORD arg) {
     lift_field<DWORD>(self, 0x48) = result;
 }
 } // namespace lift_006ACFE0
+
+// [0x006A9340]
+namespace lift_006A9340 {
+// @name Unknown::ForwardField0xA4AndArg
+// @class Unknown
+// @summary Forwards this+0x9C as the thiscall receiver, this->field_0xA4 and arg1 to ext_006A6796 and returns its result.
+// @field Unknown +0xA4 uint32_t field_0xA4
+
+namespace lift_006A9340 {
+
+// IAT thunk to MFC80!ord_5714. Receiver in ecx, then two stack args
+// (pushed as eax then edx, so the first stack param is edx).
+extern uint32_t __thiscall ext_006A6796(void* self, uint32_t field_a4, uint32_t arg1);
+
+uint32_t __thiscall sub_006A9340(void* self, uint32_t arg1) {
+    uint32_t field_a4 = lift_field<uint32_t>(self, 0xA4);
+    return ext_006A6796(static_cast<uint8_t*>(self) + 0x9C, field_a4, arg1);
+}
+
+} // namespace lift_006A9340
+} // namespace lift_006A9340
