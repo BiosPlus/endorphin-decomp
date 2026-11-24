@@ -5459,6 +5459,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046FD70": {
+    "name": "sub_0046FD70",
+    "signature": "uint32_t __thiscall sub_0046FD70(uint32_t self, uint32_t out_ptr)",
+    "summary": "Copies an 8-byte value from nested member pointers into the output buffer and returns the output pointer.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FDA0": {
     "name": "Unknown::setSubobject1E0Value",
     "class": "Unknown",
@@ -12262,6 +12268,12 @@
     "signature": "double __thiscall sub_0050EA10(void* self)",
     "summary": "Returns a double at offset 0x20 from the object pointed to by this+0x8.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
+  "0x0050EE70": {
+    "name": "destroyStringRange",
+    "signature": "void __stdcall sub_0050EE70(uint32_t begin, uint32_t end)",
+    "summary": "Destroys a contiguous range [begin, end) of 0x20-byte std::string objects.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050F180": {
     "name": "sub_0050F180",

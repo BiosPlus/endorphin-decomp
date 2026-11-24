@@ -508,3 +508,27 @@ extern void __stdcall fn_004691D0(uint32_t flag, const void* rhs) {
     obj[0x04] = 1;
 }
 } // namespace lift_004691D0
+
+// [0x0046FD70]
+namespace lift_0046FD70 {
+// @name sub_0046FD70
+// @summary Copies an 8-byte value from nested member pointers into the output buffer and returns the output pointer.
+// @field Self +0xcc uint32_t field_0xcc
+// @field SubA +0x26c uint32_t field_0x26c
+// @field SubB +0x1e0 uint32_t field_0x1e0
+// @field SubB +0x1e4 uint32_t field_0x1e4
+
+
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __thiscall sub_0046FD70(uint32_t self, uint32_t out_ptr) {
+    uint32_t a = mem_read32(self + 0xCC);
+    uint32_t b = mem_read32(a + 0x26C);
+    uint32_t lo = mem_read32(b + 0x1E0);
+    uint32_t hi = mem_read32(b + 0x1E4);
+    mem_write32(out_ptr, lo);
+    mem_write32(out_ptr + 4, hi);
+    return out_ptr;
+}
+} // namespace lift_0046FD70
