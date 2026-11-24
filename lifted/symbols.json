@@ -14475,6 +14475,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x005136F0": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e",
+    "signature": "void* __thiscall fn_005136F0(void* self, void* dst, void** obj_ptr)",
+    "summary": "Reads a std::string property from a Chromosome::Descriptor* via virtual slot 9, or throws an exception if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00513AA0": {
     "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e",

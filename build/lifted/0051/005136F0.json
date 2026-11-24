@@ -1,0 +1,14 @@
+{
+  "va": "0x005136F0",
+  "size": 76,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e",
+  "signature": "void* __thiscall fn_005136F0(void* self, void* dst, void** obj_ptr)",
+  "summary": "Reads a std::string property from a Chromosome::Descriptor* via virtual slot 9, or throws an exception if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:49:48Z"
+}

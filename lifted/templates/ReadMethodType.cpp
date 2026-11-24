@@ -33939,3 +33939,29 @@ void* __thiscall fn_0068F1F0(void* self, void* out_val, void** target_ptr) {
     return out_val;
 }
 } // namespace lift_0068F1F0
+
+// [0x005136F0]
+namespace lift_005136F0 {
+extern void* __thiscall ext_00682ED0(void* self);
+extern void* __cdecl ext_004276B0(void* dst, const void* src);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_4
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor>
+// @summary Reads a std::string property from a Chromosome::Descriptor* via virtual slot 9, or throws an exception if null.
+void* __thiscall fn_005136F0(void* self, void* dst, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        void* src = ext_00682ED0(static_cast<uint8_t*>(obj) + 4);
+        ext_004276B0(dst, src);
+        return dst;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2();
+    return nullptr;
+}
+} // namespace lift_005136F0
