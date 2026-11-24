@@ -1,0 +1,22 @@
+{
+  "va": "0x00611910",
+  "size": 57,
+  "orig_symbol": "sub_00611910",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::forwardFloatThroughChildAndVirtualF0",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00611910(void* self, float value)",
+  "summary": "Gets an int32 handle from ext_00594000, passes (handle + 0x2E0) and the float argument to ext_006781B0, then calls the object's vtable slot at +0xF0 as (this, 1, result).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:20:02Z"
+}

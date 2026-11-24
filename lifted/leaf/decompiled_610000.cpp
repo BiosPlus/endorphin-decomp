@@ -184,3 +184,26 @@ extern void __thiscall fn_00611870(void* self) {
     ext_00678130(target, val);
 }
 } // namespace lift_00611870
+
+// [0x00611910] sub_00611910 (57 bytes)
+namespace lift_00611910 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Callee 0x006781B0: thiscall, one float stack arg (callee pops 4), returns float in st(0).
+extern float __thiscall ext_006781B0(void* self, float value);
+
+// @name Unknown::forwardFloatThroughChildAndVirtualF0
+// @class Unknown
+// @summary Gets an int32 handle from ext_00594000, passes (handle + 0x2E0) and the float argument to ext_006781B0, then calls the object's vtable slot at +0xF0 as (this, 1, result).
+// @field Unknown +0x00 void* vtable
+void __thiscall fn_00611910(void* self, float value) {
+    uintptr_t child = static_cast<uint32_t>(ext_00594000()) + 0x2E0;
+    float result = ext_006781B0(reinterpret_cast<void*>(child), value);
+
+    // Virtual call: vtable slot at +0xF0, thiscall, args (int32 flag = 1, float value).
+    using VSlot = void(__thiscall*)(void* self, int32_t flag, float value);
+    void* vtable = lift_field<void*>(self, 0x00);
+    VSlot slot = reinterpret_cast<VSlot>(lift_field<void*>(vtable, 0xF0));
+    slot(self, 1, result);
+}
+} // namespace lift_00611910
