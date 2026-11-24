@@ -1,0 +1,21 @@
+{
+  "va": "0x007BFD40",
+  "size": 56,
+  "orig_symbol": "sub_007BFD40",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "WordCopyOrForwardDispatch_007BFD40",
+  "signature": "DWORD fn_007BFD40(void* a1, DWORD a2, void* a3)",
+  "summary": "If a2 == 0x13D, copies the WORD at a1-\u003e+0x1CC into *a3 and returns 1; otherwise forwards (a1, a2, a3) to the function pointer at (a1-\u003e+0x1CC)+0x1C and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "field_0x1cc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:17:22Z"
+}

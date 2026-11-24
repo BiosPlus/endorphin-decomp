@@ -54088,6 +54088,12 @@
     "summary": "Dispatches two virtual/table callbacks via *(arg1 + 0x1cc) at offsets +0xc and +0x10",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFD40": {
+    "name": "WordCopyOrForwardDispatch_007BFD40",
+    "signature": "DWORD fn_007BFD40(void* a1, DWORD a2, void* a3)",
+    "summary": "If a2 == 0x13D, copies the WORD at a1-\u003e+0x1CC into *a3 and returns 1; otherwise forwards (a1, a2, a3) to the function pointer at (a1-\u003e+0x1CC)+0x1C and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007C1F60": {
     "name": "writeU16BE",
     "signature": "void __cdecl sub_007C1F60(void* self, uint32_t value)",

@@ -623,7 +623,8 @@ struct Unknown_Fields {
     // +0x1C4 int32_t                  field_0x1c4  (evidence: 0x006D8210) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C5 uint8_t                  field_0x1C5  (evidence: 0x006D7CE0)
     // +0x1C8 float                    field_0x1c8  (evidence: 0x007C2E50, 0x007C5F90)
-    // +0x1CC void* field_0x1cc (pointer to a handle-holder object; freed via GlobalFree)  (evidence: 0x007BD340)
+    // +0x1CC void* field_0x1cc (pointer to a handle-holder object; freed via GlobalFree)  (evidence: 0x007BD340) // CONFLICT: multiple definitions at +0x1CC
+    // +0x1CC void*                    field_0x1cc  (evidence: 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
     // +0x1D0 int32_t                  field_0x1D0  (evidence: 0x007BF4A0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D0 void*                    field_1D0  (evidence: 0x005B0E60, 0x005B6BC0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D4 uint32_t                 field_0x1d4  (evidence: 0x006D8210)

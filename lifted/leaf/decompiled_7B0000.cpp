@@ -479,3 +479,25 @@ int __cdecl fn_007BD9E0(void* self, uint32_t key, void* out) {
     return forward(self, key, out);
 }
 } // namespace lift_007BD9E0
+
+// [0x007BFD40] sub_007BFD40 (56 bytes)
+namespace lift_007BFD40 {
+// @name WordCopyOrForwardDispatch_007BFD40
+// @summary If a2 == 0x13D, copies the WORD at a1->+0x1CC into *a3 and returns 1; otherwise forwards (a1, a2, a3) to the function pointer at (a1->+0x1CC)+0x1C and returns its result.
+// @field Unknown +0x1cc void* field_0x1cc
+DWORD fn_007BFD40(void* a1, DWORD a2, void* a3) {
+    // Original: eax = [a1 + 0x1cc]; loaded before the compare.
+    void* p = lift_field<void*>(a1, 0x1cc);
+
+    if (a2 == 0x13D) {
+        // Original: ecx = a3; edx = [ecx]; word [edx] = word [eax]; eax = 1.
+        void* dst = lift_field<void*>(a3, 0x00);
+        lift_field<WORD>(dst, 0x00) = lift_field<WORD>(p, 0x00);
+        return 1;
+    }
+
+    // Original: push a3, push a2, push a1; call [p + 0x1c]; add esp, 0xC; return eax.
+    auto target = reinterpret_cast<DWORD (*)(void*, DWORD, void*)>(lift_field<void*>(p, 0x1c));
+    return target(a1, a2, a3);
+}
+} // namespace lift_007BFD40
