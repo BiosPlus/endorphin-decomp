@@ -8909,6 +8909,12 @@
     "summary": "Builds a float[4] {scalar, this-\u003e+0x20, this-\u003e+0x24, this-\u003e+0x28} and passes it to ext_004B0ED0 (stdcall, one pointer arg); scalar is a stack arg, callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B10D0": {
+    "name": "sub_004B10D0",
+    "signature": "void __stdcall sub_004B10D0(void* ecx, float arg1)",
+    "summary": "Reads three float fields from the object and forwards them with an extra float argument to sub_004B0ED0 through a temporary out-parameter.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B1250": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData,int,getColor\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",

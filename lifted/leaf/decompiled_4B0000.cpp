@@ -205,3 +205,22 @@ void __thiscall fn_004B10A0(void* self, float scalar) {
     ext_004B0ED0(v);
 }
 } // namespace lift_004B10A0
+
+// [0x004B10D0]
+namespace lift_004B10D0 {
+// @name sub_004B10D0
+// @summary Reads three float fields from the object and forwards them with an extra float argument to sub_004B0ED0 through a temporary out-parameter.
+// @field +0x1C float field_0x1C
+// @field +0x24 float field_0x24
+// @field +0x28 float field_0x28
+
+extern void __cdecl ext_004B0ED0(float* out, float a, float x, float b, float c);
+
+void __stdcall sub_004B10D0(void* ecx, float arg1) {
+    float a = lift_field<float>(ecx, 0x1C);
+    float out = a;
+    float b = lift_field<float>(ecx, 0x24);
+    float c = lift_field<float>(ecx, 0x28);
+    ext_004B0ED0(&out, a, arg1, b, c);
+}
+} // namespace lift_004B10D0
