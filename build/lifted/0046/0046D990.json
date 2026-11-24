@@ -1,0 +1,22 @@
+{
+  "va": "0x0046D990",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_4 (ImageExporter::getImageHeight)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0\u003e",
+  "signature": "void* fn_0046D990(void* self)",
+  "summary": "Reads the object pointer stored in the holder's first slot; if non-null, calls vfunc_21 on it, forwards (holder, result) to sub_0046C500, and returns the holder; if null, throws.",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:41:30Z"
+}

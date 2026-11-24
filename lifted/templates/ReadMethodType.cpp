@@ -30984,3 +30984,25 @@ std::string fn_0049B910(const void* holder) {
     return *src;
 }
 } // namespace lift_0049B910
+
+// [0x0046D990] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046D990 {
+// SelectionBuffer::vfunc_21 (thiscall; `this` is the object stored in the holder's first slot).
+extern uintptr_t ext_006AD1C0(void* self);
+// sub_0046C500 (cdecl, two stack args: holder, vfunc_21 result).
+extern void ext_0046C500(void* holder, uintptr_t value);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_4 (ImageExporter::getImageHeight)
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Reads the object pointer stored in the holder's first slot; if non-null, calls vfunc_21 on it, forwards (holder, result) to sub_0046C500, and returns the holder; if null, throws.
+// @field ValuePtr +0x00 void* field_0x00
+void* fn_0046D990(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null value pointer");
+    }
+    const uintptr_t value = ext_006AD1C0(obj);
+    ext_0046C500(self, value);
+    return self;
+}
+} // namespace lift_0046D990
