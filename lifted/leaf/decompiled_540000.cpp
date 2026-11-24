@@ -342,3 +342,16 @@ void __thiscall fn_00547E80(void* self, const float* src) {
     slot17(self);
 }
 } // namespace lift_00547E80
+
+// [0x0054F1B0]
+namespace lift_0054F1B0 {
+extern void ext_0054F030(uint8_t* self, uint32_t arg);
+
+// @name constructRange_0054F1B0
+// @summary Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.
+void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg) {
+    for (uint8_t* cur = begin; cur != end; cur += 0x68) {
+        ext_0054F030(cur, arg);
+    }
+}
+} // namespace lift_0054F1B0

@@ -1,0 +1,13 @@
+{
+  "va": "0x0054F1B0",
+  "size": 38,
+  "orig_symbol": "sub_0054F1B0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "constructRange_0054F1B0",
+  "signature": "void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg)",
+  "summary": "Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:55:47Z"
+}

@@ -15720,6 +15720,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0054ECB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0054F1B0": {
+    "name": "constructRange_0054F1B0",
+    "signature": "void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg)",
+    "summary": "Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F400": {
     "name": "LightList::vfunc_0",
     "class": "LightList",
