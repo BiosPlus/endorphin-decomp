@@ -709,3 +709,24 @@ void* fn_006BB7C0(void* self) {
     return vtbl[2];
 }
 } // namespace lift_006BB7C0
+
+// [0x006B4FD0] sub_006B4FD0 (21 bytes)
+namespace lift_006B4FD0 {
+// @name IsEscapeKeyUp
+// @summary Queries GetKeyState(VK_ESCAPE) and returns 4 if the key is currently up (high bit clear), else 0.
+
+// USER32!GetKeyState (imported via IAT slot mem_009255F4).
+using GetKeyState_t = int16_t (__stdcall*)(int32_t nVirtKey);
+extern GetKeyState_t ext_GetKeyState;
+// IAT slot at 0x009255F4 holding the address of GetKeyState (resolved by the loader).
+extern uint32_t mem_009255F4;
+
+uint32_t fn_006B4FD0() {
+    const int16_t state = ext_GetKeyState(0x1B); // VK_ESCAPE
+    uint32_t eax = static_cast<uint16_t>(state); // movzx eax, ax
+    eax = ~eax;                                  // xor eax, -1
+    eax >>= 13;                                  // shr eax, 0xd
+    eax &= 0x4;                                  // and eax, 4
+    return eax;                                  // ret
+}
+} // namespace lift_006B4FD0

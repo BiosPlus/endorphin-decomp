@@ -1,0 +1,13 @@
+{
+  "va": "0x006B4FD0",
+  "size": 21,
+  "orig_symbol": "sub_006B4FD0",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "IsEscapeKeyUp",
+  "signature": "uint32_t fn_006B4FD0()",
+  "summary": "Queries GetKeyState(VK_ESCAPE) and returns 4 if the key is currently up (high bit clear), else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:52Z"
+}

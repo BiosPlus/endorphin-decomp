@@ -32226,6 +32226,12 @@
     "summary": "Pure jump thunk forwarding to sub_006B4F80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B4FD0": {
+    "name": "IsEscapeKeyUp",
+    "signature": "uint32_t fn_006B4FD0()",
+    "summary": "Queries GetKeyState(VK_ESCAPE) and returns 4 if the key is currently up (high bit clear), else 0.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B5120": {
     "name": "GWCPropInPlaceButton::vfunc_1",
     "class": "GWCPropInPlaceButton",
