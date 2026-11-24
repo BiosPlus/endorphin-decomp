@@ -976,6 +976,12 @@
     "summary": "Forwards its two string-operand arguments in order to MSVCP80 std::operator+ and returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00414880": {
+    "name": "descriptiveName: fn_00414880 (ElementCountDelta)",
+    "signature": "int32_t fn_00414880(void* self, void* other)",
+    "summary": "Verifies both operands share the same first-word owner (unless it is null) and returns (self.field_0x04 - other.field_0x04) / 8 as a signed element count.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004153A0": {
     "name": "sub_004153A0",
     "signature": "extern \"C\" void fn_004153A0(void)",

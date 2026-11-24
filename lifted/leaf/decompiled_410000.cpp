@@ -267,3 +267,28 @@ uint32_t fn_0041CEB0(void* self, uint32_t arg1) {
     return arg1;
 }
 } // namespace lift_0041CEB0
+
+// [0x00414880] sub_00414880 (38 bytes)
+namespace lift_00414880 {
+// MSVCR80!_invalid_parameter_noinfo, reached through the import slot at 0x925134.
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name descriptiveName: fn_00414880 (ElementCountDelta)
+// @summary Verifies both operands share the same first-word owner (unless it is null) and returns (self.field_0x04 - other.field_0x04) / 8 as a signed element count.
+// @field field_0x00 int32_t (owner/tag word; compared against other.field_0x00 when non-zero)
+// @field field_0x04 int32_t (position word; differenced against other.field_0x04)
+//
+// Calling convention: __thiscall (this in ecx), one stack argument `other`, ret 4.
+int32_t fn_00414880(void* self, void* other) {
+    auto* lhs = static_cast<int32_t*>(self);
+    auto* rhs = static_cast<int32_t*>(other);
+
+    const int32_t owner = lhs[0];
+    if (owner != 0 && owner != rhs[0]) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    const int32_t delta = lhs[1] - rhs[1];
+    return delta >> 3; // arithmetic shift, elements are 8 bytes
+}
+} // namespace lift_00414880
