@@ -1,0 +1,13 @@
+{
+  "va": "0x00479A90",
+  "size": 44,
+  "orig_symbol": "sub_00479A90",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "fill_n_float",
+  "signature": "float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value)",
+  "summary": "Fills count floats starting at dst with *value and returns dst + count.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:08:47Z"
+}

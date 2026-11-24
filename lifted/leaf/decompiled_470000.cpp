@@ -19,3 +19,20 @@ DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0047A010
+
+// [0x00479A90]
+namespace lift_00479A90 {
+// @name fill_n_float
+// @summary Fills count floats starting at dst with *value and returns dst + count.
+
+
+float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value) {
+    if (count > 0) {
+        float v = *value;
+        for (uint32_t i = 0; i < count; ++i) {
+            dst[i] = v;
+        }
+    }
+    return dst + count;
+}
+} // namespace lift_00479A90
