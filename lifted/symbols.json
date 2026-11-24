@@ -7201,6 +7201,12 @@
     "summary": "Copies a 64-byte template structure into count consecutive 64-byte slots starting at dst, skipping null dst.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004817A0": {
+    "name": "fillVec4Array",
+    "signature": "void sub_004817A0(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Fills an array of 16-byte 4-float vectors with a constant 4-float value.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481BB0": {
     "name": "InitValueAndZeroTail",
     "class": "\u003cunknown\u003e (member, thiscall; 'this' passed in ECX)",
