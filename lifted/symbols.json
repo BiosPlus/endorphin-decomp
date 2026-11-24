@@ -19928,9 +19928,10 @@
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
   "0x005E2C70": {
-    "name": "descriptiveName: storeWordThenCopyBlock16",
-    "signature": "uint32_t* fn_005E2C70(uint32_t* out, uint32_t value, LiftBlock16 block)",
-    "summary": "Writes a dword to out[0], then copies a 16-dword by-value block (cdecl stack args) into out[1..16]; returns out.",
+    "name": "sub_005E1360_forwardVirtualSlot1Field234",
+    "class": "PoseTool",
+    "signature": "static inline T mem_(const void* base, uintptr_t offset)",
+    "summary": "Loads the pointer at this+0x234 and tail-dispatches its vtable slot 1 with that pointer as `this`, returning the callee's result.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
   "0x005E3350": {

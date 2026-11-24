@@ -4,10 +4,83 @@
   "orig_symbol": "sub_005E2C70",
   "src_path": "src/leaf/tiny_5E0000.cpp",
   "lifted_path": "lifted/leaf/tiny_5E0000.cpp",
-  "name": "descriptiveName: storeWordThenCopyBlock16",
-  "signature": "uint32_t* fn_005E2C70(uint32_t* out, uint32_t value, LiftBlock16 block)",
-  "summary": "Writes a dword to out[0], then copies a 16-dword by-value block (cdecl stack args) into out[1..16]; returns out.",
+  "name": "sub_005E1360_forwardVirtualSlot1Field234",
+  "class": "PoseTool",
+  "signature": "static inline T mem_(const void* base, uintptr_t offset)",
+  "summary": "Loads the pointer at this+0x234 and tail-dispatches its vtable slot 1 with that pointer as `this`, returning the callee's result.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "self",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "void* field_0x234 (subobject pointer; class",
+      "name": "unrecovered)"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x234",
+      "type": "uint32_t",
+      "name": "field_0x234"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (next link",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x29",
+      "type": "uint8_t field_0x29 (flag",
+      "name": "byte)"
+    },
     {
       "class": "\u003cnone\u003e",
       "offset": "+0x0",
@@ -23,5 +96,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:13:02Z"
+  "lifted_at": "2026-11-24T12:13:07Z"
 }

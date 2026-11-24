@@ -11,7 +11,7 @@ struct _unknown__Fields {
     // +0x0   void*                    delegate  (evidence: 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_0x00  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00481BB0, 0x00519CE0, 0x005478F0, 0x0054C760, 0x0063E0F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x00493EC0, 0x005E0AB0, 0x006BB820) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00493EC0, 0x005E0AB0, 0x005E2C70, 0x006BB820) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (set to&    mem_00991348)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x00610A60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x006B2400) // CONFLICT: multiple definitions at +0x0
@@ -21,7 +21,7 @@ struct _unknown__Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00515B90) // CONFLICT: multiple definitions at +0x4
     // +0x8   DWORD                    field_0x08  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00481BB0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x08  (evidence: 0x005E0AB0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x005E0AB0, 0x005E2C70) // CONFLICT: multiple definitions at +0x8
     // +0xC   DWORD                    field_0x0C  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0xC
     // +0xC   int                      field_0x0C  (evidence: 0x00515E80, 0x00516550) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00515B90) // CONFLICT: multiple definitions at +0xC
@@ -47,6 +47,6 @@ struct _unknown__Fields {
     // +0xA0  void*                    field_0xa0  (evidence: 0x00548240) // CONFLICT: multiple definitions at +0xA0
     // +0x17C void*                    field_0x17c  (evidence: 0x005E28B0)
     // +0x1F4 float                    field_0x1F4  (evidence: 0x005480D0)
-    // +0x234 uint32_t                 field_0x234  (evidence: 0x005E1740)
+    // +0x234 uint32_t                 field_0x234  (evidence: 0x005E1740, 0x005E2C70)
 };
 } // namespace lifted_layout
