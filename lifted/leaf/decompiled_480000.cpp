@@ -534,3 +534,51 @@ uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src) {
     return dst + (count << 6);
 }
 } // namespace lift_00481DE0
+
+// [0x004817A0]
+namespace lift_004817A0 {
+float mem_read_f32(uint32_t addr);
+void mem_write_f32(uint32_t addr, float val);
+
+// @name fillVec4Array
+// @summary Fills an array of 16-byte 4-float vectors with a constant 4-float value.
+
+void sub_004817A0(uint32_t dst, uint32_t count, uint32_t src) {
+    if (count == 0) {
+        return;
+    }
+    do {
+        if (dst != 0) {
+            mem_write_f32(dst + 0x0, mem_read_f32(src + 0x0));
+            mem_write_f32(dst + 0x4, mem_read_f32(src + 0x4));
+            mem_write_f32(dst + 0x8, mem_read_f32(src + 0x8));
+            mem_write_f32(dst + 0xc, mem_read_f32(src + 0xc));
+        }
+        count -= 1;
+        dst += 0x10;
+    } while (count > 0);
+}
+} // namespace lift_004817A0
+
+// [0x00480CA0]
+namespace lift_00480CA0 {
+// @name copyVec4Loop
+// @summary Copies one 4-float vector from src to dst; repeats while dst+0x10 != end (loop index is never advanced in the original).
+
+// Memory accessors used by this function.
+float mem_read_f32(uint32_t addr);
+void mem_write_f32(uint32_t addr, float value);
+
+// cdecl: arguments are (dst, end, src) on the stack; caller cleans up.
+void sub_00480CA0(uint32_t dst, uint32_t end, uint32_t src) {
+    if (dst == end) {
+        return;
+    }
+    do {
+        mem_write_f32(dst + 0x0, mem_read_f32(src + 0x0));
+        mem_write_f32(dst + 0x4, mem_read_f32(src + 0x4));
+        mem_write_f32(dst + 0x8, mem_read_f32(src + 0x8));
+        mem_write_f32(dst + 0xc, mem_read_f32(src + 0xc));
+    } while (dst + 0x10 != end);
+}
+} // namespace lift_00480CA0
