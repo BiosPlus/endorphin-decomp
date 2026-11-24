@@ -74,3 +74,24 @@ extern const unsigned char mem_007B8A48[24] = {
     0x01, 0x02, 0x01, 0x01, 0x01, 0x02,
 };
 } // namespace lift_007B8A48
+
+// [0x007BEA10] sub_007BEA10 (28 bytes)
+namespace lift_007BEA10 {
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.)
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+// @name ForwardObjectFieldsToOptionalHook
+// @summary Reads two 32-bit fields from the object at self and forwards them with a constant tag to DispatchThreeArgsToOptionalHook.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x164 uint32_t field_0x164
+void fn_007BEA10(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    uint32_t field_0x00 = 0;
+    uint32_t field_0x164 = 0;
+    std::memcpy(&field_0x00, base + 0x00, sizeof(field_0x00));
+    std::memcpy(&field_0x164, base + 0x164, sizeof(field_0x164));
+
+    ext_0079B140(field_0x00, 0x00AB24A4u, field_0x164);
+}
+} // namespace lift_007BEA10

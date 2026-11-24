@@ -43548,6 +43548,12 @@
     "summary": "Sets fields at +0x1A0 and +0x1A8 to mem_007BDC20 and returns 1.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007BEA10": {
+    "name": "ForwardObjectFieldsToOptionalHook",
+    "signature": "void fn_007BEA10(void* self)",
+    "summary": "Reads two 32-bit fields from the object at self and forwards them with a constant tag to DispatchThreeArgsToOptionalHook.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007C2E50": {
     "name": "readFloatPtr",
     "class": "unknown",
