@@ -110,3 +110,15 @@ void fn_00530650(uint32_t value) {
 }
 } // namespace lift_004A24A0
 } // namespace lift_00530650
+
+// [0x00533D40] sub_00533D40 (13 bytes)
+namespace lift_00533D40 {
+// @name SetField498
+// @class <ClassName> (unknown; `this` is passed in ECX)
+// @summary Stores the second stack argument (DWORD) into this+0x498 and returns, popping 8 bytes of arguments.
+// @field <ClassName> +0x498 DWORD field_0x498
+void fn_00533D40(void* self, DWORD arg0, DWORD value) {
+    (void)arg0;
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x498) = value;
+}
+} // namespace lift_00533D40

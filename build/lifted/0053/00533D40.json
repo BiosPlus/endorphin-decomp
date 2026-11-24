@@ -1,0 +1,22 @@
+{
+  "va": "0x00533D40",
+  "size": 13,
+  "orig_symbol": "sub_00533D40",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "SetField498",
+  "class": "\u003cClassName\u003e (unknown; `this` is passed in ECX)",
+  "signature": "void fn_00533D40(void* self, DWORD arg0, DWORD value)",
+  "summary": "Stores the second stack argument (DWORD) into this+0x498 and returns, popping 8 bytes of arguments.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x498",
+      "type": "DWORD",
+      "name": "field_0x498"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:03Z"
+}

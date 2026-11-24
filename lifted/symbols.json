@@ -10618,6 +10618,13 @@
     "summary": "Setter storing float argument into field at offset +0x400.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533D40": {
+    "name": "SetField498",
+    "class": "\u003cClassName\u003e (unknown; `this` is passed in ECX)",
+    "signature": "void fn_00533D40(void* self, DWORD arg0, DWORD value)",
+    "summary": "Stores the second stack argument (DWORD) into this+0x498 and returns, popping 8 bytes of arguments.",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x00533DE0": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_3",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",

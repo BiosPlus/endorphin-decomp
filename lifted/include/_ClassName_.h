@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct _ClassName__Fields {
     // +0x0   <type>                   <fieldName>  (evidence: 0x00493E40, 0x00493E50, 0x00493E60)
+    // +0x498 DWORD                    field_0x498  (evidence: 0x00533D40)
 };
 } // namespace lifted_layout
