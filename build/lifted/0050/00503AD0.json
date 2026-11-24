@@ -1,0 +1,13 @@
+{
+  "va": "0x00503AD0",
+  "size": 29,
+  "orig_symbol": "sub_00503AD0",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "sub_00503AD0_fillDoubleRange",
+  "signature": "void fn_00503AD0(double* first, double* last, const double* value)",
+  "summary": "Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:11:47Z"
+}

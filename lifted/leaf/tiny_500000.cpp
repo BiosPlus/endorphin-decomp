@@ -226,3 +226,19 @@ void* fn_005014B0(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_005014B0
+
+// [0x00503AD0] sub_00503AD0 (29 bytes)
+namespace lift_00503AD0 {
+// @name sub_00503AD0_fillDoubleRange
+// @summary Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.
+void fn_00503AD0(double* first, double* last, const double* value) {
+    if (first == last) {
+        return;
+    }
+    double* p = first;
+    do {
+        *p = *value;
+        ++p;
+    } while (p != last);
+}
+} // namespace lift_00503AD0

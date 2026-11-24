@@ -11175,6 +11175,12 @@
     "summary": "Stores a float argument widened to double at +0x28 and sets the flag byte at +0x20 to 1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00503AD0": {
+    "name": "sub_00503AD0_fillDoubleRange",
+    "signature": "void fn_00503AD0(double* first, double* last, const double* value)",
+    "summary": "Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00503DD0": {
     "name": "Evaluator::vfunc_0",
     "class": "Evaluator",
