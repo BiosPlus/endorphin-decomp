@@ -11700,6 +11700,13 @@
     "summary": "Lazily constructs the shared static accessor object (guarded by a one-bit init flag) and stores its address into the ValuePtr argument at +0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004CB250": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40 (lazy static accessor)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_004CB250(void* self, void* out)",
+    "summary": "Lazily constructs a function-local static object at 0x00AE44C0 (once, guarded by a bit in 0x00AE44C4) and stores its address into the out ValuePtr slot at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CB3E0": {
     "name": "Unknown::GetFieldOr0x188Address",
     "class": "Unknown",

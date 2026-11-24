@@ -1,0 +1,22 @@
+{
+  "va": "0x004CB250",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40 (lazy static accessor)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void fn_004CB250(void* self, void* out)",
+  "summary": "Lazily constructs a function-local static object at 0x00AE44C0 (once, guarded by a bit in 0x00AE44C4) and stores its address into the out ValuePtr slot at +0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:05:27Z"
+}

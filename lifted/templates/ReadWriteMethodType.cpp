@@ -9663,3 +9663,33 @@ void fn_004B86C0(void* self) {
     reinterpret_cast<void**>(self)[1] = reinterpret_cast<void*>(&mem_00AE1684);
 }
 } // namespace lift_004B86C0
+
+// [0x004CB250] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CB250 {
+extern void ext_0067A670(void* self);
+extern int mem_00AE44C4;
+extern int mem_00AE44C0;
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData>::vfunc_40 (lazy static accessor)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const &), 0}>
+// @summary Lazily constructs a function-local static object at 0x00AE44C0 (once, guarded by a bit in 0x00AE44C4) and stores its address into the out ValuePtr slot at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004CB250(void* self, void* out) {
+    // 'self' is unused by the original (ecx is overwritten before the call).
+    (void)self;
+
+    void* obj = &mem_00AE44C0;
+
+    // One-time initialization guard: bit 0 of mem_00AE44C4 marks the object as constructed.
+    if ((mem_00AE44C4 & 1) == 0) {
+        mem_00AE44C4 |= 1;
+        ext_0067A670(obj);
+        // Object's vtable pointer (MSVC-style class layout, 32-bit VA).
+        lift_field<std::uint32_t>(obj, 0) = 0x00946C64u;
+    }
+
+    // Publish the object's address through the out slot.
+    lift_field<std::uint32_t>(out, 0x04) =
+        static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(obj));
+}
+} // namespace lift_004CB250
