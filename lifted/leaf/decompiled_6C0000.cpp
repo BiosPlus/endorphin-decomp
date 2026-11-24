@@ -607,3 +607,26 @@ uint32_t Unknown_setMaskedBitsField10(Unknown* self, uint32_t value, uint32_t fl
     return result;
 }
 } // namespace lift_006C9D30
+
+// [0x006C3150]
+namespace lift_006C3150 {
+// @name sub_006C3150
+// @summary Returns field_0x158 if non-null and its vtable[0]() returns 6, else 0
+// @field Unknown +0x158 uint32_t field_0x158
+
+
+extern uint32_t mem_r32(uint32_t addr);
+
+uint32_t __thiscall sub_006C3150(uint32_t this_ptr) {
+    uint32_t obj = mem_r32(this_ptr + 0x158);
+    if (obj != 0) {
+        uint32_t vtable = mem_r32(obj);
+        uint32_t fn = mem_r32(vtable);
+        using VFunc0 = uint32_t(__thiscall*)(uint32_t);
+        if (reinterpret_cast<VFunc0>(static_cast<uintptr_t>(fn))(obj) == 6) {
+            return mem_r32(this_ptr + 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C3150

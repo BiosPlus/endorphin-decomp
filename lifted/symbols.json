@@ -38527,6 +38527,12 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 5, otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3150": {
+    "name": "sub_006C3150",
+    "signature": "uint32_t __thiscall sub_006C3150(uint32_t this_ptr)",
+    "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 6, else 0",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C33C0": {
     "name": "Unknown::loadRecordDwordByIndex",
     "class": "Unknown",
