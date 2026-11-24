@@ -696,29 +696,6 @@ void* fn_00443700(void* self, uint32_t arg, uint32_t unused_arg) {
 }
 } // namespace lift_00443700
 
-// [0x00441090] sub_00441090 (33 bytes)
-namespace lift_00441090 {
-// Read as a qword by the original `fadd qword ptr [0x92bd70]`. Only the low dword
-// (0xE1796495) was supplied in RDATA_CONSTANTS; the high dword is unverified.
-extern const double mem_0092BD70;
-
-// @name MemberToInt32RoundedOffsetField98
-// @class <ClassName> (optional)
-// @summary Returns (int32) round-to-nearest of (this->field_0x98 + mem_0092BD70), x87 fistp semantics.
-// @field <ClassName> +0x98 double field_0x98
-int fn_00441090(void* self) {
-    const double sum = lift_field<double>(self, 0x98) + mem_0092BD70;
-
-    // fistp: round per current rounding mode (nearest-even), and on NaN or
-    // out-of-range produce the x87 "integer indefinite" value 0x80000000.
-    const double rounded = std::nearbyint(sum);
-    if (!(rounded >= -2147483648.0 && rounded <= 2147483647.0)) {
-        return INT32_MIN;
-    }
-    return static_cast<int>(rounded);
-}
-} // namespace lift_00441090
-
 // [0x00441060] sub_00441060 (33 bytes)
 namespace lift_00441060 {
 // Read as a qword by the original `fadd qword ptr [0x92bd70]`. Only the low dword
@@ -761,3 +738,26 @@ int fn_004489E0(void* self, WPARAM arg1, LPARAM arg2) {
     return 0;
 }
 } // namespace lift_004489E0
+
+// [0x00441090] sub_00441090 (33 bytes)
+namespace lift_00441090 {
+// Read as a qword by the original `fadd qword ptr [0x92bd70]`. Only the low dword
+// (0xE1796495) was supplied in RDATA_CONSTANTS; the high dword is unverified.
+extern const double mem_0092BD70;
+
+// @name MemberToInt32RoundedOffsetField98
+// @class <ClassName> (optional)
+// @summary Returns (int32) round-to-nearest of (this->field_0x98 + mem_0092BD70), x87 fistp semantics.
+// @field <ClassName> +0x98 double field_0x98
+int fn_00441090(void* self) {
+    const double sum = lift_field<double>(self, 0x98) + mem_0092BD70;
+
+    // fistp: round per current rounding mode (nearest-even), and on NaN or
+    // out-of-range produce the x87 "integer indefinite" value 0x80000000.
+    const double rounded = std::nearbyint(sum);
+    if (!(rounded >= -2147483648.0 && rounded <= 2147483647.0)) {
+        return INT32_MIN;
+    }
+    return static_cast<int>(rounded);
+}
+} // namespace lift_00441090
