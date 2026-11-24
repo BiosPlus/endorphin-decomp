@@ -63,3 +63,29 @@ void fn_0066A330(void* self, float a0, float a1, float a2, float a3) {
     *reinterpret_cast<float*>(base + 0x0C) = a3;
 }
 } // namespace lift_0066A330
+
+// [0x00661860] sub_00661860 (32 bytes)
+namespace lift_00661860 {
+// @name Unknown::CallSubobjectVirtualSlot1
+// @class Unknown
+// @summary Forwards (arg1, this+4, arg2) to virtual slot 1 of the object pointed to by this+0, then returns arg1.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+
+// Stdcall-style target taking three pointer-sized arguments (callee pops them).
+typedef void* (__stdcall* VirtualSlot1Fn)(void* a, void* b, void* c);
+
+void* fn_00661860(void* self, void* arg1, void* arg2) {
+    auto* base = static_cast<uint8_t*>(self);
+    // mov ecx, [this]         -> subobject pointer
+    void* subobject = *reinterpret_cast<void**>(base + 0x00);
+    // mov edx, [subobject]    -> vtable of subobject
+    auto* vtable = *reinterpret_cast<uint8_t**>(subobject);
+    // mov eax, [vtable + 4]   -> slot 1
+    auto slot1 = *reinterpret_cast<VirtualSlot1Fn*>(vtable + 0x04);
+    // push arg2; push (this + 4); push arg1; call slot1
+    slot1(arg1, base + 0x04, arg2);
+    // mov eax, arg1; ret 8
+    return arg1;
+}
+} // namespace lift_00661860
