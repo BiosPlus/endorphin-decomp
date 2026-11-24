@@ -13955,6 +13955,13 @@
     "summary": "Returns float at subobject(+0xA0)+0x204, or 1.0f when the subobject pointer is null.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00548240": {
+    "name": "sub_00548240",
+    "class": "\u003cunknown\u003e",
+    "signature": "float fn_00548240(void* self)",
+    "summary": "Returns 1.0f if this+0xA0 is null; otherwise returns ext_005B11E0(this+0xA0+0x210, 5), i.e. element 5 of the float array of the sub-object at +0xA0.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00548260": {
     "name": "sub_00548260",
     "class": "\u003cClassName\u003e (unknown; receiver type not yet identified)",

@@ -170,3 +170,22 @@ uint8_t sub_005434C0(void* self) {
     return fn(child);
 }
 } // namespace lift_005434C0
+
+// [0x00548240] sub_00548240 (27 bytes)
+namespace lift_00548240 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
+extern float ext_005B11E0(void* self, uint32_t index);
+
+// @name sub_00548240
+// @class <unknown>
+// @summary Returns 1.0f if this+0xA0 is null; otherwise returns ext_005B11E0(this+0xA0+0x210, 5), i.e. element 5 of the float array of the sub-object at +0xA0.
+// @field <unknown> +0xA0 void* field_0xa0
+float fn_00548240(void* self) {
+    void* child = lift_field<void*>(self, 0xa0);
+    if (child == nullptr) {
+        return 1.0f;
+    }
+    void* sub = static_cast<char*>(child) + 0x210;
+    return ext_005B11E0(sub, 5);
+}
+} // namespace lift_00548240

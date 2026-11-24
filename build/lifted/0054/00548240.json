@@ -1,0 +1,22 @@
+{
+  "va": "0x00548240",
+  "size": 27,
+  "orig_symbol": "sub_00548240",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "sub_00548240",
+  "class": "\u003cunknown\u003e",
+  "signature": "float fn_00548240(void* self)",
+  "summary": "Returns 1.0f if this+0xA0 is null; otherwise returns ext_005B11E0(this+0xA0+0x210, 5), i.e. element 5 of the float array of the sub-object at +0xA0.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:11Z"
+}
