@@ -32550,10 +32550,10 @@
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
   "0x00692380": {
-    "name": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, setElement\u003e::vfunc_49",
-    "class": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, setElement\u003e",
-    "signature": "extern uint32_t __stdcall fn_00692380(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
-    "summary": "Calls virtual slot 2 on the object at arg3+4 with (arg3, arg4, *arg2, 0), forwards the result as the argument to ext_004ECA90 on *arg2, zeroes the out buffer at *arg2 via ext_00671F30 and returns *arg2.",
+    "name": "ExprParser::Method2Type::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x00692540": {

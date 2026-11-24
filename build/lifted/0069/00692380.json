@@ -4,11 +4,35 @@
   "orig_symbol": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, {public: void __thiscall ValuePtrArrayObject::setElement(int, ValuePtr const \u0026), 0}\u003e::vfunc_49",
   "src_path": "src/templates/Method2Type.cpp",
   "lifted_path": "lifted/templates/Method2Type.cpp",
-  "name": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, setElement\u003e::vfunc_49",
-  "class": "ExprParser::Method2Type\u003cValuePtrArrayObject, int, ValuePtr const \u0026, setElement\u003e",
-  "signature": "extern uint32_t __stdcall fn_00692380(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
-  "summary": "Calls virtual slot 2 on the object at arg3+4 with (arg3, arg4, *arg2, 0), forwards the result as the argument to ext_004ECA90 on *arg2, zeroes the out buffer at *arg2 via ext_00671F30 and returns *arg2.",
+  "name": "ExprParser::Method2Type::vfunc_49",
+  "class": "ExprParser::Method2Type",
+  "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+  "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uintptr_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -24,5 +48,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:40:22Z"
+  "lifted_at": "2026-11-24T14:40:38Z"
 }
