@@ -1,0 +1,40 @@
+{
+  "va": "0x00545B50",
+  "size": 45,
+  "orig_symbol": "ResizeTool::vfunc_26",
+  "src_path": "src/classes/ResizeTool.cpp",
+  "lifted_path": "lifted/classes/ResizeTool.cpp",
+  "name": "ResizeTool::vfunc_26",
+  "class": "ResizeTool",
+  "signature": "void fn_00545B50(void* self)",
+  "summary": "Calls the virtual at vtable+0x80 on self, then initializes the float/int fields at +0xB0..+0xBC to 3 and 1.0f.",
+  "fields": [
+    {
+      "class": "ResizeTool",
+      "offset": "+0xB0",
+      "type": "int32_t",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "ResizeTool",
+      "offset": "+0xB4",
+      "type": "float",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "ResizeTool",
+      "offset": "+0xB8",
+      "type": "float",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "ResizeTool",
+      "offset": "+0xBC",
+      "type": "float",
+      "name": "field_0xBC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:06:59Z"
+}

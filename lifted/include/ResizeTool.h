@@ -12,5 +12,9 @@ namespace lifted_layout {
 struct ResizeTool_Fields {
     // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x00545B80)
     // +0xAC  int32_t                  field_0xAC  (evidence: 0x00535610, 0x00545A60, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0xB0  int32_t                  field_0xB0  (evidence: 0x00545B50)
+    // +0xB4  float                    field_0xB4  (evidence: 0x00545B50)
+    // +0xB8  float                    field_0xB8  (evidence: 0x00545B50)
+    // +0xBC  float                    field_0xBC  (evidence: 0x00545B50)
 };
 } // namespace lifted_layout
