@@ -12108,6 +12108,13 @@
     "summary": "Stores a*b*b and b as two consecutive dwords at the output pointer (ecx); callee pops 8 bytes of args.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x005184D0": {
+    "name": "Unknown::WrapSignedValueByField4",
+    "class": "Unknown",
+    "signature": "void fn_005184D0(void* self, int32_t* value)",
+    "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
+    "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
   "0x00519CE0": {
     "name": "std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",

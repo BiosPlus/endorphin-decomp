@@ -135,3 +135,21 @@ int32_t Unknown_GetElementCount12(const Unknown* self) {
     return diff / 12;
 }
 } // namespace lift_0051DE50
+
+// [0x005184D0] sub_005184D0 (31 bytes)
+namespace lift_005184D0 {
+// @name Unknown::WrapSignedValueByField4
+// @class Unknown
+// @summary Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values >= b get b subtracted.
+// @field Unknown +0x04 int32_t field_0x04
+void fn_005184D0(void* self, int32_t* value) {
+    int32_t& v = *value;
+    const int32_t b = lift_field<int32_t>(self, 0x04);
+
+    if (v < 0) {
+        v = static_cast<int32_t>(static_cast<uint32_t>(v) + static_cast<uint32_t>(b));
+    } else if (v >= b) {
+        v = static_cast<int32_t>(static_cast<uint32_t>(v) - static_cast<uint32_t>(b));
+    }
+}
+} // namespace lift_005184D0

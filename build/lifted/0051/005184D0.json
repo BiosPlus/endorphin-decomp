@@ -1,0 +1,22 @@
+{
+  "va": "0x005184D0",
+  "size": 31,
+  "orig_symbol": "sub_005184D0",
+  "src_path": "src/leaf/tiny_510000.cpp",
+  "lifted_path": "lifted/leaf/tiny_510000.cpp",
+  "name": "Unknown::WrapSignedValueByField4",
+  "class": "Unknown",
+  "signature": "void fn_005184D0(void* self, int32_t* value)",
+  "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:24:25Z"
+}
