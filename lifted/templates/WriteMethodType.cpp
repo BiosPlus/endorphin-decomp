@@ -7412,3 +7412,26 @@ void __thiscall fn_005F3B70(void* self, void* arg0) {
     *(uint32_t*)((uint8_t*)arg0 + 4) = (uint32_t)(uintptr_t)&mem_00B4683C;
 }
 } // namespace lift_005F3B70
+
+// [0x005F3BF0]
+namespace lift_005F3BF0 {
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &EffectorGroup::setAll>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &EffectorGroup::setAll>
+// @summary Lazily initializes a static local object and stores its pointer at arg0 + 0x4.
+
+
+extern uint32_t mem_00B46844;
+extern uint32_t mem_00B46848;
+extern void __thiscall ext_0067A670(void* self);
+
+extern void __thiscall fn_005F3BF0(void* self, void* out) {
+    (void)self;
+    if ((mem_00B46848 & 1u) == 0) {
+        mem_00B46848 |= 1u;
+        ext_0067A670(&mem_00B46844);
+        mem_00B46844 = 0x0096C7DCu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(out) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B46844));
+}
+} // namespace lift_005F3BF0

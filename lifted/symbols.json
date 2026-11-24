@@ -25664,6 +25664,13 @@
     "summary": "Lazily initializes static type descriptor mem_00B4683C and stores its pointer at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3BF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setAll\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setAll\u003e",
+    "signature": "extern \"C\" void __thiscall fn_005F3BF0(void* self, void* out)",
+    "summary": "Lazily initializes a static local object and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F3D70": {
     "name": "WriteMethodType\u003cEffectorGroup,float\u003e::vfunc_40 (lazy static init, stores object ptr)",
     "class": "ExprParser::ValuePtrType",
