@@ -1374,3 +1374,35 @@ void fn_00431400(void) {
     ((vfn_t)(uintptr_t)target)(obj);
 }
 } // namespace lift_00431400
+
+// [0x00430F70] sub_00430F70 (46 bytes)
+namespace lift_00430F70 {
+// IAT slots for MSVCP80 imports (both thiscall).
+extern uintptr_t mem_00924EA0; // basic_ios::rdbuf()
+extern uintptr_t mem_00924E9C; // basic_streambuf::_Unlock()
+
+// @name stream_unlockRdbufIfPresent
+// @class Stream
+// @summary Calls rdbuf() on the stream reached via *self's virtual base; if non-null, calls _Unlock() on the streambuf.
+// @field Stream +0x00 void* field_0x00
+void fn_00430F70(void* self) {
+    using rdbuf_fn = void* (__thiscall*)(void*);
+    using unlock_fn = void (__thiscall*)(void*);
+
+    auto rdbuf = reinterpret_cast<rdbuf_fn>(mem_00924EA0);
+    auto unlock = reinterpret_cast<unlock_fn>(mem_00924E9C);
+
+    // ios = (uint8_t*)*self + vbase_offset, where vbase_offset = vtable[+4].
+    auto locateIos = [self]() -> void* {
+        uint8_t* obj = *reinterpret_cast<uint8_t**>(self);
+        uint8_t* vtbl = *reinterpret_cast<uint8_t**>(obj);
+        ptrdiff_t off = *reinterpret_cast<int32_t*>(vtbl + 4);
+        return obj + off;
+    };
+
+    if (rdbuf(locateIos()) == nullptr) {
+        return;
+    }
+    unlock(rdbuf(locateIos()));
+}
+} // namespace lift_00430F70

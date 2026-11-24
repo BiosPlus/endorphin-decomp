@@ -2236,6 +2236,13 @@
     "summary": "If the object pointed to by the slot at *self is non-null, invoke its virtual slot 1 with argument 1.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00430F70": {
+    "name": "stream_unlockRdbufIfPresent",
+    "class": "Stream",
+    "signature": "extern \"C\" uintptr_t mem_00924EA0; // basic_ios::rdbuf() extern \"C\" uintptr_t mem_00924E9C; // basic_streambuf::_Unlock() void fn_00430F70(void* self)",
+    "summary": "Calls rdbuf() on the stream reached via *self's virtual base; if non-null, calls _Unlock() on the streambuf.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",
