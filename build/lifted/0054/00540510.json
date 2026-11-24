@@ -1,0 +1,21 @@
+{
+  "va": "0x00540510",
+  "size": 57,
+  "orig_symbol": "sub_00540510",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "ApplyFillCullStateIfEnabled",
+  "signature": "void __thiscall fn_00540510(void* self, DWORD arg)",
+  "summary": "If the object's enabled byte is set and the argument is 0x1C02, set polygon mode to GL_FILL on both faces, cull back faces, and enable GL_CULL_FACE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "BYTE",
+      "name": "enabled"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:19:24Z"
+}

@@ -593,3 +593,35 @@ void fn_00540DD0(void* self, const int32_t* src) {
     ext_00548110(width, height);
 }
 } // namespace lift_00540DD0
+
+// [0x00540510] sub_00540510 (57 bytes)
+namespace lift_00540510 {
+extern uint32_t mem_0092551C;
+extern uint32_t mem_00925428;
+extern uint32_t mem_00925418;
+
+using GlPolygonModeFn = void(__stdcall*)(GLenum face, GLenum mode);
+using GlCullFaceFn = void(__stdcall*)(GLenum mode);
+using GlEnableFn = void(__stdcall*)(GLenum cap);
+
+// @name ApplyFillCullStateIfEnabled
+// @summary If the object's enabled byte is set and the argument is 0x1C02, set polygon mode to GL_FILL on both faces, cull back faces, and enable GL_CULL_FACE.
+// @field Unknown +0x14 BYTE enabled
+void __thiscall fn_00540510(void* self, DWORD arg) {
+    if (lift_field<BYTE>(self, 0x14) == 0) {
+        return;
+    }
+    if (arg != 0x1C02) {
+        return;
+    }
+
+    constexpr GLenum GL_FRONT_AND_BACK = 0x0408;
+    constexpr GLenum GL_FILL = 0x1B02;
+    constexpr GLenum GL_BACK = 0x0404;
+    constexpr GLenum GL_CULL_FACE = 0x0B44;
+
+    reinterpret_cast<GlPolygonModeFn>(static_cast<uintptr_t>(mem_0092551C))(GL_FRONT_AND_BACK, GL_FILL);
+    reinterpret_cast<GlCullFaceFn>(static_cast<uintptr_t>(mem_00925428))(GL_BACK);
+    reinterpret_cast<GlEnableFn>(static_cast<uintptr_t>(mem_00925418))(GL_CULL_FACE);
+}
+} // namespace lift_00540510

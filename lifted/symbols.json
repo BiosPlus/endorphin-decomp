@@ -18363,6 +18363,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00540130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00540510": {
+    "name": "ApplyFillCullStateIfEnabled",
+    "signature": "void __thiscall fn_00540510(void* self, DWORD arg)",
+    "summary": "If the object's enabled byte is set and the argument is 0x1C02, set polygon mode to GL_FILL on both faces, cull back faces, and enable GL_CULL_FACE.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540549": {
     "name": "glSetWireframeNoCull",
     "signature": "void sub_00540549()",
