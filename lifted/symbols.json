@@ -1454,6 +1454,12 @@
     "summary": "Calls the MFC80 thunk, then tail-calls sub_004349D0 with the global at 0x00ACDB40 as its ECX argument.",
     "lifted_path": "lifted/classes/GettingStartedDialog.cpp"
   },
+  "0x0041B540": {
+    "name": "fn_0041B540",
+    "signature": "uint32_t __thiscall fn_0041B540(void* pThis, void* pDC, void* pWnd, uint32_t nCtlColor)",
+    "summary": "Sets transparent background mode and white text color on a CDC, then returns a brush handle from this+0x114",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041B580": {
     "name": "sub_0041B580",
     "signature": "extern \"C\" const char* __cdecl fn_0041B580()",
