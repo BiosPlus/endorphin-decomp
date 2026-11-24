@@ -28333,6 +28333,12 @@
     "summary": "Returns 1 if the std::string path is relative (PathIsRelativeA == TRUE), else 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00662F50": {
+    "name": "showFatalErrorAndExit",
+    "signature": "void sub_00662F50(uint32_t arg0)",
+    "summary": "Logs/initializes via sub_00662F20, displays a fatal error MessageBoxA from a std::string, and exits with -1.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662F80": {
     "name": "showInfoMessageBox",
     "signature": "void showInfoMessageBox(const std::string* caption, const std::string* text)",
@@ -30354,6 +30360,18 @@
     "signature": "extern \"C\" void* __fastcall fn_0068BD40(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0068BB60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0068BDC0": {
+    "name": "sub_0068BDC0",
+    "signature": "float __thiscall sub_0068BDC0(uint32_t self)",
+    "summary": "Calls ext_00508680 on this+0x10, converts unsigned result to double, scales by mem_0094FF78, and returns float",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x0068BE70": {
+    "name": "sub_0068BE70",
+    "signature": "float __thiscall sub_0068BE70(void* self)",
+    "summary": "Calls sub_00508680 on this+0x10 and converts the unsigned 32-bit result to a scaled float",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x0068BF40": {
     "name": "ExprParser::FunctionType\u003cRandomizer, int, int, randIntExcN\u003e::vfunc_48",

@@ -141,3 +141,43 @@ void __stdcall fn_00688B20(uint8_t* begin, uint8_t* end) {
     }
 }
 } // namespace lift_00688B20
+
+// [0x0068BDC0]
+namespace lift_0068BDC0 {
+extern uint32_t __thiscall ext_00508680(uint32_t self);
+extern double mem_0093BD38;
+extern double mem_0094FF78;
+
+// @name sub_0068BDC0
+// @summary Calls ext_00508680 on this+0x10, converts unsigned result to double, scales by mem_0094FF78, and returns float
+// @field Class +0x10 uint8_t field_0x10
+float __thiscall sub_0068BDC0(uint32_t self) {
+    uint32_t val = ext_00508680(self + 0x10);
+    double d = static_cast<double>(static_cast<int32_t>(val));
+    if (static_cast<int32_t>(val) < 0) {
+        d += mem_0093BD38;
+    }
+    d *= mem_0094FF78;
+    return static_cast<float>(d);
+}
+} // namespace lift_0068BDC0
+
+// [0x0068BE70]
+namespace lift_0068BE70 {
+extern uint32_t __thiscall ext_00508680(void* self);
+extern double mem_0093BD38;
+extern double mem_0098E428;
+
+// @name sub_0068BE70
+// @summary Calls sub_00508680 on this+0x10 and converts the unsigned 32-bit result to a scaled float
+// @field Unknown +0x10 uint8_t field_0x10
+float __thiscall sub_0068BE70(void* self) {
+    uint32_t val = ext_00508680(reinterpret_cast<uint8_t*>(self) + 0x10);
+    double d = static_cast<double>(static_cast<int32_t>(val));
+    if (static_cast<int32_t>(val) < 0) {
+        d += mem_0093BD38;
+    }
+    d *= mem_0098E428;
+    return static_cast<float>(d);
+}
+} // namespace lift_0068BE70
