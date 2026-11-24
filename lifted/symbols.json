@@ -14820,6 +14820,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00526BE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00507450": {
+    "name": "InitialVariableValues::vfunc_15",
+    "class": "InitialVariableValues",
+    "signature": "uint32_t* fn_00507450(void* self, uint32_t* out, uint32_t key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050AA70 (NMData::Task::vfunc_15).",
+    "lifted_path": "lifted/classes/InitialVariableValues.cpp"
+  },
   "0x00507730": {
     "name": "ThreeLayerNet::vfunc_0",
     "class": "ThreeLayerNet",
