@@ -18120,10 +18120,10 @@
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005B0E60": {
-    "name": "Unknown::copyCStringTableEntryToString",
+    "name": "getField0x04From005B6930",
     "class": "Unknown",
-    "signature": "uint32_t __thiscall sub_005B0E60(uintptr_t this_ptr, uintptr_t out_ptr)",
-    "summary": "Constructs the std::string at out from the C-string table entry selected by this-\u003e+0x08; returns out.",
+    "signature": "float sub_005B6970()",
+    "summary": "Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
   "0x005B0E90": {

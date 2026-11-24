@@ -4,11 +4,95 @@
   "orig_symbol": "sub_005B0E60",
   "src_path": "src/leaf/decompiled_5B0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
-  "name": "Unknown::copyCStringTableEntryToString",
+  "name": "getField0x04From005B6930",
   "class": "Unknown",
-  "signature": "uint32_t __thiscall sub_005B0E60(uintptr_t this_ptr, uintptr_t out_ptr)",
-  "summary": "Constructs the std::string at out from the C-string table entry selected by this-\u003e+0x08; returns out.",
+  "signature": "float sub_005B6970()",
+  "summary": "Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D0",
+      "type": "void*",
+      "name": "field_1D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E8",
+      "type": "void*",
+      "name": "field_0x1e8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F4",
+      "type": "uint8_t",
+      "name": "field_0x1F4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B8",
+      "type": "void*",
+      "name": "field_0x1b8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "uint8_t",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
     {
       "class": "Unknown",
       "offset": "+0x8",
@@ -18,5 +102,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:53:53Z"
+  "lifted_at": "2026-11-24T13:53:58Z"
 }
