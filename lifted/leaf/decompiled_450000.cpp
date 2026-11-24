@@ -387,3 +387,21 @@ void sub_00455410(uintptr_t self) {
     *reinterpret_cast<uint8_t*>(self + 0x158) = (res != 0) ? 1 : 0;
 }
 } // namespace lift_00455410
+
+// [0x00455C80] sub_00455C80 (40 bytes)
+namespace lift_00455C80 {
+// Known callee 0x006A6094: thunk_MFC80_ord_4296 (IAT jump thunk forwarding to MFC80!ord_4296.)
+extern int32_t ext_006A6094(int32_t arg);
+
+// @name CheckResultAndClearField_E8
+// @summary Forwards its argument to an MFC80 import; returns -1 on failure, otherwise clears the dword at +0xE8 and returns 0.
+// @field Unknown +0xE8 uint32_t field_0xE8
+int32_t fn_00455C80(void* self, int32_t arg) {
+    const int32_t result = ext_006A6094(arg);
+    if (result == -1) {
+        return -1;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0xE8) = 0;
+    return 0;
+}
+} // namespace lift_00455C80
