@@ -1,0 +1,40 @@
+{
+  "va": "0x00783790",
+  "size": 16,
+  "orig_symbol": "sub_00783790",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "Unknown::zeroFourDwords",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_00783790(void* self, int edx_unused)",
+  "summary": "Zeroes four consecutive uint32_t fields at offsets +0x00..+0x0C and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:05Z"
+}

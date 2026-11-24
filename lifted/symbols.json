@@ -36104,6 +36104,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C3A0": {
+    "name": "sub_0071C3A0",
+    "signature": "uint8_t __fastcall sub_0071C3A0(uint32_t self)",
+    "summary": "Reads a byte flag at offset 0x15A8 from the object pointed to by this+0xC.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C3D0": {
     "name": "sub_0071C3D0",
     "class": "Unknown",
@@ -36812,6 +36818,13 @@
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",
     "summary": "Reads a byte at offset +0x4 from the pointer stored at this+0x4",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00783790": {
+    "name": "Unknown::zeroFourDwords",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_00783790(void* self, int edx_unused)",
+    "summary": "Zeroes four consecutive uint32_t fields at offsets +0x00..+0x0C and returns this.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
   "0x00784510": {

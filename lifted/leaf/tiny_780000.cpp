@@ -372,3 +372,22 @@ void* fn_00785430(void* ecx) {
 }
 } // namespace lift_006F8AC0
 } // namespace lift_00785430
+
+// [0x00783790] sub_00783790 (16 bytes)
+namespace lift_00783790 {
+// @name Unknown::zeroFourDwords
+// @class Unknown
+// @summary Zeroes four consecutive uint32_t fields at offsets +0x00..+0x0C and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+extern void* __fastcall fn_00783790(void* self, int edx_unused) {
+    (void)edx_unused;
+    lift_field<uint32_t>(self, 0x00) = 0u;
+    lift_field<uint32_t>(self, 0x04) = 0u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    return self;
+}
+} // namespace lift_00783790
