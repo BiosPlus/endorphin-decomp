@@ -393,3 +393,99 @@ DWORD fn_0080B5B0(DWORD a, DWORD b, DWORD c) {
     return ext_008597B0(a, b, c);
 }
 } // namespace lift_0080B5B0
+
+// [0x0080B570] sub_0080B570 (32 bytes)
+namespace lift_0080B570 {
+// @name sub_0080B570
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_00859740(void* dst, const void* src, size_t n);
+
+void* fn_0080B570(void* dst, const void* src, size_t n) {
+    return ext_00859740(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_0080B570
+
+// [0x0080B5D0] sub_0080B5D0 (32 bytes)
+namespace lift_0080B5D0 {
+// @name sub_0080B5D0
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_008597E0(void* dst, const void* src, size_t n);
+
+void* fn_0080B5D0(void* dst, const void* src, size_t n) {
+    return ext_008597E0(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_0080B5D0
+
+// [0x0080B630] sub_0080B630 (32 bytes)
+namespace lift_0080B630 {
+// @name sub_0080B630
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_008598E0(void* dst, const void* src, size_t n);
+
+void* fn_0080B630(void* dst, const void* src, size_t n) {
+    return ext_008598E0(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_0080B630
+
+// [0x0080B650] sub_0080B650 (32 bytes)
+namespace lift_0080B650 {
+// @name sub_0080B650
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_00859930(void* dst, const void* src, size_t n);
+
+void* fn_0080B650(void* dst, const void* src, size_t n) {
+    return ext_00859930(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_0080B650
+
+// [0x0080B6A0] sub_0080B6A0 (32 bytes)
+namespace lift_0080B6A0 {
+// @name sub_0080B6A0
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_00859A50(void* dst, const void* src, size_t n);
+
+void* fn_0080B6A0(void* dst, const void* src, size_t n) {
+    return ext_00859A50(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_0080B6A0
+
+// [0x0080EBB0] sub_0080EBB0 (32 bytes)
+namespace lift_0080EBB0 {
+// @name sub_0080EBB0
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_0085C2E0(void* dst, const void* src, size_t n);
+
+void* fn_0080EBB0(void* dst, const void* src, size_t n) {
+    return ext_0085C2E0(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_0080EBB0

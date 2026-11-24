@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_790000.cpp
 #include "lift_compat.h"
 #include <cstdio>
+#include <cstdint>
 
 // [0x0079EBE0]
 namespace lift_0079EBE0 {
@@ -306,3 +307,19 @@ void fn_0079EA60(void* self) {
     }
 }
 } // namespace lift_0079EA60
+
+// [0x00798F90] sub_00798F90 (32 bytes)
+namespace lift_00798F90 {
+// @name sub_00798F90
+// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_00798F10(void* dst, const void* src, size_t n);
+
+void* fn_00798F90(void* dst, const void* src, size_t n) {
+    return ext_00798F10(dst, src, n);
+}
+} // namespace lift_0080B590
+} // namespace lift_00798F90

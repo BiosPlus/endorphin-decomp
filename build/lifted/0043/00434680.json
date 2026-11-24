@@ -1,0 +1,22 @@
+{
+  "va": "0x00434680",
+  "size": 49,
+  "orig_symbol": "sub_00434680",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00434680",
+  "class": "Unknown",
+  "signature": "inline void* vtableSlot(void* obj, ptrdiff_t slotOffset)",
+  "summary": "Auto-lifted identical-shape clone of 0x00434380 (Unknown::notifyObjectWithQueryResult).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "void*",
+      "name": "field_0xe0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:30:18Z"
+}

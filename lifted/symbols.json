@@ -2444,6 +2444,27 @@
     "summary": "Reads a byte flag from the object at global +0x26C, then calls self vtable slot 1 with that flag and slot 0 with 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434640": {
+    "name": "sub_00434640",
+    "class": "Unknown",
+    "signature": "inline void* vtableSlot(void* obj, ptrdiff_t slotOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434380 (Unknown::notifyObjectWithQueryResult).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434680": {
+    "name": "sub_00434680",
+    "class": "Unknown",
+    "signature": "inline void* vtableSlot(void* obj, ptrdiff_t slotOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434380 (Unknown::notifyObjectWithQueryResult).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004346C0": {
+    "name": "sub_004346C0",
+    "class": "Unknown",
+    "signature": "inline void* vtableSlot(void* obj, ptrdiff_t slotOffset)",
+    "summary": "Auto-lifted identical-shape clone of 0x00434380 (Unknown::notifyObjectWithQueryResult).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004348F0": {
     "name": "sub_004348F0",
     "class": "(none)",
@@ -47718,6 +47739,12 @@
     "summary": "47-byte index-to-class lookup table (default 0x0c; sparse entries 0x00-0x0a); data, not code",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00798F90": {
+    "name": "sub_00798F90",
+    "signature": "void* fn_00798F90(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079A0EC": {
     "name": "sub_0079A0EC",
     "signature": "void sub_0079A0EC()",
@@ -50380,6 +50407,12 @@
     "summary": "Forwards its single stack argument to the GlobalFree wrapper and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B570": {
+    "name": "sub_0080B570",
+    "signature": "void* fn_0080B570(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B590": {
     "name": "Thunk::copyMemoryDwordThenBytesForward",
     "class": "Thunk",
@@ -50394,6 +50427,24 @@
     "summary": "Forwards its three cdecl DWORD arguments unchanged to ext_008597B0 and returns the value left in eax by that call.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B5D0": {
+    "name": "sub_0080B5D0",
+    "signature": "void* fn_0080B5D0(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B630": {
+    "name": "sub_0080B630",
+    "signature": "void* fn_0080B630(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B650": {
+    "name": "sub_0080B650",
+    "signature": "void* fn_0080B650(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B670": {
     "name": "sub_0080B670",
     "signature": "uint32_t fn_0080B670(uint32_t size)",
@@ -50404,6 +50455,12 @@
     "name": "strcat_wrapper",
     "signature": "uint32_t sub_0080B680(uint32_t dst_addr, uint32_t src_addr)",
     "summary": "Forwards destination and source string pointers to strcat_impl (sub_00859A20) and returns the destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B6A0": {
+    "name": "sub_0080B6A0",
+    "signature": "void* fn_0080B6A0(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080C690": {
@@ -50422,6 +50479,12 @@
     "name": "GlobalFreeForwarder",
     "signature": "void* fn_0080CA10(void* hMem)",
     "summary": "Forwards its single stack argument to ext_00859730 (GlobalFreeWrapper) and returns the callee's result unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080EBB0": {
+    "name": "sub_0080EBB0",
+    "signature": "void* fn_0080EBB0(void* dst, const void* src, size_t n)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080EBD0": {

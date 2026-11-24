@@ -1,0 +1,13 @@
+{
+  "va": "0x0080B650",
+  "size": 32,
+  "orig_symbol": "sub_0080B650",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "sub_0080B650",
+  "signature": "void* fn_0080B650(void* dst, const void* src, size_t n)",
+  "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:30:18Z"
+}

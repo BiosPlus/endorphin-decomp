@@ -1,0 +1,13 @@
+{
+  "va": "0x00798F90",
+  "size": 32,
+  "orig_symbol": "sub_00798F90",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_00798F90",
+  "signature": "void* fn_00798F90(void* dst, const void* src, size_t n)",
+  "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:30:18Z"
+}
