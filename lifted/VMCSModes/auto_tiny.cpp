@@ -207,3 +207,19 @@ uint32_t fn_004F9930(void* self) {
     return lowByte == 0 ? 1u : 0u;
 }
 } // namespace lift_004F9930
+
+// [0x004F9880] VMCSModes::DefaultImplementation::vfunc_94 (21 bytes)
+namespace lift_004F9880 {
+// Dispatches through the object's vtable slot at +0xA0 (no-arg virtual call,
+// this = self) and returns 1 if the signed int result is greater than 1, else 0.
+extern int32_t ext_vcall_slot_A0(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_94
+// @class VMCSModes::DefaultImplementation
+// @summary Calls the vtable slot at +0xA0 on self and returns (result > 1) as a byte.
+// @field VMCSModes::DefaultImplementation +0x00 void* vtable
+uint8_t fn_004F9880(void* self) {
+    int32_t r = ext_vcall_slot_A0(self);
+    return r > 1 ? 1 : 0;
+}
+} // namespace lift_004F9880

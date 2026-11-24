@@ -10027,6 +10027,13 @@
     "summary": "Calls the virtual method at vtable slot +0x98 on this with argument 4, discards its result, and returns 0.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9880": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_94",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint8_t fn_004F9880(void* self)",
+    "summary": "Calls the vtable slot at +0xA0 on self and returns (result \u003e 1) as a byte.",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004F98C0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_28",
     "class": "VMCSModes::DefaultImplementation",
