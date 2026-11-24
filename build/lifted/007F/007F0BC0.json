@@ -1,0 +1,22 @@
+{
+  "va": "0x007F0BC0",
+  "size": 55,
+  "orig_symbol": "sub_007F0BC0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "UnknownObject::CompareFloatKeyAt0x58",
+  "class": "Unknown",
+  "signature": "int fn_007F0BC0(void** a, void** b)",
+  "summary": "Three-way compares the float at +0x58 of two objects reached through double-pointer handles; returns -1, 0, or 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:15:36Z"
+}

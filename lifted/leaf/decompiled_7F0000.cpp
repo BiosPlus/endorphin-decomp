@@ -127,3 +127,23 @@ void fn_007F6690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t* out) {
     (void)fn(arg0, arg1, arg2, out);
 }
 } // namespace lift_007F6690
+
+// [0x007F0BC0] sub_007F0BC0 (55 bytes)
+namespace lift_007F0BC0 {
+// @name UnknownObject::CompareFloatKeyAt0x58
+// @class Unknown
+// @summary Three-way compares the float at +0x58 of two objects reached through double-pointer handles; returns -1, 0, or 1.
+// @field Unknown +0x58 float field_0x58
+int fn_007F0BC0(void** a, void** b) {
+    const float x = *reinterpret_cast<const float*>(static_cast<const char*>(*a) + 0x58);
+    const float y = *reinterpret_cast<const float*>(static_cast<const char*>(*b) + 0x58);
+
+    if (y > x) {
+        return -1;
+    }
+    if (y < x) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_007F0BC0
