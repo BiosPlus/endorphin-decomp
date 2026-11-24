@@ -3781,6 +3781,13 @@
     "summary": "If field_0x64 is non-null, calls its vtable[0xC0] method and passes the boolean result to arg1-\u003evtable[0x4].",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B560": {
+    "name": "Unknown::flushOptionalChildAndClear",
+    "class": "Unknown",
+    "signature": "void fn_0044B560(void* self)",
+    "summary": "If global mem_00ACDB40 is nonzero, calls ext_004339B0(0); then calls ext_006A6718; then, if the object at +0x64 is non-null, invokes its vtable slot 2 (+0x08) with that object as this, and finally sets +0x64 to 0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B5A0": {
     "name": "RenderView::vfunc_26",
     "class": "RenderView",

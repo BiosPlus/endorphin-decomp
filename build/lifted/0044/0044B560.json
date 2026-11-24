@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B560",
+  "size": 50,
+  "orig_symbol": "sub_0044B560",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::flushOptionalChildAndClear",
+  "class": "Unknown",
+  "signature": "void fn_0044B560(void* self)",
+  "summary": "If global mem_00ACDB40 is nonzero, calls ext_004339B0(0); then calls ext_006A6718; then, if the object at +0x64 is non-null, invokes its vtable slot 2 (+0x08) with that object as this, and finally sets +0x64 to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:32:15Z"
+}

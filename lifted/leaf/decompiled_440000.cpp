@@ -1433,3 +1433,35 @@ void __thiscall fn_0044B220(void* self, void* target) {
     notify(target, flag);
 }
 } // namespace lift_0044B220
+
+// [0x0044B560] sub_0044B560 (50 bytes)
+namespace lift_0044B560 {
+extern void ext_004339B0(uint32_t arg);
+// Known callee 0x006A6718: thunk_MFC80_ord_4352 (IAT jump thunk forwarding to MFC80!ord_4352.)
+extern void ext_006A6718();
+extern int mem_00ACDB40;
+
+// @name Unknown::flushOptionalChildAndClear
+// @class Unknown
+// @summary If global mem_00ACDB40 is nonzero, calls ext_004339B0(0); then calls ext_006A6718; then, if the object at +0x64 is non-null, invokes its vtable slot 2 (+0x08) with that object as this, and finally sets +0x64 to 0.
+// @field Unknown +0x64 uint32_t field_0x64
+void fn_0044B560(void* self) {
+    if (mem_00ACDB40 != 0) {
+        ext_004339B0(0u);
+    }
+
+    ext_006A6718();
+
+    const uint32_t child = lift_field<uint32_t>(self, 0x64);
+    if (child != 0) {
+        // Object layout: first DWORD is the vtable pointer; slot at +0x08 is method index 2.
+        auto* obj = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(child));
+        auto* vtbl = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj[0]));
+        using SlotFn = void (*)(void*);
+        auto slot = reinterpret_cast<SlotFn>(static_cast<uintptr_t>(vtbl[2]));
+        slot(obj);
+    }
+
+    lift_field<uint32_t>(self, 0x64) = 0u;
+}
+} // namespace lift_0044B560
