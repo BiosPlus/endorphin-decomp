@@ -1,0 +1,22 @@
+{
+  "va": "0x007D5BB0",
+  "size": 12,
+  "orig_symbol": "sub_007D5BB0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "setField20_007D5BB0",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_007D5BB0(void* self, DWORD value)",
+  "summary": "Stores a 32-bit value (second stack arg) into the object's +0x20 field.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:18Z"
+}

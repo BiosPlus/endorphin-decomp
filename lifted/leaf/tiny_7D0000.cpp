@@ -216,3 +216,14 @@ void fn_007D4AE0(void* self) {
     *reinterpret_cast<uint32_t*>(base + 0x30) = 1u;
 }
 } // namespace lift_007D4AE0
+
+// [0x007D5BB0] sub_007D5BB0 (12 bytes)
+namespace lift_007D5BB0 {
+// @name setField20_007D5BB0
+// @class <unknown>
+// @summary Stores a 32-bit value (second stack arg) into the object's +0x20 field.
+// @field <unknown> +0x20 DWORD field_20
+void fn_007D5BB0(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x20) = value;
+}
+} // namespace lift_007D5BB0

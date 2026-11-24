@@ -35598,6 +35598,13 @@
     "summary": "Stores the second stack argument as a 32-bit value at offset 0x04 of the object pointed to by the first argument.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5BB0": {
+    "name": "setField20_007D5BB0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007D5BB0(void* self, DWORD value)",
+    "summary": "Stores a 32-bit value (second stack arg) into the object's +0x20 field.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5BC0": {
     "name": "getField0x20",
     "signature": "extern \"C\" uint32_t sub_007D5BC0(uint32_t arg0)",
