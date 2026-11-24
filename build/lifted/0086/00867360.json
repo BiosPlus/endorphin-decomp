@@ -1,0 +1,14 @@
+{
+  "va": "0x00867360",
+  "size": 42,
+  "orig_symbol": "sub_00867360",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "parseDecimalPrefix",
+  "class": "(none)",
+  "signature": "int fn_00867360(const char* s)",
+  "summary": "Parses leading ASCII decimal digits of a string into a 32-bit integer (atoi-like), stopping at the first non-digit.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:59:55Z"
+}

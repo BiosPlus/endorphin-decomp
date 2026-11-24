@@ -4297,6 +4297,13 @@
     "summary": "Kills timers 2 and 3 on the owner object stored at self+0x08.",
     "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp"
   },
+  "0x00458810": {
+    "name": "SpinButtonStates::DragSpinState::vfunc_1",
+    "class": "SpinButtonStates::DragSpinState",
+    "signature": "void* __thiscall fn_00458810(void* self)",
+    "summary": "Captures mouse, hides cursor, and records initial message position on drag start",
+    "lifted_path": "lifted/SpinButtonStates/DragSpinState.cpp"
+  },
   "0x004589E0": {
     "name": "sub_004589E0",
     "signature": "extern \"C\" void* __cdecl fn_004589E0(void)",
@@ -47536,6 +47543,13 @@
     "name": "DataBytes_008665CC",
     "signature": "void fn_008665CC(void* self)",
     "summary": "Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x00867360": {
+    "name": "parseDecimalPrefix",
+    "class": "(none)",
+    "signature": "int fn_00867360(const char* s)",
+    "summary": "Parses leading ASCII decimal digits of a string into a 32-bit integer (atoi-like), stopping at the first non-digit.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x00867850": {

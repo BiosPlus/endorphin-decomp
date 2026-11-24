@@ -168,3 +168,25 @@ void* fn_0086CF90(uint32_t count, uint32_t size) {
     return local_alloc(kLmemZeroinit, count * size);
 }
 } // namespace lift_0086CF90
+
+// [0x00867360] sub_00867360 (42 bytes)
+namespace lift_00867360 {
+// @name parseDecimalPrefix
+// @class (none)
+// @summary Parses leading ASCII decimal digits of a string into a 32-bit integer (atoi-like), stopping at the first non-digit.
+// @field none
+int fn_00867360(const char* s) {
+    uint32_t result = 0;
+    size_t i = 0;
+    int8_t c = static_cast<int8_t>(s[0]);
+    if (c < '0' || c > '9') {
+        return 0;
+    }
+    do {
+        result = result * 10u + static_cast<uint32_t>(c - '0');
+        ++i;
+        c = static_cast<int8_t>(s[i]);
+    } while (c >= '0' && c <= '9');
+    return static_cast<int>(result);
+}
+} // namespace lift_00867360
