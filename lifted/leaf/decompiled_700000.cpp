@@ -540,3 +540,18 @@ void* fn_0070EEB0(void* self, void* other) {
 }
 } // namespace lift_0070E390
 } // namespace lift_0070EEB0
+
+// [0x0070EC70] sub_0070EC70 (32 bytes)
+namespace lift_0070EC70 {
+// Callee sub_007873F0 (64 bytes): receives the sub-object pointer as "this" and one stack argument.
+extern DWORD ext_007873F0(void* self, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x188
+// @class Unknown
+// @summary Forwards one argument to sub_007873F0 on the sub-object at this+0x188 and returns its result.
+// @field Unknown +0x188 void* field_0x188
+DWORD fn_0070EC70(void* self, DWORD arg) {
+    void* sub = lift_field<void*>(self, 0x188) == nullptr ? nullptr : static_cast<uint8_t*>(self) + 0x188;
+    return ext_007873F0(sub, arg);
+}
+} // namespace lift_0070EC70

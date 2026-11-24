@@ -1,0 +1,22 @@
+{
+  "va": "0x0070EC70",
+  "size": 32,
+  "orig_symbol": "sub_0070EC70",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardSubObjectAt0x188",
+  "class": "Unknown",
+  "signature": "DWORD fn_0070EC70(void* self, DWORD arg)",
+  "summary": "Forwards one argument to sub_007873F0 on the sub-object at this+0x188 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x188",
+      "type": "void*",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:39:24Z"
+}
