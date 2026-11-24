@@ -495,3 +495,18 @@ uint32_t fn_00493F60(void** self, uint32_t arg) {
 }
 } // namespace lift_00493DA0
 } // namespace lift_00493F60
+
+// [0x00492550] sub_00492550 (20 bytes)
+namespace lift_00492550 {
+// @name IsStateOneWithNonZeroField8
+// @summary Returns 1 if the dword at self+0x00 equals 1 and the dword at self+0x08 is nonzero, else 0.
+// @field Self +0x00 int32_t field_0x00
+// @field Self +0x08 int32_t field_0x08
+int fn_00492550(void* self) {
+    const int32_t state = lift_field<int32_t>(self, 0x00);
+    if (state == 1 && lift_field<int32_t>(self, 0x08) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_00492550

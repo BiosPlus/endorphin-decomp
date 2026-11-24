@@ -5270,6 +5270,12 @@
     "summary": "Returns true if the 32-bit value at offset 0 of the object is zero.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00492550": {
+    "name": "IsStateOneWithNonZeroField8",
+    "signature": "int fn_00492550(void* self)",
+    "summary": "Returns 1 if the dword at self+0x00 equals 1 and the dword at self+0x08 is nonzero, else 0.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493D80": {
     "name": "ZeroHeaderFields",
     "class": "UnknownClass",
