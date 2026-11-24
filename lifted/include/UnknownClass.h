@@ -20,6 +20,6 @@ struct UnknownClass_Fields {
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
-    // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040)
+    // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
 };
 } // namespace lifted_layout

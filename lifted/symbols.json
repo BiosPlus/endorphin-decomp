@@ -15547,9 +15547,10 @@
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
   "0x0059DE20": {
-    "name": "descriptiveName: MinFloatPtr",
-    "signature": "float* fn_0059DE20(float* a, float* b)",
-    "summary": "Returns the pointer whose float value is smaller; on ties or NaN returns the second pointer.",
+    "name": "sub_00594000",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __cdecl fn_00594000(void)",
+    "summary": "Returns global int32 value from mem_00B40D08.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
   "0x0059DEB0": {

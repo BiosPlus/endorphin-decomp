@@ -4,10 +4,43 @@
   "orig_symbol": "sub_0059DE20",
   "src_path": "src/leaf/tiny_590000.cpp",
   "lifted_path": "lifted/leaf/tiny_590000.cpp",
-  "name": "descriptiveName: MinFloatPtr",
-  "signature": "float* fn_0059DE20(float* a, float* b)",
-  "summary": "Returns the pointer whose float value is smaller; on ties or NaN returns the second pointer.",
+  "name": "sub_00594000",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __cdecl fn_00594000(void)",
+  "summary": "Returns global int32 value from mem_00B40D08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "void*",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "float",
+      "name": "field_0x138"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0xF4",
+      "type": "int32_t",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xF4",
+      "type": "int32_t",
+      "name": "field_0xF4"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:55:25Z"
+  "lifted_at": "2026-11-24T11:55:31Z"
 }
