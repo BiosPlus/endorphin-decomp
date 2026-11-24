@@ -122,3 +122,29 @@ void fn_00533D40(void* self, DWORD arg0, DWORD value) {
     *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x498) = value;
 }
 } // namespace lift_00533D40
+
+// [0x00532B80]
+namespace lift_00532B80 {
+// @name dispatch_global_obj_vfunc1
+// @summary Loads the global object pointer, fetches its vtable, and forwards the call to vtable slot 1 with the object as `this`.
+// @field object +0x00 void* vtable (read via global mem_00AEED24)
+
+// Global pointer to an object whose first dword is its vtable pointer.
+extern uint32_t mem_00AEED24;
+
+// Portable model of the tail-jump: the original `jmp edx` forwards the caller's
+// stack arguments untouched, so the forwarding callee signature is unknown here.
+// It is modelled as a thiscall-style function taking only `this`.
+using VFunc1Fn = void (*)(void* self);
+
+void fn_00532B80() {
+    // mov ecx, [mem_00AEED24]  -> ecx = object pointer
+    void* self = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00AEED24));
+    // mov eax, [ecx]            -> eax = vtable pointer
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(self);
+    // mov edx, [eax + 4]        -> edx = vtable[1]
+    uintptr_t slot1 = *reinterpret_cast<uint32_t*>(vtable + 0x04);
+    // jmp edx                   -> tail-call vtable[1] with this = self
+    reinterpret_cast<VFunc1Fn>(slot1)(self);
+}
+} // namespace lift_00532B80

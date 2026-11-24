@@ -1,0 +1,21 @@
+{
+  "va": "0x00532B80",
+  "size": 13,
+  "orig_symbol": "sub_00532B80",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "dispatch_global_obj_vfunc1",
+  "signature": "void fn_00532B80()",
+  "summary": "Loads the global object pointer, fetches its vtable, and forwards the call to vtable slot 1 with the object as `this`.",
+  "fields": [
+    {
+      "class": "object",
+      "offset": "+0x0",
+      "type": "void* vtable (read via global",
+      "name": "mem_00AEED24)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:09Z"
+}
