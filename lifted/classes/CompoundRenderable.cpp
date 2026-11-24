@@ -81,3 +81,27 @@ void CompoundRenderable_vfunc_22(void* self, uint32_t arg) {
     call_vslot22(static_cast<uint8_t*>(self) + 0x18, arg);
 }
 } // namespace lift_00537B80
+
+// [0x00537C70]
+namespace lift_00537C70 {
+// @name CompoundRenderable::vfunc_1
+// @class CompoundRenderable
+// @summary Forwards arg to virtual slot 1 of the object at +0x14 (if non-null), then to virtual slot 1 of the embedded object at +0x18 (receiver = this+0x18).
+// @field CompoundRenderable +0x14 void* field_0x14
+// @field CompoundRenderable +0x18 void* field_0x18
+void fn_00537C70(void* self, void* arg) {
+    // mov ecx, [esi+0x14]; if (ecx) ecx->vtbl[1](arg);
+    void* obj14 = lift_field<void*>(self, 0x14);
+    if (obj14 != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj14);
+        using Fn = void (*)(void* self_, void* arg_);
+        reinterpret_cast<Fn>(vtbl[1])(obj14, arg);
+    }
+
+    // eax = [esi+0x18]; edx = eax->vtbl[1]; ecx = esi+0x18; push arg; call edx
+    void* obj18 = lift_field<void*>(self, 0x18);
+    void** vtbl18 = *reinterpret_cast<void***>(obj18);
+    using Fn = void (*)(void* self_, void* arg_);
+    reinterpret_cast<Fn>(vtbl18[1])(&lift_field<void*>(self, 0x18), arg);
+}
+} // namespace lift_00537C70

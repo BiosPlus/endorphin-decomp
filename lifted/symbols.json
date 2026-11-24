@@ -14197,6 +14197,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00537C30 (CompoundRenderable::forwardSlot8ToField14).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537C70": {
+    "name": "CompoundRenderable::vfunc_1",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00537C70(void* self, void* arg)",
+    "summary": "Forwards arg to virtual slot 1 of the object at +0x14 (if non-null), then to virtual slot 1 of the embedded object at +0x18 (receiver = this+0x18).",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537CA0": {
     "name": "CompoundRenderable::vfunc_2",
     "class": "CompoundRenderable",
