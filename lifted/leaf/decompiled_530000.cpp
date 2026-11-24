@@ -333,3 +333,34 @@ int32_t fn_0053F960(void* self) {
     return 0;
 }
 } // namespace lift_0053F960
+
+// [0x00539800] sub_00539800 (47 bytes)
+namespace lift_00539800 {
+namespace lift_00539800 {
+// @name sub_00539800
+// @summary Copies 12-byte (3 x float) records from [src_begin, src_end) to dst, advancing dst by 12 per record; skips the store when dst is null.
+
+// Stack args (cdecl): src_begin = [esp+4], src_end = [esp+8], dst = [esp+12].
+void __cdecl fn_00539800(const void* src_begin, const void* src_end, void* dst) {
+    uintptr_t src = reinterpret_cast<uintptr_t>(src_begin);
+    const uintptr_t end = reinterpret_cast<uintptr_t>(src_end);
+    uintptr_t out = reinterpret_cast<uintptr_t>(dst);
+
+    if (src == end) {
+        return;
+    }
+
+    do {
+        if (out != 0) {
+            const float* s = reinterpret_cast<const float*>(src);
+            float* d = reinterpret_cast<float*>(out);
+            d[0] = s[0];
+            d[1] = s[1];
+            d[2] = s[2];
+        }
+        src += 0xC;
+        out += 0xC;
+    } while (src != end);
+}
+} // namespace lift_00539800
+} // namespace lift_00539800
