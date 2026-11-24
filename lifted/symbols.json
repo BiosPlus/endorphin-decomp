@@ -44674,6 +44674,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5B70": {
+    "name": "setVec3_0x160",
+    "signature": "void __cdecl sub_007C5B70(uint32_t dst, uint32_t src)",
+    "summary": "Copies a 3-float vector from src into dst offsets +0x160, +0x164, and +0x168.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C5C30": {
     "name": "setFields_0x1e4_0x1f4",
     "signature": "void sub_007C5C30(void* self, uint32_t val1, uint32_t val2)",

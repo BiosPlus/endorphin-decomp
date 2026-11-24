@@ -9,5 +9,5 @@
   "summary": "Stores -HUGE_VAL into three double globals (mem_00B60B58/60/68).",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:00:17Z"
+  "lifted_at": "2026-11-24T13:00:32Z"
 }
