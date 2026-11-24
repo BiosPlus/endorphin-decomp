@@ -161,3 +161,22 @@ int64_t fn_006E9AE0(void* self) {
     return ext_00872828(f);
 }
 } // namespace lift_006E9AE0
+
+// [0x006EA410] sub_006EA410 (36 bytes)
+namespace lift_006EA410 {
+extern double mem_00B5E0E8;
+extern double mem_00B5E0F0;
+extern double mem_00B5E0F8;
+extern uint32_t mem_00925284; // holds address of the CRT _HUGE double constant
+
+// @name negateHugeConstantsToGlobals
+// @summary Loads the CRT _HUGE constant, negates it, and stores the result into three globals.
+// (no class; no struct field offsets accessed)
+void fn_006EA410(void) {
+    const double huge =
+        *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5E0E8 = -huge;
+    mem_00B5E0F0 = -huge;
+    mem_00B5E0F8 = -huge;
+}
+} // namespace lift_006EA410
