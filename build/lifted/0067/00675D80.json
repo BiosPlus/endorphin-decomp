@@ -1,0 +1,34 @@
+{
+  "va": "0x00675D80",
+  "size": 46,
+  "orig_symbol": "Properties::PropertyManager::vfunc_6",
+  "src_path": "src/Properties/PropertyManager.cpp",
+  "lifted_path": "lifted/Properties/PropertyManager.cpp",
+  "name": "Properties::PropertyManager::vfunc_6",
+  "class": "Properties::PropertyManager",
+  "signature": "bool fn_00675D80(void* self)",
+  "summary": "Returns true if the object at +0x70 reports ready and the object at +0x6C has its flag byte at +0xB8 clear.",
+  "fields": [
+    {
+      "class": "Properties::PropertyManager",
+      "offset": "+0x6C",
+      "type": "void*",
+      "name": "field_0x6C"
+    },
+    {
+      "class": "Properties::PropertyManager",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Properties::PropertyManager",
+      "offset": "+0xB8",
+      "type": "uint8_t",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:54Z"
+}

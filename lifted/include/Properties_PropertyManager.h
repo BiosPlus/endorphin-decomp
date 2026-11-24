@@ -11,5 +11,8 @@
 namespace lifted_layout {
 struct Properties_PropertyManager_Fields {
     // +0xC   void*                    field_0x0C  (evidence: 0x00675D30)
+    // +0x6C  void*                    field_0x6C  (evidence: 0x00675D80)
+    // +0x70  void*                    field_0x70  (evidence: 0x00675D80)
+    // +0xB8  uint8_t                  field_0xB8  (evidence: 0x00675D80)
 };
 } // namespace lifted_layout

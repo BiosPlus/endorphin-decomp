@@ -25,3 +25,32 @@ void fn_00675D30(void* self) {
     }
 }
 } // namespace lift_00675D30
+
+// [0x00675D80] Properties::PropertyManager::vfunc_6 (46 bytes)
+namespace lift_00675D80 {
+// @name Properties::PropertyManager::vfunc_6
+// @class Properties::PropertyManager
+// @summary Returns true if the object at +0x70 reports ready and the object at +0x6C has its flag byte at +0xB8 clear.
+// @field Properties::PropertyManager +0x6C void* field_0x6C
+// @field Properties::PropertyManager +0x70 void* field_0x70
+// @field Properties::PropertyManager +0xB8 uint8_t field_0xB8
+
+struct LiftPolymorphic {
+    virtual bool vfunc_0() = 0;
+};
+
+bool fn_00675D80(void* self) {
+    void* ctrl = lift_field<void*>(self, 0x70);
+    if (ctrl == nullptr) {
+        return false;
+    }
+    if (!static_cast<LiftPolymorphic*>(ctrl)->vfunc_0()) {
+        return false;
+    }
+    void* other = lift_field<void*>(self, 0x6C);
+    if (other == nullptr) {
+        return false;
+    }
+    return lift_field<uint8_t>(other, 0xB8) == 0;
+}
+} // namespace lift_00675D80

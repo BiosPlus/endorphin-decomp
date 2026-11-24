@@ -30591,6 +30591,13 @@
     "summary": "If the child pointer at +0x10 is non-null, invoke the child's vtable slot at +0x14 with the child as this.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00675D80": {
+    "name": "Properties::PropertyManager::vfunc_6",
+    "class": "Properties::PropertyManager",
+    "signature": "bool fn_00675D80(void* self)",
+    "summary": "Returns true if the object at +0x70 reports ready and the object at +0x6C has its flag byte at +0xB8 clear.",
+    "lifted_path": "lifted/Properties/PropertyManager.cpp"
+  },
   "0x00675DB0": {
     "name": "sub_00675DB0",
     "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",
