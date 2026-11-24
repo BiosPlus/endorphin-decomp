@@ -9641,3 +9641,25 @@ void fn_004C7400(uint32_t* out) {
     out[1] = 0x00AE3D84u;
 }
 } // namespace lift_004C7400
+
+// [0x004B86C0] ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, &public: void __thiscall NMData::EngineData::setUnitLength(float)>::vfunc_40 (122 bytes)
+namespace lift_004B86C0 {
+extern void ext_0067A670();
+extern int mem_00AE1688;
+extern int mem_00AE1684;
+
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, &public: void __thiscall NMData::EngineData::setUnitLength(float)>
+// @summary Lazily initializes a function-local static type object (guarded by a one-time flag), then stores its address into the ValuePtrType base of the argument.
+// @field ValuePtrType +0x04 void* ptr
+void fn_004B86C0(void* self) {
+    // One-time initialization guard (bit 0 of the flag byte at mem_00AE1688).
+    if ((mem_00AE1688 & 1) == 0) {
+        mem_00AE1688 |= 1;
+        ext_0067A670();
+        mem_00AE1684 = 0x943E2C; // vtable slot of the static object
+    }
+    // Hand back the address of the static object through the ValuePtrType base.
+    reinterpret_cast<void**>(self)[1] = reinterpret_cast<void*>(&mem_00AE1684);
+}
+} // namespace lift_004B86C0

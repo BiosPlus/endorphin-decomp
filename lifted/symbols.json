@@ -10655,6 +10655,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType\u003cPoseToolOptions,isGravityEnabled\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B86C0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitLength(float)\u003e",
+    "signature": "void fn_004B86C0(void* self)",
+    "summary": "Lazily initializes a function-local static type object (guarded by a one-time flag), then stores its address into the ValuePtrType base of the argument.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B88A0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40 (lazy-init accessor binding)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitMass(float)\u003e",
