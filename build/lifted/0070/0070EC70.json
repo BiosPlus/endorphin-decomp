@@ -4,11 +4,71 @@
   "orig_symbol": "sub_0070EC70",
   "src_path": "src/leaf/decompiled_700000.cpp",
   "lifted_path": "lifted/leaf/decompiled_700000.cpp",
-  "name": "Unknown::ForwardSubObjectAt0x188",
+  "name": "sub_0070A1D0",
   "class": "Unknown",
-  "signature": "DWORD fn_0070EC70(void* self, DWORD arg)",
-  "summary": "Forwards one argument to sub_007873F0 on the sub-object at this+0x188 and returns its result.",
+  "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "\u003cembedded object\u003e",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "void*",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x270",
+      "type": "uint8_t",
+      "name": "field_0x270"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "ptr",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x270",
+      "type": "uint8",
+      "name": "field_0x270"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "field_0x5C"
+    },
     {
       "class": "Unknown",
       "offset": "+0x188",
@@ -18,5 +78,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:39:24Z"
+  "lifted_at": "2026-11-24T12:39:29Z"
 }
