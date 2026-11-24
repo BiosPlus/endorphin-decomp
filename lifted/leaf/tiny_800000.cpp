@@ -11,10 +11,10 @@ extern "C" void* __cdecl fn_0080EFC0(void) {
 
 // [0x00803980] sub_00803980 (13 bytes)
 namespace lift_00803980 {
-// @name descriptiveName: fn_00803980 (returns **a - *b)
-// @summary Returns the difference between the int32 value behind a double pointer (arg0) and the int32 value behind a pointer (arg1).
+// @name fn_00803980 (returns **a - *b)
+// @summary Returns the int32 value behind a double pointer (arg0) minus the int32 value behind a pointer (arg1).
 // (free function; no class, so no @class or @field entries)
-extern "C++" int32_t fn_00803980(int32_t** a, const int32_t* b) {
+int32_t fn_00803980(int32_t** a, const int32_t* b) {
     return **a - *b;
 }
 } // namespace lift_00803980
