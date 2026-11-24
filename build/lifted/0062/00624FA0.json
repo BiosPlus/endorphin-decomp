@@ -1,0 +1,28 @@
+{
+  "va": "0x00624FA0",
+  "size": 82,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e",
+  "signature": "void* __thiscall fn_00624FA0(void* self, void* outValue, void** sensorPtr)",
+  "summary": "Evaluates SensorIsCollidingWith::getBool() on the target sensor pointer and constructs a boolean result value, or throws if null.",
+  "fields": [
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:50:23Z"
+}

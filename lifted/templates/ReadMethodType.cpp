@@ -33965,3 +33965,94 @@ void* __thiscall fn_005136F0(void* self, void* dst, void** obj_ptr) {
     return nullptr;
 }
 } // namespace lift_005136F0
+
+// [0x00624FA0]
+namespace lift_00624FA0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &Sensors::SensorIsCollidingWith::getBool, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &Sensors::SensorIsCollidingWith::getBool, 1>
+// @summary Evaluates SensorIsCollidingWith::getBool() on the target sensor pointer and constructs a boolean result value, or throws if null.
+// @field Sensors::SensorIsCollidingWith +0x00 void** vtable
+// @field Sensors::SensorIsCollidingWith +0x30 uint8_t field_0x30
+
+extern void __thiscall ext_006720A0(void* self, uint32_t value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+extern const uint32_t mem_009DEC1C;
+
+void* __thiscall fn_00624FA0(void* self, void* outValue, void** sensorPtr) {
+    (void)self;
+    void* sensor = *sensorPtr;
+    if (!sensor) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return outValue;
+    }
+
+    void** vtable = *reinterpret_cast<void***>(sensor);
+    using Vfunc44 = double(__thiscall*)(void*);
+    auto fn44 = reinterpret_cast<Vfunc44>(vtable[0x44 / 4]);
+    (void)fn44(sensor);
+
+    uint8_t flag = *reinterpret_cast<const uint8_t*>(reinterpret_cast<const uint8_t*>(sensor) + 0x30);
+    ext_006720A0(outValue, static_cast<uint32_t>(flag));
+    return outValue;
+}
+} // namespace lift_00624FA0
+
+// [0x0049D530]
+namespace lift_0049D530 {
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State>
+// @summary Invokes virtual slot 1 at +0x8 on a non-null NMData::State to copy-construct a std::string result, or throws on null.
+// @field NMData::State +0x8 void* field_0x8
+
+extern void* __thiscall ext_0046A470(void* self);
+extern void* __cdecl ext_004276B0(void* dst, const void* src);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+void* __thiscall fn_0049D530(void* self, void* out_str, void** obj_ptr_ptr) {
+    (void)self;
+    uint8_t* obj = static_cast<uint8_t*>(*obj_ptr_ptr);
+    if (obj != nullptr) {
+        const void* src_str = ext_0046A470(obj + 0x8);
+        ext_004276B0(out_str, src_str);
+        return out_str;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_str;
+}
+} // namespace lift_0049D530
+
+// [0x005B3B70]
+namespace lift_005B3B70 {
+// @name ExprParser::ReadMethodType<Geometry, std::string const &, &Geometry::getFileName, 0>::vfunc_4
+// @class ExprParser::ReadMethodType
+// @summary Evaluates Geometry::getFileName on the dereferenced object's Geometry member and copy-constructs the result string, or throws on null.
+// @field Object +0x0C void* geometry
+
+void* ext_004276B0(void* dst, const void* src);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void* __thiscall fn_005B3B70(void* self, void* out_str, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+    }
+    void* geom = *reinterpret_cast<void**>(static_cast<uint8_t*>(obj) + 0x0C);
+    void** vtable = *reinterpret_cast<void***>(geom);
+    using GetFileNameFn = const void* (__thiscall*)(void*);
+    auto get_file_name = reinterpret_cast<GetFileNameFn>(vtable[0x20 / 4]);
+    const void* file_name = get_file_name(geom);
+    ext_004276B0(out_str, file_name);
+    return out_str;
+}
+} // namespace lift_005B3B70
