@@ -1,0 +1,21 @@
+{
+  "va": "0x00570380",
+  "size": 54,
+  "orig_symbol": "sub_00570380",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "readUntilNewline",
+  "signature": "bool __stdcall sub_00570380(void* stream)",
+  "summary": "Reads one char at a time from the istream until '\\n' is consumed (returns true) or the stream fails (returns false).",
+  "fields": [
+    {
+      "class": "std::basic_istream",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:11:45Z"
+}

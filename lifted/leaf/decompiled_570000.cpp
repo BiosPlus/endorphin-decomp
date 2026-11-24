@@ -255,3 +255,41 @@ uint32_t fn_0057E8E0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
 }
 } // namespace lift_0051AF30
 } // namespace lift_0057E8E0
+
+// [0x00570380] sub_00570380 (54 bytes)
+namespace lift_00570380 {
+namespace lift_00570380 {
+// MSVCP80 basic_istream<char>::get(char&), reached through IAT slot 0x009250BC. Returns istream&.
+extern uint32_t mem_009250BC;
+// MSVCP80 ios_base::operator!(), reached through IAT slot 0x009250C0. Returns true when the stream has failed.
+extern uint32_t mem_009250C0;
+
+// @name readUntilNewline
+// @summary Reads one char at a time from the istream until '\n' is consumed (returns true) or the stream fails (returns false).
+// @field std::basic_istream +0x00 void* vptr
+bool __stdcall sub_00570380(void* stream) {
+    using GetFn = void*(__thiscall*)(void* self, char* out);
+    using NotFn = bool(__thiscall*)(void* ios);
+
+    auto get = reinterpret_cast<GetFn>(static_cast<uintptr_t>(mem_009250BC));
+    auto fail = reinterpret_cast<NotFn>(static_cast<uintptr_t>(mem_009250C0));
+
+    for (;;) {
+        char c = 0;
+        void* s = get(stream, &c);
+
+        // mov ecx,[eax]; mov ecx,[ecx+4]; add ecx,eax -> ios_base subobject via vbase displacement.
+        void* const vtable = lift_field<void*>(s, 0x00);
+        const int32_t vbaseDisp = lift_field<int32_t>(vtable, 0x04);
+        void* const ios = static_cast<uint8_t*>(s) + vbaseDisp;
+
+        if (fail(ios)) {
+            return false;
+        }
+        if (c == '\n') {
+            return true;
+        }
+    }
+}
+} // namespace lift_00570380
+} // namespace lift_00570380
