@@ -5880,3 +5880,15 @@ int CharacterSelection_vfunc_19(int value) {
     return eax;
 }
 } // namespace lift_004EC6E0
+
+// [0x005453B0] PoseTool::vfunc_22 (18 bytes)
+namespace lift_005453B0 {
+// @name PoseTool::vfunc_22
+// @class PoseTool
+// @summary Clears the dword at this+0x350 and returns 1 (ret 8 => two stack args, unused).
+// @field PoseTool +0x350 uint32_t field_0x350
+int32_t PoseTool_vfunc_22(uint8_t* self, uint32_t /*arg1*/, uint32_t /*arg2*/) {
+    *reinterpret_cast<uint32_t*>(self + 0x350) = 0;
+    return 1;
+}
+} // namespace lift_005453B0

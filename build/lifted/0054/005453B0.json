@@ -1,0 +1,22 @@
+{
+  "va": "0x005453B0",
+  "size": 18,
+  "orig_symbol": "PoseTool::vfunc_22",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "PoseTool::vfunc_22",
+  "class": "PoseTool",
+  "signature": "int32_t PoseTool_vfunc_22(uint8_t* self, uint32_t /*arg1*/, uint32_t /*arg2*/)",
+  "summary": "Clears the dword at this+0x350 and returns 1 (ret 8 =\u003e two stack args, unused).",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x350",
+      "type": "uint32_t",
+      "name": "field_0x350"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:57:28Z"
+}
