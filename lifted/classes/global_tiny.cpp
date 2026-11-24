@@ -5502,3 +5502,26 @@ void CColorCheck_vfunc_81(CColorCheck* self, int arg) {
     self->field_0x54 = (arg == 1) ? 1u : 0u;
 }
 } // namespace lift_0040FD10
+
+// [0x005272B0]
+namespace lift_005272B0 {
+// @name InitialVariableValues::vfunc_0_off_38
+// @class InitialVariableValues
+// @summary Thunk for the PointainerWithUndo::Owner base at +0x38: recovers the InitialVariableValues this (ecx-0x38) and tail-dispatches vtable slot 23 (+0x5c) with argument 0, popping 8 bytes of args.
+// @field InitialVariableValues +0x0 void** vtable
+
+struct InitialVariableValues {
+    void** vtable;
+};
+
+typedef uint32_t (__thiscall *VFnSlot23)(void* self, uint32_t arg);
+
+uint32_t __thiscall fn_005272B0(void* ecx, uint32_t arg0, uint32_t arg1) {
+    (void)arg0;
+    (void)arg1;
+    InitialVariableValues* self =
+        reinterpret_cast<InitialVariableValues*>(static_cast<uint8_t*>(ecx) - 0x38);
+    VFnSlot23 fn = reinterpret_cast<VFnSlot23>(self->vtable[23]); // +0x5c / sizeof(void*) on 32-bit
+    return fn(self, 0);
+}
+} // namespace lift_005272B0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005272B0",
+  "size": 16,
+  "orig_symbol": "InitialVariableValues::vfunc_0_off_38",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "InitialVariableValues::vfunc_0_off_38",
+  "class": "InitialVariableValues",
+  "signature": "uint32_t __thiscall fn_005272B0(void* ecx, uint32_t arg0, uint32_t arg1)",
+  "summary": "Thunk for the PointainerWithUndo::Owner base at +0x38: recovers the InitialVariableValues this (ecx-0x38) and tail-dispatches vtable slot 23 (+0x5c) with argument 0, popping 8 bytes of args.",
+  "fields": [
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:35:38Z"
+}
