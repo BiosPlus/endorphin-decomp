@@ -16472,6 +16472,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/RemoveFluidObjectCommand.cpp"
   },
+  "0x005AC820": {
+    "name": "Unknown::walkLinkUntilFlagSet_005AC820",
+    "class": "Unknown",
+    "signature": "void* fn_005AC820(void* a)",
+    "summary": "Follow the +0x08 link chain from arg until a node with byte +0x29 set is reached; returns the node whose +0x08 link leads to it (or arg itself if the first link already matches).",
+    "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
+  },
   "0x005AC840": {
     "name": "sub_005AC840",
     "signature": "void* fn_005AC840(void* arg)",

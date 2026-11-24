@@ -57,3 +57,25 @@ void* fn_005AC840(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_005AC840
+
+// [0x005AC820]
+namespace lift_005AC820 {
+// @name Unknown::walkLinkUntilFlagSet_005AC820
+// @class Unknown
+// @summary Follow the +0x08 link chain from arg until a node with byte +0x29 set is reached; returns the node whose +0x08 link leads to it (or arg itself if the first link already matches).
+// @field Unknown +0x08 void* field_0x08 (next link pointer)
+// @field Unknown +0x29 uint8_t field_0x29 (flag byte)
+
+void* fn_005AC820(void* a) {
+    void* eax = a;
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x29) != 0) {
+        return eax;
+    }
+    do {
+        eax = ecx;
+        ecx = lift_field<void*>(eax, 0x08);
+    } while (lift_field<uint8_t>(ecx, 0x29) == 0);
+    return eax;
+}
+} // namespace lift_005AC820
