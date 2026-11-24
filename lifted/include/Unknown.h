@@ -203,6 +203,8 @@ struct Unknown_Fields {
     // +0x78  DWORD                    field_0x78  (evidence: 0x00417630, 0x00422CE0) // CONFLICT: multiple definitions at +0x78
     // +0x78  uint32_t                 field_0x78  (evidence: 0x007057E0) // CONFLICT: multiple definitions at +0x78
     // +0x7C  DWORD                    field_0x7C  (evidence: 0x00540F60)
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x006B7DC0)
+    // +0x84  uint32_t                 field_0x84  (evidence: 0x006B7DC0)
     // +0x88  uint32_t                 field_0x88  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t                  field_0x88  (evidence: 0x004407C0) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0) // CONFLICT: multiple definitions at +0x88

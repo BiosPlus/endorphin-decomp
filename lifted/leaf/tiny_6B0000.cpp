@@ -789,3 +789,15 @@ uint32_t __thiscall sub_006B0C40(uint32_t self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006B0C40
+
+// [0x006B7DC0]
+namespace lift_006B7DC0 {
+// @name sub_006B7DC0
+// @summary Unpacks a 32-bit value into low and high 16-bit unsigned integers stored at +0x80 and +0x84
+// @field Unknown +0x80 uint32_t field_0x80
+// @field Unknown +0x84 uint32_t field_0x84
+void __thiscall sub_006B7DC0(uint8_t* self, uint32_t packed) {
+    *reinterpret_cast<uint32_t*>(self + 0x80) = packed & 0xFFFFu;
+    *reinterpret_cast<uint32_t*>(self + 0x84) = packed >> 16;
+}
+} // namespace lift_006B7DC0

@@ -1,0 +1,27 @@
+{
+  "va": "0x006B7DC0",
+  "size": 25,
+  "orig_symbol": "sub_006B7DC0",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B7DC0",
+  "signature": "void __thiscall sub_006B7DC0(uint8_t* self, uint32_t packed)",
+  "summary": "Unpacks a 32-bit value into low and high 16-bit unsigned integers stored at +0x80 and +0x84",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:52:05Z"
+}
