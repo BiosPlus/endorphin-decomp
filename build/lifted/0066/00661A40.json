@@ -1,0 +1,28 @@
+{
+  "va": "0x00661A40",
+  "size": 22,
+  "orig_symbol": "sub_00661A40",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "ReciprocalOfSubobjectField138",
+  "class": "Unknown (self is thiscall; pointee class not yet identified)",
+  "signature": "float fn_00661A40(void* self)",
+  "summary": "Returns 1.0f / (float)*(self-\u003efield_0x04 + 0x138), as an x87 float result (st0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (pointer to subobject,",
+      "name": "dereferenced)"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x138",
+      "type": "float field_0x138 (divisor read through the pointer at",
+      "name": "self+0x04)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:29:39Z"
+}

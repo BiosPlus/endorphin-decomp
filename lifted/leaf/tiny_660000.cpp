@@ -307,3 +307,18 @@ void* fn_0066B080(uint32_t index) {
 }
 } // namespace lift_004D0B60
 } // namespace lift_0066B080
+
+// [0x00661A40] sub_00661A40 (22 bytes)
+namespace lift_00661A40 {
+// @name ReciprocalOfSubobjectField138
+// @class Unknown (self is thiscall; pointee class not yet identified)
+// @summary Returns 1.0f / (float)*(self->field_0x04 + 0x138), as an x87 float result (st0).
+// @field Unknown +0x04 void* field_0x04 (pointer to subobject, dereferenced)
+// @field Subobject +0x138 float field_0x138 (divisor read through the pointer at self+0x04)
+float fn_00661A40(void* self) {
+    void* sub = lift_field<void*>(self, 0x04);
+    float divisor = lift_field<float>(sub, 0x138);
+    float result = 1.0f / divisor;
+    return result;
+}
+} // namespace lift_00661A40

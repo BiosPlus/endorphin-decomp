@@ -24783,6 +24783,13 @@
     "summary": "Reads a pointer at this+0x4 and returns the float at offset 0x138 of that object.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00661A40": {
+    "name": "ReciprocalOfSubobjectField138",
+    "class": "Unknown (self is thiscall; pointee class not yet identified)",
+    "signature": "float fn_00661A40(void* self)",
+    "summary": "Returns 1.0f / (float)*(self-\u003efield_0x04 + 0x138), as an x87 float result (st0).",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661A60": {
     "name": "sub_00661A60",
     "signature": "extern \"C\" void __fastcall fn_00661A60(void* self)",
