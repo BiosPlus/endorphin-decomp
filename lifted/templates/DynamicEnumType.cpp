@@ -2007,3 +2007,33 @@ void fn_004D4A50(void* out) {
     *reinterpret_cast<uintptr_t*>(base + 0x04) = reinterpret_cast<uintptr_t>(&mem_00AE5CFC);
 }
 } // namespace lift_004D4A50
+
+// [0x00515C90] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_40 (122 bytes)
+namespace lift_00515C90 {
+extern void ext_0067A670(void* self, uint32_t flag);
+extern uint32_t mem_00AEBEA0; // static object storage; first dword becomes its vtable VA
+extern uint32_t mem_00AEBEA4; // one-time initialization guard word (bit 0)
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_40
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>
+// @summary Lazily initializes the static EvolverRuntimeOptions-backed ValuePtr object (once, guarded by bit 0 of mem_00AEBEA4) and writes its address into the out-object's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+// Guest-side behavior (32-bit VA semantics):
+//   if ((mem_00AEBEA4 & 1) == 0) {
+//       mem_00AEBEA4 |= 1;
+//       ext_0067A670(&mem_00AEBEA0, 0);      // construct/init the static object
+//       mem_00AEBEA0 = 0x00951A64;           // vtable VA
+//   }
+//   out->field_0x04 = 0x00AEBEA0;
+// The original MSVC SEH frame (fs:[0] push/pop around the body) is a
+// compiler-generated exception-handling scaffold and is not reproduced here.
+void fn_00515C90(void* out) {
+    if ((mem_00AEBEA4 & 1u) == 0u) {
+        mem_00AEBEA4 |= 1u;
+        ext_0067A670(static_cast<void*>(&mem_00AEBEA0), 0u);
+        mem_00AEBEA0 = 0x00951A64u;
+    }
+    lift_field<uint32_t>(out, 4) = 0x00AEBEA0u;
+}
+} // namespace lift_00515C90

@@ -1,0 +1,22 @@
+{
+  "va": "0x00515C90",
+  "size": 122,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_40",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_40",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e",
+  "signature": "extern \"C\" uint32_t mem_00AEBEA4; // one-time initialization guard word (bit 0) void fn_00515C90(void* out)",
+  "summary": "Lazily initializes the static EvolverRuntimeOptions-backed ValuePtr object (once, guarded by bit 0 of mem_00AEBEA4) and writes its address into the out-object's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:47:45Z"
+}

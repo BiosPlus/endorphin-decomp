@@ -14471,6 +14471,13 @@
     "summary": "If the holder's stored target pointer is non-null, invoke source-\u003einner-\u003evfunc[2](source) and store the uint32 result into target+0x08; otherwise build an exception payload and throw.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00515C90": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_40",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e",
+    "signature": "extern \"C\" uint32_t mem_00AEBEA4; // one-time initialization guard word (bit 0) void fn_00515C90(void* out)",
+    "summary": "Lazily initializes the static EvolverRuntimeOptions-backed ValuePtr object (once, guarded by bit 0 of mem_00AEBEA4) and writes its address into the out-object's +0x04 slot.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00515D10": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e::vfunc_26",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",
@@ -27146,6 +27153,13 @@
     "class": "NMData::HingeCalibrationVariables",
     "signature": "void* __thiscall fn_006228E0(uint8_t* self)",
     "summary": "Allocates and constructs a 16-byte object and initializes it with three float fields via virtual setters.",
+    "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
+  "0x00622940": {
+    "name": "NMData::HingeCalibrationVariables::vfunc_29",
+    "class": "NMData::HingeCalibrationVariables",
+    "signature": "void __thiscall fn_00622940(void* self, void* serializer, uint32_t arg1, uint32_t arg2)",
+    "summary": "Serializes or compares three float calibration fields via vtable calls and sub_00487A30.",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
   },
   "0x00623D80": {
