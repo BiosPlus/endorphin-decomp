@@ -42597,3 +42597,28 @@ void* fn_005B3300(void* dst, const void* src) {
     return dst;
 }
 } // namespace lift_005B3300
+
+// [0x00683930] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_4 (115 bytes)
+namespace lift_00683930 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+// Known callee 0x00683100: sub_00683100 (138B, stdcall). Takes a 28-byte std::string scratch buffer and a 32-bit key;
+// returns a pointer to the string it produced.
+// mem_00924FF4: .rdata slot holding the MSVCP80 std::string destructor (~basic_string), called on the scratch buffer.
+extern void* ext_004276B0(void* dst, const void* src);
+extern void* ext_00683100(void* scratch, uint32_t key);
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Returns a std::string (via hidden return slot) built from the 32-bit word at self+0x00 through sub_00683100, then copies it into dst and destroys the temporary.
+// @field NMData::ValuePtrData +0x00 uint32_t field_0x00
+void* fn_00683930(void* dst, const void* self) {
+    // MSVC std::string is 28 bytes (0x1C) on this target; the scratch buffer mirrors the original stack temporary.
+    alignas(8) unsigned char scratch[28];
+    const uint32_t key = *static_cast<const uint32_t*>(self);
+    void* produced = ext_00683100(scratch, key);
+    ext_004276B0(dst, produced);
+    mem_00924FF4(scratch);
+    return dst;
+}
+} // namespace lift_00683930
