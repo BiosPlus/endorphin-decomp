@@ -569,3 +569,17 @@ DWORD fn_0070EC90(void* self, DWORD arg) {
     return ext_007873F0(sub, arg);
 }
 } // namespace lift_0070EC90
+
+// [0x0070EC30] sub_0070EC30 (32 bytes)
+namespace lift_0070EC30 {
+extern DWORD __fastcall ext_007873F0(void* self, int edx_unused, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x168
+// @class Unknown
+// @summary Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.
+extern DWORD __fastcall fn_0070EC30(void* self, int edx_unused, DWORD arg) {
+    (void)edx_unused;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x168;
+    return ext_007873F0(sub, 0, arg);
+}
+} // namespace lift_0070EC30

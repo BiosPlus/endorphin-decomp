@@ -1,0 +1,14 @@
+{
+  "va": "0x0070EC30",
+  "size": 32,
+  "orig_symbol": "sub_0070EC30",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardSubObjectAt0x168",
+  "class": "Unknown",
+  "signature": "extern \"C\" DWORD __fastcall fn_0070EC30(void* self, int edx_unused, DWORD arg)",
+  "summary": "Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:39:29Z"
+}

@@ -39918,6 +39918,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x58.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070EC30": {
+    "name": "Unknown::ForwardSubObjectAt0x168",
+    "class": "Unknown",
+    "signature": "extern \"C\" DWORD __fastcall fn_0070EC30(void* self, int edx_unused, DWORD arg)",
+    "summary": "Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070EC70": {
     "name": "Unknown::ForwardSubObjectAt0x188",
     "class": "Unknown",
