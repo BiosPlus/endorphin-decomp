@@ -1,0 +1,13 @@
+{
+  "va": "0x0042FC30",
+  "size": 48,
+  "orig_symbol": "sub_0042FC30",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "dispatchVtable0xE0WithVtable0x9CResult",
+  "signature": "void __cdecl fn_0042FC30(void)",
+  "summary": "Fetches the global object via ext_00465B40, calls vtable+0x9C, and passes the result and offset +0x3C to vtable+0xE0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:18:17Z"
+}

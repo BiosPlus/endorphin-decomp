@@ -464,3 +464,26 @@ DWORD* __thiscall fn_00428BA0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00428BA0
+
+// [0x0042FC30]
+namespace lift_0042FC30 {
+// @name dispatchVtable0xE0WithVtable0x9CResult
+// @summary Fetches the global object via ext_00465B40, calls vtable+0x9C, and passes the result and offset +0x3C to vtable+0xE0.
+
+
+extern uint32_t __cdecl ext_00465B40(void);
+
+void __cdecl fn_0042FC30(void) {
+    uint32_t obj1 = ext_00465B40();
+    uint32_t vtable1 = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj1));
+    using Vfn9C = uint32_t (__thiscall*)(uint32_t);
+    Vfn9C fn9c = reinterpret_cast<Vfn9C>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable1 + 0x9c))));
+    uint32_t res = fn9c(obj1);
+
+    uint32_t obj2 = ext_00465B40();
+    uint32_t vtable2 = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj2));
+    using VfnE0 = void (__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+    VfnE0 fnE0 = reinterpret_cast<VfnE0>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable2 + 0xe0))));
+    fnE0(obj2, 6, res, res + 0x3c, 0);
+}
+} // namespace lift_0042FC30
