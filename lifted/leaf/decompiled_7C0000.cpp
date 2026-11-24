@@ -656,3 +656,32 @@ void BuildScaledPartialMatrix(float a, float b, float* out) {
     out[8] = v;
 }
 } // namespace lift_007CA1A0
+
+// [0x007CCA20] sub_007CCA20 (59 bytes)
+namespace lift_007CCA20 {
+// @name DispatchObject::dispatchThroughTable
+// @class DispatchObject
+// @summary Looks up a handler in the object's context table by its type byte and calls it with (&{obj, arg2}, arg3, arg4).
+// @field DispatchObject +0x00 uint32_t typeWord
+// @field DispatchObject +0x0c void* context
+// @field DispatchContext +0x20 void* handlerTable
+// @field DispatchTableEntry +0x0c uint32_t handler (entries are 40 bytes; index = typeWord & 0xff)
+uint32_t fn_007CCA20(uint32_t obj, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    const auto* o = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(obj));
+    const uint32_t typeWord = *reinterpret_cast<const uint32_t*>(o + 0x00);
+    const uint32_t ctxAddr = *reinterpret_cast<const uint32_t*>(o + 0x0c);
+    const auto* ctx = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(ctxAddr));
+    const uint32_t tableAddr = *reinterpret_cast<const uint32_t*>(ctx + 0x20);
+    const auto* table = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(tableAddr));
+
+    const uint32_t index = typeWord & 0xffu;
+    const uint32_t handlerAddr = *reinterpret_cast<const uint32_t*>(table + index * 40u + 0x0c);
+
+    // Argument block passed by pointer: { obj, arg2 }.
+    uint32_t pair[2] = {obj, arg2};
+
+    using Handler = uint32_t(__cdecl*)(uint32_t*, uint32_t, uint32_t);
+    auto handler = reinterpret_cast<Handler>(static_cast<uintptr_t>(handlerAddr));
+    return handler(pair, arg3, arg4);
+}
+} // namespace lift_007CCA20

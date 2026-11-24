@@ -1,0 +1,40 @@
+{
+  "va": "0x007CCA20",
+  "size": 59,
+  "orig_symbol": "sub_007CCA20",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "DispatchObject::dispatchThroughTable",
+  "class": "DispatchObject",
+  "signature": "uint32_t fn_007CCA20(uint32_t obj, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Looks up a handler in the object's context table by its type byte and calls it with (\u0026{obj, arg2}, arg3, arg4).",
+  "fields": [
+    {
+      "class": "DispatchObject",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "typeWord"
+    },
+    {
+      "class": "DispatchObject",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "context"
+    },
+    {
+      "class": "DispatchContext",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "handlerTable"
+    },
+    {
+      "class": "DispatchTableEntry",
+      "offset": "+0xC",
+      "type": "uint32_t handler (entries are 40 bytes; index = typeWord \u0026",
+      "name": "0xff)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:26:23Z"
+}

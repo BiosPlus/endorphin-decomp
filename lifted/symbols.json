@@ -55927,6 +55927,13 @@
     "summary": "Reads a 32-bit value from a 40-byte-strided table using an index byte at +0x00 and table pointer at (+0x0C)-\u003e+0x20.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CCA20": {
+    "name": "DispatchObject::dispatchThroughTable",
+    "class": "DispatchObject",
+    "signature": "uint32_t fn_007CCA20(uint32_t obj, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Looks up a handler in the object's context table by its type byte and calls it with (\u0026{obj, arg2}, arg3, arg4).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CCC00": {
     "name": "setFloatAndUpdateFlag",
     "signature": "void sub_007CCC00(uintptr_t ecx_ptr, float value)",
