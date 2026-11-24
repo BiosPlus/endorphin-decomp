@@ -16539,6 +16539,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0095EEF4 and tail-calls base destructor sub_0065C660.",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AA830": {
+    "name": "ObjectWithChild::setValueAndNotifyChild",
+    "class": "ObjectWithChild",
+    "summary": "Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.",
+    "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
+  },
   "0x005AA9E0": {
     "name": "sub_005AA9E0",
     "class": "Unknown",

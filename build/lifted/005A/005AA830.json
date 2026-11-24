@@ -1,0 +1,27 @@
+{
+  "va": "0x005AA830",
+  "size": 29,
+  "orig_symbol": "sub_005AA830",
+  "src_path": "src/leaf/tiny_5A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5A0000.cpp",
+  "name": "ObjectWithChild::setValueAndNotifyChild",
+  "class": "ObjectWithChild",
+  "summary": "Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.",
+  "fields": [
+    {
+      "class": "ObjectWithChild",
+      "offset": "+0x154",
+      "type": "int32_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "ObjectWithChild",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:12:34Z"
+}

@@ -79,3 +79,12 @@ void* fn_005AC820(void* a) {
     return eax;
 }
 } // namespace lift_005AC820
+
+// [0x005AA830]
+namespace lift_005AA830 {
+// @name ObjectWithChild::setValueAndNotifyChild
+// @class ObjectWithChild
+// @summary Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.
+// @field ObjectWithChild +0x154 int32_t field_0x154
+// @field ObjectWithChild +0x190 void* field_0x190
+} // namespace lift_005AA830
