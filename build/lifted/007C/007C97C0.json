@@ -1,0 +1,28 @@
+{
+  "va": "0x007C97C0",
+  "size": 38,
+  "orig_symbol": "sub_007C97C0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::setFields94And98IfUnlocked",
+  "class": "Unknown",
+  "signature": "void fn_007C97C0(void* self, uint32_t val94, uint32_t val98)",
+  "summary": "Sets 32-bit fields at +0x94 and +0x98 if bit 0 of field +0x9C is clear.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "uint32_t",
+      "name": "field_0x94"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "uint32_t",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:49:13Z"
+}

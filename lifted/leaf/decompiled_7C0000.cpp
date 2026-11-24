@@ -297,3 +297,24 @@ void fn_007CD550(void* self) {
     ext_007C9930(reinterpret_cast<void*>(static_cast<uintptr_t>(resolved)));
 }
 } // namespace lift_007CD550
+
+// [0x007C97C0]
+namespace lift_007C97C0 {
+// @name Unknown::setFields94And98IfUnlocked
+// @class Unknown
+// @summary Sets 32-bit fields at +0x94 and +0x98 if bit 0 of field +0x9C is clear.
+// @field Unknown +0x94 uint32_t field_0x94
+// @field Unknown +0x98 uint32_t field_0x98
+
+
+extern uint32_t ext_007C9260(void* self);
+
+void fn_007C97C0(void* self, uint32_t val94, uint32_t val98) {
+    if (ext_007C9260(self) != 0) {
+        return;
+    }
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x94) = val94;
+    *reinterpret_cast<uint32_t*>(base + 0x98) = val98;
+}
+} // namespace lift_007C97C0
