@@ -1,0 +1,22 @@
+{
+  "va": "0x006B9940",
+  "size": 16,
+  "orig_symbol": "sub_006B9940",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "Unknown::IsNotTypeTag_B5D2BC",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006B9940(void* self)",
+  "summary": "Returns 1 if the first dword of *this differs from the constant 0xB5D2BC (global mem_00B5D2BC), else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:51Z"
+}

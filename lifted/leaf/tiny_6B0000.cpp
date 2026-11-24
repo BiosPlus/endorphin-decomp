@@ -611,3 +611,25 @@ int fn_006B9950(void* self) {
     return v == 0 ? 1 : 0;
 }
 } // namespace lift_006B9950
+
+// [0x006B9940] sub_006B9940 (16 bytes)
+namespace lift_006B9940 {
+// @name Unknown::IsNotTypeTag_B5D2BC
+// @class Unknown
+// @summary Returns 1 if the first dword of *this differs from the constant 0xB5D2BC (global mem_00B5D2BC), else 0.
+// @field Unknown +0x00 uint32_t field_0x00
+
+// Global at VA 0x00B5D2BC; only its address is compared, never its contents.
+extern const uint8_t mem_00B5D2BC[];
+
+namespace {
+// Compared against the first dword of the object, as in the original `cmp edx, 0xb5d2bc`.
+constexpr uint32_t kMem_00B5D2BC_VA = 0x00B5D2BCu;
+}
+
+// thiscall in the original: `this` arrives in ecx.
+uint32_t fn_006B9940(void* self) {
+    const uint32_t first = lift_field<uint32_t>(self, 0x00);
+    return first != kMem_00B5D2BC_VA ? 1u : 0u;
+}
+} // namespace lift_006B9940
