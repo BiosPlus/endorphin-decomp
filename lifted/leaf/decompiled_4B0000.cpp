@@ -224,3 +224,23 @@ void __stdcall sub_004B10D0(void* ecx, float arg1) {
     ext_004B0ED0(&out, a, arg1, b, c);
 }
 } // namespace lift_004B10D0
+
+// [0x004B1100] sub_004B1100 (46 bytes)
+namespace lift_004B1100 {
+extern void ext_004B0ED0(float* quad);
+
+// @name packQuadAndCall
+// @summary Copies float fields +0x1C, +0x20, +0x28 of self plus one stack float into a local 4-float array and passes it to sub_004B0ED0.
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x28 float field_0x28
+void fn_004B1100(void* self, float arg0) {
+    auto* ecx = static_cast<uint8_t*>(self);
+    float quad[4];
+    quad[0] = *reinterpret_cast<float*>(ecx + 0x1C);
+    quad[1] = *reinterpret_cast<float*>(ecx + 0x20);
+    quad[2] = arg0;
+    quad[3] = *reinterpret_cast<float*>(ecx + 0x28);
+    ext_004B0ED0(quad);
+}
+} // namespace lift_004B1100
