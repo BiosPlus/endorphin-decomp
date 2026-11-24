@@ -2707,3 +2707,31 @@ uint8_t __thiscall fn_0071C970(uint8_t* self) {
     return inner[0x1960];
 }
 } // namespace lift_0071C970
+
+// [0x0071C560]
+namespace lift_0071C560 {
+extern uint32_t mem_read32(uintptr_t addr);
+extern uint8_t mem_read8(uintptr_t addr);
+
+// @name getField0x7d8
+// @summary Reads a byte at offset 0x7d8 from the pointer stored at this+0x0c
+// @field Self +0x0c uint32_t field_0x0c
+uint8_t __thiscall sub_0071C560(void* self) {
+    uint32_t ptr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x0c);
+    return mem_read8(static_cast<uintptr_t>(ptr) + 0x7d8);
+}
+} // namespace lift_0071C560
+
+// [0x0071C500]
+namespace lift_0071C500 {
+uint32_t mem_r32(uint32_t addr);
+uint8_t mem_r8(uint32_t addr);
+
+// @name getField0xEC0FromField0x0C
+// @summary Reads a byte at offset 0xEC0 from the pointer stored at this+0x0C.
+// @field Object +0x0C uint32_t field_0x0C
+uint8_t __fastcall sub_0071C500(uint32_t self) {
+    uint32_t ptr = mem_r32(self + 0x0C);
+    return mem_r8(ptr + 0x0EC0);
+}
+} // namespace lift_0071C500
