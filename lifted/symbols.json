@@ -32285,6 +32285,13 @@
     "summary": "Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D9020": {
+    "name": "Unknown::LoadConstantOne",
+    "class": "Unknown",
+    "signature": "double fn_006D9020(void)",
+    "summary": "Returns the double constant 1.0 (loaded from .rdata mem_0092A270); result is the float return value.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006D9450": {
     "name": "sub_006D9450",
     "signature": "extern \"C\" void __fastcall fn_006D9450(void* self)",

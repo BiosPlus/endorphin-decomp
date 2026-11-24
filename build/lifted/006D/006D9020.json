@@ -1,0 +1,14 @@
+{
+  "va": "0x006D9020",
+  "size": 16,
+  "orig_symbol": "sub_006D9020",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::LoadConstantOne",
+  "class": "Unknown",
+  "signature": "double fn_006D9020(void)",
+  "summary": "Returns the double constant 1.0 (loaded from .rdata mem_0092A270); result is the float return value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:19Z"
+}

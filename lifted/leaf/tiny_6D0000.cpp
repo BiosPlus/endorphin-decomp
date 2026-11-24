@@ -363,3 +363,14 @@ double fn_006D9010(uint32_t self) {
     return *reinterpret_cast<double*>(inner + 0x1E8u);
 }
 } // namespace lift_006D9010
+
+// [0x006D9020] sub_006D9020 (16 bytes)
+namespace lift_006D9020 {
+extern double mem_0092A270;
+
+// @name Unknown::LoadConstantOne
+// @summary Returns the double constant 1.0 (loaded from .rdata mem_0092A270); result is the float return value.
+double fn_006D9020(void) {
+    return mem_0092A270;
+}
+} // namespace lift_006D9020
