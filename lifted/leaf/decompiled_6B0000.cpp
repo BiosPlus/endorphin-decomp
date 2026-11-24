@@ -372,3 +372,31 @@ void fn_006BBA00(void) {
 }
 } // namespace lift_007747B0
 } // namespace lift_006BBA00
+
+// [0x006B51D0] sub_006B51D0 (40 bytes)
+namespace lift_006B51D0 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+// Thiscall: self is passed in ecx; no stack arguments are forwarded by the caller here.
+extern void ext_006A5EA8(void* self);
+
+// @name Unknown::onCode13VirtualThenForward
+// @summary If arg1 == 0xD and self+0xDC is zero, call vtable slot at +0x13C on self; then always forward self to ext_006A5EA8.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0xdc uint8_t field_0xdc
+// Note: original is thiscall with 3 stack args and `ret 0xc` (callee-cleaned); only arg1 is read.
+void fn_006B51D0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg2;
+    (void)arg3;
+
+    if (arg1 == 0x0Du) {
+        const uint8_t flag = lift_field<uint8_t>(self, 0xDC);
+        if (flag == 0) {
+            void* vtbl = lift_field<void*>(self, 0x00);
+            auto slot = lift_field<void (*)(void*)>(vtbl, 0x13C);
+            slot(self);
+        }
+    }
+
+    ext_006A5EA8(self);
+}
+} // namespace lift_006B51D0
