@@ -8,7 +8,7 @@
 // Recovered field layout for ExprResult:
 namespace lifted_layout {
 struct ExprResult_Fields {
-    // +0x0   void*                    value  (evidence: 0x00487000, 0x0064F240)
-    // +0x4   void*                    source  (evidence: 0x00487000, 0x0064F240)
+    // +0x0   void*                    value  (evidence: 0x00487000, 0x005B7BC0, 0x0064F240)
+    // +0x4   void*                    source  (evidence: 0x00487000, 0x005B7BC0, 0x0064F240)
 };
 } // namespace lifted_layout

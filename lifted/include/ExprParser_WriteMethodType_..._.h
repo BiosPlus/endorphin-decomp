@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::WriteMethodType<...>:
 namespace lifted_layout {
 struct ExprParser_WriteMethodType_...__Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489700)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489700, 0x005B7BC0)
 };
 } // namespace lifted_layout

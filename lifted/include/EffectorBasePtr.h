@@ -8,6 +8,6 @@
 // Recovered field layout for EffectorBasePtr:
 namespace lifted_layout {
 struct EffectorBasePtr_Fields {
-    // +0x4   void*                    target  (evidence: 0x00603480)
+    // +0x4   void*                    target  (evidence: 0x005B7BC0, 0x00603480)
 };
 } // namespace lifted_layout

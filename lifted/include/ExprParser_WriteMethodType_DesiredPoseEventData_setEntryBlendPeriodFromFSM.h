@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM:
 namespace lifted_layout {
 struct ExprParser_WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489800)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489800, 0x005B7BC0)
 };
 } // namespace lifted_layout

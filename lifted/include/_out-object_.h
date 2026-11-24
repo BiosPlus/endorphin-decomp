@@ -8,6 +8,6 @@
 // Recovered field layout for <out-object>:
 namespace lifted_layout {
 struct _out-object__Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489680)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489680, 0x005B7BC0)
 };
 } // namespace lifted_layout
