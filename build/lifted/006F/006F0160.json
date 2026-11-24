@@ -1,0 +1,22 @@
+{
+  "va": "0x006F0160",
+  "size": 34,
+  "orig_symbol": "sub_006F0160",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgsToSubobject2310",
+  "class": "Unknown",
+  "signature": "void __thiscall Unknown::forwardArgsToSubobject2310(uint32_t arg1, void* arg2)",
+  "summary": "Forwards its two arguments, plus two constant tokens, to the subobject at this+0x2310 via ext_00711D40.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2310",
+      "type": "(subobject) not dereferenced here; only its address is passed as self to",
+      "name": "ext_00711D40."
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:14:16Z"
+}

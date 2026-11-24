@@ -421,3 +421,24 @@ void fn_006F01E0(void* self, uint32_t arg1, void* arg2) {
     ext_00711D40(child, arg1, arg2, 0x006F7EA0u, 0x006F7D00u);
 }
 } // namespace lift_006F01E0
+
+    // [0x006F0160]
+namespace lift_006F0160 {
+// @name Unknown::forwardArgsToSubobject2310
+// @class Unknown
+// @summary Forwards its two arguments, plus two constant tokens, to the subobject at this+0x2310 via ext_00711D40.
+// @field Unknown +0x2310 (subobject) not dereferenced here; only its address is passed as self to ext_00711D40.
+
+// Callee: stores args into the subobject and notifies a child object.
+extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+
+struct Unknown {
+
+void __thiscall forwardArgsToSubobject2310(uint32_t arg1, void* arg2);
+};
+
+void __thiscall Unknown::forwardArgsToSubobject2310(uint32_t arg1, void* arg2) {
+    void* subobject = reinterpret_cast<uint8_t*>(this) + 0x2310;
+    ext_00711D40(subobject, arg1, arg2, 0x006F8540u, 0x006F8390u);
+}
+} // namespace lift_006F0160
