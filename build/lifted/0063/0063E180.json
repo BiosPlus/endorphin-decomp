@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E180",
+  "size": 23,
+  "orig_symbol": "AdvXMLParser::Text::vfunc_3",
+  "src_path": "src/AdvXMLParser/Text.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Text.cpp",
+  "name": "AdvXMLParser::Text::vfunc_3",
+  "class": "AdvXMLParser::Text",
+  "signature": "uint32_t fn_0063E180(void* self, uint32_t arg)",
+  "summary": "Returns true when the argument equals 3; otherwise forwards the call (same args) to AnimatableTransform::vfunc_13_off_C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:33:08Z"
+}
