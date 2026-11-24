@@ -1042,3 +1042,23 @@ extern int32_t __stdcall fn_004304C0(void* target) {
     return vfunc1(target, (val == 2) ? 1 : 0);
 }
 } // namespace lift_004304C0
+
+// [0x00430520]
+namespace lift_00430520 {
+// @name update_control_enabled_from_mode
+// @summary Calls global getter, queries mode via Acclaim2CharacterIO::vfunc_23, and invokes vtable+0x4 on arg1 with (mode == 3).
+// @field arg1 +0x00 uint32_t* vtable
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern int32_t __thiscall ext_00528530(int32_t this_ptr);
+
+extern int32_t __stdcall fn_00430520(void* arg1) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(arg1);
+    int32_t obj = ext_00465B30();
+    int32_t mode = ext_00528530(obj);
+    using vfunc_t = int32_t(__thiscall*)(void*, int32_t);
+    auto vfunc = reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(vtable[1]));
+    return vfunc(arg1, mode == 3 ? 1 : 0);
+}
+} // namespace lift_00430520

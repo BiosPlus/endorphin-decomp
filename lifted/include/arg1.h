@@ -8,7 +8,8 @@
 // Recovered field layout for arg1:
 namespace lifted_layout {
 struct arg1_Fields {
-    // +0x0   pointer field_0x00 (pointer to object whose first word is a vtable-bearing object)  (evidence: 0x00681C10)
+    // +0x0   pointer field_0x00 (pointer to object whose first word is a vtable-bearing object)  (evidence: 0x00681C10) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t*                vtable  (evidence: 0x00430520) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00487300)
 };
 } // namespace lifted_layout
