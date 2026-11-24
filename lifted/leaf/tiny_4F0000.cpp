@@ -121,3 +121,20 @@ void fn_004F4D20(void* self, DWORD arg1, DWORD arg2) {
     lift_field<DWORD>(self, 0x00) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_0094CC14));
 }
 } // namespace lift_004F4D20
+
+// [0x004F9800] sub_004F9800 (25 bytes)
+namespace lift_004F9800 {
+extern int mem_0094DDEC;
+
+// @name initVtableAndStoreTwoArgsAlt
+// @class Unknown
+// @summary __thiscall initializer: stores the two stack arguments at +0x04 and +0x08, then sets the vtable pointer at +0x00 to mem_0094DDEC (callee cleans 8 bytes).
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+void fn_004F9800(void* self, DWORD arg1, DWORD arg2) {
+    lift_field<DWORD>(self, 0x04) = arg1;
+    lift_field<DWORD>(self, 0x08) = arg2;
+    lift_field<DWORD>(self, 0x00) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_0094DDEC));
+}
+} // namespace lift_004F9800

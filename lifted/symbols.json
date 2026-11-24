@@ -10286,6 +10286,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F9800": {
+    "name": "initVtableAndStoreTwoArgsAlt",
+    "class": "Unknown",
+    "signature": "void fn_004F9800(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "__thiscall initializer: stores the two stack arguments at +0x04 and +0x08, then sets the vtable pointer at +0x00 to mem_0094DDEC (callee cleans 8 bytes).",
+    "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
   "0x004F9820": {
     "name": "sub_004F9820",
     "signature": "extern \"C\" void __fastcall fn_004F9820(void* self)",
