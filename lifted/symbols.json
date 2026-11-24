@@ -2495,6 +2495,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_0043CD80.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00442C40": {
+    "name": "Unknown::InitWithTagAndVtable",
+    "class": "Unknown",
+    "signature": "void* fn_00442C40(void* self, uint32_t arg, uint32_t unused_arg)",
+    "summary": "Runs the base init helper with the two stack args, then installs the vtable at mem_009326EC and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00442C60": {
     "name": "thunk_USER32_ReleaseCapture",
     "signature": "extern \"C\" void fn_00442C60(void)",

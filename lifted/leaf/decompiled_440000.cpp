@@ -572,3 +572,20 @@ void* fn_00442960(void* self, uint32_t arg, uint32_t unused_arg) {
     return self;
 }
 } // namespace lift_00442960
+
+// [0x00442C40]
+namespace lift_00442C40 {
+// @name Unknown::InitWithTagAndVtable
+// @class Unknown
+// @summary Runs the base init helper with the two stack args, then installs the vtable at mem_009326EC and returns self.
+// @field Unknown +0x00 void* vtable (written with mem_009326EC)
+
+extern void* ext_00442960(void* self, uint32_t arg, uint32_t unused_arg);
+extern uint8_t mem_009326EC[];
+
+void* fn_00442C40(void* self, uint32_t arg, uint32_t unused_arg) {
+    ext_00442960(self, arg, unused_arg);
+    *reinterpret_cast<void**>(self) = static_cast<void*>(mem_009326EC);
+    return self;
+}
+} // namespace lift_00442C40
