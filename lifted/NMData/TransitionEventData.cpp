@@ -59,3 +59,39 @@ void* __thiscall fn_004D0C80(void* self, void* out, uint32_t id) {
     return out;
 }
 } // namespace lift_004D0C80
+
+// [0x004D0CF0] NMData::TransitionEventData::vfunc_81 (67 bytes)
+namespace lift_004D0CF0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x00594640: sub_00594640 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.)
+extern void* ext_00594640(void* self);
+// Known callee 0x005AA830: ObjectWithChild::setValueAndNotifyChild (Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.)
+extern void ext_005AA830(uint8_t* self, int32_t value);
+// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
+extern void ext_004C0340();
+
+// @name NMData::TransitionEventData::vfunc_81
+// @class NMData::TransitionEventData
+// @summary Caches the global-derived object at +0x168; if it is non-null and its vtable slot 10 returns true, notifies the child at +0x198 with value 0; then runs the global flag helper.
+// @field NMData::TransitionEventData +0x168 void* field_0x168
+// @field NMData::TransitionEventData +0x198 uint8_t field_0x198
+void fn_004D0CF0(void* self, int32_t arg) {
+    (void)arg;  // pushed by the caller but not read by any callee
+
+    uint8_t* const s = static_cast<uint8_t*>(self);
+    void* const obj = ext_00594640(reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00594000())));
+    lift_field<void*>(s, 0x168) = obj;
+
+    if (obj != nullptr) {
+        void** const vtable = *reinterpret_cast<void***>(obj);
+        // Vtable byte offset 0x28 on a 32-bit target is slot index 10.
+        auto const slot10 = reinterpret_cast<uint8_t (*)(void*)>(vtable[10]);
+        if (slot10(obj) != 0) {
+            ext_005AA830(s + 0x198, 0);
+        }
+    }
+
+    ext_004C0340();
+}
+} // namespace lift_004D0CF0

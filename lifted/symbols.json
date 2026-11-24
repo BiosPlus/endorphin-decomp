@@ -10899,6 +10899,13 @@
     "summary": "Returns property value for ID 0x40 from field_0x198 if field_0x168-\u003evfunc_10() is false, otherwise delegates to base vfunc_14.",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D0CF0": {
+    "name": "NMData::TransitionEventData::vfunc_81",
+    "class": "NMData::TransitionEventData",
+    "signature": "void fn_004D0CF0(void* self, int32_t arg)",
+    "summary": "Caches the global-derived object at +0x168; if it is non-null and its vtable slot 10 returns true, notifies the child at +0x198 with value 0; then runs the global flag helper.",
+    "lifted_path": "lifted/NMData/TransitionEventData.cpp"
+  },
   "0x004D0E00": {
     "name": "GetTableEntryForSelfIndex",
     "class": "(none)",

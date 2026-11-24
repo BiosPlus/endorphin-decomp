@@ -1,0 +1,28 @@
+{
+  "va": "0x004D0CF0",
+  "size": 67,
+  "orig_symbol": "NMData::TransitionEventData::vfunc_81",
+  "src_path": "src/NMData/TransitionEventData.cpp",
+  "lifted_path": "lifted/NMData/TransitionEventData.cpp",
+  "name": "NMData::TransitionEventData::vfunc_81",
+  "class": "NMData::TransitionEventData",
+  "signature": "void fn_004D0CF0(void* self, int32_t arg)",
+  "summary": "Caches the global-derived object at +0x168; if it is non-null and its vtable slot 10 returns true, notifies the child at +0x198 with value 0; then runs the global flag helper.",
+  "fields": [
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x198",
+      "type": "uint8_t",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:33:43Z"
+}
