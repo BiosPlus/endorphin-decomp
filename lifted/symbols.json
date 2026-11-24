@@ -39777,6 +39777,12 @@
     "summary": "Returns address of global mem_00AB6B0C.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080F700": {
+    "name": "strlen",
+    "signature": "uint32_t sub_0080F700(const char* str)",
+    "summary": "Returns the length of a NUL-terminated string (equivalent to repne scasb strlen idiom).",
+    "lifted_path": "lifted/leaf/tiny_800000.cpp"
+  },
   "0x0080FBB0": {
     "name": "sub_0080FBB0_getField08",
     "signature": "uint32_t sub_0080FBB0_getField08(const uint8_t* obj)",

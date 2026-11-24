@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_800000.cpp
 #include "lift_compat.h"
 extern "C" int mem_00AB6B0C;
+#include <cstddef>
+#include <cstdint>
 
-// [0x0080EFC0] sub_0080EFC0 (16 bytes)
+#include <cstdint>
 // @name sub_0080EFC0
 // @summary Returns address of global mem_00AB6B0C.
 extern "C" void* __cdecl fn_0080EFC0(void) {
@@ -42,3 +44,19 @@ uint32_t sub_0080FBB0_getField08(const uint8_t* obj) {
     return *reinterpret_cast<const uint32_t*>(obj + 0x08);
 }
 } // namespace lift_0080FBB0
+
+// [0x0080F700]
+namespace lift_0080F700 {
+// @name strlen
+// @summary Returns the length of a NUL-terminated string (equivalent to repne scasb strlen idiom).
+// @stackargs 1 pointer argument: const char* str (at [esp+4] on entry).
+
+
+uint32_t sub_0080F700(const char* str) {
+    const char* p = str;
+    while (*p != '\0') {
+        ++p;
+    }
+    return static_cast<uint32_t>(p - str);
+}
+} // namespace lift_0080F700
