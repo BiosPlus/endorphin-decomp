@@ -1,0 +1,21 @@
+{
+  "va": "0x006FA3B0",
+  "size": 16,
+  "orig_symbol": "sub_006FA3B0",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "getField34Shifted27",
+  "signature": "int32_t __thiscall sub_006FA3B0(uintptr_t self)",
+  "summary": "Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T01:44:10Z"
+}

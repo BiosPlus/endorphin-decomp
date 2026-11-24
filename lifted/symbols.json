@@ -34231,6 +34231,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006FA230 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA3B0": {
+    "name": "getField34Shifted27",
+    "signature": "int32_t __thiscall sub_006FA3B0(uintptr_t self)",
+    "summary": "Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006FA520": {
     "name": "sub_006FA520",
     "signature": "void fn_006FA520(uint32_t arg)",

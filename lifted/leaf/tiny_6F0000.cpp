@@ -2608,3 +2608,15 @@ uint32_t sub_006F7700(uint32_t index) {
     return mem_read32(0x00994764u + index * 4u);
 }
 } // namespace lift_006F7700
+
+// [0x006FA3B0]
+namespace lift_006FA3B0 {
+// @name getField34Shifted27
+// @summary Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.
+// @field Self +0x34 int32_t field_0x34
+
+
+int32_t __thiscall sub_006FA3B0(uintptr_t self) {
+    return *reinterpret_cast<const int32_t*>(self + 0x34) >> 27;
+}
+} // namespace lift_006FA3B0
