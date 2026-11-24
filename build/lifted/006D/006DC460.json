@@ -1,0 +1,28 @@
+{
+  "va": "0x006DC460",
+  "size": 32,
+  "orig_symbol": "sub_006DC460",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::GetValueIfCountPositive",
+  "class": "Unknown",
+  "signature": "int32_t Unknown_GetValueIfCountPositive(void* self)",
+  "summary": "Returns *(this-\u003efield_0xC8) when this-\u003efield_0xB8 \u003e 0, otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "int32_t",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "int32_t*",
+      "name": "field_0xC8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:51Z"
+}

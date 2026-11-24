@@ -220,3 +220,22 @@ void fn_006D7CE0(void* self, uint8_t arg1, uint8_t arg2) {
     lift_field<uint8_t>(self, 0x1C5) = arg2;
 }
 } // namespace lift_006D7CE0
+
+// [0x006DC460]
+namespace lift_006DC460 {
+// @name Unknown::GetValueIfCountPositive
+// @class Unknown
+// @summary Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.
+// @field Unknown +0xB8 int32_t field_0xB8
+// @field Unknown +0xC8 int32_t* field_0xC8
+
+int32_t Unknown_GetValueIfCountPositive(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0xB8);
+    if (count > 0) {
+        int32_t* ptr = *reinterpret_cast<int32_t**>(base + 0xC8);
+        return *ptr;
+    }
+    return 0;
+}
+} // namespace lift_006DC460
