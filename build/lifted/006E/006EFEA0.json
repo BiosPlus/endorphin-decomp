@@ -4,19 +4,85 @@
   "orig_symbol": "sub_006EFEA0",
   "src_path": "src/leaf/decompiled_6E0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
-  "name": "Unknown::forwardArgsToSubobject1E48",
+  "name": "sub_006E7390",
   "class": "Unknown",
-  "signature": "extern \"C\" void sub_006EFEA0(void* self, uint32_t arg1, void* arg2)",
-  "summary": "Forwards two stack arguments plus two constant addresses to ext_00711D40 on the subobject at this+0x1E48.",
+  "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "nextNode"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "chainValue"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "double field_0xA0 (accessed through the pointer at",
+      "name": "+0x08)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D38",
+      "type": "uint8_t field_1D38 (address taken only; passed as `this` to",
+      "name": "ext_00711D40)"
+    },
     {
       "class": "Unknown",
       "offset": "+0x1E48",
       "type": "void*",
       "name": "field_0x1e48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1CB0",
+      "type": "void* field_1CB0 (address computed as this + 0x1CB0 and passed on; not dereferenced",
+      "name": "here)"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:13:48Z"
+  "lifted_at": "2026-11-24T14:13:54Z"
 }

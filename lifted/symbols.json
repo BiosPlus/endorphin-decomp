@@ -40051,10 +40051,10 @@
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006EFEA0": {
-    "name": "Unknown::forwardArgsToSubobject1E48",
+    "name": "sub_006E7390",
     "class": "Unknown",
-    "signature": "extern \"C\" void sub_006EFEA0(void* self, uint32_t arg1, void* arg2)",
-    "summary": "Forwards two stack arguments plus two constant addresses to ext_00711D40 on the subobject at this+0x1E48.",
+    "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006EFED0": {
