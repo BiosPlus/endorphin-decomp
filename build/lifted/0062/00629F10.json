@@ -1,0 +1,22 @@
+{
+  "va": "0x00629F10",
+  "size": 26,
+  "orig_symbol": "sub_00629F10",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "StoreDeltaToField38",
+  "class": "Unknown",
+  "signature": "void fn_00629F10(void* self, float arg)",
+  "summary": "Stores (ext_00594010(self-from-ext_00594000) - arg) into this-\u003e+0x38 as float.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:56:37Z"
+}

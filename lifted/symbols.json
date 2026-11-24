@@ -22451,6 +22451,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005FF040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00629F10": {
+    "name": "StoreDeltaToField38",
+    "class": "Unknown",
+    "signature": "void fn_00629F10(void* self, float arg)",
+    "summary": "Stores (ext_00594010(self-from-ext_00594000) - arg) into this-\u003e+0x38 as float.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629F40": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e",

@@ -64,3 +64,22 @@ void __thiscall fn_00627280(void* self) {
     ext_00647E20(target, arg);
 }
 } // namespace lift_00627280
+
+// [0x00629F10] sub_00629F10 (26 bytes)
+namespace lift_00629F10 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x00594010: sub_00594010 (Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_00642650.)
+// Returns a float on the x87 stack (consumed by fsub in the original).
+extern float ext_00594010(void* self);
+
+// @name StoreDeltaToField38
+// @class Unknown
+// @summary Stores (ext_00594010(self-from-ext_00594000) - arg) into this->+0x38 as float.
+// @field Unknown +0x38 float field_0x38
+void fn_00629F10(void* self, float arg) {
+    const auto ctx = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    const float value = ext_00594010(reinterpret_cast<void*>(ctx));
+    lift_field<float>(self, 0x38) = value - arg;
+}
+} // namespace lift_00629F10
