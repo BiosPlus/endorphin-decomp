@@ -1,0 +1,13 @@
+{
+  "va": "0x00798800",
+  "size": 52,
+  "orig_symbol": "sub_00798800",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "computeRowsPerStrip",
+  "signature": "int32_t fn_00798800(uint8_t* self, int32_t rowsPerStrip)",
+  "summary": "Returns requested rows per strip if \u003e= 1, otherwise computes how many rows fit in 8192 bytes (minimum 1).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:09:55Z"
+}

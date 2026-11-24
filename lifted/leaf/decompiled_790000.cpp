@@ -366,3 +366,21 @@ int32_t sub_0079B030(uint32_t arg1, uint32_t arg2, uint32_t count) {
     return 0;
 }
 } // namespace lift_0079B030
+
+// [0x00798800]
+namespace lift_00798800 {
+extern uint32_t ext_00798840(uint8_t* self);
+
+// @name computeRowsPerStrip
+// @summary Returns requested rows per strip if >= 1, otherwise computes how many rows fit in 8192 bytes (minimum 1).
+int32_t fn_00798800(uint8_t* self, int32_t rowsPerStrip) {
+    if (rowsPerStrip >= 1) {
+        return rowsPerStrip;
+    }
+
+    uint32_t rowBytes = ext_00798840(self);
+    uint32_t divisor = (rowBytes == 0) ? 1u : rowBytes;
+    uint32_t rows = 0x2000u / divisor;
+    return (rows == 0) ? 1 : static_cast<int32_t>(rows);
+}
+} // namespace lift_00798800

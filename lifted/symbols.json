@@ -32217,6 +32217,13 @@
     "summary": "Returns 1 if bit 0 of the field at +0x9C of the object stored at this+0x94 (passed through ext_007D8700) is set, otherwise 0.",
     "lifted_path": "lifted/classes/RelationshipRPROMagnet.cpp"
   },
+  "0x00648F90": {
+    "name": "RelationshipRPROMagnet::vfunc_50",
+    "class": "RelationshipRPROMagnet",
+    "signature": "extern \"C\" void __thiscall fn_00648F90(void* self)",
+    "summary": "Releases and clears field_0x94 if non-null after invoking vtable+0x1c",
+    "lifted_path": "lifted/classes/RelationshipRPROMagnet.cpp"
+  },
   "0x00649010": {
     "name": "Unknown::forwardFloatToVfunc3Loop",
     "class": "Unknown",
@@ -52322,6 +52329,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x00798800": {
+    "name": "computeRowsPerStrip",
+    "signature": "int32_t fn_00798800(uint8_t* self, int32_t rowsPerStrip)",
+    "summary": "Returns requested rows per strip if \u003e= 1, otherwise computes how many rows fit in 8192 bytes (minimum 1).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x00798840": {
     "name": "UnknownClass::computeRowByteSize",
