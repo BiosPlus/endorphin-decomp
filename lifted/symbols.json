@@ -47223,6 +47223,13 @@
     "summary": "Increments counters at +0x08 and +0x0C on this node, then walks the next-pointer chain at +0x00 incrementing the same counters on each node until a null link.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x007837D0": {
+    "name": "IndexListNode::shiftIndicesAfterRemove",
+    "class": "IndexListNode",
+    "signature": "void IndexListNode_shiftIndicesAfterRemove(void* self, int32_t removedIndex)",
+    "summary": "Walks the node list from this; decrements the indices at +0x08 and +0x0C that are greater than the removed index argument.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783800": {
     "name": "ResetNodeChain (descriptive label inferred from behavior; no class name recovered)",
     "class": "Unknown",

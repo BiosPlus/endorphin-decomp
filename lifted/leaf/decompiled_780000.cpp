@@ -544,3 +544,29 @@ void fn_00784720(void* self) {
     lift_field<uint8_t>(self, 0x10) = 0;
 }
 } // namespace lift_00784720
+
+// [0x007837D0]
+namespace lift_007837D0 {
+// @name IndexListNode::shiftIndicesAfterRemove
+// @class IndexListNode
+// @summary Walks the node list from this; decrements the indices at +0x08 and +0x0C that are greater than the removed index argument.
+// @field IndexListNode +0x00 IndexListNode* field_0x00
+// @field IndexListNode +0x08 int32_t field_0x08
+// @field IndexListNode +0x0C int32_t field_0x0C
+
+// __thiscall-style: self in ECX, one stack argument, callee-cleanup (ret 4).
+void IndexListNode_shiftIndicesAfterRemove(void* self, int32_t removedIndex) {
+    void* node = self;
+    while (node != nullptr) {
+        int32_t& f08 = lift_field<int32_t>(node, 0x08);
+        if (removedIndex < f08) {
+            f08--;
+        }
+        int32_t& f0C = lift_field<int32_t>(node, 0x0C);
+        if (removedIndex < f0C) {
+            f0C--;
+        }
+        node = lift_field<void*>(node, 0x00);
+    }
+}
+} // namespace lift_007837D0

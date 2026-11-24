@@ -1,0 +1,34 @@
+{
+  "va": "0x007837D0",
+  "size": 48,
+  "orig_symbol": "sub_007837D0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "IndexListNode::shiftIndicesAfterRemove",
+  "class": "IndexListNode",
+  "signature": "void IndexListNode_shiftIndicesAfterRemove(void* self, int32_t removedIndex)",
+  "summary": "Walks the node list from this; decrements the indices at +0x08 and +0x0C that are greater than the removed index argument.",
+  "fields": [
+    {
+      "class": "IndexListNode",
+      "offset": "+0x0",
+      "type": "IndexListNode*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "IndexListNode",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "IndexListNode",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:47Z"
+}
