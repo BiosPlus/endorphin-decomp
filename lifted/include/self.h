@@ -15,6 +15,9 @@ struct self_Fields {
     // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70) // CONFLICT: multiple definitions at +0x4
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00468750, 0x0046F7D0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x00468750, 0x0046F7D0)
+    // +0x30  float                    field_0x30  (evidence: 0x007C6130)
+    // +0x34  float                    field_0x34  (evidence: 0x007C6130)
+    // +0x38  float                    field_0x38  (evidence: 0x007C6130)
     // +0x50  double                   field_0x50  (evidence: 0x004408E0, 0x00440900)
     // +0x58  double                   field_0x58  (evidence: 0x004408E0, 0x00440900)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004DE160)

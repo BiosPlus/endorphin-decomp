@@ -1287,3 +1287,26 @@ void sub_007C9C90(Float4Out* out) {
     out->field_0x08 = maxValue;
 }
 } // namespace lift_007C9C90
+
+// [0x007C6130] sub_007C6130 (26 bytes)
+namespace lift_007C6130 {
+// @name CopyVec3FromOffset30
+// @class <none>
+// @summary Copies three consecutive floats from self+0x30..+0x38 into out[0..2].
+// @field self +0x30 float field_0x30
+// @field self +0x34 float field_0x34
+// @field self +0x38 float field_0x38
+void fn_007C6130(const void* self, void* out) {
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint8_t* dst = static_cast<uint8_t*>(out);
+
+    float v0, v1, v2;
+    std::memcpy(&v0, src + 0x30, sizeof(float));
+    std::memcpy(&v1, src + 0x34, sizeof(float));
+    std::memcpy(&v2, src + 0x38, sizeof(float));
+
+    std::memcpy(dst + 0x0, &v0, sizeof(float));
+    std::memcpy(dst + 0x4, &v1, sizeof(float));
+    std::memcpy(dst + 0x8, &v2, sizeof(float));
+}
+} // namespace lift_007C6130

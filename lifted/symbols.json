@@ -41111,6 +41111,13 @@
     "summary": "Returns the float field at offset 0x1D0 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6130": {
+    "name": "CopyVec3FromOffset30",
+    "class": "\u003cnone\u003e",
+    "signature": "void fn_007C6130(const void* self, void* out)",
+    "summary": "Copies three consecutive floats from self+0x30..+0x38 into out[0..2].",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6310": {
     "name": "sub_007C6310",
     "class": "\u003cunknown\u003e",
