@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstdint>
 
 // [0x004409D0] sub_004409D0 (10 bytes)
 namespace lift_004409D0 {
@@ -1532,3 +1533,29 @@ uint32_t __stdcall ArrayDwordElementAddr(uint32_t a1, uint32_t a2, uint32_t a3, 
     return a1 + 4u * a2;  // lea eax, [edi + 4*esi]
 }
 } // namespace lift_0044C420
+
+// [0x0044C360]
+namespace lift_0044C360 {
+// @name copyBackwardDwords
+// @summary Copies 32-bit dwords backward from [first, last) to [d_last - count, d_last) and returns the destination start address.
+
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t sub_0044C360(uint32_t first, uint32_t last, uint32_t d_last) {
+    int32_t count = static_cast<int32_t>(last - first) >> 2;
+    uint32_t byte_count = static_cast<uint32_t>(count * 4);
+    uint32_t result = d_last - byte_count;
+    if (first == last) {
+        return result;
+    }
+    uint32_t dst = d_last;
+    uint32_t src = last;
+    do {
+        src -= 4;
+        dst -= 4;
+        mem_write32(dst, mem_read32(src));
+    } while (src != first);
+    return result;
+}
+} // namespace lift_0044C360
