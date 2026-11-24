@@ -4,31 +4,10 @@
   "orig_symbol": "sub_006989B0",
   "src_path": "src/leaf/decompiled_690000.cpp",
   "lifted_path": "lifted/leaf/decompiled_690000.cpp",
-  "name": "sub_00692D90",
-  "class": "NMData::RealChannel",
-  "signature": "void __thiscall fn_00692D90(uint8_t* self)",
-  "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
-  "fields": [
-    {
-      "class": "NMData::RealChannel",
-      "offset": "+0x30",
-      "type": "uint32_t",
-      "name": "begin"
-    },
-    {
-      "class": "NMData::RealChannel",
-      "offset": "+0x34",
-      "type": "uint32_t",
-      "name": "end"
-    },
-    {
-      "class": "unknown",
-      "offset": "+0x8",
-      "type": "uint32_t",
-      "name": "field_0x08"
-    }
-  ],
+  "name": "CopyBytesRange",
+  "signature": "uint8_t* CopyBytesRange(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
+  "summary": "Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:46:54Z"
+  "lifted_at": "2026-11-24T13:47:15Z"
 }
