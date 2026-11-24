@@ -1,0 +1,51 @@
+{
+  "va": "0x007911E0",
+  "size": 39,
+  "orig_symbol": "sub_007911E0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_007911E0",
+  "signature": "uint32_t __thiscall sub_007911E0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Initializes object fields at offsets 0x28, 0x2c, 0x48, 0x4c, 0x50, and 0x60 and returns 0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:57:31Z"
+}
