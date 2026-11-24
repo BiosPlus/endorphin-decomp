@@ -36803,6 +36803,13 @@
     "summary": "Releases the object held at this-\u003efield_0xFC-\u003efield_0x04 via its vtable slot 0 (deleting dtor, flag 1), then nulls that pointer.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D74E0": {
+    "name": "Unknown::SetByteAtIndex0x14C",
+    "class": "Unknown",
+    "signature": "void fn_006D74E0(void* self, DWORD index, BYTE value)",
+    "summary": "Stores one byte into the byte array at this+0x14C, indexed by the first stack argument (ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D78F0": {
     "name": "sub_006D78F0",
     "signature": "extern \"C\" void* __fastcall fn_006D78F0(void* self, int edx_unused, unsigned int flags)",

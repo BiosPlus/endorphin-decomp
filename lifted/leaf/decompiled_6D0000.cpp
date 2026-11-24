@@ -168,3 +168,16 @@ void fn_006D6AF0(void* self, DWORD index, BYTE value) {
     lift_field<BYTE>(self, static_cast<ptrdiff_t>(0x1B8) + static_cast<ptrdiff_t>(index)) = value;
 }
 } // namespace lift_006D6AF0
+
+// [0x006D74E0] sub_006D74E0 (32 bytes)
+namespace lift_006D74E0 {
+// @name Unknown::SetByteAtIndex0x14C
+// @class Unknown
+// @summary Stores one byte into the byte array at this+0x14C, indexed by the first stack argument (ret 8).
+// @field Unknown +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)
+
+void fn_006D74E0(void* self, DWORD index, BYTE value) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    base[static_cast<ptrdiff_t>(0x14C) + static_cast<ptrdiff_t>(index)] = value;
+}
+} // namespace lift_006D74E0
