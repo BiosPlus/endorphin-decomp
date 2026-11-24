@@ -958,3 +958,15 @@ void fn_007C6F40(void* self) {
 }
 } // namespace lift_007C6F50
 } // namespace lift_007C6F40
+
+// [0x007C70C0]
+namespace lift_007C70C0 {
+// @name sub_007C70C0_setField20Thunk
+// @summary Adjusts this by +0x44 and tail-forwards the call to setField20_007D5BB0, which stores value at +0x20 of that subobject.
+
+void ext_007D5BB0(void* self, DWORD value);
+
+void fn_007C70C0(void* self, DWORD value) {
+    ext_007D5BB0(static_cast<char*>(self) + 0x44, value);
+}
+} // namespace lift_007C70C0

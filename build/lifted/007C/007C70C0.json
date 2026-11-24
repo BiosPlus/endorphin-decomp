@@ -1,0 +1,13 @@
+{
+  "va": "0x007C70C0",
+  "size": 16,
+  "orig_symbol": "sub_007C70C0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C70C0_setField20Thunk",
+  "signature": "void fn_007C70C0(void* self, DWORD value)",
+  "summary": "Adjusts this by +0x44 and tail-forwards the call to setField20_007D5BB0, which stores value at +0x20 of that subobject.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:47:29Z"
+}

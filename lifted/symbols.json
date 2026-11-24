@@ -38256,6 +38256,12 @@
     "summary": "Returns the 32-bit value at offset 0x7C of the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C70C0": {
+    "name": "sub_007C70C0_setField20Thunk",
+    "signature": "void fn_007C70C0(void* self, DWORD value)",
+    "summary": "Adjusts this by +0x44 and tail-forwards the call to setField20_007D5BB0, which stores value at +0x20 of that subobject.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C70E0": {
     "name": "getField0x24",
     "signature": "uint16_t sub_007C70E0(uint32_t obj)",
