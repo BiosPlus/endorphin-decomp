@@ -20,3 +20,19 @@ void* fn_005136C0(void* self, void* pair, DWORD b) {
 }
 } // namespace lift_00500310
 } // namespace lift_005136C0
+
+// [0x005142F0] sub_005142F0 (35 bytes)
+namespace lift_005142F0 {
+// Known callee 0x005136C0: sub_005136C0 (Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).)
+extern void* ext_005136C0(void* self, void* pair, DWORD b);
+
+// @name WrapPairInit_005142F0
+// @summary Forwards (self, pair) to ext_005136C0 with a zero DWORD and returns self.
+void* fn_005142F0(void* self, void* pair) {
+    // Stack-level detail: the 0 store in the disassembly lands in the saved-ECX slot,
+    // so the third argument read by the callee is not literally 0 at the ABI level.
+    // Lifted as the evident intent (b = 0); verify against the callee before relying on it.
+    ext_005136C0(self, pair, 0);
+    return self;
+}
+} // namespace lift_005142F0

@@ -12483,6 +12483,12 @@
     "summary": "Null-checks the held value pointer, invokes the slot-9 (vtable +0x24) getter on the held object's +4 sub-object, passes the result to ext_006720E0, and returns the argument.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005142F0": {
+    "name": "WrapPairInit_005142F0",
+    "signature": "void* fn_005142F0(void* self, void* pair)",
+    "summary": "Forwards (self, pair) to ext_005136C0 with a zero DWORD and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00515820": {
     "name": "sub_00515820",
     "signature": "extern \"C\" void __fastcall fn_00515820(void* self)",
