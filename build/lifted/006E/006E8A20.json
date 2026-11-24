@@ -1,0 +1,28 @@
+{
+  "va": "0x006E8A20",
+  "size": 32,
+  "orig_symbol": "sub_006E8A20",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::SetValueAndFlag",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006E8A20(void* self, uint32_t value)",
+  "summary": "Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:36:14Z"
+}

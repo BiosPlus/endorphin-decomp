@@ -37302,6 +37302,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E7F90 (sub_006E6340).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8A20": {
+    "name": "Unknown::SetValueAndFlag",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006E8A20(void* self, uint32_t value)",
+    "summary": "Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9420": {
     "name": "sub_006E9420",
     "signature": "extern \"C\" int32_t __fastcall fn_006E9420(void* self)",

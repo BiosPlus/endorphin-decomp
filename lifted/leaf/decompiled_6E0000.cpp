@@ -78,3 +78,19 @@ extern uint32_t __stdcall fn_006E5710(void* self, uint32_t value) {
     return value & mask;
 }
 } // namespace lift_006E5710
+
+// [0x006E8A20]
+namespace lift_006E8A20 {
+// @name Unknown::SetValueAndFlag
+// @class Unknown
+// @summary Stores a 32-bit argument at +0x00, sets the flag word at +0x04 to 1, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+// Thiscall: ECX = this, one stack argument, callee pops 4 bytes (ret 4).
+void* __thiscall fn_006E8A20(void* self, uint32_t value) {
+    lift_field<uint32_t>(self, 0x00) = value;
+    lift_field<uint32_t>(self, 0x04) = 1;
+    return self;
+}
+} // namespace lift_006E8A20
