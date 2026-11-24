@@ -1,0 +1,34 @@
+{
+  "va": "0x00711D40",
+  "size": 47,
+  "orig_symbol": "sub_00711D40",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::storeArgsAndNotifyChild",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (on subobject returned by ext_0071E680, i.e.",
+      "name": "self+0x40)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t field_0x10 (on subobject returned by ext_0071E680, i.e.",
+      "name": "self+0x40)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e.",
+      "name": "self+0x40)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:13:11Z"
+}

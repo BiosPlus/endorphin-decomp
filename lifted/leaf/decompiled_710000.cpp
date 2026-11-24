@@ -808,3 +808,31 @@ const char* __stdcall sub_0071A5E0(int32_t orientation) {
     }
 }
 } // namespace lift_0071A5E0
+
+// [0x00711D40]
+namespace lift_00711D40 {
+// @name Unknown::storeArgsAndNotifyChild
+// @class Unknown
+// @summary Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.
+// @field Unknown +0x04 uint32_t field_0x04 (on subobject returned by ext_0071E680, i.e. self+0x40)
+// @field Unknown +0x10 uint32_t field_0x10 (on subobject returned by ext_0071E680, i.e. self+0x40)
+// @field Unknown +0x14 uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e. self+0x40)
+
+
+extern void* __fastcall ext_0071E680(void* self);
+
+void __thiscall sub_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4) {
+    void* sub = ext_0071E680(self);
+
+    // arg2->vtable[0x50 / 4](self)
+    uint32_t vtable = lift_field<uint32_t>(arg2, 0x00);
+    uint32_t target = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x50);
+    using VFunc = void(__thiscall*)(void*, void*);
+    VFunc fn = reinterpret_cast<VFunc>(static_cast<uintptr_t>(target));
+    fn(arg2, self);
+
+    lift_field<uint32_t>(sub, 0x04) = arg1;
+    lift_field<uint32_t>(sub, 0x10) = arg3;
+    lift_field<uint32_t>(sub, 0x14) = arg4;
+}
+} // namespace lift_00711D40
