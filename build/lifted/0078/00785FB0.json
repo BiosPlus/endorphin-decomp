@@ -1,0 +1,13 @@
+{
+  "va": "0x00785FB0",
+  "size": 36,
+  "orig_symbol": "sub_00785FB0",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "negate_huge_into_globals",
+  "signature": "void negate_huge_into_globals()",
+  "summary": "Loads the double pointed to by the HUGE constant and stores its negation into three globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:09Z"
+}
