@@ -1021,3 +1021,28 @@ void fn_006FB520(uint32_t self, uint32_t src) {
     lift_field<uint32_t>(mem_, self + 0x0) = lift_field<uint32_t>(mem_, p);
 }
 } // namespace lift_006FB520
+
+// [0x006FA400] sub_006FA400 (48 bytes)
+namespace lift_006FA400 {
+// Known callee 0x006FA3B0: getField34Shifted27 (Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.)
+extern int32_t __thiscall ext_006FA3B0(void* self);
+// Callee 0x006FA3C0 (32B): __thiscall, one int32 stack argument, callee-cleans.
+extern void __thiscall ext_006FA3C0(void* self, int32_t arg);
+
+// @name Unknown::decShiftedField34AndNotify
+// @class Unknown
+// @summary Computes (int32 at +0x34 >> 27) - 1, passes it to ext_006FA3C0; if that value is zero and bit 0x10000 of +0x34 is set, calls vtable slot 1 with 0.
+// @field Unknown +0x34 int32_t field_0x34
+void fn_006FA400(void* self) {
+    const int32_t shifted = ext_006FA3B0(self);
+    const uint32_t idx = static_cast<uint32_t>(shifted) - 1u;
+
+    ext_006FA3C0(self, static_cast<int32_t>(idx));
+
+    if (idx == 0 && (lift_field<uint32_t>(self, 0x34) & 0x10000u) != 0) {
+        void** vtbl = lift_field<void**>(self, 0);
+        auto notify = reinterpret_cast<void (__thiscall*)(void*, int32_t)>(vtbl[1]);
+        notify(self, 0);
+    }
+}
+} // namespace lift_006FA400
