@@ -139,3 +139,33 @@ void fn_0077F520(void* self) {
     lift_field<DWORD>(self, 0x04) = value;
 }
 } // namespace lift_0077F520
+
+// [0x0077FB10]
+namespace lift_0077FB10 {
+// @name Unknown::compareDoublePair
+// @class Unknown
+// @summary Compares the two doubles at offsets 0x00 and 0x08 of this against the two doubles at the same offsets of the stack argument; returns 0 if both pairs compare equal (x87 fcomp C3 semantics, so unordered counts as equal), otherwise 1.
+// @field Unknown +0x00 double field_0x00
+// @field Unknown +0x08 double field_0x08
+
+// x87 fcomp C3 is set when operands are equal or unordered; equivalently, neither is less than the other.
+static inline bool x87_fcomp_equal(double a, double b) {
+    return !(a < b) && !(b < a);
+}
+
+int sub_0077FB10(void* self, const void* other) {
+    const double a0 = lift_field<double>(other, 0x00);
+    const double b0 = lift_field<double>(self, 0x00);
+    if (!x87_fcomp_equal(a0, b0)) {
+        return 1;
+    }
+
+    const double a1 = lift_field<double>(other, 0x08);
+    const double b1 = lift_field<double>(self, 0x08);
+    if (!x87_fcomp_equal(a1, b1)) {
+        return 1;
+    }
+
+    return 0;
+}
+} // namespace lift_0077FB10

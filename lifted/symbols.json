@@ -46968,6 +46968,13 @@
     "summary": "Returns the double stored at element index (stride 8) of the object's table, thiscall, callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077FB10": {
+    "name": "Unknown::compareDoublePair",
+    "class": "Unknown",
+    "signature": "static inline bool x87_fcomp_equal(double a, double b)",
+    "summary": "Compares the two doubles at offsets 0x00 and 0x08 of this against the two doubles at the same offsets of the stack argument; returns 0 if both pairs compare equal (x87 fcomp C3 semantics, so unordered counts as equal), otherwise 1.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077FB40": {
     "name": "Unknown::setDoubleQuadToOnes",
     "class": "Unknown",

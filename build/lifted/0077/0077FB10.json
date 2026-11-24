@@ -1,0 +1,28 @@
+{
+  "va": "0x0077FB10",
+  "size": 48,
+  "orig_symbol": "sub_0077FB10",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::compareDoublePair",
+  "class": "Unknown",
+  "signature": "static inline bool x87_fcomp_equal(double a, double b)",
+  "summary": "Compares the two doubles at offsets 0x00 and 0x08 of this against the two doubles at the same offsets of the stack argument; returns 0 if both pairs compare equal (x87 fcomp C3 semantics, so unordered counts as equal), otherwise 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:44Z"
+}
