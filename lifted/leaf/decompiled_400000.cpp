@@ -491,3 +491,19 @@ extern uint32_t __thiscall fn_00409080(void* self, uint32_t arg1, uint32_t arg2)
     return 1;
 }
 } // namespace lift_00409080
+
+// [0x00401080]
+namespace lift_00401080 {
+extern uint32_t (__stdcall *mem_00925694)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+// @name CWnd::SetFont
+// @class CWnd
+// @summary Sends WM_SETFONT to the window handle with the font handle (or 0 if null) and redraw flag.
+// @field CWnd +0x20 uint32_t m_hWnd
+
+uint32_t __thiscall sub_00401080(void* this_ptr, void* font, uint32_t redraw) {
+    uint32_t hWnd = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(this_ptr) + 0x20);
+    uint32_t hFont = font ? *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(font) + 0x4) : 0;
+    return mem_00925694(hWnd, 0x30, hFont, redraw);
+}
+} // namespace lift_00401080
