@@ -1290,6 +1290,12 @@
     "summary": "Stores arg0 into field_0x04 of arg3, calls ext_00419960(arg3) if arg1 == 1, and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00419BF0": {
+    "name": "getShellFolderPidl",
+    "signature": "extern \"C\" uint32_t fn_00419BF0(uint32_t csidl)",
+    "summary": "Resolves a CSIDL shell folder id to an ITEMIDLIST via SHGetFolderLocation; returns the pidl (or the input unchanged when 0 or on failure), calling the MFC80 error thunk on failure.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00419E20": {
     "name": "FolderDialog::vfunc_79",
     "class": "FolderDialog",

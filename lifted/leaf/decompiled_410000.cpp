@@ -509,3 +509,32 @@ DWORD* __thiscall fn_0041DDE0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0041DDE0
+
+// [0x00419BF0]
+namespace lift_00419BF0 {
+// @name getShellFolderPidl
+// @summary Resolves a CSIDL shell folder id to an ITEMIDLIST via SHGetFolderLocation; returns the pidl (or the input unchanged when 0 or on failure), calling the MFC80 error thunk on failure.
+
+// IAT slot for SHELL32!SHGetFolderLocation; its stored value is the import address.
+extern const uint32_t mem_0092553C;
+
+// IAT jump thunk forwarding to MFC80!ord_1191 (error path).
+extern void fn_006A6304(void);
+
+extern uint32_t fn_00419BF0(uint32_t csidl) {
+    if (csidl == 0) {
+        return csidl;
+    }
+
+    using SHGetFolderLocation_t = HRESULT(__stdcall*)(HWND, int32_t, HANDLE, uint32_t, uint32_t*);
+    auto SHGetFolderLocation = reinterpret_cast<SHGetFolderLocation_t>(
+        static_cast<uintptr_t>(mem_0092553C));
+
+    uint32_t pidl = csidl;
+    HRESULT hr = SHGetFolderLocation(nullptr, static_cast<int32_t>(csidl), nullptr, 0, &pidl);
+    if (hr < 0) {
+        fn_006A6304();
+    }
+    return pidl;
+}
+} // namespace lift_00419BF0
