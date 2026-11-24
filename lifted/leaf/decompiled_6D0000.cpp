@@ -633,3 +633,25 @@ void* __thiscall fn_006D2AA0(void* self, void* obj, uint32_t index) {
     return obj;
 }
 } // namespace lift_006D2AA0
+
+// [0x006DBE30] sub_006DBE30 (48 bytes)
+namespace lift_006DBE30 {
+// Known callee 0x006A6F00: sub_006A6F00 (832 bytes), takes two 64-bit values and returns a 64-bit value in edx:eax.
+extern int64_t ext_006A6F00(int64_t a, int64_t b);
+
+// @name Unknown::storeInt64Result
+// @class Unknown
+// @summary Sign-extends a 32-bit value to 64 bits, combines it with the 64-bit value at ecx via ext_006A6F00, and stores the 64-bit result to the output pointer.
+// @field Unknown +0x00 int32_t lo
+// @field Unknown +0x04 int32_t hi
+void fn_006DBE30(void* self, void* out, int32_t value) {
+    const uint32_t lo = static_cast<uint32_t>(lift_field<int32_t>(self, 0));
+    const uint32_t hi = static_cast<uint32_t>(lift_field<int32_t>(self, 4));
+    const int64_t b = static_cast<int64_t>((static_cast<uint64_t>(hi) << 32) | lo);
+
+    const int64_t result = ext_006A6F00(static_cast<int64_t>(value), b);
+
+    lift_field<int32_t>(out, 0) = static_cast<int32_t>(static_cast<uint32_t>(result));
+    lift_field<int32_t>(out, 4) = static_cast<int32_t>(static_cast<uint32_t>(static_cast<uint64_t>(result) >> 32));
+}
+} // namespace lift_006DBE30

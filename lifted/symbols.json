@@ -39687,6 +39687,13 @@
     "summary": "Stores (int64_t)(0x0AC0E8D7B0 * scale) into the object's first 8 bytes, where scale is the double argument.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DBE30": {
+    "name": "Unknown::storeInt64Result",
+    "class": "Unknown",
+    "signature": "void fn_006DBE30(void* self, void* out, int32_t value)",
+    "summary": "Sign-extends a 32-bit value to 64 bits, combines it with the 64-bit value at ecx via ext_006A6F00, and stores the 64-bit result to the output pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC2A0": {
     "name": "sub_006DC2A0",
     "signature": "extern \"C\" void* __fastcall fn_006DC2A0(void* self, int edx_unused, unsigned int flags)",

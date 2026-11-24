@@ -1,0 +1,28 @@
+{
+  "va": "0x006DBE30",
+  "size": 48,
+  "orig_symbol": "sub_006DBE30",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::storeInt64Result",
+  "class": "Unknown",
+  "signature": "void fn_006DBE30(void* self, void* out, int32_t value)",
+  "summary": "Sign-extends a 32-bit value to 64 bits, combines it with the 64-bit value at ecx via ext_006A6F00, and stores the 64-bit result to the output pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "lo"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "hi"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:47Z"
+}
