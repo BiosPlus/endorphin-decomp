@@ -9011,3 +9011,46 @@ void __stdcall fn_00470B40(uint8_t* out) {
     *reinterpret_cast<uint32_t*>(out + 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD8FFC));
 }
 } // namespace lift_00470B40
+
+// [0x00470FD0]
+namespace lift_00470FD0 {
+void __thiscall ext_0067A670(void* this_ptr);
+extern uint32_t mem_00AD9004;
+extern uint32_t mem_00AD9008;
+
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, bool, getPlaybackLoopingEnabled, bool, enablePlaybackLooping>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes static type descriptor at 0x00AD9004 and stores its address at out+0x4.
+// @field out +0x04 uint32_t typePtr
+void __thiscall fn_00470FD0(void* this_ptr, uint8_t* out) {
+    (void)this_ptr;
+    if ((mem_00AD9008 & 1u) == 0) {
+        mem_00AD9008 |= 1u;
+        ext_0067A670(&mem_00AD9004);
+        mem_00AD9004 = 0x0093BA34u;
+    }
+    *reinterpret_cast<uint32_t*>(out + 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD9004));
+}
+} // namespace lift_00470FD0
+
+// [0x00471300]
+namespace lift_00471300 {
+extern uint32_t mem_00AD9010;
+extern uint32_t mem_00AD900C;
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine,int,getNumTicksToRun,int,setNumTicksToRun>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes static type descriptor at 0x00AD900C and stores its pointer at out+0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+void __thiscall fn_00471300(void* /*self*/, void* out) {
+    if ((mem_00AD9010 & 1) == 0) {
+        mem_00AD9010 |= 1;
+        ext_0067A670(&mem_00AD900C);
+        mem_00AD900C = 0x0093BBE4u;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(out) + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD900C));
+}
+} // namespace lift_00471300
