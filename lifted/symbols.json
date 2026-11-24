@@ -41756,6 +41756,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C8A0": {
+    "name": "Unknown::IsSubObjectFlag0x18D8Clear",
+    "class": "Unknown",
+    "signature": "int __thiscall sub_0071C8A0(void* self)",
+    "summary": "Returns 1 if the byte at subobject+0x18D8 is zero (subobject = this-\u003e+0x0C), else 0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C8C0": {
     "name": "sub_0071C8C0",
     "class": "Unknown",

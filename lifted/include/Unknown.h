@@ -125,7 +125,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t field_0x0C      (slot[0])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 entry_value  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (accessed on the subobject returned by ext_0071E680)  (evidence: 0x00711DC0) // CONFLICT: multiple definitions at +0xC
-    // +0xC   DWORD                    field_0x0C  (evidence: 0x005539F0, 0x006C9F00, 0x00783610, 0x0086B200) // CONFLICT: multiple definitions at +0xC
+    // +0xC   DWORD                    field_0x0C  (evidence: 0x005539F0, 0x006C9F00, 0x0071C8A0, 0x00783610, 0x0086B200) // CONFLICT: multiple definitions at +0xC
     // +0xC   INT                      field_0x0C  (evidence: 0x007D4780) // CONFLICT: multiple definitions at +0xC
     // +0xC   ProcPtr                  field_0x0C  (evidence: 0x007DCAA0) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0C  (evidence: 0x0043B3E0, 0x00622750, 0x00669E60, 0x0066A310, 0x0066A330, 0x007C9C90) // CONFLICT: multiple definitions at +0xC
@@ -425,6 +425,7 @@ struct Unknown_Fields {
     // +0x1054 uint32_t                 field_0x1054  (evidence: 0x0086D600)
     // +0x1520 DWORD                    field_0x1520  (evidence: 0x0071C3B0)
     // +0x1524 DWORD                    field_0x1524  (evidence: 0x0071C3B0)
+    // +0x18D8 BYTE                     field_0x18D8  (evidence: 0x0071C8A0)
     // +0x1960 uint8_t                  field_0x1960  (evidence: 0x0071C740, 0x0071C8D0, 0x0071C970)
     // +0x1AE8 void*                    field_0x1ae8  (evidence: 0x006C1290) // CONFLICT: multiple definitions at +0x1AE8
     // +0x1AE8 void*                    field_1AE8  (evidence: 0x006C12B0, 0x006C12F0, 0x006F22E0, 0x006F2350, 0x006F23C0, 0x006F2430, 0x006F24A0, 0x00700570, 0x00701BC0, 0x0070FDA0, 0x0070FDE0) // CONFLICT: multiple definitions at +0x1AE8

@@ -534,3 +534,22 @@ void fn_0071C3B0(void* self, DWORD arg1, DWORD arg2) {
     lift_field<DWORD>(sub, 0x1524) = arg2;
 }
 } // namespace lift_0071C3B0
+
+// [0x0071C8A0]
+namespace lift_0071C8A0 {
+// @name Unknown::IsSubObjectFlag0x18D8Clear
+// @class Unknown
+// @summary Returns 1 if the byte at subobject+0x18D8 is zero (subobject = this->+0x0C), else 0.
+// @field Unknown +0x0C DWORD field_0x0C
+// @field Unknown +0x18D8 BYTE field_0x18D8
+
+int __thiscall sub_0071C8A0(void* self) {
+    // mov eax, [ecx+0x0C]  -- 32-bit sub-object pointer
+    DWORD sub = lift_field<DWORD>(self, 0x0C);
+
+    // mov dl, [eax+0x18D8]; test dl, dl; sete cl
+    BYTE flag = lift_field<BYTE>(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)), 0x18D8);
+
+    return flag == 0 ? 1 : 0;
+}
+} // namespace lift_0071C8A0
