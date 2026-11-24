@@ -1,0 +1,40 @@
+{
+  "va": "0x008703B0",
+  "size": 20,
+  "orig_symbol": "sub_008703B0",
+  "src_path": "src/leaf/tiny_870000.cpp",
+  "lifted_path": "lifted/leaf/tiny_870000.cpp",
+  "name": "Unknown::ctorResetFields_008703B0",
+  "class": "Unknown",
+  "signature": "void* fn_008703B0(void* self)",
+  "summary": "Stores a vtable-style pointer at +0x00, zeroes the three dwords at +0x08..+0x10, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:10:45Z"
+}

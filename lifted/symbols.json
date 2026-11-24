@@ -40369,6 +40369,13 @@
     "summary": "No-op: `add eax, 0` (opcode 05 with imm32 0), which leaves eax unchanged; only flags are touched.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008703B0": {
+    "name": "Unknown::ctorResetFields_008703B0",
+    "class": "Unknown",
+    "signature": "void* fn_008703B0(void* self)",
+    "summary": "Stores a vtable-style pointer at +0x00, zeroes the three dwords at +0x08..+0x10, and returns self.",
+    "lifted_path": "lifted/leaf/tiny_870000.cpp"
+  },
   "0x008703F0": {
     "name": "sub_008703F0",
     "class": "NMData::State",

@@ -65,3 +65,24 @@ void fn_00871860(void* self) {
     lift_00871860::Unknown_CallVtableSlot0_IfNonNull(self);
 }
 } // namespace lift_00871860
+
+// [0x008703B0] sub_008703B0 (20 bytes)
+namespace lift_008703B0 {
+extern int mem_0094F63C;
+
+// @name Unknown::ctorResetFields_008703B0
+// @summary Stores a vtable-style pointer at +0x00, zeroes the three dwords at +0x08..+0x10, and returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void* fn_008703B0(void* self) {
+    // Original: mov eax,ecx; xor ecx,ecx; mov [eax],0x94F63C; mov [eax+8/0C/10],ecx; ret
+    // The stored value is the 32-bit address of mem_0094F63C (kept as a constant here).
+    lift_field<uint32_t>(self, 0x00) = 0x0094F63Cu;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    lift_field<uint32_t>(self, 0x10) = 0u;
+    return self;
+}
+} // namespace lift_008703B0
