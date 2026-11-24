@@ -23230,6 +23230,13 @@
     "summary": "Returns early if kind equals the stored field; otherwise maps kind 5 to 3 and tail-forwards to NMData::FixedPathJointData::vfunc_63 (ext_005EB920).",
     "lifted_path": "lifted/NMData/RPROJointData.cpp"
   },
+  "0x005ECB10": {
+    "name": "NMData::FixedPathJointData::vfunc_9_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005ECB10(void* self, uint32_t arg0)",
+    "summary": "Maps mode 1-\u003e3 and 2-\u003e4, forwards it to the AnimatableTransform base, then calls vtable slot 8 on each child pointer in the child vector.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005ECCF0": {
     "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",

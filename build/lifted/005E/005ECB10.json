@@ -1,0 +1,28 @@
+{
+  "va": "0x005ECB10",
+  "size": 136,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_9_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_9_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void fn_005ECB10(void* self, uint32_t arg0)",
+  "summary": "Maps mode 1-\u003e3 and 2-\u003e4, forwards it to the AnimatableTransform base, then calls vtable slot 8 on each child pointer in the child vector.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1F8",
+      "type": "void**",
+      "name": "childBegin"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1FC",
+      "type": "void**",
+      "name": "childEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:35:45Z"
+}

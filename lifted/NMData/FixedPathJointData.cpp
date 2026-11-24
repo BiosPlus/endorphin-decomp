@@ -182,3 +182,34 @@ void fn_005E09B0(void* self) {
 }
 } // namespace lift_004AEC60
 } // namespace lift_005E09B0
+
+// [0x005ECB10] NMData::FixedPathJointData::vfunc_9_off_C (136 bytes)
+namespace lift_005ECB10 {
+// Known callee 0x00528C30: AnimatableTransform::vfunc_9_off_C (If the sub-object at +0x4 is non-null, forwards the call to its vtable slot 8; otherwise returns 0.)
+extern uint32_t ext_00528C30(void* self, uint32_t arg0);
+
+// @name NMData::FixedPathJointData::vfunc_9_off_C
+// @class NMData::FixedPathJointData
+// @summary Maps mode 1->3 and 2->4, forwards it to the AnimatableTransform base, then calls vtable slot 8 on each child pointer in the child vector.
+// @field NMData::FixedPathJointData +0x1F8 void** childBegin
+// @field NMData::FixedPathJointData +0x1FC void** childEnd
+void fn_005ECB10(void* self, uint32_t arg0) {
+    uint32_t mode = arg0;
+    if (mode == 1) {
+        mode = 3;
+    } else if (mode == 2) {
+        mode = 4;
+    }
+
+    ext_00528C30(self, mode);
+
+    using Slot8Fn = void (*)(void* self, uint32_t arg);
+    void** it = lift_field<void**>(self, 0x1F8);
+    while (it != lift_field<void**>(self, 0x1FC)) {
+        void* child = *it;
+        void** vtbl = *reinterpret_cast<void***>(child);
+        reinterpret_cast<Slot8Fn>(vtbl[8])(child, mode);
+        ++it;
+    }
+}
+} // namespace lift_005ECB10
