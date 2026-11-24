@@ -1,0 +1,28 @@
+{
+  "va": "0x006E62A0",
+  "size": 32,
+  "orig_symbol": "sub_006E62A0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::SetChainField0x60",
+  "class": "Unknown",
+  "signature": "void fn_006E62A0(void* self, DWORD value)",
+  "summary": "Stores a DWORD into +0x60 of this and of every node reached by following the +0x40 link chain.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "nextNode"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "chainValue"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:56Z"
+}

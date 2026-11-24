@@ -37070,6 +37070,13 @@
     "summary": "Returns 1 if the dword at this+0x68 equals 2, otherwise 0 (cmp/sete/ret).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E62A0": {
+    "name": "Unknown::SetChainField0x60",
+    "class": "Unknown",
+    "signature": "void fn_006E62A0(void* self, DWORD value)",
+    "summary": "Stores a DWORD into +0x60 of this and of every node reached by following the +0x40 link chain.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E6340": {
     "name": "sub_006E6340",
     "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",

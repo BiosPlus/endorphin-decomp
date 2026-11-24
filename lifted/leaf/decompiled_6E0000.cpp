@@ -46,3 +46,20 @@ void Unknown_InitFields0x0C(Unknown* self, uint32_t arg1, uint32_t arg2) {
     self->field_0x0C = arg1;
 }
 } // namespace lift_006E67C0
+
+// [0x006E62A0] sub_006E62A0 (32 bytes)
+namespace lift_006E62A0 {
+// @name Unknown::SetChainField0x60
+// @class Unknown
+// @summary Stores a DWORD into +0x60 of this and of every node reached by following the +0x40 link chain.
+// @field Unknown +0x40 void* nextNode
+// @field Unknown +0x60 DWORD chainValue
+void fn_006E62A0(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x60) = value;
+    void* node = lift_field<void*>(self, 0x40);
+    while (node != nullptr) {
+        lift_field<DWORD>(node, 0x60) = value;
+        node = lift_field<void*>(node, 0x40);
+    }
+}
+} // namespace lift_006E62A0

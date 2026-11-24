@@ -214,6 +214,7 @@ struct Unknown_Fields {
     // +0x3C  void*                    field_0x3C  (evidence: 0x006ACEE0)
     // +0x40  DWORD                    field_0x40  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0x40
     // +0x40  float                    field_0x40  (evidence: 0x007D8590) // CONFLICT: multiple definitions at +0x40
+    // +0x40  void*                    nextNode  (evidence: 0x006E62A0) // CONFLICT: multiple definitions at +0x40
     // +0x44  float                    field_0x44  (evidence: 0x0054E340, 0x0054E400, 0x007D8590) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t                 field_0x44  (evidence: 0x007C97A0) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150) // CONFLICT: multiple definitions at +0x44
@@ -239,6 +240,7 @@ struct Unknown_Fields {
     // +0x5C  std::uint32_t            field_0x5C  (evidence: 0x005DA110, 0x005DA150) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x00790DC0, 0x00790E20) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 field_0x5c  (evidence: 0x00647F00, 0x00647F30, 0x006481C0, 0x006481E0, 0x00648480) // CONFLICT: multiple definitions at +0x5C
+    // +0x60  DWORD                    chainValue  (evidence: 0x006E62A0) // CONFLICT: multiple definitions at +0x60
     // +0x60  DWORD                    field_0x60  (evidence: 0x00410310, 0x006722B0, 0x00672490, 0x00673B80) // CONFLICT: multiple definitions at +0x60
     // +0x60  double                   field_0x60  (evidence: 0x006E86E0) // CONFLICT: multiple definitions at +0x60
     // +0x60  int32_t                  field_0x60  (evidence: 0x00430260, 0x00430370, 0x00430380, 0x00430DA0) // CONFLICT: multiple definitions at +0x60
