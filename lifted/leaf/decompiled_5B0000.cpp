@@ -95,3 +95,23 @@ void fn_005B6BC0(void* self) {
     }
 }
 } // namespace lift_005B6BC0
+
+// [0x005B6C20] sub_005B6C20 (33 bytes)
+namespace lift_005B6C20 {
+// Known callee 0x005CEA00: sub_005CEA00 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647EA0.)
+// Original passes the argument on the stack (push eax) and the object in ecx.
+extern void ext_005CEA00(void* self, void* arg);
+
+// @name Unknown::forwardFieldE8IfField158Set
+// @class Unknown
+// @summary If the pointer at +0x158 is non-null, forwards the address of the subobject at +0x1E8 to ext_005CEA00 using +0x158 as the receiver; otherwise does nothing.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0x1E8 void* field_0x1e8
+void fn_005B6C20(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+    void* obj = *reinterpret_cast<void**>(base + 0x158);
+    if (obj != nullptr) {
+        ext_005CEA00(obj, base + 0x1E8);
+    }
+}
+} // namespace lift_005B6C20

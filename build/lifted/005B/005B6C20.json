@@ -1,0 +1,28 @@
+{
+  "va": "0x005B6C20",
+  "size": 33,
+  "orig_symbol": "sub_005B6C20",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "Unknown::forwardFieldE8IfField158Set",
+  "class": "Unknown",
+  "signature": "void fn_005B6C20(void* self)",
+  "summary": "If the pointer at +0x158 is non-null, forwards the address of the subobject at +0x1E8 to ext_005CEA00 using +0x158 as the receiver; otherwise does nothing.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E8",
+      "type": "void*",
+      "name": "field_0x1e8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:38Z"
+}
