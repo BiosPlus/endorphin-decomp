@@ -8,14 +8,14 @@
 // Recovered field layout for ExprParser::WriteMethodType:
 namespace lifted_layout {
 struct ExprParser_WriteMethodType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x005944A0, 0x00603440, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    target  (evidence: 0x00594470, 0x00594520, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00, 0x0064F3A0, 0x0064F5B0, 0x0064F660) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    targetObj  (evidence: 0x00604C40, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and +0x70)  (evidence: 0x005A2C40, 0x00627720, 0x0062B380, 0x00649150, 0x006492B0, 0x0064EC00, 0x00650DB0, 0x00650E50, 0x0068BC90) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    expr  (evidence: 0x00604C70, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x0   void*                    field_0x00  (evidence: 0x00487000, 0x005944A0, 0x00603440, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    target  (evidence: 0x00487000, 0x00594470, 0x00594520, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00, 0x0064F3A0, 0x0064F5B0, 0x0064F660) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    targetObj  (evidence: 0x00487000, 0x00604C40, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void* subObject (holder sub-object pointer; its vtable is used for slots +0x08 and +0x70)  (evidence: 0x00487000, 0x005A2C40, 0x00627720, 0x0062B380, 0x00649150, 0x006492B0, 0x0064EC00, 0x00650DB0, 0x00650E50, 0x0068BC90) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    expr  (evidence: 0x00487000, 0x00604C70, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00487000, 0x00629F70, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 = get-value-ref)  (evidence: 0x0062B170, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    inner  (evidence: 0x005F36B0, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    subObject  (evidence: 0x0064F3A0, 0x0064F5B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (value-source object; vtable slot 1 = sample, slot 28 = get-value-ref)  (evidence: 0x00487000, 0x0062B170, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    inner  (evidence: 0x00487000, 0x005F36B0, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    subObject  (evidence: 0x00487000, 0x0064F3A0, 0x0064F5B0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
