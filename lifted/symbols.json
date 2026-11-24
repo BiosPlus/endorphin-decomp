@@ -14429,6 +14429,13 @@
     "summary": "Requires the holder's bound target (holder-\u003etarget) to be non-null, then stores the int returned by the inner object's vtable slot +0x08 (called with arg2) into target+0x0C.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00515BD0": {
+    "name": "DynamicEnumType\u003cEvolverRuntimeOptions\u003e::vfunc_40",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "void fn_00515BD0(uint32_t* out)",
+    "summary": "One-time guarded static init of the EvolverRuntimeOptions enum-type object; stores its address at out+0x04.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00515C50": {
     "name": "ExprParser::DynamicEnumType\u003cEvolverRuntimeOptions\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",

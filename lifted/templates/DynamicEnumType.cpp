@@ -1940,3 +1940,24 @@ void* __fastcall fn_005C85D0(void* /*self*/, void* /*edx*/, void* sret, void** o
 }
 } // namespace lift_004AB2C0
 } // namespace lift_005C85D0
+
+// [0x00515BD0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_40 (122 bytes)
+namespace lift_00515BD0 {
+extern void ext_0067A670();
+extern int mem_00AEBE9C;
+extern uint32_t mem_00AEBE98;
+
+// @name DynamicEnumType<EvolverRuntimeOptions>::vfunc_40
+// @class ExprParser::ValuePtrType
+// @summary One-time guarded static init of the EvolverRuntimeOptions enum-type object; stores its address at out+0x04.
+// @field ValuePtrType +0x04 uint32_t field_0x04
+void fn_00515BD0(uint32_t* out) {
+    unsigned char* base = reinterpret_cast<unsigned char*>(out);
+    if ((mem_00AEBE9C & 1) == 0) {
+        mem_00AEBE9C |= 1;
+        ext_0067A670();
+        mem_00AEBE98 = 0x0095198Cu;
+    }
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0x00AEBE98u;
+}
+} // namespace lift_00515BD0
