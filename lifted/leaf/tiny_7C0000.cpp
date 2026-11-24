@@ -1356,3 +1356,18 @@ void fn_007CD490(void* self) {
     }
 }
 } // namespace lift_007CD490
+
+// [0x007C8A30] sub_007C8A30 (30 bytes)
+namespace lift_007C8A30 {
+// @name ArrayRecord::SetWordAt
+// @class ArrayRecord
+// @summary Computes index = self->+0x00 * stride + base, then stores a 32-bit value at record[index].+0x14 in self->+0x28 array (24-byte records).
+// @field ArrayRecord +0x00 int32_t count_or_stride
+// @field ArrayRecord +0x28 uint8_t* records
+void fn_007C8A30(uint8_t* self, int32_t base, int32_t stride, uint32_t value) {
+    int32_t index = (*reinterpret_cast<int32_t*>(self + 0x00)) * stride + base;
+    uint8_t* records = *reinterpret_cast<uint8_t**>(self + 0x28);
+    // Record stride is 24 bytes (lea eax,[eax+2*eax]; scaled by 8).
+    *reinterpret_cast<uint32_t*>(records + static_cast<intptr_t>(index) * 24 + 0x14) = value;
+}
+} // namespace lift_007C8A30

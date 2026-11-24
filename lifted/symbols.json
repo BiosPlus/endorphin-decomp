@@ -42608,6 +42608,13 @@
     "summary": "Computes index = (*self) * y + x and returns the DWORD at +0x14 of the 24-byte table entry at that index in the table pointed to by self+0x28.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8A30": {
+    "name": "ArrayRecord::SetWordAt",
+    "class": "ArrayRecord",
+    "signature": "void fn_007C8A30(uint8_t* self, int32_t base, int32_t stride, uint32_t value)",
+    "summary": "Computes index = self-\u003e+0x00 * stride + base, then stores a 32-bit value at record[index].+0x14 in self-\u003e+0x28 array (24-byte records).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8A50": {
     "name": "SetEntryDwordAtIndex",
     "signature": "void fn_007C8A50(void* self, uint32_t index, uint32_t value)",

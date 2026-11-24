@@ -1,0 +1,28 @@
+{
+  "va": "0x007C8A30",
+  "size": 30,
+  "orig_symbol": "sub_007C8A30",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "ArrayRecord::SetWordAt",
+  "class": "ArrayRecord",
+  "signature": "void fn_007C8A30(uint8_t* self, int32_t base, int32_t stride, uint32_t value)",
+  "summary": "Computes index = self-\u003e+0x00 * stride + base, then stores a 32-bit value at record[index].+0x14 in self-\u003e+0x28 array (24-byte records).",
+  "fields": [
+    {
+      "class": "ArrayRecord",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count_or_stride"
+    },
+    {
+      "class": "ArrayRecord",
+      "offset": "+0x28",
+      "type": "uint8_t*",
+      "name": "records"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:20:19Z"
+}
