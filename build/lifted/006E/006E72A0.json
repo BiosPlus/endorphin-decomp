@@ -1,0 +1,27 @@
+{
+  "va": "0x006E72A0",
+  "size": 48,
+  "orig_symbol": "sub_006E72A0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "initWithInlineBuffer_006E72A0",
+  "signature": "void* fn_006E72A0(void* self)",
+  "summary": "Sets the vtable word, initializes an embedded 20-byte sub-object at +0x04 with count 0x10 and value 4, and links its tail pointer at +0x18 to +0x14.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:51Z"
+}

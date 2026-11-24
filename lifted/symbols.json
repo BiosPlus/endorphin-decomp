@@ -40150,6 +40150,12 @@
     "summary": "Returns the double at self-\u003e+0xA8 (via self-\u003e+8) or delegates to ext_00711BB0 when self-\u003e+0 is set; returns HUGE_VAL when self-\u003e+8 is null.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E72A0": {
+    "name": "initWithInlineBuffer_006E72A0",
+    "signature": "void* fn_006E72A0(void* self)",
+    "summary": "Sets the vtable word, initializes an embedded 20-byte sub-object at +0x04 with count 0x10 and value 4, and links its tail pointer at +0x18 to +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7390": {
     "name": "sub_006E7390",
     "signature": "void* fn_006E7390(void* self, uint32_t arg1)",

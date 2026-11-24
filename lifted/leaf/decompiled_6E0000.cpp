@@ -599,3 +599,31 @@ extern void __thiscall fn_006E6850(void* self, uint32_t flags) {
     }
 }
 } // namespace lift_006E6850
+
+// [0x006E72A0] sub_006E72A0 (48 bytes)
+namespace lift_006E72A0 {
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern void* __thiscall ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+extern int mem_00993CE0;
+
+// @name initWithInlineBuffer_006E72A0
+// @summary Sets the vtable word, initializes an embedded 20-byte sub-object at +0x04 with count 0x10 and value 4, and links its tail pointer at +0x18 to +0x14.
+// @field Unknown +0x00 uint32_t vptr
+// @field Unknown +0x18 uint32_t field_0x18
+void* fn_006E72A0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Initialize embedded sub-object at self+0x04.
+    ext_006D2130(base + 0x04, 0x10, 4);
+
+    // self+0x18 = address of self+0x14 (guest address stored as 32-bit).
+    const uint32_t link = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x14));
+    std::memcpy(base + 0x18, &link, sizeof(link));
+
+    // self+0x00 = constant vtable/data address 0x00993CE0.
+    const uint32_t vptr = 0x00993CE0u;
+    std::memcpy(base + 0x00, &vptr, sizeof(vptr));
+
+    return self;
+}
+} // namespace lift_006E72A0
