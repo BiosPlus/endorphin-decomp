@@ -55289,6 +55289,12 @@
     "summary": "Updates state at +0x10 and invokes callback at +0x1c/+0x10 on pointer at +0x00 when transitioning from 1 with +0x14 == 0.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D7190": {
+    "name": "addClampedCounter",
+    "signature": "int32_t fn_007D7190(int32_t* counter, int32_t bias, int32_t limit, int32_t delta, int32_t reportArg)",
+    "summary": "Adds delta to *counter; if the result exceeds limit, reports via ext_007D5950 and returns 0, otherwise stores the sum and returns old + bias.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D7A20": {
     "name": "sub_007D7A20",
     "signature": "extern \"C\" void* __cdecl fn_007D7A20(void)",

@@ -524,3 +524,21 @@ void fn_007D4860(void* self, int32_t value) {
     }
 }
 } // namespace lift_007D4860
+
+// [0x007D7190] sub_007D7190 (55 bytes)
+namespace lift_007D7190 {
+extern int32_t __cdecl ext_007D5950(int32_t a, int32_t b, int32_t c);
+
+// @name addClampedCounter
+// @summary Adds delta to *counter; if the result exceeds limit, reports via ext_007D5950 and returns 0, otherwise stores the sum and returns old + bias.
+int32_t fn_007D7190(int32_t* counter, int32_t bias, int32_t limit, int32_t delta, int32_t reportArg) {
+    const int32_t oldValue = *counter;
+    const int32_t newValue = oldValue + delta;
+    if (newValue > limit) {
+        ext_007D5950(0, reportArg, 0x0099DF2C);
+        return 0;
+    }
+    *counter = newValue;
+    return oldValue + bias;
+}
+} // namespace lift_007D7190
