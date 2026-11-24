@@ -1,0 +1,14 @@
+{
+  "va": "0x004B1A00",
+  "size": 100,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType, 0\u003e",
+  "signature": "extern \"C\" uint32_t __thiscall fn_004B1A00(void* self, uint32_t arg0)",
+  "summary": "Checks if the string at (*arg0)+4 matches either of two expected type strings, throwing if *arg0 is null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:56:52Z"
+}

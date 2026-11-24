@@ -9182,6 +9182,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A3140": {
+    "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView,bool,\u0026StateMachineEditor::FSMEditView::drawConditions,bool,\u0026StateMachineEditor::FSMEditView::setDrawConditions\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004A3140(void* self, uint8_t* arg1)",
+    "summary": "Initializes a static type-descriptor singleton if needed and stores its pointer at arg1 + 0x4",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004A31C0": {
     "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_2 (StateMachineEditor::FSMEditView::drawConditions)",
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0\u003e",
@@ -9965,6 +9972,13 @@
     "signature": "void __thiscall fn_004B1910(void* this_ptr, uintptr_t arg0)",
     "summary": "Lazily initializes a static type/descriptor object at 0x00AE0CF8 and stores its pointer at arg0 + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004B1A00": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType, 0\u003e",
+    "signature": "extern \"C\" uint32_t __thiscall fn_004B1A00(void* self, uint32_t arg0)",
+    "summary": "Checks if the string at (*arg0)+4 matches either of two expected type strings, throwing if *arg0 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B1A70": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e::vfunc_41",

@@ -39372,3 +39372,39 @@ int32_t __thiscall fn_0068D850(void *self, void **arg) {
 }
 } // namespace lift_0046C880
 } // namespace lift_0068D850
+
+// [0x004B1A00]
+namespace lift_004B1A00 {
+// @name ExprParser::ReadMethodType<Interpreter, std::string const &, &Interpreter::getType, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Interpreter, std::string const &, &Interpreter::getType, 0>
+// @summary Checks if the string at (*arg0)+4 matches either of two expected type strings, throwing if *arg0 is null.
+
+
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+
+typedef uint8_t (__cdecl* string_eq_cstr_t)(uint32_t str_ptr, uint32_t cstr_ptr);
+
+extern uint32_t __thiscall fn_004B1A00(void* self, uint32_t arg0) {
+    (void)self;
+    uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg0));
+    if (obj == 0) {
+        uint8_t exc_buf[0x28];
+        ext_0046C3C0(exc_buf);
+        ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+        return 0;
+    }
+
+    string_eq_cstr_t eq_fn = reinterpret_cast<string_eq_cstr_t>(static_cast<uintptr_t>(mem_00924FC0));
+    uint32_t str_ptr = obj + 4u;
+    if (eq_fn(str_ptr, 0x0092F10Cu) != 0) {
+        return 1;
+    }
+    if (eq_fn(str_ptr, 0x0093A810u) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004B1A00
