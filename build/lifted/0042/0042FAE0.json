@@ -4,18 +4,55 @@
   "orig_symbol": "sub_0042FAE0",
   "src_path": "src/leaf/decompiled_420000.cpp",
   "lifted_path": "lifted/leaf/decompiled_420000.cpp",
-  "name": "DispatchVirtualSlotDC_Arg2",
-  "signature": "void DispatchVirtualSlotDC_Arg2(void)",
-  "summary": "Gets an object via ext_00465B30/ext_00468660, then calls its vtable slot at +0xDC with argument 2.",
+  "name": "sub_0042EE50",
+  "class": "NMData::RealChannel",
+  "signature": "void __thiscall fn_0042EE50(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
   "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
       "type": "uint32_t",
       "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:00:17Z"
+  "lifted_at": "2026-11-24T12:00:32Z"
 }

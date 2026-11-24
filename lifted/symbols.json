@@ -1624,9 +1624,10 @@
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x0042FAE0": {
-    "name": "DispatchVirtualSlotDC_Arg2",
-    "signature": "void DispatchVirtualSlotDC_Arg2(void)",
-    "summary": "Gets an object via ext_00465B30/ext_00468660, then calls its vtable slot at +0xDC with argument 2.",
+    "name": "sub_0042EE50",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_0042EE50(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x0042FB00": {
