@@ -335,3 +335,18 @@ void sub_00401920(void* self) {
     }
 }
 } // namespace lift_00401920
+
+// [0x0040BEE0] sub_0040BEE0 (20 bytes)
+namespace lift_0040BEE0 {
+extern int mem_00925694;
+extern int32_t __stdcall ext_SendMessageA(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
+
+// @name Window::sendMessage_0x18B
+// @class Window
+// @summary Sends message 0x18B with zero wParam/lParam to the window handle stored in this->+0x20.
+// @field Window +0x20 uint32_t hWnd
+void fn_0040BEE0(void* self) {
+    const uint32_t hWnd = lift_field<uint32_t>(self, 0x20);
+    ext_SendMessageA(hWnd, 0x18B, 0, 0);
+}
+} // namespace lift_0040BEE0

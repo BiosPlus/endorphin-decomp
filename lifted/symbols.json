@@ -471,6 +471,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x168.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040BEE0": {
+    "name": "Window::sendMessage_0x18B",
+    "class": "Window",
+    "signature": "void fn_0040BEE0(void* self)",
+    "summary": "Sends message 0x18B with zero wParam/lParam to the window handle stored in this-\u003e+0x20.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040CDF0": {
     "name": "NewCharacterDialog::vfunc_92",
     "class": "NewCharacterDialog",

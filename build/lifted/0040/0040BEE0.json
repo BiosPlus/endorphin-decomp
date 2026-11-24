@@ -1,0 +1,22 @@
+{
+  "va": "0x0040BEE0",
+  "size": 20,
+  "orig_symbol": "sub_0040BEE0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "Window::sendMessage_0x18B",
+  "class": "Window",
+  "signature": "void fn_0040BEE0(void* self)",
+  "summary": "Sends message 0x18B with zero wParam/lParam to the window handle stored in this-\u003e+0x20.",
+  "fields": [
+    {
+      "class": "Window",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:05:04Z"
+}
