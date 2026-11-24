@@ -185,3 +185,35 @@ uint32_t __cdecl sub_006629B0(uint32_t path_str) {
     return (res == 0) ? 1u : 0u;
 }
 } // namespace lift_006629B0
+
+// [0x006618F0]
+namespace lift_006618F0 {
+// @name sub_006618F0
+// @summary Forwards a 3-argument call to inner object's vtable slot +0x28 with (this + 4) prepended.
+// @field Class +0x00 void* field_0x00
+uint32_t __thiscall sub_006618F0(void* this_ptr, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* inner = *reinterpret_cast<void**>(this_ptr);
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(inner);
+    using Vfn = uint32_t(__thiscall*)(void*, uint32_t, uint32_t, uint32_t, uint32_t);
+    auto fn = reinterpret_cast<Vfn>(vtable[0x28 / sizeof(uint32_t)]);
+    uint32_t this_plus_4 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(this_ptr) + 4);
+    return fn(inner, this_plus_4, arg1, arg2, arg3);
+}
+} // namespace lift_006618F0
+
+// [0x00661920]
+namespace lift_00661920 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name sub_00661920
+// @summary Forwards a 3-argument virtual call to vtable slot 0x2c on the object at this+0x00, prepending this+0x04
+// @field <unknown> +0x00 uint32_t field_0x00
+
+uint32_t __thiscall sub_00661920(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t inner = mem_read32(self);
+    uint32_t vtable = mem_read32(inner);
+    uint32_t fn_addr = mem_read32(vtable + 0x2c);
+    using Fn = uint32_t(__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+    return reinterpret_cast<Fn>(fn_addr)(inner, self + 4, arg1, arg2, arg3);
+}
+} // namespace lift_00661920

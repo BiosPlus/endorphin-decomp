@@ -27561,6 +27561,18 @@
     "summary": "Forwards arg1 to virtual slot 3 of the object pointed to by self+0, passing self+4 as the first argument (thiscall, ret 4).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006618F0": {
+    "name": "sub_006618F0",
+    "signature": "uint32_t __thiscall sub_006618F0(void* this_ptr, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards a 3-argument call to inner object's vtable slot +0x28 with (this + 4) prepended.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00661920": {
+    "name": "sub_00661920",
+    "signature": "uint32_t __thiscall sub_00661920(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards a 3-argument virtual call to vtable slot 0x2c on the object at this+0x00, prepending this+0x04",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661950": {
     "name": "sub_00661950",
     "class": "Unknown",

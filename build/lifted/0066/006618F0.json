@@ -1,0 +1,21 @@
+{
+  "va": "0x006618F0",
+  "size": 35,
+  "orig_symbol": "sub_006618F0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_006618F0",
+  "signature": "uint32_t __thiscall sub_006618F0(void* this_ptr, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards a 3-argument call to inner object's vtable slot +0x28 with (this + 4) prepended.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:59:13Z"
+}
