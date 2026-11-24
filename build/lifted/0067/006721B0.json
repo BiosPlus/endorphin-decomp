@@ -9,5 +9,5 @@
   "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:58:58Z"
+  "lifted_at": "2026-11-24T01:59:05Z"
 }
