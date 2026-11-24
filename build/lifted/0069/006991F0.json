@@ -1,0 +1,21 @@
+{
+  "va": "0x006991F0",
+  "size": 35,
+  "orig_symbol": "sub_006991F0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "setOwnedObject_006991F0",
+  "signature": "void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr)",
+  "summary": "Replaces an owned object pointer at +0x8, invoking its virtual deleting destructor if non-null and different",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:00:01Z"
+}

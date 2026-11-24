@@ -48,3 +48,25 @@ void* fn_00695E20(void* self, uint32_t ecx_in) {
     return self;
 }
 } // namespace lift_00695E20
+
+// [0x006991F0]
+namespace lift_006991F0 {
+// @name setOwnedObject_006991F0
+// @summary Replaces an owned object pointer at +0x8, invoking its virtual deleting destructor if non-null and different
+// @field unknown +0x08 uint32_t field_0x08
+
+
+uint32_t mem_r32(uint32_t addr);
+void mem_w32(uint32_t addr, uint32_t val);
+
+void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr) {
+    uint32_t oldPtr = mem_r32(self + 0x8);
+    if (newPtr != oldPtr && oldPtr != 0) {
+        uint32_t vtable = mem_r32(oldPtr);
+        uint32_t dtor = mem_r32(vtable);
+        using ScalarDeletingDtor = void (__thiscall *)(uint32_t, uint32_t);
+        reinterpret_cast<ScalarDeletingDtor>(dtor)(oldPtr, 1);
+    }
+    mem_w32(self + 0x8, newPtr);
+}
+} // namespace lift_006991F0
