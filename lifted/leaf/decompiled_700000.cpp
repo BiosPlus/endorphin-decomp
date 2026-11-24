@@ -300,3 +300,243 @@ float fn_0070BE80(void* self) {
         reinterpret_cast<void*>(static_cast<uintptr_t>(second)));
 }
 } // namespace lift_0070BE80
+
+// [0x0070ED50] sub_0070ED50 (32 bytes)
+namespace lift_0070ED50 {
+// @name sub_0070ED50
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070ED50(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x168);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070ED50
+
+// [0x0070ED70] sub_0070ED70 (32 bytes)
+namespace lift_0070ED70 {
+// @name sub_0070ED70
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070ED70(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x148);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070ED70
+
+// [0x0070ED90] sub_0070ED90 (32 bytes)
+namespace lift_0070ED90 {
+// @name sub_0070ED90
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070ED90(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x188);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070ED90
+
+// [0x0070EDB0] sub_0070EDB0 (32 bytes)
+namespace lift_0070EDB0 {
+// @name sub_0070EDB0
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EDB0(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x1C8);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EDB0
+
+// [0x0070EDD0] sub_0070EDD0 (32 bytes)
+namespace lift_0070EDD0 {
+// @name sub_0070EDD0
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EDD0(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x1A8);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EDD0
+
+// [0x0070EDF0] sub_0070EDF0 (32 bytes)
+namespace lift_0070EDF0 {
+// @name sub_0070EDF0
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EDF0(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x1E8);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EDF0
+
+// [0x0070EE10] sub_0070EE10 (32 bytes)
+namespace lift_0070EE10 {
+// @name sub_0070EE10
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EE10(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x228);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EE10
+
+// [0x0070EE30] sub_0070EE30 (32 bytes)
+namespace lift_0070EE30 {
+// @name sub_0070EE30
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EE30(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x208);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EE30
+
+// [0x0070EE50] sub_0070EE50 (32 bytes)
+namespace lift_0070EE50 {
+// @name sub_0070EE50
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EE50(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x248);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EE50
+
+// [0x0070EE70] sub_0070EE70 (32 bytes)
+namespace lift_0070EE70 {
+// @name sub_0070EE70
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EE70(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x290);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EE70
+
+// [0x0070EE90] sub_0070EE90 (32 bytes)
+namespace lift_0070EE90 {
+// @name sub_0070EE90
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EE90(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x270);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EE90
+
+// [0x0070EEB0] sub_0070EEB0 (32 bytes)
+namespace lift_0070EEB0 {
+// @name sub_0070EEB0
+// @summary Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_007873F0(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070EEB0(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x2B0);
+    ext_007873F0(other, sub);
+    return other;
+}
+} // namespace lift_0070E390
+} // namespace lift_0070EEB0

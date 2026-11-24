@@ -39918,6 +39918,90 @@
     "summary": "Setter storing int32_t argument into field at offset +0x58.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070ED50": {
+    "name": "sub_0070ED50",
+    "class": "Unknown",
+    "signature": "void* fn_0070ED50(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070ED70": {
+    "name": "sub_0070ED70",
+    "class": "Unknown",
+    "signature": "void* fn_0070ED70(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070ED90": {
+    "name": "sub_0070ED90",
+    "class": "Unknown",
+    "signature": "void* fn_0070ED90(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EDB0": {
+    "name": "sub_0070EDB0",
+    "class": "Unknown",
+    "signature": "void* fn_0070EDB0(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EDD0": {
+    "name": "sub_0070EDD0",
+    "class": "Unknown",
+    "signature": "void* fn_0070EDD0(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EDF0": {
+    "name": "sub_0070EDF0",
+    "class": "Unknown",
+    "signature": "void* fn_0070EDF0(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EE10": {
+    "name": "sub_0070EE10",
+    "class": "Unknown",
+    "signature": "void* fn_0070EE10(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EE30": {
+    "name": "sub_0070EE30",
+    "class": "Unknown",
+    "signature": "void* fn_0070EE30(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EE50": {
+    "name": "sub_0070EE50",
+    "class": "Unknown",
+    "signature": "void* fn_0070EE50(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EE70": {
+    "name": "sub_0070EE70",
+    "class": "Unknown",
+    "signature": "void* fn_0070EE70(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EE90": {
+    "name": "sub_0070EE90",
+    "class": "Unknown",
+    "signature": "void* fn_0070EE90(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EEB0": {
+    "name": "sub_0070EEB0",
+    "class": "Unknown",
+    "signature": "void* fn_0070EEB0(void* self, void* other)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070E390 (sub_0070A1D0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070F2D0": {
     "name": "sub_0070F2D0",
     "signature": "extern \"C\" int32_t __fastcall fn_0070F2D0(void* self)",
