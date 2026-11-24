@@ -9275,3 +9275,27 @@ void fn_004C17A0(void* out) {
     lift_field<void*>(out, 4) = &mem_00AE3044;
 }
 } // namespace lift_004C17A0
+
+// [0x004A3140]
+namespace lift_004A3140 {
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView,bool,&StateMachineEditor::FSMEditView::drawConditions,bool,&StateMachineEditor::FSMEditView::setDrawConditions>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Initializes a static type-descriptor singleton if needed and stores its pointer at arg1 + 0x4
+// @field Arg1 +0x4 uint32_t field_0x4
+
+
+extern uint32_t mem_00ADE0F0;
+extern uint32_t mem_00ADE0EC;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_004A3140(void* self, uint8_t* arg1) {
+    (void)self;
+    if ((mem_00ADE0F0 & 1u) == 0) {
+        mem_00ADE0F0 |= 1u;
+        ext_0067A670(&mem_00ADE0EC);
+        mem_00ADE0EC = 0x00940D44u;
+    }
+    *(uint32_t*)(arg1 + 0x4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE0EC));
+}
+} // namespace lift_004A3140

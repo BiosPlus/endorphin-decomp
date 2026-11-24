@@ -1,0 +1,22 @@
+{
+  "va": "0x004A3140",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditions(bool), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView,bool,\u0026StateMachineEditor::FSMEditView::drawConditions,bool,\u0026StateMachineEditor::FSMEditView::setDrawConditions\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __thiscall fn_004A3140(void* self, uint8_t* arg1)",
+  "summary": "Initializes a static type-descriptor singleton if needed and stores its pointer at arg1 + 0x4",
+  "fields": [
+    {
+      "class": "Arg1",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:56:49Z"
+}
