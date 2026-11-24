@@ -30,6 +30,7 @@ struct self_Fields {
     // +0x48  float                    field_0x48  (evidence: 0x007D8450, 0x007D8470)
     // +0x50  double                   field_0x50  (evidence: 0x004408E0, 0x00440900, 0x00441020)
     // +0x58  double                   field_0x58  (evidence: 0x004408E0, 0x00440900, 0x00441020)
+    // +0x68  void*                    field_0x68  (evidence: 0x0044B9A0)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004DE160)
     // +0x188 uint32_t                 field_0x188  (evidence: 0x004D0E00)
     // +0x1A0 DWORD slotA (pointer to  mem_007BDA50)  (evidence: 0x007BDA20)

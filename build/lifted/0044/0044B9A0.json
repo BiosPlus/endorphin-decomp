@@ -1,0 +1,21 @@
+{
+  "va": "0x0044B9A0",
+  "size": 48,
+  "orig_symbol": "sub_0044B9A0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044B9A0",
+  "signature": "int __thiscall fn_0044B9A0(void* self, void* arg0)",
+  "summary": "Checks if field_0x68's string equals global string at 0x00A2FFD4 and passes the boolean result to arg0's vtable+0x04 method.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:18:40Z"
+}
