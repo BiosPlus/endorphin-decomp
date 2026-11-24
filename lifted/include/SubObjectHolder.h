@@ -8,6 +8,6 @@
 // Recovered field layout for SubObjectHolder:
 namespace lifted_layout {
 struct SubObjectHolder_Fields {
-    // +0xC   pointer                  field_0x0C  (evidence: 0x00642630, 0x006426D0, 0x00642720)
+    // +0xC   pointer                  field_0x0C  (evidence: 0x00642630, 0x006426D0, 0x00642720, 0x00648A20)
 };
 } // namespace lifted_layout

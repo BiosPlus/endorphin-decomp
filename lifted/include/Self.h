@@ -28,7 +28,7 @@ struct Self_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x007B1FA0, 0x007BD640)
     // +0x20  uint8_t                  field_0x20  (evidence: 0x00610CB0)
     // +0x28  void*                    field_0x28  (evidence: 0x00627510)
-    // +0x30  void*                    field_0x30  (evidence: 0x00648A60)
+    // +0x30  void*                    field_0x30  (evidence: 0x00648A20, 0x00648A60)
     // +0x34  int32_t                  field_0x34  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006FA3B0, 0x006FA3E0)
     // +0x48  uint32_t                 field_0x48  (evidence: 0x00687230, 0x006872C0)
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00627510)

@@ -32536,10 +32536,10 @@
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648A20": {
-    "name": "forwardThreeFloatsToChildIfFieldGreater",
-    "class": "unknown",
-    "signature": "void __thiscall fn_00648A20(void* self, float a, float b, float c)",
-    "summary": "If ext_006488F0(this) \u003e ext_00648930(this), forwards three float args to ext_0065BF30 on the object at +0x28.",
+    "name": "GetIndirectField_0x5c_0x00",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00648480(void* self)",
+    "summary": "Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648A60": {

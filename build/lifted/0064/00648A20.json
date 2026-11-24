@@ -4,19 +4,199 @@
   "orig_symbol": "sub_00648A20",
   "src_path": "src/leaf/decompiled_640000.cpp",
   "lifted_path": "lifted/leaf/decompiled_640000.cpp",
-  "name": "forwardThreeFloatsToChildIfFieldGreater",
-  "class": "unknown",
-  "signature": "void __thiscall fn_00648A20(void* self, float a, float b, float c)",
-  "summary": "If ext_006488F0(this) \u003e ext_00648930(this), forwards three float args to ext_0065BF30 on the object at +0x28.",
+  "name": "GetIndirectField_0x5c_0x00",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00648480(void* self)",
+  "summary": "Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SubObjectHolder",
+      "offset": "+0xC",
+      "type": "pointer",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "void*",
+      "name": "field_0xA4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    },
+    {
+      "class": "Class",
+      "offset": "+0xA4",
+      "type": "uint32_t*",
+      "name": "field_0xa4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void* field_0x100 (tail-call target passed to",
+      "name": "ext_0044B780)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "void* field_0x108 (argument passed to",
+      "name": "ext_0043C8F0)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "uint32_t",
+      "name": "field_0xa4"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
     {
       "class": "unknown",
       "offset": "+0x28",
       "type": "void*",
       "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "field_0x11"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "const char*",
+      "name": "str_ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "str_obj"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "flags"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "counter"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "oneShot"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t field_0x00 (bit 0 = suppress",
+      "name": "flag)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C (count,",
+      "name": "decremented)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t field_0x10 (one-shot",
+      "name": "byte)"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T15:14:21Z"
+  "lifted_at": "2026-11-24T15:14:27Z"
 }
