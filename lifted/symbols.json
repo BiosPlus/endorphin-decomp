@@ -38069,6 +38069,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9970": {
+    "name": "Unknown::detachAndRelease",
+    "class": "Unknown",
+    "signature": "void fn_006B9970(void* self)",
+    "summary": "Detaches the object's heap buffer via detachBuffer and releases the detached pointer through MFC80 ord_764 (operator delete).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9990": {
     "name": "Unknown::detachBuffer",
     "class": "Unknown",
@@ -38499,6 +38506,12 @@
     "name": "getValidatedChild0x158",
     "signature": "uint32_t sub_006C3040(uint32_t self)",
     "summary": "Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C30F0": {
+    "name": "sub_006C30F0",
+    "signature": "uint32_t __fastcall sub_006C30F0(uint32_t this_ptr, uint32_t /*edx*/)",
+    "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 4, else 0",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C33C0": {

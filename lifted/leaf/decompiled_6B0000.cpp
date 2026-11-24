@@ -649,3 +649,20 @@ void fn_006B8B10(void) {
     ext_006A5EA8();
 }
 } // namespace lift_006B8B10
+
+// [0x006B9970] sub_006B9970 (32 bytes)
+namespace lift_006B9970 {
+// Known callee 0x006B9990: Unknown::detachBuffer (Detaches the heap buffer into out if it is not a static sentinel or inline buffer, then resets the object.)
+extern void ext_006B9990(void* ecx, uint32_t* out);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; used as operator delete.)
+extern void ext_006A5C5C(void* block);
+
+// @name Unknown::detachAndRelease
+// @class Unknown
+// @summary Detaches the object's heap buffer via detachBuffer and releases the detached pointer through MFC80 ord_764 (operator delete).
+void fn_006B9970(void* self) {
+    uint32_t buffer = 0;
+    ext_006B9990(self, &buffer);
+    ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(buffer)));
+}
+} // namespace lift_006B9970
