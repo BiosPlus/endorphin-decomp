@@ -50618,6 +50618,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859300": {
+    "name": "UnknownClass::clearFlagIfKeyMatches",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_00859300(void* obj, uint32_t key)",
+    "summary": "If obj's flag bit0 is set, clear it when the key matches (following one indirection when flag bit2 is set); returns 0 on success, 0xD on key mismatch, 0 when bit0 is clear.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x008596E0": {
     "name": "sub_008596E0",
     "signature": "uint32_t __cdecl fn_008596E0(uint32_t size)",

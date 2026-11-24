@@ -1,0 +1,28 @@
+{
+  "va": "0x00859300",
+  "size": 48,
+  "orig_symbol": "sub_00859300",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "UnknownClass::clearFlagIfKeyMatches",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_00859300(void* obj, uint32_t key)",
+  "summary": "If obj's flag bit0 is set, clear it when the key matches (following one indirection when flag bit2 is set); returns 0 on success, 0xD on key mismatch, 0 when bit0 is clear.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:29Z"
+}

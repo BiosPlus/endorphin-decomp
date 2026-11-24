@@ -394,3 +394,30 @@ int fn_00857440(int a1, int a2, int a3) {
     return fn(a1, a2, a3);
 }
 } // namespace lift_00857440
+
+// [0x00859300] sub_00859300 (48 bytes)
+namespace lift_00859300 {
+// @name UnknownClass::clearFlagIfKeyMatches
+// @class UnknownClass
+// @summary If obj's flag bit0 is set, clear it when the key matches (following one indirection when flag bit2 is set); returns 0 on success, 0xD on key mismatch, 0 when bit0 is clear.
+// @field UnknownClass +0x00 uint32_t field_0x00
+// @field UnknownClass +0x14 uint32_t field_0x14
+uint32_t fn_00859300(void* obj, uint32_t key) {
+    // Bit 2 of flags at +0x14 means `obj` is a handle that points at the real object.
+    if (lift_field<uint32_t>(obj, 0x14) & 0x4) {
+        obj = lift_field<void*>(obj, 0x00);
+    }
+
+    uint32_t flags = lift_field<uint32_t>(obj, 0x14);
+    if (!(flags & 0x1)) {
+        return 0;
+    }
+
+    if (lift_field<uint32_t>(obj, 0x00) != key) {
+        return 0xD;
+    }
+
+    lift_field<uint32_t>(obj, 0x14) = flags & ~static_cast<uint32_t>(0x1);
+    return 0;
+}
+} // namespace lift_00859300

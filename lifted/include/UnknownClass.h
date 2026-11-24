@@ -8,7 +8,7 @@
 // Recovered field layout for UnknownClass:
 namespace lifted_layout {
 struct UnknownClass_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00493D80, 0x00494050, 0x007AD590) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00493D80, 0x00494050, 0x007AD590, 0x00859300) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x004B0F50, 0x004B10D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00492A50, 0x0049AD40) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)  (evidence: 0x0078D4E0) // CONFLICT: multiple definitions at +0x0
@@ -30,7 +30,7 @@ struct UnknownClass_Fields {
     // +0xC   DWORD                    field_0x0c  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint8_t*                 entries  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0, 0x005B7040) // CONFLICT: multiple definitions at +0x10
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0, 0x00859300) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_0x14  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    listHead  (evidence: 0x007B2E20) // CONFLICT: multiple definitions at +0x14
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0)
