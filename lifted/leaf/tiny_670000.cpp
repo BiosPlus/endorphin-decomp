@@ -299,3 +299,23 @@ void fn_00675D60(void* self) {
     reinterpret_cast<Fn>(slot)(child);
 }
 } // namespace lift_00675D60
+
+// [0x0067B070]
+namespace lift_0067B070 {
+// @name ZeroFiveDwordsAt4
+// @summary Zeroes five consecutive 32-bit fields at offsets +0x04..+0x14 of the object passed in ECX and returns that object pointer.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+// @field Unknown +0x0C int32_t field_0x0C
+// @field Unknown +0x10 int32_t field_0x10
+// @field Unknown +0x14 int32_t field_0x14
+
+uint32_t* ZeroFiveDwordsAt4(uint32_t* self) {
+    self[1] = 0;
+    self[2] = 0;
+    self[3] = 0;
+    self[4] = 0;
+    self[5] = 0;
+    return self;
+}
+} // namespace lift_0067B070

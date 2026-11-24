@@ -25903,6 +25903,12 @@
     "summary": "Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B070": {
+    "name": "ZeroFiveDwordsAt4",
+    "signature": "uint32_t* ZeroFiveDwordsAt4(uint32_t* self)",
+    "summary": "Zeroes five consecutive 32-bit fields at offsets +0x04..+0x14 of the object passed in ECX and returns that object pointer.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067B260": {
     "name": "RuntimeEngine::NullThread::vfunc_0",
     "class": "RuntimeEngine::NullThread",
