@@ -2366,6 +2366,13 @@
     "summary": "Gets the owner object, tests its +0x38 subobject's +0x24 flag, and forwards that flag as a bool to virtual slot 0 of the argument object.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434610": {
+    "name": "Unknown::notifyGlobalFlagState",
+    "class": "Unknown",
+    "signature": "void fn_00434610(void* self)",
+    "summary": "Reads a byte flag from the object at global +0x26C, then calls self vtable slot 1 with that flag and slot 0 with 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004348F0": {
     "name": "sub_004348F0",
     "class": "(none)",

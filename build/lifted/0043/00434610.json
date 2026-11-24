@@ -1,0 +1,34 @@
+{
+  "va": "0x00434610",
+  "size": 47,
+  "orig_symbol": "sub_00434610",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::notifyGlobalFlagState",
+  "class": "Unknown",
+  "signature": "void fn_00434610(void* self)",
+  "summary": "Reads a byte flag from the object at global +0x26C, then calls self vtable slot 1 with that flag and slot 0 with 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x531",
+      "type": "uint8_t",
+      "name": "field_0x531"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:11:07Z"
+}

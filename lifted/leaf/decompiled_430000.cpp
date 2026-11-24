@@ -1406,3 +1406,30 @@ void fn_00430F70(void* self) {
     unlock(rdbuf(locateIos()));
 }
 } // namespace lift_00430F70
+
+// [0x00434610] sub_00434610 (47 bytes)
+namespace lift_00434610 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+
+// @name Unknown::notifyGlobalFlagState
+// @class Unknown
+// @summary Reads a byte flag from the object at global +0x26C, then calls self vtable slot 1 with that flag and slot 0 with 1.
+// @field Unknown +0x00 void** field_0x00
+// @field Unknown +0x26C uint32_t field_0x26C
+// @field Unknown +0x531 uint8_t field_0x531
+void fn_00434610(void* self) {
+    using MethodFn = void (*)(void*, uint32_t);
+
+    const uintptr_t globalObjAddr = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    void* globalObj = reinterpret_cast<void*>(globalObjAddr);
+
+    const uint32_t innerAddr = lift_field<uint32_t>(globalObj, 0x26C);
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(innerAddr));
+    const uint32_t flag = lift_field<uint8_t>(inner, 0x531);
+
+    void** vtbl = lift_field<void**>(self, 0x00);
+    reinterpret_cast<MethodFn>(vtbl[1])(self, flag);
+    reinterpret_cast<MethodFn>(vtbl[0])(self, 1u);
+}
+} // namespace lift_00434610
