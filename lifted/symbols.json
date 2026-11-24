@@ -11616,6 +11616,13 @@
     "summary": "Loads this-\u003efield_0x14; if null returns 0 (ret 4 pops one stack arg), otherwise tail-calls vtable slot 8 (+0x20) of that object with the same this and stack argument.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537C50": {
+    "name": "CompoundRenderable::vfunc_10",
+    "class": "CompoundRenderable",
+    "signature": "uint32_t __fastcall fn_00537C50(void* self, void* edx_unused, uint32_t arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537C30 (CompoundRenderable::forwardSlot8ToField14).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537E20": {
     "name": "CompoundRenderable::vfunc_0",
     "class": "CompoundRenderable",
@@ -12280,11 +12287,39 @@
     "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005449A0": {
+    "name": "ReshapeTool::vfunc_29",
+    "class": "ReshapeTool",
+    "signature": "void fn_005449A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005449C0": {
+    "name": "ReshapeTool::vfunc_14",
+    "class": "ReshapeTool",
+    "signature": "void fn_005449C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005449E0": {
+    "name": "ReshapeTool::vfunc_24",
+    "class": "ReshapeTool",
+    "signature": "void fn_005449E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00544A00": {
     "name": "ReshapeTool::vfunc_15",
     "class": "ReshapeTool",
     "signature": "void fn_00544A00(void* self)",
     "summary": "Thunk: adjusts this by +0x9C to the ToolClient base, then tail-dispatches vtable slot 15 (+0x3C).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00544A70": {
+    "name": "ReshapeTool::vfunc_26",
+    "class": "ReshapeTool",
+    "signature": "void fn_00544A70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00544A90": {
@@ -12320,6 +12355,13 @@
     "class": "ReshapeTool",
     "signature": "extern \"C\" void* __fastcall fn_00544BC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00544920 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00544C50": {
+    "name": "ReshapeTool::vfunc_23",
+    "class": "ReshapeTool",
+    "signature": "void fn_00544C50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00544E00": {
@@ -17206,6 +17248,13 @@
     "signature": "bool fn_005D9CB0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005DA190": {
+    "name": "sub_005DA190",
+    "class": "CompoundRenderable",
+    "signature": "void* fn_005DA190(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537C10 (CompoundRenderable::vfunc_19).",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
   "0x005DA1B0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0\u003e::vfunc_0",
@@ -23777,6 +23826,13 @@
     "class": "Unknown",
     "signature": "void sub_00666CB0(uint8_t* ecx)",
     "summary": "If this-\u003e+0x94 is non-null, clears the byte at +0x04 of the pointed-to object.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00666CC0": {
+    "name": "sub_00666CC0",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00666CC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049ABC0 (Unknown::getByteAt09OfPtr12C).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
   "0x00668ED0": {

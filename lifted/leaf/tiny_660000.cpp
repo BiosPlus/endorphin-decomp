@@ -256,3 +256,22 @@ void fn_006616C0(void* self) {
     fn(subobject, reinterpret_cast<uint8_t*>(self) + 0x04);
 }
 } // namespace lift_006616C0
+
+// [0x00666CC0] sub_00666CC0 (17 bytes)
+namespace lift_00666CC0 {
+// @name sub_00666CC0
+// @summary Auto-lifted identical-shape clone of 0x0049ABC0 (Unknown::getByteAt09OfPtr12C).
+namespace lift_0049ABC0 {
+// @name Unknown::getByteAt09OfPtr12C
+// @class Unknown
+// @summary Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.
+// @field Unknown +0x12C void* field_0x12C
+uint8_t fn_00666CC0(void* self) {
+    void* ptr = lift_field<void*>(self, 0x94);
+    if (ptr == nullptr) {
+        return 0;
+    }
+    return lift_field<uint8_t>(ptr, 0x4);
+}
+} // namespace lift_0049ABC0
+} // namespace lift_00666CC0

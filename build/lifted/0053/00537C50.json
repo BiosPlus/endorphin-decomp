@@ -1,0 +1,22 @@
+{
+  "va": "0x00537C50",
+  "size": 17,
+  "orig_symbol": "CompoundRenderable::vfunc_10",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_10",
+  "class": "CompoundRenderable",
+  "signature": "uint32_t __fastcall fn_00537C50(void* self, void* edx_unused, uint32_t arg0)",
+  "summary": "Auto-lifted identical-shape clone of 0x00537C30 (CompoundRenderable::forwardSlot8ToField14).",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:52:59Z"
+}

@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" void __fastcall ext_005DA190(void* self);
 extern "C" void __fastcall ext_005DC480(void* self);
+#include <cstdint>
 
 // [0x005DC420] sub_005DC420 (8 bytes)
 // @name sub_005DC420
@@ -32,3 +33,25 @@ uint8_t sub_005D0AF0(void* self) {
     return value != 0 ? 1 : 0;
 }
 } // namespace lift_005D0AF0
+
+// [0x005DA190] sub_005DA190 (17 bytes)
+namespace lift_005DA190 {
+// @name sub_005DA190
+// @summary Auto-lifted identical-shape clone of 0x00537C10 (CompoundRenderable::vfunc_19).
+namespace lift_00537C10 {
+// @name CompoundRenderable::vfunc_19
+// @class CompoundRenderable
+// @summary Forwards to vtable slot 19 (byte offset 0x4C) of the object at +0x14, passing that object as this; returns 0 if the pointer is null.
+// @field CompoundRenderable +0x14 void* field_0x14
+void* fn_005DA190(void* self) {
+    void* child = lift_field<void*>(self, 0x4);
+    if (child == nullptr) {
+        return nullptr;
+    }
+    // Vtable pointer is the first word of the child object; slot 19 lives at byte offset 0x4C.
+    void* vtbl = lift_field<void*>(child, 0);
+    auto target = reinterpret_cast<void* (*)(void*)>(lift_field<void*>(vtbl, 0x5C));
+    return target(child);
+}
+} // namespace lift_00537C10
+} // namespace lift_005DA190

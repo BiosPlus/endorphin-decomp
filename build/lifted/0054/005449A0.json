@@ -1,0 +1,28 @@
+{
+  "va": "0x005449A0",
+  "size": 17,
+  "orig_symbol": "ReshapeTool::vfunc_29",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ReshapeTool::vfunc_29",
+  "class": "ReshapeTool",
+  "signature": "void fn_005449A0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x27C",
+      "type": "void*",
+      "name": "field_0x27C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:52:59Z"
+}

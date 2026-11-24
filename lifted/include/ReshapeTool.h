@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct ReshapeTool_Fields {
     // +0x88  uint32_t                 field_0x88  (evidence: 0x00544B00, 0x00544B20, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    field_0x88  (evidence: 0x00544E00, 0x00545650, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x88
-    // +0x9C  uint32_t*                field_0x9C  (evidence: 0x00544980, 0x00544A00, 0x00544A90, 0x005A9ED0, 0x005FF1C0)
+    // +0x9C  uint32_t*                field_0x9C  (evidence: 0x00544980, 0x00544A00, 0x00544A90, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x9C
+    // +0x9C  void*                    field_0x9C  (evidence: 0x005449A0, 0x005449C0, 0x005449E0, 0x00544A70, 0x00544C50) // CONFLICT: multiple definitions at +0x9C
 };
 } // namespace lifted_layout

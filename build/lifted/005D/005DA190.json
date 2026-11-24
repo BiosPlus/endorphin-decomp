@@ -1,0 +1,22 @@
+{
+  "va": "0x005DA190",
+  "size": 17,
+  "orig_symbol": "sub_005DA190",
+  "src_path": "src/leaf/tiny_5D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5D0000.cpp",
+  "name": "sub_005DA190",
+  "class": "CompoundRenderable",
+  "signature": "void* fn_005DA190(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00537C10 (CompoundRenderable::vfunc_19).",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:52:59Z"
+}

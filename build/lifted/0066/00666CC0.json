@@ -1,0 +1,22 @@
+{
+  "va": "0x00666CC0",
+  "size": 17,
+  "orig_symbol": "sub_00666CC0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "sub_00666CC0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_00666CC0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049ABC0 (Unknown::getByteAt09OfPtr12C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "void*",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:52:59Z"
+}

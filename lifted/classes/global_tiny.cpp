@@ -5694,3 +5694,144 @@ uint32_t __fastcall fn_00537C30(void* self, void* edx_unused, uint32_t arg0) {
 
 } // namespace lift_00537C30
 } // namespace lift_00537C30
+
+// [0x00537C50] CompoundRenderable::vfunc_10 (17 bytes)
+namespace lift_00537C50 {
+// @name CompoundRenderable::vfunc_10
+// @class CompoundRenderable
+// @summary Auto-lifted identical-shape clone of 0x00537C30 (CompoundRenderable::forwardSlot8ToField14).
+// @field CompoundRenderable +0x14 void* field_0x14
+namespace lift_00537C30 {
+// @name CompoundRenderable::forwardSlot8ToField14
+// @class CompoundRenderable
+// @summary Loads this->field_0x14; if null returns 0 (ret 4 pops one stack arg), otherwise tail-calls vtable slot 8 (+0x20) of that object with the same this and stack argument.
+// @field CompoundRenderable +0x14 void* field_0x14
+namespace lift_00537C30 {
+
+// Slot 8 of the subobject's vtable, invoked with the original stack argument.
+using SlotFn = uint32_t(__fastcall*)(void* self, void* edx_unused, uint32_t arg0);
+
+uint32_t __fastcall fn_00537C50(void* self, void* edx_unused, uint32_t arg0) {
+    (void)edx_unused;
+    // mov ecx, [ecx + 0x14]  ; ecx = self->field_0x14
+    void* sub = lift_field<void*>(self, 0x14);
+    // test ecx, ecx / je ret4 ; null -> return (callee-cleans one stack arg)
+    if (sub == nullptr) {
+        return 0;
+    }
+    // mov eax, [ecx]         ; eax = sub->vtable
+    void** vtable = *reinterpret_cast<void***>(sub);
+    // mov eax, [eax + 0x20]  ; slot 8
+    // jmp eax                ; tail-jump, this still in ecx, stack arg untouched
+    SlotFn target = reinterpret_cast<SlotFn>(vtable[0x28 / sizeof(void*)]);
+    return target(sub, nullptr, arg0);
+}
+
+} // namespace lift_00537C30
+} // namespace lift_00537C30
+} // namespace lift_00537C50
+
+// [0x005449A0] ReshapeTool::vfunc_29 (17 bytes)
+namespace lift_005449A0 {
+// @name ReshapeTool::vfunc_29
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_005449A0(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x9C);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0x74);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0
+} // namespace lift_005449A0
+
+// [0x005449C0] ReshapeTool::vfunc_14 (17 bytes)
+namespace lift_005449C0 {
+// @name ReshapeTool::vfunc_14
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_005449C0(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x9C);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0x38);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0
+} // namespace lift_005449C0
+
+// [0x005449E0] ReshapeTool::vfunc_24 (17 bytes)
+namespace lift_005449E0 {
+// @name ReshapeTool::vfunc_24
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_005449E0(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x9C);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0x60);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0
+} // namespace lift_005449E0
+
+// [0x00544A70] ReshapeTool::vfunc_26 (17 bytes)
+namespace lift_00544A70 {
+// @name ReshapeTool::vfunc_26
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_00544A70(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x9C);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0x68);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0
+} // namespace lift_00544A70
+
+// [0x00544C50] ReshapeTool::vfunc_23 (17 bytes)
+namespace lift_00544C50 {
+// @name ReshapeTool::vfunc_23
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_00544C50(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x9C);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0x5C);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0
+} // namespace lift_00544C50
