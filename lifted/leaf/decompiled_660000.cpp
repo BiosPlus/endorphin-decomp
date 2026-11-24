@@ -143,3 +143,29 @@ void* fn_006619D0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_006619D0
+
+// [0x0066BA00] sub_0066BA00 (34 bytes)
+namespace lift_0066BA00 {
+// Guest memory and call helpers (32-bit guest addresses).
+extern uint32_t ext_read_u32(uint32_t addr);
+extern void ext_call_thiscall_out_arg(uint32_t fn, uint32_t thisp, uint32_t* out, uint32_t arg);
+
+// @name Unknown::resolveViaVtableSlot1C
+// @class Unknown
+// @summary Caches the child pointer of the owner held in self, calls the child's vtable slot 0x70 to produce a replacement value, and stores that value back into self.
+// @field Unknown +0x00 uint32_t owner
+// @field Unknown +0x04 uint32_t cachedChild
+void fn_0066BA00(uint32_t* self) {
+    uint32_t owner = self[0];                       // mov eax, [esi]
+    uint32_t child = ext_read_u32(owner + 0x04);    // mov ecx, [eax+4]
+    self[1] = child;                                // mov [esi+4], ecx
+
+    uint32_t vtbl = ext_read_u32(child);            // mov edx, [ecx]
+    uint32_t slot = ext_read_u32(vtbl + 0x70);      // mov edx, [edx+0x70]
+
+    // The out-parameter is the function's own argument slot (lea eax,[esp+0xc]).
+    uint32_t result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ext_call_thiscall_out_arg(slot, child, &result, owner);  // call edx (this=ecx)
+    self[0] = result;                               // mov [esi], eax
+}
+} // namespace lift_0066BA00

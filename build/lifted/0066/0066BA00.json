@@ -1,0 +1,28 @@
+{
+  "va": "0x0066BA00",
+  "size": 34,
+  "orig_symbol": "sub_0066BA00",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::resolveViaVtableSlot1C",
+  "class": "Unknown",
+  "signature": "void fn_0066BA00(uint32_t* self)",
+  "summary": "Caches the child pointer of the owner held in self, calls the child's vtable slot 0x70 to produce a replacement value, and stores that value back into self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "owner"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "cachedChild"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:56:12Z"
+}

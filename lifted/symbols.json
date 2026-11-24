@@ -28074,6 +28074,13 @@
     "summary": "Tail-forwards to vtable slot 14 (0x38) of the object at (*this)-\u003e+0x04, passing (*this) as the this/arg; returns the callee's eax.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066BA00": {
+    "name": "Unknown::resolveViaVtableSlot1C",
+    "class": "Unknown",
+    "signature": "void fn_0066BA00(uint32_t* self)",
+    "summary": "Caches the child pointer of the owner held in self, calls the child's vtable slot 0x70 to produce a replacement value, and stores that value back into self.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066BA30": {
     "name": "ExprParser::ExtROType::vfunc_38",
     "class": "ExprParser::ExtROType",
