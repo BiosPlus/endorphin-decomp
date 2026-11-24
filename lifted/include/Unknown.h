@@ -332,6 +332,10 @@ struct Unknown_Fields {
     // +0x5A0 DWORD                    field_0x5A0  (evidence: 0x007046E0)
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
+    // +0x1048 uint32_t                 field_0x1048  (evidence: 0x0086D600)
+    // +0x104C uint32_t                 field_0x104c  (evidence: 0x0086D600)
+    // +0x1050 uint32_t                 field_0x1050  (evidence: 0x0086D600)
+    // +0x1054 uint32_t                 field_0x1054  (evidence: 0x0086D600)
     // +0x1960 uint8_t                  field_0x1960  (evidence: 0x0071C740, 0x0071C8D0, 0x0071C970)
     // +0x1AE8 void*                    field_1AE8  (evidence: 0x006C12B0, 0x006C12F0, 0x006F22E0, 0x006F2350, 0x006F23C0, 0x006F2430, 0x006F24A0, 0x00700570, 0x00701BC0, 0x0070FDA0, 0x0070FDE0)
 };

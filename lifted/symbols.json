@@ -43353,6 +43353,13 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086D600": {
+    "name": "CopyQwordField1050To1048",
+    "class": "(unknown owner)",
+    "signature": "void fn_0086D600(void* self)",
+    "summary": "Copies the two dword halves of the 64-bit field at +0x1050 into +0x1048.",
+    "lifted_path": "lifted/leaf/tiny_860000.cpp"
+  },
   "0x0086F15B": {
     "name": "sub_0086F15B",
     "signature": "void fn_0086F15B(void)",

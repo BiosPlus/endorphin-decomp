@@ -1,0 +1,40 @@
+{
+  "va": "0x0086D600",
+  "size": 29,
+  "orig_symbol": "sub_0086D600",
+  "src_path": "src/leaf/tiny_860000.cpp",
+  "lifted_path": "lifted/leaf/tiny_860000.cpp",
+  "name": "CopyQwordField1050To1048",
+  "class": "(unknown owner)",
+  "signature": "void fn_0086D600(void* self)",
+  "summary": "Copies the two dword halves of the 64-bit field at +0x1050 into +0x1048.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1048",
+      "type": "uint32_t",
+      "name": "field_0x1048"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x104C",
+      "type": "uint32_t",
+      "name": "field_0x104c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1050",
+      "type": "uint32_t",
+      "name": "field_0x1050"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1054",
+      "type": "uint32_t",
+      "name": "field_0x1054"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:15:07Z"
+}

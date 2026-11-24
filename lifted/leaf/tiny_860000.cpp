@@ -31,3 +31,25 @@ void fn_0086B200(void* self) {
     }
 }
 } // namespace lift_0086B200
+
+// [0x0086D600] sub_0086D600 (29 bytes)
+namespace lift_0086D600 {
+// @name CopyQwordField1050To1048
+// @class (unknown owner)
+// @summary Copies the two dword halves of the 64-bit field at +0x1050 into +0x1048.
+// @field Unknown +0x1048 uint32_t field_0x1048
+// @field Unknown +0x104C uint32_t field_0x104c
+// @field Unknown +0x1050 uint32_t field_0x1050
+// @field Unknown +0x1054 uint32_t field_0x1054
+void fn_0086D600(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    uint32_t lo = 0;
+    uint32_t hi = 0;
+    std::memcpy(&lo, base + 0x1050, sizeof(lo));
+    std::memcpy(&hi, base + 0x1054, sizeof(hi));
+
+    std::memcpy(base + 0x1048, &lo, sizeof(lo));
+    std::memcpy(base + 0x104C, &hi, sizeof(hi));
+}
+} // namespace lift_0086D600
