@@ -71,3 +71,24 @@ void* fn_0058F550(void* self) {
     return self;
 }
 } // namespace lift_0058F550
+
+// [0x00584A10] sub_00584A10 (34 bytes)
+namespace lift_00584A10 {
+extern int mem_00924FC8;
+extern const char mem_00928B5D[];
+extern bool ext_string_eq_cstr(const void* str, const char* s);
+
+// @name descriptiveName: SelectStringByLiteralMatch
+// @summary Returns the address of the member at +0x30 if its string equals the literal at mem_00928B5D, otherwise the address of the member at +0x14.
+// @field self +0x14 unknown field_0x14
+// @field self +0x30 unknown field_0x30
+void* fn_00584A10(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void* at30 = base + 0x30;
+    void* at14 = base + 0x14;
+    if (ext_string_eq_cstr(at30, mem_00928B5D)) {
+        return at30;
+    }
+    return at14;
+}
+} // namespace lift_00584A10

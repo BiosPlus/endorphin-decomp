@@ -1,0 +1,27 @@
+{
+  "va": "0x00584A10",
+  "size": 34,
+  "orig_symbol": "sub_00584A10",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "descriptiveName: SelectStringByLiteralMatch",
+  "signature": "void* fn_00584A10(void* self)",
+  "summary": "Returns the address of the member at +0x30 if its string equals the literal at mem_00928B5D, otherwise the address of the member at +0x14.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x14",
+      "type": "unknown",
+      "name": "field_0x14"
+    },
+    {
+      "class": "self",
+      "offset": "+0x30",
+      "type": "unknown",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:00Z"
+}
