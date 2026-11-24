@@ -488,3 +488,22 @@ void fn_00669E40(void* self, float a0, float a1, float a2, float a3) {
     lift_field<float>(self, 0x0C) = a3;
 }
 } // namespace lift_00669E40
+
+// [0x006616D0]
+namespace lift_006616D0 {
+// @name Unknown::IsSameDwordPair
+// @class Unknown
+// @summary Returns 1 if both leading DWORDs of *this and *other match, else 0 (stdcall-style, one stack arg, ret 4).
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+int fn_006616D0(void* self, const void* other) {
+    const int32_t a0 = lift_field<int32_t>(self, 0x00);
+    const int32_t b0 = lift_field<int32_t>(other, 0x00);
+    if (a0 != b0) {
+        return 0;
+    }
+    const int32_t a1 = lift_field<int32_t>(self, 0x04);
+    const int32_t b1 = lift_field<int32_t>(other, 0x04);
+    return a1 == b1 ? 1 : 0;
+}
+} // namespace lift_006616D0

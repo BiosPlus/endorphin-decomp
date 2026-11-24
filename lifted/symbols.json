@@ -26953,6 +26953,13 @@
     "summary": "Forwards a call to virtual slot 7 of the object stored at +0x00, passing the address of this+0x04 as the single argument.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006616D0": {
+    "name": "Unknown::IsSameDwordPair",
+    "class": "Unknown",
+    "signature": "int fn_006616D0(void* self, const void* other)",
+    "summary": "Returns 1 if both leading DWORDs of *this and *other match, else 0 (stdcall-style, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x006616F0": {
     "name": "Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)",
     "class": "Unknown",

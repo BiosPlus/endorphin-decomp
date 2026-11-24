@@ -1,0 +1,28 @@
+{
+  "va": "0x006616D0",
+  "size": 31,
+  "orig_symbol": "sub_006616D0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "Unknown::IsSameDwordPair",
+  "class": "Unknown",
+  "signature": "int fn_006616D0(void* self, const void* other)",
+  "summary": "Returns 1 if both leading DWORDs of *this and *other match, else 0 (stdcall-style, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:26:05Z"
+}
