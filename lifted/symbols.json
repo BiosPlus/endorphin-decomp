@@ -10190,6 +10190,13 @@
     "summary": "Evaluates GraphEngineData::getYMax() through the value pointer and returns 1 if the result is \u003e= 1e-6 (NaN yields 0); throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B2AB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, getMaxAutoWidth, float, setMaxAutoWidth\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, getMaxAutoWidth, float, setMaxAutoWidth\u003e",
+    "signature": "void* __thiscall fn_004B2AB0(void* self, void* out)",
+    "summary": "Lazily initializes a static type descriptor at 0x00AE0D30 and stores its pointer at out+0x4",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B2B30": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0\u003e",
@@ -10204,12 +10211,26 @@
     "summary": "Returns 1 if the wrapped GraphEngineData's getMaxAutoWidth() is \u003e= 1e-6 (NaN gives 0); throws via sub_0046C3C0 when the wrapped pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B2DE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,int,\u0026NMData::GraphEngineData::getMinNumTimeSteps,int,\u0026NMData::GraphEngineData::setMinNumTimeSteps\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,int,\u0026NMData::GraphEngineData::getMinNumTimeSteps,int,\u0026NMData::GraphEngineData::setMinNumTimeSteps\u003e",
+    "signature": "void __thiscall fn_004B2DE0(void* self, void* arg0)",
+    "summary": "Lazily initializes static singleton at 0x00AE0D38 with vtable 0x00943014 and stores its pointer at arg0+0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B2E60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0\u003e",
     "signature": "int fn_004B2E60(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B2FE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,bool\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,bool\u003e",
+    "signature": "void __thiscall fn_004B2FE0(void* /*self*/, void* arg0)",
+    "summary": "Lazily initializes static object at 0x00AE0D40 and stores its address at arg0 + 4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004B3110": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3",
