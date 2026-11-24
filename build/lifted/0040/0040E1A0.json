@@ -1,0 +1,13 @@
+{
+  "va": "0x0040E1A0",
+  "size": 39,
+  "orig_symbol": "sub_0040E1A0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "fill_std_string_range",
+  "signature": "void sub_0040E1A0(uint32_t first, uint32_t last, uint32_t val)",
+  "summary": "Fills a range of std::string objects [first, last) with copies of val.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:50:42Z"
+}

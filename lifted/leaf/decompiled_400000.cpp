@@ -291,3 +291,18 @@ void fn_0040C300(uint8_t* self) {
     ext_0042EE50(self + 0x84);
 }
 } // namespace lift_0040C300
+
+// [0x0040E1A0]
+namespace lift_0040E1A0 {
+extern uintptr_t mem_00924FDC;
+
+// @name fill_std_string_range
+// @summary Fills a range of std::string objects [first, last) with copies of val.
+void sub_0040E1A0(uint32_t first, uint32_t last, uint32_t val) {
+    using assign_fn_t = uint32_t(__thiscall*)(void*, uint32_t);
+    auto assign_fn = reinterpret_cast<assign_fn_t>(mem_00924FDC);
+    for (uint32_t cur = first; cur != last; cur += 0x1C) {
+        assign_fn(reinterpret_cast<void*>(static_cast<uintptr_t>(cur)), val);
+    }
+}
+} // namespace lift_0040E1A0
