@@ -14129,10 +14129,10 @@
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
   "0x0053F6A0": {
-    "name": "ForwardSetField498ToChild",
-    "class": "Unknown",
-    "signature": "void fn_0053F6A0(void* self, DWORD arg0, DWORD value)",
-    "summary": "Forwards the second stack argument to child object at this+0xB4 via SetField498 with tag 0x93A444; pops 8 bytes.",
+    "name": "sub_00530070",
+    "class": "QuadricWrapper",
+    "signature": "void* fn_00530070()",
+    "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x0053F894": {
