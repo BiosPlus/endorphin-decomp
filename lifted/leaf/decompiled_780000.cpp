@@ -624,3 +624,30 @@ uint32_t fn_00783860(uint32_t self) {
     return self;
 }
 } // namespace lift_00783860
+
+// [0x007847B0]
+namespace lift_007847B0 {
+// @name sortEntriesIfDirty
+// @summary If the flag at +0x10 is set, qsorts the entry array at +0x00 (count at +0x04, 8-byte elements) with ext_00784790, then clears the flag; always returns 0.
+// @field sortEntriesIfDirty +0x00 void* field_0x00
+// @field sortEntriesIfDirty +0x04 uint32_t field_0x04
+// @field sortEntriesIfDirty +0x10 uint8_t field_0x10
+
+// Known callee 0x00784790: comparator passed to qsort.
+extern int __cdecl ext_00784790(const void* a, const void* b);
+// Known callee: IAT target of MSVCR80!qsort (called via mem_00925298 slot in the original).
+extern void __cdecl ext_0062D38C(void* base, size_t nmemb, size_t size,
+                                     int(__cdecl* compar)(const void*, const void*));
+
+// __thiscall-style: self in ECX, no stack arguments, returns 0 in EAX.
+int32_t sortEntriesIfDirty(void* self) {
+    uint8_t& dirty = lift_field<uint8_t>(self, 0x10);
+    if (dirty != 0) {
+        void* base = lift_field<void*>(self, 0x00);
+        uint32_t count = lift_field<uint32_t>(self, 0x04);
+        ext_0062D38C(base, static_cast<size_t>(count), 8, ext_00784790);
+        dirty = 0;
+    }
+    return 0;
+}
+} // namespace lift_007847B0
