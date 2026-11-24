@@ -44867,6 +44867,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007ABCA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007ABEE0": {
+    "name": "sub_007ABEE0",
+    "signature": "void fn_007ABEE0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
   "0x007ABFE0": {
     "name": "sub_007ABFE0",
     "signature": "extern \"C\" int32_t __cdecl fn_007ABFE0(void)",
@@ -44897,6 +44903,12 @@
     "summary": "Destructor tail-call: restores vtable mem_009983DC and tail-calls base destructor sub_007AA880.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AC160": {
+    "name": "sub_007AC160",
+    "signature": "void fn_007AC160(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
   "0x007AC260": {
     "name": "sub_007AC260",
     "signature": "extern \"C\" int32_t __cdecl fn_007AC260(void)",
@@ -44921,6 +44933,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007AC2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AC570": {
+    "name": "sub_007AC570",
+    "signature": "void fn_007AC570(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
   "0x007AC670": {
     "name": "sub_007AD5C0",
     "class": "none",
@@ -44933,6 +44951,18 @@
     "signature": "extern \"C\" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AD590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007ADF50": {
+    "name": "sub_007ADF50",
+    "signature": "void fn_007ADF50(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
+  "0x007ADFC0": {
+    "name": "sub_007ADFC0",
+    "signature": "void fn_007ADFC0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
+    "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
   "0x007AE070": {
     "name": "sub_007AE070",
