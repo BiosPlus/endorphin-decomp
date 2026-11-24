@@ -1,0 +1,21 @@
+{
+  "va": "0x004304C0",
+  "size": 41,
+  "orig_symbol": "sub_004304C0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "updateStateFromGlobalField",
+  "signature": "extern \"C\" int32_t __stdcall fn_004304C0(void* target)",
+  "summary": "Queries global field 0x58 via ext_00465B30, calls Acclaim2CharacterIO::vfunc_23, and invokes vtable[1] on the argument with (result == 2).",
+  "fields": [
+    {
+      "class": "Target",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:58:33Z"
+}
