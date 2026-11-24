@@ -1961,3 +1961,24 @@ void fn_00515BD0(uint32_t* out) {
     *reinterpret_cast<uint32_t*>(base + 0x04) = 0x00AEBE98u;
 }
 } // namespace lift_00515BD0
+
+// [0x004D47A0]
+namespace lift_004D47A0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_40
+// @class ExprParser::DynamicEnumType
+// @summary Lazily constructs the shared static object at mem_00AE5CF4 (once-guard bit 0 in mem_00AE5CF8), then stores its address into the argument's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+extern uint32_t mem_00AE5CF8;
+extern uint32_t mem_00AE5CF4;
+extern void ext_0067A670(uint32_t* self);
+
+void ExprParser_DynamicEnumType_RigEventData_vfunc_40(uint32_t* out) {
+    if ((mem_00AE5CF8 & 1u) == 0u) {
+        mem_00AE5CF8 |= 1u;
+        ext_0067A670(&mem_00AE5CF4);
+        mem_00AE5CF4 = 0x0094836Cu;
+    }
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5CF4));
+}
+} // namespace lift_004D47A0

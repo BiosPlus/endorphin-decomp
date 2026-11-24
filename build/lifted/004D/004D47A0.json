@@ -1,0 +1,22 @@
+{
+  "va": "0x004D47A0",
+  "size": 122,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_40",
+  "class": "ExprParser::DynamicEnumType",
+  "signature": "void ExprParser_DynamicEnumType_RigEventData_vfunc_40(uint32_t* out)",
+  "summary": "Lazily constructs the shared static object at mem_00AE5CF4 (once-guard bit 0 in mem_00AE5CF8), then stores its address into the argument's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:47:39Z"
+}

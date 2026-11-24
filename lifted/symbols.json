@@ -11704,6 +11704,13 @@
     "summary": "Checks whether the string returned by sub_004D40E0 differs from the global string at 0x00A34650.",
     "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
+  "0x004D47A0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_40",
+    "class": "ExprParser::DynamicEnumType",
+    "signature": "void ExprParser_DynamicEnumType_RigEventData_vfunc_40(uint32_t* out)",
+    "summary": "Lazily constructs the shared static object at mem_00AE5CF4 (once-guard bit 0 in mem_00AE5CF8), then stores its address into the argument's +0x04 slot.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004D4820": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_0",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
