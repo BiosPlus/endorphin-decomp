@@ -8968,6 +8968,13 @@
     "summary": "Reads the object's string value via virtual slot 1 on its +0x8 subobject and returns it converted to float (atof).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D4B0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_2 (string -\u003e rounded number)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "int fn_0049D4B0(void* const* holder)",
+    "summary": "Gets a string through the held object's virtual slot 1, converts it with atof, rounds half away from zero, and passes the result to 0x006A6DE0.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049D530": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::State\u003e",

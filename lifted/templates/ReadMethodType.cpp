@@ -42410,3 +42410,38 @@ void* fn_00512BA0(void* ret, void* self) {
     return out;
 }
 } // namespace lift_00512BA0
+
+// [0x0049D4B0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_2 (117 bytes)
+namespace lift_0049D4B0 {
+// Known callee 0x0046A470: VirtualSlot1Thunk. Loads the object's vtable and tail-calls slot 1 with the same this pointer.
+// Its return value (eax) is taken as the std::string* returned by the virtual call.
+extern void* ext_0046A470(void* self);
+// Callee 0x006A6DE0 (171 bytes, not yet named). Called with the rounded value on the FPU stack; modelled as taking a double.
+// Its return value is assumed to be the eax result of this vfunc (unverified).
+extern int ext_006A6DE0(double value);
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_2 (string -> rounded number)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Gets a string through the held object's virtual slot 1, converts it with atof, rounds half away from zero, and passes the result to 0x006A6DE0.
+// @field NMData::State +0x08 subobject field_0x08
+int fn_0049D4B0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null value pointer");
+    }
+
+    // The virtual call receives obj+0x08 as this and yields a std::string*.
+    auto* text = static_cast<const std::string*>(
+        ext_0046A470(static_cast<char*>(obj) + 0x08));
+
+    // Original stores atof() as float before comparing with 0.0.
+    float value = static_cast<float>(std::atof(text->c_str()));
+
+    // Round half away from zero: +0.5 when value >= 0, -0.5 when value < 0.
+    double rounded = (value >= 0.0f)
+        ? static_cast<double>(value) + 0.5
+        : static_cast<double>(value) - 0.5;
+
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0049D4B0
