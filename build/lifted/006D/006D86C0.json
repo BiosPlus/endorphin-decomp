@@ -1,0 +1,13 @@
+{
+  "va": "0x006D86C0",
+  "size": 48,
+  "orig_symbol": "sub_006D86C0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "resolveAndReadDword",
+  "signature": "int32_t fn_006D86C0()",
+  "summary": "Resolves an object via ext_006FDF70(0); if non-null and ext_006BC380 returns non-null, returns the dword the getter points to, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:26Z"
+}

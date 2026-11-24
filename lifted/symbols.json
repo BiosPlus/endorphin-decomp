@@ -39537,6 +39537,12 @@
     "summary": "Resolves a sub-object via two ext_006FDF70 calls and ext_006FC930; returns the int32 at +0x08 of the result, or 0 if any step is null.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D86C0": {
+    "name": "resolveAndReadDword",
+    "signature": "int32_t fn_006D86C0()",
+    "summary": "Resolves an object via ext_006FDF70(0); if non-null and ext_006BC380 returns non-null, returns the dword the getter points to, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D89C0": {
     "name": "sub_006D89C0",
     "signature": "extern \"C\" void* __fastcall fn_006D89C0(void* self)",

@@ -568,3 +568,27 @@ extern int32_t __fastcall fn_006D8550(void* self) {
     return value;
 }
 } // namespace lift_006D8550
+
+// [0x006D86C0] sub_006D86C0 (48 bytes)
+namespace lift_006D86C0 {
+// Known callee 0x006BC380: lifted getter, extern int32_t __fastcall (void* self); returns int32_t field at +0x8.
+extern int32_t __fastcall ext_006BC380(void* self);
+// Callee 0x006FDF70: unlifted, takes one stack argument (pushed as 0), callee-cleans, returns pointer in eax.
+extern uint32_t __stdcall ext_006FDF70(int32_t arg0);
+
+// @name resolveAndReadDword
+// @summary Resolves an object via ext_006FDF70(0); if non-null and ext_006BC380 returns non-null, returns the dword the getter points to, else 0.
+// (No direct field offsets are accessed in this function body; the +0x8 access lives inside ext_006BC380.)
+int32_t fn_006D86C0() {
+    uint32_t obj = ext_006FDF70(0);
+    if (obj == 0) {
+        return 0;
+    }
+    uint32_t first = static_cast<uint32_t>(ext_006BC380(reinterpret_cast<void*>(static_cast<uintptr_t>(obj))));
+    if (first == 0) {
+        return 0;
+    }
+    uint32_t second = static_cast<uint32_t>(ext_006BC380(reinterpret_cast<void*>(static_cast<uintptr_t>(obj))));
+    return *reinterpret_cast<int32_t*>(static_cast<uintptr_t>(second));
+}
+} // namespace lift_006D86C0
