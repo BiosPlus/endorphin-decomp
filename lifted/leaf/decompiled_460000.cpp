@@ -352,3 +352,18 @@ void fn_004693F0(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_004693F0
+
+// [0x0046F7D0]
+namespace lift_0046F7D0 {
+// @name CallInitWithZeroAndReturnArg
+// @summary Calls sub_00661620 with the argument as this (ecx) and 0 as its stack argument, then returns the argument.
+// @field unknown +0x00 uint32_t vtable
+
+
+extern uint32_t __thiscall ext_00661620(uint32_t self, uint32_t arg0);
+
+uint32_t __stdcall sub_0046F7D0(uint32_t arg0) {
+    ext_00661620(arg0, 0);
+    return arg0;
+}
+} // namespace lift_0046F7D0

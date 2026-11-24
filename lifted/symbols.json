@@ -154,6 +154,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00401EF0": {
+    "name": "ExceptionCopyCtor",
+    "class": "Exception",
+    "signature": "void* __thiscall sub_00401EF0(void* self, const void* other)",
+    "summary": "Copy-constructs a std::exception subclass and sets its vtable pointer.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401FC0": {
     "name": "AVIIO::vfunc_0_off_4",
     "class": "AVIIO",
@@ -4567,6 +4574,12 @@
     "signature": "int fn_0046F210(void* self)",
     "summary": "Reads the wrapped ImageExporter pointer at +0x00; throws if it is null, otherwise returns 1 if ext_0046C090(wrapped) is non-zero, else 0.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0046F7D0": {
+    "name": "CallInitWithZeroAndReturnArg",
+    "signature": "uint32_t __stdcall sub_0046F7D0(uint32_t arg0)",
+    "summary": "Calls sub_00661620 with the argument as this (ecx) and 0 as its stack argument, then returns the argument.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046F7F0": {
     "name": "sub_0046F7F0",
