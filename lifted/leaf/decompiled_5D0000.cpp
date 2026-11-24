@@ -56,3 +56,36 @@ extern void __thiscall fn_005DF270(void* self, uint32_t node) {
     }
 }
 } // namespace lift_005DF270
+
+// [0x005D9EF0] sub_005D9EF0 (56 bytes)
+namespace lift_005D9EF0 {
+extern uint32_t ext_00480920(uint32_t value);
+extern int mem_00B40644;
+extern int mem_00965D08;
+
+// @name CObject::InitTimerFloor
+// @class CObject
+// @summary If the flag at +0x1f1 is clear, forward a global value through a helper and a virtual call on the object at +0x04, then store the float constant 5.0 at +0x1f4.
+// @field CObject +0x04 void* field_0x04
+// @field CObject +0x1f1 uint8_t field_0x1f1
+// @field CObject +0x1f4 float field_0x1f4
+void fn_005D9EF0(void* self) {
+    using VirtualFn = void (*)(void* self, uint32_t arg0, int32_t arg1);
+
+    if (lift_field<uint8_t>(self, 0x1f1) != 0) {
+        return;
+    }
+
+    const uint32_t global_value = static_cast<uint32_t>(mem_00B40644);
+    void* const obj = lift_field<void*>(self, 0x04);
+    const uint32_t helper_result = ext_00480920(global_value);
+
+    // Virtual call through slot 0 of the object at +0x04, with `this` = &self->field_0x04.
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<VirtualFn>(vtbl[0]);
+    fn(reinterpret_cast<uint8_t*>(self) + 0x04, helper_result, 0);
+
+    // 0x40A00000 is the IEEE-754 bit pattern of 5.0f (mem_00965D08).
+    lift_field<float>(self, 0x1f4) = 5.0f;
+}
+} // namespace lift_005D9EF0

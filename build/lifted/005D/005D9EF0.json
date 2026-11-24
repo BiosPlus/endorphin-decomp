@@ -1,0 +1,34 @@
+{
+  "va": "0x005D9EF0",
+  "size": 56,
+  "orig_symbol": "sub_005D9EF0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "CObject::InitTimerFloor",
+  "class": "CObject",
+  "signature": "void fn_005D9EF0(void* self)",
+  "summary": "If the flag at +0x1f1 is clear, forward a global value through a helper and a virtual call on the object at +0x04, then store the float constant 5.0 at +0x1f4.",
+  "fields": [
+    {
+      "class": "CObject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "CObject",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "field_0x1f1"
+    },
+    {
+      "class": "CObject",
+      "offset": "+0x1F4",
+      "type": "float",
+      "name": "field_0x1f4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:51Z"
+}

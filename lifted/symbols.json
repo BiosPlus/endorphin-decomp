@@ -25567,6 +25567,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D9EF0": {
+    "name": "CObject::InitTimerFloor",
+    "class": "CObject",
+    "signature": "void fn_005D9EF0(void* self)",
+    "summary": "If the flag at +0x1f1 is clear, forward a global value through a helper and a virtual call on the object at +0x04, then store the float constant 5.0 at +0x1f4.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DA110": {
     "name": "Unknown::setChildField5C",
     "class": "Unknown",
