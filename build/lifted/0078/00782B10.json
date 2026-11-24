@@ -1,0 +1,13 @@
+{
+  "va": "0x00782B10",
+  "size": 32,
+  "orig_symbol": "sub_00782B10",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "GetBipedQuadrupedName",
+  "signature": "const char* sub_00782B10(uint32_t selector)",
+  "summary": "Returns \"Biped\" for selector 0, \"Quadruped\" for selector 1, otherwise nullptr.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:44:28Z"
+}

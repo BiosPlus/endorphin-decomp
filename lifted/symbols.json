@@ -42509,6 +42509,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00782B10": {
+    "name": "GetBipedQuadrupedName",
+    "signature": "const char* sub_00782B10(uint32_t selector)",
+    "summary": "Returns \"Biped\" for selector 0, \"Quadruped\" for selector 1, otherwise nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782D20": {
     "name": "sub_00782D20",
     "signature": "extern \"C\" void fn_00782D20(void)",
