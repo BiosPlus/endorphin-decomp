@@ -857,3 +857,37 @@ uint32_t fn_00412E20(void* self) {
     return *first;
 }
 } // namespace lift_00412E20
+
+// [0x00410290] sub_00410290 (57 bytes)
+namespace lift_00410290 {
+// @name Unknown::forwardFieldsToArg1AndReturnSubfield
+// @class Unknown
+// @summary Calls vtable slot 13 then slot 14 of arg1 with this+0x5C and this+0x60; returns dword at this+0x58 (or 0 if this+0x54 is null).
+// @field Unknown +0x58 uint32_t field_0x58
+// @field Unknown +0x5C uint32_t field_0x5C
+// @field Unknown +0x60 uint32_t field_0x60
+extern uint32_t __thiscall fn_00410290(void* self, void* arg1, uint32_t stackArgUnused) {
+    (void)stackArgUnused; // second stack argument, cleaned by ret 8 but never read
+
+    auto* obj = static_cast<uint8_t*>(self);
+
+    // lea eax, [self+0x54]; test eax, eax; jne ... ; ebx = [eax+4] = self+0x58
+    uint32_t result = 0;
+    if (reinterpret_cast<uintptr_t>(obj) + 0x54 != 0) {
+        result = lift_field<uint32_t>(obj, 0x58);
+    }
+
+    // First virtual call: vtable[0x34 / 4] (slot 13) with arg = self+0x5C.
+    void* vtable = lift_field<void*>(arg1, 0);
+    void* slot13 = static_cast<void**>(vtable)[13];
+    auto call13 = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(slot13);
+    call13(arg1, lift_field<uint32_t>(obj, 0x5C));
+
+    // Second virtual call: vtable[0x38 / 4] (slot 14) with arg = self+0x60.
+    void* slot14 = static_cast<void**>(vtable)[14];
+    auto call14 = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(slot14);
+    call14(arg1, lift_field<uint32_t>(obj, 0x60));
+
+    return result;
+}
+} // namespace lift_00410290

@@ -938,6 +938,13 @@
     "summary": "Pure jump thunk forwarding to sub_0040FED0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00410290": {
+    "name": "Unknown::forwardFieldsToArg1AndReturnSubfield",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00410290(void* self, void* arg1, uint32_t stackArgUnused)",
+    "summary": "Calls vtable slot 13 then slot 14 of arg1 with this+0x5C and this+0x60; returns dword at this+0x58 (or 0 if this+0x54 is null).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00410310": {
     "name": "Unknown::setValueAndRedraw_00410310",
     "class": "Unknown",
