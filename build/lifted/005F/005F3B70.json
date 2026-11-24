@@ -1,0 +1,14 @@
+{
+  "va": "0x005F3B70",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradients(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, EffectorGroup::setGradients\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, EffectorGroup::setGradients\u003e",
+  "signature": "void __thiscall fn_005F3B70(void* self, void* arg0)",
+  "summary": "Lazily initializes static type descriptor mem_00B4683C and stores its pointer at arg0 + 0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:56:10Z"
+}
