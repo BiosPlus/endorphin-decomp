@@ -1,0 +1,27 @@
+{
+  "va": "0x00430B10",
+  "size": 40,
+  "orig_symbol": "sub_00430B10",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "dispatchGlobalPredicateToArg",
+  "signature": "void fn_00430B10(void* arg)",
+  "summary": "Fetches the global object, calls its vtable slot at +0x1A4 (index 105) to obtain a byte flag, then passes that flag to vtable slot 0 of the argument object.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x0",
+      "type": "void* vptr (global object returned by ext_00465B40; vtable slot +0x1A4",
+      "name": "read)"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x0",
+      "type": "void* vptr (argument object; vtable slot 0 invoked with the",
+      "name": "flag)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:51:39Z"
+}

@@ -953,3 +953,31 @@ void fn_00430AE0(void* self) {
         vtableSlot(arg, 0x00))(arg, flag);   // call [vptr+0] with ecx=arg
 }
 } // namespace lift_00430AE0
+
+// [0x00430B10] sub_00430B10 (40 bytes)
+namespace lift_00430B10 {
+// Global object getter: returns the object whose vtable is dispatched first.
+extern void* ext_00465B40();
+
+// @name dispatchGlobalPredicateToArg
+// @summary Fetches the global object, calls its vtable slot at +0x1A4 (index 105) to obtain a byte flag, then passes that flag to vtable slot 0 of the argument object.
+// @field UnknownObject +0x00 void* vptr (global object returned by ext_00465B40; vtable slot +0x1A4 read)
+// @field UnknownObject +0x00 void* vptr (argument object; vtable slot 0 invoked with the flag)
+void fn_00430B10(void* arg) {
+    // call ext_00465B40; obj = eax
+    void* obj = ext_00465B40();
+
+    // mov edx, [eax]; mov eax, [edx+0x1A4]; mov ecx, eax; call eax
+    void* objVtable = *reinterpret_cast<void**>(obj);
+    using PredicateFn = uint8_t (*)(void* self);
+    PredicateFn predicate = reinterpret_cast<PredicateFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(objVtable) + 0x1A4));
+    uint8_t flag = predicate(obj);
+
+    // mov edi, [esi]; mov edx, [edi]; push flag; mov ecx, esi; call edx
+    void* argVtable = *reinterpret_cast<void**>(arg);
+    using ArgFn = void (*)(void* self, uint32_t value);
+    ArgFn target = reinterpret_cast<ArgFn>(*reinterpret_cast<void**>(argVtable));
+    target(arg, static_cast<uint32_t>(flag));
+}
+} // namespace lift_00430B10
