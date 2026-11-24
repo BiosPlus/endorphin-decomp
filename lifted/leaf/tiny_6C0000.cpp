@@ -1376,3 +1376,19 @@ float fn_006C9E60(void* self, uint32_t idx) {
     return *reinterpret_cast<const float*>(base + 0x14 + static_cast<size_t>(idx) * 4u);
 }
 } // namespace lift_006C9E60
+
+// [0x006C9F50]
+namespace lift_006C9F50 {
+// @name Unknown::GetFlagBit16
+// @class Unknown
+// @summary Returns bit 16 of the dword at this+0x10 as a 0/1 byte.
+// @field Unknown +0x10 uint32_t field_0x10 (bit 16 read)
+
+
+uint8_t GetFlagBit16(const void* self) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    uint32_t value;
+    __builtin_memcpy(&value, base + 0x10, sizeof(value));
+    return static_cast<uint8_t>((value >> 16) & 0x1u);
+}
+} // namespace lift_006C9F50

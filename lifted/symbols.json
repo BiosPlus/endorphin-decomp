@@ -32019,6 +32019,13 @@
     "summary": "Getter returning float field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9F50": {
+    "name": "Unknown::GetFlagBit16",
+    "class": "Unknown",
+    "signature": "uint8_t GetFlagBit16(const void* self)",
+    "summary": "Returns bit 16 of the dword at this+0x10 as a 0/1 byte.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9F70": {
     "name": "sub_006C9F70",
     "signature": "extern \"C\" float __fastcall fn_006C9F70(void* self)",

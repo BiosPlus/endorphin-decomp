@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9F50",
+  "size": 16,
+  "orig_symbol": "sub_006C9F50",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::GetFlagBit16",
+  "class": "Unknown",
+  "signature": "uint8_t GetFlagBit16(const void* self)",
+  "summary": "Returns bit 16 of the dword at this+0x10 as a 0/1 byte.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t field_0x10 (bit 16",
+      "name": "read)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:56Z"
+}
