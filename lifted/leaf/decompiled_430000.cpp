@@ -370,3 +370,61 @@ void __thiscall fn_004332D0(void* self) {
 }
 } // namespace lift_004332B0
 } // namespace lift_004332D0
+
+// [0x00435270]
+namespace lift_00435270 {
+void __thiscall ext_004332B0(void* self);
+int32_t __cdecl ext_00465B30(void);
+void __thiscall ext_00468C80(void* self);
+void __thiscall ext_004332D0(void* self);
+
+// @name Unknown::updateSubobjectsAndGlobal_00435270
+// @class Unknown
+// @summary Calls ext_004332B0 on self, calls ext_00468C80 on the object returned by ext_00465B30, then tail-calls ext_004332D0 on self.
+void __thiscall fn_00435270(void* self) {
+    ext_004332B0(self);
+    int32_t obj = ext_00465B30();
+    ext_00468C80(reinterpret_cast<void*>(static_cast<intptr_t>(obj)));
+    ext_004332D0(self);
+}
+} // namespace lift_00435270
+
+// [0x00430FA0]
+namespace lift_00430FA0 {
+// @name CWndDerived::killTimerAndForward
+// @class CWndDerived
+// @summary Kills the timer stored at +0x160 for HWND at +0x20 and tail-calls MFC80!ord_4342.
+// @field CWndDerived +0x20 uint32_t m_hWnd
+// @field CWndDerived +0x160 uint32_t timerId
+
+
+extern int __stdcall KillTimer(uint32_t hWnd, uint32_t uIDEvent);
+extern void ext_006A64EA(void);
+
+typedef int (__stdcall *KillTimerFn)(uint32_t hWnd, uint32_t uIDEvent);
+extern uint32_t mem_00925660;
+
+void __fastcall fn_00430FA0(uint32_t thisPtr) {
+    uint32_t timerId = *(uint32_t*)(thisPtr + 0x160);
+    uint32_t hWnd = *(uint32_t*)(thisPtr + 0x20);
+    ((KillTimerFn)mem_00925660)(hWnd, timerId);
+    ext_006A64EA();
+}
+} // namespace lift_00430FA0
+
+// [0x00430CC0]
+namespace lift_00430CC0 {
+// @name DispatchVtable0WithCheck
+// @summary Checks if field at +0x60 is zero via ext_00430370 and invokes vtable[0] on the given object with the result.
+
+
+extern uint8_t __cdecl ext_00430370(void);
+
+extern void __stdcall fn_00430CC0(void* obj) {
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+    uint8_t flag = ext_00430370();
+    using VtableFn0 = void(__thiscall*)(void*, uint32_t);
+    auto fn = reinterpret_cast<VtableFn0>(vtable[0]);
+    fn(obj, static_cast<uint32_t>(flag));
+}
+} // namespace lift_00430CC0

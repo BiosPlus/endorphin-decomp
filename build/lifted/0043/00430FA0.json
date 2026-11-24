@@ -1,0 +1,28 @@
+{
+  "va": "0x00430FA0",
+  "size": 28,
+  "orig_symbol": "sub_00430FA0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CWndDerived::killTimerAndForward",
+  "class": "CWndDerived",
+  "signature": "void __fastcall fn_00430FA0(uint32_t thisPtr)",
+  "summary": "Kills the timer stored at +0x160 for HWND at +0x20 and tail-calls MFC80!ord_4342.",
+  "fields": [
+    {
+      "class": "CWndDerived",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    },
+    {
+      "class": "CWndDerived",
+      "offset": "+0x160",
+      "type": "uint32_t",
+      "name": "timerId"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:08:03Z"
+}
