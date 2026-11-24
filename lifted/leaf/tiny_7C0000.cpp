@@ -1064,3 +1064,15 @@ uint32_t* descriptiveName_007C8C70(uint32_t /*arg0_unused*/, uint32_t* p) {
     return p;  // eax still holds the pointer
 }
 } // namespace lift_007C8C70
+
+// [0x007CB9C0] sub_007CB9C0 (18 bytes)
+namespace lift_007CB9C0 {
+// @name descriptiveName_007CB9C0 (doubleFloatField14)
+// @summary Returns twice the float at offset +0x14 of the object passed in (self + 0x14) * 2.
+// @field <unknown> +0x14 float field_0x14
+
+float fn_007CB9C0(void* self) {
+    float value = lift_field<float>(self, 0x14);
+    return value + value;
+}
+} // namespace lift_007CB9C0

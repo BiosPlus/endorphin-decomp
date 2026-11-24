@@ -39167,6 +39167,12 @@
     "summary": "Reads a 32-bit float from offset 0x10 of the passed struct pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CB9C0": {
+    "name": "descriptiveName_007CB9C0 (doubleFloatField14)",
+    "signature": "float fn_007CB9C0(void* self)",
+    "summary": "Returns twice the float at offset +0x14 of the object passed in (self + 0x14) * 2.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CC600": {
     "name": "get_field_0x28",
     "signature": "uint32_t sub_007CC600(uint32_t arg0)",
