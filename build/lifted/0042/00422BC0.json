@@ -1,0 +1,28 @@
+{
+  "va": "0x00422BC0",
+  "size": 49,
+  "orig_symbol": "CImageButton::vfunc_69",
+  "src_path": "src/classes/CImageButton.cpp",
+  "lifted_path": "lifted/classes/CImageButton.cpp",
+  "name": "CImageButton::vfunc_69",
+  "class": "CImageButton",
+  "signature": "LRESULT fn_00422BC0(void* self, UINT msg, WPARAM wParam, LPARAM lParam, LRESULT* pResult)",
+  "summary": "On WM_MOUSELEAVE (0x2A3) clear the flag at +0x8E and invalidate the window; otherwise forward to the base handler.",
+  "fields": [
+    {
+      "class": "CImageButton",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "CImageButton",
+      "offset": "+0x8E",
+      "type": "BYTE",
+      "name": "field_0x8e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:29:54Z"
+}
