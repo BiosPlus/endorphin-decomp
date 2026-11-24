@@ -150,3 +150,37 @@ uint32_t __stdcall sub_00494FF0(uint32_t arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_00494FF0
+
+// [0x004970A0] sub_004970A0 (40 bytes)
+namespace lift_004970A0 {
+extern int mem_00924FDC;
+
+// @name UnknownClass::assignFromSubobjectVirtual_004970A0
+// @class UnknownClass
+// @summary If field +0xBC is non-null, call virtual slot 1 on the sub-object at +0x8 and assign its result into the string at +0x30.
+// @field UnknownClass +0xBC void* field_0xBC
+// @field UnknownClass +0x30 std::string field_0x30
+
+namespace {
+
+using SubobjectGetFn = const void* (__thiscall*)(void* self);
+using StringAssignFn = void* (__thiscall*)(void* self, const void* src);
+
+} // namespace
+
+void fn_004970A0(void* self) {
+    void* sub_ptr = lift_field<void*>(self, 0xBC);
+    if (sub_ptr == nullptr) {
+        return;
+    }
+
+    void* sub = static_cast<uint8_t*>(sub_ptr) + 0x8;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    auto get = reinterpret_cast<SubobjectGetFn>(vtbl[1]);
+    const void* src = get(sub);
+
+    void* str_field = static_cast<uint8_t*>(self) + 0x30;
+    auto assign = *reinterpret_cast<StringAssignFn*>(&mem_00924FDC);
+    assign(str_field, src);
+}
+} // namespace lift_004970A0

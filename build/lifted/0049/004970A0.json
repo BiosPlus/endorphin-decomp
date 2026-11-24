@@ -1,0 +1,28 @@
+{
+  "va": "0x004970A0",
+  "size": 40,
+  "orig_symbol": "sub_004970A0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "UnknownClass::assignFromSubobjectVirtual_004970A0",
+  "class": "UnknownClass",
+  "signature": "void fn_004970A0(void* self)",
+  "summary": "If field +0xBC is non-null, call virtual slot 1 on the sub-object at +0x8 and assign its result into the string at +0x30.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0xBC",
+      "type": "void*",
+      "name": "field_0xBC"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x30",
+      "type": "std::string",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:28Z"
+}

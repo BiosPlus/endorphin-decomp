@@ -7153,6 +7153,13 @@
     "summary": "Calls sub_0049ED40 on the object at +0xB8 (as this) with self as its stack argument, and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x004970A0": {
+    "name": "UnknownClass::assignFromSubobjectVirtual_004970A0",
+    "class": "UnknownClass",
+    "signature": "void fn_004970A0(void* self)",
+    "summary": "If field +0xBC is non-null, call virtual slot 1 on the sub-object at +0x8 and assign its result into the string at +0x30.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004972E0": {
     "name": "NMData::Transition::vfunc_35",
     "class": "NMData::Transition",
