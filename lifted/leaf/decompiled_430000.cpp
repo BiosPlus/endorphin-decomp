@@ -731,3 +731,23 @@ void fn_00435160(void* self) {
     ext_004332D0(self);
 }
 } // namespace lift_00435160
+
+// [0x0043C9D0] sub_0043C9D0 (33 bytes)
+namespace lift_0043C9D0 {
+// @name Unknown::forwardFourArgsVfunc155
+// @class Unknown
+// @summary Forwards its four stack arguments (in original order) and self to the virtual method at vtable slot 0x154 (index 85) of self, returning its result.
+// @field Unknown +0x00 void* vptr
+namespace lift_0043C9D0 {
+constexpr ptrdiff_t kVptrOffset = 0x00;
+constexpr ptrdiff_t kVfuncOffset = 0x154;
+}
+
+int fn_0043C9D0(void* self, int a1, int a2, int a3, int a4) {
+    using namespace lift_0043C9D0;
+    void* vptr = lift_field<void*>(self, kVptrOffset);
+    auto target = reinterpret_cast<int (*)(void*, int, int, int, int)>(
+        lift_field<void*>(vptr, kVfuncOffset));
+    return target(self, a1, a2, a3, a4);
+}
+} // namespace lift_0043C9D0

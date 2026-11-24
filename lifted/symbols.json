@@ -2244,6 +2244,13 @@
     "summary": "Forwards its argument to virtual slot 0x150 on self, passing self+0x80 as the second argument, and returns the result.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043C9D0": {
+    "name": "Unknown::forwardFourArgsVfunc155",
+    "class": "Unknown",
+    "signature": "int fn_0043C9D0(void* self, int a1, int a2, int a3, int a4)",
+    "summary": "Forwards its four stack arguments (in original order) and self to the virtual method at vtable slot 0x154 (index 85) of self, returning its result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CAA0": {
     "name": "sub_0043CAA0",
     "signature": "extern \"C\" void __fastcall fn_0043CAA0(void* self)",
