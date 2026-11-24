@@ -159,3 +159,21 @@ void fn_00810370(void* arg0, uint32_t flag) {
     }
 }
 } // namespace lift_00810370
+
+// [0x00810460] sub_00810460 (42 bytes)
+namespace lift_00810460 {
+// @name SetOrClearFlag0x400ViaIndirect4
+// @class Unknown
+// @summary If arg2 != 0, set 0x400 in the dword at (*(self+0x04))+0x04; otherwise clear it.
+// @field Unknown +0x04 void* field_0x04 (pointer to inner object; inner +0x04 is the flags dword)
+void fn_00810460(void* self, int enable) {
+    auto* outer = reinterpret_cast<uint8_t*>(self);
+    auto* inner = *reinterpret_cast<uint8_t**>(outer + 0x04);
+    auto* flags = reinterpret_cast<uint32_t*>(inner + 0x04);
+    if (enable != 0) {
+        *flags |= 0x00000400u;
+    } else {
+        *flags &= ~0x00000400u;
+    }
+}
+} // namespace lift_00810460

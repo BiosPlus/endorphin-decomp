@@ -86,6 +86,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t                 cachedChild  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (pointer to inner object; inner +0x04 is the flags dword)  (evidence: 0x00810460) // CONFLICT: multiple definitions at +0x4
     // +0x4   float field_0x04 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 entry_count  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
