@@ -35546,6 +35546,13 @@
     "summary": "Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BC0D0": {
+    "name": "Unknown::ForwardSetValueThroughChild",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006BC0D0(void* self, uint32_t value)",
+    "summary": "Calls virtual slot +0x74 on the child object at +0x00 with (old value at +0x08, 1), then stores the new argument into +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC370": {
     "name": "sub_006BC370",
     "signature": "extern \"C\" void __fastcall fn_006BC370(void* self)",

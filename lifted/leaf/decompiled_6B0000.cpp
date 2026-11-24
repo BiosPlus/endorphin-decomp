@@ -307,3 +307,27 @@ BOOL fn_006BDAF0(void* self) {
     return TRUE;
 }
 } // namespace lift_006BDAF0
+
+// [0x006BC0D0] sub_006BC0D0 (32 bytes)
+namespace lift_006BC0D0 {
+// @name Unknown::ForwardSetValueThroughChild
+// @class Unknown
+// @summary Calls virtual slot +0x74 on the child object at +0x00 with (old value at +0x08, 1), then stores the new argument into +0x08.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+
+// Virtual slot at byte offset 0x74 (slot 29 on the 32-bit target).
+// Called __thiscall: object in ECX, then (oldValue, flag) on the stack.
+typedef void(__thiscall* ChildSlot74Fn)(void* self, uint32_t oldValue, int32_t flag);
+
+void __thiscall fn_006BC0D0(void* self, uint32_t value) {
+    void* child = lift_field<void*>(self, 0x00);
+    uint32_t oldValue = lift_field<uint32_t>(self, 0x08);
+
+    void** vtbl = *reinterpret_cast<void***>(child);
+    void* slot = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x74);
+    reinterpret_cast<ChildSlot74Fn>(slot)(child, oldValue, 1);
+
+    lift_field<uint32_t>(self, 0x08) = value;
+}
+} // namespace lift_006BC0D0

@@ -1,0 +1,28 @@
+{
+  "va": "0x006BC0D0",
+  "size": 32,
+  "orig_symbol": "sub_006BC0D0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::ForwardSetValueThroughChild",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006BC0D0(void* self, uint32_t value)",
+  "summary": "Calls virtual slot +0x74 on the child object at +0x00 with (old value at +0x08, 1), then stores the new argument into +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:32:57Z"
+}
