@@ -338,3 +338,25 @@ uint32_t fn_00783410(void* self, void* buf, uint32_t count) {
         std::fread(buf, 1, count, reinterpret_cast<FILE*>(static_cast<uintptr_t>(stream))));
 }
 } // namespace lift_00783410
+
+// [0x00783510]
+namespace lift_00783510 {
+extern uint32_t mem_009252AC;
+
+// @name StreamReader::readByte
+// @class StreamReader
+// @summary Reads a single byte from the underlying FILE stream if open, returning the byte read or 0.
+// @field StreamReader +0x04 void* field_0x04
+uint8_t __thiscall sub_00783510(void* self, uint8_t* outByte) {
+    uint8_t* streamWrapper = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    if (streamWrapper[0x4] == 0) {
+        return 0;
+    }
+
+    void* file = *reinterpret_cast<void**>(streamWrapper);
+    using FreadFn = size_t(__cdecl*)(void* ptr, size_t size, size_t count, void* stream);
+    auto freadFn = reinterpret_cast<FreadFn>(static_cast<uintptr_t>(mem_009252AC));
+    freadFn(outByte, 1, 1, file);
+    return *outByte;
+}
+} // namespace lift_00783510

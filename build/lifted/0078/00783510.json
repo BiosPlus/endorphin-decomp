@@ -1,0 +1,22 @@
+{
+  "va": "0x00783510",
+  "size": 43,
+  "orig_symbol": "sub_00783510",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "StreamReader::readByte",
+  "class": "StreamReader",
+  "signature": "uint8_t __thiscall sub_00783510(void* self, uint8_t* outByte)",
+  "summary": "Reads a single byte from the underlying FILE stream if open, returning the byte read or 0.",
+  "fields": [
+    {
+      "class": "StreamReader",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:06:56Z"
+}
