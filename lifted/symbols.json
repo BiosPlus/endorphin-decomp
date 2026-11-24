@@ -7005,6 +7005,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487120": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004871E0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType",
@@ -7012,11 +7019,25 @@
     "summary": "Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487250": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00487300": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setRootFromFSM\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType",
     "signature": "void __thiscall fn_00487300(uint32_t this_ptr, uint32_t arg0, uint32_t arg1)",
     "summary": "Evaluates an expression to a string and invokes DesiredPoseEventData::setRootFromFSM on the target object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00487370": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00487420": {
@@ -7218,11 +7239,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0048B7E0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0048BD50": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
     "signature": "extern void __fastcall fn_0048BD50(void* self, void* edx, void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0048BDC0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0048C120": {
@@ -10469,6 +10504,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x004CA4B0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004CA560": {
     "name": "sub_004CA560",
     "signature": "extern \"C\" void __fastcall fn_004CA560(void* self)",
@@ -10487,6 +10529,13 @@
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
     "signature": "extern void __fastcall fn_004CA8D0(void* self, void* edx, void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x004CA940": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x004CAA70": {
@@ -24261,6 +24310,20 @@
     "class": "ExprParser::WriteMethodType",
     "signature": "void fn_006049D0(void* self, void* arg1, void* arg2)",
     "summary": "Converts an expression value to std::string via ext_0046E780, passes it to EffectorBase virtual slot 16, and destroys the temporary string.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00604A40": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00604AF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e",
+    "signature": "inline uint32_t as_u32(const void* p)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00604BA0": {
