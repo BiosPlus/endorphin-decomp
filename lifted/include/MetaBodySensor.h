@@ -10,6 +10,6 @@
 // Recovered field layout for MetaBodySensor:
 namespace lifted_layout {
 struct MetaBodySensor_Fields {
-    // +0x28  int32_t                  field_0x28  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x28  int32_t                  field_0x28  (evidence: 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

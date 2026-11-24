@@ -10,7 +10,7 @@
 // Recovered field layout for MainPhysicsAdapter:
 namespace lifted_layout {
 struct MainPhysicsAdapter_Fields {
-    // +0x8   void*                    delegate_0x8  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x00642740)
-    // +0xC   void*                    delegate_0xC  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x006425F0)
+    // +0x8   void*                    delegate_0x8  (evidence: 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x00642740)
+    // +0xC   void*                    delegate_0xC  (evidence: 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x006425F0)
 };
 } // namespace lifted_layout

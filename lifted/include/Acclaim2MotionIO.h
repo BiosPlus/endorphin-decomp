@@ -11,9 +11,9 @@
 namespace lifted_layout {
 struct Acclaim2MotionIO_Fields {
     // +0x0   void* vtable (no direct field access in this function; self is only passed through to ext_00553720)  (evidence: 0x00582B60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vtable  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x0055BBD0, 0x0055BBF0, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x0
-    // +0x568 std::string              field_0x568  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x0055BBD0, 0x00582BA0, 0x005A9ED0, 0x005FF1C0)
-    // +0x578 size_t                   field_0x578  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x0055BBD0, 0x00582BA0, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   void*                    vtable  (evidence: 0x00535610, 0x00545B80, 0x0055BBD0, 0x0055BBF0, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x0
+    // +0x568 std::string              field_0x568  (evidence: 0x00535610, 0x00545B80, 0x0055BBD0, 0x00582BA0, 0x005A9ED0, 0x005FF1C0)
+    // +0x578 size_t                   field_0x578  (evidence: 0x00535610, 0x00545B80, 0x0055BBD0, 0x00582BA0, 0x005A9ED0, 0x005FF1C0)
     // +0x584 void*                    field_0x584  (evidence: 0x0055BBF0)
 };
 } // namespace lifted_layout

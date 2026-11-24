@@ -22514,6 +22514,20 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_006489E0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006426D0": {
+    "name": "sub_006426D0",
+    "class": "SubObjectHolder",
+    "signature": "void fn_006426D0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00642630 (SubObjectHolder::forwardSetField8Float).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00642720": {
+    "name": "sub_00642720",
+    "class": "SubObjectHolder",
+    "signature": "void fn_00642720(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00642630 (SubObjectHolder::forwardSetField8Float).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00642740": {
     "name": "MainPhysicsAdapter::vfunc_1_off_4",
     "class": "MainPhysicsAdapter",

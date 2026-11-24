@@ -10,6 +10,6 @@
 // Recovered field layout for GridPropertyPage:
 namespace lifted_layout {
 struct GridPropertyPage_Fields {
-    // +0x0   u32                      field_0x00  (evidence: 0x0041B950, 0x00535610, 0x00535650, 0x00545B80, 0x0055BBD0, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   u32                      field_0x00  (evidence: 0x0041B950, 0x00535610, 0x00545B80, 0x0055BBD0, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

@@ -10,6 +10,6 @@
 // Recovered field layout for GWCCategoryWithButtonsItem:
 namespace lifted_layout {
 struct GWCCategoryWithButtonsItem_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x00402060, 0x004C4DC0, 0x004CA300, 0x00535610, 0x00535650, 0x00543620, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x00646220, 0x006B0480)
+    // +0x0   uint32_t                 vtable  (evidence: 0x00402060, 0x004C4DC0, 0x004CA300, 0x00535610, 0x00543620, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x00646220, 0x006B0480)
 };
 } // namespace lifted_layout

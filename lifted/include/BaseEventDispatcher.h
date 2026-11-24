@@ -9,7 +9,7 @@
 // Recovered field layout for BaseEventDispatcher:
 namespace lifted_layout {
 struct BaseEventDispatcher_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x00437E70, 0x00535610, 0x00535650, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   void**                   vtable  (evidence: 0x00437E70, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
     // +0x30  uint32_t                 begin  (evidence: 0x00437AD0)
     // +0x34  uint32_t                 end  (evidence: 0x00437AD0)
 };

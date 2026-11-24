@@ -1,0 +1,22 @@
+{
+  "va": "0x006426D0",
+  "size": 19,
+  "orig_symbol": "sub_006426D0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "sub_006426D0",
+  "class": "SubObjectHolder",
+  "signature": "void fn_006426D0(void* self, float value)",
+  "summary": "Auto-lifted identical-shape clone of 0x00642630 (SubObjectHolder::forwardSetField8Float).",
+  "fields": [
+    {
+      "class": "SubObjectHolder",
+      "offset": "+0xC",
+      "type": "pointer",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:04:45Z"
+}
