@@ -559,3 +559,55 @@ uint8_t __thiscall sub_0041C5D0(uintptr_t self, uint32_t arg1, uint32_t arg2, ui
     return fn(child, arg1, arg2, arg3);
 }
 } // namespace lift_0041C5D0
+
+// [0x0041C540]
+namespace lift_0041C540 {
+// @name sub_0041C540
+// @summary Stores two parameters at +0x0c and +0x10 and forwards all three arguments to child vtable+0x0c if present.
+// @field Self +0x08 void* field_0x08
+// @field Self +0x0c uint32_t field_0x0c
+// @field Self +0x10 uint32_t field_0x10
+
+
+bool __thiscall sub_0041C540(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x0c) = arg2;
+    *reinterpret_cast<uint32_t*>(base + 0x10) = arg3;
+
+    void* child = *reinterpret_cast<void**>(base + 0x08);
+    if (!child) {
+        return false;
+    }
+
+    using VFunc = bool(__thiscall*)(void*, uint32_t, uint32_t, uint32_t);
+    auto* vtable = *reinterpret_cast<uintptr_t**>(child);
+    auto fn = reinterpret_cast<VFunc>(vtable[3]);
+    return fn(child, arg1, arg2, arg3);
+}
+} // namespace lift_0041C540
+
+// [0x0041C630]
+namespace lift_0041C630 {
+// @name sub_0041C630
+// @summary Stores two 32-bit values at +0x14 and +0x18 and forwards the call to child->vtable[0x30] if child (+0x08) is non-null.
+// @field unknown +0x08 uint32_t field_0x08
+// @field unknown +0x14 uint32_t field_0x14
+// @field unknown +0x18 uint32_t field_0x18
+
+
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+uint8_t __thiscall sub_0041C630(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    mem_write32(self + 0x14, arg2);
+    mem_write32(self + 0x18, arg3);
+    uint32_t child = mem_read32(self + 0x08);
+    if (!child) {
+        return 0;
+    }
+    uint32_t vtable = mem_read32(child);
+    uint32_t fn_addr = mem_read32(vtable + 0x30);
+    using VMethod = uint8_t(__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    return reinterpret_cast<VMethod>(static_cast<uintptr_t>(fn_addr))(child, arg1, arg2, arg3);
+}
+} // namespace lift_0041C630
