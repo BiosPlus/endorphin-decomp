@@ -11000,6 +11000,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x004CA9F0": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}\u003e",
+    "signature": "void fn_004CA9F0(void* out)",
+    "summary": "One-time guarded init of the static Method0Type instance at mem_00AE4498, then stores its address into the caller-supplied output's +0x04 slot.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CAA70": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e",
@@ -12059,6 +12066,13 @@
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}\u003e",
     "signature": "void fn_004D8B10(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x004D8B20": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_27",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
+    "signature": "uint32_t __thiscall fn_004D8B20(uint32_t self, uint32_t sret, uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls getAvailableRigTypeName on the RigEventData instance and copies the resulting std::string to sret.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x004D8BA0": {

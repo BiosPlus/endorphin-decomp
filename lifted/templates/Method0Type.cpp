@@ -870,3 +870,24 @@ void fn_004CA750(void* out) {
     lift_field<uint32_t>(out, 0x04) = 0x00AE4480u;
 }
 } // namespace lift_004CA750
+
+// [0x004CA9F0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CA9F0 {
+extern void ext_0067A670();
+extern int mem_00AE449C;
+extern int mem_00AE4498;
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData>::vfunc_40
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>
+// @summary One-time guarded init of the static Method0Type instance at mem_00AE4498, then stores its address into the caller-supplied output's +0x04 slot.
+// @field ExprParser::Method0Type<NMData::MetaBodyConstraintData> +0x04 uint32_t field_0x04
+void fn_004CA9F0(void* out) {
+    // Function-local static guard: run the one-time initializer only on first use.
+    if ((mem_00AE449C & 1) == 0) {
+        mem_00AE449C |= 1;
+        ext_0067A670();
+        mem_00AE4498 = 0x009465A4;  // vtable pointer for the static instance
+    }
+    lift_field<uint32_t>(out, 0x04) = 0x00AE4498u;
+}
+} // namespace lift_004CA9F0
