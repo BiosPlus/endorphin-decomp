@@ -26832,6 +26832,13 @@
     "summary": "Forwards to the object at *out via ext_00493D90, default-constructs the std::string at out, and returns out.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0060A0D0": {
+    "name": "ExprParser::Method0Type\u003cDisabledCollisionPairList, addSelectedCollisionModels\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B478C0;   // init guard flag (bit 0) extern \"C\" uint32_t mem_00B478BC;   // function-local static object storage void fn_0060A0D0(void* out)",
+    "summary": "Lazily initializes a function-local static (guarded by bit 0 of mem_00B478C0) and stores its address into the output object at +0x04.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0060A150": {
     "name": "Method0Type\u003cDisabledCollisionPairList,addSelectedCollisionModels\u003e::vfunc_1",
     "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",

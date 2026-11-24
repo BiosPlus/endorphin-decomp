@@ -942,3 +942,25 @@ void fn_0060A160(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00B478C4u;
 }
 } // namespace lift_0060A160
+
+// [0x0060A0D0] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_0060A0D0 {
+extern void ext_0067A670(void* self, int arg);
+extern uint32_t mem_00B478C0;   // init guard flag (bit 0)
+extern uint32_t mem_00B478BC;   // function-local static object storage
+
+// @name ExprParser::Method0Type<DisabledCollisionPairList, addSelectedCollisionModels>::vfunc_40
+// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+// @summary Lazily initializes a function-local static (guarded by bit 0 of mem_00B478C0) and stores its address into the output object at +0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_0060A0D0(void* out) {
+    if ((mem_00B478C0 & 1u) == 0) {
+        // First call: mark initialized, run the static's constructor, then set its vtable.
+        mem_00B478C0 |= 1u;
+        ext_0067A670(&mem_00B478BC, 0);
+        mem_00B478BC = 0x00971D0Cu;  // vtable address
+    }
+    // Both paths publish the static's address to out->field_0x04.
+    lift_field<uint32_t>(out, 0x04) = 0x00B478BCu;
+}
+} // namespace lift_0060A0D0
