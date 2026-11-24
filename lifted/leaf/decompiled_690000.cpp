@@ -296,3 +296,17 @@ __stdcall std::uint8_t* fn_0069A0F0(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_0069A0F0
+
+// [0x0069B640]
+namespace lift_0069B640 {
+// @name sub_0069B640
+// @summary Initializes a range of elements using sub_00596300 and returns the end pointer
+
+extern uint32_t __cdecl ext_00596300(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+
+uint32_t __thiscall sub_0069B640(uint32_t ecx, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t local_var = (ecx & 0xFFFFFF00u);
+    ext_00596300(arg1, arg2, arg3, ecx, arg3, local_var);
+    return arg1 + 8u * arg2;
+}
+} // namespace lift_0069B640
