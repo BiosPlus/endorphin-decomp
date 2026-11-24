@@ -35511,6 +35511,13 @@
     "summary": "Forwards its single stack argument to virtual slot +0xB0 of the object at this+0x1AE8, passing (this+0x1AE8) as the callee's this, and returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C12D0": {
+    "name": "Unknown::ForwardToSubobjectVirtual0xB8",
+    "class": "Unknown",
+    "signature": "DWORD fn_006C12D0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Forwards two stack arguments (in original order) to virtual slot 0xB8 of the embedded sub-object at +0x1B78 and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C12F0": {
     "name": "sub_006C12F0",
     "class": "Unknown",

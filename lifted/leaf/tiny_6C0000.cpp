@@ -1559,3 +1559,24 @@ void fn_006C1290(void* self, DWORD arg0, DWORD arg1) {
     target(sub, arg0, arg1);
 }
 } // namespace lift_006C1290
+
+// [0x006C12D0]
+namespace lift_006C12D0 {
+// @name Unknown::ForwardToSubobjectVirtual0xB8
+// @class Unknown
+// @summary Forwards two stack arguments (in original order) to virtual slot 0xB8 of the embedded sub-object at +0x1B78 and returns its result.
+// @field Unknown +0x1B78 void* subobjVtbl
+
+// Original: thiscall-style, two stack args, callee cleans up (ret 8).
+DWORD fn_006C12D0(void* self, DWORD arg1, DWORD arg2) {
+    // Embedded sub-object at self + 0x1B78; its first dword is its vtable pointer.
+    uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0x1B78;
+    uintptr_t vtbl = static_cast<uintptr_t>(lift_field<DWORD>(sub, 0));
+
+    // Slot 0xB8 is a byte offset into the vtable (32-bit layout).
+    using VirtualFn = DWORD (*)(void* thisPtr, DWORD a, DWORD b);
+    uintptr_t slot = static_cast<uintptr_t>(lift_field<DWORD>(reinterpret_cast<void*>(vtbl), 0xB8));
+    VirtualFn fn = reinterpret_cast<VirtualFn>(slot);
+    return fn(sub, arg1, arg2);
+}
+} // namespace lift_006C12D0

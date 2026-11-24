@@ -374,5 +374,6 @@ struct Unknown_Fields {
     // +0x1960 uint8_t                  field_0x1960  (evidence: 0x0071C740, 0x0071C8D0, 0x0071C970)
     // +0x1AE8 void*                    field_0x1ae8  (evidence: 0x006C1290) // CONFLICT: multiple definitions at +0x1AE8
     // +0x1AE8 void*                    field_1AE8  (evidence: 0x006C12B0, 0x006C12F0, 0x006F22E0, 0x006F2350, 0x006F23C0, 0x006F2430, 0x006F24A0, 0x00700570, 0x00701BC0, 0x0070FDA0, 0x0070FDE0) // CONFLICT: multiple definitions at +0x1AE8
+    // +0x1B78 void*                    subobjVtbl  (evidence: 0x006C12D0)
 };
 } // namespace lifted_layout
