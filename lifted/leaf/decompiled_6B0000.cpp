@@ -666,3 +666,31 @@ void fn_006B9970(void* self) {
     ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(buffer)));
 }
 } // namespace lift_006B9970
+
+// [0x006B53D0] sub_006B53D0 (49 bytes)
+namespace lift_006B53D0 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+// Known callee 0x006AD0D0: sub_006AD0D0 (4 bytes), takes this-like arg in ECX, returns AL.
+extern void __fastcall ext_006A5EA8(void* self);
+extern uint8_t __fastcall ext_006AD0D0(void* self);
+extern int mem_00925688;
+
+// @name Unknown::invalidateOnFlagClearAndForward
+// @class Unknown
+// @summary If flag +0x64 is set and ext_006AD0D0(+0x58) returns 0, clear the flag and call InvalidateRect(+0x20, NULL, TRUE); then always forward to thunk ext_006A5EA8.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x58 void* field_0x58
+// @field Unknown +0x64 uint8_t dirtyFlag
+extern void __fastcall fn_006B53D0(void* self) {
+    if (lift_field<uint8_t>(self, 0x64) != 0) {
+        uint8_t r = ext_006AD0D0(lift_field<void*>(self, 0x58));
+        if (r == 0) {
+            lift_field<uint8_t>(self, 0x64) = r;
+            using InvalidateRectFn = BOOL(__stdcall*)(HWND, const RECT*, BOOL);
+            auto invalidateRect = reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688));
+            invalidateRect(lift_field<HWND>(self, 0x20), nullptr, TRUE);
+        }
+    }
+    ext_006A5EA8(self);
+}
+} // namespace lift_006B53D0

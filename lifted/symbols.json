@@ -37860,6 +37860,13 @@
     "summary": "If arg1 == 0xD and self+0xDC is zero, call vtable slot at +0x13C on self; then always forward self to ext_006A5EA8.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B53D0": {
+    "name": "Unknown::invalidateOnFlagClearAndForward",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006B53D0(void* self)",
+    "summary": "If flag +0x64 is set and ext_006AD0D0(+0x58) returns 0, clear the flag and call InvalidateRect(+0x20, NULL, TRUE); then always forward to thunk ext_006A5EA8.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B6050": {
     "name": "sub_006B6050",
     "signature": "extern \"C\" void* __cdecl fn_006B6050(void)",
