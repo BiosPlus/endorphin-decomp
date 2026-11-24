@@ -558,6 +558,13 @@
     "summary": "Pure jump thunk forwarding to GetConstant_00409630.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0040A910": {
+    "name": "Unknown::forwardSubobject68ThenMfcOrd297",
+    "class": "Unknown",
+    "signature": "void* fn_0040A910(void* self, void* arg1)",
+    "summary": "Calls MFC80 ordinal 297 on the argument with (this+0x68, 0) and returns the argument.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040AE10": {
     "name": "sub_0040AE10",
     "signature": "extern \"C\" void __fastcall fn_0040AE10(void* self)",
