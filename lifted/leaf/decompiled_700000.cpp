@@ -645,3 +645,18 @@ DWORD fn_0070ECD0(void* self, DWORD arg) {
     return ext_007873F0(sub, arg);
 }
 } // namespace lift_0070ECD0
+
+// [0x0070ECF0] sub_0070ECF0 (32 bytes)
+namespace lift_0070ECF0 {
+// Callee sub_007873F0 (64 bytes): receives the sub-object pointer as "this" and one stack argument.
+extern DWORD ext_007873F0(void* self, DWORD arg);
+
+// @name Unknown::ForwardArgToSubObjectAt0x228
+// @class Unknown
+// @summary Forwards its single stack argument to sub_007873F0 on the sub-object at this+0x228 and returns the callee's result.
+// (Only the address self+0x228 is taken, not dereferenced, so no @field lines.)
+DWORD fn_0070ECF0(void* self, DWORD arg) {
+    void* sub = static_cast<uint8_t*>(self) + 0x228;
+    return ext_007873F0(sub, arg);
+}
+} // namespace lift_0070ECF0
