@@ -235,3 +235,23 @@ void* fn_0072B220(void* self) {
     return self;
 }
 } // namespace lift_0072B220
+
+// [0x0072B250]
+namespace lift_0072B250 {
+extern void ext_006A5C5C(void* arg);
+
+// @name Unknown::releaseOwnedHandle
+// @class Unknown
+// @summary Releases the handle at +0x08 of the object referenced by *this, clears that slot, then releases the object itself.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 void* field_0x08
+void fn_0072B250(void* self) {
+    void* obj = lift_field<void*>(self, 0x00);
+    if (obj == nullptr) {
+        return;
+    }
+    ext_006A5C5C(lift_field<void*>(obj, 0x08));
+    lift_field<void*>(obj, 0x08) = nullptr;
+    ext_006A5C5C(obj);
+}
+} // namespace lift_0072B250

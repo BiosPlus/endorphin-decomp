@@ -1,0 +1,28 @@
+{
+  "va": "0x0072B250",
+  "size": 48,
+  "orig_symbol": "sub_0072B250",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::releaseOwnedHandle",
+  "class": "Unknown",
+  "signature": "void fn_0072B250(void* self)",
+  "summary": "Releases the handle at +0x08 of the object referenced by *this, clears that slot, then releases the object itself.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:48Z"
+}
