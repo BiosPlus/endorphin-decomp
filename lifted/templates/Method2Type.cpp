@@ -90,3 +90,43 @@ extern uintptr_t __stdcall fn_005B7F50(uintptr_t arg1, uintptr_t arg2, uintptr_t
     return arg2;
 }
 } // namespace lift_005B7F50
+
+// [0x005C48E0] ExprParser::Method2Type<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulseAtPostion(class NM::Vector3 const &, NM::Vector3 const &), 0}>::vfunc_49 (75 bytes)
+namespace lift_005C48E0 {
+// Known callee 0x005C30D0: sub_005C30D0 (Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).)
+// Signature: void __thiscall(void* self, DWORD stackArg0, DWORD stackArg1)
+extern void ext_005C30D0(void* self, DWORD stackArg0, DWORD stackArg1);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+// Signature: void __cdecl(uint32_t* out)
+extern void ext_00671F30(void* out);
+
+// @name ExprParser::Method2Type::vfunc_49
+// @class ExprParser::Method2Type<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulseAtPostion(class NM::Vector3 const &, NM::Vector3 const &), 0}>
+// @summary Calls vtable slot 5 on two argument objects, forwards the results to ext_005C30D0, then zeroes/initializes the out buffer and returns it.
+void* fn_005C48E0(void* out, void* a1, DWORD a2, void* a3) {
+    (void)a2;
+
+    // esi = *(DWORD*)a1 (used as `this` for the forwarding call below)
+    const DWORD selfValue = lift_field<DWORD>(a1, 0);
+
+    // First virtual call: obj3 = a3->field_04; vtbl[5](obj3, a3, 0)
+    void* obj3 = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<DWORD>(a3, 4)));
+    void* const* vtbl3 = *reinterpret_cast<void* const* const*>(obj3);
+    auto slot5a = reinterpret_cast<DWORD(__thiscall*)(void*, void*, DWORD)>(vtbl3[5]);
+    const DWORD r1 = slot5a(obj3, a3, 0);
+
+    // Second virtual call: obj1 = a1->field_04; vtbl[5](obj1, a1, r1)
+    void* obj1 = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<DWORD>(a1, 4)));
+    void* const* vtbl1 = *reinterpret_cast<void* const* const*>(obj1);
+    auto slot5b = reinterpret_cast<DWORD(__thiscall*)(void*, void*, DWORD)>(vtbl1[5]);
+    const DWORD r2 = slot5b(obj1, a1, r1);
+
+    // Forward r2 and a1 to the helper with selfValue as `this`.
+    ext_005C30D0(reinterpret_cast<void*>(static_cast<uintptr_t>(selfValue)), r2,
+                 static_cast<DWORD>(reinterpret_cast<uintptr_t>(a1)));
+
+    // Initialize the out buffer; the function returns `out` in eax.
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_005C48E0

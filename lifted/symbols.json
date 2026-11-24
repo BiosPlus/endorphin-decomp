@@ -20888,6 +20888,13 @@
     "summary": "Dynamically casts the input object pointer to NMData::CollisionModelDataBase using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x005C48E0": {
+    "name": "ExprParser::Method2Type::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulseAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void* fn_005C48E0(void* out, void* a1, DWORD a2, void* a3)",
+    "summary": "Calls vtable slot 5 on two argument objects, forwards the results to ext_005C30D0, then zeroes/initializes the out buffer and returns it.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x005C4930": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1\u003e",
