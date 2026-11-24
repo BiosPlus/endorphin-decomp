@@ -47053,6 +47053,12 @@
     "summary": "Returns \"Biped\" for selector 0, \"Quadruped\" for selector 1, otherwise nullptr.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782B30": {
+    "name": "selectStaticAddressByIndex",
+    "signature": "uint32_t __cdecl fn_00782B30(uint32_t selector)",
+    "summary": "Maps selector 0/1/2 to one of three static addresses; any other value yields 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782B60": {
     "name": "GetAutoUserModeName",
     "signature": "const char* sub_00782B60(uint32_t selector)",

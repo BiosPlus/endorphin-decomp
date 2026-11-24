@@ -1,0 +1,13 @@
+{
+  "va": "0x00782B30",
+  "size": 48,
+  "orig_symbol": "sub_00782B30",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "selectStaticAddressByIndex",
+  "signature": "uint32_t __cdecl fn_00782B30(uint32_t selector)",
+  "summary": "Maps selector 0/1/2 to one of three static addresses; any other value yields 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:01Z"
+}

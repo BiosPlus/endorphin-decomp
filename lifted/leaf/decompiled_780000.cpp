@@ -425,3 +425,17 @@ uint32_t sub_00782BA0(uint32_t selector) {
     }
 }
 } // namespace lift_00782BA0
+
+// [0x00782B30] sub_00782B30 (48 bytes)
+namespace lift_00782B30 {
+// @name selectStaticAddressByIndex
+// @summary Maps selector 0/1/2 to one of three static addresses; any other value yields 0.
+uint32_t __cdecl fn_00782B30(uint32_t selector) {
+    switch (selector) {
+        case 0:  return 0x00AAF2B8u;
+        case 1:  return 0x00AAF2BCu;
+        case 2:  return 0x00AAF2C4u;
+        default: return 0u;
+    }
+}
+} // namespace lift_00782B30
