@@ -24922,6 +24922,13 @@
     "summary": "Installs the Space vtable (0x009848CC) and resets fields +0x0C to 1.0f, +0x10 and +0x18 to 0.",
     "lifted_path": "lifted/leaf/tiny_650000.cpp"
   },
+  "0x0065C320": {
+    "name": "CopyBlock64FromOffset0x0C",
+    "class": "Unknown",
+    "signature": "void fn_0065C320(void* self, void* dst)",
+    "summary": "Copies 64 bytes (16 dwords) from self+0x0C into the caller-supplied destination buffer (thiscall, 1 stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
   "0x0065C640": {
     "name": "CriticalSectionLock::enter",
     "class": "CriticalSectionLock",

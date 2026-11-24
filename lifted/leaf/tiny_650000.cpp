@@ -22,6 +22,7 @@ extern "C" void __fastcall fn_0065BB60(void* self) {
     ext_0065C660(self);
 }
 extern "C" int mem_0093BF24;
+#include <cstring>
 
 // [0x0065C660] sub_0065C660 (7 bytes)
 // @name sub_0065C660
@@ -105,3 +106,15 @@ void fn_0065BD80(void* self) {
     lift_field<uint32_t>(self, 0x18) = 0;
 }
 } // namespace lift_0065BD80
+
+// [0x0065C320] sub_0065C320 (23 bytes)
+namespace lift_0065C320 {
+// @name CopyBlock64FromOffset0x0C
+// @class Unknown
+// @summary Copies 64 bytes (16 dwords) from self+0x0C into the caller-supplied destination buffer (thiscall, 1 stack arg, ret 4).
+// @field Unknown +0x0C uint32_t[16] field_0x0C
+void fn_0065C320(void* self, void* dst) {
+    // rep movsd: ecx=0x10 dwords copied from [self+0x0C] to [dst].
+    std::memcpy(dst, &lift_field<uint8_t>(self, 0x0C), 0x10 * sizeof(uint32_t));
+}
+} // namespace lift_0065C320

@@ -1,0 +1,22 @@
+{
+  "va": "0x0065C320",
+  "size": 23,
+  "orig_symbol": "sub_0065C320",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "CopyBlock64FromOffset0x0C",
+  "class": "Unknown",
+  "signature": "void fn_0065C320(void* self, void* dst)",
+  "summary": "Copies 64 bytes (16 dwords) from self+0x0C into the caller-supplied destination buffer (thiscall, 1 stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t[16]",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:33:49Z"
+}
