@@ -496,3 +496,28 @@ uint32_t __thiscall sub_0045C5F0(void* self, uint32_t arg0) {
     return ext_0045C5C0(self, arg0, 0);
 }
 } // namespace lift_0045C5F0
+
+// [0x00455F10]
+namespace lift_00455F10 {
+namespace lift_00455F10 {
+// .rdata slot (VA 0x0092407C) holding the address of GDI32!CreateSolidBrush (0x00628CF4).
+extern const uint32_t mem_0092407C;
+// Import thunks forwarding to MFC80 ordinals; both receive the sub-object in ECX.
+extern void __thiscall ext_006A63B8(void* self);
+extern void __thiscall ext_006A5FFE(void* self, HBRUSH brush);
+
+// @name Unknown::setBackgroundColor
+// @class Unknown
+// @summary Stores the COLORREF argument at +0x104, creates a GDI solid brush of that color, and passes the brush to the embedded sub-object at +0xFC (ret 4).
+// @field Unknown +0x104 DWORD field_0x104
+extern void __thiscall fn_00455F10(void* self, COLORREF color) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uint8_t*>(self) + 0xFC);
+    ext_006A63B8(sub);
+    lift_field<DWORD>(self, 0x104) = color;
+    auto createSolidBrush = reinterpret_cast<HBRUSH(__stdcall*)(COLORREF)>(
+        static_cast<uintptr_t>(mem_0092407C));
+    HBRUSH brush = createSolidBrush(color);
+    ext_006A5FFE(sub, brush);
+}
+} // namespace lift_00455F10
+} // namespace lift_00455F10

@@ -4285,6 +4285,13 @@
     "summary": "Forwards two stack arguments with this to an external MFC80 routine, then zeroes the DWORD at this+0xE8.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00455F10": {
+    "name": "Unknown::setBackgroundColor",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_00455F10(void* self, COLORREF color)",
+    "summary": "Stores the COLORREF argument at +0x104, creates a GDI solid brush of that color, and passes the brush to the embedded sub-object at +0xFC (ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455F40": {
     "name": "Unknown::returnTrueIfNeitherCheckMatches_00455F40",
     "class": "Unknown",
