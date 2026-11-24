@@ -1,0 +1,14 @@
+{
+  "va": "0x005B7CE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const\u0026\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const \u0026), 0}\u003e",
+  "signature": "void fn_005B7CE0(uint8_t* self)",
+  "summary": "Lazily initializes the shared static accessor object (guarded by a one-time flag) and stores its address into the target's +0x04 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:49:19Z"
+}

@@ -7020,3 +7020,26 @@ void fn_0059F740(void* arg) {
     lift_field<uint32_t>(arg, 0x04) = 0x00B414B4u;
 }
 } // namespace lift_0059F740
+
+// [0x005B7CE0] ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B7CE0 {
+extern void ext_0067A670();
+extern uint32_t mem_00B43C74;
+extern uint32_t mem_00B43C78;
+
+// @name ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const&>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const &), 0}>
+// @summary Lazily initializes the shared static accessor object (guarded by a one-time flag) and stores its address into the target's +0x04 slot.
+// @field ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const &), 0}> +0x04 uint32_t field_0x04
+void fn_005B7CE0(uint8_t* self) {
+    // One-time initialization guarded by bit 0 of mem_00B43C78.
+    if ((mem_00B43C78 & 1u) == 0) {
+        mem_00B43C78 |= 1u;
+        ext_0067A670();
+        mem_00B43C74 = 0x009615FCu; // vtable pointer for the static accessor
+    }
+    // Store the static accessor's address into self+0x04.
+    uint32_t addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B43C74));
+    std::memcpy(self + 0x04, &addr, sizeof(addr));
+}
+} // namespace lift_005B7CE0

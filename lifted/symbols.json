@@ -21380,6 +21380,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005B7CE0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const\u0026\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "void fn_005B7CE0(uint8_t* self)",
+    "summary": "Lazily initializes the shared static accessor object (guarded by a one-time flag) and stores its address into the target's +0x04 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005B7D90": {
     "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addImpulse(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addImpulse(class NM::Vector3 const \u0026), 0}\u003e",
