@@ -1,0 +1,34 @@
+{
+  "va": "0x007148C0",
+  "size": 32,
+  "orig_symbol": "sub_007148C0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::CopyBytes3To5Out",
+  "class": "Unknown",
+  "signature": "void fn_007148C0(void* self, BYTE* out0, BYTE* out1, BYTE* out2)",
+  "summary": "Copies object bytes +0x03, +0x04, +0x05 to three caller-supplied BYTE* out-pointers (thiscall, ret 0xC).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3",
+      "type": "BYTE",
+      "name": "field_0x03"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "BYTE",
+      "name": "field_0x05"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:56Z"
+}

@@ -57,7 +57,8 @@ struct Unknown_Fields {
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00648EA0, 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1D40, 0x004B7BC0, 0x00633240, 0x00678960)
-    // +0x3   uint8_t                  field_0x03  (evidence: 0x007148A0)
+    // +0x3   BYTE                     field_0x03  (evidence: 0x007148C0) // CONFLICT: multiple definitions at +0x3
+    // +0x3   uint8_t                  field_0x03  (evidence: 0x007148A0) // CONFLICT: multiple definitions at +0x3
     // +0x4   uint32_t field_0x04      (begin)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t field_0x04 (type code read from inner struct; compared against 2)  (evidence: 0x006BB790) // CONFLICT: multiple definitions at +0x4
@@ -71,7 +72,7 @@ struct Unknown_Fields {
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4
-    // +0x4   BYTE                     field_0x04  (evidence: 0x004E9BB0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   BYTE                     field_0x04  (evidence: 0x004E9BB0, 0x007148C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x004F9800, 0x00528BB0, 0x005D1480, 0x0078C230, 0x0078C3A0, 0x008102B0, 0x00810440, 0x0086B200) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x0043B3E0, 0x0052EF50, 0x00535610, 0x00545B80, 0x00553A10, 0x00622750, 0x00669E60, 0x0066A310, 0x0066A330, 0x006C9A90, 0x007C9C90, 0x007FC290) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x00404D50, 0x00476BA0, 0x0049AD70, 0x004BF680, 0x00504990, 0x00504A80, 0x005184D0, 0x00553E60, 0x005B4BA0, 0x00620F60, 0x006455B0, 0x006616D0, 0x006722B0, 0x00672490, 0x0067B070, 0x007C2E50, 0x007CD040, 0x007D8470, 0x007DD000) // CONFLICT: multiple definitions at +0x4
@@ -91,7 +92,7 @@ struct Unknown_Fields {
     // +0x4   void*                    subVptr  (evidence: 0x0079ADA0, 0x0079C1F0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   ptr                      subobject  (evidence: 0x00486980, 0x006721D0, 0x006722B0, 0x006722D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* vtable_slot1 (vtable slot 1 = offset +0x4, called with the sub-object as this)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
-    // +0x5   BYTE                     field_0x05  (evidence: 0x004E9BB0) // CONFLICT: multiple definitions at +0x5
+    // +0x5   BYTE                     field_0x05  (evidence: 0x004E9BB0, 0x007148C0) // CONFLICT: multiple definitions at +0x5
     // +0x5   uint8_t                  field_0x05  (evidence: 0x004EB9B0, 0x006F8AF0, 0x007148A0) // CONFLICT: multiple definitions at +0x5
     // +0x6   BYTE                     field_0x06  (evidence: 0x004E9BB0) // CONFLICT: multiple definitions at +0x6
     // +0x6   uint8_t                  field_0x06  (evidence: 0x006F8AF0) // CONFLICT: multiple definitions at +0x6

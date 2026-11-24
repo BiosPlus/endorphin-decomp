@@ -325,3 +325,18 @@ void fn_007148A0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2) {
     obj[0x05] = arg2;
 }
 } // namespace lift_007148A0
+
+// [0x007148C0] sub_007148C0 (32 bytes)
+namespace lift_007148C0 {
+// @name Unknown::CopyBytes3To5Out
+// @class Unknown
+// @summary Copies object bytes +0x03, +0x04, +0x05 to three caller-supplied BYTE* out-pointers (thiscall, ret 0xC).
+// @field Unknown +0x03 BYTE field_0x03
+// @field Unknown +0x04 BYTE field_0x04
+// @field Unknown +0x05 BYTE field_0x05
+void fn_007148C0(void* self, BYTE* out0, BYTE* out1, BYTE* out2) {
+    *out0 = lift_field<BYTE>(self, 0x03);
+    *out1 = lift_field<BYTE>(self, 0x04);
+    *out2 = lift_field<BYTE>(self, 0x05);
+}
+} // namespace lift_007148C0
