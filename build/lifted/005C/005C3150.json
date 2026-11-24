@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3150",
+  "size": 22,
+  "orig_symbol": "sub_005C3150",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "CallSlot14ThenAdd20",
+  "class": "Unknown",
+  "signature": "uint32_t fn_005C3150(void* self)",
+  "summary": "Calls virtual slot 0x14 of the object at self+0x04 with self+0x04 as this and the global mem_00B40640 as its single argument, then returns the result plus 0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:29:18Z"
+}

@@ -16666,6 +16666,13 @@
     "summary": "Calls the callback stored at obj-\u003efield_14 (obj = this-\u003efield_04), passing this+4 and a global, then returns its result + 0x10.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C3150": {
+    "name": "CallSlot14ThenAdd20",
+    "class": "Unknown",
+    "signature": "uint32_t fn_005C3150(void* self)",
+    "summary": "Calls virtual slot 0x14 of the object at self+0x04 with self+0x04 as this and the global mem_00B40640 as its single argument, then returns the result plus 0x20.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005C3170": {
     "name": "sub_005C3170",
     "class": "Unknown",

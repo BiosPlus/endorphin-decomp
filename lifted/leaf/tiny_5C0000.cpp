@@ -385,3 +385,41 @@ void fn_005CE940(void* self) {
     fn(reinterpret_cast<void*>(static_cast<uintptr_t>(sub_addr)), arg);
 }
 } // namespace lift_005CE940
+
+// [0x005C3130]
+namespace lift_005C3130 {
+extern int mem_00B40640;
+
+// @name ForwardGlobalArgAndAdd16
+// @class Unknown
+// @summary Calls the callback stored at obj->field_14 (obj = this->field_04), passing this+4 and a global, then returns its result + 0x10.
+// @field Unknown +0x04 void* field_04
+// @field Unknown +0x14 void* field_14
+int fn_005C3130(void* self) {
+    using Callback = int (*)(void* self, int arg);
+
+    uint8_t* obj = lift_field<uint8_t*>(self, 0x04);
+    Callback fn = lift_field<Callback>(obj, 0x14);
+    int result = fn(static_cast<uint8_t*>(self) + 0x04, mem_00B40640);
+    return result + 0x10;
+}
+} // namespace lift_005C3130
+
+// [0x005C3150]
+namespace lift_005C3150 {
+extern int mem_00B40640;
+
+// @name CallSlot14ThenAdd20
+// @class Unknown
+// @summary Calls virtual slot 0x14 of the object at self+0x04 with self+0x04 as this and the global mem_00B40640 as its single argument, then returns the result plus 0x20.
+// @field Unknown +0x04 void* field_0x04
+uint32_t fn_005C3150(void* self) {
+    auto* sub = static_cast<uint8_t*>(self) + 0x04;
+    auto* obj = *reinterpret_cast<uint8_t**>(sub);
+    auto* vtbl = *reinterpret_cast<uint8_t**>(obj);
+    using SlotFn = uint32_t (*)(void* thisPtr, int arg);
+    auto slot = reinterpret_cast<SlotFn>(*reinterpret_cast<void**>(vtbl + 0x14));
+    uint32_t result = slot(sub, mem_00B40640);
+    return result + 0x20;
+}
+} // namespace lift_005C3150
