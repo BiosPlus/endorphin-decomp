@@ -21616,6 +21616,13 @@
     "summary": "Returns 1 if the object at this+0x44 has a nonzero dword at offset +0x4, else 0.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005D13B0": {
+    "name": "NMData::CameraData::vfunc_7_off_C",
+    "class": "NMData::CameraData",
+    "signature": "void fn_005D13B0(void* self)",
+    "summary": "Sets the guard flag, queries a float via vtable slot 1 of the object at +0x25C, stores it into the element at +0x204, and marks +0x208 as set.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005D1480": {
     "name": "descriptiveName_005D1480 (thiscall: stores arg into first dword, zeroes second, returns this)",
     "signature": "void* fn_005D1480(void* self, DWORD arg)",

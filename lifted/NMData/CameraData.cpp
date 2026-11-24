@@ -63,3 +63,36 @@ void* __thiscall fn_005CFC20(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_005CFC20
+
+// [0x005D13B0] NMData::CameraData::vfunc_7_off_C (115 bytes)
+namespace lift_005D13B0 {
+// Known callee 0x005B11D0: sub_005B11D0 (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(uintptr_t self, uint32_t index);
+// Global guard byte set to 1 while this function runs and cleared to 0 on exit.
+extern uint8_t mem_00B3F200;
+
+// @name NMData::CameraData::vfunc_7_off_C
+// @class NMData::CameraData
+// @summary Sets the guard flag, queries a float via vtable slot 1 of the object at +0x25C, stores it into the element at +0x204, and marks +0x208 as set.
+// @field NMData::CameraData +0x204 uint8_t field_0x204
+// @field NMData::CameraData +0x208 uint8_t field_0x208
+// @field NMData::CameraData +0x258 float field_0x258
+// @field NMData::CameraData +0x25C void* field_0x25c
+void fn_005D13B0(void* self) {
+    mem_00B3F200 = 1;
+
+    // Query the float through vtable slot 1 (offset 4) of the object at +0x25C.
+    void* obj = lift_field<void*>(self, 0x25C);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using QueryFn = float(__thiscall*)(void* self, float* out);
+    auto query = reinterpret_cast<QueryFn>(vtbl[1]);
+    float value = query(obj, &lift_field<float>(self, 0x258));
+
+    // Store the value into the element at index 0 of the inline array at +0x204.
+    uint32_t* elem = ext_005B11D0(reinterpret_cast<uintptr_t>(self) + 0x204, 0);
+    *reinterpret_cast<float*>(elem) = value;
+
+    lift_field<uint8_t>(self, 0x208) = 1;
+    mem_00B3F200 = 0;
+}
+} // namespace lift_005D13B0

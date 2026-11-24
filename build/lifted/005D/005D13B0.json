@@ -1,0 +1,40 @@
+{
+  "va": "0x005D13B0",
+  "size": 115,
+  "orig_symbol": "NMData::CameraData::vfunc_7_off_C",
+  "src_path": "src/NMData/CameraData.cpp",
+  "lifted_path": "lifted/NMData/CameraData.cpp",
+  "name": "NMData::CameraData::vfunc_7_off_C",
+  "class": "NMData::CameraData",
+  "signature": "void fn_005D13B0(void* self)",
+  "summary": "Sets the guard flag, queries a float via vtable slot 1 of the object at +0x25C, stores it into the element at +0x204, and marks +0x208 as set.",
+  "fields": [
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x204",
+      "type": "uint8_t",
+      "name": "field_0x204"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x208",
+      "type": "uint8_t",
+      "name": "field_0x208"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x258",
+      "type": "float",
+      "name": "field_0x258"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x25C",
+      "type": "void*",
+      "name": "field_0x25c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:33:38Z"
+}
