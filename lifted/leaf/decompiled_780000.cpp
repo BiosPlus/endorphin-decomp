@@ -493,3 +493,33 @@ uint32_t __cdecl fn_00782CD0(uint32_t selector) {
 }
 } // namespace lift_00782B30
 } // namespace lift_00782CD0
+
+// [0x007837A0]
+namespace lift_007837A0 {
+// @name bumpNodeChainCounters
+// @class Node
+// @summary Increments counters at +0x08 and +0x0C on this node, then walks the next-pointer chain at +0x00 incrementing the same counters on each node until a null link.
+// @field Node +0x00 Node* next
+// @field Node +0x08 uint32_t counter_08
+// @field Node +0x0C uint32_t counter_0C
+
+struct Node {
+    Node*    next;        // +0x00
+    uint32_t field_0x04;  // +0x04
+    uint32_t counter_08;  // +0x08
+    uint32_t counter_0C;  // +0x0C
+};
+
+void bumpNodeChainCounters(Node* self)
+{
+    self->counter_08++;
+    self->counter_0C++;
+
+    Node* node = self->next;
+    while (node != nullptr) {
+        node->counter_08++;
+        node->counter_0C++;
+        node = node->next;
+    }
+}
+} // namespace lift_007837A0

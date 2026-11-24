@@ -47202,6 +47202,13 @@
     "summary": "Zeroes four consecutive uint32_t fields at offsets +0x00..+0x0C and returns this.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007837A0": {
+    "name": "bumpNodeChainCounters",
+    "class": "Node",
+    "signature": "void bumpNodeChainCounters(Node* self)",
+    "summary": "Increments counters at +0x08 and +0x0C on this node, then walks the next-pointer chain at +0x00 incrementing the same counters on each node until a null link.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783800": {
     "name": "ResetNodeChain (descriptive label inferred from behavior; no class name recovered)",
     "class": "Unknown",

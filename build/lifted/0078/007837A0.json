@@ -1,0 +1,34 @@
+{
+  "va": "0x007837A0",
+  "size": 48,
+  "orig_symbol": "sub_007837A0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "bumpNodeChainCounters",
+  "class": "Node",
+  "signature": "void bumpNodeChainCounters(Node* self)",
+  "summary": "Increments counters at +0x08 and +0x0C on this node, then walks the next-pointer chain at +0x00 incrementing the same counters on each node until a null link.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "Node*",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "counter_08"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "counter_0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:34Z"
+}
