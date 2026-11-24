@@ -1,0 +1,22 @@
+{
+  "va": "0x00537BF0",
+  "size": 19,
+  "orig_symbol": "CompoundRenderable::vfunc_18",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_18",
+  "class": "CompoundRenderable",
+  "signature": "uint32_t fn_00537BF0(void* self, uint32_t arg)",
+  "summary": "Forwards the call to the vtable slot 18 (+0x48) of the object held at this+0x14; returns 0 if that object is null.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:02:59Z"
+}

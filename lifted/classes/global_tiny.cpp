@@ -6035,3 +6035,22 @@ void fn_00535690(void* self, float value) {
     lift_field<float>(target, 0xC0) = value;
 }
 } // namespace lift_00535690
+
+// [0x00537BF0]
+namespace lift_00537BF0 {
+// @name CompoundRenderable::vfunc_18
+// @class CompoundRenderable
+// @summary Forwards the call to the vtable slot 18 (+0x48) of the object held at this+0x14; returns 0 if that object is null.
+// @field CompoundRenderable +0x14 void* field_0x14
+uint32_t fn_00537BF0(void* self, uint32_t arg) {
+    void* child = lift_field<void*>(self, 0x14);
+    if (child == nullptr) {
+        return 0;
+    }
+    // Load child's vtable and fetch slot 18 (offset 0x48).
+    void** vtbl = lift_field<void**>(child, 0);
+    using SlotFn = uint32_t (*)(void* self, uint32_t arg);
+    SlotFn target = reinterpret_cast<SlotFn>(vtbl[0x48 / sizeof(void*)]);
+    return target(child, arg);
+}
+} // namespace lift_00537BF0
