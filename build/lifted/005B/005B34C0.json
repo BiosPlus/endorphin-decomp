@@ -1,0 +1,51 @@
+{
+  "va": "0x005B34C0",
+  "size": 50,
+  "orig_symbol": "sub_005B34C0",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "sub_005B34C0",
+  "signature": "BOOL __thiscall sub_005B34C0(void* ecx)",
+  "summary": "Returns TRUE if the three 16-byte entries at this+0x04, +0x14, +0x24 all hold empty ranges (begin==0 or (end-begin)\u003e\u003e2 == 0); FALSE otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:06:48Z"
+}

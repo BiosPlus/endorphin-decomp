@@ -22147,6 +22147,12 @@
     "summary": "Builds a std::string result in dst: reads the object from src, fills a temporary string via 0x005B1220, copy-constructs dst from it, destroys the temporary, and returns dst.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B34C0": {
+    "name": "sub_005B34C0",
+    "signature": "BOOL __thiscall sub_005B34C0(void* ecx)",
+    "summary": "Returns TRUE if the three 16-byte entries at this+0x04, +0x14, +0x24 all hold empty ranges (begin==0 or (end-begin)\u003e\u003e2 == 0); FALSE otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B3590": {
     "name": "Geometry::vfunc_0",
     "class": "Geometry",

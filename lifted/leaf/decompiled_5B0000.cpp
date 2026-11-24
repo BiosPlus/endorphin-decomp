@@ -234,3 +234,34 @@ uint32_t __thiscall sub_005B0E60(uintptr_t this_ptr, uintptr_t out_ptr) {
     return static_cast<uint32_t>(out_ptr);
 }
 } // namespace lift_005B0E60
+
+// [0x005B34C0]
+namespace lift_005B34C0 {
+// @name sub_005B34C0
+// @summary Returns TRUE if the three 16-byte entries at this+0x04, +0x14, +0x24 all hold empty ranges (begin==0 or (end-begin)>>2 == 0); FALSE otherwise.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+// @field Unknown +0x24 DWORD field_0x24
+// @field Unknown +0x28 DWORD field_0x28
+
+BOOL __thiscall sub_005B34C0(void* ecx) {
+    // ecx is the implicit `this` for a thiscall; the loop walks three
+    // 16-byte entries starting at this+0.
+    for (int32_t i = 0; i < 3; ++i) {
+        const ptrdiff_t off = static_cast<ptrdiff_t>(i) * 0x10;
+        const uint32_t begin = lift_field<uint32_t>(ecx, off + 0x04);
+        int32_t count = 0;
+        if (begin != 0) {
+            const uint32_t end = lift_field<uint32_t>(ecx, off + 0x08);
+            // Signed subtraction followed by arithmetic shift by 2 (element size 4).
+            count = static_cast<int32_t>(end - begin) >> 2;
+        }
+        if (count != 0) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+} // namespace lift_005B34C0
