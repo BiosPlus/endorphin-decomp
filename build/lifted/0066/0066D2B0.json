@@ -1,0 +1,14 @@
+{
+  "va": "0x0066D2B0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type::vfunc_40 (cartesianAtoB_TSA)",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+  "signature": "extern \"C\" uint32_t mem_00B59694; // one-time init guard word (bit 0 = initialized) extern \"C\" uint32_t mem_00B59690; // function-local static object storage void fn_0066D2B0(void* self)",
+  "summary": "Lazily initializes the function-local static object at mem_00B59690 once, then stores its address at +0x04 of the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:54:31Z"
+}

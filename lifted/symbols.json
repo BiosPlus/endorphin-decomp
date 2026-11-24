@@ -33609,6 +33609,13 @@
     "summary": "Lazily initializes the static descriptor object at 0x00B59688 (once, guarded by bit 0 of 0x00B5968C) and stores its address at offset +0x4 of the output argument.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x0066D2B0": {
+    "name": "ExprParser::Method2Type::vfunc_40 (cartesianAtoB_TSA)",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B59694; // one-time init guard word (bit 0 = initialized) extern \"C\" uint32_t mem_00B59690; // function-local static object storage void fn_0066D2B0(void* self)",
+    "summary": "Lazily initializes the function-local static object at mem_00B59690 once, then stores its address at +0x04 of the argument.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066DCB0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",

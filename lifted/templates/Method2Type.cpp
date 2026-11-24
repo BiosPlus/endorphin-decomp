@@ -822,3 +822,23 @@ void __thiscall fn_0066D230(void* self, void* arg1) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B59688));
 }
 } // namespace lift_0066D230
+
+// [0x0066D2B0] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+namespace lift_0066D2B0 {
+extern void ext_0067A670();
+extern uint32_t mem_00B59694; // one-time init guard word (bit 0 = initialized)
+extern uint32_t mem_00B59690; // function-local static object storage
+
+// @name ExprParser::Method2Type::vfunc_40 (cartesianAtoB_TSA)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const &, NM::Vector3 const &)>
+// @summary Lazily initializes the function-local static object at mem_00B59690 once, then stores its address at +0x04 of the argument.
+// @field ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const &, NM::Vector3 const &)> +0x04 void* field_0x04
+void fn_0066D2B0(void* self) {
+    if ((mem_00B59694 & 1u) == 0) {
+        mem_00B59694 |= 1u;
+        ext_0067A670();
+        mem_00B59690 = 0x009884CCu; // vtable pointer for the static object
+    }
+    lift_field<uint32_t>(self, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B59690));
+}
+} // namespace lift_0066D2B0
