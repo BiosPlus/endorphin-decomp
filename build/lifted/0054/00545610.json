@@ -1,0 +1,22 @@
+{
+  "va": "0x00545610",
+  "size": 13,
+  "orig_symbol": "PoseTool::vfunc_14",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "PoseTool::vfunc_14",
+  "class": "PoseTool",
+  "signature": "uintptr_t fn_00545610(void* self)",
+  "summary": "Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:21:08Z"
+}

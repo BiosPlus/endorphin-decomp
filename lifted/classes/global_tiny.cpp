@@ -5161,3 +5161,20 @@ void* fn_005455F0(void* self) {
     return target(obj);
 }
 } // namespace lift_005455F0
+
+// [0x00545610] PoseTool::vfunc_14 (13 bytes)
+namespace lift_00545610 {
+// @name PoseTool::vfunc_14
+// @class PoseTool
+// @summary Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.
+// @field PoseTool +0xA0 void* field_0xa0
+
+typedef uintptr_t (*lift_vfn_t)(void* self);
+
+uintptr_t fn_00545610(void* self) {
+    void* target = lift_field<void*>(self, 0xA0);
+    void* vtable = lift_field<void*>(target, 0);
+    lift_vfn_t fn = reinterpret_cast<lift_vfn_t>(lift_field<void*>(vtable, 0x38));
+    return fn(target);
+}
+} // namespace lift_00545610
