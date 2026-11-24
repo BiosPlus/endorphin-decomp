@@ -27220,6 +27220,13 @@
     "summary": "Stores address of mem_0098C5E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B2F0": {
+    "name": "InitInverseScalesAndZeroOffset",
+    "class": "Unknown",
+    "signature": "void fn_0067B2F0(void* self, double a, double b)",
+    "summary": "Stores 1/a at +0x08, 1/b at +0x10, and 0.0 at +0x18 (thiscall, two double args, callee pops 0x10).",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067B310": {
     "name": "InitValueReciprocalZero",
     "class": "Unknown",

@@ -502,3 +502,24 @@ void __thiscall sub_0067AE00(uint32_t self, uint32_t mode) {
   }
 }
 } // namespace lift_0067AE00
+
+// [0x0067B2F0] sub_0067B2F0 (26 bytes)
+namespace lift_0067B2F0 {
+// @name InitInverseScalesAndZeroOffset
+// @class Unknown
+// @summary Stores 1/a at +0x08, 1/b at +0x10, and 0.0 at +0x18 (thiscall, two double args, callee pops 0x10).
+// @field Unknown +0x08 double field_0x08
+// @field Unknown +0x10 double field_0x10
+// @field Unknown +0x18 double field_0x18
+void fn_0067B2F0(void* self, double a, double b) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    const double inv_a = 1.0 / a;
+    const double inv_b = 1.0 / b;
+    const double zero = 0.0;
+
+    std::memcpy(base + 0x08, &inv_a, sizeof inv_a);
+    std::memcpy(base + 0x10, &inv_b, sizeof inv_b);
+    std::memcpy(base + 0x18, &zero, sizeof zero);
+}
+} // namespace lift_0067B2F0
