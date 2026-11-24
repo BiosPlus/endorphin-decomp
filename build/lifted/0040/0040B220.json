@@ -1,0 +1,13 @@
+{
+  "va": "0x0040B220",
+  "size": 41,
+  "orig_symbol": "sub_0040B220",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "prependSpaceToString",
+  "signature": "uintptr_t __stdcall fn_0040B220(uintptr_t out_ptr, uintptr_t rhs_ptr)",
+  "summary": "Builds a std::string equal to \" \" + arg, writes it to the sret buffer, and returns that buffer pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:54:19Z"
+}

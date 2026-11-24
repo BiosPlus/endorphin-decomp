@@ -585,6 +585,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x84 and tail-calls thunk_MFC80_ord_5833.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040B220": {
+    "name": "prependSpaceToString",
+    "signature": "uintptr_t __stdcall fn_0040B220(uintptr_t out_ptr, uintptr_t rhs_ptr)",
+    "summary": "Builds a std::string equal to \" \" + arg, writes it to the sret buffer, and returns that buffer pointer.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040B770": {
     "name": "AddCharacterDialog::vfunc_91",
     "class": "AddCharacterDialog",

@@ -306,3 +306,22 @@ void sub_0040E1A0(uint32_t first, uint32_t last, uint32_t val) {
     }
 }
 } // namespace lift_0040E1A0
+
+// [0x0040B220] sub_0040B220 (41 bytes)
+namespace lift_0040B220 {
+// MSVCP80 std::operator+(const char*, const std::string&) imported via [0x924FCC].
+// Writes the result std::string through the hidden return pointer (sret).
+extern void __cdecl ext_00924FCC(void* sret, const char* lhs, const void* rhs);
+
+// Literal " " (single space) stored at mem_0092AB78 in .rdata.
+extern int mem_0092AB78;
+
+// @name prependSpaceToString
+// @summary Builds a std::string equal to " " + arg, writes it to the sret buffer, and returns that buffer pointer.
+uintptr_t __stdcall fn_0040B220(uintptr_t out_ptr, uintptr_t rhs_ptr) {
+    ext_00924FCC(reinterpret_cast<void*>(out_ptr),
+                 reinterpret_cast<const char*>(&mem_0092AB78),
+                 reinterpret_cast<const void*>(rhs_ptr));
+    return out_ptr;
+}
+} // namespace lift_0040B220
