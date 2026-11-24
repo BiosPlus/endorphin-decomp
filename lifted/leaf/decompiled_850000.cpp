@@ -355,3 +355,22 @@ int strncmpSignedChar(const char* s1, const char* s2, std::size_t n) {
     return 0;
 }
 } // namespace lift_008597B0
+
+// [0x00859780] sub_00859780 (48 bytes)
+namespace lift_00859780 {
+// @name copyMemoryDwordThenBytes
+// @summary Copies n bytes from src to dst (whole dwords first, then remaining bytes) and returns dst.
+void* fn_00859780(void* dst, const void* src, size_t n) {
+    size_t dwordBytes = (n >> 2) << 2;
+    size_t tailBytes = n & 3;
+    if (dwordBytes != 0) {
+        std::memcpy(dst, src, dwordBytes);
+    }
+    if (tailBytes != 0) {
+        std::memcpy(static_cast<uint8_t*>(dst) + dwordBytes,
+                    static_cast<const uint8_t*>(src) + dwordBytes,
+                    tailBytes);
+    }
+    return dst;
+}
+} // namespace lift_00859780

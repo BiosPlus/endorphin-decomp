@@ -50597,6 +50597,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00859780": {
+    "name": "copyMemoryDwordThenBytes",
+    "signature": "void* fn_00859780(void* dst, const void* src, size_t n)",
+    "summary": "Copies n bytes from src to dst (whole dwords first, then remaining bytes) and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x008597B0": {
     "name": "strncmpSignedChar",
     "signature": "int strncmpSignedChar(const char* s1, const char* s2, std::size_t n)",
