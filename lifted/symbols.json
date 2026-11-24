@@ -16057,6 +16057,13 @@
     "summary": "Returns 12 if the dword at this+0x9C is nonzero, otherwise 11.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005451B0": {
+    "name": "PoseTool::vfunc_26",
+    "class": "PoseTool",
+    "signature": "void fn_005451B0(uint32_t self)",
+    "summary": "Invokes vtable slots +0xA4 and +0xA8 on field_0x88, then tail-calls PoseTool::vfunc_32 (+0x80).",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x005453B0": {
     "name": "PoseTool::vfunc_22",
     "class": "PoseTool",
